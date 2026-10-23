@@ -52,6 +52,7 @@ export const CORRECTION_PROMPT = `你是中文语法纠错助手。检查“学�
 - original 尽量短，只包含出错的最小片段，不要复制整句。original 必须从学习者消息中逐字复制。
 - corrected 只改这个片段并保持原意。例如“看看了”改为“看了”，不要改成“看了看”。
 - explanation 最多 20 个越南语词，只说明这个片段应该怎么说，例如“Không lặp lại ‘看’; chỉ cần nói ‘看了’.”。不要解释整句语法，不要写不确定的规则，不能出现英语单词。
+- category 只能取 "grammar"（语法）、"word_choice"（用词/搭配）、"word_order"（语序）、"measure_word"（量词）、"other"（其他）。拿不准时用 "other"。
 - 最多 1 条。没有明确错误就返回 {"corrections":[]}。
 
 只输出 JSON。`;
@@ -68,9 +69,46 @@ export function sanitizeHistory(messages) {
     .slice(-14);
 }
 
-export function buildMessages(level, history) {
+export function buildMessages(level, history, learningDigest = '') {
+  const memory = String(learningDigest ?? '')
+    .replace(/\u0000/g, '')
+    .trim()
+    .slice(0, 2200);
+  const system = memory
+    ? `${buildSystemPrompt(level)}\n\n${memory}`
+    : buildSystemPrompt(level);
   return [
-    { role: 'system', content: buildSystemPrompt(level) },
+    { role: 'system', content: system },
     ...sanitizeHistory(history),
+  ];
+}
+
+export const ANALYSIS_PROMPT = `Bạn là chuyên gia phân tích lỗi cho người Việt học tiếng Trung. Trình độ hiện tại của người học được ghi trong dữ liệu. Bạn nhận được dữ liệu do ứng dụng tổng hợp từ các buổi luyện nói: số lượt, các lỗi đã được sửa, từ vựng đang ôn và hoạt động gần đây.
+
+Nhiệm vụ: chỉ ra chính xác kỹ năng nào còn yếu, vì sao, và cách luyện cụ thể trong vài ngày tới.
+
+Quy tắc:
+- Chỉ kết luận từ dữ liệu được cung cấp. Không bịa lỗi, không bịa từ, không suy đoán ngoài dữ liệu.
+- Viết bằng tiếng Việt có dấu, tự nhiên, ngắn gọn, dễ hiểu. Được phép dùng chữ Hán và pinyin làm ví dụ.
+- Nếu dữ liệu quá ít (dưới 3 lượt hoặc chưa có lỗi/từ nào), nói rõ trong summary rằng cần thêm dữ liệu, nhưng vẫn đưa ra hướng luyện tập hợp lý.
+- summary: 2–3 câu, tối đa 450 ký tự.
+- strengths: 2–3 điểm đang làm tốt, dựa trên dữ liệu (ví dụ ít lỗi ở một nhóm nào đó, chăm ôn từ). Mỗi ý tối đa 25 từ.
+- weaknesses: 2–3 mục, xếp theo mức độ đáng chú ý. Mỗi mục gồm:
+  - skill: "grammar" | "word_choice" | "word_order" | "measure_word" | "vocabulary" | "other"
+  - title: tên điểm yếu ngắn, cụ thể bằng tiếng Việt
+  - evidence: dẫn chứng ngắn từ dữ liệu (ví dụ một lỗi hoặc một từ), tối đa 25 từ
+  - advice: cách hiểu/sửa đúng, tối đa 2 câu ngắn
+  - practice: một bài luyện rất cụ thể, làm được ngay, tối đa 25 từ
+- focusWords: 2–3 từ, ưu tiên từ có trong danh sách từ vựng hoặc xuất hiện trong lỗi. Mỗi từ gồm word (chữ Hán), pinyin (có dấu thanh), meaning (nghĩa tiếng Việt ngắn), why (tối đa 20 từ).
+- plan: đúng 3 bước hành động cho 3–5 ngày tới, mỗi bước tối đa 25 từ.
+- Tổng toàn bộ JSON dưới 900 từ. Không markdown, không bullet ký tự, không lời chào, không nhắc “là AI”. Chỉ trả JSON đúng schema.`;
+
+export function buildAnalysisMessages(profileText) {
+  return [
+    { role: 'system', content: ANALYSIS_PROMPT },
+    {
+      role: 'user',
+      content: String(profileText ?? '').slice(0, 6000),
+    },
   ];
 }

@@ -1,5 +1,7 @@
 import type {
+  AnalysisReport,
   ChatHistoryMessage,
+  Correction,
   StatusResponse,
   StreamAttitude,
   StreamEvent,
@@ -28,6 +30,7 @@ export interface ChatRequest {
   model: string;
   level: string;
   messages: ChatHistoryMessage[];
+  learning?: string;
 }
 
 export interface ChatStreamHandlers {
@@ -35,6 +38,7 @@ export interface ChatStreamHandlers {
   onAttitude?: (event: StreamAttitude) => void;
   onReplyDelta?: (text: string) => void;
   onReplyDone?: () => void;
+  onTranslation?: (text: string) => void;
   onTurn?: (event: StreamTurn) => void;
 }
 
@@ -97,6 +101,9 @@ export async function streamChat(
             case 'reply_done':
               handlers.onReplyDone?.();
               break;
+            case 'translation':
+              handlers.onTranslation?.(event.text);
+              break;
             case 'turn':
               gotTurn = true;
               handlers.onTurn?.(event);
@@ -132,6 +139,21 @@ export async function streamChat(
   }
 }
 
+export async function fetchCorrections(payload: {
+  provider: string;
+  model: string;
+  text: string;
+}): Promise<Correction[]> {
+  const res = await fetch('/api/corrections', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(await readError(res));
+  const data = (await res.json()) as { corrections?: Correction[] };
+  return Array.isArray(data?.corrections) ? data.corrections : [];
+}
+
 export async function fetchTts(
   text: string,
   voice: string,
@@ -145,4 +167,21 @@ export async function fetchTts(
   });
   if (!res.ok) throw new Error(await readError(res));
   return res.json();
+}
+
+export async function analyzeLearning(payload: {
+  provider: string;
+  model: string;
+  profile: string;
+  periodDays: number;
+}): Promise<AnalysisReport> {
+  const res = await fetch('/api/analysis', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(await readError(res));
+  const data = (await res.json()) as { report?: AnalysisReport };
+  if (!data?.report) throw new Error('Model không trả về bản phân tích.');
+  return data.report;
 }

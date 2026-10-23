@@ -28,6 +28,7 @@ interface ChatPanelProps {
   onSend: () => void;
   onMicToggle: () => void;
   onReplay: (message: ChatMessage) => void;
+  onSpeakTranslation: (message: ChatMessage) => void;
   onTogglePinyin: () => void;
   onNewChat: () => void;
   onDismissError: () => void;
@@ -63,6 +64,7 @@ interface MessageItemProps {
   showPinyin: boolean;
   busy: boolean;
   onReplay: (message: ChatMessage) => void;
+  onSpeakTranslation: (message: ChatMessage) => void;
   onUseSuggestion: (text: string) => void;
 }
 
@@ -71,6 +73,7 @@ function MessageItem({
   showPinyin,
   busy,
   onReplay,
+  onSpeakTranslation,
   onUseSuggestion,
 }: MessageItemProps) {
   const assistant = message.role === 'assistant';
@@ -131,7 +134,19 @@ function MessageItem({
               </p>
               {pinyin && <p className="pinyin-line">{pinyin}</p>}
               {message.translation && (
-                <p className="bubble-translation">{message.translation}</p>
+                <div className="translation-row">
+                  <p className="bubble-translation">{message.translation}</p>
+                  <button
+                    className="translation-play"
+                    type="button"
+                    onClick={() => onSpeakTranslation(message)}
+                    disabled={busy}
+                    title="Nghe bản dịch bằng giọng Việt"
+                  >
+                    <VolumeIcon size={13} />
+                    <span>Nghe tiếng Việt</span>
+                  </button>
+                </div>
               )}
             </>
           ) : (
@@ -184,6 +199,13 @@ function MessageItem({
           </div>
         )}
 
+        {message.correctionsPending && !message.streaming && (
+          <p className="corrections-pending">
+            <span className="corrections-pending-dot" aria-hidden="true" />
+            Đang kiểm tra ngữ pháp…
+          </p>
+        )}
+
         {message.suggestion && !message.streaming && (
           <button
             className="suggestion-card"
@@ -224,6 +246,7 @@ export function ChatPanel({
   onSend,
   onMicToggle,
   onReplay,
+  onSpeakTranslation,
   onTogglePinyin,
   onNewChat,
   onDismissError,
@@ -327,6 +350,7 @@ export function ChatPanel({
             showPinyin={showPinyin}
             busy={busy}
             onReplay={onReplay}
+            onSpeakTranslation={onSpeakTranslation}
             onUseSuggestion={useSuggestion}
           />
         ))}
@@ -357,7 +381,9 @@ export function ChatPanel({
               <i />
               <i />
             </span>
-            <span>{draft.trim() ? draft : 'Đang nghe bạn nói tiếng Trung…'}</span>
+            <span>
+              {draft.trim() || 'Đang nghe bạn nói tiếng Trung… ngừng 3 giây để gửi.'}
+            </span>
             <button type="button" onClick={onMicToggle}>
               Xong
             </button>

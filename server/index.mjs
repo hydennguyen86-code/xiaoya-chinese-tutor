@@ -1,13 +1,21 @@
 import express from 'express';
 import path from 'node:path';
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 import { pinyin } from 'pinyin-pro';
 
 import { PROVIDER_DEFS, detectProviders } from './providers.mjs';
-import { CORRECTION_PROMPT, LEVELS, buildMessages, sanitizeHistory } from './prompt.mjs';
 import {
+  CORRECTION_PROMPT,
+  LEVELS,
+  buildAnalysisMessages,
+  buildMessages,
+  sanitizeHistory,
+} from './prompt.mjs';
+import {
+  ANALYSIS_SCHEMA,
   CORRECTION_SCHEMA,
   ModelError,
   completeJson,
@@ -15,11 +23,17 @@ import {
 } from './llm.mjs';
 import {
   parseCorrections,
+  parseJsonObject,
   parseTutorResponse,
   readAttitude,
   readStringField,
 } from './jsonStream.mjs';
-import { TTS_VOICES, synthesizeSpeech } from './tts.mjs';
+import {
+  DEFAULT_VI_VOICE,
+  TTS_VOICES,
+  VI_TTS_VOICES,
+  synthesizeSpeech,
+} from './tts.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
@@ -97,6 +111,8 @@ app.get('/api/status', async (_req, res) => {
     providers,
     voices: TTS_VOICES,
     defaultVoice: DEFAULT_VOICE,
+    viVoices: VI_TTS_VOICES,
+    defaultViVoice: DEFAULT_VI_VOICE,
     levels: Object.keys(LEVELS),
     avatarUrl: '/avatars/brunette.glb',
   });
@@ -121,12 +137,170 @@ app.post('/api/tts', async (req, res) => {
   }
 });
 
+const ANALYSIS_SKILLS = new Set([
+  'grammar',
+  'word_choice',
+  'word_order',
+  'measure_word',
+  'vocabulary',
+  'other',
+]);
+
+function analysisText(value, max = 500) {
+  return typeof value === 'string'
+    ? value.replace(/\s+/g, ' ').trim().slice(0, max)
+    : '';
+}
+
+function sanitizeAnalysis(data, periodDays) {
+  if (!data || typeof data !== 'object') return null;
+
+  const summary = analysisText(data.summary, 900);
+  const strengths = Array.isArray(data.strengths)
+    ? data.strengths.map((item) => analysisText(item, 220)).filter(Boolean).slice(0, 4)
+    : [];
+  const weaknesses = Array.isArray(data.weaknesses)
+    ? data.weaknesses
+        .filter((item) => item && typeof item === 'object')
+        .map((item) => ({
+          skill: ANALYSIS_SKILLS.has(item.skill) ? item.skill : 'other',
+          title: analysisText(item.title, 180),
+          evidence: analysisText(item.evidence, 400),
+          advice: analysisText(item.advice, 450),
+          practice: analysisText(item.practice, 450),
+        }))
+        .filter((item) => item.title)
+        .slice(0, 4)
+    : [];
+  const focusWords = Array.isArray(data.focusWords)
+    ? data.focusWords
+        .filter((item) => item && typeof item === 'object')
+        .map((item) => {
+          const word = analysisText(item.word, 30);
+          const modelPinyin = analysisText(item.pinyin, 100);
+          const pinyinLooksValid =
+            !HAN.test(modelPinyin) && /^[A-Za-z\u00c0-\u024f\u1e00-\u1eff' -]+$/.test(modelPinyin);
+          return {
+            word,
+            pinyin: HAN.test(word)
+              ? pinyinLooksValid
+                ? modelPinyin
+                : pinyin(word, { toneType: 'symbol', type: 'array' }).join(' ')
+              : modelPinyin,
+            meaning: analysisText(item.meaning, 220),
+            why: analysisText(item.why, 250),
+          };
+        })
+        .filter(
+          (item) =>
+            item.word &&
+            HAN.test(item.word) &&
+            item.meaning &&
+            !HAN.test(item.meaning),
+        )
+        .slice(0, 4)
+    : [];
+  const plan = Array.isArray(data.plan)
+    ? data.plan.map((item) => analysisText(item, 250)).filter(Boolean).slice(0, 5)
+    : [];
+
+  if (!summary && !weaknesses.length) return null;
+
+  return {
+    id: crypto.randomUUID(),
+    createdAt: Date.now(),
+    periodDays,
+    summary,
+    strengths,
+    weaknesses,
+    focusWords,
+    plan,
+  };
+}
+
+app.post('/api/analysis', async (req, res) => {
+  const { provider = 'ollama', model, profile, periodDays = 1 } = req.body || {};
+
+  if (!PROVIDER_DEFS[provider]) {
+    res.status(400).json({ error: 'Provider không hợp lệ.' });
+    return;
+  }
+  if (typeof model !== 'string' || !model.trim() || model.length > 200) {
+    res.status(400).json({ error: 'Chưa chọn model.' });
+    return;
+  }
+  if (typeof profile !== 'string' || profile.trim().length < 30) {
+    res.status(400).json({
+      error: 'Chưa có đủ dữ liệu học tập để phân tích. Hãy luyện thêm vài lượt rồi thử lại.',
+    });
+    return;
+  }
+
+  const safePeriod = Math.max(1, Math.min(365, Math.round(Number(periodDays) || 1)));
+
+  try {
+    const result = await completeJson({
+      provider,
+      model: model.trim(),
+      messages: buildAnalysisMessages(profile),
+      signal: AbortSignal.timeout(150000),
+      schema: ANALYSIS_SCHEMA,
+      maxTokens: 1600,
+      temperature: 0.35,
+    });
+    const report = sanitizeAnalysis(parseJsonObject(result.raw), safePeriod);
+    if (!report) {
+      throw new ModelError('Model trả về bản phân tích chưa đúng cấu trúc.', 502);
+    }
+    res.json({ report, elapsedMs: result.elapsedMs });
+    console.log(
+      `[analysis] ${provider}/${model} · ${result.elapsedMs}ms · ${report.weaknesses.length} điểm yếu`,
+    );
+  } catch (error) {
+    console.error('[analysis]', error);
+    res.status(error.status || 502).json({
+      error: friendlyError(error),
+    });
+  }
+});
+
+app.post('/api/corrections', async (req, res) => {
+  const { provider = 'ollama', model, text = '' } = req.body || {};
+
+  if (!PROVIDER_DEFS[provider]) {
+    res.status(400).json({ error: 'Provider không hợp lệ.' });
+    return;
+  }
+  if (typeof model !== 'string' || !model.trim() || model.length > 200) {
+    res.status(400).json({ error: 'Chưa chọn model.' });
+    return;
+  }
+
+  const learnerText =
+    typeof text === 'string' ? text.replace(/\u0000/g, '').trim().slice(0, 2000) : '';
+  if (!learnerText || !HAN.test(learnerText)) {
+    res.json({ corrections: [] });
+    return;
+  }
+
+  try {
+    const corrections = await collectCorrections(provider, model.trim(), learnerText);
+    res.json({ corrections });
+  } catch (error) {
+    if (error?.name !== 'AbortError' && error?.name !== 'TimeoutError') {
+      console.error('[correct]', error.message);
+    }
+    res.json({ corrections: [] });
+  }
+});
+
 app.post('/api/chat', async (req, res) => {
   const {
     provider = 'ollama',
     model,
     level = 'HSK5-6',
     messages = [],
+    learning = '',
   } = req.body || {};
 
   if (!PROVIDER_DEFS[provider]) {
@@ -145,7 +319,9 @@ app.post('/api/chat', async (req, res) => {
   }
 
   const safeLevel = Object.hasOwn(LEVELS, level) ? level : 'HSK5-6';
-  const conversation = buildMessages(safeLevel, history);
+  const learningDigest =
+    typeof learning === 'string' ? learning.replace(/\u0000/g, '').trim().slice(0, 2200) : '';
+  const conversation = buildMessages(safeLevel, history, learningDigest);
 
   res.status(200);
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
@@ -178,6 +354,7 @@ app.post('/api/chat', async (req, res) => {
   let raw = '';
   let sentReplyLength = 0;
   let replyDoneSent = false;
+  let translationSent = false;
   let lastAttitudeKey = '';
 
   const processTokenText = (text) => {
@@ -201,6 +378,14 @@ app.post('/api/chat', async (req, res) => {
       if (partial.complete && !replyDoneSent) {
         replyDoneSent = true;
         send({ type: 'reply_done' });
+      }
+    }
+
+    const translation = readStringField(raw, 'translation');
+    if (translation?.complete && !translationSent) {
+      translationSent = true;
+      if (!HAN.test(translation.text)) {
+        send({ type: 'translation', text: translation.text });
       }
     }
   };
@@ -236,22 +421,9 @@ app.post('/api/chat', async (req, res) => {
       throw new ModelError('Model trả về phản hồi rỗng.', 502);
     }
 
-    try {
-      turn.corrections = await collectCorrections(
-        provider,
-        model.trim(),
-        history[history.length - 1].content,
-        abort.signal,
-      );
-    } catch (error) {
-      turn.corrections = [];
-      if (!clientGone && error?.name !== 'AbortError' && error?.name !== 'TimeoutError') {
-        console.error('[correct]', error.message);
-      }
-    }
-
-    if (clientGone) return;
-
+    // Grammar check runs afterwards through /api/corrections so the full turn
+    // reaches the learner as soon as the reply itself is ready.
+    turn.corrections = [];
     polishTurn(turn);
 
     finished = true;

@@ -95,11 +95,14 @@ interface MicCallbacks {
   onState: (listening: boolean) => void;
 }
 
+const SILENCE_MS = 3000;
+
 export class ChineseMic {
   private recognition: SpeechRecognitionLike | null = null;
   private finalText = '';
   private interimText = '';
   private active = false;
+  private silenceTimer: number | null = null;
   private callbacks: MicCallbacks;
 
   constructor(callbacks: MicCallbacks) {
@@ -110,6 +113,21 @@ export class ChineseMic {
     return Boolean(getConstructor());
   }
 
+  private clearSilenceTimer() {
+    if (this.silenceTimer !== null) {
+      window.clearTimeout(this.silenceTimer);
+      this.silenceTimer = null;
+    }
+  }
+
+  private scheduleStop() {
+    this.clearSilenceTimer();
+    this.silenceTimer = window.setTimeout(() => {
+      this.silenceTimer = null;
+      this.stop();
+    }, SILENCE_MS);
+  }
+
   start() {
     if (this.active) return true;
     const Constructor = getConstructor();
@@ -117,7 +135,8 @@ export class ChineseMic {
 
     const recognition = new Constructor();
     recognition.lang = 'zh-CN';
-    recognition.continuous = false;
+    // Giữ micro mở để người học kịp ngừng thở/ngập ngừng giữa câu.
+    recognition.continuous = true;
     recognition.interimResults = true;
     recognition.maxAlternatives = 1;
 
@@ -125,6 +144,7 @@ export class ChineseMic {
     this.finalText = '';
     this.interimText = '';
     this.active = true;
+    this.clearSilenceTimer();
 
     recognition.onstart = () => {
       this.callbacks.onState(true);
@@ -141,7 +161,9 @@ export class ChineseMic {
       }
       this.finalText = finalText;
       this.interimText = interim;
-      this.callbacks.onTranscript((finalText + interim).trim());
+      const combined = (finalText + interim).trim();
+      this.callbacks.onTranscript(combined);
+      if (combined) this.scheduleStop();
     };
 
     recognition.onerror = (event) => {
@@ -152,6 +174,7 @@ export class ChineseMic {
     };
 
     recognition.onend = () => {
+      this.clearSilenceTimer();
       this.active = false;
       this.recognition = null;
       this.callbacks.onState(false);
@@ -169,6 +192,7 @@ export class ChineseMic {
   }
 
   stop() {
+    this.clearSilenceTimer();
     if (!this.recognition) return;
     try {
       this.recognition.stop();
@@ -178,14 +202,20 @@ export class ChineseMic {
   }
 
   abort() {
-    if (!this.recognition) return;
-    try {
-      this.recognition.abort();
-    } catch {
-      // ignore
-    }
+    this.clearSilenceTimer();
+    const recognition = this.recognition;
     this.active = false;
     this.recognition = null;
+    if (recognition) {
+      recognition.onresult = null;
+      recognition.onerror = null;
+      recognition.onend = null;
+      try {
+        recognition.abort();
+      } catch {
+        // ignore
+      }
+    }
     this.callbacks.onState(false);
   }
 }

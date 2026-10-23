@@ -8,6 +8,7 @@ import crypto from 'node:crypto';
 
 const execFileAsync = promisify(execFile);
 const DEFAULT_VOICE = 'zh-CN-XiaoxiaoNeural';
+export const DEFAULT_VI_VOICE = 'vi-VN-HoaiMyNeural';
 
 export const TTS_VOICES = [
   {
@@ -32,12 +33,31 @@ export const TTS_VOICES = [
   },
 ];
 
-const voiceIds = new Set(TTS_VOICES.map((v) => v.id));
+export const VI_TTS_VOICES = [
+  {
+    id: 'vi-VN-HoaiMyNeural',
+    label: 'HoaiMy · tiếng Việt chuẩn, nữ',
+    short: 'HoaiMy',
+  },
+  {
+    id: 'vi-VN-NamMinhNeural',
+    label: 'NamMinh · tiếng Việt, nam',
+    short: 'NamMinh',
+  },
+];
+
+const voiceIds = new Set(
+  [...TTS_VOICES, ...VI_TTS_VOICES].map((voice) => voice.id),
+);
 const cache = new Map();
 const CACHE_LIMIT = 48;
 
 export function normalizeVoice(voice) {
   return voiceIds.has(voice) ? voice : DEFAULT_VOICE;
+}
+
+function isVietnameseVoice(voice) {
+  return voice.startsWith('vi-');
 }
 
 export function sanitizeSpeechText(input) {
@@ -210,20 +230,22 @@ async function getDurationMs(filePath) {
   }
 }
 
-async function synthesizeMac(text) {
+async function synthesizeMac(text, voice = DEFAULT_VOICE) {
   const id = crypto.randomUUID();
   const base = path.join(os.tmpdir(), `xiaoya-tts-${id}`);
   const aiff = `${base}.aiff`;
   const mp3 = `${base}.mp3`;
+  const vietnamese = isVietnameseVoice(voice);
+  const macVoices = vietnamese ? ['Linh'] : ['Tingting', 'Flo'];
 
   try {
     let ok = false;
     let lastError;
-    for (const voice of ['Tingting', 'Flo']) {
+    for (const macVoice of macVoices) {
       try {
         await execFileAsync(
           'say',
-          ['-v', voice, '-r', '180', '-o', aiff, text],
+          ['-v', macVoice, '-r', vietnamese ? '175' : '180', '-o', aiff, text],
           { timeout: 30000 },
         );
         ok = true;
@@ -232,7 +254,16 @@ async function synthesizeMac(text) {
         lastError = error;
       }
     }
-    if (!ok) throw lastError || new Error('Không tìm thấy giọng đọc tiếng Trung của macOS.');
+    if (!ok) {
+      throw (
+        lastError ||
+        new Error(
+          vietnamese
+            ? 'Không tìm thấy giọng đọc tiếng Việt của macOS (Linh).'
+            : 'Không tìm thấy giọng đọc tiếng Trung của macOS.',
+        )
+      );
+    }
 
     await execFileAsync(
       'ffmpeg',
@@ -276,7 +307,7 @@ export async function synthesizeSpeech({ text, voice }) {
   } catch (edgeError) {
     console.warn('[tts] Edge TTS lỗi, chuyển sang giọng macOS:', edgeError.message);
     try {
-      result = await synthesizeMac(cleanText);
+      result = await synthesizeMac(cleanText, safeVoice);
       result.fallbackReason = 'Edge TTS không khả dụng, đang dùng giọng macOS.';
     } catch (macError) {
       const error = new Error(

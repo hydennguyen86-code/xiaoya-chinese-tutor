@@ -22,6 +22,7 @@ interface SettingsDialogProps {
   onChange: (patch: Partial<Settings>) => void;
   onRefresh: () => void;
   onPreviewVoice: () => void;
+  onPreviewTranslation: () => void;
   onClearChat: () => void;
   onResetProgress: () => void;
 }
@@ -77,6 +78,7 @@ export function SettingsDialog({
   onChange,
   onRefresh,
   onPreviewVoice,
+  onPreviewTranslation,
   onClearChat,
   onResetProgress,
 }: SettingsDialogProps) {
@@ -85,6 +87,7 @@ export function SettingsDialog({
   const provider = providers.find((item) => item.id === settings.providerId);
   const onlineProviders = providers.filter((item) => item.online);
   const voices = status?.voices ?? [];
+  const viVoices = status?.viVoices ?? [];
   const week = lastSevenDays(progress);
   const levelOption = LEVEL_OPTIONS.find((item) => item.value === settings.level);
 
@@ -240,7 +243,7 @@ export function SettingsDialog({
 
             <div className="voice-row">
               <label className="field voice-field">
-                <span className="field-label">Giọng đọc</span>
+                <span className="field-label">Giọng đọc tiếng Trung</span>
                 <span className="select-wrap">
                   <select
                     value={settings.voice}
@@ -264,6 +267,39 @@ export function SettingsDialog({
             </div>
             <p className="field-hint">
               Giọng Edge cần internet. Nếu mất kết nối, máy Mac sẽ tự chuyển sang giọng Tingting.
+            </p>
+
+            <div className="voice-row vi-voice-row">
+              <label className="field voice-field">
+                <span className="field-label">Giọng đọc bản dịch tiếng Việt</span>
+                <span className="select-wrap">
+                  <select
+                    value={settings.viVoice}
+                    onChange={(event) => onChange({ viVoice: event.target.value })}
+                    disabled={!viVoices.length}
+                  >
+                    {!viVoices.length && <option value={settings.viVoice}>HoaiMy</option>}
+                    {viVoices.map((voice) => (
+                      <option key={voice.id} value={voice.id}>
+                        {voice.label}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDownIcon size={15} />
+                </span>
+              </label>
+              <button
+                className="preview-button"
+                type="button"
+                onClick={onPreviewTranslation}
+              >
+                <VolumeIcon size={17} />
+                Nghe thử
+              </button>
+            </div>
+            <p className="field-hint">
+              Dùng cho nút “Nghe tiếng Việt” dưới mỗi bản dịch. Nếu mất kết nối, máy Mac dùng
+              giọng Linh.
             </p>
           </section>
 
@@ -304,6 +340,13 @@ export function SettingsDialog({
                 onChange={(checked) => onChange({ autoSpeak: checked })}
                 label="Tự động đọc câu trả lời"
                 description="Nghe giọng nói và xem khẩu hình khi Tiểu Nhã trả lời."
+              />
+              <Toggle
+                checked={settings.autoReadTranslation}
+                onChange={(checked) => onChange({ autoReadTranslation: checked })}
+                label="Tự đọc bản dịch tiếng Việt"
+                description="Sau câu tiếng Trung, đọc luôn nghĩa tiếng Việt bằng giọng Việt."
+                disabled={!settings.autoSpeak}
               />
               <Toggle
                 checked={settings.showPinyin}

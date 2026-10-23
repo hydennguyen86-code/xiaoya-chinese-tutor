@@ -11,8 +11,10 @@ export const DEFAULT_SETTINGS: Settings = {
   providerId: '',
   model: '',
   voice: 'zh-CN-XiaoxiaoNeural',
+  viVoice: 'vi-VN-HoaiMyNeural',
   level: 'HSK5-6',
   autoSpeak: true,
+  autoReadTranslation: false,
   showPinyin: false,
 };
 
@@ -41,11 +43,19 @@ export function loadSettings(): Settings {
         typeof parsed.voice === 'string' && parsed.voice
           ? parsed.voice
           : DEFAULT_SETTINGS.voice,
+      viVoice:
+        typeof parsed.viVoice === 'string' && parsed.viVoice
+          ? parsed.viVoice
+          : DEFAULT_SETTINGS.viVoice,
       level: LEVELS.has(parsed.level) ? parsed.level : DEFAULT_SETTINGS.level,
       autoSpeak:
         typeof parsed.autoSpeak === 'boolean'
           ? parsed.autoSpeak
           : DEFAULT_SETTINGS.autoSpeak,
+      autoReadTranslation:
+        typeof parsed.autoReadTranslation === 'boolean'
+          ? parsed.autoReadTranslation
+          : DEFAULT_SETTINGS.autoReadTranslation,
       showPinyin:
         typeof parsed.showPinyin === 'boolean'
           ? parsed.showPinyin

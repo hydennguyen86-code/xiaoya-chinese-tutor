@@ -150,3 +150,14 @@ export function ChevronDownIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function BookIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5H6.5A2.5 2.5 0 0 0 4 22V5.5Z" />
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M8 7h8" />
+      <path d="M8 11h5" />
+    </Icon>
+  );
+}

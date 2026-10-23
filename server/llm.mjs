@@ -6,8 +6,12 @@ const CORRECTION_ITEM_SCHEMA = {
     original: { type: 'string' },
     corrected: { type: 'string' },
     explanation: { type: 'string' },
+    category: {
+      type: 'string',
+      enum: ['grammar', 'word_choice', 'word_order', 'measure_word', 'other'],
+    },
   },
-  required: ['original', 'corrected', 'explanation'],
+  required: ['original', 'corrected', 'explanation', 'category'],
 };
 
 export const CORRECTION_SCHEMA = {
@@ -19,6 +23,59 @@ export const CORRECTION_SCHEMA = {
     },
   },
   required: ['corrections'],
+};
+
+export const ANALYSIS_SCHEMA = {
+  type: 'object',
+  properties: {
+    summary: { type: 'string' },
+    strengths: {
+      type: 'array',
+      items: { type: 'string' },
+    },
+    weaknesses: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          skill: {
+            type: 'string',
+            enum: [
+              'grammar',
+              'word_choice',
+              'word_order',
+              'measure_word',
+              'vocabulary',
+              'other',
+            ],
+          },
+          title: { type: 'string' },
+          evidence: { type: 'string' },
+          advice: { type: 'string' },
+          practice: { type: 'string' },
+        },
+        required: ['skill', 'title', 'evidence', 'advice', 'practice'],
+      },
+    },
+    focusWords: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          word: { type: 'string' },
+          pinyin: { type: 'string' },
+          meaning: { type: 'string' },
+          why: { type: 'string' },
+        },
+        required: ['word', 'pinyin', 'meaning', 'why'],
+      },
+    },
+    plan: {
+      type: 'array',
+      items: { type: 'string' },
+    },
+  },
+  required: ['summary', 'strengths', 'weaknesses', 'focusWords', 'plan'],
 };
 
 const TURN_SCHEMA = {

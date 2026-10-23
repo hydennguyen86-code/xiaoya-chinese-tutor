@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AvatarStage } from './components/AvatarStage';
 import { ChatPanel } from './components/ChatPanel';
+import { LearningDialog } from './components/LearningDialog';
 import { SettingsDialog } from './components/SettingsDialog';
 import {
+  BookIcon,
   ChevronDownIcon,
   FlameIcon,
   MuteIcon,
@@ -10,7 +12,7 @@ import {
   VolumeIcon,
 } from './components/Icons';
 import type { AvatarController } from './lib/avatar';
-import { fetchStatus, streamChat } from './lib/api';
+import { analyzeLearning, fetchCorrections, fetchStatus, streamChat } from './lib/api';
 import { ChineseMic, isSpeechSupported, micPermissionState } from './lib/speech';
 import {
   DAILY_GOAL,
@@ -24,12 +26,28 @@ import {
   saveMessages,
   saveSettings,
 } from './lib/storage';
+import {
+  addReport,
+  buildAnalysisInput,
+  buildLearningDigest,
+  clearLearning,
+  dueWords,
+  emptyLearning,
+  learningPeriodDays,
+  loadLearning,
+  recordLearningCorrections,
+  recordLearningTurn,
+  reviewWord,
+  saveLearning,
+  seedLearningFromMessages,
+} from './lib/learning';
 import { extractSpeechSegments, makeGreeting, shortModelName, uid } from './lib/text';
 import type {
   ChatHistoryMessage,
   ChatMessage,
   Emotion,
   Gesture,
+  LearningProfile,
   Phase,
   Progress,
   Settings,
@@ -58,6 +76,11 @@ export default function App() {
     return saved.length ? saved : [makeGreeting()];
   });
   const [progress, setProgress] = useState<Progress>(loadProgress);
+  const [learning, setLearning] = useState<LearningProfile>(() => {
+    const saved = loadLearning();
+    if (saved.updatedAt) return saved;
+    return seedLearningFromMessages(messages);
+  });
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [statusError, setStatusError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(true);
@@ -66,6 +89,9 @@ export default function App() {
   const [listening, setListening] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [learningOpen, setLearningOpen] = useState(false);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
 
   const avatarRef = useRef<AvatarController | null>(null);
@@ -76,16 +102,19 @@ export default function App() {
   const abortRef = useRef<AbortController | null>(null);
   const toastTimerRef = useRef<number | null>(null);
   const statusRequestRef = useRef(0);
+  const learningEpochRef = useRef(0);
 
   const settingsRef = useRef(settings);
   const messagesRef = useRef(messages);
   const progressRef = useRef(progress);
+  const learningRef = useRef(learning);
   const phaseRef = useRef(phase);
   const statusRef = useRef(status);
   const draftRef = useRef(draft);
   settingsRef.current = settings;
   messagesRef.current = messages;
   progressRef.current = progress;
+  learningRef.current = learning;
   phaseRef.current = phase;
   statusRef.current = status;
   draftRef.current = draft;
@@ -124,11 +153,15 @@ export default function App() {
         const voice = data.voices.some((item) => item.id === previous.voice)
           ? previous.voice
           : data.defaultVoice || previous.voice;
+        const viVoice = data.viVoices?.some((item) => item.id === previous.viVoice)
+          ? previous.viVoice
+          : data.defaultViVoice || previous.viVoice;
         return {
           ...previous,
           providerId: chosenProvider?.id || '',
           model,
           voice,
+          viVoice,
         };
       });
     } catch (requestError) {
@@ -147,6 +180,10 @@ export default function App() {
   useEffect(() => {
     saveSettings(settings);
   }, [settings]);
+
+  useEffect(() => {
+    saveLearning(learning);
+  }, [learning]);
 
   useEffect(() => {
     saveMessages(messages);
@@ -200,6 +237,7 @@ export default function App() {
   const busy = phase === 'thinking' || phase === 'replying';
   const visibleError = error || statusError;
   const week = useMemo(() => lastSevenDays(progress), [progress]);
+  const learningDue = useMemo(() => dueWords(learning).length, [learning]);
   const goalPercent = Math.min(
     100,
     Math.round((progress.todayTurns / DAILY_GOAL) * 100),
@@ -290,6 +328,7 @@ export default function App() {
       let gesture: Gesture = 'none';
       let speechCursor = 0;
       let spoke = false;
+      let translationQueued = false;
       let completed = false;
 
       const patchAssistant = (patch: Partial<ChatMessage>) => {
@@ -331,6 +370,7 @@ export default function App() {
           model: settingsRef.current.model,
           level: settingsRef.current.level,
           messages: history,
+          learning: buildLearningDigest(learningRef.current) || undefined,
         },
         {
           onAttitude: (event) => {
@@ -349,6 +389,13 @@ export default function App() {
             feedSpeech(streamedText, true);
             patchAssistant({ streaming: false });
           },
+          onTranslation: (text) => {
+            patchAssistant({ translation: text });
+            if (autoSpeak && settingsRef.current.autoReadTranslation && text.trim()) {
+              avatarRef.current?.queueSpeech(text, settingsRef.current.viVoice);
+              translationQueued = true;
+            }
+          },
           onTurn: (event) => {
             completed = true;
             const turn = event.turn;
@@ -361,7 +408,8 @@ export default function App() {
               translation: turn.translation,
               emotion,
               gesture,
-              corrections: turn.corrections,
+              corrections: [],
+              correctionsPending: true,
               vocab: turn.vocab,
               suggestion: turn.suggestion,
               suggestionTranslation: turn.suggestionTranslation,
@@ -381,6 +429,22 @@ export default function App() {
               setPhase('ready');
             }
 
+            if (
+              autoSpeak &&
+              !translationQueued &&
+              settingsRef.current.autoReadTranslation &&
+              turn.translation.trim()
+            ) {
+              avatarRef.current?.queueSpeech(
+                turn.translation,
+                settingsRef.current.viVoice,
+              );
+            }
+
+            const nextLearning = recordLearningTurn(learningRef.current, text, turn);
+            learningRef.current = nextLearning;
+            setLearning(nextLearning);
+
             if (event.warning) {
               showToast('Câu trả lời đã được chuẩn hoá để hiển thị đầy đủ.');
             }
@@ -391,6 +455,30 @@ export default function App() {
             if (nextProgress.todayTurns === DAILY_GOAL) {
               showToast('Đã đạt mục tiêu hôm nay. Tiếp tục giữ nhịp thật đều nhé!');
             }
+
+            const learningEpoch = learningEpochRef.current;
+            const { providerId, model: modelId } = settingsRef.current;
+            void fetchCorrections({ provider: providerId, model: modelId, text })
+              .then((corrections) => {
+                patchAssistant({ corrections, correctionsPending: false });
+                if (
+                  !corrections.length ||
+                  learningEpoch !== learningEpochRef.current ||
+                  !messagesRef.current.some((message) => message.id === assistantId)
+                ) {
+                  return;
+                }
+                const withCorrections = recordLearningCorrections(
+                  learningRef.current,
+                  text,
+                  corrections,
+                );
+                learningRef.current = withCorrections;
+                setLearning(withCorrections);
+              })
+              .catch(() => {
+                patchAssistant({ correctionsPending: false });
+              });
           },
         },
         abort.signal,
@@ -484,6 +572,130 @@ export default function App() {
       setPhase('speaking');
       setError(null);
     }
+  };
+
+  const speakText = useCallback((text: string, voice: string, emotion: Emotion) => {
+    const clean = text.trim();
+    if (!clean) return;
+    const controller = avatarRef.current;
+    if (!controller?.isLoaded) {
+      setError('Avatar chưa sẵn sàng để đọc câu này.');
+      return;
+    }
+    const started = controller.speakAll(clean, voice, emotion, 'none');
+    if (started) {
+      setPhase('speaking');
+      setError(null);
+    }
+  }, []);
+
+  const handleSpeakTranslation = (message: ChatMessage) => {
+    if (busyRef.current || !message.translation?.trim()) return;
+    speakText(message.translation, settingsRef.current.viVoice, 'warm');
+  };
+
+  const handleSpeakChinese = useCallback(
+    (text: string) => {
+      speakText(text, settingsRef.current.voice, 'happy');
+    },
+    [speakText],
+  );
+
+  const handleSpeakVietnamese = useCallback(
+    (text: string) => {
+      speakText(text, settingsRef.current.viVoice, 'warm');
+    },
+    [speakText],
+  );
+
+  const handlePreviewTranslation = () => {
+    speakText(
+      'Xin chào, mình là Tiểu Nhã. Đây là giọng đọc tiếng Việt của mình.',
+      settingsRef.current.viVoice,
+      'warm',
+    );
+  };
+
+  const openLearning = useCallback(() => {
+    micRef.current?.abort();
+    setListening(false);
+    if (phaseRef.current === 'listening') {
+      setPhase(avatarReadyRef.current ? 'ready' : 'loading');
+    }
+    setAnalysisError(null);
+    setLearningOpen(true);
+  }, []);
+
+  const closeLearning = useCallback(() => {
+    setLearningOpen(false);
+  }, []);
+
+  const handleReviewWord = useCallback(
+    (word: string, remembered: boolean) => {
+      const next = reviewWord(learningRef.current, word, remembered);
+      learningRef.current = next;
+      setLearning(next);
+      showToast(
+        remembered
+          ? `Đã ghi nhận bạn nhớ “${word}”.`
+          : `Sẽ gặp lại “${word}” sau 10 phút.`,
+      );
+    },
+    [showToast],
+  );
+
+  const handleAnalyzeLearning = useCallback(async () => {
+    const active = statusRef.current?.providers.find(
+      (provider) => provider.id === settingsRef.current.providerId,
+    );
+    if (!statusRef.current || !active?.online || !settingsRef.current.model) {
+      setAnalysisError(
+        'Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt.',
+      );
+      return;
+    }
+    if (analyzing) return;
+
+    setAnalyzing(true);
+    setAnalysisError(null);
+    try {
+      const levelLabel = LEVEL_LABEL[settingsRef.current.level];
+      const profileText = `Trình độ hiện tại: ${levelLabel}\n\n${buildAnalysisInput(learningRef.current)}`;
+      const report = await analyzeLearning({
+        provider: settingsRef.current.providerId,
+        model: settingsRef.current.model,
+        profile: profileText,
+        periodDays: learningPeriodDays(learningRef.current),
+      });
+      const next = addReport(learningRef.current, report);
+      learningRef.current = next;
+      setLearning(next);
+      saveLearning(next);
+      showToast('Đã cập nhật phân tích điểm yếu.');
+    } catch (analysisFailure) {
+      console.error('[analysis]', analysisFailure);
+      setAnalysisError(friendlyError(analysisFailure));
+    } finally {
+      setAnalyzing(false);
+    }
+  }, [analyzing, showToast]);
+
+  const handleClearLearning = () => {
+    if (
+      !window.confirm(
+        'Xoá toàn bộ hồ sơ học tập gồm lỗi đã ghi, từ vựng, lịch ôn và các bản phân tích? Thao tác này không thể hoàn tác.',
+      )
+    ) {
+      return;
+    }
+    const fresh = emptyLearning(Date.now());
+    learningEpochRef.current += 1;
+    learningRef.current = fresh;
+    setLearning(fresh);
+    saveLearning(fresh);
+    setAnalysisError(null);
+    setAnalyzing(false);
+    showToast('Đã xoá hồ sơ học tập. Tiến độ chuỗi ngày vẫn được giữ.');
   };
 
   const handleSettingsChange = (patch: Partial<Settings>) => {
@@ -629,6 +841,19 @@ export default function App() {
           </button>
 
           <button
+            className="icon-button learning-button"
+            type="button"
+            onClick={openLearning}
+            title="Hồ sơ học tập và ôn bài"
+            aria-label="Mở hồ sơ học tập và ôn bài"
+          >
+            <BookIcon size={19} />
+            {learningDue > 0 && (
+              <span className="learning-badge">{learningDue > 9 ? '9+' : learningDue}</span>
+            )}
+          </button>
+
+          <button
             className="icon-button"
             type="button"
             onClick={handleToggleSound}
@@ -710,6 +935,7 @@ export default function App() {
           onSend={() => send()}
           onMicToggle={handleMicToggle}
           onReplay={handleReplay}
+          onSpeakTranslation={handleSpeakTranslation}
           onTogglePinyin={handleTogglePinyin}
           onNewChat={handleNewChat}
           onDismissError={handleDismissError}
@@ -726,8 +952,24 @@ export default function App() {
         onChange={handleSettingsChange}
         onRefresh={() => void refreshStatus()}
         onPreviewVoice={handlePreviewVoice}
+        onPreviewTranslation={handlePreviewTranslation}
         onClearChat={handleNewChat}
         onResetProgress={handleResetProgress}
+      />
+
+      <LearningDialog
+        open={learningOpen}
+        learning={learning}
+        levelLabel={LEVEL_LABEL[settings.level]}
+        canAnalyze={canChat}
+        analyzing={analyzing}
+        analysisError={analysisError}
+        onClose={closeLearning}
+        onReviewWord={handleReviewWord}
+        onAnalyze={() => void handleAnalyzeLearning()}
+        onSpeakChinese={handleSpeakChinese}
+        onSpeakVietnamese={handleSpeakVietnamese}
+        onClearLearning={handleClearLearning}
       />
 
       {toast && (

@@ -1,5 +1,12 @@
 const EMOTIONS = new Set(['neutral', 'happy', 'warm', 'encouraging']);
 const GESTURES = new Set(['none', 'thumbup', 'ok', 'index', 'shrug', 'handup']);
+const CORRECTION_CATEGORIES = new Set([
+  'grammar',
+  'word_choice',
+  'word_order',
+  'measure_word',
+  'other',
+]);
 
 function scanJsonString(raw, start) {
   let text = '';
@@ -128,6 +135,7 @@ function cleanCorrections(value, userText = '') {
       original: cleanText(item.original),
       corrected: cleanText(item.corrected),
       explanation: cleanText(item.explanation),
+      category: CORRECTION_CATEGORIES.has(item.category) ? item.category : 'other',
     }))
     .filter((item) => item.original && item.corrected && item.explanation)
     .filter((item) => item.original !== item.corrected)
@@ -138,6 +146,10 @@ function cleanCorrections(value, userText = '') {
 export function parseCorrections(raw, userText = '') {
   const parsed = parseJson(raw);
   return cleanCorrections(parsed?.corrections, userText);
+}
+
+export function parseJsonObject(raw) {
+  return parseJson(raw);
 }
 
 export function normalizeTurn(data, fallbackReply = '') {

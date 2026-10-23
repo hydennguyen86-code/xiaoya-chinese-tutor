@@ -2,11 +2,19 @@ export type Emotion = 'neutral' | 'happy' | 'warm' | 'encouraging';
 export type Gesture = 'none' | 'thumbup' | 'ok' | 'index' | 'shrug' | 'handup';
 export type Level = 'HSK1-2' | 'HSK3-4' | 'HSK5-6' | 'free';
 export type Phase = 'loading' | 'ready' | 'listening' | 'thinking' | 'replying' | 'speaking';
+export type MistakeCategory =
+  | 'grammar'
+  | 'word_choice'
+  | 'word_order'
+  | 'measure_word'
+  | 'other';
+export type SkillKey = MistakeCategory | 'vocabulary';
 
 export interface Correction {
   original: string;
   corrected: string;
   explanation: string;
+  category?: MistakeCategory;
 }
 
 export interface VocabItem {
@@ -32,6 +40,7 @@ export interface ChatMessage {
   text: string;
   translation?: string;
   corrections?: Correction[];
+  correctionsPending?: boolean;
   vocab?: VocabItem[];
   suggestion?: string;
   suggestionTranslation?: string;
@@ -47,8 +56,10 @@ export interface Settings {
   providerId: string;
   model: string;
   voice: string;
+  viVoice: string;
   level: Level;
   autoSpeak: boolean;
+  autoReadTranslation: boolean;
   showPinyin: boolean;
 }
 
@@ -71,6 +82,8 @@ export interface StatusResponse {
   providers: ProviderInfo[];
   voices: VoiceInfo[];
   defaultVoice: string;
+  viVoices: VoiceInfo[];
+  defaultViVoice: string;
   levels: Level[];
   avatarUrl: string;
 }
@@ -131,6 +144,11 @@ export interface StreamReplyDone {
   type: 'reply_done';
 }
 
+export interface StreamTranslation {
+  type: 'translation';
+  text: string;
+}
+
 export interface StreamTurn {
   type: 'turn';
   turn: TutorTurn;
@@ -151,6 +169,7 @@ export type StreamEvent =
   | StreamAttitude
   | StreamReplyDelta
   | StreamReplyDone
+  | StreamTranslation
   | StreamTurn
   | StreamError;
 
@@ -158,3 +177,73 @@ export interface ChatHistoryMessage {
   role: 'user' | 'assistant';
   content: string;
 }
+
+export interface MistakeRecord {
+  id: string;
+  original: string;
+  corrected: string;
+  explanation: string;
+  category: MistakeCategory;
+  count: number;
+  firstSeen: number;
+  lastSeen: number;
+  contexts: string[];
+}
+
+export interface WordRecord {
+  word: string;
+  pinyin: string;
+  meaning: string;
+  count: number;
+  firstSeen: number;
+  lastSeen: number;
+  box: number;
+  dueAt: number;
+  reviews: number;
+  lapses: number;
+  lastReviewedAt?: number;
+}
+
+export interface LearningDay {
+  date: string;
+  turns: number;
+  corrections: number;
+  newWords: number;
+  reviews: number;
+}
+
+export interface AnalysisWeakness {
+  skill: SkillKey;
+  title: string;
+  evidence: string;
+  advice: string;
+  practice: string;
+}
+
+export interface AnalysisFocusWord {
+  word: string;
+  pinyin: string;
+  meaning: string;
+  why: string;
+}
+
+export interface AnalysisReport {
+  id: string;
+  createdAt: number;
+  periodDays: number;
+  summary: string;
+  strengths: string[];
+  weaknesses: AnalysisWeakness[];
+  focusWords: AnalysisFocusWord[];
+  plan: string[];
+}
+
+export interface LearningProfile {
+  version: 1;
+  mistakes: MistakeRecord[];
+  words: WordRecord[];
+  days: LearningDay[];
+  reports: AnalysisReport[];
+  updatedAt: number;
+}
+
