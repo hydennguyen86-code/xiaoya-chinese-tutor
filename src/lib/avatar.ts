@@ -1,3 +1,4 @@
+import { speakBrowser, stopBrowserVoice } from './browserVoice';
 import { TalkingHead } from '@met4citizen/talkinghead';
 import type { MaterialLike, TextureLike } from '@met4citizen/talkinghead';
 import type { Emotion, Gesture, TtsResult } from '../types';
@@ -152,6 +153,7 @@ export class AvatarController implements AvatarApi {
   }
 
   beginTurn() {
+    stopBrowserVoice();
     this.session += 1;
     this.chain = Promise.resolve();
     this.pendingSpeech = 0;
@@ -166,6 +168,7 @@ export class AvatarController implements AvatarApi {
   }
 
   stopSpeech() {
+    stopBrowserVoice();
     this.session += 1;
     this.pendingSpeech = 0;
     this.speechEndAt = 0;
@@ -192,17 +195,22 @@ export class AvatarController implements AvatarApi {
         if (session !== this.session || this.destroyed || !this.head) return;
         const result = await this.getTts(clean, voice);
         if (session !== this.session || this.destroyed || !this.head) return;
+        if (result.browserText) {
+          this.callbacks.onAudioState?.(true);
+          try {
+            await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN');
+          } finally {
+            this.callbacks.onAudioState?.(false);
+          }
+          return;
+        }
         await this.unlock();
         if (session !== this.session || this.destroyed || !this.head) return;
 
         const audioBuffer = await this.decodeAudio(result.audioBase64);
         if (session !== this.session || this.destroyed || !this.head) return;
 
-        const timeline = buildSpeechTimeline(
-          clean,
-          result.words,
-          Math.round(audioBuffer.duration * 1000),
-        );
+        const timeline = buildSpeechTimeline(clean, result.words, Math.round(audioBuffer.duration * 1000));
 
         this.head.speakAudio(
           {
@@ -220,16 +228,14 @@ export class AvatarController implements AvatarApi {
 
         this.callbacks.onAudioState?.(true);
         const now = performance.now();
-        this.speechEndAt =
-          Math.max(this.speechEndAt, now) + audioBuffer.duration * 1000 + 340;
+        this.speechEndAt = Math.max(this.speechEndAt, now) + audioBuffer.duration * 1000 + 340;
         this.scheduleIdle();
       })
       .catch((error) => {
         if (session === this.session) {
           console.error('[avatar] TTS error', error);
-          this.callbacks.onError?.(
-            'Không đọc được câu trả lời. Kiểm tra kết nối mạng để dùng giọng Edge.',
-          );
+          if (error?.name !== 'AbortError')
+            this.callbacks.onError?.(error instanceof Error ? error.message : 'Không đọc được câu trả lời. Thử lại bằng nút Nghe.');
         }
       })
       .finally(() => {
@@ -251,6 +257,7 @@ export class AvatarController implements AvatarApi {
   }
 
   destroy() {
+    stopBrowserVoice();
     this.destroyed = true;
     this.session += 1;
     this.clearIdleTimer();
@@ -295,13 +302,7 @@ export class AvatarController implements AvatarApi {
         const surface: SurfaceMaterial = material;
         if (!surface || seen.has(surface)) continue;
         seen.add(surface);
-        for (const map of [
-          surface.map,
-          surface.normalMap,
-          surface.roughnessMap,
-          surface.metalnessMap,
-          surface.aoMap,
-        ]) {
+        for (const map of [surface.map, surface.normalMap, surface.roughnessMap, surface.metalnessMap, surface.aoMap]) {
           if (map) {
             map.anisotropy = anisotropy;
             map.needsUpdate = true;
@@ -355,7 +356,7 @@ export class AvatarController implements AvatarApi {
       return cached;
     }
     const result = await fetchTts(text, voice);
-    this.ttsCache.set(key, result);
+    if (!result.browserText) this.ttsCache.set(key, result);
     if (this.ttsCache.size > 16) {
       const oldest = this.ttsCache.keys().next().value;
       if (oldest) this.ttsCache.delete(oldest);
@@ -385,18 +386,21 @@ export class AvatarController implements AvatarApi {
     this.clearIdleTimer();
     const remaining = this.speechEndAt - performance.now();
     const delay = delayOverride ?? Math.max(250, remaining + 180);
-    this.idleTimer = window.setTimeout(() => {
-      this.idleTimer = null;
-      if (this.pendingSpeech > 0) {
-        this.scheduleIdle(700);
-        return;
-      }
-      const left = this.speechEndAt - performance.now();
-      if (left > 120) {
-        this.scheduleIdle(left + 160);
-        return;
-      }
-      this.callbacks.onAudioState?.(false);
-    }, Math.max(100, delay));
+    this.idleTimer = window.setTimeout(
+      () => {
+        this.idleTimer = null;
+        if (this.pendingSpeech > 0) {
+          this.scheduleIdle(700);
+          return;
+        }
+        const left = this.speechEndAt - performance.now();
+        if (left > 120) {
+          this.scheduleIdle(left + 160);
+          return;
+        }
+        this.callbacks.onAudioState?.(false);
+      },
+      Math.max(100, delay),
+    );
   }
 }

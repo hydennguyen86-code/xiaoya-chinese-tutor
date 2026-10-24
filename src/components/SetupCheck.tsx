@@ -1,3 +1,4 @@
+import { speakBrowser } from '../lib/browserVoice';
 import { useEffect, useRef, useState } from 'react';
 import { fetchStatus, fetchTts, streamChat } from '../lib/api';
 import type { Settings, StatusResponse } from '../types';
@@ -125,6 +126,12 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
     try {
       const r = await fetchTts('你好，欢迎和米苏一起练习中文。', settings.voice, c.signal);
       if (!alive.current) return;
+      if (r.browserText) {
+        setTts('Đang thử giọng dự phòng trình duyệt…');
+        await speakBrowser(r.browserText, r.browserLocale ?? 'zh-CN', c.signal);
+        if (alive.current) setTts('Đã phát giọng dự phòng trình duyệt.');
+        return;
+      }
       const bytes = Uint8Array.from(atob(r.audioBase64), (ch) => ch.charCodeAt(0));
       const url = URL.createObjectURL(new Blob([bytes], { type: r.mime }));
       urls.current.push(url);
@@ -201,6 +208,15 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
       before?.focus();
     };
   }, []);
+  const ram = status?.system?.ramGB;
+  const ramHint =
+    ram === undefined
+      ? 'Chưa đọc được RAM của máy chủ.'
+      : ram < 8
+        ? `${ram} GB RAM: ưu tiên bài cố định hoặc API; avatar/model local có thể chậm.`
+        : ram < 16
+          ? `${ram} GB RAM: bắt đầu bằng bài cố định hoặc model nhỏ; đóng app nặng. Nếu không đủ bộ nhớ, dùng API tuỳ chọn.`
+          : `${ram} GB RAM: có thể thử model local đã đo qwen3.5:4b — ollama pull qwen3.5:4b. RAM không bảo đảm tốc độ; còn phụ thuộc CPU/GPU.`;
   const provider = status?.providers.find((p) => p.id === settings.providerId);
   return (
     <div className="setup-overlay" role="dialog" aria-modal="true" aria-label="Kiểm tra hệ thống">
@@ -212,7 +228,7 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
           </button>
         </header>
         <section>
-          <h3>1. Model cục bộ</h3>
+          <h3>1. Model trên máy hoặc API</h3>
           <p>Bài nghe và luyện nói cố định có thể học trước khi chọn model. Model dùng cho trò chuyện và góp ý tương tác.</p>
           <p>
             {provider?.online && provider.models.includes(settings.model)
@@ -222,6 +238,7 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
           <button type="button" onClick={() => void refresh()}>
             Làm mới
           </button>
+          <p className="lesson-hint">{ramHint}</p>
           <label>
             Nhà cung cấp{' '}
             <select

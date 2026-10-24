@@ -1,16 +1,8 @@
+import { ConnectivitySettings } from './ConnectivitySettings';
 import { useEffect, useRef } from 'react';
 import type { AvatarMode, Level, Progress, Settings, StatusResponse } from '../types';
 import { DAILY_GOAL, lastSevenDays } from '../lib/storage';
-import {
-  AlertIcon,
-  CheckIcon,
-  ChevronDownIcon,
-  CloseIcon,
-  FlameIcon,
-  RefreshIcon,
-  SparkIcon,
-  VolumeIcon,
-} from './Icons';
+import { AlertIcon, CheckIcon, ChevronDownIcon, CloseIcon, FlameIcon, RefreshIcon, SparkIcon, VolumeIcon } from './Icons';
 
 interface SettingsDialogProps {
   open: boolean;
@@ -123,12 +115,7 @@ export function SettingsDialog({
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div
-        className="settings-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="settings-title"
-      >
+      <div className="settings-dialog" role="dialog" aria-modal="true" aria-labelledby="settings-title">
         <header className="settings-head">
           <div className="settings-heading">
             <span className="settings-seal" aria-hidden="true">
@@ -139,13 +126,7 @@ export function SettingsDialog({
               <p>Điều chỉnh gia sư, giọng nói và nhịp học của bạn.</p>
             </div>
           </div>
-          <button
-            ref={closeRef}
-            className="icon-button"
-            type="button"
-            onClick={onClose}
-            aria-label="Đóng cài đặt"
-          >
+          <button ref={closeRef} className="icon-button" type="button" onClick={onClose} aria-label="Đóng cài đặt">
             <CloseIcon size={18} />
           </button>
         </header>
@@ -155,14 +136,9 @@ export function SettingsDialog({
             <div className="section-heading">
               <div>
                 <h3>Bộ não của Misu</h3>
-                <p>Chạy hoàn toàn trên máy bạn qua Ollama hoặc LM Studio.</p>
+                <p>Chọn Ollama/LM Studio trên máy, hoặc tự cấu hình API bên ngoài ở phía dưới.</p>
               </div>
-              <button
-                className="refresh-button"
-                type="button"
-                onClick={onRefresh}
-                disabled={refreshing}
-              >
+              <button className="refresh-button" type="button" onClick={onRefresh} disabled={refreshing}>
                 <RefreshIcon size={15} className={refreshing ? 'is-spinning' : ''} />
                 {refreshing ? 'Đang quét' : 'Làm mới'}
               </button>
@@ -175,7 +151,9 @@ export function SettingsDialog({
               </div>
             )}
 
-            <button type="button" className="lesson-secondary" onClick={onSetup}>Kiểm tra hệ thống và micro</button>
+            <button type="button" className="lesson-secondary" onClick={onSetup}>
+              Kiểm tra hệ thống và micro
+            </button>
             <div className="field-grid">
               <label className="field">
                 <span className="field-label">Nhà cung cấp</span>
@@ -209,7 +187,7 @@ export function SettingsDialog({
                     {provider?.models.map((model) => (
                       <option key={model} value={model}>
                         {model}
-                        {model === provider.recommendedModel ? ' · đề xuất' : ''}
+                        {model === provider.recommendedModel ? (provider.remote ? ' · đã cấu hình, chưa đo' : ' · đề xuất') : ''}
                       </option>
                     ))}
                   </select>
@@ -222,7 +200,7 @@ export function SettingsDialog({
               <span className={`status-dot${provider?.online ? ' is-online' : ''}`} />
               <span className="runtime-label">
                 {provider
-                  ? `${provider.name} ${provider.online ? 'đang chạy' : 'chưa bật'}`
+                  ? `${provider.name} ${provider.remote ? 'đã cấu hình; chưa xác minh kết nối' : provider.online ? 'đang chạy' : 'chưa bật'}`
                   : 'Chưa phát hiện runtime'}
               </span>
               {provider && <code>{provider.url}</code>}
@@ -254,11 +232,7 @@ export function SettingsDialog({
               <label className="field voice-field">
                 <span className="field-label">Giọng đọc tiếng Trung</span>
                 <span className="select-wrap">
-                  <select
-                    value={settings.voice}
-                    onChange={(event) => onChange({ voice: event.target.value })}
-                    disabled={!voices.length}
-                  >
+                  <select value={settings.voice} onChange={(event) => onChange({ voice: event.target.value })} disabled={!voices.length}>
                     {!voices.length && <option value={settings.voice}>Xiaoxiao</option>}
                     {voices.map((voice) => (
                       <option key={voice.id} value={voice.id}>
@@ -275,7 +249,8 @@ export function SettingsDialog({
               </button>
             </div>
             <p className="field-hint">
-              Giọng Edge cần internet. Nếu mất kết nối, máy Mac sẽ tự chuyển sang giọng Tingting.
+              Giọng Edge cần internet. Khi lỗi: thử giọng macOS, rồi giọng zh-CN của trình duyệt nếu máy đã cài; nguồn giọng sẽ hiện trên
+              màn hình.
             </p>
 
             <div className="voice-row vi-voice-row">
@@ -297,18 +272,14 @@ export function SettingsDialog({
                   <ChevronDownIcon size={15} />
                 </span>
               </label>
-              <button
-                className="preview-button"
-                type="button"
-                onClick={onPreviewTranslation}
-              >
+              <button className="preview-button" type="button" onClick={onPreviewTranslation}>
                 <VolumeIcon size={17} />
                 Nghe thử
               </button>
             </div>
             <p className="field-hint">
-              Dùng cho nút “Nghe tiếng Việt” dưới mỗi bản dịch. Nếu mất kết nối, máy Mac dùng
-              giọng Linh.
+              Dùng cho nút “Nghe tiếng Việt” dưới mỗi bản dịch. Khi lỗi có thể dùng Linh trên macOS hoặc giọng vi-VN của trình duyệt nếu đã
+              cài.
             </p>
           </section>
 
@@ -353,8 +324,8 @@ export function SettingsDialog({
             </div>
 
             <p className="field-hint">
-              .zip là bản dựng LAM từ ảnh/video thật (cần máy GPU để tạo). .glb là avatar 3D
-              kiểu Ready Player Me. Chọn xong, Misu đổi gương mặt ngay.
+              .zip là bản dựng LAM từ ảnh/video thật (cần máy GPU để tạo). .glb là avatar 3D kiểu Ready Player Me. Chọn xong, Misu đổi gương
+              mặt ngay.
             </p>
           </section>
 
@@ -375,9 +346,7 @@ export function SettingsDialog({
                   onClick={() => onChange({ level: option.value })}
                   aria-pressed={settings.level === option.value}
                 >
-                  <span className="level-check">
-                    {settings.level === option.value && <CheckIcon size={13} />}
-                  </span>
+                  <span className="level-check">{settings.level === option.value && <CheckIcon size={13} />}</span>
                   <span className="level-name">{option.label}</span>
                   <span className="level-hint">{option.hint}</span>
                 </button>
@@ -437,10 +406,7 @@ export function SettingsDialog({
 
             <div className="week-row">
               {week.map((day) => (
-                <div
-                  key={day.key}
-                  className={`week-day${day.active ? ' is-active' : ''}${day.today ? ' is-today' : ''}`}
-                >
+                <div key={day.key} className={`week-day${day.active ? ' is-active' : ''}${day.today ? ' is-today' : ''}`}>
                   <span className="week-dot">{day.active ? <CheckIcon size={12} /> : null}</span>
                   <span className="week-label">{day.label}</span>
                 </div>
@@ -449,7 +415,9 @@ export function SettingsDialog({
 
             <div className="stats-grid">
               <div>
-                <strong>{progress.todayTurns}/{DAILY_GOAL}</strong>
+                <strong>
+                  {progress.todayTurns}/{DAILY_GOAL}
+                </strong>
                 <span>lượt hôm nay</span>
               </div>
               <div>
@@ -467,11 +435,12 @@ export function SettingsDialog({
             </div>
           </section>
 
+          <ConnectivitySettings onChange={onChange} onRefresh={onRefresh} />
           <section className="settings-section settings-footer">
             <p className="privacy-note">
               <SparkIcon size={14} />
-              Hội thoại và tiến độ được lưu trong trình duyệt và đồng bộ vào thư mục dữ liệu trên máy.
-              Model và Whisper chạy cục bộ. Giọng Edge và nhận dạng trình duyệt có thể dùng dịch vụ mạng.
+              Hội thoại và tiến độ được lưu trong trình duyệt và đồng bộ vào thư mục dữ liệu trên máy. Whisper chạy cục bộ; model dùng API
+              tuỳ chọn sẽ nhận nội dung hội thoại. Giọng Edge và nhận dạng trình duyệt có thể dùng dịch vụ mạng.
             </p>
             <div className="data-actions">
               <button className="text-button" type="button" onClick={onClearChat}>

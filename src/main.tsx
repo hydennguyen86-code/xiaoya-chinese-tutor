@@ -7,3 +7,7 @@ import './styles.css';
 void initServerStore().finally(() => {
   createRoot(document.getElementById('root')!).render(<App />);
 });
+
+if ('serviceWorker' in navigator && window.isSecureContext) {
+  void navigator.serviceWorker.register('/sw.js').catch(() => {});
+}

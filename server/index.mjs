@@ -1,3 +1,8 @@
+import https from 'node:https';
+import http from 'node:http';
+import { createLanAccess, ownerRequest } from './lanAccess.mjs';
+import os from 'node:os';
+import { initializeRemoteProvider, publicRemoteSettings, saveRemoteSettings, deleteRemoteSettings } from './remoteProvider.mjs';
 import { mountToneEvaluation } from './toneEvaluation.mjs';
 import { assessTask, prepareTask } from './assessment.mjs';
 import express from 'express';
@@ -29,10 +34,33 @@ const HOST = process.env.HOST || '127.0.0.1';
 
 const dataStore = createDataStore(process.env.XIAOYA_DATA_DIR || path.resolve(__dirname, '..', 'data'));
 
+initializeRemoteProvider(dataStore.dir);
+const lan = await createLanAccess({ host: HOST, port: PORT, dataDir: dataStore.dir });
 const app = express();
 app.disable('x-powered-by');
+app.use(lan.guard);
 app.use(express.json({ limit: '5mb' }));
+app.post('/api/lan/login', lan.login);
+app.get('/api/lan/info', lan.info);
+app.get('/api/lan/certificate', (req, res) =>
+  ownerRequest(req) && lan.tls ? res.type('application/x-pem-file').send(lan.tls.cert) : res.sendStatus(403),
+);
 mountToneEvaluation(app, dataStore.dir);
+const isOwner = ownerRequest;
+app.get('/api/provider-config', (req, res) => (isOwner(req) ? res.json(publicRemoteSettings()) : res.sendStatus(403)));
+app.put('/api/provider-config', (req, res) => {
+  if (!isOwner(req)) return res.sendStatus(403);
+  try {
+    res.json(saveRemoteSettings(req.body));
+  } catch {
+    res.status(400).json({ error: 'Cấu hình chưa hợp lệ: cần URL HTTPS, model và đồng ý gửi hội thoại. Key không được chứa xuống dòng.' });
+  }
+});
+app.delete('/api/provider-config', (req, res) => {
+  if (!isOwner(req)) return res.sendStatus(403);
+  deleteRemoteSettings();
+  res.json({ ok: true });
+});
 
 // Learner data folder (see dataStore.mjs). The server only listens on
 // 127.0.0.1 by default, so this is reachable from this computer only.
@@ -242,6 +270,7 @@ app.get('/api/status', async (_req, res) => {
     avatarUrl: findAvatar(GLB_AVATARS),
     lamAvatarUrl: findAvatar(LAM_AVATARS),
     localStt: sttReady(),
+    system: { ramGB: Math.round(os.totalmem() / 1024 ** 3), platform: process.platform },
   });
 });
 
@@ -673,10 +702,16 @@ app.use((error, _req, res, _next) => {
   res.status(500).json({ error: 'Lỗi server.' });
 });
 
-const server = app.listen(PORT, HOST, async () => {
+const server = lan.enabled ? https.createServer(lan.tls, app) : http.createServer(app);
+server.on('error', () => {
+  console.error('Không mở được server: cổng đang dùng, HOST không hợp lệ hoặc thiếu quyền.');
+  process.exitCode = 1;
+});
+server.listen(PORT, HOST, async () => {
   const providers = await detectProviders();
   const summary = providers.map((p) => `${p.name}: ${p.online ? `${p.models.length} model` : 'offline'}`).join(' · ');
-  console.log(`米苏 server → http://${HOST}:${PORT}`);
+  process.send?.({ type: 'misu-ready', port: PORT });
+  console.log(`米苏 server → ${lan.enabled ? 'https' : 'http'}://${HOST}:${PORT}`);
   console.log(`[providers] ${summary}`);
   await startStt();
 });

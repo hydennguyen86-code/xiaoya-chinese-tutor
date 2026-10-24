@@ -2,8 +2,8 @@
 
 *A Chinese speaking tutor for Vietnamese learners: a 3D avatar you talk to, a
 local LLM that replies at your HSK level and corrects your sentences, local
-speech-to-text, tone checking, and a daily guided lesson. Everything except
-the optional online voices runs on your own computer. The interface is in
+speech-to-text, tone checking, and a daily guided lesson. Local mode runs on your computer; optional online voices and a user-configured
+OpenAI-compatible model API send the relevant text to those services. The interface is in
 Vietnamese.*
 
 Misu là bạn luyện nói tiếng Trung cho người Việt: bạn nói (hoặc gõ), avatar trả
@@ -66,27 +66,56 @@ không tính điểm; các lần có đề khác nhau không hoàn toàn tương
 
 ## Cài đặt
 
-Cần: macOS trên Apple Silicon (đã thử), Node.js 24, [Ollama](https://ollama.com/)
-và ffmpeg (`brew install ffmpeg`). Máy khác vẫn chạy được phần chính; giọng dự
-phòng `say` và tăng tốc Metal chỉ có trên macOS.
+Cần **Node.js 24** và npm. Đã thử trên macOS Apple Silicon; đường dẫn Windows/Linux
+và CI ba hệ điều hành đã được bổ sung, **chưa thử trên Windows thật**.
+Bài học cố định không cần Ollama/GPU. Trò chuyện và sửa câu cần Ollama/LM Studio
+hoặc API do bạn tự cấu hình trong Cài đặt. ffmpeg cần cho Whisper/chấm thanh;
+`brew install ffmpeg` trên Mac, `winget install --id Gyan.FFmpeg --exact` trên Windows.
+Giọng Edge cần mạng, có giọng trình duyệt dự phòng nếu máy đã cài đúng ngôn ngữ.
 
 ```bash
 git clone https://github.com/hydennguyen86-code/xiaoya-chinese-tutor.git
 ```
 
 ```bash
-cd xiaoya-chinese-tutor && npm install
+cd xiaoya-chinese-tutor && npm ci
 ```
+
+Nếu dùng model local đã được đo trong repo (xem số đo phía dưới):
 
 ```bash
 ollama pull qwen3.5:4b
 ```
+
+Máy ít RAM có thể bắt đầu bằng bài cố định hoặc dùng API tuỳ chọn. Màn hình
+**Kiểm tra hệ thống** đọc RAM máy chủ để gợi ý; RAM không bảo đảm tốc độ CPU/GPU.
+
+Sau khi tải mã nguồn, có thể bấm đúp **start-windows.bat** hoặc
+**start-mac.command**. Launcher kiểm tra Node, chạy `npm ci` lần đầu/khi lockfile
+đổi, build, kiểm tra Ollama và mở trình duyệt. Mặc định chỉ mở trên máy này.
+Launcher cần quyền chạy file; nếu macOS chặn file tải xuống, hãy kiểm tra nguồn
+và dùng lệnh terminal bên dưới, không vô hiệu hoá bảo vệ của hệ điều hành.
 
 Nhận dạng giọng nói cục bộ (không bắt buộc; cần git, cmake; tải về khoảng 466 MB):
 
 ```bash
 npm run setup:whisper
 ```
+
+Windows x64 dùng PowerShell, không cần tự build C++:
+
+```powershell
+npm run setup:whisper:windows
+# Nếu chưa có ffmpeg và muốn cài qua winget:
+powershell -NoProfile -File scripts/setup-whisper.ps1 -InstallFfmpeg
+```
+
+Script ghim whisper.cpp **v1.7.6** (cùng commit với script Mac/Linux), kiểm tra
+SHA256 ZIP/model trước khi dùng. Các file tải về nằm trong `vendor/`, `models/`
+đã được Git bỏ qua. Có thể chọn `-Size base` rồi đặt `WHISPER_MODEL` như script
+hướng dẫn; `WHISPER_BIN`, `FFMPEG_PATH`, `FFPROBE_PATH` nhận đường dẫn `.exe`
+có khoảng trắng. Windows ARM64 và cài đặt Windows thật chưa được xác minh.
+Nếu thiếu DLL Visual C++, dùng liên kết Microsoft được script in ra.
 
 Chạy:
 
@@ -108,6 +137,7 @@ gửi âm thanh lên máy chủ Google) và không chấm được thanh điệu
 | `XIAOYA_SAMPLE_AVATARS` | tắt | đặt `1` để chỉ dùng avatar mẫu khi thử hoặc quay demo |
 | `OLLAMA_URL`, `LMSTUDIO_URL` | cổng mặc định | máy chủ mô hình |
 | `WHISPER_BIN`, `WHISPER_MODEL`, `WHISPER_PORT` | `vendor/…`, `models/ggml-small.bin`, `8178` | whisper.cpp |
+| `VOICE_CLONE_URL`, `VOICE_CLONE_VI_URL` | cổng `8766`, `8767` | dịch vụ giọng clone tự chạy (không bắt buộc), xem [docs/voice-clone.md](docs/voice-clone.md) |
 | `FFMPEG_PATH`, `FFPROBE_PATH` | tự tìm trong thư mục cài phổ biến hoặc PATH | công cụ âm thanh |
 
 ### Avatar của riêng bạn
@@ -163,10 +193,14 @@ giọng bạn cao thấp thế nào.
 
 ## Quyền riêng tư
 
-- Câu trả lời, sửa lỗi, nhận dạng giọng nói (khi có whisper.cpp) và chấm thanh
-  điệu đều chạy trên máy bạn. Server chỉ nghe ở `127.0.0.1`.
+- Với Ollama/LM Studio, câu trả lời và sửa lỗi chạy trên máy. Whisper và chấm thanh
+  chạy trên máy. Mặc định server chỉ nghe ở `127.0.0.1`; LAN là chế độ bật riêng.
+- Với API tuỳ chọn, bản chép lời, hội thoại và dữ liệu học liên quan gửi tới URL
+  bạn đã đồng ý. API model không nhận audio gốc; dịch vụ có thể tính phí.
 - **Giọng đọc Edge** (mặc định) gửi *chữ* của câu trả lời lên dịch vụ của
-  Microsoft để đọc. Không vào được thì tự chuyển sang giọng `say` của macOS.
+  Microsoft để đọc. Khi lỗi, Mac thử `say`, rồi dùng `speechSynthesis` của trình
+  duyệt trên các hệ điều hành nếu có giọng đúng ngôn ngữ. Một số giọng trình duyệt
+  dùng mạng; app hiển thị nguồn giọng, không hứa tất cả đều offline.
 - **Nhận dạng giọng nói của trình duyệt** (chỉ khi không có whisper.cpp) gửi âm
   thanh lên nhà cung cấp trình duyệt.
 - Dữ liệu người học nằm trong `data/` (đã có trong `.gitignore`).
@@ -184,7 +218,9 @@ npm run typecheck && npm test
 
 ## Giấy phép
 
-Mã nguồn: MIT ([LICENSE](LICENSE)). Avatar mẫu và các thư viện có giấy phép
+Mã gốc của app: MIT ([LICENSE](LICENSE)); riêng module chuyển đổi GEC v2
+`server/edgeGec.mjs` dùng LGPLv3 và được giữ dưới dạng source riêng có thể thay thế.
+Avatar mẫu và các thư viện có giấy phép
 riêng, trong đó avatar `brunette.glb` chỉ dùng phi thương mại. Xem
 [NOTICE.md](NOTICE.md).
 
@@ -237,3 +273,88 @@ không phải biên bản đã thử thành công.
 - Thiếu **cmake** khi cài Whisper: `brew install cmake`, rồi chạy lại `npm run setup:whisper`.
 - **Ollama chưa chạy**: mở Ollama, tải model và kiểm tra `ollama list`; bài tự soạn vẫn mở được khi chưa có model.
 - **Micro bị chặn**: cho phép micro trong quyền của trình duyệt và macOS; dùng localhost, kiểm tra thiết bị đầu vào. Không đổi ngưỡng để che lỗi thu âm.
+
+### Giọng đọc và phép thử Edge thật
+
+Phần tương thích GEC v2 thay URL/token v1 của `msedge-tts` 2.1.0 theo
+[upstream Edge TTS](https://github.com/rany2/edge-tts/issues/490). Phép thử này
+chỉ đọc câu tự soạn, đòi kết quả `provider=edge`, không nhận giọng Mac thay thế:
+
+```sh
+npm run test:edge:live
+```
+
+Lệnh có mạng, được tách khỏi `npm test`/CI. Khi dùng giọng trình duyệt,
+[giọng có sẵn tuỳ thiết bị](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices):
+thêm gói giọng Trung `zh-CN` (hoặc Việt `vi-VN`) trong hệ điều hành rồi mở lại
+trình duyệt. App không lấy giọng Anh thay cho Trung. Nếu tự đọc bị trình duyệt
+chặn, bấm **Nghe** để thử lại. Giọng dự phòng không có audio để khớp khẩu hình
+hoặc tạo đoạn mẫu chấm cao độ trên server.
+
+### API cho máy yếu
+
+Trong **Cài đặt → Máy yếu · dùng API của bạn**, nhập URL cổng Chat Completions
+(gồm `/v1` hoặc đường dẫn tương ứng), mã model và key. Cổng cần hỗ trợ JSON-object
+response. Chọn ô đồng ý gửi dữ liệu rồi bấm lưu; đổi URL sẽ yêu cầu đồng ý lại.
+Phản hồi API được đọc trọn trước khi hiện, không bảo đảm có token xuất hiện ngay.
+Chưa có model API bên ngoài nào được đo trong repo hoặc được khuyến nghị về chất lượng.
+
+Key nằm trong `$XIAOYA_DATA_DIR/private/provider.json`, không thuộc dữ liệu
+`xiaoya.*` đồng bộ trình duyệt. API cấu hình không trả key, lỗi upstream không
+được phản chiếu nguyên văn. Cấu hình/xoá key chỉ thực hiện từ localhost của máy
+chủ; thiết bị LAN có PIN không có quyền cấu hình. File key dựa vào quyền truy cập
+hệ điều hành, không được mã hoá thành một kho bí mật riêng. Không đưa thư mục dữ
+liệu vào Git. Xoá bằng nút **Xoá API/key**.
+
+Muốn đo model bạn đã cấu hình, lệnh sau có thể tính phí theo dịch vụ. Chỉ ghi
+số đo có file kết quả thực tế vào README:
+
+```sh
+EVAL_PROVIDER=compatible npm run eval:corrections -- MODEL_ID_DA_CAU_HINH http://127.0.0.1:8791
+```
+
+### Điện thoại cùng Wi-Fi: HTTPS + PIN
+
+Mặc định vẫn là localhost. Chỉ khi muốn chia sẻ cho thiết bị tin cậy, khởi động
+chế độ LAN. Thiết bị có PIN được đọc/sửa toàn bộ dữ liệu học dùng chung; đây
+không phải hệ thống tài khoản tách biệt cho từng người.
+
+macOS/Linux, với dữ liệu thử và avatar mẫu:
+
+```sh
+HOST=0.0.0.0 PORT=8791 XIAOYA_DATA_DIR=/tmp/misu-lan-test XIAOYA_SAMPLE_AVATARS=1 npm start
+```
+
+Windows PowerShell:
+
+```powershell
+$env:HOST = '0.0.0.0'
+$env:PORT = '8791'
+$env:XIAOYA_DATA_DIR = Join-Path $env:TEMP 'misu-lan-test'
+$env:XIAOYA_SAMPLE_AVATARS = '1'
+npm start
+```
+
+- Server dùng HTTPS tự ký; chứng chỉ và private key ở thư mục dữ liệu `private/`.
+  Mở `https://localhost:8791` trên máy chủ sau khi thiết lập tin cậy đúng cách.
+  Chỉ chuyển **chứng chỉ công khai**, không chuyển `lan-key.pem` sang điện thoại.
+- Trong Cài đặt có địa chỉ IP, QR **không chứa PIN**, PIN và dấu vân tay chứng chỉ.
+  Đối chiếu dấu vân tay trên máy chủ; thiết lập tin cậy bằng cài đặt chứng chỉ
+  của thiết bị hoặc dùng chứng chỉ đã được tin cậy cho IP đó. Không tắt kiểm tra
+  TLS hay chỉ dựa vào thao tác bỏ qua cảnh báo của trình duyệt.
+- Nếu nền tảng không tin cậy chứng chỉ tự ký này cho micro/PWA, cung cấp cả
+  `XIAOYA_TLS_CERT` và `XIAOYA_TLS_KEY` là đường dẫn chứng chỉ/key đã chuẩn bị,
+  còn hạn và có IP Wi-Fi trong SAN. Chứng chỉ không được coi là tin cậy tự động
+  chỉ vì có HTTPS. [Micro cần secure context](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
+- Điện thoại cùng Wi-Fi quét QR, nhập PIN. Session dùng cookie Secure/HttpOnly,
+  tối đa 12 giờ; khởi động lại server thu hồi session. Sai 8 lần khoá 10 phút.
+  Có thể đặt `XIAOYA_LAN_PIN` 6–10 chữ số; mặc định tạo mới mỗi lần chạy.
+- Chỉ cho app qua firewall trên mạng riêng, không mở port router ra Internet.
+  Khi IP thay đổi, kiểm tra lại địa chỉ/chứng chỉ. Dừng server để tắt chia sẻ.
+- Có manifest PWA, có thể dùng “Thêm vào màn hình chính” nếu trình duyệt đáp ứng
+  [điều kiện cài đặt](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable).
+  Service worker không cache API/audio/dữ liệu người học; app vẫn cần server.
+
+Đã kiểm tra UI ở 375px và luồng HTTPS/PIN bằng client thử; **chưa xác minh micro,
+trust chứng chỉ hay cài PWA trên Android/iPhone thật**. Không coi kiểm tra giả lập
+là kiểm tra thiết bị thật.

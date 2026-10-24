@@ -1,3 +1,4 @@
+import { voiceLocale } from './browserVoice';
 import type {
   AnalysisReport,
   ChatHistoryMessage,
@@ -44,11 +45,7 @@ export interface ChatStreamHandlers {
   onTurn?: (event: StreamTurn) => void;
 }
 
-export async function streamChat(
-  payload: ChatRequest,
-  handlers: ChatStreamHandlers,
-  signal?: AbortSignal,
-) {
+export async function streamChat(payload: ChatRequest, handlers: ChatStreamHandlers, signal?: AbortSignal) {
   const res = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -141,11 +138,7 @@ export async function streamChat(
   }
 }
 
-export async function fetchCorrections(payload: {
-  provider: string;
-  model: string;
-  text: string;
-}): Promise<Correction[]> {
+export async function fetchCorrections(payload: { provider: string; model: string; text: string }): Promise<Correction[]> {
   const res = await fetch('/api/corrections', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -156,19 +149,39 @@ export async function fetchCorrections(payload: {
   return Array.isArray(data?.corrections) ? data.corrections : [];
 }
 
-export async function fetchTts(
-  text: string,
-  voice: string,
-  signal?: AbortSignal,
-): Promise<TtsResult> {
-  const res = await fetch('/api/tts', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text, voice }),
-    signal,
-  });
-  if (!res.ok) throw new Error(await readError(res));
-  return res.json();
+export async function fetchTts(text: string, voice: string, signal?: AbortSignal): Promise<TtsResult> {
+  try {
+    const res = await fetch('/api/tts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text, voice }),
+      signal,
+    });
+    if (!res.ok) {
+      if (res.status < 500) throw Object.assign(new Error(await readError(res)), { noFallback: true });
+      throw new Error('Giọng server không khả dụng.');
+    }
+    const result = await res.json();
+    window.dispatchEvent(
+      new CustomEvent('misu:voice-source', {
+        detail: `Nguồn giọng: ${result.provider}${result.fallbackReason ? ` — ${result.fallbackReason}` : ''}`,
+      }),
+    );
+    return result;
+  } catch (error) {
+    if (signal?.aborted || (error as { noFallback?: boolean }).noFallback) throw error;
+    if (!('speechSynthesis' in window)) throw error;
+    return {
+      audioBase64: '',
+      mime: '',
+      words: [],
+      durationMs: 0,
+      provider: 'browser',
+      browserText: text,
+      browserLocale: voiceLocale(voice),
+      fallbackReason: 'Giọng dự phòng của trình duyệt',
+    };
+  }
 }
 
 export async function analyzeLearning(payload: {
@@ -189,7 +202,12 @@ export async function analyzeLearning(payload: {
 }
 
 export async function assessmentRequest<T>(route: 'assess-task' | 'prepare-task', payload: object, signal?: AbortSignal): Promise<T> {
-  const res = await fetch(`/api/${route}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal });
+  const res = await fetch(`/api/${route}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+    signal,
+  });
   if (!res.ok) throw new Error(await readError(res));
   return res.json();
 }

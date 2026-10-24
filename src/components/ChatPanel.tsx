@@ -429,7 +429,7 @@ export function ChatPanel({
         </div>
         <div className="composer-hint">
           <span>Enter để gửi · Shift + Enter để xuống dòng</span>
-          <span className="composer-voice-note">Giọng đọc: Edge TTS</span>
+          <span className="composer-voice-note">Giọng Edge · có dự phòng</span>
         </div>
       </footer>
     </section>

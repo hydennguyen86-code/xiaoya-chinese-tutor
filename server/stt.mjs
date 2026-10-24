@@ -1,20 +1,23 @@
+import { fileURLToPath } from 'node:url';
+import { mediaToolEnv } from './mediaTools.mjs';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 
 // Local speech-to-text with whisper.cpp's server (Metal GPU on Apple Silicon),
 // so the learner's voice never leaves this computer. `npm run setup:whisper`
-// builds it into vendor/ and downloads the model into models/; a build in the
-// sibling AI-Chinese-Teacher folder, or WHISPER_BIN / WHISPER_MODEL, also work.
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const SIBLING = path.resolve(ROOT, '..', 'AI-Chinese-Teacher');
+// builds it into vendor/ and downloads the model into models/; WHISPER_BIN /
+// WHISPER_MODEL point to a build elsewhere.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const firstExisting = (...candidates) => candidates.find((file) => fs.existsSync(file)) || candidates[0];
 const BIN =
   process.env.WHISPER_BIN ||
-  firstExisting(path.join(ROOT, 'vendor', 'whisper.cpp', 'build', 'bin', 'whisper-server'), path.join(SIBLING, 'whisper.cpp', 'build', 'bin', 'whisper-server'));
-const MODEL =
-  process.env.WHISPER_MODEL || firstExisting(path.join(ROOT, 'models', 'ggml-small.bin'), path.join(SIBLING, 'models', 'ggml-small.bin'));
+  firstExisting(
+    path.join(ROOT, 'vendor', 'whisper-windows', 'whisper-server.exe'),
+    path.join(ROOT, 'vendor', 'whisper.cpp', 'build', 'bin', process.platform === 'win32' ? 'whisper-server.exe' : 'whisper-server'),
+    path.join(ROOT, 'vendor', 'whisper.cpp', 'build', 'bin', 'Release', 'whisper-server.exe'),
+  );
+const MODEL = process.env.WHISPER_MODEL || path.join(ROOT, 'models', 'ggml-small.bin');
 const PORT = Number(process.env.WHISPER_PORT || 8178);
 const URL_BASE = `http://127.0.0.1:${PORT}`;
 const PROMPT = '以下是普通话的简体中文句子。';
@@ -48,11 +51,14 @@ export async function startStt() {
     ready = true; // already running (e.g. left over from a previous server)
     return;
   }
-  // ffmpeg (for --convert) lives in ~/.local/bin on this machine
-  const PATH = [path.join(os.homedir(), '.local', 'bin'), '/opt/homebrew/bin', process.env.PATH].join(':');
   child = spawn(BIN, ['-m', MODEL, '--host', '127.0.0.1', '--port', String(PORT), '-l', 'zh', '-t', '4', '--convert'], {
-    env: { ...process.env, PATH },
+    env: mediaToolEnv(),
     stdio: ['ignore', 'ignore', 'pipe'],
+  });
+  child.on('error', () => {
+    ready = false;
+    child = null;
+    console.error('[stt] Không chạy được whisper-server; kiểm tra WHISPER_BIN và quyền thực thi.');
   });
   child.stderr.on('data', () => {}); // whisper logs a lot; keep the pipe drained
   child.on('exit', (code) => {
@@ -78,7 +84,15 @@ export function stopStt() {
 
 async function inference(audio, mimeType, format) {
   if (!ready) throw Object.assign(new Error('Nhận dạng giọng nói cục bộ chưa sẵn sàng.'), { status: 503 });
-  const ext = /mp4|m4a|aac/.test(mimeType) ? 'm4a' : /wav/.test(mimeType) ? 'wav' : /ogg/.test(mimeType) ? 'ogg' : /mpeg|mp3/.test(mimeType) ? 'mp3' : 'webm';
+  const ext = /mp4|m4a|aac/.test(mimeType)
+    ? 'm4a'
+    : /wav/.test(mimeType)
+      ? 'wav'
+      : /ogg/.test(mimeType)
+        ? 'ogg'
+        : /mpeg|mp3/.test(mimeType)
+          ? 'mp3'
+          : 'webm';
   const form = new FormData();
   form.append('file', new Blob([audio], { type: mimeType }), `speech.${ext}`);
   form.append('response_format', format);

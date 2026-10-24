@@ -1,3 +1,4 @@
+import { streamRemote } from './remoteProvider.mjs';
 import { PROVIDER_DEFS } from './providers.mjs';
 
 const CORRECTION_ITEM_SCHEMA = {
@@ -40,14 +41,7 @@ export const ANALYSIS_SCHEMA = {
         properties: {
           skill: {
             type: 'string',
-            enum: [
-              'grammar',
-              'word_choice',
-              'word_order',
-              'measure_word',
-              'vocabulary',
-              'other',
-            ],
+            enum: ['grammar', 'word_choice', 'word_order', 'measure_word', 'vocabulary', 'other'],
           },
           title: { type: 'string' },
           evidence: { type: 'string' },
@@ -104,16 +98,7 @@ const TURN_SCHEMA = {
     suggestion: { type: 'string' },
     suggestionTranslation: { type: 'string' },
   },
-  required: [
-    'emotion',
-    'gesture',
-    'reply',
-    'translation',
-    'corrections',
-    'vocab',
-    'suggestion',
-    'suggestionTranslation',
-  ],
+  required: ['emotion', 'gesture', 'reply', 'translation', 'corrections', 'vocab', 'suggestion', 'suggestionTranslation'],
 };
 
 class ModelError extends Error {
@@ -161,15 +146,7 @@ async function* readLines(res) {
   }
 }
 
-async function streamOllama({
-  model,
-  messages,
-  signal,
-  onDelta,
-  schema = TURN_SCHEMA,
-  maxTokens = 700,
-  temperature = 0.7,
-}) {
+async function streamOllama({ model, messages, signal, onDelta, schema = TURN_SCHEMA, maxTokens = 700, temperature = 0.7 }) {
   const url = `${PROVIDER_DEFS.ollama.url}/api/chat`;
   const res = await fetch(url, {
     method: 'POST',
@@ -192,10 +169,7 @@ async function streamOllama({
 
   if (!res.ok || !res.body) {
     const detail = await readBody(res);
-    throw new ModelError(
-      `Ollama không phản hồi đúng (HTTP ${res.status}). ${detail}`,
-      502,
-    );
+    throw new ModelError(`Ollama không phản hồi đúng (HTTP ${res.status}). ${detail}`, 502);
   }
 
   const usage = {};
@@ -234,15 +208,7 @@ async function streamOllama({
   return { usage };
 }
 
-async function requestLmStudio(
-  model,
-  messages,
-  signal,
-  jsonMode,
-  schema,
-  maxTokens,
-  temperature,
-) {
+async function requestLmStudio(model, messages, signal, jsonMode, schema, maxTokens, temperature) {
   const body = {
     model,
     messages,
@@ -268,45 +234,18 @@ async function requestLmStudio(
   });
 }
 
-async function streamLmStudio({
-  model,
-  messages,
-  signal,
-  onDelta,
-  schema = TURN_SCHEMA,
-  maxTokens = 700,
-  temperature = 0.7,
-}) {
-  let res = await requestLmStudio(
-    model,
-    messages,
-    signal,
-    'schema',
-    schema,
-    maxTokens,
-    temperature,
-  );
+async function streamLmStudio({ model, messages, signal, onDelta, schema = TURN_SCHEMA, maxTokens = 700, temperature = 0.7 }) {
+  let res = await requestLmStudio(model, messages, signal, 'schema', schema, maxTokens, temperature);
 
   for (const fallback of ['object', 'none']) {
     if (res.status !== 400) break;
     await res.body?.cancel();
-    res = await requestLmStudio(
-      model,
-      messages,
-      signal,
-      fallback,
-      schema,
-      maxTokens,
-      temperature,
-    );
+    res = await requestLmStudio(model, messages, signal, fallback, schema, maxTokens, temperature);
   }
 
   if (!res.ok || !res.body) {
     const detail = await readBody(res);
-    throw new ModelError(
-      `LM Studio không phản hồi đúng (HTTP ${res.status}). ${detail}`,
-      502,
-    );
+    throw new ModelError(`LM Studio không phản hồi đúng (HTTP ${res.status}). ${detail}`, 502);
   }
 
   let usage = {};
@@ -340,25 +279,13 @@ async function streamLmStudio({
   }
 
   if (!sawToken) {
-    throw new ModelError(
-      'LM Studio không trả về nội dung. Model có thể đang bật chế độ suy luận hoặc đã hết token.',
-      502,
-    );
+    throw new ModelError('LM Studio không trả về nội dung. Model có thể đang bật chế độ suy luận hoặc đã hết token.', 502);
   }
 
   return { usage };
 }
 
-export async function streamCompletion({
-  provider,
-  model,
-  messages,
-  signal,
-  onDelta,
-  schema,
-  maxTokens,
-  temperature,
-}) {
+export async function streamCompletion({ provider, model, messages, signal, onDelta, schema, maxTokens, temperature }) {
   const startedAt = Date.now();
   if (provider === 'ollama') {
     const result = await streamOllama({
@@ -370,6 +297,10 @@ export async function streamCompletion({
       maxTokens,
       temperature,
     });
+    return { ...result, elapsedMs: Date.now() - startedAt };
+  }
+  if (provider === 'compatible') {
+    const result = await streamRemote({ model, messages, signal, onDelta, schema: schema || TURN_SCHEMA, maxTokens, temperature });
     return { ...result, elapsedMs: Date.now() - startedAt };
   }
   if (provider === 'lmstudio') {
@@ -387,15 +318,7 @@ export async function streamCompletion({
   throw new ModelError('Provider không hợp lệ.', 400);
 }
 
-export async function completeJson({
-  provider,
-  model,
-  messages,
-  signal,
-  schema,
-  maxTokens = 300,
-  temperature = 0.3,
-}) {
+export async function completeJson({ provider, model, messages, signal, schema, maxTokens = 300, temperature = 0.3 }) {
   let raw = '';
   const result = await streamCompletion({
     provider,

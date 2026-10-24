@@ -1,3 +1,4 @@
+import { VoiceSourceNotice } from './components/VoiceSourceNotice';
 import { Assessment } from './components/Assessment';
 import { SetupCheck } from './components/SetupCheck';
 import { isDue, loadAssessment } from './lib/assessment';
@@ -374,7 +375,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         return;
       }
       if (!active?.online || !settingsRef.current.model) {
-        setError('Chưa có model local sẵn sàng. Mở Ollama hoặc LM Studio, sau đó kiểm tra trong Cài đặt.');
+        setError('Chưa có model sẵn sàng. Mở Ollama hoặc LM Studio, sau đó kiểm tra trong Cài đặt.');
         return;
       }
 
@@ -585,7 +586,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       return;
     }
     if (!canChat) {
-      setError('Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt trước khi nói nhé.');
+      setError('Chưa có model sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt trước khi nói nhé.');
       return;
     }
 
@@ -687,7 +688,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const handleAnalyzeLearning = useCallback(async () => {
     const active = statusRef.current?.providers.find((provider) => provider.id === settingsRef.current.providerId);
     if (!statusRef.current || !active?.online || !settingsRef.current.model) {
-      setAnalysisError('Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt.');
+      setAnalysisError('Chưa có model sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt.');
       return;
     }
     if (analyzing) return;
@@ -1044,6 +1045,13 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           }}
         />
       )}
+      {settings.providerId === 'compatible' && (
+        <p className="remote-provider-notice" role="status">
+          Đang dùng API bên ngoài: bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến {activeProvider?.url}. Dịch vụ có thể tính
+          phí.
+        </p>
+      )}
+      <VoiceSourceNotice />
       <SettingsDialog
         open={settingsOpen}
         status={status}

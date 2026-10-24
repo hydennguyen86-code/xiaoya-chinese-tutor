@@ -1,3 +1,4 @@
+import { speakBrowser } from '../lib/browserVoice';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { fetchTts } from '../lib/api';
 import { exerciseFingerprint, gradeListening, speechText } from '../lib/coursePractice';
@@ -132,6 +133,16 @@ function useAudio(voice: string, onBusy: (busy: boolean) => void) {
     try {
       const result = await fetchTts(speechText(text), voice, controller.signal);
       if (!alive.current || controller.signal.aborted) return;
+      if (result.browserText) {
+        setProvider('Giọng dự phòng trình duyệt; tuỳ giọng có thể dùng mạng.');
+        await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', controller.signal, onStarted);
+        if (alive.current && !controller.signal.aborted) {
+          loading.current = false;
+          setPlaying(false);
+          onBusy(false);
+        }
+        return;
+      }
       const bytes = Uint8Array.from(atob(result.audioBase64), (ch) => ch.charCodeAt(0));
       if (url.current) URL.revokeObjectURL(url.current);
       url.current = URL.createObjectURL(new Blob([bytes], { type: result.mime }));

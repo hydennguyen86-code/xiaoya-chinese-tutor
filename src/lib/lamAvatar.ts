@@ -1,3 +1,4 @@
+import { speakBrowser, stopBrowserVoice } from './browserVoice';
 import { GaussianSplatRenderer } from '@myned-ai/gsplat-flame-avatar-renderer';
 import type { Emotion, Gesture, TtsResult } from '../types';
 import type { AvatarApi } from './avatarApi';
@@ -36,12 +37,32 @@ const MOODS: Record<Emotion, Weights> = {
 // Channels the mouth/mood layers can touch; always emitted so a channel that
 // stops being driven returns to 0 instead of sticking.
 const CHANNELS = [
-  'jawOpen', 'jawForward', 'mouthClose', 'mouthFunnel', 'mouthPucker',
-  'mouthPressLeft', 'mouthPressRight', 'mouthRollLower', 'mouthRollUpper',
-  'mouthStretchLeft', 'mouthStretchRight', 'mouthSmileLeft', 'mouthSmileRight',
-  'mouthLowerDownLeft', 'mouthLowerDownRight', 'mouthUpperUpLeft', 'mouthUpperUpRight',
-  'cheekSquintLeft', 'cheekSquintRight', 'browInnerUp', 'browOuterUpLeft', 'browOuterUpRight',
-  'browDownLeft', 'browDownRight', 'eyeBlinkLeft', 'eyeBlinkRight',
+  'jawOpen',
+  'jawForward',
+  'mouthClose',
+  'mouthFunnel',
+  'mouthPucker',
+  'mouthPressLeft',
+  'mouthPressRight',
+  'mouthRollLower',
+  'mouthRollUpper',
+  'mouthStretchLeft',
+  'mouthStretchRight',
+  'mouthSmileLeft',
+  'mouthSmileRight',
+  'mouthLowerDownLeft',
+  'mouthLowerDownRight',
+  'mouthUpperUpLeft',
+  'mouthUpperUpRight',
+  'cheekSquintLeft',
+  'cheekSquintRight',
+  'browInnerUp',
+  'browOuterUpLeft',
+  'browOuterUpRight',
+  'browDownLeft',
+  'browDownRight',
+  'eyeBlinkLeft',
+  'eyeBlinkRight',
 ];
 
 interface AvatarCallbacks {
@@ -57,11 +78,7 @@ interface PlayedSegment {
 }
 
 type CreatableRenderer = {
-  create: (
-    container: HTMLElement,
-    assetPath: string,
-    options: Record<string, unknown>,
-  ) => Promise<{ dispose: () => void }>;
+  create: (container: HTMLElement, assetPath: string, options: Record<string, unknown>) => Promise<{ dispose: () => void }>;
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -209,6 +226,7 @@ export class LamAvatarController implements AvatarApi {
   }
 
   beginTurn() {
+    stopBrowserVoice();
     this.stopSources();
     this.session += 1;
     this.chain = Promise.resolve();
@@ -217,6 +235,7 @@ export class LamAvatarController implements AvatarApi {
   }
 
   stopSpeech() {
+    stopBrowserVoice();
     this.session += 1;
     this.pendingSpeech = 0;
     this.stopSources();
@@ -237,17 +256,22 @@ export class LamAvatarController implements AvatarApi {
         if (session !== this.session || this.destroyed || !this.ctx) return;
         const result = await this.getTts(clean, voice);
         if (session !== this.session || this.destroyed || !this.ctx) return;
+        if (result.browserText) {
+          this.callbacks.onAudioState?.(true);
+          try {
+            await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN');
+          } finally {
+            this.callbacks.onAudioState?.(false);
+          }
+          return;
+        }
         await this.unlock();
         if (session !== this.session || this.destroyed || !this.ctx) return;
 
         const buffer = await this.decodeAudio(result.audioBase64);
         if (session !== this.session || this.destroyed || !this.ctx) return;
 
-        const timeline = buildSpeechTimeline(
-          clean,
-          result.words,
-          Math.round(buffer.duration * 1000),
-        );
+        const timeline = buildSpeechTimeline(clean, result.words, Math.round(buffer.duration * 1000));
 
         const source = this.ctx.createBufferSource();
         source.buffer = buffer;
@@ -263,9 +287,8 @@ export class LamAvatarController implements AvatarApi {
       .catch((error) => {
         if (session === this.session) {
           console.error('[lam-avatar] TTS error', error);
-          this.callbacks.onError?.(
-            'Không đọc được câu trả lời. Kiểm tra kết nối mạng để dùng giọng Edge.',
-          );
+          if (error?.name !== 'AbortError')
+            this.callbacks.onError?.(error instanceof Error ? error.message : 'Không đọc được câu trả lời. Thử lại bằng nút Nghe.');
         }
       })
       .finally(() => {
@@ -284,6 +307,7 @@ export class LamAvatarController implements AvatarApi {
   }
 
   destroy() {
+    stopBrowserVoice();
     this.destroyed = true;
     this.session += 1;
     this.stopSources();
@@ -344,7 +368,7 @@ export class LamAvatarController implements AvatarApi {
     const moodScale = speaking ? 0.55 : 1;
     for (const [key, value] of Object.entries(mood)) target[key] = value * moodScale;
 
-    const shape = viseme ? VISEMES[viseme] ?? {} : {};
+    const shape = viseme ? (VISEMES[viseme] ?? {}) : {};
     for (const [key, value] of Object.entries(shape)) {
       target[key] = Math.max(target[key] ?? 0, value);
     }
@@ -409,7 +433,7 @@ export class LamAvatarController implements AvatarApi {
     const cached = this.ttsCache.get(key);
     if (cached) return cached;
     const result = await fetchTts(text, voice);
-    this.ttsCache.set(key, result);
+    if (!result.browserText) this.ttsCache.set(key, result);
     if (this.ttsCache.size > 16) {
       const oldest = this.ttsCache.keys().next().value;
       if (oldest) this.ttsCache.delete(oldest);

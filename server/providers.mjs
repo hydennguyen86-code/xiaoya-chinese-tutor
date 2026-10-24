@@ -1,7 +1,9 @@
+import { remoteSettings } from './remoteProvider.mjs';
 const OLLAMA_URL = (process.env.OLLAMA_URL || 'http://127.0.0.1:11434').replace(/\/$/, '');
 const LMSTUDIO_URL = (process.env.LMSTUDIO_URL || 'http://127.0.0.1:1234').replace(/\/$/, '');
 
 export const PROVIDER_DEFS = {
+  compatible: { id: 'compatible', name: 'API OpenAI-compatible (dịch vụ bạn chọn)', url: '' },
   ollama: {
     id: 'ollama',
     name: 'Ollama',
@@ -25,14 +27,7 @@ function looksLikeEmbedding(name = '') {
 }
 
 function pickRecommended(models) {
-  const candidates = [
-    /^qwen3\.5/i,
-    /^qwen3/i,
-    /^qwen2\.5/i,
-    /qwen/i,
-    /^gemma/i,
-    /^llama/i,
-  ];
+  const candidates = [/^qwen3\.5/i, /^qwen3/i, /^qwen2\.5/i, /qwen/i, /^gemma/i, /^llama/i];
   for (const re of candidates) {
     const match = models.find((m) => re.test(m));
     if (match) return match;
@@ -43,9 +38,7 @@ function pickRecommended(models) {
 async function detectOllama() {
   try {
     const data = await fetchJson(`${OLLAMA_URL}/api/tags`);
-    const models = (data.models || [])
-      .map((m) => m.name || m.model)
-      .filter((name) => name && !looksLikeEmbedding(name));
+    const models = (data.models || []).map((m) => m.name || m.model).filter((name) => name && !looksLikeEmbedding(name));
     return {
       ...PROVIDER_DEFS.ollama,
       online: true,
@@ -65,9 +58,7 @@ async function detectOllama() {
 async function detectLmStudio() {
   try {
     const data = await fetchJson(`${LMSTUDIO_URL}/v1/models`);
-    const models = (data.data || [])
-      .map((m) => m.id)
-      .filter((name) => name && !looksLikeEmbedding(name));
+    const models = (data.data || []).map((m) => m.id).filter((name) => name && !looksLikeEmbedding(name));
     return {
       ...PROVIDER_DEFS.lmstudio,
       online: true,
@@ -86,7 +77,19 @@ async function detectLmStudio() {
 
 export async function detectProviders() {
   const [ollama, lmstudio] = await Promise.all([detectOllama(), detectLmStudio()]);
-  return [ollama, lmstudio];
+  const remote = remoteSettings();
+  return [
+    ollama,
+    lmstudio,
+    {
+      ...PROVIDER_DEFS.compatible,
+      url: remote?.url || '',
+      online: Boolean(remote),
+      models: remote ? [remote.model] : [],
+      recommendedModel: remote?.model || '',
+      remote: true,
+    },
+  ];
 }
 
 export function getProvider(id) {

@@ -1,3 +1,4 @@
+import { generateGecV2, EDGE_TOKEN } from './edgeGec.mjs';
 import { mediaToolPath } from './mediaTools.mjs';
 import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts';
 import { execFile } from 'node:child_process';
@@ -7,6 +8,12 @@ import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
+// msedge-tts 2.1.0 implements GEC v1; keep its stream/clock-skew handling,
+// replace only the public URL builder with the v2 upstream protocol.
+MsEdgeTTS.getSynthUrl = async function () {
+  const query = new URLSearchParams({ TrustedClientToken: EDGE_TOKEN, ConnectionId: crypto.randomUUID().replaceAll('-', ''), 'Sec-MS-GEC': generateGecV2(Date.now() + (MsEdgeTTS._clockOffsetMs || 0)), 'Sec-MS-GEC-Version': '2-143.0.3650.75' });
+  return `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?${query}`;
+};
 const execFileAsync = promisify(execFile);
 const DEFAULT_VOICE = 'zh-CN-XiaoxiaoNeural';
 export const DEFAULT_VI_VOICE = 'vi-VN-HoaiMyNeural';
@@ -69,13 +76,13 @@ const CLONE_SERVICES = {
     url: process.env.VOICE_CLONE_URL || 'http://127.0.0.1:8766',
     language: 'Chinese',
     fallbackVoice: DEFAULT_VOICE,
-    hint: 'Chạy "npm run voice" trong thư mục AI-Chinese-Teacher để bật giọng clone tiếng Trung.',
+    hint: 'Chưa kết nối được dịch vụ clone giọng tiếng Trung (VOICE_CLONE_URL, mặc định cổng 8766). Xem docs/voice-clone.md.',
   },
   'clone-vi': {
     url: process.env.VOICE_CLONE_VI_URL || 'http://127.0.0.1:8767',
     language: 'Vietnamese',
     fallbackVoice: DEFAULT_VI_VOICE,
-    hint: 'Chạy "npm run voice:vi" trong thư mục AI-Chinese-Teacher để bật giọng clone tiếng Việt.',
+    hint: 'Chưa kết nối được dịch vụ clone giọng tiếng Việt (VOICE_CLONE_VI_URL, mặc định cổng 8767). Xem docs/voice-clone.md.',
   },
 };
 
@@ -188,7 +195,7 @@ function parseWordBoundaries(chunks) {
   return words;
 }
 
-async function synthesizeEdge(text, voice) {
+export async function synthesizeEdge(text, voice) {
   const tts = new MsEdgeTTS({
     connectionTimeoutMs: 10000,
     synthesisTimeoutMs: 25000,
@@ -394,7 +401,8 @@ async function synthesizeEdgeOrMac(text, voice) {
   try {
     return await synthesizeEdge(text, voice);
   } catch (edgeError) {
-    console.warn('[tts] Edge TTS lỗi, chuyển sang giọng macOS:', edgeError.message);
+    if (process.platform !== 'darwin') throw Object.assign(new Error('Giọng Edge tạm không khả dụng. Hãy dùng giọng trình duyệt.'), { status: 502 });
+    console.warn('[tts] Edge TTS không khả dụng; dùng giọng macOS.');
     try {
       const result = await synthesizeMac(text, voice);
       result.fallbackReason = 'Edge TTS không khả dụng, đang dùng giọng macOS.';

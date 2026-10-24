@@ -3,12 +3,7 @@ export type Gesture = 'none' | 'thumbup' | 'ok' | 'index' | 'shrug' | 'handup';
 export type Level = 'HSK1-2' | 'HSK3-4' | 'HSK5-6' | 'free';
 export type AvatarMode = 'classic' | 'lam';
 export type Phase = 'loading' | 'ready' | 'listening' | 'thinking' | 'replying' | 'speaking';
-export type MistakeCategory =
-  | 'grammar'
-  | 'word_choice'
-  | 'word_order'
-  | 'measure_word'
-  | 'other';
+export type MistakeCategory = 'grammar' | 'word_choice' | 'word_order' | 'measure_word' | 'other';
 export type SkillKey = MistakeCategory | 'vocabulary';
 
 export interface Correction {
@@ -66,6 +61,7 @@ export interface Settings {
 }
 
 export interface ProviderInfo {
+  remote?: boolean;
   id: string;
   name: string;
   url: string;
@@ -81,6 +77,7 @@ export interface VoiceInfo {
 }
 
 export interface StatusResponse {
+  system?: { ramGB: number; platform: string };
   providers: ProviderInfo[];
   voices: VoiceInfo[];
   defaultVoice: string;
@@ -99,6 +96,8 @@ export interface TtsWord {
 }
 
 export interface TtsResult {
+  browserText?: string;
+  browserLocale?: string;
   audioBase64: string;
   mime: string;
   words: TtsWord[];
@@ -168,14 +167,7 @@ export interface StreamError {
   message: string;
 }
 
-export type StreamEvent =
-  | StreamMeta
-  | StreamAttitude
-  | StreamReplyDelta
-  | StreamReplyDone
-  | StreamTranslation
-  | StreamTurn
-  | StreamError;
+export type StreamEvent = StreamMeta | StreamAttitude | StreamReplyDelta | StreamReplyDone | StreamTranslation | StreamTurn | StreamError;
 
 export interface ChatHistoryMessage {
   role: 'user' | 'assistant';
@@ -250,4 +242,3 @@ export interface LearningProfile {
   reports: AnalysisReport[];
   updatedAt: number;
 }
-

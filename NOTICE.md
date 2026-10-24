@@ -1,6 +1,6 @@
 # Third-party material
 
-The MIT license in `LICENSE` covers the code in this repository. The bundled
+The MIT license in `LICENSE` covers original app code, except the separately licensed `server/edgeGec.mjs` module described below. The bundled
 sample avatars and the libraries below keep their own licenses.
 
 ## Bundled files
@@ -34,3 +34,28 @@ Chinese: Oral Course) only through a table of contents that you type in
 yourself (`data/syllabus/tiyan-hanyu-kouyu.json`, not in this repository). No
 text, dialogue or exercise from the book is included; the practice material is
 written by the local model.
+
+## Edge GEC v2 compatibility module
+
+`server/edgeGec.mjs` is a JavaScript port derived from
+[rany2/edge-tts drm.py](https://github.com/rany2/edge-tts/blob/master/src/edge_tts/drm.py),
+including the v2 work discussed in [upstream PR 492](https://github.com/rany2/edge-tts/pull/492).
+The upstream DRM file is **LGPLv3**, not covered by the MIT exception for its
+subtitle composer. Copyright belongs to rany and the edge-tts contributors.
+Changes on 2026-10-24: JavaScript arithmetic/Buffer port, generic SHA rounds,
+explicit timestamp argument and local reference-vector tests.
+
+This module is distributed as separate, replaceable source under LGPL-3.0-only;
+see [the upstream license](licenses/edge-tts-LGPL-3.0.txt) and
+[GPLv3 incorporated by LGPLv3](licenses/GPL-3.0.txt). Keep these notices and the
+module source with redistributed builds; users can replace the module and run
+its tests without rebuilding the browser app. Other app files retain their
+existing licenses. This server module is not bundled into the browser.
+
+`selfsigned` and `qrcode` use MIT licenses; their dependency notices remain in
+node_modules when installed. No new speech model is bundled. Whisper Windows
+uses the upstream MIT release; downloaded GGML weights retain their upstream
+terms and live outside tracked source.
+Full notices for the newly bundled/generated-code dependencies are also kept
+in [licenses/qrcode-MIT.txt](licenses/qrcode-MIT.txt) and
+[licenses/selfsigned-MIT.txt](licenses/selfsigned-MIT.txt).

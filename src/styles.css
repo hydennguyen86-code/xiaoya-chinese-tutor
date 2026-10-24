@@ -4974,3 +4974,17 @@ svg {
 .tone-replay { display: flex; flex-wrap: wrap; gap: 6px; }
 .tone-replay button { min-width: 36px; padding: 6px 10px; border: 1px solid currentColor; border-radius: 8px; color: inherit; background: transparent; cursor: pointer; }
 .tone-replay button:disabled { opacity: 0.5; cursor: default; }
+
+.voice-source-notice, .remote-provider-notice { position: fixed; bottom: 8px; left: 12px; right: 12px; max-width: 860px; margin: auto; padding: 8px 12px; background: var(--paper-strong); border: 1px solid var(--line-strong); border-radius: 12px; font-size: 12px; z-index: 25; }
+.remote-provider-notice { bottom: 52px; color: var(--terracotta-deep); }
+.connectivity-settings { display: grid; gap: 12px; }
+.connectivity-settings label { display: grid; gap: 6px; }
+.connectivity-settings input:not([type="checkbox"]), .connectivity-settings select { width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper-strong); }
+.connectivity-settings .consent-row { display: flex; align-items: flex-start; gap: 10px; }
+.connectivity-settings code, .connectivity-settings p { overflow-wrap: anywhere; }
+.connectivity-settings img { max-width: 100%; }
+@media (max-width: 420px) {
+  .settings-dialog { max-width: calc(100vw - 16px); }
+  .connectivity-settings .lesson-actions { flex-wrap: wrap; }
+  .remote-provider-notice, .voice-source-notice { left: 6px; right: 6px; font-size: 11px; }
+}

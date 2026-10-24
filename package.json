@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "concurrently -k -n server,web -c magenta,cyan \"node server/index.mjs\" \"vite\"",
     "build": "tsc --noEmit && vite build",
-    "start": "NODE_ENV=production node server/index.mjs",
-    "voice": "cd ../AI-Chinese-Teacher && ./.venv-tts/bin/python tts_service.py",
-    "voice:vi": "cd ../AI-Chinese-Teacher && ./.venv-vitts/bin/python vitts_service.py",
+    "start": "node server/index.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test server/*.test.mjs src/lib/*.test.ts",
     "eval:corrections": "node eval/corrections.mjs",
@@ -17,7 +15,9 @@
     "format": "node scripts/format.mjs",
     "format:check": "node scripts/format.mjs --check",
     "check:assets": "node scripts/check-public-assets.mjs",
-    "review:lesson": "node scripts/review-lesson.mjs"
+    "review:lesson": "node scripts/review-lesson.mjs",
+    "setup:whisper:windows": "powershell -NoProfile -File scripts/setup-whisper.ps1",
+    "test:edge:live": "node scripts/test-edge-live.mjs"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",
@@ -26,12 +26,15 @@
     "jszip": "^3.10.2",
     "msedge-tts": "^2.1.0",
     "pinyin-pro": "^3.29.5",
+    "qrcode": "^1.5.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "selfsigned": "^5.5.0",
     "three": "^0.186.1"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
