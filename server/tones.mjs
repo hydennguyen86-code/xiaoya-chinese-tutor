@@ -1,7 +1,5 @@
+import { mediaToolPath } from './mediaTools.mjs';
 import { spawn } from 'node:child_process';
-import fs from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
 import { pinyin } from 'pinyin-pro';
 
 // Tone feedback for a sentence the learner read aloud. Everything runs on this
@@ -15,15 +13,10 @@ const HOP = 160; // 10 ms
 const FRAME = 800; // 50 ms
 const HAN = /\p{Script=Han}/u;
 
-function ffmpegPath() {
-  if (process.env.FFMPEG_PATH) return process.env.FFMPEG_PATH;
-  const local = path.join(os.homedir(), '.local', 'bin', 'ffmpeg');
-  return fs.existsSync(local) ? local : 'ffmpeg';
-}
 
 export function decodeToPcm(buffer) {
   return new Promise((resolve, reject) => {
-    const proc = spawn(ffmpegPath(), ['-hide_banner', '-loglevel', 'error', '-i', 'pipe:0', '-ac', '1', '-ar', String(SR), '-f', 'f32le', 'pipe:1']);
+    const proc = spawn(mediaToolPath('ffmpeg'), ['-hide_banner', '-loglevel', 'error', '-i', 'pipe:0', '-ac', '1', '-ar', String(SR), '-f', 'f32le', 'pipe:1']);
     const chunks = [];
     proc.stdout.on('data', (chunk) => chunks.push(chunk));
     proc.on('error', reject);

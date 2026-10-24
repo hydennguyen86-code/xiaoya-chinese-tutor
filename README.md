@@ -91,7 +91,7 @@ gửi âm thanh lên máy chủ Google) và không chấm được thanh điệu
 | `XIAOYA_DATA_DIR` | `./data` | nơi lưu dữ liệu người học |
 | `OLLAMA_URL`, `LMSTUDIO_URL` | cổng mặc định | máy chủ mô hình |
 | `WHISPER_BIN`, `WHISPER_MODEL`, `WHISPER_PORT` | `vendor/…`, `models/ggml-small.bin`, `8178` | whisper.cpp |
-| `FFMPEG_PATH` | `ffmpeg` trong PATH | ffmpeg |
+| `FFMPEG_PATH`, `FFPROBE_PATH` | tự tìm trong thư mục cài phổ biến hoặc PATH | công cụ âm thanh |
 
 ### Avatar của riêng bạn
 

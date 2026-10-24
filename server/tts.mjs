@@ -1,3 +1,4 @@
+import { mediaToolPath } from './mediaTools.mjs';
 import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -254,7 +255,7 @@ async function synthesizeEdge(text, voice) {
 
 async function getDurationMs(filePath) {
   try {
-    const { stdout } = await execFileAsync('ffprobe', [
+    const { stdout } = await execFileAsync(mediaToolPath('ffprobe'), [
       '-v',
       'error',
       '-show_entries',
@@ -306,7 +307,7 @@ async function synthesizeMac(text, voice = DEFAULT_VOICE) {
     }
 
     await execFileAsync(
-      'ffmpeg',
+      mediaToolPath('ffmpeg'),
       ['-y', '-loglevel', 'error', '-i', aiff, '-codec:a', 'libmp3lame', '-q:a', '4', mp3],
       { timeout: 30000 },
     );

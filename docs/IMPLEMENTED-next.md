@@ -22,11 +22,12 @@
   Không có bài nào được tuyên bố đã được người có chuyên môn duyệt.
 - CONTRIBUTING, hai issue template, tải động hai renderer avatar, kết quả đo thô.
 - GIF 30 giây từ thao tác thật bằng bàn phím: nhập câu → phản hồi/sửa lỗi → ôn từ, avatar hoạt hình mẫu.
+- Sửa giọng macOS dự phòng dùng cùng bộ tìm ffmpeg với phần chấm thanh; kiểm tra thật tạo được MP3 khi Edge lỗi.
 - Sửa chú thích quyền riêng tư cũ trong Cài đặt cho khớp dữ liệu đồng bộ server.
 
 ## Kiểm chứng
 
-- 39 test qua; TypeScript và build qua. Bundle chính khoảng 653 KB trước gzip;
+- 40 test qua; TypeScript và build qua. Bundle chính khoảng 653 KB trước gzip;
   renderer avatar thành các chunk chỉ tải khi dùng.
 - UI thật: thiết lập lần đầu, mở lại Cài đặt, thi thiếu dữ liệu, thi có dữ liệu
   giả lập, bỏ qua thanh điệu chưa chấm, lưu lịch sử. Không thu giọng người thật.
