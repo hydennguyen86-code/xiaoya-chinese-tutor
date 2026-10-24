@@ -15,7 +15,7 @@ import {
 import type { AvatarApi } from './lib/avatarApi';
 import { analyzeLearning, fetchCorrections, fetchStatus, streamChat } from './lib/api';
 import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
-import { ChineseMic, isSpeechSupported, micPermissionState } from './lib/speech';
+import { ChineseMic, configureSpeech, isSpeechSupported, micPermissionState } from './lib/speech';
 import {
   DAILY_GOAL,
   clearMessages,
@@ -167,6 +167,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     try {
       const data = await fetchStatus();
       if (requestId !== statusRequestRef.current) return;
+      configureSpeech({ local: Boolean(data.localStt) });
       setStatus(data);
       setStatusError(null);
       setSettings((previous) => {

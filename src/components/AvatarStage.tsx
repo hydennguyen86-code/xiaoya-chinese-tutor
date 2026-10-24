@@ -28,7 +28,7 @@ const PHASE_COPY: Record<Phase, { label: string; hint: string }> = {
   },
   listening: {
     label: 'Đang lắng nghe',
-    hint: 'Nói tự nhiên bằng tiếng Trung. Ngừng khoảng 3 giây để mình gửi câu.',
+    hint: 'Nói tự nhiên bằng tiếng Trung. Ngừng nói một chút để mình gửi câu.',
   },
   thinking: {
     label: 'Đang suy nghĩ',

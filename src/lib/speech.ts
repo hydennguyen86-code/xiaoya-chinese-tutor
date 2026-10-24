@@ -1,3 +1,13 @@
+import { listen, voiceSupported, type VoiceHandle } from './voiceInput';
+
+// When the server has local speech-to-text (whisper.cpp), record here and
+// transcribe on this computer instead of sending audio to the browser vendor.
+let useLocal = false;
+
+export function configureSpeech(options: { local: boolean }) {
+  useLocal = options.local && voiceSupported(true);
+}
+
 interface SpeechResultAlternative {
   transcript: string;
   confidence: number;
@@ -50,7 +60,7 @@ function getConstructor(): SpeechRecognitionConstructor | null {
 }
 
 export function isSpeechSupported() {
-  return Boolean(getConstructor());
+  return useLocal || Boolean(getConstructor());
 }
 
 export async function micPermissionState(): Promise<
@@ -103,6 +113,7 @@ export class ChineseMic {
   private interimText = '';
   private active = false;
   private silenceTimer: number | null = null;
+  private localHandle: VoiceHandle | null = null;
   private callbacks: MicCallbacks;
 
   constructor(callbacks: MicCallbacks) {
@@ -110,7 +121,37 @@ export class ChineseMic {
   }
 
   get supported() {
-    return Boolean(getConstructor());
+    return isSpeechSupported();
+  }
+
+  private startLocal() {
+    const handle = listen({ local: true });
+    this.localHandle = handle;
+    this.active = true;
+    this.callbacks.onState(true);
+    handle.result
+      .then((text) => {
+        if (this.localHandle !== handle) return; // aborted
+        this.callbacks.onTranscript(text);
+        this.callbacks.onState(false);
+        this.callbacks.onDone(text);
+      })
+      .catch((error: unknown) => {
+        if (this.localHandle !== handle) return;
+        const denied = error instanceof DOMException && error.name === 'NotAllowedError';
+        this.callbacks.onError(
+          denied ? friendlyMicError('not-allowed') : error instanceof Error ? error.message : friendlyMicError(''),
+        );
+        this.callbacks.onState(false);
+        this.callbacks.onDone('');
+      })
+      .finally(() => {
+        if (this.localHandle === handle) {
+          this.localHandle = null;
+          this.active = false;
+        }
+      });
+    return true;
   }
 
   private clearSilenceTimer() {
@@ -130,6 +171,7 @@ export class ChineseMic {
 
   start() {
     if (this.active) return true;
+    if (useLocal) return this.startLocal();
     const Constructor = getConstructor();
     if (!Constructor) return false;
 
@@ -193,6 +235,10 @@ export class ChineseMic {
 
   stop() {
     this.clearSilenceTimer();
+    if (this.localHandle) {
+      this.localHandle.stop();
+      return;
+    }
     if (!this.recognition) return;
     try {
       this.recognition.stop();
@@ -203,6 +249,14 @@ export class ChineseMic {
 
   abort() {
     this.clearSilenceTimer();
+    if (this.localHandle) {
+      const handle = this.localHandle;
+      this.localHandle = null;
+      this.active = false;
+      handle.cancel();
+      this.callbacks.onState(false);
+      return;
+    }
     const recognition = this.recognition;
     this.active = false;
     this.recognition = null;
