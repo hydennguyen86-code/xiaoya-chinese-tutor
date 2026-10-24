@@ -67,3 +67,8 @@ xác nhận đã kiểm chứng. Ngưỡng chưa chỉnh, chưa có số trướ
 Bổ sung khi kiểm tra cài đặt: npm audit báo body-parser bản cũ có cảnh báo
 DoS mức high. Đã cập nhật bản vá tương thích trong lockfile; audit sau cập
 nhật báo 0 lỗ hổng. Không thay ngưỡng chấm hay model.
+
+Lượt xác minh npm 11 đầu tiên phát hiện preinstall của msedge-tts gọi npx
+only-allow pnpm, thất bại trong runtime npm 11. Thêm .npmrc ignore-scripts=true
+(dependency hiện không cần lifecycle build, npm 12 cũng đã tự bỏ qua script đó).
+Cần chạy lại smoke-test npm 11 để xác nhận trước khi kết luận cài sạch.

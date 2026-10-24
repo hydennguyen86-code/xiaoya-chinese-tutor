@@ -54,3 +54,11 @@ Kết quả ở `eval/results/` lưu thời điểm, commit, cấu hình và s�
 ngưỡng được chỉnh dựa trên bộ thử; không coi kết quả TTS là độ chính xác trên
 người thật. Không đưa dữ liệu người học, ảnh, giọng cá nhân hoặc nội dung sách
 vào PR. Mẫu báo lỗi trong GitHub Issues giúp tái hiện lỗi AI và bài học.
+
+## Cài dependency
+
+`.npmrc` đặt `ignore-scripts=true`: dependency hiện dùng JS hoặc binary đóng
+gói sẵn; không cần chạy lifecycle script lúc cài. `msedge-tts` có preinstall
+chỉ chấp nhận pnpm, nên chạy script đó làm hỏng hướng dẫn `npm ci`.
+`npm run build` và các lệnh script được gọi rõ vẫn hoạt động. Nếu thêm dependency
+cần bước build sau cài, phải kiểm tra lại cài sạch và ghi lệnh cần thiết.
