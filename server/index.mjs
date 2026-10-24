@@ -36,6 +36,8 @@ import {
   isCloneVietnameseVoice,
   synthesizeSpeech,
 } from './tts.mjs';
+import { createDataStore } from './dataStore.mjs';
+import { isStyleOnlyEdit } from './correctionFilter.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
@@ -43,9 +45,37 @@ const DEFAULT_VOICE = 'zh-CN-XiaoxiaoNeural';
 const PORT = Number(process.env.PORT || 8787);
 const HOST = process.env.HOST || '127.0.0.1';
 
+const dataStore = createDataStore(
+  process.env.XIAOYA_DATA_DIR || path.resolve(__dirname, '..', 'data'),
+);
+
 const app = express();
 app.disable('x-powered-by');
-app.use(express.json({ limit: '2mb' }));
+app.use(express.json({ limit: '5mb' }));
+
+// Learner data folder (see dataStore.mjs). The server only listens on
+// 127.0.0.1 by default, so this is reachable from this computer only.
+app.get('/api/store', (_req, res) => {
+  res.json({ dir: dataStore.dir, items: dataStore.readAll() });
+});
+
+app.put('/api/store/:key', (req, res) => {
+  try {
+    dataStore.write(req.params.key, req.body?.value);
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(error.status || 500).json({ error: error.message });
+  }
+});
+
+app.delete('/api/store/:key', (req, res) => {
+  try {
+    dataStore.remove(req.params.key);
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(error.status || 500).json({ error: error.message });
+  }
+});
 
 function friendlyError(error) {
   if (error?.name === 'AbortError') {
@@ -81,9 +111,12 @@ async function collectCorrections(provider, model, userText, signal) {
     signal: combined,
     schema: CORRECTION_SCHEMA,
     maxTokens: 400,
-    temperature: 0.3,
+    temperature: 0,
   });
-  return parseCorrections(result.raw, userText);
+  // drop "corrections" that only change style (synonyms, 很→非常, 儿, final particles)
+  return parseCorrections(result.raw, userText).filter(
+    (item) => !isStyleOnlyEdit(item.original, item.corrected),
+  );
 }
 
 function polishTurn(turn) {
