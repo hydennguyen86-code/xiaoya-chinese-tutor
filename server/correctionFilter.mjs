@@ -36,10 +36,30 @@ function canonical(text) {
   return t;
 }
 
-export function isStyleOnlyEdit(original, corrected) {
+function droppedIntensifier(a, b) {
+  // 挺大的 / 很大的 → 大: the intensifier and a trailing 的 both go
+  const bare = (t) => INTENSIFIERS.reduce((acc, w) => acc.split(w).join(''), t).replace(/的$/, '');
+  if (a !== b && bare(a) === bare(b)) return true;
+  const [longer, shorter] = a.length > b.length ? [a, b] : [b, a];
+  for (const word of INTENSIFIERS) {
+    let at = longer.indexOf(word);
+    while (at >= 0) {
+      if (longer.slice(0, at) + longer.slice(at + word.length) === shorter) return true;
+      at = longer.indexOf(word, at + 1);
+    }
+  }
+  return false;
+}
+
+/**
+ * True when the "correction" only changes style. `sentence` is the learner's
+ * whole sentence: dropping 很 is a real fix only in a 比 comparison.
+ */
+export function isStyleOnlyEdit(original, corrected, sentence = '') {
   const a = strip(original);
   const b = strip(corrected);
   if (!a || !b || a === b) return true;
+  if (droppedIntensifier(a, b) && !/比(?!较|赛|如|方|例)/.test(`${sentence}${original}`)) return true;
   // only a trailing particle added or removed
   if (a.replace(FINAL_PARTICLES, '') === b.replace(FINAL_PARTICLES, '')) return true;
   // only 儿, synonyms or intensifiers changed

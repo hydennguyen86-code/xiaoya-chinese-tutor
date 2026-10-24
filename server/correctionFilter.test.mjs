@@ -10,6 +10,9 @@ test('treats synonym, intensifier, 儿 and particle swaps as style only', () => 
   assert.equal(isStyleOnlyEdit('很', '非常'), true);
   assert.equal(isStyleOnlyEdit('很流利。', '很流利'), true);
   assert.equal(isStyleOnlyEdit('', '吃'), true);
+  // dropping 很 outside a comparison (seen while testing the daily lesson)
+  assert.equal(isStyleOnlyEdit('我最近压力很大吗？', '我最近压力大吗？', '我最近压力很大吗？'), true);
+  assert.equal(isStyleOnlyEdit('压力挺大的', '压力大', '经常加班，压力挺大的。'), true);
 });
 
 // Real fixes from the evaluation set must survive the filter.

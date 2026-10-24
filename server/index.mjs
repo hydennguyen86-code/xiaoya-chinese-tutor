@@ -38,6 +38,7 @@ import {
 } from './tts.mjs';
 import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
+import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
 import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
@@ -121,25 +122,35 @@ function friendlyError(error) {
 const HAN = /\p{Script=Han}/u;
 
 async function collectCorrections(provider, model, userText, signal) {
-  const timeout = AbortSignal.timeout(15000);
-  const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
-  const result = await completeJson({
-    provider,
-    model,
-    messages: [
-      { role: 'system', content: CORRECTION_PROMPT },
-      { role: 'user', content: userText },
-    ],
-    signal: combined,
-    schema: CORRECTION_SCHEMA,
-    maxTokens: 400,
-    temperature: 0,
-  });
+  // deterministic rules for typical Vietnamese-learner errors always apply,
+  // even when the model is slow, down or returns nothing usable
+  const ruleFixes = ruleCorrections(userText);
+  let raw = '';
+  try {
+    const timeout = AbortSignal.timeout(15000);
+    const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
+    const result = await completeJson({
+      provider,
+      model,
+      messages: [
+        { role: 'system', content: CORRECTION_PROMPT },
+        { role: 'user', content: userText },
+      ],
+      signal: combined,
+      schema: CORRECTION_SCHEMA,
+      maxTokens: 400,
+      temperature: 0,
+    });
+    raw = result.raw;
+  } catch (error) {
+    if (!ruleFixes.length) throw error;
+  }
   // drop "corrections" that only change style (synonyms, 很→非常, 儿, final particles)
-  return parseCorrections(result.raw, userText)
-    .filter((item) => !isStyleOnlyEdit(item.original, item.corrected))
+  const modelFixes = parseCorrections(raw, userText)
+    .filter((item) => !isStyleOnlyEdit(item.original, item.corrected, userText))
     // the explanation must be Vietnamese; a Chinese one is dropped, the fix is kept
     .map((item) => (HAN.test(item.explanation || '') ? { ...item, explanation: '' } : item));
+  return mergeCorrections(ruleFixes, modelFixes);
 }
 
 function polishTurn(turn) {
