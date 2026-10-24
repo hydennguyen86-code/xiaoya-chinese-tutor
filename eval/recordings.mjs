@@ -5,7 +5,7 @@ import { validateToneLabel } from '../server/toneEvaluation.mjs';
 import { TONE_ITEMS } from './toneItems.mjs';
 import { saveResult } from './record.mjs';
 
-export async function evaluateRecordings(directory) {
+export async function evaluateRecordings(directory, { persist = true } = {}) {
   const root = fs.realpathSync(directory);
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
   if (manifest.version !== 1 || !Array.isArray(manifest.recordings)) throw new Error('Unsupported recording manifest.');
@@ -49,9 +49,11 @@ export async function evaluateRecordings(directory) {
   console.log('Rows: human label 1–4. Columns: unclear, predicted 1,2,3,4.');
   console.table(matrix.slice(1));
   console.log(counts);
-  saveResult(
-    'tones-human',
-    { thresholds: 'unchanged', rangeCalibration: 'same captured set; not held-out', labels: 'human; self/expert reported separately' },
-    { matrix, bySource: sources, counts },
-  );
+  if (persist)
+    saveResult(
+      'tones-human',
+      { thresholds: 'unchanged', rangeCalibration: 'same captured set; not held-out', labels: 'human; self/expert reported separately' },
+      { matrix, bySource: sources, counts },
+    );
+  return { matrix, bySource: sources, counts };
 }

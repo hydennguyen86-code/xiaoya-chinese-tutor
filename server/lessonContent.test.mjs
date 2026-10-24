@@ -6,8 +6,22 @@ const lesson = { no: 1, title: 'Ăn uống', topics: [], vocab: [], patterns: []
 const word = (w, example) => ({ word: w, meaning: 'gọi món ăn', example, exampleVi: 'Tôi muốn gọi món.' });
 const base = {
   vocab: [word('点菜', '我们点菜吧。'), word('服务员', '服务员，请过来一下。'), word('菜单', '请给我菜单。'), word('辣', '这个菜很辣。')],
-  patterns: [{ pattern: '……一点儿', explanation: 'Dùng sau tính từ để nói "hơi… một chút".', example: '少放一点儿辣。', exampleVi: 'Cho ít cay một chút.' }],
-  roleplay: { setting: 'Ở nhà hàng', avatarRole: 'Phục vụ', learnerRole: 'Khách', goals: ['Gọi một món'], opening: '您想吃点儿什么？', openingVi: 'Anh muốn ăn gì?' },
+  patterns: [
+    {
+      pattern: '……一点儿',
+      explanation: 'Dùng sau tính từ để nói "hơi… một chút".',
+      example: '少放一点儿辣。',
+      exampleVi: 'Cho ít cay một chút.',
+    },
+  ],
+  roleplay: {
+    setting: 'Ở nhà hàng',
+    avatarRole: 'Phục vụ',
+    learnerRole: 'Khách',
+    goals: ['Gọi một món'],
+    opening: '您想吃点儿什么？',
+    openingVi: 'Anh muốn ăn gì?',
+  },
   freeTalk: { question: '你喜欢吃辣的吗？', questionVi: 'Bạn có thích ăn cay không?' },
 };
 
@@ -25,7 +39,10 @@ test('a valid lesson passes', () => {
 test('examples must use the word or pattern they teach', () => {
   const raw = { ...base, vocab: [...base.vocab.slice(0, 3), word('辣', '这个菜很好吃。')] };
   const { content, problems } = normalizeLesson(raw, lesson);
-  assert.equal(content.vocab.some((v) => v.word === '辣'), false);
+  assert.equal(
+    content.vocab.some((v) => v.word === '辣'),
+    false,
+  );
   assert.ok(problems.includes('quá ít từ vựng hợp lệ'));
   const badPattern = { ...base, patterns: [{ ...base.patterns[0], example: '少放辣。' }] };
   assert.ok(normalizeLesson(badPattern, lesson).problems.includes('không có mẫu câu hợp lệ'));
@@ -59,22 +76,43 @@ import os from 'node:os';
 import path from 'node:path';
 import { getLessonContent } from './lessonContent.mjs';
 test('reviewed material is validated, level matched, and loaded without model generation', async () => {
-  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'misu-reviewed-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-reviewed-'));
   try {
-    fs.mkdirSync(path.join(dir,'lessons-reviewed'));
-    fs.writeFileSync(path.join(dir,'lessons-reviewed','unit-1-d1.json'),JSON.stringify({...base,level:'HSK1-2',reviewed:true,reviewedBy:'Người duyệt thử',reviewedAt:'2026-10-24',notes:'Synthetic test fixture: structure only, no real review claim.'}));
-    const content=await getLessonContent({dataDir:dir,syllabus:{volumes:[{id:'unit',title:'Tự soạn',lessons:[lesson]}]},volumeId:'unit',lessonNo:1,day:1,level:'HSK1-2',provider:'not-used',model:'not-used'});
-    assert.equal(content.reviewed,true);
-    assert.equal(content.review.reviewer,'Người duyệt thử');
+    fs.mkdirSync(path.join(dir, 'lessons-reviewed'));
+    fs.writeFileSync(
+      path.join(dir, 'lessons-reviewed', 'unit-1-d1.json'),
+      JSON.stringify({
+        ...base,
+        level: 'HSK1-2',
+        reviewed: true,
+        reviewedBy: 'Người duyệt thử',
+        reviewedAt: '2026-10-24',
+        notes: 'Synthetic test fixture: structure only, no real review claim.',
+      }),
+    );
+    const content = await getLessonContent({
+      dataDir: dir,
+      syllabus: { volumes: [{ id: 'unit', title: 'Tự soạn', lessons: [lesson] }] },
+      volumeId: 'unit',
+      lessonNo: 1,
+      day: 1,
+      level: 'HSK1-2',
+      provider: 'not-used',
+      model: 'not-used',
+    });
+    assert.equal(content.reviewed, true);
+    assert.equal(content.review.reviewer, 'Người duyệt thử');
     assert.ok(content.vocab[0].pinyin);
-  } finally {fs.rmSync(dir,{recursive:true,force:true});}
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 });
 test('all bundled original drafts pass structural checks without being marked reviewed', () => {
-  const root=path.resolve('lessons/drafts');
-  for(const name of fs.readdirSync(root).filter((n)=>n.startsWith('misu-original-'))) {
-    const raw=JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));
-    assert.equal(raw.reviewed,false);
-    assert.deepEqual(normalizeLesson(raw,lesson).problems,[],name);
+  const root = path.resolve('lessons/drafts');
+  for (const name of fs.readdirSync(root).filter((n) => n.startsWith('misu-original-'))) {
+    const raw = JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
+    assert.equal(raw.reviewed, false);
+    assert.deepEqual(normalizeLesson(raw, lesson).problems, [], name);
   }
 });
 
@@ -83,7 +121,15 @@ test('loader refuses legacy review metadata instead of displaying a reviewed bad
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-review-migration-'));
   try {
     fs.mkdirSync(path.join(dir, 'lessons-reviewed'));
-    fs.writeFileSync(path.join(dir, 'lessons-reviewed/unit-1-d1.json'), JSON.stringify({ ...base, level: 'HSK1-2', reviewed: true, review: { reviewer: 'Legacy', date: '2026-10-24' } }));
-    assert.equal(loadReviewedLesson({ dataDir: dir, volume: { title: 'Fixture' }, lesson, volumeId: 'unit', lessonNo: 1, day: 1, level: 'HSK1-2' }), null);
-  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+    fs.writeFileSync(
+      path.join(dir, 'lessons-reviewed/unit-1-d1.json'),
+      JSON.stringify({ ...base, level: 'HSK1-2', reviewed: true, review: { reviewer: 'Legacy', date: '2026-10-24' } }),
+    );
+    assert.equal(
+      loadReviewedLesson({ dataDir: dir, volume: { title: 'Fixture' }, lesson, volumeId: 'unit', lessonNo: 1, day: 1, level: 'HSK1-2' }),
+      null,
+    );
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 });

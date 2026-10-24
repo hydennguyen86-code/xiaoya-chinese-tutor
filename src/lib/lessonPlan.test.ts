@@ -17,14 +17,24 @@ import {
 const book: Syllabus = {
   book: 'test',
   volumes: [
-    { id: 'so-cap', title: 'Sơ cấp', levels: ['HSK1-2'], lessons: [
-      { no: 1, title: 'A', pages: '', topics: [], days: 2 },
-      { no: 2, title: 'B', pages: '', topics: [], days: 2 },
-    ] },
-    { id: 'cao-cap', title: 'Cao cấp', levels: ['HSK5-6', 'free'], lessons: [
-      { no: 1, title: 'C', pages: '', topics: [], days: 2 },
-      { no: 2, title: 'D', pages: '', topics: [], days: 1 },
-    ] },
+    {
+      id: 'so-cap',
+      title: 'Sơ cấp',
+      levels: ['HSK1-2'],
+      lessons: [
+        { no: 1, title: 'A', pages: '', topics: [], days: 2 },
+        { no: 2, title: 'B', pages: '', topics: [], days: 2 },
+      ],
+    },
+    {
+      id: 'cao-cap',
+      title: 'Cao cấp',
+      levels: ['HSK5-6', 'free'],
+      lessons: [
+        { no: 1, title: 'C', pages: '', topics: [], days: 2 },
+        { no: 2, title: 'D', pages: '', topics: [], days: 1 },
+      ],
+    },
   ],
 };
 
@@ -96,10 +106,14 @@ test('the end of a volume moves to the next one, the end of the book stops', () 
 
 test('a replaced outline keeps the learner somewhere sensible', () => {
   assert.deepEqual(resolvePointer(book, 'HSK5-6', { volumeId: 'tam-cao-cap', lessonNo: 5, day: 2 }), {
-    volumeId: 'cao-cap', lessonNo: 1, day: 1,
+    volumeId: 'cao-cap',
+    lessonNo: 1,
+    day: 1,
   });
   assert.deepEqual(resolvePointer(book, 'HSK1-2', { volumeId: 'so-cap', lessonNo: 1, day: 9 }), {
-    volumeId: 'so-cap', lessonNo: 1, day: 2,
+    volumeId: 'so-cap',
+    lessonNo: 1,
+    day: 2,
   });
 });
 
@@ -112,9 +126,12 @@ test('remaining time and calendar helpers', () => {
 });
 
 test('finishing an authored course never jumps from HSK 1 to HSK 5', () => {
-  const syllabus = { book: 'Misu', volumes: [
-    { id: 'one', title: 'HSK1', levels: ['HSK1-2'], authored: true, lessons: [{ no: 1, title: 'Bài', pages: '', topics: [], days: 2 }] },
-    { id: 'five', title: 'HSK5', levels: ['HSK5-6'], authored: true, lessons: [{ no: 1, title: 'Bài', pages: '', topics: [], days: 2 }] },
-  ] };
-  assert.equal(nextPointer(syllabus, {volumeId:'one',lessonNo:1,day:2}),null);
+  const syllabus = {
+    book: 'Misu',
+    volumes: [
+      { id: 'one', title: 'HSK1', levels: ['HSK1-2'], authored: true, lessons: [{ no: 1, title: 'Bài', pages: '', topics: [], days: 2 }] },
+      { id: 'five', title: 'HSK5', levels: ['HSK5-6'], authored: true, lessons: [{ no: 1, title: 'Bài', pages: '', topics: [], days: 2 }] },
+    ],
+  };
+  assert.equal(nextPointer(syllabus, { volumeId: 'one', lessonNo: 1, day: 2 }), null);
 });

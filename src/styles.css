@@ -4963,3 +4963,14 @@ svg {
 .course-choice { display: flex; align-items: baseline; gap: 8px; padding: 7px 0; }
 .course-practice details p { line-height: 1.8; }
 .course-practice h4 { margin: 0 0 10px; }
+
+.tone-evaluation { gap: 14px; overflow-y: auto; }
+.tone-evaluation h3, .tone-evaluation p { margin: 0; }
+.tone-evaluation label { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tone-evaluation input, .tone-evaluation select { min-width: 100px; max-width: 100%; padding: 9px 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper-strong); color: inherit; font: inherit; }
+.tone-evaluation .lesson-prompt { font-size: 40px; text-align: center; }
+.tone-evaluation .lesson-actions { flex-wrap: wrap; }
+.tone-evaluation audio { width: 100%; }
+.tone-replay { display: flex; flex-wrap: wrap; gap: 6px; }
+.tone-replay button { min-width: 36px; padding: 6px 10px; border: 1px solid currentColor; border-radius: 8px; color: inherit; background: transparent; cursor: pointer; }
+.tone-replay button:disabled { opacity: 0.5; cursor: default; }

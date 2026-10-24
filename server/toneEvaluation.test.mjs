@@ -10,7 +10,13 @@ test('tone capture has the exact 40 characters and 16 words with unique ids', ()
 test('human labels require reviewer, provenance and one valid tone per syllable', () => {
   const valid = { source: 'expert', reviewedBy: 'Test reviewer', tones: [2, 3] };
   assert.equal(validateToneLabel(valid, 2), true);
-  for (const value of [{ ...valid, source: 'ai' }, { ...valid, reviewedBy: '' }, { ...valid, tones: [5, 1] }, { ...valid, tones: [1] }]) assert.equal(validateToneLabel(value, 2), false);
+  for (const value of [
+    { ...valid, source: 'ai' },
+    { ...valid, reviewedBy: '' },
+    { ...valid, tones: [5, 1] },
+    { ...valid, tones: [1] },
+  ])
+    assert.equal(validateToneLabel(value, 2), false);
 });
 
 import fs from 'node:fs';
@@ -20,11 +26,22 @@ import { mountToneEvaluation } from './toneEvaluation.mjs';
 test('captured audio stays per learner; rerecording invalidates labels and rejects path tricks', () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-capture-test-'));
   const routes = new Map();
-  const app = Object.fromEntries(['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]));
+  const app = Object.fromEntries(
+    ['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
+  );
   mountToneEvaluation(app, dir);
   function call(route, body, learner = 'synthetic-fixture') {
     const req = { params: { learner, item: 'single-1-1' }, headers: { 'content-type': 'audio/wav' }, body };
-    const res = { code: 200, status(code) { this.code = code; return this; }, json(value) { this.value = value; } };
+    const res = {
+      code: 200,
+      status(code) {
+        this.code = code;
+        return this;
+      },
+      json(value) {
+        this.value = value;
+      },
+    };
     routes.get(route)(req, res);
     return res;
   }
@@ -40,5 +57,7 @@ test('captured audio stays per learner; rerecording invalidates labels and rejec
     assert.equal(JSON.parse(fs.readFileSync(file)).recordings[0].label, null);
     assert.equal(call(upload, audioFixture, '../escape').code, 400);
     assert.equal(call(label, { source: 'ai', reviewedBy: 'AI', tones: [1] }).code, 400);
-  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 });

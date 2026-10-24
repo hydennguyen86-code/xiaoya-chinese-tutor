@@ -115,7 +115,7 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
     }
   }
   return (
-    <section className="lesson-panel">
+    <section className="lesson-panel tone-evaluation">
       <h3>Bộ đo giọng cá nhân · 40 chữ và 16 từ</h3>
       <p>
         Bản ghi chỉ lưu trên máy trong thư mục dữ liệu/eval-recordings của người học. Không tự gửi lên GitHub. Đọc tự nhiên, nghe lại rồi
@@ -124,7 +124,7 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
       <p>
         Đã ghi {recordings.length}/56 · có nhãn {recordings.filter((r) => r.label).length}/56.
       </p>
-      <button disabled={busy} onClick={onClose}>
+      <button className="lesson-secondary" disabled={busy} onClick={onClose}>
         Về kiểm tra
       </button>
       {error && <p role="alert">{error}</p>}
@@ -141,7 +141,7 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
             </select>
           </label>
           <p className="lesson-prompt">{item.text}</p>
-          <button disabled={busy && !recording} onClick={() => void capture()}>
+          <button className="lesson-secondary" disabled={busy && !recording} onClick={() => void capture()}>
             {recording ? 'Dừng và lưu bản ghi' : 'Ghi âm (tối đa 8 giây)'}
           </button>
           {current && !busy && (
@@ -178,13 +178,13 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
             </label>
           ))}
           <div className="lesson-actions">
-            <button disabled={busy || !current || !reviewer.trim()} onClick={() => void label(true)}>
+            <button className="lesson-secondary" disabled={busy || !current || !reviewer.trim()} onClick={() => void label(true)}>
               Mình đọc đúng thanh — lưu nhãn mục tiêu
             </button>
-            <button disabled={busy || !current || !reviewer.trim()} onClick={() => void label()}>
+            <button className="lesson-secondary" disabled={busy || !current || !reviewer.trim()} onClick={() => void label()}>
               Lưu từng thanh vừa nghe
             </button>
-            <button disabled={busy || index === 55} onClick={() => setIndex(index + 1)}>
+            <button className="lesson-secondary" disabled={busy || index === 55} onClick={() => setIndex(index + 1)}>
               Mục tiếp
             </button>
           </div>

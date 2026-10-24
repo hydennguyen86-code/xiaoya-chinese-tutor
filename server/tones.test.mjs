@@ -14,10 +14,22 @@ const shape = (...points) => {
 const judge = (frames, known = true) => classifyIsolated(toneFeatures(frames, -4, 4), known);
 
 test('expected tones follow the sandhi rules', () => {
-  assert.deepEqual(expectedTones('你好').map((s) => s.expected), [2, 3]);
-  assert.deepEqual(expectedTones('不是').map((s) => s.expected), [2, 4]);
-  assert.deepEqual(expectedTones('一起').map((s) => s.expected), [4, 3]);
-  assert.deepEqual(expectedTones('中国，好！').map((s) => s.char), ['中', '国', '好']);
+  assert.deepEqual(
+    expectedTones('你好').map((s) => s.expected),
+    [2, 3],
+  );
+  assert.deepEqual(
+    expectedTones('不是').map((s) => s.expected),
+    [2, 4],
+  );
+  assert.deepEqual(
+    expectedTones('一起').map((s) => s.expected),
+    [4, 3],
+  );
+  assert.deepEqual(
+    expectedTones('中国，好！').map((s) => s.char),
+    ['中', '国', '好'],
+  );
 });
 
 test('isolated syllables are classified by contour and height', () => {
@@ -54,11 +66,19 @@ test('analyseTones exposes ordered bounded timestamps for words and sentences', 
   const rate = 16000;
   const count = rate * 2;
   const wav = Buffer.alloc(44 + count * 2);
-  wav.write('RIFF', 0); wav.writeUInt32LE(36 + count * 2, 4); wav.write('WAVEfmt ', 8);
-  wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
-  wav.writeUInt32LE(rate, 24); wav.writeUInt32LE(rate * 2, 28); wav.writeUInt16LE(2, 32); wav.writeUInt16LE(16, 34);
-  wav.write('data', 36); wav.writeUInt32LE(count * 2, 40);
-  for (let i = 0; i < count; i++) wav.writeInt16LE(Math.round(6000 * Math.sin(2 * Math.PI * 180 * i / rate)), 44 + i * 2);
+  wav.write('RIFF', 0);
+  wav.writeUInt32LE(36 + count * 2, 4);
+  wav.write('WAVEfmt ', 8);
+  wav.writeUInt32LE(16, 16);
+  wav.writeUInt16LE(1, 20);
+  wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(rate, 24);
+  wav.writeUInt32LE(rate * 2, 28);
+  wav.writeUInt16LE(2, 32);
+  wav.writeUInt16LE(16, 34);
+  wav.write('data', 36);
+  wav.writeUInt32LE(count * 2, 40);
+  for (let i = 0; i < count; i++) wav.writeInt16LE(Math.round(6000 * Math.sin((2 * Math.PI * 180 * i) / rate)), 44 + i * 2);
   for (const text of ['中国', '我学习汉语']) {
     const report = await analyseTones(wav, text);
     assert.equal(report.segments.length, [...text].length);

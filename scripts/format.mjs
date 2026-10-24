@@ -4,6 +4,8 @@ const files = [
   'src/components/{Assessment,SetupCheck,CommunicationTask,DailyLesson,CoursePractice,ToneFeedback,ToneEvaluation}.tsx',
   'src/lib/{assessment,voiceInput,lessonApi,lessonPlan,coursePractice}.ts',
   'src/App.tsx',
+  'src/lib/{coursePractice,lessonPlan}.test.ts',
+  'server/{courseContent,lessonContent,lessonReview,recordings,toneEvaluation,tones}.test.mjs',
   'server/{assessment,index,lessonContent,syllabus,courseContent,tones,toneEvaluation,lessonReview}.mjs',
   'scripts/{format,check-public-assets,review-lesson}.mjs',
   'eval/{tones,recordings,toneItems}.mjs',

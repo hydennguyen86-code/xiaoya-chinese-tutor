@@ -72,3 +72,20 @@ Lượt xác minh npm 11 đầu tiên phát hiện preinstall của msedge-tts g
 only-allow pnpm, thất bại trong runtime npm 11. Thêm .npmrc ignore-scripts=true
 (dependency hiện không cần lifecycle build, npm 12 cũng đã tự bỏ qua script đó).
 Cần chạy lại smoke-test npm 11 để xác nhận trước khi kết luận cài sạch.
+
+## Kiểm tra cuối
+
+- Clone sạch từ `8ce610d` với Node **24.19.0**, npm **11.21.1** và
+  `SMOKE_REQUIRE_TTS=1`: **qua**, có audio TTS, hai avatar mẫu và mục lục.
+  `npm ci` báo **0 vulnerabilities** sau bản vá body-parser.
+- Typecheck, format:check, asset allowlist và build qua; **54 test qua**,
+  bao gồm pipeline bản ghi/nhãn bằng WAV tổng hợp (không lưu thành kết quả người thật),
+  xoá nhãn khi ghi lại, giới hạn đường dẫn, metadata duyệt và mốc âm tiết.
+- Kiểm tra trực quan trên app: mở đủ 56 mục ghi, trạng thái 0/56, nhãn thanh
+  mặc định “không rõ”, nút lưu bị khoá khi chưa ghi/chưa có tên; bài HSK 5
+  hiện nhãn chưa được giáo viên duyệt. Avatar mẫu đeo kính.
+- Chưa xác minh thao tác thu bằng micro vật lý và chất lượng cắt/phát đoạn trên
+  giọng người thật; đã kiểm tra cấu trúc timestamp và UI, không coi đó là kiểm
+  định nghe/nói. Cần người dùng thực hiện cùng bộ đo thật.
+- Không chạy lại benchmark TTS để tạo số trước/sau; không chỉnh classifyIsolated.
+- Linux CI chưa được chạy trên GitHub, macOS thứ hai chưa thử. Chưa phát hành.
