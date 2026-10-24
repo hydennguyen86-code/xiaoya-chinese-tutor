@@ -11,9 +11,9 @@ import type {
   VocabItem,
   WordRecord,
 } from '../types';
-import { dayKey } from './storage';
+import { dayKey, scopedKey } from './storage';
 
-const LEARNING_KEY = 'xiaoya.learning.v1';
+export const LEARNING_KEY = 'xiaoya.learning.v1';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MAX_MISTAKES = 120;
 const MAX_WORDS = 400;
@@ -197,9 +197,9 @@ function cleanReports(value: unknown): AnalysisReport[] {
     .slice(0, MAX_REPORTS);
 }
 
-export function loadLearning(): LearningProfile {
+export function loadLearning(scope = ''): LearningProfile {
   try {
-    const parsed = JSON.parse(localStorage.getItem(LEARNING_KEY) || 'null');
+    const parsed = JSON.parse(localStorage.getItem(scopedKey(LEARNING_KEY, scope)) || 'null');
     if (!parsed || typeof parsed !== 'object') return emptyLearning();
     return {
       version: 1,
@@ -214,17 +214,17 @@ export function loadLearning(): LearningProfile {
   }
 }
 
-export function saveLearning(profile: LearningProfile) {
+export function saveLearning(profile: LearningProfile, scope = '') {
   try {
-    localStorage.setItem(LEARNING_KEY, JSON.stringify(profile));
+    localStorage.setItem(scopedKey(LEARNING_KEY, scope), JSON.stringify(profile));
   } catch {
     // storage can be unavailable in private windows
   }
 }
 
-export function clearLearning() {
+export function clearLearning(scope = '') {
   try {
-    localStorage.removeItem(LEARNING_KEY);
+    localStorage.removeItem(scopedKey(LEARNING_KEY, scope));
   } catch {
     // ignore
   }

@@ -181,7 +181,7 @@ async function streamOllama({
       stream: true,
       think: false,
       format: schema,
-      keep_alive: '30m',
+      keep_alive: '2h',
       options: {
         temperature,
         top_p: 0.92,

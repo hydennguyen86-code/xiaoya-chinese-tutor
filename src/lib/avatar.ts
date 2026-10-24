@@ -1,6 +1,8 @@
 import { TalkingHead } from '@met4citizen/talkinghead';
+import type { MaterialLike, TextureLike } from '@met4citizen/talkinghead';
 import type { Emotion, Gesture, TtsResult } from '../types';
 import { fetchTts } from './api';
+import type { AvatarApi } from './avatarApi';
 import { buildSpeechTimeline } from './lipsync';
 import { splitSpeechSegments } from './text';
 
@@ -11,12 +13,31 @@ const MOOD_MAP: Record<Emotion, string> = {
   encouraging: 'happy',
 };
 
+// Ready Player Me ships matte, game-grade surfaces; a portrait needs softer
+// skin and glossier eyes, otherwise the face reads as plastic.
+const SURFACE_LOOK: Record<string, { roughness?: number; envMapIntensity?: number }> = {
+  Wolf3D_Skin: { roughness: 0.6, envMapIntensity: 0.7 },
+  Wolf3D_Eye: { roughness: 0.1, envMapIntensity: 1.4 },
+  Wolf3D_Teeth: { roughness: 0.22, envMapIntensity: 0.9 },
+  Wolf3D_Hair: { roughness: 0.55, envMapIntensity: 0.8 },
+};
+
+type SurfaceMaterial = MaterialLike & {
+  roughness?: number;
+  envMapIntensity?: number;
+  map?: TextureLike | null;
+  normalMap?: TextureLike | null;
+  roughnessMap?: TextureLike | null;
+  metalnessMap?: TextureLike | null;
+  aoMap?: TextureLike | null;
+};
+
 interface AvatarCallbacks {
   onAudioState?: (playing: boolean) => void;
   onError?: (message: string) => void;
 }
 
-export class AvatarController {
+export class AvatarController implements AvatarApi {
   private head: TalkingHead | null = null;
   private session = 0;
   private chain: Promise<void> = Promise.resolve();
@@ -26,6 +47,7 @@ export class AvatarController {
   private lastGestureAt = 0;
   private ttsCache = new Map<string, TtsResult>();
   private destroyed = false;
+  private breathFrame: number | null = null;
 
   constructor(
     private container: HTMLElement,
@@ -34,13 +56,13 @@ export class AvatarController {
 
   async load(url: string, onProgress?: (ratio: number) => void) {
     this.head = new TalkingHead(this.container, {
-      cameraView: 'upper',
+      cameraView: 'head',
       cameraRotateEnable: false,
       cameraZoomEnable: false,
       cameraPanEnable: false,
-      cameraDistance: -0.35,
-      cameraY: 0.015,
-      modelPixelRatio: 1,
+      cameraDistance: 0.75,
+      cameraY: 0.2,
+      modelPixelRatio: 2,
       lipsyncLang: 'en',
       lipsyncModules: [],
       avatarMood: 'happy',
@@ -73,9 +95,11 @@ export class AvatarController {
     );
 
     if (this.destroyed) return;
+    this.dressScene();
     this.head.setMood('happy');
     this.head.lookAtCamera(4500);
     this.head.start();
+    this.startBreathing();
   }
 
   get isLoaded() {
@@ -230,6 +254,10 @@ export class AvatarController {
     this.destroyed = true;
     this.session += 1;
     this.clearIdleTimer();
+    if (this.breathFrame !== null) {
+      cancelAnimationFrame(this.breathFrame);
+      this.breathFrame = null;
+    }
     try {
       this.head?.stopSpeaking();
       this.head?.stop();
@@ -242,6 +270,80 @@ export class AvatarController {
     }
     this.head = null;
     this.container.replaceChildren();
+  }
+
+  private dressScene() {
+    const head = this.head;
+    const model = head?.armature;
+    if (!head?.renderer || !model) return;
+
+    // Default render is 1x, so the portrait is upscaled and looks soft on retina.
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    head.renderer.setPixelRatio(ratio);
+    const width = this.container.clientWidth;
+    const height = this.container.clientHeight;
+    if (width > 0 && height > 0) head.renderer.setSize(width, height, false);
+    head.renderer.toneMappingExposure = 1.03;
+
+    const anisotropy = Math.min(8, head.renderer.capabilities.getMaxAnisotropy());
+    const seen = new Set<MaterialLike>();
+    model.traverse((node) => {
+      const nodeMaterial = node.material;
+      if (!nodeMaterial) return;
+      const list = Array.isArray(nodeMaterial) ? nodeMaterial : [nodeMaterial];
+      for (const material of list) {
+        const surface: SurfaceMaterial = material;
+        if (!surface || seen.has(surface)) continue;
+        seen.add(surface);
+        for (const map of [
+          surface.map,
+          surface.normalMap,
+          surface.roughnessMap,
+          surface.metalnessMap,
+          surface.aoMap,
+        ]) {
+          if (map) {
+            map.anisotropy = anisotropy;
+            map.needsUpdate = true;
+          }
+        }
+        const look = SURFACE_LOOK[surface.name];
+        if (!look) continue;
+        if (look.roughness !== undefined) surface.roughness = look.roughness;
+        if (look.envMapIntensity !== undefined) surface.envMapIntensity = look.envMapIntensity;
+        surface.needsUpdate = true;
+      }
+    });
+
+    // Key light alone flattens the face; a cool rim behind and a warm fill in
+    // front separate her from the backdrop without touching the base setup.
+    head.setLighting({ lightAmbientIntensity: 1.2 });
+    const rim = head.lightDirect.clone();
+    rim.color.set(0xbdd4ff);
+    rim.intensity = 15;
+    rim.position.set(1.45, 1.35, -1.55);
+    const fill = head.lightDirect.clone();
+    fill.color.set(0xffe9de);
+    fill.intensity = 7;
+    fill.position.set(-1.75, 0.85, 1.45);
+    head.scene.add(rim, fill);
+  }
+
+  private startBreathing() {
+    const model = this.head?.armature;
+    if (!model) return;
+    const baseY = model.position.y;
+    const baseTilt = model.rotation.z;
+    const start = performance.now();
+    const tick = () => {
+      const armature = this.head?.armature;
+      if (this.destroyed || !armature) return;
+      const t = (performance.now() - start) / 1000;
+      armature.position.y = baseY + Math.sin(t * 1.15) * 0.0035;
+      armature.rotation.z = baseTilt + Math.sin(t * 0.52) * 0.0022;
+      this.breathFrame = requestAnimationFrame(tick);
+    };
+    tick();
   }
 
   private async getTts(text: string, voice: string): Promise<TtsResult> {

@@ -4,3 +4,13 @@ dist/
 .env
 .env.*
 *.log
+
+# personal photos and the avatars built from them: never commit
+/mom*.jpg
+/mom*.png
+/model*.glb
+/buocB-so-sanh.png
+public/avatars/mom*
+
+# learner data saved by the server (see server/dataStore.mjs)
+/data/

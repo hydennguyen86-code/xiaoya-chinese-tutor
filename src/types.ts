@@ -1,6 +1,7 @@
 export type Emotion = 'neutral' | 'happy' | 'warm' | 'encouraging';
 export type Gesture = 'none' | 'thumbup' | 'ok' | 'index' | 'shrug' | 'handup';
 export type Level = 'HSK1-2' | 'HSK3-4' | 'HSK5-6' | 'free';
+export type AvatarMode = 'classic' | 'lam';
 export type Phase = 'loading' | 'ready' | 'listening' | 'thinking' | 'replying' | 'speaking';
 export type MistakeCategory =
   | 'grammar'
@@ -61,6 +62,7 @@ export interface Settings {
   autoSpeak: boolean;
   autoReadTranslation: boolean;
   showPinyin: boolean;
+  avatarMode: AvatarMode;
 }
 
 export interface ProviderInfo {
@@ -86,6 +88,7 @@ export interface StatusResponse {
   defaultViVoice: string;
   levels: Level[];
   avatarUrl: string;
+  lamAvatarUrl?: string;
 }
 
 export interface TtsWord {

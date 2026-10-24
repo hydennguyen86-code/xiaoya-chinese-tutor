@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="18" fill="#b45f4a"/>
   <circle cx="32" cy="32" r="23" fill="none" stroke="#fdf5ea" stroke-opacity=".35" stroke-width="1.5"/>
-  <text x="32" y="44" text-anchor="middle" font-family="Songti SC, Noto Serif SC, serif" font-size="34" fill="#fdf5ea">雅</text>
+  <text x="32" y="44" text-anchor="middle" font-family="Songti SC, Noto Serif SC, serif" font-size="34" fill="#fdf5ea">苏</text>
 </svg>

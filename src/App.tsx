@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AvatarStage } from './components/AvatarStage';
 import { ChatPanel } from './components/ChatPanel';
+import { LearnerPicker } from './components/LearnerPicker';
 import { LearningDialog } from './components/LearningDialog';
 import { SettingsDialog } from './components/SettingsDialog';
 import {
@@ -11,8 +12,9 @@ import {
   SettingsIcon,
   VolumeIcon,
 } from './components/Icons';
-import type { AvatarController } from './lib/avatar';
+import type { AvatarApi } from './lib/avatarApi';
 import { analyzeLearning, fetchCorrections, fetchStatus, streamChat } from './lib/api';
+import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
 import { ChineseMic, isSpeechSupported, micPermissionState } from './lib/speech';
 import {
   DAILY_GOAL,
@@ -41,12 +43,22 @@ import {
   saveLearning,
   seedLearningFromMessages,
 } from './lib/learning';
+import {
+  createLearner,
+  loadActiveLearnerId,
+  loadLearners,
+  setActiveLearner,
+  updateLearnerLevel,
+} from './lib/learners';
+import type { Learner } from './lib/learners';
 import { extractSpeechSegments, makeGreeting, shortModelName, uid } from './lib/text';
 import type {
+  AvatarMode,
   ChatHistoryMessage,
   ChatMessage,
   Emotion,
   Gesture,
+  Level,
   LearningProfile,
   Phase,
   Progress,
@@ -66,18 +78,27 @@ function friendlyError(error: unknown) {
   if (/failed to fetch|networkerror|load failed|fetch failed/i.test(message)) {
     return 'Không kết nối được server local. Hãy chạy npm run dev hoặc npm start rồi thử lại.';
   }
-  return message || 'Có lỗi xảy ra khi kết nối với Tiểu Nhã.';
+  return message || 'Có lỗi xảy ra khi kết nối với Misu.';
 }
 
-export default function App() {
-  const [settings, setSettings] = useState<Settings>(loadSettings);
+interface TutorProps {
+  learner: Learner;
+  onSwitchLearner: () => void;
+}
+
+function Tutor({ learner, onSwitchLearner }: TutorProps) {
+  const scope = learner.id;
+  const [settings, setSettings] = useState<Settings>(() => ({
+    ...loadSettings(),
+    level: learner.level,
+  }));
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
-    const saved = loadMessages();
-    return saved.length ? saved : [makeGreeting()];
+    const saved = loadMessages(scope);
+    return saved.length ? saved : [makeGreeting(learner.name)];
   });
-  const [progress, setProgress] = useState<Progress>(loadProgress);
+  const [progress, setProgress] = useState<Progress>(() => loadProgress(scope));
   const [learning, setLearning] = useState<LearningProfile>(() => {
-    const saved = loadLearning();
+    const saved = loadLearning(scope);
     if (saved.updatedAt) return saved;
     return seedLearningFromMessages(messages);
   });
@@ -93,8 +114,16 @@ export default function App() {
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
+  const [customAvatar, setCustomAvatar] = useState<{
+    url: string;
+    name: string;
+    kind: AvatarMode;
+  } | null>(null);
+  const [avatarChecked, setAvatarChecked] = useState(false);
 
-  const avatarRef = useRef<AvatarController | null>(null);
+  const customAvatarUrlRef = useRef<string | null>(null);
+
+  const avatarRef = useRef<AvatarApi | null>(null);
   const avatarReadyRef = useRef(false);
   const micRef = useRef<ChineseMic | null>(null);
   const micBaseRef = useRef('');
@@ -182,13 +211,56 @@ export default function App() {
   }, [settings]);
 
   useEffect(() => {
-    saveLearning(learning);
-  }, [learning]);
+    let cancelled = false;
+    loadCustomAvatar()
+      .then((stored) => {
+        if (cancelled || !stored) return;
+        setCustomAvatar({
+          url: URL.createObjectURL(stored.blob),
+          name: stored.name,
+          kind: stored.kind,
+        });
+      })
+      .catch((avatarError) => console.error('[avatar] stored file', avatarError))
+      .finally(() => {
+        if (!cancelled) setAvatarChecked(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
-    saveMessages(messages);
+    const previous = customAvatarUrlRef.current;
+    const current = customAvatar?.url ?? null;
+    if (previous && previous !== current) URL.revokeObjectURL(previous);
+    customAvatarUrlRef.current = current;
+  }, [customAvatar]);
+
+  useEffect(() => {
+    return () => {
+      if (customAvatarUrlRef.current) URL.revokeObjectURL(customAvatarUrlRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    updateLearnerLevel(learner.id, settings.level);
+  }, [learner.id, settings.level]);
+
+  useEffect(() => {
+    return () => {
+      abortRef.current?.abort();
+    };
+  }, []);
+
+  useEffect(() => {
+    saveLearning(learning, scope);
+  }, [learning, scope]);
+
+  useEffect(() => {
+    saveMessages(messages, scope);
     messagesRef.current = messages;
-  }, [messages]);
+  }, [messages, scope]);
 
   useEffect(() => {
     const mic = new ChineseMic({
@@ -234,6 +306,7 @@ export default function App() {
   );
   const providerOnline = Boolean(activeProvider?.online);
   const canChat = Boolean(status && activeProvider?.online && settings.model);
+  const avatarMode: AvatarMode = customAvatar?.kind ?? settings.avatarMode;
   const busy = phase === 'thinking' || phase === 'replying';
   const visibleError = error || statusError;
   const week = useMemo(() => lastSevenDays(progress), [progress]);
@@ -248,7 +321,7 @@ export default function App() {
     setDraft(value);
   };
 
-  const handleAvatarReady = useCallback((controller: AvatarController) => {
+  const handleAvatarReady = useCallback((controller: AvatarApi) => {
     avatarRef.current = controller;
     avatarReadyRef.current = true;
     setPhase((current) => (current === 'loading' ? 'ready' : current));
@@ -370,7 +443,10 @@ export default function App() {
           model: settingsRef.current.model,
           level: settingsRef.current.level,
           messages: history,
-          learning: buildLearningDigest(learningRef.current) || undefined,
+          learning:
+            [`Tên học viên: ${learner.name}`, buildLearningDigest(learningRef.current)]
+              .filter(Boolean)
+              .join('\n\n') || undefined,
         },
         {
           onAttitude: (event) => {
@@ -449,7 +525,7 @@ export default function App() {
               showToast('Câu trả lời đã được chuẩn hoá để hiển thị đầy đủ.');
             }
 
-            const nextProgress = recordPractice(progressRef.current);
+            const nextProgress = recordPractice(progressRef.current, scope);
             progressRef.current = nextProgress;
             setProgress(nextProgress);
             if (nextProgress.todayTurns === DAILY_GOAL) {
@@ -610,7 +686,7 @@ export default function App() {
 
   const handlePreviewTranslation = () => {
     speakText(
-      'Xin chào, mình là Tiểu Nhã. Đây là giọng đọc tiếng Việt của mình.',
+      'Xin chào, mình là Misu. Đây là giọng đọc tiếng Việt của mình.',
       settingsRef.current.viVoice,
       'warm',
     );
@@ -670,7 +746,7 @@ export default function App() {
       const next = addReport(learningRef.current, report);
       learningRef.current = next;
       setLearning(next);
-      saveLearning(next);
+      saveLearning(next, scope);
       showToast('Đã cập nhật phân tích điểm yếu.');
     } catch (analysisFailure) {
       console.error('[analysis]', analysisFailure);
@@ -692,7 +768,7 @@ export default function App() {
     learningEpochRef.current += 1;
     learningRef.current = fresh;
     setLearning(fresh);
-    saveLearning(fresh);
+    saveLearning(fresh, scope);
     setAnalysisError(null);
     setAnalyzing(false);
     showToast('Đã xoá hồ sơ học tập. Tiến độ chuỗi ngày vẫn được giữ.');
@@ -709,6 +785,40 @@ export default function App() {
       }
       return next;
     });
+  };
+
+  const handlePickAvatar = async (file: File) => {
+    try {
+      const stored = await saveCustomAvatar(file);
+      avatarRef.current?.stopSpeech();
+      avatarRef.current = null;
+      avatarReadyRef.current = false;
+      setCustomAvatar({
+        url: URL.createObjectURL(stored.blob),
+        name: stored.name,
+        kind: stored.kind,
+      });
+      setError(null);
+      setPhase('loading');
+      showToast(`Đang dùng avatar “${stored.name}”.`);
+    } catch (pickError) {
+      showToast(pickError instanceof Error ? pickError.message : 'Không đổi được avatar.');
+    }
+  };
+
+  const handleClearAvatar = async () => {
+    try {
+      await clearCustomAvatar();
+      avatarRef.current?.stopSpeech();
+      avatarRef.current = null;
+      avatarReadyRef.current = false;
+      setCustomAvatar(null);
+      setError(null);
+      setPhase('loading');
+      showToast('Đã trở lại avatar mặc định.');
+    } catch (clearError) {
+      showToast(clearError instanceof Error ? clearError.message : 'Không xoá được avatar.');
+    }
   };
 
   const openSettings = useCallback(() => {
@@ -730,7 +840,7 @@ export default function App() {
     if (muting) {
       avatarRef.current?.stopSpeech();
       setPhase((current) => (current === 'speaking' ? 'ready' : current));
-      showToast('Đã tắt giọng đọc. Tiểu Nhã vẫn trả lời bằng chữ.');
+      showToast('Đã tắt giọng đọc. Misu vẫn trả lời bằng chữ.');
     } else {
       showToast('Đã bật giọng đọc cho câu trả lời tiếp theo.');
     }
@@ -754,8 +864,8 @@ export default function App() {
     micRef.current?.abort();
     setListening(false);
     avatarRef.current?.stopSpeech();
-    clearMessages();
-    setMessages([makeGreeting()]);
+    clearMessages(scope);
+    setMessages([makeGreeting(learner.name)]);
     setError(null);
     setPhase(avatarReadyRef.current ? 'ready' : 'loading');
     showToast('Đã mở cuộc trò chuyện mới.');
@@ -769,7 +879,7 @@ export default function App() {
     ) {
       return;
     }
-    const fresh = resetProgress();
+    const fresh = resetProgress(scope);
     progressRef.current = fresh;
     setProgress(fresh);
     showToast('Đã đặt lại tiến độ luyện tập.');
@@ -782,7 +892,7 @@ export default function App() {
       return;
     }
     const started = controller.speakAll(
-      '你好呀，我是小雅。很高兴和你一起练习中文。',
+      '你好呀，我是米苏。很高兴和你一起练习中文。',
       settingsRef.current.voice,
       'happy',
       'handup',
@@ -800,15 +910,24 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <div className="brand-seal" aria-hidden="true">
-            雅
+            苏
           </div>
           <div className="brand-copy">
-            <p className="brand-title">小雅</p>
+            <p className="brand-title">米苏</p>
             <p className="brand-subtitle">Luyện nói tiếng Trung mỗi ngày</p>
           </div>
         </div>
 
         <div className="topbar-actions">
+          <button
+            className="learner-chip"
+            type="button"
+            onClick={onSwitchLearner}
+            title="Đổi người học"
+          >
+            {learner.name}
+          </button>
+
           <button
             className="runtime-chip"
             type="button"
@@ -879,6 +998,10 @@ export default function App() {
         <section className="stage-column">
           <AvatarStage
             avatarUrl={status?.avatarUrl}
+            lamAvatarUrl={status?.lamAvatarUrl}
+            customAvatarUrl={customAvatar?.url}
+            deferred={!avatarChecked}
+            mode={avatarMode}
             phase={phase}
             onReady={handleAvatarReady}
             onAudioState={handleAudioState}
@@ -955,6 +1078,9 @@ export default function App() {
         onPreviewTranslation={handlePreviewTranslation}
         onClearChat={handleNewChat}
         onResetProgress={handleResetProgress}
+        customAvatar={customAvatar}
+        onPickAvatar={handlePickAvatar}
+        onClearAvatar={handleClearAvatar}
       />
 
       <LearningDialog
@@ -979,4 +1105,31 @@ export default function App() {
       )}
     </div>
   );
+}
+
+export default function App() {
+  const [learners, setLearners] = useState<Learner[]>(loadLearners);
+  const [activeId, setActiveId] = useState<string>(loadActiveLearnerId);
+  const active = learners.find((item) => item.id === activeId) ?? null;
+
+  const handlePick = (id: string) => {
+    setActiveLearner(id);
+    setActiveId(id);
+  };
+
+  const handleCreate = (name: string, level: Level) => {
+    const created = createLearner(name, level);
+    setLearners(loadLearners());
+    setActiveId(created.id);
+  };
+
+  const handleSwitch = () => {
+    setActiveLearner('');
+    setActiveId('');
+  };
+
+  if (!active) {
+    return <LearnerPicker learners={learners} onPick={handlePick} onCreate={handleCreate} />;
+  }
+  return <Tutor key={active.id} learner={active} onSwitchLearner={handleSwitch} />;
 }

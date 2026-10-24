@@ -29,9 +29,11 @@ import {
   readStringField,
 } from './jsonStream.mjs';
 import {
+  CLONE_VOICES,
   DEFAULT_VI_VOICE,
   TTS_VOICES,
   VI_TTS_VOICES,
+  isCloneVietnameseVoice,
   synthesizeSpeech,
 } from './tts.mjs';
 
@@ -105,16 +107,32 @@ function polishTurn(turn) {
   }
 }
 
+// A personal LAM avatar (mom-lam.zip) wins over the bundled sample when it exists.
+function findLamAvatar() {
+  const roots = [distDir, path.resolve(__dirname, '..', 'public')];
+  for (const name of ['mom-lam.zip', 'lam-sample.zip']) {
+    const file = roots
+      .map((root) => path.join(root, 'avatars', name))
+      .find((candidate) => fs.existsSync(candidate));
+    if (file) {
+      // version by modification time so a replaced avatar is not served from browser cache
+      return `/avatars/${name}?v=${Math.round(fs.statSync(file).mtimeMs)}`;
+    }
+  }
+  return undefined;
+}
+
 app.get('/api/status', async (_req, res) => {
   const providers = await detectProviders();
   res.json({
     providers,
-    voices: TTS_VOICES,
+    voices: [...TTS_VOICES, ...CLONE_VOICES.filter((v) => !isCloneVietnameseVoice(v.id))],
     defaultVoice: DEFAULT_VOICE,
-    viVoices: VI_TTS_VOICES,
+    viVoices: [...VI_TTS_VOICES, ...CLONE_VOICES.filter((v) => isCloneVietnameseVoice(v.id))],
     defaultViVoice: DEFAULT_VI_VOICE,
     levels: Object.keys(LEVELS),
-    avatarUrl: '/avatars/brunette.glb',
+    avatarUrl: '/avatars/mom-v2.glb?v=1',
+    lamAvatarUrl: findLamAvatar(),
   });
 });
 
@@ -481,7 +499,7 @@ const server = app.listen(PORT, HOST, async () => {
   const summary = providers
     .map((p) => `${p.name}: ${p.online ? `${p.models.length} model` : 'offline'}`)
     .join(' · ');
-  console.log(`小雅 server → http://${HOST}:${PORT}`);
+  console.log(`米苏 server → http://${HOST}:${PORT}`);
   console.log(`[providers] ${summary}`);
 });
 

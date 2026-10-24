@@ -46,9 +46,49 @@ export const VI_TTS_VOICES = [
   },
 ];
 
+// Voices served by the two local voice-clone services in the mandarin-teacher
+// folder, which copy the reference recording. These do not need the network,
+// unlike the Edge voices above. tts_service.py (Qwen3-TTS) handles Chinese;
+// vitts_service.py (VieNeu-TTS) handles Vietnamese.
+export const CLONE_VOICES = [
+  {
+    id: 'clone-zh',
+    label: 'Giọng vợ · bản sao giọng nói tiếng Trung (offline)',
+    short: 'Giọng vợ',
+  },
+  {
+    id: 'clone-vi',
+    label: 'Giọng vợ · bản sao giọng nói tiếng Việt (offline)',
+    short: 'Giọng vợ (Việt)',
+  },
+];
+
+const CLONE_SERVICES = {
+  'clone-zh': {
+    url: process.env.VOICE_CLONE_URL || 'http://127.0.0.1:8766',
+    language: 'Chinese',
+    fallbackVoice: DEFAULT_VOICE,
+    hint: 'Chạy "npm run voice" trong thư mục AI-Chinese-Teacher để bật giọng clone tiếng Trung.',
+  },
+  'clone-vi': {
+    url: process.env.VOICE_CLONE_VI_URL || 'http://127.0.0.1:8767',
+    language: 'Vietnamese',
+    fallbackVoice: DEFAULT_VI_VOICE,
+    hint: 'Chạy "npm run voice:vi" trong thư mục AI-Chinese-Teacher để bật giọng clone tiếng Việt.',
+  },
+};
+
 const voiceIds = new Set(
-  [...TTS_VOICES, ...VI_TTS_VOICES].map((voice) => voice.id),
+  [...TTS_VOICES, ...VI_TTS_VOICES, ...CLONE_VOICES].map((voice) => voice.id),
 );
+
+export function isCloneVoice(voice) {
+  return Object.hasOwn(CLONE_SERVICES, voice);
+}
+
+export function isCloneVietnameseVoice(voice) {
+  return voice === 'clone-vi';
+}
 const cache = new Map();
 const CACHE_LIMIT = 48;
 
@@ -288,6 +328,86 @@ async function synthesizeMac(text, voice = DEFAULT_VOICE) {
   }
 }
 
+// Duration of a PCM WAV file, used when the clone service omits the header.
+function wavDurationMs(buffer) {
+  try {
+    if (buffer.length < 44 || buffer.toString('ascii', 0, 4) !== 'RIFF') return 0;
+    let offset = 12;
+    let byteRate = 0;
+    let dataSize = 0;
+    while (offset + 8 <= buffer.length) {
+      const id = buffer.toString('ascii', offset, offset + 4);
+      const size = buffer.readUInt32LE(offset + 4);
+      if (id === 'fmt ') byteRate = buffer.readUInt32LE(offset + 16);
+      else if (id === 'data') {
+        dataSize = size;
+        break;
+      }
+      offset += 8 + size + (size % 2);
+    }
+    if (!byteRate || !dataSize) return 0;
+    return Math.round((dataSize / byteRate) * 1000);
+  } catch {
+    return 0;
+  }
+}
+
+async function synthesizeClone(text, voice) {
+  const service = CLONE_SERVICES[voice];
+  const res = await fetch(`${service.url}/synthesize`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text, language: service.language }),
+    signal: AbortSignal.timeout(180000),
+  });
+
+  if (!res.ok) {
+    let detail = '';
+    try {
+      detail = (await res.json())?.error || '';
+    } catch {
+      // the service may answer with an empty or non-JSON body
+    }
+    throw new Error(detail || `Dịch vụ clone giọng trả về HTTP ${res.status}.`);
+  }
+
+  const audio = Buffer.from(await res.arrayBuffer());
+  if (!audio.length) throw new Error('Dịch vụ clone giọng trả về audio rỗng.');
+
+  const headerDuration = Number(res.headers.get('x-duration-ms') || 0);
+  const durationMs = headerDuration > 0 ? headerDuration : wavDurationMs(audio);
+
+  return {
+    audioBase64: audio.toString('base64'),
+    mime: 'audio/wav',
+    // The clone service does not emit word boundaries, so the client falls back
+    // to distributing visemes evenly across the clip.
+    words: [],
+    durationMs: Math.max(300, durationMs),
+    provider: 'clone',
+  };
+}
+
+// Edge TTS over the network, with the macOS `say` voice as a local fallback.
+async function synthesizeEdgeOrMac(text, voice) {
+  try {
+    return await synthesizeEdge(text, voice);
+  } catch (edgeError) {
+    console.warn('[tts] Edge TTS lỗi, chuyển sang giọng macOS:', edgeError.message);
+    try {
+      const result = await synthesizeMac(text, voice);
+      result.fallbackReason = 'Edge TTS không khả dụng, đang dùng giọng macOS.';
+      return result;
+    } catch (macError) {
+      const error = new Error(
+        `Không tạo được giọng đọc: ${edgeError.message} / ${macError.message}`,
+      );
+      error.status = 502;
+      throw error;
+    }
+  }
+}
+
 export async function synthesizeSpeech({ text, voice }) {
   const cleanText = sanitizeSpeechText(text);
   if (!cleanText) {
@@ -302,20 +422,17 @@ export async function synthesizeSpeech({ text, voice }) {
   if (cached) return cached;
 
   let result;
-  try {
-    result = await synthesizeEdge(cleanText, safeVoice);
-  } catch (edgeError) {
-    console.warn('[tts] Edge TTS lỗi, chuyển sang giọng macOS:', edgeError.message);
+  if (isCloneVoice(safeVoice)) {
+    const service = CLONE_SERVICES[safeVoice];
     try {
-      result = await synthesizeMac(cleanText, safeVoice);
-      result.fallbackReason = 'Edge TTS không khả dụng, đang dùng giọng macOS.';
-    } catch (macError) {
-      const error = new Error(
-        `Không tạo được giọng đọc: ${edgeError.message} / ${macError.message}`,
-      );
-      error.status = 502;
-      throw error;
+      result = await synthesizeClone(cleanText, safeVoice);
+    } catch (cloneError) {
+      console.warn('[tts] clone giọng lỗi, dùng giọng Edge:', cloneError.message);
+      result = await synthesizeEdgeOrMac(cleanText, service.fallbackVoice);
+      result.fallbackReason = `Dịch vụ clone giọng chưa chạy, tạm dùng giọng Edge. ${service.hint}`;
     }
+  } else {
+    result = await synthesizeEdgeOrMac(cleanText, safeVoice);
   }
 
   cacheSet(key, result);

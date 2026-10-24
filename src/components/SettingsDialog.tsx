@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import type { Level, Progress, Settings, StatusResponse } from '../types';
+import type { AvatarMode, Level, Progress, Settings, StatusResponse } from '../types';
 import { DAILY_GOAL, lastSevenDays } from '../lib/storage';
 import {
   AlertIcon,
@@ -25,6 +25,9 @@ interface SettingsDialogProps {
   onPreviewTranslation: () => void;
   onClearChat: () => void;
   onResetProgress: () => void;
+  customAvatar: { name: string; kind: AvatarMode } | null;
+  onPickAvatar: (file: File) => void;
+  onClearAvatar: () => void;
 }
 
 const LEVEL_OPTIONS: Array<{ value: Level; label: string; hint: string }> = [
@@ -81,6 +84,9 @@ export function SettingsDialog({
   onPreviewTranslation,
   onClearChat,
   onResetProgress,
+  customAvatar,
+  onPickAvatar,
+  onClearAvatar,
 }: SettingsDialogProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const providers = status?.providers ?? [];
@@ -146,7 +152,7 @@ export function SettingsDialog({
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Bộ não của Tiểu Nhã</h3>
+                <h3>Bộ não của Misu</h3>
                 <p>Chạy hoàn toàn trên máy bạn qua Ollama hoặc LM Studio.</p>
               </div>
               <button
@@ -236,7 +242,7 @@ export function SettingsDialog({
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Giọng của Tiểu Nhã</h3>
+                <h3>Giọng của Misu</h3>
                 <p>Giọng nữ tiếng Phổ thông, có nhịp môi khớp với từng câu.</p>
               </div>
             </div>
@@ -306,7 +312,53 @@ export function SettingsDialog({
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Cách Tiểu Nhã trò chuyện</h3>
+                <h3>Khuôn mặt của Misu</h3>
+                <p>File avatar chỉ lưu trong trình duyệt này, không gửi lên server.</p>
+              </div>
+            </div>
+
+            <div className="avatar-row">
+              <div className="avatar-file">
+                <strong>{customAvatar ? customAvatar.name : 'Avatar mặc định'}</strong>
+                <span>
+                  {customAvatar
+                    ? customAvatar.kind === 'lam'
+                      ? 'Ảnh thật · LAM (.zip)'
+                      : 'Mô hình 3D (.glb)'
+                    : 'Ảnh dựng sẵn của ứng dụng'}
+                </span>
+              </div>
+              <div className="avatar-actions">
+                <label className="preview-button avatar-pick">
+                  <input
+                    type="file"
+                    accept=".zip,.glb"
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      event.target.value = '';
+                      if (file) onPickAvatar(file);
+                    }}
+                  />
+                  Chọn file…
+                </label>
+                {customAvatar && (
+                  <button className="text-button" type="button" onClick={onClearAvatar}>
+                    Dùng mặc định
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <p className="field-hint">
+              .zip là bản dựng LAM từ ảnh/video thật (cần máy GPU để tạo). .glb là avatar 3D
+              kiểu Ready Player Me. Chọn xong, Misu đổi gương mặt ngay.
+            </p>
+          </section>
+
+          <section className="settings-section">
+            <div className="section-heading">
+              <div>
+                <h3>Cách Misu trò chuyện</h3>
                 <p>Chọn độ khó và những hỗ trợ bạn muốn thấy sau mỗi lượt.</p>
               </div>
             </div>
@@ -330,7 +382,7 @@ export function SettingsDialog({
             </div>
             {levelOption && (
               <p className="field-hint">
-                Tiểu Nhã sẽ dùng từ vựng và độ dài câu phù hợp với trình độ {settings.level === 'free' ? 'tự do' : settings.level}.
+                Misu sẽ dùng từ vựng và độ dài câu phù hợp với trình độ {settings.level === 'free' ? 'tự do' : settings.level}.
               </p>
             )}
 
@@ -339,7 +391,7 @@ export function SettingsDialog({
                 checked={settings.autoSpeak}
                 onChange={(checked) => onChange({ autoSpeak: checked })}
                 label="Tự động đọc câu trả lời"
-                description="Nghe giọng nói và xem khẩu hình khi Tiểu Nhã trả lời."
+                description="Nghe giọng nói và xem khẩu hình khi Misu trả lời."
               />
               <Toggle
                 checked={settings.autoReadTranslation}
@@ -347,6 +399,17 @@ export function SettingsDialog({
                 label="Tự đọc bản dịch tiếng Việt"
                 description="Sau câu tiếng Trung, đọc luôn nghĩa tiếng Việt bằng giọng Việt."
                 disabled={!settings.autoSpeak}
+              />
+              <Toggle
+                checked={settings.avatarMode === 'lam'}
+                onChange={(checked) => onChange({ avatarMode: checked ? 'lam' : 'classic' })}
+                label="Avatar ảnh thật (LAM)"
+                description={
+                  customAvatar
+                    ? 'Đang dùng file avatar tuỳ chỉnh. Bấm “Dùng mặc định” ở trên để chọn lại kiểu avatar.'
+                    : 'Avatar dựng từ ảnh thật, chạy cục bộ; miệng và nét mặt chuyển động theo giọng nói. Tắt để dùng avatar 3D hoạt hình.'
+                }
+                disabled={Boolean(customAvatar)}
               />
               <Toggle
                 checked={settings.showPinyin}
@@ -361,7 +424,7 @@ export function SettingsDialog({
             <div className="section-heading">
               <div>
                 <h3>Tiến độ của bạn</h3>
-                <p>Mỗi lượt trả lời được tính khi Tiểu Nhã đã phản hồi xong.</p>
+                <p>Mỗi lượt trả lời được tính khi Misu đã phản hồi xong.</p>
               </div>
               <div className="mini-streak">
                 <FlameIcon size={16} />

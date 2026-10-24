@@ -277,7 +277,7 @@ export function LearningDialog({
                       : 'Bắt đầu ghi lại hành trình của bạn'}
                   </h3>
                   <p>
-                    Tiểu Nhã tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trong
+                    Misu tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trong
                     trình duyệt này và chỉ gửi đến model local khi bạn yêu cầu phân tích.
                   </p>
                 </div>
@@ -310,7 +310,7 @@ export function LearningDialog({
                 <div className="learning-section-head">
                   <div>
                     <h3>Kỹ năng cần chú ý</h3>
-                    <p>Dựa trên các lỗi đã được Tiểu Nhã ghi lại.</p>
+                    <p>Dựa trên các lỗi đã được Misu ghi lại.</p>
                   </div>
                   <span className="learning-count">{totals.corrections} lỗi</span>
                 </div>
@@ -335,7 +335,7 @@ export function LearningDialog({
                   </div>
                 ) : (
                   <p className="learning-muted">
-                    Chưa có lỗi nào được ghi. Cứ nói tự nhiên, Tiểu Nhã sẽ để ý giúp bạn.
+                    Chưa có lỗi nào được ghi. Cứ nói tự nhiên, Misu sẽ để ý giúp bạn.
                   </p>
                 )}
               </section>
@@ -547,7 +547,7 @@ export function LearningDialog({
                   description={
                     totals.words
                       ? `Kho từ có ${totals.words} từ. Từ gần nhất sẽ đến hạn ${untilLabel(nextReview)}.`
-                      : 'Hãy trò chuyện vài lượt, Tiểu Nhã sẽ ghi lại những từ đáng nhớ cho bạn.'
+                      : 'Hãy trò chuyện vài lượt, Misu sẽ ghi lại những từ đáng nhớ cho bạn.'
                   }
                 >
                   {totals.words > 0 && (
@@ -621,7 +621,7 @@ export function LearningDialog({
               ) : (
                 <EmptyState
                   title="Chưa có lỗi nào"
-                  description="Khi Tiểu Nhã phát hiện một lỗi rõ ràng, lỗi đó sẽ được ghi ở đây để bạn xem lại."
+                  description="Khi Misu phát hiện một lỗi rõ ràng, lỗi đó sẽ được ghi ở đây để bạn xem lại."
                 />
               )}
             </div>

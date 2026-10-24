@@ -51,7 +51,7 @@ function formatTime(timestamp: number) {
 
 function TypingDots() {
   return (
-    <span className="typing-dots" aria-label="Tiểu Nhã đang viết">
+    <span className="typing-dots" aria-label="Misu đang viết">
       <i />
       <i />
       <i />
@@ -101,11 +101,11 @@ function MessageItem({
   return (
     <article className={`message message-assistant${message.streaming ? ' is-streaming' : ''}`}>
       <div className="speaker-avatar" aria-hidden="true">
-        雅
+        苏
       </div>
       <div className="message-content">
         <div className="message-meta">
-          <span className="speaker-name">小雅</span>
+          <span className="speaker-name">米苏</span>
           {message.kind === 'greeting' && <span className="message-tag">Lời chào</span>}
           {message.streaming && hasText && <span className="message-tag">đang viết</span>}
           <time dateTime={new Date(message.createdAt).toISOString()}>
@@ -303,7 +303,7 @@ export function ChatPanel({
   };
 
   return (
-    <section className="chat-panel" aria-label="Cuộc trò chuyện với Tiểu Nhã">
+    <section className="chat-panel" aria-label="Cuộc trò chuyện với Misu">
       <header className="chat-head">
         <div>
           <h2>Cuộc trò chuyện</h2>
@@ -414,7 +414,7 @@ export function ChatPanel({
             readOnly={listening}
             onChange={(event) => onDraftChange(event.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={listening ? 'Hãy nói bằng tiếng Trung…' : 'Nhắn cho Tiểu Nhã bằng tiếng Trung…'}
+            placeholder={listening ? 'Hãy nói bằng tiếng Trung…' : 'Nhắn cho Misu bằng tiếng Trung…'}
             aria-label="Tin nhắn của bạn"
           />
           <button

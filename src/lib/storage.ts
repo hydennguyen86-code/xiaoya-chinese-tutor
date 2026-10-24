@@ -1,11 +1,16 @@
 import type { ChatMessage, Level, Progress, Settings } from '../types';
 
 const SETTINGS_KEY = 'xiaoya.settings.v1';
-const CHAT_KEY = 'xiaoya.chat.v1';
-const PROGRESS_KEY = 'xiaoya.progress.v1';
+export const CHAT_KEY = 'xiaoya.chat.v1';
+export const PROGRESS_KEY = 'xiaoya.progress.v1';
 const CHAT_LIMIT = 80;
 
 export const DAILY_GOAL = 8;
+
+// Per-learner storage: each learner gets its own key suffix. Empty scope = legacy key.
+export function scopedKey(base: string, scope = '') {
+  return scope ? `${base}:${scope}` : base;
+}
 
 export const DEFAULT_SETTINGS: Settings = {
   providerId: '',
@@ -16,6 +21,7 @@ export const DEFAULT_SETTINGS: Settings = {
   autoSpeak: true,
   autoReadTranslation: false,
   showPinyin: false,
+  avatarMode: 'lam',
 };
 
 const LEVELS = new Set<Level>(['HSK1-2', 'HSK3-4', 'HSK5-6', 'free']);
@@ -60,6 +66,7 @@ export function loadSettings(): Settings {
         typeof parsed.showPinyin === 'boolean'
           ? parsed.showPinyin
           : DEFAULT_SETTINGS.showPinyin,
+      avatarMode: parsed.avatarMode === 'classic' ? 'classic' : 'lam',
     };
   } catch {
     return { ...DEFAULT_SETTINGS };
@@ -74,9 +81,9 @@ export function saveSettings(settings: Settings) {
   }
 }
 
-export function loadMessages(): ChatMessage[] {
+export function loadMessages(scope = ''): ChatMessage[] {
   try {
-    const parsed = JSON.parse(localStorage.getItem(CHAT_KEY) || 'null');
+    const parsed = JSON.parse(localStorage.getItem(scopedKey(CHAT_KEY, scope)) || 'null');
     if (!parsed || parsed.date !== dayKey() || !Array.isArray(parsed.messages)) {
       return [];
     }
@@ -97,27 +104,30 @@ export function loadMessages(): ChatMessage[] {
   }
 }
 
-export function saveMessages(messages: ChatMessage[]) {
+export function saveMessages(messages: ChatMessage[], scope = '') {
   try {
     const clean = messages
       .filter((m) => !m.error)
       .map(({ streaming: _streaming, ...rest }) => rest)
       .slice(-CHAT_LIMIT);
-    localStorage.setItem(CHAT_KEY, JSON.stringify({ date: dayKey(), messages: clean }));
+    localStorage.setItem(
+      scopedKey(CHAT_KEY, scope),
+      JSON.stringify({ date: dayKey(), messages: clean }),
+    );
   } catch {
     // ignore
   }
 }
 
-export function clearMessages() {
+export function clearMessages(scope = '') {
   try {
-    localStorage.removeItem(CHAT_KEY);
+    localStorage.removeItem(scopedKey(CHAT_KEY, scope));
   } catch {
     // ignore
   }
 }
 
-export function loadProgress(): Progress {
+export function loadProgress(scope = ''): Progress {
   const today = dayKey();
   const fallback: Progress = {
     streak: 0,
@@ -130,7 +140,7 @@ export function loadProgress(): Progress {
   };
 
   try {
-    const parsed = JSON.parse(localStorage.getItem(PROGRESS_KEY) || 'null');
+    const parsed = JSON.parse(localStorage.getItem(scopedKey(PROGRESS_KEY, scope)) || 'null');
     if (!parsed || typeof parsed !== 'object') return fallback;
     const progress: Progress = {
       streak: Number.isFinite(parsed.streak) ? Math.max(0, parsed.streak) : 0,
@@ -157,7 +167,7 @@ export function loadProgress(): Progress {
   }
 }
 
-export function recordPractice(progress: Progress): Progress {
+export function recordPractice(progress: Progress, scope = ''): Progress {
   const today = dayKey();
   const yesterday = yesterdayKey();
   const next: Progress = { ...progress };
@@ -179,14 +189,14 @@ export function recordPractice(progress: Progress): Progress {
   }
 
   try {
-    localStorage.setItem(PROGRESS_KEY, JSON.stringify(next));
+    localStorage.setItem(scopedKey(PROGRESS_KEY, scope), JSON.stringify(next));
   } catch {
     // ignore
   }
   return next;
 }
 
-export function resetProgress() {
+export function resetProgress(scope = '') {
   const today = dayKey();
   const fresh: Progress = {
     streak: 0,
@@ -198,7 +208,7 @@ export function resetProgress() {
     days: [],
   };
   try {
-    localStorage.removeItem(PROGRESS_KEY);
+    localStorage.removeItem(scopedKey(PROGRESS_KEY, scope));
   } catch {
     // ignore
   }

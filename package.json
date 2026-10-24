@@ -7,11 +7,15 @@
     "dev": "concurrently -k -n server,web -c magenta,cyan \"node server/index.mjs\" \"vite\"",
     "build": "tsc --noEmit && vite build",
     "start": "NODE_ENV=production node server/index.mjs",
+    "voice": "cd ../AI-Chinese-Teacher && ./.venv-tts/bin/python tts_service.py",
+    "voice:vi": "cd ../AI-Chinese-Teacher && ./.venv-vitts/bin/python vitts_service.py",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",
+    "@myned-ai/gsplat-flame-avatar-renderer": "^1.4.0",
     "express": "^5.3.0",
+    "jszip": "^3.10.2",
     "msedge-tts": "^2.1.0",
     "pinyin-pro": "^3.29.5",
     "react": "^19.3.1",

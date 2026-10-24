@@ -12,26 +12,27 @@ export function uid() {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-export function makeGreeting(): ChatMessage {
+export function makeGreeting(name = ''): ChatMessage {
   const hour = new Date().getHours();
+  const who = name ? `, ${name}` : '';
   let text: string;
   let translation: string;
   let suggestion: string;
   let suggestionTranslation: string;
 
   if (hour < 11) {
-    text = '早上好呀！我是小雅。新的一天，你今天有什么安排吗？';
-    translation = 'Chào buổi sáng! Mình là Tiểu Nhã. Một ngày mới, hôm nay bạn có kế hoạch gì chưa?';
+    text = '早上好呀！我是米苏。新的一天，你今天有什么安排吗？';
+    translation = `Chào buổi sáng${who}! Mình là Misu. Một ngày mới, hôm nay bạn có kế hoạch gì chưa?`;
     suggestion = '我今天打算去图书馆看书。';
     suggestionTranslation = 'Hôm nay mình định đến thư viện đọc sách.';
   } else if (hour < 18) {
-    text = '下午好呀！我是小雅。今天过得怎么样？';
-    translation = 'Chào buổi chiều! Mình là Tiểu Nhã. Hôm nay của bạn thế nào?';
+    text = '下午好呀！我是米苏。今天过得怎么样？';
+    translation = `Chào buổi chiều${who}! Mình là Misu. Hôm nay của bạn thế nào?`;
     suggestion = '还不错，就是有点忙。你呢？';
     suggestionTranslation = 'Cũng ổn, chỉ hơi bận. Còn bạn thì sao?';
   } else {
-    text = '晚上好呀！我是小雅。今天有什么想和我分享的吗？';
-    translation = 'Chào buổi tối! Mình là Tiểu Nhã. Hôm nay có điều gì bạn muốn chia sẻ với mình không?';
+    text = '晚上好呀！我是米苏。今天有什么想和我分享的吗？';
+    translation = `Chào buổi tối${who}! Mình là Misu. Hôm nay có điều gì bạn muốn chia sẻ với mình không?`;
     suggestion = '今天挺顺利的，我下班后看了一部电影。';
     suggestionTranslation = 'Hôm nay khá suôn sẻ, sau giờ làm mình đã xem một bộ phim.';
   }
