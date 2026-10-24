@@ -1,0 +1,166 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 3,
+  "lessonTitle": "Số đếm và số điện thoại",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "一",
+      "meaning": "một",
+      "example": "我有一个朋友。",
+      "exampleVi": "Tôi có một người bạn.",
+      "pinyin": "yī",
+      "examplePinyin": "wǒ yǒu yí gè péng yǒu 。"
+    },
+    {
+      "word": "二",
+      "meaning": "hai",
+      "example": "二加一是三。",
+      "exampleVi": "Hai cộng một bằng ba.",
+      "pinyin": "èr",
+      "examplePinyin": "èr jiā yī shì sān 。"
+    },
+    {
+      "word": "三",
+      "meaning": "ba",
+      "example": "我有三本书。",
+      "exampleVi": "Tôi có ba quyển sách.",
+      "pinyin": "sān",
+      "examplePinyin": "wǒ yǒu sān běn shū 。"
+    },
+    {
+      "word": "多少",
+      "meaning": "bao nhiêu",
+      "example": "这本书多少钱？",
+      "exampleVi": "Quyển sách này bao nhiêu tiền?",
+      "pinyin": "duō shǎo",
+      "examplePinyin": "zhè běn shū duō shǎo qián ？"
+    },
+    {
+      "word": "电话",
+      "meaning": "điện thoại",
+      "example": "这是我的电话。",
+      "exampleVi": "Đây là điện thoại của tôi.",
+      "pinyin": "diàn huà",
+      "examplePinyin": "zhè shì wǒ de diàn huà 。"
+    },
+    {
+      "word": "号码",
+      "meaning": "số; mã số",
+      "example": "请说你的号码。",
+      "exampleVi": "Xin đọc số của bạn.",
+      "pinyin": "hào mǎ",
+      "examplePinyin": "qǐng shuō nǐ de hào mǎ 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……的电话号码是多少？",
+      "explanation": "Hỏi số điện thoại; đọc từng chữ số thay vì ghép thành số lớn.",
+      "example": "你的电话号码是多少？",
+      "exampleVi": "Số điện thoại của bạn là bao nhiêu?",
+      "examplePinyin": "nǐ de diàn huà hào mǎ shì duō shǎo ？"
+    },
+    {
+      "pattern": "是……吗？",
+      "explanation": "Xác nhận thông tin vừa nghe.",
+      "example": "是三八六吗？",
+      "exampleVi": "Là ba tám sáu phải không?",
+      "examplePinyin": "shì sān bā liù ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Trao đổi số liên hệ giả định; buổi 2 sửa số ở quầy nhận hàng. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Nhân viên nhận thông tin",
+    "learnerRole": "Người cung cấp số giả định",
+    "goals": [
+      "Đọc một số liên hệ giả định",
+      "Nghe và xác nhận một nhóm chữ số"
+    ],
+    "opening": "请说一个电话号码。",
+    "openingVi": "Xin đọc một số điện thoại."
+  },
+  "freeTalk": {
+    "question": "请说三个数字，再请对方确认。",
+    "questionVi": "Xin đọc ba chữ số rồi nhờ người đối thoại xác nhận."
+  },
+  "learningNotes": [
+    "Học bổ trợ số 0–10: 零 líng、一 yī、二 èr、三 sān、四 sì、五 wǔ、六 liù、七 qī、八 bā、九 jiǔ、十 shí.",
+    "Đọc số liên lạc giả định trong bài; không cần cung cấp số điện thoại thật. 号码 là từ bổ trợ thực dụng.",
+    "二 dùng khi đọc chữ số; 两 thường đứng trước lượng từ như 两个人.",
+    "Ghép số: 十一 shíyī — 11; 十二 shíèr — 12; 二十 èrshí — 20; 二十一 èrshíyī — 21. Luyện phân biệt 十四 shísì và 四十 sìshí trước các bài giá tiền."
+  ],
+  "prerequisites": [
+    1,
+    2
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Số đếm và số điện thoại",
+    "playLimit": 2,
+    "transcript": "甲：是二五九吗？乙：不是，是二九五。甲：二九五。乙：对，谢谢。",
+    "translation": "A: Là 259 phải không? B: Không phải, là 295. A: 295. B: Đúng, cảm ơn.",
+    "questions": [
+      {
+        "prompt": "Số đã sửa là gì?",
+        "options": [
+          "925",
+          "259",
+          "295"
+        ],
+        "answer": 2,
+        "explanation": "B nói 是二九五."
+      },
+      {
+        "prompt": "A làm gì sau khi được sửa?",
+        "options": [
+          "Đọc lại",
+          "Bỏ đi",
+          "Hỏi giá"
+        ],
+        "answer": 0,
+        "explanation": "A đọc lại 二九五."
+      }
+    ],
+    "pinyin": "jiǎ ： shì èr wǔ jiǔ ma ？ yǐ ： bú shì ， shì èr jiǔ wǔ 。 jiǎ ： èr jiǔ wǔ 。 yǐ ： duì ， xiè xiè 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我有一个朋友。 二加一是三。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我有一个朋友。 二加一是三。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请说三个数字，再请对方确认。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "三、八、六。是三八六，对吗？",
+      "sampleVi": "Ba, tám, sáu. Là 386, đúng không?"
+    }
+  ],
+  "transferTask": "Trao đổi số liên hệ giả định; buổi 2 sửa số ở quầy nhận hàng."
+}

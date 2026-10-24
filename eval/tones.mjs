@@ -1,3 +1,4 @@
+import { SYLLABLES, WORDS } from './toneItems.mjs';
 // Measures the tone checker through the running server (/api/pronounce) on
 // reference speech from the TTS voice, as a stand-in for a learner:
 //  1. ten sentences let the server learn the voice's pitch range (as it does
@@ -15,6 +16,12 @@ import path from 'node:path';
 import { saveResult } from './record.mjs';
 
 const args = process.argv.slice(2);
+const recordingsDir = args.find((arg) => arg.startsWith('--recordings='))?.slice(13);
+if (recordingsDir) {
+  const { evaluateRecordings } = await import('./recordings.mjs');
+  await evaluateRecordings(recordingsDir);
+  process.exit(0);
+}
 const base = args.find((a) => a.startsWith('http')) || 'http://127.0.0.1:8787';
 const voice = (args.find((a) => a.startsWith('--voice=')) || '--voice=zh-CN-XiaoxiaoNeural').slice(8);
 const sayVoice = (args.find((a) => a.startsWith('--say=')) || '').slice(6);
@@ -23,16 +30,17 @@ const learner = `eval-${(sayVoice || voice).replace(/[^A-Za-z0-9]+/g, '').slice(
 let usedVoice = sayVoice ? `macOS ${sayVoice}` : voice;
 
 const SENTENCES = [
-  '我今天很忙。', '你明天有空吗？', '我们一起去吃饭吧。', '这本书很有意思。', '他在银行工作。',
-  '我想喝一杯咖啡。', '周末你打算做什么？', '天气越来越冷了。', '我觉得这个办法不错。', '请问地铁站怎么走？',
+  '我今天很忙。',
+  '你明天有空吗？',
+  '我们一起去吃饭吧。',
+  '这本书很有意思。',
+  '他在银行工作。',
+  '我想喝一杯咖啡。',
+  '周末你打算做什么？',
+  '天气越来越冷了。',
+  '我觉得这个办法不错。',
+  '请问地铁站怎么走？',
 ];
-const SYLLABLES = {
-  1: '妈八衣汤诗温天方书飞',
-  2: '麻拔姨糖十文甜房熟肥',
-  3: '马把椅躺使稳舔访鼠匪',
-  4: '骂爸意烫是问店放树费',
-};
-const WORDS = ['中国', '学习', '汉语', '老师', '银行', '工作', '电脑', '飞机', '回家', '地铁', '北京', '上海', '手机', '音乐', '周末', '咖啡'];
 
 async function speech(text) {
   if (sayVoice) {
@@ -67,7 +75,7 @@ async function pronounce(text, retry = 1) {
 }
 
 function post(text, audio) {
-  return fetch(`${base}/api/pronounce?learner=${learner}&target=${encodeURIComponent(text)}`, {
+  return fetch(`${base}/api/pronounce?learner=${learner}&reference=0&target=${encodeURIComponent(text)}`, {
     method: 'POST',
     headers: { 'content-type': sayVoice ? 'audio/aiff' : 'audio/mpeg' },
     body: audio,
@@ -93,10 +101,17 @@ for (const tone of [1, 2, 3, 4]) {
   right += row[tone];
   total += row.reduce((a, b) => a + b, 0);
   unclear += row[0];
-  console.log(`  tone ${tone}: ${row.slice(1).map((n) => String(n).padStart(2)).join(' ')} | ${row[0]}`);
+  console.log(
+    `  tone ${tone}: ${row
+      .slice(1)
+      .map((n) => String(n).padStart(2))
+      .join(' ')} | ${row[0]}`,
+  );
 }
 const judged = total - unclear;
-console.log(`  correct ${right}/${total}; of the ${judged} judged: ${Math.round((right / Math.max(1, judged)) * 100)}% right; unclear ${unclear}`);
+console.log(
+  `  correct ${right}/${total}; of the ${judged} judged: ${Math.round((right / Math.max(1, judged)) * 100)}% right; unclear ${unclear}`,
+);
 
 let wordRight = 0;
 let wordJudged = 0;
@@ -113,13 +128,19 @@ for (const word of WORDS) {
     else misses.push(`${word} ${s.char}: expected ${s.expected}, heard ${s.heard}`);
   }
 }
-console.log(`\ntwo-syllable words: ${wordRight}/${wordJudged} judged syllables right (${Math.round((wordRight / Math.max(1, wordJudged)) * 100)}%), ${wordSyll - wordJudged}/${wordSyll} unclear`);
+console.log(
+  `\ntwo-syllable words: ${wordRight}/${wordJudged} judged syllables right (${Math.round((wordRight / Math.max(1, wordJudged)) * 100)}%), ${wordSyll - wordJudged}/${wordSyll} unclear`,
+);
 if (misses.length) console.log(`  ${misses.join('\n  ')}`);
 
 await fetch(`${base}/api/store/xiaoya.pitch.v1:${learner}`, { method: 'DELETE' });
-saveResult('tones', { voice: usedVoice }, {
-  matrix,
-  singles: { correct: right, total, unclear },
-  words: { correct: wordRight, judged: wordJudged, syllables: wordSyll },
-  misses,
-});
+saveResult(
+  'tones',
+  { voice: usedVoice },
+  {
+    matrix,
+    singles: { correct: right, total, unclear },
+    words: { correct: wordRight, judged: wordJudged, syllables: wordSyll },
+    misses,
+  },
+);

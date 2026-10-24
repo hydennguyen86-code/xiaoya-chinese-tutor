@@ -1,0 +1,186 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 11,
+  "lessonTitle": "Trình bày quan điểm và phản hồi câu hỏi",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "观点",
+      "meaning": "quan điểm",
+      "example": "我的观点跟你不完全一样。",
+      "exampleVi": "Quan điểm của tôi không hoàn toàn giống bạn.",
+      "pinyin": "guān diǎn",
+      "examplePinyin": "wǒ de guān diǎn gēn nǐ bù wán quán yí yàng 。"
+    },
+    {
+      "word": "理由",
+      "meaning": "lý do",
+      "example": "请说明你的理由。",
+      "exampleVi": "Xin nêu lý do của bạn.",
+      "pinyin": "lǐ yóu",
+      "examplePinyin": "qǐng shuō míng nǐ de lǐ yóu 。"
+    },
+    {
+      "word": "平衡",
+      "meaning": "cân bằng",
+      "example": "我们需要平衡效率和公平。",
+      "exampleVi": "Chúng ta cần cân bằng hiệu quả và công bằng.",
+      "pinyin": "píng héng",
+      "examplePinyin": "wǒ men xū yào píng héng xiào lǜ hé gōng píng 。"
+    },
+    {
+      "word": "限制",
+      "meaning": "giới hạn; hạn chế",
+      "example": "这个办法也有一定的限制。",
+      "exampleVi": "Cách này cũng có những giới hạn nhất định.",
+      "pinyin": "xiàn zhì",
+      "examplePinyin": "zhè ge bàn fǎ yě yǒu yí dìng de xiàn zhì 。"
+    },
+    {
+      "word": "实际",
+      "meaning": "thực tế",
+      "example": "我们要考虑实际情况。",
+      "exampleVi": "Chúng ta cần xét tình hình thực tế.",
+      "pinyin": "shí jì",
+      "examplePinyin": "wǒ men yào kǎo lǜ shí jì qíng kuàng 。"
+    },
+    {
+      "word": "选择",
+      "meaning": "lựa chọn",
+      "example": "不同的人可能有不同的选择。",
+      "exampleVi": "Những người khác nhau có thể có lựa chọn khác nhau.",
+      "pinyin": "xuǎn zé",
+      "examplePinyin": "bù tóng de rén kě néng yǒu bù tóng de xuǎn zé 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "一方面……另一方面……",
+      "explanation": "Trình bày hai mặt cùng tồn tại, không buộc phải mâu thuẫn tuyệt đối.",
+      "example": "一方面线上会议节省时间，另一方面也可能减少交流。",
+      "exampleVi": "Một mặt họp trực tuyến tiết kiệm thời gian, mặt khác có thể giảm trao đổi.",
+      "examplePinyin": "yì fāng miàn xiàn shàng huì yì jié shěng shí jiān ， lìng yì fāng miàn yě kě néng jiǎn shǎo jiāo liú 。"
+    },
+    {
+      "pattern": "并不是……而是……",
+      "explanation": "Sửa một cách hiểu, nêu trọng tâm thực sự.",
+      "example": "问题并不是工具不够，而是分工不清楚。",
+      "exampleVi": "Vấn đề không phải thiếu công cụ, mà là phân công chưa rõ.",
+      "examplePinyin": "wèn tí bìng bú shì gōng jù bú gòu ， ér shì fēn gōng bù qīng chǔ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Làm việc từ xa; buổi 2 thiết kế nhắc học phù hợp từng người. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người nêu quan điểm khác",
+    "learnerRole": "Người trình bày lập luận",
+    "goals": [
+      "Nêu quan điểm và hai lý do hoặc hai mặt",
+      "Đưa một ví dụ và một giới hạn",
+      "Trả lời câu hỏi phản biện mà không đổi chủ đề"
+    ],
+    "opening": "请先表明观点，再给出理由和一个具体例子。",
+    "openingVi": "Xin nêu quan điểm trước, rồi đưa lý do và một ví dụ cụ thể."
+  },
+  "freeTalk": {
+    "question": "学习工具应该追求让人多用，还是让人用得有效？请解释。",
+    "questionVi": "Công cụ học nên nhắm đến việc khiến người ta dùng nhiều hay dùng hiệu quả? Xin giải thích."
+  },
+  "learningNotes": [
+    "Nói 90–120 giây: quan điểm → lý do → ví dụ → giới hạn → kết luận. Không chấm theo việc có cùng quan điểm với gia sư hay không."
+  ],
+  "prerequisites": [
+    4,
+    9,
+    10
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Trình bày quan điểm và phản hồi câu hỏi",
+    "playLimit": 1,
+    "transcript": "主持人：你支持每周都在家办公吗？嘉宾：我不赞成一刀切。需要安静完成的任务，在家可能更有效；刚加入团队的人，则可能需要更多面对面交流。关键不是谁在办公室坐得久，而是目标是否清楚、沟通是否及时。可以先按任务试行，再听员工反馈，而不是把某一种方式当成所有人的答案。",
+    "translation": "Khách mời không ủng hộ áp dụng một kiểu cho tất cả. Công việc cần yên tĩnh có thể phù hợp làm ở nhà, người mới cần giao tiếp trực tiếp hơn. Đề xuất thử theo loại nhiệm vụ, đánh giá mục tiêu/giao tiếp và lấy phản hồi.",
+    "questions": [
+      {
+        "prompt": "Quan điểm của khách mời?",
+        "options": [
+          "Tùy nhiệm vụ và người, tránh áp một kiểu",
+          "Tất cả phải ở nhà",
+          "Không ai được ở nhà"
+        ],
+        "answer": 0,
+        "explanation": "Khách mời nói 不赞成一刀切."
+      },
+      {
+        "prompt": "Tiêu chí chính được nhấn mạnh?",
+        "options": [
+          "Địa chỉ nhà",
+          "Mục tiêu rõ và giao tiếp kịp thời",
+          "Số giờ ngồi văn phòng"
+        ],
+        "answer": 1,
+        "explanation": "Người nói đối chiếu với việc ngồi lâu."
+      },
+      {
+        "prompt": "Cách thực hiện đề xuất?",
+        "options": [
+          "Áp dụng vĩnh viễn ngay",
+          "Chỉ hỏi một người",
+          "Thử theo nhiệm vụ rồi lấy phản hồi"
+        ],
+        "answer": 2,
+        "explanation": "Người nói đề nghị 先按任务试行."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Khách mời không ủng hộ áp dụng một kiểu cho tất cả. Công việc cần yên tĩnh có thể phù hợp làm ở nhà, người mới cần giao tiếp trực tiếp hơn. Đề xuất thử theo loại nhiệm vụ, đánh giá mục tiêu/giao tiếp và lấy phản hồi.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "我的观点跟你不完全一样。 请说明你的理由。 我们需要平衡效率和公平。 这个办法也有一定的限制。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "学习工具应该追求让人多用，还是让人用得有效？请解释。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "我认为学习工具首先应该帮助人有效学习，而不是单纯增加使用时间。打开次数可以说明参与程度，却不能直接证明会用了。比如每天点很多选择题，到了真实对话仍然说不出来，就需要改变练习方式。当然，适当提醒和有趣的设计也有价值，因为坚持很重要。更好的办法是兼顾持续练习和实际任务表现。",
+      "sampleVi": "Tôi cho rằng công cụ học trước hết phải giúp học hiệu quả, không chỉ tăng thời gian dùng. Lượt mở cho biết mức tham gia chứ chưa chứng minh dùng được. Làm nhiều trắc nghiệm nhưng vẫn bí khi hội thoại thì cần đổi bài tập. Nhắc học vừa phải và thiết kế thú vị vẫn có giá trị để duy trì. Nên xét cả sự đều đặn lẫn kết quả nhiệm vụ thật."
+    }
+  ],
+  "transferTask": "Làm việc từ xa; buổi 2 thiết kế nhắc học phù hợp từng người."
+}

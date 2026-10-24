@@ -47,3 +47,26 @@ test('pitch tracking finds the frequency of a steady tone', () => {
   const { median } = pitchTrack(samples);
   assert.ok(Math.abs(median - 220) < 5, `median ${median}`);
 });
+
+test('analyseTones exposes ordered bounded timestamps for words and sentences', async () => {
+  const { analyseTones } = await import('./tones.mjs');
+  // A generated PCM fixture checks timestamps, never a human-accuracy claim.
+  const rate = 16000;
+  const count = rate * 2;
+  const wav = Buffer.alloc(44 + count * 2);
+  wav.write('RIFF', 0); wav.writeUInt32LE(36 + count * 2, 4); wav.write('WAVEfmt ', 8);
+  wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(rate, 24); wav.writeUInt32LE(rate * 2, 28); wav.writeUInt16LE(2, 32); wav.writeUInt16LE(16, 34);
+  wav.write('data', 36); wav.writeUInt32LE(count * 2, 40);
+  for (let i = 0; i < count; i++) wav.writeInt16LE(Math.round(6000 * Math.sin(2 * Math.PI * 180 * i / rate)), 44 + i * 2);
+  for (const text of ['中国', '我学习汉语']) {
+    const report = await analyseTones(wav, text);
+    assert.equal(report.segments.length, [...text].length);
+    assert.equal(report.duration, 2);
+    report.segments.forEach((part, index) => {
+      assert.equal(part.char, [...text][index]);
+      assert.ok(part.start >= 0 && part.end > part.start && part.end <= report.duration);
+      if (index) assert.equal(part.start, report.segments[index - 1].end);
+    });
+  }
+});

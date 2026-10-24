@@ -1,0 +1,163 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 5,
+  "lessonTitle": "Giờ giấc và hẹn gặp",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "今天",
+      "meaning": "hôm nay",
+      "example": "今天我有时间。",
+      "exampleVi": "Hôm nay tôi có thời gian.",
+      "pinyin": "jīn tiān",
+      "examplePinyin": "jīn tiān wǒ yǒu shí jiān 。"
+    },
+    {
+      "word": "明天",
+      "meaning": "ngày mai",
+      "example": "明天我们见面。",
+      "exampleVi": "Ngày mai chúng ta gặp nhau.",
+      "pinyin": "míng tiān",
+      "examplePinyin": "míng tiān wǒ men jiàn miàn 。"
+    },
+    {
+      "word": "点",
+      "meaning": "giờ",
+      "example": "现在是三点。",
+      "exampleVi": "Bây giờ là ba giờ.",
+      "pinyin": "diǎn",
+      "examplePinyin": "xiàn zài shì sān diǎn 。"
+    },
+    {
+      "word": "上午",
+      "meaning": "buổi sáng",
+      "example": "我上午学习。",
+      "exampleVi": "Tôi học vào buổi sáng.",
+      "pinyin": "shàng wǔ",
+      "examplePinyin": "wǒ shàng wǔ xué xí 。"
+    },
+    {
+      "word": "下午",
+      "meaning": "buổi chiều",
+      "example": "我下午有时间。",
+      "exampleVi": "Tôi có thời gian vào buổi chiều.",
+      "pinyin": "xià wǔ",
+      "examplePinyin": "wǒ xià wǔ yǒu shí jiān 。"
+    },
+    {
+      "word": "见面",
+      "meaning": "gặp mặt",
+      "example": "我们两点见面。",
+      "exampleVi": "Chúng ta gặp lúc hai giờ.",
+      "pinyin": "jiàn miàn",
+      "examplePinyin": "wǒ men liǎng diǎn jiàn miàn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我们……见面",
+      "explanation": "Thời gian đứng trước động từ 见面.",
+      "example": "我们明天下午两点见面。",
+      "exampleVi": "Chúng ta gặp vào hai giờ chiều mai.",
+      "examplePinyin": "wǒ men míng tiān xià wǔ liǎng diǎn jiàn miàn 。"
+    },
+    {
+      "pattern": "……有时间吗？",
+      "explanation": "Hỏi người đối thoại có thời gian ở một thời điểm không.",
+      "example": "你明天上午有时间吗？",
+      "exampleVi": "Sáng mai bạn có thời gian không?",
+      "examplePinyin": "nǐ míng tiān shàng wǔ yǒu shí jiān ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hẹn bạn học; buổi 2 sửa lại lịch hẹn ở quán nước. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người hẹn gặp",
+    "goals": [
+      "Đề xuất ngày và giờ gặp",
+      "Đọc lại lịch hẹn để xác nhận"
+    ],
+    "opening": "你明天下午有时间吗？",
+    "openingVi": "Chiều mai bạn có thời gian không?"
+  },
+  "freeTalk": {
+    "question": "请约一个见面时间，再确认一次。",
+    "questionVi": "Xin hẹn một thời gian gặp rồi xác nhận lại một lần."
+  },
+  "learningNotes": [
+    "Bổ trợ: 现在 xiànzài — bây giờ; 时间 shíjiān — thời gian; 可以 kěyǐ — được/có thể.",
+    "Học 两点 liǎng diǎn cho hai giờ. Cụm 见面 và 时间 được đưa vào vì nhu cầu thực tế."
+  ],
+  "prerequisites": [
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Giờ giấc và hẹn gặp",
+    "playLimit": 2,
+    "transcript": "甲：你明天上午有时间吗？乙：上午没有时间，下午可以。甲：那我们下午两点见面。乙：好，下午两点。",
+    "translation": "A: Sáng mai bạn có thời gian không? B: Buổi sáng không có, buổi chiều thì được. A: Vậy chúng ta gặp lúc hai giờ chiều. B: Được, hai giờ chiều.",
+    "questions": [
+      {
+        "prompt": "Buổi nào B rảnh?",
+        "options": [
+          "Chiều",
+          "Không buổi nào",
+          "Sáng"
+        ],
+        "answer": 0,
+        "explanation": "B nói 下午可以."
+      },
+      {
+        "prompt": "Hẹn mấy giờ?",
+        "options": [
+          "Hai giờ sáng",
+          "Hai giờ chiều",
+          "Ba giờ chiều"
+        ],
+        "answer": 1,
+        "explanation": "Hai người xác nhận 下午两点."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ míng tiān shàng wǔ yǒu shí jiān ma ？ yǐ ： shàng wǔ méi yǒu shí jiān ， xià wǔ kě yǐ 。 jiǎ ： nà wǒ men xià wǔ liǎng diǎn jiàn miàn 。 yǐ ： hǎo ， xià wǔ liǎng diǎn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "今天我有时间。 明天我们见面。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "今天我有时间。 明天我们见面。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请约一个见面时间，再确认一次。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我们明天下午两点见面，好吗？是明天下午两点，对吗？",
+      "sampleVi": "Mai chúng ta gặp lúc hai giờ chiều nhé? Là hai giờ chiều mai, đúng không?"
+    }
+  ],
+  "transferTask": "Hẹn bạn học; buổi 2 sửa lại lịch hẹn ở quán nước."
+}

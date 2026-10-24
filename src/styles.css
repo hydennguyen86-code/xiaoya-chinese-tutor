@@ -4955,3 +4955,11 @@ svg {
   .topbar { flex-wrap: wrap; }
   .topbar-actions { flex-wrap: wrap; justify-content: flex-end; flex: 1 1 100%; }
 }
+
+.course-picker { display: flex; flex-wrap: wrap; gap: 10px; padding: 8px 0; }
+.course-picker label { display: flex; gap: 6px; align-items: center; min-width: 0; max-width: 100%; }
+.course-picker select { max-width: 100%; min-width: 0; padding: 8px; border: 1px solid #d8cab7; border-radius: 10px; background: #fffaf2; color: inherit; }
+.course-practice fieldset { border: 1px solid #d8cab7; border-radius: 10px; margin: 12px 0; padding: 12px; }
+.course-choice { display: flex; align-items: baseline; gap: 8px; padding: 7px 0; }
+.course-practice details p { line-height: 1.8; }
+.course-practice h4 { margin: 0 0 10px; }

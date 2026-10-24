@@ -1,0 +1,185 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 10,
+  "lessonTitle": "Kể trải nghiệm và rút bài học",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "经历",
+      "meaning": "trải nghiệm; trải qua",
+      "example": "这次经历让我改变了想法。",
+      "exampleVi": "Trải nghiệm này khiến tôi thay đổi suy nghĩ.",
+      "pinyin": "jīng lì",
+      "examplePinyin": "zhè cì jīng lì ràng wǒ gǎi biàn le xiǎng fǎ 。"
+    },
+    {
+      "word": "失误",
+      "meaning": "sai sót",
+      "example": "我承认这是一次沟通失误。",
+      "exampleVi": "Tôi thừa nhận đây là một sai sót giao tiếp.",
+      "pinyin": "shī wù",
+      "examplePinyin": "wǒ chéng rèn zhè shì yí cì gōu tōng shī wù 。"
+    },
+    {
+      "word": "意识",
+      "meaning": "ý thức; nhận ra",
+      "example": "我意识到自己没有确认时间。",
+      "exampleVi": "Tôi nhận ra mình chưa xác nhận thời gian.",
+      "pinyin": "yì shí",
+      "examplePinyin": "wǒ yì shí dào zì jǐ méi yǒu què rèn shí jiān 。"
+    },
+    {
+      "word": "改进",
+      "meaning": "cải tiến; cải thiện cách làm",
+      "example": "我们需要改进交接方式。",
+      "exampleVi": "Chúng ta cần cải tiến cách bàn giao.",
+      "pinyin": "gǎi jìn",
+      "examplePinyin": "wǒ men xū yào gǎi jìn jiāo jiē fāng shì 。"
+    },
+    {
+      "word": "结果",
+      "meaning": "kết quả",
+      "example": "结果跟我们预想的不一样。",
+      "exampleVi": "Kết quả khác với dự kiến của chúng ta.",
+      "pinyin": "jié guǒ",
+      "examplePinyin": "jié guǒ gēn wǒ men yù xiǎng de bù yí yàng 。"
+    },
+    {
+      "word": "反思",
+      "meaning": "nhìn lại, suy xét để rút kinh nghiệm",
+      "example": "事后反思比互相指责更有用。",
+      "exampleVi": "Sau việc đó, nhìn lại để rút kinh nghiệm hữu ích hơn đổ lỗi cho nhau.",
+      "pinyin": "fǎn sī",
+      "examplePinyin": "shì hòu fǎn sī bǐ hù xiāng zhǐ zé gèng yǒu yòng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "直到……才……",
+      "explanation": "Nói mãi đến một mốc mới nhận ra hoặc thực hiện việc gì.",
+      "example": "直到客户打电话，我才发现时间记错了。",
+      "exampleVi": "Mãi đến khi khách gọi tôi mới phát hiện ghi nhầm giờ.",
+      "examplePinyin": "zhí dào kè hù dǎ diàn huà ， wǒ cái fā xiàn shí jiān jì cuò le 。"
+    },
+    {
+      "pattern": "这次经历让我意识到……",
+      "explanation": "Nêu bài học gắn với một sự việc cụ thể, tránh kết luận sáo rỗng.",
+      "example": "这次经历让我意识到确认细节的重要性。",
+      "exampleVi": "Trải nghiệm này khiến tôi nhận ra tầm quan trọng của việc xác nhận chi tiết.",
+      "examplePinyin": "zhè cì jīng lì ràng wǒ yì shí dào què rèn xì jié de zhòng yào xìng 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Lỗi tổ chức hoạt động; buổi 2 kể việc học ngoại ngữ hoặc trải nghiệm của chính mình. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người nghe và hỏi thêm",
+    "learnerRole": "Người kể trải nghiệm",
+    "goals": [
+      "Kể trải nghiệm có trình tự và nguyên nhân",
+      "Nêu một thay đổi cụ thể sau trải nghiệm"
+    ],
+    "opening": "请讲一次你处理失误的经历：发生了什么，你后来怎样改进？",
+    "openingVi": "Xin kể một lần bạn xử lý sai sót: chuyện gì xảy ra và sau đó bạn cải tiến thế nào?"
+  },
+  "freeTalk": {
+    "question": "一次不顺利的经历一定是坏事吗？请用例子说明。",
+    "questionVi": "Một trải nghiệm không thuận lợi có nhất thiết là điều xấu không? Xin giải thích bằng ví dụ."
+  },
+  "learningNotes": [
+    "Khi nghe kể lại: giữ đúng ai, vấn đề, hành động, kết quả; không tự thêm hậu quả.",
+    "Có thể dùng câu chuyện giả định nếu không muốn chia sẻ chuyện cá nhân."
+  ],
+  "prerequisites": [
+    1,
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Kể trải nghiệm và rút bài học",
+    "playLimit": 1,
+    "transcript": "第一次独立安排活动时，我以为“下周五”大家都理解成同一天，没有在邮件里写日期。结果两位同事记成了不同的周五。幸好提前核对场地时发现了问题，没有耽误活动。后来我在所有通知里同时写日期、星期和时间，也请关键负责人回复确认。这次失误让我明白，熟悉的词也可能有不同理解。",
+    "translation": "Lần đầu tự tổ chức hoạt động, người kể chỉ ghi “thứ Sáu tuần sau”, khiến hai đồng nghiệp hiểu khác ngày. Nhờ kiểm tra địa điểm trước nên phát hiện kịp. Sau đó người kể luôn ghi ngày, thứ, giờ và xin người phụ trách xác nhận.",
+    "questions": [
+      {
+        "prompt": "Nguyên nhân hiểu nhầm?",
+        "options": [
+          "Không có địa điểm",
+          "Không gửi thư",
+          "Chỉ ghi thứ Sáu tuần sau, không ghi ngày"
+        ],
+        "answer": 2,
+        "explanation": "Người kể không ghi ngày cụ thể."
+      },
+      {
+        "prompt": "Hoạt động có bị lỡ không?",
+        "options": [
+          "Không, phát hiện trước",
+          "Có, hủy toàn bộ",
+          "Không được nói"
+        ],
+        "answer": 0,
+        "explanation": "Người kể nói 没有耽误活动."
+      },
+      {
+        "prompt": "Cách cải tiến?",
+        "options": [
+          "Đổ lỗi đồng nghiệp",
+          "Ghi đủ ngày/thứ/giờ và xin xác nhận",
+          "Không dùng email nữa"
+        ],
+        "answer": 1,
+        "explanation": "Đây là hai hành động cụ thể sau sai sót."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Lần đầu tự tổ chức hoạt động, người kể chỉ ghi “thứ Sáu tuần sau”, khiến hai đồng nghiệp hiểu khác ngày. Nhờ kiểm tra địa điểm trước nên phát hiện kịp. Sau đó người kể luôn ghi ngày, thứ, giờ và xin người phụ trách xác nhận.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "这次经历让我改变了想法。 我承认这是一次沟通失误。 我意识到自己没有确认时间。 我们需要改进交接方式。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "一次不顺利的经历一定是坏事吗？请用例子说明。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "不顺利的经历不一定是坏事，但也不会自动变成收获。重要的是事后有没有分析原因，并改变下一次的做法。比如因为时间没有写清楚而产生误会，以后就应该同时写日期和时间，并请对方确认。当然，有些损失不能靠一句“学到了”来弥补，还需要承担责任。反思只有落实到行动，才真正有用。",
+      "sampleVi": "Trải nghiệm không thuận lợi chưa chắc xấu, nhưng cũng không tự biến thành bài học. Quan trọng là phân tích nguyên nhân rồi đổi cách làm. Ví dụ hiểu nhầm giờ thì sau đó ghi đủ ngày giờ và xin xác nhận. Có thiệt hại không thể bù bằng câu “đã học được”, còn cần chịu trách nhiệm. Suy xét chỉ hữu ích khi thành hành động."
+    }
+  ],
+  "transferTask": "Lỗi tổ chức hoạt động; buổi 2 kể việc học ngoại ngữ hoặc trải nghiệm của chính mình."
+}

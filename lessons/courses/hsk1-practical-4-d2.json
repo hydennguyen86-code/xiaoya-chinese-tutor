@@ -1,0 +1,164 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 4,
+  "lessonTitle": "Gia đình và số người",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "家",
+      "meaning": "nhà; gia đình",
+      "example": "我家有三口人。",
+      "exampleVi": "Gia đình tôi có ba người.",
+      "pinyin": "jiā",
+      "examplePinyin": "wǒ jiā yǒu sān kǒu rén 。"
+    },
+    {
+      "word": "爸爸",
+      "meaning": "bố",
+      "example": "我爸爸是老师。",
+      "exampleVi": "Bố tôi là giáo viên.",
+      "pinyin": "bà ba",
+      "examplePinyin": "wǒ bà ba shì lǎo shī 。"
+    },
+    {
+      "word": "妈妈",
+      "meaning": "mẹ",
+      "example": "我妈妈在家。",
+      "exampleVi": "Mẹ tôi đang ở nhà.",
+      "pinyin": "mā ma",
+      "examplePinyin": "wǒ mā ma zài jiā 。"
+    },
+    {
+      "word": "哥哥",
+      "meaning": "anh trai",
+      "example": "我有一个哥哥。",
+      "exampleVi": "Tôi có một anh trai.",
+      "pinyin": "gē ge",
+      "examplePinyin": "wǒ yǒu yí gè gē ge 。"
+    },
+    {
+      "word": "姐姐",
+      "meaning": "chị gái",
+      "example": "我姐姐是学生。",
+      "exampleVi": "Chị gái tôi là học sinh.",
+      "pinyin": "jiě jie",
+      "examplePinyin": "wǒ jiě jie shì xué shēng 。"
+    },
+    {
+      "word": "有",
+      "meaning": "có",
+      "example": "我有两个姐姐。",
+      "exampleVi": "Tôi có hai chị gái.",
+      "pinyin": "yǒu",
+      "examplePinyin": "wǒ yǒu liǎng gè jiě jie 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我家有……口人",
+      "explanation": "Đếm số thành viên trong gia đình bằng 口.",
+      "example": "我家有四口人。",
+      "exampleVi": "Gia đình tôi có bốn người.",
+      "examplePinyin": "wǒ jiā yǒu sì kǒu rén 。"
+    },
+    {
+      "pattern": "我有……",
+      "explanation": "Nói mình có anh/chị/em; 一个 / 两个 đứng trước danh từ chỉ người.",
+      "example": "我有一个姐姐。",
+      "exampleVi": "Tôi có một chị gái.",
+      "examplePinyin": "wǒ yǒu yí gè jiě jie 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Giới thiệu gia đình với bạn; buổi 2 giới thiệu một gia đình giả định khác. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Bạn học",
+    "learnerRole": "Người giới thiệu gia đình",
+    "goals": [
+      "Nói số người trong gia đình",
+      "Giới thiệu một người thân hoặc nói không có anh/chị/em"
+    ],
+    "opening": "你家有几口人？",
+    "openingVi": "Gia đình bạn có mấy người?"
+  },
+  "freeTalk": {
+    "question": "请介绍你的家人，也可以介绍一个虚构的家庭。",
+    "questionVi": "Xin giới thiệu gia đình bạn, hoặc một gia đình giả định."
+  },
+  "learningNotes": [
+    "Bổ trợ: 弟弟 dìdi — em trai; 妹妹 mèimei — em gái; 没有 méiyǒu — không có; 几 jǐ — mấy; 口 kǒu — lượng từ đếm người trong gia đình.",
+    "Gia đình không nhất thiết có đủ bố mẹ/anh chị em; dùng hoàn cảnh của mình hoặc gia đình giả định."
+  ],
+  "prerequisites": [
+    2,
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Gia đình và số người",
+    "playLimit": 2,
+    "transcript": "甲：你有姐姐吗？乙：没有。我有一个弟弟。甲：你家有几口人？乙：三口人：妈妈、弟弟和我。",
+    "translation": "A: Bạn có chị gái không? B: Không. Tôi có một em trai. A: Gia đình bạn có mấy người? B: Ba người: mẹ, em trai và tôi.",
+    "questions": [
+      {
+        "prompt": "B có em trai không?",
+        "options": [
+          "Có",
+          "Không",
+          "Không nói"
+        ],
+        "answer": 0,
+        "explanation": "B nói 我有一个弟弟."
+      },
+      {
+        "prompt": "Gia đình B có mấy người?",
+        "options": [
+          "Hai",
+          "Ba",
+          "Bốn"
+        ],
+        "answer": 1,
+        "explanation": "B nói 三口人."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ yǒu jiě jie ma ？ yǐ ： méi yǒu 。 wǒ yǒu yí gè dì di 。 jiǎ ： nǐ jiā yǒu jǐ kǒu rén ？ yǐ ： sān kǒu rén ： mā ma 、 dì di hé wǒ 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我家有三口人。 我爸爸是老师。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我家有三口人。 我爸爸是老师。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请介绍你的家人，也可以介绍一个虚构的家庭。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我家有三口人：妈妈、姐姐和我。我姐姐是学生。",
+      "sampleVi": "Gia đình tôi có ba người: mẹ, chị gái và tôi. Chị gái tôi là học sinh."
+    }
+  ],
+  "transferTask": "Giới thiệu gia đình với bạn; buổi 2 giới thiệu một gia đình giả định khác."
+}

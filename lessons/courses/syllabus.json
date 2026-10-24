@@ -1,0 +1,1044 @@
+{
+  "book": "Misu — Nghe nói thực tế HSK 1 & HSK 5 (giai đoạn 1)",
+  "authored": true,
+  "volumes": [
+    {
+      "id": "hsk1-practical",
+      "title": "HSK 1 · Nghe nói thực tế",
+      "levels": [
+        "HSK1-2"
+      ],
+      "targetLevel": "HSK1",
+      "authored": true,
+      "lessons": [
+        {
+          "no": 1,
+          "title": "Nghe âm, chào hỏi và xin nhắc lại",
+          "topics": [
+            "Nghe âm, chào hỏi và xin nhắc lại"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "你好",
+              "meaning": "xin chào"
+            },
+            {
+              "word": "好",
+              "meaning": "tốt; khỏe"
+            },
+            {
+              "word": "谢谢",
+              "meaning": "cảm ơn"
+            },
+            {
+              "word": "再见",
+              "meaning": "tạm biệt"
+            },
+            {
+              "word": "请",
+              "meaning": "xin; mời"
+            },
+            {
+              "word": "说",
+              "meaning": "nói"
+            }
+          ],
+          "patterns": [
+            "……好吗？",
+            "请再说一遍"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 2,
+          "title": "Tên, người và quốc tịch",
+          "topics": [
+            "Tên, người và quốc tịch"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "我",
+              "meaning": "tôi"
+            },
+            {
+              "word": "你",
+              "meaning": "bạn"
+            },
+            {
+              "word": "叫",
+              "meaning": "tên là"
+            },
+            {
+              "word": "名字",
+              "meaning": "tên"
+            },
+            {
+              "word": "是",
+              "meaning": "là"
+            },
+            {
+              "word": "人",
+              "meaning": "người"
+            }
+          ],
+          "patterns": [
+            "我叫……",
+            "你叫什么名字？"
+          ],
+          "prerequisites": [
+            1
+          ]
+        },
+        {
+          "no": 3,
+          "title": "Số đếm và số điện thoại",
+          "topics": [
+            "Số đếm và số điện thoại"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "一",
+              "meaning": "một"
+            },
+            {
+              "word": "二",
+              "meaning": "hai"
+            },
+            {
+              "word": "三",
+              "meaning": "ba"
+            },
+            {
+              "word": "多少",
+              "meaning": "bao nhiêu"
+            },
+            {
+              "word": "电话",
+              "meaning": "điện thoại"
+            },
+            {
+              "word": "号码",
+              "meaning": "số; mã số"
+            }
+          ],
+          "patterns": [
+            "……的电话号码是多少？",
+            "是……吗？"
+          ],
+          "prerequisites": [
+            1,
+            2
+          ]
+        },
+        {
+          "no": 4,
+          "title": "Gia đình và số người",
+          "topics": [
+            "Gia đình và số người"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "家",
+              "meaning": "nhà; gia đình"
+            },
+            {
+              "word": "爸爸",
+              "meaning": "bố"
+            },
+            {
+              "word": "妈妈",
+              "meaning": "mẹ"
+            },
+            {
+              "word": "哥哥",
+              "meaning": "anh trai"
+            },
+            {
+              "word": "姐姐",
+              "meaning": "chị gái"
+            },
+            {
+              "word": "有",
+              "meaning": "có"
+            }
+          ],
+          "patterns": [
+            "我家有……口人",
+            "我有……"
+          ],
+          "prerequisites": [
+            2,
+            3
+          ]
+        },
+        {
+          "no": 5,
+          "title": "Giờ giấc và hẹn gặp",
+          "topics": [
+            "Giờ giấc và hẹn gặp"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "今天",
+              "meaning": "hôm nay"
+            },
+            {
+              "word": "明天",
+              "meaning": "ngày mai"
+            },
+            {
+              "word": "点",
+              "meaning": "giờ"
+            },
+            {
+              "word": "上午",
+              "meaning": "buổi sáng"
+            },
+            {
+              "word": "下午",
+              "meaning": "buổi chiều"
+            },
+            {
+              "word": "见面",
+              "meaning": "gặp mặt"
+            }
+          ],
+          "patterns": [
+            "我们……见面",
+            "……有时间吗？"
+          ],
+          "prerequisites": [
+            3
+          ]
+        },
+        {
+          "no": 6,
+          "title": "Gọi nước và nói sở thích",
+          "topics": [
+            "Gọi nước và nói sở thích"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "水",
+              "meaning": "nước"
+            },
+            {
+              "word": "茶",
+              "meaning": "trà"
+            },
+            {
+              "word": "咖啡",
+              "meaning": "cà phê"
+            },
+            {
+              "word": "喝",
+              "meaning": "uống"
+            },
+            {
+              "word": "杯",
+              "meaning": "cốc; lượng từ cho đồ uống"
+            },
+            {
+              "word": "热",
+              "meaning": "nóng"
+            }
+          ],
+          "patterns": [
+            "我要……杯……",
+            "请不要加……"
+          ],
+          "prerequisites": [
+            2,
+            3
+          ]
+        },
+        {
+          "no": 7,
+          "title": "Gọi món và hỏi giá",
+          "topics": [
+            "Gọi món và hỏi giá"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "吃",
+              "meaning": "ăn"
+            },
+            {
+              "word": "米饭",
+              "meaning": "cơm"
+            },
+            {
+              "word": "面条",
+              "meaning": "mì"
+            },
+            {
+              "word": "钱",
+              "meaning": "tiền"
+            },
+            {
+              "word": "块",
+              "meaning": "đồng; cách nói khẩu ngữ của đơn vị tiền"
+            },
+            {
+              "word": "辣",
+              "meaning": "cay"
+            }
+          ],
+          "patterns": [
+            "……多少钱？",
+            "请少放一点儿辣椒"
+          ],
+          "prerequisites": [
+            3,
+            6
+          ]
+        },
+        {
+          "no": 8,
+          "title": "Vị trí và xác nhận đường đi",
+          "topics": [
+            "Vị trí và xác nhận đường đi"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "在",
+              "meaning": "ở"
+            },
+            {
+              "word": "哪里",
+              "meaning": "đâu"
+            },
+            {
+              "word": "前面",
+              "meaning": "phía trước"
+            },
+            {
+              "word": "左边",
+              "meaning": "bên trái"
+            },
+            {
+              "word": "右边",
+              "meaning": "bên phải"
+            },
+            {
+              "word": "走",
+              "meaning": "đi bộ; đi theo hướng"
+            }
+          ],
+          "patterns": [
+            "……在哪里？",
+            "是往……走吗？"
+          ],
+          "prerequisites": [
+            2,
+            5
+          ]
+        },
+        {
+          "no": 9,
+          "title": "Mua đồ và chọn phương án",
+          "topics": [
+            "Mua đồ và chọn phương án"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "买",
+              "meaning": "mua"
+            },
+            {
+              "word": "这个",
+              "meaning": "cái này"
+            },
+            {
+              "word": "那个",
+              "meaning": "cái kia"
+            },
+            {
+              "word": "大",
+              "meaning": "to; lớn"
+            },
+            {
+              "word": "小",
+              "meaning": "nhỏ"
+            },
+            {
+              "word": "喜欢",
+              "meaning": "thích"
+            }
+          ],
+          "patterns": [
+            "我想买……",
+            "有……一点儿的吗？"
+          ],
+          "prerequisites": [
+            3,
+            7
+          ]
+        },
+        {
+          "no": 10,
+          "title": "Lịch sinh hoạt và công việc",
+          "topics": [
+            "Lịch sinh hoạt và công việc"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "每天",
+              "meaning": "hằng ngày"
+            },
+            {
+              "word": "起床",
+              "meaning": "thức dậy"
+            },
+            {
+              "word": "工作",
+              "meaning": "làm việc; công việc"
+            },
+            {
+              "word": "学习",
+              "meaning": "học"
+            },
+            {
+              "word": "回家",
+              "meaning": "về nhà"
+            },
+            {
+              "word": "睡觉",
+              "meaning": "ngủ"
+            }
+          ],
+          "patterns": [
+            "我每天……",
+            "……几点……？"
+          ],
+          "prerequisites": [
+            5
+          ]
+        },
+        {
+          "no": 11,
+          "title": "Thời tiết, sức khỏe đơn giản và xin giúp đỡ",
+          "topics": [
+            "Thời tiết, sức khỏe đơn giản và xin giúp đỡ"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "天气",
+              "meaning": "thời tiết"
+            },
+            {
+              "word": "冷",
+              "meaning": "lạnh"
+            },
+            {
+              "word": "热",
+              "meaning": "nóng"
+            },
+            {
+              "word": "下雨",
+              "meaning": "mưa"
+            },
+            {
+              "word": "医院",
+              "meaning": "bệnh viện"
+            },
+            {
+              "word": "帮助",
+              "meaning": "giúp đỡ"
+            }
+          ],
+          "patterns": [
+            "今天……",
+            "请帮我……"
+          ],
+          "prerequisites": [
+            1,
+            5,
+            8
+          ]
+        },
+        {
+          "no": 12,
+          "title": "Chuyến đi nhỏ: nghe rồi tự xử lý",
+          "topics": [
+            "Chuyến đi nhỏ: nghe rồi tự xử lý"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "去",
+              "meaning": "đi"
+            },
+            {
+              "word": "朋友",
+              "meaning": "người bạn"
+            },
+            {
+              "word": "现在",
+              "meaning": "bây giờ"
+            },
+            {
+              "word": "什么",
+              "meaning": "gì"
+            },
+            {
+              "word": "不",
+              "meaning": "không"
+            },
+            {
+              "word": "对",
+              "meaning": "đúng"
+            }
+          ],
+          "patterns": [
+            "先……再……",
+            "不是……是……"
+          ],
+          "prerequisites": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hsk5-practical",
+      "title": "HSK 5 · Nghe nói thực tế",
+      "levels": [
+        "HSK5-6",
+        "free"
+      ],
+      "targetLevel": "HSK5",
+      "authored": true,
+      "lessons": [
+        {
+          "no": 1,
+          "title": "Giới thiệu năng lực và mục tiêu công việc",
+          "topics": [
+            "Giới thiệu năng lực và mục tiêu công việc"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "负责",
+              "meaning": "phụ trách; chịu trách nhiệm"
+            },
+            {
+              "word": "经验",
+              "meaning": "kinh nghiệm"
+            },
+            {
+              "word": "优势",
+              "meaning": "điểm mạnh; lợi thế"
+            },
+            {
+              "word": "目标",
+              "meaning": "mục tiêu"
+            },
+            {
+              "word": "适应",
+              "meaning": "thích nghi"
+            },
+            {
+              "word": "具体",
+              "meaning": "cụ thể"
+            }
+          ],
+          "patterns": [
+            "不仅……还……",
+            "通过……提高……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 2,
+          "title": "Nghe yêu cầu và xác nhận đầu việc",
+          "topics": [
+            "Nghe yêu cầu và xác nhận đầu việc"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "需求",
+              "meaning": "nhu cầu; yêu cầu"
+            },
+            {
+              "word": "确认",
+              "meaning": "xác nhận"
+            },
+            {
+              "word": "范围",
+              "meaning": "phạm vi"
+            },
+            {
+              "word": "优先",
+              "meaning": "ưu tiên"
+            },
+            {
+              "word": "避免",
+              "meaning": "tránh"
+            },
+            {
+              "word": "细节",
+              "meaning": "chi tiết"
+            }
+          ],
+          "patterns": [
+            "你的意思是……，对吗？",
+            "在……之前，先……"
+          ],
+          "prerequisites": [
+            1
+          ]
+        },
+        {
+          "no": 3,
+          "title": "Báo tiến độ và thương lượng thời hạn",
+          "topics": [
+            "Báo tiến độ và thương lượng thời hạn"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "进度",
+              "meaning": "tiến độ"
+            },
+            {
+              "word": "截止",
+              "meaning": "hạn chót; kết thúc đến một mốc"
+            },
+            {
+              "word": "延迟",
+              "meaning": "chậm; trì hoãn"
+            },
+            {
+              "word": "调整",
+              "meaning": "điều chỉnh"
+            },
+            {
+              "word": "影响",
+              "meaning": "ảnh hưởng"
+            },
+            {
+              "word": "承担",
+              "meaning": "đảm nhận; chịu trách nhiệm"
+            }
+          ],
+          "patterns": [
+            "由于……，……",
+            "如果……，就能……"
+          ],
+          "prerequisites": [
+            1,
+            2
+          ]
+        },
+        {
+          "no": 4,
+          "title": "Họp nhóm và bất đồng có lý do",
+          "topics": [
+            "Họp nhóm và bất đồng có lý do"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "建议",
+              "meaning": "đề nghị; đề xuất"
+            },
+            {
+              "word": "方案",
+              "meaning": "phương án"
+            },
+            {
+              "word": "成本",
+              "meaning": "chi phí"
+            },
+            {
+              "word": "效果",
+              "meaning": "hiệu quả; kết quả tác động"
+            },
+            {
+              "word": "保留",
+              "meaning": "giữ lại; bảo lưu"
+            },
+            {
+              "word": "执行",
+              "meaning": "thực hiện; thi hành"
+            }
+          ],
+          "patterns": [
+            "我理解……，不过……",
+            "与其……不如……"
+          ],
+          "prerequisites": [
+            2,
+            3
+          ]
+        },
+        {
+          "no": 5,
+          "title": "Thuê nhà và xác nhận điều kiện",
+          "topics": [
+            "Thuê nhà và xác nhận điều kiện"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "押金",
+              "meaning": "tiền đặt cọc"
+            },
+            {
+              "word": "租金",
+              "meaning": "tiền thuê"
+            },
+            {
+              "word": "合同",
+              "meaning": "hợp đồng"
+            },
+            {
+              "word": "维修",
+              "meaning": "sửa chữa; bảo trì"
+            },
+            {
+              "word": "提前",
+              "meaning": "sớm; trước thời hạn"
+            },
+            {
+              "word": "包含",
+              "meaning": "bao gồm"
+            }
+          ],
+          "patterns": [
+            "除了……以外，还……",
+            "如果……，由谁……？"
+          ],
+          "prerequisites": [
+            2
+          ]
+        },
+        {
+          "no": 6,
+          "title": "Khiếu nại dịch vụ và tìm giải pháp",
+          "topics": [
+            "Khiếu nại dịch vụ và tìm giải pháp"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "投诉",
+              "meaning": "khiếu nại; phàn nàn chính thức"
+            },
+            {
+              "word": "承诺",
+              "meaning": "cam kết; lời hứa"
+            },
+            {
+              "word": "退款",
+              "meaning": "hoàn tiền"
+            },
+            {
+              "word": "更换",
+              "meaning": "đổi; thay thế"
+            },
+            {
+              "word": "处理",
+              "meaning": "xử lý"
+            },
+            {
+              "word": "凭证",
+              "meaning": "chứng từ; bằng chứng giao dịch"
+            }
+          ],
+          "patterns": [
+            "我理解……，但我希望……",
+            "如果不能……，是否可以……？"
+          ],
+          "prerequisites": [
+            2,
+            3
+          ]
+        },
+        {
+          "no": 7,
+          "title": "Sắp xếp chuyến đi khi có thay đổi",
+          "topics": [
+            "Sắp xếp chuyến đi khi có thay đổi"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "行程",
+              "meaning": "lịch trình chuyến đi"
+            },
+            {
+              "word": "取消",
+              "meaning": "hủy"
+            },
+            {
+              "word": "改签",
+              "meaning": "đổi vé; đổi chuyến"
+            },
+            {
+              "word": "耽误",
+              "meaning": "làm lỡ; trì hoãn"
+            },
+            {
+              "word": "预订",
+              "meaning": "đặt trước"
+            },
+            {
+              "word": "费用",
+              "meaning": "chi phí; khoản phí"
+            }
+          ],
+          "patterns": [
+            "原本……，现在……",
+            "只要……，就……"
+          ],
+          "prerequisites": [
+            3,
+            6
+          ]
+        },
+        {
+          "no": 8,
+          "title": "Thương lượng giá và điều kiện",
+          "topics": [
+            "Thương lượng giá và điều kiện"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "报价",
+              "meaning": "báo giá"
+            },
+            {
+              "word": "优惠",
+              "meaning": "ưu đãi; giảm giá"
+            },
+            {
+              "word": "条件",
+              "meaning": "điều kiện"
+            },
+            {
+              "word": "数量",
+              "meaning": "số lượng"
+            },
+            {
+              "word": "保证",
+              "meaning": "bảo đảm"
+            },
+            {
+              "word": "合作",
+              "meaning": "hợp tác"
+            }
+          ],
+          "patterns": [
+            "在……的前提下，……",
+            "如果……，能否……？"
+          ],
+          "prerequisites": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "no": 9,
+          "title": "Nghe tin và phân biệt sự kiện với suy luận",
+          "topics": [
+            "Nghe tin và phân biệt sự kiện với suy luận"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "消息",
+              "meaning": "tin; thông tin"
+            },
+            {
+              "word": "来源",
+              "meaning": "nguồn"
+            },
+            {
+              "word": "证据",
+              "meaning": "bằng chứng"
+            },
+            {
+              "word": "结论",
+              "meaning": "kết luận"
+            },
+            {
+              "word": "调查",
+              "meaning": "khảo sát; điều tra"
+            },
+            {
+              "word": "代表",
+              "meaning": "đại diện"
+            }
+          ],
+          "patterns": [
+            "根据……，只能说……，不能说……",
+            "目前还不能确定……"
+          ],
+          "prerequisites": [
+            4
+          ]
+        },
+        {
+          "no": 10,
+          "title": "Kể trải nghiệm và rút bài học",
+          "topics": [
+            "Kể trải nghiệm và rút bài học"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "经历",
+              "meaning": "trải nghiệm; trải qua"
+            },
+            {
+              "word": "失误",
+              "meaning": "sai sót"
+            },
+            {
+              "word": "意识",
+              "meaning": "ý thức; nhận ra"
+            },
+            {
+              "word": "改进",
+              "meaning": "cải tiến; cải thiện cách làm"
+            },
+            {
+              "word": "结果",
+              "meaning": "kết quả"
+            },
+            {
+              "word": "反思",
+              "meaning": "nhìn lại, suy xét để rút kinh nghiệm"
+            }
+          ],
+          "patterns": [
+            "直到……才……",
+            "这次经历让我意识到……"
+          ],
+          "prerequisites": [
+            1,
+            3
+          ]
+        },
+        {
+          "no": 11,
+          "title": "Trình bày quan điểm và phản hồi câu hỏi",
+          "topics": [
+            "Trình bày quan điểm và phản hồi câu hỏi"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "观点",
+              "meaning": "quan điểm"
+            },
+            {
+              "word": "理由",
+              "meaning": "lý do"
+            },
+            {
+              "word": "平衡",
+              "meaning": "cân bằng"
+            },
+            {
+              "word": "限制",
+              "meaning": "giới hạn; hạn chế"
+            },
+            {
+              "word": "实际",
+              "meaning": "thực tế"
+            },
+            {
+              "word": "选择",
+              "meaning": "lựa chọn"
+            }
+          ],
+          "patterns": [
+            "一方面……另一方面……",
+            "并不是……而是……"
+          ],
+          "prerequisites": [
+            4,
+            9,
+            10
+          ]
+        },
+        {
+          "no": 12,
+          "title": "Bài tích hợp: nghe, tóm tắt và đề xuất",
+          "topics": [
+            "Bài tích hợp: nghe, tóm tắt và đề xuất"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "总结",
+              "meaning": "tổng kết; tóm tắt"
+            },
+            {
+              "word": "关键",
+              "meaning": "điểm then chốt; quan trọng"
+            },
+            {
+              "word": "分歧",
+              "meaning": "bất đồng"
+            },
+            {
+              "word": "依据",
+              "meaning": "căn cứ"
+            },
+            {
+              "word": "协调",
+              "meaning": "điều phối; dung hòa"
+            },
+            {
+              "word": "落实",
+              "meaning": "thực hiện cụ thể; đưa vào thực tế"
+            }
+          ],
+          "patterns": [
+            "综合考虑……，我建议……",
+            "为了避免……，需要先……"
+          ],
+          "prerequisites": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    }
+  ]
+}

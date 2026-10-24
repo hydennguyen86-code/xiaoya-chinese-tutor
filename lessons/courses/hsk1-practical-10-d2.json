@@ -1,0 +1,163 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 10,
+  "lessonTitle": "Lịch sinh hoạt và công việc",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "每天",
+      "meaning": "hằng ngày",
+      "example": "我每天学习。",
+      "exampleVi": "Tôi học hằng ngày.",
+      "pinyin": "měi tiān",
+      "examplePinyin": "wǒ měi tiān xué xí 。"
+    },
+    {
+      "word": "起床",
+      "meaning": "thức dậy",
+      "example": "我七点起床。",
+      "exampleVi": "Tôi thức dậy lúc bảy giờ.",
+      "pinyin": "qǐ chuáng",
+      "examplePinyin": "wǒ qī diǎn qǐ chuáng 。"
+    },
+    {
+      "word": "工作",
+      "meaning": "làm việc; công việc",
+      "example": "我上午工作。",
+      "exampleVi": "Tôi làm việc buổi sáng.",
+      "pinyin": "gōng zuò",
+      "examplePinyin": "wǒ shàng wǔ gōng zuò 。"
+    },
+    {
+      "word": "学习",
+      "meaning": "học",
+      "example": "我晚上学习中文。",
+      "exampleVi": "Tôi học tiếng Trung buổi tối.",
+      "pinyin": "xué xí",
+      "examplePinyin": "wǒ wǎn shàng xué xí zhōng wén 。"
+    },
+    {
+      "word": "回家",
+      "meaning": "về nhà",
+      "example": "我六点回家。",
+      "exampleVi": "Tôi về nhà lúc sáu giờ.",
+      "pinyin": "huí jiā",
+      "examplePinyin": "wǒ liù diǎn huí jiā 。"
+    },
+    {
+      "word": "睡觉",
+      "meaning": "ngủ",
+      "example": "我十点睡觉。",
+      "exampleVi": "Tôi ngủ lúc mười giờ.",
+      "pinyin": "shuì jiào",
+      "examplePinyin": "wǒ shí diǎn shuì jiào 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我每天……",
+      "explanation": "Nói thói quen; thời điểm đứng trước hành động.",
+      "example": "我每天七点起床。",
+      "exampleVi": "Tôi thức dậy lúc bảy giờ mỗi ngày.",
+      "examplePinyin": "wǒ měi tiān qī diǎn qǐ chuáng 。"
+    },
+    {
+      "pattern": "……几点……？",
+      "explanation": "Hỏi giờ thực hiện hành động.",
+      "example": "你几点回家？",
+      "exampleVi": "Bạn về nhà lúc mấy giờ?",
+      "examplePinyin": "nǐ jǐ diǎn huí jiā ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Chia sẻ lịch cá nhân; buổi 2 thay lịch làm việc bằng lịch học/ngày nghỉ. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người kể lịch",
+    "goals": [
+      "Kể hai hoạt động kèm thời gian",
+      "Hỏi một thời điểm trong lịch của bạn"
+    ],
+    "opening": "你每天几点起床？",
+    "openingVi": "Bạn thức dậy lúc mấy giờ mỗi ngày?"
+  },
+  "freeTalk": {
+    "question": "请说两个活动和时间，再问对方一个问题。",
+    "questionVi": "Xin nói hai hoạt động cùng thời gian, rồi hỏi người đối thoại một câu."
+  },
+  "learningNotes": [
+    "Bổ trợ: 晚上 wǎnshang — buổi tối; 中文 Zhōngwén — tiếng Trung.",
+    "Người không đi làm có thể dùng 学习; không mặc định mọi người học đều có lịch công sở."
+  ],
+  "prerequisites": [
+    5
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Lịch sinh hoạt và công việc",
+    "playLimit": 2,
+    "transcript": "甲：你每天八点工作吗？乙：今天不工作。我上午学习，下午回家。甲：你几点睡觉？乙：十点。",
+    "translation": "A: Ngày nào bạn cũng làm việc lúc tám giờ à? B: Hôm nay tôi không làm. Tôi học buổi sáng, về nhà buổi chiều. A: Bạn ngủ lúc mấy giờ? B: Mười giờ.",
+    "questions": [
+      {
+        "prompt": "Hôm nay B có làm việc không?",
+        "options": [
+          "Không",
+          "Chỉ buổi tối",
+          "Có"
+        ],
+        "answer": 0,
+        "explanation": "B nói 今天不工作."
+      },
+      {
+        "prompt": "B ngủ lúc nào?",
+        "options": [
+          "Chín",
+          "Mười",
+          "Tám"
+        ],
+        "answer": 1,
+        "explanation": "B trả lời 十点."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ měi tiān bā diǎn gōng zuò ma ？ yǐ ： jīn tiān bù gōng zuò 。 wǒ shàng wǔ xué xí ， xià wǔ huí jiā 。 jiǎ ： nǐ jǐ diǎn shuì jiào ？ yǐ ： shí diǎn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我每天学习。 我七点起床。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我每天学习。 我七点起床。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请说两个活动和时间，再问对方一个问题。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我七点起床，六点回家。你几点回家？",
+      "sampleVi": "Tôi thức dậy lúc bảy giờ, về nhà lúc sáu giờ. Bạn về nhà lúc mấy giờ?"
+    }
+  ],
+  "transferTask": "Chia sẻ lịch cá nhân; buổi 2 thay lịch làm việc bằng lịch học/ngày nghỉ."
+}

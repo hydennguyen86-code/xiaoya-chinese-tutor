@@ -1,0 +1,164 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 2,
+  "lessonTitle": "Tên, người và quốc tịch",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "我",
+      "meaning": "tôi",
+      "example": "我是学生。",
+      "exampleVi": "Tôi là học sinh.",
+      "pinyin": "wǒ",
+      "examplePinyin": "wǒ shì xué shēng 。"
+    },
+    {
+      "word": "你",
+      "meaning": "bạn",
+      "example": "你是老师吗？",
+      "exampleVi": "Bạn là giáo viên à?",
+      "pinyin": "nǐ",
+      "examplePinyin": "nǐ shì lǎo shī ma ？"
+    },
+    {
+      "word": "叫",
+      "meaning": "tên là",
+      "example": "我叫小安。",
+      "exampleVi": "Tôi tên là Tiểu An.",
+      "pinyin": "jiào",
+      "examplePinyin": "wǒ jiào xiǎo ān 。"
+    },
+    {
+      "word": "名字",
+      "meaning": "tên",
+      "example": "你的名字是什么？",
+      "exampleVi": "Tên của bạn là gì?",
+      "pinyin": "míng zì",
+      "examplePinyin": "nǐ de míng zì shì shén me ？"
+    },
+    {
+      "word": "是",
+      "meaning": "là",
+      "example": "我是越南人。",
+      "exampleVi": "Tôi là người Việt Nam.",
+      "pinyin": "shì",
+      "examplePinyin": "wǒ shì yuè nán rén 。"
+    },
+    {
+      "word": "人",
+      "meaning": "người",
+      "example": "他是中国人。",
+      "exampleVi": "Anh ấy là người Trung Quốc.",
+      "pinyin": "rén",
+      "examplePinyin": "tā shì zhōng guó rén 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我叫……",
+      "explanation": "Giới thiệu tên; không dùng 是 ngay trước 叫.",
+      "example": "我叫小安。",
+      "exampleVi": "Tôi tên là Tiểu An.",
+      "examplePinyin": "wǒ jiào xiǎo ān 。"
+    },
+    {
+      "pattern": "你叫什么名字？",
+      "explanation": "Câu hỏi tên có từ hỏi 什么 nên không thêm 吗.",
+      "example": "你叫什么名字？",
+      "exampleVi": "Bạn tên gì?",
+      "examplePinyin": "nǐ jiào shén me míng zì ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Làm quen với bạn học; buổi 2 xác nhận lại tên ở quầy đăng ký. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người đăng ký",
+    "learnerRole": "Người giới thiệu",
+    "goals": [
+      "Nói tên và quốc tịch của mình",
+      "Hỏi tên người đối thoại"
+    ],
+    "opening": "你好，你叫什么名字？",
+    "openingVi": "Chào bạn, bạn tên gì?"
+  },
+  "freeTalk": {
+    "question": "请说你的名字和你是哪国人。",
+    "questionVi": "Xin nói tên của bạn và bạn là người nước nào."
+  },
+  "learningNotes": [
+    "Cụm bổ trợ: 越南 Yuènán — Việt Nam; 中国 Zhōngguó — Trung Quốc; 不 bù — không.",
+    "Khi 不 đứng trước thanh 4, thường đọc bú, ví dụ 不是 bú shì.",
+    "Từ hỗ trợ trong câu mẫu: 老师 lǎoshī — giáo viên; 学生 xuésheng — học sinh/sinh viên tùy ngữ cảnh."
+  ],
+  "prerequisites": [
+    1
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Tên, người và quốc tịch",
+    "playLimit": 2,
+    "transcript": "甲：你好，我叫小安。你叫什么名字？乙：我叫小明。我是中国人。甲：我是越南人。",
+    "translation": "A: Chào bạn, tôi tên Tiểu An. Bạn tên gì? B: Tôi tên Tiểu Minh. Tôi là người Trung Quốc. A: Tôi là người Việt Nam.",
+    "questions": [
+      {
+        "prompt": "B tên gì?",
+        "options": [
+          "小明",
+          "老师",
+          "小安"
+        ],
+        "answer": 0,
+        "explanation": "B nói 我叫小明."
+      },
+      {
+        "prompt": "A là người nước nào?",
+        "options": [
+          "Nhật Bản",
+          "Việt Nam",
+          "Trung Quốc"
+        ],
+        "answer": 1,
+        "explanation": "A nói 我是越南人."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo ān 。 nǐ jiào shén me míng zì ？ yǐ ： wǒ jiào xiǎo míng 。 wǒ shì zhōng guó rén 。 jiǎ ： wǒ shì yuè nán rén 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我是学生。 你是老师吗？",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我是学生。 你是老师吗？"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请说你的名字和你是哪国人。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我叫小安。我是越南人。你叫什么名字？",
+      "sampleVi": "Tôi tên Tiểu An. Tôi là người Việt Nam. Bạn tên gì?"
+    }
+  ],
+  "transferTask": "Làm quen với bạn học; buổi 2 xác nhận lại tên ở quầy đăng ký."
+}

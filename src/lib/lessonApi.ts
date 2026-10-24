@@ -17,7 +17,44 @@ export interface LessonPattern {
   exampleVi: string;
 }
 
+export interface ListeningExercise {
+  title: string;
+  transcript: string;
+  translation: string;
+  pinyin?: string;
+  playLimit: number;
+  questions: Array<{ prompt: string; options: string[]; answer: number; explanation: string }>;
+}
+export interface SpeakingExercise {
+  kind: 'repeat' | 'retell' | 'read' | 'answer' | 'opinion';
+  prompt: string;
+  promptVi?: string;
+  text?: string;
+  audioText?: string;
+  reference: string;
+  sampleZh?: string;
+  sampleVi?: string;
+  prepareSeconds: number;
+  responseSeconds: number;
+  checklist: string[];
+}
 export interface LessonContent {
+  authored?: boolean;
+  level?: string;
+  targetLevel?: string;
+  editorialStatus?: string;
+  recommendedMinutes?: number;
+  learningNotes?: string[];
+  pronunciation?: Array<{ text: string; pinyin: string; hint: string }>;
+  listening?: ListeningExercise;
+  speaking?: SpeakingExercise[];
+  checkpoint?: {
+    title: string;
+    practiceMinutes: number;
+    instructions: string;
+    listening: ListeningExercise[];
+    speaking: SpeakingExercise[];
+  };
   reviewed?: boolean;
   review?: { reviewer: string; date: string };
   volumeId: string;
@@ -51,20 +88,23 @@ async function errorText(res: Response) {
   return `Yêu cầu thất bại (HTTP ${res.status}).`;
 }
 
-export async function fetchSyllabus(): Promise<Syllabus> {
-  const res = await fetch('/api/syllabus');
+export async function fetchSyllabus(signal?: AbortSignal): Promise<Syllabus> {
+  const res = await fetch('/api/syllabus', { signal });
   if (!res.ok) throw new Error(await errorText(res));
   return res.json();
 }
 
-export async function fetchLessonContent(payload: {
-  provider: string;
-  model: string;
-  volumeId: string;
-  lessonNo: number;
-  day: number;
-  level: string;
-}, signal?: AbortSignal): Promise<LessonContent> {
+export async function fetchLessonContent(
+  payload: {
+    provider: string;
+    model: string;
+    volumeId: string;
+    lessonNo: number;
+    day: number;
+    level: string;
+  },
+  signal?: AbortSignal,
+): Promise<LessonContent> {
   const res = await fetch('/api/lesson-content', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

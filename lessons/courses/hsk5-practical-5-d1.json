@@ -1,0 +1,183 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 5,
+  "lessonTitle": "Thuê nhà và xác nhận điều kiện",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "押金",
+      "meaning": "tiền đặt cọc",
+      "example": "押金是多少？",
+      "exampleVi": "Tiền đặt cọc là bao nhiêu?",
+      "pinyin": "yā jīn",
+      "examplePinyin": "yā jīn shì duō shǎo ？"
+    },
+    {
+      "word": "租金",
+      "meaning": "tiền thuê",
+      "example": "租金包括网络费吗？",
+      "exampleVi": "Tiền thuê có bao gồm phí mạng không?",
+      "pinyin": "zū jīn",
+      "examplePinyin": "zū jīn bāo kuò wǎng luò fèi ma ？"
+    },
+    {
+      "word": "合同",
+      "meaning": "hợp đồng",
+      "example": "我们先看一下合同。",
+      "exampleVi": "Chúng ta xem hợp đồng trước.",
+      "pinyin": "hé tong",
+      "examplePinyin": "wǒ men xiān kàn yí xià hé tong 。"
+    },
+    {
+      "word": "维修",
+      "meaning": "sửa chữa; bảo trì",
+      "example": "空调需要维修。",
+      "exampleVi": "Điều hòa cần sửa.",
+      "pinyin": "wéi xiū",
+      "examplePinyin": "kōng tiáo xū yào wéi xiū 。"
+    },
+    {
+      "word": "提前",
+      "meaning": "sớm; trước thời hạn",
+      "example": "搬走前要提前通知。",
+      "exampleVi": "Trước khi dọn đi phải báo trước.",
+      "pinyin": "tí qián",
+      "examplePinyin": "bān zǒu qián yào tí qián tōng zhī 。"
+    },
+    {
+      "word": "包含",
+      "meaning": "bao gồm",
+      "example": "这个价格不包含水电费。",
+      "exampleVi": "Giá này chưa bao gồm điện nước.",
+      "pinyin": "bāo hán",
+      "examplePinyin": "zhè ge jià gé bù bāo hán shuǐ diàn fèi 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "除了……以外，还……",
+      "explanation": "Hỏi hoặc nêu khoản bổ sung ngoài một khoản đã biết.",
+      "example": "除了租金以外，还需要付什么费用？",
+      "exampleVi": "Ngoài tiền thuê còn cần trả khoản nào?",
+      "examplePinyin": "chú le zū jīn yǐ wài ， hái xū yào fù shén me fèi yòng ？"
+    },
+    {
+      "pattern": "如果……，由谁……？",
+      "explanation": "Xác nhận trách nhiệm trong một tình huống cụ thể.",
+      "example": "如果空调坏了，由谁负责维修？",
+      "exampleVi": "Nếu điều hòa hỏng thì ai phụ trách sửa?",
+      "examplePinyin": "rú guǒ kōng tiáo huài le ， yóu shuí fù zé wéi xiū ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Thuê nhà; buổi 2 bàn giao nhà và đối chiếu khoản phí. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Chủ nhà",
+    "learnerRole": "Người thuê nhà",
+    "goals": [
+      "Hỏi rõ khoản bao gồm và chưa bao gồm",
+      "Xác nhận một điều kiện cần ghi bằng văn bản"
+    ],
+    "opening": "你看中了这套房子，签约前还想确认哪些条件？",
+    "openingVi": "Bạn đã ưng căn nhà này; trước khi ký còn muốn xác nhận điều kiện nào?"
+  },
+  "freeTalk": {
+    "question": "租房时，价格和沟通透明度哪个更重要？请说明取舍。",
+    "questionVi": "Khi thuê nhà, giá hay sự minh bạch trong trao đổi quan trọng hơn? Xin giải thích sự đánh đổi."
+  },
+  "learningNotes": [
+    "Các điều khoản trong bài là tình huống giả định để luyện tiếng, không phải quy định thuê nhà áp dụng cho mọi nơi."
+  ],
+  "prerequisites": [
+    2
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Thuê nhà và xác nhận điều kiện",
+    "playLimit": 1,
+    "transcript": "租客：每月三千元，包括哪些费用？房东：包括网络，不包括水电。租客：押金呢？房东：一个月租金。租客：如果空调正常使用时坏了，谁负责？房东：我安排维修，但你要先告诉我，不要自己拆。租客：这些条件能写进合同吗？房东：可以，我们一起核对。",
+    "translation": "Tiền thuê giả định ba nghìn/tháng gồm mạng, chưa gồm điện nước; cọc bằng một tháng thuê. Chủ nhà sắp xếp sửa điều hòa khi hỏng trong sử dụng bình thường, cần được báo trước. Hai bên đồng ý ghi và kiểm tra điều kiện trong hợp đồng.",
+    "questions": [
+      {
+        "prompt": "Khoản nào đã bao gồm?",
+        "options": [
+          "Mạng",
+          "Điện",
+          "Nước"
+        ],
+        "answer": 0,
+        "explanation": "Chủ nhà nói 包括网络，不包括水电."
+      },
+      {
+        "prompt": "Tiền cọc bằng bao nhiêu?",
+        "options": [
+          "Không cọc",
+          "Một tháng thuê",
+          "Hai tháng thuê"
+        ],
+        "answer": 1,
+        "explanation": "房东 nói 一个月租金."
+      },
+      {
+        "prompt": "Người thuê muốn làm gì để tránh hiểu nhầm?",
+        "options": [
+          "Tự tháo điều hòa",
+          "Chỉ thỏa thuận miệng",
+          "Ghi điều kiện vào hợp đồng"
+        ],
+        "answer": 2,
+        "explanation": "Người thuê hỏi 能写进合同吗."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Tiền thuê giả định ba nghìn/tháng gồm mạng, chưa gồm điện nước; cọc bằng một tháng thuê. Chủ nhà sắp xếp sửa điều hòa khi hỏng trong sử dụng bình thường, cần được báo trước. Hai bên đồng ý ghi và kiểm tra điều kiện trong hợp đồng.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "押金是多少？ 租金包括网络费吗？ 我们先看一下合同。 空调需要维修。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "租房时，价格和沟通透明度哪个更重要？请说明取舍。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "租房时，我会先确定自己能承担的价格范围，再比较沟通是否透明。低租金如果伴随许多没有说明的费用，最后可能并不便宜。我会询问水电、押金和维修责任，并要求写清楚。当然，透明也不代表价格一定合理，还要比较位置和房屋状况。对我来说，负担得起和条件清楚应该同时满足。",
+      "sampleVi": "Khi thuê nhà tôi xác định khoảng giá chịu được trước rồi so độ minh bạch. Tiền thuê thấp nhưng nhiều phí không nói rõ chưa chắc rẻ. Tôi hỏi điện nước, cọc và trách nhiệm sửa chữa, xin ghi rõ. Minh bạch không đồng nghĩa giá hợp lý, còn phải xét vị trí và tình trạng. Với tôi cả khả năng chi trả lẫn điều kiện rõ đều cần có."
+    }
+  ],
+  "transferTask": "Thuê nhà; buổi 2 bàn giao nhà và đối chiếu khoản phí."
+}

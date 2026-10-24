@@ -1,3 +1,4 @@
+import { bundledSyllabus } from './courseContent.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -16,7 +17,10 @@ function cleanStr(value, max = 120) {
 
 function cleanList(value, max = 20, itemMax = 60) {
   return Array.isArray(value)
-    ? value.map((item) => cleanStr(item, itemMax)).filter(Boolean).slice(0, max)
+    ? value
+        .map((item) => cleanStr(item, itemMax))
+        .filter(Boolean)
+        .slice(0, max)
     : [];
 }
 
@@ -47,7 +51,11 @@ export function validateSyllabus(raw) {
         topics: cleanList(lesson.topics, 6),
         vocab: Array.isArray(lesson.vocab)
           ? lesson.vocab
-              .map((item) => (typeof item === 'string' ? { word: cleanStr(item, 12) } : { word: cleanStr(item?.word, 12), meaning: cleanStr(item?.meaning, 60) }))
+              .map((item) =>
+                typeof item === 'string'
+                  ? { word: cleanStr(item, 12) }
+                  : { word: cleanStr(item?.word, 12), meaning: cleanStr(item?.meaning, 60) },
+              )
               .filter((item) => item.word)
               .slice(0, 16)
           : [],
@@ -56,9 +64,16 @@ export function validateSyllabus(raw) {
       };
     });
     lessons.sort((a, b) => a.no - b.no);
-    return { id, title: cleanStr(vol.title, 40) || id, levels: levels.length ? levels : [...LEVELS], lessons };
+    return {
+      id,
+      title: cleanStr(vol.title, 40) || id,
+      levels: levels.length ? levels : [...LEVELS],
+      lessons,
+      authored: Boolean(vol.authored),
+      targetLevel: cleanStr(vol.targetLevel, 20),
+    };
   });
-  return { book: cleanStr(raw.book, 60) || '体验汉语口语', volumes, placeholder: false };
+  return { book: cleanStr(raw.book, 100) || '体验汉语口语', volumes, placeholder: false, authored: Boolean(raw.authored) };
 }
 
 // Everyday topics chosen by us, not taken from the book.
@@ -83,43 +98,58 @@ export const PLACEHOLDER_SYLLABUS = {
   book: '体验汉语口语',
   placeholder: true,
   volumes: [
-    placeholderVolume('tam-so-cap', 'Sơ cấp (tạm)', ['HSK1-2'], [
-      ['chào hỏi, giới thiệu bản thân', '问候与介绍'],
-      ['gia đình', '家庭'],
-      ['số đếm, thời gian', '时间'],
-      ['mua đồ ở chợ', '买东西'],
-      ['gọi món ăn', '点菜'],
-      ['hỏi đường', '问路'],
-      ['thời tiết', '天气'],
-      ['sở thích', '爱好'],
-    ]),
-    placeholderVolume('tam-trung-cap', 'Trung cấp (tạm)', ['HSK3-4'], [
-      ['đặt phòng khách sạn', '订房间'],
-      ['đi khám bệnh', '看病'],
-      ['thuê nhà', '租房子'],
-      ['ở ngân hàng', '在银行'],
-      ['lên kế hoạch du lịch', '旅行计划'],
-      ['mời bạn đi ăn', '请客吃饭'],
-      ['phàn nàn và xin lỗi', '投诉和道歉'],
-      ['phỏng vấn xin việc', '面试'],
-    ]),
-    placeholderVolume('tam-cao-cap', 'Cao cấp (tạm)', ['HSK5-6', 'free'], [
-      ['công việc và áp lực', '工作与压力'],
-      ['giáo dục con cái', '子女教育'],
-      ['sức khỏe và lối sống', '健康生活'],
-      ['công nghệ trong đời sống', '科技与生活'],
-      ['văn hoá và phong tục', '文化习俗'],
-      ['môi trường', '环境保护'],
-      ['đàm phán, thương lượng', '谈判'],
-      ['kể chuyện, chia sẻ trải nghiệm', '分享经历'],
-    ]),
+    placeholderVolume(
+      'tam-so-cap',
+      'Sơ cấp (tạm)',
+      ['HSK1-2'],
+      [
+        ['chào hỏi, giới thiệu bản thân', '问候与介绍'],
+        ['gia đình', '家庭'],
+        ['số đếm, thời gian', '时间'],
+        ['mua đồ ở chợ', '买东西'],
+        ['gọi món ăn', '点菜'],
+        ['hỏi đường', '问路'],
+        ['thời tiết', '天气'],
+        ['sở thích', '爱好'],
+      ],
+    ),
+    placeholderVolume(
+      'tam-trung-cap',
+      'Trung cấp (tạm)',
+      ['HSK3-4'],
+      [
+        ['đặt phòng khách sạn', '订房间'],
+        ['đi khám bệnh', '看病'],
+        ['thuê nhà', '租房子'],
+        ['ở ngân hàng', '在银行'],
+        ['lên kế hoạch du lịch', '旅行计划'],
+        ['mời bạn đi ăn', '请客吃饭'],
+        ['phàn nàn và xin lỗi', '投诉和道歉'],
+        ['phỏng vấn xin việc', '面试'],
+      ],
+    ),
+    placeholderVolume(
+      'tam-cao-cap',
+      'Cao cấp (tạm)',
+      ['HSK5-6', 'free'],
+      [
+        ['công việc và áp lực', '工作与压力'],
+        ['giáo dục con cái', '子女教育'],
+        ['sức khỏe và lối sống', '健康生活'],
+        ['công nghệ trong đời sống', '科技与生活'],
+        ['văn hoá và phong tục', '文化习俗'],
+        ['môi trường', '环境保护'],
+        ['đàm phán, thương lượng', '谈判'],
+        ['kể chuyện, chia sẻ trải nghiệm', '分享经历'],
+      ],
+    ),
   ],
 };
 
 export function loadSyllabus(dataDir) {
   const file = path.join(dataDir, SYLLABUS_FILE);
   if (!fs.existsSync(file)) {
-    return { ...PLACEHOLDER_SYLLABUS, warning: 'Chưa có mục lục sách: đang dùng chủ đề tạm.' };
+    return validateSyllabus(bundledSyllabus());
   }
   try {
     return validateSyllabus(JSON.parse(fs.readFileSync(file, 'utf8')));

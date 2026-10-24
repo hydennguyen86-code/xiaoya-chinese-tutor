@@ -1,0 +1,195 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 12,
+  "lessonTitle": "Bài tích hợp: nghe, tóm tắt và đề xuất",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "总结",
+      "meaning": "tổng kết; tóm tắt",
+      "example": "请先总结双方的主要需求。",
+      "exampleVi": "Xin tóm tắt yêu cầu chính của hai bên trước.",
+      "pinyin": "zǒng jié",
+      "examplePinyin": "qǐng xiān zǒng jié shuāng fāng de zhǔ yào xū qiú 。"
+    },
+    {
+      "word": "关键",
+      "meaning": "điểm then chốt; quan trọng",
+      "example": "关键是先确认截止时间。",
+      "exampleVi": "Điểm then chốt là xác nhận hạn chót trước.",
+      "pinyin": "guān jiàn",
+      "examplePinyin": "guān jiàn shì xiān què rèn jié zhǐ shí jiān 。"
+    },
+    {
+      "word": "分歧",
+      "meaning": "bất đồng",
+      "example": "双方的分歧主要在费用上。",
+      "exampleVi": "Bất đồng giữa hai bên chủ yếu ở chi phí.",
+      "pinyin": "fēn qí",
+      "examplePinyin": "shuāng fāng de fēn qí zhǔ yào zài fèi yòng shàng 。"
+    },
+    {
+      "word": "依据",
+      "meaning": "căn cứ",
+      "example": "你的建议有什么依据？",
+      "exampleVi": "Đề nghị của bạn có căn cứ gì?",
+      "pinyin": "yī jù",
+      "examplePinyin": "nǐ de jiàn yì yǒu shén me yī jù ？"
+    },
+    {
+      "word": "协调",
+      "meaning": "điều phối; dung hòa",
+      "example": "我们需要协调各方的时间。",
+      "exampleVi": "Chúng ta cần điều phối thời gian của các bên.",
+      "pinyin": "xié tiáo",
+      "examplePinyin": "wǒ men xū yào xié tiáo gè fāng de shí jiān 。"
+    },
+    {
+      "word": "落实",
+      "meaning": "thực hiện cụ thể; đưa vào thực tế",
+      "example": "决定以后要落实到具体负责人。",
+      "exampleVi": "Sau khi quyết định phải giao cụ thể cho người phụ trách thực hiện.",
+      "pinyin": "luò shí",
+      "examplePinyin": "jué dìng yǐ hòu yào luò shí dào jù tǐ fù zé rén 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "综合考虑……，我建议……",
+      "explanation": "Tóm hợp các điều kiện trước khi đề xuất; nói rõ ưu tiên và giới hạn.",
+      "example": "综合考虑时间和成本，我建议先小范围试行。",
+      "exampleVi": "Xét tổng thể thời gian và chi phí, tôi đề nghị thử ở phạm vi nhỏ trước.",
+      "examplePinyin": "zōng hé kǎo lǜ shí jiān hé chéng běn ， wǒ jiàn yì xiān xiǎo fàn wéi shì xíng 。"
+    },
+    {
+      "pattern": "为了避免……，需要先……",
+      "explanation": "Nêu hành động phòng ngừa có liên hệ rõ với vấn đề.",
+      "example": "为了避免误解，需要先书面确认范围。",
+      "exampleVi": "Để tránh hiểu nhầm, cần xác nhận phạm vi bằng văn bản trước.",
+      "examplePinyin": "wèi le bì miǎn wù jiě ， xū yào xiān shū miàn què rèn fàn wéi 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hoạt động cộng đồng; buổi 2 kế hoạch đào tạo doanh nghiệp, chuyển kiến thức sang tình huống mới. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người phụ trách dự án",
+    "learnerRole": "Người tổng hợp và đề xuất",
+    "goals": [
+      "Tóm tắt đúng nhu cầu và giới hạn của ít nhất hai bên",
+      "Đề xuất một phương án có căn cứ và một rủi ro",
+      "Chốt người phụ trách, thời gian và cách kiểm tra"
+    ],
+    "opening": "请先总结各方的需求，再提出一个可执行的方案。",
+    "openingVi": "Xin tóm tắt nhu cầu của các bên trước, sau đó đề xuất một phương án thực hiện được."
+  },
+  "freeTalk": {
+    "question": "在真实工作中，怎样判断一次沟通是否成功？请结合这次任务回答。",
+    "questionVi": "Trong công việc thực tế, đánh giá một lần trao đổi thành công bằng cách nào? Xin trả lời dựa trên nhiệm vụ lần này."
+  },
+  "learningNotes": [
+    "Bài cuối giai đoạn: nghe một lần để nắm ý, lần hai ghi mốc và hạn chế; sau đó nói 2 phút không nhìn bản chép.",
+    "Đây là bài tự soạn luyện kỹ năng, không phải đề thi chính thức hay chứng nhận đạt HSK 5."
+  ],
+  "prerequisites": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Bài tích hợp: nghe, tóm tắt và đề xuất",
+    "playLimit": 1,
+    "transcript": "社区准备办一次周末活动。负责人希望免费开放，吸引更多居民；财务人员担心材料费超出预算；志愿者则说，如果人数太多，现场可能照顾不过来。有人提出先开放五十个名额，参加者提前报名，活动结束后再根据实际费用和反馈决定是否扩大。负责人同意试行，但要求今天明确报名截止时间和现场分工。",
+    "translation": "Nhóm tổ chức hoạt động cộng đồng cân nhắc miễn phí để thu hút người, giới hạn ngân sách và nhân lực. Chọn thử 50 chỗ đăng ký trước, đánh giá chi phí/phản hồi rồi mới mở rộng. Hôm nay cần chốt hạn đăng ký và phân công hiện trường.",
+    "questions": [
+      {
+        "prompt": "Ba mối quan tâm chính?",
+        "options": [
+          "Chỉ số chỗ",
+          "Thu hút người, chi phí và nhân lực",
+          "Địa điểm, màu áo và ảnh chụp"
+        ],
+        "answer": 1,
+        "explanation": "Ba vai nêu ba giới hạn khác nhau."
+      },
+      {
+        "prompt": "Phương án được chọn?",
+        "options": [
+          "Mở không giới hạn",
+          "Hủy hoạt động",
+          "Thử 50 chỗ đăng ký trước"
+        ],
+        "answer": 2,
+        "explanation": "Đề xuất được người phụ trách đồng ý thử."
+      },
+      {
+        "prompt": "Việc phải chốt hôm nay?",
+        "options": [
+          "Hạn đăng ký và phân công",
+          "Mở rộng toàn thành phố",
+          "Kết quả khảo sát cuối"
+        ],
+        "answer": 0,
+        "explanation": "Câu cuối nêu hai đầu việc này."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Nhóm tổ chức hoạt động cộng đồng cân nhắc miễn phí để thu hút người, giới hạn ngân sách và nhân lực. Chọn thử 50 chỗ đăng ký trước, đánh giá chi phí/phản hồi rồi mới mở rộng. Hôm nay cần chốt hạn đăng ký và phân công hiện trường.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "请先总结双方的主要需求。 关键是先确认截止时间。 双方的分歧主要在费用上。 你的建议有什么依据？",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "在真实工作中，怎样判断一次沟通是否成功？请结合这次任务回答。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "我会看双方是否对目标、限制和下一步有相同的理解，而不只看谈话是否愉快。以培训任务为例，如果客户仍然以为一天后所有人都能熟练处理复杂问题，沟通就没有完成。需要说明每阶段能做什么，再确认负责人和检查方式。当然，暂时有分歧不等于失败，只要分歧明确，双方知道怎样继续，就有进展。",
+      "sampleVi": "Tôi xét hai bên có hiểu giống nhau về mục tiêu, giới hạn và bước tiếp theo không, chứ không chỉ cuộc nói chuyện vui vẻ. Với đào tạo, nếu khách vẫn nghĩ một ngày đủ để mọi người xử lý thành thạo việc phức tạp thì chưa trao đổi xong. Cần chuẩn đầu ra từng giai đoạn, người phụ trách và cách kiểm tra. Còn bất đồng chưa hẳn thất bại nếu đã làm rõ và biết tiếp tục ra sao."
+    }
+  ],
+  "transferTask": "Hoạt động cộng đồng; buổi 2 kế hoạch đào tạo doanh nghiệp, chuyển kiến thức sang tình huống mới."
+}

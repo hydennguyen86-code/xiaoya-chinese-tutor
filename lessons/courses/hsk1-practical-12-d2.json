@@ -1,0 +1,264 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 12,
+  "lessonTitle": "Chuyến đi nhỏ: nghe rồi tự xử lý",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "去",
+      "meaning": "đi",
+      "example": "我想去商店。",
+      "exampleVi": "Tôi muốn đi cửa hàng.",
+      "pinyin": "qù",
+      "examplePinyin": "wǒ xiǎng qù shāng diàn 。"
+    },
+    {
+      "word": "朋友",
+      "meaning": "người bạn",
+      "example": "我和朋友见面。",
+      "exampleVi": "Tôi gặp bạn.",
+      "pinyin": "péng yǒu",
+      "examplePinyin": "wǒ hé péng yǒu jiàn miàn 。"
+    },
+    {
+      "word": "现在",
+      "meaning": "bây giờ",
+      "example": "现在是九点。",
+      "exampleVi": "Bây giờ là chín giờ.",
+      "pinyin": "xiàn zài",
+      "examplePinyin": "xiàn zài shì jiǔ diǎn 。"
+    },
+    {
+      "word": "什么",
+      "meaning": "gì",
+      "example": "你想喝什么？",
+      "exampleVi": "Bạn muốn uống gì?",
+      "pinyin": "shén me",
+      "examplePinyin": "nǐ xiǎng hē shén me ？"
+    },
+    {
+      "word": "不",
+      "meaning": "không",
+      "example": "我不喝茶。",
+      "exampleVi": "Tôi không uống trà.",
+      "pinyin": "bù",
+      "examplePinyin": "wǒ bù hē chá 。"
+    },
+    {
+      "word": "对",
+      "meaning": "đúng",
+      "example": "对，是下午三点。",
+      "exampleVi": "Đúng, là ba giờ chiều.",
+      "pinyin": "duì",
+      "examplePinyin": "duì ， shì xià wǔ sān diǎn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "先……再……",
+      "explanation": "Nói hai việc theo thứ tự; mẫu mở rộng để lập kế hoạch ngắn.",
+      "example": "先喝水，再去商店。",
+      "exampleVi": "Uống nước trước, rồi đi cửa hàng.",
+      "examplePinyin": "xiān hē shuǐ ， zài qù shāng diàn 。"
+    },
+    {
+      "pattern": "不是……是……",
+      "explanation": "Sửa thông tin vừa nghe; đọc lại phần đúng.",
+      "example": "不是今天，是明天。",
+      "exampleVi": "Không phải hôm nay, mà là ngày mai.",
+      "examplePinyin": "bú shì jīn tiān ， shì míng tiān 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người lên kế hoạch",
+    "goals": [
+      "Xác nhận thời gian và nơi gặp",
+      "Gọi một món hoặc đồ uống rồi hỏi giá",
+      "Sửa một thông tin nghe nhầm"
+    ],
+    "opening": "你好，我们几点在哪里见面？",
+    "openingVi": "Chào bạn, chúng ta gặp lúc mấy giờ và ở đâu?"
+  },
+  "freeTalk": {
+    "question": "请安排一次见面，说时间、地点和一个活动。",
+    "questionVi": "Xin sắp xếp một cuộc gặp, nêu thời gian, địa điểm và một hoạt động."
+  },
+  "learningNotes": [
+    "Bài tích hợp, ưu tiên dùng lại vốn đã học. Không yêu cầu học nhiều từ mới.",
+    "Nếu còn cần nhìn mẫu, ôn lại bài 5–9 trước khi làm bài kiểm tra cuối chặng."
+  ],
+  "prerequisites": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Chuyến đi nhỏ: nghe rồi tự xử lý",
+    "playLimit": 2,
+    "transcript": "甲：我们三点在商店前面见面吗？乙：不是商店，是学校前面。甲：好，三点在学校前面。乙：对。",
+    "translation": "A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải cửa hàng, mà là trước trường. A: Được, ba giờ trước trường. B: Đúng.",
+    "questions": [
+      {
+        "prompt": "Địa điểm đúng?",
+        "options": [
+          "Trước cửa hàng",
+          "Bệnh viện",
+          "Trước trường"
+        ],
+        "answer": 2,
+        "explanation": "B sửa thành 学校前面."
+      },
+      {
+        "prompt": "Giờ gặp có thay đổi không?",
+        "options": [
+          "Không, vẫn ba giờ",
+          "Không nói giờ",
+          "Có, thành hai giờ"
+        ],
+        "answer": 0,
+        "explanation": "A xác nhận 三点."
+      }
+    ],
+    "pinyin": "jiǎ ： wǒ men sān diǎn zài shāng diàn qián miàn jiàn miàn ma ？ yǐ ： bú shì shāng diàn ， shì xué xiào qián miàn 。 jiǎ ： hǎo ， sān diǎn zài xué xiào qián miàn 。 yǐ ： duì 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想去商店。 我和朋友见面。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想去商店。 我和朋友见面。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请安排一次见面，说时间、地点和一个活动。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我们明天下午三点在学校前面见面。先喝茶，再去商店。",
+      "sampleVi": "Mai chúng ta gặp lúc ba giờ chiều trước trường. Uống trà trước, rồi đi cửa hàng."
+    }
+  ],
+  "transferTask": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền.",
+  "checkpoint": {
+    "title": "Kiểm tra chặng 2 — nghe và nói ứng dụng",
+    "practiceMinutes": 12,
+    "official": false,
+    "instructions": "Bài mini tự soạn, không sao chép đề thi, không quy đổi điểm sang chứng chỉ. Nghe tối đa hai lần.",
+    "listening": [
+      {
+        "transcript": "甲：请问，商店在哪里？乙：往左走，商店在学校旁边。甲：是往左走吗？乙：对。",
+        "translation": "A: Xin hỏi, cửa hàng ở đâu? B: Đi sang trái, cửa hàng bên cạnh trường. A: Là sang trái phải không? B: Đúng.",
+        "questions": [
+          {
+            "prompt": "Hướng cần đi?",
+            "options": [
+              "Trái",
+              "Phải",
+              "Quay lại"
+            ],
+            "answer": 0,
+            "explanation": "B nói 往左走."
+          },
+          {
+            "prompt": "Cửa hàng ở cạnh đâu?",
+            "options": [
+              "Nhà",
+              "Trường",
+              "Bệnh viện"
+            ],
+            "answer": 1,
+            "explanation": "B nói 在学校旁边."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 1"
+      },
+      {
+        "transcript": "甲：我要一碗面条和两杯水。乙：面条八块，水一杯两块，一共十二块。甲：好，请不要放辣椒。",
+        "translation": "A: Tôi lấy một bát mì và hai cốc nước. B: Mì tám đồng, nước hai đồng một cốc, tổng mười hai đồng. A: Được, xin đừng cho ớt.",
+        "questions": [
+          {
+            "prompt": "Tổng tiền?",
+            "options": [
+              "Mười",
+              "Mười hai",
+              "Tám"
+            ],
+            "answer": 1,
+            "explanation": "B nói 一共十二块."
+          },
+          {
+            "prompt": "Khẩu vị yêu cầu?",
+            "options": [
+              "Thêm đường",
+              "Thêm đá",
+              "Không ớt"
+            ],
+            "answer": 2,
+            "explanation": "A nói 请不要放辣椒."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 2"
+      }
+    ],
+    "speaking": [
+      {
+        "kind": "repeat",
+        "prompt": "Nghe rồi nhắc lại hai câu ngắn.",
+        "audioText": "现在是下午四点。我们在学校见面。",
+        "prepareSeconds": 15,
+        "responseSeconds": 30,
+        "reference": "现在是下午四点。我们在学校见面。",
+        "checklist": [
+          "Giữ đúng dữ kiện",
+          "Không thêm sự kiện không có trong bài",
+          "Nói rõ và có trình tự"
+        ]
+      },
+      {
+        "kind": "answer",
+        "prompt": "请介绍自己，再约一个见面时间。",
+        "promptVi": "Giới thiệu ngắn rồi hẹn giờ gặp.",
+        "prepareSeconds": 15,
+        "responseSeconds": 30,
+        "reference": "我叫小安。我们明天下午三点见面，好吗？",
+        "checklist": [
+          "Đúng trọng tâm",
+          "Có chi tiết cụ thể",
+          "Tự nói không nhìn mẫu"
+        ]
+      }
+    ]
+  }
+}

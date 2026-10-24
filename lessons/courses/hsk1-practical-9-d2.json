@@ -1,0 +1,164 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 9,
+  "lessonTitle": "Mua đồ và chọn phương án",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "买",
+      "meaning": "mua",
+      "example": "我想买这个。",
+      "exampleVi": "Tôi muốn mua cái này.",
+      "pinyin": "mǎi",
+      "examplePinyin": "wǒ xiǎng mǎi zhè ge 。"
+    },
+    {
+      "word": "这个",
+      "meaning": "cái này",
+      "example": "这个多少钱？",
+      "exampleVi": "Cái này bao nhiêu tiền?",
+      "pinyin": "zhè ge",
+      "examplePinyin": "zhè ge duō shǎo qián ？"
+    },
+    {
+      "word": "那个",
+      "meaning": "cái kia",
+      "example": "我要那个。",
+      "exampleVi": "Tôi lấy cái kia.",
+      "pinyin": "nà ge",
+      "examplePinyin": "wǒ yào nà ge 。"
+    },
+    {
+      "word": "大",
+      "meaning": "to; lớn",
+      "example": "这个杯子很大。",
+      "exampleVi": "Cốc này rất to.",
+      "pinyin": "dà",
+      "examplePinyin": "zhè ge bēi zi hěn dà 。"
+    },
+    {
+      "word": "小",
+      "meaning": "nhỏ",
+      "example": "那个杯子很小。",
+      "exampleVi": "Cốc kia rất nhỏ.",
+      "pinyin": "xiǎo",
+      "examplePinyin": "nà ge bēi zi hěn xiǎo 。"
+    },
+    {
+      "word": "喜欢",
+      "meaning": "thích",
+      "example": "我喜欢这个。",
+      "exampleVi": "Tôi thích cái này.",
+      "pinyin": "xǐ huan",
+      "examplePinyin": "wǒ xǐ huan zhè ge 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想买……",
+      "explanation": "Nói thứ muốn mua.",
+      "example": "我想买一个杯子。",
+      "exampleVi": "Tôi muốn mua một cái cốc.",
+      "examplePinyin": "wǒ xiǎng mǎi yí gè bēi zi 。"
+    },
+    {
+      "pattern": "有……一点儿的吗？",
+      "explanation": "Hỏi có loại lớn/nhỏ hơn một chút; đây là mẫu mở rộng thực dụng.",
+      "example": "有小一点儿的吗？",
+      "exampleVi": "Có loại nhỏ hơn một chút không?",
+      "examplePinyin": "yǒu xiǎo yì diǎn ér de ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Mua cốc; buổi 2 chọn giữa hai món có giá khác nhau. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người bán hàng",
+    "learnerRole": "Người mua",
+    "goals": [
+      "Hỏi giá hai lựa chọn",
+      "Chọn một món và nói yêu cầu về kích thước"
+    ],
+    "opening": "你好，你想买什么？",
+    "openingVi": "Chào bạn, bạn muốn mua gì?"
+  },
+  "freeTalk": {
+    "question": "请比较两个东西的价格，再选一个。",
+    "questionVi": "Xin so giá hai món đồ rồi chọn một."
+  },
+  "learningNotes": [
+    "Bổ trợ: 杯子 bēizi — cái cốc; 二十 èrshí — hai mươi; 太……了 tài...le — quá.",
+    "Mẫu hỏi loại khác có độ khó vượt phần nhập môn; được học như cụm để dùng tại cửa hàng."
+  ],
+  "prerequisites": [
+    3,
+    7
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Mua đồ và chọn phương án",
+    "playLimit": 2,
+    "transcript": "甲：这个多少钱？乙：二十块钱。甲：那个呢？乙：十块。甲：我要那个。",
+    "translation": "A: Cái này bao nhiêu tiền? B: Hai mươi đồng. A: Còn cái kia? B: Mười đồng. A: Tôi lấy cái kia.",
+    "questions": [
+      {
+        "prompt": "A chọn cái nào?",
+        "options": [
+          "Không chọn",
+          "Cái này",
+          "Cái kia"
+        ],
+        "answer": 2,
+        "explanation": "A nói 我要那个."
+      },
+      {
+        "prompt": "Giá món A chọn?",
+        "options": [
+          "Mười",
+          "Hai mươi",
+          "Ba mươi"
+        ],
+        "answer": 0,
+        "explanation": "那个 được báo giá 十块."
+      }
+    ],
+    "pinyin": "jiǎ ： zhè ge duō shǎo qián ？ yǐ ： èr shí kuài qián 。 jiǎ ： nà ge ne ？ yǐ ： shí kuài 。 jiǎ ： wǒ yào nà ge 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想买这个。 这个多少钱？",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想买这个。 这个多少钱？"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请比较两个东西的价格，再选一个。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "这个多少钱？那个呢？我要那个。",
+      "sampleVi": "Cái này bao nhiêu tiền? Còn cái kia? Tôi lấy cái kia."
+    }
+  ],
+  "transferTask": "Mua cốc; buổi 2 chọn giữa hai món có giá khác nhau."
+}

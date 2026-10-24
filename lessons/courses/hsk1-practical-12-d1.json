@@ -1,0 +1,172 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 12,
+  "lessonTitle": "Chuyến đi nhỏ: nghe rồi tự xử lý",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "去",
+      "meaning": "đi",
+      "example": "我想去商店。",
+      "exampleVi": "Tôi muốn đi cửa hàng.",
+      "pinyin": "qù",
+      "examplePinyin": "wǒ xiǎng qù shāng diàn 。"
+    },
+    {
+      "word": "朋友",
+      "meaning": "người bạn",
+      "example": "我和朋友见面。",
+      "exampleVi": "Tôi gặp bạn.",
+      "pinyin": "péng yǒu",
+      "examplePinyin": "wǒ hé péng yǒu jiàn miàn 。"
+    },
+    {
+      "word": "现在",
+      "meaning": "bây giờ",
+      "example": "现在是九点。",
+      "exampleVi": "Bây giờ là chín giờ.",
+      "pinyin": "xiàn zài",
+      "examplePinyin": "xiàn zài shì jiǔ diǎn 。"
+    },
+    {
+      "word": "什么",
+      "meaning": "gì",
+      "example": "你想喝什么？",
+      "exampleVi": "Bạn muốn uống gì?",
+      "pinyin": "shén me",
+      "examplePinyin": "nǐ xiǎng hē shén me ？"
+    },
+    {
+      "word": "不",
+      "meaning": "không",
+      "example": "我不喝茶。",
+      "exampleVi": "Tôi không uống trà.",
+      "pinyin": "bù",
+      "examplePinyin": "wǒ bù hē chá 。"
+    },
+    {
+      "word": "对",
+      "meaning": "đúng",
+      "example": "对，是下午三点。",
+      "exampleVi": "Đúng, là ba giờ chiều.",
+      "pinyin": "duì",
+      "examplePinyin": "duì ， shì xià wǔ sān diǎn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "先……再……",
+      "explanation": "Nói hai việc theo thứ tự; mẫu mở rộng để lập kế hoạch ngắn.",
+      "example": "先喝水，再去商店。",
+      "exampleVi": "Uống nước trước, rồi đi cửa hàng.",
+      "examplePinyin": "xiān hē shuǐ ， zài qù shāng diàn 。"
+    },
+    {
+      "pattern": "不是……是……",
+      "explanation": "Sửa thông tin vừa nghe; đọc lại phần đúng.",
+      "example": "不是今天，是明天。",
+      "exampleVi": "Không phải hôm nay, mà là ngày mai.",
+      "examplePinyin": "bú shì jīn tiān ， shì míng tiān 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người lên kế hoạch",
+    "goals": [
+      "Xác nhận thời gian và nơi gặp",
+      "Gọi một món hoặc đồ uống rồi hỏi giá",
+      "Sửa một thông tin nghe nhầm"
+    ],
+    "opening": "你好，我们几点在哪里见面？",
+    "openingVi": "Chào bạn, chúng ta gặp lúc mấy giờ và ở đâu?"
+  },
+  "freeTalk": {
+    "question": "请安排一次见面，说时间、地点和一个活动。",
+    "questionVi": "Xin sắp xếp một cuộc gặp, nêu thời gian, địa điểm và một hoạt động."
+  },
+  "learningNotes": [
+    "Bài tích hợp, ưu tiên dùng lại vốn đã học. Không yêu cầu học nhiều từ mới.",
+    "Nếu còn cần nhìn mẫu, ôn lại bài 5–9 trước khi làm bài kiểm tra cuối chặng."
+  ],
+  "prerequisites": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Chuyến đi nhỏ: nghe rồi tự xử lý",
+    "playLimit": 2,
+    "transcript": "甲：明天下午两点见面，好吗？乙：好，在哪里？甲：在学校前面。我们先喝茶，再去商店。乙：好。",
+    "translation": "A: Mai gặp lúc hai giờ chiều nhé? B: Được, ở đâu? A: Trước trường. Chúng ta uống trà trước, rồi đi cửa hàng. B: Được.",
+    "questions": [
+      {
+        "prompt": "Gặp lúc nào?",
+        "options": [
+          "Ba giờ sáng mai",
+          "Hai giờ chiều mai",
+          "Hai giờ chiều nay"
+        ],
+        "answer": 1,
+        "explanation": "A nói 明天下午两点."
+      },
+      {
+        "prompt": "Sau uống trà làm gì?",
+        "options": [
+          "Về nhà",
+          "Đi học",
+          "Đi cửa hàng"
+        ],
+        "answer": 2,
+        "explanation": "A nói 再去商店."
+      }
+    ],
+    "pinyin": "jiǎ ： míng tiān xià wǔ liǎng diǎn jiàn miàn ， hǎo ma ？ yǐ ： hǎo ， zài nǎ lǐ ？ jiǎ ： zài xué xiào qián miàn 。 wǒ men xiān hē chá ， zài qù shāng diàn 。 yǐ ： hǎo 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想去商店。 我和朋友见面。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想去商店。 我和朋友见面。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请安排一次见面，说时间、地点和一个活动。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我们明天下午三点在学校前面见面。先喝茶，再去商店。",
+      "sampleVi": "Mai chúng ta gặp lúc ba giờ chiều trước trường. Uống trà trước, rồi đi cửa hàng."
+    }
+  ],
+  "transferTask": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền."
+}

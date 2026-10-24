@@ -1,3 +1,4 @@
+import { mountToneEvaluation } from './toneEvaluation.mjs';
 import { assessTask, prepareTask } from './assessment.mjs';
 import express from 'express';
 import path from 'node:path';
@@ -8,35 +9,10 @@ import { fileURLToPath } from 'node:url';
 import { pinyin } from 'pinyin-pro';
 
 import { PROVIDER_DEFS, detectProviders } from './providers.mjs';
-import {
-  CORRECTION_PROMPT,
-  LEVELS,
-  buildAnalysisMessages,
-  buildMessages,
-  sanitizeHistory,
-} from './prompt.mjs';
-import {
-  ANALYSIS_SCHEMA,
-  CORRECTION_SCHEMA,
-  ModelError,
-  completeJson,
-  streamCompletion,
-} from './llm.mjs';
-import {
-  parseCorrections,
-  parseJsonObject,
-  parseTutorResponse,
-  readAttitude,
-  readStringField,
-} from './jsonStream.mjs';
-import {
-  CLONE_VOICES,
-  DEFAULT_VI_VOICE,
-  TTS_VOICES,
-  VI_TTS_VOICES,
-  isCloneVietnameseVoice,
-  synthesizeSpeech,
-} from './tts.mjs';
+import { CORRECTION_PROMPT, LEVELS, buildAnalysisMessages, buildMessages, sanitizeHistory } from './prompt.mjs';
+import { ANALYSIS_SCHEMA, CORRECTION_SCHEMA, ModelError, completeJson, streamCompletion } from './llm.mjs';
+import { parseCorrections, parseJsonObject, parseTutorResponse, readAttitude, readStringField } from './jsonStream.mjs';
+import { CLONE_VOICES, DEFAULT_VI_VOICE, TTS_VOICES, VI_TTS_VOICES, isCloneVietnameseVoice, synthesizeSpeech } from './tts.mjs';
 import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
@@ -51,13 +27,12 @@ const DEFAULT_VOICE = 'zh-CN-XiaoxiaoNeural';
 const PORT = Number(process.env.PORT || 8787);
 const HOST = process.env.HOST || '127.0.0.1';
 
-const dataStore = createDataStore(
-  process.env.XIAOYA_DATA_DIR || path.resolve(__dirname, '..', 'data'),
-);
+const dataStore = createDataStore(process.env.XIAOYA_DATA_DIR || path.resolve(__dirname, '..', 'data'));
 
 const app = express();
 app.disable('x-powered-by');
 app.use(express.json({ limit: '5mb' }));
+mountToneEvaluation(app, dataStore.dir);
 
 // Learner data folder (see dataStore.mjs). The server only listens on
 // 127.0.0.1 by default, so this is reachable from this computer only.
@@ -75,30 +50,26 @@ app.put('/api/store/:key', (req, res) => {
 });
 
 // Speech-to-text on this computer (whisper.cpp). Body: the raw recorded audio.
-app.post(
-  '/api/transcribe',
-  express.raw({ type: () => true, limit: '15mb' }),
-  async (req, res) => {
-    if (!Buffer.isBuffer(req.body) || req.body.length < 1000) {
-      res.status(400).json({ error: 'Không có âm thanh.' });
-      return;
+app.post('/api/transcribe', express.raw({ type: () => true, limit: '15mb' }), async (req, res) => {
+  if (!Buffer.isBuffer(req.body) || req.body.length < 1000) {
+    res.status(400).json({ error: 'Không có âm thanh.' });
+    return;
+  }
+  try {
+    const text = await transcribe(req.body, String(req.headers['content-type'] || 'audio/webm'));
+    res.json({ text });
+    // learn the speaker's pitch range in the background (used by tone checks)
+    const key = pitchKey(String(req.query.learner || ''));
+    if (key) {
+      profileFromAudio(req.body, loadPitchProfile(key))
+        .then((profile) => dataStore.write(key, JSON.stringify(profile)))
+        .catch(() => {});
     }
-    try {
-      const text = await transcribe(req.body, String(req.headers['content-type'] || 'audio/webm'));
-      res.json({ text });
-      // learn the speaker's pitch range in the background (used by tone checks)
-      const key = pitchKey(String(req.query.learner || ''));
-      if (key) {
-        profileFromAudio(req.body, loadPitchProfile(key))
-          .then((profile) => dataStore.write(key, JSON.stringify(profile)))
-          .catch(() => {});
-      }
-    } catch (error) {
-      console.error('[stt]', error.message);
-      res.status(error.status || 500).json({ error: 'Không nhận dạng được giọng nói. Thử lại nhé.' });
-    }
-  },
-);
+  } catch (error) {
+    console.error('[stt]', error.message);
+    res.status(error.status || 500).json({ error: 'Không nhận dạng được giọng nói. Thử lại nhé.' });
+  }
+});
 
 // Pronunciation practice. A per-learner pitch profile (their voice range) is
 // kept in the data folder so isolated syllables can be judged high or low.
@@ -119,39 +90,47 @@ async function modelCurve(target) {
   if (modelCurves.has(target)) return modelCurves.get(target);
   const speech = await synthesizeSpeech({ text: target, voice: DEFAULT_VOICE });
   const report = await analyseTones(Buffer.from(speech.audioBase64, 'base64'), target);
-  const curve = report.curve || [];
+  const curve = {
+    curve: report.curve || [],
+    segments: report.segments || [],
+    duration: report.duration,
+    audioBase64: speech.audioBase64,
+    mime: speech.mime,
+  };
   modelCurves.set(target, curve);
   if (modelCurves.size > 200) modelCurves.delete(modelCurves.keys().next().value);
   return curve;
 }
 
 // Query: target=<sentence>, learner=<id>; body: the raw recorded audio.
-app.post(
-  '/api/pronounce',
-  express.raw({ type: () => true, limit: '15mb' }),
-  async (req, res) => {
-    const target = String(req.query.target || '').slice(0, 120);
-    if (!Buffer.isBuffer(req.body) || req.body.length < 1000 || !HAN.test(target)) {
-      res.status(400).json({ error: 'Cần âm thanh và câu mẫu tiếng Trung.' });
-      return;
+app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), async (req, res) => {
+  const target = String(req.query.target || '').slice(0, 120);
+  if (!Buffer.isBuffer(req.body) || req.body.length < 1000 || !HAN.test(target)) {
+    res.status(400).json({ error: 'Cần âm thanh và câu mẫu tiếng Trung.' });
+    return;
+  }
+  try {
+    const key = pitchKey(String(req.query.learner || ''));
+    const mime = String(req.headers['content-type'] || 'audio/webm');
+    const [text, report] = await Promise.all([
+      sttReady() ? transcribe(req.body, mime).catch(() => '') : Promise.resolve(''),
+      analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1' }),
+    ]);
+    if (key) dataStore.write(key, JSON.stringify(report.profile));
+    const { profile: _profile, ...tones } = report;
+    if (req.query.reference !== '0') {
+      const reference = await modelCurve(target).catch(() => null);
+      if (reference) {
+        tones.modelCurve = reference.curve;
+        tones.model = reference;
+      }
     }
-    try {
-      const key = pitchKey(String(req.query.learner || ''));
-      const mime = String(req.headers['content-type'] || 'audio/webm');
-      const [text, report] = await Promise.all([
-        sttReady() ? transcribe(req.body, mime).catch(() => '') : Promise.resolve(''),
-        analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1' }),
-      ]);
-      if (key) dataStore.write(key, JSON.stringify(report.profile));
-      const { profile: _profile, ...tones } = report;
-      if (tones.mode === 'sentence') tones.modelCurve = await modelCurve(target).catch(() => []);
-      res.json({ text, tones });
-    } catch (error) {
-      console.error('[pronounce]', error.message);
-      res.status(error.status || 500).json({ error: 'Không chấm được phát âm. Thử lại nhé.' });
-    }
-  },
-);
+    res.json({ text, tones });
+  } catch (error) {
+    console.error('[pronounce]', error.message);
+    res.status(error.status || 500).json({ error: 'Không chấm được phát âm. Thử lại nhé.' });
+  }
+});
 
 app.delete('/api/store/:key', (req, res) => {
   try {
@@ -225,9 +204,7 @@ function polishTurn(turn) {
     .slice(0, 2)
     .map((item) => ({
       ...item,
-      pinyin: HAN.test(item.word)
-        ? pinyin(item.word, { toneType: 'symbol', type: 'array' }).join(' ')
-        : item.pinyin,
+      pinyin: HAN.test(item.word) ? pinyin(item.word, { toneType: 'symbol', type: 'array' }).join(' ') : item.pinyin,
     }));
 
   if (!turn.suggestion || !HAN.test(turn.suggestion)) {
@@ -238,15 +215,13 @@ function polishTurn(turn) {
 
 // Your own avatars (public/avatars/personal-lam.zip, public/avatars/personal.glb;
 // never committed) win over the bundled samples when they exist.
-const LAM_AVATARS = ['personal-lam.zip', 'lam-sample.zip'];
-const GLB_AVATARS = ['personal.glb', 'brunette.glb'];
+const LAM_AVATARS = process.env.XIAOYA_SAMPLE_AVATARS === '1' ? ['lam-sample.zip'] : ['personal-lam.zip', 'lam-sample.zip'];
+const GLB_AVATARS = process.env.XIAOYA_SAMPLE_AVATARS === '1' ? ['brunette.glb'] : ['personal.glb', 'brunette.glb'];
 
 function findAvatar(names) {
   const roots = [distDir, path.resolve(__dirname, '..', 'public')];
   for (const name of names) {
-    const file = roots
-      .map((root) => path.join(root, 'avatars', name))
-      .find((candidate) => fs.existsSync(candidate));
+    const file = roots.map((root) => path.join(root, 'avatars', name)).find((candidate) => fs.existsSync(candidate));
     if (file) {
       // version by modification time so a replaced avatar is not served from browser cache
       return `/avatars/${name}?v=${Math.round(fs.statSync(file).mtimeMs)}`;
@@ -289,19 +264,10 @@ app.post('/api/tts', async (req, res) => {
   }
 });
 
-const ANALYSIS_SKILLS = new Set([
-  'grammar',
-  'word_choice',
-  'word_order',
-  'measure_word',
-  'vocabulary',
-  'other',
-]);
+const ANALYSIS_SKILLS = new Set(['grammar', 'word_choice', 'word_order', 'measure_word', 'vocabulary', 'other']);
 
 function analysisText(value, max = 500) {
-  return typeof value === 'string'
-    ? value.replace(/\s+/g, ' ').trim().slice(0, max)
-    : '';
+  return typeof value === 'string' ? value.replace(/\s+/g, ' ').trim().slice(0, max) : '';
 }
 
 function sanitizeAnalysis(data, periodDays) {
@@ -309,7 +275,10 @@ function sanitizeAnalysis(data, periodDays) {
 
   const summary = analysisText(data.summary, 900);
   const strengths = Array.isArray(data.strengths)
-    ? data.strengths.map((item) => analysisText(item, 220)).filter(Boolean).slice(0, 4)
+    ? data.strengths
+        .map((item) => analysisText(item, 220))
+        .filter(Boolean)
+        .slice(0, 4)
     : [];
   const weaknesses = Array.isArray(data.weaknesses)
     ? data.weaknesses
@@ -330,8 +299,7 @@ function sanitizeAnalysis(data, periodDays) {
         .map((item) => {
           const word = analysisText(item.word, 30);
           const modelPinyin = analysisText(item.pinyin, 100);
-          const pinyinLooksValid =
-            !HAN.test(modelPinyin) && /^[A-Za-z\u00c0-\u024f\u1e00-\u1eff' -]+$/.test(modelPinyin);
+          const pinyinLooksValid = !HAN.test(modelPinyin) && /^[A-Za-z\u00c0-\u024f\u1e00-\u1eff' -]+$/.test(modelPinyin);
           return {
             word,
             pinyin: HAN.test(word)
@@ -343,17 +311,14 @@ function sanitizeAnalysis(data, periodDays) {
             why: analysisText(item.why, 250),
           };
         })
-        .filter(
-          (item) =>
-            item.word &&
-            HAN.test(item.word) &&
-            item.meaning &&
-            !HAN.test(item.meaning),
-        )
+        .filter((item) => item.word && HAN.test(item.word) && item.meaning && !HAN.test(item.meaning))
         .slice(0, 4)
     : [];
   const plan = Array.isArray(data.plan)
-    ? data.plan.map((item) => analysisText(item, 250)).filter(Boolean).slice(0, 5)
+    ? data.plan
+        .map((item) => analysisText(item, 250))
+        .filter(Boolean)
+        .slice(0, 5)
     : [];
 
   if (!summary && !weaknesses.length) return null;
@@ -374,16 +339,35 @@ function sanitizeAnalysis(data, periodDays) {
 for (const route of ['assess-task', 'prepare-task']) {
   app.post(`/api/${route}`, async (req, res) => {
     const { provider, model, goals, learnerTurns, source, level, variant, open = false } = req.body || {};
-    if (!PROVIDER_DEFS[provider] || typeof model !== 'string' || !model.trim() || model.length > 200 ||
-      !Array.isArray(goals) || goals.length > 6 || (!open && !goals.length) ||
+    if (
+      !PROVIDER_DEFS[provider] ||
+      typeof model !== 'string' ||
+      !model.trim() ||
+      model.length > 200 ||
+      !Array.isArray(goals) ||
+      goals.length > 6 ||
+      (!open && !goals.length) ||
       goals.some((g) => typeof g !== 'string' || !g.trim() || g.length > 300) ||
-      (route === 'assess-task' && (!Array.isArray(learnerTurns) || !learnerTurns.length || learnerTurns.length > 8 || learnerTurns.some((t) => typeof t !== 'string' || !t.trim() || t.length > 2000)))) {
+      (route === 'assess-task' &&
+        (!Array.isArray(learnerTurns) ||
+          !learnerTurns.length ||
+          learnerTurns.length > 8 ||
+          learnerTurns.some((t) => typeof t !== 'string' || !t.trim() || t.length > 2000)))
+    ) {
       return res.status(400).json({ error: 'Dữ liệu kiểm tra không hợp lệ.' });
     }
     try {
-      const result = route === 'prepare-task'
-        ? await prepareTask({ goals, source: String(source || '').slice(0, 600), level: String(level || '').slice(0, 20), variant: String(variant || '').slice(0, 100), provider, model })
-        : await assessTask({ goals, learnerTurns, provider, model, open: open === true });
+      const result =
+        route === 'prepare-task'
+          ? await prepareTask({
+              goals,
+              source: String(source || '').slice(0, 600),
+              level: String(level || '').slice(0, 20),
+              variant: String(variant || '').slice(0, 100),
+              provider,
+              model,
+            })
+          : await assessTask({ goals, learnerTurns, provider, model, open: open === true });
       res.json(result);
     } catch (error) {
       console.error('[assessment]', error.message);
@@ -427,9 +411,7 @@ app.post('/api/analysis', async (req, res) => {
       throw new ModelError('Model trả về bản phân tích chưa đúng cấu trúc.', 502);
     }
     res.json({ report, elapsedMs: result.elapsedMs });
-    console.log(
-      `[analysis] ${provider}/${model} · ${result.elapsedMs}ms · ${report.weaknesses.length} điểm yếu`,
-    );
+    console.log(`[analysis] ${provider}/${model} · ${result.elapsedMs}ms · ${report.weaknesses.length} điểm yếu`);
   } catch (error) {
     console.error('[analysis]', error);
     res.status(error.status || 502).json({
@@ -451,7 +433,12 @@ app.post('/api/corrections', async (req, res) => {
   }
 
   const learnerText =
-    typeof text === 'string' ? text.replace(/\u0000/g, '').trim().slice(0, 2000) : '';
+    typeof text === 'string'
+      ? text
+          .replace(/\u0000/g, '')
+          .trim()
+          .slice(0, 2000)
+      : '';
   if (!learnerText || !HAN.test(learnerText)) {
     res.json({ corrections: [] });
     return;
@@ -475,20 +462,22 @@ app.get('/api/syllabus', (_req, res) => {
 
 app.post('/api/lesson-content', async (req, res) => {
   const { provider = 'ollama', model, volumeId, lessonNo, day, level = 'HSK5-6' } = req.body || {};
-  if (!PROVIDER_DEFS[provider] || typeof model !== 'string' || !model.trim()) {
+  const syllabus = loadSyllabus(dataStore.dir);
+  const fixedCourse = syllabus.volumes.some((v) => v.id === volumeId && v.authored);
+  if (!fixedCourse && (!PROVIDER_DEFS[provider] || typeof model !== 'string' || !model.trim())) {
     res.status(400).json({ error: 'Chưa chọn model.' });
     return;
   }
   try {
     const content = await getLessonContent({
       dataDir: dataStore.dir,
-      syllabus: loadSyllabus(dataStore.dir),
+      syllabus,
       volumeId: String(volumeId || ''),
       lessonNo: Number(lessonNo),
       day: Number(day),
       level: Object.hasOwn(LEVELS, level) ? level : 'HSK5-6',
       provider,
-      model: model.trim(),
+      model: typeof model === 'string' ? model.trim() : '',
     });
     res.json(content);
   } catch (error) {
@@ -498,14 +487,7 @@ app.post('/api/lesson-content', async (req, res) => {
 });
 
 app.post('/api/chat', async (req, res) => {
-  const {
-    provider = 'ollama',
-    model,
-    level = 'HSK5-6',
-    messages = [],
-    learning = '',
-    scenario = '',
-  } = req.body || {};
+  const { provider = 'ollama', model, level = 'HSK5-6', messages = [], learning = '', scenario = '' } = req.body || {};
 
   if (!PROVIDER_DEFS[provider]) {
     res.status(400).json({ error: 'Provider không hợp lệ.' });
@@ -524,15 +506,21 @@ app.post('/api/chat', async (req, res) => {
 
   const safeLevel = Object.hasOwn(LEVELS, level) ? level : 'HSK5-6';
   const learningDigest =
-    typeof learning === 'string' ? learning.replace(/\u0000/g, '').trim().slice(0, 2200) : '';
+    typeof learning === 'string'
+      ? learning
+          .replace(/\u0000/g, '')
+          .trim()
+          .slice(0, 2200)
+      : '';
   // a lesson role-play scenario goes first so the learner digest cannot push it out
   const scenarioText =
-    typeof scenario === 'string' ? scenario.replace(/\u0000/g, '').trim().slice(0, 900) : '';
-  const conversation = buildMessages(
-    safeLevel,
-    history,
-    [scenarioText, learningDigest].filter(Boolean).join('\n\n'),
-  );
+    typeof scenario === 'string'
+      ? scenario
+          .replace(/\u0000/g, '')
+          .trim()
+          .slice(0, 900)
+      : '';
+  const conversation = buildMessages(safeLevel, history, [scenarioText, learningDigest].filter(Boolean).join('\n\n'));
 
   res.status(200);
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
@@ -648,9 +636,7 @@ app.post('/api/chat', async (req, res) => {
       provider,
       model,
     });
-    console.log(
-      `[chat] ${provider}/${model} · ${result.elapsedMs}ms · ${turn.reply.length} ký tự`,
-    );
+    console.log(`[chat] ${provider}/${model} · ${result.elapsedMs}ms · ${turn.reply.length} ký tự`);
   } catch (error) {
     if (!clientGone) {
       console.error('[chat]', error);
@@ -689,9 +675,7 @@ app.use((error, _req, res, _next) => {
 
 const server = app.listen(PORT, HOST, async () => {
   const providers = await detectProviders();
-  const summary = providers
-    .map((p) => `${p.name}: ${p.online ? `${p.models.length} model` : 'offline'}`)
-    .join(' · ');
+  const summary = providers.map((p) => `${p.name}: ${p.online ? `${p.models.length} model` : 'offline'}`).join(' · ');
   console.log(`米苏 server → http://${HOST}:${PORT}`);
   console.log(`[providers] ${summary}`);
   await startStt();

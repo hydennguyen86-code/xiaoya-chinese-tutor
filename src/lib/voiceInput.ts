@@ -13,7 +13,15 @@ export interface ToneSyllable {
   ok: boolean | null;
 }
 
+export interface ToneSegment {
+  char: string;
+  start: number;
+  end: number;
+}
 export interface ToneReport {
+  duration?: number;
+  segments?: ToneSegment[];
+  model?: { segments: ToneSegment[]; duration: number; audioBase64: string; mime: string };
   mode?: 'word' | 'sentence';
   syllables: ToneSyllable[];
   checked: number;
@@ -27,6 +35,7 @@ export interface ToneReport {
 export interface VoiceResult {
   text: string;
   tones: ToneReport | null;
+  audio?: Blob;
 }
 
 export interface VoiceHandle {
@@ -153,7 +162,7 @@ function listenLocal({ onPhase, learnerId, pronounce, silenceMs = 1600, noSpeech
     });
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
     const data = (await res.json()) as { text?: string; tones?: ToneReport };
-    return { text: (data.text || '').trim(), tones: data.tones ?? null };
+    return { text: (data.text || '').trim(), tones: data.tones ?? null, audio: blob };
   })();
 
   return {
@@ -198,7 +207,9 @@ function listenBrowser({ onPhase }: Options): VoiceHandle {
     recognition.continuous = false;
     let text = '';
     recognition.onresult = (event) => {
-      text = Array.from(event.results).map((r) => r[0]?.transcript ?? '').join('');
+      text = Array.from(event.results)
+        .map((r) => r[0]?.transcript ?? '')
+        .join('');
     };
     recognition.onerror = (event) => {
       if (event.error !== 'no-speech' && event.error !== 'aborted') {

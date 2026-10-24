@@ -1,0 +1,165 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 11,
+  "lessonTitle": "Thời tiết, sức khỏe đơn giản và xin giúp đỡ",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "天气",
+      "meaning": "thời tiết",
+      "example": "今天天气很好。",
+      "exampleVi": "Thời tiết hôm nay rất đẹp.",
+      "pinyin": "tiān qì",
+      "examplePinyin": "jīn tiān tiān qì hěn hǎo 。"
+    },
+    {
+      "word": "冷",
+      "meaning": "lạnh",
+      "example": "今天很冷。",
+      "exampleVi": "Hôm nay rất lạnh.",
+      "pinyin": "lěng",
+      "examplePinyin": "jīn tiān hěn lěng 。"
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "今天很热。",
+      "exampleVi": "Hôm nay rất nóng.",
+      "pinyin": "rè",
+      "examplePinyin": "jīn tiān hěn rè 。"
+    },
+    {
+      "word": "下雨",
+      "meaning": "mưa",
+      "example": "今天下雨。",
+      "exampleVi": "Hôm nay trời mưa.",
+      "pinyin": "xià yǔ",
+      "examplePinyin": "jīn tiān xià yǔ 。"
+    },
+    {
+      "word": "医院",
+      "meaning": "bệnh viện",
+      "example": "医院在哪里？",
+      "exampleVi": "Bệnh viện ở đâu?",
+      "pinyin": "yī yuàn",
+      "examplePinyin": "yī yuàn zài nǎ lǐ ？"
+    },
+    {
+      "word": "帮助",
+      "meaning": "giúp đỡ",
+      "example": "谢谢你的帮助。",
+      "exampleVi": "Cảm ơn sự giúp đỡ của bạn.",
+      "pinyin": "bāng zhù",
+      "examplePinyin": "xiè xiè nǐ de bāng zhù 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "今天……",
+      "explanation": "Mô tả thời tiết hiện tại; tính từ có thể đi với 很, động từ 下雨 không dùng 很 trước nó.",
+      "example": "今天很冷。",
+      "exampleVi": "Hôm nay rất lạnh.",
+      "examplePinyin": "jīn tiān hěn lěng 。"
+    },
+    {
+      "pattern": "请帮我……",
+      "explanation": "Xin người khác giúp thực hiện một việc cụ thể.",
+      "example": "请帮我找医院。",
+      "exampleVi": "Xin giúp tôi tìm bệnh viện.",
+      "examplePinyin": "qǐng bāng wǒ zhǎo yī yuàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Đổi lịch vì mưa; buổi 2 xin giúp tìm nơi khám khi không khỏe. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người hỗ trợ",
+    "learnerRole": "Người cần giúp",
+    "goals": [
+      "Mô tả thời tiết bằng một câu",
+      "Xin giúp tìm một địa điểm và xin nhắc lại nếu cần"
+    ],
+    "opening": "你好，你需要什么帮助？",
+    "openingVi": "Chào bạn, bạn cần giúp việc gì?"
+  },
+  "freeTalk": {
+    "question": "请说明一个需要，再请对方帮忙。",
+    "questionVi": "Xin nói một nhu cầu rồi nhờ người đối thoại giúp."
+  },
+  "learningNotes": [
+    "Bổ trợ: 不舒服 bù shūfu — không khỏe; 帮 bāng — giúp; 找 zhǎo — tìm.",
+    "Tình huống luyện giao tiếp, không chẩn đoán hoặc hướng dẫn điều trị."
+  ],
+  "prerequisites": [
+    1,
+    5,
+    8
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Thời tiết, sức khỏe đơn giản và xin giúp đỡ",
+    "playLimit": 2,
+    "transcript": "甲：你好，我不舒服。请帮我找医院。乙：医院在前面。甲：谢谢，请再说一遍。乙：往前走。",
+    "translation": "A: Chào bạn, tôi không khỏe. Xin giúp tôi tìm bệnh viện. B: Bệnh viện ở phía trước. A: Cảm ơn, xin nhắc lại. B: Đi thẳng về trước.",
+    "questions": [
+      {
+        "prompt": "A cần tìm nơi nào?",
+        "options": [
+          "Trường",
+          "Bệnh viện",
+          "Cửa hàng"
+        ],
+        "answer": 1,
+        "explanation": "A nói 找医院."
+      },
+      {
+        "prompt": "B chỉ hướng nào?",
+        "options": [
+          "Sang trái",
+          "Sang phải",
+          "Đi thẳng"
+        ],
+        "answer": 2,
+        "explanation": "B nói 往前走."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ bù shū fú 。 qǐng bāng wǒ zhǎo yī yuàn 。 yǐ ： yī yuàn zài qián miàn 。 jiǎ ： xiè xiè ， qǐng zài shuō yí biàn 。 yǐ ： wǎng qián zǒu 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "今天天气很好。 今天很冷。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "今天天气很好。 今天很冷。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请说明一个需要，再请对方帮忙。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我不舒服。请帮我找医院。请再说一遍。",
+      "sampleVi": "Tôi không khỏe. Xin giúp tôi tìm bệnh viện. Xin nói lại một lần nữa."
+    }
+  ],
+  "transferTask": "Đổi lịch vì mưa; buổi 2 xin giúp tìm nơi khám khi không khỏe."
+}

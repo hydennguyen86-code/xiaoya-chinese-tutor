@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   SESSION_MS,
+  nextPointer,
   beginSession,
   completeSession,
   planToday,
@@ -108,4 +109,12 @@ test('remaining time and calendar helpers', () => {
   assert.equal(remainingMs(s), 16 * 60_000);
   assert.equal(previousDay('2026-03-01'), '2026-02-28');
   assert.equal(previousDay('2026-01-01'), '2025-12-31');
+});
+
+test('finishing an authored course never jumps from HSK 1 to HSK 5', () => {
+  const syllabus = { book: 'Misu', volumes: [
+    { id: 'one', title: 'HSK1', levels: ['HSK1-2'], authored: true, lessons: [{ no: 1, title: 'Bài', pages: '', topics: [], days: 2 }] },
+    { id: 'five', title: 'HSK5', levels: ['HSK5-6'], authored: true, lessons: [{ no: 1, title: 'Bài', pages: '', topics: [], days: 2 }] },
+  ] };
+  assert.equal(nextPointer(syllabus, {volumeId:'one',lessonNo:1,day:2}),null);
 });

@@ -8,14 +8,7 @@ import { ChatPanel } from './components/ChatPanel';
 import { LearnerPicker } from './components/LearnerPicker';
 import { LearningDialog } from './components/LearningDialog';
 import { SettingsDialog } from './components/SettingsDialog';
-import {
-  BookIcon,
-  ChevronDownIcon,
-  FlameIcon,
-  MuteIcon,
-  SettingsIcon,
-  VolumeIcon,
-} from './components/Icons';
+import { BookIcon, ChevronDownIcon, FlameIcon, MuteIcon, SettingsIcon, VolumeIcon } from './components/Icons';
 import type { AvatarApi } from './lib/avatarApi';
 import { analyzeLearning, fetchCorrections, fetchStatus, streamChat } from './lib/api';
 import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
@@ -47,13 +40,7 @@ import {
   saveLearning,
   seedLearningFromMessages,
 } from './lib/learning';
-import {
-  createLearner,
-  loadActiveLearnerId,
-  loadLearners,
-  setActiveLearner,
-  updateLearnerLevel,
-} from './lib/learners';
+import { createLearner, loadActiveLearnerId, loadLearners, setActiveLearner, updateLearnerLevel } from './lib/learners';
 import type { Learner } from './lib/learners';
 import { DailyLesson } from './components/DailyLesson';
 import { extractSpeechSegments, makeGreeting, shortModelName, uid } from './lib/text';
@@ -121,9 +108,22 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const [setupOpen, setSetupOpen] = useState(() => localStorage.getItem('xiaoya.setup.v1') !== 'done');
   const assessmentData = loadAssessment(learner.id);
   const lessonProgress = loadLessonProgress(learner.id);
-  const firstStudyAt = Math.min(...[...learning.words.map((w) => w.firstSeen), ...learning.mistakes.map((m) => m.firstSeen), ...assessmentData.samples.map((s) => s.date), ...learning.days.filter((d) => d.turns > 0).map((d) => new Date(d.date + 'T00:00:00').getTime())].filter((n) => n > 0), Date.now());
-  const assessmentDue = isDue('week', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt) || isDue('month', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt);
-  function closeSetup() { localStorage.setItem('xiaoya.setup.v1', 'done'); setSetupOpen(false); }
+  const firstStudyAt = Math.min(
+    ...[
+      ...learning.words.map((w) => w.firstSeen),
+      ...learning.mistakes.map((m) => m.firstSeen),
+      ...assessmentData.samples.map((s) => s.date),
+      ...learning.days.filter((d) => d.turns > 0).map((d) => new Date(d.date + 'T00:00:00').getTime()),
+    ].filter((n) => n > 0),
+    Date.now(),
+  );
+  const assessmentDue =
+    isDue('week', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt) ||
+    isDue('month', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt);
+  function closeSetup() {
+    localStorage.setItem('xiaoya.setup.v1', 'done');
+    setSetupOpen(false);
+  }
 
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
@@ -184,9 +184,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       setStatusError(null);
       setSettings((previous) => {
         const chosenProvider =
-          data.providers.find(
-            (provider) => provider.id === previous.providerId && provider.online,
-          ) ||
+          data.providers.find((provider) => provider.id === previous.providerId && provider.online) ||
           data.providers.find((provider) => provider.online) ||
           data.providers[0];
         const model = chosenProvider
@@ -194,9 +192,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             ? previous.model
             : chosenProvider.recommendedModel || chosenProvider.models[0] || ''
           : '';
-        const voice = data.voices.some((item) => item.id === previous.voice)
-          ? previous.voice
-          : data.defaultVoice || previous.voice;
+        const voice = data.voices.some((item) => item.id === previous.voice) ? previous.voice : data.defaultVoice || previous.voice;
         const viVoice = data.viVoices?.some((item) => item.id === previous.viVoice)
           ? previous.viVoice
           : data.defaultViVoice || previous.viVoice;
@@ -337,10 +333,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     learningRef.current = next;
     setLearning(next);
   }, []);
-  const goalPercent = Math.min(
-    100,
-    Math.round((progress.todayTurns / DAILY_GOAL) * 100),
-  );
+  const goalPercent = Math.min(100, Math.round((progress.todayTurns / DAILY_GOAL) * 100));
   const goalReached = progress.todayTurns >= DAILY_GOAL;
 
   const handleDraftChange = (value: string) => {
@@ -360,9 +353,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       return;
     }
     if (busyRef.current) return;
-    setPhase((current) =>
-      current === 'speaking' ? (avatarReadyRef.current ? 'ready' : 'loading') : current,
-    );
+    setPhase((current) => (current === 'speaking' ? (avatarReadyRef.current ? 'ready' : 'loading') : current));
   }, []);
 
   const handleAvatarIssue = useCallback((message: string) => {
@@ -377,17 +368,13 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       if (!text || busyRef.current) return;
 
       const currentStatus = statusRef.current;
-      const active = currentStatus?.providers.find(
-        (provider) => provider.id === settingsRef.current.providerId,
-      );
+      const active = currentStatus?.providers.find((provider) => provider.id === settingsRef.current.providerId);
       if (!currentStatus) {
         setError('Đang kết nối server local. Đợi một chút rồi thử lại nhé.');
         return;
       }
       if (!active?.online || !settingsRef.current.model) {
-        setError(
-          'Chưa có model local sẵn sàng. Mở Ollama hoặc LM Studio, sau đó kiểm tra trong Cài đặt.',
-        );
+        setError('Chưa có model local sẵn sàng. Mở Ollama hoặc LM Studio, sau đó kiểm tra trong Cài đặt.');
         return;
       }
 
@@ -431,11 +418,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       let completed = false;
 
       const patchAssistant = (patch: Partial<ChatMessage>) => {
-        setMessages((current) =>
-          current.map((message) =>
-            message.id === assistantId ? { ...message, ...patch } : message,
-          ),
-        );
+        setMessages((current) => current.map((message) => (message.id === assistantId ? { ...message, ...patch } : message)));
       };
 
       const feedSpeech = (fullText: string, flush: boolean) => {
@@ -451,13 +434,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       };
 
       const history: ChatHistoryMessage[] = baseMessages
-        .filter(
-          (message) =>
-            !message.error &&
-            !message.streaming &&
-            message.kind !== 'greeting' &&
-            message.text.trim(),
-        )
+        .filter((message) => !message.error && !message.streaming && message.kind !== 'greeting' && message.text.trim())
         .map((message) => ({ role: message.role, content: message.text }));
 
       const abort = new AbortController();
@@ -469,10 +446,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           model: settingsRef.current.model,
           level: settingsRef.current.level,
           messages: history,
-          learning:
-            [`Tên học viên: ${learner.name}`, buildLearningDigest(learningRef.current)]
-              .filter(Boolean)
-              .join('\n\n') || undefined,
+          learning: [`Tên học viên: ${learner.name}`, buildLearningDigest(learningRef.current)].filter(Boolean).join('\n\n') || undefined,
         },
         {
           onAttitude: (event) => {
@@ -520,27 +494,14 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             avatarRef.current?.applyReaction(turn.emotion, turn.gesture);
 
             if (autoSpeak && !spoke && streamedText) {
-              const started = avatarRef.current?.speakAll(
-                streamedText,
-                voice,
-                turn.emotion,
-                turn.gesture,
-              );
+              const started = avatarRef.current?.speakAll(streamedText, voice, turn.emotion, turn.gesture);
               if (started) setPhase('speaking');
             } else if (!autoSpeak) {
               setPhase('ready');
             }
 
-            if (
-              autoSpeak &&
-              !translationQueued &&
-              settingsRef.current.autoReadTranslation &&
-              turn.translation.trim()
-            ) {
-              avatarRef.current?.queueSpeech(
-                turn.translation,
-                settingsRef.current.viVoice,
-              );
+            if (autoSpeak && !translationQueued && settingsRef.current.autoReadTranslation && turn.translation.trim()) {
+              avatarRef.current?.queueSpeech(turn.translation, settingsRef.current.viVoice);
             }
 
             const nextLearning = recordLearningTurn(learningRef.current, text, turn);
@@ -570,11 +531,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
                 ) {
                   return;
                 }
-                const withCorrections = recordLearningCorrections(
-                  learningRef.current,
-                  text,
-                  corrections,
-                );
+                const withCorrections = recordLearningCorrections(learningRef.current, text, corrections);
                 learningRef.current = withCorrections;
                 setLearning(withCorrections);
               })
@@ -595,9 +552,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
               if (target && !target.text.trim()) {
                 return current.filter((message) => message.id !== assistantId);
               }
-              return current.map((message) =>
-                message.id === assistantId ? { ...message, streaming: false } : message,
-              );
+              return current.map((message) => (message.id === assistantId ? { ...message, streaming: false } : message));
             });
             avatarRef.current?.stopSpeech();
             setPhase('ready');
@@ -626,15 +581,11 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     }
     if (busyRef.current) return;
     if (!isSpeechSupported()) {
-      setError(
-        'Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Edge, hoặc gõ tin nhắn bằng tiếng Trung.',
-      );
+      setError('Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Edge, hoặc gõ tin nhắn bằng tiếng Trung.');
       return;
     }
     if (!canChat) {
-      setError(
-        'Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt trước khi nói nhé.',
-      );
+      setError('Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt trước khi nói nhé.');
       return;
     }
 
@@ -664,12 +615,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       setError('Avatar chưa sẵn sàng để đọc câu trả lời.');
       return;
     }
-    const started = controller.speakAll(
-      message.text,
-      settingsRef.current.voice,
-      message.emotion || 'happy',
-      message.gesture || 'none',
-    );
+    const started = controller.speakAll(message.text, settingsRef.current.voice, message.emotion || 'happy', message.gesture || 'none');
     if (started) {
       setPhase('speaking');
       setError(null);
@@ -711,11 +657,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   );
 
   const handlePreviewTranslation = () => {
-    speakText(
-      'Xin chào, mình là Misu. Đây là giọng đọc tiếng Việt của mình.',
-      settingsRef.current.viVoice,
-      'warm',
-    );
+    speakText('Xin chào, mình là Misu. Đây là giọng đọc tiếng Việt của mình.', settingsRef.current.viVoice, 'warm');
   };
 
   const openLearning = useCallback(() => {
@@ -737,23 +679,15 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       const next = reviewWord(learningRef.current, word, remembered);
       learningRef.current = next;
       setLearning(next);
-      showToast(
-        remembered
-          ? `Đã ghi nhận bạn nhớ “${word}”.`
-          : `Sẽ gặp lại “${word}” sau 10 phút.`,
-      );
+      showToast(remembered ? `Đã ghi nhận bạn nhớ “${word}”.` : `Sẽ gặp lại “${word}” sau 10 phút.`);
     },
     [showToast],
   );
 
   const handleAnalyzeLearning = useCallback(async () => {
-    const active = statusRef.current?.providers.find(
-      (provider) => provider.id === settingsRef.current.providerId,
-    );
+    const active = statusRef.current?.providers.find((provider) => provider.id === settingsRef.current.providerId);
     if (!statusRef.current || !active?.online || !settingsRef.current.model) {
-      setAnalysisError(
-        'Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt.',
-      );
+      setAnalysisError('Chưa có model local sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt.');
       return;
     }
     if (analyzing) return;
@@ -784,9 +718,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
 
   const handleClearLearning = () => {
     if (
-      !window.confirm(
-        'Xoá toàn bộ hồ sơ học tập gồm lỗi đã ghi, từ vựng, lịch ôn và các bản phân tích? Thao tác này không thể hoàn tác.',
-      )
+      !window.confirm('Xoá toàn bộ hồ sơ học tập gồm lỗi đã ghi, từ vựng, lịch ôn và các bản phân tích? Thao tác này không thể hoàn tác.')
     ) {
       return;
     }
@@ -804,9 +736,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     setSettings((previous) => {
       const next = { ...previous, ...patch };
       if (patch.providerId && patch.providerId !== previous.providerId) {
-        const provider = statusRef.current?.providers.find(
-          (item) => item.id === patch.providerId,
-        );
+        const provider = statusRef.current?.providers.find((item) => item.id === patch.providerId);
         next.model = provider?.recommendedModel || provider?.models[0] || '';
       }
       return next;
@@ -877,11 +807,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   };
 
   const handleNewChat = () => {
-    if (
-      !window.confirm(
-        'Bắt đầu cuộc trò chuyện mới? Nội dung hội thoại hôm nay sẽ được xoá khỏi trình duyệt.',
-      )
-    ) {
+    if (!window.confirm('Bắt đầu cuộc trò chuyện mới? Nội dung hội thoại hôm nay sẽ được xoá khỏi trình duyệt.')) {
       return;
     }
     abortRef.current?.abort();
@@ -898,11 +824,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   };
 
   const handleResetProgress = () => {
-    if (
-      !window.confirm(
-        'Đặt lại toàn bộ chuỗi ngày, XP và số lượt đã luyện? Hội thoại hôm nay vẫn được giữ lại.',
-      )
-    ) {
+    if (!window.confirm('Đặt lại toàn bộ chuỗi ngày, XP và số lượt đã luyện? Hội thoại hôm nay vẫn được giữ lại.')) {
       return;
     }
     const fresh = resetProgress(scope);
@@ -917,12 +839,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       setError('Avatar chưa sẵn sàng để nghe thử giọng.');
       return;
     }
-    const started = controller.speakAll(
-      '你好呀，我是米苏。很高兴和你一起练习中文。',
-      settingsRef.current.voice,
-      'happy',
-      'handup',
-    );
+    const started = controller.speakAll('你好呀，我是米苏。很高兴和你一起练习中文。', settingsRef.current.voice, 'happy', 'handup');
     if (started) setPhase('speaking');
   };
 
@@ -945,12 +862,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         </div>
 
         <div className="topbar-actions">
-          <button
-            className="learner-chip"
-            type="button"
-            onClick={onSwitchLearner}
-            title="Đổi người học"
-          >
+          <button className="learner-chip" type="button" onClick={onSwitchLearner} title="Đổi người học">
             {learner.name}
           </button>
 
@@ -963,42 +875,33 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
               setAssessmentOpen(false);
               setLessonOpen((open) => !open);
             }}
-            title="Bài học 20 phút theo giáo trình, tự chọn bài cho hôm nay"
+            title="Bài học theo lộ trình, có nghe hiểu và luyện nói"
           >
             {lessonOpen ? 'Về trò chuyện' : 'Bài hôm nay'}
           </button>
 
-          <button type="button" className={`lesson-launch${assessmentDue ? ' is-due' : ''}`} onClick={() => {
-            micRef.current?.abort(); avatarRef.current?.stopSpeech(); setLessonOpen(false); setAssessmentOpen((v) => !v);
-          }}>Kiểm tra{assessmentDue ? ' · đến hạn' : ''}</button>
           <button
-            className="runtime-chip"
             type="button"
-            onClick={openSettings}
-            title="Xem hoặc đổi model local"
+            className={`lesson-launch${assessmentDue ? ' is-due' : ''}`}
+            onClick={() => {
+              micRef.current?.abort();
+              avatarRef.current?.stopSpeech();
+              setLessonOpen(false);
+              setAssessmentOpen((v) => !v);
+            }}
           >
+            Kiểm tra{assessmentDue ? ' · đến hạn' : ''}
+          </button>
+          <button className="runtime-chip" type="button" onClick={openSettings} title="Xem hoặc đổi model local">
             <span className={`status-dot${providerOnline ? ' is-online' : ''}`} />
             <span className="runtime-chip-copy">
-              <strong>
-                {activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}
-              </strong>
-              <small>
-                {settings.model
-                  ? shortModelName(settings.model, 26)
-                  : activeProvider
-                    ? 'Chọn model'
-                    : 'Ollama · LM Studio'}
-              </small>
+              <strong>{activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}</strong>
+              <small>{settings.model ? shortModelName(settings.model, 26) : activeProvider ? 'Chọn model' : 'Ollama · LM Studio'}</small>
             </span>
             <ChevronDownIcon size={14} />
           </button>
 
-          <button
-            className="level-chip"
-            type="button"
-            onClick={openSettings}
-            title="Đổi trình độ luyện tập"
-          >
+          <button className="level-chip" type="button" onClick={openSettings} title="Đổi trình độ luyện tập">
             {LEVEL_LABEL[settings.level]}
           </button>
 
@@ -1010,9 +913,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             aria-label="Mở hồ sơ học tập và ôn bài"
           >
             <BookIcon size={19} />
-            {learningDue > 0 && (
-              <span className="learning-badge">{learningDue > 9 ? '9+' : learningDue}</span>
-            )}
+            {learningDue > 0 && <span className="learning-badge">{learningDue > 9 ? '9+' : learningDue}</span>}
           </button>
 
           <button
@@ -1025,13 +926,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             {settings.autoSpeak ? <VolumeIcon size={19} /> : <MuteIcon size={19} />}
           </button>
 
-          <button
-            className="icon-button"
-            type="button"
-            onClick={openSettings}
-            title="Cài đặt"
-            aria-label="Mở cài đặt"
-          >
+          <button className="icon-button" type="button" onClick={openSettings} title="Cài đặt" aria-label="Mở cài đặt">
             <SettingsIcon size={19} />
           </button>
         </div>
@@ -1087,12 +982,21 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         </section>
 
         {assessmentOpen ? (
-          <Assessment learnerId={learner.id} learning={learning} provider={settings.providerId} model={settings.model} level={settings.level}
-            localStt={Boolean(status?.localStt)} say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
-            onLearningUpdate={updateLearning} onClose={() => setAssessmentOpen(false)} />
+          <Assessment
+            learnerId={learner.id}
+            learning={learning}
+            provider={settings.providerId}
+            model={settings.model}
+            level={settings.level}
+            localStt={Boolean(status?.localStt)}
+            say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
+            onLearningUpdate={updateLearning}
+            onClose={() => setAssessmentOpen(false)}
+          />
         ) : lessonOpen ? (
           <DailyLesson
             learner={learner}
+            onLevelChange={(level) => handleSettingsChange({ level })}
             level={settings.level}
             provider={settings.providerId}
             model={settings.model}
@@ -1127,8 +1031,19 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         )}
       </main>
 
-      {setupOpen && <SetupCheck settings={settings} onChange={handleSettingsChange} onStatus={setStatus} onClose={closeSetup}
-        onStart={() => { closeSetup(); setAssessmentOpen(false); setLessonOpen(true); }} />}
+      {setupOpen && (
+        <SetupCheck
+          settings={settings}
+          onChange={handleSettingsChange}
+          onStatus={setStatus}
+          onClose={closeSetup}
+          onStart={() => {
+            closeSetup();
+            setAssessmentOpen(false);
+            setLessonOpen(true);
+          }}
+        />
+      )}
       <SettingsDialog
         open={settingsOpen}
         status={status}
@@ -1137,7 +1052,10 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         refreshing={refreshing}
         onClose={closeSettings}
         onChange={handleSettingsChange}
-        onSetup={() => { setSettingsOpen(false); setSetupOpen(true); }}
+        onSetup={() => {
+          setSettingsOpen(false);
+          setSetupOpen(true);
+        }}
         onRefresh={() => void refreshStatus()}
         onPreviewVoice={handlePreviewVoice}
         onPreviewTranslation={handlePreviewTranslation}

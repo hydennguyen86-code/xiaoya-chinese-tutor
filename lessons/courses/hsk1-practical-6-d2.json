@@ -1,0 +1,256 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 6,
+  "lessonTitle": "Gọi nước và nói sở thích",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "水",
+      "meaning": "nước",
+      "example": "我想喝水。",
+      "exampleVi": "Tôi muốn uống nước.",
+      "pinyin": "shuǐ",
+      "examplePinyin": "wǒ xiǎng hē shuǐ 。"
+    },
+    {
+      "word": "茶",
+      "meaning": "trà",
+      "example": "我要一杯茶。",
+      "exampleVi": "Tôi lấy một cốc trà.",
+      "pinyin": "chá",
+      "examplePinyin": "wǒ yào yì bēi chá 。"
+    },
+    {
+      "word": "咖啡",
+      "meaning": "cà phê",
+      "example": "我喜欢喝咖啡。",
+      "exampleVi": "Tôi thích uống cà phê.",
+      "pinyin": "kā fēi",
+      "examplePinyin": "wǒ xǐ huan hē kā fēi 。"
+    },
+    {
+      "word": "喝",
+      "meaning": "uống",
+      "example": "你想喝什么？",
+      "exampleVi": "Bạn muốn uống gì?",
+      "pinyin": "hē",
+      "examplePinyin": "nǐ xiǎng hē shén me ？"
+    },
+    {
+      "word": "杯",
+      "meaning": "cốc; lượng từ cho đồ uống",
+      "example": "我要两杯水。",
+      "exampleVi": "Tôi lấy hai cốc nước.",
+      "pinyin": "bēi",
+      "examplePinyin": "wǒ yào liǎng bēi shuǐ 。"
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "这杯茶很热。",
+      "exampleVi": "Cốc trà này rất nóng.",
+      "pinyin": "rè",
+      "examplePinyin": "zhè bēi chá hěn rè 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……杯……",
+      "explanation": "Gọi số lượng đồ uống; dùng 一杯 hoặc 两杯.",
+      "example": "我要一杯热茶。",
+      "exampleVi": "Tôi lấy một cốc trà nóng.",
+      "examplePinyin": "wǒ yào yì bēi rè chá 。"
+    },
+    {
+      "pattern": "请不要加……",
+      "explanation": "Yêu cầu không thêm một thứ; học như cụm gọi đồ uống.",
+      "example": "请不要加糖。",
+      "exampleVi": "Xin đừng thêm đường.",
+      "examplePinyin": "qǐng bú yào jiā táng 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Nhân viên đồ uống",
+    "learnerRole": "Khách gọi nước",
+    "goals": [
+      "Gọi đồ uống kèm số lượng",
+      "Nói một yêu cầu về đường hoặc đá"
+    ],
+    "opening": "你好，你想喝什么？",
+    "openingVi": "Chào bạn, bạn muốn uống gì?"
+  },
+  "freeTalk": {
+    "question": "请点一杯饮料，再说一个要求。",
+    "questionVi": "Xin gọi một đồ uống rồi đưa ra một yêu cầu."
+  },
+  "learningNotes": [
+    "Bổ trợ: 糖 táng — đường; 冰 bīng — đá; 加 jiā — thêm; 不要 bú yào — không muốn/đừng.",
+    "Câu thứ hai buổi 2 luyện nghe phân biệt từng cốc, không chỉ nhận ra từ cà phê."
+  ],
+  "prerequisites": [
+    2,
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Gọi nước và nói sở thích",
+    "playLimit": 2,
+    "transcript": "甲：我要两杯咖啡。乙：要热的吗？甲：一杯热的，一杯加冰。乙：好，两杯咖啡。",
+    "translation": "A: Tôi lấy hai cốc cà phê. B: Anh/chị muốn loại nóng phải không? A: Một cốc nóng, một cốc thêm đá. B: Được, hai cốc cà phê.",
+    "questions": [
+      {
+        "prompt": "Tổng cộng bao nhiêu cốc?",
+        "options": [
+          "Ba",
+          "Một",
+          "Hai"
+        ],
+        "answer": 2,
+        "explanation": "A nói 两杯咖啡."
+      },
+      {
+        "prompt": "Cốc thứ hai thế nào?",
+        "options": [
+          "Thêm đá",
+          "Không đá",
+          "Chỉ có nước"
+        ],
+        "answer": 0,
+        "explanation": "A nói 一杯加冰."
+      }
+    ],
+    "pinyin": "jiǎ ： wǒ yào liǎng bēi kā fēi 。 yǐ ： yào rè de ma ？ jiǎ ： yì bēi rè de ， yì bēi jiā bīng 。 yǐ ： hǎo ， liǎng bēi kā fēi 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想喝水。 我要一杯茶。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想喝水。 我要一杯茶。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请点一杯饮料，再说一个要求。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我要一杯热茶。请不要加糖。谢谢。",
+      "sampleVi": "Tôi lấy một cốc trà nóng. Xin đừng thêm đường. Cảm ơn."
+    }
+  ],
+  "transferTask": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người.",
+  "checkpoint": {
+    "title": "Kiểm tra chặng 1 — nghe và nói ứng dụng",
+    "practiceMinutes": 12,
+    "official": false,
+    "instructions": "Bài mini tự soạn, không sao chép đề thi, không quy đổi điểm sang chứng chỉ. Nghe tối đa hai lần.",
+    "listening": [
+      {
+        "transcript": "甲：你好，我叫小林。乙：你是老师吗？甲：不是，我是学生。我家有三口人。",
+        "translation": "A: Chào bạn, tôi tên Tiểu Lâm. B: Bạn là giáo viên à? A: Không, tôi là học sinh. Gia đình tôi có ba người.",
+        "questions": [
+          {
+            "prompt": "A là ai?",
+            "options": [
+              "Học sinh",
+              "Bác sĩ",
+              "Giáo viên"
+            ],
+            "answer": 0,
+            "explanation": "A nói 我是学生."
+          },
+          {
+            "prompt": "Gia đình A có mấy người?",
+            "options": [
+              "Hai",
+              "Ba",
+              "Bốn"
+            ],
+            "answer": 1,
+            "explanation": "A nói 三口人."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 1"
+      },
+      {
+        "transcript": "甲：你明天下午有时间吗？乙：有，我们四点见面吧。甲：好。你想喝什么？乙：一杯水，谢谢。",
+        "translation": "A: Chiều mai bạn có thời gian không? B: Có, chúng ta gặp lúc bốn giờ nhé. A: Được. Bạn muốn uống gì? B: Một cốc nước, cảm ơn.",
+        "questions": [
+          {
+            "prompt": "Giờ hẹn?",
+            "options": [
+              "Ba giờ chiều mai",
+              "Bốn giờ chiều mai",
+              "Bốn giờ sáng"
+            ],
+            "answer": 1,
+            "explanation": "B nói 明天下午 và 四点."
+          },
+          {
+            "prompt": "B muốn uống gì?",
+            "options": [
+              "Trà",
+              "Cà phê",
+              "Nước"
+            ],
+            "answer": 2,
+            "explanation": "B nói 一杯水."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 2"
+      }
+    ],
+    "speaking": [
+      {
+        "kind": "repeat",
+        "prompt": "Nghe rồi nhắc lại hai câu ngắn.",
+        "audioText": "现在是下午四点。我们在学校见面。",
+        "prepareSeconds": 15,
+        "responseSeconds": 30,
+        "reference": "现在是下午四点。我们在学校见面。",
+        "checklist": [
+          "Giữ đúng dữ kiện",
+          "Không thêm sự kiện không có trong bài",
+          "Nói rõ và có trình tự"
+        ]
+      },
+      {
+        "kind": "answer",
+        "prompt": "请介绍自己，再约一个见面时间。",
+        "promptVi": "Giới thiệu ngắn rồi hẹn giờ gặp.",
+        "prepareSeconds": 15,
+        "responseSeconds": 30,
+        "reference": "我叫小安。我们明天下午三点见面，好吗？",
+        "checklist": [
+          "Đúng trọng tâm",
+          "Có chi tiết cụ thể",
+          "Tự nói không nhìn mẫu"
+        ]
+      }
+    ]
+  }
+}

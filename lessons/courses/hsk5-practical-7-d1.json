@@ -1,0 +1,184 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 7,
+  "lessonTitle": "Sắp xếp chuyến đi khi có thay đổi",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "行程",
+      "meaning": "lịch trình chuyến đi",
+      "example": "我们需要调整行程。",
+      "exampleVi": "Chúng ta cần điều chỉnh lịch trình.",
+      "pinyin": "xíng chéng",
+      "examplePinyin": "wǒ men xū yào tiáo zhěng xíng chéng 。"
+    },
+    {
+      "word": "取消",
+      "meaning": "hủy",
+      "example": "下午的会议取消了。",
+      "exampleVi": "Cuộc họp chiều đã bị hủy.",
+      "pinyin": "qǔ xiāo",
+      "examplePinyin": "xià wǔ de huì yì qǔ xiāo le 。"
+    },
+    {
+      "word": "改签",
+      "meaning": "đổi vé; đổi chuyến",
+      "example": "这张车票可以改签吗？",
+      "exampleVi": "Vé tàu này có đổi chuyến được không?",
+      "pinyin": "gǎi qiān",
+      "examplePinyin": "zhè zhāng chē piào kě yǐ gǎi qiān ma ？"
+    },
+    {
+      "word": "耽误",
+      "meaning": "làm lỡ; trì hoãn",
+      "example": "我们不想耽误第二天的会议。",
+      "exampleVi": "Chúng tôi không muốn lỡ cuộc họp hôm sau.",
+      "pinyin": "dān wù",
+      "examplePinyin": "wǒ men bù xiǎng dān wù dì èr tiān de huì yì 。"
+    },
+    {
+      "word": "预订",
+      "meaning": "đặt trước",
+      "example": "我预订了两个房间。",
+      "exampleVi": "Tôi đã đặt trước hai phòng.",
+      "pinyin": "yù dìng",
+      "examplePinyin": "wǒ yù dìng le liǎng gè fáng jiān 。"
+    },
+    {
+      "word": "费用",
+      "meaning": "chi phí; khoản phí",
+      "example": "请说明改签的费用。",
+      "exampleVi": "Xin giải thích phí đổi vé.",
+      "pinyin": "fèi yòng",
+      "examplePinyin": "qǐng shuō míng gǎi qiān de fèi yòng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "原本……，现在……",
+      "explanation": "Nêu kế hoạch cũ và thay đổi mới, tránh trộn hai lịch.",
+      "example": "我们原本今天出发，现在要改到明天。",
+      "exampleVi": "Ban đầu chúng tôi đi hôm nay, giờ phải đổi sang ngày mai.",
+      "examplePinyin": "wǒ men yuán běn jīn tiān chū fā ， xiàn zài yào gǎi dào míng tiān 。"
+    },
+    {
+      "pattern": "只要……，就……",
+      "explanation": "Nêu điều kiện đủ để chấp nhận một phương án, không phải điều kiện cần duy nhất.",
+      "example": "只要能在中午前到，我就可以接受换车次。",
+      "exampleVi": "Chỉ cần đến trước buổi trưa, tôi có thể chấp nhận đổi chuyến.",
+      "examplePinyin": "zhǐ yào néng zài zhōng wǔ qián dào ， wǒ jiù kě yǐ jiē shòu huàn chē cì 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Đổi chuyến; buổi 2 xử lý nhận phòng muộn. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Nhân viên hỗ trợ chuyến đi",
+    "learnerRole": "Người có lịch thay đổi",
+    "goals": [
+      "Nêu mốc giờ quan trọng và giới hạn có thể chấp nhận",
+      "Hỏi phí/điều kiện trước khi đồng ý thay đổi"
+    ],
+    "opening": "你的行程突然变了，你最需要先确认什么？",
+    "openingVi": "Lịch trình của bạn đột ngột thay đổi; bạn cần xác nhận điều gì trước tiên?"
+  },
+  "freeTalk": {
+    "question": "出行计划变化时，你怎样比较时间、费用和风险？",
+    "questionVi": "Khi lịch đi lại thay đổi, bạn so sánh thời gian, chi phí và rủi ro thế nào?"
+  },
+  "learningNotes": [
+    "Lịch và phí là ví dụ giả định; phân biệt ngày mai/ngày kia và giờ đến/giờ khởi hành."
+  ],
+  "prerequisites": [
+    3,
+    6
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Sắp xếp chuyến đi khi có thay đổi",
+    "playLimit": 1,
+    "transcript": "旅客：我原本坐今晚的车，但会议推迟到后天下午了。工作人员：您想改到明天吗？旅客：对，只要后天中午前能到就行。工作人员：明天下午有一班，后天早上八点到，需要补五十元差价。旅客：请先确认原来的座位能否保留到我决定之后。工作人员：可以，十分钟内给我答复。",
+    "translation": "Cuộc họp chuyển sang chiều ngày kia. Khách muốn đi ngày mai và đến trước trưa ngày kia. Có chuyến chiều mai đến 8 giờ sáng ngày kia, bù 50 tiền chênh lệch. Khách được giữ chỗ cũ trong mười phút để quyết định.",
+    "questions": [
+      {
+        "prompt": "Yêu cầu đến nơi muộn nhất?",
+        "options": [
+          "Tối nay",
+          "Ngày mai trước tám giờ",
+          "Trước trưa ngày kia"
+        ],
+        "answer": 2,
+        "explanation": "Khách nói 后天中午前能到."
+      },
+      {
+        "prompt": "Năm mươi là gì?",
+        "options": [
+          "Chênh lệch giá",
+          "Toàn bộ giá vé",
+          "Phí khách sạn"
+        ],
+        "answer": 0,
+        "explanation": "Nhân viên nói 补五十元差价."
+      },
+      {
+        "prompt": "Khách cần phản hồi trong bao lâu?",
+        "options": [
+          "Hai giờ",
+          "Mười phút",
+          "Một ngày"
+        ],
+        "answer": 1,
+        "explanation": "Nhân viên cho 十分钟."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Cuộc họp chuyển sang chiều ngày kia. Khách muốn đi ngày mai và đến trước trưa ngày kia. Có chuyến chiều mai đến 8 giờ sáng ngày kia, bù 50 tiền chênh lệch. Khách được giữ chỗ cũ trong mười phút để quyết định.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "我们需要调整行程。 下午的会议取消了。 这张车票可以改签吗？ 我们不想耽误第二天的会议。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "出行计划变化时，你怎样比较时间、费用和风险？",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "行程变化时，我先找出不能改变的时间，比如会议开始时间，再比较其他选择。如果便宜的方案很容易误事，就不一定划算。我会确认到达时间、额外费用和取消条件，也准备一个备用办法。当然，不是所有风险都能消除，所以最后要选择自己能承担后果的方案，并及时通知受影响的人。",
+      "sampleVi": "Khi đổi lịch tôi xác định mốc không thể thay như giờ họp trước rồi so phương án. Cách rẻ mà dễ lỡ việc chưa chắc đáng chọn. Tôi xác nhận giờ đến, phí thêm, điều kiện hủy và chuẩn bị dự phòng. Không thể xóa mọi rủi ro nên chọn hậu quả mình chịu được, đồng thời báo kịp cho người bị ảnh hưởng."
+    }
+  ],
+  "transferTask": "Đổi chuyến; buổi 2 xử lý nhận phòng muộn."
+}

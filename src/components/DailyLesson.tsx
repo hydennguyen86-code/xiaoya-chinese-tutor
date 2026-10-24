@@ -1,3 +1,4 @@
+import { CoursePractice } from './CoursePractice';
 import { CommunicationTask } from './CommunicationTask';
 import { MicButton, Han } from './LessonWidgets';
 import { rememberLesson, loadAssessment, saveAssessment } from '../lib/assessment';
@@ -5,13 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { AvatarApi } from '../lib/avatarApi';
 import { fetchCorrections, streamChat } from '../lib/api';
 import type { Learner } from '../lib/learners';
-import {
-  dueWords,
-  recordLearningCorrections,
-  recordLearningTurn,
-  reviewWord,
-  topMistakes,
-} from '../lib/learning';
+import { dueWords, recordLearningCorrections, recordLearningTurn, reviewWord, topMistakes } from '../lib/learning';
 import { fetchLessonContent, fetchSyllabus, type LessonContent } from '../lib/lessonApi';
 import {
   SECTIONS,
@@ -19,7 +14,7 @@ import {
   completeSession,
   planToday,
   remainingMs,
-  sectionBudgetMs,
+  sectionBudgetMs as baseSectionBudgetMs,
   type DialogLine,
   type LessonProgress,
   type Pointer,
@@ -29,7 +24,15 @@ import {
 import { loadLessonProgress, saveLessonProgress } from '../lib/lessonStore';
 import { dayKey } from '../lib/storage';
 import { ToneFeedback } from './ToneFeedback';
-import { bareChinese, listen, voiceSupported, type ToneReport, type VoiceHandle, type VoicePhase, type VoiceResult } from '../lib/voiceInput';
+import {
+  bareChinese,
+  listen,
+  voiceSupported,
+  type ToneReport,
+  type VoiceHandle,
+  type VoicePhase,
+  type VoiceResult,
+} from '../lib/voiceInput';
 import type { Correction, LearningProfile, Level } from '../types';
 
 interface DailyLessonProps {
@@ -43,6 +46,7 @@ interface DailyLessonProps {
   learning: LearningProfile;
   onLearningUpdate: (update: (previous: LearningProfile) => LearningProfile) => void;
   onClose: () => void;
+  onLevelChange?: (level: Level) => void;
 }
 
 type Screen =
@@ -80,6 +84,7 @@ export function DailyLesson(props: DailyLessonProps) {
   const progressRef = useRef(progress);
   progressRef.current = progress;
   const voiceRef = useRef<VoiceHandle | null>(null);
+  const loadRequest = useRef<AbortController | null>(null);
   const busyRef = useRef(false);
   busyRef.current = busy || voicePhase !== null;
 
@@ -88,6 +93,7 @@ export function DailyLesson(props: DailyLessonProps) {
       progressRef.current = next;
       setProgress(next);
       saveLessonProgress(learner.id, next);
+      saveLessonProgress(`${learner.id}:${next.volumeId}`, next);
     },
     [learner.id],
   );
@@ -103,9 +109,13 @@ export function DailyLesson(props: DailyLessonProps) {
 
   // ---- load the outline, decide today's session, fetch its material ----
   const load = useCallback(async () => {
+    loadRequest.current?.abort();
+    const request = new AbortController();
+    loadRequest.current = request;
     setScreen({ kind: 'loading' });
     try {
-      const outline = await fetchSyllabus();
+      const outline = await fetchSyllabus(request.signal);
+      if (request.signal.aborted) return;
       setSyllabus(outline);
       const today = dayKey();
       const stored = loadLessonProgress(learner.id);
@@ -119,27 +129,37 @@ export function DailyLesson(props: DailyLessonProps) {
         return;
       }
       const pointer = plan.kind === 'resume' ? plan.session : plan.pointer;
-      setScreen({ kind: 'loading', note: 'Misu đang soạn bài cho hôm nay. Lần đầu mất khoảng 20–40 giây, lần sau mở ngay.' });
-      const material = await fetchLessonContent({
-        provider,
-        model,
-        volumeId: pointer.volumeId,
-        lessonNo: pointer.lessonNo,
-        day: pointer.day,
-        level,
+      setScreen({
+        kind: 'loading',
+        note: outline.volumes.find((v) => v.id === pointer.volumeId)?.authored
+          ? 'Đang mở bài cố định trong lộ trình…'
+          : 'Misu đang soạn bài cho hôm nay. Lần đầu có thể mất khoảng 20–40 giây.',
       });
+      const material = await fetchLessonContent(
+        {
+          provider,
+          model,
+          volumeId: pointer.volumeId,
+          lessonNo: pointer.lessonNo,
+          day: pointer.day,
+          level,
+        },
+        request.signal,
+      );
+      if (request.signal.aborted) return;
       setContent(material);
       save(plan.kind === 'resume' ? (stored as LessonProgress) : beginSession(stored, outline, level, plan.pointer, today));
       setScreen({ kind: 'ready' });
     } catch (error) {
+      if (request.signal.aborted) return;
       setScreen({ kind: 'error', message: error instanceof Error ? error.message : 'Không mở được bài học.' });
     }
   }, [learner.id, level, provider, model, save]);
 
   useEffect(() => {
-    if (!model) return;
     void load();
-  }, [load, model]);
+    return () => loadRequest.current?.abort();
+  }, [load]);
 
   useEffect(
     () => () => {
@@ -149,6 +169,8 @@ export function DailyLesson(props: DailyLessonProps) {
     [getAvatar],
   );
 
+  const lessonBudget = (content?.authored ? (content.recommendedMinutes ?? 20) : 20) * 60000;
+  const sectionBudgetMs = (index: number) => (baseSectionBudgetMs(index) * lessonBudget) / (20 * 60000);
   const session = progress?.current ?? null;
   const section = session?.section ?? 0;
 
@@ -170,6 +192,7 @@ export function DailyLesson(props: DailyLessonProps) {
       if (ticks % 5 === 0) saveLessonProgress(learner.id, next);
       // past the section budget plus a grace period and idle: move on
       if (
+        !content?.authored &&
         s.section < SECTIONS.length - 1 &&
         elapsedMs[s.section] > sectionBudgetMs(s.section) + AUTO_ADVANCE_GRACE_MS &&
         !busyRef.current
@@ -184,7 +207,7 @@ export function DailyLesson(props: DailyLessonProps) {
     };
     // goToSection is stable through refs
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [screen.kind, paused, learner.id]);
+  }, [screen.kind, paused, learner.id, content?.authored]);
 
   // ---- shared helpers for the sections ----
   const say = useCallback(
@@ -203,7 +226,14 @@ export function DailyLesson(props: DailyLessonProps) {
         return { text: '', tones: null };
       }
       getAvatar()?.stopSpeech();
-      const handle = listen({ local: localStt, onPhase: setVoicePhase, learnerId: learner.id, pronounce });
+      const handle = listen({
+        local: localStt,
+        onPhase: setVoicePhase,
+        learnerId: learner.id,
+        pronounce,
+        maxMs: content?.targetLevel === 'HSK5' ? 125000 : 45000,
+        silenceMs: content?.targetLevel === 'HSK5' ? 3000 : 1600,
+      });
       voiceRef.current = handle;
       try {
         return await handle.details;
@@ -245,6 +275,83 @@ export function DailyLesson(props: DailyLessonProps) {
     if (next) void fetchLessonContent({ provider, model, ...next, level }).catch(() => {});
   }, [syllabus, save, provider, model, level, content, learner.id]);
 
+  function chooseCourse(volumeId: string, lessonNo?: number, day = 1) {
+    if (!syllabus) return;
+    const volume = syllabus.volumes.find((v) => v.id === volumeId);
+    if (!volume?.lessons.length) return;
+    voiceRef.current?.cancel();
+    getAvatar()?.stopSpeech();
+    setBusy(false);
+    const current = progressRef.current;
+    if (current) saveLessonProgress(`${learner.id}:${current.volumeId}`, current);
+    const remembered = loadLessonProgress(`${learner.id}:${volumeId}`);
+    const pointer = {
+      volumeId,
+      lessonNo: lessonNo ?? remembered?.lessonNo ?? volume.lessons[0].no,
+      day: lessonNo ? day : (remembered?.day ?? 1),
+    };
+    const base = current ?? beginSession(null, syllabus, level, pointer, dayKey());
+    save({ ...base, ...pointer, current: lessonNo ? null : (remembered?.current ?? null), finished: false, lastCompletedDate: '' });
+    const nextLevel: Level = volume.targetLevel === 'HSK5' ? 'HSK5-6' : volume.targetLevel === 'HSK1' ? 'HSK1-2' : level;
+    if (nextLevel !== level && props.onLevelChange) props.onLevelChange(nextLevel);
+    else void load();
+  }
+  const currentVolume = syllabus?.volumes.find((v) => v.id === progress?.volumeId);
+  const coursePicker = syllabus && (
+    <div className="course-picker">
+      <label>
+        Lộ trình{' '}
+        <select aria-label="Lộ trình học" value={currentVolume?.id ?? ''} onChange={(event) => chooseCourse(event.target.value)}>
+          {!currentVolume && <option value="">Chọn lộ trình</option>}
+          {syllabus.volumes.map((volume) => (
+            <option key={volume.id} value={volume.id}>
+              {volume.title}
+            </option>
+          ))}
+        </select>
+      </label>
+      {currentVolume && (
+        <label>
+          Bài{' '}
+          <select
+            aria-label="Chọn bài trong lộ trình"
+            value={progress?.lessonNo ?? 1}
+            onChange={(event) => chooseCourse(currentVolume.id, Number(event.target.value))}
+          >
+            {currentVolume.lessons.map((lesson) => (
+              <option key={lesson.no} value={lesson.no}>
+                {lesson.no}. {lesson.title}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+      {currentVolume && (
+        <label>
+          Buổi{' '}
+          <select
+            aria-label="Chọn buổi học"
+            value={progress?.day ?? 1}
+            onChange={(event) => chooseCourse(currentVolume.id, progress?.lessonNo ?? 1, Number(event.target.value))}
+          >
+            {Array.from({ length: currentVolume.lessons.find((lesson) => lesson.no === progress?.lessonNo)?.days ?? 2 }, (_, index) => (
+              <option key={index} value={index + 1}>
+                {index + 1}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+    </div>
+  );
+  const teachingLevel: Level = content?.targetLevel === 'HSK5' ? 'HSK5-6' : content?.targetLevel === 'HSK1' ? 'HSK1-2' : level;
+  const handleCourseBusy = useCallback(
+    (value: boolean) => {
+      if (value) getAvatar()?.stopSpeech();
+      setBusy(value);
+    },
+    [getAvatar],
+  );
   const micReady = voiceSupported(localStt);
 
   // ---------------------------------------------------------------- render
@@ -252,6 +359,7 @@ export function DailyLesson(props: DailyLessonProps) {
     return (
       <section className="lesson-panel">
         <LessonTop title="Bài hôm nay" subtitle={learner.name} onClose={onClose} />
+        {coursePicker}
         <div className="lesson-state">
           {screen.kind === 'loading' && (
             <>
@@ -280,7 +388,9 @@ export function DailyLesson(props: DailyLessonProps) {
           {screen.kind === 'completed' && (
             <>
               <h3>Hoàn thành buổi học</h3>
-              <p>Chuỗi ngày học: {progress?.streak ?? 0} ngày · đã học {progress?.completed ?? 0} buổi.</p>
+              <p>
+                Chuỗi ngày học: {progress?.streak ?? 0} ngày · đã học {progress?.completed ?? 0} buổi.
+              </p>
               {screen.next ? <p>Ngày mai: {lessonLabel(syllabus, screen.next)}</p> : <p>Bạn đã học hết giáo trình.</p>}
               <button className="lesson-primary" type="button" onClick={onClose}>
                 Về trò chuyện
@@ -303,7 +413,21 @@ export function DailyLesson(props: DailyLessonProps) {
   const sectionInfo = SECTIONS[section];
   const sectionElapsed = session.elapsedMs[section] || 0;
   const overBudget = sectionElapsed > sectionBudgetMs(section);
-  const shared = { content, session, say, ask, read, stopVoice, voicePhase, micReady, busy, setBusy, updateSession, onLearningUpdate, setNotice };
+  const shared = {
+    content,
+    session,
+    say,
+    ask,
+    read,
+    stopVoice,
+    voicePhase,
+    micReady,
+    busy,
+    setBusy,
+    updateSession,
+    onLearningUpdate,
+    setNotice,
+  };
 
   return (
     <section className="lesson-panel">
@@ -315,12 +439,25 @@ export function DailyLesson(props: DailyLessonProps) {
           onClose();
         }}
       />
+      {coursePicker}
       <p className={`lesson-ref${content.placeholder ? ' is-warning' : ''}`}>
-        {content.placeholder
-          ? 'Đang dùng chủ đề tạm vì chưa có mục lục sách 《体验汉语口语》. Nội dung do Misu tự soạn.'
-          : `Tham khảo: Bài ${content.lessonNo}, ${content.volumeTitle}${content.pages ? `, trang ${content.pages}` : ''} trong sách 《体验汉语口语》. Nội dung luyện tập do Misu tự soạn.`}
+        {content.authored
+          ? `${content.editorialStatus}. Thời lượng gợi ý ${content.recommendedMinutes} phút; tự chuyển phần khi sẵn sàng.`
+          : content.placeholder
+            ? 'Đang dùng chủ đề tạm vì chưa có mục lục sách 《体验汉语口语》. Nội dung do Misu tự soạn.'
+            : `Tham khảo: Bài ${content.lessonNo}, ${content.volumeTitle}${content.pages ? `, trang ${content.pages}` : ''} trong sách 《体验汉语口语》. Nội dung luyện tập do Misu tự soạn.`}
       </p>
 
+      {content.learningNotes && (
+        <details className="lesson-card">
+          <summary>Kiến thức cần biết và cách học buổi này</summary>
+          <ul>
+            {content.learningNotes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
+        </details>
+      )}
       <div className="lesson-timeline" role="list">
         {SECTIONS.map((item, index) => {
           const spent = session.elapsedMs[index] || 0;
@@ -332,7 +469,7 @@ export function DailyLesson(props: DailyLessonProps) {
               role="listitem"
               className={`lesson-step${index === section ? ' is-current' : ''}${index < section ? ' is-done' : ''}`}
               onClick={() => goToSection(index)}
-              title={`${item.title} · ${item.minutes} phút`}
+              title={`${item.title} · khoảng ${Math.round(sectionBudgetMs(index) / 60000)} phút`}
             >
               <span className="lesson-step-bar">
                 <span style={{ width: `${index < section ? 100 : pct}%` }} />
@@ -347,7 +484,7 @@ export function DailyLesson(props: DailyLessonProps) {
         <span>
           <strong>{sectionInfo.title}</strong> · còn {clock(sectionBudgetMs(section) - sectionElapsed)}
         </span>
-        <span>Cả buổi còn {clock(remainingMs(session))}</span>
+        <span>Cả buổi còn {clock(Math.max(0, lessonBudget - session.elapsedMs.reduce((a, b) => a + b, 0)))}</span>
       </div>
       {overBudget && section < SECTIONS.length - 1 && (
         <p className="lesson-notice">Đã hết thời gian phần này. Làm nốt câu đang dở rồi bấm "Phần tiếp".</p>
@@ -364,15 +501,49 @@ export function DailyLesson(props: DailyLessonProps) {
         {sectionInfo.id === 'vocab' && <VocabSection {...shared} />}
         {sectionInfo.id === 'patterns' && <PatternSection {...shared} provider={provider} model={model} />}
         {(sectionInfo.id === 'roleplay' || sectionInfo.id === 'freetalk') && (
-          <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={level} />
+          <>
+            {content.authored && sectionInfo.id === 'roleplay' && (
+              <CoursePractice
+                content={content}
+                learnerId={learner.id}
+                voice={voice}
+                ask={shared.ask}
+                micReady={micReady}
+                voicePhase={voicePhase}
+                onBusy={handleCourseBusy}
+              />
+            )}
+            {model ? (
+              <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={teachingLevel} />
+            ) : (
+              <p className="lesson-notice">
+                Bài nghe và luyện nói cố định vẫn học được. Chọn model trong Cài đặt để nhập vai tương tác với Misu.
+              </p>
+            )}
+          </>
         )}
-        {sectionInfo.id === 'summary' && <>
-          <CommunicationTask task={content.roleplay} provider={provider} model={model} level={level} ask={shared.ask} say={say} micReady={micReady} voicePhase={voicePhase} onComplete={(result) => {
-            const data = loadAssessment(learner.id);
-            saveAssessment(learner.id, { ...data, tasks: [...data.tasks, { date: Date.now(), task: content.roleplay, result }].slice(-90) });
-          }} />
-          <SummarySection session={session} content={content} onFinish={finish} />
-        </>}
+        {sectionInfo.id === 'summary' && (
+          <>
+            <CommunicationTask
+              task={content.roleplay}
+              provider={provider}
+              model={model}
+              level={teachingLevel}
+              ask={shared.ask}
+              say={say}
+              micReady={micReady}
+              voicePhase={voicePhase}
+              onComplete={(result) => {
+                const data = loadAssessment(learner.id);
+                saveAssessment(learner.id, {
+                  ...data,
+                  tasks: [...data.tasks, { date: Date.now(), task: content.roleplay, result }].slice(-90),
+                });
+              }}
+            />
+            <SummarySection session={session} content={content} onFinish={finish} />
+          </>
+        )}
       </div>
 
       <div className="lesson-controls">
@@ -396,7 +567,7 @@ function LessonTop({ title, subtitle, onClose }: { title: string; subtitle: stri
   return (
     <header className="lesson-top">
       <div>
-        <p className="lesson-kicker">Bài hôm nay · 20 phút</p>
+        <p className="lesson-kicker">Bài hôm nay · Nghe và nói</p>
         <h2>{title}</h2>
         <p className="lesson-sub">{subtitle}</p>
       </div>
@@ -427,8 +598,15 @@ interface SharedProps {
 function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
   const { session, say, ask, voicePhase, micReady, updateSession, onLearningUpdate } = props;
   const items = useMemo(() => {
-    const words = dueWords(props.learning).slice(0, 6).map((w) => ({ kind: 'word' as const, word: w.word, pinyin: w.pinyin, meaning: w.meaning }));
-    const mistakes = topMistakes(props.learning, 2).map((m) => ({ kind: 'mistake' as const, original: m.original, corrected: m.corrected, explanation: m.explanation }));
+    const words = dueWords(props.learning)
+      .slice(0, 6)
+      .map((w) => ({ kind: 'word' as const, word: w.word, pinyin: w.pinyin, meaning: w.meaning }));
+    const mistakes = topMistakes(props.learning, 2).map((m) => ({
+      kind: 'mistake' as const,
+      original: m.original,
+      corrected: m.corrected,
+      explanation: m.explanation,
+    }));
     return [...words, ...mistakes];
     // fixed when the section opens
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -476,7 +654,9 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
       </p>
       {item.kind === 'word' ? (
         <>
-          <p className="lesson-prompt">Nói bằng tiếng Trung: <strong>{item.meaning}</strong></p>
+          <p className="lesson-prompt">
+            Nói bằng tiếng Trung: <strong>{item.meaning}</strong>
+          </p>
           {result && (
             <p className={result.ok ? 'lesson-ok' : 'lesson-bad'}>
               {result.ok ? 'Đúng rồi!' : `Mình nghe: "${result.heard}". Đáp án:`} <Han text={item.word} pinyinText={item.pinyin} />
@@ -515,7 +695,7 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
 function VocabSection(props: SharedProps) {
   const { content, session, say, read, voicePhase, micReady, updateSession, onLearningUpdate } = props;
   const word = content.vocab[session.item];
-  const [heard, setHeard] = useState<{ target: string; text: string; tones: ToneReport | null } | null>(null);
+  const [heard, setHeard] = useState<({ target: string } & VoiceResult) | null>(null);
 
   useEffect(() => {
     setHeard(null);
@@ -537,7 +717,14 @@ function VocabSection(props: SharedProps) {
     if (result.text || result.tones) setHeard({ target, ...result });
   };
   const next = () => {
-    onLearningUpdate((p) => recordLearningTurn(p, '', { corrections: [], vocab: [{ word: word.word, pinyin: word.pinyin, meaning: word.meaning }] }, { countTurn: false }));
+    onLearningUpdate((p) =>
+      recordLearningTurn(
+        p,
+        '',
+        { corrections: [], vocab: [{ word: word.word, pinyin: word.pinyin, meaning: word.meaning }] },
+        { countTurn: false },
+      ),
+    );
     updateSession((s) => ({ ...s, item: s.item + 1, stats: { ...s.stats, newWords: s.stats.newWords + 1 } }));
   };
   const ok = heard !== null && bareChinese(heard.text).includes(bareChinese(heard.target));
@@ -560,7 +747,7 @@ function VocabSection(props: SharedProps) {
           {ok ? 'Mình nghe đúng chữ rồi.' : `Mình nghe thành: "${heard.text}". Nghe lại rồi thử lần nữa nhé.`}
         </p>
       )}
-      {heard?.tones && <ToneFeedback report={heard.tones} />}
+      {heard?.tones && <ToneFeedback report={heard.tones} audio={heard.audio} />}
       <div className="lesson-actions">
         <button type="button" className="lesson-secondary" onClick={() => say(`${word.word}。${word.example}`)}>
           Nghe lại
@@ -609,7 +796,10 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
       updateSession((s) => ({
         ...s,
         stats: { ...s.stats, sentences: s.stats.sentences + 1, corrections: s.stats.corrections + corrections.length },
-        notes: [...(s.notes || []), ...corrections.map(({ original, corrected, explanation }) => ({ original, corrected, explanation }))].slice(-20),
+        notes: [
+          ...(s.notes || []),
+          ...corrections.map(({ original, corrected, explanation }) => ({ original, corrected, explanation })),
+        ].slice(-20),
       }));
     } catch {
       setFeedback({ corrections: [], missing: [] });
@@ -686,10 +876,36 @@ function scenarioText(content: LessonContent, mode: 'roleplay' | 'freetalk') {
 }
 
 function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; provider: string; model: string; level: Level }) {
-  const { content, session, say, ask, voicePhase, micReady, busy, setBusy, updateSession, onLearningUpdate, setNotice, mode, provider, model, level } = props;
+  const {
+    content,
+    session,
+    say,
+    ask,
+    voicePhase,
+    micReady,
+    busy,
+    setBusy,
+    updateSession,
+    onLearningUpdate,
+    setNotice,
+    mode,
+    provider,
+    model,
+    level,
+  } = props;
   const dialog = session.dialog ?? [];
   const [draft, setDraft] = useState('');
   const [streaming, setStreaming] = useState('');
+  const active = useRef(true);
+  const request = useRef<AbortController | null>(null);
+  useEffect(() => {
+    active.current = true;
+    return () => {
+      active.current = false;
+      request.current?.abort();
+      setBusy(false);
+    };
+  }, []);
   const opening = mode === 'roleplay' ? content.roleplay.opening : content.freeTalk.question;
   const openingVi = mode === 'roleplay' ? content.roleplay.openingVi : content.freeTalk.questionVi;
 
@@ -709,18 +925,25 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
     const userLine: DialogLine = { role: 'user', text };
     const history = [...dialog, userLine];
     updateSession((s) => ({ ...s, dialog: history, stats: { ...s.stats, turns: s.stats.turns + 1 } }));
+    const controller = new AbortController();
+    request.current = controller;
     setBusy(true);
     setStreaming('');
 
     // check the learner's sentence in the background
     void fetchCorrections({ provider, model, text })
       .then((corrections) => {
-        if (!corrections.length) return;
+        if (!active.current || !corrections.length) return;
         onLearningUpdate((p) => recordLearningCorrections(p, text, corrections));
         updateSession((s) => ({
           ...s,
-          dialog: (s.dialog || []).map((line) => (line === userLine || (line.role === 'user' && line.text === text && !line.corrections) ? { ...line, corrections } : line)),
-          notes: [...(s.notes || []), ...corrections.map(({ original, corrected, explanation }) => ({ original, corrected, explanation }))].slice(-20),
+          dialog: (s.dialog || []).map((line) =>
+            line === userLine || (line.role === 'user' && line.text === text && !line.corrections) ? { ...line, corrections } : line,
+          ),
+          notes: [
+            ...(s.notes || []),
+            ...corrections.map(({ original, corrected, explanation }) => ({ original, corrected, explanation })),
+          ].slice(-20),
           stats: { ...s.stats, corrections: s.stats.corrections + corrections.length },
         }));
       })
@@ -738,10 +961,12 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
         },
         {
           onReplyDelta: (chunk) => {
+            if (!active.current) return;
             replyText += chunk;
             setStreaming(replyText);
           },
           onTurn: (event) => {
+            if (!active.current) return;
             const answer = event.turn.reply || replyText;
             updateSession((s) => ({
               ...s,
@@ -750,12 +975,16 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
             say(answer);
           },
         },
+        controller.signal,
       );
     } catch (error) {
-      setNotice(error instanceof Error ? error.message : 'Misu chưa trả lời được. Thử lại nhé.');
+      if (active.current && !controller.signal.aborted)
+        setNotice(error instanceof Error ? error.message : 'Misu chưa trả lời được. Thử lại nhé.');
     } finally {
-      setStreaming('');
-      setBusy(false);
+      if (active.current) {
+        setStreaming('');
+        setBusy(false);
+      }
     }
   };
 
@@ -814,7 +1043,7 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
         />
         <MicButton voicePhase={voicePhase} micReady={micReady && !busy} onClick={() => void speak()} />
         <button type="button" className="lesson-secondary" disabled={busy || !draft.trim()} onClick={() => void reply(draft)}>
-          {busy ? 'Misu đang trả lời…' : 'Gửi'}
+          {busy ? 'Đang xử lý…' : 'Gửi'}
         </button>
       </div>
     </div>
@@ -828,9 +1057,15 @@ function SummarySection({ session, content, onFinish }: { session: SessionState;
     <div className="lesson-card">
       <h3>Tổng kết buổi học</h3>
       <ul className="lesson-stats">
-        <li>Ôn tập: {s.reviewed} mục, nhớ {s.remembered}</li>
-        <li>Từ của bài: {s.newWords}/{content.vocab.length} đã thêm vào ôn tập</li>
-        <li>Câu tự đặt: {s.sentences} · lượt hội thoại: {s.turns}</li>
+        <li>
+          Ôn tập: {s.reviewed} mục, nhớ {s.remembered}
+        </li>
+        <li>
+          Từ của bài: {s.newWords}/{content.vocab.length} đã thêm vào ôn tập
+        </li>
+        <li>
+          Câu tự đặt: {s.sentences} · lượt hội thoại: {s.turns}
+        </li>
         <li>Lỗi được sửa: {s.corrections}</li>
       </ul>
       {session.notes && session.notes.length > 0 && (
@@ -856,4 +1091,3 @@ function SummarySection({ session, content, onFinish }: { session: SessionState;
 export function lessonButtonLabel(progress: LessonProgress | null) {
   return progress && progress.streak > 0 ? `Bài hôm nay · ${progress.streak} ngày` : 'Bài hôm nay';
 }
-

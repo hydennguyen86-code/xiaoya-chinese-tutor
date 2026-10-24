@@ -1,0 +1,185 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 3,
+  "lessonTitle": "Báo tiến độ và thương lượng thời hạn",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "进度",
+      "meaning": "tiến độ",
+      "example": "目前的进度比计划慢一天。",
+      "exampleVi": "Tiến độ hiện tại chậm hơn kế hoạch một ngày.",
+      "pinyin": "jìn dù",
+      "examplePinyin": "mù qián de jìn dù bǐ jì huà màn yì tiān 。"
+    },
+    {
+      "word": "截止",
+      "meaning": "hạn chót; kết thúc đến một mốc",
+      "example": "截止日期是周五。",
+      "exampleVi": "Hạn chót là thứ Sáu.",
+      "pinyin": "jié zhǐ",
+      "examplePinyin": "jié zhǐ rì qī shì zhōu wǔ 。"
+    },
+    {
+      "word": "延迟",
+      "meaning": "chậm; trì hoãn",
+      "example": "材料延迟送到了。",
+      "exampleVi": "Vật liệu đã được giao đến muộn.",
+      "pinyin": "yán chí",
+      "examplePinyin": "cái liào yán chí sòng dào le 。"
+    },
+    {
+      "word": "调整",
+      "meaning": "điều chỉnh",
+      "example": "我们需要调整时间安排。",
+      "exampleVi": "Chúng ta cần điều chỉnh lịch trình.",
+      "pinyin": "tiáo zhěng",
+      "examplePinyin": "wǒ men xū yào tiáo zhěng shí jiān ān pái 。"
+    },
+    {
+      "word": "影响",
+      "meaning": "ảnh hưởng",
+      "example": "这个变化会影响交货时间。",
+      "exampleVi": "Thay đổi này sẽ ảnh hưởng thời gian giao hàng.",
+      "pinyin": "yǐng xiǎng",
+      "examplePinyin": "zhè ge biàn huà huì yǐng xiǎng jiāo huò shí jiān 。"
+    },
+    {
+      "word": "承担",
+      "meaning": "đảm nhận; chịu trách nhiệm",
+      "example": "我愿意承担协调工作。",
+      "exampleVi": "Tôi sẵn sàng đảm nhận việc điều phối.",
+      "pinyin": "chéng dān",
+      "examplePinyin": "wǒ yuàn yì chéng dān xié tiáo gōng zuò 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "由于……，……",
+      "explanation": "Nêu nguyên nhân tương đối trang trọng; sau đó nói tác động cụ thể và hướng xử lý.",
+      "example": "由于材料晚到，测试需要推迟一天。",
+      "exampleVi": "Do vật liệu đến muộn, việc kiểm thử cần lùi một ngày.",
+      "examplePinyin": "yóu yú cái liào wǎn dào ， cè shì xū yào tuī chí yì tiān 。"
+    },
+    {
+      "pattern": "如果……，就能……",
+      "explanation": "Đề xuất điều kiện để đạt kết quả thay vì chỉ báo không làm kịp.",
+      "example": "如果先减少功能，就能按时上线。",
+      "exampleVi": "Nếu trước tiên giảm tính năng thì có thể ra mắt đúng hạn.",
+      "examplePinyin": "rú guǒ xiān jiǎn shǎo gōng néng ， jiù néng àn shí shàng xiàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Tiến độ phần mềm; buổi 2 điều phối giao hàng. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Khách hàng/quản lý",
+    "learnerRole": "Người báo tiến độ",
+    "goals": [
+      "Báo vấn đề kèm tác động cụ thể",
+      "Đề xuất hai phương án có đánh đổi",
+      "Xác nhận lựa chọn và bước tiếp theo"
+    ],
+    "opening": "你发现原定时间可能来不及，你准备怎么跟我沟通？",
+    "openingVi": "Bạn phát hiện có thể không kịp thời hạn ban đầu; bạn định trao đổi với tôi thế nào?"
+  },
+  "freeTalk": {
+    "question": "按时交付和保证质量发生冲突时，你会怎样处理？",
+    "questionVi": "Khi giao đúng hạn mâu thuẫn với bảo đảm chất lượng, bạn sẽ xử lý thế nào?"
+  },
+  "learningNotes": [
+    "Phân biệt cam kết chắc chắn với dự kiến/争取. Không dùng lý do để né trách nhiệm."
+  ],
+  "prerequisites": [
+    1,
+    2
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Báo tiến độ và thương lượng thời hạn",
+    "playLimit": 1,
+    "transcript": "员工：测试发现了两个问题，周五交完整版有风险。主管：最重要的部分能按时交吗？员工：可以。我们建议周五先交核心功能，报表周一补上。如果坚持一次交完，就要把日期改到下周二。主管：先保核心功能，但今天要把范围变化告诉客户。员工：我来联系，并把确认结果发给团队。",
+    "translation": "Có hai lỗi kiểm thử. Nhân viên đưa hai phương án: thứ Sáu giao tính năng cốt lõi rồi thứ Hai bổ sung báo cáo; hoặc thứ Ba tuần sau giao toàn bộ. Quản lý chọn phương án đầu và yêu cầu báo khách ngay hôm nay.",
+    "questions": [
+      {
+        "prompt": "Phương án được chọn?",
+        "options": [
+          "Thứ Sáu giao toàn bộ",
+          "Giao cốt lõi trước, báo cáo bổ sung sau",
+          "Hủy dự án"
+        ],
+        "answer": 1,
+        "explanation": "Quản lý nói 先保核心功能."
+      },
+      {
+        "prompt": "Việc phải làm hôm nay?",
+        "options": [
+          "Hoàn thành toàn bộ báo cáo",
+          "Thay toàn bộ nhóm",
+          "Báo khách thay đổi phạm vi"
+        ],
+        "answer": 2,
+        "explanation": "Quản lý yêu cầu 今天告诉客户."
+      },
+      {
+        "prompt": "Thứ Ba tuần sau là mốc gì?",
+        "options": [
+          "Mốc của phương án giao một lần toàn bộ",
+          "Mốc đã chốt của báo cáo",
+          "Ngày họp đầu tiên"
+        ],
+        "answer": 0,
+        "explanation": "Đó là phương án khác, không phải lịch cuối cùng đã chọn."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Có hai lỗi kiểm thử. Nhân viên đưa hai phương án: thứ Sáu giao tính năng cốt lõi rồi thứ Hai bổ sung báo cáo; hoặc thứ Ba tuần sau giao toàn bộ. Quản lý chọn phương án đầu và yêu cầu báo khách ngay hôm nay.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "目前的进度比计划慢一天。 截止日期是周五。 材料延迟送到了。 我们需要调整时间安排。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "按时交付和保证质量发生冲突时，你会怎样处理？",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "我会先判断质量问题会造成什么影响，再跟相关人员讨论。如果问题影响基本使用，就不能为了按时交付而隐瞒。可以考虑分阶段交付，先完成最重要的部分，再补上其他功能。当然，调整之前必须说明范围和时间，得到对方确认。我的原则是让对方了解真实情况，再共同选择可接受的方案。",
+      "sampleVi": "Tôi sẽ đánh giá tác động của vấn đề chất lượng rồi trao đổi với bên liên quan. Nếu ảnh hưởng sử dụng cơ bản thì không được giấu để kịp hạn. Có thể giao theo giai đoạn, ưu tiên phần quan trọng rồi bổ sung. Nhưng phải nêu rõ phạm vi, thời gian và được xác nhận trước. Nguyên tắc là cùng chọn phương án trên cơ sở thông tin thật."
+    }
+  ],
+  "transferTask": "Tiến độ phần mềm; buổi 2 điều phối giao hàng."
+}

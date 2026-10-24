@@ -13,10 +13,22 @@ const HOP = 160; // 10 ms
 const FRAME = 800; // 50 ms
 const HAN = /\p{Script=Han}/u;
 
-
 export function decodeToPcm(buffer) {
   return new Promise((resolve, reject) => {
-    const proc = spawn(mediaToolPath('ffmpeg'), ['-hide_banner', '-loglevel', 'error', '-i', 'pipe:0', '-ac', '1', '-ar', String(SR), '-f', 'f32le', 'pipe:1']);
+    const proc = spawn(mediaToolPath('ffmpeg'), [
+      '-hide_banner',
+      '-loglevel',
+      'error',
+      '-i',
+      'pipe:0',
+      '-ac',
+      '1',
+      '-ar',
+      String(SR),
+      '-f',
+      'f32le',
+      'pipe:1',
+    ]);
     const chunks = [];
     proc.stdout.on('data', (chunk) => chunks.push(chunk));
     proc.on('error', reject);
@@ -82,7 +94,10 @@ export function pitchTrack(samples) {
   const voiced = f0.map((v, i) => (rms[i] > peak * 0.08 ? v : 0));
   const smooth = voiced.map((v, i) => {
     if (!v) return 0;
-    const win = voiced.slice(Math.max(0, i - 2), i + 3).filter(Boolean).sort((x, y) => x - y);
+    const win = voiced
+      .slice(Math.max(0, i - 2), i + 3)
+      .filter(Boolean)
+      .sort((x, y) => x - y);
     return win[Math.floor(win.length / 2)];
   });
   const sorted = smooth.filter(Boolean).sort((x, y) => x - y);
@@ -127,7 +142,7 @@ export function segment(rms, f0, n, lo = 0, hi = rms.length - 1) {
     for (let t = k * minLen; t <= T; t += 1) {
       const end = k === n ? T : t;
       if (k === n && t !== T) continue;
-      for (let s = (k - 1) * minLen; s <= end - minLen; s += 1) {
+      for (let s = n > 2 ? Math.max((k - 1) * minLen, end - Math.ceil(mean * 3)) : (k - 1) * minLen; s <= end - minLen; s += 1) {
         if (dp[k - 1][s] >= INF) continue;
         const cost = dp[k - 1][s] + segCost(end - s) + (k < n ? boundaryCost(Math.min(end, T - 1)) : 0);
         if (cost < dp[k][end]) {
@@ -276,8 +291,8 @@ export async function profileFromAudio(audio, profile) {
 function contour(f0, median, points = 60) {
   const voicedIdx = f0.map((v, i) => (v ? i : -1)).filter((i) => i >= 0);
   if (!voicedIdx.length) return [];
-  const a = voicedIdx[0];
-  const b = voicedIdx[voicedIdx.length - 1];
+  const a = 0;
+  const b = f0.length - 1;
   const out = [];
   for (let p = 0; p < points; p += 1) {
     const i = Math.round(a + ((b - a) * p) / (points - 1));
@@ -304,6 +319,14 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   if (!syllables.length) return { ...base, note: 'Không có chữ Hán để chấm.' };
   if (!median) return { ...base, note: 'Không nghe rõ giọng. Đọc to, rõ và chậm hơn nhé.' };
 
+  const parts = segment(rms, f0, syllables.length);
+  const duration = pcm.length / SR;
+  const segments = (parts || []).map(([a, b], index) => ({
+    char: syllables[index].char,
+    start: (a * HOP) / SR,
+    end: Math.min(duration, (b * HOP) / SR),
+  }));
+  Object.assign(base, { duration, segments, curve: contour(f0, median), boundaryMethod: 'energy-estimate' });
   if (syllables.length > 2) {
     return { ...base, mode: 'sentence', curve: contour(f0, median) };
   }
@@ -312,7 +335,6 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   const ref = range ? range.median : median;
   const low = range ? semis(range.low, ref) : -3;
   const high = range ? semis(range.high, ref) : 3;
-  const parts = segment(rms, f0, syllables.length);
   if (!parts) return { ...base, mode: 'word', note: 'Không đủ âm thanh để chấm. Đọc to, rõ hơn nhé.' };
   const result = syllables.map((s, i) => {
     const [a, b] = parts[i];

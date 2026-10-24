@@ -1,3 +1,4 @@
+import { readCourseLesson } from './courseContent.mjs';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -70,9 +71,7 @@ const LEVEL_NOTE = {
 };
 
 function buildPrompt({ lesson, volume, level, day, dayOneWords }) {
-  const given = lesson.vocab.length
-    ? `必须包含这些词：${lesson.vocab.map((v) => v.word).join('、')}。`
-    : '';
+  const given = lesson.vocab.length ? `必须包含这些词：${lesson.vocab.map((v) => v.word).join('、')}。` : '';
   const givenPatterns = lesson.patterns.length ? `必须包含这些句型：${lesson.patterns.join('；')}。` : '';
   const session =
     day === 1
@@ -103,13 +102,12 @@ const clean = (value, max = 200) => (typeof value === 'string' ? value.trim().sl
 const VI_MARKS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/iu;
 // Vietnamese: no Chinese characters, and anything longer than two words has
 // Vietnamese tone marks (so an English sentence is not accepted as Vietnamese).
-export const isVi = (text) =>
-  Boolean(text) && !HAN.test(text) && (VI_MARKS.test(text) || text.trim().split(/\s+/).length <= 2);
+export const isVi = (text) => Boolean(text) && !HAN.test(text) && (VI_MARKS.test(text) || text.trim().split(/\s+/).length <= 2);
 const isZh = (text) => Boolean(text) && HAN.test(text);
 const bare = (text) => text.replace(/[\s，。！？、；：,.!?;:“”"'‘’…（）()《》-]/gu, '');
 /** The fixed parts of a pattern like "一边……一边……". */
-export const patternParts = (pattern) => (pattern.match(/\p{Script=Han}+/gu) || [])
-  .filter((part) => !['主语', '宾语', '动词', '名词', '形容词'].includes(part));
+export const patternParts = (pattern) =>
+  (pattern.match(/\p{Script=Han}+/gu) || []).filter((part) => !['主语', '宾语', '动词', '名词', '形容词'].includes(part));
 export function matchesPattern(pattern, example) {
   const parts = patternParts(pattern);
   let cursor = 0;
@@ -148,7 +146,14 @@ export function normalizeLesson(raw, lesson, { day = 1 } = {}) {
       example: clean(item?.example),
       exampleVi: clean(item?.exampleVi),
     }))
-    .filter((item) => isZh(item.pattern) && isVi(item.explanation) && isZh(item.example) && isVi(item.exampleVi))
+    .filter(
+      (item) =>
+        isZh(item.pattern) &&
+        isVi(item.explanation.replace(/\p{Script=Han}+/gu, '')) &&
+        /[àáạảãâăèéẹẻẽêìíịỉĩòóọỏõôơùúụủũưỳýỵỷỹđ]/iu.test(item.explanation) &&
+        isZh(item.example) &&
+        isVi(item.exampleVi),
+    )
     .filter((item) => matchesPattern(item.pattern, item.example))
     .slice(0, 3)
     .map((item) => ({ ...item, examplePinyin: py(item.example) }));
@@ -157,7 +162,10 @@ export function normalizeLesson(raw, lesson, { day = 1 } = {}) {
     setting: clean(rp.setting, 300),
     avatarRole: clean(rp.avatarRole, 80),
     learnerRole: clean(rp.learnerRole, 80),
-    goals: (Array.isArray(rp.goals) ? rp.goals : []).map((g) => clean(g, 120)).filter(isVi).slice(0, 3),
+    goals: (Array.isArray(rp.goals) ? rp.goals : [])
+      .map((g) => clean(g, 120))
+      .filter(isVi)
+      .slice(0, 3),
     opening: clean(rp.opening),
     openingVi: clean(rp.openingVi),
   };
@@ -194,7 +202,10 @@ export function normalizeLesson(raw, lesson, { day = 1 } = {}) {
 // editing the table of contents does not bring back material written for the old one.
 function cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day, level }) {
   const safe = `${volumeId}`.replace(/[^A-Za-z0-9_-]/g, '');
-  const outline = createHash('sha1').update(JSON.stringify({ CONTENT_VERSION, title: volume.title, lesson })).digest('hex').slice(0, 8);
+  const outline = createHash('sha1')
+    .update(JSON.stringify({ CONTENT_VERSION, title: volume.title, lesson }))
+    .digest('hex')
+    .slice(0, 8);
   return path.join(dataDir, 'lessons', `${safe}-${lessonNo}-d${day}-${level}-${outline}.json`);
 }
 
@@ -209,6 +220,12 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
   }
   const reviewed = loadReviewedLesson({ dataDir, volume, lesson, volumeId, lessonNo, day, level });
   if (reviewed) return reviewed;
+  const packaged = readCourseLesson(volumeId, lessonNo, day);
+  if (packaged) {
+    const { content, problems } = normalizeLesson(packaged, lesson, { day });
+    if (problems.length) throw Object.assign(new Error(`Bài đóng gói chưa hợp lệ: ${problems.join('; ')}`), { status: 500 });
+    return { ...packaged, ...content, reviewed: false, authored: true };
+  }
   const file = cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day, level });
   if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));
 
@@ -221,7 +238,11 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
       if (fs.existsSync(first)) dayOneWords = JSON.parse(fs.readFileSync(first, 'utf8')).vocab.map((v) => v.word);
     }
     const messages = [
-      { role: 'system', content: 'Bạn soạn bài tiếng Trung cho người Việt. Các trường meaning, explanation, exampleVi, setting, avatarRole, learnerRole, goals, openingVi, questionVi PHẢI viết tiếng Việt có dấu. Đặc biệt patterns[].explanation không được viết bằng tiếng Trung; ví dụ: “Dùng để hỏi số lượng.” Không phiên âm tiếng Trung thành nghĩa tiếng Việt. Các trường word, example, pattern, opening, question viết tiếng Trung. Chỉ JSON.' },
+      {
+        role: 'system',
+        content:
+          'Bạn soạn bài tiếng Trung cho người Việt. Các trường meaning, explanation, exampleVi, setting, avatarRole, learnerRole, goals, openingVi, questionVi PHẢI viết tiếng Việt có dấu. Đặc biệt patterns[].explanation không được viết bằng tiếng Trung; ví dụ: “Dùng để hỏi số lượng.” Không phiên âm tiếng Trung thành nghĩa tiếng Việt. Các trường word, example, pattern, opening, question viết tiếng Trung. Chỉ JSON.',
+      },
       { role: 'user', content: buildPrompt({ lesson, volume, level, day, dayOneWords }) },
     ];
     let lastProblems = [];
@@ -248,7 +269,10 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
         if (process.env.XIAOYA_DEBUG_LESSONS === '1') {
           const directory = path.join(dataDir, 'lesson-debug');
           fs.mkdirSync(directory, { recursive: true });
-          fs.writeFileSync(path.join(directory, `${volumeId.replace(/[^A-Za-z0-9_-]/g, '')}-${lessonNo}-${level}-${attempt}.json`), JSON.stringify({ raw, problems }, null, 2));
+          fs.writeFileSync(
+            path.join(directory, `${volumeId.replace(/[^A-Za-z0-9_-]/g, '')}-${lessonNo}-${level}-${attempt}.json`),
+            JSON.stringify({ raw, problems }, null, 2),
+          );
         }
         // show the model what was rejected and ask for a corrected version
         messages.push(
@@ -300,9 +324,25 @@ export function loadReviewedLesson({ dataDir, volume, lesson, volumeId, lessonNo
       if (raw.level !== level || !raw.review?.reviewer?.trim() || !raw.review?.date || raw.reviewed !== true) continue;
       const { content, problems } = normalizeLesson(raw, lesson, { day });
       if (problems.length) continue;
-      return { ...content, volumeId, volumeTitle: volume.title, lessonNo, lessonTitle: lesson.title,
-        pages: lesson.pages, day, days: lesson.days, level, placeholder: false, reviewed: true, review: raw.review };
-    } catch { /* Invalid reviewed files fall through to generation. */ }
+      return {
+        ...raw,
+        ...content,
+        volumeId,
+        volumeTitle: volume.title,
+        lessonNo,
+        lessonTitle: lesson.title,
+        pages: lesson.pages,
+        day,
+        days: lesson.days,
+        level,
+        placeholder: false,
+        reviewed: true,
+        review: raw.review,
+        editorialStatus: `Đã được ${raw.review.reviewer} duyệt`,
+      };
+    } catch {
+      /* Invalid reviewed files fall through to generation. */
+    }
   }
   return null;
 }

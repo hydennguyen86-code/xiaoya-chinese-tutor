@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import type { ToneReport } from '../lib/voiceInput';
 
 const TONE_HINT: Record<number, string> = {
@@ -8,15 +9,94 @@ const TONE_HINT: Record<number, string> = {
 };
 
 /** Per-syllable tone verdicts for a word, or the pitch curve for a sentence. */
-export function ToneFeedback({ report }: { report: ToneReport }) {
+export function ToneFeedback({ report, audio }: { report: ToneReport; audio?: Blob }) {
+  const context = useRef<AudioContext | null>(null);
+  const source = useRef<AudioBufferSourceNode | null>(null);
+  const sequence = useRef(0);
+  const [playback, setPlayback] = useState('');
+  useEffect(
+    () => () => {
+      sequence.current += 1;
+      source.current?.stop();
+      void context.current?.close();
+      context.current = null;
+    },
+    [report, audio],
+  );
+  async function replay(index: number) {
+    const part = report.segments?.[index];
+    if (!part || !audio) return;
+    const turn = ++sequence.current;
+    source.current?.stop();
+    const ctx = context.current ?? new AudioContext();
+    context.current = ctx;
+    try {
+      await ctx.resume();
+      const play = async (buffer: ArrayBuffer, start: number, end: number) => {
+        const decoded = await ctx.decodeAudioData(buffer);
+        if (turn !== sequence.current) return;
+        const node = ctx.createBufferSource();
+        node.buffer = decoded;
+        node.connect(ctx.destination);
+        source.current = node;
+        await new Promise<void>((resolve) => {
+          node.onended = () => resolve();
+          node.start(0, Math.max(0, start), Math.max(0.01, Math.min(end, decoded.duration) - start));
+        });
+      };
+      setPlayback(`Đang phát ${part.char}: bản ghi của bạn`);
+      await play(await audio.arrayBuffer(), part.start, part.end);
+      const modelPart = report.model?.segments[index];
+      if (turn === sequence.current && modelPart && report.model) {
+        setPlayback(`Đang phát ${part.char}: giọng mẫu`);
+        const binary = atob(report.model.audioBase64);
+        await play(Uint8Array.from(binary, (ch) => ch.charCodeAt(0)).buffer, modelPart.start, modelPart.end);
+      }
+      if (turn === sequence.current) setPlayback('');
+    } catch {
+      if (turn === sequence.current) setPlayback('Không phát được đoạn âm thanh.');
+    }
+  }
+  const segments = report.segments ?? [];
+  const comparison = (
+    <>
+      {report.curve?.some((v) => v !== null) && (
+        <PitchCurve learner={report.curve} model={report.modelCurve ?? []} segments={segments} duration={report.duration ?? 0} />
+      )}
+      {segments.length > 0 && (
+        <div className="tone-replay">
+          {segments.map((part, index) => (
+            <button
+              type="button"
+              key={index}
+              disabled={!audio}
+              onClick={() => void replay(index)}
+              aria-label={`Nghe lại chữ ${part.char}: bạn rồi giọng mẫu`}
+            >
+              {part.char}
+            </button>
+          ))}
+        </div>
+      )}
+      {segments.length > 0 && (
+        <p className="lesson-hint">
+          Mốc chữ ước lượng theo năng lượng, có thể cắt lệch khi đọc thiếu chữ hoặc khác nhịp. Bấm chữ để nghe bản ghi của bạn rồi đoạn
+          tương ứng của giọng mẫu. Hai đường chưa căn chỉnh theo từng chữ.
+        </p>
+      )}
+      {playback && <p role="status">{playback}</p>}
+    </>
+  );
+
   if (report.mode === 'sentence') {
     return (
       <div className="tone-feedback">
+        {comparison}
         {report.curve && report.curve.some((v) => v !== null) ? (
           <>
-            <PitchCurve learner={report.curve} model={report.modelCurve ?? []} />
             <p className="lesson-hint">
-              Chấm tự động mới được thử trên giọng máy. Đường cao độ của bạn (cam) và của giọng mẫu (xanh). Hai đường được kéo về cùng độ dài, chưa căn theo từng chữ; khác nhịp đọc cũng làm đường lệch. Chỉ tham khảo dáng chung.
+              Chấm tự động mới được thử trên giọng máy. Đường cao độ của bạn (cam) và của giọng mẫu (xanh). Hai đường được kéo về cùng độ
+              dài, chưa căn theo từng chữ; khác nhịp đọc cũng làm đường lệch. Chỉ tham khảo dáng chung.
             </p>
           </>
         ) : (
@@ -30,6 +110,7 @@ export function ToneFeedback({ report }: { report: ToneReport }) {
   return (
     <div className="tone-feedback">
       <p className="lesson-hint">Chấm tự động mới được thử trên giọng máy; hãy xem kết quả là gợi ý.</p>
+      {comparison}
       <div className="tone-syllables">
         {report.syllables.map((s, i) => (
           <span
@@ -43,13 +124,15 @@ export function ToneFeedback({ report }: { report: ToneReport }) {
           </span>
         ))}
       </div>
-      {report.checked > 0 && !wrong.length && (
-        report.checked === report.syllables.filter((s) => s.expected).length ? (
+      {report.checked > 0 &&
+        !wrong.length &&
+        (report.checked === report.syllables.filter((s) => s.expected).length ? (
           <p className="lesson-ok">Lần này Misu nghe các thanh khớp với mẫu.</p>
         ) : (
-          <p className="lesson-hint">Các chữ chấm được đều đúng thanh. Chữ có dấu — thì chưa chấm được: đọc rõ và kéo dài hơn một chút nhé.</p>
-        )
-      )}
+          <p className="lesson-hint">
+            Các chữ chấm được đều đúng thanh. Chữ có dấu — thì chưa chấm được: đọc rõ và kéo dài hơn một chút nhé.
+          </p>
+        ))}
       {report.checked === 0 && !report.note && report.syllables.length > 0 && (
         <p className="lesson-hint">Chưa chấm được thanh điệu lần này: đọc rõ, chậm và kéo dài từng chữ hơn một chút nhé.</p>
       )}
@@ -85,10 +168,29 @@ function paths(values: (number | null)[]) {
   return out;
 }
 
-function PitchCurve({ learner, model }: { learner: (number | null)[]; model: (number | null)[] }) {
+function PitchCurve({
+  learner,
+  model,
+  segments,
+  duration,
+}: {
+  learner: (number | null)[];
+  model: (number | null)[];
+  segments: NonNullable<ToneReport['segments']>;
+  duration: number;
+}) {
   return (
-    <svg className="tone-curve" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Đường cao độ của bạn so với giọng mẫu">
+    <svg className="tone-curve" viewBox={`0 0 ${W} ${H + 20}`} role="img" aria-label="Đường cao độ của bạn so với giọng mẫu">
       <line x1="0" x2={W} y1={H / 2} y2={H / 2} className="tone-curve-mid" />
+      {duration > 0 &&
+        segments.map((part, index) => (
+          <g key={index}>
+            <line x1={(part.start / duration) * W} x2={(part.start / duration) * W} y1={0} y2={H} stroke="currentColor" opacity="0.2" />
+            <text x={((part.start + part.end) / 2 / duration) * W} y={H + 15} fontSize="11" textAnchor="middle" fill="currentColor">
+              {part.char}
+            </text>
+          </g>
+        ))}
       {paths(model).map((d, i) => (
         <path key={`m${i}`} d={d} className="tone-curve-model" />
       ))}

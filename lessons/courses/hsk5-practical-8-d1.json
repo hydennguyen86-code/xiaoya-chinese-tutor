@@ -1,0 +1,186 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 8,
+  "lessonTitle": "Thương lượng giá và điều kiện",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "报价",
+      "meaning": "báo giá",
+      "example": "请提供包含运费的报价。",
+      "exampleVi": "Xin cung cấp báo giá gồm phí vận chuyển.",
+      "pinyin": "bào jià",
+      "examplePinyin": "qǐng tí gōng bāo hán yùn fèi de bào jià 。"
+    },
+    {
+      "word": "优惠",
+      "meaning": "ưu đãi; giảm giá",
+      "example": "订购数量增加后有优惠吗？",
+      "exampleVi": "Khi tăng số lượng đặt có ưu đãi không?",
+      "pinyin": "yōu huì",
+      "examplePinyin": "dìng gòu shù liàng zēng jiā hòu yǒu yōu huì ma ？"
+    },
+    {
+      "word": "条件",
+      "meaning": "điều kiện",
+      "example": "这个价格有什么条件？",
+      "exampleVi": "Giá này đi kèm điều kiện nào?",
+      "pinyin": "tiáo jiàn",
+      "examplePinyin": "zhè ge jià gé yǒu shén me tiáo jiàn ？"
+    },
+    {
+      "word": "数量",
+      "meaning": "số lượng",
+      "example": "我们还没有确定数量。",
+      "exampleVi": "Chúng ta chưa xác định số lượng.",
+      "pinyin": "shù liàng",
+      "examplePinyin": "wǒ men hái méi yǒu què dìng shù liàng 。"
+    },
+    {
+      "word": "保证",
+      "meaning": "bảo đảm",
+      "example": "请保证产品质量一致。",
+      "exampleVi": "Xin bảo đảm chất lượng sản phẩm đồng đều.",
+      "pinyin": "bǎo zhèng",
+      "examplePinyin": "qǐng bǎo zhèng chǎn pǐn zhì liàng yí zhì 。"
+    },
+    {
+      "word": "合作",
+      "meaning": "hợp tác",
+      "example": "我们希望建立长期合作。",
+      "exampleVi": "Chúng tôi mong thiết lập hợp tác lâu dài.",
+      "pinyin": "hé zuò",
+      "examplePinyin": "wǒ men xī wàng jiàn lì cháng qī hé zuò 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "在……的前提下，……",
+      "explanation": "Nêu điều kiện nền phải được giữ; không đánh đổi điều thiết yếu chỉ để giảm giá.",
+      "example": "在质量不变的前提下，我们可以增加数量。",
+      "exampleVi": "Với điều kiện chất lượng không đổi, chúng tôi có thể tăng số lượng.",
+      "examplePinyin": "zài zhì liàng bú biàn de qián tí xià ， wǒ men kě yǐ zēng jiā shù liàng 。"
+    },
+    {
+      "pattern": "如果……，能否……？",
+      "explanation": "Đưa đề nghị đổi một điều kiện lấy một lợi ích cụ thể.",
+      "example": "如果我们一次订一百件，能否免运费？",
+      "exampleVi": "Nếu chúng tôi đặt một trăm sản phẩm một lần, có thể miễn phí vận chuyển không?",
+      "examplePinyin": "rú guǒ wǒ men yí cì dìng yì bǎi jiàn ， néng fǒu miǎn yùn fèi ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Mua số lượng lớn; buổi 2 gói dịch vụ dài hạn. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Nhà cung cấp",
+    "learnerRole": "Người thương lượng",
+    "goals": [
+      "Hỏi tổng chi phí và điều kiện đi kèm",
+      "Đưa đề nghị có đánh đổi",
+      "Xác nhận thỏa thuận bằng văn bản"
+    ],
+    "opening": "这是我们的报价，你还想商量哪些条件？",
+    "openingVi": "Đây là báo giá của chúng tôi; bạn còn muốn thương lượng điều kiện nào?"
+  },
+  "freeTalk": {
+    "question": "便宜的方案一定更划算吗？请说明你的判断标准。",
+    "questionVi": "Phương án rẻ có nhất thiết đáng tiền hơn không? Xin nêu tiêu chí đánh giá."
+  },
+  "learningNotes": [
+    "Đây là bài luyện thương lượng, không phải khuyến nghị ký hợp đồng hay đầu tư."
+  ],
+  "prerequisites": [
+    2,
+    3,
+    4
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Thương lượng giá và điều kiện",
+    "playLimit": 1,
+    "transcript": "买方：一百件的报价能再低一点吗？卖方：单价不能降低，但可以免运费。买方：交货时间呢？卖方：两周。如果要一周到，需要加急费。买方：我们不赶时间，可以接受两周，但请把免运费和质量标准都写在报价单上。卖方：可以，今天发给您确认。",
+    "translation": "Giá đơn vị không giảm nhưng được miễn vận chuyển cho 100 sản phẩm. Giao hai tuần; một tuần thì thêm phí nhanh. Khách chấp nhận hai tuần và muốn ghi miễn vận chuyển cùng tiêu chuẩn chất lượng trên báo giá.",
+    "questions": [
+      {
+        "prompt": "Nhượng bộ của người bán?",
+        "options": [
+          "Miễn vận chuyển",
+          "Giảm đơn giá",
+          "Giao nhanh miễn phí"
+        ],
+        "answer": 0,
+        "explanation": "Người bán nói 单价不能降低，但可以免运费."
+      },
+      {
+        "prompt": "Lịch giao được chấp nhận?",
+        "options": [
+          "Một tuần",
+          "Hai tuần",
+          "Một tháng"
+        ],
+        "answer": 1,
+        "explanation": "Khách chấp nhận 两周."
+      },
+      {
+        "prompt": "Khách ưu tiên ghi rõ điều gì?",
+        "options": [
+          "Chỉ lời hứa miệng",
+          "Màu văn phòng",
+          "Phí vận chuyển và tiêu chuẩn chất lượng"
+        ],
+        "answer": 2,
+        "explanation": "Khách yêu cầu ghi cả hai vào báo giá."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Giá đơn vị không giảm nhưng được miễn vận chuyển cho 100 sản phẩm. Giao hai tuần; một tuần thì thêm phí nhanh. Khách chấp nhận hai tuần và muốn ghi miễn vận chuyển cùng tiêu chuẩn chất lượng trên báo giá.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "请提供包含运费的报价。 订购数量增加后有优惠吗？ 这个价格有什么条件？ 我们还没有确定数量。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "便宜的方案一定更划算吗？请说明你的判断标准。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "我不会只看报价上的单价，而会比较总成本和使用条件。有的方案价格低，却需要另外支付运输、维护或培训费用。如果增加数量能够降低成本，也要确认是否真的需要那么多。当然，贵的方案也不一定更好。我的判断标准是它能否满足实际需要，费用是否清楚，以及出现问题后能否得到支持。",
+      "sampleVi": "Tôi không chỉ nhìn đơn giá mà so tổng chi phí và điều kiện dùng. Một số phương án rẻ nhưng thêm vận chuyển, bảo trì hay đào tạo. Nếu tăng lượng giúp giảm giá thì vẫn phải xét có cần nhiều đến vậy không. Đắt cũng chưa chắc tốt. Tiêu chí là đáp ứng nhu cầu thật, phí rõ và có hỗ trợ khi gặp vấn đề."
+    }
+  ],
+  "transferTask": "Mua số lượng lớn; buổi 2 gói dịch vụ dài hạn."
+}

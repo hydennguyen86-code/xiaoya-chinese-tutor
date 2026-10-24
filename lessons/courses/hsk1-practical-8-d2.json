@@ -1,0 +1,164 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 8,
+  "lessonTitle": "Vị trí và xác nhận đường đi",
+  "day": 2,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "在",
+      "meaning": "ở",
+      "example": "老师在学校。",
+      "exampleVi": "Giáo viên ở trường.",
+      "pinyin": "zài",
+      "examplePinyin": "lǎo shī zài xué xiào 。"
+    },
+    {
+      "word": "哪里",
+      "meaning": "đâu",
+      "example": "学校在哪里？",
+      "exampleVi": "Trường ở đâu?",
+      "pinyin": "nǎ lǐ",
+      "examplePinyin": "xué xiào zài nǎ lǐ ？"
+    },
+    {
+      "word": "前面",
+      "meaning": "phía trước",
+      "example": "商店在前面。",
+      "exampleVi": "Cửa hàng ở phía trước.",
+      "pinyin": "qián miàn",
+      "examplePinyin": "shāng diàn zài qián miàn 。"
+    },
+    {
+      "word": "左边",
+      "meaning": "bên trái",
+      "example": "学校在左边。",
+      "exampleVi": "Trường ở bên trái.",
+      "pinyin": "zuǒ biān",
+      "examplePinyin": "xué xiào zài zuǒ biān 。"
+    },
+    {
+      "word": "右边",
+      "meaning": "bên phải",
+      "example": "商店在右边。",
+      "exampleVi": "Cửa hàng ở bên phải.",
+      "pinyin": "yòu biān",
+      "examplePinyin": "shāng diàn zài yòu biān 。"
+    },
+    {
+      "word": "走",
+      "meaning": "đi bộ; đi theo hướng",
+      "example": "请往前走。",
+      "exampleVi": "Xin đi thẳng về phía trước.",
+      "pinyin": "zǒu",
+      "examplePinyin": "qǐng wǎng qián zǒu 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……在哪里？",
+      "explanation": "Hỏi vị trí; 哪里 đã là từ hỏi nên không thêm 吗.",
+      "example": "商店在哪里？",
+      "exampleVi": "Cửa hàng ở đâu?",
+      "examplePinyin": "shāng diàn zài nǎ lǐ ？"
+    },
+    {
+      "pattern": "是往……走吗？",
+      "explanation": "Xác nhận hướng vừa nghe; phân biệt trái, phải và phía trước.",
+      "example": "是往左走吗？",
+      "exampleVi": "Là đi sang trái phải không?",
+      "examplePinyin": "shì wǎng zuǒ zǒu ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hỏi cửa hàng; buổi 2 tìm trường ở một ngã rẽ khác. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người đi đường",
+    "learnerRole": "Người hỏi đường",
+    "goals": [
+      "Hỏi vị trí một địa điểm",
+      "Xác nhận lại hướng nghe được"
+    ],
+    "opening": "你好，你想去哪里？",
+    "openingVi": "Chào bạn, bạn muốn đi đâu?"
+  },
+  "freeTalk": {
+    "question": "请问一个地方在哪里，再确认方向。",
+    "questionVi": "Xin hỏi một địa điểm ở đâu rồi xác nhận hướng đi."
+  },
+  "learningNotes": [
+    "Bổ trợ: 学校 xuéxiào — trường; 商店 shāngdiàn — cửa hàng; 往 wǎng — về phía; 对 duì — đúng.",
+    "Hai hướng trái/phải là từ mở rộng thực dụng; dùng sơ đồ đơn giản tự vẽ khi luyện."
+  ],
+  "prerequisites": [
+    2,
+    5
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Vị trí và xác nhận đường đi",
+    "playLimit": 2,
+    "transcript": "甲：学校在左边吗？乙：不在左边，在右边。甲：好，往右走。谢谢！",
+    "translation": "A: Trường ở bên trái phải không? B: Không ở bên trái, ở bên phải. A: Được, đi sang phải. Cảm ơn!",
+    "questions": [
+      {
+        "prompt": "Trường ở đâu?",
+        "options": [
+          "Bên trái",
+          "Bên phải",
+          "Chưa biết"
+        ],
+        "answer": 1,
+        "explanation": "B sửa thành 在右边."
+      },
+      {
+        "prompt": "A có đọc lại hướng không?",
+        "options": [
+          "Không",
+          "Không nghe rõ",
+          "Có"
+        ],
+        "answer": 2,
+        "explanation": "A nói 往右走."
+      }
+    ],
+    "pinyin": "jiǎ ： xué xiào zài zuǒ biān ma ？ yǐ ： bú zài zuǒ biān ， zài yòu biān 。 jiǎ ： hǎo ， wǎng yòu zǒu 。 xiè xiè ！"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "老师在学校。 学校在哪里？",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "老师在学校。 学校在哪里？"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请问一个地方在哪里，再确认方向。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "请问，学校在哪里？是往右走吗？谢谢。",
+      "sampleVi": "Xin hỏi trường ở đâu? Là đi sang phải phải không? Cảm ơn."
+    }
+  ],
+  "transferTask": "Hỏi cửa hàng; buổi 2 tìm trường ở một ngã rẽ khác."
+}

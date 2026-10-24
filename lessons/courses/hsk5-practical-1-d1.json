@@ -1,0 +1,182 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 1,
+  "lessonTitle": "Giới thiệu năng lực và mục tiêu công việc",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "负责",
+      "meaning": "phụ trách; chịu trách nhiệm",
+      "example": "我负责安排项目进度。",
+      "exampleVi": "Tôi phụ trách sắp xếp tiến độ dự án.",
+      "pinyin": "fù zé",
+      "examplePinyin": "wǒ fù zé ān pái xiàng mù jìn dù 。"
+    },
+    {
+      "word": "经验",
+      "meaning": "kinh nghiệm",
+      "example": "我有三年客户服务经验。",
+      "exampleVi": "Tôi có ba năm kinh nghiệm chăm sóc khách hàng.",
+      "pinyin": "jīng yàn",
+      "examplePinyin": "wǒ yǒu sān nián kè hù fú wù jīng yàn 。"
+    },
+    {
+      "word": "优势",
+      "meaning": "điểm mạnh; lợi thế",
+      "example": "我的优势是善于沟通。",
+      "exampleVi": "Điểm mạnh của tôi là giỏi giao tiếp.",
+      "pinyin": "yōu shì",
+      "examplePinyin": "wǒ de yōu shì shì shàn yú gōu tōng 。"
+    },
+    {
+      "word": "目标",
+      "meaning": "mục tiêu",
+      "example": "我的目标是提高工作效率。",
+      "exampleVi": "Mục tiêu của tôi là nâng cao hiệu quả công việc.",
+      "pinyin": "mù biāo",
+      "examplePinyin": "wǒ de mù biāo shì tí gāo gōng zuò xiào lǜ 。"
+    },
+    {
+      "word": "适应",
+      "meaning": "thích nghi",
+      "example": "我能很快适应新的工作环境。",
+      "exampleVi": "Tôi có thể nhanh chóng thích nghi với môi trường làm việc mới.",
+      "pinyin": "shì yìng",
+      "examplePinyin": "wǒ néng hěn kuài shì yìng xīn de gōng zuò huán jìng 。"
+    },
+    {
+      "word": "具体",
+      "meaning": "cụ thể",
+      "example": "请举一个具体的例子。",
+      "exampleVi": "Xin đưa ra một ví dụ cụ thể.",
+      "pinyin": "jù tǐ",
+      "examplePinyin": "qǐng jǔ yí gè jù tǐ de lì zǐ 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "不仅……还……",
+      "explanation": "Nêu hai năng lực hoặc đóng góp, phần sau bổ sung thêm giá trị; chủ ngữ giống nhau có thể đứng trước 不仅.",
+      "example": "我不仅负责销售，还协助培训新人。",
+      "exampleVi": "Tôi không chỉ phụ trách bán hàng mà còn hỗ trợ đào tạo người mới.",
+      "examplePinyin": "wǒ bù jǐn fù zé xiāo shòu ， hái xié zhù péi xùn xīn rén 。"
+    },
+    {
+      "pattern": "通过……提高……",
+      "explanation": "Nêu cách làm và kết quả; kết quả cần có ví dụ thực tế.",
+      "example": "我通过整理常见问题提高了回复效率。",
+      "exampleVi": "Tôi nâng cao hiệu quả trả lời bằng cách hệ thống hóa các câu hỏi thường gặp.",
+      "examplePinyin": "wǒ tōng guò zhěng lǐ cháng jiàn wèn tí tí gāo le huí fù xiào lǜ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 1 phỏng vấn; buổi 2 giới thiệu với nhóm mới, không lặp nguyên bài nói. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người phỏng vấn/đồng nghiệp mới",
+    "learnerRole": "Người giới thiệu năng lực",
+    "goals": [
+      "Giới thiệu năng lực bằng một ví dụ có hành động và kết quả",
+      "Nêu mục tiêu phát triển và trả lời một câu hỏi làm rõ"
+    ],
+    "opening": "请用一个具体例子介绍你的工作能力。",
+    "openingVi": "Xin dùng một ví dụ cụ thể để giới thiệu năng lực công việc của bạn."
+  },
+  "freeTalk": {
+    "question": "工作经验和学习能力，哪一个更重要？请结合例子说明。",
+    "questionVi": "Kinh nghiệm công việc và khả năng học hỏi, điều nào quan trọng hơn? Xin giải thích bằng ví dụ."
+  },
+  "learningNotes": [
+    "Điều kiện đầu vào: đã giao tiếp được về sinh hoạt, công việc và kể việc quá khứ; đây không phải khóa từ số không lên HSK 5.",
+    "Nói 60–90 giây theo bốn ý: bối cảnh, nhiệm vụ, hành động, kết quả; không bịa thành tích của bản thân."
+  ],
+  "prerequisites": [],
+  "listening": {
+    "title": "Nghe buổi 1: Giới thiệu năng lực và mục tiêu công việc",
+    "playLimit": 1,
+    "transcript": "面试官：请介绍一下你的工作经历。应聘者：我做了三年客户服务，主要负责处理订单问题。以前同事要逐个查找客户记录，我把常见问题整理成表格，大家回复客户时就快多了。面试官：你为什么想换工作？应聘者：我希望学习项目管理，而不是只换一个职位名称。",
+    "translation": "Nhà tuyển dụng yêu cầu giới thiệu kinh nghiệm. Ứng viên từng làm chăm sóc khách hàng ba năm, xử lý đơn và lập bảng câu hỏi thường gặp để đồng nghiệp trả lời nhanh hơn. Người này muốn chuyển việc để học quản lý dự án, không chỉ đổi chức danh.",
+    "questions": [
+      {
+        "prompt": "Ứng viên đưa ra bằng chứng nào về năng lực?",
+        "options": [
+          "Làm một mình toàn bộ đơn hàng",
+          "Tăng số chức danh",
+          "Hệ thống hóa câu hỏi để trả lời nhanh hơn"
+        ],
+        "answer": 2,
+        "explanation": "Bằng chứng là bảng câu hỏi, không có số liệu tăng doanh thu."
+      },
+      {
+        "prompt": "Lý do chuyển việc chính?",
+        "options": [
+          "Học quản lý dự án",
+          "Không thích khách hàng",
+          "Chỉ muốn chức danh mới"
+        ],
+        "answer": 0,
+        "explanation": "Ứng viên nói 希望学习项目管理."
+      },
+      {
+        "prompt": "Nhận xét nào được đoạn nghe hỗ trợ?",
+        "options": [
+          "Không có kinh nghiệm dịch vụ",
+          "Có sáng kiến cải thiện quy trình",
+          "Đã là quản lý dự án"
+        ],
+        "answer": 1,
+        "explanation": "Việc lập bảng thể hiện cải thiện quy trình, chưa chứng minh đã làm quản lý."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Nhà tuyển dụng yêu cầu giới thiệu kinh nghiệm. Ứng viên từng làm chăm sóc khách hàng ba năm, xử lý đơn và lập bảng câu hỏi thường gặp để đồng nghiệp trả lời nhanh hơn. Người này muốn chuyển việc để học quản lý dự án, không chỉ đổi chức danh.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "我负责安排项目进度。 我有三年客户服务经验。 我的优势是善于沟通。 我的目标是提高工作效率。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "工作经验和学习能力，哪一个更重要？请结合例子说明。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "我认为两者都重要，但在工作内容经常变化的情况下，学习能力更关键。经验能帮助我们快速判断常见问题，却不一定适合新的任务。比如以前处理订单的方法，可能需要随着系统变化而调整。当然，没有基本经验的人也需要时间练习。因此，我会用经验作为起点，同时保持学习和确认的习惯。",
+      "sampleVi": "Tôi cho rằng cả hai đều quan trọng, nhưng khi công việc thay đổi thường xuyên thì khả năng học hỏi quan trọng hơn. Kinh nghiệm giúp xử lý việc quen thuộc nhanh, nhưng chưa chắc hợp nhiệm vụ mới. Chẳng hạn cách xử lý đơn cần điều chỉnh khi hệ thống đổi. Người chưa có kinh nghiệm vẫn cần thời gian luyện, vì vậy tôi lấy kinh nghiệm làm điểm xuất phát và tiếp tục học, xác nhận."
+    }
+  ],
+  "transferTask": "Buổi 1 phỏng vấn; buổi 2 giới thiệu với nhóm mới, không lặp nguyên bài nói."
+}

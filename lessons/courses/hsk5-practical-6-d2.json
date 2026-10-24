@@ -1,0 +1,310 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 6,
+  "lessonTitle": "Khiếu nại dịch vụ và tìm giải pháp",
+  "day": 2,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "投诉",
+      "meaning": "khiếu nại; phàn nàn chính thức",
+      "example": "我想投诉这次配送服务。",
+      "exampleVi": "Tôi muốn khiếu nại dịch vụ giao hàng lần này.",
+      "pinyin": "tóu sù",
+      "examplePinyin": "wǒ xiǎng tóu sù zhè cì pèi sòng fú wù 。"
+    },
+    {
+      "word": "承诺",
+      "meaning": "cam kết; lời hứa",
+      "example": "服务没有达到之前的承诺。",
+      "exampleVi": "Dịch vụ chưa đạt cam kết trước đó.",
+      "pinyin": "chéng nuò",
+      "examplePinyin": "fú wù méi yǒu dá dào zhī qián de chéng nuò 。"
+    },
+    {
+      "word": "退款",
+      "meaning": "hoàn tiền",
+      "example": "请说明退款需要多久。",
+      "exampleVi": "Xin nói rõ việc hoàn tiền cần bao lâu.",
+      "pinyin": "tuì kuǎn",
+      "examplePinyin": "qǐng shuō míng tuì kuǎn xū yào duō jiǔ 。"
+    },
+    {
+      "word": "更换",
+      "meaning": "đổi; thay thế",
+      "example": "我希望更换有问题的商品。",
+      "exampleVi": "Tôi muốn đổi sản phẩm có vấn đề.",
+      "pinyin": "gēng huàn",
+      "examplePinyin": "wǒ xī wàng gēng huàn yǒu wèn tí de shāng pǐn 。"
+    },
+    {
+      "word": "处理",
+      "meaning": "xử lý",
+      "example": "这个问题由谁来处理？",
+      "exampleVi": "Ai xử lý vấn đề này?",
+      "pinyin": "chǔ lǐ",
+      "examplePinyin": "zhè ge wèn tí yóu shuí lái chǔ lǐ ？"
+    },
+    {
+      "word": "凭证",
+      "meaning": "chứng từ; bằng chứng giao dịch",
+      "example": "我保留了付款凭证。",
+      "exampleVi": "Tôi đã giữ chứng từ thanh toán.",
+      "pinyin": "píng zhèng",
+      "examplePinyin": "wǒ bǎo liú le fù kuǎn píng zhèng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我理解……，但我希望……",
+      "explanation": "Ghi nhận khó khăn của bên kia nhưng vẫn nêu yêu cầu giải quyết rõ ràng.",
+      "example": "我理解配送有困难，但我希望今天能收到明确答复。",
+      "exampleVi": "Tôi hiểu việc giao hàng gặp khó khăn, nhưng mong nhận câu trả lời rõ ràng hôm nay.",
+      "examplePinyin": "wǒ lǐ jiě pèi sòng yǒu kùn nán ， dàn wǒ xī wàng jīn tiān néng shōu dào míng què dá fù 。"
+    },
+    {
+      "pattern": "如果不能……，是否可以……？",
+      "explanation": "Đưa phương án thay thế khi yêu cầu đầu không thực hiện được.",
+      "example": "如果不能今天更换，是否可以退款？",
+      "exampleVi": "Nếu không đổi được hôm nay thì có thể hoàn tiền không?",
+      "examplePinyin": "rú guǒ bù néng jīn tiān gēng huàn ， shì fǒu kě yǐ tuì kuǎn ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Sản phẩm hỏng; buổi 2 giao trễ, không dùng nguyên lời khiếu nại sản phẩm. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Nhân viên dịch vụ",
+    "learnerRole": "Người khiếu nại",
+    "goals": [
+      "Nêu sự việc và bằng chứng mà không công kích",
+      "Đề xuất giải pháp phù hợp nhu cầu",
+      "Chốt thời gian và cách xác nhận"
+    ],
+    "opening": "请说明发生了什么问题，以及你希望我们怎样处理。",
+    "openingVi": "Xin nói rõ đã xảy ra vấn đề gì và bạn mong chúng tôi xử lý ra sao."
+  },
+  "freeTalk": {
+    "question": "服务出问题时，怎样表达不满才更容易解决问题？",
+    "questionVi": "Khi dịch vụ có vấn đề, bày tỏ bất mãn thế nào để dễ giải quyết hơn?"
+  },
+  "learningNotes": [
+    "Tách sự kiện, tác động và yêu cầu. Tránh dùng lời quy kết không có bằng chứng."
+  ],
+  "prerequisites": [
+    2,
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Khiếu nại dịch vụ và tìm giải pháp",
+    "playLimit": 1,
+    "transcript": "顾客：你们说上午送到，现在下午了还没收到。客服：司机的车出了问题，预计五点前到。顾客：五点以后我不在家。能不能改到明天上午，并把时间写在订单里？客服：可以，我为您改到明天九点到十一点。顾客：请再发一条确认消息，免得司机按原来的时间来。",
+    "translation": "Đơn giao trễ vì xe gặp vấn đề. Khách không có nhà sau năm giờ nên đổi sang sáng mai, chốt khung 9–11 giờ và xin tin xác nhận để tài xế không theo lịch cũ.",
+    "questions": [
+      {
+        "prompt": "Lịch cuối cùng được chọn?",
+        "options": [
+          "Mai năm giờ chiều",
+          "Hôm nay trước năm giờ",
+          "Mai chín đến mười một giờ"
+        ],
+        "answer": 2,
+        "explanation": "Dịch vụ chốt 明天九点到十一点."
+      },
+      {
+        "prompt": "Lý do không nhận cuối chiều?",
+        "options": [
+          "Khách không có nhà sau năm giờ",
+          "Tài xế nghỉ cả tuần",
+          "Đơn bị hủy"
+        ],
+        "answer": 0,
+        "explanation": "Khách nói 五点以后我不在家."
+      },
+      {
+        "prompt": "Tin xác nhận nhằm tránh gì?",
+        "options": [
+          "Tính lại giá",
+          "Tài xế dùng lịch cũ",
+          "Thay sản phẩm"
+        ],
+        "answer": 1,
+        "explanation": "Câu cuối nêu 按原来的时间来."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Đơn giao trễ vì xe gặp vấn đề. Khách không có nhà sau năm giờ nên đổi sang sáng mai, chốt khung 9–11 giờ và xin tin xác nhận để tài xế không theo lịch cũ.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "我想投诉这次配送服务。 服务没有达到之前的承诺。 请说明退款需要多久。 我希望更换有问题的商品。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "服务出问题时，怎样表达不满才更容易解决问题？",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "服务出问题时，我会先说明发生了什么，再讲它对我的影响，最后提出具体要求。例如商品坏了，可以说明问题、提供照片，再询问换货或退款的时间。表达不满并不等于指责对方的人格。当然，态度平和也不代表接受没有结果的拖延。关键是确认谁处理、什么时候回复，以及下一步怎么做。",
+      "sampleVi": "Khi dịch vụ có vấn đề tôi nêu sự việc, ảnh hưởng và yêu cầu cụ thể. Với hàng hỏng, có thể cung cấp ảnh rồi hỏi thời gian đổi hoặc hoàn. Bày tỏ bất mãn không có nghĩa công kích cá nhân. Bình tĩnh cũng không có nghĩa chấp nhận trì hoãn vô hạn. Cần chốt ai xử lý, lúc nào trả lời và bước tiếp theo."
+    }
+  ],
+  "transferTask": "Sản phẩm hỏng; buổi 2 giao trễ, không dùng nguyên lời khiếu nại sản phẩm.",
+  "checkpoint": {
+    "title": "Kiểm tra chặng 1 — nghe và nói ứng dụng",
+    "practiceMinutes": 20,
+    "official": false,
+    "instructions": "Bài mini tự soạn, không sao chép đề thi, không quy đổi điểm sang chứng chỉ. Nghe tối đa một lần; có thể chuyển sang luyện lại sau khi nộp.",
+    "listening": [
+      {
+        "transcript": "项目负责人：原定周四发布的功能，测试还没有结束。客户希望日期不变，但也不能接受数据出错。团队提出周四先开放查询功能，修改功能完成测试后周一再开。客户同意分步发布，但要求在页面上写清楚暂时不能修改，并安排一个联系人处理问题。负责人决定今天先发书面说明，周三再次确认测试结果。",
+        "translation": "Dự án chưa kiểm thử xong. Khách muốn giữ ngày nhưng không chấp nhận sai dữ liệu. Chốt thứ Năm chỉ mở tra cứu, thứ Hai mở sửa sau kiểm thử; thông báo giới hạn và có người liên hệ. Hôm nay gửi văn bản, thứ Tư kiểm tra lại kết quả.",
+        "questions": [
+          {
+            "prompt": "周四先开放什么？",
+            "options": [
+              "查询功能",
+              "全部修改功能",
+              "新的付款功能"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn nghe nói 先开放查询功能."
+          },
+          {
+            "prompt": "客户接受方案的条件是什么？",
+            "options": [
+              "取消测试",
+              "说明限制并安排联系人",
+              "保证所有功能当天完成"
+            ],
+            "answer": 1,
+            "explanation": "Khách yêu cầu ghi rõ giới hạn và có người liên hệ."
+          },
+          {
+            "prompt": "今天要做什么？",
+            "options": [
+              "宣布测试全部结束",
+              "关闭所有功能",
+              "发送书面说明"
+            ],
+            "answer": 2,
+            "explanation": "Người phụ trách quyết định 今天先发书面说明."
+          }
+        ],
+        "playLimit": 1,
+        "title": "Đoạn 1"
+      },
+      {
+        "transcript": "顾客：我买的椅子有一条腿不稳。客服说可以免费寄配件，不过需要五天。我告诉他们家里老人要用，等不了那么久。最后双方同意退货，商家安排取件，我保留了照片和沟通记录。这里的关键不是争论谁态度不好，而是把商品问题、使用需要和可接受的处理方式说清楚。",
+        "translation": "Ghế có chân không vững. Khách không chờ được linh kiện năm ngày vì người cao tuổi cần dùng. Hai bên đồng ý trả hàng, bên bán bố trí lấy; khách giữ ảnh và trao đổi.",
+        "questions": [
+          {
+            "prompt": "顾客为什么不等配件？",
+            "options": [
+              "丢失了付款记录",
+              "家里老人急着使用",
+              "不喜欢椅子的颜色"
+            ],
+            "answer": 1,
+            "explanation": "Nhu cầu sử dụng gấp được nêu rõ."
+          },
+          {
+            "prompt": "最后采用什么办法？",
+            "options": [
+              "自己付费修理",
+              "再买一把一样的",
+              "退货并由商家取件"
+            ],
+            "answer": 2,
+            "explanation": "Hai bên đồng ý 退货，商家安排取件."
+          },
+          {
+            "prompt": "说话人强调什么？",
+            "options": [
+              "具体问题和解决需要",
+              "只比较态度",
+              "越生气越有效"
+            ],
+            "answer": 0,
+            "explanation": "Câu cuối nhấn mạnh vấn đề, nhu cầu và phương án."
+          }
+        ],
+        "playLimit": 1,
+        "title": "Đoạn 2"
+      }
+    ],
+    "speaking": [
+      {
+        "kind": "retell",
+        "prompt": "Nghe đoạn thứ nhất một lần, rồi kể lại trong 90 giây: vấn đề, nhu cầu, giải pháp và việc tiếp theo.",
+        "audioText": "项目负责人：原定周四发布的功能，测试还没有结束。客户希望日期不变，但也不能接受数据出错。团队提出周四先开放查询功能，修改功能完成测试后周一再开。客户同意分步发布，但要求在页面上写清楚暂时不能修改，并安排一个联系人处理问题。负责人决定今天先发书面说明，周三再次确认测试结果。",
+        "prepareSeconds": 45,
+        "responseSeconds": 90,
+        "reference": "Dự án chưa kiểm thử xong. Khách muốn giữ ngày nhưng không chấp nhận sai dữ liệu. Chốt thứ Năm chỉ mở tra cứu, thứ Hai mở sửa sau kiểm thử; thông báo giới hạn và có người liên hệ. Hôm nay gửi văn bản, thứ Tư kiểm tra lại kết quả.",
+        "checklist": [
+          "Giữ đúng dữ kiện",
+          "Không thêm sự kiện không có trong bài",
+          "Nói rõ và có trình tự"
+        ]
+      },
+      {
+        "kind": "read",
+        "prompt": "Đọc thành tiếng đoạn văn tự soạn sau.",
+        "text": "有效的沟通不只是把话说完，还包括确认对方是否理解。遇到意见不一致时，先弄清各自的需要，再讨论可以调整的条件。即使最后没有达成一致，也应该明确下一步由谁负责、什么时候再联系。",
+        "prepareSeconds": 30,
+        "responseSeconds": 60,
+        "reference": "Đọc theo cụm nghĩa, phân biệt câu nêu quan điểm và câu nêu hành động.",
+        "checklist": [
+          "Đọc đủ ý",
+          "Ngắt theo cụm",
+          "Giữ âm lượng dễ nghe"
+        ]
+      },
+      {
+        "kind": "opinion",
+        "prompt": "有人认为只要结果好，过程中的沟通就不重要。你怎么看？请举例并说明一个限制。",
+        "promptVi": "Nêu quan điểm, hai lý do, ví dụ và một giới hạn; không chấm theo ý kiến đồng ý hay phản đối.",
+        "prepareSeconds": 45,
+        "responseSeconds": 120,
+        "reference": "Bài mẫu dàn ý: kết quả quan trọng nhưng thông tin rõ ràng giúp tránh hiểu nhầm; ví dụ thay đổi thời hạn; thừa nhận có việc khẩn cấp; kết luận vẫn cần xác nhận sau. Người học có thể có quan điểm khác.",
+        "checklist": [
+          "Đúng trọng tâm",
+          "Có chi tiết cụ thể",
+          "Tự nói không nhìn mẫu"
+        ]
+      }
+    ]
+  }
+}

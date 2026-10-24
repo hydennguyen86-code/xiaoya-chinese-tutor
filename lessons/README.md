@@ -11,3 +11,6 @@ Chúng là điểm xuất phát để người có chuyên môn duyệt, chưa p
 `drafts/syllabus.json` là mục lục tương ứng, cũng chưa duyệt. Những file mang mã
 `tam-*` là đầu ra thử trực tiếp qwen3.5:4b; có thể chứa lỗi dịch nghĩa dù qua kiểm
 tra cấu trúc, không dùng làm đáp án chuẩn.
+
+Khóa đang dùng trong app: [hai lộ trình nghe–nói cố định](courses/README.md).
+Các file `drafts/` vẫn là bản thử cũ để tham khảo, không thay thế bộ bài mới.

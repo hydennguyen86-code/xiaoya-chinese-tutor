@@ -2,18 +2,34 @@
 
 *A Chinese speaking tutor for Vietnamese learners: a 3D avatar you talk to, a
 local LLM that replies at your HSK level and corrects your sentences, local
-speech-to-text, tone checking, and a daily 20-minute lesson. Everything except
+speech-to-text, tone checking, and a daily guided lesson. Everything except
 the optional online voices runs on your own computer. The interface is in
 Vietnamese.*
 
 Misu là bạn luyện nói tiếng Trung cho người Việt: bạn nói (hoặc gõ), avatar trả
 lời bằng tiếng Trung có pinyin và bản dịch tiếng Việt, sửa câu sai, ghi lại từ
-mới để ôn, và mỗi ngày có sẵn một bài học 20 phút để khỏi phải tự chọn học gì.
+mới để ôn, và mỗi ngày có sẵn một bài học theo lộ trình để khỏi phải tự chọn học gì.
 
 ![Demo nhập câu, nhận phản hồi và ôn từ](docs/media/demo-keyboard.gif)
 
 *Demo thao tác bằng bàn phím (30 giây, dữ liệu giả lập, avatar hoạt hình mẫu).
 Chưa phải bản quay luyện nói bằng micro.*
+
+## Học ngay: HSK 1 và HSK 5 ứng dụng
+
+Có sẵn **48 buổi cố định**, 12 chủ đề × 2 buổi cho mỗi lộ trình, kèm **4 bài
+kiểm tra chặng** tự soạn. Mở **Bài hôm nay → Lộ trình học**, chọn HSK 1 hoặc
+HSK 5. Trong phần Hội thoại nhập vai có bài nghe, chọn đáp án rồi mở bản chép
+lời/giải thích; tiếp theo là nhắc lại/kể lại, đọc và trả lời theo nhiệm vụ.
+Nội dung cố định không cần model soạn lại; nhập vai tương tác vẫn cần model.
+
+- [Tài liệu HSK 1 thực tế](lessons/courses/HSK1-GUIDE.md): khoảng 25 phút/buổi.
+- [Tài liệu HSK 5 thực tế](lessons/courses/HSK5-GUIDE.md): khoảng 30 phút/buổi.
+- [Nguồn dạng thi và giới hạn](lessons/courses/EXAM-ALIGNMENT.md).
+
+Đây là giai đoạn thực hành đầu tiên, AI biên soạn và rà soát, **chưa có giáo viên
+duyệt**. Không tuyên bố bao phủ toàn bộ HSK hoặc quy đổi điểm mini thành điểm
+thi. Phần nói HSK 1 là mở rộng giao tiếp, không gọi là phần thi nói chính thức.
 
 ## Kiểm tra và chuẩn bị
 
@@ -40,9 +56,9 @@ không tính điểm; các lần có đề khác nhau không hoàn toàn tương
 - **Nhận dạng giọng nói cục bộ** bằng whisper.cpp: giọng bạn không rời khỏi máy.
 - **Chấm thanh điệu**: đọc một từ, Misu chỉ ra chữ nào sai thanh và cách sửa;
   đọc một câu, Misu vẽ đường cao độ của bạn cạnh giọng mẫu.
-- **Bài hôm nay (20 phút)**: ôn từ và lỗi cũ của chính bạn → từ mới → mẫu câu →
-  đóng vai → nói tự do → tổng kết. Lịch học tự đi theo thứ tự bài của sách
-  《体验汉语口语》 (xem phần [Mục lục sách](#mục-lục-sách)).
+- **Bài hôm nay**: ôn từ và lỗi cũ của chính bạn → từ mới → mẫu câu →
+  đóng vai → nói tự do → tổng kết. Mặc định dùng hai lộ trình Misu tự soạn; có thể dùng mục lục
+  sách riêng (xem phần [Mục lục sách](#mục-lục-sách)).
 - **Nhiều người học** trên một máy, mỗi người có trình độ, lịch sử và từ ôn
   riêng.
 - **Dữ liệu nằm trong thư mục `data/`** (mỗi mục một file JSON, sao lưu mỗi ngày,
@@ -89,6 +105,7 @@ gửi âm thanh lên máy chủ Google) và không chấm được thanh điệu
 |---|---|---|
 | `PORT`, `HOST` | `8787`, `127.0.0.1` | địa chỉ server |
 | `XIAOYA_DATA_DIR` | `./data` | nơi lưu dữ liệu người học |
+| `XIAOYA_SAMPLE_AVATARS` | tắt | đặt `1` để chỉ dùng avatar mẫu khi thử hoặc quay demo |
 | `OLLAMA_URL`, `LMSTUDIO_URL` | cổng mặc định | máy chủ mô hình |
 | `WHISPER_BIN`, `WHISPER_MODEL`, `WHISPER_PORT` | `vendor/…`, `models/ggml-small.bin`, `8178` | whisper.cpp |
 | `FFMPEG_PATH`, `FFPROBE_PATH` | tự tìm trong thư mục cài phổ biến hoặc PATH | công cụ âm thanh |
@@ -109,9 +126,9 @@ của người đã đồng ý.
 Repo **không** chứa nội dung sách. Để lịch học đi theo đúng bài của
 《体验汉语口语》, tự gõ mục lục (tên bài, số trang, chủ đề) vào
 `data/syllabus/tiyan-hanyu-kouyu.json` theo mẫu [docs/syllabus.example.json](docs/syllabus.example.json).
-Chưa có file này thì Misu dùng các chủ đề đời thường tạm thời và ghi rõ điều đó
-trên màn hình. Từ vựng, hội thoại, bài tập của mỗi buổi do mô hình cục bộ tự
-soạn.
+Chưa có file này thì Misu dùng hai lộ trình HSK 1/HSK 5 cố định trong
+`lessons/courses/`. Với mục lục riêng không có bài cố định, model cục bộ tự
+soạn nội dung. App không thay đổi mục lục riêng đã có.
 
 ## Độ chính xác: đo được bao nhiêu
 
@@ -174,3 +191,49 @@ riêng, trong đó avatar `brunette.glb` chỉ dùng phi thương mại. Xem
 ## Đóng góp
 
 Xem [CONTRIBUTING.md](CONTRIBUTING.md). Bài AI soạn chưa duyệt ở [lessons/](lessons/).
+
+### Thu bộ đo giọng thật
+
+Trong **Kiểm tra → Ghi bộ đo giọng cá nhân**, đọc 40 chữ và 16 từ, nghe lại,
+điền tên người gắn nhãn và chọn tự đánh giá hoặc người giỏi nghe. Có thể gắn
+thanh thực sự nghe được cho từng chữ; `0` nghĩa là không rõ. Ghi lại sẽ xoá
+nhãn cũ của mục đó để tránh dùng nhãn cho nhầm audio. Bản ghi ở
+`$XIAOYA_DATA_DIR/eval-recordings/<learner>/`, mặc định dưới `data/` đã được Git bỏ qua.
+
+```sh
+npm run eval:tones -- --recordings=data/eval-recordings/<learner>
+```
+
+Lệnh chạy trực tiếp trên máy, cần ffmpeg; không cần Ollama hay mạng.
+`eval/results/` chỉ nhận số tổng hợp, không có audio, tên người gắn nhãn hoặc
+đường dẫn hồ sơ. Ma trận so với nhãn người nghe, tách tự đánh giá/người nghe
+khác; khoảng giọng được lấy từ cùng bộ ghi nên chưa phải kiểm định độc lập.
+**Chưa có bộ giọng thật được gắn nhãn. Chưa chỉnh ngưỡng thanh điệu.**
+Không có số trước/sau mới để báo cáo; các số TTS bên trên vẫn là mốc tham khảo.
+
+### Kiểm tra bản cài sạch và máy macOS khác
+
+```sh
+bash scripts/smoke-test.sh
+# Bắt buộc tạo được giọng đọc, nếu máy có đủ TTS:
+SMOKE_REQUIRE_TTS=1 bash scripts/smoke-test.sh
+```
+
+Script clone bản **đã commit** vào thư mục tạm, `npm ci`, build, chạy bằng avatar
+mẫu và dữ liệu tạm, kiểm tra status, mục lục, hai avatar và TTS rồi dọn sạch.
+Mặc định dùng cổng 8791; dừng server thử cũ trước, hoặc đặt `SMOKE_PORT`.
+Linux CI không cần Ollama. Nếu TTS không khả dụng, lượt thường xác nhận
+phản hồi lỗi và báo rõ chưa xác minh tạo audio; lượt `SMOKE_REQUIRE_TTS=1` thất bại.
+
+**Chưa thử trên máy macOS thứ hai.** Khi bạn có máy khác: cài Node 24 và Git,
+clone repo, chạy script trên; sau đó `npm ci`, `npm run build`, chạy
+`XIAOYA_SAMPLE_AVATARS=1 XIAOYA_DATA_DIR=/tmp/misu-test npm start`.
+Mở app, tạo người học thử, vào HSK 1/HSK 5 và kiểm tra nghe; cài Whisper nếu
+muốn thử thu âm/chấm thanh. Ghi lại phiên bản macOS, Node, CPU, lệnh chạy,
+kết quả và lỗi vào `docs/IMPLEMENTED-next-2.md`. Đây là hướng dẫn cần thử,
+không phải biên bản đã thử thành công.
+
+- Thiếu **ffmpeg**: cài `brew install ffmpeg`, hoặc đặt `FFMPEG_PATH` và `FFPROBE_PATH` tới binary thật.
+- Thiếu **cmake** khi cài Whisper: `brew install cmake`, rồi chạy lại `npm run setup:whisper`.
+- **Ollama chưa chạy**: mở Ollama, tải model và kiểm tra `ollama list`; bài tự soạn vẫn mở được khi chưa có model.
+- **Micro bị chặn**: cho phép micro trong quyền của trình duyệt và macOS; dùng localhost, kiểm tra thiết bị đầu vào. Không đổi ngưỡng để che lỗi thu âm.

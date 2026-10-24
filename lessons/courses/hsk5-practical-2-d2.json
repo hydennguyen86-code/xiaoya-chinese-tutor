@@ -1,0 +1,183 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 2,
+  "lessonTitle": "Nghe yêu cầu và xác nhận đầu việc",
+  "day": 2,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "需求",
+      "meaning": "nhu cầu; yêu cầu",
+      "example": "我们需要先确认客户需求。",
+      "exampleVi": "Chúng ta cần xác nhận yêu cầu của khách trước.",
+      "pinyin": "xū qiú",
+      "examplePinyin": "wǒ men xū yào xiān què rèn kè hù xū qiú 。"
+    },
+    {
+      "word": "确认",
+      "meaning": "xác nhận",
+      "example": "我再确认一下交货时间。",
+      "exampleVi": "Tôi xác nhận lại thời gian giao hàng.",
+      "pinyin": "què rèn",
+      "examplePinyin": "wǒ zài què rèn yí xià jiāo huò shí jiān 。"
+    },
+    {
+      "word": "范围",
+      "meaning": "phạm vi",
+      "example": "这项任务的范围是什么？",
+      "exampleVi": "Phạm vi của nhiệm vụ này là gì?",
+      "pinyin": "fàn wéi",
+      "examplePinyin": "zhè xiàng rèn wu de fàn wéi shì shén me ？"
+    },
+    {
+      "word": "优先",
+      "meaning": "ưu tiên",
+      "example": "请优先处理紧急问题。",
+      "exampleVi": "Xin ưu tiên xử lý vấn đề khẩn cấp.",
+      "pinyin": "yōu xiān",
+      "examplePinyin": "qǐng yōu xiān chǔ lǐ jǐn jí wèn tí 。"
+    },
+    {
+      "word": "避免",
+      "meaning": "tránh",
+      "example": "这样可以避免重复工作。",
+      "exampleVi": "Cách này có thể tránh làm việc trùng lặp.",
+      "pinyin": "bì miǎn",
+      "examplePinyin": "zhè yàng kě yǐ bì miǎn chóng fù gōng zuò 。"
+    },
+    {
+      "word": "细节",
+      "meaning": "chi tiết",
+      "example": "我们还需要讨论几个细节。",
+      "exampleVi": "Chúng ta còn cần bàn một vài chi tiết.",
+      "pinyin": "xì jié",
+      "examplePinyin": "wǒ men hái xū yào tǎo lùn jǐ gè xì jié 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你的意思是……，对吗？",
+      "explanation": "Diễn đạt lại yêu cầu để xác nhận; không coi suy đoán của mình là điều người kia đã đồng ý.",
+      "example": "你的意思是先做中文版本，对吗？",
+      "exampleVi": "Ý bạn là làm bản tiếng Trung trước, đúng không?",
+      "examplePinyin": "nǐ de yì sī shì xiān zuò zhōng wén bǎn běn ， duì ma ？"
+    },
+    {
+      "pattern": "在……之前，先……",
+      "explanation": "Nêu điều kiện/việc cần làm trước một mốc.",
+      "example": "在开始设计之前，先确认内容。",
+      "exampleVi": "Trước khi bắt đầu thiết kế, hãy xác nhận nội dung.",
+      "examplePinyin": "zài kāi shǐ shè jì zhī qián ， xiān què rèn nèi róng 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 1 trang hoạt động; buổi 2 chuẩn bị tài liệu đào tạo. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người giao việc",
+    "learnerRole": "Người nhận việc",
+    "goals": [
+      "Hỏi hai chi tiết chưa rõ",
+      "Đọc lại phạm vi và thời hạn để xin xác nhận"
+    ],
+    "opening": "这项任务你打算怎么做？有哪些需要先确认的地方？",
+    "openingVi": "Bạn định thực hiện nhiệm vụ này thế nào? Có những điểm nào cần xác nhận trước?"
+  },
+  "freeTalk": {
+    "question": "遇到要求不清楚的任务，你会先行动还是先提问？为什么？",
+    "questionVi": "Gặp nhiệm vụ chưa rõ yêu cầu, bạn sẽ làm trước hay hỏi trước? Vì sao?"
+  },
+  "learningNotes": [
+    "Tách điều được nói rõ khỏi suy luận. Ghi ba cột: phải làm, chưa làm, cần hỏi."
+  ],
+  "prerequisites": [
+    1
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Nghe yêu cầu và xác nhận đầu việc",
+    "playLimit": 1,
+    "transcript": "同事：能帮我整理培训资料吗？员工：可以，明天就要吗？同事：不是明天上课，是明天先给主管看目录。员工：那我先整理目录，不做完整讲义。还需要什么？同事：把每部分的学习目标写上就行，案例下周再补。员工：明白，明天下午发目录和目标，案例暂时不加。",
+    "translation": "Đồng nghiệp nhờ chuẩn bị tài liệu đào tạo. Ngày mai chỉ cần đưa mục lục và mục tiêu học cho quản lý xem; giáo án đầy đủ và ví dụ chưa cần. Nhân viên xác nhận sẽ gửi chiều mai.",
+    "questions": [
+      {
+        "prompt": "Ngày mai cần giao gì?",
+        "options": [
+          "Toàn bộ giáo án",
+          "Mục lục và mục tiêu",
+          "Bài kiểm tra cuối khóa"
+        ],
+        "answer": 1,
+        "explanation": "Yêu cầu là 目录 và 学习目标."
+      },
+      {
+        "prompt": "Ví dụ bổ sung khi nào?",
+        "options": [
+          "Ngay hôm nay",
+          "Không cần nữa",
+          "Tuần sau"
+        ],
+        "answer": 2,
+        "explanation": "Đồng nghiệp nói 案例下周再补."
+      },
+      {
+        "prompt": "Hiểu nhầm ban đầu là gì?",
+        "options": [
+          "Nghĩ ngày mai đã có lớp",
+          "Nghĩ không cần mục lục",
+          "Nghĩ phải dịch tiếng Anh"
+        ],
+        "answer": 0,
+        "explanation": "Nhân viên ban đầu hỏi ngày mai đã cần toàn bộ tài liệu hay chưa."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Đồng nghiệp nhờ chuẩn bị tài liệu đào tạo. Ngày mai chỉ cần đưa mục lục và mục tiêu học cho quản lý xem; giáo án đầy đủ và ví dụ chưa cần. Nhân viên xác nhận sẽ gửi chiều mai.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "我们需要先确认客户需求。 我再确认一下交货时间。 这项任务的范围是什么？ 请优先处理紧急问题。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "遇到要求不清楚的任务，你会先行动还是先提问？为什么？",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "遇到要求不清楚的任务，我会先确认最重要的目标、时间和范围，而不是把所有细节都问完才开始。如果任务容易修改，可以先做一个简单版本，请对方看看。但涉及较大费用或重要承诺时，就应该先取得明确确认。这样既能避免重复工作，也不会因为一直等待而完全没有进展。",
+      "sampleVi": "Với nhiệm vụ chưa rõ, tôi xác nhận mục tiêu, thời gian và phạm vi quan trọng trước, không đợi hỏi hết mọi chi tiết. Nếu dễ sửa, có thể làm bản đơn giản để xin phản hồi. Nhưng khi liên quan khoản phí lớn hoặc cam kết quan trọng thì cần xác nhận rõ trước. Cách này vừa tránh làm lại vừa không chờ vô hạn."
+    }
+  ],
+  "transferTask": "Buổi 1 trang hoạt động; buổi 2 chuẩn bị tài liệu đào tạo."
+}

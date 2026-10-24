@@ -13,7 +13,10 @@
     "test": "node --test server/*.test.mjs src/lib/*.test.ts",
     "eval:corrections": "node eval/corrections.mjs",
     "eval:tones": "node eval/tones.mjs",
-    "setup:whisper": "bash scripts/setup-whisper.sh"
+    "setup:whisper": "bash scripts/setup-whisper.sh",
+    "format": "node scripts/format.mjs",
+    "format:check": "node scripts/format.mjs --check",
+    "check:assets": "node scripts/check-public-assets.mjs"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",
@@ -32,6 +35,7 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "concurrently": "^10.0.6",
+    "prettier": "^3.9.10",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
   }

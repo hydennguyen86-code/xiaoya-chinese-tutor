@@ -1,0 +1,164 @@
+{
+  "volumeId": "hsk1-practical",
+  "volumeTitle": "HSK 1 · Nghe nói thực tế",
+  "lessonNo": 6,
+  "lessonTitle": "Gọi nước và nói sở thích",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "水",
+      "meaning": "nước",
+      "example": "我想喝水。",
+      "exampleVi": "Tôi muốn uống nước.",
+      "pinyin": "shuǐ",
+      "examplePinyin": "wǒ xiǎng hē shuǐ 。"
+    },
+    {
+      "word": "茶",
+      "meaning": "trà",
+      "example": "我要一杯茶。",
+      "exampleVi": "Tôi lấy một cốc trà.",
+      "pinyin": "chá",
+      "examplePinyin": "wǒ yào yì bēi chá 。"
+    },
+    {
+      "word": "咖啡",
+      "meaning": "cà phê",
+      "example": "我喜欢喝咖啡。",
+      "exampleVi": "Tôi thích uống cà phê.",
+      "pinyin": "kā fēi",
+      "examplePinyin": "wǒ xǐ huan hē kā fēi 。"
+    },
+    {
+      "word": "喝",
+      "meaning": "uống",
+      "example": "你想喝什么？",
+      "exampleVi": "Bạn muốn uống gì?",
+      "pinyin": "hē",
+      "examplePinyin": "nǐ xiǎng hē shén me ？"
+    },
+    {
+      "word": "杯",
+      "meaning": "cốc; lượng từ cho đồ uống",
+      "example": "我要两杯水。",
+      "exampleVi": "Tôi lấy hai cốc nước.",
+      "pinyin": "bēi",
+      "examplePinyin": "wǒ yào liǎng bēi shuǐ 。"
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "这杯茶很热。",
+      "exampleVi": "Cốc trà này rất nóng.",
+      "pinyin": "rè",
+      "examplePinyin": "zhè bēi chá hěn rè 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……杯……",
+      "explanation": "Gọi số lượng đồ uống; dùng 一杯 hoặc 两杯.",
+      "example": "我要一杯热茶。",
+      "exampleVi": "Tôi lấy một cốc trà nóng.",
+      "examplePinyin": "wǒ yào yì bēi rè chá 。"
+    },
+    {
+      "pattern": "请不要加……",
+      "explanation": "Yêu cầu không thêm một thứ; học như cụm gọi đồ uống.",
+      "example": "请不要加糖。",
+      "exampleVi": "Xin đừng thêm đường.",
+      "examplePinyin": "qǐng bú yào jiā táng 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Nhân viên đồ uống",
+    "learnerRole": "Khách gọi nước",
+    "goals": [
+      "Gọi đồ uống kèm số lượng",
+      "Nói một yêu cầu về đường hoặc đá"
+    ],
+    "opening": "你好，你想喝什么？",
+    "openingVi": "Chào bạn, bạn muốn uống gì?"
+  },
+  "freeTalk": {
+    "question": "请点一杯饮料，再说一个要求。",
+    "questionVi": "Xin gọi một đồ uống rồi đưa ra một yêu cầu."
+  },
+  "learningNotes": [
+    "Bổ trợ: 糖 táng — đường; 冰 bīng — đá; 加 jiā — thêm; 不要 bú yào — không muốn/đừng.",
+    "Câu thứ hai buổi 2 luyện nghe phân biệt từng cốc, không chỉ nhận ra từ cà phê."
+  ],
+  "prerequisites": [
+    2,
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Gọi nước và nói sở thích",
+    "playLimit": 2,
+    "transcript": "甲：你想喝什么？乙：我要一杯热茶。甲：要加糖吗？乙：请不要加糖。",
+    "translation": "A: Bạn muốn uống gì? B: Tôi lấy một cốc trà nóng. A: Có thêm đường không? B: Xin đừng thêm đường.",
+    "questions": [
+      {
+        "prompt": "B gọi gì?",
+        "options": [
+          "Cà phê",
+          "Trà nóng",
+          "Nước lạnh"
+        ],
+        "answer": 1,
+        "explanation": "B nói 一杯热茶."
+      },
+      {
+        "prompt": "B muốn thêm đường?",
+        "options": [
+          "Không nói",
+          "Có",
+          "Không"
+        ],
+        "answer": 2,
+        "explanation": "B yêu cầu 请不要加糖."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ xiǎng hē shén me ？ yǐ ： wǒ yào yì bēi rè chá 。 jiǎ ： yào jiā táng ma ？ yǐ ： qǐng bú yào jiā táng 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想喝水。 我要一杯茶。",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想喝水。 我要一杯茶。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "请点一杯饮料，再说一个要求。",
+      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đúng việc được yêu cầu",
+        "Dùng ít nhất một mẫu của bài",
+        "Người nghe hiểu được thông tin chính"
+      ],
+      "sampleZh": "我要一杯热茶。请不要加糖。谢谢。",
+      "sampleVi": "Tôi lấy một cốc trà nóng. Xin đừng thêm đường. Cảm ơn."
+    }
+  ],
+  "transferTask": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người."
+}

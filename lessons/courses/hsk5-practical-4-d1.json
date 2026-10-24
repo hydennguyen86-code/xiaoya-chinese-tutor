@@ -1,0 +1,184 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 4,
+  "lessonTitle": "Họp nhóm và bất đồng có lý do",
+  "day": 1,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "建议",
+      "meaning": "đề nghị; đề xuất",
+      "example": "我建议先做一个小规模测试。",
+      "exampleVi": "Tôi đề xuất thử ở quy mô nhỏ trước.",
+      "pinyin": "jiàn yì",
+      "examplePinyin": "wǒ jiàn yì xiān zuò yí gè xiǎo guī mó cè shì 。"
+    },
+    {
+      "word": "方案",
+      "meaning": "phương án",
+      "example": "这个方案比较容易执行。",
+      "exampleVi": "Phương án này tương đối dễ thực hiện.",
+      "pinyin": "fāng àn",
+      "examplePinyin": "zhè ge fāng àn bǐ jiào róng yì zhí xíng 。"
+    },
+    {
+      "word": "成本",
+      "meaning": "chi phí",
+      "example": "我们还没有计算维护成本。",
+      "exampleVi": "Chúng ta chưa tính chi phí bảo trì.",
+      "pinyin": "chéng běn",
+      "examplePinyin": "wǒ men hái méi yǒu jì suàn wéi hù chéng běn 。"
+    },
+    {
+      "word": "效果",
+      "meaning": "hiệu quả; kết quả tác động",
+      "example": "我们需要观察实际效果。",
+      "exampleVi": "Chúng ta cần quan sát hiệu quả thực tế.",
+      "pinyin": "xiào guǒ",
+      "examplePinyin": "wǒ men xū yào guān chá shí jì xiào guǒ 。"
+    },
+    {
+      "word": "保留",
+      "meaning": "giữ lại; bảo lưu",
+      "example": "我对这个结论仍有保留。",
+      "exampleVi": "Tôi vẫn còn bảo lưu về kết luận này.",
+      "pinyin": "bǎo liú",
+      "examplePinyin": "wǒ duì zhè ge jié lùn réng yǒu bǎo liú 。"
+    },
+    {
+      "word": "执行",
+      "meaning": "thực hiện; thi hành",
+      "example": "决定以后要有人负责执行。",
+      "exampleVi": "Sau khi quyết định cần có người chịu trách nhiệm thực hiện.",
+      "pinyin": "zhí xíng",
+      "examplePinyin": "jué dìng yǐ hòu yào yǒu rén fù zé zhí xíng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我理解……，不过……",
+      "explanation": "Thừa nhận một điểm hợp lý rồi nêu giới hạn hoặc bằng chứng khác.",
+      "example": "我理解节省成本很重要，不过也要考虑维护费用。",
+      "exampleVi": "Tôi hiểu tiết kiệm chi phí rất quan trọng, nhưng cũng phải tính phí bảo trì.",
+      "examplePinyin": "wǒ lǐ jiě jié shěng chéng běn hěn zhòng yào ， bú guò yě yào kǎo lǜ wéi hù fèi yòng 。"
+    },
+    {
+      "pattern": "与其……不如……",
+      "explanation": "Đề nghị chọn cách phù hợp hơn giữa hai khả năng.",
+      "example": "与其马上全面推广，不如先小范围测试。",
+      "exampleVi": "Thay vì triển khai toàn diện ngay, nên thử trong phạm vi nhỏ trước.",
+      "examplePinyin": "yǔ qí mǎ shàng quán miàn tuī guǎng ， bù rú xiān xiǎo fàn wéi cè shì 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Chọn hệ thống; buổi 2 đánh giá một hoạt động cộng đồng. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người đề xuất phương án",
+    "learnerRole": "Người phản biện và đề xuất",
+    "goals": [
+      "Nêu bất đồng lịch sự kèm một lý do",
+      "Đề xuất cách kiểm chứng và tiêu chí quyết định"
+    ],
+    "opening": "你对这个方案有什么看法？请提出一个具体建议。",
+    "openingVi": "Bạn có ý kiến gì về phương án này? Xin đưa ra một đề xuất cụ thể."
+  },
+  "freeTalk": {
+    "question": "做决定时，数字越多就越可靠吗？请举例说明。",
+    "questionVi": "Khi quyết định, càng nhiều số liệu có nhất thiết càng đáng tin không? Xin lấy ví dụ."
+  },
+  "learningNotes": [
+    "Tóm tắt ai đề xuất gì, ai phản biện bằng chứng nào, nhóm chốt việc gì."
+  ],
+  "prerequisites": [
+    2,
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Họp nhóm và bất đồng có lý do",
+    "playLimit": 1,
+    "transcript": "经理：新系统每月能省一千元，我们下周全部换掉吧。员工：我理解节省费用的考虑，不过报价不包括培训和维护。另一位同事：旧系统下个月才到期，可以先让一个部门试用两周。经理：好，先比较总成本和出错率，两周后再决定，不把省一千元当作唯一标准。",
+    "translation": "Quản lý muốn đổi toàn bộ hệ thống vì tiết kiệm một nghìn mỗi tháng. Nhân viên nhắc thiếu phí đào tạo/bảo trì. Nhóm quyết định thử một bộ phận hai tuần, so tổng chi phí và tỷ lệ lỗi rồi mới quyết định.",
+    "questions": [
+      {
+        "prompt": "Vấn đề trong lập luận ban đầu?",
+        "options": [
+          "Không muốn thay đổi",
+          "Không có hệ thống cũ",
+          "Chỉ nhìn một khoản tiết kiệm"
+        ],
+        "answer": 2,
+        "explanation": "Báo giá thiếu chi phí đào tạo và bảo trì."
+      },
+      {
+        "prompt": "Quyết định cuối cùng?",
+        "options": [
+          "Thử một bộ phận hai tuần",
+          "Giữ cũ vĩnh viễn",
+          "Đổi hết tuần sau"
+        ],
+        "answer": 0,
+        "explanation": "Nhóm chọn thử nghiệm có thời hạn."
+      },
+      {
+        "prompt": "Nhóm sẽ so những gì?",
+        "options": [
+          "Chỉ số nhân viên",
+          "Tổng chi phí và tỷ lệ lỗi",
+          "Chỉ phí tháng"
+        ],
+        "answer": 1,
+        "explanation": "Câu cuối nêu 总成本和出错率."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Quản lý muốn đổi toàn bộ hệ thống vì tiết kiệm một nghìn mỗi tháng. Nhân viên nhắc thiếu phí đào tạo/bảo trì. Nhóm quyết định thử một bộ phận hai tuần, so tổng chi phí và tỷ lệ lỗi rồi mới quyết định.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "我建议先做一个小规模测试。 这个方案比较容易执行。 我们还没有计算维护成本。 我们需要观察实际效果。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "做决定时，数字越多就越可靠吗？请举例说明。",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "数字多并不一定说明结论可靠。首先要看数据从哪里来，统计对象和条件是否一致。比如免费活动和收费活动的参加人数不能直接比较。其次，还要明确我们想解决什么问题，避免收集很多无关数字。当然，信息太少也可能误判，所以关键不是越多越好，而是数据是否合适、解释是否有依据。",
+      "sampleVi": "Nhiều số liệu chưa chắc làm kết luận đáng tin. Cần xét nguồn, đối tượng và điều kiện thống kê. Ví dụ không thể so trực tiếp số người dự hoạt động miễn phí và có phí. Cần xác định vấn đề để tránh gom số liệu không liên quan. Quá ít thông tin cũng dễ sai, nên quan trọng là dữ liệu phù hợp và cách giải thích có căn cứ."
+    }
+  ],
+  "transferTask": "Chọn hệ thống; buổi 2 đánh giá một hoạt động cộng đồng."
+}

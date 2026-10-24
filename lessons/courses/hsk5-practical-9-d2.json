@@ -1,0 +1,184 @@
+{
+  "volumeId": "hsk5-practical",
+  "volumeTitle": "HSK 5 · Nghe nói thực tế",
+  "lessonNo": 9,
+  "lessonTitle": "Nghe tin và phân biệt sự kiện với suy luận",
+  "day": 2,
+  "days": 2,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 30,
+  "vocab": [
+    {
+      "word": "消息",
+      "meaning": "tin; thông tin",
+      "example": "这条消息还需要核实。",
+      "exampleVi": "Thông tin này còn cần xác minh.",
+      "pinyin": "xiāo xī",
+      "examplePinyin": "zhè tiáo xiāo xī hái xū yào hé shí 。"
+    },
+    {
+      "word": "来源",
+      "meaning": "nguồn",
+      "example": "请说明消息的来源。",
+      "exampleVi": "Xin nêu nguồn của thông tin.",
+      "pinyin": "lái yuán",
+      "examplePinyin": "qǐng shuō míng xiāo xī de lái yuán 。"
+    },
+    {
+      "word": "证据",
+      "meaning": "bằng chứng",
+      "example": "目前没有足够的证据。",
+      "exampleVi": "Hiện chưa có đủ bằng chứng.",
+      "pinyin": "zhèng jù",
+      "examplePinyin": "mù qián méi yǒu zú gòu de zhèng jù 。"
+    },
+    {
+      "word": "结论",
+      "meaning": "kết luận",
+      "example": "不要急着下结论。",
+      "exampleVi": "Đừng vội kết luận.",
+      "pinyin": "jié lùn",
+      "examplePinyin": "bú yào jí zhe xià jié lùn 。"
+    },
+    {
+      "word": "调查",
+      "meaning": "khảo sát; điều tra",
+      "example": "这项调查只访问了一个社区。",
+      "exampleVi": "Khảo sát này chỉ phỏng vấn một khu dân cư.",
+      "pinyin": "diào chá",
+      "examplePinyin": "zhè xiàng diào chá zhī fǎng wèn le yí gè shè qū 。"
+    },
+    {
+      "word": "代表",
+      "meaning": "đại diện",
+      "example": "这些意见不能代表所有人。",
+      "exampleVi": "Những ý kiến này không thể đại diện cho tất cả mọi người.",
+      "pinyin": "dài biǎo",
+      "examplePinyin": "zhè xiē yì jiàn bù néng dài biǎo suǒ yǒu rén 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "根据……，只能说……，不能说……",
+      "explanation": "Giới hạn kết luận trong phạm vi dữ liệu.",
+      "example": "根据这次调查，只能说部分居民支持，不能说全市居民都支持。",
+      "exampleVi": "Theo khảo sát này chỉ có thể nói một bộ phận cư dân ủng hộ, không thể nói toàn thành phố đều ủng hộ.",
+      "examplePinyin": "gēn jù zhè cì diào chá ， zhǐ néng shuō bù fen jū mín zhī chí ， bù néng shuō quán shì jū mín dōu zhī chí 。"
+    },
+    {
+      "pattern": "目前还不能确定……",
+      "explanation": "Nêu điều chưa biết thay vì suy đoán như sự thật.",
+      "example": "目前还不能确定变化的原因。",
+      "exampleVi": "Hiện chưa xác định được nguyên nhân thay đổi.",
+      "examplePinyin": "mù qián hái bù néng què dìng biàn huà de yuán yīn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Bản tin khảo sát; buổi 2 trao đổi số liệu cửa hàng. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "avatarRole": "Người đưa ra kết luận",
+    "learnerRole": "Người kiểm chứng thông tin",
+    "goals": [
+      "Tóm tắt sự kiện chính mà không thêm suy đoán",
+      "Nêu một giới hạn của bằng chứng",
+      "Đề xuất thông tin cần kiểm chứng"
+    ],
+    "opening": "你听完这条消息以后，哪些是事实，哪些还不能确定？",
+    "openingVi": "Sau khi nghe tin này, điều nào là sự thật, điều nào chưa thể xác định?"
+  },
+  "freeTalk": {
+    "question": "听到一个很有吸引力的结论时，你会怎样核实？",
+    "questionVi": "Nghe một kết luận rất hấp dẫn, bạn sẽ xác minh thế nào?"
+  },
+  "learningNotes": [
+    "Mọi khảo sát và số liệu trong bài đều tự soạn, không phải tin tức thật."
+  ],
+  "prerequisites": [
+    4
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Nghe tin và phân biệt sự kiện với suy luận",
+    "playLimit": 1,
+    "transcript": "同事：这家店换了招牌以后，顾客多了，说明新招牌很有效。员工：也可能跟旁边地铁站刚开放有关，还要比较不同时间的数据。同事：那是不是招牌完全没用？员工：也不能这样说。目前只是不能确定影响各占多少，可以继续记录客流和顾客从哪里得知这家店。",
+    "translation": "Sau đổi biển hiệu, khách tăng; nhưng ga tàu cạnh đó cũng vừa mở. Chưa xác định đóng góp của từng yếu tố, không có nghĩa biển hiệu hoàn toàn vô ích. Có thể tiếp tục ghi lưu lượng và cách khách biết cửa hàng.",
+    "questions": [
+      {
+        "prompt": "Yếu tố khác cần xét?",
+        "options": [
+          "Giá thuê đã giảm",
+          "Nhân viên nghỉ việc",
+          "Ga tàu mới mở"
+        ],
+        "answer": 2,
+        "explanation": "Đoạn nghe nhắc 地铁站刚开放."
+      },
+      {
+        "prompt": "Người nói khẳng định biển hiệu vô dụng?",
+        "options": [
+          "Không",
+          "Không nhắc biển",
+          "Có"
+        ],
+        "answer": 0,
+        "explanation": "Người nói bác cả suy luận cực đoan thứ hai."
+      },
+      {
+        "prompt": "Nên thu thêm dữ liệu gì?",
+        "options": [
+          "Chỉ tên cửa hàng",
+          "Lưu lượng và nguồn khách biết cửa hàng",
+          "Màu áo khách"
+        ],
+        "answer": 1,
+        "explanation": "Câu cuối nêu 客流 và 从哪里得知."
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn của buổi này rồi kể lại: ai muốn gì, giới hạn nào quan trọng, quyết định hoặc kết quả là gì. Không tự thêm chi tiết.",
+      "prepareSeconds": 45,
+      "responseSeconds": 90,
+      "reference": "Sau đổi biển hiệu, khách tăng; nhưng ga tàu cạnh đó cũng vừa mở. Chưa xác định đóng góp của từng yếu tố, không có nghĩa biển hiệu hoàn toàn vô ích. Có thể tiếp tục ghi lưu lượng và cách khách biết cửa hàng.",
+      "checklist": [
+        "Giữ đúng thông tin trọng tâm",
+        "Người nghe hiểu được ý",
+        "Không nhìn câu mẫu khi thử lại"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
+      "text": "这条消息还需要核实。 请说明消息的来源。 目前没有足够的证据。 不要急着下结论。",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "听到一个很有吸引力的结论时，你会怎样核实？",
+      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prepareSeconds": 45,
+      "responseSeconds": 120,
+      "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
+      "checklist": [
+        "Trả lời đúng câu hỏi, nêu rõ quan điểm",
+        "Có lý do và ví dụ cụ thể",
+        "Nêu một giới hạn hoặc phản biện, rồi kết luận"
+      ],
+      "sampleZh": "听到很吸引人的结论时，我会先确认原话和来源，再看有什么证据。尤其要区分调查发现、个人经验和推测。如果只访问一个社区，就不能轻易代表所有人。当然，我也不会因为信息不完整就认定它是假的。更合理的做法是说明哪些已经知道、哪些还不确定，并继续寻找能够比较的资料。",
+      "sampleVi": "Khi nghe kết luận hấp dẫn tôi xác nhận nguyên lời và nguồn rồi xem bằng chứng. Cần phân biệt phát hiện khảo sát, trải nghiệm và suy đoán. Một cộng đồng không tự động đại diện mọi người. Nhưng thông tin chưa đầy đủ cũng không đồng nghĩa là giả. Hợp lý hơn là nói điều đã biết, điều chưa chắc và tiếp tục tìm tài liệu có thể đối chiếu."
+    }
+  ],
+  "transferTask": "Bản tin khảo sát; buổi 2 trao đổi số liệu cửa hàng."
+}

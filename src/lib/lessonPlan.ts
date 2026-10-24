@@ -10,6 +10,8 @@ export interface SyllabusLesson {
 }
 
 export interface SyllabusVolume {
+  authored?: boolean;
+  targetLevel?: string;
   id: string;
   title: string;
   levels: string[];
@@ -20,6 +22,7 @@ export interface Syllabus {
   book: string;
   volumes: SyllabusVolume[];
   placeholder?: boolean;
+  authored?: boolean;
   warning?: string;
 }
 
@@ -126,6 +129,7 @@ export function nextPointer(syllabus: Syllabus, pointer: Pointer): Pointer | nul
   if (pointer.day < volume.lessons[lIndex].days) return { ...pointer, day: pointer.day + 1 };
   const nextLesson = volume.lessons[lIndex + 1];
   if (nextLesson) return { volumeId: volume.id, lessonNo: nextLesson.no, day: 1 };
+  if (volume.authored) return null; // Independent courses: never jump from HSK 1 straight to HSK 5.
   const nextVolume = syllabus.volumes[vIndex + 1];
   if (nextVolume?.lessons.length) return { volumeId: nextVolume.id, lessonNo: nextVolume.lessons[0].no, day: 1 };
   return null;
@@ -174,7 +178,13 @@ export function emptyStats(): SessionStats {
   return { reviewed: 0, remembered: 0, newWords: 0, sentences: 0, corrections: 0, turns: 0 };
 }
 
-export function beginSession(progress: LessonProgress | null, syllabus: Syllabus, level: string, pointer: Pointer, today: string): LessonProgress {
+export function beginSession(
+  progress: LessonProgress | null,
+  syllabus: Syllabus,
+  level: string,
+  pointer: Pointer,
+  today: string,
+): LessonProgress {
   const base = progress ?? (initialProgress(syllabus, level) as LessonProgress);
   return {
     ...base,
@@ -195,11 +205,7 @@ export function completeSession(progress: LessonProgress, syllabus: Syllabus, to
   const pointer: Pointer = { volumeId: done.volumeId, lessonNo: done.lessonNo, day: done.day };
   const next = nextPointer(syllabus, pointer);
   const streak =
-    progress.lastCompletedDate === today
-      ? progress.streak
-      : progress.lastCompletedDate === previousDay(today)
-        ? progress.streak + 1
-        : 1;
+    progress.lastCompletedDate === today ? progress.streak : progress.lastCompletedDate === previousDay(today) ? progress.streak + 1 : 1;
   return {
     ...progress,
     ...(next ?? pointer),

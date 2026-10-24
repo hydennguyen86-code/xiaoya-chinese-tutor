@@ -11,8 +11,13 @@ npm run build
 Chạy server thử với dữ liệu riêng, không dùng hồ sơ thật:
 
 ```sh
-PORT=8791 XIAOYA_DATA_DIR=/tmp/misu-test node server/index.mjs
+PORT=8791 XIAOYA_DATA_DIR=/tmp/misu-test XIAOYA_SAMPLE_AVATARS=1 node server/index.mjs
 ```
+
+Khi chụp màn hình hoặc quay demo, bắt buộc đặt `XIAOYA_SAMPLE_AVATARS=1`.
+Server chỉ chọn `brunette.glb` (avatar đeo kính) hoặc `lam-sample.zip`.
+Dùng hồ sơ giả, kiểm tra từng khung hình trước khi thêm vào `docs/media/`.
+Chạy `node scripts/check-public-assets.mjs`; kiểm tra tự động không thay thế việc xem ảnh.
 
 ## Đóng góp bài học
 
