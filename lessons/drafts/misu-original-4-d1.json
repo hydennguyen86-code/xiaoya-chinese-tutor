@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 4,
+  "lessonTitle": "Gọi đồ uống",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "水",
+      "meaning": "nước",
+      "example": "我想喝水。",
+      "exampleVi": "Tôi muốn uống nước."
+    },
+    {
+      "word": "茶",
+      "meaning": "trà",
+      "example": "这杯茶很好喝。",
+      "exampleVi": "Cốc trà này ngon."
+    },
+    {
+      "word": "咖啡",
+      "meaning": "cà phê",
+      "example": "我要一杯咖啡。",
+      "exampleVi": "Tôi lấy một cốc cà phê."
+    },
+    {
+      "word": "牛奶",
+      "meaning": "sữa",
+      "example": "我每天喝牛奶。",
+      "exampleVi": "Tôi uống sữa hằng ngày."
+    },
+    {
+      "word": "糖",
+      "meaning": "đường",
+      "example": "请少放糖。",
+      "exampleVi": "Xin cho ít đường."
+    },
+    {
+      "word": "冰",
+      "meaning": "đá",
+      "example": "请不要加冰。",
+      "exampleVi": "Xin đừng cho đá."
+    },
+    {
+      "word": "杯",
+      "meaning": "cốc",
+      "example": "我要一杯茶。",
+      "exampleVi": "Tôi lấy một cốc trà."
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "这杯水很热。",
+      "exampleVi": "Cốc nước này rất nóng."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……",
+      "explanation": "Nói món mình muốn gọi.",
+      "example": "我要一杯热茶。",
+      "exampleVi": "Tôi lấy một cốc trà nóng."
+    }
+  ],
+  "roleplay": {
+    "setting": "Gọi đồ uống trong một tình huống đời thường",
+    "avatarRole": "Nhân viên quán",
+    "learnerRole": "Khách hàng",
+    "goals": [
+      "Gọi một đồ uống",
+      "Yêu cầu ít đường hoặc không đá"
+    ],
+    "opening": "你好，你想喝什么？",
+    "openingVi": "Chào bạn, bạn muốn uống gì?"
+  },
+  "freeTalk": {
+    "question": "你平时喜欢喝什么？为什么？",
+    "questionVi": "Bình thường bạn thích uống gì? Vì sao?"
+  }
+}

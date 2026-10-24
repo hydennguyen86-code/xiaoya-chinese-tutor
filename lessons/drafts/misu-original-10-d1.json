@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 10,
+  "lessonTitle": "Sinh hoạt hằng ngày",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "起床",
+      "meaning": "thức dậy",
+      "example": "我七点起床。",
+      "exampleVi": "Tôi thức dậy lúc bảy giờ."
+    },
+    {
+      "word": "吃饭",
+      "meaning": "ăn cơm",
+      "example": "我们一起吃饭。",
+      "exampleVi": "Chúng ta cùng ăn cơm."
+    },
+    {
+      "word": "上班",
+      "meaning": "đi làm",
+      "example": "我八点上班。",
+      "exampleVi": "Tôi đi làm lúc tám giờ."
+    },
+    {
+      "word": "下班",
+      "meaning": "tan làm",
+      "example": "我六点下班。",
+      "exampleVi": "Tôi tan làm lúc sáu giờ."
+    },
+    {
+      "word": "回家",
+      "meaning": "về nhà",
+      "example": "我下班后回家。",
+      "exampleVi": "Tôi về nhà sau khi tan làm."
+    },
+    {
+      "word": "睡觉",
+      "meaning": "ngủ",
+      "example": "我十点睡觉。",
+      "exampleVi": "Tôi ngủ lúc mười giờ."
+    },
+    {
+      "word": "每天",
+      "meaning": "hằng ngày",
+      "example": "我每天学习中文。",
+      "exampleVi": "Tôi học tiếng Trung hằng ngày."
+    },
+    {
+      "word": "学习",
+      "meaning": "học",
+      "example": "我晚上学习。",
+      "exampleVi": "Tôi học vào buổi tối."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我每天……",
+      "explanation": "Nói một thói quen hằng ngày.",
+      "example": "我每天七点起床。",
+      "exampleVi": "Tôi thức dậy lúc bảy giờ mỗi ngày."
+    }
+  ],
+  "roleplay": {
+    "setting": "Sinh hoạt hằng ngày trong một tình huống đời thường",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người kể lịch sinh hoạt",
+    "goals": [
+      "Nói giờ thức dậy",
+      "Kể thêm hai hoạt động trong ngày"
+    ],
+    "opening": "你每天几点起床？",
+    "openingVi": "Bạn thức dậy lúc mấy giờ mỗi ngày?"
+  },
+  "freeTalk": {
+    "question": "请说一说你每天做什么。",
+    "questionVi": "Hãy kể những việc bạn làm hằng ngày."
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "volumeId": "tam-so-cap",
+  "volumeTitle": "Sơ cấp (tạm)",
+  "lessonNo": 2,
+  "lessonTitle": "Chủ đề tạm: gia đình",
+  "pages": "",
+  "day": 1,
+  "days": 2,
+  "placeholder": true,
+  "level": "HSK1-2",
+  "generatedAt": 1792831522835,
+  "vocab": [
+    {
+      "word": "家人",
+      "meaning": "thân nhân, người trong gia đình",
+      "example": "我有很多家人。",
+      "exampleVi": "Tôi có nhiều thân nhân.",
+      "pinyin": "jiā rén",
+      "examplePinyin": "wǒ yǒu hěn duō jiā rén"
+    },
+    {
+      "word": "爸爸",
+      "meaning": "bố",
+      "example": "我的爸爸很高。",
+      "exampleVi": "Bố tôi cao lớn.",
+      "pinyin": "bà ba",
+      "examplePinyin": "wǒ de bà ba hěn gāo"
+    },
+    {
+      "word": "妈妈",
+      "meaning": "mẹ",
+      "example": "妈妈做饭很好吃。",
+      "exampleVi": "Mẹ nấu ăn rất ngon.",
+      "pinyin": "mā ma",
+      "examplePinyin": "mā ma zuò fàn hěn hǎo chī"
+    },
+    {
+      "word": "哥哥",
+      "meaning": "anh trai (em gái)",
+      "example": "我有一个哥哥。",
+      "exampleVi": "Tôi có một anh trai.",
+      "pinyin": "gē ge",
+      "examplePinyin": "wǒ yǒu yí gè gē ge"
+    },
+    {
+      "word": "姐姐",
+      "meaning": "chị gái (em trai)",
+      "example": "姐姐在读书。",
+      "exampleVi": "Chị gái tôi đang học tập.",
+      "pinyin": "jiě jie",
+      "examplePinyin": "jiě jie zài dú shū"
+    },
+    {
+      "word": "弟弟",
+      "meaning": "em trai (anh chị)",
+      "example": "我有一个弟弟。",
+      "exampleVi": "Tôi có một em trai.",
+      "pinyin": "dì di",
+      "examplePinyin": "wǒ yǒu yí gè dì di"
+    },
+    {
+      "word": "妹妹",
+      "meaning": "em gái (anh chị)",
+      "example": "妹妹很可爱。",
+      "exampleVi": "Em gái tôi rất dễ thương.",
+      "pinyin": "mèi mei",
+      "examplePinyin": "mèi mei hěn kě ài"
+    },
+    {
+      "word": "亲戚",
+      "meaning": "người thân, họ hàng xa",
+      "example": "我们有很多亲戚。",
+      "exampleVi": "Chúng ta có nhiều người thân.",
+      "pinyin": "qīn qi",
+      "examplePinyin": "wǒ men yǒu hěn duō qīn qi"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我有一个……",
+      "explanation": "Dùng để giới thiệu thành viên trong gia đình của bạn. Cấu trúc này giúp bạn nói 'Tôi có một anh/chị/em...'.",
+      "example": "我有一个哥哥。",
+      "exampleVi": "Tôi có một anh trai.",
+      "examplePinyin": "wǒ yǒu yí gè gē ge"
+    },
+    {
+      "pattern": "……在……",
+      "explanation": "Dùng để nói vị trí hoặc hoạt động của người thân. Ví dụ: 'Anh ấy đang học ở trường' hoặc 'Mẹ ấy nấu ăn'.",
+      "example": "哥哥在学校。",
+      "exampleVi": "Anh trai tôi ở trường.",
+      "examplePinyin": "gē ge zài xué xiào"
+    },
+    {
+      "pattern": "……很……",
+      "explanation": "Dùng để mô tả tính cách hoặc đặc điểm của người thân. Ví dụ: 'Mẹ rất tốt bụng' hoặc 'Em gái rất cao'.",
+      "example": "妈妈很好。",
+      "exampleVi": "Mẹ tôi rất tốt.",
+      "examplePinyin": "mā ma hěn hǎo"
+    }
+  ],
+  "roleplay": {
+    "setting": "Một buổi học tiếng Trung tại trường phổ thông ở Việt Nam.",
+    "avatarRole": "Giáo viên người Trung Quốc thân thiện và nhiệt tình.",
+    "learnerRole": "Học sinh lớp 6 hoặc lớp 7, đang bắt đầu học tiếng Trung.",
+    "goals": [
+      "Nói được ít nhất 3 từ mới về gia đình.",
+      "Sử dụng đúng 2 mẫu câu đã học trong bài.",
+      "Mô tả được một thành viên trong gia đình của mình."
+    ],
+    "opening": "同学们好！今天我们来聊聊‘家人’这个话题。你们有哥哥或姐姐吗？",
+    "openingVi": "Xin chào các bạn! Hôm nay chúng ta sẽ nói về chủ đề 'thân nhân'. Các bạn có anh trai hay chị gái không?"
+  },
+  "freeTalk": {
+    "question": "你最喜欢家里的哪个人？为什么？",
+    "questionVi": "Bạn thích nhất người nào trong gia đình? Vì sao?"
+  },
+  "reviewed": false,
+  "draft": true
+}

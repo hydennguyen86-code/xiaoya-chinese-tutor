@@ -187,3 +187,9 @@ export async function analyzeLearning(payload: {
   if (!data?.report) throw new Error('Model không trả về bản phân tích.');
   return data.report;
 }
+
+export async function assessmentRequest<T>(route: 'assess-task' | 'prepare-task', payload: object, signal?: AbortSignal): Promise<T> {
+  const res = await fetch(`/api/${route}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal });
+  if (!res.ok) throw new Error(await readError(res));
+  return res.json();
+}

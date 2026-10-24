@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { AvatarController } from '../lib/avatar';
 import type { AvatarApi } from '../lib/avatarApi';
-import { LamAvatarController } from '../lib/lamAvatar';
 import type { AvatarMode, Phase } from '../types';
 import { AlertIcon, RefreshIcon } from './Icons';
 
@@ -79,35 +77,29 @@ export function AvatarStage({
       onAudioState: (playing: boolean) => callbacksRef.current.onAudioState(playing),
       onError: (message: string) => callbacksRef.current.onUnavailable(message),
     };
-    const controller: AvatarApi = useLam
-      ? new LamAvatarController(hostRef.current, callbacks)
-      : new AvatarController(hostRef.current, callbacks);
-
-    controller
-      .load(sourceUrl, (ratio) => {
-        if (!cancelled) setProgress(ratio);
-      })
-      .then(() => {
-        if (cancelled) return;
-        setLoadState('ready');
-        callbacksRef.current.onReady(controller);
-      })
-      .catch((error: unknown) => {
-        if (cancelled) return;
-        console.error('[avatar] load failed', error);
-        const message = customAvatarUrl
-          ? 'Không đọc được file avatar bạn chọn. Kiểm tra lại file .zip (LAM) hoặc .glb (3D).'
-          : useLam
-            ? 'Không tải được avatar ảnh thật (LAM). Thử lại hoặc tắt trong Cài đặt.'
-            : 'Không tải được avatar 3D. Kiểm tra file .glb trong public/avatars rồi thử lại.';
-        setAvatarError(message);
-        setLoadState('error');
-        callbacksRef.current.onUnavailable(message);
-      });
+    let controller: AvatarApi | null = null;
+    void (async () => {
+      const Controller = useLam
+        ? (await import('../lib/lamAvatar')).LamAvatarController
+        : (await import('../lib/avatar')).AvatarController;
+      if (cancelled || !hostRef.current) return;
+      controller = new Controller(hostRef.current, callbacks);
+      await controller.load(sourceUrl, (ratio) => { if (!cancelled) setProgress(ratio); });
+      if (cancelled) return;
+      setLoadState('ready');
+      callbacksRef.current.onReady(controller);
+    })().catch((error: unknown) => {
+      if (cancelled) return;
+      console.error('[avatar] load failed', error);
+      const message = 'Không tải được avatar. Kiểm tra file hoặc đổi avatar trong Cài đặt.';
+      setAvatarError(message);
+      setLoadState('error');
+      callbacksRef.current.onUnavailable(message);
+    });
 
     return () => {
       cancelled = true;
-      controller.destroy();
+      controller?.destroy();
     };
   }, [avatarUrl, lamAvatarUrl, customAvatarUrl, deferred, mode, attempt]);
 

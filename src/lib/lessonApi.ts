@@ -18,6 +18,8 @@ export interface LessonPattern {
 }
 
 export interface LessonContent {
+  reviewed?: boolean;
+  review?: { reviewer: string; date: string };
   volumeId: string;
   volumeTitle: string;
   lessonNo: number;

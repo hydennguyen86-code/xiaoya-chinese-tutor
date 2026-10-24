@@ -1,0 +1,21 @@
+name: Bài học có lỗi
+description: Báo lỗi tiếng Trung, pinyin, bản dịch hoặc độ khó
+title: '[Bài học] '
+body:
+  - type: input
+    id: lesson
+    attributes:
+      label: Tập, số bài, buổi, trình độ và model
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Đoạn có lỗi và cách sửa đề xuất
+      description: Chỉ trích đoạn cần thiết, không gửi hồ sơ hoặc nội dung sách.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Cách tái hiện và bài đã duyệt hay AI soạn

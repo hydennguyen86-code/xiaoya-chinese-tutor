@@ -1,3 +1,4 @@
+import { assessTask, prepareTask } from './assessment.mjs';
 import express from 'express';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -367,6 +368,28 @@ function sanitizeAnalysis(data, periodDays) {
     focusWords,
     plan,
   };
+}
+
+// Assessment requests are bounded; provider/model are resolved through existing local adapters.
+for (const route of ['assess-task', 'prepare-task']) {
+  app.post(`/api/${route}`, async (req, res) => {
+    const { provider, model, goals, learnerTurns, source, level, variant, open = false } = req.body || {};
+    if (!PROVIDER_DEFS[provider] || typeof model !== 'string' || !model.trim() || model.length > 200 ||
+      !Array.isArray(goals) || goals.length > 6 || (!open && !goals.length) ||
+      goals.some((g) => typeof g !== 'string' || !g.trim() || g.length > 300) ||
+      (route === 'assess-task' && (!Array.isArray(learnerTurns) || !learnerTurns.length || learnerTurns.length > 8 || learnerTurns.some((t) => typeof t !== 'string' || !t.trim() || t.length > 2000)))) {
+      return res.status(400).json({ error: 'Dữ liệu kiểm tra không hợp lệ.' });
+    }
+    try {
+      const result = route === 'prepare-task'
+        ? await prepareTask({ goals, source: String(source || '').slice(0, 600), level: String(level || '').slice(0, 20), variant: String(variant || '').slice(0, 100), provider, model })
+        : await assessTask({ goals, learnerTurns, provider, model, open: open === true });
+      res.json(result);
+    } catch (error) {
+      console.error('[assessment]', error.message);
+      res.status(502).json({ error: 'Chưa đánh giá được. Kiểm tra model rồi thử lại; kết quả chưa được tính điểm.' });
+    }
+  });
 }
 
 app.post('/api/analysis', async (req, res) => {

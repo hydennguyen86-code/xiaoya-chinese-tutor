@@ -1,0 +1,20 @@
+{
+ "name": "corrections",
+ "ranAt": "2026-10-24T08:36:17.692Z",
+ "commit": "841d68b",
+ "dirty": true,
+ "settings": {
+  "model": "qwen3.5:4b"
+ },
+ "result": {
+  "falseCorrections": 0,
+  "correctSentences": 22,
+  "detected": 17,
+  "fixed": 16,
+  "wrongSentences": 18,
+  "notes": [
+   "off target 我很想念我的家庭在越南。 -> 家庭→家人",
+   "missed     我是很高兴。"
+  ]
+ }
+}

@@ -277,8 +277,8 @@ export function LearningDialog({
                       : 'Bắt đầu ghi lại hành trình của bạn'}
                   </h3>
                   <p>
-                    Misu tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trong
-                    trình duyệt này và chỉ gửi đến model local khi bạn yêu cầu phân tích.
+                    Misu tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trên máy, được lưu trong trình duyệt và đồng bộ vào thư mục dữ liệu.
+                    Model local dùng hồ sơ để điều chỉnh bài luyện và phân tích khi bạn yêu cầu.
                   </p>
                 </div>
                 <div className="learning-hero-seal" aria-hidden="true">
@@ -774,7 +774,7 @@ export function LearningDialog({
 
         <footer className="learning-footer">
           <p>
-            Hồ sơ chỉ lưu trên trình duyệt này. Bạn có thể xoá bất cứ lúc nào.
+            Hồ sơ được đồng bộ vào thư mục dữ liệu trên máy. Các bản sao lưu hằng ngày có thể còn giữ dữ liệu đã xoá.
           </p>
           <div className="data-actions">
             <button className="text-button danger" type="button" onClick={onClearLearning}>

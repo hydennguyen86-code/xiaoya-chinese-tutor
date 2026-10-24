@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 8,
+  "lessonTitle": "Sở thích",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "喜欢",
+      "meaning": "thích",
+      "example": "我喜欢看书。",
+      "exampleVi": "Tôi thích đọc sách."
+    },
+    {
+      "word": "看书",
+      "meaning": "đọc sách",
+      "example": "我晚上看书。",
+      "exampleVi": "Tôi đọc sách vào buổi tối."
+    },
+    {
+      "word": "听音乐",
+      "meaning": "nghe nhạc",
+      "example": "我喜欢听音乐。",
+      "exampleVi": "Tôi thích nghe nhạc."
+    },
+    {
+      "word": "电影",
+      "meaning": "phim",
+      "example": "这个电影很好看。",
+      "exampleVi": "Bộ phim này hay."
+    },
+    {
+      "word": "跑步",
+      "meaning": "chạy bộ",
+      "example": "我早上跑步。",
+      "exampleVi": "Tôi chạy bộ vào buổi sáng."
+    },
+    {
+      "word": "游泳",
+      "meaning": "bơi",
+      "example": "我会游泳。",
+      "exampleVi": "Tôi biết bơi."
+    },
+    {
+      "word": "周末",
+      "meaning": "cuối tuần",
+      "example": "周末我在家休息。",
+      "exampleVi": "Cuối tuần tôi nghỉ ở nhà."
+    },
+    {
+      "word": "一起",
+      "meaning": "cùng nhau",
+      "example": "我们一起去吧。",
+      "exampleVi": "Chúng ta cùng đi nhé."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我喜欢……",
+      "explanation": "Nói về hoạt động yêu thích.",
+      "example": "我喜欢听音乐。",
+      "exampleVi": "Tôi thích nghe nhạc."
+    }
+  ],
+  "roleplay": {
+    "setting": "Sở thích trong một tình huống đời thường",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người trò chuyện",
+    "goals": [
+      "Nói một sở thích",
+      "Rủ bạn cùng tham gia một hoạt động"
+    ],
+    "opening": "你平时喜欢做什么？",
+    "openingVi": "Bình thường bạn thích làm gì?"
+  },
+  "freeTalk": {
+    "question": "周末你喜欢做什么？",
+    "questionVi": "Cuối tuần bạn thích làm gì?"
+  }
+}

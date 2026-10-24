@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 7,
+  "lessonTitle": "Mua đồ",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "买",
+      "meaning": "mua",
+      "example": "我想买这个。",
+      "exampleVi": "Tôi muốn mua cái này."
+    },
+    {
+      "word": "贵",
+      "meaning": "đắt",
+      "example": "这件衣服太贵了。",
+      "exampleVi": "Chiếc áo này đắt quá."
+    },
+    {
+      "word": "便宜",
+      "meaning": "rẻ",
+      "example": "这个便宜一点儿。",
+      "exampleVi": "Cái này rẻ hơn một chút."
+    },
+    {
+      "word": "大",
+      "meaning": "to",
+      "example": "这件衣服太大了。",
+      "exampleVi": "Chiếc áo này to quá."
+    },
+    {
+      "word": "小",
+      "meaning": "nhỏ",
+      "example": "这个杯子很小。",
+      "exampleVi": "Cốc này rất nhỏ."
+    },
+    {
+      "word": "红色",
+      "meaning": "màu đỏ",
+      "example": "我喜欢红色。",
+      "exampleVi": "Tôi thích màu đỏ."
+    },
+    {
+      "word": "衣服",
+      "meaning": "quần áo",
+      "example": "我想买衣服。",
+      "exampleVi": "Tôi muốn mua quần áo."
+    },
+    {
+      "word": "这个",
+      "meaning": "cái này",
+      "example": "这个多少钱？",
+      "exampleVi": "Cái này bao nhiêu tiền?"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想买……",
+      "explanation": "Nói món đồ muốn mua.",
+      "example": "我想买一件衣服。",
+      "exampleVi": "Tôi muốn mua một chiếc áo."
+    }
+  ],
+  "roleplay": {
+    "setting": "Mua đồ trong một tình huống đời thường",
+    "avatarRole": "Người bán hàng",
+    "learnerRole": "Người mua",
+    "goals": [
+      "Nói món đồ muốn mua",
+      "Hỏi giá hoặc kích cỡ"
+    ],
+    "opening": "你好，你想买什么？",
+    "openingVi": "Chào bạn, bạn muốn mua gì?"
+  },
+  "freeTalk": {
+    "question": "你想买什么？为什么？",
+    "questionVi": "Bạn muốn mua gì? Vì sao?"
+  }
+}

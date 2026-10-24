@@ -1,3 +1,6 @@
+import { CommunicationTask } from './CommunicationTask';
+import { MicButton, Han } from './LessonWidgets';
+import { rememberLesson, loadAssessment, saveAssessment } from '../lib/assessment';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { AvatarApi } from '../lib/avatarApi';
 import { fetchCorrections, streamChat } from '../lib/api';
@@ -233,13 +236,14 @@ export function DailyLesson(props: DailyLessonProps) {
   const finish = useCallback(() => {
     const current = progressRef.current;
     if (!current || !syllabus) return;
+    if (content) rememberLesson(learner.id, content);
     const done = completeSession(current, syllabus, dayKey());
     save(done);
     const next = done.finished ? null : { volumeId: done.volumeId, lessonNo: done.lessonNo, day: done.day };
     setScreen({ kind: 'completed', next });
     // prepare the next session's material in the background
     if (next) void fetchLessonContent({ provider, model, ...next, level }).catch(() => {});
-  }, [syllabus, save, provider, model, level]);
+  }, [syllabus, save, provider, model, level, content, learner.id]);
 
   const micReady = voiceSupported(localStt);
 
@@ -355,13 +359,20 @@ export function DailyLesson(props: DailyLessonProps) {
       )}
 
       <div className="lesson-body">
+        {content.reviewed && <p className="lesson-hint">Đã duyệt bởi {content.review?.reviewer}</p>}
         {sectionInfo.id === 'review' && <ReviewSection {...shared} learning={props.learning} />}
         {sectionInfo.id === 'vocab' && <VocabSection {...shared} />}
         {sectionInfo.id === 'patterns' && <PatternSection {...shared} provider={provider} model={model} />}
         {(sectionInfo.id === 'roleplay' || sectionInfo.id === 'freetalk') && (
           <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={level} />
         )}
-        {sectionInfo.id === 'summary' && <SummarySection session={session} content={content} onFinish={finish} />}
+        {sectionInfo.id === 'summary' && <>
+          <CommunicationTask task={content.roleplay} provider={provider} model={model} level={level} ask={shared.ask} say={say} micReady={micReady} voicePhase={voicePhase} onComplete={(result) => {
+            const data = loadAssessment(learner.id);
+            saveAssessment(learner.id, { ...data, tasks: [...data.tasks, { date: Date.now(), task: content.roleplay, result }].slice(-90) });
+          }} />
+          <SummarySection session={session} content={content} onFinish={finish} />
+        </>}
       </div>
 
       <div className="lesson-controls">
@@ -410,30 +421,6 @@ interface SharedProps {
   updateSession: (change: (session: SessionState) => SessionState) => void;
   onLearningUpdate: (update: (previous: LearningProfile) => LearningProfile) => void;
   setNotice: (text: string) => void;
-}
-
-function MicButton({ voicePhase, micReady, onClick, label = 'Nói' }: { voicePhase: VoicePhase | null; micReady: boolean; onClick: () => void; label?: string }) {
-  const text = voicePhase === 'listening' ? 'Đang nghe… (bấm để dừng)' : voicePhase === 'transcribing' ? 'Đang nhận dạng…' : label;
-  return (
-    <button
-      type="button"
-      className={`lesson-mic${voicePhase ? ' is-active' : ''}`}
-      onClick={onClick}
-      disabled={!micReady || voicePhase === 'transcribing'}
-      title={micReady ? '' : 'Trình duyệt này chưa dùng được micro'}
-    >
-      {text}
-    </button>
-  );
-}
-
-function Han({ text, pinyinText }: { text: string; pinyinText?: string }) {
-  return (
-    <span className="lesson-han">
-      {pinyinText && <small>{pinyinText}</small>}
-      <span>{text}</span>
-    </span>
-  );
 }
 
 // 1. Warm-up review: words due for this learner, plus a recurring mistake or two.
@@ -608,7 +595,7 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
     );
   }
 
-  const fixedParts = pattern.pattern.split(/……|\.\.\.|…/).map(bareChinese).filter((part) => part.length > 0);
+  const fixedParts = pattern.pattern.match(/\p{Script=Han}+/gu) ?? [];
 
   const check = async (sentence: string) => {
     const text = sentence.trim();

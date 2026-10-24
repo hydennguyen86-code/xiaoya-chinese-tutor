@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 1,
+  "lessonTitle": "Chào hỏi và tên gọi",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "你好",
+      "meaning": "xin chào",
+      "example": "你好，很高兴认识你。",
+      "exampleVi": "Chào bạn, rất vui được làm quen."
+    },
+    {
+      "word": "名字",
+      "meaning": "tên",
+      "example": "你的名字很好听。",
+      "exampleVi": "Tên của bạn rất hay."
+    },
+    {
+      "word": "叫",
+      "meaning": "tên là",
+      "example": "我叫小林。",
+      "exampleVi": "Tôi tên là Tiểu Lâm."
+    },
+    {
+      "word": "认识",
+      "meaning": "quen biết",
+      "example": "很高兴认识你。",
+      "exampleVi": "Rất vui được làm quen với bạn."
+    },
+    {
+      "word": "朋友",
+      "meaning": "bạn bè",
+      "example": "他是我的朋友。",
+      "exampleVi": "Anh ấy là bạn của tôi."
+    },
+    {
+      "word": "越南",
+      "meaning": "Việt Nam",
+      "example": "我来自越南。",
+      "exampleVi": "Tôi đến từ Việt Nam."
+    },
+    {
+      "word": "老师",
+      "meaning": "giáo viên",
+      "example": "她是老师。",
+      "exampleVi": "Cô ấy là giáo viên."
+    },
+    {
+      "word": "学生",
+      "meaning": "học sinh",
+      "example": "我是学生。",
+      "exampleVi": "Tôi là học sinh."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我叫……",
+      "explanation": "Giới thiệu tên của mình.",
+      "example": "我叫小林。",
+      "exampleVi": "Tôi tên là Tiểu Lâm."
+    }
+  ],
+  "roleplay": {
+    "setting": "Chào hỏi và tên gọi trong một tình huống đời thường",
+    "avatarRole": "Bạn mới quen",
+    "learnerRole": "Người tham gia",
+    "goals": [
+      "Giới thiệu tên của mình",
+      "Hỏi tên người mới quen"
+    ],
+    "opening": "你好，你叫什么名字？",
+    "openingVi": "Chào bạn, bạn tên gì?"
+  },
+  "freeTalk": {
+    "question": "你想认识什么样的朋友？",
+    "questionVi": "Bạn muốn làm quen với những người bạn như thế nào?"
+  }
+}

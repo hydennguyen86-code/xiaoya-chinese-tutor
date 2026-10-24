@@ -1,0 +1,35 @@
+{
+ "name": "lessons",
+ "ranAt": "2026-10-24T08:46:25.700Z",
+ "commit": "841d68b",
+ "dirty": true,
+ "settings": {
+  "model": "qwen3.5:4b"
+ },
+ "result": [
+  {
+   "level": "HSK1-2",
+   "volumeId": "tam-so-cap",
+   "status": 200,
+   "elapsedMs": 27538,
+   "words": 8,
+   "patterns": 3
+  },
+  {
+   "level": "HSK3-4",
+   "volumeId": "tam-trung-cap",
+   "status": 200,
+   "elapsedMs": 31738,
+   "words": 9,
+   "patterns": 2
+  },
+  {
+   "level": "HSK5-6",
+   "volumeId": "tam-cao-cap",
+   "status": 200,
+   "elapsedMs": 31116,
+   "words": 8,
+   "patterns": 2
+  }
+ ]
+}

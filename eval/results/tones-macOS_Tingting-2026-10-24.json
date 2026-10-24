@@ -1,0 +1,57 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-24T08:39:27.857Z",
+ "commit": "841d68b",
+ "dirty": true,
+ "settings": {
+  "voice": "macOS Tingting"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    0,
+    10,
+    0,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    8,
+    2,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    1,
+    9,
+    0
+   ],
+   "4": [
+    0,
+    0,
+    0,
+    2,
+    8
+   ]
+  },
+  "singles": {
+   "correct": 35,
+   "total": 40,
+   "unclear": 0
+  },
+  "words": {
+   "correct": 25,
+   "judged": 29,
+   "syllables": 32
+  },
+  "misses": [
+   "中国 国: expected 2, heard 3",
+   "老师 老: expected 3, heard 4",
+   "回家 回: expected 2, heard 3",
+   "手机 手: expected 3, heard 4"
+  ]
+ }
+}

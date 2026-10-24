@@ -3,6 +3,7 @@
 // errors fixed as expected.
 //   npm run eval:corrections -- [model] [server-url]
 import fs from 'node:fs';
+import { saveResult } from './record.mjs';
 
 const model = process.argv[2] || 'qwen3.5:4b';
 const base = process.argv[3] || 'http://127.0.0.1:8787';
@@ -44,3 +45,11 @@ console.log(`false corrections of correct sentences: ${falseFixes}/${cases.corre
 console.log(`errors detected:                        ${detected}/${cases.wrong.length}`);
 console.log(`errors fixed as expected:               ${fixed}/${cases.wrong.length}`);
 if (notes.length) console.log(`\n${notes.join('\n')}`);
+saveResult('corrections', { model }, {
+  falseCorrections: falseFixes,
+  correctSentences: cases.correct.length,
+  detected,
+  fixed,
+  wrongSentences: cases.wrong.length,
+  notes,
+});

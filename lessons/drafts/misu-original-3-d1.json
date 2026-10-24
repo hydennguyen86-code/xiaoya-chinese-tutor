@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 3,
+  "lessonTitle": "Hẹn thời gian",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "今天",
+      "meaning": "hôm nay",
+      "example": "今天我有空。",
+      "exampleVi": "Hôm nay tôi rảnh."
+    },
+    {
+      "word": "明天",
+      "meaning": "ngày mai",
+      "example": "明天我们见面吧。",
+      "exampleVi": "Ngày mai chúng ta gặp nhau nhé."
+    },
+    {
+      "word": "现在",
+      "meaning": "bây giờ",
+      "example": "现在是三点。",
+      "exampleVi": "Bây giờ là ba giờ."
+    },
+    {
+      "word": "上午",
+      "meaning": "buổi sáng",
+      "example": "我上午上课。",
+      "exampleVi": "Tôi học vào buổi sáng."
+    },
+    {
+      "word": "下午",
+      "meaning": "buổi chiều",
+      "example": "我下午有空。",
+      "exampleVi": "Tôi rảnh buổi chiều."
+    },
+    {
+      "word": "时间",
+      "meaning": "thời gian",
+      "example": "你有时间吗？",
+      "exampleVi": "Bạn có thời gian không?"
+    },
+    {
+      "word": "见面",
+      "meaning": "gặp mặt",
+      "example": "我们明天见面。",
+      "exampleVi": "Ngày mai chúng ta gặp nhau."
+    },
+    {
+      "word": "点",
+      "meaning": "giờ",
+      "example": "我们两点见面。",
+      "exampleVi": "Chúng ta gặp lúc hai giờ."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我们……见面",
+      "explanation": "Hẹn thời điểm gặp nhau.",
+      "example": "我们明天下午见面。",
+      "exampleVi": "Ngày mai chúng ta gặp vào buổi chiều."
+    }
+  ],
+  "roleplay": {
+    "setting": "Hẹn thời gian trong một tình huống đời thường",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người hẹn gặp",
+    "goals": [
+      "Đề xuất một giờ hẹn",
+      "Xác nhận ngày gặp"
+    ],
+    "opening": "你明天几点有空？",
+    "openingVi": "Ngày mai bạn rảnh lúc mấy giờ?"
+  },
+  "freeTalk": {
+    "question": "你明天下午想做什么？",
+    "questionVi": "Chiều mai bạn muốn làm gì?"
+  }
+}

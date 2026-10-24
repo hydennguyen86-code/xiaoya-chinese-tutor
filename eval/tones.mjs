@@ -12,6 +12,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { saveResult } from './record.mjs';
 
 const args = process.argv.slice(2);
 const base = args.find((a) => a.startsWith('http')) || 'http://127.0.0.1:8787';
@@ -116,3 +117,9 @@ console.log(`\ntwo-syllable words: ${wordRight}/${wordJudged} judged syllables r
 if (misses.length) console.log(`  ${misses.join('\n  ')}`);
 
 await fetch(`${base}/api/store/xiaoya.pitch.v1:${learner}`, { method: 'DELETE' });
+saveResult('tones', { voice: usedVoice }, {
+  matrix,
+  singles: { correct: right, total, unclear },
+  words: { correct: wordRight, judged: wordJudged, syllables: wordSyll },
+  misses,
+});

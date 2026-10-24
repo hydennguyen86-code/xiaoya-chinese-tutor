@@ -1,0 +1,94 @@
+{
+  "book": "Misu — bài tự soạn chưa duyệt",
+  "volumes": [
+    {
+      "id": "misu-original",
+      "title": "Giao tiếp ban đầu (bản nháp)",
+      "levels": [
+        "HSK1-2"
+      ],
+      "lessons": [
+        {
+          "no": 1,
+          "title": "Chào hỏi và tên gọi",
+          "topics": [
+            "Chào hỏi và tên gọi"
+          ],
+          "days": 2
+        },
+        {
+          "no": 2,
+          "title": "Gia đình",
+          "topics": [
+            "Gia đình"
+          ],
+          "days": 2
+        },
+        {
+          "no": 3,
+          "title": "Hẹn thời gian",
+          "topics": [
+            "Hẹn thời gian"
+          ],
+          "days": 2
+        },
+        {
+          "no": 4,
+          "title": "Gọi đồ uống",
+          "topics": [
+            "Gọi đồ uống"
+          ],
+          "days": 2
+        },
+        {
+          "no": 5,
+          "title": "Ăn uống",
+          "topics": [
+            "Ăn uống"
+          ],
+          "days": 2
+        },
+        {
+          "no": 6,
+          "title": "Hỏi đường",
+          "topics": [
+            "Hỏi đường"
+          ],
+          "days": 2
+        },
+        {
+          "no": 7,
+          "title": "Mua đồ",
+          "topics": [
+            "Mua đồ"
+          ],
+          "days": 2
+        },
+        {
+          "no": 8,
+          "title": "Sở thích",
+          "topics": [
+            "Sở thích"
+          ],
+          "days": 2
+        },
+        {
+          "no": 9,
+          "title": "Thời tiết",
+          "topics": [
+            "Thời tiết"
+          ],
+          "days": 2
+        },
+        {
+          "no": 10,
+          "title": "Sinh hoạt hằng ngày",
+          "topics": [
+            "Sinh hoạt hằng ngày"
+          ],
+          "days": 2
+        }
+      ]
+    }
+  ]
+}

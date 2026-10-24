@@ -1,3 +1,7 @@
+import { Assessment } from './components/Assessment';
+import { SetupCheck } from './components/SetupCheck';
+import { isDue, loadAssessment } from './lib/assessment';
+import { loadLessonProgress } from './lib/lessonStore';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AvatarStage } from './components/AvatarStage';
 import { ChatPanel } from './components/ChatPanel';
@@ -113,6 +117,14 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [learningOpen, setLearningOpen] = useState(false);
   const [lessonOpen, setLessonOpen] = useState(false);
+  const [assessmentOpen, setAssessmentOpen] = useState(false);
+  const [setupOpen, setSetupOpen] = useState(() => localStorage.getItem('xiaoya.setup.v1') !== 'done');
+  const assessmentData = loadAssessment(learner.id);
+  const lessonProgress = loadLessonProgress(learner.id);
+  const firstStudyAt = Math.min(...[...learning.words.map((w) => w.firstSeen), ...learning.mistakes.map((m) => m.firstSeen), ...assessmentData.samples.map((s) => s.date), ...learning.days.filter((d) => d.turns > 0).map((d) => new Date(d.date + 'T00:00:00').getTime())].filter((n) => n > 0), Date.now());
+  const assessmentDue = isDue('week', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt) || isDue('month', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt);
+  function closeSetup() { localStorage.setItem('xiaoya.setup.v1', 'done'); setSetupOpen(false); }
+
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
@@ -948,6 +960,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             onClick={() => {
               micRef.current?.abort();
               avatarRef.current?.stopSpeech();
+              setAssessmentOpen(false);
               setLessonOpen((open) => !open);
             }}
             title="Bài học 20 phút theo giáo trình, tự chọn bài cho hôm nay"
@@ -955,6 +968,9 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             {lessonOpen ? 'Về trò chuyện' : 'Bài hôm nay'}
           </button>
 
+          <button type="button" className={`lesson-launch${assessmentDue ? ' is-due' : ''}`} onClick={() => {
+            micRef.current?.abort(); avatarRef.current?.stopSpeech(); setLessonOpen(false); setAssessmentOpen((v) => !v);
+          }}>Kiểm tra{assessmentDue ? ' · đến hạn' : ''}</button>
           <button
             className="runtime-chip"
             type="button"
@@ -1070,7 +1086,11 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           </div>
         </section>
 
-        {lessonOpen ? (
+        {assessmentOpen ? (
+          <Assessment learnerId={learner.id} learning={learning} provider={settings.providerId} model={settings.model} level={settings.level}
+            localStt={Boolean(status?.localStt)} say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
+            onLearningUpdate={updateLearning} onClose={() => setAssessmentOpen(false)} />
+        ) : lessonOpen ? (
           <DailyLesson
             learner={learner}
             level={settings.level}
@@ -1107,6 +1127,8 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         )}
       </main>
 
+      {setupOpen && <SetupCheck settings={settings} onChange={handleSettingsChange} onStatus={setStatus} onClose={closeSetup}
+        onStart={() => { closeSetup(); setAssessmentOpen(false); setLessonOpen(true); }} />}
       <SettingsDialog
         open={settingsOpen}
         status={status}
@@ -1115,6 +1137,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         refreshing={refreshing}
         onClose={closeSettings}
         onChange={handleSettingsChange}
+        onSetup={() => { setSettingsOpen(false); setSetupOpen(true); }}
         onRefresh={() => void refreshStatus()}
         onPreviewVoice={handlePreviewVoice}
         onPreviewTranslation={handlePreviewTranslation}

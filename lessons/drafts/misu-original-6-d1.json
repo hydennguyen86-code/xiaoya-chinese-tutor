@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 6,
+  "lessonTitle": "Hỏi đường",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "地铁站",
+      "meaning": "ga tàu điện",
+      "example": "地铁站在哪儿？",
+      "exampleVi": "Ga tàu điện ở đâu?"
+    },
+    {
+      "word": "左边",
+      "meaning": "bên trái",
+      "example": "银行在左边。",
+      "exampleVi": "Ngân hàng ở bên trái."
+    },
+    {
+      "word": "右边",
+      "meaning": "bên phải",
+      "example": "商店在右边。",
+      "exampleVi": "Cửa hàng ở bên phải."
+    },
+    {
+      "word": "前面",
+      "meaning": "phía trước",
+      "example": "学校在前面。",
+      "exampleVi": "Trường học ở phía trước."
+    },
+    {
+      "word": "旁边",
+      "meaning": "bên cạnh",
+      "example": "银行在学校旁边。",
+      "exampleVi": "Ngân hàng ở cạnh trường học."
+    },
+    {
+      "word": "远",
+      "meaning": "xa",
+      "example": "地铁站很远。",
+      "exampleVi": "Ga tàu điện rất xa."
+    },
+    {
+      "word": "近",
+      "meaning": "gần",
+      "example": "这家店很近。",
+      "exampleVi": "Cửa hàng này rất gần."
+    },
+    {
+      "word": "走",
+      "meaning": "đi bộ",
+      "example": "请往前走。",
+      "exampleVi": "Xin đi thẳng về phía trước."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……在哪儿",
+      "explanation": "Hỏi vị trí của một địa điểm.",
+      "example": "地铁站在哪儿？",
+      "exampleVi": "Ga tàu điện ở đâu?"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hỏi đường trong một tình huống đời thường",
+    "avatarRole": "Người đi đường",
+    "learnerRole": "Khách du lịch",
+    "goals": [
+      "Hỏi vị trí một địa điểm",
+      "Xác nhận hướng cần đi"
+    ],
+    "opening": "你好，你要去哪儿？",
+    "openingVi": "Chào bạn, bạn muốn đi đâu?"
+  },
+  "freeTalk": {
+    "question": "你家附近有什么？",
+    "questionVi": "Gần nhà bạn có những gì?"
+  }
+}

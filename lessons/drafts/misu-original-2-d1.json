@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 2,
+  "lessonTitle": "Gia đình",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "家",
+      "meaning": "nhà",
+      "example": "我家有三口人。",
+      "exampleVi": "Nhà tôi có ba người."
+    },
+    {
+      "word": "爸爸",
+      "meaning": "bố",
+      "example": "我爸爸喜欢喝茶。",
+      "exampleVi": "Bố tôi thích uống trà."
+    },
+    {
+      "word": "妈妈",
+      "meaning": "mẹ",
+      "example": "我妈妈是老师。",
+      "exampleVi": "Mẹ tôi là giáo viên."
+    },
+    {
+      "word": "哥哥",
+      "meaning": "anh trai",
+      "example": "我哥哥在工作。",
+      "exampleVi": "Anh trai tôi đang làm việc."
+    },
+    {
+      "word": "姐姐",
+      "meaning": "chị gái",
+      "example": "我姐姐喜欢看书。",
+      "exampleVi": "Chị gái tôi thích đọc sách."
+    },
+    {
+      "word": "弟弟",
+      "meaning": "em trai",
+      "example": "我弟弟十岁。",
+      "exampleVi": "Em trai tôi mười tuổi."
+    },
+    {
+      "word": "妹妹",
+      "meaning": "em gái",
+      "example": "我妹妹在家。",
+      "exampleVi": "Em gái tôi đang ở nhà."
+    },
+    {
+      "word": "孩子",
+      "meaning": "trẻ em",
+      "example": "那个孩子很开心。",
+      "exampleVi": "Đứa trẻ kia rất vui."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我有……",
+      "explanation": "Nói về những người trong gia đình.",
+      "example": "我有一个姐姐。",
+      "exampleVi": "Tôi có một chị gái."
+    }
+  ],
+  "roleplay": {
+    "setting": "Gia đình trong một tình huống đời thường",
+    "avatarRole": "Bạn học",
+    "learnerRole": "Người giới thiệu",
+    "goals": [
+      "Nói gia đình có mấy người",
+      "Giới thiệu một người thân"
+    ],
+    "opening": "你家有几口人？",
+    "openingVi": "Gia đình bạn có mấy người?"
+  },
+  "freeTalk": {
+    "question": "请介绍一下你的家人。",
+    "questionVi": "Hãy giới thiệu một chút về gia đình bạn."
+  }
+}

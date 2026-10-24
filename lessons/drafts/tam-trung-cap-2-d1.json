@@ -1,0 +1,120 @@
+{
+  "volumeId": "tam-trung-cap",
+  "volumeTitle": "Trung cấp (tạm)",
+  "lessonNo": 2,
+  "lessonTitle": "Chủ đề tạm: đi khám bệnh",
+  "pages": "",
+  "day": 1,
+  "days": 2,
+  "placeholder": true,
+  "level": "HSK3-4",
+  "generatedAt": 1792831554582,
+  "vocab": [
+    {
+      "word": "发烧",
+      "meaning": "Sốt",
+      "example": "我昨天发烧了。",
+      "exampleVi": "Hôm qua tôi bị sốt.",
+      "pinyin": "fā shāo",
+      "examplePinyin": "wǒ zuó tiān fā shāo le"
+    },
+    {
+      "word": "吃药",
+      "meaning": "Uống thuốc",
+      "example": "医生让我吃药。",
+      "exampleVi": "Bác sĩ bảo tôi uống thuốc.",
+      "pinyin": "chī yào",
+      "examplePinyin": "yī shēng ràng wǒ chī yào"
+    },
+    {
+      "word": "休息",
+      "meaning": "Nghỉ ngơi",
+      "example": "你需要多休息。",
+      "exampleVi": "Bạn cần nghỉ ngơi nhiều hơn.",
+      "pinyin": "xiū xi",
+      "examplePinyin": "nǐ xū yào duō xiū xi"
+    },
+    {
+      "word": "检查",
+      "meaning": "Kiểm tra / Làm xét nghiệm",
+      "example": "医生让我做检查。",
+      "exampleVi": "Bác sĩ bảo tôi làm kiểm tra.",
+      "pinyin": "jiǎn chá",
+      "examplePinyin": "yī shēng ràng wǒ zuò jiǎn chá"
+    },
+    {
+      "word": "疼",
+      "meaning": "Đau",
+      "example": "这里很疼。",
+      "exampleVi": "Nơi đây rất đau.",
+      "pinyin": "téng",
+      "examplePinyin": "zhè lǐ hěn téng"
+    },
+    {
+      "word": "传染",
+      "meaning": "Lây truyền bệnh",
+      "example": "不要传染给别人。",
+      "exampleVi": "Đừng lây bệnh cho người khác.",
+      "pinyin": "chuán rǎn",
+      "examplePinyin": "bú yào chuán rǎn gěi bié rén"
+    },
+    {
+      "word": "康复",
+      "meaning": "Hồi phục sức khỏe",
+      "example": "祝你早日康复。",
+      "exampleVi": "Chúc bạn sớm hồi phục.",
+      "pinyin": "kāng fù",
+      "examplePinyin": "zhù nǐ zǎo rì kāng fù"
+    },
+    {
+      "word": "医生",
+      "meaning": "Bác sĩ",
+      "example": "我去找医生看病。",
+      "exampleVi": "Tôi đi tìm bác sĩ để khám bệnh.",
+      "pinyin": "yī shēng",
+      "examplePinyin": "wǒ qù zhǎo yī shēng kàn bìng"
+    },
+    {
+      "word": "症状",
+      "meaning": "Triệu chứng",
+      "example": "你有这些症状吗？",
+      "exampleVi": "Bạn có những triệu chứng này không?",
+      "pinyin": "zhèng zhuàng",
+      "examplePinyin": "nǐ yǒu zhè xiē zhèng zhuàng ma"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我……了。",
+      "explanation": "Dùng để nói về việc vừa xảy ra hoặc trạng thái hiện tại. Ví dụ: Tôi bị sốt rồi.",
+      "example": "我发烧了。",
+      "exampleVi": "Tôi bị sốt.",
+      "examplePinyin": "wǒ fā shāo le"
+    },
+    {
+      "pattern": "……吗？",
+      "explanation": "Dùng để hỏi câu hỏi, thường dùng ở cuối câu. Ví dụ: Bạn đau không?",
+      "example": "你疼吗？",
+      "exampleVi": "Bạn đau không?",
+      "examplePinyin": "nǐ téng ma"
+    }
+  ],
+  "roleplay": {
+    "setting": "Bệnh viện - Phòng khám của bác sĩ",
+    "avatarRole": "Bác sĩ (nữ)",
+    "learnerRole": "Khách hàng đến khám bệnh",
+    "goals": [
+      "Mô tả triệu chứng của mình.",
+      "Lắng nghe lời khuyên từ bác sĩ.",
+      "Nói lời cảm ơn sau khi được chữa trị."
+    ],
+    "opening": "你好，请坐。哪里不舒服？",
+    "openingVi": "Xin chào, hãy ngồi. Bạn không khỏe ở đâu?"
+  },
+  "freeTalk": {
+    "question": "你上次生病是什么时候？吃了什么药？现在感觉怎么样？",
+    "questionVi": "Lần cuối cùng bạn bị bệnh là khi nào? Uống thuốc gì? Bây giờ cảm thấy thế nào?"
+  },
+  "reviewed": false,
+  "draft": true
+}

@@ -1,0 +1,112 @@
+{
+  "volumeId": "tam-cao-cap",
+  "volumeTitle": "Cao cấp (tạm)",
+  "lessonNo": 2,
+  "lessonTitle": "Chủ đề tạm: giáo dục con cái",
+  "pages": "",
+  "day": 1,
+  "days": 2,
+  "placeholder": true,
+  "level": "HSK5-6",
+  "generatedAt": 1792831585699,
+  "vocab": [
+    {
+      "word": "管教",
+      "meaning": "Quản lý, giáo dục con cái một cách nghiêm túc.",
+      "example": "做父母后，他更懂得如何管教孩子。",
+      "exampleVi": "Sau khi trở thành cha mẹ, ông ấy mới hiểu rõ cách quản lý và giáo dục con cái.",
+      "pinyin": "guǎn jiào",
+      "examplePinyin": "zuò fù mǔ hòu tā gèng dǒng de rú hé guǎn jiào hái zi"
+    },
+    {
+      "word": "攀比",
+      "meaning": "Soi mó, so sánh với người khác để tự ti.",
+      "example": "家长不应让孩子陷入无谓的攀比中。",
+      "exampleVi": "Cha mẹ không nên để con rơi vào vòng xoáy của việc so sánh vô nghĩa.",
+      "pinyin": "pān bǐ",
+      "examplePinyin": "jiā zhǎng bú yìng ràng hái zi xiàn rù wú wèi de pān bǐ zhōng"
+    },
+    {
+      "word": "兴趣班",
+      "meaning": "Lớp học ngoại khóa theo sở thích.",
+      "example": "孩子报了两个兴趣班，分别是钢琴和绘画。",
+      "exampleVi": "Con đã đăng ký hai lớp học ngoại khóa, là đàn piano và vẽ tranh.",
+      "pinyin": "xìng qù bān",
+      "examplePinyin": "hái zi bào le liǎng gè xìng qù bān fēn bié shì gāng qín hé huì huà"
+    },
+    {
+      "word": "压力",
+      "meaning": "Áp lực (thường chỉ áp lực học tập hoặc cuộc sống).",
+      "example": "过度的学业压力会让孩子失去学习兴趣。",
+      "exampleVi": "Áp lực học hành quá mức sẽ khiến con mất đi hứng thú với việc học.",
+      "pinyin": "yā lì",
+      "examplePinyin": "guò dù de xué yè yā lì huì ràng hái zi shī qù xué xí xìng qù"
+    },
+    {
+      "word": "沟通",
+      "meaning": "Giao tiếp, trao đổi ý kiến.",
+      "example": "父母需要多与孩子沟通，了解他们的想法。",
+      "exampleVi": "Cha mẹ cần giao tiếp nhiều hơn với con để hiểu suy nghĩ của họ.",
+      "pinyin": "gōu tōng",
+      "examplePinyin": "fù mǔ xū yào duō yǔ hái zi gōu tōng liǎo jiě tā men de xiǎng fǎ"
+    },
+    {
+      "word": "榜样",
+      "meaning": "Mẫu mực, người mà người khác noi theo.",
+      "example": "父母是孩子最好的榜样。",
+      "exampleVi": "Cha mẹ là mẫu mực tốt nhất cho con.",
+      "pinyin": "bǎng yàng",
+      "examplePinyin": "fù mǔ shì hái zi zuì hǎo de bǎng yàng"
+    },
+    {
+      "word": "自由",
+      "meaning": "Tự do, quyền được làm gì tùy thích.",
+      "example": "周末给孩子一些自由，让他们安排自己的时间。",
+      "exampleVi": "Vào cuối tuần hãy để con có chút tự do để sắp xếp thời gian của mình.",
+      "pinyin": "zì yóu",
+      "examplePinyin": "zhōu mò gěi hái zi yì xiē zì yóu ràng tā men ān pái zì jǐ de shí jiān"
+    },
+    {
+      "word": "习惯",
+      "meaning": "Thói quen, thói quen hàng ngày.",
+      "example": "培养孩子早睡早起的好习惯非常重要。",
+      "exampleVi": "Việc nuôi dưỡng thói quen ngủ sớm và dậy sớm cho con là rất quan trọng.",
+      "pinyin": "xí guàn",
+      "examplePinyin": "péi yǎng hái zi zǎo shuì zǎo qǐ de hǎo xí guàn fēi cháng zhòng yào"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……很重要",
+      "explanation": "Dùng để nhấn mạnh một việc gì đó là cần thiết hoặc quan trọng.",
+      "example": "培养孩子独立的能力很重要。",
+      "exampleVi": "Việc nuôi dưỡng khả năng độc lập cho con là rất quan trọng.",
+      "examplePinyin": "péi yǎng hái zi dú lì de néng lì hěn zhòng yào"
+    },
+    {
+      "pattern": "与其……不如……",
+      "explanation": "Dùng để so sánh hai lựa chọn và khuyên nên chọn phương án tốt hơn.",
+      "example": "与其逼孩子学琴，不如培养他的兴趣。",
+      "exampleVi": "Thay vì ép con học đàn, hãy nuôi dưỡng sở thích của họ.",
+      "examplePinyin": "yǔ qí bī hái zi xué qín bù rú péi yǎng tā de xìng qù"
+    }
+  ],
+  "roleplay": {
+    "setting": "Gia đình buổi tối, bàn ăn.",
+    "avatarRole": "Cha mẹ (người lớn đang nói chuyện với con).",
+    "learnerRole": "Con cái (HSK5-6, đang trả lời cha mẹ).",
+    "goals": [
+      "Sử dụng từ vựng mới về giáo dục để trả lời câu hỏi.",
+      "Áp dụng các mẫu câu so sánh và nhấn mạnh trong hội thoại.",
+      "Giao tiếp tự nhiên về sở thích và áp lực học tập."
+    ],
+    "opening": "你觉得现在给孩子报兴趣班多吗？",
+    "openingVi": "Theo bạn, việc đăng ký lớp học ngoại khóa cho con bây giờ có nhiều không?"
+  },
+  "freeTalk": {
+    "question": "你小时候父母是怎么教育你的？现在你有不同的看法吗？",
+    "questionVi": "Cha mẹ đã giáo dục bạn như thế nào khi còn nhỏ? Bây giờ bạn có quan điểm khác biệt không?"
+  },
+  "reviewed": false,
+  "draft": true
+}

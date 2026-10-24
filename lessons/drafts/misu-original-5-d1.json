@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 5,
+  "lessonTitle": "Ăn uống",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "米饭",
+      "meaning": "cơm",
+      "example": "我要一碗米饭。",
+      "exampleVi": "Tôi lấy một bát cơm."
+    },
+    {
+      "word": "面条",
+      "meaning": "mì",
+      "example": "我喜欢吃面条。",
+      "exampleVi": "Tôi thích ăn mì."
+    },
+    {
+      "word": "鸡肉",
+      "meaning": "thịt gà",
+      "example": "这个鸡肉很好吃。",
+      "exampleVi": "Món thịt gà này ngon."
+    },
+    {
+      "word": "鱼",
+      "meaning": "cá",
+      "example": "我要吃鱼。",
+      "exampleVi": "Tôi muốn ăn cá."
+    },
+    {
+      "word": "菜",
+      "meaning": "món ăn",
+      "example": "这个菜不辣。",
+      "exampleVi": "Món này không cay."
+    },
+    {
+      "word": "辣",
+      "meaning": "cay",
+      "example": "我不能吃辣。",
+      "exampleVi": "Tôi không ăn được cay."
+    },
+    {
+      "word": "菜单",
+      "meaning": "thực đơn",
+      "example": "请给我菜单。",
+      "exampleVi": "Xin đưa cho tôi thực đơn."
+    },
+    {
+      "word": "多少钱",
+      "meaning": "bao nhiêu tiền",
+      "example": "这个菜多少钱？",
+      "exampleVi": "Món này bao nhiêu tiền?"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "请给我……",
+      "explanation": "Lịch sự yêu cầu món hoặc đồ dùng.",
+      "example": "请给我一碗米饭。",
+      "exampleVi": "Xin cho tôi một bát cơm."
+    }
+  ],
+  "roleplay": {
+    "setting": "Ăn uống trong một tình huống đời thường",
+    "avatarRole": "Nhân viên phục vụ",
+    "learnerRole": "Thực khách",
+    "goals": [
+      "Gọi một món ăn",
+      "Hỏi giá và yêu cầu ít cay"
+    ],
+    "opening": "您想吃什么？",
+    "openingVi": "Anh muốn ăn gì?"
+  },
+  "freeTalk": {
+    "question": "你最喜欢吃什么？为什么？",
+    "questionVi": "Bạn thích ăn món gì nhất? Vì sao?"
+  }
+}

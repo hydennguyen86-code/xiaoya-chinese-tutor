@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pinyin } from 'pinyin-pro';
@@ -95,16 +96,37 @@ ${given}${givenPatterns}
 越南语字段只能写越南语（有声调），不能有汉字或英语。中文字段只能写简体中文。只输出 JSON。`;
 }
 
+// Bump when the checks below change, so lessons cached under older rules are written again.
+const CONTENT_VERSION = 4;
+
 const clean = (value, max = 200) => (typeof value === 'string' ? value.trim().slice(0, max) : '');
-const isVi = (text) => Boolean(text) && !HAN.test(text);
+const VI_MARKS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/iu;
+// Vietnamese: no Chinese characters, and anything longer than two words has
+// Vietnamese tone marks (so an English sentence is not accepted as Vietnamese).
+export const isVi = (text) =>
+  Boolean(text) && !HAN.test(text) && (VI_MARKS.test(text) || text.trim().split(/\s+/).length <= 2);
 const isZh = (text) => Boolean(text) && HAN.test(text);
+const bare = (text) => text.replace(/[\s，。！？、；：,.!?;:“”"'‘’…（）()《》-]/gu, '');
+/** The fixed parts of a pattern like "一边……一边……". */
+export const patternParts = (pattern) => (pattern.match(/\p{Script=Han}+/gu) || [])
+  .filter((part) => !['主语', '宾语', '动词', '名词', '形容词'].includes(part));
+export function matchesPattern(pattern, example) {
+  const parts = patternParts(pattern);
+  let cursor = 0;
+  for (const part of parts) {
+    const at = bare(example).indexOf(part, cursor);
+    if (at < 0) return false;
+    cursor = at + part.length;
+  }
+  return parts.length > 0;
+}
 const PUNCT_TOKEN = /^[\s，。！？、；：,.!?;:“”"'‘’…（）()《》]+$/u;
 const py = (text) =>
   pinyin(text, { toneType: 'symbol', type: 'array', nonZh: 'consecutive' })
     .filter((token) => !PUNCT_TOKEN.test(token))
     .join(' ');
 
-export function normalizeLesson(raw, lesson) {
+export function normalizeLesson(raw, lesson, { day = 1 } = {}) {
   const givenMeaning = new Map(lesson.vocab.filter((v) => v.meaning).map((v) => [v.word, v.meaning]));
   const seen = new Set();
   const vocab = (Array.isArray(raw?.vocab) ? raw.vocab : [])
@@ -115,6 +137,7 @@ export function normalizeLesson(raw, lesson) {
       exampleVi: clean(item?.exampleVi),
     }))
     .filter((item) => isZh(item.word) && item.word.length <= 8 && isVi(item.meaning) && isZh(item.example) && isVi(item.exampleVi))
+    .filter((item) => bare(item.example).includes(item.word)) // the example must use the word it teaches
     .filter((item) => (seen.has(item.word) ? false : seen.add(item.word)))
     .slice(0, 12)
     .map((item) => ({ ...item, pinyin: py(item.word), examplePinyin: py(item.example) }));
@@ -125,7 +148,8 @@ export function normalizeLesson(raw, lesson) {
       example: clean(item?.example),
       exampleVi: clean(item?.exampleVi),
     }))
-    .filter((item) => isZh(item.pattern) && item.explanation && isZh(item.example) && isVi(item.exampleVi))
+    .filter((item) => isZh(item.pattern) && isVi(item.explanation) && isZh(item.example) && isVi(item.exampleVi))
+    .filter((item) => matchesPattern(item.pattern, item.example))
     .slice(0, 3)
     .map((item) => ({ ...item, examplePinyin: py(item.example) }));
   const rp = raw?.roleplay || {};
@@ -142,17 +166,36 @@ export function normalizeLesson(raw, lesson) {
 
   const problems = [];
   if (vocab.length < 4) problems.push('quá ít từ vựng hợp lệ');
-  if (!patterns.length) problems.push('không có mẫu câu hợp lệ');
+  if (!patterns.length) {
+    problems.push('không có mẫu câu hợp lệ');
+    if (Array.isArray(raw?.patterns) && raw.patterns.some((item) => !isVi(clean(item?.explanation)))) {
+      problems.push('patterns.explanation phải viết tiếng Việt có dấu, không viết bằng tiếng Trung');
+    }
+  }
+  if (day === 1) {
+    // words and patterns named in the outline must be taught
+    const missingWords = lesson.vocab.map((v) => v.word).filter((word) => !vocab.some((item) => item.word === word));
+    if (missingWords.length) problems.push(`thiếu từ của bài: ${missingWords.join('、')}`);
+    const missingPatterns = lesson.patterns.filter(
+      (given) => !patterns.some((item) => patternParts(given).every((part) => bare(item.pattern).includes(part))),
+    );
+    if (missingPatterns.length) problems.push(`thiếu mẫu câu của bài: ${missingPatterns.join('；')}`);
+  }
+  if (!roleplay.goals.length) problems.push('nhập vai chưa có nhiệm vụ');
   if (!isZh(roleplay.opening) || !isVi(roleplay.setting) || !isVi(roleplay.avatarRole) || !isVi(roleplay.learnerRole)) {
     problems.push('kịch bản nhập vai thiếu hoặc sai ngôn ngữ');
   }
-  if (!isZh(freeTalk.question)) problems.push('thiếu câu hỏi nói tự do');
+  if (!isZh(roleplay.opening) || !isVi(roleplay.openingVi)) problems.push('câu mở đầu nhập vai thiếu bản dịch');
+  if (!isZh(freeTalk.question) || !isVi(freeTalk.questionVi)) problems.push('thiếu câu hỏi nói tự do');
   return { content: { vocab, patterns, roleplay, freeTalk }, problems };
 }
 
-function cacheFile(dataDir, volumeId, lessonNo, day) {
+// Keyed by level and by the outline entry too, so changing the level or
+// editing the table of contents does not bring back material written for the old one.
+function cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day, level }) {
   const safe = `${volumeId}`.replace(/[^A-Za-z0-9_-]/g, '');
-  return path.join(dataDir, 'lessons', `${safe}-${lessonNo}-d${day}.json`);
+  const outline = createHash('sha1').update(JSON.stringify({ CONTENT_VERSION, title: volume.title, lesson })).digest('hex').slice(0, 8);
+  return path.join(dataDir, 'lessons', `${safe}-${lessonNo}-d${day}-${level}-${outline}.json`);
 }
 
 const inflight = new Map();
@@ -164,7 +207,9 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
   if (!Number.isInteger(day) || day < 1 || day > lesson.days) {
     throw Object.assign(new Error('Buổi học không hợp lệ.'), { status: 400 });
   }
-  const file = cacheFile(dataDir, volumeId, lessonNo, day);
+  const reviewed = loadReviewedLesson({ dataDir, volume, lesson, volumeId, lessonNo, day, level });
+  if (reviewed) return reviewed;
+  const file = cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day, level });
   if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));
 
   const key = file;
@@ -172,12 +217,15 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
   const job = (async () => {
     let dayOneWords = [];
     if (day > 1) {
-      const first = cacheFile(dataDir, volumeId, lessonNo, 1);
+      const first = cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day: 1, level });
       if (fs.existsSync(first)) dayOneWords = JSON.parse(fs.readFileSync(first, 'utf8')).vocab.map((v) => v.word);
     }
-    const messages = [{ role: 'user', content: buildPrompt({ lesson, volume, level, day, dayOneWords }) }];
+    const messages = [
+      { role: 'system', content: 'Bạn soạn bài tiếng Trung cho người Việt. Các trường meaning, explanation, exampleVi, setting, avatarRole, learnerRole, goals, openingVi, questionVi PHẢI viết tiếng Việt có dấu. Đặc biệt patterns[].explanation không được viết bằng tiếng Trung; ví dụ: “Dùng để hỏi số lượng.” Không phiên âm tiếng Trung thành nghĩa tiếng Việt. Các trường word, example, pattern, opening, question viết tiếng Trung. Chỉ JSON.' },
+      { role: 'user', content: buildPrompt({ lesson, volume, level, day, dayOneWords }) },
+    ];
     let lastProblems = [];
-    for (let attempt = 0; attempt < 2; attempt += 1) {
+    for (let attempt = 0; attempt < 3; attempt += 1) {
       const result = await completeJson({
         provider,
         model,
@@ -194,9 +242,22 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
         lastProblems = ['model trả JSON hỏng'];
         continue;
       }
-      const { content, problems } = normalizeLesson(raw, lesson);
+      const { content, problems } = normalizeLesson(raw, lesson, { day });
       if (problems.length) {
         lastProblems = problems;
+        if (process.env.XIAOYA_DEBUG_LESSONS === '1') {
+          const directory = path.join(dataDir, 'lesson-debug');
+          fs.mkdirSync(directory, { recursive: true });
+          fs.writeFileSync(path.join(directory, `${volumeId.replace(/[^A-Za-z0-9_-]/g, '')}-${lessonNo}-${level}-${attempt}.json`), JSON.stringify({ raw, problems }, null, 2));
+        }
+        // show the model what was rejected and ask for a corrected version
+        messages.push(
+          { role: 'assistant', content: result.raw },
+          {
+            role: 'user',
+            content: `这份材料不合格（${problems.join('；')}）。注意：每个 example 必须包含它要教的词或句型；越南语字段必须是带声调的越南语。请输出修改后的完整 JSON。`,
+          },
+        );
         continue;
       }
       const payload = {
@@ -208,6 +269,7 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
         day,
         days: lesson.days,
         placeholder: Boolean(syllabus.placeholder),
+        level,
         generatedAt: Date.now(),
         ...content,
       };
@@ -224,4 +286,23 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
   } finally {
     inflight.delete(key);
   }
+}
+
+// A reviewed file must name its level and a human reviewer. Drafts are never promoted automatically.
+export function loadReviewedLesson({ dataDir, volume, lesson, volumeId, lessonNo, day, level }) {
+  const safe = volumeId.replace(/[^A-Za-z0-9_-]/g, '');
+  const name = `${safe}-${lessonNo}-d${day}.json`;
+  for (const directory of [path.join(dataDir, 'lessons-reviewed'), path.resolve('lessons', 'reviewed')]) {
+    const file = path.join(directory, name);
+    if (!fs.existsSync(file)) continue;
+    try {
+      const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
+      if (raw.level !== level || !raw.review?.reviewer?.trim() || !raw.review?.date || raw.reviewed !== true) continue;
+      const { content, problems } = normalizeLesson(raw, lesson, { day });
+      if (problems.length) continue;
+      return { ...content, volumeId, volumeTitle: volume.title, lessonNo, lessonTitle: lesson.title,
+        pages: lesson.pages, day, days: lesson.days, level, placeholder: false, reviewed: true, review: raw.review };
+    } catch { /* Invalid reviewed files fall through to generation. */ }
+  }
+  return null;
 }

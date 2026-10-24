@@ -10,6 +10,23 @@ Misu là bạn luyện nói tiếng Trung cho người Việt: bạn nói (hoặ
 lời bằng tiếng Trung có pinyin và bản dịch tiếng Việt, sửa câu sai, ghi lại từ
 mới để ôn, và mỗi ngày có sẵn một bài học 20 phút để khỏi phải tự chọn học gì.
 
+![Demo nhập câu, nhận phản hồi và ôn từ](docs/media/demo-keyboard.gif)
+
+*Demo thao tác bằng bàn phím (30 giây, dữ liệu giả lập, avatar hoạt hình mẫu).
+Chưa phải bản quay luyện nói bằng micro.*
+
+## Kiểm tra và chuẩn bị
+
+Lần mở đầu có màn hình kiểm tra model, ghi thử micro, nhận dạng local, nghe TTS
+và hội thoại mẫu. Mở lại từ **Cài đặt → Kiểm tra hệ thống và micro**.
+
+Nút **Kiểm tra** cạnh **Bài hôm nay** cho phép thi tuần/tháng và xem lịch sử.
+Bài tuần đến hạn sau 7 ngày hoặc 3 buổi mới; bài tháng sau 30 ngày. Đề lấy từ
+các từ, lỗi và bài đã học của từng người. Thiếu dữ liệu thì đề ngắn hơn.
+Nhiệm vụ giao tiếp dùng bối cảnh mới; xin gợi ý được ghi riêng. Điểm AI và
+thanh điệu chỉ là ước lượng, không phải chứng chỉ HSK. Phần không chấm được
+không tính điểm; các lần có đề khác nhau không hoàn toàn tương đương.
+
 ## Tính năng
 
 - **Avatar nói chuyện**: avatar 3D (TalkingHead, cử động môi theo tiếng nói)
@@ -98,13 +115,12 @@ soạn.
 
 ## Độ chính xác: đo được bao nhiêu
 
-Cả hai bộ đo nằm trong `eval/` và chạy lại được trên máy bạn.
+Cả hai bộ đo nằm trong `eval/` và chạy lại được trên máy bạn. Kết quả thô được lưu ở [eval/results/](eval/results/).
 
 **Sửa câu** (`npm run eval:corrections`, qwen3.5:4b, 40 câu): 0/22 câu đúng bị
 sửa nhầm; 17/18 câu sai được phát hiện, 16/18 sửa đúng như đáp án. Bộ câu nhỏ và
 gồm đúng những loại lỗi mà luật đã viết cho, nên với lỗi khác (chọn từ, ngữ
-pháp hiếm) phần sửa vẫn do mô hình 4B quyết định và có lúc sai. Mô hình lớn hơn
-sẽ tốt hơn.
+pháp hiếm) phần sửa vẫn do mô hình 4B quyết định và có lúc sai. Mô hình khác cần được đo riêng bằng cùng bộ thử.
 
 **Thanh điệu** (`npm run eval:tones -- --say="<giọng macOS>"`): đọc bằng giọng
 tổng hợp của macOS thay cho người học. Ngưỡng được chỉnh trên giọng Tingting;
@@ -154,3 +170,7 @@ npm run typecheck && npm test
 Mã nguồn: MIT ([LICENSE](LICENSE)). Avatar mẫu và các thư viện có giấy phép
 riêng, trong đó avatar `brunette.glb` chỉ dùng phi thương mại. Xem
 [NOTICE.md](NOTICE.md).
+
+## Đóng góp
+
+Xem [CONTRIBUTING.md](CONTRIBUTING.md). Bài AI soạn chưa duyệt ở [lessons/](lessons/).

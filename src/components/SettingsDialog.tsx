@@ -21,6 +21,7 @@ interface SettingsDialogProps {
   onClose: () => void;
   onChange: (patch: Partial<Settings>) => void;
   onRefresh: () => void;
+  onSetup: () => void;
   onPreviewVoice: () => void;
   onPreviewTranslation: () => void;
   onClearChat: () => void;
@@ -80,6 +81,7 @@ export function SettingsDialog({
   onClose,
   onChange,
   onRefresh,
+  onSetup,
   onPreviewVoice,
   onPreviewTranslation,
   onClearChat,
@@ -173,6 +175,7 @@ export function SettingsDialog({
               </div>
             )}
 
+            <button type="button" className="lesson-secondary" onClick={onSetup}>Kiểm tra hệ thống và micro</button>
             <div className="field-grid">
               <label className="field">
                 <span className="field-label">Nhà cung cấp</span>
@@ -467,8 +470,8 @@ export function SettingsDialog({
           <section className="settings-section settings-footer">
             <p className="privacy-note">
               <SparkIcon size={14} />
-              Hội thoại và tiến độ chỉ được lưu trong trình duyệt này. Tin nhắn chỉ gửi đến
-              runtime local của bạn. Giọng đọc và nhận dạng giọng nói cần internet.
+              Hội thoại và tiến độ được lưu trong trình duyệt và đồng bộ vào thư mục dữ liệu trên máy.
+              Model và Whisper chạy cục bộ. Giọng Edge và nhận dạng trình duyệt có thể dùng dịch vụ mạng.
             </p>
             <div className="data-actions">
               <button className="text-button" type="button" onClick={onClearChat}>

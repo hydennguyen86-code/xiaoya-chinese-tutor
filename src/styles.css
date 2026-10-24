@@ -4937,3 +4937,21 @@ svg {
   stroke: var(--line-strong);
   stroke-width: 1;
 }
+
+/* Setup and assessment reuse the lesson cards and controls. */
+.lesson-launch.is-due { box-shadow: 0 0 0 2px var(--accent, #b87b40); background: #f8e6bd; }
+.setup-overlay { position: fixed; inset: 0; z-index: 120; background: #18181899; display: grid; place-items: center; padding: 20px; }
+.setup-panel { background: #fffaf2; color: #302b25; border-radius: 20px; padding: 24px; width: min(720px, 100%); max-height: 90dvh; overflow: auto; }
+.setup-panel section { padding: 12px 0; border-bottom: 1px solid #ddd1bf; }
+.setup-panel label { display: block; margin: 8px 0; }
+.setup-panel select { max-width: 100%; padding: 8px; }
+.setup-panel button, .assessment-panel button { padding: 9px 14px; border-radius: 10px; cursor: pointer; }
+.setup-panel audio { display: block; max-width: 100%; margin: 10px 0; }
+.setup-demo { white-space: pre-wrap; }
+.assessment-panel textarea { width: 100%; min-height: 100px; padding: 12px; border-radius: 10px; box-sizing: border-box; }
+.assessment-panel { max-height: 85dvh; overflow-y: auto; }
+.assessment-panel details { margin: 8px 0 18px; }
+@media (max-width: 720px) {
+  .topbar { flex-wrap: wrap; }
+  .topbar-actions { flex-wrap: wrap; justify-content: flex-end; flex: 1 1 100%; }
+}

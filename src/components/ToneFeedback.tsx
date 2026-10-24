@@ -16,7 +16,7 @@ export function ToneFeedback({ report }: { report: ToneReport }) {
           <>
             <PitchCurve learner={report.curve} model={report.modelCurve ?? []} />
             <p className="lesson-hint">
-              Đường cao độ của bạn (cam) và của giọng mẫu (xanh). Hai đường nên lên xuống giống nhau; câu dài thì chỉ cần so dáng chung.
+              Chấm tự động mới được thử trên giọng máy. Đường cao độ của bạn (cam) và của giọng mẫu (xanh). Hai đường được kéo về cùng độ dài, chưa căn theo từng chữ; khác nhịp đọc cũng làm đường lệch. Chỉ tham khảo dáng chung.
             </p>
           </>
         ) : (
@@ -29,6 +29,7 @@ export function ToneFeedback({ report }: { report: ToneReport }) {
   const wrong = report.syllables.filter((s) => s.ok === false);
   return (
     <div className="tone-feedback">
+      <p className="lesson-hint">Chấm tự động mới được thử trên giọng máy; hãy xem kết quả là gợi ý.</p>
       <div className="tone-syllables">
         {report.syllables.map((s, i) => (
           <span
@@ -44,7 +45,7 @@ export function ToneFeedback({ report }: { report: ToneReport }) {
       </div>
       {report.checked > 0 && !wrong.length && (
         report.checked === report.syllables.filter((s) => s.expected).length ? (
-          <p className="lesson-ok">Thanh điệu chuẩn rồi!</p>
+          <p className="lesson-ok">Lần này Misu nghe các thanh khớp với mẫu.</p>
         ) : (
           <p className="lesson-hint">Các chữ chấm được đều đúng thanh. Chữ có dấu — thì chưa chấm được: đọc rõ và kéo dài hơn một chút nhé.</p>
         )

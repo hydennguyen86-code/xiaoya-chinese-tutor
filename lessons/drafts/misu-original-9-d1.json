@@ -1,0 +1,86 @@
+{
+  "volumeId": "misu-original",
+  "volumeTitle": "Giao tiếp ban đầu — bản nháp",
+  "lessonNo": 9,
+  "lessonTitle": "Thời tiết",
+  "day": 1,
+  "days": 2,
+  "level": "HSK1-2",
+  "placeholder": false,
+  "reviewed": false,
+  "draft": true,
+  "authorship": "AI tự soạn, chưa có người duyệt tiếng Trung; cần kiểm tra độ khó trước khi dùng.",
+  "vocab": [
+    {
+      "word": "天气",
+      "meaning": "thời tiết",
+      "example": "今天天气很好。",
+      "exampleVi": "Thời tiết hôm nay rất đẹp."
+    },
+    {
+      "word": "下雨",
+      "meaning": "mưa",
+      "example": "外面下雨了。",
+      "exampleVi": "Bên ngoài mưa rồi."
+    },
+    {
+      "word": "冷",
+      "meaning": "lạnh",
+      "example": "今天很冷。",
+      "exampleVi": "Hôm nay rất lạnh."
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "今天很热。",
+      "exampleVi": "Hôm nay rất nóng."
+    },
+    {
+      "word": "雨伞",
+      "meaning": "ô",
+      "example": "请带雨伞。",
+      "exampleVi": "Xin mang theo ô."
+    },
+    {
+      "word": "太阳",
+      "meaning": "mặt trời",
+      "example": "今天有太阳。",
+      "exampleVi": "Hôm nay có nắng."
+    },
+    {
+      "word": "外面",
+      "meaning": "bên ngoài",
+      "example": "外面很冷。",
+      "exampleVi": "Bên ngoài rất lạnh."
+    },
+    {
+      "word": "出门",
+      "meaning": "ra ngoài",
+      "example": "我今天不想出门。",
+      "exampleVi": "Hôm nay tôi không muốn ra ngoài."
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "今天很……",
+      "explanation": "Mô tả thời tiết hôm nay.",
+      "example": "今天很冷。",
+      "exampleVi": "Hôm nay rất lạnh."
+    }
+  ],
+  "roleplay": {
+    "setting": "Thời tiết trong một tình huống đời thường",
+    "avatarRole": "Người bạn",
+    "learnerRole": "Người lên kế hoạch",
+    "goals": [
+      "Mô tả thời tiết",
+      "Đề xuất có ra ngoài hay không và nêu lý do"
+    ],
+    "opening": "今天天气怎么样？",
+    "openingVi": "Thời tiết hôm nay thế nào?"
+  },
+  "freeTalk": {
+    "question": "下雨的时候你喜欢做什么？",
+    "questionVi": "Khi trời mưa bạn thích làm gì?"
+  }
+}

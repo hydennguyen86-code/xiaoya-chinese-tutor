@@ -7,6 +7,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SIZE="${WHISPER_SIZE:-small}"
+# the whisper.cpp commit this app was tested with; WHISPER_REF=<tag|commit> to change it
+REF="${WHISPER_REF:-231638a0717b7822784297e5980965ffcec05810}"
 SRC="$ROOT/vendor/whisper.cpp"
 MODEL="$ROOT/models/ggml-$SIZE.bin"
 
@@ -15,9 +17,12 @@ need git "Install Xcode command line tools: xcode-select --install"
 need cmake "Install it, e.g. brew install cmake"
 command -v ffmpeg >/dev/null 2>&1 || echo "Note: ffmpeg not found. Speech-to-text and tone checks need it: brew install ffmpeg (or set FFMPEG_PATH)." >&2
 
-if [ ! -d "$SRC" ]; then
-  git clone --depth 1 https://github.com/ggml-org/whisper.cpp.git "$SRC"
+if [ ! -d "$SRC/.git" ]; then
+  git init -q "$SRC"
+  git -C "$SRC" remote add origin https://github.com/ggml-org/whisper.cpp.git
 fi
+git -C "$SRC" fetch -q --depth 1 origin "$REF"
+git -C "$SRC" checkout -q FETCH_HEAD
 cmake -S "$SRC" -B "$SRC/build" -DCMAKE_BUILD_TYPE=Release -DWHISPER_BUILD_EXAMPLES=ON
 cmake --build "$SRC/build" --config Release -j --target whisper-server
 
