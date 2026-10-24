@@ -4,11 +4,17 @@ import os from 'node:os';
 import path from 'node:path';
 
 // Local speech-to-text with whisper.cpp's server (Metal GPU on Apple Silicon),
-// so the learner's voice never leaves this computer. Defaults reuse the build
-// and model already present in the sibling AI-Chinese-Teacher folder.
-const SIBLING = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', 'AI-Chinese-Teacher');
-const BIN = process.env.WHISPER_BIN || path.join(SIBLING, 'whisper.cpp', 'build', 'bin', 'whisper-server');
-const MODEL = process.env.WHISPER_MODEL || path.join(SIBLING, 'models', 'ggml-small.bin');
+// so the learner's voice never leaves this computer. `npm run setup:whisper`
+// builds it into vendor/ and downloads the model into models/; a build in the
+// sibling AI-Chinese-Teacher folder, or WHISPER_BIN / WHISPER_MODEL, also work.
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const SIBLING = path.resolve(ROOT, '..', 'AI-Chinese-Teacher');
+const firstExisting = (...candidates) => candidates.find((file) => fs.existsSync(file)) || candidates[0];
+const BIN =
+  process.env.WHISPER_BIN ||
+  firstExisting(path.join(ROOT, 'vendor', 'whisper.cpp', 'build', 'bin', 'whisper-server'), path.join(SIBLING, 'whisper.cpp', 'build', 'bin', 'whisper-server'));
+const MODEL =
+  process.env.WHISPER_MODEL || firstExisting(path.join(ROOT, 'models', 'ggml-small.bin'), path.join(SIBLING, 'models', 'ggml-small.bin'));
 const PORT = Number(process.env.WHISPER_PORT || 8178);
 const URL_BASE = `http://127.0.0.1:${PORT}`;
 const PROMPT = '以下是普通话的简体中文句子。';
@@ -35,7 +41,7 @@ async function probe() {
 
 export async function startStt() {
   if (!sttConfigured()) {
-    console.log('[stt] whisper.cpp not found; the browser speech API is used instead');
+    console.log('[stt] whisper.cpp not found (run `npm run setup:whisper`); the browser speech API is used instead');
     return;
   }
   if (await probe()) {
@@ -70,17 +76,21 @@ export function stopStt() {
   ready = false;
 }
 
-export async function transcribe(audio, mimeType = 'audio/webm') {
+async function inference(audio, mimeType, format) {
   if (!ready) throw Object.assign(new Error('Nhận dạng giọng nói cục bộ chưa sẵn sàng.'), { status: 503 });
-  const ext = /mp4|m4a|aac/.test(mimeType) ? 'm4a' : /wav/.test(mimeType) ? 'wav' : /ogg/.test(mimeType) ? 'ogg' : 'webm';
+  const ext = /mp4|m4a|aac/.test(mimeType) ? 'm4a' : /wav/.test(mimeType) ? 'wav' : /ogg/.test(mimeType) ? 'ogg' : /mpeg|mp3/.test(mimeType) ? 'mp3' : 'webm';
   const form = new FormData();
   form.append('file', new Blob([audio], { type: mimeType }), `speech.${ext}`);
-  form.append('response_format', 'json');
+  form.append('response_format', format);
   form.append('language', 'zh');
   form.append('temperature', '0');
   form.append('prompt', PROMPT);
   const res = await fetch(`${URL_BASE}/inference`, { method: 'POST', body: form, signal: AbortSignal.timeout(60000) });
   if (!res.ok) throw Object.assign(new Error(`whisper-server HTTP ${res.status}`), { status: 502 });
-  const data = await res.json();
+  return res.json();
+}
+
+export async function transcribe(audio, mimeType = 'audio/webm') {
+  const data = await inference(audio, mimeType, 'json');
   return String(data?.text ?? '').trim();
 }

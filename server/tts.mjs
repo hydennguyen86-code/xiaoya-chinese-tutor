@@ -53,13 +53,13 @@ export const VI_TTS_VOICES = [
 export const CLONE_VOICES = [
   {
     id: 'clone-zh',
-    label: 'Giọng vợ · bản sao giọng nói tiếng Trung (offline)',
-    short: 'Giọng vợ',
+    label: 'Giọng riêng · bản sao giọng nói tiếng Trung (offline)',
+    short: 'Giọng riêng',
   },
   {
     id: 'clone-vi',
-    label: 'Giọng vợ · bản sao giọng nói tiếng Việt (offline)',
-    short: 'Giọng vợ (Việt)',
+    label: 'Giọng riêng · bản sao giọng nói tiếng Việt (offline)',
+    short: 'Giọng riêng (Việt)',
   },
 ];
 

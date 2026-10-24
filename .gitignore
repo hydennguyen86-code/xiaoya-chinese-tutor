@@ -4,6 +4,7 @@ dist/
 .env
 .env.*
 *.log
+*.tsbuildinfo
 
 # personal photos and the avatars built from them: never commit
 /mom*.jpg
@@ -11,6 +12,11 @@ dist/
 /model*.glb
 /buocB-so-sanh.png
 public/avatars/mom*
+public/avatars/personal*
 
 # learner data saved by the server (see server/dataStore.mjs)
 /data/
+
+# whisper.cpp build and models downloaded by scripts/setup-whisper.sh
+/vendor/
+/models/

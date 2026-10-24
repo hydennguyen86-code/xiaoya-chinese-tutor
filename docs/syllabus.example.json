@@ -1,0 +1,13 @@
+{
+  "volumes": [
+    {
+      "id": "vol1",
+      "title": "Tập 1",
+      "levels": ["HSK1-2"],
+      "lessons": [
+        { "no": 1, "title": "Chào hỏi", "pages": "1-8", "topics": ["chào hỏi", "giới thiệu tên"], "days": 2 },
+        { "no": 2, "title": "Gia đình", "topics": ["thành viên gia đình", "nghề nghiệp"], "vocab": ["爸爸", "妈妈", { "word": "工作", "meaning": "công việc" }], "patterns": ["……是……"], "days": 2 }
+      ]
+    }
+  ]
+}

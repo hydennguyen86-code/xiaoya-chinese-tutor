@@ -11,7 +11,9 @@
     "voice:vi": "cd ../AI-Chinese-Teacher && ./.venv-vitts/bin/python vitts_service.py",
     "typecheck": "tsc --noEmit",
     "test": "node --test server/*.test.mjs src/lib/*.test.ts",
-    "eval:corrections": "node eval/corrections.mjs"
+    "eval:corrections": "node eval/corrections.mjs",
+    "eval:tones": "node eval/tones.mjs",
+    "setup:whisper": "bash scripts/setup-whisper.sh"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",
