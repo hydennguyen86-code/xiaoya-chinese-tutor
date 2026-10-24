@@ -51,6 +51,7 @@ import {
   updateLearnerLevel,
 } from './lib/learners';
 import type { Learner } from './lib/learners';
+import { DailyLesson } from './components/DailyLesson';
 import { extractSpeechSegments, makeGreeting, shortModelName, uid } from './lib/text';
 import type {
   AvatarMode,
@@ -111,6 +112,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const [error, setError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [learningOpen, setLearningOpen] = useState(false);
+  const [lessonOpen, setLessonOpen] = useState(false);
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
@@ -311,6 +313,13 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const visibleError = error || statusError;
   const week = useMemo(() => lastSevenDays(progress), [progress]);
   const learningDue = useMemo(() => dueWords(learning).length, [learning]);
+
+  const getAvatar = useCallback(() => avatarRef.current, []);
+  const updateLearning = useCallback((update: (previous: LearningProfile) => LearningProfile) => {
+    const next = update(learningRef.current);
+    learningRef.current = next;
+    setLearning(next);
+  }, []);
   const goalPercent = Math.min(
     100,
     Math.round((progress.todayTurns / DAILY_GOAL) * 100),
@@ -929,6 +938,19 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           </button>
 
           <button
+            className="lesson-launch"
+            type="button"
+            onClick={() => {
+              micRef.current?.abort();
+              avatarRef.current?.stopSpeech();
+              setLessonOpen((open) => !open);
+            }}
+            title="Bài học 20 phút theo giáo trình, tự chọn bài cho hôm nay"
+          >
+            {lessonOpen ? 'Về trò chuyện' : 'Bài hôm nay'}
+          </button>
+
+          <button
             className="runtime-chip"
             type="button"
             onClick={openSettings}
@@ -1043,26 +1065,41 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           </div>
         </section>
 
-        <ChatPanel
-          messages={messages}
-          phase={phase}
-          draft={draft}
-          listening={listening}
-          micSupported={isSpeechSupported()}
-          canSend={canChat && !busy}
-          showPinyin={settings.showPinyin}
-          todayTurns={progress.todayTurns}
-          goal={DAILY_GOAL}
-          error={visibleError}
-          onDraftChange={handleDraftChange}
-          onSend={() => send()}
-          onMicToggle={handleMicToggle}
-          onReplay={handleReplay}
-          onSpeakTranslation={handleSpeakTranslation}
-          onTogglePinyin={handleTogglePinyin}
-          onNewChat={handleNewChat}
-          onDismissError={handleDismissError}
-        />
+        {lessonOpen ? (
+          <DailyLesson
+            learner={learner}
+            level={settings.level}
+            provider={settings.providerId}
+            model={settings.model}
+            voice={settings.voice}
+            localStt={Boolean(status?.localStt)}
+            getAvatar={getAvatar}
+            learning={learning}
+            onLearningUpdate={updateLearning}
+            onClose={() => setLessonOpen(false)}
+          />
+        ) : (
+          <ChatPanel
+            messages={messages}
+            phase={phase}
+            draft={draft}
+            listening={listening}
+            micSupported={isSpeechSupported()}
+            canSend={canChat && !busy}
+            showPinyin={settings.showPinyin}
+            todayTurns={progress.todayTurns}
+            goal={DAILY_GOAL}
+            error={visibleError}
+            onDraftChange={handleDraftChange}
+            onSend={() => send()}
+            onMicToggle={handleMicToggle}
+            onReplay={handleReplay}
+            onSpeakTranslation={handleSpeakTranslation}
+            onTogglePinyin={handleTogglePinyin}
+            onNewChat={handleNewChat}
+            onDismissError={handleDismissError}
+          />
+        )}
       </main>
 
       <SettingsDialog

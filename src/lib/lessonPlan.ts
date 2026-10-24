@@ -50,12 +50,29 @@ export interface SessionStats {
   turns: number;
 }
 
+export interface DialogLine {
+  role: 'user' | 'assistant';
+  text: string;
+  translation?: string;
+  corrections?: Array<{ original: string; corrected: string; explanation: string }>;
+}
+
+export interface SessionNote {
+  original: string;
+  corrected: string;
+  explanation: string;
+}
+
 export interface SessionState extends Pointer {
   date: string;
   section: number;
   item: number;
   elapsedMs: number[];
   stats: SessionStats;
+  /** role-play / free-talk conversation, kept so a resumed session continues it */
+  dialog?: DialogLine[];
+  /** corrections collected during the session, shown in the summary */
+  notes?: SessionNote[];
 }
 
 export interface LessonProgress extends Pointer {

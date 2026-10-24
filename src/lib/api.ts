@@ -31,6 +31,8 @@ export interface ChatRequest {
   level: string;
   messages: ChatHistoryMessage[];
   learning?: string;
+  /** role-play instructions for a lesson; the server puts them in the system prompt */
+  scenario?: string;
 }
 
 export interface ChatStreamHandlers {

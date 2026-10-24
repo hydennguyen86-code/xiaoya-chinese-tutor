@@ -98,7 +98,11 @@ ${given}${givenPatterns}
 const clean = (value, max = 200) => (typeof value === 'string' ? value.trim().slice(0, max) : '');
 const isVi = (text) => Boolean(text) && !HAN.test(text);
 const isZh = (text) => Boolean(text) && HAN.test(text);
-const py = (text) => pinyin(text, { toneType: 'symbol', type: 'array', nonZh: 'consecutive' }).join(' ');
+const PUNCT_TOKEN = /^[\s，。！？、；：,.!?;:“”"'‘’…（）()《》]+$/u;
+const py = (text) =>
+  pinyin(text, { toneType: 'symbol', type: 'array', nonZh: 'consecutive' })
+    .filter((token) => !PUNCT_TOKEN.test(token))
+    .join(' ');
 
 export function normalizeLesson(raw, lesson) {
   const givenMeaning = new Map(lesson.vocab.filter((v) => v.meaning).map((v) => [v.word, v.meaning]));

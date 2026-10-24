@@ -89,6 +89,7 @@ export interface StatusResponse {
   levels: Level[];
   avatarUrl: string;
   lamAvatarUrl?: string;
+  localStt?: boolean;
 }
 
 export interface TtsWord {

@@ -136,9 +136,10 @@ async function collectCorrections(provider, model, userText, signal) {
     temperature: 0,
   });
   // drop "corrections" that only change style (synonyms, 很→非常, 儿, final particles)
-  return parseCorrections(result.raw, userText).filter(
-    (item) => !isStyleOnlyEdit(item.original, item.corrected),
-  );
+  return parseCorrections(result.raw, userText)
+    .filter((item) => !isStyleOnlyEdit(item.original, item.corrected))
+    // the explanation must be Vietnamese; a Chinese one is dropped, the fix is kept
+    .map((item) => (HAN.test(item.explanation || '') ? { ...item, explanation: '' } : item));
 }
 
 function polishTurn(turn) {
