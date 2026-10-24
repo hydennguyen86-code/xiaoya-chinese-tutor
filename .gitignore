@@ -20,3 +20,6 @@ public/avatars/personal*
 # whisper.cpp build and models downloaded by scripts/setup-whisper.sh
 /vendor/
 /models/
+
+# recordings remain private even with a custom data folder inside the repo
+**/eval-recordings/

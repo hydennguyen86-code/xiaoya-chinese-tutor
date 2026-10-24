@@ -40,3 +40,30 @@ Script clone tạm, npm ci/build, status/syllabus/avatar/TTS và dọn sạch;
 CI Linux không đòi model. Chế độ TTS thường báo rõ nếu chỉ kiểm tra được lỗi;
 SMOKE_REQUIRE_TTS=1 bắt buộc có audio. Chưa chạy trên máy macOS thứ hai.
 Kết quả chạy local sẽ bổ sung sau khi clone bản commit.
+
+Kết quả mục 4: clone local từ commit `905133f` trên máy hiện tại, chạy
+`SMOKE_REQUIRE_TTS=1 bash scripts/smoke-test.sh` thành công: npm ci, build,
+status, syllabus, brunette.glb, lam-sample.zip, TTS tạo được audio.
+Runtime đi kèm Codex (Node/npm), không phải máy macOS thứ hai. Linux job
+đã viết nhưng chưa chạy trên GitHub vì không push. Build còn cảnh báo bundle >500 KB.
+
+## 5 — duyệt bài
+
+`npm run review:lesson -- <file>` in từ/nghĩa/pinyin/ví dụ/mẫu câu/nhập vai,
+cả nghe/nói và checkpoint nếu có. `--check` bắt buộc reviewedBy/reviewedAt/notes
+và reviewed:true. Loader dùng cùng validator; metadata review cũ phải được
+người duyệt bổ sung. Test từ chối thiếu trường/ngày sai. Không bài thật nào
+được tự gắn nhãn đã duyệt. UI phân biệt đã duyệt và bài AI chưa được giáo viên duyệt.
+
+## 6 — chuẩn bị, chưa đủ điều kiện phát hành
+
+README chỉ giữ số đo có file trong eval/results; bỏ bảng bốn giọng không có
+file lưu, không tạo số đo mới. Có GIF avatar mẫu đã xem từng khung.
+CHANGELOG v0.1.0 để trạng thái chưa phát hành. Không tạo tag/release/push.
+Mục 2 còn cần người thật ghi và gắn nhãn; mục 4 còn cần máy macOS thứ hai.
+Đây là phần cần người dùng thực hiện, không thể thay bằng audio giả hoặc tự
+xác nhận đã kiểm chứng. Ngưỡng chưa chỉnh, chưa có số trước/sau mới.
+
+Bổ sung khi kiểm tra cài đặt: npm audit báo body-parser bản cũ có cảnh báo
+DoS mức high. Đã cập nhật bản vá tương thích trong lockfile; audit sau cập
+nhật báo 0 lỗ hổng. Không thay ngưỡng chấm hay model.

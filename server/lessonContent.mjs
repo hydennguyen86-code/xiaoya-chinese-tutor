@@ -1,3 +1,4 @@
+import { reviewProblems } from './lessonReview.mjs';
 import { readCourseLesson } from './courseContent.mjs';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
@@ -321,7 +322,7 @@ export function loadReviewedLesson({ dataDir, volume, lesson, volumeId, lessonNo
     if (!fs.existsSync(file)) continue;
     try {
       const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
-      if (raw.level !== level || !raw.review?.reviewer?.trim() || !raw.review?.date || raw.reviewed !== true) continue;
+      if (raw.level !== level || reviewProblems(raw).length > 0) continue;
       const { content, problems } = normalizeLesson(raw, lesson, { day });
       if (problems.length) continue;
       return {
@@ -337,8 +338,8 @@ export function loadReviewedLesson({ dataDir, volume, lesson, volumeId, lessonNo
         level,
         placeholder: false,
         reviewed: true,
-        review: raw.review,
-        editorialStatus: `Đã được ${raw.review.reviewer} duyệt`,
+        review: { reviewer: raw.reviewedBy, date: raw.reviewedAt },
+        editorialStatus: `Đã được ${raw.reviewedBy} duyệt`,
       };
     } catch {
       /* Invalid reviewed files fall through to generation. */

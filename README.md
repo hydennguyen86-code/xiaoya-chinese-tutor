@@ -132,30 +132,30 @@ soạn nội dung. App không thay đổi mục lục riêng đã có.
 
 ## Độ chính xác: đo được bao nhiêu
 
-Cả hai bộ đo nằm trong `eval/` và chạy lại được trên máy bạn. Kết quả thô được lưu ở [eval/results/](eval/results/).
+Các bộ đo nằm trong `eval/` và chạy lại được trên máy bạn. Kết quả thô được lưu ở [eval/results/](eval/results/).
+Số sửa câu đối chiếu được trong [kết quả qwen3.5:4b](eval/results/corrections-qwen3.5_4b-2026-10-24.json).
+[Đo sinh bài ba trình độ](eval/results/lessons-qwen3.5_4b-2026-10-24.json) chỉ xác nhận phản hồi và cấu trúc, không chứng nhận nội dung.
 
 **Sửa câu** (`npm run eval:corrections`, qwen3.5:4b, 40 câu): 0/22 câu đúng bị
 sửa nhầm; 17/18 câu sai được phát hiện, 16/18 sửa đúng như đáp án. Bộ câu nhỏ và
 gồm đúng những loại lỗi mà luật đã viết cho, nên với lỗi khác (chọn từ, ngữ
 pháp hiếm) phần sửa vẫn do mô hình 4B quyết định và có lúc sai. Mô hình khác cần được đo riêng bằng cùng bộ thử.
 
-**Thanh điệu** (`npm run eval:tones -- --say="<giọng macOS>"`): đọc bằng giọng
-tổng hợp của macOS thay cho người học. Ngưỡng được chỉnh trên giọng Tingting;
-bốn giọng còn lại chưa từng dùng để chỉnh.
+**Thanh điệu**: bản ghi có thể đối chiếu mới nhất là
+[Tingting ngày 24/10/2026](eval/results/tones-macOS_Tingting-2026-10-24.json),
+commit `841d68b`, working tree lúc đo còn thay đổi. Giọng tổng hợp macOS,
+ngưỡng từng được chỉnh trên chính giọng Tingting nên không phải kiểm định độc lập.
 
-| Giọng | Chữ đọc riêng (40 chữ, 4 thanh) | Chữ trong từ 2 chữ |
+| Giọng có file kết quả | Chữ đọc riêng | Chữ trong từ hai chữ |
 |---|---|---|
-| Tingting (dùng để chỉnh) | 35/40 | 25/29 đúng (3 chữ chưa chấm được) |
-| Flo | 40/40 | 29/32 |
-| Reed | 36/40 (1 chữ chưa chấm được) | 27/30 (2 chưa chấm được) |
-| Grandpa | 31/40 (1 chưa chấm được) | 23/27 (5 chưa chấm được) |
-| Shelley | 40/40 | 31/32 |
+| Tingting | 35/40 đúng, 0 chưa chấm | 25/29 chữ chấm được đúng; 3/32 chưa chấm |
 
-Lỗi còn lại chủ yếu là thanh 3 bị nghe thành thanh 2 và thanh 4 thành thanh 3,
-nhất là giọng trầm (Grandpa).
+Các số của Flo/Reed/Grandpa/Shelley từng ghi ở đây không có file kết quả
+kèm theo trong repo, nên đã bỏ khỏi bảng có thể kiểm chứng. Chưa chạy lại bộ
+TTS sau thay đổi giao diện/mốc âm tiết; ngưỡng `classifyIsolated` giữ nguyên.
 
-Đây là giọng máy đọc chuẩn, chưa phải người học thật: con số với giọng người
-(nhất là người mới học, đọc ngập ngừng) sẽ thấp hơn. Vì thế Misu chỉ chấm đúng/sai
+Đây là giọng máy đọc chuẩn, chưa phải người học thật: độ chính xác trên giọng người
+(nhất là người mới học, đọc ngập ngừng) hiện chưa được đo. Vì thế Misu chỉ chấm đúng/sai
 từng chữ khi đọc từ 1–2 chữ, còn với câu dài thì chỉ vẽ đường cao độ để bạn tự
 so, và báo "chưa chấm được" thay vì đoán khi không rõ. Thanh 1 và thanh 3 đọc
 riêng chỉ khác nhau ở độ cao, nên Misu cần nghe bạn nói vài câu trước để biết

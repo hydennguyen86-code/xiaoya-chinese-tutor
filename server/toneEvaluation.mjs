@@ -73,7 +73,10 @@ export function mountToneEvaluation(app, dataDir) {
       const { dir, item } = locate(req);
       const entry = manifest(dir).recordings.find((r) => r.id === item.id);
       if (!entry) return res.sendStatus(404);
-      res.type(entry.mime).sendFile(path.join(dir, `${item.id}.audio`));
+      res
+        .set('Cache-Control', 'no-store')
+        .type(entry.mime)
+        .sendFile(path.join(dir, `${item.id}.audio`));
     } catch (error) {
       res.status(400).json({ error: error.message });
     }

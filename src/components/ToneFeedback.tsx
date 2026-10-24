@@ -52,7 +52,7 @@ export function ToneFeedback({ report, audio }: { report: ToneReport; audio?: Bl
         const binary = atob(report.model.audioBase64);
         await play(Uint8Array.from(binary, (ch) => ch.charCodeAt(0)).buffer, modelPart.start, modelPart.end);
       }
-      if (turn === sequence.current) setPlayback('');
+      if (turn === sequence.current) setPlayback(modelPart ? '' : 'Chưa tải được giọng mẫu; đã phát bản ghi của bạn.');
     } catch {
       if (turn === sequence.current) setPlayback('Không phát được đoạn âm thanh.');
     }

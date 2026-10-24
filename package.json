@@ -16,7 +16,8 @@
     "setup:whisper": "bash scripts/setup-whisper.sh",
     "format": "node scripts/format.mjs",
     "format:check": "node scripts/format.mjs --check",
-    "check:assets": "node scripts/check-public-assets.mjs"
+    "check:assets": "node scripts/check-public-assets.mjs",
+    "review:lesson": "node scripts/review-lesson.mjs"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",

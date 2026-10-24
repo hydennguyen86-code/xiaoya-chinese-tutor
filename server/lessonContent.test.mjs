@@ -62,7 +62,7 @@ test('reviewed material is validated, level matched, and loaded without model ge
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'misu-reviewed-'));
   try {
     fs.mkdirSync(path.join(dir,'lessons-reviewed'));
-    fs.writeFileSync(path.join(dir,'lessons-reviewed','unit-1-d1.json'),JSON.stringify({...base,level:'HSK1-2',reviewed:true,review:{reviewer:'Người duyệt thử',date:'2026-10-24'}}));
+    fs.writeFileSync(path.join(dir,'lessons-reviewed','unit-1-d1.json'),JSON.stringify({...base,level:'HSK1-2',reviewed:true,reviewedBy:'Người duyệt thử',reviewedAt:'2026-10-24',notes:'Synthetic test fixture: structure only, no real review claim.'}));
     const content=await getLessonContent({dataDir:dir,syllabus:{volumes:[{id:'unit',title:'Tự soạn',lessons:[lesson]}]},volumeId:'unit',lessonNo:1,day:1,level:'HSK1-2',provider:'not-used',model:'not-used'});
     assert.equal(content.reviewed,true);
     assert.equal(content.review.reviewer,'Người duyệt thử');
@@ -76,4 +76,14 @@ test('all bundled original drafts pass structural checks without being marked re
     assert.equal(raw.reviewed,false);
     assert.deepEqual(normalizeLesson(raw,lesson).problems,[],name);
   }
+});
+
+test('loader refuses legacy review metadata instead of displaying a reviewed badge', async () => {
+  const { loadReviewedLesson } = await import('./lessonContent.mjs');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-review-migration-'));
+  try {
+    fs.mkdirSync(path.join(dir, 'lessons-reviewed'));
+    fs.writeFileSync(path.join(dir, 'lessons-reviewed/unit-1-d1.json'), JSON.stringify({ ...base, level: 'HSK1-2', reviewed: true, review: { reviewer: 'Legacy', date: '2026-10-24' } }));
+    assert.equal(loadReviewedLesson({ dataDir: dir, volume: { title: 'Fixture' }, lesson, volumeId: 'unit', lessonNo: 1, day: 1, level: 'HSK1-2' }), null);
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });

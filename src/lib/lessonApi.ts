@@ -56,6 +56,9 @@ export interface LessonContent {
     speaking: SpeakingExercise[];
   };
   reviewed?: boolean;
+  reviewedBy?: string;
+  reviewedAt?: string;
+  notes?: string;
   review?: { reviewer: string; date: string };
   volumeId: string;
   volumeTitle: string;

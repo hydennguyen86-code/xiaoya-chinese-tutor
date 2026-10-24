@@ -29,7 +29,12 @@ Ghi rõ trình độ, mục tiêu, nguồn do bạn tự soạn và trạng thá
 Chỉ khi có người đủ năng lực tiếng Trung kiểm tra nội dung, pinyin, bản dịch,
 độ khó và mục tiêu giao tiếp, mới chuyển bài sang `lessons/reviewed/` với tên
 `<volumeId>-<lessonNo>-d<day>.json`, `level`, `reviewed: true`,
-`review: { reviewer: "Tên người duyệt", date: "YYYY-MM-DD" }`.
+`reviewedBy: "Tên người duyệt"`, `reviewedAt: "YYYY-MM-DD"`,
+`notes: "Đã kiểm tra những gì, đã sửa những gì"`.
+Chạy `npm run review:lesson -- <file>` để đọc đủ từ, nghĩa, pinyin, mẫu câu,
+nhập vai, bài nghe/nói; sau khi điền metadata chạy lại với `--check`.
+Cấu trúc cũ `review: { reviewer, date }` cần được người duyệt bổ sung metadata
+mới, không tự động nâng trạng thái.
 Mã tập/bài phải khớp mục lục. Có thể nạp bài cá nhân tương tự ở
 `data/lessons-reviewed/`. Hệ thống ưu tiên bài đã duyệt có đúng trình độ và
 qua kiểm tra cấu trúc. Không gắn nhãn đã duyệt cho nội dung chỉ được AI kiểm tra.

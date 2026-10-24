@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 type Item = { id: string; text: string; kind: string; expected: number[] };
 type Label = { source: 'self' | 'expert'; reviewedBy: string; tones: number[] };
-type Recording = { id: string; label: Label | null };
+type Recording = { id: string; label: Label | null; recordedAt: string };
 export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onClose: () => void }) {
   const [items, setItems] = useState<Item[]>([]);
   const [recordings, setRecordings] = useState<Recording[]>([]);
@@ -42,7 +42,7 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
     };
   }, [base]);
   useEffect(() => {
-    setLabels(current?.label?.tones ?? item?.expected ?? []);
+    setLabels(current?.label?.tones ?? item?.expected.map(() => 0) ?? []);
   }, [item, current]);
   async function capture() {
     if (recorder.current?.state === 'recording') {
@@ -115,7 +115,7 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
     }
   }
   return (
-    <section className="lesson-card">
+    <section className="lesson-panel">
       <h3>Bộ đo giọng cá nhân · 40 chữ và 16 từ</h3>
       <p>
         Bản ghi chỉ lưu trên máy trong thư mục dữ liệu/eval-recordings của người học. Không tự gửi lên GitHub. Đọc tự nhiên, nghe lại rồi
@@ -146,9 +146,9 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
           </button>
           {current && !busy && (
             <audio
-              key={`${item.id}-${recordings.indexOf(current)}`}
+              key={`${item.id}-${current.recordedAt}`}
               controls
-              src={`${base}/${item.id}/audio?v=${current.label?.reviewedBy ?? recordings.length}`}
+              src={`${base}/${item.id}/audio?v=${encodeURIComponent(current.recordedAt)}`}
             />
           )}
           <label>

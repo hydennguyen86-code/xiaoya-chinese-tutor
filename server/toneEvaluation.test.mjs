@@ -12,3 +12,33 @@ test('human labels require reviewer, provenance and one valid tone per syllable'
   assert.equal(validateToneLabel(valid, 2), true);
   for (const value of [{ ...valid, source: 'ai' }, { ...valid, reviewedBy: '' }, { ...valid, tones: [5, 1] }, { ...valid, tones: [1] }]) assert.equal(validateToneLabel(value, 2), false);
 });
+
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { mountToneEvaluation } from './toneEvaluation.mjs';
+test('captured audio stays per learner; rerecording invalidates labels and rejects path tricks', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-capture-test-'));
+  const routes = new Map();
+  const app = Object.fromEntries(['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]));
+  mountToneEvaluation(app, dir);
+  function call(route, body, learner = 'synthetic-fixture') {
+    const req = { params: { learner, item: 'single-1-1' }, headers: { 'content-type': 'audio/wav' }, body };
+    const res = { code: 200, status(code) { this.code = code; return this; }, json(value) { this.value = value; } };
+    routes.get(route)(req, res);
+    return res;
+  }
+  try {
+    const upload = 'post /api/tone-evaluation/:learner/:item';
+    const label = 'put /api/tone-evaluation/:learner/:item/label';
+    const audioFixture = Buffer.alloc(1001); // Not human speech and never an eval result.
+    assert.equal(call(upload, audioFixture).code, 200);
+    assert.equal(call(label, { source: 'self', reviewedBy: 'Synthetic test fixture', tones: [1] }).code, 200);
+    const file = path.join(dir, 'eval-recordings/synthetic-fixture/manifest.json');
+    assert.deepEqual(JSON.parse(fs.readFileSync(file)).recordings[0].label.tones, [1]);
+    assert.equal(call(upload, audioFixture).code, 200);
+    assert.equal(JSON.parse(fs.readFileSync(file)).recordings[0].label, null);
+    assert.equal(call(upload, audioFixture, '../escape').code, 400);
+    assert.equal(call(label, { source: 'ai', reviewedBy: 'AI', tones: [1] }).code, 400);
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});

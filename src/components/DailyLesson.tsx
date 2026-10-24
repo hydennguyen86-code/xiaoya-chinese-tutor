@@ -245,7 +245,7 @@ export function DailyLesson(props: DailyLessonProps) {
         setVoicePhase(null);
       }
     },
-    [getAvatar, localStt, learner.id],
+    [getAvatar, localStt, learner.id, content?.targetLevel],
   );
   const ask = useCallback(async () => (await listenFor()).text, [listenFor]);
   const read = useCallback((target: string) => listenFor(target), [listenFor]);
@@ -448,6 +448,9 @@ export function DailyLesson(props: DailyLessonProps) {
             : `Tham khảo: Bài ${content.lessonNo}, ${content.volumeTitle}${content.pages ? `, trang ${content.pages}` : ''} trong sách 《体验汉语口语》. Nội dung luyện tập do Misu tự soạn.`}
       </p>
 
+      <p className={content.reviewed ? 'lesson-ok' : 'lesson-notice'}>
+        {content.reviewed ? `Đã duyệt bởi ${content.reviewedBy} · ${content.reviewedAt}` : 'Bài do AI soạn, chưa được giáo viên duyệt'}
+      </p>
       {content.learningNotes && (
         <details className="lesson-card">
           <summary>Kiến thức cần biết và cách học buổi này</summary>
@@ -496,7 +499,6 @@ export function DailyLesson(props: DailyLessonProps) {
       )}
 
       <div className="lesson-body">
-        {content.reviewed && <p className="lesson-hint">Đã duyệt bởi {content.review?.reviewer}</p>}
         {sectionInfo.id === 'review' && <ReviewSection {...shared} learning={props.learning} />}
         {sectionInfo.id === 'vocab' && <VocabSection {...shared} />}
         {sectionInfo.id === 'patterns' && <PatternSection {...shared} provider={provider} model={model} />}
