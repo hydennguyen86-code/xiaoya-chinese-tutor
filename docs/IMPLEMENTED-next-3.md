@@ -149,3 +149,16 @@ E21 kiểm tra: typecheck, 62/62 test, build và kiểm tra allowlist toàn dist
 Chưa chạy migration trên avatar thật (để giữ luật không đụng data thật);
 Windows thật vẫn chưa thử. Build lại đã loại bản sao cũ khỏi dist, không xoá
 bất kỳ file nào trong public/.
+
+## E24 — test route, adapter và component
+
+Thêm test server index thật trên PORT=0, cổng tự chọn, dữ liệu tạm và sample-only;
+backend Ollama/LM Studio/Whisper/clone đều là HTTP fixture local. Bao phủ status,
+store CRUD/đầu vào sai, syllabus, bài cố định chưa duyệt, TTS, transcribe,
+pronounce, corrections/chat, chặn avatar riêng và config không trả key.
+Test riêng STT multipart/readiness/lỗi, TTS stream audio/metadata/đóng stream,
+LLM NDJSON/SSE/fallback định dạng/lỗi. Ba test SSR component kiểm tra không báo
+thành công giả, không chấm thanh chưa rõ thành đúng, không lộ transcript sớm.
+Typecheck, 66 test backend/lib + 3 test component, build/dist allowlist qua.
+Không gọi cloud, không dùng audio người thật. SSR không thay thế thao tác UI
+hay thiết bị Windows thật. E23 vẫn chờ bộ câu thử DeepSeek, không sửa luật.

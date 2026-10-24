@@ -8,7 +8,7 @@
     "build": "tsc --noEmit && vite build && node scripts/check-dist.mjs",
     "start": "node server/index.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node --test server/*.test.mjs src/lib/*.test.ts",
+    "test": "node --test server/*.test.mjs src/lib/*.test.ts && tsx --tsconfig tsconfig.test.json --test src/components/*.test.tsx",
     "eval:corrections": "node eval/corrections.mjs",
     "eval:tones": "node eval/tones.mjs",
     "setup:whisper": "bash scripts/setup-whisper.sh",
@@ -40,6 +40,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "concurrently": "^10.0.6",
     "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
   }

@@ -710,7 +710,7 @@ server.on('error', () => {
 server.listen(PORT, HOST, async () => {
   const providers = await detectProviders();
   const summary = providers.map((p) => `${p.name}: ${p.online ? `${p.models.length} model` : 'offline'}`).join(' · ');
-  process.send?.({ type: 'misu-ready', port: PORT });
+  process.send?.({ type: 'misu-ready', port: server.address().port });
   console.log(`米苏 server → ${lan.enabled ? 'https' : 'http'}://${HOST}:${PORT}`);
   console.log(`[providers] ${summary}`);
   await startStt();
