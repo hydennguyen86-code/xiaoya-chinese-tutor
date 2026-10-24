@@ -11,12 +11,14 @@ import {
   CORRECTION_PROMPT,
   LEVELS,
   buildAnalysisMessages,
+  buildCorrectionVerifyMessages,
   buildMessages,
   sanitizeHistory,
 } from './prompt.mjs';
 import {
   ANALYSIS_SCHEMA,
   CORRECTION_SCHEMA,
+  CORRECTION_VERIFY_SCHEMA,
   ModelError,
   completeJson,
   streamCompletion,
@@ -38,6 +40,7 @@ import {
 } from './tts.mjs';
 import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
+import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
@@ -67,6 +70,25 @@ app.put('/api/store/:key', (req, res) => {
     res.status(error.status || 500).json({ error: error.message });
   }
 });
+
+// Speech-to-text on this computer (whisper.cpp). Body: the raw recorded audio.
+app.post(
+  '/api/transcribe',
+  express.raw({ type: () => true, limit: '15mb' }),
+  async (req, res) => {
+    if (!Buffer.isBuffer(req.body) || req.body.length < 1000) {
+      res.status(400).json({ error: 'Không có âm thanh.' });
+      return;
+    }
+    try {
+      const text = await transcribe(req.body, String(req.headers['content-type'] || 'audio/webm'));
+      res.json({ text });
+    } catch (error) {
+      console.error('[stt]', error.message);
+      res.status(error.status || 500).json({ error: 'Không nhận dạng được giọng nói. Thử lại nhé.' });
+    }
+  },
+);
 
 app.delete('/api/store/:key', (req, res) => {
   try {
@@ -98,6 +120,25 @@ function friendlyError(error) {
 
 const HAN = /\p{Script=Han}/u;
 
+async function verifyCorrection(provider, model, sentence, item) {
+  // A 4B model sometimes "corrects" valid phrases (多练习 → 多加练习). Ask it a
+  // second, narrow yes/no question before showing the fix; when in doubt drop it.
+  try {
+    const result = await completeJson({
+      provider,
+      model,
+      messages: buildCorrectionVerifyMessages(sentence, item.original, item.corrected),
+      signal: AbortSignal.timeout(12000),
+      schema: CORRECTION_VERIFY_SCHEMA,
+      maxTokens: 40,
+      temperature: 0,
+    });
+    return parseJsonObject(result.raw)?.wrong === true;
+  } catch {
+    return false;
+  }
+}
+
 async function collectCorrections(provider, model, userText, signal) {
   const timeout = AbortSignal.timeout(15000);
   const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
@@ -114,9 +155,15 @@ async function collectCorrections(provider, model, userText, signal) {
     temperature: 0,
   });
   // drop "corrections" that only change style (synonyms, 很→非常, 儿, final particles)
-  return parseCorrections(result.raw, userText).filter(
+  const candidates = parseCorrections(result.raw, userText).filter(
     (item) => !isStyleOnlyEdit(item.original, item.corrected),
   );
+
+  const verified = [];
+  for (const item of candidates) {
+    if (await verifyCorrection(provider, model, userText, item)) verified.push(item);
+  }
+  return verified;
 }
 
 function polishTurn(turn) {
@@ -166,6 +213,7 @@ app.get('/api/status', async (_req, res) => {
     levels: Object.keys(LEVELS),
     avatarUrl: '/avatars/mom-v2.glb?v=1',
     lamAvatarUrl: findLamAvatar(),
+    localStt: sttReady(),
   });
 });
 
@@ -534,10 +582,12 @@ const server = app.listen(PORT, HOST, async () => {
     .join(' · ');
   console.log(`米苏 server → http://${HOST}:${PORT}`);
   console.log(`[providers] ${summary}`);
+  await startStt();
 });
 
 for (const signal of ['SIGINT', 'SIGTERM']) {
   process.on(signal, () => {
+    stopStt();
     server.close(() => process.exit(0));
     setTimeout(() => process.exit(0), 1500).unref();
   });
