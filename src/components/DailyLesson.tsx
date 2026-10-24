@@ -25,7 +25,8 @@ import {
 } from '../lib/lessonPlan';
 import { loadLessonProgress, saveLessonProgress } from '../lib/lessonStore';
 import { dayKey } from '../lib/storage';
-import { bareChinese, listen, voiceSupported, type VoiceHandle, type VoicePhase } from '../lib/voiceInput';
+import { ToneFeedback } from './ToneFeedback';
+import { bareChinese, listen, voiceSupported, type ToneReport, type VoiceHandle, type VoicePhase, type VoiceResult } from '../lib/voiceInput';
 import type { Correction, LearningProfile, Level } from '../types';
 
 interface DailyLessonProps {
@@ -191,24 +192,30 @@ export function DailyLesson(props: DailyLessonProps) {
     [getAvatar, voice],
   );
 
-  const ask = useCallback(async (): Promise<string> => {
-    if (voiceRef.current) {
-      voiceRef.current.stop();
-      return '';
-    }
-    getAvatar()?.stopSpeech();
-    const handle = listen({ local: localStt, onPhase: setVoicePhase });
-    voiceRef.current = handle;
-    try {
-      return await handle.result;
-    } catch (error) {
-      setNotice(error instanceof Error ? error.message : 'Không nghe được. Thử lại nhé.');
-      return '';
-    } finally {
-      voiceRef.current = null;
-      setVoicePhase(null);
-    }
-  }, [getAvatar, localStt]);
+  // record one answer; with a target text and local speech-to-text, its tones are checked too
+  const listenFor = useCallback(
+    async (pronounce?: string): Promise<VoiceResult> => {
+      if (voiceRef.current) {
+        voiceRef.current.stop();
+        return { text: '', tones: null };
+      }
+      getAvatar()?.stopSpeech();
+      const handle = listen({ local: localStt, onPhase: setVoicePhase, learnerId: learner.id, pronounce });
+      voiceRef.current = handle;
+      try {
+        return await handle.details;
+      } catch (error) {
+        setNotice(error instanceof Error ? error.message : 'Không nghe được. Thử lại nhé.');
+        return { text: '', tones: null };
+      } finally {
+        voiceRef.current = null;
+        setVoicePhase(null);
+      }
+    },
+    [getAvatar, localStt, learner.id],
+  );
+  const ask = useCallback(async () => (await listenFor()).text, [listenFor]);
+  const read = useCallback((target: string) => listenFor(target), [listenFor]);
 
   const stopVoice = useCallback(() => voiceRef.current?.stop(), []);
 
@@ -292,7 +299,7 @@ export function DailyLesson(props: DailyLessonProps) {
   const sectionInfo = SECTIONS[section];
   const sectionElapsed = session.elapsedMs[section] || 0;
   const overBudget = sectionElapsed > sectionBudgetMs(section);
-  const shared = { content, session, say, ask, stopVoice, voicePhase, micReady, busy, setBusy, updateSession, onLearningUpdate, setNotice };
+  const shared = { content, session, say, ask, read, stopVoice, voicePhase, micReady, busy, setBusy, updateSession, onLearningUpdate, setNotice };
 
   return (
     <section className="lesson-panel">
@@ -394,6 +401,7 @@ interface SharedProps {
   session: SessionState;
   say: (text: string) => void;
   ask: () => Promise<string>;
+  read: (target: string) => Promise<VoiceResult>;
   stopVoice: () => void;
   voicePhase: VoicePhase | null;
   micReady: boolean;
@@ -518,9 +526,9 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
 
 // 2. New words: listen, repeat, and they go into the learner's review list.
 function VocabSection(props: SharedProps) {
-  const { content, session, say, ask, voicePhase, micReady, updateSession, onLearningUpdate } = props;
+  const { content, session, say, read, voicePhase, micReady, updateSession, onLearningUpdate } = props;
   const word = content.vocab[session.item];
-  const [heard, setHeard] = useState<string | null>(null);
+  const [heard, setHeard] = useState<{ target: string; text: string; tones: ToneReport | null } | null>(null);
 
   useEffect(() => {
     setHeard(null);
@@ -537,15 +545,15 @@ function VocabSection(props: SharedProps) {
     );
   }
 
-  const repeat = async () => {
-    const text = await ask();
-    if (text) setHeard(text);
+  const readAloud = async (target: string) => {
+    const result = await read(target);
+    if (result.text || result.tones) setHeard({ target, ...result });
   };
   const next = () => {
     onLearningUpdate((p) => recordLearningTurn(p, '', { corrections: [], vocab: [{ word: word.word, pinyin: word.pinyin, meaning: word.meaning }] }, { countTurn: false }));
     updateSession((s) => ({ ...s, item: s.item + 1, stats: { ...s.stats, newWords: s.stats.newWords + 1 } }));
   };
-  const ok = heard !== null && bareChinese(heard).includes(word.word);
+  const ok = heard !== null && bareChinese(heard.text).includes(bareChinese(heard.target));
 
   return (
     <div className="lesson-card">
@@ -560,16 +568,18 @@ function VocabSection(props: SharedProps) {
         <Han text={word.example} pinyinText={word.examplePinyin} />
       </p>
       <p className="lesson-hint">{word.exampleVi}</p>
-      {heard !== null && (
+      {heard !== null && heard.text && (
         <p className={ok ? 'lesson-ok' : 'lesson-bad'}>
-          {ok ? 'Đọc chuẩn rồi!' : `Mình nghe thành: "${heard}". Nghe lại rồi thử lần nữa nhé.`}
+          {ok ? 'Mình nghe đúng chữ rồi.' : `Mình nghe thành: "${heard.text}". Nghe lại rồi thử lần nữa nhé.`}
         </p>
       )}
+      {heard?.tones && <ToneFeedback report={heard.tones} />}
       <div className="lesson-actions">
         <button type="button" className="lesson-secondary" onClick={() => say(`${word.word}。${word.example}`)}>
           Nghe lại
         </button>
-        <MicButton voicePhase={voicePhase} micReady={micReady} onClick={() => void repeat()} label="Đọc theo" />
+        <MicButton voicePhase={voicePhase} micReady={micReady} onClick={() => void readAloud(word.word)} label="Đọc từ" />
+        <MicButton voicePhase={voicePhase} micReady={micReady} onClick={() => void readAloud(word.example)} label="Đọc câu" />
         <button type="button" className="lesson-primary" onClick={next}>
           Từ tiếp theo
         </button>

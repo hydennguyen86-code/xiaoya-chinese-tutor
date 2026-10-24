@@ -3,9 +3,11 @@ import { listen, voiceSupported, type VoiceHandle } from './voiceInput';
 // When the server has local speech-to-text (whisper.cpp), record here and
 // transcribe on this computer instead of sending audio to the browser vendor.
 let useLocal = false;
+let learnerId: string | undefined;
 
-export function configureSpeech(options: { local: boolean }) {
-  useLocal = options.local && voiceSupported(true);
+export function configureSpeech(options: { local?: boolean; learnerId?: string }) {
+  if (options.local !== undefined) useLocal = options.local && voiceSupported(true);
+  if (options.learnerId !== undefined) learnerId = options.learnerId;
 }
 
 interface SpeechResultAlternative {
@@ -125,7 +127,7 @@ export class ChineseMic {
   }
 
   private startLocal() {
-    const handle = listen({ local: true });
+    const handle = listen({ local: true, learnerId });
     this.localHandle = handle;
     this.active = true;
     this.callbacks.onState(true);

@@ -4,8 +4,35 @@
 
 export type VoicePhase = 'listening' | 'transcribing';
 
+export interface ToneSyllable {
+  char: string;
+  pinyin: string;
+  expected: number;
+  heard: number;
+  /** null when the tone could not be judged */
+  ok: boolean | null;
+}
+
+export interface ToneReport {
+  mode?: 'word' | 'sentence';
+  syllables: ToneSyllable[];
+  checked: number;
+  correct: number;
+  note?: string;
+  /** pitch in semitones around the speaker's middle, for sentences */
+  curve?: (number | null)[];
+  modelCurve?: (number | null)[];
+}
+
+export interface VoiceResult {
+  text: string;
+  tones: ToneReport | null;
+}
+
 export interface VoiceHandle {
   result: Promise<string>;
+  /** the text plus, when reading a given text aloud, the tone check */
+  details: Promise<VoiceResult>;
   /** finish now and transcribe what was said */
   stop: () => void;
   /** discard */
@@ -18,6 +45,10 @@ interface Options {
   silenceMs?: number;
   noSpeechMs?: number;
   maxMs?: number;
+  /** who is speaking: their voice range is learnt for tone checks */
+  learnerId?: string;
+  /** the text being read aloud; with local speech-to-text its tones are checked */
+  pronounce?: string;
 }
 
 export function voiceSupported(local: boolean) {
@@ -27,17 +58,21 @@ export function voiceSupported(local: boolean) {
 }
 
 export function listen(options: Options): VoiceHandle {
-  return options.local ? listenLocal(options) : listenBrowser(options);
+  const handle = options.local ? listenLocal(options) : listenBrowser(options);
+  // callers await one of the two; keep the other from reporting an unhandled error
+  handle.result.catch(() => {});
+  handle.details.catch(() => {});
+  return handle;
 }
 
-function listenLocal({ onPhase, silenceMs = 1600, noSpeechMs = 8000, maxMs = 30000 }: Options): VoiceHandle {
+function listenLocal({ onPhase, learnerId, pronounce, silenceMs = 1600, noSpeechMs = 8000, maxMs = 30000 }: Options): VoiceHandle {
   let stopRequested = false;
   let cancelled = false;
   let finish: () => void = () => {
     stopRequested = true;
   };
 
-  const result = (async () => {
+  const details = (async (): Promise<VoiceResult> => {
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: { echoCancellation: true, noiseSuppression: true, channelCount: 1 },
     });
@@ -104,22 +139,26 @@ function listenLocal({ onPhase, silenceMs = 1600, noSpeechMs = 8000, maxMs = 300
     await stopped;
     stream.getTracks().forEach((track) => track.stop());
     void ctx.close();
-    if (cancelled || !heard) return '';
+    if (cancelled || !heard) return { text: '', tones: null };
 
     onPhase?.('transcribing');
     const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
-    const res = await fetch('/api/transcribe', {
+    const query = new URLSearchParams();
+    if (learnerId) query.set('learner', learnerId);
+    if (pronounce) query.set('target', pronounce);
+    const res = await fetch(`${pronounce ? '/api/pronounce' : '/api/transcribe'}?${query}`, {
       method: 'POST',
       headers: { 'Content-Type': blob.type },
       body: blob,
     });
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
-    const data = (await res.json()) as { text?: string };
-    return (data.text || '').trim();
+    const data = (await res.json()) as { text?: string; tones?: ToneReport };
+    return { text: (data.text || '').trim(), tones: data.tones ?? null };
   })();
 
   return {
-    result,
+    result: details.then((d) => d.text),
+    details,
     stop: () => finish(),
     cancel: () => {
       cancelled = true;
@@ -172,6 +211,7 @@ function listenBrowser({ onPhase }: Options): VoiceHandle {
   });
   return {
     result,
+    details: result.then((text) => ({ text, tones: null })),
     stop: () => recognition?.stop(),
     cancel: () => {
       cancelled = true;

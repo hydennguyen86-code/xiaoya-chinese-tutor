@@ -66,6 +66,15 @@ export function createDataStore(dir) {
       return items;
     },
 
+    read(key) {
+      if (!this.isValidKey(key)) return null;
+      try {
+        return fs.readFileSync(fileFor(key), 'utf8');
+      } catch {
+        return null;
+      }
+    },
+
     write(key, value) {
       if (!this.isValidKey(key)) throw Object.assign(new Error('Khoá dữ liệu không hợp lệ.'), { status: 400 });
       if (typeof value !== 'string') throw Object.assign(new Error('Giá trị phải là chuỗi.'), { status: 400 });

@@ -251,6 +251,10 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   }, [learner.id, settings.level]);
 
   useEffect(() => {
+    configureSpeech({ learnerId: learner.id });
+  }, [learner.id]);
+
+  useEffect(() => {
     return () => {
       abortRef.current?.abort();
     };

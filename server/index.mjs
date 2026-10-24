@@ -40,6 +40,7 @@ import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
 import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
+import { analyseTones, profileFromAudio } from './tones.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 
@@ -84,9 +85,69 @@ app.post(
     try {
       const text = await transcribe(req.body, String(req.headers['content-type'] || 'audio/webm'));
       res.json({ text });
+      // learn the speaker's pitch range in the background (used by tone checks)
+      const key = pitchKey(String(req.query.learner || ''));
+      if (key) {
+        profileFromAudio(req.body, loadPitchProfile(key))
+          .then((profile) => dataStore.write(key, JSON.stringify(profile)))
+          .catch(() => {});
+      }
     } catch (error) {
       console.error('[stt]', error.message);
       res.status(error.status || 500).json({ error: 'Không nhận dạng được giọng nói. Thử lại nhé.' });
+    }
+  },
+);
+
+// Pronunciation practice. A per-learner pitch profile (their voice range) is
+// kept in the data folder so isolated syllables can be judged high or low.
+const LEARNER_ID = /^[A-Za-z0-9_-]{1,40}$/;
+const pitchKey = (learner) => (LEARNER_ID.test(learner) ? `xiaoya.pitch.v1:${learner}` : '');
+
+function loadPitchProfile(key) {
+  if (!key) return null;
+  try {
+    return JSON.parse(dataStore.read(key) || 'null');
+  } catch {
+    return null;
+  }
+}
+
+const modelCurves = new Map();
+async function modelCurve(target) {
+  if (modelCurves.has(target)) return modelCurves.get(target);
+  const speech = await synthesizeSpeech({ text: target, voice: DEFAULT_VOICE });
+  const report = await analyseTones(Buffer.from(speech.audioBase64, 'base64'), target);
+  const curve = report.curve || [];
+  modelCurves.set(target, curve);
+  if (modelCurves.size > 200) modelCurves.delete(modelCurves.keys().next().value);
+  return curve;
+}
+
+// Query: target=<sentence>, learner=<id>; body: the raw recorded audio.
+app.post(
+  '/api/pronounce',
+  express.raw({ type: () => true, limit: '15mb' }),
+  async (req, res) => {
+    const target = String(req.query.target || '').slice(0, 120);
+    if (!Buffer.isBuffer(req.body) || req.body.length < 1000 || !HAN.test(target)) {
+      res.status(400).json({ error: 'Cần âm thanh và câu mẫu tiếng Trung.' });
+      return;
+    }
+    try {
+      const key = pitchKey(String(req.query.learner || ''));
+      const mime = String(req.headers['content-type'] || 'audio/webm');
+      const [text, report] = await Promise.all([
+        sttReady() ? transcribe(req.body, mime).catch(() => '') : Promise.resolve(''),
+        analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1' }),
+      ]);
+      if (key) dataStore.write(key, JSON.stringify(report.profile));
+      const { profile: _profile, ...tones } = report;
+      if (tones.mode === 'sentence') tones.modelCurve = await modelCurve(target).catch(() => []);
+      res.json({ text, tones });
+    } catch (error) {
+      console.error('[pronounce]', error.message);
+      res.status(error.status || 500).json({ error: 'Không chấm được phát âm. Thử lại nhé.' });
     }
   },
 );
@@ -174,10 +235,14 @@ function polishTurn(turn) {
   }
 }
 
-// A personal LAM avatar (mom-lam.zip) wins over the bundled sample when it exists.
-function findLamAvatar() {
+// Your own avatars (public/avatars/personal-lam.zip, public/avatars/personal.glb;
+// never committed) win over the bundled samples when they exist.
+const LAM_AVATARS = ['personal-lam.zip', 'lam-sample.zip'];
+const GLB_AVATARS = ['personal.glb', 'brunette.glb'];
+
+function findAvatar(names) {
   const roots = [distDir, path.resolve(__dirname, '..', 'public')];
-  for (const name of ['mom-lam.zip', 'lam-sample.zip']) {
+  for (const name of names) {
     const file = roots
       .map((root) => path.join(root, 'avatars', name))
       .find((candidate) => fs.existsSync(candidate));
@@ -198,8 +263,8 @@ app.get('/api/status', async (_req, res) => {
     viVoices: [...VI_TTS_VOICES, ...CLONE_VOICES.filter((v) => isCloneVietnameseVoice(v.id))],
     defaultViVoice: DEFAULT_VI_VOICE,
     levels: Object.keys(LEVELS),
-    avatarUrl: '/avatars/mom-v2.glb?v=1',
-    lamAvatarUrl: findLamAvatar(),
+    avatarUrl: findAvatar(GLB_AVATARS),
+    lamAvatarUrl: findAvatar(LAM_AVATARS),
     localStt: sttReady(),
   });
 });
