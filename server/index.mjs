@@ -1,3 +1,4 @@
+import { createAvatarStore } from './avatars.mjs';
 import https from 'node:https';
 import http from 'node:http';
 import { createLanAccess, ownerRequest } from './lanAccess.mjs';
@@ -241,22 +242,21 @@ function polishTurn(turn) {
   }
 }
 
-// Your own avatars (public/avatars/personal-lam.zip, public/avatars/personal.glb;
-// never committed) win over the bundled samples when they exist.
-const LAM_AVATARS = process.env.XIAOYA_SAMPLE_AVATARS === '1' ? ['lam-sample.zip'] : ['personal-lam.zip', 'lam-sample.zip'];
-const GLB_AVATARS = process.env.XIAOYA_SAMPLE_AVATARS === '1' ? ['brunette.glb'] : ['personal.glb', 'brunette.glb'];
-
-function findAvatar(names) {
-  const roots = [distDir, path.resolve(__dirname, '..', 'public')];
-  for (const name of names) {
-    const file = roots.map((root) => path.join(root, 'avatars', name)).find((candidate) => fs.existsSync(candidate));
-    if (file) {
-      // version by modification time so a replaced avatar is not served from browser cache
-      return `/avatars/${name}?v=${Math.round(fs.statSync(file).mtimeMs)}`;
-    }
-  }
-  return undefined;
-}
+const avatarStore = createAvatarStore({
+  dataDir: dataStore.dir,
+  publicDir: path.resolve(__dirname, '..', 'public'),
+  samplesOnly: process.env.XIAOYA_SAMPLE_AVATARS === '1',
+});
+app.get('/api/avatars/:name', (req, res) => {
+  const file = avatarStore.resolve(req.params.name);
+  if (!file) return res.sendStatus(404);
+  res.set('Cache-Control', 'private, no-store').sendFile(file);
+});
+// Even an old dist must not expose legacy avatars through the static route.
+app.use('/avatars', (req, res, next) => {
+  if (!['/brunette.glb', '/lam-sample.zip'].includes(req.path)) return res.sendStatus(404);
+  next();
+});
 
 app.get('/api/status', async (_req, res) => {
   const providers = await detectProviders();
@@ -267,8 +267,8 @@ app.get('/api/status', async (_req, res) => {
     viVoices: [...VI_TTS_VOICES, ...CLONE_VOICES.filter((v) => isCloneVietnameseVoice(v.id))],
     defaultViVoice: DEFAULT_VI_VOICE,
     levels: Object.keys(LEVELS),
-    avatarUrl: findAvatar(GLB_AVATARS),
-    lamAvatarUrl: findAvatar(LAM_AVATARS),
+    avatarUrl: avatarStore.glbUrl(),
+    lamAvatarUrl: avatarStore.lamUrl(),
     localStt: sttReady(),
     system: { ramGB: Math.round(os.totalmem() / 1024 ** 3), platform: process.platform },
   });

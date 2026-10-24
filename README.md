@@ -143,9 +143,9 @@ gửi âm thanh lên máy chủ Google) và không chấm được thanh điệu
 ### Avatar của riêng bạn
 
 - Avatar 3D: đặt file `.glb` (Ready Player Me hoặc tương thích, có blendshape
-  ARKit + viseme) ở `public/avatars/personal.glb`.
+  ARKit + viseme) ở `data/avatars/personal.glb`.
 - Avatar LAM từ ảnh: dựng bằng [LAM](https://github.com/aigc3d/LAM) (bản demo
-  online hoặc máy có GPU), rồi đặt file `.zip` ở `public/avatars/personal-lam.zip`.
+  online hoặc máy có GPU), rồi đặt file `.zip` ở `data/avatars/personal-lam.zip`.
 - Hoặc chọn file ngay trong phần Cài đặt của ứng dụng.
 
 Các file `personal*` đã nằm trong `.gitignore`, không bị đưa lên git. Chỉ dùng ảnh
@@ -358,3 +358,17 @@ npm start
 Đã kiểm tra UI ở 375px và luồng HTTPS/PIN bằng client thử; **chưa xác minh micro,
 trust chứng chỉ hay cài PWA trên Android/iPhone thật**. Không coi kiểm tra giả lập
 là kiểm tra thiết bị thật.
+
+### Avatar riêng và bản build an toàn
+
+Avatar riêng nằm trong `$XIAOYA_DATA_DIR/avatars/` (mặc định `data/avatars/`),
+được phục vụ qua `/api/avatars/` với cùng bảo vệ LAN/PIN. Khi không ở chế độ
+avatar mẫu, server tự **copy** hai file cũ `public/avatars/personal.glb` và
+`personal-lam.zip` sang đây nếu đích chưa tồn tại; không xoá hoặc ghi đè file
+của bạn. `XIAOYA_SAMPLE_AVATARS=1` bỏ qua cả copy và phục vụ avatar riêng.
+
+Build chỉ copy danh sách public đã cho phép; bước kiểm tra sau build từ chối
+file lạ trong dist. **Không nén gửi nguyên thư mục dist cũ**: các file `mom*`
+hoặc `personal*` trong `dist/avatars/` có thể là bản chép từ build trước. Bạn
+cần tự xoá bản build cũ hoặc chạy lại `npm run build`; build sẽ tạo lại dist,
+nhưng không xoá file gốc trong public. Không đưa data/avatars vào gói phát hành.

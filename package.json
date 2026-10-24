@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -k -n server,web -c magenta,cyan \"node server/index.mjs\" \"vite\"",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node scripts/check-dist.mjs",
     "start": "node server/index.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test server/*.test.mjs src/lib/*.test.ts",

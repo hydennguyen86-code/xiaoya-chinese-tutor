@@ -134,3 +134,18 @@ Ngày 2026-10-25, đã chạy đúng chuỗi
 Không chạy script setup Windows, không dùng API trả phí thật, không đánh dấu
 các kiểm chứng thiết bị còn thiếu là đã hoàn thành. Dừng tại A, chờ người dùng
 xem báo cáo trước khi làm B.
+
+## E21 — avatar riêng ngoài public (2026-10-25)
+
+Đã chuyển bộ đọc sang thư mục dữ liệu/avatars và route API; migration chỉ copy,
+không xoá nguồn/ghi đè đích. Chế độ sample bỏ qua cả migration/avatar riêng.
+Vite không copy cả public nữa; chỉ copy allowlist. Sau build kiểm tra toàn dist,
+chặn cả file dư và ảnh/avatar lạ. Route static chặn tên riêng ngay cả với dist cũ.
+Test migration chỉ dùng chuỗi fixture giả trong thư mục tạm, không đọc/copy ảnh
+hay avatar thật trong public khi kiểm tra. Không đụng data thật. E19/E20/E22 bỏ
+qua theo chỉ dẫn; E23 chờ corrections-cases.json. Không push/tag.
+
+E21 kiểm tra: typecheck, 62/62 test, build và kiểm tra allowlist toàn dist qua.
+Chưa chạy migration trên avatar thật (để giữ luật không đụng data thật);
+Windows thật vẫn chưa thử. Build lại đã loại bản sao cũ khỏi dist, không xoá
+bất kỳ file nào trong public/.

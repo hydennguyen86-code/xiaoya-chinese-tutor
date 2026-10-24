@@ -7,9 +7,9 @@ const files = [
   'src/main.tsx',
   'src/types.ts',
   'src/lib/{coursePractice,lessonPlan,browserVoice}.test.ts',
-  'server/{courseContent,lessonContent,lessonReview,recordings,toneEvaluation,tones,edgeGec,mediaTools,remoteProvider,lanAccess}.test.mjs',
-  'server/{assessment,index,lessonContent,syllabus,courseContent,tones,toneEvaluation,lessonReview,edgeGec,mediaTools,remoteProvider,providers,llm,lanAccess,stt}.mjs',
-  'scripts/{format,check-public-assets,review-lesson,start,test-edge-live}.mjs',
+  'server/{courseContent,lessonContent,lessonReview,recordings,toneEvaluation,tones,edgeGec,mediaTools,remoteProvider,lanAccess,avatars}.test.mjs',
+  'server/{assessment,index,lessonContent,syllabus,courseContent,tones,toneEvaluation,lessonReview,edgeGec,mediaTools,remoteProvider,providers,llm,lanAccess,stt,avatars}.mjs',
+  'scripts/{format,check-public-assets,review-lesson,start,test-edge-live,buildPrivacy,check-dist}.mjs',
   'eval/{tones,recordings,toneItems,corrections}.mjs',
 ];
 const result = spawnSync(
