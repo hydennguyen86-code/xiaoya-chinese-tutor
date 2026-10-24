@@ -195,7 +195,7 @@ function parseWordBoundaries(chunks) {
   return words;
 }
 
-export async function synthesizeEdge(text, voice) {
+export async function synthesizeEdge(text, voice, rate = 1) {
   const tts = new MsEdgeTTS({
     connectionTimeoutMs: 10000,
     synthesisTimeoutMs: 25000,
@@ -207,7 +207,7 @@ export async function synthesizeEdge(text, voice) {
       sentenceBoundaryEnabled: false,
     });
 
-    const { audioStream, metadataStream } = tts.toStream(text);
+    const { audioStream, metadataStream } = tts.toStream(text, { rate });
     const audioChunks = [];
     const metadataChunks = [];
 
@@ -278,7 +278,7 @@ async function getDurationMs(filePath) {
   }
 }
 
-async function synthesizeMac(text, voice = DEFAULT_VOICE) {
+async function synthesizeMac(text, voice = DEFAULT_VOICE, rate = 1) {
   const id = crypto.randomUUID();
   const base = path.join(os.tmpdir(), `xiaoya-tts-${id}`);
   const aiff = `${base}.aiff`;
@@ -293,7 +293,7 @@ async function synthesizeMac(text, voice = DEFAULT_VOICE) {
       try {
         await execFileAsync(
           'say',
-          ['-v', macVoice, '-r', vietnamese ? '175' : '180', '-o', aiff, text],
+          ['-v', macVoice, '-r', String(Math.round((vietnamese ? 175 : 180) * rate)), '-o', aiff, text],
           { timeout: 30000 },
         );
         ok = true;
@@ -397,14 +397,14 @@ async function synthesizeClone(text, voice) {
 }
 
 // Edge TTS over the network, with the macOS `say` voice as a local fallback.
-async function synthesizeEdgeOrMac(text, voice) {
+async function synthesizeEdgeOrMac(text, voice, rate = 1) {
   try {
-    return await synthesizeEdge(text, voice);
+    return await synthesizeEdge(text, voice, rate);
   } catch (edgeError) {
     if (process.platform !== 'darwin') throw Object.assign(new Error('Giọng Edge tạm không khả dụng. Hãy dùng giọng trình duyệt.'), { status: 502 });
     console.warn('[tts] Edge TTS không khả dụng; dùng giọng macOS.');
     try {
-      const result = await synthesizeMac(text, voice);
+      const result = await synthesizeMac(text, voice, rate);
       result.fallbackReason = 'Edge TTS không khả dụng, đang dùng giọng macOS.';
       return result;
     } catch (macError) {
@@ -417,7 +417,7 @@ async function synthesizeEdgeOrMac(text, voice) {
   }
 }
 
-export async function synthesizeSpeech({ text, voice }) {
+export async function synthesizeSpeech({ text, voice, rate = 1 }) {
   const cleanText = sanitizeSpeechText(text);
   if (!cleanText) {
     const error = new Error('Không có nội dung để đọc.');
@@ -425,8 +425,9 @@ export async function synthesizeSpeech({ text, voice }) {
     throw error;
   }
 
+  rate = [0.7, 0.85, 1].includes(Number(rate)) ? Number(rate) : 1;
   const safeVoice = normalizeVoice(voice);
-  const key = `${safeVoice}:${cleanText}`;
+  const key = `${safeVoice}:${rate}:${cleanText}`;
   const cached = cacheGet(key);
   if (cached) return cached;
 
@@ -434,14 +435,15 @@ export async function synthesizeSpeech({ text, voice }) {
   if (isCloneVoice(safeVoice)) {
     const service = CLONE_SERVICES[safeVoice];
     try {
+      if (rate !== 1) throw new Error('Giọng clone chưa hỗ trợ tốc độ; dùng Edge cho lượt nghe chậm.');
       result = await synthesizeClone(cleanText, safeVoice);
     } catch (cloneError) {
       console.warn('[tts] clone giọng lỗi, dùng giọng Edge:', cloneError.message);
-      result = await synthesizeEdgeOrMac(cleanText, service.fallbackVoice);
-      result.fallbackReason = `Dịch vụ clone giọng chưa chạy, tạm dùng giọng Edge. ${service.hint}`;
+      result = await synthesizeEdgeOrMac(cleanText, service.fallbackVoice, rate);
+      result.fallbackReason = rate !== 1 ? 'Lượt nghe chậm dùng Edge thay giọng clone; nếu Edge lỗi có giọng dự phòng.' : `Dịch vụ clone giọng chưa chạy, tạm dùng giọng Edge. ${service.hint}`;
     }
   } else {
-    result = await synthesizeEdgeOrMac(cleanText, safeVoice);
+    result = await synthesizeEdgeOrMac(cleanText, safeVoice, rate);
   }
 
   cacheSet(key, result);

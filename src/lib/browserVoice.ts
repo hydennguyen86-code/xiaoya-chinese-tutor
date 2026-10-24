@@ -11,7 +11,7 @@ export function stopBrowserVoice() {
   voiceRun += 1;
   cancelActive?.();
 }
-export async function speakBrowser(text: string, locale: string, signal?: AbortSignal, onStarted?: () => void) {
+export async function speakBrowser(text: string, locale: string, signal?: AbortSignal, onStarted?: () => void, rate = 1) {
   if (!('speechSynthesis' in window)) throw new Error('Trình duyệt chưa hỗ trợ giọng dự phòng.');
   if (signal?.aborted) throw new DOMException('Đã dừng', 'AbortError');
   stopBrowserVoice();
@@ -37,6 +37,7 @@ export async function speakBrowser(text: string, locale: string, signal?: AbortS
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.voice = voice;
     utterance.lang = locale;
+    utterance.rate = [0.7, 0.85, 1].includes(rate) ? rate : 1;
     let settled = false;
     let timer: ReturnType<typeof setTimeout>;
     const cleanup = () => {

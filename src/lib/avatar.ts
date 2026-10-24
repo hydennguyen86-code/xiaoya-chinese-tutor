@@ -1,3 +1,4 @@
+import { speechRate } from './listeningPrefs';
 import { speakBrowser, stopBrowserVoice } from './browserVoice';
 import { TalkingHead } from '@met4citizen/talkinghead';
 import type { MaterialLike, TextureLike } from '@met4citizen/talkinghead';
@@ -188,17 +189,18 @@ export class AvatarController implements AvatarApi {
     if (!clean) return;
 
     const session = this.session;
+    const rate = speechRate();
     this.pendingSpeech += 1;
 
     this.chain = this.chain
       .then(async () => {
         if (session !== this.session || this.destroyed || !this.head) return;
-        const result = await this.getTts(clean, voice);
+        const result = await this.getTts(clean, voice, rate);
         if (session !== this.session || this.destroyed || !this.head) return;
         if (result.browserText) {
           this.callbacks.onAudioState?.(true);
           try {
-            await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN');
+            await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', undefined, undefined, result.browserRate);
           } finally {
             this.callbacks.onAudioState?.(false);
           }
@@ -347,15 +349,15 @@ export class AvatarController implements AvatarApi {
     tick();
   }
 
-  private async getTts(text: string, voice: string): Promise<TtsResult> {
-    const key = `${voice}::${text}`;
+  private async getTts(text: string, voice: string, rate: number): Promise<TtsResult> {
+    const key = `${voice}::${rate}::${text}`;
     const cached = this.ttsCache.get(key);
     if (cached) {
       this.ttsCache.delete(key);
       this.ttsCache.set(key, cached);
       return cached;
     }
-    const result = await fetchTts(text, voice);
+    const result = await fetchTts(text, voice, undefined, rate);
     if (!result.browserText) this.ttsCache.set(key, result);
     if (this.ttsCache.size > 16) {
       const oldest = this.ttsCache.keys().next().value;

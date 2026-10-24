@@ -45,3 +45,12 @@ test('listening course initially conceals transcript and answer key', () => {
   assert.ok(!html.includes(content.listening.transcript));
   assert.match(html, /Nộp bài nghe/);
 });
+
+test('listen-first role-play hides both Chinese and translation by default', async () => {
+  const { ListenFirstLine } = await import('./ListeningControls');
+  const html = renderToStaticMarkup(<ListenFirstLine text="秘密句子" translation="Bản dịch fixture" onPlay={() => {}} />);
+  assert.ok(!html.includes('秘密句子'));
+  assert.ok(!html.includes('Bản dịch fixture'));
+  assert.match(html, /Hiện chữ và nghĩa/);
+  assert.match(html, /Nghe chậm/);
+});

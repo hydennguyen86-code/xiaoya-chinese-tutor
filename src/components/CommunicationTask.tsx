@@ -1,3 +1,4 @@
+import { ListenFirstLine } from './ListeningControls';
 import { useEffect, useRef, useState } from 'react';
 import { assessmentRequest, streamChat } from '../lib/api';
 import type { CanDo, TaskSpec } from '../lib/assessment';
@@ -122,7 +123,7 @@ export function CommunicationTask({ task, provider, model, level, ask, say, micR
       <div className="lesson-chat">
         {dialog.map((d, i) => (
           <div key={i} className={`lesson-line is-${d.role}`}>
-            <p>{d.content}</p>
+            {d.role === 'assistant' ? <ListenFirstLine text={d.content} onPlay={() => say(d.content)} /> : <p>{d.content}</p>}
           </div>
         ))}
       </div>

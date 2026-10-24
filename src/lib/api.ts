@@ -1,3 +1,4 @@
+import { speechRate } from './listeningPrefs';
 import { voiceLocale } from './browserVoice';
 import type {
   AnalysisReport,
@@ -149,12 +150,12 @@ export async function fetchCorrections(payload: { provider: string; model: strin
   return Array.isArray(data?.corrections) ? data.corrections : [];
 }
 
-export async function fetchTts(text: string, voice: string, signal?: AbortSignal): Promise<TtsResult> {
+export async function fetchTts(text: string, voice: string, signal?: AbortSignal, rate = speechRate()): Promise<TtsResult> {
   try {
     const res = await fetch('/api/tts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, voice }),
+      body: JSON.stringify({ text, voice, rate }),
       signal,
     });
     if (!res.ok) {
@@ -179,6 +180,7 @@ export async function fetchTts(text: string, voice: string, signal?: AbortSignal
       provider: 'browser',
       browserText: text,
       browserLocale: voiceLocale(voice),
+      browserRate: rate,
       fallbackReason: 'Giọng dự phòng của trình duyệt',
     };
   }

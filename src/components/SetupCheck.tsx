@@ -128,7 +128,7 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
       if (!alive.current) return;
       if (r.browserText) {
         setTts('Đang thử giọng dự phòng trình duyệt…');
-        await speakBrowser(r.browserText, r.browserLocale ?? 'zh-CN', c.signal);
+        await speakBrowser(r.browserText, r.browserLocale ?? 'zh-CN', c.signal, undefined, r.browserRate);
         if (alive.current) setTts('Đã phát giọng dự phòng trình duyệt.');
         return;
       }

@@ -98,6 +98,7 @@ export interface TtsWord {
 export interface TtsResult {
   browserText?: string;
   browserLocale?: string;
+  browserRate?: number;
   audioBase64: string;
   mime: string;
   words: TtsWord[];

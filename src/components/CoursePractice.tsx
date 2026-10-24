@@ -1,3 +1,4 @@
+import { SlowListen } from './ListeningControls';
 import { speakBrowser } from '../lib/browserVoice';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { fetchTts } from '../lib/api';
@@ -135,7 +136,7 @@ function useAudio(voice: string, onBusy: (busy: boolean) => void) {
       if (!alive.current || controller.signal.aborted) return;
       if (result.browserText) {
         setProvider('Giọng dự phòng trình duyệt; tuỳ giọng có thể dùng mạng.');
-        await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', controller.signal, onStarted);
+        await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', controller.signal, onStarted, result.browserRate);
         if (alive.current && !controller.signal.aborted) {
           loading.current = false;
           setPlaying(false);
@@ -218,6 +219,10 @@ function ListeningCard({
       >
         {audio.playing ? 'Dừng âm thanh' : state.submitted ? 'Nghe lại để ôn' : 'Nghe đoạn hội thoại / đoạn văn'}
       </button>
+      <SlowListen
+        disabled={!canPlay || audio.playing}
+        onPlay={() => audio.play(exercise.transcript, () => save({ ...state, plays: state.plays + 1 }))}
+      />
       {audio.error && (
         <p role="alert" className="lesson-bad">
           {audio.error}
@@ -342,6 +347,7 @@ function SpeakingCard({
         trôi chảy. Với bài dài nên dùng nhận dạng cục bộ; trình duyệt có thể dừng sau một câu.
       </p>
       <div className="lesson-actions">
+        {source && <SlowListen onPlay={() => audio.play(source)} disabled={audio.playing} />}
         {source && (
           <button type="button" className="lesson-secondary" onClick={() => void audio.play(source)}>
             {audio.playing ? 'Dừng âm thanh' : 'Nghe lời đọc / đoạn để kể lại'}
@@ -430,6 +436,7 @@ function PronunciationCard({
       <p>Nghe từng mục, so hướng lên/xuống rồi thử nhắc lại. Đây là bài nhận âm, chưa cần thuộc nghĩa bốn từ đầu.</p>
       {sounds.map((sound) => (
         <p key={sound.text}>
+          <SlowListen disabled={audio.playing} onPlay={() => audio.play(sound.text)} />
           <button type="button" className="lesson-secondary" disabled={audio.playing} onClick={() => void audio.play(sound.text)}>
             {sound.text} · {sound.pinyin}
           </button>{' '}

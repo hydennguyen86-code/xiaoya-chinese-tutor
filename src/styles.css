@@ -4988,3 +4988,8 @@ svg {
   .connectivity-settings .lesson-actions { flex-wrap: wrap; }
   .remote-provider-notice, .voice-source-notice { left: 6px; right: 6px; font-size: 11px; }
 }
+.listening-controls { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 8px 0; font-size: 12px; }
+.listening-controls label { display: flex; gap: 6px; align-items: center; }
+.listening-controls select { border: 1px solid var(--line-strong); background: var(--paper-strong); border-radius: 8px; padding: 5px; }
+.slow-listen { font-size: 12px; margin: 4px; }
+.listen-first-line .lesson-actions { flex-wrap: wrap; }

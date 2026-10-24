@@ -6,6 +6,7 @@ import { synthesizeEdge, synthesizeSpeech, sanitizeSpeechText } from './tts.mjs'
 test('TTS adapter collects audio/word boundaries, closes failed streams, rejects empty input', async () => {
   const proto = MsEdgeTTS.prototype;
   const old = { setMetadata: proto.setMetadata, toStream: proto.toStream, close: proto.close };
+  let requestedRate;
   let closed = 0,
     empty = false;
   try {
@@ -13,7 +14,8 @@ test('TTS adapter collects audio/word boundaries, closes failed streams, rejects
     proto.close = () => {
       closed++;
     };
-    proto.toStream = () => {
+    proto.toStream = (_text, options) => {
+      requestedRate = options.rate;
       const audioStream = new PassThrough(),
         metadataStream = new PassThrough();
       queueMicrotask(() => {
@@ -24,8 +26,9 @@ test('TTS adapter collects audio/word boundaries, closes failed streams, rejects
       });
       return { audioStream, metadataStream };
     };
-    const result = await synthesizeEdge('你好', 'zh-CN-XiaoxiaoNeural');
+    const result = await synthesizeEdge('你好', 'zh-CN-XiaoxiaoNeural', 0.7);
     assert.equal(result.provider, 'edge');
+    assert.equal(requestedRate, 0.7);
     assert.equal(result.words[0].startMs, 100);
     assert.equal(result.words[0].durationMs, 200);
     assert.equal(closed, 1);

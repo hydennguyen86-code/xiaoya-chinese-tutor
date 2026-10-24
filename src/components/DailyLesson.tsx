@@ -1,3 +1,4 @@
+import { ListeningControls, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
 import { CoursePractice } from './CoursePractice';
 import { CommunicationTask } from './CommunicationTask';
 import { MicButton, Han } from './LessonWidgets';
@@ -360,6 +361,7 @@ export function DailyLesson(props: DailyLessonProps) {
       <section className="lesson-panel">
         <LessonTop title="Bài hôm nay" subtitle={learner.name} onClose={onClose} />
         {coursePicker}
+        <ListeningControls />
         <div className="lesson-state">
           {screen.kind === 'loading' && (
             <>
@@ -440,6 +442,7 @@ export function DailyLesson(props: DailyLessonProps) {
         }}
       />
       {coursePicker}
+      <ListeningControls />
       <p className={`lesson-ref${content.placeholder ? ' is-warning' : ''}`}>
         {content.authored
           ? `${content.editorialStatus}. Thời lượng gợi ý ${content.recommendedMinutes} phút; tự chuyển phần khi sẵn sàng.`
@@ -751,6 +754,7 @@ function VocabSection(props: SharedProps) {
       )}
       {heard?.tones && <ToneFeedback report={heard.tones} audio={heard.audio} />}
       <div className="lesson-actions">
+        <SlowListen onPlay={() => say(`${word.word}。${word.example}`)} />
         <button type="button" className="lesson-secondary" onClick={() => say(`${word.word}。${word.example}`)}>
           Nghe lại
         </button>
@@ -827,6 +831,7 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
       <p className="lesson-meaning">{pattern.explanation}</p>
       <p className="lesson-example">
         <Han text={pattern.example} pinyinText={pattern.examplePinyin} />
+        <SlowListen onPlay={() => say(pattern.example)} />
         <button type="button" className="lesson-link" onClick={() => say(pattern.example)}>
           Nghe
         </button>
@@ -878,6 +883,7 @@ function scenarioText(content: LessonContent, mode: 'roleplay' | 'freetalk') {
 }
 
 function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; provider: string; model: string; level: Level }) {
+  const { listenFirst } = useListeningPrefs();
   const {
     content,
     session,
@@ -1017,8 +1023,11 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
       <div className="lesson-chat">
         {dialog.map((line, i) => (
           <div key={i} className={`lesson-line is-${line.role}`}>
-            <p>{line.text}</p>
-            {line.translation && <small>{line.translation}</small>}
+            {line.role === 'assistant' ? (
+              <ListenFirstLine text={line.text} translation={line.translation} onPlay={() => say(line.text)} hidden={mode === 'roleplay'} />
+            ) : (
+              <p>{line.text}</p>
+            )}
             {line.corrections?.map((c, j) => (
               <small key={j} className="lesson-bad">
                 <s>{c.original}</s> → {c.corrected}
@@ -1029,7 +1038,7 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
         ))}
         {streaming && (
           <div className="lesson-line is-assistant">
-            <p>{streaming}</p>
+            <p>{mode === 'roleplay' && listenFirst ? 'Đang chuẩn bị câu trả lời để nghe…' : streaming}</p>
           </div>
         )}
       </div>

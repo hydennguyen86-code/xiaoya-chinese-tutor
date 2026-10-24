@@ -283,7 +283,7 @@ app.post('/api/tts', async (req, res) => {
   }
 
   try {
-    const result = await synthesizeSpeech({ text, voice });
+    const result = await synthesizeSpeech({ text, voice, rate: req.body?.rate });
     res.json(result);
   } catch (error) {
     console.error('[tts]', error.message);

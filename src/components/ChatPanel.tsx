@@ -1,3 +1,4 @@
+import { ListeningControls, SlowListen } from './ListeningControls';
 import { useEffect, useMemo, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 import type { ChatMessage, Phase } from '../types';
@@ -125,6 +126,7 @@ function MessageItem({
           )}
         </div>
 
+        <SlowListen disabled={busy || Boolean(message.streaming)} onPlay={() => onReplay(message)} />
         <div className="bubble bubble-assistant">
           {hasText ? (
             <>
@@ -430,6 +432,7 @@ export function ChatPanel({
         <div className="composer-hint">
           <span>Enter để gửi · Shift + Enter để xuống dòng</span>
           <span className="composer-voice-note">Giọng Edge · có dự phòng</span>
+          <ListeningControls />
         </div>
       </footer>
     </section>
