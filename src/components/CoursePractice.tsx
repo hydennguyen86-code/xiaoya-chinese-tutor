@@ -1,3 +1,4 @@
+import { CommunityListening } from './CommunityListening';
 import { SlowListen } from './ListeningControls';
 import { speakBrowser } from '../lib/browserVoice';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -49,6 +50,7 @@ export function CoursePractice(props: Props) {
         Bài tự soạn ưu tiên ứng dụng. Nghe bằng giọng tổng hợp; có thể cần mạng nếu dùng giọng Edge. Điểm bài này không quy đổi sang điểm
         HSK.
       </p>
+      {!checkpoint && <CommunityListening />}
       {content.checkpoint && (
         <button type="button" className="lesson-secondary" onClick={() => setCheckpoint((v) => !v)}>
           {checkpoint ? 'Về bài luyện của buổi' : content.checkpoint.title}

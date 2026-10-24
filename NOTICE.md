@@ -59,3 +59,12 @@ terms and live outside tracked source.
 Full notices for the newly bundled/generated-code dependencies are also kept
 in [licenses/qrcode-MIT.txt](licenses/qrcode-MIT.txt) and
 [licenses/selfsigned-MIT.txt](licenses/selfsigned-MIT.txt).
+
+## Optional Common Voice listening corpus (not bundled)
+
+Common Voice Scripted Speech zh-CN is community-contributed speech released
+under CC0-1.0 by Mozilla Common Voice. Obtain the chosen release through
+[Mozilla Data Collective](https://mozilladatacollective.com/) under its access
+terms. The app stores optional imported clips and dataset version/source URL
+only in the private data directory. No Common Voice audio is included in this
+repository or browser build. See [import instructions](docs/COMMON-VOICE.md).

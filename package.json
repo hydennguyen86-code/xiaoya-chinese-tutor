@@ -17,7 +17,8 @@
     "check:assets": "node scripts/check-public-assets.mjs",
     "review:lesson": "node scripts/review-lesson.mjs",
     "setup:whisper:windows": "powershell -NoProfile -File scripts/setup-whisper.ps1",
-    "test:edge:live": "node scripts/test-edge-live.mjs"
+    "test:edge:live": "node scripts/test-edge-live.mjs",
+    "corpus:import": "node scripts/import-common-voice.mjs"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",

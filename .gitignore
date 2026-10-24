@@ -23,3 +23,6 @@ public/avatars/personal*
 
 # recordings remain private even with a custom data folder inside the repo
 **/eval-recordings/
+
+# Downloaded community speech stays private with custom data folders too
+**/listening-corpus/

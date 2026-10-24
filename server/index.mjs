@@ -1,3 +1,4 @@
+import { mountListeningCorpus } from './listeningCorpus.mjs';
 import { createAvatarStore } from './avatars.mjs';
 import https from 'node:https';
 import http from 'node:http';
@@ -47,6 +48,7 @@ app.get('/api/lan/certificate', (req, res) =>
   ownerRequest(req) && lan.tls ? res.type('application/x-pem-file').send(lan.tls.cert) : res.sendStatus(403),
 );
 mountToneEvaluation(app, dataStore.dir);
+mountListeningCorpus(app, dataStore.dir);
 const isOwner = ownerRequest;
 app.get('/api/provider-config', (req, res) => (isOwner(req) ? res.json(publicRemoteSettings()) : res.sendStatus(403)));
 app.put('/api/provider-config', (req, res) => {
