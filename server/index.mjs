@@ -11,14 +11,12 @@ import {
   CORRECTION_PROMPT,
   LEVELS,
   buildAnalysisMessages,
-  buildCorrectionVerifyMessages,
   buildMessages,
   sanitizeHistory,
 } from './prompt.mjs';
 import {
   ANALYSIS_SCHEMA,
   CORRECTION_SCHEMA,
-  CORRECTION_VERIFY_SCHEMA,
   ModelError,
   completeJson,
   streamCompletion,
@@ -41,6 +39,8 @@ import {
 import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
+import { loadSyllabus } from './syllabus.mjs';
+import { getLessonContent } from './lessonContent.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
@@ -120,25 +120,6 @@ function friendlyError(error) {
 
 const HAN = /\p{Script=Han}/u;
 
-async function verifyCorrection(provider, model, sentence, item) {
-  // A 4B model sometimes "corrects" valid phrases (多练习 → 多加练习). Ask it a
-  // second, narrow yes/no question before showing the fix; when in doubt drop it.
-  try {
-    const result = await completeJson({
-      provider,
-      model,
-      messages: buildCorrectionVerifyMessages(sentence, item.original, item.corrected),
-      signal: AbortSignal.timeout(12000),
-      schema: CORRECTION_VERIFY_SCHEMA,
-      maxTokens: 40,
-      temperature: 0,
-    });
-    return parseJsonObject(result.raw)?.wrong === true;
-  } catch {
-    return false;
-  }
-}
-
 async function collectCorrections(provider, model, userText, signal) {
   const timeout = AbortSignal.timeout(15000);
   const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
@@ -155,15 +136,9 @@ async function collectCorrections(provider, model, userText, signal) {
     temperature: 0,
   });
   // drop "corrections" that only change style (synonyms, 很→非常, 儿, final particles)
-  const candidates = parseCorrections(result.raw, userText).filter(
+  return parseCorrections(result.raw, userText).filter(
     (item) => !isStyleOnlyEdit(item.original, item.corrected),
   );
-
-  const verified = [];
-  for (const item of candidates) {
-    if (await verifyCorrection(provider, model, userText, item)) verified.push(item);
-  }
-  return verified;
 }
 
 function polishTurn(turn) {
@@ -393,6 +368,35 @@ app.post('/api/corrections', async (req, res) => {
   }
 });
 
+// Daily lessons: course outline and the cached practice material per session.
+app.get('/api/syllabus', (_req, res) => {
+  res.json(loadSyllabus(dataStore.dir));
+});
+
+app.post('/api/lesson-content', async (req, res) => {
+  const { provider = 'ollama', model, volumeId, lessonNo, day, level = 'HSK5-6' } = req.body || {};
+  if (!PROVIDER_DEFS[provider] || typeof model !== 'string' || !model.trim()) {
+    res.status(400).json({ error: 'Chưa chọn model.' });
+    return;
+  }
+  try {
+    const content = await getLessonContent({
+      dataDir: dataStore.dir,
+      syllabus: loadSyllabus(dataStore.dir),
+      volumeId: String(volumeId || ''),
+      lessonNo: Number(lessonNo),
+      day: Number(day),
+      level: Object.hasOwn(LEVELS, level) ? level : 'HSK5-6',
+      provider,
+      model: model.trim(),
+    });
+    res.json(content);
+  } catch (error) {
+    console.error('[lesson]', error.message);
+    res.status(error.status || 502).json({ error: error.status ? error.message : friendlyError(error) });
+  }
+});
+
 app.post('/api/chat', async (req, res) => {
   const {
     provider = 'ollama',
@@ -400,6 +404,7 @@ app.post('/api/chat', async (req, res) => {
     level = 'HSK5-6',
     messages = [],
     learning = '',
+    scenario = '',
   } = req.body || {};
 
   if (!PROVIDER_DEFS[provider]) {
@@ -420,7 +425,14 @@ app.post('/api/chat', async (req, res) => {
   const safeLevel = Object.hasOwn(LEVELS, level) ? level : 'HSK5-6';
   const learningDigest =
     typeof learning === 'string' ? learning.replace(/\u0000/g, '').trim().slice(0, 2200) : '';
-  const conversation = buildMessages(safeLevel, history, learningDigest);
+  // a lesson role-play scenario goes first so the learner digest cannot push it out
+  const scenarioText =
+    typeof scenario === 'string' ? scenario.replace(/\u0000/g, '').trim().slice(0, 900) : '';
+  const conversation = buildMessages(
+    safeLevel,
+    history,
+    [scenarioText, learningDigest].filter(Boolean).join('\n\n'),
+  );
 
   res.status(200);
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
