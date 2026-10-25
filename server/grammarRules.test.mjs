@@ -64,3 +64,12 @@ test('every active rule has zero false positives on the merged AI evaluation and
   assert.ok(ruleCorrections('我是昨天来。').length);
   assert.ok(ruleCorrections('我吃饭也。').length);
 });
+
+test('review fixes: look-alikes found in the code review stay untouched, real errors are caught', () => {
+  for (const sentence of ['我说中文一点儿也不累。', '他学汉语一点儿都不难。', '我知道明天。', '我希望明天。', '我帮忙在银行。', '他帮忙在学校。']) {
+    assert.deepEqual(fixes(sentence), [], sentence);
+  }
+  assert.deepEqual(fixes('我昨天没去了学校。'), ['没去了→没去']);
+  assert.deepEqual(fixes('他今天没去了学校。'), ['没去了→没去']);
+  assert.deepEqual(fixes('我三天没吃了饭。'), []);
+});

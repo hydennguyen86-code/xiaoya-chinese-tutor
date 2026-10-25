@@ -5,6 +5,8 @@ import { activeRules, ruleCorrections } from '../server/grammarRules.mjs';
 import { candidateRules } from './candidates/grammar-deepseek.mjs';
 import { ruleCorrections as baseline } from './candidates/grammar-baseline.mjs';
 import { saveResult } from './record.mjs';
+
+const applyAll = (text, hits) => hits.reduce((out, c) => out.split(c.original).join(c.corrected), text);
 const cases = JSON.parse(fs.readFileSync(new URL('./corrections.json', import.meta.url), 'utf8'));
 export function evaluate(corrector) {
   const falseCorrections = cases.correct.flatMap((text) => {
@@ -17,7 +19,8 @@ export function evaluate(corrector) {
       text,
       expected,
       detected: hits.length > 0,
-      fixed: hits.some((c) => text.replace(c.original, c.corrected).includes(expected) || c.corrected.includes(expected)),
+      // apply every fix to the whole sentence; a fix only counts if the result reads as expected
+      fixed: hits.length > 0 && applyAll(text, hits).includes(expected),
     };
   });
   return {

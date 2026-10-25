@@ -86,13 +86,15 @@ const RULES = [
   (text) => {
     const m = text.match(new RegExp(`(没有?)(去|来|吃|喝|看|买|做|写|说|听|学|回|到|见|找|打)了([${HANZI}])`));
     if (!m) return null;
-    const before = text.slice(Math.max(0, m.index - 4), m.index);
-    if (/[久天年月周期]/.test(before)) return null;
+    // a duration right before 没 (好久没去了 / 三天没吃了) is a different structure;
+    // a bare time word like 昨天 is not
+    const before = text.slice(0, m.index);
+    if (/(久|几天|多天|几年|几个月|好几天|长时间|[一二两三四五六七八九十几]+(天|年|个月|周|个星期))$/.test(before)) return null;
     return fix(`${m[1]}${m[2]}了`, `${m[1]}${m[2]}`, 'Câu phủ định với 没(有) không dùng 了 sau động từ.', 'grammar');
   },
-  // 我会说中文一点儿 → 我会说一点儿中文
+  // 我会说中文一点儿 → 我会说一点儿中文   (not 说中文一点儿也不累: 一点儿也/都不 is fine)
   (text) => {
-    const m = text.match(new RegExp(`(说|讲|学|懂|会)(${LANGS})(一点儿|一点)`));
+    const m = text.match(new RegExp(`(说|讲|学|懂|会)(${LANGS})(一点儿?)(?![儿也都还不])`));
     if (!m) return null;
     return fix(m[0], `${m[1]}${m[3]}${m[2]}`, `${m[3]} đứng trước tân ngữ: ${m[1]}${m[3]}${m[2]}.`, 'word_order');
   },
@@ -102,6 +104,12 @@ const RULES = [
     const m = text.match(new RegExp(`(${FEELINGS}|${PLACE_AFTER})在([${HANZI}]{1,6}?)(?=[吧吗呢啊呀了]?(?:[，。！？,.!?]|$))`));
     if (!m) return null;
     if (m[2].includes('的')) return null;
+    // a bare 忙/累… may be the end of a compound (帮忙在银行): only take it after a
+    // subject or an adverb, or when it carries its own intensifier
+    if (new RegExp(`^(?:${FEELINGS})$`).test(m[1]) && !/^(很|非常|特别|太|有点)/.test(m[1])) {
+      const prev = text[m.index - 1];
+      if (prev && /\p{Script=Han}/u.test(prev) && !/[我你他她们也都不还又就真]/.test(prev)) return null;
+    }
     return fix(
       m[0],
       `在${m[2]}${m[1]}`,
@@ -114,7 +122,7 @@ const RULES = [
     const m = text.match(new RegExp(`^(${SUBJECTS})([${HANZI}]{1,10}?)(${TIMES})([。！？!?]?)$`));
     if (!m) return null;
     const middle = m[2];
-    if (new RegExp(TIMES).test(middle) || /(是|在|到|等|从|喜欢|定|改|选|过|的)$/.test(middle)) return null;
+    if (new RegExp(TIMES).test(middle) || /(是|在|到|等|从|喜欢|定|改|选|过|的|知道|希望|觉得|认为|相信|担心|听说|记得|忘记|忘了|打算|安排|决定|发现|说明|准备|计划|想|要)$/.test(middle)) return null;
     return fix(
       `${m[1]}${middle}${m[3]}`,
       `${m[1]}${m[3]}${middle}`,

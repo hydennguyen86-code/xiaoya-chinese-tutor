@@ -5,6 +5,8 @@
 import fs from 'node:fs';
 import { saveResult } from './record.mjs';
 
+const applyAll = (text, hits) => hits.reduce((out, c) => out.split(c.original).join(c.corrected), text);
+
 const provider = process.env.EVAL_PROVIDER || 'ollama';
 const model = process.argv[2] || 'qwen3.5:4b';
 const base = process.argv[3] || 'http://127.0.0.1:8787';
@@ -37,7 +39,8 @@ for (const [text, expected] of cases.wrong) {
     continue;
   }
   detected += 1;
-  const ok = found.some((c) => text.replace(c.original, c.corrected).includes(expected) || c.corrected.includes(expected));
+  // apply every fix to the whole sentence; it only counts if the result reads as expected
+  const ok = applyAll(text, found).includes(expected);
   if (ok) fixed += 1;
   else notes.push(`off target ${text} -> ${found.map((c) => `${c.original}→${c.corrected}`).join('; ')}`);
 }
