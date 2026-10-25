@@ -113,3 +113,31 @@ test('a short, high, creaky syllable is left unjudged instead of being called to
   const low = { ...high, height: 0.1, startHeight: 0.2, endHeight: 0, minHeight: 0 };
   assert.equal(classifyIsolated(low, true), 3);
 });
+
+test('inside a word: a tone 1 gliding up from the previous syllable, and a low first syllable that still rises', () => {
+  const base = {
+    start: 0,
+    end: 0,
+    min: 0,
+    change: 0,
+    rise: 0,
+    fall: 0,
+    minPos: 0,
+    range: 0,
+    height: 0.5,
+    startHeight: 0.5,
+    endHeight: 0.5,
+    minHeight: 0.5,
+    voicedRatio: 1,
+    frames: 18,
+  };
+  // 北京 京: starts already high, rises to the top -> tone 1 (on its own it would be tone 2)
+  const glide = { ...base, start: 0, end: 2.3, rise: 2.4, change: 2.3, range: 2.6, minPos: 0, height: 0.9, startHeight: 0.7, endHeight: 1 };
+  assert.equal(classifyIsolated(glide, true, { single: false, first: false }), 1);
+  assert.equal(classifyIsolated(glide, true, { single: true }), 2);
+  // 回家 回: low but rising -> tone 2; 北京 北: low and falling -> tone 3
+  const lowRise = { ...base, rise: 1.3, fall: 0.5, change: 0.8, range: 1.4, minPos: 0.4, height: 0.2, startHeight: 0.1, endHeight: 0.2 };
+  assert.equal(classifyIsolated(lowRise, true, { single: false, first: true }), 2);
+  const lowFall = { ...lowRise, rise: 0, fall: 2.7, change: -2.7, minPos: 1 };
+  assert.equal(classifyIsolated(lowFall, true, { single: false, first: true }), 3);
+});

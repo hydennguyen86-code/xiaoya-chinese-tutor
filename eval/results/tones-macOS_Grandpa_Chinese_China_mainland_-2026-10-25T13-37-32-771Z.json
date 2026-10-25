@@ -1,0 +1,56 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-25T13:37:32.771Z",
+ "commit": "299b819",
+ "dirty": true,
+ "settings": {
+  "voice": "macOS Grandpa (Chinese (China mainland))"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    4,
+    6,
+    0,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    10,
+    0,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    4,
+    6,
+    0
+   ],
+   "4": [
+    1,
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  "singles": {
+   "correct": 31,
+   "total": 40,
+   "unclear": 5
+  },
+  "words": {
+   "correct": 24,
+   "judged": 27,
+   "syllables": 32
+  },
+  "misses": [
+   "学习 学: expected 2, heard 3",
+   "飞机 飞: expected 1, heard 2",
+   "上海 上: expected 4, heard 3"
+  ]
+ }
+}

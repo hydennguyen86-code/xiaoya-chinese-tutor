@@ -1,0 +1,56 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-25T13:37:30.028Z",
+ "commit": "299b819",
+ "dirty": true,
+ "settings": {
+  "voice": "zh-CN-XiaoxiaoNeural"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    0,
+    8,
+    2,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    9,
+    1,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    1,
+    9,
+    0
+   ],
+   "4": [
+    1,
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  "singles": {
+   "correct": 35,
+   "total": 40,
+   "unclear": 1
+  },
+  "words": {
+   "correct": 25,
+   "judged": 28,
+   "syllables": 32
+  },
+  "misses": [
+   "中国 国: expected 2, heard 3",
+   "回家 回: expected 2, heard 3",
+   "音乐 音: expected 1, heard 2"
+  ]
+ }
+}

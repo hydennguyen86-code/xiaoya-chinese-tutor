@@ -133,7 +133,10 @@ export function segment(rms, f0, n, lo = 0, hi = rms.length - 1) {
     return win.reduce((a, b) => a + b, 0) / win.length / peak;
   });
   const boundaryCost = (t) => env[t] + (f0[first + t] ? 0.25 : 0);
-  const segCost = (len) => 0.6 * ((len - mean) / mean) ** 2;
+  // a fairly strong pull towards equal syllable lengths: in connected speech the
+  // energy dip between syllables is often missing (汉语, 电脑), and a weak prior
+  // let the boundary slide into the first syllable
+  const segCost = (len) => 1.5 * ((len - mean) / mean) ** 2;
   // dp[k][t]: best cost with the k-th boundary at t (boundary 0 is the start)
   const INF = 1e18;
   const dp = Array.from({ length: n + 1 }, () => new Float64Array(T + 1).fill(INF));
@@ -250,7 +253,7 @@ export function toneFeatures(frames, low, high) {
  * Tone of an isolated word syllable from its shape and, when the speaker's
  * range is known, its height. 0 when it cannot be told apart.
  */
-export function classifyIsolated(f, knownRange, { single = true } = {}) {
+export function classifyIsolated(f, knownRange, { single = true, first = false } = {}) {
   if (!f) return 0;
   if (f.fall >= 4 && f.minPos >= 0.6 && (!knownRange || f.startHeight >= 0.45)) return 4;
   // a dip (falls first, lowest point mid-syllable, then rises) is tone 3;
@@ -258,6 +261,16 @@ export function classifyIsolated(f, knownRange, { single = true } = {}) {
   // Only for a syllable said on its own: inside a word, the move from the
   // previous syllable makes tone 2 dip as well.
   if (single && f.fall >= 0.8 && f.rise >= 1.5 && f.minPos >= 0.35 && f.minPos <= 0.9 && f.change <= 2.5) return 3;
+  if (!single && !first && knownRange) {
+    // inside a word, tone 1 after another syllable glides up into its high level:
+    // it already starts in the upper range and ends at the top
+    if (f.rise >= 2 && f.minPos <= 0.3 && f.fall < 1 && f.startHeight >= 0.6 && f.endHeight >= 0.85) return 1;
+  }
+  if (!single && first && knownRange) {
+    // a low first syllable that still rises is tone 2; a low half-third (tone 3
+    // before another tone) falls or stays level
+    if (f.height <= 0.35 && f.change >= 0.3 && f.rise >= 0.6 && f.fall <= f.rise) return 2;
+  }
   if (f.rise >= 2 && f.minPos <= 0.75 && f.end > f.start + 0.5) return 2;
   const creaky = f.voicedRatio < 0.8;
   if (f.range <= 2.5 && !creaky) {
@@ -345,7 +358,7 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     const [a, b] = parts[i];
     const frames = f0.slice(a, b + 1).map((v) => (v ? semis(v, ref) : null));
     const features = toneFeatures(frames, low, high);
-    const heard = s.expected ? classifyIsolated(features, Boolean(range), { single: syllables.length === 1 }) : 0;
+    const heard = s.expected ? classifyIsolated(features, Boolean(range), { single: syllables.length === 1, first: i === 0 }) : 0;
     return { ...s, heard, ok: s.expected && heard ? heard === s.expected : null, ...(debug ? { features } : {}) };
   });
   const scored = result.filter((s) => s.ok !== null);

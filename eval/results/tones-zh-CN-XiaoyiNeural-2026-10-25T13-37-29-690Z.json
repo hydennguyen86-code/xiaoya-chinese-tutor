@@ -1,0 +1,57 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-25T13:37:29.690Z",
+ "commit": "299b819",
+ "dirty": true,
+ "settings": {
+  "voice": "zh-CN-XiaoyiNeural"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    1,
+    8,
+    1,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    9,
+    1,
+    0
+   ],
+   "3": [
+    1,
+    0,
+    2,
+    7,
+    0
+   ],
+   "4": [
+    5,
+    0,
+    0,
+    0,
+    5
+   ]
+  },
+  "singles": {
+   "correct": 29,
+   "total": 40,
+   "unclear": 7
+  },
+  "words": {
+   "correct": 25,
+   "judged": 29,
+   "syllables": 32
+  },
+  "misses": [
+   "中国 国: expected 2, heard 3",
+   "学习 习: expected 2, heard 3",
+   "北京 京: expected 1, heard 2",
+   "音乐 音: expected 1, heard 2"
+  ]
+ }
+}
