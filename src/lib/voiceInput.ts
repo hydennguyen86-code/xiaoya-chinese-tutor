@@ -86,8 +86,9 @@ let currentVoice: VoiceHandle | null = null;
 export function listen(options: Options): VoiceHandle {
   if (currentVoice) {
     const details = Promise.reject<VoiceResult>(new Error('Micro đang được dùng ở lượt khác. Hãy dừng lượt đó trước.'));
-    const result = details.then(d => d.text);
-    details.catch(() => {}); result.catch(() => {});
+    const result = details.then((d) => d.text);
+    details.catch(() => {});
+    result.catch(() => {});
     return { details, result, stop() {}, cancel() {} };
   }
   const handle = options.local ? listenLocal(options) : listenBrowser(options);
