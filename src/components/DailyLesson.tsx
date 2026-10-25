@@ -1,3 +1,4 @@
+import { PronunciationReview } from './PronunciationReview';
 import { ListeningControls, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
 import { CoursePractice } from './CoursePractice';
 import { CommunicationTask } from './CommunicationTask';
@@ -503,7 +504,7 @@ export function DailyLesson(props: DailyLessonProps) {
       )}
 
       <div className="lesson-body">
-        {sectionInfo.id === 'review' && <ReviewSection {...shared} learning={props.learning} />}
+        {sectionInfo.id === 'review' && <><PronunciationReview learning={props.learning} learnerId={learner.id} voice={voice} localStt={localStt} onUpdate={onLearningUpdate}/><ReviewSection {...shared} learning={props.learning} /></>}
         {sectionInfo.id === 'vocab' && <VocabSection {...shared} />}
         {sectionInfo.id === 'patterns' && <PatternSection {...shared} provider={provider} model={model} />}
         {(sectionInfo.id === 'roleplay' || sectionInfo.id === 'freetalk') && (

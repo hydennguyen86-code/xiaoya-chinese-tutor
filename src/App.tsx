@@ -1,3 +1,4 @@
+import { recordPronunciation } from './lib/learning';
 import { VoiceSourceNotice } from './components/VoiceSourceNotice';
 import { Assessment } from './components/Assessment';
 import { SetupCheck } from './components/SetupCheck';
@@ -334,6 +335,12 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     learningRef.current = next;
     setLearning(next);
   }, []);
+  useEffect(()=>{
+    const error=(event:Event)=>{const e=(event as CustomEvent).detail;if(e?.learnerId!==scope)return;updateLearning(p=>recordPronunciation(p,e));};
+    const sound=(event:Event)=>{const e=(event as CustomEvent).detail;if(e?.learnerId!==scope||e.correct)return;updateLearning(p=>recordPronunciation(p,{kind:'sound',target:e.text,contrast:e.pairId,heard:e.heard}));};
+    window.addEventListener('misu:pronunciation-error',error);window.addEventListener('misu:sound-answer',sound);
+    return()=>{window.removeEventListener('misu:pronunciation-error',error);window.removeEventListener('misu:sound-answer',sound);};
+  },[scope,updateLearning]);
   const goalPercent = Math.min(100, Math.round((progress.todayTurns / DAILY_GOAL) * 100));
   const goalReached = progress.todayTurns >= DAILY_GOAL;
 

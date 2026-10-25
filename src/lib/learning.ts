@@ -1,4 +1,5 @@
 import type {
+  PronunciationReviewRecord,
   AnalysisReport,
   ChatMessage,
   Correction,
@@ -11,7 +12,7 @@ import type {
   VocabItem,
   WordRecord,
 } from '../types';
-import { dayKey, scopedKey } from './storage';
+import { dayKey, scopedKey } from './storage.ts';
 
 export const LEARNING_KEY = 'xiaoya.learning.v1';
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -50,7 +51,8 @@ const SKILLS = new Set<SkillKey>([
 
 export function emptyLearning(updatedAt = 0): LearningProfile {
   return {
-    version: 1,
+    version: 2,
+    pronunciation: [],
     mistakes: [],
     words: [],
     days: [],
@@ -202,7 +204,8 @@ export function loadLearning(scope = ''): LearningProfile {
     const parsed = JSON.parse(localStorage.getItem(scopedKey(LEARNING_KEY, scope)) || 'null');
     if (!parsed || typeof parsed !== 'object') return emptyLearning();
     return {
-      version: 1,
+      version: 2,
+      pronunciation: cleanPronunciation(parsed.pronunciation),
       mistakes: cleanMistakes(parsed.mistakes),
       words: cleanWords(parsed.words),
       days: cleanDays(parsed.days),
@@ -634,3 +637,23 @@ export function hasAnalysisData(profile: LearningProfile) {
   const totals = learningTotals(profile);
   return totals.turns >= 3 || totals.mistakes >= 2 || totals.words >= 3;
 }
+
+
+const PRONUNCIATION_MS = [5*60_000, 30*60_000, 6*3600_000, 24*3600_000, 3*24*3600_000];
+function cleanPronunciation(value:unknown):PronunciationReviewRecord[] {
+ if(!Array.isArray(value))return [];
+ return value.filter(v=>v&&['tone','sound'].includes(v.kind)&&typeof v.target==='string'&&v.target.length<=120&&typeof v.contrast==='string').map(v=>({id:`${v.kind}|${v.target}|${v.contrast}`,kind:v.kind as 'tone'|'sound',target:v.target,contrast:v.contrast,heard:asString(v.heard),count:Math.max(1,asNumber(v.count,1)),box:Math.max(0,Math.min(4,Math.floor(asNumber(v.box)))),dueAt:asNumber(v.dueAt),reviews:Math.max(0,asNumber(v.reviews)),lapses:Math.max(0,asNumber(v.lapses)),lastSeen:asNumber(v.lastSeen)})).slice(-200);
+}
+export function recordPronunciation(profile:LearningProfile, evidence:{kind:'tone'|'sound';target:string;contrast:string;heard:string}, now=Date.now()):LearningProfile {
+ const id=`${evidence.kind}|${evidence.target}|${evidence.contrast}`;
+ const entries=(profile.pronunciation||[]).map(e=>({...e}));
+ const old=entries.find(e=>e.id===id);
+ if(old){old.count++;old.lastSeen=now;old.heard=evidence.heard;old.box=0;old.dueAt=now;}
+ else entries.push({...evidence,id,count:1,box:0,dueAt:now,reviews:0,lapses:0,lastSeen:now});
+ return {...profile,version:2,pronunciation:entries.slice(-200),updatedAt:now};
+}
+export function reviewPronunciation(profile:LearningProfile,id:string,correct:boolean|null,now=Date.now()):LearningProfile {
+ if(correct===null)return profile;
+ return {...profile,pronunciation:(profile.pronunciation||[]).map(e=>{if(e.id!==id)return e;const box=correct?Math.min(e.box+1,4):0;return {...e,box,dueAt:now+PRONUNCIATION_MS[box],reviews:e.reviews+1,lapses:e.lapses+Number(!correct)};}),updatedAt:now};
+}
+export function duePronunciation(profile:LearningProfile,now=Date.now()) { return (profile.pronunciation||[]).filter(e=>e.dueAt<=now).sort((a,b)=>a.dueAt-b.dueAt||b.count-a.count); }

@@ -14,13 +14,16 @@ export function listeningHistory(scope: string): ListeningHistory {
 export function recordToneAnswer(scope: string, item: ToneItem, answer: number[]) {
   const history = listeningHistory(scope);
   history.attempts[item.id] = (history.attempts[item.id] || 0) + 1;
-  if (!gradeTone(item, answer)) seq(item.tone).forEach((expected, i) => { const key = `${expected}:${answer[i]}`; history.matrix[key] = (history.matrix[key] || 0) + 1; });
+  if (!gradeTone(item, answer)) seq(item.tone).forEach((expected, i) => { if(expected!==answer[i]&&typeof window!=='undefined')window.dispatchEvent(new CustomEvent('misu:pronunciation-error',{detail:{learnerId:scope,kind:'tone',target:[...item.hanzi][i],contrast:String(expected),heard:String(answer[i])}}));
+    const key = `${expected}:${answer[i]}`; history.matrix[key] = (history.matrix[key] || 0) + 1; });
   save(scope, history);
 }
 function save(scope: string, value: ListeningHistory) { try { localStorage.setItem(`xiaoya.ear.v1:${scope}`, JSON.stringify(value)); } catch { /* optional storage */ } }
 export function recordSpokenTones(scope: string, report: ToneReport) {
   const history = listeningHistory(scope);
-  for (const s of report.syllables) if (s.ok === false && s.heard >= 1 && s.heard <= 5) { const key = `${s.expected}:${s.heard}`; history.matrix[key] = (history.matrix[key] || 0) + 1; }
+  for (const s of report.syllables) if (s.ok === false && s.heard >= 1 && s.heard <= 5) {
+    if(typeof window!=='undefined')window.dispatchEvent(new CustomEvent('misu:pronunciation-error',{detail:{learnerId:scope,kind:'tone',target:s.char,contrast:String(s.expected),heard:String(s.heard)}}));
+    const key = `${s.expected}:${s.heard}`; history.matrix[key] = (history.matrix[key] || 0) + 1; }
   save(scope, history);
 }
 export function tonePriority(item: ToneItem, history: ListeningHistory) {

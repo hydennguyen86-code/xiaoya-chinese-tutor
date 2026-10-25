@@ -64,3 +64,10 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Từ chữ bị chấm sai trong bài từ vựng/kiểm tra có nút mở vòng chữ → từ → câu; nghe mẫu/chậm và nói lại. Mỗi bước chỉ chuyển sau hai lần rõ và khớp liên tiếp; sai xóa chuỗi, chưa chấm được không tăng lượt. Bản nhận dạng phải khớp mục tiêu; acceptTones DeepSeek được ưu tiên nếu có.
 - Hủy ghi khi đóng vòng; audio chỉ ở bộ nhớ. Test state machine cho đủ ba bước, sai/unclear và chặn kết quả không có báo cáo.
 - **Giới hạn còn lại**: bộ chấm hiện hữu chỉ chấm thanh cho 1–2 chữ. Bước câu dài vẫn cho nghe/thu nhưng không tự xác nhận qua vòng (hiện rõ lý do), để tránh giả điểm hoặc thay thuật toán/cách cắt khi chưa có bộ đo người thật. Chưa kiểm chứng bằng người học thật. Đây là phần chưa đạt toàn bộ tiêu chí mục 6, không gắn nhãn hoàn tất sư phạm.
+
+## Mục 7 — Lịch ôn lỗi thanh/cặp âm
+
+- LearningProfile schema 2, giữ khóa lưu cũ để chuyển đổi tại load; thêm pronunciation, giữ từ/lỗi/lịch cũ. Hồ sơ cũ không có phát âm bắt đầu danh sách rỗng. Lỗi nghe/nói đi qua sự kiện của đúng learner, cập nhật state hiện tại tránh ghi đè bằng snapshot cũ.
+- Lỗi thanh và nhóm âm lưu mục ôn; khoảng ôn 5 phút/30 phút/6 giờ/1 ngày/3 ngày, ngắn hơn lịch từ vựng. Chưa chấm được không đổi lịch; sai quay về 5 phút.
+- Phần Khởi động có Ôn phát âm: thanh được thu/chấm; cặp âm được nghe/chọn không phụ thuộc STT. Test chuyển đổi dữ liệu cũ, giữ từ, tách learner, lịch đúng/sai/unclear. Không tự coi lời tự đánh giá là đúng.
+- Chưa đo mức nhớ dài hạn hoặc thử micro người thật; không thay ngưỡng phát âm.

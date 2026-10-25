@@ -235,8 +235,10 @@ export interface AnalysisReport {
   plan: string[];
 }
 
+export interface PronunciationReviewRecord { id:string; kind:'tone'|'sound'; target:string; contrast:string; heard:string; count:number; box:number; dueAt:number; reviews:number; lapses:number; lastSeen:number }
 export interface LearningProfile {
-  version: 1;
+  version: 2;
+  pronunciation: PronunciationReviewRecord[];
   mistakes: MistakeRecord[];
   words: WordRecord[];
   days: LearningDay[];
