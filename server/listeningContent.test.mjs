@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
-for (const kind of ['tone-pairs', 'sound-pairs', 'dictation', 'shadowing'])
+for (const kind of ['tone-pairs', 'sound-pairs', 'dictation', 'shadowing', 'hanviet-traps'])
   test(`${kind}: supplied structure, pinyin and sandhi checks run in repo`, () => {
     const file = new URL(`../lessons/listening/${kind}.json`, import.meta.url);
     assert.equal(JSON.parse(fs.readFileSync(file)).source, 'AI soạn, chưa duyệt');

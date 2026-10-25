@@ -1,3 +1,4 @@
+import { HanViet, HanVietGuide } from './HanViet';
 import { LatencyHistory } from './LatencyHistory';
 import { FluencyHistory } from './FluencyHistory';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -232,6 +233,7 @@ export function LearningDialog({
         <div className="settings-body learning-body">
           {tab === 'overview' && (
             <div className="learning-overview">
+              <HanVietGuide onSpeak={onSpeakChinese}/>
               <FluencyHistory learnerId={learnerId} />
               <LatencyHistory learnerId={learnerId} />
               <div className="learning-hero">
@@ -350,7 +352,7 @@ export function LearningDialog({
                           }}
                         >
                           <span className="mini-word-main">
-                            <strong>{word.word}</strong>
+                            <strong>{word.word}</strong><HanViet word={word.word}/>
                             <small>{word.pinyin}</small>
                           </span>
                           <span className="mini-word-meaning">{word.meaning}</span>
@@ -396,7 +398,7 @@ export function LearningDialog({
 
                   <div className="review-card">
                     <span className="review-kicker">Ôn lại từ này</span>
-                    <h3 className="review-word">{currentWord.word}</h3>
+                    <h3 className="review-word">{currentWord.word}</h3><HanViet word={currentWord.word} showTips={revealed}/>
                     <button className="review-audio" type="button" onClick={() => onSpeakChinese(currentWord.word)}>
                       <VolumeIcon size={15} />
                       Nghe phát âm
@@ -472,7 +474,7 @@ export function LearningDialog({
                     <div className="upcoming-words">
                       {words.slice(0, 6).map((word) => (
                         <div key={word.word} className="upcoming-word">
-                          <strong>{word.word}</strong>
+                          <strong>{word.word}</strong><HanViet word={word.word}/>
                           <span>{word.pinyin}</span>
                           <small>{word.dueAt <= Date.now() ? 'đến hạn' : `${daysUntil(word.dueAt)} ngày nữa`}</small>
                         </div>
@@ -620,7 +622,7 @@ export function LearningDialog({
                         {report.focusWords.map((word) => (
                           <div className="analysis-word" key={word.word}>
                             <div className="analysis-word-head">
-                              <strong>{word.word}</strong>
+                              <strong>{word.word}</strong><HanViet word={word.word}/>
                               <span>{word.pinyin}</span>
                               <button type="button" onClick={() => onSpeakChinese(word.word)} aria-label={`Nghe ${word.word}`}>
                                 <VolumeIcon size={13} />

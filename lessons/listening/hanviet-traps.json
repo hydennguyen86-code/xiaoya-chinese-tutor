@@ -1,0 +1,457 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "hanviet-traps",
+  "version": 2,
+  "note": "Hai nhóm tách biệt. (1) Mẹo âm Hán Việt → pinyin: quy luật gần đúng giữa âm Hán Việt và pinyin, chỉ để nhớ mặt chữ, không phải quy tắc tuyệt đối. (2) Bẫy nghĩa: chỉ giữ khi âm Hán Việt là từ/cụm tiếng Việt đang dùng nhưng nghĩa hiện đại đã trôi khác. Các từ Hán Việt cũ hoặc không dùng trong tiếng Việt (hỏa xa, khí xa, điện não, thủ cơ, đồ thư quán…) đã bị loại vì không tạo bẫy. File không chứa audio; app tự đọc hanzi bằng TTS.",
+  "levels": [
+    "HSK1-2",
+    "HSK3-4",
+    "HSK5-6"
+  ],
+  "groups": [
+    {
+      "trap": "âm",
+      "title": "Mẹo âm Hán Việt → pinyin",
+      "description": "Quy luật tương ứng gần đúng giữa phụ âm/vần của âm Hán Việt và pinyin. Mỗi mục chỉ là mẹo gợi nhớ, có ngoại lệ; noteVi luôn ghi \"gần đúng\"."
+    },
+    {
+      "trap": "nghĩa",
+      "title": "Bẫy nghĩa",
+      "description": "Âm Hán Việt là từ hoặc cụm tiếng Việt đang dùng, nhưng nghĩa trong tiếng Trung hiện đại đã khác. Không đưa vào các âm Hán Việt cũ/không dùng, vì người học không có nghĩa quen thuộc để nhầm."
+    }
+  ],
+  "schema": {
+    "id": "hv-<số 3 chữ số>",
+    "level": "HSK1-2 | HSK3-4 | HSK5-6 — bậc của từ, không phải bậc của bẫy",
+    "hanzi": "chữ hoặc từ chữ Hán",
+    "pinyin": "pinyin có dấu thanh, dạng đọc thành tiếng",
+    "hanViet": "âm Hán Việt của chữ/từ",
+    "meaningVi": "nghĩa hiện đại trong tiếng Trung",
+    "trap": "nghĩa | âm — nhóm được mô tả trong groups",
+    "noteVi": "giải thích; mẹo âm phải ghi rõ \"gần đúng\"; bẫy nghĩa phải nhắc lại âm Hán Việt và nghĩa hiện đại",
+    "toneNote": "chỉ có khi pinyin đã áp biến điệu 3+3",
+    "uncertain": "true khi người soạn chưa chắc, kèm uncertainReason"
+  },
+  "items": [
+    {
+      "id": "hv-001",
+      "level": "HSK1-2",
+      "hanzi": "学",
+      "pinyin": "xué",
+      "hanViet": "học",
+      "meaningVi": "học",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): x- trong pinyin thường ứng với h- trong âm Hán Việt (xué — học), nhưng quy luật có ngoại lệ nên chỉ dùng để nhớ mặt chữ."
+    },
+    {
+      "id": "hv-002",
+      "level": "HSK1-2",
+      "hanzi": "下",
+      "pinyin": "xià",
+      "hanViet": "hạ",
+      "meaningVi": "ở dưới, xuống",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): x- ứng với h- (xià — hạ). Người Việt hay đọc x thành \"x\" tiếng Việt, trong khi x tiếng Trung là âm mặt lưỡi, môi dẹt."
+    },
+    {
+      "id": "hv-003",
+      "level": "HSK1-2",
+      "hanzi": "花",
+      "pinyin": "huā",
+      "hanViet": "hoa",
+      "meaningVi": "hoa",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): h- giữ nguyên (huā — hoa), nhưng vần -ua trong tiếng Trung đọc liền một hơi, không ngắt thành hai âm."
+    },
+    {
+      "id": "hv-004",
+      "level": "HSK1-2",
+      "hanzi": "中",
+      "pinyin": "zhōng",
+      "hanViet": "trung",
+      "meaningVi": "giữa, Trung Quốc",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): zh- thường ứng với tr- (zhōng — trung); nhớ zh là âm cuộn lưỡi, không phải \"tr\" rung đầu lưỡi."
+    },
+    {
+      "id": "hv-005",
+      "level": "HSK1-2",
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "hanViet": "trà",
+      "meaningVi": "trà",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): ch- ứng với tr- (chá — trà), nhưng ch tiếng Trung bật hơi mạnh hơn \"tr\" tiếng Việt."
+    },
+    {
+      "id": "hv-006",
+      "level": "HSK1-2",
+      "hanzi": "车",
+      "pinyin": "chē",
+      "hanViet": "xa",
+      "meaningVi": "xe",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): ch- trước vần -e ứng với x- (chē — xa); đây là quy luật hay gặp nhưng không phủ hết mọi chữ."
+    },
+    {
+      "id": "hv-007",
+      "level": "HSK1-2",
+      "hanzi": "生",
+      "pinyin": "shēng",
+      "hanViet": "sinh",
+      "meaningVi": "sinh, sinh ra",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): sh- ứng với s- (shēng — sinh). Người Việt hay đọc sh thành \"s\" vì quen, nên rất dễ bỏ mất độ cuộn lưỡi."
+    },
+    {
+      "id": "hv-008",
+      "level": "HSK1-2",
+      "hanzi": "山",
+      "pinyin": "shān",
+      "hanViet": "sơn",
+      "meaningVi": "núi",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): sh- ứng với s- (shān — sơn); vần -an của tiếng Trung đóng bằng -n, không mở như \"sơn\" tiếng Việt."
+    },
+    {
+      "id": "hv-009",
+      "level": "HSK1-2",
+      "hanzi": "手",
+      "pinyin": "shǒu",
+      "hanViet": "thủ",
+      "meaningVi": "tay",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): sh- ứng với th- (shǒu — thủ); sh tiếng Trung cuộn lưỡi, còn \"th\" tiếng Việt đặt đầu lưỡi sau răng."
+    },
+    {
+      "id": "hv-010",
+      "level": "HSK1-2",
+      "hanzi": "人",
+      "pinyin": "rén",
+      "hanViet": "nhân",
+      "meaningVi": "người",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): r- ứng với nh- (rén — nhân), nhưng r tiếng Trung là âm cuộn lưỡi, không phải \"nh\" mũi."
+    },
+    {
+      "id": "hv-011",
+      "level": "HSK1-2",
+      "hanzi": "日",
+      "pinyin": "rì",
+      "hanViet": "nhật",
+      "meaningVi": "mặt trời, ngày",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): r- ứng với nh- (rì — nhật); 日 là âm nhập, đuôi -t của \"nhật\" không tồn tại trong tiếng Trung."
+    },
+    {
+      "id": "hv-012",
+      "level": "HSK1-2",
+      "hanzi": "二",
+      "pinyin": "èr",
+      "hanViet": "nhị",
+      "meaningVi": "hai",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): âm r không có phụ âm đầu được ghi thành nh- (èr — nhị). Khi đếm số thường đọc èr, không đọc \"hai\"."
+    },
+    {
+      "id": "hv-013",
+      "level": "HSK1-2",
+      "hanzi": "五",
+      "pinyin": "wǔ",
+      "hanViet": "ngũ",
+      "meaningVi": "năm",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): w- ứng với ng- (wǔ — ngũ); w tiếng Trung là bán nguyên âm, môi tròn, không phải \"v\" như người Việt hay đọc."
+    },
+    {
+      "id": "hv-014",
+      "level": "HSK1-2",
+      "hanzi": "我",
+      "pinyin": "wǒ",
+      "hanViet": "ngã",
+      "meaningVi": "tôi",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): w- ứng với ng- (wǒ — ngã), nhưng thanh 3 khiến âm đi xuống rồi lên, khác \"ngã\" tiếng Việt chỉ đi lên."
+    },
+    {
+      "id": "hv-015",
+      "level": "HSK1-2",
+      "hanzi": "外",
+      "pinyin": "wài",
+      "hanViet": "ngoại",
+      "meaningVi": "ngoài",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): w- ứng với ng- (wài — ngoại); vần -ai của tiếng Trung mở dần, không co lại như tiếng Việt."
+    },
+    {
+      "id": "hv-016",
+      "level": "HSK1-2",
+      "hanzi": "月",
+      "pinyin": "yuè",
+      "hanViet": "nguyệt",
+      "meaningVi": "tháng, mặt trăng",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): yu- ứng với nguy- (yuè — nguyệt); ü cần tròn môi chặt, và âm cuối -e đọc dẹt."
+    },
+    {
+      "id": "hv-017",
+      "level": "HSK1-2",
+      "hanzi": "一",
+      "pinyin": "yī",
+      "hanViet": "nhất",
+      "meaningVi": "một",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): âm y không có phụ âm đầu ứng với nh- (yī — nhất), nhưng thanh thực tế đổi theo chữ sau (yì, yí)."
+    },
+    {
+      "id": "hv-018",
+      "level": "HSK1-2",
+      "hanzi": "六",
+      "pinyin": "liù",
+      "hanViet": "lục",
+      "meaningVi": "sáu",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): l- giữ nguyên (liù — lục); vần -iu đọc liền, môi tròn dần về cuối."
+    },
+    {
+      "id": "hv-019",
+      "level": "HSK1-2",
+      "hanzi": "七",
+      "pinyin": "qī",
+      "hanViet": "thất",
+      "meaningVi": "bảy",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): q- trước -i ứng với th- (qī — thất), nhưng q tiếng Trung bật hơi mạnh, không phải \"th\" đặt lưỡi sau răng."
+    },
+    {
+      "id": "hv-020",
+      "level": "HSK1-2",
+      "hanzi": "九",
+      "pinyin": "jiǔ",
+      "hanViet": "cửu",
+      "meaningVi": "chín",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): j- ứng với c- (jiǔ — cửu); j không bật hơi, âm gần \"d\" cứng hơn."
+    },
+    {
+      "id": "hv-021",
+      "level": "HSK1-2",
+      "hanzi": "不",
+      "pinyin": "bù",
+      "hanViet": "bất",
+      "meaningVi": "không",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): b- giữ nguyên (bù — bất), nhưng bù đổi thành bú khi đứng trước thanh 4; đuôi -t của \"bất\" không tồn tại trong tiếng Trung."
+    },
+    {
+      "id": "hv-022",
+      "level": "HSK1-2",
+      "hanzi": "国",
+      "pinyin": "guó",
+      "hanViet": "quốc",
+      "meaningVi": "nước, quốc gia",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): gu- ứng với qu- (guó — quốc); âm đệm u phải tròn môi rõ, đuôi -c của \"quốc\" không có trong tiếng Trung."
+    },
+    {
+      "id": "hv-023",
+      "level": "HSK3-4",
+      "hanzi": "行",
+      "pinyin": "xíng",
+      "hanViet": "hành",
+      "meaningVi": "đi, được; hàng",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): x- ứng với h- (xíng — hành); chữ này còn đọc háng trong 银行, nên phải xem ngữ cảnh."
+    },
+    {
+      "id": "hv-024",
+      "level": "HSK3-4",
+      "hanzi": "知",
+      "pinyin": "zhī",
+      "hanViet": "tri",
+      "meaningVi": "biết",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): zh- ứng với tr- (zhī — tri), nhưng âm tiết chỉ có một nguyên âm cuộn lưỡi, không có -i rõ như \"tri\" tiếng Việt."
+    },
+    {
+      "id": "hv-025",
+      "level": "HSK3-4",
+      "hanzi": "元",
+      "pinyin": "yuán",
+      "hanViet": "nguyên",
+      "meaningVi": "đồng tiền tệ; nguồn gốc",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): yu- ứng với nguy- (yuán — nguyên); vần -an đóng bằng -n, môi không mở như \"nguyên\" tiếng Việt."
+    },
+    {
+      "id": "hv-026",
+      "level": "HSK3-4",
+      "hanzi": "银",
+      "pinyin": "yín",
+      "hanViet": "ngân",
+      "meaningVi": "bạc",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): y- ứng với ng- (yín — ngân); đuôi -n phải chạm lưỡi, không buông mũi thành \"ngân\" nặng."
+    },
+    {
+      "id": "hv-027",
+      "level": "HSK3-4",
+      "hanzi": "眼",
+      "pinyin": "yǎn",
+      "hanViet": "nhãn",
+      "meaningVi": "mắt",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): y- ứng với nh- (yǎn — nhãn); thanh 3 đi xuống rồi lên, khác dấu ngã tiếng Việt."
+    },
+    {
+      "id": "hv-028",
+      "level": "HSK3-4",
+      "hanzi": "地",
+      "pinyin": "dì",
+      "hanViet": "địa",
+      "meaningVi": "đất, mặt đất",
+      "trap": "âm",
+      "noteVi": "Mẹo (gần đúng): d- ứng với đ- (dì — địa); chữ này còn đọc de nhẹ khi làm trợ từ, phải phân biệt theo ngữ pháp."
+    },
+    {
+      "id": "hv-029",
+      "level": "HSK1-2",
+      "hanzi": "东西",
+      "pinyin": "dōng xi",
+      "hanViet": "đông tây",
+      "meaningVi": "đồ vật",
+      "trap": "nghĩa",
+      "noteVi": "Người mới hay dịch thành \"đông tây\"; 东西 trong đời sống là đồ vật, và chữ 西 đọc nhẹ xi."
+    },
+    {
+      "id": "hv-030",
+      "level": "HSK1-2",
+      "hanzi": "地方",
+      "pinyin": "dì fāng",
+      "hanViet": "địa phương",
+      "meaningVi": "nơi, chỗ",
+      "trap": "nghĩa",
+      "noteVi": "\"Địa phương\" nghĩa là vùng, khu vực hành chính; 地方 chỉ là nơi chốn bình thường."
+    },
+    {
+      "id": "hv-031",
+      "level": "HSK1-2",
+      "hanzi": "医生",
+      "pinyin": "yī shēng",
+      "hanViet": "y sĩ",
+      "meaningVi": "bác sĩ",
+      "trap": "nghĩa",
+      "noteVi": "\"Y sĩ\" trong tiếng Việt là trình độ thấp hơn bác sĩ; 医生 là bác sĩ nói chung."
+    },
+    {
+      "id": "hv-032",
+      "level": "HSK3-4",
+      "hanzi": "便宜",
+      "pinyin": "pián yi",
+      "hanViet": "tiện nghi",
+      "meaningVi": "rẻ",
+      "trap": "nghĩa",
+      "noteVi": "\"Tiện nghi\" trong tiếng Việt là tiện lợi; 便宜 lại có nghĩa là rẻ. Muốn nói tiện lợi phải dùng 方便."
+    },
+    {
+      "id": "hv-033",
+      "level": "HSK3-4",
+      "hanzi": "意思",
+      "pinyin": "yì si",
+      "hanViet": "ý tứ",
+      "meaningVi": "nghĩa, ý",
+      "trap": "nghĩa",
+      "noteVi": "\"Ý tứ\" tiếng Việt thiên về hàm ý tinh tế; 意思 chỉ là nghĩa của từ hoặc ý muốn nói."
+    },
+    {
+      "id": "hv-034",
+      "level": "HSK3-4",
+      "hanzi": "骄傲",
+      "pinyin": "jiāo ào",
+      "hanViet": "kiêu ngạo",
+      "meaningVi": "tự hào",
+      "trap": "nghĩa",
+      "noteVi": "\"Kiêu ngạo\" trong tiếng Việt mang nghĩa xấu; 骄傲 thường dùng tích cực, nghĩa là tự hào."
+    },
+    {
+      "id": "hv-035",
+      "level": "HSK3-4",
+      "hanzi": "运动",
+      "pinyin": "yùn dòng",
+      "hanViet": "vận động",
+      "meaningVi": "thể thao",
+      "trap": "nghĩa",
+      "noteVi": "\"Vận động\" tiếng Việt chỉ sự tác động, vận động hành lang; 运动 chủ yếu là thể thao, vận động cơ thể."
+    },
+    {
+      "id": "hv-036",
+      "level": "HSK3-4",
+      "hanzi": "商量",
+      "pinyin": "shāng liang",
+      "hanViet": "thương lượng",
+      "meaningVi": "bàn bạc",
+      "trap": "nghĩa",
+      "noteVi": "\"Thương lượng\" hàm ý đàm phán chính thức; 商量 chỉ là bàn bạc nhẹ nhàng, thường trong gia đình, nhóm nhỏ."
+    },
+    {
+      "id": "hv-037",
+      "level": "HSK3-4",
+      "hanzi": "水平",
+      "pinyin": "shuǐ píng",
+      "hanViet": "thủy bình",
+      "meaningVi": "trình độ",
+      "trap": "nghĩa",
+      "noteVi": "\"Thủy bình\" là dụng cụ đo; 水平 nghĩa bóng là trình độ, mức độ, rất hay dùng cho năng lực học tập."
+    },
+    {
+      "id": "hv-038",
+      "level": "HSK3-4",
+      "hanzi": "困难",
+      "pinyin": "kùn nán",
+      "hanViet": "khốn nạn",
+      "meaningVi": "khó khăn",
+      "trap": "nghĩa",
+      "noteVi": "\"Khốn nạn\" trong tiếng Việt là từ nặng nề; 困难 chỉ là khó khăn, trung tính."
+    },
+    {
+      "id": "hv-039",
+      "level": "HSK3-4",
+      "hanzi": "紧张",
+      "pinyin": "jǐn zhāng",
+      "hanViet": "khẩn trương",
+      "meaningVi": "căng thẳng, hồi hộp",
+      "trap": "nghĩa",
+      "noteVi": "\"Khẩn trương\" tiếng Việt là gấp gáp, khẩn cấp; 紧张 lại là căng thẳng, hồi hộp, hoặc tình hình khan hiếm."
+    },
+    {
+      "id": "hv-040",
+      "level": "HSK5-6",
+      "hanzi": "对象",
+      "pinyin": "duì xiàng",
+      "hanViet": "đối tượng",
+      "meaningVi": "bạn trai hoặc bạn gái",
+      "trap": "nghĩa",
+      "noteVi": "\"Đối tượng\" tiếng Việt là người bị nhắm tới; 对象 trong đời sống thường là bạn trai hoặc bạn gái."
+    },
+    {
+      "id": "hv-041",
+      "level": "HSK5-6",
+      "hanzi": "报酬",
+      "pinyin": "bào chóu",
+      "hanViet": "báo thù",
+      "meaningVi": "tiền công, thưởng",
+      "trap": "nghĩa",
+      "noteVi": "\"Báo thù\" trong tiếng Việt là trả thù; 报酬 lại là tiền công, phần thưởng cho việc đã làm."
+    },
+    {
+      "id": "hv-042",
+      "level": "HSK5-6",
+      "hanzi": "究竟",
+      "pinyin": "jiū jìng",
+      "hanViet": "cứu cánh",
+      "meaningVi": "rốt cuộc, cuối cùng",
+      "trap": "nghĩa",
+      "noteVi": "\"Cứu cánh\" trong tiếng Việt là mục đích cuối cùng, lối thoát; 究竟 lại là rốt cuộc, rút cục, dùng để hỏi cho ra lẽ."
+    }
+  ]
+}

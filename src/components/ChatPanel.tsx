@@ -1,3 +1,4 @@
+import { HanViet } from './HanViet';
 import { SpokenPronunciation } from './SpokenPronunciation';
 import type { VoiceResult } from '../lib/voiceInput';
 import { ListeningControls, SlowListen } from './ListeningControls';
@@ -182,6 +183,7 @@ function MessageItem({
                         <span className="vocab-word">{item.word}</span>
                         <span className="vocab-pinyin">{item.pinyin}</span>
                       </div>
+                      <HanViet word={item.word}/>
                       <p>{item.meaning}</p>
                     </div>
                   ))}

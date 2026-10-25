@@ -71,3 +71,26 @@ data, Git or dist, and unavailable to remote LAN clients. A private catalog
 retains sentence and release provenance without speaker demographics. No
 Common Voice audio is distributed with this app. See
 [configuration and limitations](docs/COMMON-VOICE.md).
+
+## Unihan Sino-Vietnamese readings
+
+`src/data/hanviet-unihan.json` is derived from the Unicode **17.0.0**
+[Unihan database](https://www.unicode.org/Public/17.0.0/ucd/Unihan.zip),
+`Unihan_Readings.txt` **kVietnamese**, with simplified-character fallback via
+`Unihan_Variants.txt` **kTraditionalVariant**. © 2025 Unicode, Inc.
+Distributed under [Unicode License V3](licenses/Unicode-3.0.txt); the full
+permission notice is retained. See [UAX #38](https://www.unicode.org/reports/tr38/)
+for field definitions. The pinned archive SHA-256 and release version are
+recorded in the generated JSON. Rebuild with `node scripts/build-hanviet.mjs`
+and an official 17.0.0 Unihan.zip outside the repository.
+
+The derived file retains multiple readings and the traditional characters used
+for fallback. These are character readings, not context-resolved word readings,
+modern Vietnamese translations or Mandarin pronunciation. Missing readings are
+reported rather than guessed. DeepSeek's `hanviet-traps.json` is separately
+labeled **AI soạn, chưa duyệt**; its two groups are semantic traps and approximate
+sound mnemonics, not Unicode data or teacher-reviewed instruction.
+The Unicode definition of kVietnamese is pronunciation(s) in Quốc ngữ; it does
+not guarantee a complete or context-disambiguated Sino-Vietnamese dictionary.
+The UI reports missing data and retains alternatives. It does not silently
+replace absent entries with AI guesses.

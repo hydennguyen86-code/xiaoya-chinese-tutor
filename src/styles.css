@@ -5030,3 +5030,10 @@ svg {
 .course-practice table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .course-practice th, .course-practice td { padding: 8px 4px; text-align: left; border-bottom: 1px solid var(--line); }
 .course-practice .lesson-actions { flex-wrap: wrap; }
+.hanviet { font-size: 12px; line-height: 1.6; color: var(--ink-soft); margin: 6px 0; }
+.hanviet .hanviet-reading { margin: 4px 0; }
+.hanviet summary, .hanviet-guide summary { cursor: pointer; }
+.hanviet details { margin: 6px 0; }
+.hanviet-guide { margin: 14px 0; padding: 14px; border: 1px solid var(--line-strong); border-radius: 12px; }
+.hanviet-guide select { margin: 8px; padding: 6px; border: 1px solid var(--line-strong); border-radius: 8px; }
+.hanviet-entry { padding: 12px 0; border-bottom: 1px solid var(--line); }

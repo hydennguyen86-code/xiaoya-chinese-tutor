@@ -1,3 +1,4 @@
+import { HanViet } from './HanViet';
 import { PronunciationReview } from './PronunciationReview';
 import { ListeningControls, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
 import { CoursePractice } from './CoursePractice';
@@ -675,6 +676,7 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
       <p className="lesson-count">
         Ôn tập {session.item + 1}/{items.length}
       </p>
+      {item.kind === 'word' && result && <HanViet word={item.word}/>}
       {item.kind === 'word' ? (
         <>
           <p className="lesson-prompt">
@@ -760,6 +762,7 @@ function VocabSection(props: SharedProps) {
       <p className="lesson-word">
         <Han text={word.word} pinyinText={word.pinyin} />
       </p>
+      <HanViet word={word.word}/>
       <p className="lesson-meaning">{word.meaning}</p>
       <p className="lesson-example">
         <Han text={word.example} pinyinText={word.examplePinyin} />

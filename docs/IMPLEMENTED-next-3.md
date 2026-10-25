@@ -169,3 +169,10 @@ hay thiết bị Windows thật. E23 vẫn chờ bộ câu thử DeepSeek, khôn
 - Lưu bản luật gốc/bản DeepSeek trong eval/candidates để tái chạy đối chiếu, không import vào runtime. Bản DeepSeek nguyên trạng có 7 luật sửa nhầm (1,2,5,7,8,10,11); loại khỏi danh sách nhận nguyên trạng. Giữ lượng từ hẹp cũ; thêm guard mệnh đề 的 cho so sánh/vị trí. Nhận luật 是…的 và phó từ cuối câu, cùng các luật cũ đạt cổng kiểm tra.
 - Kết quả deterministic: bản cũ sửa nhầm 2/108, sửa trúng 27/98; bản cuối sửa nhầm **0/108**, sửa trúng 29/98. Mỗi luật active riêng cũng có 0 câu đúng bị sửa. 69 lỗi còn lại chưa bắt được; không tự nhận toàn bộ luật DeepSeek.
 - eval/rule-corrections.mjs lưu audit từng luật, câu sửa nhầm, SHA-256 nguồn và benchmark trong eval/results/. Đây chỉ đo luật cố định; chưa đo lại pipeline LLM và không bảo đảm 0 false positive ngoài bộ thử. Không tự gắn nhãn giáo viên duyệt.
+
+## B7 — Hán Việt từ Unihan và bẫy DeepSeek
+
+- Trích kVietnamese từ Unihan 17.0.0 chính thức (8.306 chữ có giá trị trực tiếp), fallback giản thể qua kTraditionalVariant thành 9.430 chữ tra được; giữ nhiều âm và nguồn biến thể, không chọn âm theo ngữ cảnh. Có script tái tạo và SHA-256 archive. NOTICE và giấy phép Unicode V3 được giữ đầy đủ.
+- Trường âm hiển thị trong thẻ từ bài học, từ mới hội thoại, kho từ và thẻ ôn. Ôn hỏi đáp chỉ mở ghi chú sau khi hiện đáp án để không lộ nghĩa. Phần hồ sơ có danh mục riêng 42 mục DeepSeek, chia Bẫy nghĩa / Mẹo âm; giữ nhãn AI soạn, chưa duyệt và ghi rõ mẹo âm gần đúng.
+- kVietnamese là âm Quốc ngữ theo chữ, không phải nguồn phân giải từ/ngữ cảnh và không thay pinyin/nghĩa hiện đại. Không đoán âm khi thiếu: hiện chữ + chưa có dữ liệu. Tại thời điểm kiểm tra 143 từ khác nhau của khóa học có 26 chữ thiếu dữ liệu Unihan; không tuyên bố bao phủ mọi chữ Hán hoặc chọn đúng âm cho mọi từ đa âm.
+- Test giản/phồn, nhiều âm, ký tự thiếu, tách nhóm bẫy/mẹo; checker DeepSeek chạy trong repo. Chưa có người dạy duyệt các ghi chú DeepSeek hay âm theo ngữ cảnh.
