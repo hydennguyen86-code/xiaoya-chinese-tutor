@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import readline from 'node:readline';
+import { ownerRequest } from './lanAccess.mjs';
+import { listeningDifficulty } from './listeningDifficulty.mjs';
 
 const MAX_BYTES = 2_000_000;
 const validId = (id) => /^[a-f0-9]{24}$/.test(id);
@@ -12,93 +14,138 @@ function safeFile(root, name) {
   if (path.dirname(fs.realpathSync(file)) !== fs.realpathSync(root)) throw Error('Invalid clip path');
   return file;
 }
-// Read only validated.tsv from an official, already downloaded zh-CN release.
-// Speaker IDs, demographic fields and original file paths never enter the manifest.
+// Catalog only: never copy or modify source audio. Runtime source is explicitly configured.
+const sourceKey = (source) => crypto.createHash('sha256').update(fs.realpathSync(source)).digest('hex');
 export async function importCommonVoice({ source, dataDir, version, sourceUrl, limit = 50 }) {
-  if (!/^https:\/\/mozilladatacollective\.com\/datasets\/[a-zA-Z0-9-]+$/.test(sourceUrl || ''))
+  if (sourceUrl && !/^https:\/\/mozilladatacollective\.com\/datasets\/[a-zA-Z0-9-]+$/.test(sourceUrl))
     throw Error('Use the official dataset page URL');
   if (!/^[\w.-]{1,60}$/.test(version || '')) throw Error('Specify dataset version');
   const count = Math.min(200, Math.max(1, Number(limit) || 50));
+  source = fs.realpathSync(source);
   const root = path.join(dataDir, 'listening-corpus');
   fs.mkdirSync(root, { recursive: true });
   if (fs.lstatSync(root).isSymbolicLink()) throw Error('Corpus folder must not be a symlink');
-  const entries = [];
-  const seen = new Set();
-  const lines = readline.createInterface({ input: fs.createReadStream(path.join(source, 'validated.tsv')), crlfDelay: Infinity });
-  let columns;
-  try {
-    for await (const line of lines) {
-      const cells = line.replace(/^\uFEFF/, '').split('\t');
-      if (!columns) {
-        columns = cells;
-        if (!['path', 'sentence', 'locale', 'up_votes', 'down_votes'].every((name) => columns.includes(name)))
-          throw Error('Unsupported validated.tsv columns');
-        continue;
+  const splits = fs.existsSync(path.join(source, 'validated.tsv')) ? ['validated.tsv'] : ['train.tsv', 'dev.tsv', 'test.tsv'];
+  const entries = [],
+    seen = new Set();
+  const stats = { rows: 0, qualityRejected: 0, difficultyRejected: 0, fileRejected: 0, duplicate: 0, eligible: 0 };
+  for (const split of splits) {
+    const lines = readline.createInterface({ input: fs.createReadStream(path.join(source, split)), crlfDelay: Infinity });
+    let columns;
+    try {
+      for await (const line of lines) {
+        const cells = line.replace(/^\uFEFF/, '').split('\t');
+        if (!columns) {
+          columns = cells;
+          if (!['path', 'sentence', 'up_votes', 'down_votes'].every((name) => columns.includes(name)))
+            throw Error('Unsupported TSV columns');
+          continue;
+        }
+        stats.rows++;
+        const get = (key) => cells[columns.indexOf(key)] || '';
+        const text = get('sentence').trim(),
+          clip = get('path');
+        const up = Number(get('up_votes')),
+          down = Number(get('down_votes'));
+        if (
+          (columns.includes('locale') && !['zh-CN', 'zh-CN-beijing'].includes(get('locale'))) ||
+          !Number.isFinite(up) ||
+          !Number.isFinite(down) ||
+          up < 2 ||
+          down !== 0
+        ) {
+          stats.qualityRejected++;
+          continue;
+        }
+        const difficulty = listeningDifficulty(text);
+        if (!difficulty) {
+          stats.difficultyRejected++;
+          continue;
+        }
+        if (seen.has(text)) {
+          stats.duplicate++;
+          continue;
+        }
+        if (!/^[\w-]+\.mp3$/.test(clip)) {
+          stats.fileRejected++;
+          continue;
+        }
+        try {
+          safeFile(path.join(source, 'clips'), clip);
+        } catch {
+          stats.fileRejected++;
+          continue;
+        }
+        const id = crypto.createHash('sha256').update(version).update(clip).update(text).digest('hex').slice(0, 24);
+        entries.push({ id, clip, text, version, ...(sourceUrl ? { sourceUrl } : {}), license: 'CC0-1.0', locale: 'zh-CN', ...difficulty });
+        seen.add(text);
+        stats.eligible++;
       }
-      const get = (key) => cells[columns.indexOf(key)] || '';
-      const text = get('sentence').trim();
-      const clip = get('path');
-      if (get('locale') !== 'zh-CN' || !/^[\p{Script=Han}\s，。！？、；：“”‘’《》…,.!?]+$/u.test(text)) continue;
-      const chars = [...text.matchAll(/\p{Script=Han}/gu)].length;
-      const up = Number(get('up_votes')),
-        down = Number(get('down_votes'));
-      if (chars < 2 || chars > 40 || seen.has(text) || !Number.isFinite(up) || !Number.isFinite(down) || up < 2 || down !== 0) continue;
-      if (!/^[\w-]+\.mp3$/.test(clip)) continue;
-      let file;
-      try {
-        file = safeFile(path.join(source, 'clips'), clip);
-      } catch {
-        continue;
-      }
-      const bytes = fs.readFileSync(file);
-      const id = crypto.createHash('sha256').update(bytes).update(text).digest('hex').slice(0, 24);
-      const target = path.join(root, `${id}.mp3`);
-      if (fs.existsSync(target)) safeFile(root, `${id}.mp3`);
-      else fs.writeFileSync(target, bytes, { flag: 'wx' });
-      entries.push({ id, text, version, sourceUrl, license: 'CC0-1.0', locale: 'zh-CN' });
-      seen.add(text);
-      if (entries.length >= count) break;
+    } finally {
+      lines.close();
     }
-  } finally {
-    lines.close();
   }
+  // Short/basic first; deterministic order and complete scan prevent split-order bias.
+  entries.sort(
+    (a, b) =>
+      (a.difficulty === 'basic' ? 0 : 1) - (b.difficulty === 'basic' ? 0 : 1) || a.text.length - b.text.length || a.id.localeCompare(b.id),
+  );
   if (!entries.length) throw Error('No eligible clips found; existing catalog was kept');
   const tmp = path.join(root, `manifest-${crypto.randomUUID()}.tmp`);
-  fs.writeFileSync(tmp, JSON.stringify({ entries }, null, 2));
+  fs.writeFileSync(tmp, JSON.stringify({ schema: 2, sourceKey: sourceKey(source), entries: entries.slice(0, count) }, null, 2));
   fs.renameSync(tmp, path.join(root, 'manifest.json'));
-  return entries.length;
+  return { ...stats, selected: Math.min(count, entries.length) };
 }
-export function corpusStore(dataDir) {
+export function corpusStore(dataDir, source = process.env.XIAOYA_COMMON_VOICE_DIR) {
   const root = path.join(dataDir, 'listening-corpus');
-  function list() {
+  function entries() {
     try {
-      if (fs.lstatSync(root).isSymbolicLink()) return [];
-      const manifest = safeFile(root, 'manifest.json');
-      const { entries } = JSON.parse(fs.readFileSync(manifest, 'utf8'));
-      return (Array.isArray(entries) ? entries : [])
+      if (!source || fs.lstatSync(root).isSymbolicLink()) return [];
+      const manifest = JSON.parse(fs.readFileSync(safeFile(root, 'manifest.json'), 'utf8'));
+      if (manifest.schema !== 2 || manifest.sourceKey !== sourceKey(source)) return [];
+      return (Array.isArray(manifest.entries) ? manifest.entries : [])
         .slice(0, 200)
         .filter(
-          (e) => validId(e.id) && typeof e.text === 'string' && e.text.length <= 160 && e.license === 'CC0-1.0' && e.locale === 'zh-CN',
-        )
-        .map(({ id, text, version, sourceUrl, license }) => ({ id, text, version, sourceUrl, license }));
+          (e) =>
+            validId(e.id) &&
+            typeof e.text === 'string' &&
+            e.text.length <= 160 &&
+            /^[\w-]+\.mp3$/.test(e.clip) &&
+            e.license === 'CC0-1.0' &&
+            e.locale === 'zh-CN' &&
+            listeningDifficulty(e.text),
+        );
     } catch {
       return [];
     }
   }
   return {
-    list,
+    list() {
+      return entries().map(({ id, text, version, license, difficulty, vocabularyBasis }) => ({
+        id,
+        text,
+        version,
+        license,
+        difficulty,
+        vocabularyBasis,
+      }));
+    },
     audio(id) {
-      if (!validId(id) || !list().some((e) => e.id === id)) return null;
+      if (!validId(id)) return null;
+      const entry = entries().find((e) => e.id === id);
+      if (!entry) return null;
       try {
-        return safeFile(root, `${id}.mp3`);
+        return safeFile(path.join(fs.realpathSync(source), 'clips'), entry.clip);
       } catch {
         return null;
       }
     },
   };
 }
-export function mountListeningCorpus(app, dataDir) {
-  const store = corpusStore(dataDir);
+export function mountListeningCorpus(app, dataDir, source = process.env.XIAOYA_COMMON_VOICE_DIR) {
+  const store = corpusStore(dataDir, source);
+  // Dataset access is local to its owner; do not redistribute to LAN clients.
+  app.use('/api/listening-corpus', (req, res, next) => (ownerRequest(req) ? next() : res.sendStatus(403)));
   app.get('/api/listening-corpus', (_req, res) => res.set('Cache-Control', 'no-store').json({ entries: store.list() }));
   app.get('/api/listening-corpus/:id/audio', (req, res) => {
     const file = store.audio(req.params.id);

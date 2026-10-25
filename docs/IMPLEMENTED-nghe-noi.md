@@ -18,3 +18,17 @@
 - Hướng dẫn tải chính thức: `docs/COMMON-VOICE.md`; NOTICE bổ sung nguồn và giấy phép. Người dùng cần tự đăng nhập/xem điều khoản Mozilla Data Collective. Không tải từ mirror không rõ nguồn, không đưa API key vào chat.
 - Kiểm chứng: 69 test backend/lib + 4 component, typecheck, build/dist đạt; fixture giả chỉ kiểm tra nhập/lọc/API/alignment, không phải giọng người thật.
 - **Chưa hoàn tất kiểm chứng mục 5**: chưa được cung cấp đường dẫn Common Voice tải hợp lệ; chưa phát mp3 Common Voice thật, chưa kiểm tra nhiều người nói và độ phù hợp nội dung. Chờ người dùng cung cấp thư mục zh-CN có `validated.tsv`/`clips` cùng version/URL để thử trong dữ liệu tạm. Mục 6–12 chưa thực hiện trong đợt này, để giữ thứ tự sau khi xác nhận bước 5. Mục 12 cần người học và người gắn nhãn thật; không được thay bằng fixture.
+
+
+## Mục 5 — Cập nhật theo bộ Beijing Chinese người dùng cung cấp
+
+Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu của bản trước.
+
+- App chỉ đọc nguồn ngoài repo do `XIAOYA_COMMON_VOICE_DIR` cấu hình; catalog schema 2 không chứa audio/đường dẫn tuyệt đối. Không đọc manifest cũ đã copy audio; không xóa dữ liệu cũ.
+- Hỗ trợ train/dev/test.tsv, locale tùy chọn; không sửa nguồn. Không tự đoán URL hay xác nhận lại điều khoản: ghi nhận version/CC0/không chia sẻ lại theo người dùng.
+- API Common Voice chỉ cho loopback, chặn client LAN kể cả đã đăng nhập. Chỉ ID thuộc catalog cùng nguồn, từ chối symlink, sai nguồn và tên file bất hợp lệ.
+- Lọc câu ngắn/đời thường, loại mẫu bách khoa và chữ ngoài vốn từ bài HSK1/HSK5 của app + từ thông dụng; không gắn nhãn trình độ HSK chính thức. Quét đủ 2.860 dòng: chọn 17, loại 2.843 do nội dung/độ khó. Bộ lọc bảo thủ; chưa là duyệt sư phạm và có thể bỏ sót câu tốt.
+- Thử thực trên thư mục người dùng, dữ liệu app ở /tmp, avatar mẫu: 17/17 MP3 giải mã sang null bằng ffmpeg; không ghi audio vào data tạm hoặc repo. Test gồm split/dedup/filter/no-copy/source-binding/symlink/API/LAN.
+- Chưa thử Windows thật, chưa được giáo viên duyệt câu và chưa đo hiệu quả với người học. Không thay ngưỡng chấm hay cách cắt âm tiết.
+
+- Kiểm tra cuối: typecheck, 71 test backend/lib + 4 component (75 tổng), build và allowlist dist đều đạt. API trả đúng byte gốc cho 17/17 clip, không lộ tên file nguồn trong danh sách công khai. Trình duyệt phát hết một MP3 thật ở 0.7× (readyState 4, không lỗi), gõ pinyin và mở đối chiếu đúng. Chưa nghe/đánh giá thủ công toàn bộ 17 câu.

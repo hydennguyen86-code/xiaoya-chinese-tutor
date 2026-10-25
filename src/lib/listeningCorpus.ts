@@ -3,7 +3,9 @@ export interface CommunityClip {
   id: string;
   text: string;
   version: string;
-  sourceUrl: string;
+  sourceUrl?: string;
+  difficulty?: 'basic' | 'extended';
+  vocabularyBasis?: string;
   license: string;
 }
 const han = (value: string) => [...value].filter((ch) => /\p{Script=Han}/u.test(ch));

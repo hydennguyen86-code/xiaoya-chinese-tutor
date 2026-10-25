@@ -33,18 +33,25 @@ export function CommunityListening() {
     if (!audio.current) return;
     audio.current.playbackRate = rate;
     audio.current.currentTime = 0;
-    audio.current.play().catch(() => setError('Không phát được bản ghi. Kiểm tra file Common Voice đã nhập.'));
+    audio.current.play().catch(() => setError('Không phát được bản ghi. Kiểm tra đường dẫn Common Voice đã cấu hình.'));
   }
   return (
     <details className="course-practice">
       <summary>Nghe và nghe chép · giọng cộng đồng Common Voice</summary>
       <p>Giọng người đóng góp zh-CN; không bảo đảm mọi người nói cùng một giọng địa phương. Đây là luyện tập, không phải đề thi HSK.</p>
+      <p>
+        Lọc tự động theo vốn từ các bài HSK1/HSK5 của app và từ thông dụng; không phải nhãn trình độ HSK chính thức, chưa có giáo viên
+        duyệt. Chỉ phát trên máy đang chứa dữ liệu.
+      </p>
       {!clip ? (
-        <p>Chưa có bản ghi cục bộ. Xem docs/COMMON-VOICE.md để tải từ Mozilla và nhập khi cần. Ứng dụng không tự thay bằng giọng máy.</p>
+        <p>
+          Chưa có danh sách câu phù hợp. Cấu hình XIAOYA_COMMON_VOICE_DIR rồi lập danh sách theo docs/COMMON-VOICE.md. Âm thanh được đọc
+          trực tiếp từ thư mục của bạn.
+        </p>
       ) : (
         <>
           <p>
-            Câu {index + 1}/{clips.length} · {clip.version} · CC0
+            Câu {index + 1}/{clips.length} · {clip.version} · {clip.difficulty === 'basic' ? 'Câu ngắn, từ quen' : 'Câu mở rộng'}
           </p>
           <audio
             ref={audio}

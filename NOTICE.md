@@ -62,9 +62,12 @@ in [licenses/qrcode-MIT.txt](licenses/qrcode-MIT.txt) and
 
 ## Optional Common Voice listening corpus (not bundled)
 
-Common Voice Scripted Speech zh-CN is community-contributed speech released
-under CC0-1.0 by Mozilla Common Voice. Obtain the chosen release through
-[Mozilla Data Collective](https://mozilladatacollective.com/) under its access
-terms. The app stores optional imported clips and dataset version/source URL
-only in the private data directory. No Common Voice audio is included in this
-repository or browser build. See [import instructions](docs/COMMON-VOICE.md).
+Common Voice Scripted Speech is community-contributed speech labeled CC0-1.0.
+Users obtain datasets themselves through Mozilla Data Collective under the
+applicable access terms. For the user-provided Beijing Chinese 26.0 release,
+the app respects the stated restriction against redistribution: audio is read
+in place from an explicitly configured external folder, never copied into app
+data, Git or dist, and unavailable to remote LAN clients. A private catalog
+retains sentence and release provenance without speaker demographics. No
+Common Voice audio is distributed with this app. See
+[configuration and limitations](docs/COMMON-VOICE.md).

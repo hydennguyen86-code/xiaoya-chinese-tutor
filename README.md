@@ -372,3 +372,12 @@ file lạ trong dist. **Không nén gửi nguyên thư mục dist cũ**: các fi
 hoặc `personal*` trong `dist/avatars/` có thể là bản chép từ build trước. Bạn
 cần tự xoá bản build cũ hoặc chạy lại `npm run build`; build sẽ tạo lại dist,
 nhưng không xoá file gốc trong public. Không đưa data/avatars vào gói phát hành.
+
+
+### Giọng cộng đồng Common Voice (tùy chọn)
+
+App đọc MP3 trực tiếp từ thư mục tải ngoài repo do `XIAOYA_COMMON_VOICE_DIR`
+cấu hình; không sao chép audio vào dữ liệu app và không phục vụ cho máy LAN.
+Lập catalog câu ngắn/đời thường bằng `npm run corpus:import`; hỗ trợ cả
+`validated.tsv` và bộ `train.tsv`/`dev.tsv`/`test.tsv`.
+Xem [cách cấu hình và giới hạn bộ lọc](docs/COMMON-VOICE.md).
