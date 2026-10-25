@@ -26,3 +26,9 @@ public/avatars/personal*
 
 # Downloaded community speech stays private with custom data folders too
 **/listening-corpus/
+
+# voice recordings of real people: keep outside the repo
+*.m4a
+*.wav
+*.mp3
+!public/**/*.mp3
