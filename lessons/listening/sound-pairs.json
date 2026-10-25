@@ -1,0 +1,242 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "sound-pairs",
+  "version": 1,
+  "note": "Cặp âm người Việt dễ lẫn khi nghe tiếng Trung. App tự đọc hanzi bằng TTS, file này không chứa audio. Mỗi cặp có tipVi về khẩu hình — mẹo này chỉ gần đúng, không thay được việc nghe thật.",
+  "levels": ["HSK1-2", "HSK3-4", "HSK5-6"],
+  "schema": {
+    "levels": "ba bậc của app — cặp âm KHÔNG chia theo bậc vì cùng một lỗi gặp ở mọi trình độ; độ khó nằm ở từng từ (có từ hiếm như 僧, 恤, 拴 nên người dạy có thể bỏ qua)",
+    "pairs[].id": "sp-<contrast>",
+    "pairs[].contrast": "[a, b] — hai âm cần phân biệt",
+    "pairs[].type": "initial | final | umlaut",
+    "pairs[].tipVi": "mẹo đặt lưỡi / khẩu hình, ghi rõ gần đúng",
+    "pairs[].tipApproximate": "luôn true: mẹo chỉ mang tính gợi ý",
+    "pairs[].examples[].id": "sp-<contrast>-<số>",
+    "pairs[].examples[].a": "{ hanzi, pinyin, meaningVi }",
+    "pairs[].examples[].b": "{ hanzi, pinyin, meaningVi }",
+    "pairs[].examples[].kind": "minimal = chỉ khác đúng âm cần luyện; near = khác thêm phụ âm đầu nhưng vẫn cùng vần và cùng thanh",
+    "pairs[].examples[].uncertain": "true khi người soạn chưa chắc, kèm uncertainReason"
+  },
+  "pairs": [
+    {
+      "id": "sp-zh-z",
+      "label": "zh / z",
+      "contrast": ["zh", "z"],
+      "type": "initial",
+      "tipVi": "Gần đúng: zh là âm cuộn lưỡi — lưỡi cong lên chạm vùng vòm cứng phía sau răng, môi hơi chu ra. z là âm đầu lưỡi — đầu lưỡi chạm ngay sau răng trên, lưỡi phẳng. Người Việt hay đọc zh thành z hoặc gi.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-zh-z-01", "kind": "minimal", "a": { "hanzi": "找", "pinyin": "zhǎo", "meaningVi": "kiếm, tìm" }, "b": { "hanzi": "早", "pinyin": "zǎo", "meaningVi": "sớm" } },
+        { "id": "sp-zh-z-02", "kind": "minimal", "a": { "hanzi": "纸", "pinyin": "zhǐ", "meaningVi": "tờ giấy" }, "b": { "hanzi": "紫", "pinyin": "zǐ", "meaningVi": "màu tím" } },
+        { "id": "sp-zh-z-03", "kind": "minimal", "a": { "hanzi": "张", "pinyin": "zhāng", "meaningVi": "tờ; họ Trương" }, "b": { "hanzi": "脏", "pinyin": "zāng", "meaningVi": "bẩn, dơ" }, "uncertain": true, "uncertainReason": "脏 còn đọc zàng trong 内脏 (tạng phủ); nghĩa 'bẩn' là zāng nhưng TTS chọn theo ngữ cảnh nên cần chốt nghĩa khi phát." },
+        { "id": "sp-zh-z-04", "kind": "minimal", "a": { "hanzi": "主", "pinyin": "zhǔ", "meaningVi": "chính, chủ" }, "b": { "hanzi": "组", "pinyin": "zǔ", "meaningVi": "tổ, nhóm" } },
+        { "id": "sp-zh-z-05", "kind": "minimal", "a": { "hanzi": "中", "pinyin": "zhōng", "meaningVi": "giữa, trong" }, "b": { "hanzi": "宗", "pinyin": "zōng", "meaningVi": "dòng họ; lượng từ việc" }, "uncertain": true, "uncertainReason": "中 có hai thanh: zhōng (giữa, Trung Quốc) và zhòng (trúng, 中奖). Ở đây lấy zhōng; TTS đọc một chữ thì thường ra zhōng." },
+        { "id": "sp-zh-z-06", "kind": "minimal", "a": { "hanzi": "照", "pinyin": "zhào", "meaningVi": "chiếu, chụp (ảnh)" }, "b": { "hanzi": "造", "pinyin": "zào", "meaningVi": "làm ra, chế tạo" } },
+        { "id": "sp-zh-z-07", "kind": "minimal", "a": { "hanzi": "蒸", "pinyin": "zhēng", "meaningVi": "hấp, đồ" }, "b": { "hanzi": "增", "pinyin": "zēng", "meaningVi": "tăng thêm" } },
+        { "id": "sp-zh-z-08", "kind": "minimal", "a": { "hanzi": "证", "pinyin": "zhèng", "meaningVi": "giấy tờ, chứng" }, "b": { "hanzi": "赠", "pinyin": "zèng", "meaningVi": "tặng, cho" } }
+      ]
+    },
+    {
+      "id": "sp-ch-c",
+      "label": "ch / c",
+      "contrast": ["ch", "c"],
+      "type": "initial",
+      "tipVi": "Gần đúng: ch cuộn lưỡi + bật hơi mạnh (đặt tay trước miệng thấy hơi); c là âm đầu lưỡi, hơi nhẹ hơn nhiều. Người Việt hay lẫn ch với tr hoặc đọc c thành ch.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-ch-c-01", "kind": "minimal", "a": { "hanzi": "超", "pinyin": "chāo", "meaningVi": "vượt, siêu" }, "b": { "hanzi": "操", "pinyin": "cāo", "meaningVi": "tập (thể dục); cầm" } },
+        { "id": "sp-ch-c-02", "kind": "minimal", "a": { "hanzi": "常", "pinyin": "cháng", "meaningVi": "thường, thường xuyên" }, "b": { "hanzi": "藏", "pinyin": "cáng", "meaningVi": "giấu, cất" }, "uncertain": true, "uncertainReason": "藏 đọc cáng (giấu) hoặc zàng (tạng, 西藏). Lấy nghĩa 'giấu' thì thanh là 2 và phụ âm là c." },
+        { "id": "sp-ch-c-03", "kind": "minimal", "a": { "hanzi": "柴", "pinyin": "chái", "meaningVi": "củi" }, "b": { "hanzi": "裁", "pinyin": "cái", "meaningVi": "cắt (quần áo)" } },
+        { "id": "sp-ch-c-04", "kind": "minimal", "a": { "hanzi": "插", "pinyin": "chā", "meaningVi": "cắm, xen vào" }, "b": { "hanzi": "擦", "pinyin": "cā", "meaningVi": "lau, chùi" } },
+        { "id": "sp-ch-c-05", "kind": "minimal", "a": { "hanzi": "产", "pinyin": "chǎn", "meaningVi": "sản xuất, sinh" }, "b": { "hanzi": "惨", "pinyin": "cǎn", "meaningVi": "thảm, tội nghiệp" } },
+        { "id": "sp-ch-c-06", "kind": "minimal", "a": { "hanzi": "程", "pinyin": "chéng", "meaningVi": "quãng đường, khóa học" }, "b": { "hanzi": "层", "pinyin": "céng", "meaningVi": "tầng, lớp" } },
+        { "id": "sp-ch-c-07", "kind": "minimal", "a": { "hanzi": "出", "pinyin": "chū", "meaningVi": "ra, xuất hiện" }, "b": { "hanzi": "粗", "pinyin": "cū", "meaningVi": "thô, to" } },
+        { "id": "sp-ch-c-08", "kind": "minimal", "a": { "hanzi": "处", "pinyin": "chù", "meaningVi": "nơi, chỗ" }, "b": { "hanzi": "醋", "pinyin": "cù", "meaningVi": "giấm" }, "uncertain": true, "uncertainReason": "处 đọc chù (nơi, chỗ) khi là danh từ, chǔ (xử) khi là động từ; TTS một chữ dễ chọn nhầm thanh 3." }
+      ]
+    },
+    {
+      "id": "sp-sh-s",
+      "label": "sh / s",
+      "contrast": ["sh", "s"],
+      "type": "initial",
+      "tipVi": "Gần đúng: sh cuộn lưỡi, hơi rít đi qua mặt lưỡi cong áp vòm cứng; s đầu lưỡi sát chân răng trên. Tiếng Việt không có sh cuộn lưỡi nên người học hay đọc thành s hoặc x.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-sh-s-01", "kind": "minimal", "a": { "hanzi": "山", "pinyin": "shān", "meaningVi": "núi" }, "b": { "hanzi": "三", "pinyin": "sān", "meaningVi": "số ba, 3" } },
+        { "id": "sp-sh-s-02", "kind": "minimal", "a": { "hanzi": "师", "pinyin": "shī", "meaningVi": "thầy, thầy giáo" }, "b": { "hanzi": "丝", "pinyin": "sī", "meaningVi": "sợi tơ" } },
+        { "id": "sp-sh-s-03", "kind": "minimal", "a": { "hanzi": "树", "pinyin": "shù", "meaningVi": "cây" }, "b": { "hanzi": "速", "pinyin": "sù", "meaningVi": "tốc độ" } },
+        { "id": "sp-sh-s-04", "kind": "minimal", "a": { "hanzi": "睡", "pinyin": "shuì", "meaningVi": "ngủ" }, "b": { "hanzi": "岁", "pinyin": "suì", "meaningVi": "tuổi" } },
+        { "id": "sp-sh-s-05", "kind": "minimal", "a": { "hanzi": "少", "pinyin": "shǎo", "meaningVi": "ít, thiếu" }, "b": { "hanzi": "扫", "pinyin": "sǎo", "meaningVi": "quét" }, "uncertain": true, "uncertainReason": "少 còn đọc shào (trẻ, 少年); nghĩa 'ít' là shǎo. Khi phát một chữ, TTS thường đọc shǎo nhưng vẫn có rủi ro." },
+        { "id": "sp-sh-s-06", "kind": "minimal", "a": { "hanzi": "生", "pinyin": "shēng", "meaningVi": "sống, học" }, "b": { "hanzi": "僧", "pinyin": "sēng", "meaningVi": "nhà sư" } },
+        { "id": "sp-sh-s-07", "kind": "minimal", "a": { "hanzi": "身", "pinyin": "shēn", "meaningVi": "thân, mình" }, "b": { "hanzi": "森", "pinyin": "sēn", "meaningVi": "rừng (rậm)" } },
+        { "id": "sp-sh-s-08", "kind": "minimal", "a": { "hanzi": "事", "pinyin": "shì", "meaningVi": "việc" }, "b": { "hanzi": "四", "pinyin": "sì", "meaningVi": "bốn" } },
+        { "id": "sp-sh-s-09", "kind": "minimal", "a": { "hanzi": "收", "pinyin": "shōu", "meaningVi": "thu, nhận" }, "b": { "hanzi": "搜", "pinyin": "sōu", "meaningVi": "tìm kiếm, lục" } }
+      ]
+    },
+    {
+      "id": "sp-r-l",
+      "label": "r / l",
+      "contrast": ["r", "l"],
+      "type": "initial",
+      "tipVi": "Gần đúng: r tiếng Trung là âm cuộn lưỡi, lưỡi cong áp vòm cứng, KHÔNG rung như l tiếng Việt; nhiều người Việt nghe r thành l. Mẹo: tập nói 'z' cuộn lưỡi rồi giữ nguyên vị trí đó, chỉ thêm rung giọng.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-r-l-01", "kind": "minimal", "a": { "hanzi": "热", "pinyin": "rè", "meaningVi": "nóng" }, "b": { "hanzi": "乐", "pinyin": "lè", "meaningVi": "vui, vui vẻ" }, "uncertain": true, "uncertainReason": "乐 đọc lè (vui) hoặc yuè (nhạc, 音乐). TTS một chữ có thể chọn yuè; nếu vậy nên đổi vế này thành 乐 trong từ 快乐." },
+        { "id": "sp-r-l-02", "kind": "minimal", "a": { "hanzi": "让", "pinyin": "ràng", "meaningVi": "nhường, khiến" }, "b": { "hanzi": "浪", "pinyin": "làng", "meaningVi": "sóng; lãng phí" } },
+        { "id": "sp-r-l-03", "kind": "minimal", "a": { "hanzi": "日", "pinyin": "rì", "meaningVi": "ngày, mặt trời" }, "b": { "hanzi": "利", "pinyin": "lì", "meaningVi": "lợi, thuận lợi" } },
+        { "id": "sp-r-l-04", "kind": "minimal", "a": { "hanzi": "入", "pinyin": "rù", "meaningVi": "vào, nhập" }, "b": { "hanzi": "路", "pinyin": "lù", "meaningVi": "đường, con đường" } },
+        { "id": "sp-r-l-05", "kind": "minimal", "a": { "hanzi": "染", "pinyin": "rǎn", "meaningVi": "nhuộm, lây" }, "b": { "hanzi": "懒", "pinyin": "lǎn", "meaningVi": "lười" } },
+        { "id": "sp-r-l-06", "kind": "minimal", "a": { "hanzi": "容", "pinyin": "róng", "meaningVi": "dung chứa, dung mạo" }, "b": { "hanzi": "龙", "pinyin": "lóng", "meaningVi": "con rồng" } },
+        { "id": "sp-r-l-07", "kind": "minimal", "a": { "hanzi": "肉", "pinyin": "ròu", "meaningVi": "thịt" }, "b": { "hanzi": "漏", "pinyin": "lòu", "meaningVi": "rò, rỉ, bỏ sót" } },
+        { "id": "sp-r-l-08", "kind": "minimal", "a": { "hanzi": "乳", "pinyin": "rǔ", "meaningVi": "sữa, vú" }, "b": { "hanzi": "鲁", "pinyin": "lǔ", "meaningVi": "vụng về; họ Lỗ" } },
+        { "id": "sp-r-l-09", "kind": "minimal", "a": { "hanzi": "饶", "pinyin": "ráo", "meaningVi": "tha thứ, buông cho" }, "b": { "hanzi": "劳", "pinyin": "láo", "meaningVi": "nhọc, lao động" } }
+      ]
+    },
+    {
+      "id": "sp-j-q",
+      "label": "j / q",
+      "contrast": ["j", "q"],
+      "type": "initial",
+      "tipVi": "Gần đúng: j và q cùng vị trí lưỡi (áp vòm cứng, lưỡi phẳng, mép lưỡi chạm răng) chỉ khác hơi — q bật hơi mạnh, j không bật hơi. Người Việt hay đọc q thành 'x' và j thành 'd'.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-j-q-01", "kind": "minimal", "a": { "hanzi": "鸡", "pinyin": "jī", "meaningVi": "con gà" }, "b": { "hanzi": "七", "pinyin": "qī", "meaningVi": "bảy" } },
+        { "id": "sp-j-q-02", "kind": "minimal", "a": { "hanzi": "家", "pinyin": "jiā", "meaningVi": "nhà, gia đình" }, "b": { "hanzi": "掐", "pinyin": "qiā", "meaningVi": "bóp, vặt" } },
+        { "id": "sp-j-q-03", "kind": "minimal", "a": { "hanzi": "几", "pinyin": "jǐ", "meaningVi": "mấy, vài" }, "b": { "hanzi": "起", "pinyin": "qǐ", "meaningVi": "đứng dậy, bắt đầu" }, "uncertain": true, "uncertainReason": "几 còn đọc jī trong 几乎 (gần như); nghĩa 'mấy' là jǐ." },
+        { "id": "sp-j-q-04", "kind": "minimal", "a": { "hanzi": "姐", "pinyin": "jiě", "meaningVi": "chị" }, "b": { "hanzi": "且", "pinyin": "qiě", "meaningVi": "hơn nữa, mà còn" } },
+        { "id": "sp-j-q-05", "kind": "minimal", "a": { "hanzi": "奖", "pinyin": "jiǎng", "meaningVi": "thưởng, phần thưởng" }, "b": { "hanzi": "抢", "pinyin": "qiǎng", "meaningVi": "cướp, tranh" } },
+        { "id": "sp-j-q-06", "kind": "minimal", "a": { "hanzi": "叫", "pinyin": "jiào", "meaningVi": "gọi, kêu" }, "b": { "hanzi": "俏", "pinyin": "qiào", "meaningVi": "xinh, đẹp" } },
+        { "id": "sp-j-q-07", "kind": "minimal", "a": { "hanzi": "斤", "pinyin": "jīn", "meaningVi": "cân (đơn vị)" }, "b": { "hanzi": "亲", "pinyin": "qīn", "meaningVi": "thân, người thân" } },
+        { "id": "sp-j-q-08", "kind": "minimal", "a": { "hanzi": "京", "pinyin": "jīng", "meaningVi": "kinh đô, Bắc Kinh" }, "b": { "hanzi": "青", "pinyin": "qīng", "meaningVi": "xanh biếc" } }
+      ]
+    },
+    {
+      "id": "sp-q-x",
+      "label": "q / x",
+      "contrast": ["q", "x"],
+      "type": "initial",
+      "tipVi": "Gần đúng: q bật hơi mạnh rồi mới tới vần; x là âm sát (như 'x' tiếng Việt nhưng lưỡi cao hơn, áp vòm cứng). q ngắn và nổ, x kéo dài và rít.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-q-x-01", "kind": "minimal", "a": { "hanzi": "七", "pinyin": "qī", "meaningVi": "bảy" }, "b": { "hanzi": "西", "pinyin": "xī", "meaningVi": "phía tây" } },
+        { "id": "sp-q-x-02", "kind": "minimal", "a": { "hanzi": "千", "pinyin": "qiān", "meaningVi": "nghìn" }, "b": { "hanzi": "先", "pinyin": "xiān", "meaningVi": "trước, đầu tiên" } },
+        { "id": "sp-q-x-03", "kind": "minimal", "a": { "hanzi": "气", "pinyin": "qì", "meaningVi": "khí, không khí" }, "b": { "hanzi": "戏", "pinyin": "xì", "meaningVi": "món kịch, trò chơi" } },
+        { "id": "sp-q-x-04", "kind": "minimal", "a": { "hanzi": "全", "pinyin": "quán", "meaningVi": "toàn bộ" }, "b": { "hanzi": "悬", "pinyin": "xuán", "meaningVi": "treo lơ lửng" } },
+        { "id": "sp-q-x-05", "kind": "minimal", "a": { "hanzi": "群", "pinyin": "qún", "meaningVi": "bầy, nhóm" }, "b": { "hanzi": "循", "pinyin": "xún", "meaningVi": "tuân theo, lần theo" } },
+        { "id": "sp-q-x-06", "kind": "minimal", "a": { "hanzi": "去", "pinyin": "qù", "meaningVi": "đi" }, "b": { "hanzi": "恤", "pinyin": "xù", "meaningVi": "thương xót, an ủi" } },
+        { "id": "sp-q-x-07", "kind": "minimal", "a": { "hanzi": "欠", "pinyin": "qiàn", "meaningVi": "nợ, thiếu" }, "b": { "hanzi": "陷", "pinyin": "xiàn", "meaningVi": "sa lầy, hãm hại" } },
+        { "id": "sp-q-x-08", "kind": "minimal", "a": { "hanzi": "青", "pinyin": "qīng", "meaningVi": "xanh biếc" }, "b": { "hanzi": "星", "pinyin": "xīng", "meaningVi": "sao, ngôi sao" } }
+      ]
+    },
+    {
+      "id": "sp-j-x",
+      "label": "j / x",
+      "contrast": ["j", "x"],
+      "type": "initial",
+      "tipVi": "Gần đúng: j không bật hơi, âm ngắn gọn (gần 'd' tiếng Việt nhưng lưỡi áp vòm cứng); x kéo dài hơi rít (như 'x' tiếng Việt). Người Việt hay lẫn j ~ x ~ s.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-j-x-01", "kind": "minimal", "a": { "hanzi": "加", "pinyin": "jiā", "meaningVi": "thêm, cộng" }, "b": { "hanzi": "虾", "pinyin": "xiā", "meaningVi": "con tôm" } },
+        { "id": "sp-j-x-02", "kind": "minimal", "a": { "hanzi": "见", "pinyin": "jiàn", "meaningVi": "thấy, gặp" }, "b": { "hanzi": "现", "pinyin": "xiàn", "meaningVi": "hiện tại, xuất hiện" } },
+        { "id": "sp-j-x-03", "kind": "minimal", "a": { "hanzi": "景", "pinyin": "jǐng", "meaningVi": "cảnh, phong cảnh" }, "b": { "hanzi": "醒", "pinyin": "xǐng", "meaningVi": "tỉnh, thức dậy" } },
+        { "id": "sp-j-x-04", "kind": "minimal", "a": { "hanzi": "机", "pinyin": "jī", "meaningVi": "máy, cơ hội" }, "b": { "hanzi": "西", "pinyin": "xī", "meaningVi": "phía tây" } },
+        { "id": "sp-j-x-05", "kind": "minimal", "a": { "hanzi": "姐", "pinyin": "jiě", "meaningVi": "chị" }, "b": { "hanzi": "写", "pinyin": "xiě", "meaningVi": "viết" } },
+        { "id": "sp-j-x-06", "kind": "minimal", "a": { "hanzi": "讲", "pinyin": "jiǎng", "meaningVi": "nói, giảng" }, "b": { "hanzi": "想", "pinyin": "xiǎng", "meaningVi": "nghĩ, nhớ, muốn" } },
+        { "id": "sp-j-x-07", "kind": "minimal", "a": { "hanzi": "江", "pinyin": "jiāng", "meaningVi": "sông (giang)" }, "b": { "hanzi": "香", "pinyin": "xiāng", "meaningVi": "thơm" } },
+        { "id": "sp-j-x-08", "kind": "minimal", "a": { "hanzi": "进", "pinyin": "jìn", "meaningVi": "vào, tiến" }, "b": { "hanzi": "信", "pinyin": "xìn", "meaningVi": "tin, lá thư" } }
+      ]
+    },
+    {
+      "id": "sp-u-umlaut",
+      "label": "ü / u",
+      "contrast": ["ü", "u"],
+      "type": "umlaut",
+      "tipVi": "Gần đúng: u tròn môi như 'u' tiếng Việt; ü là 'u' nhưng đẩy lưỡi lên trước và giữ môi tròn chặt (đọc 'i' rồi bo môi lại mà không đổi lưỡi). Sau j/q/x/y, ü viết thành u — nên 去 qù thực ra mang âm ü.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-u-umlaut-01", "kind": "minimal", "a": { "hanzi": "绿", "pinyin": "lǜ", "meaningVi": "xanh lá" }, "b": { "hanzi": "路", "pinyin": "lù", "meaningVi": "đường" } },
+        { "id": "sp-u-umlaut-02", "kind": "minimal", "a": { "hanzi": "女", "pinyin": "nǚ", "meaningVi": "con gái, nữ" }, "b": { "hanzi": "努", "pinyin": "nǔ", "meaningVi": "cố gắng" } },
+        { "id": "sp-u-umlaut-03", "kind": "minimal", "a": { "hanzi": "吕", "pinyin": "lǚ", "meaningVi": "họ Lữ" }, "b": { "hanzi": "鲁", "pinyin": "lǔ", "meaningVi": "vụng về; họ Lỗ" } },
+        { "id": "sp-u-umlaut-04", "kind": "minimal", "a": { "hanzi": "驴", "pinyin": "lǘ", "meaningVi": "con lừa" }, "b": { "hanzi": "芦", "pinyin": "lú", "meaningVi": "cây lau, cây sậy" } },
+        { "id": "sp-u-umlaut-05", "kind": "near", "a": { "hanzi": "去", "pinyin": "qù", "meaningVi": "đi" }, "b": { "hanzi": "醋", "pinyin": "cù", "meaningVi": "giấm" } },
+        { "id": "sp-u-umlaut-06", "kind": "near", "a": { "hanzi": "居", "pinyin": "jū", "meaningVi": "ở, cư trú" }, "b": { "hanzi": "朱", "pinyin": "zhū", "meaningVi": "đỏ; họ Chu" } },
+        { "id": "sp-u-umlaut-07", "kind": "near", "a": { "hanzi": "徐", "pinyin": "xú", "meaningVi": "chậm rãi; họ Từ" }, "b": { "hanzi": "俗", "pinyin": "sú", "meaningVi": "tục, bình dân" } },
+        { "id": "sp-u-umlaut-08", "kind": "near", "a": { "hanzi": "需", "pinyin": "xū", "meaningVi": "cần, nhu cầu" }, "b": { "hanzi": "书", "pinyin": "shū", "meaningVi": "sách" } }
+      ]
+    },
+    {
+      "id": "sp-an-ang",
+      "label": "an / ang",
+      "contrast": ["an", "ang"],
+      "type": "final",
+      "tipVi": "Gần đúng: an kết thúc bằng -n, đầu lưỡi chạm vòm răng rồi ngắt hơi; ang kết thúc bằng -ng, gốc lưỡi nâng chạm vòm mềm, miệng mở và âm vang hơn. Người Việt dễ đọc ang thành 'ăng' hoặc nuốt mất -g.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-an-ang-01", "kind": "minimal", "a": { "hanzi": "班", "pinyin": "bān", "meaningVi": "lớp, ca làm" }, "b": { "hanzi": "帮", "pinyin": "bāng", "meaningVi": "giúp đỡ" } },
+        { "id": "sp-an-ang-02", "kind": "minimal", "a": { "hanzi": "板", "pinyin": "bǎn", "meaningVi": "tấm ván, bảng" }, "b": { "hanzi": "绑", "pinyin": "bǎng", "meaningVi": "buộc, trói" } },
+        { "id": "sp-an-ang-03", "kind": "minimal", "a": { "hanzi": "兰", "pinyin": "lán", "meaningVi": "cây lan, hoa lan" }, "b": { "hanzi": "狼", "pinyin": "láng", "meaningVi": "con sói" } },
+        { "id": "sp-an-ang-04", "kind": "minimal", "a": { "hanzi": "干", "pinyin": "gān", "meaningVi": "khô, làm" }, "b": { "hanzi": "刚", "pinyin": "gāng", "meaningVi": "vừa mới; cứng" }, "uncertain": true, "uncertainReason": "干 đọc gān (khô) hoặc gàn (việc làm, 干活). nghĩa 'khô' an toàn hơn; TTS một chữ thường ra gān." },
+        { "id": "sp-an-ang-05", "kind": "minimal", "a": { "hanzi": "反", "pinyin": "fǎn", "meaningVi": "ngược, chống" }, "b": { "hanzi": "仿", "pinyin": "fǎng", "meaningVi": "bắt chước, mô phỏng" } },
+        { "id": "sp-an-ang-06", "kind": "minimal", "a": { "hanzi": "山", "pinyin": "shān", "meaningVi": "núi" }, "b": { "hanzi": "商", "pinyin": "shāng", "meaningVi": "buôn bán, thương" } },
+        { "id": "sp-an-ang-07", "kind": "minimal", "a": { "hanzi": "感", "pinyin": "gǎn", "meaningVi": "cảm giác" }, "b": { "hanzi": "港", "pinyin": "gǎng", "meaningVi": "cảng, bến" } },
+        { "id": "sp-an-ang-08", "kind": "minimal", "a": { "hanzi": "胆", "pinyin": "dǎn", "meaningVi": "quả mật, gan dạ" }, "b": { "hanzi": "党", "pinyin": "dǎng", "meaningVi": "đảng, bè" } },
+        { "id": "sp-an-ang-09", "kind": "minimal", "a": { "hanzi": "盘", "pinyin": "pán", "meaningVi": "cái đĩa, khoanh" }, "b": { "hanzi": "旁", "pinyin": "páng", "meaningVi": "bên cạnh" } }
+      ]
+    },
+    {
+      "id": "sp-en-eng",
+      "label": "en / eng",
+      "contrast": ["en", "eng"],
+      "type": "final",
+      "tipVi": "Gần đúng: en đóng bằng -n, đầu lưỡi chạm vòm răng; eng mở bằng -ng, gốc lưỡi áp vòm mềm, âm kéo dài. eng cũng gần với 'ân' trong 'ân hận' của tiếng Việt, nên dễ lẫn.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-en-eng-01", "kind": "minimal", "a": { "hanzi": "奔", "pinyin": "bēn", "meaningVi": "chạy, rảo" }, "b": { "hanzi": "崩", "pinyin": "bēng", "meaningVi": "sập, đổ" } },
+        { "id": "sp-en-eng-02", "kind": "minimal", "a": { "hanzi": "分", "pinyin": "fēn", "meaningVi": "chia, phần" }, "b": { "hanzi": "风", "pinyin": "fēng", "meaningVi": "gió" } },
+        { "id": "sp-en-eng-03", "kind": "minimal", "a": { "hanzi": "跟", "pinyin": "gēn", "meaningVi": "theo, với" }, "b": { "hanzi": "耕", "pinyin": "gēng", "meaningVi": "cày ruộng" } },
+        { "id": "sp-en-eng-04", "kind": "minimal", "a": { "hanzi": "痕", "pinyin": "hén", "meaningVi": "vết, dấu vết" }, "b": { "hanzi": "横", "pinyin": "héng", "meaningVi": "ngang, nằm ngang" }, "uncertain": true, "uncertainReason": "横 đọc héng (ngang) hoặc hèng (hống hách, 蛮横); nghĩa 'ngang' là héng." },
+        { "id": "sp-en-eng-05", "kind": "minimal", "a": { "hanzi": "门", "pinyin": "mén", "meaningVi": "cửa" }, "b": { "hanzi": "萌", "pinyin": "méng", "meaningVi": "mầm, dễ thương (lóng)" } },
+        { "id": "sp-en-eng-06", "kind": "minimal", "a": { "hanzi": "仁", "pinyin": "rén", "meaningVi": "nhân, lòng nhân" }, "b": { "hanzi": "仍", "pinyin": "réng", "meaningVi": "vẫn, vẫn còn" } },
+        { "id": "sp-en-eng-07", "kind": "minimal", "a": { "hanzi": "身", "pinyin": "shēn", "meaningVi": "thân, mình" }, "b": { "hanzi": "声", "pinyin": "shēng", "meaningVi": "tiếng, âm thanh" } },
+        { "id": "sp-en-eng-08", "kind": "minimal", "a": { "hanzi": "臣", "pinyin": "chén", "meaningVi": "bề tôi, quần thần" }, "b": { "hanzi": "成", "pinyin": "chéng", "meaningVi": "thành, được" } },
+        { "id": "sp-en-eng-09", "kind": "minimal", "a": { "hanzi": "深", "pinyin": "shēn", "meaningVi": "sâu" }, "b": { "hanzi": "升", "pinyin": "shēng", "meaningVi": "lên, lít (đơn vị)" } }
+      ]
+    },
+    {
+      "id": "sp-in-ing",
+      "label": "in / ing",
+      "contrast": ["in", "ing"],
+      "type": "final",
+      "tipVi": "Gần đúng: in đóng bằng -n, đầu lưỡi chạm răng/vòm răng; eng mở bằng -ng nên ing cũng vậy — gốc lưỡi nâng, âm vang và dài hơn. Người Việt hay đọc 音 yīn thành 'inh'.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-in-ing-01", "kind": "minimal", "a": { "hanzi": "宾", "pinyin": "bīn", "meaningVi": "khách, tân khách" }, "b": { "hanzi": "冰", "pinyin": "bīng", "meaningVi": "đá, nước đá" } },
+        { "id": "sp-in-ing-02", "kind": "minimal", "a": { "hanzi": "贫", "pinyin": "pín", "meaningVi": "nghèo" }, "b": { "hanzi": "平", "pinyin": "píng", "meaningVi": "bằng, phẳng" } },
+        { "id": "sp-in-ing-03", "kind": "minimal", "a": { "hanzi": "民", "pinyin": "mín", "meaningVi": "dân" }, "b": { "hanzi": "名", "pinyin": "míng", "meaningVi": "tên, danh" } },
+        { "id": "sp-in-ing-04", "kind": "minimal", "a": { "hanzi": "林", "pinyin": "lín", "meaningVi": "rừng cây" }, "b": { "hanzi": "零", "pinyin": "líng", "meaningVi": "số không, lẻ" } },
+        { "id": "sp-in-ing-05", "kind": "minimal", "a": { "hanzi": "金", "pinyin": "jīn", "meaningVi": "vàng, kim loại" }, "b": { "hanzi": "京", "pinyin": "jīng", "meaningVi": "kinh đô" } },
+        { "id": "sp-in-ing-06", "kind": "minimal", "a": { "hanzi": "心", "pinyin": "xīn", "meaningVi": "trái tim, lòng" }, "b": { "hanzi": "星", "pinyin": "xīng", "meaningVi": "ngôi sao" } },
+        { "id": "sp-in-ing-07", "kind": "minimal", "a": { "hanzi": "信", "pinyin": "xìn", "meaningVi": "tin, lá thư" }, "b": { "hanzi": "姓", "pinyin": "xìng", "meaningVi": "họ (danh từ)" } },
+        { "id": "sp-in-ing-08", "kind": "minimal", "a": { "hanzi": "进", "pinyin": "jìn", "meaningVi": "vào, tiến" }, "b": { "hanzi": "敬", "pinyin": "jìng", "meaningVi": "kính, tôn trọng" } }
+      ]
+    },
+    {
+      "id": "sp-uan-uang",
+      "label": "uan / uang",
+      "contrast": ["uan", "uang"],
+      "type": "final",
+      "tipVi": "Gần đúng: uan gồm u + an, kết thúc bằng -n, môi từ tròn rồi mở; uang = u + ang, kết thúc bằng -ng, gốc lưỡi nâng và âm vang hơn, khẩu hình mở rộng hơn. Đây là cặp khó nhất vì khác cả độ mở miệng.",
+      "tipApproximate": true,
+      "examples": [
+        { "id": "sp-uan-uang-01", "kind": "minimal", "a": { "hanzi": "官", "pinyin": "guān", "meaningVi": "quan, chức" }, "b": { "hanzi": "光", "pinyin": "guāng", "meaningVi": "ánh sáng, sạch, hết" } },
+        { "id": "sp-uan-uang-02", "kind": "minimal", "a": { "hanzi": "管", "pinyin": "guǎn", "meaningVi": "quản, ống; quản lý" }, "b": { "hanzi": "广", "pinyin": "guǎng", "meaningVi": "rộng, mở" } },
+        { "id": "sp-uan-uang-03", "kind": "minimal", "a": { "hanzi": "惯", "pinyin": "guàn", "meaningVi": "quen, thói quen" }, "b": { "hanzi": "逛", "pinyin": "guàng", "meaningVi": "đi dạo, ngắm phố" } },
+        { "id": "sp-uan-uang-04", "kind": "minimal", "a": { "hanzi": "欢", "pinyin": "huān", "meaningVi": "vui, mừng" }, "b": { "hanzi": "慌", "pinyin": "huāng", "meaningVi": "hoảng, vội vàng" } },
+        { "id": "sp-uan-uang-05", "kind": "minimal", "a": { "hanzi": "宽", "pinyin": "kuān", "meaningVi": "rộng, khoan" }, "b": { "hanzi": "筐", "pinyin": "kuāng", "meaningVi": "cái sọt, cái thúng" } },
+        { "id": "sp-uan-uang-06", "kind": "minimal", "a": { "hanzi": "专", "pinyin": "zhuān", "meaningVi": "chuyên, riêng" }, "b": { "hanzi": "装", "pinyin": "zhuāng", "meaningVi": "đóng gói, trang bị" } },
+        { "id": "sp-uan-uang-07", "kind": "minimal", "a": { "hanzi": "船", "pinyin": "chuán", "meaningVi": "con thuyền, tàu" }, "b": { "hanzi": "床", "pinyin": "chuáng", "meaningVi": "cái giường" } },
+        { "id": "sp-uan-uang-08", "kind": "minimal", "a": { "hanzi": "拴", "pinyin": "shuān", "meaningVi": "buộc, cột vào" }, "b": { "hanzi": "双", "pinyin": "shuāng", "meaningVi": "đôi, cặp" } }
+      ]
+    }
+  ]
+}

@@ -39,3 +39,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Nghe rồi chọn thanh, gồm âm tiết/từ đôi; khóa trả lời đến lúc audio bắt đầu. Chấp nhận đúng các acceptTones đã khai báo; baseTone/baseTones giữ làm lời giải, không ghi đè biến điệu bằng pinyin tự suy.
 - Ma trận nhầm thanh theo người học nhận cả lỗi nghe và các báo cáo nói có kết quả chấm rõ. Chọn có trọng số ưu tiên nhầm lẫn, vẫn có phần khám phá và tránh lặp câu ngay trước. Không tính chữ chưa chấm được thành lỗi.
 - Typecheck, test và build được chạy trước commit. Chưa thu âm người thật hoặc xác nhận TTS đọc đúng từng câu; thuật toán chấm thanh không đổi. Không gắn nhãn giáo viên duyệt.
+
+## Mục 2 — Cặp âm dễ lẫn
+
+- Chép JSON + checker DeepSeek, 12 nhóm âm, giữ nhãn AI soạn, chưa duyệt. Checker kiểm tra cả tính cặp tối thiểu và pinyin; các mục uncertain không đưa vào phần chấm.
+- Nghe rồi chọn pinyin A/B, phát âm mẫu tổng hợp, có nghe chậm và giải thích khẩu hình sau trả lời. Không gọi STT để quyết định đáp án. Lịch sử nhầm theo người học được giữ riêng để ôn phát âm ở mục 7.
+- Typecheck/test/build đạt trước commit; chưa được người dạy xác nhận độ chính xác từng giọng mẫu hoặc mẹo khẩu hình.

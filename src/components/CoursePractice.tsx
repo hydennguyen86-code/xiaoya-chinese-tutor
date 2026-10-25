@@ -1,3 +1,4 @@
+import { SoundListening } from './SoundListening';
 import { CommunityListening } from './CommunityListening';
 import { SlowListen } from './ListeningControls';
 import { useLessonAudio as useAudio, stopLessonAudio } from '../lib/useLessonAudio';
@@ -51,6 +52,7 @@ export function CoursePractice(props: Props) {
         HSK.
       </p>
       {!checkpoint && <ToneListening learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />}
+      {!checkpoint && <SoundListening learnerId={props.learnerId} voice={props.voice} onBusy={props.onBusy} />}
       {!checkpoint && <CommunityListening />}
       {content.checkpoint && (
         <button type="button" className="lesson-secondary" onClick={() => setCheckpoint((v) => !v)}>
