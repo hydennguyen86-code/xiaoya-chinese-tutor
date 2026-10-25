@@ -1,3 +1,5 @@
+import { energyTiming } from './audioTiming.mjs';
+import { measureFluency } from './fluency.mjs';
 import { mountListeningCorpus } from './listeningCorpus.mjs';
 import { createAvatarStore } from './avatars.mjs';
 import https from 'node:https';
@@ -24,7 +26,7 @@ import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
 import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
-import { analyseTones, profileFromAudio } from './tones.mjs';
+import { analyseTones, profileFromAudio, decodeToPcm } from './tones.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 
@@ -87,8 +89,8 @@ app.post('/api/transcribe', express.raw({ type: () => true, limit: '15mb' }), as
     return;
   }
   try {
-    const text = await transcribe(req.body, String(req.headers['content-type'] || 'audio/webm'));
-    res.json({ text });
+    const [text,timing] = await Promise.all([transcribe(req.body, String(req.headers['content-type'] || 'audio/webm')),decodeToPcm(req.body).then(energyTiming).catch(()=>null)]);
+    res.json({ text, fluency: measureFluency(timing,text) });
     // learn the speaker's pitch range in the background (used by tone checks)
     const key = pitchKey(String(req.query.learner || ''));
     if (key) {
@@ -158,7 +160,7 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
         tones.model = reference;
       }
     }
-    res.json({ text, tones });
+    res.json({ text, tones, fluency: measureFluency(tones.timing,text) });
   } catch (error) {
     console.error('[pronounce]', error.message);
     res.status(error.status || 500).json({ error: 'Không chấm được phát âm. Thử lại nhé.' });

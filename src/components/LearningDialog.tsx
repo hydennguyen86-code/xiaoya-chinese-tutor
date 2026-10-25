@@ -1,3 +1,4 @@
+import { FluencyHistory } from './FluencyHistory';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import type {
@@ -35,6 +36,7 @@ import {
 type LearningTab = 'overview' | 'review' | 'mistakes' | 'analysis';
 
 interface LearningDialogProps {
+  learnerId: string;
   open: boolean;
   learning: LearningProfile;
   levelLabel: string;
@@ -129,6 +131,7 @@ function WeaknessCard({ report }: { report: AnalysisReport }) {
 }
 
 export function LearningDialog({
+  learnerId,
   open,
   learning,
   levelLabel,
@@ -265,6 +268,7 @@ export function LearningDialog({
         <div className="settings-body learning-body">
           {tab === 'overview' && (
             <div className="learning-overview">
+              <FluencyHistory learnerId={learnerId}/>
               <div className="learning-hero">
                 <div className="learning-hero-copy">
                   <span className="learning-kicker">

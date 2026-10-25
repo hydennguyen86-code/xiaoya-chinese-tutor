@@ -1082,6 +1082,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       />
 
       <LearningDialog
+        learnerId={scope}
         open={learningOpen}
         learning={learning}
         levelLabel={LEVEL_LABEL[settings.level]}

@@ -1,3 +1,4 @@
+import { saveFluency, type Fluency } from './fluency';
 import { recordSpokenTones } from './listeningPractice';
 // Record one spoken answer. With local speech-to-text (whisper.cpp on this
 // computer) the audio is recorded here and sent to /api/transcribe; otherwise
@@ -36,6 +37,7 @@ export interface ToneReport {
 }
 
 export interface VoiceResult {
+  fluency?: Fluency | null;
   text: string;
   tones: ToneReport | null;
   audio?: Blob;
@@ -70,8 +72,12 @@ export function voiceSupported(local: boolean) {
   return Boolean(w.SpeechRecognition || w.webkitSpeechRecognition);
 }
 
+let currentVoice: VoiceHandle | null = null;
 export function listen(options: Options): VoiceHandle {
+  currentVoice?.cancel();
   const handle = options.local ? listenLocal(options) : listenBrowser(options);
+  currentVoice = handle;
+  handle.details.finally(()=>{if(currentVoice===handle)currentVoice=null;}).catch(()=>{});
   // callers await one of the two; keep the other from reporting an unhandled error
   handle.result.catch(() => {});
   handle.details.catch(() => {});
@@ -165,9 +171,10 @@ function listenLocal({ onPhase, learnerId, pronounce, modelRate = 1, silenceMs =
       body: blob,
     });
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
-    const data = (await res.json()) as { text?: string; tones?: ToneReport };
+    const data = (await res.json()) as { text?: string; tones?: ToneReport; fluency?: Fluency };
+    if (learnerId && !pronounce && data.fluency) saveFluency(learnerId,data.fluency);
     if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones);
-    return { text: (data.text || '').trim(), tones: data.tones ?? null, audio: blob };
+    return { text: (data.text || '').trim(), tones: data.tones ?? null, audio: blob, fluency: data.fluency ?? null };
   })();
 
   return {

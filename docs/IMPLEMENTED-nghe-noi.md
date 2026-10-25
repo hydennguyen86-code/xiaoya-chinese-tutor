@@ -71,3 +71,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Lỗi thanh và nhóm âm lưu mục ôn; khoảng ôn 5 phút/30 phút/6 giờ/1 ngày/3 ngày, ngắn hơn lịch từ vựng. Chưa chấm được không đổi lịch; sai quay về 5 phút.
 - Phần Khởi động có Ôn phát âm: thanh được thu/chấm; cặp âm được nghe/chọn không phụ thuộc STT. Test chuyển đổi dữ liệu cũ, giữ từ, tách learner, lịch đúng/sai/unclear. Không tự coi lời tự đánh giá là đúng.
 - Chưa đo mức nhớ dài hạn hoặc thử micro người thật; không thay ngưỡng phát âm.
+
+## Mục 9 — Độ trôi chảy tham khảo
+
+- API trả số chữ Hán Whisper nhận được / khoảng từ tiếng đầu đến tiếng cuối, số và độ dài khoảng ngắt nội bộ >1 giây theo năng lượng. Không có tiếng/chữ thì không tạo điểm 0 giả. Không dùng để quy đổi điểm thi, không sửa bộ chấm thanh.
+- Lượt hội thoại/nhập vai dùng nhận dạng cục bộ được lưu số đo (không lưu audio/text) theo learner, tối đa 500 lượt. Bài đọc có mục tiêu không trộn vào lịch sử hội thoại. Lịch sử học và màn kiểm tra tuần/tháng hiển thị bảng theo tuần UTC, trung bình có trọng số thời lượng và thay đổi so với tuần có dữ liệu trước.
+- Test tiếng tổng hợp/Chinese đếm chữ/nhóm tuần/trọng số/thiếu dữ liệu. Thêm hủy thu trước khi mở một lượt thu khác để tránh hai micro đồng thời. Chưa có người thật để xác nhận độ tin cậy hoặc hiệu quả học; ngắt có thể là lấy hơi/cố ý, số đo chỉ tham khảo.

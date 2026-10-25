@@ -1,3 +1,4 @@
+import { FluencyHistory } from './FluencyHistory';
 import { ToneEvaluation } from './ToneEvaluation';
 import { useEffect, useRef, useState } from 'react';
 import { assessmentRequest } from '../lib/api';
@@ -248,6 +249,7 @@ export function Assessment(props: Props) {
           Thoát
         </button>
       </header>
+      <FluencyHistory learnerId={props.learnerId}/>
       {!plan && (
         <>
           <p>
