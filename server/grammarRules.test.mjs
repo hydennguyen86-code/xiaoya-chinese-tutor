@@ -78,7 +78,10 @@ test('review fixes: look-alikes found in the code review stay untouched, real er
   }
   assert.deepEqual(fixes('我昨天没去了学校。'), ['没去了→没去']);
   assert.deepEqual(fixes('他今天没去了学校。'), ['没去了→没去']);
-  assert.deepEqual(fixes('我三天没吃了饭。'), []);
+  assert.deepEqual(fixes('我三天没吃了饭。'), ['没吃了→没吃']);
+  assert.deepEqual(fixes('妈妈忙在厨房。'), ['忙在厨房→在厨房忙']);
+  assert.deepEqual(fixes('小明累在公司。'), ['累在公司→在公司累']);
+  assert.deepEqual(fixes('我好久没去了。'), []);
 });
 
 test('merging rule-rule and rule-model hits keeps one overlapping suggestion', () => {
