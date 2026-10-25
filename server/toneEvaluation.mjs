@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import express from 'express';
-import { randomUUID } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import { TONE_ITEMS } from '../eval/toneItems.mjs';
-import { expectedTones } from './tones.mjs';
+import { expectedTones, analyseTones } from './tones.mjs';
 
 // self: the learner on their own recording; peer: another learner listening;
 // expert: a teacher or native speaker. Never inferred, always chosen by the labeler.
@@ -49,10 +49,10 @@ export function mountToneEvaluation(app, dataDir) {
       res.status(400).json({ error: error.message });
     }
   });
-  app.post('/api/tone-feedback/:learner', (req, res) => {
+  app.post('/api/tone-feedback/:learner', async (req, res) => {
     try {
       const { dir } = locate(req);
-      const { text, label, audioBase64, mime, machine } = req.body ?? {};
+      const { text, label, audioBase64, mime, itemId: requestedItem } = req.body ?? {};
       const chars = typeof text === 'string' ? [...text].filter((c) => /\p{Script=Han}/u.test(c)) : [];
       if (!chars.length || chars.length > 100 || !validateToneLabel(label, chars.length, 5))
         throw new Error('Cần người gắn nhãn và thanh 0–5 cho từng chữ (0: không rõ; 5: thanh nhẹ).');
@@ -60,27 +60,36 @@ export function mountToneEvaluation(app, dataDir) {
         throw new Error('Cần bản ghi âm để đối chiếu nhãn.');
       const audio = Buffer.from(audioBase64, 'base64');
       if (audio.length < 1000 || audio.length > 3 * 1024 * 1024) throw new Error('Bản ghi phải từ 1 KB đến 3 MB.');
-      const id = randomUUID(),
+      const normalized = chars.join('');
+      const digest = (value) => createHash('sha256').update(value).digest('hex');
+      const item = TONE_ITEMS.find((i) => i.text === normalized);
+      const itemId = item?.id ?? `practice:${digest(normalized).slice(0, 24)}`;
+      if (requestedItem && requestedItem !== itemId && requestedItem !== `text:${normalized}`)
+        throw new Error('Mục phản hồi không khớp chữ.');
+      const recordingId = digest(audio);
+      const report = await analyseTones(audio, normalized);
+      const id = digest(`${itemId}|${label.reviewedBy.trim().normalize('NFC').toLowerCase()}`).slice(0, 32),
         folder = path.join(dir, 'feedback');
       fs.mkdirSync(folder, { recursive: true });
       const entry = {
         version: 1,
         id,
+        itemId,
+        recordingId,
+        roleVerification: 'self-declared; not verified',
         text: chars.join(''),
         file: `${id}.audio`,
         mime,
         label: { source: label.source, reviewedBy: label.reviewedBy.trim(), tones: label.tones, reviewedAt: new Date().toISOString() },
-        machine: Array.isArray(machine)
-          ? machine.slice(0, chars.length).map((s) => ({
-              expected: Number.isInteger(s.expected) ? s.expected : null,
-              heard: Number.isInteger(s.heard) ? s.heard : null,
-            }))
-          : [],
+        machine: report.syllables.map((s) => ({ char: s.char, expected: s.expected, heard: s.heard })),
+        machineSource: 'server; no saved speaker calibration',
         kind: 'feedback',
         recordedAt: new Date().toISOString(),
       };
-      fs.writeFileSync(path.join(folder, entry.file), audio, { flag: 'wx' });
-      fs.writeFileSync(path.join(folder, `${id}.json`), JSON.stringify(entry, null, 2), { flag: 'wx' });
+      fs.writeFileSync(path.join(folder, `${id}.audio.tmp`), audio);
+      fs.renameSync(path.join(folder, `${id}.audio.tmp`), path.join(folder, entry.file));
+      fs.writeFileSync(path.join(folder, `${id}.json.tmp`), JSON.stringify(entry, null, 2));
+      fs.renameSync(path.join(folder, `${id}.json.tmp`), path.join(folder, `${id}.json`));
       res.json({ ok: true, id });
     } catch (error) {
       res.status(400).json({ error: error.message });

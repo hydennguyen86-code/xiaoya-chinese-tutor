@@ -185,3 +185,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Giữ định dạng peer/thống kê L1 của Claude; bổ sung đọc incomplete riêng, badCut không được tính dù có tones, lỗi khi chọn sidecar cụ thể mà không có nhãn dùng được. In rejected ngay khi đọc, không đợi decode.
 - complete là đủ tập audio dùng được; fullSetLabeled mới là đủ 56 nhãn. Mục cắt hỏng không thể làm lách điều kiện 56 mục để chỉnh ngưỡng. Nhiều nguồn/người khác nhau cùng mục yêu cầu chọn sidecar, không âm thầm đè nguồn.
 - Test đúng schema label-server cho incomplete/badCut và coverage một tập nhỏ tổng hợp; chưa có nhãn người thật để công bố độ chính xác.
+
+## Review vòng 2 — L4 nguồn và bản trùng
+
+- Phản hồi gửi itemId; server kiểm khớp chữ, gắn id mục cố định nếu có hoặc id bài luyện theo text, hash bản thu và khóa cập nhật theo mục/người gắn nhãn. Lưu lại cùng mục/người ghi đè phiên bản mới nhất, không tăng số mẫu giả.
+- Machine được tính lại ở server từ audio (không tin heard/expected client). Ghi rõ máy chưa dùng hiệu chỉnh giọng đã lưu; nhãn người vẫn độc lập, vai trò self/peer/expert do người chọn và tự khai, chưa xác minh chuyên môn.
+- Test gửi máy giả 999, lưu hai lần chỉ còn 1 mẫu; identity/path/audio chỉ trong dữ liệu tạm. Chưa thử bản thu người thật.

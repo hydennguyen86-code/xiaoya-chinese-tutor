@@ -1,3 +1,4 @@
+import { fixtureWav } from './testFixtures.mjs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validateToneLabel } from './toneEvaluation.mjs';
@@ -62,14 +63,14 @@ test('captured audio stays per learner; rerecording invalidates labels and rejec
   }
 });
 
-test('human disagreement saves audio and independent labels privately, counts per learner and rejects invalid labels', () => {
+test('human disagreement saves audio and independent labels privately, counts per learner and rejects invalid labels', async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-feedback-test-'));
   const routes = new Map();
   const app = Object.fromEntries(
     ['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
   );
   mountToneEvaluation(app, dir);
-  function call(method, body, learner = 'synthetic') {
+  async function call(method, body, learner = 'synthetic') {
     const res = {
       code: 200,
       status(code) {
@@ -80,23 +81,24 @@ test('human disagreement saves audio and independent labels privately, counts pe
         this.data = data;
       },
     };
-    routes.get(`${method} /api/tone-feedback/:learner`)({ params: { learner }, body }, res);
+    await routes.get(`${method} /api/tone-feedback/:learner`)({ params: { learner }, body }, res);
     return res;
   }
   try {
     const body = {
       text: '你好',
       mime: 'audio/wav',
-      audioBase64: Buffer.alloc(1200).toString('base64'),
+      audioBase64: fixtureWav().toString('base64'),
       machine: [
-        { expected: 3, heard: 1 },
+        { expected: 999, heard: 999 },
         { expected: 3, heard: 4 },
       ],
       label: { source: 'self', reviewedBy: 'Synthetic reviewer', tones: [2, 3] },
     };
-    assert.equal(call('post', { ...body, label: { ...body.label, tones: [3] } }).code, 400);
-    assert.equal(call('post', body, '../escape').code, 400);
-    assert.equal(call('post', body).code, 200);
+    assert.equal((await call('post', { ...body, label: { ...body.label, tones: [3] } })).code, 400);
+    assert.equal((await call('post', body, '../escape')).code, 400);
+    assert.equal((await call('post', body)).code, 200);
+    assert.equal((await call('post', body)).code, 200);
     const folder = path.join(dir, 'eval-recordings/synthetic/feedback');
     const entry = JSON.parse(
       fs.readFileSync(
@@ -107,10 +109,12 @@ test('human disagreement saves audio and independent labels privately, counts pe
       ),
     );
     assert.deepEqual(entry.label.tones, [2, 3]);
-    assert.equal(entry.machine[0].heard, 1);
-    assert.equal(fs.readFileSync(path.join(folder, entry.file)).length, 1200);
-    assert.deepEqual(call('get').data, { labeled: 0, feedback: 1 });
-    assert.deepEqual(call('get', null, 'other').data, { labeled: 0, feedback: 0 });
+    assert.match(entry.itemId, /^practice:/);
+    assert.equal(entry.roleVerification, 'self-declared; not verified');
+    assert.ok(entry.machine.every((s) => s.heard >= 0 && s.heard <= 4));
+    assert.equal(fs.readFileSync(path.join(folder, entry.file)).length, fixtureWav().length);
+    assert.deepEqual((await call('get')).data, { labeled: 0, feedback: 1 });
+    assert.deepEqual((await call('get', null, 'other')).data, { labeled: 0, feedback: 0 });
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }

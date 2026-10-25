@@ -4,7 +4,7 @@ import type { ToneReport } from '../lib/voiceInput';
 export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneReport; audio?: Blob; learnerId?: string }) {
   const [open, setOpen] = useState(false),
     [reviewer, setReviewer] = useState(''),
-    [source, setSource] = useState('self'),
+    [source, setSource] = useState(''),
     [tones, setTones] = useState<Record<number, string>>({}),
     [notice, setNotice] = useState(''),
     [busy, setBusy] = useState(false);
@@ -16,7 +16,7 @@ export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneRe
   }, [report, audio]);
   async function save() {
     const id = learnerId || loadActiveLearnerId();
-    if (!audio || !id || !reviewer.trim() || chars.some((_, i) => tones[i] === undefined)) {
+    if (!audio || !id || !reviewer.trim() || !source || chars.some((_, i) => tones[i] === undefined)) {
       setNotice('Cần hồ sơ người học, bản thu, tên người gắn nhãn và nhãn từng chữ.');
       return;
     }
@@ -30,9 +30,9 @@ export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneRe
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           text: chars.map((s) => s.char).join(''),
+          itemId: `text:${chars.map((s) => s.char).join('')}`,
           mime: audio.type.split(';')[0],
           audioBase64: btoa(binary),
-          machine: chars,
           label: { source, reviewedBy: reviewer.trim(), tones: chars.map((_, i) => Number(tones[i])) },
         }),
       });
@@ -60,11 +60,15 @@ export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneRe
           <label>
             Vai trò{' '}
             <select value={source} onChange={(e) => setSource(e.target.value)}>
+              <option value="" disabled>
+                Chọn vai trò người nghe
+              </option>
               <option value="self">Người học tự nghe</option>
               <option value="peer">Người học khác nghe hộ</option>
               <option value="expert">Giáo viên / người bản ngữ</option>
             </select>
           </label>
+          <p>Vai trò do người gắn nhãn tự khai, chưa xác minh chuyên môn. Lưu lại cùng mục/người nghe sẽ cập nhật bản mới nhất.</p>
           {chars.map((s, i) => (
             <label key={i}>
               {s.char} ({i + 1}){' '}
