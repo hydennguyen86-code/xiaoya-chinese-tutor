@@ -91,3 +91,16 @@ test('merging rule-rule and rule-model hits keeps one overlapping suggestion', (
     ['一个书'],
   );
 });
+
+test('repeated errors retain real spans and shared text alone does not remove independent advice', () => {
+  const text = '我有三个书，他有三个书。',
+    hits = ruleCorrections(text);
+  assert.equal(hits.length, 2);
+  assert.deepEqual(
+    hits.map((h) => h.index),
+    [text.indexOf('三个书'), text.lastIndexOf('三个书')],
+  );
+  assert.equal(mergeCorrections(hits, [], 5, text).length, 2);
+  const independent = '我有三个书，我买两个书。';
+  assert.equal(mergeCorrections(ruleCorrections(independent), [], 5, independent).length, 2);
+});

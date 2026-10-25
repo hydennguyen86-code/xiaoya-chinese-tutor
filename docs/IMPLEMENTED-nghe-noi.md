@@ -205,3 +205,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 ## Review vòng 2 — N2 thông báo trôi chảy
 
 - Tách “chưa nhận được lời nói”, “âm thanh không đủ tiếng nói” và “không giải mã được audio”; không còn câu ngược nghĩa “âm thanh có tiếng nói”. Test SSR từng lý do.
+
+## Review vòng 2 — N3 vị trí sửa câu
+
+- Luật trả index từ regex match, lặp để giữ các lỗi xuất hiện nhiều lần; dedupe theo khoảng ký tự thật. Merge server nhận câu gốc, không loại gợi ý ở hai vị trí chỉ vì chung 2 chữ; model thiếu vị trí được neo vào đoạn còn trống.
+- Test lỗi lượng từ giống nhau hai lần và hai gợi ý độc lập có chung chữ. Vẫn chạy toàn bộ corpus câu đúng để chặn hồi quy; không sửa lại nội dung T3/T4 Claude.

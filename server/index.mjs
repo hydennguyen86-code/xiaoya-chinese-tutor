@@ -273,7 +273,7 @@ async function collectCorrections(provider, model, userText, signal) {
     .filter((item) => !isStyleOnlyEdit(item.original, item.corrected, userText))
     // the explanation must be Vietnamese; a Chinese one is dropped, the fix is kept
     .map((item) => (HAN.test(item.explanation || '') ? { ...item, explanation: '' } : item));
-  return mergeCorrections(ruleFixes, modelFixes);
+  return mergeCorrections(ruleFixes, modelFixes, 2, userText);
 }
 
 function polishTurn(turn) {

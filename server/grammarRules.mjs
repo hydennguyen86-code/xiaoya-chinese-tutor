@@ -49,8 +49,8 @@ const TIMES = '明天|昨天|今天|后天|前天|去年|明年|今年|上午|�
 const PLACE_AFTER = '工作|学习|吃饭|吃早饭|吃午饭|吃晚饭|看书|见面|上课|上班|休息|玩|做饭|买东西|喝咖啡|等你|等我';
 const FEELINGS = '(?:很|非常|特别|太|有点儿?)?(?:忙|累|开心|高兴|快乐|无聊)';
 
-function fix(original, corrected, explanation, category) {
-  return { original, corrected, explanation, category };
+function fix(original, corrected, explanation, category, index) {
+  return { original, corrected, explanation, category, index };
 }
 
 const RULES = [
@@ -62,7 +62,7 @@ const RULES = [
     const m = text.match(new RegExp(`(${NUM})个(${nouns})`));
     if (!m) return null;
     const right = MEASURE[m[2]];
-    return fix(m[0], `${m[1]}${right}${m[2]}`, `"${m[2]}" dùng lượng từ ${right}, không dùng 个.`, 'measure_word');
+    return fix(m[0], `${m[1]}${right}${m[2]}`, `"${m[2]}" dùng lượng từ ${right}, không dùng 个.`, 'measure_word', m.index);
   },
   // 他比我很高 → 他比我高   (not 比较 / 比赛 / 比如 / 比方)
   (text) => {
@@ -80,6 +80,7 @@ const RULES = [
       `比${m[1]}${m[3]}`,
       `Câu so sánh với 比 không dùng ${m[2]}; nói "比…+ tính từ" (muốn nhấn mạnh dùng 更 hoặc 还).`,
       'grammar',
+      m.index,
     );
   },
   // 我没有去了学校 → 我没有去学校   (not 好久没去了 / 没有办法了)
@@ -87,13 +88,13 @@ const RULES = [
     const m = text.match(new RegExp(`(没有?)(去|来|吃|喝|看|买|做|写|说|听|学|回|到|见|找|打)了([${HANZI}])`));
     if (!m) return null;
     // 了 at the end (好久没去了) never matches: the pattern needs an object after 了
-    return fix(`${m[1]}${m[2]}了`, `${m[1]}${m[2]}`, 'Câu phủ định với 没(有) không dùng 了 sau động từ.', 'grammar');
+    return fix(`${m[1]}${m[2]}了`, `${m[1]}${m[2]}`, 'Câu phủ định với 没(有) không dùng 了 sau động từ.', 'grammar', m.index);
   },
   // 我会说中文一点儿 → 我会说一点儿中文   (not 说中文一点儿也不累: 一点儿也/都不 is fine)
   (text) => {
     const m = text.match(new RegExp(`(说|讲|学|懂|会)(${LANGS})(一点儿?)(?![儿也都还不])`));
     if (!m) return null;
-    return fix(m[0], `${m[1]}${m[3]}${m[2]}`, `${m[3]} đứng trước tân ngữ: ${m[1]}${m[3]}${m[2]}.`, 'word_order');
+    return fix(m[0], `${m[1]}${m[3]}${m[2]}`, `${m[3]} đứng trước tân ngữ: ${m[1]}${m[3]}${m[2]}.`, 'word_order', m.index);
   },
   // 我很忙在公司 / 我工作在银行 → 在公司很忙 / 在银行工作
   (text) => {
@@ -109,6 +110,7 @@ const RULES = [
       `在${m[2]}${m[1]}`,
       'Trạng ngữ nơi chốn "在 + nơi" đứng trước động từ / tính từ, không đặt sau như tiếng Việt.',
       'word_order',
+      m.index,
     );
   },
   // 我们见面明天 → 我们明天见面
@@ -128,6 +130,7 @@ const RULES = [
       `${m[1]}${m[3]}${middle}`,
       'Từ chỉ thời gian đứng trước động từ (sau chủ ngữ), không đặt cuối câu.',
       'word_order',
+      m.index,
     );
   },
   // 我是昨天来 → 我是昨天来的   (是…的 for time/place of a past action)
@@ -138,7 +141,13 @@ const RULES = [
       ),
     );
     if (!m) return null;
-    return fix(m[0], `${m[1]}是${m[3]}${m[4]}的${m[5]}`, 'Câu 是…的 nhấn mạnh thời gian/nơi chốn phải kết thúc bằng 的.', 'grammar');
+    return fix(
+      m[0],
+      `${m[1]}是${m[3]}${m[4]}的${m[5]}`,
+      'Câu 是…的 nhấn mạnh thời gian/nơi chốn phải kết thúc bằng 的.',
+      'grammar',
+      m.index,
+    );
   },
   // 我去也 / 我吃饭也 → 我也去 / 我也吃饭   (adverbs before the verb)
   (text) => {
@@ -148,7 +157,7 @@ const RULES = [
       ),
     );
     if (!m) return null;
-    return fix(m[0], `${m[1]}${m[4]}${m[2]}${m[3]}${m[5]}`, `Phó từ "${m[4]}" đứng trước động từ, không đứng sau.`, 'word_order');
+    return fix(m[0], `${m[1]}${m[4]}${m[2]}${m[3]}${m[5]}`, `Phó từ "${m[4]}" đứng trước động từ, không đứng sau.`, 'word_order', m.index);
   },
 ];
 
@@ -172,39 +181,44 @@ export function ruleCorrections(sentence) {
   if (!text) return [];
   const found = [];
   for (const rule of RULES) {
-    const hit = rule(text);
-    if (hit && text.includes(hit.original)) found.push(hit);
+    let offset = 0;
+    while (offset < text.length) {
+      const hit = rule(text.slice(offset));
+      if (!hit || !Number.isInteger(hit.index) || !hit.original.length) break;
+      const index = offset + hit.index;
+      if (text.slice(index, index + hit.original.length) !== hit.original) break;
+      found.push({ ...hit, index });
+      offset = index + hit.original.length;
+    }
   }
-  // Prefer the longest hit when rules touch the same span, then show in text order.
   const accepted = [];
   for (const hit of found.sort((a, b) => b.original.length - a.original.length)) {
-    const start = text.indexOf(hit.original),
-      end = start + hit.original.length;
-    if (!accepted.some((r) => start < r.end && end > r.start)) accepted.push({ hit, start, end });
+    if (!accepted.some((r) => hit.index < r.index + r.original.length && r.index < hit.index + hit.original.length)) accepted.push(hit);
   }
-  return accepted.sort((a, b) => a.start - b.start).map((r) => r.hit);
+  return accepted.sort((a, b) => a.index - b.index);
 }
 
 /** Rule hits first, then model corrections that do not touch the same words. */
-export function mergeCorrections(ruleHits, modelHits, limit = 2) {
+export function mergeCorrections(ruleHits, modelHits, limit = 2, text = '') {
   const out = [];
+  const overlap = (a, b) => a.index < b.index + b.original.length && b.index < a.index + a.original.length;
   for (const item of [...ruleHits].sort((a, b) => b.original.length - a.original.length).concat(modelHits)) {
-    const overlaps = out.some(
-      (r) => r.original.includes(item.original) || item.original.includes(r.original) || sharedRun(r.original, item.original) >= 2,
-    );
-    if (!overlaps) out.push(item);
-  }
-  return out.slice(0, limit);
-}
-
-function sharedRun(a, b) {
-  let best = 0;
-  for (let i = 0; i < a.length; i += 1) {
-    for (let j = 0; j < b.length; j += 1) {
-      let k = 0;
-      while (i + k < a.length && j + k < b.length && a[i + k] === b[j + k]) k += 1;
-      best = Math.max(best, k);
+    if (!item.original) continue;
+    if (text) {
+      let index = Number.isInteger(item.index) ? item.index : text.indexOf(item.original);
+      if (!Number.isInteger(item.index))
+        while (index >= 0 && out.some((r) => overlap({ ...item, index }, r))) index = text.indexOf(item.original, index + 1);
+      if (index < 0 || text.slice(index, index + item.original.length) !== item.original) continue;
+      const hit = { ...item, index };
+      if (!out.some((r) => overlap(hit, r))) out.push(hit);
+    } else {
+      const duplicate = out.some((r) =>
+        Number.isInteger(r.index) && Number.isInteger(item.index)
+          ? overlap(r, item)
+          : r.original.includes(item.original) || item.original.includes(r.original),
+      );
+      if (!duplicate) out.push(item);
     }
   }
-  return best;
+  return out.sort((a, b) => (a.index ?? 0) - (b.index ?? 0)).slice(0, limit);
 }
