@@ -85,3 +85,14 @@ test('course practice exposes lesson-linked dictation and shadowing, with global
   assert.doesNotMatch(render(content), /Nghe của bài/);
   assert.match(render(content), /Bộ DeepSeek/);
 });
+
+test('missing fluency explains transcript, audio and decoding failures separately', () => {
+  for (const [reason, expected] of [
+    ['empty-transcript', 'chưa nhận được lời nói'],
+    ['insufficient-speech', 'âm thanh không đủ tiếng nói'],
+    ['decode-failed', 'không giải mã được audio'],
+  ]) {
+    const html = renderToStaticMarkup(<ToneFeedback report={{ syllables: [], checked: 0, correct: 0, fluencyReason: reason }} />);
+    assert.ok(html.includes(expected));
+  }
+});

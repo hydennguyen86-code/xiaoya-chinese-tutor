@@ -201,3 +201,7 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Khi ffmpeg không giải mã được, transcribe vẫn thử audio gốc qua Whisper, fluency=null/decode-failed. Pronounce cũng giữ bản chép nếu STT đọc được nhưng trả mọi thanh chưa rõ/0 chữ chấm, không giả điểm hay ghi profile hỏng; không gọi giọng mẫu vô ích.
 - Test API với audio mà ffmpeg từ chối và Whisper giả lập nhận được lời: không làm mất lượt nhận dạng, có lý do decode-failed. Chưa thử codec lạ trên Whisper thật.
+
+## Review vòng 2 — N2 thông báo trôi chảy
+
+- Tách “chưa nhận được lời nói”, “âm thanh không đủ tiếng nói” và “không giải mã được audio”; không còn câu ngược nghĩa “âm thanh có tiếng nói”. Test SSR từng lý do.

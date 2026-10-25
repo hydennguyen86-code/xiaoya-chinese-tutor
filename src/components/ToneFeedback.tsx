@@ -81,7 +81,11 @@ export function ToneFeedback({
             ? 'nhận dạng cục bộ chưa sẵn sàng.'
             : report.fluencyReason === 'stt-failed'
               ? 'nhận dạng cục bộ gặp lỗi.'
-              : 'chưa đủ lời nhận dạng hoặc âm thanh có tiếng nói.'}{' '}
+              : report.fluencyReason === 'decode-failed'
+                ? 'không giải mã được audio trên máy.'
+                : report.fluencyReason === 'empty-transcript'
+                  ? 'chưa nhận được lời nói.'
+                  : 'âm thanh không đủ tiếng nói để đo.'}{' '}
           Không ghi điểm rỗng.
         </p>
       )}
