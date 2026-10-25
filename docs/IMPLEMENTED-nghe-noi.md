@@ -210,3 +210,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Luật trả index từ regex match, lặp để giữ các lỗi xuất hiện nhiều lần; dedupe theo khoảng ký tự thật. Merge server nhận câu gốc, không loại gợi ý ở hai vị trí chỉ vì chung 2 chữ; model thiếu vị trí được neo vào đoạn còn trống.
 - Test lỗi lượng từ giống nhau hai lần và hai gợi ý độc lập có chung chữ. Vẫn chạy toàn bộ corpus câu đúng để chặn hồi quy; không sửa lại nội dung T3/T4 Claude.
+
+## Review vòng 2 — M2/Q2 đường vào 30 bài
+
+- Bộ chọn lộ trình có lựa chọn riêng “30 bài giao tiếp HSK1–6”, rồi chọn tập. Chọn lộ trình này mở Tập 1; người vào Tập 2/3 thấy thông báo đang vào giữa lộ trình và nút về bài 1.
+- Giữ mặc định HSK1/HSK5 và tiến độ cũ theo quyết định Q2; HSK3–4 vẫn vào Tập 2 nhưng được nhắc rõ bài 1–10 ở đâu. Test default/pointer đã lưu; không đổi startingVolume.

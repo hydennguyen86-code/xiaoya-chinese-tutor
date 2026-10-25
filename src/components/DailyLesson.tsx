@@ -310,15 +310,46 @@ export function DailyLesson(props: DailyLessonProps) {
     <div className="course-picker">
       <label>
         Lộ trình{' '}
-        <select aria-label="Lộ trình học" value={currentVolume?.id ?? ''} onChange={(event) => chooseCourse(event.target.value)}>
+        <select
+          aria-label="Lộ trình học"
+          value={currentVolume?.trackId || currentVolume?.id || ''}
+          onChange={(event) => chooseCourse(event.target.value === 'misu30' ? 'misu30-1' : event.target.value)}
+        >
           {!currentVolume && <option value="">Chọn lộ trình</option>}
-          {syllabus.volumes.map((volume) => (
-            <option key={volume.id} value={volume.id}>
-              {volume.title}
-            </option>
-          ))}
+          {syllabus.volumes
+            .filter((volume) => !volume.trackId)
+            .map((volume) => (
+              <option key={volume.id} value={volume.id}>
+                {volume.title}
+              </option>
+            ))}
+          {syllabus.volumes.some((v) => v.trackId === 'misu30') && <option value="misu30">30 bài giao tiếp HSK1–6</option>}
         </select>
       </label>
+      {currentVolume?.trackId === 'misu30' && (
+        <>
+          <label>
+            Tập{' '}
+            <select aria-label="Tập của 30 bài giao tiếp" value={currentVolume.id} onChange={(event) => chooseCourse(event.target.value)}>
+              {syllabus.volumes
+                .filter((v) => v.trackId === 'misu30')
+                .map((v) => (
+                  <option key={v.id} value={v.id}>
+                    {v.title}
+                  </option>
+                ))}
+            </select>
+          </label>
+          {currentVolume.id !== 'misu30-1' && (
+            <p>
+              Bạn đang vào giữa lộ trình (bài {currentVolume.lessons[0].no} trở đi). Bài 1–10 nằm ở Tập 1.{' '}
+              <button type="button" onClick={() => chooseCourse('misu30-1', 1)}>
+                Bắt đầu 30 bài từ bài 1
+              </button>
+            </p>
+          )}
+        </>
+      )}
       {currentVolume && (
         <label>
           Bài{' '}
