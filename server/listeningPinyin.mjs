@@ -8,7 +8,7 @@
 // Dấu thanh xử lý theo mã Unicode (0x0300–0x036f) để không ghi ký tự tổ hợp trực tiếp trong nguồn.
 
 import { pinyin } from 'pinyin-pro';
-import { HAN, NEUTRAL_LEXICAL as NEUTRAL, NEUTRAL_SUFFIX } from './coursePinyin.mjs';
+import { HAN, NEUTRAL_LEXICAL as NEUTRAL, NEUTRAL_SUFFIX, neutralPositions } from './coursePinyin.mjs';
 
 export { HAN, NEUTRAL, NEUTRAL_SUFFIX };
 export const PAUSE = new Set(['，', '。', '！', '？', '、', '；', '：', '…', '—', ',', '.', '!', '?', ';', ':']);
@@ -118,17 +118,7 @@ export function readSentence(text, sandhiAt = [], extraNeutral = [], options = {
   const parsed = pinyin(text, { pattern: 'tone', type: 'array' }).map(strip);
   const dict = parsed.map((p) => p.tone);
 
-  const neutral = new Set(extraNeutral);
-  for (const [word, idxs] of Object.entries(NEUTRAL)) {
-    let start = text.indexOf(word);
-    while (start >= 0) {
-      for (const k of idxs) neutral.add(start + k);
-      start = text.indexOf(word, start + word.length);
-    }
-  }
-  chars.forEach((c, i) => {
-    if (i > 0 && NEUTRAL_SUFFIX.has(c)) neutral.add(i);
-  });
+  const neutral = new Set([...neutralPositions(text), ...extraNeutral]);
 
   // "trích dẫn" = pinyin-pro + thanh nhẹ, CHƯA biến điệu 3+3
   const citation = [...dict];

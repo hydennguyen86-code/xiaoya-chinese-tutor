@@ -31,3 +31,10 @@ test('particles and everyday 子 nouns are neutral', () => {
     assert.equal(pinyinCitation(word), expected, word);
   }
 });
+
+test('known full-tone compound does not inherit the neutral meaning of its substring', async () => {
+  assert.equal(pinyinCitation('东西'), 'dōng xi');
+  assert.equal(pinyinCitation('东西方'), 'dōng xī fāng');
+  const { readSentence } = await import('./listeningPinyin.mjs');
+  assert.equal(readSentence('东西方').pinyin, 'dōng xī fāng');
+});

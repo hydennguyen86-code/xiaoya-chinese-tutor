@@ -232,3 +232,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Chép README.en.md từ nguồn Qoder, kiểm lại 30 bài/240 từ/90 mẫu, 198 dictation/48 shadowing/246 id. Cập nhật giới hạn RAM 5 lượt/20 MB và nhãn đo grammar cũ là lịch sử; bổ sung kết quả strict hiện tại (0/112 sửa nhầm, 8/102 exact + 26 partial), giới hạn quyền riêng tư và xuất/xoá bộ nhãn. Có liên kết English ở README Việt.
 - Không tự tăng điểm hay đổi nhãn chưa duyệt. Chưa chạy lại LLM, chưa có kiểm chứng hiệu quả sư phạm.
+
+## HANDOFF — T1 mép nhỏ
+
+- Ngoại lệ cụm 东西方 giữ xī có thanh, không kế thừa “xi nhẹ” của 东西 mang nghĩa đồ vật. Utility kiểm nội dung nghe dùng cùng neutralPositions để không tạo hai chính sách khác nhau.
+- Test kỳ vọng viết cứng cho cả 东西/东西方 và utility đọc; không tuyên bố đã phân giải ranh giới hay đa nghĩa cho mọi từ Hán.

@@ -54,6 +54,14 @@ export function neutralPositions(text) {
   chars.forEach((c, i) => {
     if (HAN.test(c) && i > 0 && NEUTRAL_SUFFIX.has(c)) neutral.add(hanPos[i]);
   });
+  // A known full-tone compound overrides a neutral substring (not general word segmentation).
+  for (const phrase of ['东西方']) {
+    let start = text.indexOf(phrase);
+    while (start >= 0) {
+      for (let i = start; i < start + phrase.length; i++) neutral.delete(hanPos[i]);
+      start = text.indexOf(phrase, start + phrase.length);
+    }
+  }
   return neutral;
 }
 
