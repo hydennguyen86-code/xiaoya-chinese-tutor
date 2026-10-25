@@ -165,3 +165,12 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - P2.2/P2.3: hạ bộ nhớ phát lại còn 5 lượt, tổng 20 MB, có test ngân sách; object URL đã được xử lý ở C2.
 - P3: A7–A9 và C1–C11 đã xử lý trong 2 commit sửa thấp 2cdecae/72edbf5. Không đánh dấu nhãn học liệu/giọng là đã duyệt.
 - Chưa có nhãn người; HANDOFF xác nhận bộ cắt hiện có chỉ 55/56 audio và một mục cần thu lại. Không dùng số khớp expected làm độ chính xác, không chỉnh ngưỡng.
+
+## Chốt kiểm tra đợt kế hoạch — 2026-10-25
+
+- Mỗi commit đã chạy typecheck/test/build với dữ liệu tạm và XIAOYA_SAMPLE_AVATARS=1. Mốc sau HANDOFF: **109 test backend/lib + 6 test component qua**, dist allowlist qua.
+- Smoke lần đầu bắt lỗi assertion cũ đòi dấu ? ở URL avatar; sửa để chấp nhận URL đúng có/không query. Lần chạy lại clone sạch: npm ci/build, status, đủ 5 tập, tải bài misu30 và nguồn nghe 48 buổi, số mẫu người, hai avatar mẫu và TTS tạo được audio đều qua. Không cần gọi model; không lưu audio TTS vào repo.
+- UI thử trên hồ sơ mẫu/dữ liệu tạm: bộ chọn có ba tập misu30, Nghe của bài được chọn trong bài thực tế, vẫn có Bộ DeepSeek/Ví dụ; Cài đặt hiện 0 mục nhãn và 0 phản hồi của hồ sơ thử. Không dùng mic người thật.
+- Chạy lại audit grammar sau các sửa: 0 câu đúng bị sửa trong 112 câu đúng; 34/102 câu sai sửa theo thước đo hiện tại. Artifact có hash/commit trong eval/results. Thước đo vẫn dùng expected dạng đoạn ở một phần bộ cũ, chưa thay thế đánh giá LLM/người dạy (review vòng 2 nêu T5).
+- Chưa kiểm chứng: Windows/Linux thật, micro/thu-phát trên điện thoại, hành vi abort audio bằng thiết bị thật, giáo viên duyệt nội dung, schema sidecar nhãn thực tế và độ chính xác người học. Chưa có nhãn người, không tinh chỉnh classifyIsolated; không cam kết 0 false positive ngoài bộ thử.
+- Không push/tag; không ghi data/ thật; không commit audio/giọng/ảnh người thật. Câu hỏi tồn đọng ở QUESTIONS.md. Người dùng vừa giao review-codex-2, sẽ xử lý tiếp trong các commit riêng sau mốc này.

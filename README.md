@@ -25,6 +25,10 @@ HSK 5. Trong phần Hội thoại nhập vai có bài nghe, chọn đáp án r�
 lời/giải thích; tiếp theo là nhắc lại/kể lại, đọc và trả lời theo nhiệm vụ.
 Nội dung cố định không cần model soạn lại; nhập vai tương tác vẫn cần model.
 
+Có thêm **30 bài giao tiếp HSK1–6** (3 tập, bài 1–30) trong bộ chọn lộ trình,
+với từ/mẫu câu, nghe nhận nghĩa và nhiệm vụ nói. Đây là lộ trình bổ sung AI
+soạn, chưa duyệt; giữ mặc định HSK1/HSK5 hiện tại.
+
 - [Tài liệu HSK 1 thực tế](lessons/courses/HSK1-GUIDE.md): khoảng 25 phút/buổi.
 - [Tài liệu HSK 5 thực tế](lessons/courses/HSK5-GUIDE.md): khoảng 30 phút/buổi.
 - [Nguồn dạng thi và giới hạn](lessons/courses/EXAM-ALIGNMENT.md).
@@ -52,7 +56,9 @@ không tính điểm; các lần có đề khác nhau không hoàn toàn tương
 - **Cặp âm dễ lẫn**: zh/z, ch/c, sh/s, j/q/x, ü/u và các vần n/ng;
   chọn theo tai nghe, không cần STT để chấm lựa chọn.
 - **Nghe chép**: chữ Hán hoặc pinyin, nghe lại từng cụm và tô chỗ khác bản chép.
-  Có câu DeepSeek và câu ví dụ của buổi học.
+  Có nguồn Nghe của bài (198 câu/48 buổi), Bộ DeepSeek và Ví dụ của buổi học.
+- **Misu chấm sai?**: gắn nhãn thanh từng chữ, ghi ai gắn nhãn và lưu bản thu
+  vào dữ liệu riêng; xem số mẫu từng hồ sơ trong Cài đặt.
 - **Ba tốc độ 0.7/0.85/1×**, nút nghe chậm; nhập vai mặc định ẩn chữ,
   nghe trước rồi mở lời và nghĩa.
 - **Common Voice tùy chọn**: 154 câu Beijing Chinese theo danh sách AI chọn,
@@ -63,7 +69,7 @@ không tính điểm; các lần có đề khác nhau không hoàn toàn tương
 - **Sửa phát âm và ôn theo lịch**: chữ → từ → câu, hai lần khớp rõ liên tiếp;
   chữ chưa chấm được không tính. Câu dài hiện chưa tự xác nhận qua vòng.
   Lỗi thanh/cặp âm có lịch ôn riêng ngắn hơn từ vựng.
-- **Xem câu vừa nói**: giữ tối đa 10 bản ghi cục bộ trong RAM của phiên,
+- **Xem câu vừa nói**: giữ tối đa 5 bản ghi, tổng 20 MB trong RAM của phiên,
   bấm xem phát âm trên transcript Whisper; tải lại trang sẽ mất bản ghi này.
 - **Trôi chảy và độ trễ tham khảo**: xu hướng theo tuần, âm tiết/giây ước lượng,
   khoảng ngắt; tách thời gian STT/model/TTS/phát tiếng. Chưa xác nhận mục tiêu 2,5 giây.

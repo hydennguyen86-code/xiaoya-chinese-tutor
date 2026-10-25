@@ -15,3 +15,13 @@ có nhãn và kiểm tra cài đặt trên máy macOS thứ hai trước khi k�
 
 Ngưỡng chấm thanh giữ nguyên. Số TTS cũ không thay thế đánh giá giọng người thật.
 - Cập nhật bản vá body-parser trong lockfile sau cảnh báo DoS của npm audit.
+
+## 2026-10-25 — Học liệu và phản hồi phát âm
+
+- Thêm 30 bài giao tiếp HSK1–6, giữ 48 buổi thực tế cũ; nhãn AI soạn, chưa duyệt.
+- Nghe của bài: 198 câu dictation/48 đoạn shadowing, giữ pinyin và biến điệu.
+- Nhãn sửa kết quả thanh lưu riêng; Cài đặt có số mẫu. Import bản thu tại chỗ; chưa đủ nhãn 56 mục nên không chỉnh ngưỡng.
+- Tra kVietnamese theo chữ và mẹo AI riêng, không khẳng định âm Hán Việt chuẩn theo ngữ cảnh.
+- Giữ sửa ngữ pháp Claude; dọn gợi ý chồng, PCM dùng chung, lý do thiếu fluency, lịch ôn và vòng đời audio. Phát lại giới hạn 5 lượt/20 MB RAM.
+- README có định vị riêng tư/ảnh mẫu; Git chặn audio riêng, build kiểm dist.
+- Smoke clone sạch qua build/API/khóa học/avatar mẫu/TTS. Chưa thử Windows thật, phần cứng hay thẩm định sư phạm.
