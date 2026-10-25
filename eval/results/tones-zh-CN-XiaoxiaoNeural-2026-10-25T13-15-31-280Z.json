@@ -1,0 +1,61 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-25T13:15:31.280Z",
+ "commit": "96b3583",
+ "dirty": false,
+ "settings": {
+  "voice": "zh-CN-XiaoxiaoNeural"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    0,
+    8,
+    2,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    9,
+    1,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    1,
+    9,
+    0
+   ],
+   "4": [
+    1,
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  "singles": {
+   "correct": 35,
+   "total": 40,
+   "unclear": 1
+  },
+  "words": {
+   "correct": 21,
+   "judged": 29,
+   "syllables": 32
+  },
+  "misses": [
+   "中国 国: expected 2, heard 3",
+   "汉语 汉: expected 4, heard 1",
+   "汉语 语: expected 3, heard 4",
+   "电脑 电: expected 4, heard 1",
+   "电脑 脑: expected 3, heard 4",
+   "回家 回: expected 2, heard 3",
+   "北京 京: expected 1, heard 2",
+   "音乐 音: expected 1, heard 2"
+  ]
+ }
+}
