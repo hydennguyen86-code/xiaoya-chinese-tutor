@@ -1,3 +1,4 @@
+import { recordSpokenTones } from './listeningPractice';
 // Record one spoken answer. With local speech-to-text (whisper.cpp on this
 // computer) the audio is recorded here and sent to /api/transcribe; otherwise
 // the browser's own speech recognition is used.
@@ -162,6 +163,7 @@ function listenLocal({ onPhase, learnerId, pronounce, silenceMs = 1600, noSpeech
     });
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
     const data = (await res.json()) as { text?: string; tones?: ToneReport };
+    if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones);
     return { text: (data.text || '').trim(), tones: data.tones ?? null, audio: blob };
   })();
 

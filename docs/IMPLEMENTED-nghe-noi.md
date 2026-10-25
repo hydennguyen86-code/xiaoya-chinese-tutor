@@ -32,3 +32,10 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Chưa thử Windows thật, chưa được giáo viên duyệt câu và chưa đo hiệu quả với người học. Không thay ngưỡng chấm hay cách cắt âm tiết.
 
 - Kiểm tra cuối: typecheck, 71 test backend/lib + 4 component (75 tổng), build và allowlist dist đều đạt. API trả đúng byte gốc cho 17/17 clip, không lộ tên file nguồn trong danh sách công khai. Trình duyệt phát hết một MP3 thật ở 0.7× (readyState 4, không lỗi), gõ pinyin và mở đối chiếu đúng. Chưa nghe/đánh giá thủ công toàn bộ 17 câu.
+
+## Mục 1 — Luyện tai thanh điệu
+
+- Chép duy nhất JSON thanh điệu và checker cấu trúc (không có script tác giả). 154 mục, giữ nhãn AI soạn, chưa duyệt; checker pinyin/biến điệu của DeepSeek chạy như test trong repo. Bốn mục uncertain được loại khỏi bài chấm, không tự sửa nội dung.
+- Nghe rồi chọn thanh, gồm âm tiết/từ đôi; khóa trả lời đến lúc audio bắt đầu. Chấp nhận đúng các acceptTones đã khai báo; baseTone/baseTones giữ làm lời giải, không ghi đè biến điệu bằng pinyin tự suy.
+- Ma trận nhầm thanh theo người học nhận cả lỗi nghe và các báo cáo nói có kết quả chấm rõ. Chọn có trọng số ưu tiên nhầm lẫn, vẫn có phần khám phá và tránh lặp câu ngay trước. Không tính chữ chưa chấm được thành lỗi.
+- Typecheck, test và build được chạy trước commit. Chưa thu âm người thật hoặc xác nhận TTS đọc đúng từng câu; thuật toán chấm thanh không đổi. Không gắn nhãn giáo viên duyệt.

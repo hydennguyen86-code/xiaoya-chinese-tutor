@@ -1,8 +1,8 @@
 import { CommunityListening } from './CommunityListening';
 import { SlowListen } from './ListeningControls';
-import { speakBrowser } from '../lib/browserVoice';
+import { useLessonAudio as useAudio, stopLessonAudio } from '../lib/useLessonAudio';
+import { ToneListening } from './ToneListening';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { fetchTts } from '../lib/api';
 import { exerciseFingerprint, gradeListening, speechText } from '../lib/coursePractice';
 import type { LessonContent, ListeningExercise, SpeakingExercise } from '../lib/lessonApi';
 import type { VoicePhase } from '../lib/voiceInput';
@@ -50,6 +50,7 @@ export function CoursePractice(props: Props) {
         Bài tự soạn ưu tiên ứng dụng. Nghe bằng giọng tổng hợp; có thể cần mạng nếu dùng giọng Edge. Điểm bài này không quy đổi sang điểm
         HSK.
       </p>
+      {!checkpoint && <ToneListening learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />}
       {!checkpoint && <CommunityListening />}
       {content.checkpoint && (
         <button type="button" className="lesson-secondary" onClick={() => setCheckpoint((v) => !v)}>
@@ -86,103 +87,6 @@ export function CoursePractice(props: Props) {
       </div>
     </section>
   );
-}
-let stopCurrentCourseAudio: (() => void) | null = null;
-
-function useAudio(voice: string, onBusy: (busy: boolean) => void) {
-  const player = useRef<HTMLAudioElement | null>(null);
-  const request = useRef<AbortController | null>(null);
-  const url = useRef('');
-  const alive = useRef(true);
-  const [playing, setPlaying] = useState(false);
-  const loading = useRef(false);
-  const [error, setError] = useState('');
-  const [provider, setProvider] = useState('');
-  const stop = useCallback(() => {
-    request.current?.abort();
-    player.current?.pause();
-    player.current = null;
-    if (url.current) URL.revokeObjectURL(url.current);
-    url.current = '';
-    loading.current = false;
-    setPlaying(false);
-    onBusy(false);
-    if (stopCurrentCourseAudio === stop) stopCurrentCourseAudio = null;
-  }, [onBusy]);
-  useEffect(() => {
-    alive.current = true;
-    return () => {
-      alive.current = false;
-      request.current?.abort();
-      player.current?.pause();
-      if (url.current) URL.revokeObjectURL(url.current);
-      if (stopCurrentCourseAudio === stop) stopCurrentCourseAudio = null;
-      onBusy(false);
-    };
-  }, []);
-  async function play(text: string, onStarted?: () => void) {
-    if (loading.current) {
-      stop();
-      return;
-    }
-    stopCurrentCourseAudio?.();
-    stopCurrentCourseAudio = stop;
-    loading.current = true;
-    const controller = new AbortController();
-    request.current = controller;
-    setPlaying(true);
-    setError('');
-    onBusy(true);
-    try {
-      const result = await fetchTts(speechText(text), voice, controller.signal);
-      if (!alive.current || controller.signal.aborted) return;
-      if (result.browserText) {
-        setProvider('Giọng dự phòng trình duyệt; tuỳ giọng có thể dùng mạng.');
-        await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', controller.signal, onStarted, result.browserRate);
-        if (alive.current && !controller.signal.aborted) {
-          loading.current = false;
-          setPlaying(false);
-          onBusy(false);
-        }
-        return;
-      }
-      const bytes = Uint8Array.from(atob(result.audioBase64), (ch) => ch.charCodeAt(0));
-      if (url.current) URL.revokeObjectURL(url.current);
-      url.current = URL.createObjectURL(new Blob([bytes], { type: result.mime }));
-      const audio = new Audio(url.current);
-      player.current = audio;
-      audio.onended = () => {
-        if (alive.current) {
-          loading.current = false;
-          setPlaying(false);
-          onBusy(false);
-        }
-      };
-      audio.onerror = () => {
-        if (alive.current) {
-          setError('Không phát được âm thanh. Hãy thử lại.');
-          loading.current = false;
-          setPlaying(false);
-          onBusy(false);
-        }
-      };
-      await audio.play();
-      if (!alive.current || controller.signal.aborted) {
-        audio.pause();
-        return;
-      }
-      setProvider(result.fallbackReason ?? `Giọng ${result.provider}`);
-      onStarted?.();
-    } catch (e) {
-      if (alive.current && !controller.signal.aborted) {
-        setError(e instanceof Error ? e.message : 'Chưa phát được.');
-        loading.current = false;
-        setPlaying(false);
-        onBusy(false);
-      }
-    }
-  }
-  return { play, stop, playing, error, provider };
 }
 function ListeningCard({
   exercise,
@@ -374,7 +278,7 @@ function SpeakingCard({
           micReady={props.micReady && !audio.playing}
           voicePhase={props.voicePhase}
           onClick={() => {
-            stopCurrentCourseAudio?.();
+            stopLessonAudio();
             audio.stop();
             void props.ask().then((text) => {
               if (text) {
