@@ -162,3 +162,10 @@ thành công giả, không chấm thanh chưa rõ thành đúng, không lộ tra
 Typecheck, 66 test backend/lib + 3 test component, build/dist allowlist qua.
 Không gọi cloud, không dùng audio người thật. SSR không thay thế thao tác UI
 hay thiết bị Windows thật. E23 vẫn chờ bộ câu thử DeepSeek, không sửa luật.
+
+## E23 — Luật ngữ pháp DeepSeek có cổng chống sửa nhầm
+
+- Gộp bộ DeepSeek vào eval/corrections.json, giữ bộ cũ; thêm câu đúng tương tự để kiểm tra 过去/过敏, bổ ngữ trong mệnh đề, 把 với định ngữ, 被子 và mệnh đề 的. Tổng 108 câu đúng, 98 câu sai. Nhãn gốc AI soạn, chưa duyệt được giữ trong eval/corrections-cases.json; đây không phải đánh giá chuyên gia.
+- Lưu bản luật gốc/bản DeepSeek trong eval/candidates để tái chạy đối chiếu, không import vào runtime. Bản DeepSeek nguyên trạng có 7 luật sửa nhầm (1,2,5,7,8,10,11); loại khỏi danh sách nhận nguyên trạng. Giữ lượng từ hẹp cũ; thêm guard mệnh đề 的 cho so sánh/vị trí. Nhận luật 是…的 và phó từ cuối câu, cùng các luật cũ đạt cổng kiểm tra.
+- Kết quả deterministic: bản cũ sửa nhầm 2/108, sửa trúng 27/98; bản cuối sửa nhầm **0/108**, sửa trúng 29/98. Mỗi luật active riêng cũng có 0 câu đúng bị sửa. 69 lỗi còn lại chưa bắt được; không tự nhận toàn bộ luật DeepSeek.
+- eval/rule-corrections.mjs lưu audit từng luật, câu sửa nhầm, SHA-256 nguồn và benchmark trong eval/results/. Đây chỉ đo luật cố định; chưa đo lại pipeline LLM và không bảo đảm 0 false positive ngoài bộ thử. Không tự gắn nhãn giáo viên duyệt.

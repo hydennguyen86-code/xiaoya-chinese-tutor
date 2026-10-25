@@ -1,0 +1,1394 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "corrections-cases",
+  "version": 1,
+  "note": "Câu sai + câu đúng cho lỗi người Việt hay mắc. App hiển thị câu sai, người học sửa, rồi so với right; fix là đoạn tối thiểu đã đổi để máy chấm. correct/wrong ở cuối file là hai mảng dẫn xuất đúng định dạng eval/corrections.json, không phải dữ liệu độc lập.",
+  "levels": [
+    "HSK1-2",
+    "HSK3-4",
+    "HSK5-6"
+  ],
+  "schema": {
+    "id": "cc-<số 3 chữ số>",
+    "level": "HSK1-2 | HSK3-4 | HSK5-6",
+    "wrong": "câu sai, có dấu câu cuối câu",
+    "right": "câu đúng tương ứng",
+    "fix": "đoạn tối thiểu đã sửa: nằm trong right và không nằm trong wrong",
+    "tags": "nhóm lỗi: lượng từ | trật tự từ | ngữ pháp | trợ từ | từ vựng | chữ Hán",
+    "errorVi": "một câu tiếng Việt nói người học đã làm sai gì",
+    "ruleVi": "quy tắc cần nhớ, có thể kèm chữ Hán làm ví dụ",
+    "accept": "mảng câu đúng khác cũng chấp nhận được (chỉ có khi cần)",
+    "uncertain": "true khi người soạn chưa chắc, kèm uncertainReason"
+  },
+  "items": [
+    {
+      "id": "cc-001",
+      "level": "HSK1-2",
+      "wrong": "我买了三个词典。",
+      "right": "我买了三本词典。",
+      "fix": "三本词典",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho từ điển.",
+      "ruleVi": "Sách và từ điển dùng 本: 三本词典, 一本书. 个 không dùng cho sách."
+    },
+    {
+      "id": "cc-002",
+      "level": "HSK1-2",
+      "wrong": "他买了两件裤子。",
+      "right": "他买了两条裤子。",
+      "fix": "两条裤子",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 件 cho quần.",
+      "ruleVi": "Quần 裤子 dùng 条; 件 dành cho áo và sự việc: 一件衣服, 一件事."
+    },
+    {
+      "id": "cc-003",
+      "level": "HSK1-2",
+      "wrong": "她养了三条狗。",
+      "right": "她养了三只狗。",
+      "fix": "三只狗",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 条 cho chó.",
+      "ruleVi": "Chó mèo dùng 只; 条 dùng cho vật dài như cá, rắn, sông, đường."
+    },
+    {
+      "id": "cc-004",
+      "level": "HSK1-2",
+      "wrong": "桌子上有一个纸。",
+      "right": "桌子上有一张纸。",
+      "fix": "一张纸",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho tờ giấy.",
+      "ruleVi": "Giấy, vé, ảnh, bàn, bản đồ dùng 张: 一张纸, 两张票."
+    },
+    {
+      "id": "cc-005",
+      "level": "HSK1-2",
+      "wrong": "我们坐一个出租车去机场。",
+      "right": "我们坐一辆出租车去机场。",
+      "fix": "一辆出租车",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho xe.",
+      "ruleVi": "Xe cộ dùng 辆: 一辆车, 一辆出租车, 一辆自行车."
+    },
+    {
+      "id": "cc-006",
+      "level": "HSK1-2",
+      "wrong": "我家有一只猫和两个鱼。",
+      "right": "我家有一只猫和两条鱼。",
+      "fix": "两条鱼",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho cá.",
+      "ruleVi": "Cá dùng 条; 只 dùng cho chó mèo, chim."
+    },
+    {
+      "id": "cc-007",
+      "level": "HSK1-2",
+      "wrong": "他给我写了一个信。",
+      "right": "他给我写了一封信。",
+      "fix": "一封信",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho thư.",
+      "ruleVi": "Thư 信 dùng 封: 一封信, 两封信."
+    },
+    {
+      "id": "cc-008",
+      "level": "HSK1-2",
+      "wrong": "门口有两个树。",
+      "right": "门口有两棵树。",
+      "fix": "两棵树",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho cây.",
+      "ruleVi": "Cây 树 dùng 棵: 两棵树, 一棵树."
+    },
+    {
+      "id": "cc-009",
+      "level": "HSK1-2",
+      "wrong": "我昨天看了一个电影。",
+      "right": "我昨天看了一部电影。",
+      "fix": "一部电影",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho phim.",
+      "ruleVi": "Phim và tiểu thuyết dùng 部: 一部电影, 一部小说."
+    },
+    {
+      "id": "cc-010",
+      "level": "HSK1-2",
+      "wrong": "她买了一个伞。",
+      "right": "她买了一把伞。",
+      "fix": "一把伞",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho ô.",
+      "ruleVi": "Ô, ghế, dao dùng 把: 一把伞, 两把椅子."
+    },
+    {
+      "id": "cc-011",
+      "level": "HSK3-4",
+      "wrong": "这家公司有三个电脑。",
+      "right": "这家公司有三台电脑。",
+      "fix": "三台电脑",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho máy móc.",
+      "ruleVi": "Máy móc dùng 台: 三台电脑, 一台电视."
+    },
+    {
+      "id": "cc-012",
+      "level": "HSK1-2",
+      "wrong": "学校附近有两个银行。",
+      "right": "学校附近有两家银行。",
+      "fix": "两家银行",
+      "tags": [
+        "lượng từ"
+      ],
+      "errorVi": "Dùng 个 cho ngân hàng.",
+      "ruleVi": "Cơ sở kinh doanh dùng 家: 两家银行, 一家饭馆, 一家医院."
+    },
+    {
+      "id": "cc-013",
+      "level": "HSK1-2",
+      "wrong": "我吃饭在家。",
+      "right": "我在家吃饭。",
+      "fix": "我在家吃饭",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt cụm nơi chốn sau động từ như tiếng Việt.",
+      "ruleVi": "在 + nơi chốn đứng trước động từ: 我在家吃饭, 他在学校学习."
+    },
+    {
+      "id": "cc-014",
+      "level": "HSK1-2",
+      "wrong": "他们开会明天上午。",
+      "right": "他们明天上午开会。",
+      "fix": "明天上午开会",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt thời gian ở cuối câu.",
+      "ruleVi": "Từ chỉ thời gian đứng sau chủ ngữ và trước động từ: 明天上午开会."
+    },
+    {
+      "id": "cc-015",
+      "level": "HSK1-2",
+      "wrong": "他工作在银行。",
+      "right": "他在银行工作。",
+      "fix": "他在银行工作",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt nơi làm việc sau động từ.",
+      "ruleVi": "Cụm 在 + nơi đứng trước động từ: 他在银行工作."
+    },
+    {
+      "id": "cc-016",
+      "level": "HSK1-2",
+      "wrong": "我很忙在公司。",
+      "right": "我在公司很忙。",
+      "fix": "我在公司很忙",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đẩy cụm nơi chốn ra sau tính từ.",
+      "ruleVi": "Trạng ngữ nơi chốn đứng trước tính từ: 我在公司很忙."
+    },
+    {
+      "id": "cc-017",
+      "level": "HSK3-4",
+      "wrong": "他每天喝咖啡一点儿。",
+      "right": "他每天喝一点儿咖啡。",
+      "fix": "喝一点儿咖啡",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt 一点儿 sau tân ngữ.",
+      "ruleVi": "一点儿 đứng trước tân ngữ: 喝一点儿咖啡, 买一点儿水果."
+    },
+    {
+      "id": "cc-018",
+      "level": "HSK3-4",
+      "wrong": "我昨天去中国过。",
+      "right": "我昨天去过中国。",
+      "fix": "去过中国",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt 过 sau tân ngữ.",
+      "ruleVi": "过 đứng ngay sau động từ, trước tân ngữ: 去过中国, 吃过烤鸭."
+    },
+    {
+      "id": "cc-019",
+      "level": "HSK3-4",
+      "wrong": "我吃饭完了。",
+      "right": "我吃完饭了。",
+      "fix": "吃完饭了",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Tách bổ ngữ 完 khỏi động từ.",
+      "ruleVi": "Bổ ngữ kết quả đứng ngay sau động từ: 吃完饭了, 做完作业了."
+    },
+    {
+      "id": "cc-020",
+      "level": "HSK3-4",
+      "wrong": "我把作业没做完。",
+      "right": "我没把作业做完。",
+      "fix": "我没把作业做完",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt phủ định sau 把.",
+      "ruleVi": "没(有) đứng trước 把: 我没把作业做完."
+    },
+    {
+      "id": "cc-021",
+      "level": "HSK3-4",
+      "wrong": "我淋被雨了。",
+      "right": "我被雨淋了。",
+      "fix": "我被雨淋了",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đảo 被 ra sau động từ.",
+      "ruleVi": "Câu bị động: 被 + tác nhân + động từ + thành phần khác: 我被雨淋了."
+    },
+    {
+      "id": "cc-022",
+      "level": "HSK1-2",
+      "wrong": "我去也。",
+      "right": "我也去。",
+      "fix": "我也去",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt phó từ 也 sau động từ.",
+      "ruleVi": "也, 都, 已经, 正在 đứng trước động từ, không đứng cuối câu."
+    },
+    {
+      "id": "cc-023",
+      "level": "HSK5-6",
+      "wrong": "只有努力，就能成功。",
+      "right": "只有努力，才能成功。",
+      "fix": "才能成功",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 就 trong câu 只有…才.",
+      "ruleVi": "只有…才… là cặp cố định: 只有努力，才能成功."
+    },
+    {
+      "id": "cc-024",
+      "level": "HSK5-6",
+      "wrong": "即使明天下雨，但是我们也要去。",
+      "right": "即使明天下雨，我们也要去。",
+      "fix": "即使明天下雨，我们也要去",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Thêm 但是 vào câu 即使…也.",
+      "ruleVi": "即使…也… không dùng 但是; 也 đã đủ nối hai vế."
+    },
+    {
+      "id": "cc-025",
+      "level": "HSK3-4",
+      "wrong": "请你打电话给他明天。",
+      "right": "请你明天打电话给他。",
+      "fix": "请你明天打电话给他",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt thời gian cuối câu.",
+      "ruleVi": "Từ thời gian đứng sau chủ ngữ, trước động từ: 请你明天打电话给他."
+    },
+    {
+      "id": "cc-026",
+      "level": "HSK3-4",
+      "wrong": "他送了一本书给我昨天。",
+      "right": "他昨天送了一本书给我。",
+      "fix": "他昨天送了一本书给我",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt thời gian cuối câu.",
+      "ruleVi": "Thời gian đứng sau chủ ngữ: 他昨天送了一本书给我."
+    },
+    {
+      "id": "cc-027",
+      "level": "HSK5-6",
+      "wrong": "我们讨论这个问题在会议上。",
+      "right": "我们在会议上讨论这个问题。",
+      "fix": "我们在会议上讨论这个问题",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt cụm 在会议上 sau tân ngữ.",
+      "ruleVi": "Cụm 在 + nơi/hoàn cảnh đứng trước động từ: 在会上讨论问题."
+    },
+    {
+      "id": "cc-028",
+      "level": "HSK5-6",
+      "wrong": "我哥哥工作了三年在上海。",
+      "right": "我哥哥在上海工作了三年。",
+      "fix": "在上海工作了三年",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt nơi chốn và thời lượng sai thứ tự.",
+      "ruleVi": "Chủ ngữ + 在 + nơi + động từ + 了 + thời lượng: 在上海工作了三年."
+    },
+    {
+      "id": "cc-029",
+      "level": "HSK3-4",
+      "wrong": "他从北京来昨天。",
+      "right": "他昨天从北京来。",
+      "fix": "他昨天从北京来",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt thời gian sau cụm 从北京.",
+      "ruleVi": "Thời gian đứng trước cụm giới từ: 他昨天从北京来."
+    },
+    {
+      "id": "cc-030",
+      "level": "HSK3-4",
+      "wrong": "他住了在中国三年。",
+      "right": "他住在中国三年了。",
+      "fix": "住在中国三年了",
+      "tags": [
+        "trật tự từ"
+      ],
+      "errorVi": "Đặt 了 sai chỗ và đảo cụm 在中国.",
+      "ruleVi": "Động từ + 在 + nơi + thời lượng + 了: 他住在中国三年了."
+    },
+    {
+      "id": "cc-031",
+      "level": "HSK3-4",
+      "wrong": "这个箱子比那个箱子很重。",
+      "right": "这个箱子比那个箱子重。",
+      "fix": "比那个箱子重",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Thêm 很 sau 比.",
+      "ruleVi": "Sau 比 không dùng 很/非常; muốn nhấn mạnh dùng 更 hoặc 还: 比那个箱子更重."
+    },
+    {
+      "id": "cc-032",
+      "level": "HSK5-6",
+      "wrong": "既然你病了，但是好好休息吧。",
+      "right": "既然你病了，就好好休息吧。",
+      "fix": "就好好休息吧",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 但是 trong câu 既然…就.",
+      "ruleVi": "既然…就…: vế sau dùng 就, không dùng 但是."
+    },
+    {
+      "id": "cc-033",
+      "level": "HSK1-2",
+      "wrong": "我昨天没去了公园。",
+      "right": "我昨天没去公园。",
+      "fix": "没去公园",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Thêm 了 sau động từ phủ định.",
+      "ruleVi": "没(有) + động từ: 没去公园; 了 không dùng ở đây."
+    },
+    {
+      "id": "cc-034",
+      "level": "HSK3-4",
+      "wrong": "我是昨天来。",
+      "right": "我是昨天来的。",
+      "fix": "我是昨天来的",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Thiếu 的 ở cuối câu 是…的.",
+      "ruleVi": "Câu 是…的 nhấn mạnh thời gian hoặc nơi chốn phải kết thúc bằng 的."
+    },
+    {
+      "id": "cc-035",
+      "level": "HSK3-4",
+      "wrong": "因为下雨，我没去所以。",
+      "right": "因为下雨，所以我没去。",
+      "fix": "所以我没去",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Đặt 所以 sai vị trí.",
+      "ruleVi": "Cặp 因为…所以…: 所以 mở đầu mệnh đề kết quả."
+    },
+    {
+      "id": "cc-036",
+      "level": "HSK5-6",
+      "wrong": "不管天气怎么样，但是我们都去。",
+      "right": "不管天气怎么样，我们都去。",
+      "fix": "不管天气怎么样，我们都去",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Thêm 但是 vào câu 不管…都.",
+      "ruleVi": "不管…都…: vế sau dùng 都, không dùng 但是."
+    },
+    {
+      "id": "cc-037",
+      "level": "HSK5-6",
+      "wrong": "不但他会说汉语，而且会写汉字。",
+      "right": "他不但会说汉语，而且会写汉字。",
+      "fix": "他不但会说汉语",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Đặt chủ ngữ sau 不但.",
+      "ruleVi": "Cùng một chủ ngữ thì chủ ngữ đứng trước 不但: 他不但…而且…"
+    },
+    {
+      "id": "cc-038",
+      "level": "HSK3-4",
+      "wrong": "我见面他。",
+      "right": "我跟他见面。",
+      "fix": "跟他见面",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 见面 như ngoại động từ.",
+      "ruleVi": "见面 là nội động từ: 跟/和 + người + 见面, không nói 见面他."
+    },
+    {
+      "id": "cc-039",
+      "level": "HSK3-4",
+      "wrong": "我帮忙他搬家。",
+      "right": "我帮他搬家。",
+      "fix": "帮他搬家",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 帮忙 với tân ngữ.",
+      "ruleVi": "帮忙 không mang tân ngữ; nói 帮他 hoặc 帮他的忙."
+    },
+    {
+      "id": "cc-040",
+      "level": "HSK3-4",
+      "wrong": "我很感兴趣音乐。",
+      "right": "我对音乐很感兴趣。",
+      "fix": "我对音乐很感兴趣",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Thiếu 对 trước đối tượng.",
+      "ruleVi": "感兴趣 đi với 对: 对 + đối tượng + 很感兴趣."
+    },
+    {
+      "id": "cc-041",
+      "level": "HSK3-4",
+      "wrong": "这个问题很重要对我们。",
+      "right": "这个问题对我们很重要。",
+      "fix": "对我们很重要",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Đặt cụm 对我们 sau tính từ.",
+      "ruleVi": "对 + người + tính từ: 对我们很重要."
+    },
+    {
+      "id": "cc-042",
+      "level": "HSK3-4",
+      "wrong": "我们聊天了一会儿。",
+      "right": "我们聊了一会儿天。",
+      "fix": "聊了一会儿天",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Chèn 了 vào giữa 聊天.",
+      "ruleVi": "聊天 là động từ ly hợp: 聊了一会儿天, 聊了聊天."
+    },
+    {
+      "id": "cc-043",
+      "level": "HSK3-4",
+      "wrong": "我睡觉了八个小时。",
+      "right": "我睡了八个小时。",
+      "fix": "睡了八个小时",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Đặt 了 trước cả cụm 睡觉.",
+      "ruleVi": "睡觉 ly hợp: 睡了八个小时 (bỏ 觉 khi có thời lượng).",
+      "uncertain": true,
+      "uncertainReason": "Khẩu ngữ có người nói 睡觉了八个小时; dạy dạng chuẩn 睡了八个小时."
+    },
+    {
+      "id": "cc-044",
+      "level": "HSK3-4",
+      "wrong": "我明天会去了北京。",
+      "right": "我明天会去北京。",
+      "fix": "会去北京",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 了 cho việc tương lai.",
+      "ruleVi": "了 không dùng với hành động tương lai sau 会 hoặc 要."
+    },
+    {
+      "id": "cc-045",
+      "level": "HSK3-4",
+      "wrong": "我结婚她。",
+      "right": "我跟她结婚。",
+      "fix": "跟她结婚",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 结婚 với tân ngữ.",
+      "ruleVi": "结婚 là nội động từ: 跟/和 + người + 结婚."
+    },
+    {
+      "id": "cc-046",
+      "level": "HSK3-4",
+      "wrong": "他生气我。",
+      "right": "他生我的气。",
+      "fix": "生我的气",
+      "tags": [
+        "ngữ pháp"
+      ],
+      "errorVi": "Dùng 生气 với tân ngữ.",
+      "ruleVi": "生气 không mang tân ngữ: 生我的气 hoặc 对我生气."
+    },
+    {
+      "id": "cc-047",
+      "level": "HSK3-4",
+      "wrong": "他唱歌得很好。",
+      "right": "他唱得很好。",
+      "fix": "唱得很好",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Đặt 得 sau cả cụm 唱歌.",
+      "ruleVi": "得 đứng ngay sau động từ: 唱得很好; nếu giữ tân ngữ thì lặp động từ: 唱歌唱得很好.",
+      "accept": [
+        "他唱歌唱得很好。"
+      ]
+    },
+    {
+      "id": "cc-048",
+      "level": "HSK3-4",
+      "wrong": "她高兴得说。",
+      "right": "她高兴地说。",
+      "fix": "高兴地说",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Dùng 得 thay 地 trước động từ.",
+      "ruleVi": "Trạng ngữ trước động từ dùng 地; 得 dùng sau động từ."
+    },
+    {
+      "id": "cc-049",
+      "level": "HSK3-4",
+      "wrong": "他慢慢得走。",
+      "right": "他慢慢地走。",
+      "fix": "慢慢地走",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Dùng 得 thay 地.",
+      "ruleVi": "Tính từ làm trạng ngữ dùng 地: 慢慢地走, 高兴地说."
+    },
+    {
+      "id": "cc-050",
+      "level": "HSK1-2",
+      "wrong": "这是我书。",
+      "right": "这是我的书。",
+      "fix": "这是我的书",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Thiếu 的 giữa đại từ và danh từ.",
+      "ruleVi": "Đại từ + 的 + danh từ: 我的书, 他的手机."
+    },
+    {
+      "id": "cc-051",
+      "level": "HSK3-4",
+      "wrong": "他写地字很漂亮。",
+      "right": "他写的字很漂亮。",
+      "fix": "他写的字很漂亮",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Dùng 地 thay 的.",
+      "ruleVi": "的 nối định ngữ với danh từ: 写的字, 买的书."
+    },
+    {
+      "id": "cc-052",
+      "level": "HSK1-2",
+      "wrong": "我昨天买一本书了。",
+      "right": "我昨天买了一本书。",
+      "fix": "买了一本书",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Đặt 了 sau tân ngữ có số lượng.",
+      "ruleVi": "了 đứng sau động từ, trước tân ngữ: 买了一本书."
+    },
+    {
+      "id": "cc-053",
+      "level": "HSK3-4",
+      "wrong": "门开了着。",
+      "right": "门开着。",
+      "fix": "门开着",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Dùng 了 và 着 cùng lúc.",
+      "ruleVi": "着 diễn tả trạng thái đang duy trì; không thêm 了 ngay sau 着."
+    },
+    {
+      "id": "cc-054",
+      "level": "HSK3-4",
+      "wrong": "他坐看书着。",
+      "right": "他坐着看书。",
+      "fix": "他坐着看书",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Đặt 着 cuối câu.",
+      "ruleVi": "着 đứng sau động từ chỉ tư thế, trước động từ chính: 坐着看书."
+    },
+    {
+      "id": "cc-055",
+      "level": "HSK3-4",
+      "wrong": "我学了汉语三年。",
+      "right": "我学了三年汉语。",
+      "fix": "学了三年汉语",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Đặt thời lượng sau tân ngữ.",
+      "ruleVi": "Động từ + 了 + thời lượng + tân ngữ: 学了三年汉语."
+    },
+    {
+      "id": "cc-056",
+      "level": "HSK1-2",
+      "wrong": "我还吃饭没。",
+      "right": "我还没吃饭。",
+      "fix": "还没吃饭",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Đặt 没 ở cuối câu.",
+      "ruleVi": "没(有) đứng trước động từ: 还没吃饭."
+    },
+    {
+      "id": "cc-057",
+      "level": "HSK3-4",
+      "wrong": "我看懂中文得。",
+      "right": "我看得懂中文。",
+      "fix": "看得懂中文",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Đặt 得 sau tân ngữ.",
+      "ruleVi": "Bổ ngữ khả năng: động từ + 得 + bổ ngữ: 看得懂, 听得清楚."
+    },
+    {
+      "id": "cc-058",
+      "level": "HSK3-4",
+      "wrong": "这本书是我买。",
+      "right": "这本书是我买的。",
+      "fix": "是我买的",
+      "tags": [
+        "trợ từ"
+      ],
+      "errorVi": "Thiếu 的 trong câu 是…的.",
+      "ruleVi": "是…的 nhấn mạnh nguồn gốc hoặc thời gian: 是我买的."
+    },
+    {
+      "id": "cc-059",
+      "level": "HSK3-4",
+      "wrong": "多练习能增加你的汉语水平。",
+      "right": "多练习能提高你的汉语水平。",
+      "fix": "提高你的汉语水平",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 增加 với 水平.",
+      "ruleVi": "水平 đi với 提高; 增加 dùng cho số lượng: 增加收入."
+    },
+    {
+      "id": "cc-060",
+      "level": "HSK3-4",
+      "wrong": "他帮了我很多，我很感觉他。",
+      "right": "他帮了我很多，我很感谢他。",
+      "fix": "很感谢他",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Nhầm 感觉 với 感谢.",
+      "ruleVi": "感谢 là cảm ơn; 感觉 là cảm thấy."
+    },
+    {
+      "id": "cc-061",
+      "level": "HSK5-6",
+      "wrong": "我们交流了电话号码。",
+      "right": "我们交换了电话号码。",
+      "fix": "交换了电话号码",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 交流 với số điện thoại.",
+      "ruleVi": "交换 là trao đổi vật cụ thể; 交流 là giao lưu ý tưởng, thông tin."
+    },
+    {
+      "id": "cc-062",
+      "level": "HSK5-6",
+      "wrong": "我想问你一个疑问。",
+      "right": "我想问你一个问题。",
+      "fix": "一个问题",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 疑问 như danh từ đếm được.",
+      "ruleVi": "Hỏi một câu dùng 问一个问题; 疑问 là nỗi nghi vấn, không đi với 问."
+    },
+    {
+      "id": "cc-063",
+      "level": "HSK5-6",
+      "wrong": "我参加了朋友的结婚。",
+      "right": "我参加了朋友的婚礼。",
+      "fix": "朋友的婚礼",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 结婚 như danh từ.",
+      "ruleVi": "Đám cưới là 婚礼; 结婚 là động từ, không làm tân ngữ của 参加."
+    },
+    {
+      "id": "cc-064",
+      "level": "HSK5-6",
+      "wrong": "他很有经历，什么都知道。",
+      "right": "他很有经验，什么都知道。",
+      "fix": "很有经验",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Nhầm 经历 với 经验.",
+      "ruleVi": "经验 là kinh nghiệm tích lũy; 经历 là trải nghiệm cụ thể đã qua."
+    },
+    {
+      "id": "cc-065",
+      "level": "HSK3-4",
+      "wrong": "他喜欢开笑话。",
+      "right": "他喜欢开玩笑。",
+      "fix": "开玩笑",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Ghép sai 开 với 笑话.",
+      "ruleVi": "开玩笑 là cụm cố định; 笑话 là câu chuyện cười."
+    },
+    {
+      "id": "cc-066",
+      "level": "HSK1-2",
+      "wrong": "我认识他的名字。",
+      "right": "我知道他的名字。",
+      "fix": "知道他的名字",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 认识 với tên.",
+      "ruleVi": "认识 dùng với người; biết một thông tin dùng 知道."
+    },
+    {
+      "id": "cc-067",
+      "level": "HSK5-6",
+      "wrong": "我们周末去参观老师。",
+      "right": "我们周末去拜访老师。",
+      "fix": "拜访老师",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 参观 với người.",
+      "ruleVi": "参观 dùng cho nơi chốn; thăm người dùng 拜访 hoặc 看."
+    },
+    {
+      "id": "cc-068",
+      "level": "HSK5-6",
+      "wrong": "科学家发明了一种新元素。",
+      "right": "科学家发现了一种新元素。",
+      "fix": "发现了一种新元素",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Nhầm 发明 với 发现.",
+      "ruleVi": "发现 là phát hiện thứ đã có; 发明 là phát minh ra thứ mới."
+    },
+    {
+      "id": "cc-069",
+      "level": "HSK5-6",
+      "wrong": "这个政策生产了很大的影响。",
+      "right": "这个政策产生了很大的影响。",
+      "fix": "产生了很大的影响",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Dùng 生产 với 影响.",
+      "ruleVi": "产生 đi với 影响; 生产 là sản xuất hàng hóa."
+    },
+    {
+      "id": "cc-070",
+      "level": "HSK5-6",
+      "wrong": "他很适应做老师。",
+      "right": "他很适合做老师。",
+      "fix": "很适合做老师",
+      "tags": [
+        "từ vựng"
+      ],
+      "errorVi": "Nhầm 适应 với 适合.",
+      "ruleVi": "适合 là phù hợp với việc gì; 适应 là thích nghi với hoàn cảnh."
+    },
+    {
+      "id": "cc-071",
+      "level": "HSK1-2",
+      "wrong": "我在学习汉雨。",
+      "right": "我在学习汉语。",
+      "fix": "汉语",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 雨 thay 语.",
+      "ruleVi": "语 (yǔ) là tiếng nói; 雨 (yǔ) là mưa — đồng âm khác nghĩa."
+    },
+    {
+      "id": "cc-072",
+      "level": "HSK1-2",
+      "wrong": "他每天坐地贴上班。",
+      "right": "他每天坐地铁上班。",
+      "fix": "地铁",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 贴 thay 铁.",
+      "ruleVi": "铁 (tiě) là sắt; 贴 (tiē) là dán."
+    },
+    {
+      "id": "cc-073",
+      "level": "HSK1-2",
+      "wrong": "请把门官上。",
+      "right": "请把门关上。",
+      "fix": "关上",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 官 thay 关.",
+      "ruleVi": "关 (guān) là đóng lại; 官 (guān) là quan chức."
+    },
+    {
+      "id": "cc-074",
+      "level": "HSK1-2",
+      "wrong": "我今天很类。",
+      "right": "我今天很累。",
+      "fix": "很累",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 类 thay 累.",
+      "ruleVi": "累 (lèi) là mệt; 类 (lèi) là loại."
+    },
+    {
+      "id": "cc-075",
+      "level": "HSK1-2",
+      "wrong": "他是我的好朋有。",
+      "right": "他是我的好朋友。",
+      "fix": "朋友",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 有 thay 友.",
+      "ruleVi": "友 (yǒu) trong 朋友; 有 (yǒu) là có."
+    },
+    {
+      "id": "cc-076",
+      "level": "HSK1-2",
+      "wrong": "我们名天见。",
+      "right": "我们明天见。",
+      "fix": "明天",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 名 thay 明.",
+      "ruleVi": "明 (míng) là sáng, rõ; 名 (míng) là tên."
+    },
+    {
+      "id": "cc-077",
+      "level": "HSK3-4",
+      "wrong": "这个问提很重要。",
+      "right": "这个问题很重要。",
+      "fix": "问题",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 提 thay 题.",
+      "ruleVi": "题 (tí) trong 问题; 提 (tí) là nâng lên hoặc nêu ra."
+    },
+    {
+      "id": "cc-078",
+      "level": "HSK1-2",
+      "wrong": "我住在北经。",
+      "right": "我住在北京。",
+      "fix": "北京",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 经 thay 京.",
+      "ruleVi": "京 (jīng) trong 北京; 经 (jīng) là đi qua, kinh qua."
+    },
+    {
+      "id": "cc-079",
+      "level": "HSK1-2",
+      "wrong": "我们一起吃饭把。",
+      "right": "我们一起吃饭吧。",
+      "fix": "吃饭吧",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 把 thay 吧.",
+      "ruleVi": "吧 là trợ từ cuối câu đề nghị; 把 là giới từ hoặc lượng từ."
+    },
+    {
+      "id": "cc-080",
+      "level": "HSK1-2",
+      "wrong": "他每天写汉宇。",
+      "right": "他每天写汉字。",
+      "fix": "汉字",
+      "tags": [
+        "chữ Hán"
+      ],
+      "errorVi": "Viết 宇 thay 字.",
+      "ruleVi": "字 (zì) là chữ; 宇 (yǔ) trong 宇宙."
+    }
+  ],
+  "correct": [
+    "我买了三本词典。",
+    "他买了两条裤子。",
+    "她养了三只狗。",
+    "桌子上有一张纸。",
+    "我们坐一辆出租车去机场。",
+    "我家有一只猫和两条鱼。",
+    "他给我写了一封信。",
+    "门口有两棵树。",
+    "我昨天看了一部电影。",
+    "她买了一把伞。",
+    "这家公司有三台电脑。",
+    "学校附近有两家银行。",
+    "我在家吃饭。",
+    "他们明天上午开会。",
+    "他在银行工作。",
+    "我在公司很忙。",
+    "他每天喝一点儿咖啡。",
+    "我昨天去过中国。",
+    "我吃完饭了。",
+    "我没把作业做完。",
+    "我被雨淋了。",
+    "我也去。",
+    "只有努力，才能成功。",
+    "即使明天下雨，我们也要去。",
+    "请你明天打电话给他。",
+    "他昨天送了一本书给我。",
+    "我们在会议上讨论这个问题。",
+    "我哥哥在上海工作了三年。",
+    "他昨天从北京来。",
+    "他住在中国三年了。",
+    "这个箱子比那个箱子重。",
+    "既然你病了，就好好休息吧。",
+    "我昨天没去公园。",
+    "我是昨天来的。",
+    "因为下雨，所以我没去。",
+    "不管天气怎么样，我们都去。",
+    "他不但会说汉语，而且会写汉字。",
+    "我跟他见面。",
+    "我帮他搬家。",
+    "我对音乐很感兴趣。",
+    "这个问题对我们很重要。",
+    "我们聊了一会儿天。",
+    "我睡了八个小时。",
+    "我明天会去北京。",
+    "我跟她结婚。",
+    "他生我的气。",
+    "他唱得很好。",
+    "她高兴地说。",
+    "他慢慢地走。",
+    "这是我的书。",
+    "他写的字很漂亮。",
+    "我昨天买了一本书。",
+    "门开着。",
+    "他坐着看书。",
+    "我学了三年汉语。",
+    "我还没吃饭。",
+    "我看得懂中文。",
+    "这本书是我买的。",
+    "多练习能提高你的汉语水平。",
+    "他帮了我很多，我很感谢他。",
+    "我们交换了电话号码。",
+    "我想问你一个问题。",
+    "我参加了朋友的婚礼。",
+    "他很有经验，什么都知道。",
+    "他喜欢开玩笑。",
+    "我知道他的名字。",
+    "我们周末去拜访老师。",
+    "科学家发现了一种新元素。",
+    "这个政策产生了很大的影响。",
+    "他很适合做老师。",
+    "我在学习汉语。",
+    "他每天坐地铁上班。",
+    "请把门关上。",
+    "我今天很累。",
+    "他是我的好朋友。",
+    "我们明天见。",
+    "这个问题很重要。",
+    "我住在北京。",
+    "我们一起吃饭吧。",
+    "他每天写汉字。"
+  ],
+  "wrong": [
+    [
+      "我买了三个词典。",
+      "三本词典"
+    ],
+    [
+      "他买了两件裤子。",
+      "两条裤子"
+    ],
+    [
+      "她养了三条狗。",
+      "三只狗"
+    ],
+    [
+      "桌子上有一个纸。",
+      "一张纸"
+    ],
+    [
+      "我们坐一个出租车去机场。",
+      "一辆出租车"
+    ],
+    [
+      "我家有一只猫和两个鱼。",
+      "两条鱼"
+    ],
+    [
+      "他给我写了一个信。",
+      "一封信"
+    ],
+    [
+      "门口有两个树。",
+      "两棵树"
+    ],
+    [
+      "我昨天看了一个电影。",
+      "一部电影"
+    ],
+    [
+      "她买了一个伞。",
+      "一把伞"
+    ],
+    [
+      "这家公司有三个电脑。",
+      "三台电脑"
+    ],
+    [
+      "学校附近有两个银行。",
+      "两家银行"
+    ],
+    [
+      "我吃饭在家。",
+      "我在家吃饭"
+    ],
+    [
+      "他们开会明天上午。",
+      "明天上午开会"
+    ],
+    [
+      "他工作在银行。",
+      "他在银行工作"
+    ],
+    [
+      "我很忙在公司。",
+      "我在公司很忙"
+    ],
+    [
+      "他每天喝咖啡一点儿。",
+      "喝一点儿咖啡"
+    ],
+    [
+      "我昨天去中国过。",
+      "去过中国"
+    ],
+    [
+      "我吃饭完了。",
+      "吃完饭了"
+    ],
+    [
+      "我把作业没做完。",
+      "我没把作业做完"
+    ],
+    [
+      "我淋被雨了。",
+      "我被雨淋了"
+    ],
+    [
+      "我去也。",
+      "我也去"
+    ],
+    [
+      "只有努力，就能成功。",
+      "才能成功"
+    ],
+    [
+      "即使明天下雨，但是我们也要去。",
+      "即使明天下雨，我们也要去"
+    ],
+    [
+      "请你打电话给他明天。",
+      "请你明天打电话给他"
+    ],
+    [
+      "他送了一本书给我昨天。",
+      "他昨天送了一本书给我"
+    ],
+    [
+      "我们讨论这个问题在会议上。",
+      "我们在会议上讨论这个问题"
+    ],
+    [
+      "我哥哥工作了三年在上海。",
+      "在上海工作了三年"
+    ],
+    [
+      "他从北京来昨天。",
+      "他昨天从北京来"
+    ],
+    [
+      "他住了在中国三年。",
+      "住在中国三年了"
+    ],
+    [
+      "这个箱子比那个箱子很重。",
+      "比那个箱子重"
+    ],
+    [
+      "既然你病了，但是好好休息吧。",
+      "就好好休息吧"
+    ],
+    [
+      "我昨天没去了公园。",
+      "没去公园"
+    ],
+    [
+      "我是昨天来。",
+      "我是昨天来的"
+    ],
+    [
+      "因为下雨，我没去所以。",
+      "所以我没去"
+    ],
+    [
+      "不管天气怎么样，但是我们都去。",
+      "不管天气怎么样，我们都去"
+    ],
+    [
+      "不但他会说汉语，而且会写汉字。",
+      "他不但会说汉语"
+    ],
+    [
+      "我见面他。",
+      "跟他见面"
+    ],
+    [
+      "我帮忙他搬家。",
+      "帮他搬家"
+    ],
+    [
+      "我很感兴趣音乐。",
+      "我对音乐很感兴趣"
+    ],
+    [
+      "这个问题很重要对我们。",
+      "对我们很重要"
+    ],
+    [
+      "我们聊天了一会儿。",
+      "聊了一会儿天"
+    ],
+    [
+      "我睡觉了八个小时。",
+      "睡了八个小时"
+    ],
+    [
+      "我明天会去了北京。",
+      "会去北京"
+    ],
+    [
+      "我结婚她。",
+      "跟她结婚"
+    ],
+    [
+      "他生气我。",
+      "生我的气"
+    ],
+    [
+      "他唱歌得很好。",
+      "唱得很好"
+    ],
+    [
+      "她高兴得说。",
+      "高兴地说"
+    ],
+    [
+      "他慢慢得走。",
+      "慢慢地走"
+    ],
+    [
+      "这是我书。",
+      "这是我的书"
+    ],
+    [
+      "他写地字很漂亮。",
+      "他写的字很漂亮"
+    ],
+    [
+      "我昨天买一本书了。",
+      "买了一本书"
+    ],
+    [
+      "门开了着。",
+      "门开着"
+    ],
+    [
+      "他坐看书着。",
+      "他坐着看书"
+    ],
+    [
+      "我学了汉语三年。",
+      "学了三年汉语"
+    ],
+    [
+      "我还吃饭没。",
+      "还没吃饭"
+    ],
+    [
+      "我看懂中文得。",
+      "看得懂中文"
+    ],
+    [
+      "这本书是我买。",
+      "是我买的"
+    ],
+    [
+      "多练习能增加你的汉语水平。",
+      "提高你的汉语水平"
+    ],
+    [
+      "他帮了我很多，我很感觉他。",
+      "很感谢他"
+    ],
+    [
+      "我们交流了电话号码。",
+      "交换了电话号码"
+    ],
+    [
+      "我想问你一个疑问。",
+      "一个问题"
+    ],
+    [
+      "我参加了朋友的结婚。",
+      "朋友的婚礼"
+    ],
+    [
+      "他很有经历，什么都知道。",
+      "很有经验"
+    ],
+    [
+      "他喜欢开笑话。",
+      "开玩笑"
+    ],
+    [
+      "我认识他的名字。",
+      "知道他的名字"
+    ],
+    [
+      "我们周末去参观老师。",
+      "拜访老师"
+    ],
+    [
+      "科学家发明了一种新元素。",
+      "发现了一种新元素"
+    ],
+    [
+      "这个政策生产了很大的影响。",
+      "产生了很大的影响"
+    ],
+    [
+      "他很适应做老师。",
+      "很适合做老师"
+    ],
+    [
+      "我在学习汉雨。",
+      "汉语"
+    ],
+    [
+      "他每天坐地贴上班。",
+      "地铁"
+    ],
+    [
+      "请把门官上。",
+      "关上"
+    ],
+    [
+      "我今天很类。",
+      "很累"
+    ],
+    [
+      "他是我的好朋有。",
+      "朋友"
+    ],
+    [
+      "我们名天见。",
+      "明天"
+    ],
+    [
+      "这个问提很重要。",
+      "问题"
+    ],
+    [
+      "我住在北经。",
+      "北京"
+    ],
+    [
+      "我们一起吃饭把。",
+      "吃饭吧"
+    ],
+    [
+      "他每天写汉宇。",
+      "汉字"
+    ]
+  ]
+}

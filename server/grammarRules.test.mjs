@@ -20,11 +20,25 @@ test('catches common word-order and measure-word errors', () => {
 
 test('leaves correct look-alikes alone', () => {
   for (const sentence of [
-    '我住在河内。', '书放在桌子上。', '他坐在椅子上。', '我在公司很忙。',
-    '我好久没去了。', '没有办法了。', '我还没吃饭。',
-    '我比较喜欢喝茶。', '这场比赛很精彩。', '他比我高多了。', '比如说，你可以早点儿来。',
-    '我们明天见。', '我今天很忙。', '我最喜欢的是明天。', '我买了一本书。', '这个人很好。',
-    '你最近压力很大吗？', '我会说一点儿中文。', '他每天在家吃早饭。',
+    '我住在河内。',
+    '书放在桌子上。',
+    '他坐在椅子上。',
+    '我在公司很忙。',
+    '我好久没去了。',
+    '没有办法了。',
+    '我还没吃饭。',
+    '我比较喜欢喝茶。',
+    '这场比赛很精彩。',
+    '他比我高多了。',
+    '比如说，你可以早点儿来。',
+    '我们明天见。',
+    '我今天很忙。',
+    '我最喜欢的是明天。',
+    '我买了一本书。',
+    '这个人很好。',
+    '你最近压力很大吗？',
+    '我会说一点儿中文。',
+    '他每天在家吃早饭。',
   ]) {
     assert.deepEqual(fixes(sentence), [], sentence);
   }
@@ -36,5 +50,17 @@ test('rule fixes come first and overlapping model fixes are dropped', () => {
     { original: '忙在公司', corrected: '在公司忙', explanation: '', category: 'word_order' },
     { original: '经常加班', corrected: '常常加班', explanation: '', category: 'word_choice' },
   ];
-  assert.deepEqual(mergeCorrections(rule, model).map((c) => c.original), ['很忙在公司', '经常加班']);
+  assert.deepEqual(
+    mergeCorrections(rule, model).map((c) => c.original),
+    ['很忙在公司', '经常加班'],
+  );
+});
+
+test('every active rule has zero false positives on the merged AI evaluation and local look-alikes', async () => {
+  const fs = await import('node:fs');
+  const { activeRules } = await import('./grammarRules.mjs');
+  const cases = JSON.parse(fs.readFileSync(new URL('../eval/corrections.json', import.meta.url), 'utf8'));
+  for (const { id, apply } of activeRules) for (const text of cases.correct) assert.equal(apply(text), null, `${id}: ${text}`);
+  assert.ok(ruleCorrections('我是昨天来。').length);
+  assert.ok(ruleCorrections('我吃饭也。').length);
 });
