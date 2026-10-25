@@ -1,0 +1,9 @@
+# keep LF everywhere (Windows checkouts otherwise get CRLF and fail format:check)
+* text=auto eol=lf
+*.glb binary
+*.zip binary
+*.png binary
+*.gif binary
+*.jpg binary
+*.mp3 binary
+*.wav binary
