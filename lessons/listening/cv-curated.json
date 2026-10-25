@@ -1,0 +1,1416 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "cv-curated",
+  "version": 1,
+  "note": "Câu chọn từ Common Voice zh-CN (bản Bắc Kinh) cho người học Việt. File chỉ giữ sentence_id để app tự nối với kho audio gốc; không chứa đường dẫn file, client_id hay audio. Đã loại tên riêng, địa danh và câu bách khoa; level là ước lượng biên tập theo độ dài và độ khó từ vựng.",
+  "levels": [
+    "HSK1-2",
+    "HSK3-4",
+    "HSK5-6"
+  ],
+  "schema": {
+    "sentence_id": "mã 64 ký tự hex, khóa để nối với kho Common Voice gốc",
+    "level": "HSK1-2 | HSK3-4 | HSK5-6",
+    "meaningVi": "nghĩa tiếng Việt tự nhiên của câu",
+    "focus": "mảng: điểm cần nghe ra (thanh, biến điệu, thanh nhẹ, lượng từ, cấu trúc)"
+  },
+  "items": [
+    {
+      "sentence_id": "c9ed17d16b6f877474d504264475d5877d8f329da50a429eed69d84ca7f8aeaa",
+      "level": "HSK1-2",
+      "meaningVi": "Họ đến rồi!",
+      "focus": [
+        "Câu cảm thán ngắn; 了 báo việc đã xảy ra, đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "5e006997882af33a5815edd3603157609409134997e27d179612ac2ab6b67d28",
+      "level": "HSK1-2",
+      "meaningVi": "Ông ấy là bố tôi.",
+      "focus": [
+        "是 nối hai cụm danh từ, thanh 4 rơi thẳng.",
+        "父亲 fù qīn: thanh 4 + 1, khác 附近 fù jìn."
+      ]
+    },
+    {
+      "sentence_id": "f678c19408e758da814c4df81014010a024b4384178a0966e9dadf3c92e65084",
+      "level": "HSK1-2",
+      "meaningVi": "Chúng ta cùng thưởng thức.",
+      "focus": [
+        "一起 yì qǐ: 一 đổi thanh 4 trước thanh 3.",
+        "享用 là từ trang trọng hơn 吃, dùng cho món ăn ngon."
+      ]
+    },
+    {
+      "sentence_id": "dd454dad7ea6e4ab77797ce2aae1d1ad265bd2dca027243ddc94eb61d12b639e",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi thật sự rất thích anh ấy.",
+      "focus": [
+        "真的 nhấn mạnh, 的 đọc nhẹ.",
+        "喜欢 xǐ huan: 欢 đọc thanh nhẹ, không phải huān."
+      ]
+    },
+    {
+      "sentence_id": "4aeec0ecbbfb9a625ecc520e2b2542e9fb005b0854d2566e3e6c7723ee4bca06",
+      "level": "HSK1-2",
+      "meaningVi": "Đi tìm cô ấy để ăn chút gì đó.",
+      "focus": [
+        "找 zhǎo thanh 3, khác 早 zǎo.",
+        "吃点儿化 thành chī diǎnr trong khẩu ngữ."
+      ]
+    },
+    {
+      "sentence_id": "00a0fbd251c1406cbaae8147eb3de19553d8c7380137170f0c49cdd7fa7e85da",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi sẽ đưa bạn về nhà, bạn ạ.",
+      "focus": [
+        "带 dài + người: dẫn ai đi.",
+        "回家 huí jiā: 回 thanh 2, không phải hui."
+      ]
+    },
+    {
+      "sentence_id": "4a248ce4ba949395d7783ab1b6fb2d7b493d1e228e15f41e72ac304f8ae684e9",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi thật sự sẽ không đi sao?",
+      "focus": [
+        "就 jiù nhấn mạnh thái độ, thanh 4.",
+        "不会 bú huì: 不 đổi thanh 2 trước thanh 4."
+      ]
+    },
+    {
+      "sentence_id": "40d34b3f69cb8adcada08705ab645084d5b286f5b3b3cea0f64f80d420ce0b08",
+      "level": "HSK1-2",
+      "meaningVi": "Quảng cáo cũng nhiều quá nhỉ.",
+      "focus": [
+        "也...吧: vừa phàn nàn vừa giảm nhẹ giọng.",
+        "广告 guǎng gào: 告 đọc thanh nhẹ trong từ này."
+      ]
+    },
+    {
+      "sentence_id": "170739d887cfffddb0ade5522fd434e40b25281576bbc86d7fbf5855cee888c6",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi ra ngoài tìm thử.",
+      "focus": [
+        "出来 chỉ hướng ra ngoài; 找找 lặp động từ để giảm nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "3d92e637a6b5d3357e558d63fedce1f3fb70507e6540e3b9808de717a9d92c4f",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi gọi người đến giúp.",
+      "focus": [
+        "叫 + người + 来: gọi ai đến.",
+        "帮手 là danh từ, khác 帮忙 là động từ."
+      ]
+    },
+    {
+      "sentence_id": "1a9c3d5af9a386e613aa20b8349d0ae8833b5978a90386cabd2681276b49a150",
+      "level": "HSK1-2",
+      "meaningVi": "Hẹn gặp ở buổi biểu diễn nhé!",
+      "focus": [
+        "演唱会 yǎn chàng huì: ba âm, trọng âm ở 唱.",
+        "见 jiàn thanh 4, không phải jiǎn."
+      ]
+    },
+    {
+      "sentence_id": "5e9001a45af10f50577fbcb8ca590a8766cf2a6f34316b71bc918fc9fc13068a",
+      "level": "HSK1-2",
+      "meaningVi": "Họ xông vào rồi.",
+      "focus": [
+        "冲 chōng + 进来: xông vào phía người nói.",
+        "了 đọc nhẹ, báo hoàn thành."
+      ]
+    },
+    {
+      "sentence_id": "10472a82edaace1f766ced5889181ddf80119a9678db4f5de7c53aa73f42974b",
+      "level": "HSK1-2",
+      "meaningVi": "Ở ngoài đồng cũng cần giúp.",
+      "focus": [
+        "田里 tián lǐ: 田 thanh 2, khác 天 tiān.",
+        "需 xū là từ viết, khẩu ngữ hay dùng 需要."
+      ]
+    },
+    {
+      "sentence_id": "6939d83054ea31b7bc13bd5698e4ed2c24f94bffd26fed5c4889d147a2959f82",
+      "level": "HSK1-2",
+      "meaningVi": "Cảm thấy trong lòng ấm áp.",
+      "focus": [
+        "觉得 jué de: 得 đọc nhẹ.",
+        "暖暖的 nuǎn nuǎn de: tính từ lặp, 的 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "1608f0bf56486f2abd7e285d1dfc5335d211ac2d7551955532db12bbb9f2ce20",
+      "level": "HSK1-2",
+      "meaningVi": "Mẹ tôi đưa tôi đi khám bệnh.",
+      "focus": [
+        "带 + 去 + 看医生: chuỗi động từ, không cần 和.",
+        "看医生 là cụm cố định, nghĩa là đi khám."
+      ]
+    },
+    {
+      "sentence_id": "57fc03c3c92baf11d6125160033d6e4acf2792c8a23bf33f165429632227c263",
+      "level": "HSK1-2",
+      "meaningVi": "Đây là câu cuối cùng của tôi.",
+      "focus": [
+        "最后 zuì hòu: 最 thanh 4.",
+        "句 jù là lượng từ cho lời nói."
+      ]
+    },
+    {
+      "sentence_id": "18ac95365968636b7975c21999ec1f5698b0ffcb66766a984177236c2421c208",
+      "level": "HSK1-2",
+      "meaningVi": "Sáng mai uống cà phê thay bữa sáng.",
+      "focus": [
+        "当 dàng: làm, thay cho; thanh 4.",
+        "早上 zǎo shang: 上 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "30624107ce7664fc2b451d370910cf38faf7591ef76775ae00ca35ed6694a805",
+      "level": "HSK1-2",
+      "meaningVi": "Cà phê ngon, bánh điểm tâm cũng rất ngon.",
+      "focus": [
+        "好喝 hǎo hē dùng cho đồ uống; 好吃 hǎo chī dùng cho đồ ăn.",
+        "点心 diǎn xin: 心 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "19cf1391ee50f8d6210544d1f7e95a74189f0385e9fa00fc5c1dd0c5f94c11b6",
+      "level": "HSK1-2",
+      "meaningVi": "Nhìn cậu ấy lớn lên.",
+      "focus": [
+        "着 zhe: trạng thái đang diễn ra, đọc nhẹ.",
+        "长大 zhǎng dà: 长 thanh 3, không phải cháng."
+      ]
+    },
+    {
+      "sentence_id": "19e7f583053a78856734e02b841c0cc6a9a3f425fa6c3a7d257221e93a07620a",
+      "level": "HSK1-2",
+      "meaningVi": "Kết quả là họ nói không được.",
+      "focus": [
+        "结果 jié guǒ: kết quả, thanh 2 + 3.",
+        "可以 kě yǐ: hai thanh 3, đọc thành ké yǐ."
+      ]
+    },
+    {
+      "sentence_id": "47631685621f6ff2dd229ee1ed9184b4cfeed93be15b73044a43f89a20651d06",
+      "level": "HSK1-2",
+      "meaningVi": "Cô ấy đặt điện thoại lên bàn rồi đi ngủ.",
+      "focus": [
+        "把 bǎ đưa tân ngữ lên trước động từ.",
+        "手机 shǒu jī: 机 thanh 1.",
+        "然后 rán hòu: sau đó."
+      ]
+    },
+    {
+      "sentence_id": "7ea0738713be4772b5c88c67ad671efd0cfff2149c92931e166e34f0024b2130",
+      "level": "HSK1-2",
+      "meaningVi": "Bạn xuống dưới nhà bác gái mua ba quả táo về.",
+      "focus": [
+        "那儿 ràr: khẩu ngữ, chỉ nơi chốn.",
+        "三个 sān ge: 个 đọc nhẹ.",
+        "苹果 píng guǒ: hai thanh 2 + 3."
+      ]
+    },
+    {
+      "sentence_id": "d6f06982c0a305d4e43cf599e50bb95db5df00fab7a1c06a6b13750ea0d85455",
+      "level": "HSK1-2",
+      "meaningVi": "Thời gian hoạt động là hai ngày một đêm.",
+      "focus": [
+        "为 wéi ở đây nghĩa là “là”.",
+        "两天一夜 liǎng tiān yí yè: 一 đổi thanh 2 trước thanh 4."
+      ]
+    },
+    {
+      "sentence_id": "00085167a36b7fd5d9fbf8b465d8d374a6afd218716cc260f3c281f858741d69",
+      "level": "HSK1-2",
+      "meaningVi": "Nông trại này mở cửa cho khách tham quan.",
+      "focus": [
+        "对 duì + đối tượng: hướng tới ai.",
+        "游客 yóu kè: khách du lịch."
+      ]
+    },
+    {
+      "sentence_id": "02c84050c3b681a0c895fea2b9fa8fcc67fdadbde5b9755bdf7f68b0ae5ff315",
+      "level": "HSK1-2",
+      "meaningVi": "Bảo tàng có thể vào cửa miễn phí.",
+      "focus": [
+        "博物馆 bó wù guǎn: 物 thanh 4.",
+        "免费 miǎn fèi: miễn phí."
+      ]
+    },
+    {
+      "sentence_id": "00bbd377f450ffdb7aa4218525f4b670338781f0d2ed258fa55e36231605c695",
+      "level": "HSK1-2",
+      "meaningVi": "Mọi người đều đang nhảy múa.",
+      "focus": [
+        "所有人 + 都: tất cả đều.",
+        "在 + động từ: đang làm gì."
+      ]
+    },
+    {
+      "sentence_id": "ce4e4ed36df8dde8a00331ad48f7c050764d5b1063a03d58b16470c4092b781d",
+      "level": "HSK1-2",
+      "meaningVi": "Thời hạn hợp đồng là ba năm.",
+      "focus": [
+        "合同 hé tong: 同 đọc nhẹ.",
+        "期 qī: kỳ hạn, thanh 1."
+      ]
+    },
+    {
+      "sentence_id": "be868cce0433a4da9928608e299d2d5ee9ca88e222741a2ac6efd2a14f6e6660",
+      "level": "HSK1-2",
+      "meaningVi": "Ngành du lịch hưng thịnh.",
+      "focus": [
+        "旅游业 lǚ yóu yè: ngành du lịch.",
+        "兴盛 xīng shèng: hưng thịnh."
+      ]
+    },
+    {
+      "sentence_id": "07c2b1084fc495b7533d14c3ec7b123541e910f574903e2a6f355dce2951451d",
+      "level": "HSK1-2",
+      "meaningVi": "Đã tham gia diễn xuất trong phim.",
+      "focus": [
+        "参演 cān yǎn: tham gia diễn xuất.",
+        "了 đọc nhẹ, báo hoàn thành."
+      ]
+    },
+    {
+      "sentence_id": "b7c374207e7d1ae12e2aba2a19db2d68cebd0f12e6cae6e1614ad2383cf90f8a",
+      "level": "HSK1-2",
+      "meaningVi": "Chỉ còn lại mấy phút.",
+      "focus": [
+        "只 zhǐ: chỉ, thanh 3.",
+        "剩下 shèng xià: còn lại."
+      ]
+    },
+    {
+      "sentence_id": "c9fc33404c5cea7d47b6805c1d4f080eaa4e69e2d4ee04a86ebd659dcbb0f158",
+      "level": "HSK1-2",
+      "meaningVi": "Toàn bộ người tham gia đều bình an.",
+      "focus": [
+        "参加者 cān jiā zhě: người tham gia.",
+        "全员 quán yuán: toàn bộ thành viên."
+      ]
+    },
+    {
+      "sentence_id": "1c4584ab7dfebec46cfeb1847ee9cdae6316e4f4ba0e65b0955e3dc99e762dd5",
+      "level": "HSK1-2",
+      "meaningVi": "Cuối cùng anh ấy cũng đồng ý.",
+      "focus": [
+        "终于 zhōng yú: cuối cùng, thanh 1 + 2.",
+        "同意 tóng yì: 同 thanh 2."
+      ]
+    },
+    {
+      "sentence_id": "5b8af3802452dc0b520c6f1f59025858af374aa034262df01d03ed7cbb27aee3",
+      "level": "HSK1-2",
+      "meaningVi": "Sau đó anh ấy cũng đồng ý.",
+      "focus": [
+        "后来 hòu lái: sau đó, về sau.",
+        "也 yě thanh 3, đọc rõ khi đứng một mình."
+      ]
+    },
+    {
+      "sentence_id": "3d319bc9ac2d7a3647b523b338e2927f1a6844cb1c93f659860010a61a50c782",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi cũng nghĩ như vậy.",
+      "focus": [
+        "这么 zhè me: 么 đọc nhẹ.",
+        "想 xiǎng thanh 3."
+      ]
+    },
+    {
+      "sentence_id": "39a7940437eae21f35e9a2d64ddb5eb3fa6bf813e25e5a76877aa8252cbbc68d",
+      "level": "HSK1-2",
+      "meaningVi": "Nhất định phải nghĩ ra cách.",
+      "focus": [
+        "一定 yí dìng: 一 đổi thanh 2 trước thanh 4.",
+        "办法 bàn fǎ: cách làm."
+      ]
+    },
+    {
+      "sentence_id": "286473a9aea42997ec228f8328d4e4c924b740caabc781b28aee32fe866f2a94",
+      "level": "HSK1-2",
+      "meaningVi": "Một ngày nào đó bạn sẽ hiểu.",
+      "focus": [
+        "有一天 yǒu yì tiān: 一 đổi thanh 4 trước thanh 1.",
+        "明白 míng bai: 白 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "3da70d4438d6d2f533bb21a6ffe8c5395e799d184058872774b6301e1b2af981",
+      "level": "HSK1-2",
+      "meaningVi": "Đây là lý do của tôi.",
+      "focus": [
+        "原因 yuán yīn: nguyên nhân, thanh 2 + 1."
+      ]
+    },
+    {
+      "sentence_id": "03f8e5b3ab286707ab851de7ee13d65c4ce80b437b93155ccc2547f3b665ed4b",
+      "level": "HSK1-2",
+      "meaningVi": "Về quê tôi xem thử.",
+      "focus": [
+        "家乡 jiā xiāng: quê hương.",
+        "看看 lặp động từ, việc làm nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "8d332ee4a55d154b5ed9f9c44574b1779e199b8ff69d5874aea40fef763b0e75",
+      "level": "HSK1-2",
+      "meaningVi": "Không sao, không việc gì là tốt rồi.",
+      "focus": [
+        "没关系 méi guān xi: 系 đọc nhẹ.",
+        "就好 jiù hǎo: như vậy là được."
+      ]
+    },
+    {
+      "sentence_id": "ce59c631281501c511dc0b235b79a4bccfc87682b9fd413b674c3f577dc0664d",
+      "level": "HSK1-2",
+      "meaningVi": "Tôi sẽ giao cho bạn một nhiệm vụ.",
+      "focus": [
+        "给 gěi + người + vật: đưa cho ai cái gì.",
+        "任务 rèn wu: 务 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "06f5469416961a534083ecc484c6ed5379a1068d2c878ad115430c5eb6fd0086",
+      "level": "HSK1-2",
+      "meaningVi": "Đã tra qua bản ghi một chút.",
+      "focus": [
+        "查 chá: tra cứu, thanh 2.",
+        "一下 yí xià: 一 đổi thanh 2 trước thanh 4."
+      ]
+    },
+    {
+      "sentence_id": "2c41d635e2cedcb6737f2a62899b088203c8a39a50755ba810faa8c0a8eabd51",
+      "level": "HSK1-2",
+      "meaningVi": "Một mình đến đây.",
+      "focus": [
+        "独自 dú zì: một mình.",
+        "这里 zhè lǐ: chỗ này."
+      ]
+    },
+    {
+      "sentence_id": "3d7b7453674faf31ba716430a8b8b90ac8f4eb3ba20e9d975c68ee870a0e3d9d",
+      "level": "HSK1-2",
+      "meaningVi": "Mở bao bì ra.",
+      "focus": [
+        "将 jiāng = 把, đưa tân ngữ lên trước.",
+        "包装 bāo zhuāng: bao bì."
+      ]
+    },
+    {
+      "sentence_id": "41073d374f536d544a8975d551e3d1a9bb4e15b11e61a1d272596d14621e9cee",
+      "level": "HSK1-2",
+      "meaningVi": "Bố là thủy thủ.",
+      "focus": [
+        "父亲 fù qīn: bố, trang trọng hơn 爸爸.",
+        "海员 hǎi yuán: thủy thủ."
+      ]
+    },
+    {
+      "sentence_id": "3cdd35035425512495c797b27cba1b3f9b58db18b962bfbd8485dd5afb6183df",
+      "level": "HSK1-2",
+      "meaningVi": "Cháu trai cũng lớn rồi.",
+      "focus": [
+        "孙子 sūn zi: 子 đọc nhẹ.",
+        "都 dōu: đều, thanh 1."
+      ]
+    },
+    {
+      "sentence_id": "001434793ca261c00612b3e5af3bcf59b76e57c7cf7cf2a96787d95ef7555eeb",
+      "level": "HSK3-4",
+      "meaningVi": "Anh ấy nói chuyện rất nhẹ nhàng.",
+      "focus": [
+        "地 de nối trạng ngữ với động từ, đọc nhẹ.",
+        "轻柔 qīng róu: nhẹ nhàng."
+      ]
+    },
+    {
+      "sentence_id": "19404c770c2e43acd27b99eeaa9951063a012c3a0ae8bf69b35797973c53fc26",
+      "level": "HSK3-4",
+      "meaningVi": "Nhà hàng có chỗ đỗ xe miễn phí.",
+      "focus": [
+        "可享 kě xiǎng: được hưởng, từ viết.",
+        "停车 tíng chē: đỗ xe."
+      ]
+    },
+    {
+      "sentence_id": "b10c89b0a94a2a1e7dd0b74a13df2f2de8c51ee568a9316a8daf1f1cd29728af",
+      "level": "HSK3-4",
+      "meaningVi": "Ăn bánh ngọt mềm xong bụng kêu ọc ọc.",
+      "focus": [
+        "了 sau động từ báo việc hoàn thành.",
+        "肚子 dù zi: 子 đọc nhẹ.",
+        "咕噜叫 gū lū jiào: từ tượng thanh."
+      ]
+    },
+    {
+      "sentence_id": "0ffe44e2b41f4caa7e6136a98093eeeb592b4ef1e686c4ef95dfa7bf7afe831a",
+      "level": "HSK3-4",
+      "meaningVi": "Hy vọng anh ấy có thể đổi ý.",
+      "focus": [
+        "能够 néng gòu: có thể, trang trọng hơn 能.",
+        "改变心意 gǎi biàn xīn yì: đổi ý."
+      ]
+    },
+    {
+      "sentence_id": "3d4ca09b488d5de39220746fd70c0757d590f5711ff5fb76806b0a9ffdf64849",
+      "level": "HSK3-4",
+      "meaningVi": "Như vậy chúng ta có thể hẹn lại.",
+      "focus": [
+        "这样的话: nếu như vậy.",
+        "再约 zài yuē: hẹn lại; 再 thanh 4."
+      ]
+    },
+    {
+      "sentence_id": "6ad6fe6da208fe494d29aa4342c90e280ca4efbeed18c6a1c798a2b6ce55e3ea",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi quên mất bên trong viết thế nào rồi.",
+      "focus": [
+        "忘了...了: quên mất rồi.",
+        "是怎么写的: viết như thế nào; 的 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "1bab15293a11831086786812772a3563710eabeaed5462efe53597af5721f712",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi còn tưởng ghế tự do sẽ hết chỗ.",
+      "focus": [
+        "还以为 hái yǐ wéi: tưởng nhầm.",
+        "自由席 zì yóu xí: ghế tự do.",
+        "位子 wèi zi: chỗ ngồi."
+      ]
+    },
+    {
+      "sentence_id": "3b55efc5b6e7a44b01f2c5f503a1a4fa1db22719779375d48a78c5c280636114",
+      "level": "HSK3-4",
+      "meaningVi": "Cô ấy mỗi ngày dắt con gái nhỏ đi bộ đến trường.",
+      "focus": [
+        "带 + người + 走路: dắt ai đi bộ.",
+        "上学 shàng xué: đến trường."
+      ]
+    },
+    {
+      "sentence_id": "13ca80dda04fda0be57ce03249093131e29cafad4be5ac9ea8edea35b9975d1d",
+      "level": "HSK3-4",
+      "meaningVi": "Lo con trai có làm việc tử tế không.",
+      "focus": [
+        "有没有: có... không.",
+        "好好 hǎo hǎo: tử tế, cẩn thận."
+      ]
+    },
+    {
+      "sentence_id": "70a9bf5588c16e8a12d200304ea9ec64e67c5fcecdbc34219a828789c72d1a72",
+      "level": "HSK3-4",
+      "meaningVi": "Chưa từng nghe đĩa quang là gì à?",
+      "focus": [
+        "没...过: chưa từng.",
+        "光碟 guāng dié: đĩa quang."
+      ]
+    },
+    {
+      "sentence_id": "28b7487f07256911718f5f681f402b6823e05cc6b26706a9df7f15dfacd430b0",
+      "level": "HSK3-4",
+      "meaningVi": "Hai người có hai cô con gái.",
+      "focus": [
+        "有着 yǒu zhe: có (trang trọng).",
+        "两个女儿: hai con gái; 个 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "13e013ca0c28fb2bf3791b0d9099c5e913a6d23effaeccc8ab51a4cb14c4e388",
+      "level": "HSK3-4",
+      "meaningVi": "Mọi người đều thấy tiếc cho anh ấy.",
+      "focus": [
+        "为 wèi + người: vì ai.",
+        "可惜 kě xī: đáng tiếc."
+      ]
+    },
+    {
+      "sentence_id": "1ee4e7a142c5b0f67d96414994bbef6f1f9206510fbce22f56e017038c38155a",
+      "level": "HSK3-4",
+      "meaningVi": "Đến lúc đó ra ga thế nào thì không biết.",
+      "focus": [
+        "到时候 dào shí hou: đến lúc đó; 候 đọc nhẹ.",
+        "出站 chū zhàn: ra khỏi ga."
+      ]
+    },
+    {
+      "sentence_id": "3de5603372cd5f5ec61dde892327d078581448d42f460465bf2dc8a654638e0a",
+      "level": "HSK3-4",
+      "meaningVi": "Quyết định xin mẹ ít tiền để bên mình.",
+      "focus": [
+        "向 xiàng + người: hướng tới, xin từ ai.",
+        "拿些钱 ná xiē qián: lấy ít tiền."
+      ]
+    },
+    {
+      "sentence_id": "00de708d90e2afd65d22700865e55a221295eed002933a6b8bc25a8e57f9eba5",
+      "level": "HSK3-4",
+      "meaningVi": "Thật quá nực cười, cô ấy tự nhủ.",
+      "focus": [
+        "可笑 kě xiào: nực cười.",
+        "对自己说: tự nói với mình."
+      ]
+    },
+    {
+      "sentence_id": "94445d3981f9df3bb6ee29c48826d616823252d355a8a46b2389b89d6fb2dfe2",
+      "level": "HSK3-4",
+      "meaningVi": "Chưa từng có ai nhìn thấy dáng vẻ của anh ấy.",
+      "focus": [
+        "从来 cóng lái: từ trước đến nay.",
+        "模样 mú yàng: dáng vẻ."
+      ]
+    },
+    {
+      "sentence_id": "5296aa17e9439416d4f83a4ed29e734fc32a4519c96b0abbd5e32ace81fac5cb",
+      "level": "HSK3-4",
+      "meaningVi": "Cuối cùng còn nói cảm ơn mọi người đã phối hợp.",
+      "focus": [
+        "配合 pèi hé: phối hợp.",
+        "大家 dà jiā: mọi người."
+      ]
+    },
+    {
+      "sentence_id": "0804ea7b6c33ea280f3d7faf2fd0a08a9f80c0d02d417a7cc6fd4fdf8e5420e6",
+      "level": "HSK3-4",
+      "meaningVi": "Bạn có biết mai là bắt đầu quay rồi không?",
+      "focus": [
+        "知不知道: có biết hay không.",
+        "就要 jiù yào: sắp, sắp phải."
+      ]
+    },
+    {
+      "sentence_id": "9a8d6e9423350c051d6d532d4122bdfc50d26d5915801d8660348799167a28ef",
+      "level": "HSK3-4",
+      "meaningVi": "Dạo này nghe nói anh ấy bắt đầu đi làm rồi.",
+      "focus": [
+        "这阵子 zhè zhèn zi: dạo này.",
+        "听说 tīng shuō: nghe nói."
+      ]
+    },
+    {
+      "sentence_id": "1c41c34482501a1a505e9c4fb1275f31f4cbd906ed33f209f130fc3c3cd409f0",
+      "level": "HSK3-4",
+      "meaningVi": "Anh ấy biết cô ấy nổi giận rồi.",
+      "focus": [
+        "动怒 dòng nù: nổi giận (từ viết).",
+        "了 đọc nhẹ, báo thay đổi trạng thái."
+      ]
+    },
+    {
+      "sentence_id": "beef5321b1df5706164a1580373b5267d91ddccd9fff364cc9ecd9cc0d5a8d66",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi lại làm chuyện khiến bạn không vui à?",
+      "focus": [
+        "又 yòu: lại (lần nữa).",
+        "让 + người + tính từ: khiến ai thế nào."
+      ]
+    },
+    {
+      "sentence_id": "00a8eeb0b3eec0fef494c6ac4dda32cf164104e264e8f22aa21ed715383f8bb5",
+      "level": "HSK3-4",
+      "meaningVi": "Cho tôi ít cà rốt và rau khác, tôi đi cho thỏ ăn.",
+      "focus": [
+        "一些 yì xiē: một ít; 一 đổi thanh 2 hoặc 4 tùy tốc độ.",
+        "喂 wèi: cho ăn, thanh 4."
+      ]
+    },
+    {
+      "sentence_id": "15399910e4e6774fa77f02d519513b94305fe2aaedd572ea154c915602e60bf4",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi chia tay bạn trai rồi, hôm qua tôi khóc cả đêm.",
+      "focus": [
+        "跟 gēn + người: với ai.",
+        "整个 zhěng gè: cả, toàn bộ; 个 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "1c6cc0bdfa375bec1a2f894ffd343c41ce926f55de13219fadae977cbd0c06a4",
+      "level": "HSK3-4",
+      "meaningVi": "Trong suốt quá trình thi đều ghi âm toàn bộ.",
+      "focus": [
+        "过程中 guò chéng zhōng: trong quá trình.",
+        "全程 quán chéng: toàn bộ hành trình."
+      ]
+    },
+    {
+      "sentence_id": "0388a3b58f7038520722d9510d5b55d1a731c3267368212a4f4d816812f1a203",
+      "level": "HSK3-4",
+      "meaningVi": "Trong thời gian sửa chữa xin miễn tiếp khách tham quan.",
+      "focus": [
+        "期间 qī jiān: trong thời gian.",
+        "恕不 shù bù: xin miễn (từ thông báo)."
+      ]
+    },
+    {
+      "sentence_id": "efa6648b016578ef4215281240d46f04a9bea895dd1d10f8e3645401596124e8",
+      "level": "HSK3-4",
+      "meaningVi": "Quanh ga có nhiều cửa hàng.",
+      "focus": [
+        "周边 zhōu biān: xung quanh.",
+        "多 + danh từ: nhiều... (văn viết)."
+      ]
+    },
+    {
+      "sentence_id": "65b23238d16a8f2a28fb566f0bbef826a379390e6c1fef95fcc675b1e970eed2",
+      "level": "HSK3-4",
+      "meaningVi": "Hiện nay tỉ lệ nam nữ đã khá cân bằng.",
+      "focus": [
+        "比例 bǐ lì: tỉ lệ.",
+        "平均 píng jūn: bình quân, cân bằng."
+      ]
+    },
+    {
+      "sentence_id": "1ab7c9c81c3e8219b9f7451bb36a3bf0180a1a94d003d403492acd55537f3b97",
+      "level": "HSK3-4",
+      "meaningVi": "Trường có hội sinh viên và nhiều câu lạc bộ sinh viên phong phú.",
+      "focus": [
+        "学生会 xué shēng huì: hội sinh viên.",
+        "社团 shè tuán: câu lạc bộ, đoàn thể."
+      ]
+    },
+    {
+      "sentence_id": "44998a6e38c33891e3349b655be8bc92939a1934b1becc7f23a76f27f6582ce7",
+      "level": "HSK3-4",
+      "meaningVi": "Tăng cường quản lý an toàn học sinh.",
+      "focus": [
+        "加强 jiā qiáng: tăng cường.",
+        "管理 guǎn lǐ: quản lý, hai thanh 3 → guán lǐ."
+      ]
+    },
+    {
+      "sentence_id": "5adfa240875f671739b961edf8d157ce1055b68a13acb7d019d58c504000105c",
+      "level": "HSK3-4",
+      "meaningVi": "Từ tiểu học đã hình thành thói quen viết nhật ký.",
+      "focus": [
+        "养成 yǎng chéng: hình thành (thói quen).",
+        "日记 rì jì: nhật ký."
+      ]
+    },
+    {
+      "sentence_id": "76a573863652c63a0c6b8db1912450ab67722200bcda02b2e1b86358cae171cf",
+      "level": "HSK3-4",
+      "meaningVi": "Bộ phim này nhận được đánh giá khá tích cực.",
+      "focus": [
+        "获得 huò dé: giành được, nhận được.",
+        "相当 xiāng dāng: khá, tương đối."
+      ]
+    },
+    {
+      "sentence_id": "37afd28b4e254dcdbf33eef502cbcf16533161809d6c68dead01e7c5f762cb5a",
+      "level": "HSK3-4",
+      "meaningVi": "Phim chủ yếu nhận được đánh giá tốt.",
+      "focus": [
+        "好评 hǎo píng: đánh giá tốt.",
+        "居多 jū duō: chiếm phần nhiều."
+      ]
+    },
+    {
+      "sentence_id": "1fa5e4f80d55d3350581137b8d571ccf770e5dfab6d9d8c388fe9d26c1e87ab7",
+      "level": "HSK3-4",
+      "meaningVi": "Mỗi kỳ chương trình do hai người dẫn phụ trách phát sóng.",
+      "focus": [
+        "由 yóu + người: do ai làm.",
+        "主播 zhǔ bō: người dẫn chương trình.",
+        "播报 bō bào: phát sóng, đọc tin."
+      ]
+    },
+    {
+      "sentence_id": "02b9d6f892f8ae58fc4ae271f5e750e8d1653d122b1a85f8ecb4962c37d30301",
+      "level": "HSK3-4",
+      "meaningVi": "Còn hai tuyến tàu điện ngầm vẫn đang trong quy hoạch.",
+      "focus": [
+        "仍 réng: vẫn, thanh 2.",
+        "规划 guī huà: quy hoạch."
+      ]
+    },
+    {
+      "sentence_id": "541b51317830d5da55a184d299388549ff466bfee5f002c93a1384186e827cd1",
+      "level": "HSK3-4",
+      "meaningVi": "Giờ hoạt động dưới đây lấy trang web chính thức làm chuẩn.",
+      "focus": [
+        "以...为准 yǐ...wéi zhǔn: lấy...làm chuẩn.",
+        "营运 yíng yùn: vận hành, kinh doanh."
+      ]
+    },
+    {
+      "sentence_id": "3b3e1130a480026396fac64b40ca2131af95b640382307ff518459b77da079ec",
+      "level": "HSK3-4",
+      "meaningVi": "Việc thu thập ý kiến kéo dài một tháng.",
+      "focus": [
+        "为期 wéi qī: kéo dài (thời hạn).",
+        "收集 shōu jí: thu thập."
+      ]
+    },
+    {
+      "sentence_id": "65641907b8b92575865aef39323dff02e0c220b2faccd5c1baf0586b4225abb3",
+      "level": "HSK3-4",
+      "meaningVi": "Từng dạy ngữ văn tám năm ở trường trung học.",
+      "focus": [
+        "教过 jiāo guò: từng dạy; 过 đọc nhẹ.",
+        "语文 yǔ wén: ngữ văn."
+      ]
+    },
+    {
+      "sentence_id": "25c85b2d784864bd4960c052a354f6d678975ab8d6b1a93a201b54a49fd25d8c",
+      "level": "HSK3-4",
+      "meaningVi": "Đã tham gia nhiều phim truyền hình và điện ảnh.",
+      "focus": [
+        "多部 duō bù: nhiều bộ (phim).",
+        "电视剧 diàn shì jù: phim truyền hình."
+      ]
+    },
+    {
+      "sentence_id": "4460933449aec0f6604edc0cf2845d027f932a05befabaa22fd8e05d1fe004e8",
+      "level": "HSK3-4",
+      "meaningVi": "Anh ấy từng tham gia diễn xuất hơn năm mươi bộ phim.",
+      "focus": [
+        "以上 yǐ shàng: trở lên, hơn.",
+        "出演 chū yǎn: tham gia diễn xuất."
+      ]
+    },
+    {
+      "sentence_id": "14e770e3c1effb103bcb7de32ff557e83367704edda268b1ef02569043ac6641",
+      "level": "HSK3-4",
+      "meaningVi": "Hồi trung học phổ thông đã là cầu thủ ngôi sao của đội.",
+      "focus": [
+        "已经 yǐ jīng: đã, thanh 3 + 1.",
+        "明星 míng xīng: ngôi sao."
+      ]
+    },
+    {
+      "sentence_id": "6c2862e149eb77f7185d4927edd0ab3906a4ddf077b30edc68b92ba495dad62f",
+      "level": "HSK3-4",
+      "meaningVi": "Vậy đây chính là nguồn gốc của chú thích đó.",
+      "focus": [
+        "由来 yóu lái: nguồn gốc.",
+        "标注 biāo zhù: chú thích, đánh dấu."
+      ]
+    },
+    {
+      "sentence_id": "0088258410bc2aeab6014b4ac1ddb707724c322432c1993ea4915634f4db111e",
+      "level": "HSK3-4",
+      "meaningVi": "Cô ấy cũng bật khóc thành tiếng.",
+      "focus": [
+        "放声 fàng shēng: cất tiếng to.",
+        "大哭 dà kū: khóc lớn."
+      ]
+    },
+    {
+      "sentence_id": "1d092afd912c89fe2251e69dd069aa48842152176fc3757022c6ae84ee1b3d02",
+      "level": "HSK3-4",
+      "meaningVi": "Đã dán túi giữ ấm cho cô ấy.",
+      "focus": [
+        "贴 tiē: dán, thanh 1.",
+        "暖暖包 nuǎn nuǎn bāo: túi giữ ấm."
+      ]
+    },
+    {
+      "sentence_id": "1a93b23495573e74f9db5994f86413bde53c049e4c85475551c9462686e59ea7",
+      "level": "HSK3-4",
+      "meaningVi": "Nhìn bóng dáng cô đơn của anh ấy.",
+      "focus": [
+        "落寞 luò mò: cô đơn, hiu quạnh.",
+        "身影 shēn yǐng: bóng dáng."
+      ]
+    },
+    {
+      "sentence_id": "0308459b2609bef587035ba0a5eaabde44732eb8b5371dc9116e1c61172fcce6",
+      "level": "HSK3-4",
+      "meaningVi": "Sau đó lại xem trận đấu giành mấy ván.",
+      "focus": [
+        "再 zài: rồi mới, lại.",
+        "抢几局 qiǎng jǐ jú: giành mấy ván."
+      ]
+    },
+    {
+      "sentence_id": "3f9adca2ba27047b88e7253f87858008f2d2285c8d9b4bc2b28b7e86a3edec36",
+      "level": "HSK3-4",
+      "meaningVi": "Sau đó lại vòng đi mua áo lông vũ.",
+      "focus": [
+        "绕 rào: vòng, đi đường vòng.",
+        "羽绒衣 yǔ róng yī: áo lông vũ."
+      ]
+    },
+    {
+      "sentence_id": "70f4b0a81da695e5e14d9d942a5bfe4f714f7cfab151285f52338affd5514cdd",
+      "level": "HSK3-4",
+      "meaningVi": "Bạn không còn là chính mình nữa.",
+      "focus": [
+        "不再 bú zài: không còn nữa; 不 thanh 2 trước thanh 4.",
+        "你自己 nǐ zì jǐ: chính bạn."
+      ]
+    },
+    {
+      "sentence_id": "6f04dcaa761ff7af9015088c79b80ce6dcfe2ff627596c7ec6bb8c374db7c4bc",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi không thể tin bạn được.",
+      "focus": [
+        "没办法 méi bàn fǎ: không có cách nào.",
+        "相信 xiāng xìn: tin."
+      ]
+    },
+    {
+      "sentence_id": "29b3211d35e3e59a2b2912b6471b81f08309cecf1c9ecd8af89e84ddf670846b",
+      "level": "HSK3-4",
+      "meaningVi": "Là một thành viên của chúng ta.",
+      "focus": [
+        "一分子 yí fèn zǐ: một thành viên; 一 đổi thanh 2 trước thanh 4.",
+        "的 đọc nhẹ."
+      ]
+    },
+    {
+      "sentence_id": "fdbd6530b400c9c80cb91ab053b11116aec90e7dedaddb7b41fef077d29e6bdc",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi nhất định sẽ giải thích với bạn.",
+      "focus": [
+        "向 xiàng + người: với ai.",
+        "说明 shuō míng: giải thích, làm rõ."
+      ]
+    },
+    {
+      "sentence_id": "094144201c7eaf2faa552dce3bf7743e6efda09a9eeae2e82a5b9c8b77331742",
+      "level": "HSK3-4",
+      "meaningVi": "Cảnh đêm thật sự rất khó chụp.",
+      "focus": [
+        "超 chāo: cực, rất (khẩu ngữ).",
+        "拍 pāi: chụp ảnh."
+      ]
+    },
+    {
+      "sentence_id": "290a4a185cb8c6914f56cc47ec43a72b7da8bc9e60e6351e387caf240e57e04b",
+      "level": "HSK3-4",
+      "meaningVi": "Tết về quê ngoại.",
+      "focus": [
+        "过年 guò nián: ăn Tết.",
+        "乡下 xiāng xià: nông thôn, quê.",
+        "外公 wài gōng: ông ngoại."
+      ]
+    },
+    {
+      "sentence_id": "028470cea6490164a0ba532a53af8cbaa4ebb94b02c46c22268cbb681dd72d33",
+      "level": "HSK3-4",
+      "meaningVi": "Chuyển hướng sự chú ý của mình.",
+      "focus": [
+        "转移 zhuǎn yí: chuyển, dời.",
+        "注意力 zhù yì lì: sự chú ý."
+      ]
+    },
+    {
+      "sentence_id": "163964a5300db9a5a47f4eca0a5fa1015eab651e98fef2bcbe0ba1042f163839",
+      "level": "HSK3-4",
+      "meaningVi": "Tôi tưởng phải ra khỏi ga rồi vào lại.",
+      "focus": [
+        "以为 yǐ wéi: tưởng (nhầm).",
+        "再 zài: lại, rồi mới."
+      ]
+    },
+    {
+      "sentence_id": "bfc9918294b7acc87d5be64eda731847f80e042d28cb8ebf4febe49c4535d8f0",
+      "level": "HSK3-4",
+      "meaningVi": "Bạn cứ coi anh ấy như khu vui chơi.",
+      "focus": [
+        "把 + người + 想成: coi ai là...",
+        "游乐场 yóu lè chǎng: khu vui chơi."
+      ]
+    },
+    {
+      "sentence_id": "1eb341f3801e6463cc69e285d96368a3cc61f87c49bd2be814e2da203ca0244d",
+      "level": "HSK3-4",
+      "meaningVi": "Hoàn toàn không hiệu quả.",
+      "focus": [
+        "完全 wán quán: hoàn toàn.",
+        "给力 gěi lì: hiệu quả, ổn (khẩu ngữ mạng)."
+      ]
+    },
+    {
+      "sentence_id": "14d6d5d21a2c6ad6e0c5ff1d90ca84893842ec14dfc9d3762995297ef071cc5d",
+      "level": "HSK3-4",
+      "meaningVi": "Nơi con người tụ tập sinh sống.",
+      "focus": [
+        "聚集 jù jí: tụ tập.",
+        "居住 jū zhù: cư trú, sinh sống."
+      ]
+    },
+    {
+      "sentence_id": "449fa6198a4e2163ce51b5dddd54c928492df609f716855f90ee307f4a7c7d1d",
+      "level": "HSK3-4",
+      "meaningVi": "Cuốn niên giám này hiện vẫn đang được xuất bản.",
+      "focus": [
+        "年鉴 nián jiàn: niên giám.",
+        "仍 réng: vẫn, thanh 2."
+      ]
+    },
+    {
+      "sentence_id": "3c6a21967da31309ad68761966ccd6f7c2ff3e9e8ccde85ff6a9f411608264be",
+      "level": "HSK5-6",
+      "meaningVi": "Anh ấy tìm cách có được sự ủng hộ nào đó.",
+      "focus": [
+        "寻求 xún qiú: tìm kiếm (từ viết).",
+        "某种 mǒu zhǒng: một loại nào đó."
+      ]
+    },
+    {
+      "sentence_id": "a5f6aa484b699007185a55c7faaaa25b6ee2b24e4cafb07a6706e99b8d2405a5",
+      "level": "HSK5-6",
+      "meaningVi": "Chúng ta phải có biện pháp loại bỏ nó.",
+      "focus": [
+        "采取 cǎi qǔ + 措施 cuò shī: áp dụng biện pháp.",
+        "消除 xiāo chú: loại bỏ."
+      ]
+    },
+    {
+      "sentence_id": "0af578edbf2e13f41d9068374c4e70a8b2af9e096da85e24ac0923e89d05b0d8",
+      "level": "HSK5-6",
+      "meaningVi": "Đã quyết ý nuông chiều đứa trẻ này.",
+      "focus": [
+        "打定主意: quyết định dứt khoát.",
+        "宠爱 chǒng ài: nuông chiều."
+      ]
+    },
+    {
+      "sentence_id": "442b912050d2415a9371c9e47dbe9d4bbd2a3af6ff61c97442871f8abb6581a0",
+      "level": "HSK5-6",
+      "meaningVi": "Không nghi ngờ gì, tôi có thể hoàn thành những pha cứu bóng đó!",
+      "focus": [
+        "毫无疑问 háo wú yí wèn: không chút nghi ngờ.",
+        "扑救 pū jiù: cứu bóng (thể thao)."
+      ]
+    },
+    {
+      "sentence_id": "5ade17e0c670f0b09236a6ac4e4ceb69f77c3f26bce7b00460aa67adf67dcd89",
+      "level": "HSK5-6",
+      "meaningVi": "Tính cách của cô ấy thường được cho là tích cực.",
+      "focus": [
+        "被认为 bèi rèn wéi: được cho là.",
+        "积极 jī jí: tích cực."
+      ]
+    },
+    {
+      "sentence_id": "02cb554edbbcc7687e7d8b9615517bcc4a7886c2d9a1c8f3f450435db96caad7",
+      "level": "HSK5-6",
+      "meaningVi": "Nhưng cách nói này không có bằng chứng nào khác ủng hộ.",
+      "focus": [
+        "说法 shuō fa: cách nói; 法 đọc nhẹ.",
+        "证据 zhèng jù: bằng chứng."
+      ]
+    },
+    {
+      "sentence_id": "5125ca12d0b4155fd28297efa2140e5df5e9b18f00383574a9c61cef5f198348",
+      "level": "HSK5-6",
+      "meaningVi": "Thấy anh ấy đến cái này cũng để ý được, tôi thấy rất thần kỳ.",
+      "focus": [
+        "连...都: ngay cả...cũng.",
+        "神奇 shén qí: thần kỳ."
+      ]
+    },
+    {
+      "sentence_id": "0060e1f0275f037925579169708d4807072e5d4156d5f9a46ac697f3f07d0440",
+      "level": "HSK5-6",
+      "meaningVi": "Tôi đúng, vì vậy lá thư cuối cùng của tôi chưa từng gửi cho cô ấy.",
+      "focus": [
+        "因此 yīn cǐ: vì vậy.",
+        "从未 cóng wèi: chưa từng."
+      ]
+    },
+    {
+      "sentence_id": "40a2ba6bdf6491a15aa4a031134a6879c73f2aad3e58406ce1a9d94647f5281f",
+      "level": "HSK5-6",
+      "meaningVi": "Khi kể chuyện, anh ấy bắt chước nhiều hiệu ứng âm thanh khác nhau.",
+      "focus": [
+        "模仿 mó fǎng: bắt chước.",
+        "效果 xiào guǒ: hiệu quả, hiệu ứng."
+      ]
+    },
+    {
+      "sentence_id": "3ffd8d31cd05d50c214b6146fcd2de29565cf2109a0b86edb14f0adbde3c119f",
+      "level": "HSK5-6",
+      "meaningVi": "Khi đáp lại tuyên bố này, anh ấy lại tỏ ra rất chín chắn.",
+      "focus": [
+        "回应 huí yìng: đáp lại.",
+        "声明 shēng míng: tuyên bố.",
+        "却 què: lại, nhưng lại."
+      ]
+    },
+    {
+      "sentence_id": "0038d8c98b98058f12e4ae654e4d8691af9cf6153e7db777d19a5d8801c7092c",
+      "level": "HSK5-6",
+      "meaningVi": "Anh ấy vô cùng sửng sốt vì mình giành được giải nhất.",
+      "focus": [
+        "倍感 bèi gǎn: càng cảm thấy.",
+        "震惊 zhèn jīng: sửng sốt."
+      ]
+    },
+    {
+      "sentence_id": "708c7c5d3c93975ab32f26fc189badb8958f96514fab9cf380ba538c063a2132",
+      "level": "HSK5-6",
+      "meaningVi": "Bố cục và thiết kế của ga gần như không hề thay đổi.",
+      "focus": [
+        "格局 gé jú: bố cục, cục diện.",
+        "毫无 háo wú: không hề có.",
+        "变更 biàn gēng: thay đổi."
+      ]
+    },
+    {
+      "sentence_id": "1abfaf29bdff7dbb75b2391188b5ff85bcf326c4cc16573044c204fdd8b0c63d",
+      "level": "HSK5-6",
+      "meaningVi": "Sau khi kết hôn, hai vợ chồng vẫn là tâm điểm của truyền thông.",
+      "focus": [
+        "依旧 yī jiù: vẫn như cũ.",
+        "焦点 jiāo diǎn: tiêu điểm, tâm điểm."
+      ]
+    },
+    {
+      "sentence_id": "1d61d31b9031b1578c40caa77066f767b86279af1d4d1ba69bac9e4939a8932f",
+      "level": "HSK5-6",
+      "meaningVi": "Chủ yếu là tổ chức và quản lý các trận bóng chày nghiệp dư.",
+      "focus": [
+        "主办 zhǔ bàn: tổ chức, đăng cai.",
+        "业余 yè yú: nghiệp dư."
+      ]
+    },
+    {
+      "sentence_id": "418485fd19fe14ca3ac3484d06923624ce3e413b599b09b5af47a575938f77a6",
+      "level": "HSK5-6",
+      "meaningVi": "Hạng nặng là một trong các hạng cân của môn võ đối kháng.",
+      "focus": [
+        "重量级 zhòng liàng jí: hạng nặng.",
+        "级别 jí bié: cấp bậc, hạng."
+      ]
+    },
+    {
+      "sentence_id": "48dead3ab666c5e4982a2ec3e120385b39251e6e391294c5a4ce632b2fa75964",
+      "level": "HSK5-6",
+      "meaningVi": "Chuyên làm về luật bất động sản.",
+      "focus": [
+        "从事 cóng shì: làm nghề, theo đuổi.",
+        "房地产 fáng dì chǎn: bất động sản."
+      ]
+    },
+    {
+      "sentence_id": "5000af6d7882f070ed765fa2dd4277c317cc9622d7d4f2db6c751dc1ff19a9a2",
+      "level": "HSK5-6",
+      "meaningVi": "Ga này không làm nghiệp vụ vận tải hành khách và hàng hóa.",
+      "focus": [
+        "办理 bàn lǐ: giải quyết, thực hiện thủ tục.",
+        "业务 yè wù: nghiệp vụ."
+      ]
+    },
+    {
+      "sentence_id": "f1bc022e993946a7ea080fe7dde6c4a5083f4df26d3b025b118dec699e49143b",
+      "level": "HSK5-6",
+      "meaningVi": "Thông thường xạ trị cũng là một phần của liệu trình.",
+      "focus": [
+        "通常 tōng cháng: thông thường.",
+        "放疗 fàng liáo: xạ trị.",
+        "疗程 liáo chéng: liệu trình."
+      ]
+    },
+    {
+      "sentence_id": "5e21ee25fdbd8a6b47ee9735822b42fc0f2a82832e726bdd849e2c721568efc2",
+      "level": "HSK5-6",
+      "meaningVi": "Album này không thành công như album trước.",
+      "focus": [
+        "并未 bìng wèi: không hề (từ viết).",
+        "如 rú: như."
+      ]
+    },
+    {
+      "sentence_id": "8d73dd355211ed56870d8d222e02da0e669010fec0f392c80ff3703574826bf6",
+      "level": "HSK5-6",
+      "meaningVi": "Biên kịch chương trình đặc biệt đặt mật danh cho loại áo khoác này.",
+      "focus": [
+        "专门 zhuān mén: riêng, chuyên.",
+        "代号 dài hào: mật danh, mã hiệu."
+      ]
+    },
+    {
+      "sentence_id": "de5b8ca02027a9e82761d2b985db020bd3303b71c2bc48954da0fe6918f2749a",
+      "level": "HSK5-6",
+      "meaningVi": "Sau khi công chiếu, phim nhận được nhiều giải thưởng trong và ngoài nước.",
+      "focus": [
+        "多项 duō xiàng: nhiều hạng mục.",
+        "肯定 kěn dìng: khẳng định, ghi nhận."
+      ]
+    },
+    {
+      "sentence_id": "2895c70d8d49d6c23edf54e49b71b3835b2553a7866bc63709ead6287d8fc3af",
+      "level": "HSK5-6",
+      "meaningVi": "Máy bay thường qua đêm ở sân bay để hoàn thành việc kiểm tra này.",
+      "focus": [
+        "飞行器 fēi xíng qì: phương tiện bay.",
+        "此项 cǐ xiàng: hạng mục này."
+      ]
+    },
+    {
+      "sentence_id": "5b7d414074dc1f8147e754c4dd77572873f73b8c7d91c93be64c59be782cff29",
+      "level": "HSK5-6",
+      "meaningVi": "Cuối cùng nhân viên sân bay dùng xe kéo lớn kéo máy bay ra.",
+      "focus": [
+        "拖车 tuō chē: xe kéo.",
+        "将 jiāng = 把, đưa tân ngữ lên trước."
+      ]
+    },
+    {
+      "sentence_id": "bd09b10fd98f7949ce3c1bd3d4a605f9ab8dfdd33c3c743dcefe25971e76d28d",
+      "level": "HSK5-6",
+      "meaningVi": "Vận động viên dự thi phải vượt qua vòng loại để có tư cách tham gia.",
+      "focus": [
+        "必须 bì xū: bắt buộc.",
+        "资格 zī gé: tư cách."
+      ]
+    },
+    {
+      "sentence_id": "14dc0c45165303fe69f8de1d0cdf9f1ec41802f3beb89e7755b5bd2513dfab30",
+      "level": "HSK5-6",
+      "meaningVi": "Chỉ cầu thủ của những đội này mới đủ tư cách thi đấu.",
+      "focus": [
+        "只有...才: chỉ khi...mới.",
+        "资格 zī gé: tư cách."
+      ]
+    },
+    {
+      "sentence_id": "00a03d76d99604372c92c236a52cd106304db72b15a77d99de178d5f4b995cfb",
+      "level": "HSK5-6",
+      "meaningVi": "Có hai tông màu nội thất để lựa chọn.",
+      "focus": [
+        "色调 sè diào: tông màu.",
+        "可选 kě xuǎn: có thể chọn."
+      ]
+    },
+    {
+      "sentence_id": "628f9236c46e2649c18e2150d2d0fd4125d00b4013a1d960bc6d0de85f1acdd1",
+      "level": "HSK5-6",
+      "meaningVi": "Bất kỳ ai cũng có thể tham gia mạng này với tư cách máy chủ.",
+      "focus": [
+        "任何 rèn hé: bất kỳ.",
+        "作为 zuò wéi: với tư cách.",
+        "服务器 fú wù qì: máy chủ."
+      ]
+    },
+    {
+      "sentence_id": "3e5e79bc5250a16ba8601cef56e6eae07f6f38ad2df828b1f699cdec37d0ad4c",
+      "level": "HSK5-6",
+      "meaningVi": "Sau đó dần dần đưa ra dịch vụ dán màn hình điện thoại.",
+      "focus": [
+        "逐渐 zhú jiàn: dần dần.",
+        "推出 tuī chū: đưa ra, tung ra."
+      ]
+    },
+    {
+      "sentence_id": "1ce3e823a6e60b9bc63c189a80f992f4e8a7085d0b95af37cd26397eb0dbec35",
+      "level": "HSK5-6",
+      "meaningVi": "Nhiều nhà sưu tập hơn thích sưu tầm hộp đựng thuốc hít.",
+      "focus": [
+        "收藏家 shōu cáng jiā: nhà sưu tập.",
+        "鼻烟壶 bí yān hú: hộp đựng thuốc hít."
+      ]
+    },
+    {
+      "sentence_id": "5d53427fefcc5d2bfcae949c4f286495a5cf7111fc863747921c8c523d44ec07",
+      "level": "HSK5-6",
+      "meaningVi": "Bìa của cả hai đều giống phong bì trong phim.",
+      "focus": [
+        "两者 liǎng zhě: cả hai.",
+        "俱似 jù sì: đều giống (từ viết)."
+      ]
+    },
+    {
+      "sentence_id": "eafcac3becf8a4c9ecfa840ac6ab9ccc371daaf91953a261ff0fb158c0739263",
+      "level": "HSK5-6",
+      "meaningVi": "Kết quả là câu đùa này lan truyền trên mạng.",
+      "focus": [
+        "梗 gěng: câu đùa, meme (khẩu ngữ mạng).",
+        "传播 chuán bō: lan truyền."
+      ]
+    },
+    {
+      "sentence_id": "3d88843024f70c6999867a784b01202cbb5323b9aae3a1b3abb0fd3cdbfa1ebe",
+      "level": "HSK5-6",
+      "meaningVi": "Mọi hội đều do sinh viên làm cán sự tổ chức hoạt động.",
+      "focus": [
+        "由 yóu: do (ai làm).",
+        "干事 gàn shi: cán sự; 事 đọc nhẹ.",
+        "筹办 chóu bàn: chuẩn bị tổ chức."
+      ]
+    },
+    {
+      "sentence_id": "178e641203673b2e90dbdafc38f74b123198c6c7e7d4e60c3708a0de1d0b146c",
+      "level": "HSK5-6",
+      "meaningVi": "Mỗi năm học sinh phải tham gia hội thảo giáo dục kéo dài một tuần do hiệp hội tổ chức.",
+      "focus": [
+        "每学年 měi xué nián: mỗi năm học.",
+        "研讨会 yán tǎo huì: hội thảo."
+      ]
+    },
+    {
+      "sentence_id": "c42fa2d233f58ff9b616bf4854869c31c184656f5a01a23e70526ec9b224fdc0",
+      "level": "HSK5-6",
+      "meaningVi": "Người đứng đầu hành chính khi thấy cần có thể mời người liên quan dự họp.",
+      "focus": [
+        "必要时 bì yào shí: khi cần thiết.",
+        "列席 liè xí: dự họp với tư cách không biểu quyết."
+      ]
+    },
+    {
+      "sentence_id": "23e63a4962ba3bf093f7f01c49a37c9cf93399c6bdf35a8931fac75030cbe969",
+      "level": "HSK5-6",
+      "meaningVi": "Đối với việc giết mổ tôn giáo, trong điều kiện tuân thủ tập quán tôn giáo sẽ có quy định riêng.",
+      "focus": [
+        "对于 duì yú: đối với.",
+        "前提 qián tí: tiền đề, điều kiện.",
+        "另设 lìng shè: đặt riêng."
+      ]
+    },
+    {
+      "sentence_id": "855f180da0ecdd3f9ea51ba69aa534390ed4061f8fbb7c9f2083ba9d7c0924cc",
+      "level": "HSK5-6",
+      "meaningVi": "Hình trong hình là một chức năng của một số TV và thiết bị tương tự.",
+      "focus": [
+        "画中画 huà zhōng huà: hình trong hình.",
+        "功能 gōng néng: chức năng."
+      ]
+    },
+    {
+      "sentence_id": "00e589af7531dd2c2d17f6d4a0764ba51ecc401f8422ea85c7f9bfbae565d1ea",
+      "level": "HSK5-6",
+      "meaningVi": "Ví dụ, khi truyền hình trực tiếp sẽ ghép nhiều yếu tố hình ảnh do máy tính tạo ra vào cảnh quay hiện trường.",
+      "focus": [
+        "例如 lì rú: ví dụ.",
+        "合成 hé chéng: tổng hợp, ghép.",
+        "镜头 jìng tóu: ống kính, cảnh quay."
+      ]
+    },
+    {
+      "sentence_id": "0a79604caa0fb046807f9a7c4002eb46a13227f822b86f82634a4676117db6e3",
+      "level": "HSK5-6",
+      "meaningVi": "Hồi trung học từng là cầu thủ bóng sàn.",
+      "focus": [
+        "球员 qiú yuán: cầu thủ.",
+        "曾是 céng shì: từng là."
+      ]
+    },
+    {
+      "sentence_id": "beb9450871b1386902549f33e15321f6db7b9cfee904197d978f2f0a7fe1ca41",
+      "level": "HSK5-6",
+      "meaningVi": "Trong pháp y có thể dùng để suy đoán thời gian tử vong.",
+      "focus": [
+        "法医学 fǎ yī xué: pháp y học.",
+        "推测 tuī cè: suy đoán."
+      ]
+    },
+    {
+      "sentence_id": "bfb7154ba96dce19410fd9b9626f620303b32b3ab90cea45e003e09818b723d5",
+      "level": "HSK5-6",
+      "meaningVi": "Kinh phí sản xuất phim phần lớn đến từ thù lao diễn xuất phim của anh ấy.",
+      "focus": [
+        "经费 jīng fèi: kinh phí.",
+        "酬劳 chóu láo: thù lao."
+      ]
+    },
+    {
+      "sentence_id": "05722175906dc71a7b82b4f3d6a2d59a424f63db06d731626a2734bc49695353",
+      "level": "HSK5-6",
+      "meaningVi": "Thời niên thiếu anh ấy đã làm phát minh đầu tiên: tự thiết kế một chiếc xe đạp.",
+      "focus": [
+        "发明 fā míng: phát minh.",
+        "设计 shè jì: thiết kế."
+      ]
+    },
+    {
+      "sentence_id": "b7a6f68747f8e8cf88eb1d3d568005912f214609e494a7fb62b0e4bff35a4261",
+      "level": "HSK5-6",
+      "meaningVi": "Từ thời sinh viên anh ấy đã bắt đầu sáng tác bằng chất liệu tự nhiên.",
+      "focus": [
+        "即 jí: liền, tức là (từ viết).",
+        "素材 sù cái: chất liệu, tư liệu."
+      ]
+    },
+    {
+      "sentence_id": "53e26e525d11ac27df7bb11a2720c828ba1fb3d642811e4593dbb433d80a444e",
+      "level": "HSK5-6",
+      "meaningVi": "Màu sắc khi trải lên bảng vẽ của anh ấy liền như bản nhạc của nhạc sĩ biến hóa khôn cùng!",
+      "focus": [
+        "一...就: vừa...liền.",
+        "无穷 wú qióng: vô cùng, không hết."
+      ]
+    },
+    {
+      "sentence_id": "40d2bd4b1d00791e37e4a1bf5bab5819feb1bb063e8a95b6c7fa34851ead9640",
+      "level": "HSK5-6",
+      "meaningVi": "Tính tiên phong và đa dạng của phong cách âm nhạc thể hiện rõ trong album này.",
+      "focus": [
+        "前卫 qián wèi: tiên phong.",
+        "多样性 duō yàng xìng: tính đa dạng."
+      ]
+    },
+    {
+      "sentence_id": "7a0a37c550a10d6dee9e30d03995afd8c12d6e2e0646fab9b891f2596ffb625f",
+      "level": "HSK5-6",
+      "meaningVi": "Lời bài hát này chỉ khác một chút giữa hai phiên bản ngôn ngữ.",
+      "focus": [
+        "少许 shǎo xǔ: một chút.",
+        "版本 bǎn běn: phiên bản."
+      ]
+    },
+    {
+      "sentence_id": "50b6f8bf8bf8d955ec63733d8c8cf2c3db55ead021aa241374a8a258d28375d2",
+      "level": "HSK5-6",
+      "meaningVi": "Có trang bị trong game cần đạt uy tín nhất định mới mặc được.",
+      "focus": [
+        "声望 shēng wàng: uy vọng, danh tiếng.",
+        "才能 cái néng: mới có thể."
+      ]
+    },
+    {
+      "sentence_id": "05097c822fde172e796695f0af2a85fb4bae74f78a99568f8be1439327a2fc9d",
+      "level": "HSK5-6",
+      "meaningVi": "Ban đầu dự định đặt trong phim như một phần của phim, nhưng sau đó quyết định làm thành phim ngắn.",
+      "focus": [
+        "构思 gòu sī: ý tưởng, lên ý tưởng.",
+        "制成 zhì chéng: làm thành."
+      ]
+    },
+    {
+      "sentence_id": "098598a59312acb5649bbf1dda0b2a76565768726f99b4d0bc72d1bd033b4be9",
+      "level": "HSK5-6",
+      "meaningVi": "Là một phần trải nghiệm game, người chơi phải chết đi sống lại hết lần này đến lần khác.",
+      "focus": [
+        "玩家 wán jiā: người chơi.",
+        "重生 chóng shēng: tái sinh."
+      ]
+    },
+    {
+      "sentence_id": "0009032cc46d24fe322406635881680ec5008247a1f7232ada3ca27eef270aac",
+      "level": "HSK5-6",
+      "meaningVi": "Tuy trò chơi có dung lượng nhỏ nhưng yêu cầu cấu hình máy không hề thấp.",
+      "focus": [
+        "虽然...但: tuy...nhưng.",
+        "配置 pèi zhì: cấu hình."
+      ]
+    },
+    {
+      "sentence_id": "1b70255b9b873e129f444877ab30009bd1618a8884f68fcf402d893405ff0b0e",
+      "level": "HSK5-6",
+      "meaningVi": "Lạm dụng quyền lực cũng có nghĩa là có người dùng quyền đã có để mưu lợi riêng.",
+      "focus": [
+        "滥用 làn yòng: lạm dụng.",
+        "谋取 móu qǔ: mưu cầu, giành lấy."
+      ]
+    },
+    {
+      "sentence_id": "087bbb01ee42a4a0b217cb95524fe35516e203f9950bc60becf8ea1d62b7b88f",
+      "level": "HSK5-6",
+      "meaningVi": "Cuối cùng, người con trai làm cảnh sát hình sự kịp thời xuất hiện, vạch trần thủ đoạn kẻ lừa đảo và bắt giữ.",
+      "focus": [
+        "识破 shí pò: nhìn thấu, vạch trần.",
+        "伎俩 jì liǎng: thủ đoạn.",
+        "抓捕 zhuā bǔ: bắt giữ."
+      ]
+    }
+  ]
+}

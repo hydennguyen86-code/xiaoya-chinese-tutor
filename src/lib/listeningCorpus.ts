@@ -4,8 +4,10 @@ export interface CommunityClip {
   text: string;
   version: string;
   sourceUrl?: string;
-  difficulty?: 'basic' | 'extended';
-  vocabularyBasis?: string;
+  level?: string;
+  meaningVi?: string;
+  focus?: string[];
+  curationSource?: string;
   license: string;
 }
 const han = (value: string) => [...value].filter((ch) => /\p{Script=Han}/u.test(ch));

@@ -6,7 +6,7 @@ const { values } = parseArgs({
 });
 if (!values.source || !values.version) {
   console.error(
-    'Usage: npm run corpus:import -- --source /download/zh-CN --version cv-27.0 [--url https://mozilladatacollective.com/datasets/ID] [--limit 50]',
+    'Usage: npm run corpus:import -- --source /download/zh-CN --version cv-27.0 [--url https://mozilladatacollective.com/datasets/ID] [--limit 200]',
   );
   process.exitCode = 1;
 } else {

@@ -61,7 +61,7 @@ export function CoursePractice(props: Props) {
       {!checkpoint && (
         <ShadowingPractice learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />
       )}
-      {!checkpoint && <CommunityListening />}
+      {!checkpoint && <CommunityListening level={content.level || 'HSK1-2'} />}
       {content.checkpoint && (
         <button type="button" className="lesson-secondary" onClick={() => setCheckpoint((v) => !v)}>
           {checkpoint ? 'Về bài luyện của buổi' : content.checkpoint.title}

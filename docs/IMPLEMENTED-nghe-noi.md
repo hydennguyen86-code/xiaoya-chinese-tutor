@@ -96,3 +96,18 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Tại thời điểm kiểm tra chưa có `content-for-misu/cv-curated.json`; chưa thay bộ lọc Common Voice bằng danh sách DeepSeek và không tự bịa danh sách duyệt. Audio/đường dẫn tuyệt đối của nguồn người dùng không vào Git.
 - Mục 12 cần ba người học + người gắn nhãn thật. Không có thu âm/nhãn người thật mới trong đợt này, không sửa ngưỡng thanh điệu hay bộ chia âm tiết.
+
+
+## Mục 5 — Curated DeepSeek đã tới, thay bộ lọc 17 câu
+
+- Sau khi kiểm tra lại nguồn, cv-curated.json đã có 154 mục. Chép JSON vào lessons/listening, giữ nhãn AI soạn, chưa duyệt; chỉ sentence_id/level/meaningVi/focus, không script tác giả, audio, đường dẫn tuyệt đối hay người nói.
+- Checker DeepSeek sửa nguồn TSV thành biến môi trường, chạy trong repo trên thư mục thật và đạt. Kiểm tra cấu trúc metadata có trong npm test, không cần kho riêng để chạy CI.
+- Bộ nhập nối sentence_id với TSV, không chạy lại bộ lọc 17 câu. Nối đủ 154/154, phân bậc AI 45/58/51; quét 2.860 dòng. Catalog schema 3 tham chiếu tại chỗ; thiếu câu/file hợp lệ thì giữ catalog cũ và báo lỗi. Giữ bảo vệ nguồn, symlink, LAN và không copy audio.
+- UI chọn bậc, nghe/chậm/nghe chép; hiện nghĩa Việt và focus sau nộp. Mọi bậc đều ước lượng AI, không phải chứng nhận HSK hay duyệt giáo viên.
+
+### Kiểm chứng cuối đợt
+
+- 90 test (86 backend/lib + 4 component), typecheck và build/dist allowlist đều đạt trước commit curated. Không có ảnh/giọng người thật hoặc đường dẫn nguồn tuyệt đối trong nội dung/script đã chép.
+- UI bằng hồ sơ thử: khóa lựa chọn thanh trước khi phát; trả lời sai tạo 1 mục ôn trong LearningProfile schema 2; nghe chép ni3 hao3 khớp acceptTones; Common Voice đổi bậc 45/58/51 câu, nghĩa/focus chỉ hiện sau nộp; shadowing hiển thị nhãn AI và cụm hơi. Không bấm thu micro người thật.
+- Giải mã 154/154 MP3 trực tiếp từ nguồn sang null; dữ liệu app tạm có 0 MP3. Warmup Ollama thật trả 200, cached=true. Pipeline pronounce với một câu tự soạn bằng TTS 0.85× có hai đường 60 điểm và timing mẫu/người đọc; chỉ là kiểm thử giọng máy, không phải độ chính xác người thật.
+- Chưa thử Windows thật; chưa kiểm chứng micro/căn ngắt/chấm thanh trên người Việt, vòng câu dài chưa thể tự qua, độ trễ dưới 2,5 giây chưa được xác nhận. Không push/tag.

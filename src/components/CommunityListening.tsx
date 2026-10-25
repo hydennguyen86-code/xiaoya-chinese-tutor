@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { compareDictation, type CommunityClip } from '../lib/listeningCorpus';
 import { useListeningPrefs } from './ListeningControls';
-export function CommunityListening() {
+export function CommunityListening({ level = 'HSK1-2' }: { level?: string }) {
   const [clips, setClips] = useState<CommunityClip[]>([]);
+  const [selectedLevel, setSelectedLevel] = useState(level);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -22,7 +23,8 @@ export function CommunityListening() {
       });
     return () => abort.abort();
   }, []);
-  const clip = clips[index];
+  const selected = clips.filter((c) => c.level === selectedLevel);
+  const clip = selected[index];
   useEffect(() => {
     setAnswer('');
     setSubmitted(false);
@@ -40,9 +42,24 @@ export function CommunityListening() {
       <summary>Nghe và nghe chép · giọng cộng đồng Common Voice</summary>
       <p>Giọng người đóng góp zh-CN; không bảo đảm mọi người nói cùng một giọng địa phương. Đây là luyện tập, không phải đề thi HSK.</p>
       <p>
-        Lọc tự động theo vốn từ các bài HSK1/HSK5 của app và từ thông dụng; không phải nhãn trình độ HSK chính thức, chưa có giáo viên
-        duyệt. Chỉ phát trên máy đang chứa dữ liệu.
+        AI soạn, chưa duyệt. Chọn câu theo danh sách DeepSeek; bậc học là ước lượng biên tập, không phải xác nhận HSK chính thức. Chỉ phát
+        trên máy đang chứa dữ liệu.
       </p>
+      <label>
+        Bậc câu nghe
+        <select
+          value={selectedLevel}
+          onChange={(e) => {
+            audio.current?.pause();
+            setSelectedLevel(e.target.value);
+            setIndex(0);
+          }}
+        >
+          {['HSK1-2', 'HSK3-4', 'HSK5-6'].map((l) => (
+            <option key={l}>{l}</option>
+          ))}
+        </select>
+      </label>
       {!clip ? (
         <p>
           Chưa có danh sách câu phù hợp. Cấu hình XIAOYA_COMMON_VOICE_DIR rồi lập danh sách theo docs/COMMON-VOICE.md. Âm thanh được đọc
@@ -51,7 +68,7 @@ export function CommunityListening() {
       ) : (
         <>
           <p>
-            Câu {index + 1}/{clips.length} · {clip.version} · {clip.difficulty === 'basic' ? 'Câu ngắn, từ quen' : 'Câu mở rộng'}
+            Câu {index + 1}/{selected.length} · {clip.version} · {clip.level}
           </p>
           <audio
             ref={audio}
@@ -94,6 +111,10 @@ export function CommunityListening() {
                 ))}
               </p>
               <p>{clip.text}</p>
+              <p>{clip.meaningVi}</p>
+              {clip.focus?.map((f, i) => (
+                <p key={i}>{f}</p>
+              ))}
               <p>Chỗ màu cam: khác bản chép; đưa chuột vào để xem phần bạn gõ. Dấu câu không tính.</p>
             </div>
           )}
@@ -103,7 +124,7 @@ export function CommunityListening() {
               audio.current?.pause();
               setAnswer('');
               setSubmitted(false);
-              setIndex((index + 1) % clips.length);
+              setIndex((index + 1) % selected.length);
             }}
           >
             Câu tiếp

@@ -3,7 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import readline from 'node:readline';
 import { ownerRequest } from './lanAccess.mjs';
-import { listeningDifficulty } from './listeningDifficulty.mjs';
+import { loadCurated } from './curatedListening.mjs';
 
 const MAX_BYTES = 2_000_000;
 const validId = (id) => /^[a-f0-9]{24}$/.test(id);
@@ -16,11 +16,13 @@ function safeFile(root, name) {
 }
 // Catalog only: never copy or modify source audio. Runtime source is explicitly configured.
 const sourceKey = (source) => crypto.createHash('sha256').update(fs.realpathSync(source)).digest('hex');
-export async function importCommonVoice({ source, dataDir, version, sourceUrl, limit = 50 }) {
+export async function importCommonVoice({ source, dataDir, version, sourceUrl, limit = 200, curated = loadCurated() }) {
   if (sourceUrl && !/^https:\/\/mozilladatacollective\.com\/datasets\/[a-zA-Z0-9-]+$/.test(sourceUrl))
     throw Error('Use the official dataset page URL');
   if (!/^[\w.-]{1,60}$/.test(version || '')) throw Error('Specify dataset version');
-  const count = Math.min(200, Math.max(1, Number(limit) || 50));
+  const curatedById = new Map(curated.map((e) => [e.sentence_id, e]));
+  const matched = new Set();
+  const count = Math.min(200, Math.max(1, Number(limit) || 200));
   source = fs.realpathSync(source);
   const root = path.join(dataDir, 'listening-corpus');
   fs.mkdirSync(root, { recursive: true });
@@ -37,7 +39,7 @@ export async function importCommonVoice({ source, dataDir, version, sourceUrl, l
         const cells = line.replace(/^\uFEFF/, '').split('\t');
         if (!columns) {
           columns = cells;
-          if (!['path', 'sentence', 'up_votes', 'down_votes'].every((name) => columns.includes(name)))
+          if (!['sentence_id', 'path', 'sentence', 'up_votes', 'down_votes'].every((name) => columns.includes(name)))
             throw Error('Unsupported TSV columns');
           continue;
         }
@@ -57,7 +59,7 @@ export async function importCommonVoice({ source, dataDir, version, sourceUrl, l
           stats.qualityRejected++;
           continue;
         }
-        const difficulty = listeningDifficulty(text);
+        const difficulty = curatedById.get(get('sentence_id'));
         if (!difficulty) {
           stats.difficultyRejected++;
           continue;
@@ -77,7 +79,18 @@ export async function importCommonVoice({ source, dataDir, version, sourceUrl, l
           continue;
         }
         const id = crypto.createHash('sha256').update(version).update(clip).update(text).digest('hex').slice(0, 24);
-        entries.push({ id, clip, text, version, ...(sourceUrl ? { sourceUrl } : {}), license: 'CC0-1.0', locale: 'zh-CN', ...difficulty });
+        entries.push({
+          id,
+          clip,
+          text,
+          version,
+          ...(sourceUrl ? { sourceUrl } : {}),
+          license: 'CC0-1.0',
+          locale: 'zh-CN',
+          curationSource: 'AI soạn, chưa duyệt',
+          ...difficulty,
+        });
+        matched.add(difficulty.sentence_id);
         seen.add(text);
         stats.eligible++;
       }
@@ -85,24 +98,23 @@ export async function importCommonVoice({ source, dataDir, version, sourceUrl, l
       lines.close();
     }
   }
-  // Short/basic first; deterministic order and complete scan prevent split-order bias.
-  entries.sort(
-    (a, b) =>
-      (a.difficulty === 'basic' ? 0 : 1) - (b.difficulty === 'basic' ? 0 : 1) || a.text.length - b.text.length || a.id.localeCompare(b.id),
-  );
+  entries.sort((a, b) => a.level.localeCompare(b.level) || a.text.length - b.text.length || a.id.localeCompare(b.id));
+  if (matched.size !== curatedById.size)
+    throw Error(`Curated sentences missing/invalid in source: ${curatedById.size - matched.size}; existing catalog kept`);
   if (!entries.length) throw Error('No eligible clips found; existing catalog was kept');
   const tmp = path.join(root, `manifest-${crypto.randomUUID()}.tmp`);
-  fs.writeFileSync(tmp, JSON.stringify({ schema: 2, sourceKey: sourceKey(source), entries: entries.slice(0, count) }, null, 2));
+  fs.writeFileSync(tmp, JSON.stringify({ schema: 3, sourceKey: sourceKey(source), entries: entries.slice(0, count) }, null, 2));
   fs.renameSync(tmp, path.join(root, 'manifest.json'));
   return { ...stats, selected: Math.min(count, entries.length) };
 }
-export function corpusStore(dataDir, source = process.env.XIAOYA_COMMON_VOICE_DIR) {
+export function corpusStore(dataDir, source = process.env.XIAOYA_COMMON_VOICE_DIR, curated = loadCurated()) {
   const root = path.join(dataDir, 'listening-corpus');
+  const curatedById = new Map(curated.map((e) => [e.sentence_id, e]));
   function entries() {
     try {
       if (!source || fs.lstatSync(root).isSymbolicLink()) return [];
       const manifest = JSON.parse(fs.readFileSync(safeFile(root, 'manifest.json'), 'utf8'));
-      if (manifest.schema !== 2 || manifest.sourceKey !== sourceKey(source)) return [];
+      if (manifest.schema !== 3 || manifest.sourceKey !== sourceKey(source)) return [];
       return (Array.isArray(manifest.entries) ? manifest.entries : [])
         .slice(0, 200)
         .filter(
@@ -113,7 +125,7 @@ export function corpusStore(dataDir, source = process.env.XIAOYA_COMMON_VOICE_DI
             /^[\w-]+\.mp3$/.test(e.clip) &&
             e.license === 'CC0-1.0' &&
             e.locale === 'zh-CN' &&
-            listeningDifficulty(e.text),
+            curatedById.has(e.sentence_id),
         );
     } catch {
       return [];
@@ -121,13 +133,13 @@ export function corpusStore(dataDir, source = process.env.XIAOYA_COMMON_VOICE_DI
   }
   return {
     list() {
-      return entries().map(({ id, text, version, license, difficulty, vocabularyBasis }) => ({
+      return entries().map(({ id, text, version, license, sentence_id }) => ({
         id,
         text,
         version,
         license,
-        difficulty,
-        vocabularyBasis,
+        curationSource: 'AI soạn, chưa duyệt',
+        ...curatedById.get(sentence_id),
       }));
     },
     audio(id) {
@@ -142,8 +154,8 @@ export function corpusStore(dataDir, source = process.env.XIAOYA_COMMON_VOICE_DI
     },
   };
 }
-export function mountListeningCorpus(app, dataDir, source = process.env.XIAOYA_COMMON_VOICE_DIR) {
-  const store = corpusStore(dataDir, source);
+export function mountListeningCorpus(app, dataDir, source = process.env.XIAOYA_COMMON_VOICE_DIR, curated = loadCurated()) {
+  const store = corpusStore(dataDir, source, curated);
   // Dataset access is local to its owner; do not redistribute to LAN clients.
   app.use('/api/listening-corpus', (req, res, next) => (ownerRequest(req) ? next() : res.sendStatus(403)));
   app.get('/api/listening-corpus', (_req, res) => res.set('Cache-Control', 'no-store').json({ entries: store.list() }));
