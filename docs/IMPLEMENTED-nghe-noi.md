@@ -191,3 +191,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Phản hồi gửi itemId; server kiểm khớp chữ, gắn id mục cố định nếu có hoặc id bài luyện theo text, hash bản thu và khóa cập nhật theo mục/người gắn nhãn. Lưu lại cùng mục/người ghi đè phiên bản mới nhất, không tăng số mẫu giả.
 - Machine được tính lại ở server từ audio (không tin heard/expected client). Ghi rõ máy chưa dùng hiệu chỉnh giọng đã lưu; nhãn người vẫn độc lập, vai trò self/peer/expert do người chọn và tự khai, chưa xác minh chuyên môn.
 - Test gửi máy giả 999, lưu hai lần chỉ còn 1 mẫu; identity/path/audio chỉ trong dữ liệu tạm. Chưa thử bản thu người thật.
+
+## Review vòng 2 — L5 lưu giữ/xoá/xuất
+
+- Cài đặt có xuất ZIP riêng và xoá bộ thu/nhãn theo hồ sơ, cảnh báo ZIP có audio/tên người nghe, xác nhận trước xoá. Không tự hết hạn; README chỉ cách xoá thủ công.
+- Export chỉ file trong hồ sơ, không theo symlink/manifest tuỳ ý; delete kiểm mã hồ sơ và xác nhận. Test ZIP/xoá dữ liệu tổng hợp tạm, giữ hồ sơ khác. Không xuất/xoá bộ thu người thật lần này.

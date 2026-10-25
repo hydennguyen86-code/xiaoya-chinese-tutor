@@ -28,7 +28,7 @@ test('captured audio stays per learner; rerecording invalidates labels and rejec
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-capture-test-'));
   const routes = new Map();
   const app = Object.fromEntries(
-    ['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
+    ['get', 'post', 'put', 'delete'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
   );
   mountToneEvaluation(app, dir);
   function call(route, body, learner = 'synthetic-fixture') {
@@ -67,7 +67,7 @@ test('human disagreement saves audio and independent labels privately, counts pe
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-feedback-test-'));
   const routes = new Map();
   const app = Object.fromEntries(
-    ['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
+    ['get', 'post', 'put', 'delete'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
   );
   mountToneEvaluation(app, dir);
   async function call(method, body, learner = 'synthetic') {
@@ -115,6 +115,69 @@ test('human disagreement saves audio and independent labels privately, counts pe
     assert.equal(fs.readFileSync(path.join(folder, entry.file)).length, fixtureWav().length);
     assert.deepEqual((await call('get')).data, { labeled: 0, feedback: 1 });
     assert.deepEqual((await call('get', null, 'other')).data, { labeled: 0, feedback: 0 });
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('export and deletion are confined to the confirmed learner', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-retention-')),
+    routes = new Map();
+  mountToneEvaluation(
+    Object.fromEntries(['get', 'post', 'put', 'delete'].map((m) => [m, (url, ...h) => routes.set(`${m} ${url}`, h.at(-1))])),
+    dir,
+  );
+  const folder = path.join(dir, 'eval-recordings/synthetic'),
+    other = path.join(dir, 'eval-recordings/other');
+  fs.mkdirSync(folder, { recursive: true });
+  fs.mkdirSync(other);
+  fs.writeFileSync(path.join(other, 'keep'), 'fixture');
+  fs.writeFileSync(
+    path.join(folder, 'manifest.json'),
+    JSON.stringify({
+      version: 1,
+      recordings: [
+        { id: 'single-1-1', text: '妈', file: 'single-1-1.audio', label: { source: 'peer', reviewedBy: 'Synthetic', tones: [4] } },
+      ],
+    }),
+  );
+  fs.writeFileSync(path.join(folder, 'single-1-1.audio'), fixtureWav());
+  async function call(route, body) {
+    const res = {
+      code: 200,
+      status(c) {
+        this.code = c;
+        return this;
+      },
+      json(d) {
+        this.data = d;
+      },
+      set() {
+        return this;
+      },
+      type() {
+        return this;
+      },
+      send(d) {
+        this.data = d;
+      },
+    };
+    await routes.get(route)({ params: { learner: 'synthetic' }, body }, res);
+    return res;
+  }
+  try {
+    const response = await call('get /api/tone-evaluation/:learner/export');
+    assert.equal(response.code, 200);
+    const JSZip = (await import('jszip')).default,
+      zip = await JSZip.loadAsync(response.data);
+    assert.ok(zip.file('single-1-1.audio'));
+    assert.ok(zip.file('manifest.json'));
+    assert.equal(zip.file('other/keep'), null);
+    assert.equal((await call('delete /api/tone-evaluation/:learner', {})).code, 400);
+    assert.equal(fs.existsSync(folder), true);
+    assert.equal((await call('delete /api/tone-evaluation/:learner', { confirm: 'synthetic' })).code, 200);
+    assert.equal(fs.existsSync(folder), false);
+    assert.equal(fs.existsSync(path.join(other, 'keep')), true);
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }

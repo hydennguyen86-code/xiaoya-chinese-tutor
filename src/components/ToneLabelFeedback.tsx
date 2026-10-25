@@ -121,9 +121,59 @@ export function ToneSampleCounts() {
       <button type="button" onClick={() => void refresh()}>
         Xem số mẫu theo người học
       </button>
+      <p>Audio và tên người nghe giữ tới khi bạn xoá. ZIP chứa dữ liệu riêng; chỉ xuất khi bạn muốn giữ hoặc tự chia sẻ.</p>
+      {loadLearners().map((learner) => (
+        <div key={learner.id}>
+          <p>{learner.name}</p>
+          <DatasetActions learnerId={learner.id} />
+        </div>
+      ))}
       {rows.map((row, i) => (
         <p key={i}>{row}</p>
       ))}
     </section>
+  );
+}
+
+function DatasetActions({ learnerId }: { learnerId: string }) {
+  const [notice, setNotice] = useState('');
+  async function exportData() {
+    try {
+      const res = await fetch(`/api/tone-evaluation/${encodeURIComponent(learnerId)}/export`);
+      if (!res.ok) throw new Error('Không xuất được bộ nhãn.');
+      const url = URL.createObjectURL(await res.blob()),
+        link = document.createElement('a');
+      link.href = url;
+      link.download = 'misu-tone-labels-private.zip';
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (e) {
+      setNotice(e instanceof Error ? e.message : 'Không xuất được.');
+    }
+  }
+  async function removeData() {
+    if (!window.confirm('Xoá toàn bộ bản thu, nhãn và tên người nghe của hồ sơ này? Không thể khôi phục nếu chưa xuất ZIP.')) return;
+    try {
+      const res = await fetch(`/api/tone-evaluation/${encodeURIComponent(learnerId)}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ confirm: learnerId }),
+      });
+      if (!res.ok) throw new Error('Không xoá được.');
+      setNotice('Đã xoá bộ thu và nhãn; bấm xem số mẫu để cập nhật.');
+    } catch (e) {
+      setNotice(e instanceof Error ? e.message : 'Không xoá được.');
+    }
+  }
+  return (
+    <div>
+      <button type="button" onClick={() => void exportData()}>
+        Xuất ZIP nhãn và audio riêng
+      </button>
+      <button type="button" onClick={() => void removeData()}>
+        Xoá bộ thu/nhãn của hồ sơ
+      </button>
+      <p role="status">{notice}</p>
+    </div>
   );
 }

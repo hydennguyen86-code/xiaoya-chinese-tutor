@@ -1,3 +1,4 @@
+import JSZip from 'jszip';
 import fs from 'node:fs';
 import path from 'node:path';
 import express from 'express';
@@ -38,6 +39,69 @@ export function mountToneEvaluation(app, dataDir) {
     fs.writeFileSync(path.join(dir, 'manifest.json.tmp'), JSON.stringify(data, null, 2));
     fs.renameSync(path.join(dir, 'manifest.json.tmp'), path.join(dir, 'manifest.json'));
   };
+  const safeRoot = (dir) => {
+    if (fs.existsSync(dir) && fs.lstatSync(dir).isSymbolicLink()) throw new Error('Invalid dataset symlink.');
+  };
+  app.delete('/api/tone-evaluation/:learner', (req, res) => {
+    try {
+      const { dir } = locate(req);
+      safeRoot(dir);
+      if (req.body?.confirm !== req.params.learner) throw new Error('Confirm the learner before deleting.');
+      fs.rmSync(dir, { recursive: true, force: true });
+      res.json({ ok: true });
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  });
+  app.get('/api/tone-evaluation/:learner/export', async (req, res) => {
+    try {
+      const { dir } = locate(req);
+      safeRoot(dir);
+      const zip = new JSZip();
+      const entries = manifest(dir).recordings.filter((r) => TONE_ITEMS.some((i) => i.id === r.id && i.text === r.text));
+      const addFile = (relative) => {
+        const file = path.join(dir, relative);
+        if (!fs.existsSync(file)) return;
+        const resolved = fs.realpathSync(file),
+          rootPath = fs.realpathSync(dir);
+        if (!resolved.startsWith(rootPath + path.sep) || !fs.lstatSync(file).isFile()) throw new Error('Invalid export file.');
+        zip.file(relative, fs.readFileSync(file));
+      };
+      zip.file(
+        'manifest.json',
+        JSON.stringify(
+          {
+            version: 1,
+            recordings: entries.map((r) => ({
+              id: r.id,
+              text: r.text,
+              kind: r.kind,
+              file: `${r.id}.audio`,
+              mime: r.mime,
+              recordedAt: r.recordedAt,
+              label: r.label,
+            })),
+          },
+          null,
+          2,
+        ),
+      );
+      for (const r of entries) addFile(`${r.id}.audio`);
+      const folder = path.join(dir, 'feedback');
+      if (fs.existsSync(folder)) {
+        if (fs.lstatSync(folder).isSymbolicLink()) throw new Error('Invalid feedback symlink.');
+        for (const file of fs.readdirSync(folder))
+          if (/^(?:[a-f0-9]{32}|[a-f0-9-]{36})\.(?:json|audio)$/.test(file)) addFile(`feedback/${file}`);
+      }
+      res
+        .set('Cache-Control', 'no-store')
+        .set('Content-Disposition', 'attachment; filename="misu-tone-labels-private.zip"')
+        .type('application/zip')
+        .send(await zip.generateAsync({ type: 'nodebuffer' }));
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  });
   app.get('/api/tone-feedback/:learner', (req, res) => {
     try {
       const { dir } = locate(req);

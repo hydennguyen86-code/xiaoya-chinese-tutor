@@ -425,3 +425,8 @@ Lập catalog câu ngắn/đời thường bằng `npm run corpus:import`; hỗ 
 Xem [cách cấu hình và giới hạn bộ lọc](docs/COMMON-VOICE.md).
 
 Thiết bị LAN dùng chung PIN cũng có thể gọi nhận dạng/chấm phát âm và gửi bản thu phản hồi; PIN không phân quyền riêng giữa các hồ sơ. Chỉ chia sẻ cho người tin cậy. Bản thu để phát lại giới hạn 5 lượt và 20 MB tổng trong RAM; nút lưu nhãn là thao tác riêng ghi vào thư mục dữ liệu.
+
+Bộ nhãn giọng thật không tự hết hạn. Trong **Cài đặt → Bộ đo người thật**, bạn
+có thể xuất ZIP (chứa audio và tên người nghe) hoặc xác nhận xoá bộ thu/nhãn của
+hồ sơ. Để xoá thủ công: dừng app, vào thư mục dữ liệu đã cấu hình, xoá riêng
+`eval-recordings/<mã hồ sơ>`; không xoá cả thư mục dữ liệu học.
