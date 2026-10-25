@@ -1,19 +1,21 @@
-# 米苏 · Misu — luyện nói tiếng Trung với avatar 3D, chạy trên máy của bạn
+# 米苏 · Misu — luyện nghe nói riêng tư cho người Việt
 
-*A Chinese speaking tutor for Vietnamese learners: a 3D avatar you talk to, a
-local LLM that replies at your HSK level and corrects your sentences, local
-speech-to-text, tone checking, and a daily guided lesson. Local mode runs on your computer; optional online voices and a user-configured
-OpenAI-compatible model API send the relevant text to those services. The interface is in
-Vietnamese.*
+Misu là app **luyện nghe nói riêng tư cho người Việt**, tập trung vào tiếng Trung:
+nghe trước khi xem chữ, nói với avatar, xem lại phát âm và ôn đúng chỗ hay nhầm.
+App chạy trên máy của bạn; chưa hướng tới thay thế một khóa học hoàn chỉnh.
 
-Misu là bạn luyện nói tiếng Trung cho người Việt: bạn nói (hoặc gõ), avatar trả
-lời bằng tiếng Trung có pinyin và bản dịch tiếng Việt, sửa câu sai, ghi lại từ
-mới để ôn, và mỗi ngày có sẵn một bài học theo lộ trình để khỏi phải tự chọn học gì.
+*Private Chinese listening and speaking practice for Vietnamese learners, with
+local models, local speech recognition and a talking avatar. Optional online
+voices and model APIs send the relevant text to those services.*
 
-![Demo nhập câu, nhận phản hồi và ôn từ](docs/media/demo-keyboard.gif)
+“Riêng tư” phụ thuộc cấu hình: Whisper và Ollama/LM Studio chạy cục bộ;
+giọng Edge cần mạng, API model và nhận dạng của trình duyệt là các lựa chọn
+có thể gửi dữ liệu tới dịch vụ tương ứng. Xem [Quyền riêng tư](#quyền-riêng-tư).
 
-*Demo thao tác bằng bàn phím (30 giây, dữ liệu giả lập, avatar hoạt hình mẫu).
-Chưa phải bản quay luyện nói bằng micro.*
+![Luyện nghe nói với avatar hoạt hình mẫu](docs/media/listening-sample.png)
+
+*Ảnh app thật, avatar 3D mẫu và hồ sơ học thử trong dữ liệu tạm; không phải ảnh
+người học thật. Nội dung AI chưa được giáo viên duyệt.*
 
 ## Học ngay: HSK 1 và HSK 5 ứng dụng
 
@@ -43,26 +45,53 @@ Nhiệm vụ giao tiếp dùng bối cảnh mới; xin gợi ý được ghi ri�
 thanh điệu chỉ là ước lượng, không phải chứng chỉ HSK. Phần không chấm được
 không tính điểm; các lần có đề khác nhau không hoàn toàn tương đương.
 
-## Tính năng
+## Tính năng nghe nói
 
-- **Avatar nói chuyện**: avatar 3D (TalkingHead, cử động môi theo tiếng nói)
-  hoặc avatar LAM dựng từ ảnh thật (Gaussian splatting, chạy ngay trong trình
-  duyệt).
-- **Trả lời theo trình độ**: HSK 1–2 câu rất ngắn, chậm; HSK 5–6 nói tự nhiên,
-  dài hơn. Mô hình chạy cục bộ qua Ollama hoặc LM Studio.
-- **Sửa câu**: luật cố định cho các lỗi người Việt hay mắc (lượng từ, 比…很,
-  没…了, trật tự trạng ngữ nơi chốn/thời gian, 一点儿) cộng với mô hình, có bộ
-  lọc để không "sửa" những câu vốn đã đúng.
-- **Nhận dạng giọng nói cục bộ** bằng whisper.cpp: giọng bạn không rời khỏi máy.
-- **Chấm thanh điệu**: đọc một từ, Misu chỉ ra chữ nào sai thanh và cách sửa;
-  đọc một câu, Misu vẽ đường cao độ của bạn cạnh giọng mẫu.
-- **Bài hôm nay**: ôn từ và lỗi cũ của chính bạn → từ mới → mẫu câu →
-  đóng vai → nói tự do → tổng kết. Mặc định dùng hai lộ trình Misu tự soạn; có thể dùng mục lục
-  sách riêng (xem phần [Mục lục sách](#mục-lục-sách)).
-- **Nhiều người học** trên một máy, mỗi người có trình độ, lịch sử và từ ôn
-  riêng.
-- **Dữ liệu nằm trong thư mục `data/`** (mỗi mục một file JSON, sao lưu mỗi ngày,
-  giữ 14 ngày), không phụ thuộc bộ nhớ trình duyệt.
+- **Luyện tai thanh điệu**: nghe âm/từ đôi rồi chọn thanh; ưu tiên các cặp bạn
+  hay nhầm trong nghe và nói. Đối chiếu biến điệu theo `acceptTones` của học liệu.
+- **Cặp âm dễ lẫn**: zh/z, ch/c, sh/s, j/q/x, ü/u và các vần n/ng;
+  chọn theo tai nghe, không cần STT để chấm lựa chọn.
+- **Nghe chép**: chữ Hán hoặc pinyin, nghe lại từng cụm và tô chỗ khác bản chép.
+  Có câu DeepSeek và câu ví dụ của buổi học.
+- **Ba tốc độ 0.7/0.85/1×**, nút nghe chậm; nhập vai mặc định ẩn chữ,
+  nghe trước rồi mở lời và nghĩa.
+- **Common Voice tùy chọn**: 154 câu Beijing Chinese theo danh sách AI chọn,
+  có bậc ước lượng/nghĩa Việt; đọc audio tại chỗ từ nguồn người dùng tải,
+  không kèm audio trong repo và không chia sẻ cho máy LAN.
+- **Shadowing**: phát mẫu rồi thu nói theo, xem hai đường cao độ,
+  độ dài và khoảng ngắt. Không coi đường giống nhau là chứng nhận phát âm đúng.
+- **Sửa phát âm và ôn theo lịch**: chữ → từ → câu, hai lần khớp rõ liên tiếp;
+  chữ chưa chấm được không tính. Câu dài hiện chưa tự xác nhận qua vòng.
+  Lỗi thanh/cặp âm có lịch ôn riêng ngắn hơn từ vựng.
+- **Xem câu vừa nói**: giữ tối đa 10 bản ghi cục bộ trong RAM của phiên,
+  bấm xem phát âm trên transcript Whisper; tải lại trang sẽ mất bản ghi này.
+- **Trôi chảy và độ trễ tham khảo**: xu hướng theo tuần, âm tiết/giây ước lượng,
+  khoảng ngắt; tách thời gian STT/model/TTS/phát tiếng. Chưa xác nhận mục tiêu 2,5 giây.
+- **Hán Việt và bẫy nghĩa**: tra âm Việt theo chữ từ Unihan `kVietnamese`,
+  ghi rõ nguồn/biến thể/thiếu dữ liệu; không mặc định đó là âm Hán Việt chuẩn
+  theo ngữ cảnh. Ghi chú DeepSeek chia **Bẫy nghĩa / Mẹo âm**, AI soạn, chưa duyệt.
+- **Hội thoại và sửa câu** với model cục bộ hoặc API tùy chọn, avatar mẫu
+  TalkingHead/LAM; nhiều hồ sơ học và dữ liệu lưu/sao lưu trên máy.
+
+![Thẻ từ với âm theo Unihan và ghi chú Hán Việt](docs/media/vocabulary-sample.png)
+
+Các bộ DeepSeek giữ nhãn **AI soạn, chưa duyệt**. Đây là bài thực hành,
+không phải đề HSK chính thức hay bằng chứng hiệu quả học trên người thật.
+
+## Đối chiếu trước khi chọn app
+
+Bảng này nêu tiêu chí nên kiểm tra, không khẳng định tính năng của mọi sản phẩm
+trong từng nhóm và không dùng số liệu đối thủ chưa được kiểm chứng.
+
+| Nhóm ứng dụng | Tiêu chí nên đối chiếu | Misu hiện tại / hạn chế |
+|---|---|---|
+| App khóa học | Chất lượng biên tập, lộ trình và trải nghiệm di động | 48 buổi thực hành HSK1/HSK5; chưa có giáo viên duyệt, chưa có app điện thoại native |
+| Gia sư AI trên mạng | Sự thuận tiện, chất lượng phản hồi và dữ liệu gửi đi | Chạy model trên máy hoặc tự chọn API; cần cài đặt, model nhỏ vẫn có thể sửa sai |
+| App chuyên phát âm | Phản hồi âm vị, độ tin cậy trên giọng người học | Từ 1–2 chữ có chấm thanh ước lượng; câu dài chủ yếu xem cao độ, chưa kiểm chứng với người Việt thật |
+| Từ điển / app ôn từ | Độ phủ từ, chọn âm theo ngữ cảnh và lịch ôn | Có ôn từ/lỗi riêng; Unihan còn thiếu chữ/đa âm, không thay từ điển Hán Việt chuyên dụng |
+
+Misu chưa đầu tư phần viết chữ. Có nghe giọng người thật nếu tự cấu hình Common
+Voice, nhưng audio không đi kèm repo; phạm vi giọng nghe vẫn hạn chế.
 
 ## Cài đặt
 
@@ -166,10 +195,17 @@ Các bộ đo nằm trong `eval/` và chạy lại được trên máy bạn. K�
 Số sửa câu đối chiếu được trong [kết quả qwen3.5:4b](eval/results/corrections-qwen3.5_4b-2026-10-24.json).
 [Đo sinh bài ba trình độ](eval/results/lessons-qwen3.5_4b-2026-10-24.json) chỉ xác nhận phản hồi và cấu trúc, không chứng nhận nội dung.
 
-**Sửa câu** (`npm run eval:corrections`, qwen3.5:4b, 40 câu): 0/22 câu đúng bị
+**Mốc pipeline sửa câu cũ, ngày 24/10/2026** (`npm run eval:corrections`, qwen3.5:4b, bộ cũ 40 câu): 0/22 câu đúng bị
 sửa nhầm; 17/18 câu sai được phát hiện, 16/18 sửa đúng như đáp án. Bộ câu nhỏ và
 gồm đúng những loại lỗi mà luật đã viết cho, nên với lỗi khác (chọn từ, ngữ
 pháp hiếm) phần sửa vẫn do mô hình 4B quyết định và có lúc sai. Mô hình khác cần được đo riêng bằng cùng bộ thử.
+
+**Luật cố định mới — chưa bao gồm LLM**: bộ gộp DeepSeek và các câu đúng tương tự
+có 108 câu đúng / 98 câu sai. Bản luật cuối sửa nhầm **0/108**, sửa trúng **29/98**;
+69 lỗi chưa bắt được bằng luật. [Audit từng luật và hash nguồn](eval/results/grammar-rules-deepseek-merged-2026-10-25T05-24-46-248Z.json).
+Chạy lại bằng `node eval/rule-corrections.mjs`. Nhãn thử AI chưa được chuyên gia duyệt;
+không bảo đảm 0 sửa nhầm ngoài bộ thử. Bộ `eval/corrections.json` đã lớn hơn bộ cũ,
+**chưa đo lại pipeline LLM trên bộ mới**.
 
 **Thanh điệu**: bản ghi có thể đối chiếu mới nhất là
 [Tingting ngày 24/10/2026](eval/results/tones-macOS_Tingting-2026-10-24.json),

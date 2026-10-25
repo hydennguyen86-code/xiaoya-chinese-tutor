@@ -94,3 +94,8 @@ The Unicode definition of kVietnamese is pronunciation(s) in Quốc ngữ; it do
 not guarantee a complete or context-disambiguated Sino-Vietnamese dictionary.
 The UI reports missing data and retains alternatives. It does not silently
 replace absent entries with AI guesses.
+
+For example, this pinned kVietnamese snapshot gives 你=nể and 好=háo;
+these values are faithfully reported as **Vietnamese character readings**, not
+asserted to be the standard Sino-Vietnamese word reading of 你好. AI-authored
+Sino-Vietnamese mnemonics remain separately labeled and unreviewed.

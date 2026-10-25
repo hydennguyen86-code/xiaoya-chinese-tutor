@@ -184,3 +184,11 @@ hay thiết bị Windows thật. E23 vẫn chờ bộ câu thử DeepSeek, khôn
 - Nhập JSON/chính sách thanh nhẹ vào policies và module coursePinyin, không chép _author/_make scripts. Các nhãn vẫn AI đề xuất/chưa duyệt. Quy tắc này dùng cho kiểm tra học liệu, không đổi bộ chấm thanh/segment.
 - Sửa loader bài đóng gói giữ pinyin tác giả đã kiểm tra, không tự tái sinh đè thanh nhẹ bằng mặc định pinyin-pro. Chú giải checkpoint/pinyin hiện khi mở đáp án để ôn; thêm âm Hán Việt cho từ chú giải. Thẻ kho từ nhỏ dùng dòng âm gọn để không lồng details tương tác vào button.
 - Test thêm 24 buổi với từ gốc buổi 1, giới hạn 3 từ mới, tình huống mới, pinyin/chính sách, loader giữ xiè xie, 2 checkpoint, patch add-only/idempotent. Validator toàn bộ 48 buổi vẫn chạy. Chưa duyệt sư phạm và chưa thử người học thật.
+
+## F25 — README định vị nghe nói và ảnh mẫu
+
+- Mở đầu: luyện nghe nói riêng tư cho người Việt; nêu ngay cấu hình cục bộ và lựa chọn online. Liệt kê các tính năng nghe/nói mới, Common Voice tại chỗ, vòng sửa/lịch ôn, trôi chảy/độ trễ tham khảo và Hán Việt.
+- Bảng đối chiếu nhóm app theo tiêu chí lựa chọn, nêu rõ giới hạn Misu: chưa native mobile/giáo viên duyệt/viết chữ/kiểm định người Việt; không bịa số liệu đối thủ. Tách mốc pipeline 40 câu cũ khỏi audit luật 108/98 mới, chưa đo lại LLM trên bộ lớn.
+- Hai ảnh chụp app thật trong docs/media, avatar hoạt hình GLB mẫu, hồ sơ Người học thử và thư mục dữ liệu tạm. Không dùng ảnh/giọng người thật, không sửa DOM để tạo nội dung giả.
+- Làm rõ nhãn tra âm: Unihan kVietnamese có giá trị như 你=nể/好=háo, không thể tự khẳng định đó là âm Hán Việt chuẩn của từ 你好. UI ghi Âm Việt theo chữ (Unihan), ghi chú Hán Việt DeepSeek là một nguồn AI riêng chưa duyệt; thêm regression test về nhãn.
+- Chưa xem README trên GitHub vì không push; đã kiểm tra file ảnh và liên kết cục bộ. Chưa thử Windows/người học thật. .gitignore có sửa ngoài phạm vi đợt này, nay người dùng yêu cầu commit riêng ở bước kế tiếp.

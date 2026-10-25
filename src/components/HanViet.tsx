@@ -6,18 +6,20 @@ export function HanViet({ word, showTips = true, compact = false }: { word: stri
   if (compact)
     return (
       <span className="hanviet" title="Unihan kVietnamese, âm theo chữ; không thay pinyin">
-        Hán Việt: {hanVietText(word)}
+        Âm Việt (Unihan): {hanVietText(word)}
       </span>
     );
   const traps = showTips ? wordTraps(word) : [];
+  const authoredReadings = [...new Set(traps.filter((t) => t.hanzi === word).map((t) => t.hanViet))];
   return (
     <div className="hanviet">
       <p
         className="hanviet-reading"
         title="Unihan 17.0.0 kVietnamese, tra từng chữ. kVietnamese ghi âm Quốc ngữ theo chữ, không phân giải theo ngữ cảnh. Đây không phải phiên âm tiếng Trung hay nghĩa từ."
       >
-        Âm Hán Việt: {hanVietText(word)}
+        Âm Việt theo chữ (Unihan): {hanVietText(word)}
       </p>
+      {authoredReadings.length > 0 && <p>Hán Việt gợi nhớ (AI soạn, chưa duyệt): {authoredReadings.join(' / ')}</p>}
       {parts.some((p) => p.via.length || p.readings.length > 1) && (
         <details>
           <summary>Nguồn âm / biến thể</summary>
@@ -58,7 +60,10 @@ export function HanVietGuide({ onSpeak }: { onSpeak: (text: string) => void }) {
   return (
     <details className="hanviet-guide">
       <summary>Hán Việt: bẫy nghĩa / mẹo âm</summary>
-      <p>{hanVietBank.source}. Âm tra Unihan theo chữ; ghi chú DeepSeek chỉ là gợi ý. Hán Việt không thay pinyin hay nghĩa hiện đại.</p>
+      <p>
+        {hanVietBank.source}. Âm tra Unihan theo chữ; ghi chú DeepSeek chỉ là gợi ý. kVietnamese không bảo đảm một âm Hán Việt chuẩn theo
+        ngữ cảnh. Hán Việt không thay pinyin hay nghĩa hiện đại.
+      </p>
       <label>
         Nhóm
         <select value={group} onChange={(e) => setGroup(e.target.value)}>

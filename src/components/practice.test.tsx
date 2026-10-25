@@ -1,3 +1,4 @@
+import { HanViet } from './HanViet';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -53,4 +54,13 @@ test('listen-first role-play hides both Chinese and translation by default', asy
   assert.ok(!html.includes('Bản dịch fixture'));
   assert.match(html, /Hiện chữ và nghĩa/);
   assert.match(html, /Nghe chậm/);
+});
+
+test('Unihan character readings are not mislabeled as authoritative Sino-Vietnamese word readings', () => {
+  const html = renderToStaticMarkup(<HanViet word="你好" />);
+  assert.match(html, /Âm Việt theo chữ/);
+  assert.doesNotMatch(html, /Âm Hán Việt:/);
+  const memory = renderToStaticMarkup(<HanViet word="学" />);
+  assert.match(memory, /AI soạn, chưa duyệt/);
+  assert.match(memory, /học/);
 });
