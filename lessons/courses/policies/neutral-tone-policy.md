@@ -41,7 +41,9 @@ Chỉ bỏ dấu thanh ở đúng âm tiết liệt kê; không đổi chữ cá
 | 右边 | yòu bian | âm tiết 2 |
 | 早上 | zǎo shang | âm tiết 2 |
 
-Hư từ/hậu tố đứng sau một âm tiết Hán cũng đọc nhẹ: 们、么、的、了、吧、吗、呢、啊、呀、哦、嘛、子.
+Hư từ đứng sau một âm tiết Hán luôn đọc nhẹ: 们、么、吧、吗、呢、啊、呀、哦、嘛.
+
+的、了、子 **không** đọc nhẹ theo luật chung, vì chúng còn là hình vị mang thanh: 目的 mù dì, 的确 dí què, 了解 liǎo jiě, 电子 diàn zǐ, 王子 wáng zǐ, 女子 nǚ zǐ. Với 的 và 了, dùng cách đọc theo ngữ cảnh của `pinyin-pro` (我的 wǒ de, 吃了 chī le). Với 子, chỉ đọc nhẹ khi từ nằm trong danh sách từ cụ thể ở trên hoặc `pinyin-pro` đã trả về zi (孩子, 桌子…); các danh từ thường ngày mà `pinyin-pro` đọc nhầm thành zǐ (鞋子, 饺子, 例子…) đã được thêm vào danh sách.
 
 Danh sách này là **nguồn duy nhất** trong `server/coursePinyin.mjs` (đọc JSON chính sách trong repo); các validator của học liệu đều import từ đó.
 

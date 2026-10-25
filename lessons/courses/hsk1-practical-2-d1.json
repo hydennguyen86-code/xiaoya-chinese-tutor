@@ -19,7 +19,7 @@
       "example": "我是学生。",
       "exampleVi": "Tôi là học sinh.",
       "pinyin": "wǒ",
-      "examplePinyin": "wǒ shì xué shēng 。"
+      "examplePinyin": "wǒ shì xué sheng 。"
     },
     {
       "word": "你",
@@ -42,8 +42,8 @@
       "meaning": "tên",
       "example": "你的名字是什么？",
       "exampleVi": "Tên của bạn là gì?",
-      "pinyin": "míng zì",
-      "examplePinyin": "nǐ de míng zì shì shén me ？"
+      "pinyin": "míng zi",
+      "examplePinyin": "nǐ de míng zi shì shén me ？"
     },
     {
       "word": "是",
@@ -75,7 +75,7 @@
       "explanation": "Câu hỏi tên có từ hỏi 什么 nên không thêm 吗.",
       "example": "你叫什么名字？",
       "exampleVi": "Bạn tên gì?",
-      "examplePinyin": "nǐ jiào shén me míng zì ？"
+      "examplePinyin": "nǐ jiào shén me míng zi ？"
     }
   ],
   "roleplay": {
