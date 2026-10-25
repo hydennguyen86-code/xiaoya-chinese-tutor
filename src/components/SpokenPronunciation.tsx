@@ -29,7 +29,7 @@ export function SpokenPronunciation({ turn, learnerId, voice }: { turn: VoiceRes
       const data = await response.json();
       if (!abort.signal.aborted) {
         setReport(data.tones);
-        if (data.tones) recordSpokenTones(learnerId, data.tones);
+        if (data.tones) recordSpokenTones(learnerId, data.tones, turn.audio);
       }
     } catch (e) {
       if (!abort.signal.aborted) setError(e instanceof Error ? e.message : 'Không phân tích được.');

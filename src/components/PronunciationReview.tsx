@@ -26,13 +26,13 @@ export function PronunciationReview({
     alive = useRef(true);
   const [phase, setPhase] = useState(''),
     [notice, setNotice] = useState('');
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    alive.current = true;
+    return () => {
       alive.current = false;
       handle.current?.cancel();
-    },
-    [],
-  );
+    };
+  }, []);
   async function review() {
     if (!item) return;
     audio.stop();

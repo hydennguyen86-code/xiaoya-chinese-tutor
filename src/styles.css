@@ -4993,3 +4993,40 @@ svg {
 .listening-controls select { border: 1px solid var(--line-strong); background: var(--paper-strong); border-radius: 8px; padding: 5px; }
 .slow-listen { font-size: 12px; margin: 4px; }
 .listen-first-line .lesson-actions { flex-wrap: wrap; }
+
+/* Listening drills share readable controls, including their disabled state. */
+.course-practice details.course-practice {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--paper-strong);
+}
+.course-practice summary { cursor: pointer; font-weight: 600; line-height: 1.6; }
+.course-practice p { margin: 10px 0; line-height: 1.7; overflow-wrap: anywhere; }
+.course-practice button:not(.lesson-secondary):not(.lesson-primary) {
+  margin: 4px 6px 4px 0;
+  padding: 9px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--paper);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.course-practice button:disabled { opacity: .45; cursor: default; }
+.course-practice select, .course-practice input:not([type="radio"]):not([type="checkbox"]) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 6px 0 12px;
+  padding: 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--paper);
+  color: inherit;
+  font: inherit;
+}
+.course-practice table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.course-practice th, .course-practice td { padding: 8px 4px; text-align: left; border-bottom: 1px solid var(--line); }
+.course-practice .lesson-actions { flex-wrap: wrap; }

@@ -111,3 +111,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - UI bằng hồ sơ thử: khóa lựa chọn thanh trước khi phát; trả lời sai tạo 1 mục ôn trong LearningProfile schema 2; nghe chép ni3 hao3 khớp acceptTones; Common Voice đổi bậc 45/58/51 câu, nghĩa/focus chỉ hiện sau nộp; shadowing hiển thị nhãn AI và cụm hơi. Không bấm thu micro người thật.
 - Giải mã 154/154 MP3 trực tiếp từ nguồn sang null; dữ liệu app tạm có 0 MP3. Warmup Ollama thật trả 200, cached=true. Pipeline pronounce với một câu tự soạn bằng TTS 0.85× có hai đường 60 điểm và timing mẫu/người đọc; chỉ là kiểm thử giọng máy, không phải độ chính xác người thật.
 - Chưa thử Windows thật; chưa kiểm chứng micro/căn ngắt/chấm thanh trên người Việt, vòng câu dài chưa thể tự qua, độ trễ dưới 2,5 giây chưa được xác nhận. Không push/tag.
+
+### Vá sau kiểm tra giao diện
+
+- Thống nhất khoảng cách/nút/select/input và trạng thái disabled cho các drill mới, tránh nút dính chữ trong giao diện thật.
+- Cùng một Blob bản ghi xem phát âm nhiều lần chỉ ghi ma trận nhầm một lần cho mỗi learner (WeakMap, không tạo định danh/audio lưu bền). Có test chống tăng giả số lỗi khi bấm lại. Chuẩn hóa cờ sống của màn ôn khi effect được thiết lập lại.
+- Bản vá cuối qua 91 test (87 backend/lib + 4 component), typecheck và build/dist. Giao diện shadowing đã mở lại từ bản build mới để kiểm tra bố cục; chưa thu micro người thật.

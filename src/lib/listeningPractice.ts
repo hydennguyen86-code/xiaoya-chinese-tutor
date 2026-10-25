@@ -58,7 +58,14 @@ function save(scope: string, value: ListeningHistory) {
     /* optional storage */
   }
 }
-export function recordSpokenTones(scope: string, report: ToneReport) {
+const countedRecordings = new WeakMap<Blob, Set<string>>();
+export function recordSpokenTones(scope: string, report: ToneReport, recording?: Blob) {
+  if (recording) {
+    const scopes = countedRecordings.get(recording) || new Set<string>();
+    if (scopes.has(scope)) return;
+    scopes.add(scope);
+    countedRecordings.set(recording, scopes);
+  }
   const history = listeningHistory(scope);
   for (const s of report.syllables)
     if (s.ok === false && s.heard >= 1 && s.heard <= 5) {

@@ -200,7 +200,7 @@ function listenLocal({
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
     const data = (await res.json()) as { text?: string; tones?: ToneReport; fluency?: Fluency };
     if (learnerId && !pronounce && data.fluency) saveFluency(learnerId, data.fluency);
-    if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones);
+    if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones, blob);
     return {
       text: (data.text || '').trim(),
       tones: data.tones ?? null,
