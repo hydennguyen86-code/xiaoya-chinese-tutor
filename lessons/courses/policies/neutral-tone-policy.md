@@ -93,8 +93,9 @@ Cách áp dụng: mở bản sao của file đích, thêm đúng các trường 
 
 ## 7. Kiểm tra
 
+Các bản vá được soạn và kiểm tra ngoài repo (thư mục nội dung riêng của người soạn). Trong repo, kiểm tra học liệu sau khi áp dụng bằng:
+
 ```sh
-cd /Users/admin/Documents/AI-Chinese-Teacher/content-for-misu
-ELECTRON_RUN_AS_NODE=1 /Applications/Qoder.app/Contents/MacOS/Qoder _make-fixes.mjs
-ELECTRON_RUN_AS_NODE=1 /Applications/Qoder.app/Contents/MacOS/Qoder course-fixes.check.mjs
+npm test
+node scripts/check-course-day2.mjs
 ```
