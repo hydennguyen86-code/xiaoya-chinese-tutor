@@ -1,5 +1,7 @@
 # 米苏 · Misu — luyện nghe nói riêng tư cho người Việt
 
+[English](README.en.md)
+
 Misu là app **luyện nghe nói riêng tư cho người Việt**, tập trung vào tiếng Trung:
 nghe trước khi xem chữ, nói với avatar, xem lại phát âm và ôn đúng chỗ hay nhầm.
 App chạy trên máy của bạn; chưa hướng tới thay thế một khóa học hoàn chỉnh.
@@ -206,12 +208,13 @@ sửa nhầm; 17/18 câu sai được phát hiện, 16/18 sửa đúng như đá
 gồm đúng những loại lỗi mà luật đã viết cho, nên với lỗi khác (chọn từ, ngữ
 pháp hiếm) phần sửa vẫn do mô hình 4B quyết định và có lúc sai. Mô hình khác cần được đo riêng bằng cùng bộ thử.
 
-**Luật cố định mới — chưa bao gồm LLM**: bộ gộp DeepSeek và các câu đúng tương tự
-có 108 câu đúng / 98 câu sai. Bản luật cuối sửa nhầm **0/108**, sửa trúng **29/98**;
-69 lỗi chưa bắt được bằng luật. [Audit từng luật và hash nguồn](eval/results/grammar-rules-deepseek-merged-2026-10-25T05-24-46-248Z.json).
-Chạy lại bằng `node eval/rule-corrections.mjs`. Nhãn thử AI chưa được chuyên gia duyệt;
-không bảo đảm 0 sửa nhầm ngoài bộ thử. Bộ `eval/corrections.json` đã lớn hơn bộ cũ,
-**chưa đo lại pipeline LLM trên bộ mới**.
+**Luật cố định — chưa bao gồm LLM**: audit nghiêm ngặt hiện có 0/112 câu đúng
+bị sửa, 8/102 câu sai khớp đáp án toàn câu và 26 trường hợp chỉ khớp đoạn.
+`fixed` không còn tính bằng chuỗi con; nhiều đáp án cũ chỉ là đoạn nên số này
+không so trực tiếp với mốc 29/98 trước đó.
+[Audit và hash nguồn](eval/results/grammar-rules-deepseek-merged-2026-10-25T14-10-55-134Z.json).
+Chạy lại bằng `node eval/rule-corrections.mjs`. Nhãn thử AI chưa được chuyên gia
+duyệt, không bảo đảm 0 sửa nhầm ngoài bộ thử. **Chưa đo lại pipeline LLM trên bộ mới**.
 
 **Thanh điệu**: bản ghi có thể đối chiếu mới nhất là
 [Tingting ngày 24/10/2026](eval/results/tones-macOS_Tingting-2026-10-24.json),

@@ -227,3 +227,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - fixed chỉ tính khi toàn câu sau áp các khoảng sửa đúng bằng câu kỳ vọng (chuẩn hoá dấu câu/khoảng trắng); expected dạng đoạn chỉ được tính partial, không coi là sửa xong câu.
 - Không thay mọi lần xuất hiện bằng split/join: dùng index, thiếu vị trí mà original lặp thì đánh dấu ambiguous. Dùng chung cho audit luật và eval pipeline. Bộ đáp án cũ nhiều đoạn chưa có đáp án toàn câu, nên số fixed nghiêm ngặt sẽ thấp hơn; không tự bịa câu chuẩn để tăng điểm.
 - Test hai chỗ sai giống nhau, một chỗ chưa sửa, kỳ vọng chỉ là đoạn và trường hợp không mơ hồ. Chưa chạy lại pipeline model thật.
+
+## HANDOFF — README tiếng Anh
+
+- Chép README.en.md từ nguồn Qoder, kiểm lại 30 bài/240 từ/90 mẫu, 198 dictation/48 shadowing/246 id. Cập nhật giới hạn RAM 5 lượt/20 MB và nhãn đo grammar cũ là lịch sử; bổ sung kết quả strict hiện tại (0/112 sửa nhầm, 8/102 exact + 26 partial), giới hạn quyền riêng tư và xuất/xoá bộ nhãn. Có liên kết English ở README Việt.
+- Không tự tăng điểm hay đổi nhãn chưa duyệt. Chưa chạy lại LLM, chưa có kiểm chứng hiệu quả sư phạm.
