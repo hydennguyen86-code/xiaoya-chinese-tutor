@@ -237,3 +237,15 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Ngoại lệ cụm 东西方 giữ xī có thanh, không kế thừa “xi nhẹ” của 东西 mang nghĩa đồ vật. Utility kiểm nội dung nghe dùng cùng neutralPositions để không tạo hai chính sách khác nhau.
 - Test kỳ vọng viết cứng cho cả 东西/东西方 và utility đọc; không tuyên bố đã phân giải ranh giới hay đa nghĩa cho mọi từ Hán.
+
+## Chốt review vòng 2 — 2026-10-25
+
+- Giữ commit Claude: 0f7702f (L1), d03f43a (format), 2d21afd (T3/T4).
+- Commit riêng: 3054899 L2; 6eab2dc L3; 96b3583 L4; 52dc42f L5; 299b819 N1; 1315601 N2; c5ca332 N3; 52fc808 M2/Q2; 9f71d70 M3; 45c2bd4 T5; 231b34c README.en; a658e0c T1.
+- Sau tất cả thay đổi: **120 test backend/lib + 7 test component qua**, typecheck/build/dist allowlist qua. Smoke clone sạch npm ci/build/status/5 tập/bài misu30/nguồn nghe/số mẫu/hai avatar mẫu qua, TTS tạo được audio. Có cảnh báo chunk Vite >500 kB; chưa tối ưu bundle trong phạm vi này.
+- UI dữ liệu tạm: khóa HSK1 đang học vẫn được giữ; chọn “30 bài giao tiếp” mở bài 1, chọn Tập 2 thấy lời nhắc và bấm về bài 1 thành công, mức dạy đổi đúng HSK3–4/HSK1–2. Ảnh kiểm tra chỉ avatar mẫu, không thêm ảnh/giọng thật.
+- Đọc lại bộ ngoài repo: 55 nhãn nguồn peer, 1 badCut, 6 câu calibration; 45/70 âm khớp nhãn, 14 âm chưa rõ. Nhãn do nguồn tại chỗ tự khai, chưa xác minh chuyên môn. Kết quả tổng hợp trong eval/results không tên/đường dẫn/audio. Trạng thái này thay cho ghi chú “chưa có nhãn” ở các mốc lịch sử trước.
+- complete=true (đủ 55 bản dùng được) nhưng fullSetLabeled=false (chưa đủ 56), vì vậy **giữ nguyên classifyIsolated**, không có thí nghiệm trước/sau và không chạy lại TTS để tuyên bố cải thiện. Cần thu lại mục cắt hỏng.
+- Audit luật cuối: 0/112 sửa nhầm, 34/102 phát hiện, 8 exact + 26 partial, không tự nâng partial thành câu đã sửa xong. Chưa đo lại pipeline LLM.
+- Chưa kiểm chứng: Windows/Linux thật, micro/abort/thu-phát điện thoại, nhãn chuyên gia, nhiều người nói và hiệu quả học tập. Luồng xuất/xoá chỉ test trên dữ liệu tổng hợp tạm, không đụng bộ thu người thật. Học liệu vẫn AI soạn, chưa duyệt.
+- Không push/tag, không ghi data/ thật, không đưa audio/giọng/ảnh người thật vào repo. Câu hỏi/dữ liệu còn thiếu cập nhật trong QUESTIONS.md. Kết thúc công việc theo kế hoạch.

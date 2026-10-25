@@ -1,13 +1,23 @@
-# Các việc cần bổ sung thông tin
+# Các việc còn cần dữ liệu hoặc quyết định
 
-## 2026-10-25 — Nhãn bộ đo giọng thật
+## 2026-10-25 — Bộ đo người thật
 
-Chưa thấy labels.*.json và các nhãn manifest còn trống trong bộ bản thu cắt sẵn. Cần người nghe gắn nhãn đủ 56 mục cho ít nhất một người trước khi thử chỉnh ngưỡng. Không dùng expected/app-scores làm đáp án.
+Hiện đã đọc được 55 mục nhãn nguồn peer và 6 câu hiệu chỉnh riêng tại chỗ;
+1 mục bị đánh dấu cắt hỏng. Cần thu lại mục đó và người nghe gắn đủ 56 mục
+trước khi thử chỉnh ngưỡng. complete=true chỉ là đủ tập audio dùng được;
+fullSetLabeled=false là chưa đủ điều kiện tinh chỉnh. Không lấy expected hay
+điểm máy làm nhãn người. Các vai trò self/peer/expert do người nghe chọn,
+chưa xác minh chuyên môn. Không cần đợi trả lời để tiếp tục công việc khác.
 
-Importer hiện hỗ trợ sidecar v1: `{ "version": 1, "source": "self", "reviewedBy": "người nghe", "labels": [{ "id": "single-1-1", "tones": [4] }] }`. Khi Qoder xuất nhãn cần đối chiếu schema thực tế. 0: chưa rõ, 1–4: thanh nghe được, 5: thanh nhẹ. Vai trò expert không tự đồng nghĩa với giáo viên đã duyệt.
+## Các quyết định Q1–Q3 trong HANDOFF đã chốt
 
-Bổ sung từ HANDOFF: bộ cắt hiện có 55/56 mục dùng được; cần thu lại mục hỏng rồi người nghe gắn nhãn. Hiện chưa tiến hành chỉnh ngưỡng.
+- Q1: giữ sửa grammar của Claude trong 2d21afd.
+- Q2: 30 bài giao tiếp là lộ trình song song, giữ mặc định cũ; đã có lựa chọn
+  riêng và nút bắt đầu từ bài 1 khi vào giữa lộ trình.
+- Q3: người nghe tự chọn self/peer/expert, không suy ra expert từ tên.
 
 ## LAN nhiều người
 
-PIN hiện cấp quyền chung cho người dùng LAN, gồm endpoint giọng nói và dữ liệu hồ sơ. Nếu định dùng ngoài nhóm tin cậy, cần quyết định thiết kế tài khoản/phân quyền; chưa tự thay đổi thành owner-only vì sẽ chặn micro điện thoại. README đã nêu giới hạn này.
+PIN hiện cấp quyền chung, gồm endpoint giọng nói và dữ liệu hồ sơ. Nếu dùng
+ngoài nhóm tin cậy, cần quyết định thiết kế tài khoản/phân quyền riêng.
+Hiện giữ luồng điện thoại đang có và ghi rõ giới hạn trong README.

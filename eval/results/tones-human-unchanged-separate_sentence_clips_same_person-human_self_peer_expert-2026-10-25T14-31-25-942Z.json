@@ -1,0 +1,191 @@
+{
+ "name": "tones-human",
+ "ranAt": "2026-10-25T14:31:25.942Z",
+ "commit": "a658e0c",
+ "dirty": false,
+ "settings": {
+  "thresholds": "unchanged",
+  "rangeCalibration": "separate sentence clips; same person",
+  "labels": "human; self/peer/expert reported separately"
+ },
+ "result": {
+  "matrix": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    11,
+    10,
+    0,
+    0,
+    8
+   ],
+   [
+    0,
+    1,
+    14,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    15,
+    1
+   ],
+   [
+    3,
+    0,
+    0,
+    0,
+    6
+   ]
+  ],
+  "bySource": {
+   "self": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "peer": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     11,
+     10,
+     0,
+     0,
+     8
+    ],
+    [
+     0,
+     1,
+     14,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     15,
+     1
+    ],
+    [
+     3,
+     0,
+     0,
+     0,
+     6
+    ]
+   ],
+   "expert": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "counts": {
+   "self": 0,
+   "peer": 55,
+   "expert": 0,
+   "recordings": 55,
+   "labeledSyllables": 70,
+   "correct": 45,
+   "unclear": 14,
+   "humanUnclear": 0,
+   "humanNeutral": 0
+  },
+  "inventory": {
+   "availableItems": 55,
+   "usableItems": 55,
+   "badCut": 1,
+   "fullSetLabeled": false,
+   "labeledItems": 55,
+   "requiredItems": 56,
+   "complete": true,
+   "sidecars": 1,
+   "rejectedLabels": 1,
+   "rejected": [
+    {
+     "id": "word-13",
+     "reason": "bad cut"
+    }
+   ]
+  }
+ }
+}

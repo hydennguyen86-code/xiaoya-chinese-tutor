@@ -25,3 +25,11 @@ Ngưỡng chấm thanh giữ nguyên. Số TTS cũ không thay thế đánh giá
 - Giữ sửa ngữ pháp Claude; dọn gợi ý chồng, PCM dùng chung, lý do thiếu fluency, lịch ôn và vòng đời audio. Phát lại giới hạn 5 lượt/20 MB RAM.
 - README có định vị riêng tư/ảnh mẫu; Git chặn audio riêng, build kiểm dist.
 - Smoke clone sạch qua build/API/khóa học/avatar mẫu/TTS. Chưa thử Windows thật, phần cứng hay thẩm định sư phạm.
+
+### Rà soát vòng 2
+
+- Giữ L1/T3/T4 của Claude. Bổ sung kiểm calibration, incomplete/badCut, coverage dùng được và cổng đủ 56 mục; tách nguồn self/peer/expert.
+- Phản hồi gắn mục/bản thu và cập nhật theo người nghe; server tự tính phần máy. Có xuất ZIP/xoá bộ thu theo hồ sơ.
+- Fallback STT khi ffmpeg lỗi, lý do fluency rõ và sửa grammar theo vị trí thật.
+- Chọn rõ 30 bài giao tiếp, giữ mặc định cũ; metadata nguồn qua patch idempotent. Có README tiếng Anh.
+- Audit grammar tách exact/partial; nhãn peer tại chỗ vẫn chỉ 55/56 nên không chỉnh ngưỡng. Chưa xác minh chuyên môn nhãn hay Windows/điện thoại thật.

@@ -216,7 +216,13 @@ không so trực tiếp với mốc 29/98 trước đó.
 Chạy lại bằng `node eval/rule-corrections.mjs`. Nhãn thử AI chưa được chuyên gia
 duyệt, không bảo đảm 0 sửa nhầm ngoài bộ thử. **Chưa đo lại pipeline LLM trên bộ mới**.
 
-**Thanh điệu**: bản ghi có thể đối chiếu mới nhất là
+**Giọng người — nhãn tự khai peer**: lần đo tại chỗ có 55/56 mục, 6 câu riêng
+học dải giọng; 45/70 âm khớp nhãn, 14 âm máy chưa rõ. Đây là một bộ thu nhỏ,
+nhãn chưa được chuyên gia xác minh. Mục cắt hỏng cần thu lại; **không chỉnh ngưỡng**
+vì chưa đủ 56 mục. [Kết quả tổng hợp](eval/results/tones-human-unchanged-separate_sentence_clips_same_person-human_self_peer_expert-2026-10-25T14-31-25-942Z.json).
+Không chứa audio, tên người hay đường dẫn máy.
+
+**Thanh điệu trên TTS**: bản ghi có thể đối chiếu là
 [Tingting ngày 24/10/2026](eval/results/tones-macOS_Tingting-2026-10-24.json),
 commit `841d68b`, working tree lúc đo còn thay đổi. Giọng tổng hợp macOS,
 ngưỡng từng được chỉnh trên chính giọng Tingting nên không phải kiểm định độc lập.

@@ -319,3 +319,11 @@ and labels can be exported to a private ZIP or explicitly deleted. Recordings
 are retained until deletion. ZIPs contain voices and reviewer names; export
 only when you intend to keep or share them yourself. No human audio is shipped
 in this repository. Threshold tuning still requires a fully labeled 56-item set.
+
+
+The latest local human-label run has 55/56 items with self-declared peer labels,
+6 separate calibration sentences, and 45/70 labeled syllables matching the
+checker (14 predictions unclear). Labels have not been expert-verified and
+this is not a broad validation. One bad cut needs recording again; thresholds
+remain unchanged because the full 56-item gate is not met.
+[Anonymous aggregate](eval/results/tones-human-unchanged-separate_sentence_clips_same_person-human_self_peer_expert-2026-10-25T14-31-25-942Z.json).
