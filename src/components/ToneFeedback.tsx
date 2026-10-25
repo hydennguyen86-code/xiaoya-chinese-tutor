@@ -15,8 +15,8 @@ export function ToneFeedback({ report, audio, repair }: { report: ToneReport; au
   const source = useRef<AudioBufferSourceNode | null>(null);
   const sequence = useRef(0);
   const [playback, setPlayback] = useState('');
-  const [repairChar,setRepairChar] = useState('');
-  useEffect(()=>setRepairChar(''),[report]);
+  const [repairChar, setRepairChar] = useState('');
+  useEffect(() => setRepairChar(''), [report]);
   useEffect(
     () => () => {
       sequence.current += 1;
@@ -114,8 +114,15 @@ export function ToneFeedback({ report, audio, repair }: { report: ToneReport; au
     <div className="tone-feedback">
       <p className="lesson-hint">Chấm tự động mới được thử trên giọng máy; hãy xem kết quả là gợi ý.</p>
       {comparison}
-      {repair && wrong.map((s,i)=><button type="button" key={i} onClick={()=>setRepairChar(s.char)}>Luyện lại chữ {s.char}</button>)}
-      {repair && repairChar && <PronunciationRepair key={repairChar} context={repair} char={repairChar} onClose={()=>setRepairChar('')}/>}
+      {repair &&
+        wrong.map((s, i) => (
+          <button type="button" key={i} onClick={() => setRepairChar(s.char)}>
+            Luyện lại chữ {s.char}
+          </button>
+        ))}
+      {repair && repairChar && (
+        <PronunciationRepair key={repairChar} context={repair} char={repairChar} onClose={() => setRepairChar('')} />
+      )}
       <div className="tone-syllables">
         {report.syllables.map((s, i) => (
           <span

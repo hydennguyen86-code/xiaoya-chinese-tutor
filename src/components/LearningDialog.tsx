@@ -1,12 +1,8 @@
+import { LatencyHistory } from './LatencyHistory';
 import { FluencyHistory } from './FluencyHistory';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import type {
-  AnalysisReport,
-  LearningProfile,
-  MistakeCategory,
-  SkillKey,
-} from '../types';
+import type { AnalysisReport, LearningProfile, MistakeCategory, SkillKey } from '../types';
 import {
   SKILL_LABELS,
   daysUntil,
@@ -21,17 +17,7 @@ import {
   topMistakes,
   weakWords,
 } from '../lib/learning';
-import {
-  AlertIcon,
-  ArrowRightIcon,
-  BookIcon,
-  CheckIcon,
-  CloseIcon,
-  FlameIcon,
-  PlayIcon,
-  SparkIcon,
-  VolumeIcon,
-} from './Icons';
+import { AlertIcon, ArrowRightIcon, BookIcon, CheckIcon, CloseIcon, FlameIcon, PlayIcon, SparkIcon, VolumeIcon } from './Icons';
 
 type LearningTab = 'overview' | 'review' | 'mistakes' | 'analysis';
 
@@ -85,15 +71,7 @@ function skillLabel(skill: SkillKey) {
 
 const NEXT_INTERVAL_DAYS = [1, 3, 7, 14, 30, 30];
 
-function EmptyState({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description: string;
-  children?: ReactNode;
-}) {
+function EmptyState({ title, description, children }: { title: string; description: string; children?: ReactNode }) {
   return (
     <div className="learning-empty">
       <span className="learning-empty-mark">
@@ -160,10 +138,7 @@ export function LearningDialog({
   const nextReview = nextDueAt(learning);
   const periodDays = learningPeriodDays(learning);
   const readyForAnalysis = hasAnalysisData(learning);
-  const currentWord =
-    session.length > 0
-      ? learning.words.find((word) => word.word === session[0]) || null
-      : null;
+  const currentWord = session.length > 0 ? learning.words.find((word) => word.word === session[0]) || null : null;
 
   useEffect(() => {
     if (!open) return;
@@ -216,12 +191,7 @@ export function LearningDialog({
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div
-        className="settings-dialog learning-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="learning-title"
-      >
+      <div className="settings-dialog learning-dialog" role="dialog" aria-modal="true" aria-labelledby="learning-title">
         <header className="settings-head learning-head">
           <div className="settings-heading">
             <span className="settings-seal learning-seal" aria-hidden="true">
@@ -232,13 +202,7 @@ export function LearningDialog({
               <p>Lỗi hay gặp, từ cần ôn và phân tích sau mỗi chặng luyện.</p>
             </div>
           </div>
-          <button
-            ref={closeRef}
-            className="icon-button"
-            type="button"
-            onClick={onClose}
-            aria-label="Đóng hồ sơ học tập"
-          >
+          <button ref={closeRef} className="icon-button" type="button" onClick={onClose} aria-label="Đóng hồ sơ học tập">
             <CloseIcon size={18} />
           </button>
         </header>
@@ -268,21 +232,18 @@ export function LearningDialog({
         <div className="settings-body learning-body">
           {tab === 'overview' && (
             <div className="learning-overview">
-              <FluencyHistory learnerId={learnerId}/>
+              <FluencyHistory learnerId={learnerId} />
+              <LatencyHistory learnerId={learnerId} />
               <div className="learning-hero">
                 <div className="learning-hero-copy">
                   <span className="learning-kicker">
                     <FlameIcon size={14} />
                     {levelLabel}
                   </span>
-                  <h3>
-                    {totals.words
-                      ? `${totals.words} từ đã ghi, ${totals.due} từ đang chờ ôn`
-                      : 'Bắt đầu ghi lại hành trình của bạn'}
-                  </h3>
+                  <h3>{totals.words ? `${totals.words} từ đã ghi, ${totals.due} từ đang chờ ôn` : 'Bắt đầu ghi lại hành trình của bạn'}</h3>
                   <p>
-                    Misu tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trên máy, được lưu trong trình duyệt và đồng bộ vào thư mục dữ liệu.
-                    Model local dùng hồ sơ để điều chỉnh bài luyện và phân tích khi bạn yêu cầu.
+                    Misu tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trên máy, được lưu trong trình duyệt và đồng bộ vào thư mục dữ
+                    liệu. Model local dùng hồ sơ để điều chỉnh bài luyện và phân tích khi bạn yêu cầu.
                   </p>
                 </div>
                 <div className="learning-hero-seal" aria-hidden="true">
@@ -329,18 +290,14 @@ export function LearningDialog({
                             <strong>{skill.count} lần</strong>
                           </div>
                           <div className="skill-track">
-                            <span
-                              style={{ width: `${Math.max(8, (skill.count / max) * 100)}%` }}
-                            />
+                            <span style={{ width: `${Math.max(8, (skill.count / max) * 100)}%` }} />
                           </div>
                         </div>
                       );
                     })}
                   </div>
                 ) : (
-                  <p className="learning-muted">
-                    Chưa có lỗi nào được ghi. Cứ nói tự nhiên, Misu sẽ để ý giúp bạn.
-                  </p>
+                  <p className="learning-muted">Chưa có lỗi nào được ghi. Cứ nói tự nhiên, Misu sẽ để ý giúp bạn.</p>
                 )}
               </section>
 
@@ -397,11 +354,7 @@ export function LearningDialog({
                             <small>{word.pinyin}</small>
                           </span>
                           <span className="mini-word-meaning">{word.meaning}</span>
-                          <span className="mini-word-due">
-                            {word.dueAt <= Date.now()
-                              ? 'Đến hạn'
-                              : untilLabel(word.dueAt)}
-                          </span>
+                          <span className="mini-word-due">{word.dueAt <= Date.now() ? 'Đến hạn' : untilLabel(word.dueAt)}</span>
                         </button>
                       ))}
                     </div>
@@ -412,19 +365,11 @@ export function LearningDialog({
               </div>
 
               <div className="learning-actions">
-                <button
-                  className="learning-primary"
-                  type="button"
-                  onClick={startReview}
-                >
+                <button className="learning-primary" type="button" onClick={startReview}>
                   <PlayIcon size={15} />
                   {totals.due ? `Ôn ngay ${totals.due} từ` : 'Xem kho từ'}
                 </button>
-                <button
-                  className="learning-secondary"
-                  type="button"
-                  onClick={() => switchTab('analysis')}
-                >
+                <button className="learning-secondary" type="button" onClick={() => switchTab('analysis')}>
                   <SparkIcon size={15} />
                   {report ? 'Xem phân tích gần nhất' : 'Phân tích điểm yếu'}
                 </button>
@@ -443,9 +388,7 @@ export function LearningDialog({
                     <div className="review-track">
                       <span
                         style={{
-                          width: `${Math.round(
-                            (reviewed / Math.max(1, reviewed + session.length)) * 100,
-                          )}%`,
+                          width: `${Math.round((reviewed / Math.max(1, reviewed + session.length)) * 100)}%`,
                         }}
                       />
                     </div>
@@ -454,11 +397,7 @@ export function LearningDialog({
                   <div className="review-card">
                     <span className="review-kicker">Ôn lại từ này</span>
                     <h3 className="review-word">{currentWord.word}</h3>
-                    <button
-                      className="review-audio"
-                      type="button"
-                      onClick={() => onSpeakChinese(currentWord.word)}
-                    >
+                    <button className="review-audio" type="button" onClick={() => onSpeakChinese(currentWord.word)}>
                       <VolumeIcon size={15} />
                       Nghe phát âm
                     </button>
@@ -482,11 +421,7 @@ export function LearningDialog({
                         </button>
                       </div>
                     ) : (
-                      <button
-                        className="review-reveal"
-                        type="button"
-                        onClick={() => setRevealed(true)}
-                      >
+                      <button className="review-reveal" type="button" onClick={() => setRevealed(true)}>
                         Xem nghĩa
                       </button>
                     )}
@@ -494,25 +429,14 @@ export function LearningDialog({
 
                   {revealed && (
                     <div className="review-actions">
-                      <button
-                        className="review-button is-again"
-                        type="button"
-                        onClick={() => answer(false)}
-                      >
+                      <button className="review-button is-again" type="button" onClick={() => answer(false)}>
                         Chưa nhớ
                         <small>ôn lại sau 10 phút</small>
                       </button>
-                      <button
-                        className="review-button is-good"
-                        type="button"
-                        onClick={() => answer(true)}
-                      >
+                      <button className="review-button is-good" type="button" onClick={() => answer(true)}>
                         <CheckIcon size={16} />
                         Đã nhớ
-                        <small>
-                          hẹn lại sau{' '}
-                          {NEXT_INTERVAL_DAYS[Math.min(currentWord.box, 5)]} ngày
-                        </small>
+                        <small>hẹn lại sau {NEXT_INTERVAL_DAYS[Math.min(currentWord.box, 5)]} ngày</small>
                       </button>
                     </div>
                   )}
@@ -523,31 +447,21 @@ export function LearningDialog({
                     <CheckIcon size={26} />
                   </span>
                   <h3>Ôn xong {reviewed} từ</h3>
-                  <p>
-                    {nextReview
-                      ? `Từ tiếp theo đến hạn ${untilLabel(nextReview)}.`
-                      : 'Hiện không còn từ nào đến hạn.'}
-                  </p>
+                  <p>{nextReview ? `Từ tiếp theo đến hạn ${untilLabel(nextReview)}.` : 'Hiện không còn từ nào đến hạn.'}</p>
                   <div className="review-complete-actions">
                     {dueWords(learning).length > 0 && (
                       <button className="learning-primary" type="button" onClick={startReview}>
                         Ôn tiếp {dueWords(learning).length} từ
                       </button>
                     )}
-                    <button
-                      className="learning-secondary"
-                      type="button"
-                      onClick={() => setTab('overview')}
-                    >
+                    <button className="learning-secondary" type="button" onClick={() => setTab('overview')}>
                       Về tổng quan
                     </button>
                   </div>
                 </div>
               ) : (
                 <EmptyState
-                  title={
-                    totals.words ? 'Hôm nay không có từ đến hạn' : 'Chưa có từ để ôn'
-                  }
+                  title={totals.words ? 'Hôm nay không có từ đến hạn' : 'Chưa có từ để ôn'}
                   description={
                     totals.words
                       ? `Kho từ có ${totals.words} từ. Từ gần nhất sẽ đến hạn ${untilLabel(nextReview)}.`
@@ -560,11 +474,7 @@ export function LearningDialog({
                         <div key={word.word} className="upcoming-word">
                           <strong>{word.word}</strong>
                           <span>{word.pinyin}</span>
-                          <small>
-                            {word.dueAt <= Date.now()
-                              ? 'đến hạn'
-                              : `${daysUntil(word.dueAt)} ngày nữa`}
-                          </small>
+                          <small>{word.dueAt <= Date.now() ? 'đến hạn' : `${daysUntil(word.dueAt)} ngày nữa`}</small>
                         </div>
                       ))}
                     </div>
@@ -589,9 +499,7 @@ export function LearningDialog({
                     {mistakes.map((mistake) => (
                       <article className="mistake-card" key={mistake.id}>
                         <div className="mistake-top">
-                          <span
-                            className={`mistake-category category-${mistake.category as MistakeCategory}`}
-                          >
+                          <span className={`mistake-category category-${mistake.category as MistakeCategory}`}>
                             {skillLabel(mistake.category)}
                           </span>
                           <span className="mistake-count">gặp {mistake.count} lần</span>
@@ -611,13 +519,9 @@ export function LearningDialog({
                         </div>
                         <p className="mistake-explanation">{mistake.explanation}</p>
                         {mistake.contexts.length > 0 && (
-                          <p className="mistake-context">
-                            Câu của bạn: “{mistake.contexts[mistake.contexts.length - 1]}”
-                          </p>
+                          <p className="mistake-context">Câu của bạn: “{mistake.contexts[mistake.contexts.length - 1]}”</p>
                         )}
-                        <span className="mistake-date">
-                          Gần nhất {formatShortDate(mistake.lastSeen)}
-                        </span>
+                        <span className="mistake-date">Gần nhất {formatShortDate(mistake.lastSeen)}</span>
                       </article>
                     ))}
                   </div>
@@ -637,8 +541,7 @@ export function LearningDialog({
                 <div>
                   <h3>Phân tích điểm yếu</h3>
                   <p>
-                    Dựa trên {totals.turns} lượt nói, {totals.mistakes} kiểu lỗi và{' '}
-                    {totals.words} từ trong {periodDays} ngày.
+                    Dựa trên {totals.turns} lượt nói, {totals.mistakes} kiểu lỗi và {totals.words} từ trong {periodDays} ngày.
                   </p>
                 </div>
                 <button
@@ -648,11 +551,7 @@ export function LearningDialog({
                   disabled={analyzing || !canAnalyze || !readyForAnalysis}
                 >
                   <SparkIcon size={15} />
-                  {analyzing
-                    ? 'Đang phân tích…'
-                    : report
-                      ? 'Phân tích lại'
-                      : 'Phân tích bằng AI'}
+                  {analyzing ? 'Đang phân tích…' : report ? 'Phân tích lại' : 'Phân tích bằng AI'}
                 </button>
               </div>
 
@@ -679,8 +578,7 @@ export function LearningDialog({
                 <>
                   {reportAgeDays(report) >= 3 && (
                     <div className="analysis-stale">
-                      Bản phân tích này đã {reportAgeDays(report)} ngày. Bấm “Phân tích lại”
-                      để cập nhật theo dữ liệu mới.
+                      Bản phân tích này đã {reportAgeDays(report)} ngày. Bấm “Phân tích lại” để cập nhật theo dữ liệu mới.
                     </div>
                   )}
                   <div className="analysis-summary">
@@ -724,11 +622,7 @@ export function LearningDialog({
                             <div className="analysis-word-head">
                               <strong>{word.word}</strong>
                               <span>{word.pinyin}</span>
-                              <button
-                                type="button"
-                                onClick={() => onSpeakChinese(word.word)}
-                                aria-label={`Nghe ${word.word}`}
-                              >
+                              <button type="button" onClick={() => onSpeakChinese(word.word)} aria-label={`Nghe ${word.word}`}>
                                 <VolumeIcon size={13} />
                               </button>
                             </div>
@@ -777,9 +671,7 @@ export function LearningDialog({
         </div>
 
         <footer className="learning-footer">
-          <p>
-            Hồ sơ được đồng bộ vào thư mục dữ liệu trên máy. Các bản sao lưu hằng ngày có thể còn giữ dữ liệu đã xoá.
-          </p>
+          <p>Hồ sơ được đồng bộ vào thư mục dữ liệu trên máy. Các bản sao lưu hằng ngày có thể còn giữ dữ liệu đã xoá.</p>
           <div className="data-actions">
             <button className="text-button danger" type="button" onClick={onClearLearning}>
               Xoá hồ sơ học tập

@@ -1,5 +1,4 @@
 // Kiểm tra content-for-misu/shadowing.json
-// Chạy:  ELECTRON_RUN_AS_NODE=1 /Applications/Qoder.app/Contents/MacOS/Qoder content-for-misu/shadowing.check.mjs [đường-dẫn-json]
 //
 // Kiểm tra: cấu trúc file, id duy nhất theo bậc, pinyin khớp từng chữ theo pinyin-pro
 // (kể cả các dạng chấp nhận được của biến điệu 3+3 và thanh nhẹ), cụm hơi cắt đúng,
@@ -11,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { pinyin } from 'pinyin-pro';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.join(HERE, 'shadowing.json');
+const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(HERE, '../../lessons/listening/shadowing.json');
 
 const errors = [];
 const warnings = [];

@@ -5,19 +5,12 @@ import { useEffect, useMemo, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 import type { ChatMessage, Phase } from '../types';
 import { pinyinLine } from '../lib/text';
-import {
-  AlertIcon,
-  ArrowRightIcon,
-  CloseIcon,
-  MicIcon,
-  RefreshIcon,
-  SendIcon,
-  SparkIcon,
-  VolumeIcon,
-} from './Icons';
+import { AlertIcon, ArrowRightIcon, CloseIcon, MicIcon, RefreshIcon, SendIcon, SparkIcon, VolumeIcon } from './Icons';
 
 interface ChatPanelProps {
-  spokenTurns?: Record<string,VoiceResult>; learnerId?: string; voice?: string;
+  spokenTurns?: Record<string, VoiceResult>;
+  learnerId?: string;
+  voice?: string;
   messages: ChatMessage[];
   phase: Phase;
   draft: string;
@@ -64,7 +57,9 @@ function TypingDots() {
 }
 
 interface MessageItemProps {
-  spokenTurn?: VoiceResult; learnerId?: string; voice?: string;
+  spokenTurn?: VoiceResult;
+  learnerId?: string;
+  voice?: string;
   message: ChatMessage;
   showPinyin: boolean;
   busy: boolean;
@@ -74,7 +69,9 @@ interface MessageItemProps {
 }
 
 function MessageItem({
-  spokenTurn, learnerId, voice,
+  spokenTurn,
+  learnerId,
+  voice,
   message,
   showPinyin,
   busy,
@@ -83,10 +80,7 @@ function MessageItem({
   onUseSuggestion,
 }: MessageItemProps) {
   const assistant = message.role === 'assistant';
-  const pinyin = useMemo(
-    () => (assistant && showPinyin ? pinyinLine(message.text) : ''),
-    [assistant, message.text, showPinyin],
-  );
+  const pinyin = useMemo(() => (assistant && showPinyin ? pinyinLine(message.text) : ''), [assistant, message.text, showPinyin]);
   const hasText = Boolean(message.text.trim());
 
   if (!assistant) {
@@ -95,15 +89,13 @@ function MessageItem({
         <div className="bubble bubble-user">
           <p className="bubble-cn">{message.text}</p>
         </div>
-        {spokenTurn && learnerId && <SpokenPronunciation turn={spokenTurn} learnerId={learnerId} voice={voice || 'zh-CN-XiaoxiaoNeural'}/>}
+        {spokenTurn && learnerId && <SpokenPronunciation turn={spokenTurn} learnerId={learnerId} voice={voice || 'zh-CN-XiaoxiaoNeural'} />}
         <p className="user-meta">{formatTime(message.createdAt)}</p>
       </article>
     );
   }
 
-  const hasExtras = Boolean(
-    message.corrections?.length || message.vocab?.length,
-  );
+  const hasExtras = Boolean(message.corrections?.length || message.vocab?.length);
 
   return (
     <article className={`message message-assistant${message.streaming ? ' is-streaming' : ''}`}>
@@ -115,17 +107,9 @@ function MessageItem({
           <span className="speaker-name">米苏</span>
           {message.kind === 'greeting' && <span className="message-tag">Lời chào</span>}
           {message.streaming && hasText && <span className="message-tag">đang viết</span>}
-          <time dateTime={new Date(message.createdAt).toISOString()}>
-            {formatTime(message.createdAt)}
-          </time>
+          <time dateTime={new Date(message.createdAt).toISOString()}>{formatTime(message.createdAt)}</time>
           {!message.streaming && hasText && (
-            <button
-              className="replay-button"
-              type="button"
-              onClick={() => onReplay(message)}
-              disabled={busy}
-              title="Nghe lại câu này"
-            >
+            <button className="replay-button" type="button" onClick={() => onReplay(message)} disabled={busy} title="Nghe lại câu này">
               <VolumeIcon size={14} />
               <span>Nghe</span>
             </button>
@@ -215,20 +199,13 @@ function MessageItem({
         )}
 
         {message.suggestion && !message.streaming && (
-          <button
-            className="suggestion-card"
-            type="button"
-            onClick={() => onUseSuggestion(message.suggestion || '')}
-            disabled={busy}
-          >
+          <button className="suggestion-card" type="button" onClick={() => onUseSuggestion(message.suggestion || '')} disabled={busy}>
             <span className="suggestion-kicker">
               <SparkIcon size={13} />
               Thử nói câu này
             </span>
             <span className="suggestion-cn">{message.suggestion}</span>
-            {message.suggestionTranslation && (
-              <span className="suggestion-vi">{message.suggestionTranslation}</span>
-            )}
+            {message.suggestionTranslation && <span className="suggestion-vi">{message.suggestionTranslation}</span>}
             <span className="suggestion-go" aria-hidden="true">
               <ArrowRightIcon size={16} />
             </span>
@@ -240,7 +217,9 @@ function MessageItem({
 }
 
 export function ChatPanel({
-  spokenTurns, learnerId, voice,
+  spokenTurns,
+  learnerId,
+  voice,
   messages,
   phase,
   draft,
@@ -285,8 +264,7 @@ export function ChatPanel({
   const handleScroll = () => {
     const list = listRef.current;
     if (!list) return;
-    stickToBottom.current =
-      list.scrollHeight - list.scrollTop - list.clientHeight < 140;
+    stickToBottom.current = list.scrollHeight - list.scrollTop - list.clientHeight < 140;
   };
 
   const useSuggestion = (text: string) => {
@@ -301,11 +279,7 @@ export function ChatPanel({
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (
-      event.key === 'Enter' &&
-      !event.shiftKey &&
-      !event.nativeEvent.isComposing
-    ) {
+    if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
       event.preventDefault();
       submit();
     }
@@ -342,13 +316,7 @@ export function ChatPanel({
         </div>
       </header>
 
-      <div
-        className="message-list"
-        ref={listRef}
-        onScroll={handleScroll}
-        role="log"
-        aria-label="Tin nhắn"
-      >
+      <div className="message-list" ref={listRef} onScroll={handleScroll} role="log" aria-label="Tin nhắn">
         <div className="day-divider">
           <span>Hôm nay</span>
         </div>
@@ -356,7 +324,9 @@ export function ChatPanel({
           <MessageItem
             key={message.id}
             message={message}
-            spokenTurn={spokenTurns?.[message.id]} learnerId={learnerId} voice={voice}
+            spokenTurn={spokenTurns?.[message.id]}
+            learnerId={learnerId}
+            voice={voice}
             showPinyin={showPinyin}
             busy={busy}
             onReplay={onReplay}
@@ -371,12 +341,7 @@ export function ChatPanel({
         <div className="chat-error" role="alert">
           <AlertIcon size={16} />
           <p>{error}</p>
-          <button
-            className="error-close"
-            type="button"
-            onClick={onDismissError}
-            aria-label="Đóng thông báo"
-          >
+          <button className="error-close" type="button" onClick={onDismissError} aria-label="Đóng thông báo">
             <CloseIcon size={15} />
           </button>
         </div>
@@ -391,9 +356,7 @@ export function ChatPanel({
               <i />
               <i />
             </span>
-            <span>
-              {draft.trim() || 'Đang nghe bạn nói tiếng Trung… ngừng 3 giây để gửi.'}
-            </span>
+            <span>{draft.trim() || 'Đang nghe bạn nói tiếng Trung… ngừng 3 giây để gửi.'}</span>
             <button type="button" onClick={onMicToggle}>
               Xong
             </button>
@@ -427,13 +390,7 @@ export function ChatPanel({
             placeholder={listening ? 'Hãy nói bằng tiếng Trung…' : 'Nhắn cho Misu bằng tiếng Trung…'}
             aria-label="Tin nhắn của bạn"
           />
-          <button
-            className="send-button"
-            type="button"
-            onClick={submit}
-            disabled={!canSubmit}
-            aria-label="Gửi tin nhắn"
-          >
+          <button className="send-button" type="button" onClick={submit} disabled={!canSubmit} aria-label="Gửi tin nhắn">
             <SendIcon size={19} />
           </button>
         </div>

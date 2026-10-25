@@ -65,9 +65,7 @@ export function isSpeechSupported() {
   return useLocal || Boolean(getConstructor());
 }
 
-export async function micPermissionState(): Promise<
-  'granted' | 'denied' | 'prompt' | 'unknown'
-> {
+export async function micPermissionState(): Promise<'granted' | 'denied' | 'prompt' | 'unknown'> {
   try {
     if (!navigator.permissions?.query) return 'unknown';
     const status = await navigator.permissions.query({
@@ -128,7 +126,7 @@ export class ChineseMic {
   }
 
   private startLocal() {
-    const handle = listen({ local: true, learnerId });
+    const handle = listen({ local: true, learnerId, silenceMs: 900 });
     this.localHandle = handle;
     this.active = true;
     this.callbacks.onState(true);
@@ -144,9 +142,7 @@ export class ChineseMic {
       .catch((error: unknown) => {
         if (this.localHandle !== handle) return;
         const denied = error instanceof DOMException && error.name === 'NotAllowedError';
-        this.callbacks.onError(
-          denied ? friendlyMicError('not-allowed') : error instanceof Error ? error.message : friendlyMicError(''),
-        );
+        this.callbacks.onError(denied ? friendlyMicError('not-allowed') : error instanceof Error ? error.message : friendlyMicError(''));
         this.callbacks.onState(false);
         this.callbacks.onDone('');
       })

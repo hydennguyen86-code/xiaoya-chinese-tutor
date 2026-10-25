@@ -1,3 +1,4 @@
+import { markLatency } from './latency';
 import { speechRate } from './listeningPrefs';
 import { speakBrowser, stopBrowserVoice } from './browserVoice';
 import { TalkingHead } from '@met4citizen/talkinghead';
@@ -183,7 +184,7 @@ export class AvatarController implements AvatarApi {
     this.callbacks.onAudioState?.(false);
   }
 
-  queueSpeech(text: string, voice: string) {
+  queueSpeech(text: string, voice: string, traceId?: string) {
     if (!this.head || this.destroyed) return;
     const clean = text.trim();
     if (!clean) return;
@@ -195,12 +196,22 @@ export class AvatarController implements AvatarApi {
     this.chain = this.chain
       .then(async () => {
         if (session !== this.session || this.destroyed || !this.head) return;
+        markLatency(traceId, 'ttsStart');
         const result = await this.getTts(clean, voice, rate);
+        markLatency(traceId, 'ttsReady');
         if (session !== this.session || this.destroyed || !this.head) return;
         if (result.browserText) {
-          this.callbacks.onAudioState?.(true);
           try {
-            await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', undefined, undefined, result.browserRate);
+            await speakBrowser(
+              result.browserText,
+              result.browserLocale ?? 'zh-CN',
+              undefined,
+              () => {
+                markLatency(traceId, 'audio');
+                this.callbacks.onAudioState?.(true);
+              },
+              result.browserRate,
+            );
           } finally {
             this.callbacks.onAudioState?.(false);
           }
@@ -228,6 +239,7 @@ export class AvatarController implements AvatarApi {
           null,
         );
 
+        markLatency(traceId, 'audio');
         this.callbacks.onAudioState?.(true);
         const now = performance.now();
         this.speechEndAt = Math.max(this.speechEndAt, now) + audioBuffer.duration * 1000 + 340;

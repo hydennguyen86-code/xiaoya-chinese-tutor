@@ -417,7 +417,9 @@ export function DailyLesson(props: DailyLessonProps) {
   const sectionElapsed = session.elapsedMs[section] || 0;
   const overBudget = sectionElapsed > sectionBudgetMs(section);
   const shared = {
-    learnerId: learner.id, voice, localStt,
+    learnerId: learner.id,
+    voice,
+    localStt,
     content,
     session,
     say,
@@ -504,7 +506,18 @@ export function DailyLesson(props: DailyLessonProps) {
       )}
 
       <div className="lesson-body">
-        {sectionInfo.id === 'review' && <><PronunciationReview learning={props.learning} learnerId={learner.id} voice={voice} localStt={localStt} onUpdate={onLearningUpdate}/><ReviewSection {...shared} learning={props.learning} /></>}
+        {sectionInfo.id === 'review' && (
+          <>
+            <PronunciationReview
+              learning={props.learning}
+              learnerId={learner.id}
+              voice={voice}
+              localStt={localStt}
+              onUpdate={onLearningUpdate}
+            />
+            <ReviewSection {...shared} learning={props.learning} />
+          </>
+        )}
         {sectionInfo.id === 'vocab' && <VocabSection {...shared} />}
         {sectionInfo.id === 'patterns' && <PatternSection {...shared} provider={provider} model={model} />}
         {(sectionInfo.id === 'roleplay' || sectionInfo.id === 'freetalk') && (
@@ -586,7 +599,9 @@ function LessonTop({ title, subtitle, onClose }: { title: string; subtitle: stri
 }
 
 interface SharedProps {
-  learnerId: string; voice: string; localStt: boolean;
+  learnerId: string;
+  voice: string;
+  localStt: boolean;
   content: LessonContent;
   session: SessionState;
   say: (text: string) => void;
@@ -755,7 +770,13 @@ function VocabSection(props: SharedProps) {
           {ok ? 'Mình nghe đúng chữ rồi.' : `Mình nghe thành: "${heard.text}". Nghe lại rồi thử lần nữa nhé.`}
         </p>
       )}
-      {heard?.tones && <ToneFeedback report={heard.tones} audio={heard.audio} repair={{learnerId:props.learnerId,word:heard.target,sentence:word.example,voice:props.voice,local:props.localStt}} />}
+      {heard?.tones && (
+        <ToneFeedback
+          report={heard.tones}
+          audio={heard.audio}
+          repair={{ learnerId: props.learnerId, word: heard.target, sentence: word.example, voice: props.voice, local: props.localStt }}
+        />
+      )}
       <div className="lesson-actions">
         <SlowListen onPlay={() => say(`${word.word}。${word.example}`)} />
         <button type="button" className="lesson-secondary" onClick={() => say(`${word.word}。${word.example}`)}>

@@ -83,3 +83,16 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Mic cục bộ chuyển cả kết quả và Blob cho App; gắn bản ghi với đúng ID lượt người học, tối đa 10 lượt trong RAM, không đưa vào ChatMessage/localStorage/server store. Đóng phiên/tải lại mất bản ghi, chat mới xóa map. Không có bản ghi thì không hiện nút chấm.
 - Nút Xem phát âm câu này gửi Blob đã có đến API cục bộ, dùng đúng transcript Whisper đã nhận (không dùng đoạn gõ thêm). Hiện cao độ, replay chữ sẵn có và vòng sửa mục 6. Câu dài không tự gắn chữ sai; người học chọn chữ muốn luyện riêng. Quá giới hạn 120 ký tự thì không tự cắt mục tiêu làm lệch audio.
 - Hủy fetch khi rời component; cảnh báo rõ transcript không phải bằng chứng câu người học định nói. Test giới hạn lưu RAM/không giả audio cho transcript trình duyệt. Chưa thử lượt nói người thật; giới hạn tự chấm câu dài ở mục 6 vẫn giữ.
+
+## Mục 11 — Đo và giảm độ trễ
+
+- Lượt nói cục bộ ghi mốc tiếng cuối ước lượng, dừng thu, bắt đầu/kết thúc STT; App ghi lúc yêu cầu model và hoàn thành câu đầu. Avatar nhận trace ID của đúng lượt, đo TTS và thời điểm lập lịch phát tiếng đầu; giọng trình duyệt dùng onstart. Chỉ lưu trace đầy đủ, đơn điệu, không suy ra số 0 khi thiếu mốc.
+- Hồ sơ học hiện lần cuối/trung vị, tách chờ im lặng, nhận dạng, model, TTS, giải mã/phát. Giới hạn 100 lượt/learner, không lưu text/audio. Mốc TalkingHead/LAM là lịch phát ước lượng, chưa phải đo thiết bị âm thanh vật lý.
+- Giữ cơ chế đọc câu đầu khi stream đã có; thêm warmup model cục bộ khi sẵn sàng, giới hạn 1 token và cache 10 phút, không gọi provider từ xa. Main chat cục bộ chốt sau khoảng 900 ms im lặng thay cho mặc định 1600 ms; bài dài/nhập vai giữ khoảng riêng để tránh cắt sớm câu đang luyện.
+- Test trace thiếu/đảo mốc, phân rã thời gian và warmup local/cache/failure. Chưa đo end-to-end với người thật trên máy này; **chưa xác nhận mục tiêu 2,5 giây đạt**. Mô hình lớn, cold start và mạng TTS có thể làm chậm; không hứa số đo chưa có.
+- Khi hủy thu, hủy cả fetch nhận dạng đang chờ; sửa hook phát mẫu để shadowing không chờ mãi nếu bấm dừng trước khi mở thu.
+
+## Phần chờ
+
+- Tại thời điểm kiểm tra chưa có `content-for-misu/cv-curated.json`; chưa thay bộ lọc Common Voice bằng danh sách DeepSeek và không tự bịa danh sách duyệt. Audio/đường dẫn tuyệt đối của nguồn người dùng không vào Git.
+- Mục 12 cần ba người học + người gắn nhãn thật. Không có thu âm/nhãn người thật mới trong đợt này, không sửa ngưỡng thanh điệu hay bộ chia âm tiết.

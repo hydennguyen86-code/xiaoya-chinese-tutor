@@ -1,5 +1,4 @@
 // Kiểm tra content-for-misu/tone-pairs.json
-// Chạy:  ELECTRON_RUN_AS_NODE=1 /Applications/Qoder.app/Contents/MacOS/Qoder content-for-misu/tone-pairs.check.mjs [đường-dẫn-json]
 //        hoặc `node content-for-misu/tone-pairs.check.mjs` nếu máy có node trên PATH
 //
 // Chống chéo: cấu trúc bắt buộc, id duy nhất, không trùng nội dung, phương án gây nhiễu,
@@ -13,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { pinyin } from 'pinyin-pro';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.join(HERE, 'tone-pairs.json');
+const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(HERE, '../../lessons/listening/tone-pairs.json');
 
 const errors = [];
 const warnings = [];

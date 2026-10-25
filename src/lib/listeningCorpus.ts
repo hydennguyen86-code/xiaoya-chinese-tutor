@@ -13,7 +13,7 @@ export function compareDictation(expected: string, answer: string, romanized?: s
   const chars = han(expected);
   const chinese = /\p{Script=Han}/u.test(answer);
   const actual = chinese ? han(answer) : answer.toLowerCase().replace(/ü/g, 'v').replace(/[1-5]/g, '').trim().split(/\s+/).filter(Boolean);
-  const target = chinese ? chars : (romanized || pinyin(chars.join(''), { toneType: 'none', type: 'array', v: true }));
+  const target = chinese ? chars : romanized || pinyin(chars.join(''), { toneType: 'none', type: 'array', v: true });
   // Edit distance alignment keeps one omission from falsely shifting every later character.
   const dp = Array.from({ length: target.length + 1 }, () => Array<number>(actual.length + 1).fill(0));
   for (let i = 0; i <= target.length; i++) dp[i][0] = i;

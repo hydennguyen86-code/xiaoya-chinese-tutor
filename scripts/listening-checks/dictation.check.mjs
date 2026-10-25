@@ -1,5 +1,4 @@
 // Kiểm tra content-for-misu/dictation.json
-// Chạy:  ELECTRON_RUN_AS_NODE=1 /Applications/Qoder.app/Contents/MacOS/Qoder content-for-misu/dictation.check.mjs [đường-dẫn-json]
 //
 // Kiểm tra: cấu trúc, id duy nhất, số câu mỗi bậc, pinyin khớp chữ Hán theo pinyin-pro
 // (chấp nhận thanh bề mặt sau biến điệu 一/不 và 3+3), meaningVi thuần tiếng Việt có dấu,
@@ -11,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { pinyin } from 'pinyin-pro';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.join(HERE, 'dictation.json');
+const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(HERE, '../../lessons/listening/dictation.json');
 
 const errors = [];
 const warnings = [];

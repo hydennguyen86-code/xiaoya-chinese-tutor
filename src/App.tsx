@@ -1,3 +1,4 @@
+import { beginLatency, markLatency, cancelLatency } from './lib/latency';
 import { retainSpokenTurn } from './lib/spokenTurns';
 import type { VoiceResult } from './lib/voiceInput';
 import { recordPronunciation } from './lib/learning';
@@ -85,7 +86,7 @@ interface TutorProps {
 function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const scope = learner.id;
   const pendingVoice = useRef<VoiceResult | null>(null);
-  const [spokenTurns,setSpokenTurns] = useState<Record<string,VoiceResult>>({});
+  const [spokenTurns, setSpokenTurns] = useState<Record<string, VoiceResult>>({});
   const [settings, setSettings] = useState<Settings>(() => ({
     ...loadSettings(),
     level: learner.level,
@@ -285,14 +286,16 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
 
   useEffect(() => {
     const mic = new ChineseMic({
-      onVoiceResult: result => { pendingVoice.current = result; },
+      onVoiceResult: (result) => {
+        pendingVoice.current = result;
+      },
       onTranscript: (transcript) => {
         setDraft(`${micBaseRef.current}${transcript}`.trimStart());
       },
       onDone: (transcript) => {
         setListening(false);
         const spoken = transcript.trim();
-        if (!spoken) pendingVoice.current=null;
+        if (!spoken) pendingVoice.current = null;
         const combined = `${micBaseRef.current}${spoken}`.trim();
         setDraft(combined);
         if (spoken) {
@@ -329,6 +332,17 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   );
   const providerOnline = Boolean(activeProvider?.online);
   const canChat = Boolean(status && activeProvider?.online && settings.model);
+  useEffect(() => {
+    if (!canChat || !['ollama', 'lmstudio'].includes(settings.providerId)) return;
+    const abort = new AbortController();
+    fetch('/api/warmup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ provider: settings.providerId, model: settings.model }),
+      signal: abort.signal,
+    }).catch(() => {});
+    return () => abort.abort();
+  }, [canChat, settings.providerId, settings.model]);
   const avatarMode: AvatarMode = customAvatar?.kind ?? settings.avatarMode;
   const busy = phase === 'thinking' || phase === 'replying';
   const visibleError = error || statusError;
@@ -341,12 +355,24 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     learningRef.current = next;
     setLearning(next);
   }, []);
-  useEffect(()=>{
-    const error=(event:Event)=>{const e=(event as CustomEvent).detail;if(e?.learnerId!==scope)return;updateLearning(p=>recordPronunciation(p,e));};
-    const sound=(event:Event)=>{const e=(event as CustomEvent).detail;if(e?.learnerId!==scope||e.correct)return;updateLearning(p=>recordPronunciation(p,{kind:'sound',target:e.text,contrast:e.pairId,heard:e.heard}));};
-    window.addEventListener('misu:pronunciation-error',error);window.addEventListener('misu:sound-answer',sound);
-    return()=>{window.removeEventListener('misu:pronunciation-error',error);window.removeEventListener('misu:sound-answer',sound);};
-  },[scope,updateLearning]);
+  useEffect(() => {
+    const error = (event: Event) => {
+      const e = (event as CustomEvent).detail;
+      if (e?.learnerId !== scope) return;
+      updateLearning((p) => recordPronunciation(p, e));
+    };
+    const sound = (event: Event) => {
+      const e = (event as CustomEvent).detail;
+      if (e?.learnerId !== scope || e.correct) return;
+      updateLearning((p) => recordPronunciation(p, { kind: 'sound', target: e.text, contrast: e.pairId, heard: e.heard }));
+    };
+    window.addEventListener('misu:pronunciation-error', error);
+    window.addEventListener('misu:sound-answer', sound);
+    return () => {
+      window.removeEventListener('misu:pronunciation-error', error);
+      window.removeEventListener('misu:sound-answer', sound);
+    };
+  }, [scope, updateLearning]);
   const goalPercent = Math.min(100, Math.round((progress.todayTurns / DAILY_GOAL) * 100));
   const goalReached = progress.todayTurns >= DAILY_GOAL;
 
@@ -409,7 +435,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         text,
         createdAt: Date.now(),
       };
-      if (spokenTurn) setSpokenTurns(current=>retainSpokenTurn(current,userMessage.id,spokenTurn));
+      if (spokenTurn) setSpokenTurns((current) => retainSpokenTurn(current, userMessage.id, spokenTurn));
       const assistantId = uid();
       const assistantMessage: ChatMessage = {
         id: assistantId,
@@ -425,6 +451,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       setDraft('');
 
       const autoSpeak = settingsRef.current.autoSpeak;
+      const traceId = beginLatency(scope, autoSpeak ? spokenTurn?.timing : undefined);
       const voice = settingsRef.current.voice;
       let streamedText = '';
       let emotion: Emotion = 'happy';
@@ -444,7 +471,8 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         speechCursor = result.cursor;
         if (!result.segments.length) return;
         for (const segment of result.segments) {
-          avatarRef.current?.queueSpeech(segment, voice);
+          markLatency(traceId, 'sentence');
+          avatarRef.current?.queueSpeech(segment, voice, traceId);
         }
         spoke = true;
         setPhase('speaking');
@@ -824,6 +852,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   };
 
   const handleNewChat = () => {
+    cancelLatency();
     pendingVoice.current = null;
     setSpokenTurns({});
     if (!window.confirm('Bắt đầu cuộc trò chuyện mới? Nội dung hội thoại hôm nay sẽ được xoá khỏi trình duyệt.')) {

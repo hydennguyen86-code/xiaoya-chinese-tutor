@@ -4,7 +4,9 @@ import { speakBrowser } from './browserVoice';
 import { speechText } from './coursePractice';
 let stopCurrentCourseAudio: (() => void) | null = null;
 
-export function stopLessonAudio() { stopCurrentCourseAudio?.(); }
+export function stopLessonAudio() {
+  stopCurrentCourseAudio?.();
+}
 export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
   const player = useRef<HTMLAudioElement | null>(null);
   const request = useRef<AbortController | null>(null);
@@ -13,7 +15,11 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
   const [playing, setPlaying] = useState(false);
   const loading = useRef(false);
   const finished = useRef<((success: boolean) => void) | undefined>(undefined);
-  const finish = (ok: boolean) => { const done=finished.current;finished.current=undefined;done?.(ok); };
+  const finish = (ok: boolean) => {
+    const done = finished.current;
+    finished.current = undefined;
+    done?.(ok);
+  };
   const [error, setError] = useState('');
   const [provider, setProvider] = useState('');
   const stop = useCallback(() => {
@@ -43,6 +49,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
   async function play(text: string, onStarted?: () => void, onFinished?: (success: boolean) => void) {
     if (loading.current) {
       stop();
+      onFinished?.(false);
       return;
     }
     stopCurrentCourseAudio?.();

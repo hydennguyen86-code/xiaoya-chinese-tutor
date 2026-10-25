@@ -32,22 +32,9 @@ export const SKILL_LABELS: Record<SkillKey, string> = {
   other: 'Lỗi khác',
 };
 
-const CATEGORIES = new Set<MistakeCategory>([
-  'grammar',
-  'word_choice',
-  'word_order',
-  'measure_word',
-  'other',
-]);
+const CATEGORIES = new Set<MistakeCategory>(['grammar', 'word_choice', 'word_order', 'measure_word', 'other']);
 
-const SKILLS = new Set<SkillKey>([
-  'grammar',
-  'word_choice',
-  'word_order',
-  'measure_word',
-  'vocabulary',
-  'other',
-]);
+const SKILLS = new Set<SkillKey>(['grammar', 'word_choice', 'word_order', 'measure_word', 'vocabulary', 'other']);
 
 export function emptyLearning(updatedAt = 0): LearningProfile {
   return {
@@ -70,9 +57,7 @@ function asNumber(value: unknown, fallback = 0) {
 }
 
 function parseCategory(value: unknown): MistakeCategory {
-  return CATEGORIES.has(value as MistakeCategory)
-    ? (value as MistakeCategory)
-    : 'other';
+  return CATEGORIES.has(value as MistakeCategory) ? (value as MistakeCategory) : 'other';
 }
 
 function cleanMistakes(value: unknown): MistakeRecord[] {
@@ -91,7 +76,10 @@ function cleanMistakes(value: unknown): MistakeRecord[] {
         firstSeen: asNumber(raw.firstSeen),
         lastSeen: asNumber(raw.lastSeen),
         contexts: Array.isArray(raw.contexts)
-          ? raw.contexts.map((context) => asString(context)).filter(Boolean).slice(-MAX_CONTEXTS)
+          ? raw.contexts
+              .map((context) => asString(context))
+              .filter(Boolean)
+              .slice(-MAX_CONTEXTS)
           : [],
       };
     })
@@ -154,7 +142,10 @@ function cleanReports(value: unknown): AnalysisReport[] {
         periodDays: Math.max(1, Math.round(asNumber(raw.periodDays, 1))),
         summary: asString(raw.summary),
         strengths: Array.isArray(raw.strengths)
-          ? raw.strengths.map((entry) => asString(entry)).filter(Boolean).slice(0, 5)
+          ? raw.strengths
+              .map((entry) => asString(entry))
+              .filter(Boolean)
+              .slice(0, 5)
           : [],
         weaknesses: Array.isArray(raw.weaknesses)
           ? raw.weaknesses
@@ -162,9 +153,7 @@ function cleanReports(value: unknown): AnalysisReport[] {
               .map((entry) => {
                 const weakness = entry as Record<string, unknown>;
                 return {
-                  skill: SKILLS.has(weakness.skill as SkillKey)
-                    ? (weakness.skill as SkillKey)
-                    : 'other',
+                  skill: SKILLS.has(weakness.skill as SkillKey) ? (weakness.skill as SkillKey) : 'other',
                   title: asString(weakness.title),
                   evidence: asString(weakness.evidence),
                   advice: asString(weakness.advice),
@@ -190,7 +179,10 @@ function cleanReports(value: unknown): AnalysisReport[] {
               .slice(0, 4)
           : [],
         plan: Array.isArray(raw.plan)
-          ? raw.plan.map((entry) => asString(entry)).filter(Boolean).slice(0, 5)
+          ? raw.plan
+              .map((entry) => asString(entry))
+              .filter(Boolean)
+              .slice(0, 5)
           : [],
       };
     })
@@ -233,12 +225,7 @@ export function clearLearning(scope = '') {
   }
 }
 
-function mergeCorrection(
-  mistakes: MistakeRecord[],
-  correction: Correction,
-  userText: string,
-  now: number,
-) {
+function mergeCorrection(mistakes: MistakeRecord[], correction: Correction, userText: string, now: number) {
   const category = parseCategory(correction.category);
   const id = `${category}|${correction.original}|${correction.corrected}`;
   const existing = mistakes.find((item) => item.id === id);
@@ -246,11 +233,7 @@ function mergeCorrection(
     existing.count += 1;
     existing.lastSeen = now;
     existing.explanation = correction.explanation || existing.explanation;
-    if (
-      userText &&
-      !existing.contexts.includes(userText) &&
-      existing.contexts.length < MAX_CONTEXTS
-    ) {
+    if (userText && !existing.contexts.includes(userText) && existing.contexts.length < MAX_CONTEXTS) {
       existing.contexts = [...existing.contexts, userText];
     }
     return;
@@ -292,11 +275,7 @@ function mergeWord(words: WordRecord[], item: VocabItem, now: number) {
   return true;
 }
 
-function bumpDay(
-  days: LearningDay[],
-  timestamp: number,
-  patch: Partial<Omit<LearningDay, 'date'>>,
-) {
+function bumpDay(days: LearningDay[], timestamp: number, patch: Partial<Omit<LearningDay, 'date'>>) {
   const date = dayKey(new Date(timestamp));
   let day = days.find((entry) => entry.date === date);
   if (!day) {
@@ -374,9 +353,7 @@ export function recordLearningCorrections(
 }
 
 export function seedLearningFromMessages(messages: ChatMessage[]): LearningProfile {
-  const usable = messages.filter(
-    (message) => !message.error && !message.streaming && message.text.trim(),
-  );
+  const usable = messages.filter((message) => !message.error && !message.streaming && message.text.trim());
   if (!usable.length) return emptyLearning();
 
   let profile = emptyLearning();
@@ -406,12 +383,7 @@ export function seedLearningFromMessages(messages: ChatMessage[]): LearningProfi
   return profile;
 }
 
-export function reviewWord(
-  profile: LearningProfile,
-  word: string,
-  remembered: boolean,
-  timestamp = Date.now(),
-): LearningProfile {
+export function reviewWord(profile: LearningProfile, word: string, remembered: boolean, timestamp = Date.now()): LearningProfile {
   const words = profile.words.map((item) => {
     if (item.word !== word) return item;
     const nextBox = remembered ? Math.min(item.box + 1, SRS_DAYS.length - 1) : 0;
@@ -436,9 +408,7 @@ export function reviewWord(
 }
 
 export function dueWords(profile: LearningProfile, timestamp = Date.now()) {
-  return profile.words
-    .filter((word) => word.dueAt <= timestamp)
-    .sort((a, b) => a.dueAt - b.dueAt || b.lapses - a.lapses);
+  return profile.words.filter((word) => word.dueAt <= timestamp).sort((a, b) => a.dueAt - b.dueAt || b.lapses - a.lapses);
 }
 
 export function daysUntil(timestamp: number, now = Date.now()) {
@@ -473,34 +443,20 @@ export function skillBreakdown(profile: LearningProfile) {
 }
 
 export function topMistakes(profile: LearningProfile, limit = 6) {
-  return [...profile.mistakes]
-    .sort((a, b) => b.count - a.count || b.lastSeen - a.lastSeen)
-    .slice(0, limit);
+  return [...profile.mistakes].sort((a, b) => b.count - a.count || b.lastSeen - a.lastSeen).slice(0, limit);
 }
 
 export function weakWords(profile: LearningProfile, limit = 8) {
-  return [...profile.words]
-    .sort(
-      (a, b) =>
-        b.lapses - a.lapses ||
-        a.box - b.box ||
-        b.count - a.count ||
-        a.dueAt - b.dueAt,
-    )
-    .slice(0, limit);
+  return [...profile.words].sort((a, b) => b.lapses - a.lapses || a.box - b.box || b.count - a.count || a.dueAt - b.dueAt).slice(0, limit);
 }
 
 export function allowedWords(profile: LearningProfile, limit = 10) {
-  return [...profile.words]
-    .sort((a, b) => a.dueAt - b.dueAt || b.lapses - a.lapses)
-    .slice(0, limit);
+  return [...profile.words].sort((a, b) => a.dueAt - b.dueAt || b.lapses - a.lapses).slice(0, limit);
 }
 
 export function learningTotals(profile: LearningProfile) {
   const turns = profile.days.reduce((total, day) => total + day.turns, 0);
-  const activeDays = profile.days.filter(
-    (day) => day.turns || day.corrections || day.newWords || day.reviews,
-  ).length;
+  const activeDays = profile.days.filter((day) => day.turns || day.corrections || day.newWords || day.reviews).length;
   const corrections = profile.mistakes.reduce((total, item) => total + item.count, 0);
   const reviews = profile.words.reduce((total, word) => total + word.reviews, 0);
   return {
@@ -515,10 +471,9 @@ export function learningTotals(profile: LearningProfile) {
 }
 
 export function learningPeriodDays(profile: LearningProfile, now = Date.now()) {
-  const stamps = [
-    ...profile.mistakes.map((item) => item.firstSeen),
-    ...profile.words.map((item) => item.firstSeen),
-  ].filter((stamp) => stamp > 0);
+  const stamps = [...profile.mistakes.map((item) => item.firstSeen), ...profile.words.map((item) => item.firstSeen)].filter(
+    (stamp) => stamp > 0,
+  );
   if (!stamps.length) return 1;
   const start = new Date(Math.min(...stamps));
   const end = new Date(now);
@@ -538,10 +493,7 @@ export function reportAgeDays(report: AnalysisReport, now = Date.now()) {
 export function addReport(profile: LearningProfile, report: AnalysisReport): LearningProfile {
   return {
     ...profile,
-    reports: [report, ...profile.reports.filter((item) => item.id !== report.id)].slice(
-      0,
-      MAX_REPORTS,
-    ),
+    reports: [report, ...profile.reports.filter((item) => item.id !== report.id)].slice(0, MAX_REPORTS),
     updatedAt: Date.now(),
   };
 }
@@ -563,10 +515,7 @@ export function buildLearningDigest(profile: LearningProfile) {
     .map((item) => `${item.label} (${item.count})`)
     .join(', ');
   const mistakes = topMistakes(profile, 5)
-    .map(
-      (item) =>
-        `“${item.original}” → “${item.corrected}” (${item.count} lần; ${item.explanation})`,
-    )
+    .map((item) => `“${item.original}” → “${item.corrected}” (${item.count} lần; ${item.explanation})`)
     .join('; ');
   const words = weakWords(profile, 6)
     .map((item) => `${item.word} (${item.pinyin}) = ${item.meaning}`)
@@ -605,10 +554,7 @@ export function buildAnalysisInput(profile: LearningProfile) {
     .join('\n');
   const sessions = profile.days
     .slice(-7)
-    .map(
-      (day) =>
-        `- ${day.date}: ${day.turns} lượt, ${day.corrections} lỗi mới ghi, ${day.newWords} từ mới, ${day.reviews} lượt ôn`,
-    )
+    .map((day) => `- ${day.date}: ${day.turns} lượt, ${day.corrections} lỗi mới ghi, ${day.newWords} từ mới, ${day.reviews} lượt ôn`)
     .join('\n');
 
   const lines = [
@@ -638,22 +584,58 @@ export function hasAnalysisData(profile: LearningProfile) {
   return totals.turns >= 3 || totals.mistakes >= 2 || totals.words >= 3;
 }
 
-
-const PRONUNCIATION_MS = [5*60_000, 30*60_000, 6*3600_000, 24*3600_000, 3*24*3600_000];
-function cleanPronunciation(value:unknown):PronunciationReviewRecord[] {
- if(!Array.isArray(value))return [];
- return value.filter(v=>v&&['tone','sound'].includes(v.kind)&&typeof v.target==='string'&&v.target.length<=120&&typeof v.contrast==='string').map(v=>({id:`${v.kind}|${v.target}|${v.contrast}`,kind:v.kind as 'tone'|'sound',target:v.target,contrast:v.contrast,heard:asString(v.heard),count:Math.max(1,asNumber(v.count,1)),box:Math.max(0,Math.min(4,Math.floor(asNumber(v.box)))),dueAt:asNumber(v.dueAt),reviews:Math.max(0,asNumber(v.reviews)),lapses:Math.max(0,asNumber(v.lapses)),lastSeen:asNumber(v.lastSeen)})).slice(-200);
+const PRONUNCIATION_MS = [5 * 60_000, 30 * 60_000, 6 * 3600_000, 24 * 3600_000, 3 * 24 * 3600_000];
+function cleanPronunciation(value: unknown): PronunciationReviewRecord[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter(
+      (v) =>
+        v && ['tone', 'sound'].includes(v.kind) && typeof v.target === 'string' && v.target.length <= 120 && typeof v.contrast === 'string',
+    )
+    .map((v) => ({
+      id: `${v.kind}|${v.target}|${v.contrast}`,
+      kind: v.kind as 'tone' | 'sound',
+      target: v.target,
+      contrast: v.contrast,
+      heard: asString(v.heard),
+      count: Math.max(1, asNumber(v.count, 1)),
+      box: Math.max(0, Math.min(4, Math.floor(asNumber(v.box)))),
+      dueAt: asNumber(v.dueAt),
+      reviews: Math.max(0, asNumber(v.reviews)),
+      lapses: Math.max(0, asNumber(v.lapses)),
+      lastSeen: asNumber(v.lastSeen),
+    }))
+    .slice(-200);
 }
-export function recordPronunciation(profile:LearningProfile, evidence:{kind:'tone'|'sound';target:string;contrast:string;heard:string}, now=Date.now()):LearningProfile {
- const id=`${evidence.kind}|${evidence.target}|${evidence.contrast}`;
- const entries=(profile.pronunciation||[]).map(e=>({...e}));
- const old=entries.find(e=>e.id===id);
- if(old){old.count++;old.lastSeen=now;old.heard=evidence.heard;old.box=0;old.dueAt=now;}
- else entries.push({...evidence,id,count:1,box:0,dueAt:now,reviews:0,lapses:0,lastSeen:now});
- return {...profile,version:2,pronunciation:entries.slice(-200),updatedAt:now};
+export function recordPronunciation(
+  profile: LearningProfile,
+  evidence: { kind: 'tone' | 'sound'; target: string; contrast: string; heard: string },
+  now = Date.now(),
+): LearningProfile {
+  const id = `${evidence.kind}|${evidence.target}|${evidence.contrast}`;
+  const entries = (profile.pronunciation || []).map((e) => ({ ...e }));
+  const old = entries.find((e) => e.id === id);
+  if (old) {
+    old.count++;
+    old.lastSeen = now;
+    old.heard = evidence.heard;
+    old.box = 0;
+    old.dueAt = now;
+  } else entries.push({ ...evidence, id, count: 1, box: 0, dueAt: now, reviews: 0, lapses: 0, lastSeen: now });
+  return { ...profile, version: 2, pronunciation: entries.slice(-200), updatedAt: now };
 }
-export function reviewPronunciation(profile:LearningProfile,id:string,correct:boolean|null,now=Date.now()):LearningProfile {
- if(correct===null)return profile;
- return {...profile,pronunciation:(profile.pronunciation||[]).map(e=>{if(e.id!==id)return e;const box=correct?Math.min(e.box+1,4):0;return {...e,box,dueAt:now+PRONUNCIATION_MS[box],reviews:e.reviews+1,lapses:e.lapses+Number(!correct)};}),updatedAt:now};
+export function reviewPronunciation(profile: LearningProfile, id: string, correct: boolean | null, now = Date.now()): LearningProfile {
+  if (correct === null) return profile;
+  return {
+    ...profile,
+    pronunciation: (profile.pronunciation || []).map((e) => {
+      if (e.id !== id) return e;
+      const box = correct ? Math.min(e.box + 1, 4) : 0;
+      return { ...e, box, dueAt: now + PRONUNCIATION_MS[box], reviews: e.reviews + 1, lapses: e.lapses + Number(!correct) };
+    }),
+    updatedAt: now,
+  };
 }
-export function duePronunciation(profile:LearningProfile,now=Date.now()) { return (profile.pronunciation||[]).filter(e=>e.dueAt<=now).sort((a,b)=>a.dueAt-b.dueAt||b.count-a.count); }
+export function duePronunciation(profile: LearningProfile, now = Date.now()) {
+  return (profile.pronunciation || []).filter((e) => e.dueAt <= now).sort((a, b) => a.dueAt - b.dueAt || b.count - a.count);
+}

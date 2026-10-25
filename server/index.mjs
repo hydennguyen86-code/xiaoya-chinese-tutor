@@ -1,3 +1,4 @@
+import { warmLocalModel } from './warmup.mjs';
 import { energyTiming } from './audioTiming.mjs';
 import { measureFluency } from './fluency.mjs';
 import { mountListeningCorpus } from './listeningCorpus.mjs';
@@ -52,6 +53,11 @@ app.get('/api/lan/certificate', (req, res) =>
 mountToneEvaluation(app, dataStore.dir);
 mountListeningCorpus(app, dataStore.dir);
 const isOwner = ownerRequest;
+app.post('/api/warmup', async (req,res)=>{
+  if(!ownerRequest(req))return res.sendStatus(403);
+  try { res.json(await warmLocalModel(req.body?.provider,req.body?.model)); }
+  catch { res.status(400).json({error:'Không làm nóng được model cục bộ; vẫn có thể thử trò chuyện.'}); }
+});
 app.get('/api/provider-config', (req, res) => (isOwner(req) ? res.json(publicRemoteSettings()) : res.sendStatus(403)));
 app.put('/api/provider-config', (req, res) => {
   if (!isOwner(req)) return res.sendStatus(403);

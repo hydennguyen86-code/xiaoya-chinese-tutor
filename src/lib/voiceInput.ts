@@ -1,3 +1,4 @@
+import type { VoiceTiming } from './latency';
 import { saveFluency, type Fluency } from './fluency';
 import { recordSpokenTones } from './listeningPractice';
 // Record one spoken answer. With local speech-to-text (whisper.cpp on this
@@ -20,7 +21,13 @@ export interface ToneSegment {
   start: number;
   end: number;
 }
-export interface AudioTiming { duration:number; speechStart:number; speechEnd:number; voicedSeconds:number; pauses:{start:number;end:number}[] }
+export interface AudioTiming {
+  duration: number;
+  speechStart: number;
+  speechEnd: number;
+  voicedSeconds: number;
+  pauses: { start: number; end: number }[];
+}
 export interface ToneReport {
   timing?: AudioTiming | null;
   duration?: number;
@@ -38,6 +45,7 @@ export interface ToneReport {
 
 export interface VoiceResult {
   fluency?: Fluency | null;
+  timing?: VoiceTiming;
   text: string;
   tones: ToneReport | null;
   audio?: Blob;
@@ -77,16 +85,29 @@ export function listen(options: Options): VoiceHandle {
   currentVoice?.cancel();
   const handle = options.local ? listenLocal(options) : listenBrowser(options);
   currentVoice = handle;
-  handle.details.finally(()=>{if(currentVoice===handle)currentVoice=null;}).catch(()=>{});
+  handle.details
+    .finally(() => {
+      if (currentVoice === handle) currentVoice = null;
+    })
+    .catch(() => {});
   // callers await one of the two; keep the other from reporting an unhandled error
   handle.result.catch(() => {});
   handle.details.catch(() => {});
   return handle;
 }
 
-function listenLocal({ onPhase, learnerId, pronounce, modelRate = 1, silenceMs = 1600, noSpeechMs = 8000, maxMs = 30000 }: Options): VoiceHandle {
+function listenLocal({
+  onPhase,
+  learnerId,
+  pronounce,
+  modelRate = 1,
+  silenceMs = 1600,
+  noSpeechMs = 8000,
+  maxMs = 30000,
+}: Options): VoiceHandle {
   let stopRequested = false;
   let cancelled = false;
+  const request = new AbortController();
   let finish: () => void = () => {
     stopRequested = true;
   };
@@ -154,6 +175,7 @@ function listenLocal({ onPhase, learnerId, pronounce, modelRate = 1, silenceMs =
       }, 100);
     });
 
+    const recordingEnd = performance.now();
     recorder.stop();
     await stopped;
     stream.getTracks().forEach((track) => track.stop());
@@ -164,17 +186,28 @@ function listenLocal({ onPhase, learnerId, pronounce, modelRate = 1, silenceMs =
     const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
     const query = new URLSearchParams();
     if (learnerId) query.set('learner', learnerId);
-    if (pronounce) { query.set('target', pronounce); query.set('rate', String(modelRate)); }
+    if (pronounce) {
+      query.set('target', pronounce);
+      query.set('rate', String(modelRate));
+    }
+    const sttStart = performance.now();
     const res = await fetch(`${pronounce ? '/api/pronounce' : '/api/transcribe'}?${query}`, {
       method: 'POST',
+      signal: request.signal,
       headers: { 'Content-Type': blob.type },
       body: blob,
     });
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
     const data = (await res.json()) as { text?: string; tones?: ToneReport; fluency?: Fluency };
-    if (learnerId && !pronounce && data.fluency) saveFluency(learnerId,data.fluency);
+    if (learnerId && !pronounce && data.fluency) saveFluency(learnerId, data.fluency);
     if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones);
-    return { text: (data.text || '').trim(), tones: data.tones ?? null, audio: blob, fluency: data.fluency ?? null };
+    return {
+      text: (data.text || '').trim(),
+      tones: data.tones ?? null,
+      audio: blob,
+      fluency: data.fluency ?? null,
+      timing: { speechEnd: lastVoice, recordingEnd, sttStart, sttEnd: performance.now() },
+    };
   })();
 
   return {
@@ -183,6 +216,7 @@ function listenLocal({ onPhase, learnerId, pronounce, modelRate = 1, silenceMs =
     stop: () => finish(),
     cancel: () => {
       cancelled = true;
+      request.abort();
       finish();
     },
   };

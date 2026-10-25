@@ -1,3 +1,4 @@
+import { markLatency } from './latency';
 import { speechRate } from './listeningPrefs';
 import { speakBrowser, stopBrowserVoice } from './browserVoice';
 import { GaussianSplatRenderer } from '@myned-ai/gsplat-flame-avatar-renderer';
@@ -244,7 +245,7 @@ export class LamAvatarController implements AvatarApi {
     this.setSpeaking(false);
   }
 
-  queueSpeech(text: string, voice: string) {
+  queueSpeech(text: string, voice: string, traceId?: string) {
     if (!this.ctx || this.destroyed) return;
     const clean = text.trim();
     if (!clean) return;
@@ -256,12 +257,22 @@ export class LamAvatarController implements AvatarApi {
     this.chain = this.chain
       .then(async () => {
         if (session !== this.session || this.destroyed || !this.ctx) return;
+        markLatency(traceId, 'ttsStart');
         const result = await this.getTts(clean, voice, rate);
+        markLatency(traceId, 'ttsReady');
         if (session !== this.session || this.destroyed || !this.ctx) return;
         if (result.browserText) {
-          this.callbacks.onAudioState?.(true);
           try {
-            await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', undefined, undefined, result.browserRate);
+            await speakBrowser(
+              result.browserText,
+              result.browserLocale ?? 'zh-CN',
+              undefined,
+              () => {
+                markLatency(traceId, 'audio');
+                this.callbacks.onAudioState?.(true);
+              },
+              result.browserRate,
+            );
           } finally {
             this.callbacks.onAudioState?.(false);
           }
@@ -281,6 +292,7 @@ export class LamAvatarController implements AvatarApi {
         const start = Math.max(this.ctx.currentTime + 0.05, this.audioEndAt);
         const end = start + buffer.duration;
         source.start(start);
+        markLatency(traceId, 'audio', performance.now() + Math.max(0, start - this.ctx.currentTime) * 1000);
         this.segments.push({ start, end, timeline, source });
         this.audioEndAt = end + 0.12;
         this.userState = 'Idle';

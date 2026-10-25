@@ -12,7 +12,7 @@ export interface AvatarApi {
   applyReaction(emotion?: Emotion, gesture?: Gesture): void;
   beginTurn(): void;
   stopSpeech(): void;
-  queueSpeech(text: string, voice: string): void;
+  queueSpeech(text: string, voice: string, traceId?: string): void;
   speakAll(text: string, voice: string, emotion?: Emotion, gesture?: Gesture): boolean;
   destroy(): void;
 }

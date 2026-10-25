@@ -53,10 +53,14 @@ export function CoursePractice(props: Props) {
         Bài tự soạn ưu tiên ứng dụng. Nghe bằng giọng tổng hợp; có thể cần mạng nếu dùng giọng Edge. Điểm bài này không quy đổi sang điểm
         HSK.
       </p>
-      {!checkpoint && <ToneListening learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />}
+      {!checkpoint && (
+        <ToneListening learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />
+      )}
       {!checkpoint && <SoundListening learnerId={props.learnerId} voice={props.voice} onBusy={props.onBusy} />}
       {!checkpoint && <DictationPractice content={content} voice={props.voice} onBusy={props.onBusy} />}
-      {!checkpoint && <ShadowingPractice learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />}
+      {!checkpoint && (
+        <ShadowingPractice learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />
+      )}
       {!checkpoint && <CommunityListening />}
       {content.checkpoint && (
         <button type="button" className="lesson-secondary" onClick={() => setCheckpoint((v) => !v)}>
