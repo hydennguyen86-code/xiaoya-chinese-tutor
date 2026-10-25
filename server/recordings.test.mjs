@@ -129,3 +129,25 @@ test('label-server sidecars (file-level peer source) are read, unusable rows are
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('external manifest loads six separate calibration sentences and legacy manifest remains supported', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-calibration-fixture-'));
+  try {
+    const recordings = [{ id: 'single-1-1', text: '妈', kind: 'single', file: 'single-1-1.audio', label: null }];
+    const write = () => {
+      for (const entry of recordings) fs.writeFileSync(path.join(dir, entry.file), Buffer.alloc(1200));
+      fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ version: 1, recordings }));
+    };
+    write();
+    assert.equal(readRecordingDataset(dir).calibration.length, 0);
+    for (let i = 1; i <= 6; i++)
+      recordings.push({ id: `sentence-${i}`, text: '我今天很忙。', kind: 'sentence', file: `sentence-${i}.audio`, label: null });
+    write();
+    const data = readRecordingDataset(dir);
+    assert.equal(data.calibration.length, 6);
+    assert.equal(data.inventory.availableItems, 1);
+    assert.equal(data.inventory.labeledItems, 0);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

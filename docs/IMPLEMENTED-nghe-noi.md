@@ -174,3 +174,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Chạy lại audit grammar sau các sửa: 0 câu đúng bị sửa trong 112 câu đúng; 34/102 câu sai sửa theo thước đo hiện tại. Artifact có hash/commit trong eval/results. Thước đo vẫn dùng expected dạng đoạn ở một phần bộ cũ, chưa thay thế đánh giá LLM/người dạy (review vòng 2 nêu T5).
 - Chưa kiểm chứng: Windows/Linux thật, micro/thu-phát trên điện thoại, hành vi abort audio bằng thiết bị thật, giáo viên duyệt nội dung, schema sidecar nhãn thực tế và độ chính xác người học. Chưa có nhãn người, không tinh chỉnh classifyIsolated; không cam kết 0 false positive ngoài bộ thử.
 - Không push/tag; không ghi data/ thật; không commit audio/giọng/ảnh người thật. Câu hỏi tồn đọng ở QUESTIONS.md. Người dùng vừa giao review-codex-2, sẽ xử lý tiếp trong các commit riêng sau mốc này.
+
+## Review vòng 2 — L2 (L1 do Claude)
+
+- Giữ nguyên L1 trong 0f7702f (peer/nhãn bị loại) và format voiceInput d03f43a; bỏ các sửa trùng đang làm.
+- L2: test manifest có 6 sentence-* được nạp riêng làm calibration, không tính vào 56 mục đánh giá; manifest cũ không có câu vẫn chạy, fallback được ghi rõ là cùng bộ đo. Qoder đã sửa manifest ở ngoài repo; app không ghi lại file nguồn/không chép audio.
