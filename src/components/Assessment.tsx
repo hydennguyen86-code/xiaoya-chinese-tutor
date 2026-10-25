@@ -420,7 +420,7 @@ export function Assessment(props: Props) {
                   </div>
                 </>
               )}
-              {tones && <ToneFeedback report={tones} audio={recordedAudio} />}
+              {tones && <ToneFeedback report={tones} audio={recordedAudio} repair={{learnerId:props.learnerId,word:'target' in item ? item.target : '',sentence:'target' in item ? item.target : '',voice:'zh-CN-XiaoxiaoNeural',local:props.localStt}} />}
               <p role="status">{feedback}</p>
             </div>
           )}

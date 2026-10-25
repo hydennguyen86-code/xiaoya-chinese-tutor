@@ -416,6 +416,7 @@ export function DailyLesson(props: DailyLessonProps) {
   const sectionElapsed = session.elapsedMs[section] || 0;
   const overBudget = sectionElapsed > sectionBudgetMs(section);
   const shared = {
+    learnerId: learner.id, voice, localStt,
     content,
     session,
     say,
@@ -584,6 +585,7 @@ function LessonTop({ title, subtitle, onClose }: { title: string; subtitle: stri
 }
 
 interface SharedProps {
+  learnerId: string; voice: string; localStt: boolean;
   content: LessonContent;
   session: SessionState;
   say: (text: string) => void;
@@ -752,7 +754,7 @@ function VocabSection(props: SharedProps) {
           {ok ? 'Mình nghe đúng chữ rồi.' : `Mình nghe thành: "${heard.text}". Nghe lại rồi thử lần nữa nhé.`}
         </p>
       )}
-      {heard?.tones && <ToneFeedback report={heard.tones} audio={heard.audio} />}
+      {heard?.tones && <ToneFeedback report={heard.tones} audio={heard.audio} repair={{learnerId:props.learnerId,word:heard.target,sentence:word.example,voice:props.voice,local:props.localStt}} />}
       <div className="lesson-actions">
         <SlowListen onPlay={() => say(`${word.word}。${word.example}`)} />
         <button type="button" className="lesson-secondary" onClick={() => say(`${word.word}。${word.example}`)}>

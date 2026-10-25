@@ -58,3 +58,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Chép 60 đoạn JSON và checker, giữ nhãn AI soạn, chưa duyệt. Phát mẫu theo tốc độ chung 0.7/0.85/1×; hết tiếng mẫu mới mở thu tự động theo thao tác chủ động của người học. Có dừng, hủy khi rời màn hình; bản ghi chỉ ở bộ nhớ.
 - Hiện đường cao độ sẵn có, độ dài và số chỗ ngắt nội bộ hơn một giây theo năng lượng. Giọng tham chiếu theo đúng tốc độ đã chọn; cache tách theo tốc độ. Không sửa ngưỡng thanh điệu hay cách cắt chữ, không dùng timestamp Whisper.
 - Test timing dùng tín hiệu tổng hợp kiểm tra loại khoảng lặng đầu/cuối; checker nội dung chạy trong test repo. Chưa kiểm chứng với micro người thật hoặc so sánh chuyên gia, không gắn điểm/nhãn thành thạo.
+
+## Mục 6 — Vòng sửa lỗi phát âm
+
+- Từ chữ bị chấm sai trong bài từ vựng/kiểm tra có nút mở vòng chữ → từ → câu; nghe mẫu/chậm và nói lại. Mỗi bước chỉ chuyển sau hai lần rõ và khớp liên tiếp; sai xóa chuỗi, chưa chấm được không tăng lượt. Bản nhận dạng phải khớp mục tiêu; acceptTones DeepSeek được ưu tiên nếu có.
+- Hủy ghi khi đóng vòng; audio chỉ ở bộ nhớ. Test state machine cho đủ ba bước, sai/unclear và chặn kết quả không có báo cáo.
+- **Giới hạn còn lại**: bộ chấm hiện hữu chỉ chấm thanh cho 1–2 chữ. Bước câu dài vẫn cho nghe/thu nhưng không tự xác nhận qua vòng (hiện rõ lý do), để tránh giả điểm hoặc thay thuật toán/cách cắt khi chưa có bộ đo người thật. Chưa kiểm chứng bằng người học thật. Đây là phần chưa đạt toàn bộ tiêu chí mục 6, không gắn nhãn hoàn tất sư phạm.
