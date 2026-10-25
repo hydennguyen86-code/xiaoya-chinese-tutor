@@ -3,7 +3,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 export function mediaToolPath(name, env = process.env, exists = fs.existsSync, home = os.homedir(), platform = process.platform) {
-  const paths = platform === 'win32' ? path.win32 : path;
+  const paths = platform === 'win32' ? path.win32 : path.posix;
   const binary = platform === 'win32' ? `${name}.exe` : name;
   const configured = env[name === 'ffmpeg' ? 'FFMPEG_PATH' : 'FFPROBE_PATH'];
   if (configured) return configured;
