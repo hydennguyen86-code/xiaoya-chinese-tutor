@@ -61,7 +61,8 @@ export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneRe
             Vai trò{' '}
             <select value={source} onChange={(e) => setSource(e.target.value)}>
               <option value="self">Người học tự nghe</option>
-              <option value="expert">Người dạy/người nghe chuyên môn</option>
+              <option value="peer">Người học khác nghe hộ</option>
+              <option value="expert">Giáo viên / người bản ngữ</option>
             </select>
           </label>
           {chars.map((s, i) => (

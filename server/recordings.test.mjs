@@ -88,3 +88,44 @@ test('external sidecars use human tones, never expected/app guesses, detect conf
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('label-server sidecars (file-level peer source) are read, unusable rows are reported', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-label-sidecar-'));
+  try {
+    const recordings = [
+      { id: 'single-1-1', text: '妈', kind: 'single', file: 'single-1-1.audio' },
+      { id: 'word-1', text: '中国', kind: 'word', file: 'word-1.audio' },
+      { id: 'word-13', text: '手机', kind: 'word', file: 'word-13.audio' },
+    ];
+    for (const entry of recordings) fs.writeFileSync(path.join(dir, entry.file), 'x');
+    fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ version: 1, recordings }));
+    // the shape written by content-for-misu/recording-kit/label-server.mjs
+    fs.writeFileSync(
+      path.join(dir, 'labels.SYNTHETIC.json'),
+      JSON.stringify({
+        version: 1,
+        labeler: 'SYNTHETIC',
+        source: 'peer',
+        reviewedBy: 'SYNTHETIC',
+        items: {
+          'single-1-1': { order: 1, text: '妈', tones: [1], badCut: false },
+          'word-1': { order: 2, text: '中国', tones: [1, 2], badCut: false },
+          'word-13': { order: 3, text: '手机', badCut: true },
+        },
+        incomplete: [],
+      }),
+    );
+    const { recordings: labelled, inventory } = readRecordingDataset(dir);
+    assert.deepEqual(
+      labelled.map((r) => [r.id, r.label.source]),
+      [
+        ['single-1-1', 'peer'],
+        ['word-1', 'peer'],
+      ],
+    );
+    assert.equal(inventory.rejectedLabels, 1);
+    assert.deepEqual(inventory.rejected, [{ id: 'word-13', reason: 'bad cut' }]);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

@@ -5,10 +5,14 @@ import { randomUUID } from 'node:crypto';
 import { TONE_ITEMS } from '../eval/toneItems.mjs';
 import { expectedTones } from './tones.mjs';
 
+// self: the learner on their own recording; peer: another learner listening;
+// expert: a teacher or native speaker. Never inferred, always chosen by the labeler.
+export const TONE_LABEL_SOURCES = ['self', 'peer', 'expert'];
+
 export function validateToneLabel(value, count, maxTone = 4) {
   return Boolean(
     value &&
-    ['self', 'expert'].includes(value.source) &&
+    TONE_LABEL_SOURCES.includes(value.source) &&
     typeof value.reviewedBy === 'string' &&
     value.reviewedBy.trim().length > 0 &&
     value.reviewedBy.length <= 100 &&

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { analyseTones, profileFromAudio, emptyProfile, expectedTones } from '../server/tones.mjs';
-import { validateToneLabel } from '../server/toneEvaluation.mjs';
+import { TONE_LABEL_SOURCES, validateToneLabel } from '../server/toneEvaluation.mjs';
 import { TONE_ITEMS } from './toneItems.mjs';
 import { saveResult } from './record.mjs';
 
@@ -23,8 +23,24 @@ export function readRecordingDataset(directory, { labelsFile } = {}) {
         .filter((f) => /^labels\..+\.json$/.test(f))
         .sort();
   const labels = new Map();
+  // rows that cannot be used are counted with a reason instead of vanishing
+  const rejected = [];
   function add(id, label) {
-    if (!validateToneLabel(label, TONE_ITEMS.find((i) => i.id === id)?.text.length ?? -1, 5)) return;
+    const count = TONE_ITEMS.find((i) => i.id === id)?.text.length ?? -1;
+    if (!validateToneLabel(label, count, 5)) {
+      const reason =
+        count < 0
+          ? 'unknown item'
+          : label?.badCut
+            ? 'bad cut'
+            : !TONE_LABEL_SOURCES.includes(label?.source)
+              ? 'missing or unknown source'
+              : !String(label?.reviewedBy || '').trim()
+                ? 'missing reviewedBy'
+                : 'incomplete tones';
+      rejected.push({ id, reason });
+      return;
+    }
     const old = labels.get(id);
     if (old && JSON.stringify(old.tones) !== JSON.stringify(label.tones))
       throw new Error('Conflicting human labels. Select one sidecar explicitly with --labels=<filename>.');
@@ -68,6 +84,8 @@ export function readRecordingDataset(directory, { labelsFile } = {}) {
       requiredItems: TONE_ITEMS.length,
       complete: recordings.length === TONE_ITEMS.length,
       sidecars: sidecars.length,
+      rejectedLabels: rejected.length,
+      rejected,
     },
   };
 }
@@ -85,6 +103,7 @@ export async function evaluateRecordings(directory, { persist = true, labelsFile
   const matrix = Array.from({ length: 5 }, () => [0, 0, 0, 0, 0]);
   const counts = {
     self: 0,
+    peer: 0,
     expert: 0,
     recordings: recordings.length,
     labeledSyllables: 0,
@@ -93,7 +112,7 @@ export async function evaluateRecordings(directory, { persist = true, labelsFile
     humanUnclear: 0,
     humanNeutral: 0,
   };
-  const sources = { self: Array.from({ length: 5 }, () => [0, 0, 0, 0, 0]), expert: Array.from({ length: 5 }, () => [0, 0, 0, 0, 0]) };
+  const sources = Object.fromEntries(TONE_LABEL_SOURCES.map((source) => [source, Array.from({ length: 5 }, () => [0, 0, 0, 0, 0])]));
   for (const entry of recordings) {
     const report = await analyseTones(entry.audio, entry.text, { profile });
     counts[entry.label.source] += 1;
@@ -117,13 +136,18 @@ export async function evaluateRecordings(directory, { persist = true, labelsFile
   console.log('Rows: human label 1–4. Columns: unclear, predicted 1,2,3,4.');
   console.table(matrix.slice(1));
   console.log(counts);
+  console.log(`labelled items: ${inventory.labeledItems}/${inventory.requiredItems}`);
+  if (inventory.rejectedLabels) {
+    const reasons = Object.entries(inventory.rejected.reduce((acc, { reason }) => ({ ...acc, [reason]: (acc[reason] || 0) + 1 }), {}));
+    console.warn(`label rows not used: ${inventory.rejectedLabels} (${reasons.map(([r, n]) => `${r}: ${n}`).join(', ')})`);
+  }
   if (persist)
     saveResult(
       'tones-human',
       {
         thresholds: 'unchanged',
         rangeCalibration: calibrationEntries.length ? 'separate sentence clips; same person' : 'same captured set; not held-out',
-        labels: 'human; self/expert reported separately',
+        labels: 'human; self/peer/expert reported separately',
       },
       { matrix, bySource: sources, counts, inventory },
     );

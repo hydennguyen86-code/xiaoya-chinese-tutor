@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 type Item = { id: string; text: string; kind: string; expected: number[] };
-type Label = { source: 'self' | 'expert'; reviewedBy: string; tones: number[] };
+type LabelSource = 'self' | 'peer' | 'expert';
+type Label = { source: LabelSource; reviewedBy: string; tones: number[] };
 type Recording = { id: string; label: Label | null; recordedAt: string };
 export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onClose: () => void }) {
   const [items, setItems] = useState<Item[]>([]);
@@ -11,7 +12,7 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
   const [recording, setRecording] = useState(false);
   const [error, setError] = useState('');
   const [reviewer, setReviewer] = useState('');
-  const [source, setSource] = useState<'self' | 'expert'>('self');
+  const [source, setSource] = useState<LabelSource>('self');
   const [labels, setLabels] = useState<number[]>([]);
   const recorder = useRef<MediaRecorder | null>(null);
   const stream = useRef<MediaStream | null>(null);
@@ -156,9 +157,10 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
           </label>
           <label>
             Nguồn nhãn{' '}
-            <select value={source} onChange={(e) => setSource(e.target.value as 'self' | 'expert')}>
+            <select value={source} onChange={(e) => setSource(e.target.value as LabelSource)}>
               <option value="self">Tự đánh giá</option>
-              <option value="expert">Người giỏi tiếng Trung nghe và gắn nhãn</option>
+              <option value="peer">Người học khác nghe hộ</option>
+              <option value="expert">Giáo viên / người bản ngữ nghe và gắn nhãn</option>
             </select>
           </label>
           <p>Ghi thanh thực sự nghe được, không chép thanh mục tiêu nếu đã đọc sai. 0 = không rõ.</p>
@@ -190,7 +192,13 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
           </div>
           {current?.label && (
             <p role="status">
-              Đã lưu nhãn ({current.label.source === 'self' ? 'tự đánh giá' : 'người nghe đánh giá'}): {current.label.tones.join(', ')}.
+              Đã lưu nhãn (
+              {current.label.source === 'self'
+                ? 'tự đánh giá'
+                : current.label.source === 'peer'
+                  ? 'người học khác nghe'
+                  : 'giáo viên/người bản ngữ nghe'}
+              ): {current.label.tones.join(', ')}.
             </p>
           )}
         </>
