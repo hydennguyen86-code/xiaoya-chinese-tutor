@@ -77,3 +77,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - API trả số chữ Hán Whisper nhận được / khoảng từ tiếng đầu đến tiếng cuối, số và độ dài khoảng ngắt nội bộ >1 giây theo năng lượng. Không có tiếng/chữ thì không tạo điểm 0 giả. Không dùng để quy đổi điểm thi, không sửa bộ chấm thanh.
 - Lượt hội thoại/nhập vai dùng nhận dạng cục bộ được lưu số đo (không lưu audio/text) theo learner, tối đa 500 lượt. Bài đọc có mục tiêu không trộn vào lịch sử hội thoại. Lịch sử học và màn kiểm tra tuần/tháng hiển thị bảng theo tuần UTC, trung bình có trọng số thời lượng và thay đổi so với tuần có dữ liệu trước.
 - Test tiếng tổng hợp/Chinese đếm chữ/nhóm tuần/trọng số/thiếu dữ liệu. Thêm hủy thu trước khi mở một lượt thu khác để tránh hai micro đồng thời. Chưa có người thật để xác nhận độ tin cậy hoặc hiệu quả học; ngắt có thể là lấy hơi/cố ý, số đo chỉ tham khảo.
+
+## Mục 10 — Xem phát âm câu vừa nói
+
+- Mic cục bộ chuyển cả kết quả và Blob cho App; gắn bản ghi với đúng ID lượt người học, tối đa 10 lượt trong RAM, không đưa vào ChatMessage/localStorage/server store. Đóng phiên/tải lại mất bản ghi, chat mới xóa map. Không có bản ghi thì không hiện nút chấm.
+- Nút Xem phát âm câu này gửi Blob đã có đến API cục bộ, dùng đúng transcript Whisper đã nhận (không dùng đoạn gõ thêm). Hiện cao độ, replay chữ sẵn có và vòng sửa mục 6. Câu dài không tự gắn chữ sai; người học chọn chữ muốn luyện riêng. Quá giới hạn 120 ký tự thì không tự cắt mục tiêu làm lệch audio.
+- Hủy fetch khi rời component; cảnh báo rõ transcript không phải bằng chứng câu người học định nói. Test giới hạn lưu RAM/không giả audio cho transcript trình duyệt. Chưa thử lượt nói người thật; giới hạn tự chấm câu dài ở mục 6 vẫn giữ.

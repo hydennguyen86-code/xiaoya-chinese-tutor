@@ -1,4 +1,4 @@
-import { listen, voiceSupported, type VoiceHandle } from './voiceInput';
+import { listen, voiceSupported, type VoiceHandle, type VoiceResult } from './voiceInput';
 
 // When the server has local speech-to-text (whisper.cpp), record here and
 // transcribe on this computer instead of sending audio to the browser vendor.
@@ -101,6 +101,7 @@ function friendlyMicError(code: string) {
 }
 
 interface MicCallbacks {
+  onVoiceResult?: (result: VoiceResult) => void;
   onTranscript: (current: string) => void;
   onDone: (finalText: string) => void;
   onError: (message: string) => void;
@@ -131,9 +132,11 @@ export class ChineseMic {
     this.localHandle = handle;
     this.active = true;
     this.callbacks.onState(true);
-    handle.result
-      .then((text) => {
+    handle.details
+      .then((result) => {
+        const text = result.text;
         if (this.localHandle !== handle) return; // aborted
+        this.callbacks.onVoiceResult?.(result);
         this.callbacks.onTranscript(text);
         this.callbacks.onState(false);
         this.callbacks.onDone(text);

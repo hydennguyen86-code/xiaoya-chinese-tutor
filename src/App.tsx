@@ -1,3 +1,5 @@
+import { retainSpokenTurn } from './lib/spokenTurns';
+import type { VoiceResult } from './lib/voiceInput';
 import { recordPronunciation } from './lib/learning';
 import { VoiceSourceNotice } from './components/VoiceSourceNotice';
 import { Assessment } from './components/Assessment';
@@ -82,6 +84,8 @@ interface TutorProps {
 
 function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const scope = learner.id;
+  const pendingVoice = useRef<VoiceResult | null>(null);
+  const [spokenTurns,setSpokenTurns] = useState<Record<string,VoiceResult>>({});
   const [settings, setSettings] = useState<Settings>(() => ({
     ...loadSettings(),
     level: learner.level,
@@ -281,12 +285,14 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
 
   useEffect(() => {
     const mic = new ChineseMic({
+      onVoiceResult: result => { pendingVoice.current = result; },
       onTranscript: (transcript) => {
         setDraft(`${micBaseRef.current}${transcript}`.trimStart());
       },
       onDone: (transcript) => {
         setListening(false);
         const spoken = transcript.trim();
+        if (!spoken) pendingVoice.current=null;
         const combined = `${micBaseRef.current}${spoken}`.trim();
         setDraft(combined);
         if (spoken) {
@@ -372,6 +378,8 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
 
   const send = useCallback(
     (rawText?: string) => {
+      const spokenTurn = pendingVoice.current;
+      pendingVoice.current = null;
       const text = (rawText ?? draftRef.current).trim();
       if (!text || busyRef.current) return;
 
@@ -401,6 +409,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         text,
         createdAt: Date.now(),
       };
+      if (spokenTurn) setSpokenTurns(current=>retainSpokenTurn(current,userMessage.id,spokenTurn));
       const assistantId = uid();
       const assistantMessage: ChatMessage = {
         id: assistantId,
@@ -815,6 +824,8 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   };
 
   const handleNewChat = () => {
+    pendingVoice.current = null;
+    setSpokenTurns({});
     if (!window.confirm('Bắt đầu cuộc trò chuyện mới? Nội dung hội thoại hôm nay sẽ được xoá khỏi trình duyệt.')) {
       return;
     }
@@ -1017,6 +1028,9 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           />
         ) : (
           <ChatPanel
+            spokenTurns={spokenTurns}
+            learnerId={scope}
+            voice={settings.voice}
             messages={messages}
             phase={phase}
             draft={draft}

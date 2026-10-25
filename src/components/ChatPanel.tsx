@@ -1,3 +1,5 @@
+import { SpokenPronunciation } from './SpokenPronunciation';
+import type { VoiceResult } from '../lib/voiceInput';
 import { ListeningControls, SlowListen } from './ListeningControls';
 import { useEffect, useMemo, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
@@ -15,6 +17,7 @@ import {
 } from './Icons';
 
 interface ChatPanelProps {
+  spokenTurns?: Record<string,VoiceResult>; learnerId?: string; voice?: string;
   messages: ChatMessage[];
   phase: Phase;
   draft: string;
@@ -61,6 +64,7 @@ function TypingDots() {
 }
 
 interface MessageItemProps {
+  spokenTurn?: VoiceResult; learnerId?: string; voice?: string;
   message: ChatMessage;
   showPinyin: boolean;
   busy: boolean;
@@ -70,6 +74,7 @@ interface MessageItemProps {
 }
 
 function MessageItem({
+  spokenTurn, learnerId, voice,
   message,
   showPinyin,
   busy,
@@ -90,6 +95,7 @@ function MessageItem({
         <div className="bubble bubble-user">
           <p className="bubble-cn">{message.text}</p>
         </div>
+        {spokenTurn && learnerId && <SpokenPronunciation turn={spokenTurn} learnerId={learnerId} voice={voice || 'zh-CN-XiaoxiaoNeural'}/>}
         <p className="user-meta">{formatTime(message.createdAt)}</p>
       </article>
     );
@@ -234,6 +240,7 @@ function MessageItem({
 }
 
 export function ChatPanel({
+  spokenTurns, learnerId, voice,
   messages,
   phase,
   draft,
@@ -349,6 +356,7 @@ export function ChatPanel({
           <MessageItem
             key={message.id}
             message={message}
+            spokenTurn={spokenTurns?.[message.id]} learnerId={learnerId} voice={voice}
             showPinyin={showPinyin}
             busy={busy}
             onReplay={onReplay}
