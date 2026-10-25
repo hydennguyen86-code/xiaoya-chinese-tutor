@@ -1,0 +1,90 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-2-d1",
+  "level": "HSK5-6",
+  "title": "Nghe yêu cầu và xác nhận đầu việc",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-109",
+      "level": "HSK5-6",
+      "hanzi": "请先确认客户的需求。",
+      "pinyin": "qǐng xiān què rèn kè hù de xū qiú",
+      "meaningVi": "Xin xác nhận nhu cầu của khách hàng trước.",
+      "focus": [
+        "确认 què rèn: 认 đọc rèn.",
+        "需求 xū qiú: 需 là ü."
+      ]
+    },
+    {
+      "id": "dt-3-110",
+      "level": "HSK5-6",
+      "hanzi": "这次工作的范围很清楚。",
+      "pinyin": "zhè cì gōng zuò de fàn wéi hěn qīng chǔ",
+      "meaningVi": "Phạm vi công việc lần này rất rõ.",
+      "focus": [
+        "范围 fàn wéi: 围 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-3-111",
+      "level": "HSK5-6",
+      "hanzi": "重要的事情要优先做。",
+      "pinyin": "zhòng yào de shì qíng yào yōu xiān zuò",
+      "meaningVi": "Việc quan trọng phải làm trước.",
+      "focus": [
+        "优先 yōu xiān: 先 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-112",
+      "level": "HSK5-6",
+      "hanzi": "为了避免出错，请确认细节。",
+      "pinyin": "wèi le bì miǎn chū cuò qǐng què rèn xì jié",
+      "meaningVi": "Để tránh sai sót, xin xác nhận chi tiết.",
+      "focus": [
+        "避免 bì miǎn: 免 thanh 3.",
+        "细节 xì jié: 节 thanh 2."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-23",
+      "level": "HSK5-6",
+      "text": "请先确认客户的需求和范围。重要的事情要优先做，为了避免出错，细节也要确认。",
+      "pinyin": "qǐng xiān què rèn kè hù de xū qiú hé fàn wéi zhòng yào de shì qíng yào yōu xiān zuò wèi le bì miǎn chū cuò xì jié yě yào què rèn",
+      "meaningVi": "Xin xác nhận nhu cầu và phạm vi của khách hàng trước. Việc quan trọng phải làm trước, để tránh sai sót, chi tiết cũng cần xác nhận.",
+      "syllables": 33,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "请先确认客户的需求和范围",
+          "pinyin": "qǐng xiān què rèn kè hù de xū qiú hé fàn wéi",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "重要的事情要优先做",
+          "pinyin": "zhòng yào de shì qíng yào yōu xiān zuò",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "为了避免出错",
+          "pinyin": "wèi le bì miǎn chū cuò",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "细节也要确认",
+          "pinyin": "xì jié yě yào què rèn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "确认 xuất hiện hai lần, giữ đều âm.",
+        "避免 bì miǎn: 免 thanh 3 ngắn."
+      ]
+    }
+  ]
+}

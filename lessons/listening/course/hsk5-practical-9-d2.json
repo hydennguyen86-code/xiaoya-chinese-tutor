@@ -1,0 +1,244 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-9-d2",
+  "level": "HSK5-6",
+  "title": "Nghe tin và phân biệt sự kiện với suy luận",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-171",
+      "level": "HSK5-6",
+      "hanzi": "客流的数字需要核实。",
+      "pinyin": "kè liú de shù zì xū yào hé shí",
+      "meaningVi": "Số liệu lượng khách cần được xác minh.",
+      "focus": [
+        "客流 kè liú: 流 thanh 2.",
+        "核实 hé shí: 核 hé."
+      ]
+    },
+    {
+      "id": "dt-3-172",
+      "level": "HSK5-6",
+      "hanzi": "这个消息还没有核实。",
+      "pinyin": "zhè ge xiāo xī hái méi yǒu hé shí",
+      "meaningVi": "Tin này vẫn chưa được xác minh.",
+      "focus": [
+        "消息 xiāo xī: 息 thanh 1.",
+        "核实 hé shí: 核 hé."
+      ]
+    },
+    {
+      "id": "dt-3-173",
+      "level": "HSK5-6",
+      "hanzi": "调查的结论有证据支持。",
+      "pinyin": "diào chá de jié lùn yǒu zhèng jù zhī chí",
+      "meaningVi": "Kết luận của điều tra có bằng chứng ủng hộ.",
+      "focus": [
+        "结论 jié lùn; 证据 zhèng jù."
+      ]
+    },
+    {
+      "id": "dt-3-174",
+      "level": "HSK5-6",
+      "hanzi": "来源不同的消息，结论也可能不同。",
+      "pinyin": "lái yuán bù tóng de xiāo xī jié lùn yé kě néng bù tóng",
+      "meaningVi": "Tin từ nguồn khác nhau thì kết luận cũng có thể khác.",
+      "focus": [
+        "Biến điệu 3+3: yě kě → yé kě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "来源 lái yuán; 结论 jié lùn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        2,
+        4,
+        2,
+        5,
+        1,
+        1,
+        2,
+        4,
+        3,
+        3,
+        2,
+        4,
+        2
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          4,
+          2,
+          5,
+          1,
+          1,
+          2,
+          4,
+          2,
+          3,
+          2,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          4,
+          2,
+          5,
+          1,
+          1,
+          2,
+          4,
+          3,
+          3,
+          2,
+          4,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: yě kě → yé kě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-4-2-5-1-1-2-4-2-3-2-4-2 lẫn 2-2-4-2-5-1-1-2-4-3-3-2-4-2."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-38",
+      "level": "HSK5-6",
+      "text": "客流的数字需要核实。不同来源的消息，结论也可能不同。调查还需要证据。",
+      "pinyin": "kè liú de shù zì xū yào hé shí bù tóng lái yuán de xiāo xī jié lùn yé kě néng bù tóng diào chá hái xū yào zhèng jù",
+      "meaningVi": "Số liệu lượng khách cần xác minh. Tin từ các nguồn khác nhau thì kết luận cũng có thể khác. Điều tra vẫn cần bằng chứng.",
+      "syllables": 30,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "客流的数字需要核实",
+          "pinyin": "kè liú de shù zì xū yào hé shí",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "不同来源的消息",
+          "pinyin": "bù tóng lái yuán de xiāo xī",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "结论也可能不同",
+          "pinyin": "jié lùn yé kě néng bù tóng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "调查还需要证据",
+          "pinyin": "diào chá hái xū yào zhèng jù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: yě kě → yé kě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "核实 hé shí: 核 đọc hé.",
+        "客流 kè liú: 客 thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        2,
+        5,
+        4,
+        4,
+        1,
+        4,
+        2,
+        2,
+        4,
+        2,
+        2,
+        2,
+        5,
+        1,
+        1,
+        2,
+        4,
+        3,
+        3,
+        2,
+        4,
+        2,
+        4,
+        2,
+        2,
+        1,
+        4,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          5,
+          4,
+          4,
+          1,
+          4,
+          2,
+          2,
+          4,
+          2,
+          2,
+          2,
+          5,
+          1,
+          1,
+          2,
+          4,
+          2,
+          3,
+          2,
+          4,
+          2,
+          4,
+          2,
+          2,
+          1,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          2,
+          5,
+          4,
+          4,
+          1,
+          4,
+          2,
+          2,
+          4,
+          2,
+          2,
+          2,
+          5,
+          1,
+          1,
+          2,
+          4,
+          3,
+          3,
+          2,
+          4,
+          2,
+          4,
+          2,
+          2,
+          1,
+          4,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: yě kě → yé kě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-5-4-4-1-4-2-2-4-2-2-2-5-1-1-2-4-2-3-2-4-2-4-2-2-1-4-4-4 lẫn 4-2-5-4-4-1-4-2-2-4-2-2-2-5-1-1-2-4-3-3-2-4-2-4-2-2-1-4-4-4."
+    }
+  ]
+}

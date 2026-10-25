@@ -1,0 +1,83 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-3-d2",
+  "level": "HSK1-2",
+  "title": "Số đếm và số điện thoại",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-121",
+      "level": "HSK1-2",
+      "hanzi": "我的手机号码是零一二。",
+      "pinyin": "wǒ de shǒu jī hào mǎ shì líng yī èr",
+      "meaningVi": "Số điện thoại di động của tôi là không một hai.",
+      "focus": [
+        "手机 shǒu jī: 机 không cuộn lưỡi.",
+        "零 líng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-1-122",
+      "level": "HSK1-2",
+      "hanzi": "你的手机号码是多少？",
+      "pinyin": "nǐ de shǒu jī hào mǎ shì duō shǎo",
+      "meaningVi": "Số điện thoại di động của bạn là bao nhiêu?",
+      "focus": [
+        "多少 duō shǎo: 少 thanh 3; khẩu ngữ hay đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-123",
+      "level": "HSK1-2",
+      "hanzi": "电话是零。",
+      "pinyin": "diàn huà shì líng",
+      "meaningVi": "Số điện thoại là không.",
+      "focus": [
+        "零 líng thanh 2 đi lên."
+      ]
+    },
+    {
+      "id": "dt-1-124",
+      "level": "HSK1-2",
+      "hanzi": "一二三，零。",
+      "pinyin": "yī èr sān líng",
+      "meaningVi": "Một hai ba, không.",
+      "focus": [
+        "Phân biệt 零 líng với 林 lín."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-26",
+      "level": "HSK1-2",
+      "text": "这是我的手机。我的手机号码是零一二三。你的电话号码是多少？",
+      "pinyin": "zhè shì wǒ de shǒu jī wǒ de shǒu jī hào mǎ shì líng yī èr sān nǐ de diàn huà hào mǎ shì duō shǎo",
+      "meaningVi": "Đây là điện thoại của tôi. Số di động của tôi là không một hai ba. Số điện thoại của bạn là bao nhiêu?",
+      "syllables": 26,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "这是我的手机",
+          "pinyin": "zhè shì wǒ de shǒu jī",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我的手机号码是零一二三",
+          "pinyin": "wǒ de shǒu jī hào mǎ shì líng yī èr sān",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "你的电话号码是多少",
+          "pinyin": "nǐ de diàn huà hào mǎ shì duō shǎo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "零 líng có -ng, không phải -n."
+      ]
+    }
+  ]
+}

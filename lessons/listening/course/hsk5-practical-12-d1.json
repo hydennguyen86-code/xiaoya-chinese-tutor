@@ -1,0 +1,95 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-12-d1",
+  "level": "HSK5-6",
+  "title": "Bài tích hợp: nghe, tóm tắt và đề xuất",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-192",
+      "level": "HSK5-6",
+      "hanzi": "我们先总结一下今天的讨论。",
+      "pinyin": "wǒ men xiān zǒng jié yí xià jīn tiān de tǎo lùn",
+      "meaningVi": "Chúng ta tóm tắt thảo luận hôm nay trước.",
+      "focus": [
+        "总结 zǒng jié: 结 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-3-193",
+      "level": "HSK5-6",
+      "hanzi": "关键是要有依据。",
+      "pinyin": "guān jiàn shì yào yǒu yī jù",
+      "meaningVi": "Điều then chốt là phải có căn cứ.",
+      "focus": [
+        "关键 guān jiàn: 键 thanh 4.",
+        "依据 yī jù: 依 thanh 1."
+      ]
+    },
+    {
+      "id": "dt-3-194",
+      "level": "HSK5-6",
+      "hanzi": "双方的分歧还在。",
+      "pinyin": "shuāng fāng de fēn qí hái zài",
+      "meaningVi": "Bất đồng giữa hai bên vẫn còn.",
+      "focus": [
+        "分歧 fēn qí: 歧 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-3-195",
+      "level": "HSK5-6",
+      "hanzi": "需要协调不同部门的意见。",
+      "pinyin": "xū yào xié tiáo bù tóng bù mén de yì jiàn",
+      "meaningVi": "Cần điều phối ý kiến của các bộ phận khác nhau.",
+      "focus": [
+        "协调 xié tiáo: 调 tiáo.",
+        "部门 bù mén."
+      ]
+    },
+    {
+      "id": "dt-3-196",
+      "level": "HSK5-6",
+      "hanzi": "明天开始落实这个方案。",
+      "pinyin": "míng tiān kāi shǐ luò shí zhè ge fāng àn",
+      "meaningVi": "Ngày mai bắt đầu thực hiện phương án này.",
+      "focus": [
+        "落实 luò shí: 实 thanh 2."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-43",
+      "level": "HSK5-6",
+      "text": "我们先总结一下今天的讨论。关键是要有依据，双方的分歧还需要协调。",
+      "pinyin": "wǒ men xiān zǒng jié yí xià jīn tiān de tǎo lùn guān jiàn shì yào yǒu yī jù shuāng fāng de fēn qí hái xū yào xié tiáo",
+      "meaningVi": "Chúng ta tóm tắt thảo luận hôm nay trước. Điều then chốt là có căn cứ, bất đồng giữa hai bên vẫn cần điều phối.",
+      "syllables": 29,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我们先总结一下今天的讨论",
+          "pinyin": "wǒ men xiān zǒng jié yí xià jīn tiān de tǎo lùn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "关键是要有依据",
+          "pinyin": "guān jiàn shì yào yǒu yī jù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "双方的分歧还需要协调",
+          "pinyin": "shuāng fāng de fēn qí hái xū yào xié tiáo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "总结 zǒng jié: 结 thanh 2.",
+        "分歧 fēn qí: 歧 thanh 2."
+      ]
+    }
+  ]
+}

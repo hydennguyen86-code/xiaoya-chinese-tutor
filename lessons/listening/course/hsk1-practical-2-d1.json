@@ -1,0 +1,153 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-2-d1",
+  "level": "HSK1-2",
+  "title": "Tên, người và quốc tịch",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-109",
+      "level": "HSK1-2",
+      "hanzi": "我叫小明。",
+      "pinyin": "wǒ jiào xiǎo míng",
+      "meaningVi": "Tôi tên là Tiểu Minh.",
+      "focus": [
+        "我 wǒ thanh 3.",
+        "叫 jiào không bật hơi."
+      ]
+    },
+    {
+      "id": "dt-1-110",
+      "level": "HSK1-2",
+      "hanzi": "你叫什么名字？",
+      "pinyin": "nǐ jiào shén me míng zi",
+      "meaningVi": "Bạn tên là gì?",
+      "focus": [
+        "什么 shén me: 么 nhẹ.",
+        "名字 míng zi: 子 nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-111",
+      "level": "HSK1-2",
+      "hanzi": "我是中国人。",
+      "pinyin": "wǒ shì zhōng guó rén",
+      "meaningVi": "Tôi là người Trung Quốc.",
+      "focus": [
+        "是 shì cuộn lưỡi.",
+        "人 rén đóng bằng -n."
+      ]
+    },
+    {
+      "id": "dt-1-112",
+      "level": "HSK1-2",
+      "hanzi": "他是老师。",
+      "pinyin": "tā shì lǎo shī",
+      "meaningVi": "Anh ấy là giáo viên.",
+      "focus": [
+        "他 tā thanh 1 cao và phẳng."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-23",
+      "level": "HSK1-2",
+      "text": "你好，我叫小明。你叫什么名字？我是中国人。",
+      "pinyin": "ní hǎo wǒ jiào xiǎo míng nǐ jiào shén me míng zi wǒ shì zhōng guó rén",
+      "meaningVi": "Xin chào, tôi tên Tiểu Minh. Bạn tên là gì? Tôi là người Trung Quốc.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你好",
+          "pinyin": "ní hǎo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我叫小明",
+          "pinyin": "wǒ jiào xiǎo míng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "你叫什么名字",
+          "pinyin": "nǐ jiào shén me míng zi",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我是中国人",
+          "pinyin": "wǒ shì zhōng guó rén",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: nǐ hǎo → ní hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "名字 đọc míng zi, chữ sau nhẹ.",
+        "Lên giọng ở cuối câu hỏi 名字."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        4,
+        3,
+        2,
+        3,
+        4,
+        2,
+        5,
+        2,
+        4,
+        3,
+        4,
+        1,
+        2,
+        2
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          3,
+          4,
+          3,
+          2,
+          3,
+          4,
+          2,
+          5,
+          2,
+          5,
+          3,
+          4,
+          1,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          4,
+          3,
+          2,
+          3,
+          4,
+          2,
+          5,
+          2,
+          5,
+          3,
+          4,
+          1,
+          2,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ hǎo → ní hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-3-4-3-2-3-4-2-5-2-5-3-4-1-2-2 lẫn 3-3-3-4-3-2-3-4-2-5-2-5-3-4-1-2-2."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-12-d1",
+  "level": "HSK1-2",
+  "title": "Chuyến đi nhỏ: nghe rồi tự xử lý",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-191",
+      "level": "HSK1-2",
+      "hanzi": "我现在去朋友家。",
+      "pinyin": "wǒ xiàn zài qù péng you jiā",
+      "meaningVi": "Bây giờ tôi đến nhà bạn.",
+      "focus": [
+        "现在 xiàn zài; 朋友 péng you."
+      ]
+    },
+    {
+      "id": "dt-1-192",
+      "level": "HSK1-2",
+      "hanzi": "你去什么医院？",
+      "pinyin": "nǐ qù shén me yī yuàn",
+      "meaningVi": "Bạn đi bệnh viện nào?",
+      "focus": [
+        "什么 shén me; 医院 yī yuàn."
+      ]
+    },
+    {
+      "id": "dt-1-193",
+      "level": "HSK1-2",
+      "hanzi": "不对，是明天。",
+      "pinyin": "bú duì shì míng tiān",
+      "meaningVi": "Không đúng, là ngày mai.",
+      "focus": [
+        "不对 bú duì: 不 trước thanh 4."
+      ]
+    },
+    {
+      "id": "dt-1-194",
+      "level": "HSK1-2",
+      "hanzi": "朋友现在不在家。",
+      "pinyin": "péng you xiàn zài bu zài jiā",
+      "meaningVi": "Bạn tôi bây giờ không ở nhà.",
+      "focus": [
+        "朋友 péng you; 不 bù."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-43",
+      "level": "HSK1-2",
+      "text": "你现在去朋友家吗？不对，我现在去医院。朋友不在家。",
+      "pinyin": "nǐ xiàn zài qù péng you jiā ma bú duì wǒ xiàn zài qù yī yuàn péng you bú zài jiā",
+      "meaningVi": "Bây giờ bạn đến nhà bạn à? Không đúng, bây giờ tôi đi bệnh viện. Bạn tôi không ở nhà.",
+      "syllables": 21,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你现在去朋友家吗",
+          "pinyin": "nǐ xiàn zài qù péng you jiā ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "不对",
+          "pinyin": "bú duì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我现在去医院",
+          "pinyin": "wǒ xiàn zài qù yī yuàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "朋友不在家",
+          "pinyin": "péng you bú zài jiā",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "不对 đọc bú duì vì 不 đứng trước thanh 4.",
+        "朋友 giữ 友 nhẹ."
+      ]
+    }
+  ]
+}

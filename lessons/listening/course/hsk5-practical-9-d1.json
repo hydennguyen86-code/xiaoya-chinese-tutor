@@ -1,0 +1,85 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-9-d1",
+  "level": "HSK5-6",
+  "title": "Nghe tin và phân biệt sự kiện với suy luận",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-167",
+      "level": "HSK5-6",
+      "hanzi": "这个消息的来源不清楚。",
+      "pinyin": "zhè ge xiāo xī de lái yuán bù qīng chǔ",
+      "meaningVi": "Nguồn của tin này không rõ ràng.",
+      "focus": [
+        "消息 xiāo xī: 息 thanh 1.",
+        "来源 lái yuán: 源 là ü + an."
+      ]
+    },
+    {
+      "id": "dt-3-168",
+      "level": "HSK5-6",
+      "hanzi": "调查还需要更多证据。",
+      "pinyin": "diào chá hái xū yào gèng duō zhèng jù",
+      "meaningVi": "Cuộc điều tra cần thêm bằng chứng.",
+      "focus": [
+        "调查 diào chá: 查 cuộn lưỡi.",
+        "证据 zhèng jù: 据 tròn môi."
+      ]
+    },
+    {
+      "id": "dt-3-169",
+      "level": "HSK5-6",
+      "hanzi": "目前还不能下结论。",
+      "pinyin": "mù qián hái bù néng xià jié lùn",
+      "meaningVi": "Hiện tại vẫn chưa thể kết luận.",
+      "focus": [
+        "结论 jié lùn: 论 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-170",
+      "level": "HSK5-6",
+      "hanzi": "他代表公司参加调查。",
+      "pinyin": "tā dài biǎo gōng sī cān jiā diào chá",
+      "meaningVi": "Anh ấy đại diện công ty tham gia điều tra.",
+      "focus": [
+        "代表 dài biǎo: 表 thanh 3."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-37",
+      "level": "HSK5-6",
+      "text": "这个消息的来源不清楚。调查还需要更多证据，目前还不能下结论。",
+      "pinyin": "zhè gè xiāo xī de lái yuán bù qīng chǔ diào chá hái xū yào gèng duō zhèng jù mù qián hái bù néng xià jié lùn",
+      "meaningVi": "Nguồn của tin này không rõ. Cuộc điều tra cần thêm bằng chứng, hiện tại chưa thể kết luận.",
+      "syllables": 27,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这个消息的来源不清楚",
+          "pinyin": "zhè gè xiāo xī de lái yuán bù qīng chǔ",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "调查还需要更多证据",
+          "pinyin": "diào chá hái xū yào gèng duō zhèng jù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "目前还不能下结论",
+          "pinyin": "mù qián hái bù néng xià jié lùn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "消息 xiāo xī: 息 thanh 1.",
+        "来源 lái yuán: 源 là ü + an."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-10-d2",
+  "level": "HSK5-6",
+  "title": "Kể trải nghiệm và rút bài học",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-179",
+      "level": "HSK5-6",
+      "hanzi": "每次项目结束我们都会复盘。",
+      "pinyin": "měi cì xiàng mù jié shù wǒ men dōu huì fù pán",
+      "meaningVi": "Mỗi lần dự án kết thúc chúng tôi đều nhìn lại.",
+      "focus": [
+        "复盘 fù pán: 盘 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-3-180",
+      "level": "HSK5-6",
+      "hanzi": "经验是慢慢积累的。",
+      "pinyin": "jīng yàn shì màn màn jī lěi de",
+      "meaningVi": "Kinh nghiệm được tích lũy dần dần.",
+      "focus": [
+        "经验 jīng yàn; 积累 jī lěi."
+      ]
+    },
+    {
+      "id": "dt-3-181",
+      "level": "HSK5-6",
+      "hanzi": "复盘能帮助我们改进。",
+      "pinyin": "fù pán néng bāng zhù wǒ men gǎi jìn",
+      "meaningVi": "Nhìn lại giúp chúng tôi cải tiến.",
+      "focus": [
+        "复盘 fù pán; 改进 gǎi jìn."
+      ]
+    },
+    {
+      "id": "dt-3-182",
+      "level": "HSK5-6",
+      "hanzi": "这次失误让我意识到细节的重要。",
+      "pinyin": "zhè cì shī wù ràng wǒ yì shí dào xì jié de zhòng yào",
+      "meaningVi": "Sai sót lần này khiến tôi nhận ra tầm quan trọng của chi tiết.",
+      "focus": [
+        "失误 shī wù; 意识 yì shí: 识 thanh 2."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-40",
+      "level": "HSK5-6",
+      "text": "每次项目结束我们都会复盘。经验是慢慢积累的，复盘能帮助我们改进。",
+      "pinyin": "měi cì xiàng mù jié shù wǒ men dōu huì fù pán jīng yàn shì màn màn jī lěi de fù pán néng bāng zhù wǒ men gǎi jìn",
+      "meaningVi": "Mỗi khi dự án kết thúc, chúng tôi đều nhìn lại. Kinh nghiệm được tích lũy dần, nhìn lại giúp chúng tôi cải tiến.",
+      "syllables": 29,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "每次项目结束我们都会复盘",
+          "pinyin": "měi cì xiàng mù jié shù wǒ men dōu huì fù pán",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "经验是慢慢积累的",
+          "pinyin": "jīng yàn shì màn màn jī lěi de",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "复盘能帮助我们改进",
+          "pinyin": "fù pán néng bāng zhù wǒ men gǎi jìn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "复盘 fù pán: 复 thanh 4.",
+        "积累 jī lěi: 累 thanh 3."
+      ]
+    }
+  ]
+}

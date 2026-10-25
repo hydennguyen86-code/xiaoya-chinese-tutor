@@ -1,0 +1,263 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-5-d2",
+  "level": "HSK5-6",
+  "title": "Thuê nhà và xác nhận điều kiện",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-137",
+      "level": "HSK5-6",
+      "hanzi": "水表的数字要记下来。",
+      "pinyin": "shuí biǎo de shù zì yào jì xià lái",
+      "meaningVi": "Số trên đồng hồ nước phải ghi lại.",
+      "focus": [
+        "Biến điệu 3+3: shuǐ biǎo → shuí biǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "水表 shuǐ biǎo: 表 thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          5,
+          4,
+          4,
+          4,
+          4,
+          4,
+          2
+        ],
+        [
+          3,
+          3,
+          5,
+          4,
+          4,
+          4,
+          4,
+          4,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: shuǐ biǎo → shuí biǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-4-4-4-4-4-2 lẫn 3-3-5-4-4-4-4-4-2."
+    },
+    {
+      "id": "dt-3-138",
+      "level": "HSK5-6",
+      "hanzi": "明天上午交接房子。",
+      "pinyin": "míng tiān shàng wǔ jiāo jiē fáng zi",
+      "meaningVi": "Sáng mai bàn giao nhà.",
+      "focus": [
+        "交接 jiāo jiē: 接 thanh 1."
+      ]
+    },
+    {
+      "id": "dt-3-139",
+      "level": "HSK5-6",
+      "hanzi": "交接的时候要确认水表。",
+      "pinyin": "jiāo jiē de shí hou yào què rèn shuí biǎo",
+      "meaningVi": "Khi bàn giao phải xác nhận đồng hồ nước.",
+      "focus": [
+        "Biến điệu 3+3: shuǐ biǎo → shuí biǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "交接 jiāo jiē; 确认 què rèn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        5,
+        2,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          5,
+          2,
+          5,
+          4,
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          5,
+          2,
+          5,
+          4,
+          4,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: shuǐ biǎo → shuí biǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-1-5-2-5-4-4-4-2-3 lẫn 1-1-5-2-5-4-4-4-3-3."
+    },
+    {
+      "id": "dt-3-140",
+      "level": "HSK5-6",
+      "hanzi": "押金在合同结束后退还。",
+      "pinyin": "yā jīn zài hé tong jié shù hòu tuì huán",
+      "meaningVi": "Tiền đặt cọc được trả lại sau khi hợp đồng kết thúc.",
+      "focus": [
+        "押金 yā jīn; 合同 hé tong."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-30",
+      "level": "HSK5-6",
+      "text": "明天上午交接房子。请提前确认水表的数字，合同和押金也要一起看一下。",
+      "pinyin": "míng tiān shàng wǔ jiāo jiē fáng zi qǐng tí qián què rèn shuí biǎo de shù zì hé tong hé yā jīn yě yào yì qǐ kàn yí xià",
+      "meaningVi": "Sáng mai bàn giao nhà. Xin xác nhận số đồng hồ nước trước, hợp đồng và tiền đặt cọc cũng xem cùng một lúc.",
+      "syllables": 30,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "明天上午交接房子",
+          "pinyin": "míng tiān shàng wǔ jiāo jiē fáng zi",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请提前确认水表的数字",
+          "pinyin": "qǐng tí qián què rèn shuí biǎo de shù zì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "合同和押金也要一起看一下",
+          "pinyin": "hé tong hé yā jīn yě yào yì qǐ kàn yí xià",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: shuǐ biǎo → shuí biǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "交接 jiāo jiē: 接 thanh 1.",
+        "水表 shuǐ biǎo: 表 thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        1,
+        4,
+        3,
+        1,
+        1,
+        2,
+        5,
+        3,
+        2,
+        2,
+        4,
+        4,
+        3,
+        3,
+        5,
+        4,
+        4,
+        2,
+        5,
+        2,
+        1,
+        1,
+        3,
+        4,
+        4,
+        3,
+        4,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          1,
+          4,
+          3,
+          1,
+          1,
+          2,
+          5,
+          3,
+          2,
+          2,
+          4,
+          4,
+          2,
+          3,
+          5,
+          4,
+          4,
+          2,
+          5,
+          2,
+          1,
+          1,
+          3,
+          4,
+          4,
+          3,
+          4,
+          2,
+          4
+        ],
+        [
+          2,
+          1,
+          4,
+          3,
+          1,
+          1,
+          2,
+          5,
+          3,
+          2,
+          2,
+          4,
+          4,
+          3,
+          3,
+          5,
+          4,
+          4,
+          2,
+          5,
+          2,
+          1,
+          1,
+          3,
+          4,
+          4,
+          3,
+          4,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: shuǐ biǎo → shuí biǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-1-4-3-1-1-2-5-3-2-2-4-4-2-3-5-4-4-2-5-2-1-1-3-4-4-3-4-2-4 lẫn 2-1-4-3-1-1-2-5-3-2-2-4-4-3-3-5-4-4-2-5-2-1-1-3-4-4-3-4-2-4."
+    }
+  ]
+}

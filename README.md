@@ -417,3 +417,5 @@ cấu hình; không sao chép audio vào dữ liệu app và không phục vụ 
 Lập catalog câu ngắn/đời thường bằng `npm run corpus:import`; hỗ trợ cả
 `validated.tsv` và bộ `train.tsv`/`dev.tsv`/`test.tsv`.
 Xem [cách cấu hình và giới hạn bộ lọc](docs/COMMON-VOICE.md).
+
+Thiết bị LAN dùng chung PIN cũng có thể gọi nhận dạng/chấm phát âm và gửi bản thu phản hồi; PIN không phân quyền riêng giữa các hồ sơ. Chỉ chia sẻ cho người tin cậy. Bản thu để phát lại giới hạn 5 lượt và 20 MB tổng trong RAM; nút lưu nhãn là thao tác riêng ghi vào thư mục dữ liệu.

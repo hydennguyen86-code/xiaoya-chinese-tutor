@@ -1,0 +1,279 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-3-d1",
+  "level": "HSK5-6",
+  "title": "Báo tiến độ và thương lượng thời hạn",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-117",
+      "level": "HSK5-6",
+      "hanzi": "目前项目进度比计划慢。",
+      "pinyin": "mù qián xiàng mù jìn dù bǐ jì huà màn",
+      "meaningVi": "Hiện tại tiến độ dự án chậm hơn kế hoạch.",
+      "focus": [
+        "进度 jìn dù: 度 thanh 4."
+      ]
+    },
+    {
+      "id": "dt-3-118",
+      "level": "HSK5-6",
+      "hanzi": "截止时间可以调整吗？",
+      "pinyin": "jié zhǐ shí jiān ké yǐ tiáo zhěng ma",
+      "meaningVi": "Hạn chót có thể điều chỉnh không?",
+      "focus": [
+        "Biến điệu 3+3: kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "截止 jié zhǐ: 止 cuộn lưỡi.",
+        "调整 tiáo zhěng: 整 đóng -ng."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        3,
+        2,
+        1,
+        3,
+        3,
+        2,
+        3,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          2,
+          1,
+          2,
+          3,
+          2,
+          3,
+          5
+        ],
+        [
+          2,
+          3,
+          2,
+          1,
+          3,
+          3,
+          2,
+          3,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-2-1-2-3-2-3-5 lẫn 2-3-2-1-3-3-2-3-5."
+    },
+    {
+      "id": "dt-3-119",
+      "level": "HSK5-6",
+      "hanzi": "如果延迟，会影响后面的工作。",
+      "pinyin": "rú guǒ yán chí huì yíng xiǎng hòu miàn de gōng zuò",
+      "meaningVi": "Nếu trì hoãn, sẽ ảnh hưởng đến công việc phía sau.",
+      "focus": [
+        "Biến điệu 3+3: yǐng xiǎng → yíng xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "延迟 yán chí: 迟 cuộn lưỡi.",
+        "影响 yǐng xiǎng: hai âm -ng."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        3,
+        2,
+        2,
+        4,
+        3,
+        3,
+        4,
+        4,
+        5,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          2,
+          2,
+          4,
+          2,
+          3,
+          4,
+          4,
+          5,
+          1,
+          4
+        ],
+        [
+          2,
+          3,
+          2,
+          2,
+          4,
+          3,
+          3,
+          4,
+          4,
+          5,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: yǐng xiǎng → yíng xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-2-2-4-2-3-4-4-5-1-4 lẫn 2-3-2-2-4-3-3-4-4-5-1-4."
+    },
+    {
+      "id": "dt-3-120",
+      "level": "HSK5-6",
+      "hanzi": "这个责任由我承担。",
+      "pinyin": "zhè ge zé rèn yóu wǒ chéng dān",
+      "meaningVi": "Trách nhiệm này do tôi đảm nhận.",
+      "focus": [
+        "承担 chéng dān: 担 thanh 1."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-25",
+      "level": "HSK5-6",
+      "text": "目前项目进度比计划慢。截止时间可以调整吗？如果延迟，会影响后面的工作。",
+      "pinyin": "mù qián xiàng mù jìn dù bǐ jì huà màn jié zhǐ shí jiān ké yǐ tiáo zhěng ma rú guǒ yán chí huì yíng xiǎng hòu miàn de gōng zuò",
+      "meaningVi": "Tiến độ dự án chậm hơn kế hoạch. Hạn chót có thể điều chỉnh không? Nếu trì hoãn, sẽ ảnh hưởng đến công việc phía sau.",
+      "syllables": 31,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "目前项目进度比计划慢",
+          "pinyin": "mù qián xiàng mù jìn dù bǐ jì huà màn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "截止时间可以调整吗",
+          "pinyin": "jié zhǐ shí jiān ké yǐ tiáo zhěng ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "如果延迟",
+          "pinyin": "rú guǒ yán chí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "会影响后面的工作",
+          "pinyin": "huì yíng xiǎng hòu miàn de gōng zuò",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: kě yǐ → ké yǐ; yǐng xiǎng → yíng xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "进度, 截止, 延迟, 影响 là từ trọng tâm.",
+        "Câu hỏi 调整 lên giọng cuối."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        2,
+        3,
+        2,
+        1,
+        3,
+        3,
+        2,
+        3,
+        5,
+        2,
+        3,
+        2,
+        2,
+        4,
+        3,
+        3,
+        4,
+        4,
+        5,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4,
+          2,
+          3,
+          2,
+          1,
+          2,
+          3,
+          2,
+          3,
+          5,
+          2,
+          3,
+          2,
+          2,
+          4,
+          2,
+          3,
+          4,
+          4,
+          5,
+          1,
+          4
+        ],
+        [
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4,
+          2,
+          3,
+          2,
+          1,
+          3,
+          3,
+          2,
+          3,
+          5,
+          2,
+          3,
+          2,
+          2,
+          4,
+          3,
+          3,
+          4,
+          4,
+          5,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: kě yǐ → ké yǐ; yǐng xiǎng → yíng xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-4-4-4-4-3-4-4-4-2-3-2-1-2-3-2-3-5-2-3-2-2-4-2-3-4-4-5-1-4 lẫn 4-2-4-4-4-4-3-4-4-4-2-3-2-1-3-3-2-3-5-2-3-2-2-4-3-3-4-4-5-1-4."
+    }
+  ]
+}

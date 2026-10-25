@@ -1,0 +1,201 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-8-d1",
+  "level": "HSK1-2",
+  "title": "Vị trí và xác nhận đường đi",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-157",
+      "level": "HSK1-2",
+      "hanzi": "学校在哪里？",
+      "pinyin": "xué xiào zài ná lǐ",
+      "meaningVi": "Trường học ở đâu?",
+      "focus": [
+        "Biến điệu 3+3: nǎ lǐ → ná lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "在 zài thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        4,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǎ lǐ → ná lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-4-4-2-3 lẫn 2-4-4-3-3."
+    },
+    {
+      "id": "dt-1-158",
+      "level": "HSK1-2",
+      "hanzi": "医院在前面。",
+      "pinyin": "yī yuàn zài qián miàn",
+      "meaningVi": "Bệnh viện ở phía trước.",
+      "focus": [
+        "医院 yī yuàn; 前面 qián miàn."
+      ]
+    },
+    {
+      "id": "dt-1-159",
+      "level": "HSK1-2",
+      "hanzi": "我家在左边。",
+      "pinyin": "wǒ jiā zài zuǒ bian",
+      "meaningVi": "Nhà tôi ở bên trái.",
+      "focus": [
+        "左边 zuǒ bian: 边 nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-160",
+      "level": "HSK1-2",
+      "hanzi": "我走在前面。",
+      "pinyin": "wó zǒu zài qián miàn",
+      "meaningVi": "Tôi đi phía trước.",
+      "focus": [
+        "Biến điệu 3+3: wǒ zǒu → wó zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "走 zǒu thanh 3, không bật hơi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          2,
+          4
+        ],
+        [
+          3,
+          3,
+          4,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ zǒu → wó zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-2-4 lẫn 3-3-4-2-4."
+    },
+    {
+      "id": "dt-1-161",
+      "level": "HSK1-2",
+      "hanzi": "电话在右边。",
+      "pinyin": "diàn huà zài yòu bian",
+      "meaningVi": "Điện thoại ở bên phải.",
+      "focus": [
+        "右边 yòu bian: 边 nhẹ."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-35",
+      "level": "HSK1-2",
+      "text": "我家在左边，医院在前面。学校在哪里？",
+      "pinyin": "wǒ jiā zài zuǒ bian yī yuàn zài qián miàn xué xiào zài ná lǐ",
+      "meaningVi": "Nhà tôi ở bên trái, bệnh viện ở phía trước. Trường học ở đâu?",
+      "syllables": 15,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我家在左边",
+          "pinyin": "wǒ jiā zài zuǒ bian",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "医院在前面",
+          "pinyin": "yī yuàn zài qián miàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "学校在哪里",
+          "pinyin": "xué xiào zài ná lǐ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: nǎ lǐ → ná lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "哪里 đọc ná lǐ khi nói liền.",
+        "Giữ 在 zài rõ ở mỗi cụm."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        1,
+        4,
+        3,
+        1,
+        1,
+        4,
+        4,
+        2,
+        4,
+        2,
+        4,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          3,
+          1,
+          4,
+          3,
+          5,
+          1,
+          4,
+          4,
+          2,
+          4,
+          2,
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          4,
+          3,
+          5,
+          1,
+          4,
+          4,
+          2,
+          4,
+          2,
+          4,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǎ lǐ → ná lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-1-4-3-5-1-4-4-2-4-2-4-4-2-3 lẫn 3-1-4-3-5-1-4-4-2-4-2-4-4-3-3."
+    }
+  ]
+}

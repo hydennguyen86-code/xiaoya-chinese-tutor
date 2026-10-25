@@ -1,0 +1,195 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-11-d1",
+  "level": "HSK1-2",
+  "title": "Thời tiết, sức khỏe đơn giản và xin giúp đỡ",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-182",
+      "level": "HSK1-2",
+      "hanzi": "今天天气很冷。",
+      "pinyin": "jīn tiān tiān qì hén lěng",
+      "meaningVi": "Hôm nay thời tiết rất lạnh.",
+      "focus": [
+        "Biến điệu 3+3: hěn lěng → hén lěng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "天气 tiān qì; 冷 lěng đóng -ng."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        1,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          1,
+          4,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: hěn lěng → hén lěng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-1-1-4-2-3 lẫn 1-1-1-4-3-3."
+    },
+    {
+      "id": "dt-1-183",
+      "level": "HSK1-2",
+      "hanzi": "明天天气热。",
+      "pinyin": "míng tiān tiān qì rè",
+      "meaningVi": "Ngày mai thời tiết nóng.",
+      "focus": [
+        "热 rè thanh 4."
+      ]
+    },
+    {
+      "id": "dt-1-184",
+      "level": "HSK1-2",
+      "hanzi": "今天下雨。",
+      "pinyin": "jīn tiān xià yǔ",
+      "meaningVi": "Hôm nay trời mưa.",
+      "focus": [
+        "下雨 xià yǔ: 雨 là ü."
+      ]
+    },
+    {
+      "id": "dt-1-185",
+      "level": "HSK1-2",
+      "hanzi": "医院在商店前面。",
+      "pinyin": "yī yuàn zài shāng diàn qián miàn",
+      "meaningVi": "Bệnh viện ở phía trước cửa hàng.",
+      "focus": [
+        "医院 yī yuàn; 商店 shāng diàn."
+      ]
+    },
+    {
+      "id": "dt-1-186",
+      "level": "HSK1-2",
+      "hanzi": "谢谢你的帮助。",
+      "pinyin": "xiè xie nǐ de bāng zhù",
+      "meaningVi": "Cảm ơn sự giúp đỡ của bạn.",
+      "focus": [
+        "帮助 bāng zhù: 助 thanh 4."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-41",
+      "level": "HSK1-2",
+      "text": "今天天气很冷，明天很热。下午下雨，医院在前面。",
+      "pinyin": "jīn tiān tiān qì hén lěng míng tiān hěn rè xià wǔ xià yǔ yī yuàn zài qián miàn",
+      "meaningVi": "Hôm nay thời tiết rất lạnh, mai rất nóng. Chiều mưa, bệnh viện ở phía trước.",
+      "syllables": 19,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "今天天气很冷",
+          "pinyin": "jīn tiān tiān qì hén lěng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "明天很热",
+          "pinyin": "míng tiān hěn rè",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "下午下雨",
+          "pinyin": "xià wǔ xià yǔ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "医院在前面",
+          "pinyin": "yī yuàn zài qián miàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: hěn lěng → hén lěng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "冷 lěng (-ng) khác 前 qián (-n).",
+        "雨 yǔ tròn môi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        1,
+        4,
+        3,
+        3,
+        2,
+        1,
+        3,
+        4,
+        4,
+        3,
+        4,
+        3,
+        1,
+        4,
+        4,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          1,
+          4,
+          2,
+          3,
+          2,
+          1,
+          3,
+          4,
+          4,
+          3,
+          4,
+          3,
+          1,
+          4,
+          4,
+          2,
+          4
+        ],
+        [
+          1,
+          1,
+          1,
+          4,
+          3,
+          3,
+          2,
+          1,
+          3,
+          4,
+          4,
+          3,
+          4,
+          3,
+          1,
+          4,
+          4,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: hěn lěng → hén lěng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-1-1-4-2-3-2-1-3-4-4-3-4-3-1-4-4-2-4 lẫn 1-1-1-4-3-3-2-1-3-4-4-3-4-3-1-4-4-2-4."
+    }
+  ]
+}

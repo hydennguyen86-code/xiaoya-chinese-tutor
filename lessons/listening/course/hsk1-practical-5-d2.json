@@ -1,0 +1,230 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-5-d2",
+  "level": "HSK1-2",
+  "title": "Giờ giấc và hẹn gặp",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-137",
+      "level": "HSK1-2",
+      "hanzi": "你今天有时间吗？",
+      "pinyin": "nǐ jīn tiān yǒu shí jiān ma",
+      "meaningVi": "Hôm nay bạn có thời gian không?",
+      "focus": [
+        "时间 shí jiān: 间 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-1-138",
+      "level": "HSK1-2",
+      "hanzi": "明天下午可以见面。",
+      "pinyin": "míng tiān xià wú ké yǐ jiàn miàn",
+      "meaningVi": "Chiều mai có thể gặp mặt.",
+      "focus": [
+        "Biến điệu 3+3: wǔ kě → wú ké; kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "可以 kě yǐ: 以 thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          1,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          2,
+          1,
+          4,
+          3,
+          3,
+          3,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǔ kě → wú ké; kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-1-4-2-2-3-4-4 lẫn 2-1-4-3-3-3-4-4."
+    },
+    {
+      "id": "dt-1-139",
+      "level": "HSK1-2",
+      "hanzi": "我上午没有时间。",
+      "pinyin": "wǒ shàng wǔ méi yǒu shí jiān",
+      "meaningVi": "Sáng nay tôi không có thời gian.",
+      "focus": [
+        "上午 shàng wǔ; 没 méi thanh 2."
+      ]
+    },
+    {
+      "id": "dt-1-140",
+      "level": "HSK1-2",
+      "hanzi": "三点可以吗？",
+      "pinyin": "sān dián ké yǐ ma",
+      "meaningVi": "Ba giờ được không?",
+      "focus": [
+        "Biến điệu 3+3: diǎn kě → dián ké; kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "三 sān đóng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        3,
+        3,
+        5
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          2,
+          3,
+          5
+        ],
+        [
+          1,
+          3,
+          3,
+          3,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: diǎn kě → dián ké; kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-2-2-3-5 lẫn 1-3-3-3-5."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-30",
+      "level": "HSK1-2",
+      "text": "你今天下午有时间吗？三点可以吗？我们明天上午见面也可以。",
+      "pinyin": "nǐ jīn tiān xià wú yǒu shí jiān ma sān dián ké yǐ ma wǒ men míng tiān shàng wǔ jiàn miàn yé ké yǐ",
+      "meaningVi": "Chiều nay bạn có thời gian không? Ba giờ được không? Sáng mai chúng ta gặp cũng được.",
+      "syllables": 25,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你今天下午有时间吗",
+          "pinyin": "nǐ jīn tiān xià wú yǒu shí jiān ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "三点可以吗",
+          "pinyin": "sān dián ké yǐ ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我们明天上午见面也可以",
+          "pinyin": "wǒ men míng tiān shàng wǔ jiàn miàn yé ké yǐ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǔ yǒu → wú yǒu; diǎn kě → dián ké; kě yǐ → ké yǐ; yě kě → yé ké — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "时间 giữ -n, 上 giữ -ng.",
+        "Câu hỏi cuối lên giọng, không nuốt 吗."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        1,
+        1,
+        4,
+        3,
+        3,
+        2,
+        1,
+        5,
+        1,
+        3,
+        3,
+        3,
+        5,
+        3,
+        5,
+        2,
+        1,
+        4,
+        3,
+        4,
+        4,
+        3,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          3,
+          1,
+          1,
+          4,
+          2,
+          3,
+          2,
+          1,
+          5,
+          1,
+          2,
+          2,
+          3,
+          5,
+          3,
+          5,
+          2,
+          1,
+          4,
+          3,
+          4,
+          4,
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          1,
+          4,
+          3,
+          3,
+          2,
+          1,
+          5,
+          1,
+          3,
+          3,
+          3,
+          5,
+          3,
+          5,
+          2,
+          1,
+          4,
+          3,
+          4,
+          4,
+          3,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǔ yǒu → wú yǒu; diǎn kě → dián ké; kě yǐ → ké yǐ; yě kě → yé ké — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-1-1-4-2-3-2-1-5-1-2-2-3-5-3-5-2-1-4-3-4-4-2-2-3 lẫn 3-1-1-4-3-3-2-1-5-1-3-3-3-5-3-5-2-1-4-3-4-4-3-3-3."
+    }
+  ]
+}

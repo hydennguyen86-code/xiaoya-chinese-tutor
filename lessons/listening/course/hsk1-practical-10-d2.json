@@ -1,0 +1,280 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-10-d2",
+  "level": "HSK1-2",
+  "title": "Lịch sinh hoạt và công việc",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-178",
+      "level": "HSK1-2",
+      "hanzi": "我晚上学习中文。",
+      "pinyin": "wó wǎn shang xué xí zhōng wén",
+      "meaningVi": "Buổi tối tôi học tiếng Trung.",
+      "focus": [
+        "Biến điệu 3+3: wǒ wǎn → wó wǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "晚上 wǎn shang: 上 nhẹ.",
+        "中文 zhōng wén."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        2,
+        2,
+        1,
+        2
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          5,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          5,
+          2,
+          2,
+          1,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ wǎn → wó wǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-2-2-1-2 lẫn 3-3-5-2-2-1-2."
+    },
+    {
+      "id": "dt-1-179",
+      "level": "HSK1-2",
+      "hanzi": "你每天几点睡觉？",
+      "pinyin": "ní měi tiān jí diǎn shuì jiào",
+      "meaningVi": "Mỗi ngày bạn ngủ lúc mấy giờ?",
+      "focus": [
+        "Biến điệu 3+3: nǐ měi → ní měi; jǐ diǎn → jí diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "每天 měi tiān; 睡觉 shuì jiào."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        1,
+        3,
+        3,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          1,
+          3,
+          3,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ měi → ní měi; jǐ diǎn → jí diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-1-2-3-4-4 lẫn 3-3-1-3-3-4-4."
+    },
+    {
+      "id": "dt-1-180",
+      "level": "HSK1-2",
+      "hanzi": "他晚上八点回家。",
+      "pinyin": "tā wǎn shang bā diǎn huí jiā",
+      "meaningVi": "Tối anh ấy tám giờ về nhà.",
+      "focus": [
+        "回家 huí jiā."
+      ]
+    },
+    {
+      "id": "dt-1-181",
+      "level": "HSK1-2",
+      "hanzi": "我每天工作，也学习中文。",
+      "pinyin": "wó měi tiān gōng zuò yě xué xí zhōng wén",
+      "meaningVi": "Mỗi ngày tôi làm việc, cũng học tiếng Trung.",
+      "focus": [
+        "Biến điệu 3+3: wǒ měi → wó měi — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "也 yě thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        1,
+        1,
+        4,
+        3,
+        2,
+        2,
+        1,
+        2
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          1,
+          1,
+          4,
+          3,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          1,
+          1,
+          4,
+          3,
+          2,
+          2,
+          1,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ měi → wó měi — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-1-1-4-3-2-2-1-2 lẫn 3-3-1-1-4-3-2-2-1-2."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-40",
+      "level": "HSK1-2",
+      "text": "我每天晚上学习中文。你每天几点睡觉？他八点回家，十点睡觉。",
+      "pinyin": "wó měi tiān wǎn shang xué xí zhōng wén ní měi tiān jí diǎn shuì jiào tā bā diǎn huí jiā shí diǎn shuì jiào",
+      "meaningVi": "Mỗi tối tôi học tiếng Trung. Mỗi ngày bạn ngủ lúc mấy giờ? Anh ấy tám giờ về nhà, mười giờ ngủ.",
+      "syllables": 25,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我每天晚上学习中文",
+          "pinyin": "wó měi tiān wǎn shang xué xí zhōng wén",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "你每天几点睡觉",
+          "pinyin": "ní měi tiān jí diǎn shuì jiào",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "他八点回家",
+          "pinyin": "tā bā diǎn huí jiā",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "十点睡觉",
+          "pinyin": "shí diǎn shuì jiào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ měi → wó měi; nǐ měi → ní měi; jǐ diǎn → jí diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "晚上 giữ 上 nhẹ.",
+        "Câu hỏi 几点 lên giọng cuối."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        1,
+        3,
+        4,
+        2,
+        2,
+        1,
+        2,
+        3,
+        3,
+        1,
+        3,
+        3,
+        4,
+        4,
+        1,
+        1,
+        3,
+        2,
+        1,
+        2,
+        3,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          1,
+          3,
+          5,
+          2,
+          2,
+          1,
+          2,
+          2,
+          3,
+          1,
+          2,
+          3,
+          4,
+          4,
+          1,
+          1,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          1,
+          3,
+          5,
+          2,
+          2,
+          1,
+          2,
+          3,
+          3,
+          1,
+          3,
+          3,
+          4,
+          4,
+          1,
+          1,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ měi → wó měi; nǐ měi → ní měi; jǐ diǎn → jí diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-1-3-5-2-2-1-2-2-3-1-2-3-4-4-1-1-3-2-1-2-3-4-4 lẫn 3-3-1-3-5-2-2-1-2-3-3-1-3-3-4-4-1-1-3-2-1-2-3-4-4."
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import { useLessonAudio } from '../lib/useLessonAudio';
 import type { LessonContent } from '../lib/lessonApi';
 import { SlowListen } from './ListeningControls';
 export function DictationPractice({ content, voice, onBusy }: { content: LessonContent; voice: string; onBusy: (busy: boolean) => void }) {
-  const [mode, setMode] = useState('bank');
+  const [mode, setMode] = useState(content.listeningPractice?.dictation.length ? 'lesson' : 'bank');
   const course: DictationItem[] = [
     ...content.vocab
       .filter((w) => w.example && w.examplePinyin)
@@ -26,7 +26,11 @@ export function DictationPractice({ content, voice, onBusy }: { content: LessonC
     },
   ].filter((x) => x.pinyin);
   const items =
-    mode === 'bank' ? (bank.items as DictationItem[]).filter((i) => i.level === (content.level || 'HSK1-2') && !i.uncertain) : course;
+    mode === 'lesson'
+      ? (content.listeningPractice?.dictation ?? []).filter((i) => !i.uncertain)
+      : mode === 'bank'
+        ? (bank.items as DictationItem[]).filter((i) => i.level === (content.level || 'HSK1-2') && !i.uncertain)
+        : course;
   return (
     <details className="course-practice">
       <summary>Nghe chép · chữ Hán hoặc pinyin</summary>
@@ -34,6 +38,7 @@ export function DictationPractice({ content, voice, onBusy }: { content: LessonC
       <label>
         Nguồn câu
         <select value={mode} onChange={(e) => setMode(e.target.value)}>
+          {Boolean(content.listeningPractice?.dictation.length) && <option value="lesson">Nghe của bài</option>}
           <option value="bank">Bộ DeepSeek</option>
           <option value="course">Ví dụ của buổi học</option>
         </select>

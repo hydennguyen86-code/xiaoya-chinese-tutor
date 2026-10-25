@@ -58,9 +58,22 @@ export function CoursePractice(props: Props) {
         <ToneListening learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />
       )}
       {!checkpoint && <SoundListening learnerId={props.learnerId} voice={props.voice} onBusy={props.onBusy} />}
-      {!checkpoint && <DictationPractice content={content} voice={props.voice} onBusy={props.onBusy} />}
       {!checkpoint && (
-        <ShadowingPractice learnerId={props.learnerId} level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />
+        <DictationPractice
+          key={`${content.volumeId}:${content.lessonNo}:${content.day}`}
+          content={content}
+          voice={props.voice}
+          onBusy={props.onBusy}
+        />
+      )}
+      {!checkpoint && (
+        <ShadowingPractice
+          items={content.listeningPractice?.shadowing}
+          learnerId={props.learnerId}
+          level={content.level || 'HSK1-2'}
+          voice={props.voice}
+          onBusy={props.onBusy}
+        />
       )}
       {!checkpoint && <CommunityListening level={content.level || 'HSK1-2'} />}
       {content.checkpoint && (

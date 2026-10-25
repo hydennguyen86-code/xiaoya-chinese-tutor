@@ -1,0 +1,201 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-7-d2",
+  "level": "HSK1-2",
+  "title": "Gọi món và hỏi giá",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-153",
+      "level": "HSK1-2",
+      "hanzi": "我要一碗面条。",
+      "pinyin": "wǒ yào yì wǎn miàn tiáo",
+      "meaningVi": "Tôi muốn một bát mì.",
+      "focus": [
+        "碗 wǎn thanh 3; 面条 miàn tiáo."
+      ]
+    },
+    {
+      "id": "dt-1-154",
+      "level": "HSK1-2",
+      "hanzi": "请少放辣椒。",
+      "pinyin": "qíng shǎo fàng là jiāo",
+      "meaningVi": "Xin cho ít ớt.",
+      "focus": [
+        "Biến điệu 3+3: qǐng shǎo → qíng shǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "辣椒 là jiāo: 辣 thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        4,
+        1
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          4,
+          1
+        ],
+        [
+          3,
+          3,
+          4,
+          4,
+          1
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng shǎo → qíng shǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-4-1 lẫn 3-3-4-4-1."
+    },
+    {
+      "id": "dt-1-155",
+      "level": "HSK1-2",
+      "hanzi": "这碗米饭很辣。",
+      "pinyin": "zhè wán mǐ fàn hěn là",
+      "meaningVi": "Bát cơm này rất cay.",
+      "focus": [
+        "Biến điệu 3+3: wǎn mǐ → wán mǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        3,
+        3,
+        4,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          3,
+          4,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          3,
+          4,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǎn mǐ → wán mǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-3-4-3-4 lẫn 4-3-3-4-3-4."
+    },
+    {
+      "id": "dt-1-156",
+      "level": "HSK1-2",
+      "hanzi": "面条五块一碗。",
+      "pinyin": "miàn tiáo wǔ kuài yì wǎn",
+      "meaningVi": "Mì năm tệ một bát.",
+      "focus": [
+        "五 wǔ thanh 3; 块 kuài."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-34",
+      "level": "HSK1-2",
+      "text": "我要一碗面条，请少放辣椒。这碗米饭也很辣。",
+      "pinyin": "wǒ yào yì wǎn miàn tiáo qíng shǎo fàng là jiāo zhè wán mǐ fàn yé hěn là",
+      "meaningVi": "Tôi muốn một bát mì, xin cho ít ớt. Bát cơm này cũng rất cay.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我要一碗面条",
+          "pinyin": "wǒ yào yì wǎn miàn tiáo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "请少放辣椒",
+          "pinyin": "qíng shǎo fàng là jiāo",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "这碗米饭也很辣",
+          "pinyin": "zhè wán mǐ fàn yé hěn là",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: qǐng shǎo → qíng shǎo; wǎn mǐ → wán mǐ; yě hěn → yé hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "Ngắt hơi sau 面条."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        3,
+        4,
+        2,
+        3,
+        3,
+        4,
+        4,
+        1,
+        4,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          3,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          4,
+          3,
+          4,
+          2,
+          3,
+          3,
+          4,
+          4,
+          1,
+          4,
+          3,
+          3,
+          4,
+          3,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng shǎo → qíng shǎo; wǎn mǐ → wán mǐ; yě hěn → yé hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-3-4-2-2-3-4-4-1-4-2-3-4-2-3-4 lẫn 3-4-4-3-4-2-3-3-4-4-1-4-3-3-4-3-3-4."
+    }
+  ]
+}

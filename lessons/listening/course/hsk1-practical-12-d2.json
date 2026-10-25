@@ -1,0 +1,88 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-12-d2",
+  "level": "HSK1-2",
+  "title": "Chuyến đi nhỏ: nghe rồi tự xử lý",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-195",
+      "level": "HSK1-2",
+      "hanzi": "我现在不去，明天去。",
+      "pinyin": "wǒ xiàn zài bú qù míng tiān qù",
+      "meaningVi": "Bây giờ tôi không đi, mai đi.",
+      "focus": [
+        "现在 xiàn zài; 明天 míng tiān."
+      ]
+    },
+    {
+      "id": "dt-1-196",
+      "level": "HSK1-2",
+      "hanzi": "朋友说什么？",
+      "pinyin": "péng you shuō shén me",
+      "meaningVi": "Bạn nói gì?",
+      "focus": [
+        "什么 shén me; 说 shuō."
+      ]
+    },
+    {
+      "id": "dt-1-197",
+      "level": "HSK1-2",
+      "hanzi": "这个不对，那个对。",
+      "pinyin": "zhè ge bú duì nà ge duì",
+      "meaningVi": "Cái này không đúng, cái kia đúng.",
+      "focus": [
+        "不对 bú duì; 对 duì."
+      ]
+    },
+    {
+      "id": "dt-1-198",
+      "level": "HSK1-2",
+      "hanzi": "你现在去不去？",
+      "pinyin": "nǐ xiàn zài qù bu qù",
+      "meaningVi": "Bây giờ bạn có đi không?",
+      "focus": [
+        "去 qù tròn môi."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-44",
+      "level": "HSK1-2",
+      "text": "朋友现在不在家。他说什么？不对，我明天去。",
+      "pinyin": "péng you xiàn zài bu zài jiā tā shuō shén me bú duì wǒ míng tiān qù",
+      "meaningVi": "Bạn tôi bây giờ không ở nhà. Anh ấy nói gì? Không đúng, mai tôi đi.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "朋友现在不在家",
+          "pinyin": "péng you xiàn zài bu zài jiā",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "他说什么",
+          "pinyin": "tā shuō shén me",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "不对",
+          "pinyin": "bú duì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我明天去",
+          "pinyin": "wǒ míng tiān qù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Giữ 不 bù rõ khi đứng một mình.",
+        "Ngắt hơi sau 什么."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-8-d2",
+  "level": "HSK5-6",
+  "title": "Thương lượng giá và điều kiện",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-163",
+      "level": "HSK5-6",
+      "hanzi": "可以先试用一个月吗？",
+      "pinyin": "ké yǐ xiān shì yòng yí gè yuè ma",
+      "meaningVi": "Có thể dùng thử một tháng trước không?",
+      "focus": [
+        "Biến điệu 3+3: kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "试用 shì yòng: 用 thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        1,
+        4,
+        4,
+        2,
+        4,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          1,
+          4,
+          4,
+          2,
+          4,
+          4,
+          5
+        ],
+        [
+          3,
+          3,
+          1,
+          4,
+          4,
+          2,
+          4,
+          4,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-1-4-4-2-4-4-5 lẫn 3-3-1-4-4-2-4-4-5."
+    },
+    {
+      "id": "dt-3-164",
+      "level": "HSK5-6",
+      "hanzi": "合同条款需要再看一下。",
+      "pinyin": "hé tong tiáo kuǎn xū yào zài kàn yí xià",
+      "meaningVi": "Điều khoản hợp đồng cần xem lại.",
+      "focus": [
+        "条款 tiáo kuǎn: 款 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-165",
+      "level": "HSK5-6",
+      "hanzi": "优惠的条件写在条款里。",
+      "pinyin": "yōu huì de tiáo jiàn xiě zài tiáo kuán lǐ",
+      "meaningVi": "Điều kiện ưu đãi được ghi trong điều khoản.",
+      "focus": [
+        "Biến điệu 3+3: kuǎn lǐ → kuán lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "优惠 yōu huì; 条款 tiáo kuǎn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        4,
+        5,
+        2,
+        4,
+        3,
+        4,
+        2,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          4,
+          5,
+          2,
+          4,
+          3,
+          4,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          5,
+          2,
+          4,
+          3,
+          4,
+          2,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: kuǎn lǐ → kuán lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-5-2-4-3-4-2-2-3 lẫn 1-4-5-2-4-3-4-2-3-3."
+    },
+    {
+      "id": "dt-3-166",
+      "level": "HSK5-6",
+      "hanzi": "试用期间数量可以调整。",
+      "pinyin": "shì yòng qī jiān shù liàng ké yǐ tiáo zhěng",
+      "meaningVi": "Trong thời gian dùng thử, số lượng có thể điều chỉnh.",
+      "focus": [
+        "Biến điệu 3+3: kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "试用 shì yòng; 调整 tiáo zhěng."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        1,
+        1,
+        4,
+        4,
+        3,
+        3,
+        2,
+        3
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          1,
+          1,
+          4,
+          4,
+          2,
+          3,
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          1,
+          1,
+          4,
+          4,
+          3,
+          3,
+          2,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-1-1-4-4-2-3-2-3 lẫn 4-4-1-1-4-4-3-3-2-3."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-36",
+      "level": "HSK5-6",
+      "text": "可以先试用一个月吗？合同条款需要再看一下。优惠的条件都写在条款里。",
+      "pinyin": "ké yǐ xiān shì yòng yí gè yuè ma hé tong tiáo kuǎn xū yào zài kàn yí xià yōu huì de tiáo jiàn dōu xiě zài tiáo kuán lǐ",
+      "meaningVi": "Có thể dùng thử một tháng trước không? Điều khoản hợp đồng cần xem lại. Các điều kiện ưu đãi đều ghi trong điều khoản.",
+      "syllables": 30,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "可以先试用一个月吗",
+          "pinyin": "ké yǐ xiān shì yòng yí gè yuè ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "合同条款需要再看一下",
+          "pinyin": "hé tong tiáo kuǎn xū yào zài kàn yí xià",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "优惠的条件都写在条款里",
+          "pinyin": "yōu huì de tiáo jiàn dōu xiě zài tiáo kuán lǐ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: kě yǐ → ké yǐ; kuǎn lǐ → kuán lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "条款 tiáo kuǎn: 款 đóng -n.",
+        "试用 shì yòng: 用 thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        1,
+        4,
+        4,
+        2,
+        4,
+        4,
+        5,
+        2,
+        5,
+        2,
+        3,
+        1,
+        4,
+        4,
+        4,
+        2,
+        4,
+        1,
+        4,
+        5,
+        2,
+        4,
+        1,
+        3,
+        4,
+        2,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          1,
+          4,
+          4,
+          2,
+          4,
+          4,
+          5,
+          2,
+          5,
+          2,
+          3,
+          1,
+          4,
+          4,
+          4,
+          2,
+          4,
+          1,
+          4,
+          5,
+          2,
+          4,
+          1,
+          3,
+          4,
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          1,
+          4,
+          4,
+          2,
+          4,
+          4,
+          5,
+          2,
+          5,
+          2,
+          3,
+          1,
+          4,
+          4,
+          4,
+          2,
+          4,
+          1,
+          4,
+          5,
+          2,
+          4,
+          1,
+          3,
+          4,
+          2,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: kě yǐ → ké yǐ; kuǎn lǐ → kuán lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-1-4-4-2-4-4-5-2-5-2-3-1-4-4-4-2-4-1-4-5-2-4-1-3-4-2-2-3 lẫn 3-3-1-4-4-2-4-4-5-2-5-2-3-1-4-4-4-2-4-1-4-5-2-4-1-3-4-2-3-3."
+    }
+  ]
+}

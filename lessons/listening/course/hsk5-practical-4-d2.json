@@ -1,0 +1,188 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-4-d2",
+  "level": "HSK5-6",
+  "title": "Họp nhóm và bất đồng có lý do",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-129",
+      "level": "HSK5-6",
+      "hanzi": "问卷的结果需要分析。",
+      "pinyin": "wèn juàn de jié guǒ xū yào fēn xī",
+      "meaningVi": "Kết quả bảng hỏi cần được phân tích.",
+      "focus": [
+        "问卷 wèn juàn: 卷 juàn.",
+        "结果 jié guǒ."
+      ]
+    },
+    {
+      "id": "dt-3-130",
+      "level": "HSK5-6",
+      "hanzi": "这个指标很重要。",
+      "pinyin": "zhè ge zhǐ biāo hěn zhòng yào",
+      "meaningVi": "Chỉ số này rất quan trọng.",
+      "focus": [
+        "指标 zhǐ biāo: 标 thanh 1."
+      ]
+    },
+    {
+      "id": "dt-3-131",
+      "level": "HSK5-6",
+      "hanzi": "我建议通过问卷确认客户的需求。",
+      "pinyin": "wǒ jiàn yì tōng guò wèn juàn què rèn kè hù de xū qiú",
+      "meaningVi": "Tôi đề nghị dùng bảng hỏi để xác nhận nhu cầu khách hàng.",
+      "focus": [
+        "建议 jiàn yì; 问卷 wèn juàn; 需求 xū qiú."
+      ]
+    },
+    {
+      "id": "dt-3-132",
+      "level": "HSK5-6",
+      "hanzi": "方案的成本和效果都要考虑。",
+      "pinyin": "fāng àn de chéng běn hé xiào guǒ dōu yào kǎo lù",
+      "meaningVi": "Chi phí và hiệu quả của phương án đều phải cân nhắc.",
+      "focus": [
+        "方案 fāng àn; 成本 chéng běn."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-28",
+      "level": "HSK5-6",
+      "text": "我建议先用问卷确认客户的需求。成本和效果都要考虑，这个指标也很重要。",
+      "pinyin": "wǒ jiàn yì xiān yòng wèn juàn què rèn kè hù de xū qiú chéng běn hé xiào guǒ dōu yào kǎo lù zhè ge zhǐ biāo yé hěn zhòng yào",
+      "meaningVi": "Tôi đề nghị dùng bảng hỏi để hiểu nhu cầu khách hàng trước. Chi phí và hiệu quả đều phải cân nhắc, chỉ số này cũng rất quan trọng.",
+      "syllables": 31,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我建议先用问卷确认客户的需求",
+          "pinyin": "wǒ jiàn yì xiān yòng wèn juàn què rèn kè hù de xū qiú",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "成本和效果都要考虑",
+          "pinyin": "chéng běn hé xiào guǒ dōu yào kǎo lù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "这个指标也很重要",
+          "pinyin": "zhè ge zhǐ biāo yé hěn zhòng yào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: yě hěn → yé hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "问卷 wèn juàn: 卷 đọc juàn, không phải quǎn.",
+        "指标 zhǐ biāo: 标 thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        3,
+        1,
+        4,
+        3,
+        4,
+        4,
+        5,
+        3,
+        1,
+        3,
+        3,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          3,
+          1,
+          4,
+          3,
+          4,
+          4,
+          5,
+          3,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          4,
+          4,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          3,
+          1,
+          4,
+          3,
+          4,
+          4,
+          5,
+          3,
+          1,
+          3,
+          3,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: yě hěn → yé hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-1-4-4-4-4-4-4-4-5-1-2-2-3-2-4-3-1-4-3-4-4-5-3-1-2-3-4-4 lẫn 3-4-4-1-4-4-4-4-4-4-4-5-1-2-2-3-2-4-3-1-4-3-4-4-5-3-1-3-3-4-4."
+    }
+  ]
+}

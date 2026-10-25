@@ -1,0 +1,272 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-10-d1",
+  "level": "HSK5-6",
+  "title": "Kể trải nghiệm và rút bài học",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-175",
+      "level": "HSK5-6",
+      "hanzi": "这次经历让我学到很多。",
+      "pinyin": "zhè cì jīng lì ràng wǒ xué dào hěn duō",
+      "meaningVi": "Trải nghiệm lần này giúp tôi học được nhiều.",
+      "focus": [
+        "经历 jīng lì: 历 thanh 4."
+      ]
+    },
+    {
+      "id": "dt-3-176",
+      "level": "HSK5-6",
+      "hanzi": "我意识到自己有一个失误。",
+      "pinyin": "wǒ yì shí dào zì jí yǒu yí gè shī wù",
+      "meaningVi": "Tôi nhận ra mình có một sai sót.",
+      "focus": [
+        "Biến điệu 3+3: jǐ yǒu → jí yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "意识 yì shí: 识 thanh 2.",
+        "失误 shī wù: 误 thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        2,
+        4,
+        4,
+        3,
+        3,
+        2,
+        4,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          2,
+          4,
+          4,
+          2,
+          3,
+          2,
+          4,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          2,
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: jǐ yǒu → jí yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-2-4-4-2-3-2-4-1-4 lẫn 3-4-2-4-4-3-3-2-4-1-4."
+    },
+    {
+      "id": "dt-3-177",
+      "level": "HSK5-6",
+      "hanzi": "结果不理想，需要改进。",
+      "pinyin": "jié guǒ bù lí xiǎng xū yào gǎi jìn",
+      "meaningVi": "Kết quả không lý tưởng, cần cải tiến.",
+      "focus": [
+        "Biến điệu 3+3: lǐ xiǎng → lí xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "结果 jié guǒ; 改进 gǎi jìn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        3,
+        4,
+        3,
+        3,
+        1,
+        4,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          2,
+          3,
+          1,
+          4,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4,
+          3,
+          3,
+          1,
+          4,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: lǐ xiǎng → lí xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-2-3-1-4-3-4 lẫn 2-3-4-3-3-1-4-3-4."
+    },
+    {
+      "id": "dt-3-178",
+      "level": "HSK5-6",
+      "hanzi": "事后反思很重要。",
+      "pinyin": "shì hòu fǎn sī hěn zhòng yào",
+      "meaningVi": "Suy xét lại sau việc rất quan trọng.",
+      "focus": [
+        "反思 fǎn sī: 思 thanh 1."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-39",
+      "level": "HSK5-6",
+      "text": "这次经历让我学到很多。我意识到自己有一个失误，结果不理想，需要改进。",
+      "pinyin": "zhè cì jīng lì ràng wǒ xué dào hěn duō wǒ yì shí dào zì jí yǒu yí gè shī wù jié guǒ bù lí xiǎng xū yào gǎi jìn",
+      "meaningVi": "Trải nghiệm này giúp tôi học được nhiều. Tôi nhận ra mình có một sai sót, kết quả không lý tưởng, cần cải tiến.",
+      "syllables": 30,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这次经历让我学到很多",
+          "pinyin": "zhè cì jīng lì ràng wǒ xué dào hěn duō",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我意识到自己有一个失误",
+          "pinyin": "wǒ yì shí dào zì jí yǒu yí gè shī wù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "结果不理想",
+          "pinyin": "jié guǒ bù lí xiǎng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "需要改进",
+          "pinyin": "xū yào gǎi jìn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: jǐ yǒu → jí yǒu; lǐ xiǎng → lí xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "经历 jīng lì: 历 thanh 4.",
+        "意识 yì shí: 识 thanh 2."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        1,
+        4,
+        4,
+        3,
+        2,
+        4,
+        3,
+        1,
+        3,
+        4,
+        2,
+        4,
+        4,
+        3,
+        3,
+        2,
+        4,
+        1,
+        4,
+        2,
+        3,
+        4,
+        3,
+        3,
+        1,
+        4,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          1,
+          4,
+          4,
+          3,
+          2,
+          4,
+          3,
+          1,
+          3,
+          4,
+          2,
+          4,
+          4,
+          2,
+          3,
+          2,
+          4,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2,
+          3,
+          1,
+          4,
+          3,
+          4
+        ],
+        [
+          4,
+          4,
+          1,
+          4,
+          4,
+          3,
+          2,
+          4,
+          3,
+          1,
+          3,
+          4,
+          2,
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          1,
+          4,
+          2,
+          3,
+          4,
+          3,
+          3,
+          1,
+          4,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: jǐ yǒu → jí yǒu; lǐ xiǎng → lí xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-1-4-4-3-2-4-3-1-3-4-2-4-4-2-3-2-4-1-4-2-3-4-2-3-1-4-3-4 lẫn 4-4-1-4-4-3-2-4-3-1-3-4-2-4-4-3-3-2-4-1-4-2-3-4-3-3-1-4-3-4."
+    }
+  ]
+}

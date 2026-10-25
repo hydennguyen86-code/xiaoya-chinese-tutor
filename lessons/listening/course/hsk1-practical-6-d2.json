@@ -1,0 +1,88 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-6-d2",
+  "level": "HSK1-2",
+  "title": "Gọi nước và nói sở thích",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-145",
+      "level": "HSK1-2",
+      "hanzi": "请加糖。",
+      "pinyin": "qǐng jiā táng",
+      "meaningVi": "Xin thêm đường.",
+      "focus": [
+        "加 jiā thanh 1; 糖 táng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-1-146",
+      "level": "HSK1-2",
+      "hanzi": "我要一杯冰咖啡。",
+      "pinyin": "wǒ yào yì bēi bīng kā fēi",
+      "meaningVi": "Tôi muốn một cốc cà phê đá.",
+      "focus": [
+        "冰 bīng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-1-147",
+      "level": "HSK1-2",
+      "hanzi": "茶里加冰吗？",
+      "pinyin": "chá lǐ jiā bīng ma",
+      "meaningVi": "Trà có thêm đá không?",
+      "focus": [
+        "茶 chá; 里 lǐ thanh 3."
+      ]
+    },
+    {
+      "id": "dt-1-148",
+      "level": "HSK1-2",
+      "hanzi": "热水不加糖。",
+      "pinyin": "rè shuǐ bù jiā táng",
+      "meaningVi": "Nước nóng không thêm đường.",
+      "focus": [
+        "不 bù; 加 jiā."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-32",
+      "level": "HSK1-2",
+      "text": "我要一杯冰咖啡，请加糖。茶不要加冰，谢谢。",
+      "pinyin": "wǒ yào yì bēi bīng kā fēi qǐng jiā táng chá bú yào jiā bīng xiè xie",
+      "meaningVi": "Tôi muốn một cốc cà phê đá, xin thêm đường. Trà không cần thêm đá, cảm ơn.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我要一杯冰咖啡",
+          "pinyin": "wǒ yào yì bēi bīng kā fēi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "请加糖",
+          "pinyin": "qǐng jiā táng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "茶不要加冰",
+          "pinyin": "chá bú yào jiā bīng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "谢谢",
+          "pinyin": "xiè xie",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "冰 bīng và 加 jiā đều là âm ngắn.",
+        "Ngắt hơi sau 咖啡."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-3-d1",
+  "level": "HSK1-2",
+  "title": "Số đếm và số điện thoại",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-117",
+      "level": "HSK1-2",
+      "hanzi": "一二三，谢谢。",
+      "pinyin": "yī èr sān xiè xie",
+      "meaningVi": "Một hai ba, cảm ơn.",
+      "focus": [
+        "二 èr khác 一 yī ở âm cuối.",
+        "三 sān đóng -n."
+      ]
+    },
+    {
+      "id": "dt-1-118",
+      "level": "HSK1-2",
+      "hanzi": "你的电话号码是多少？",
+      "pinyin": "nǐ de diàn huà hào mǎ shì duō shǎo",
+      "meaningVi": "Số điện thoại của bạn là bao nhiêu?",
+      "focus": [
+        "电话 diàn huà: 话 cuộn lưỡi.",
+        "号码 hào mǎ: 码 thanh 3."
+      ]
+    },
+    {
+      "id": "dt-1-119",
+      "level": "HSK1-2",
+      "hanzi": "我的号码是二三。",
+      "pinyin": "wǒ de hào mǎ shì èr sān",
+      "meaningVi": "Số của tôi là hai ba.",
+      "focus": [
+        "是 shì thanh 4 rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-1-120",
+      "level": "HSK1-2",
+      "hanzi": "请说电话号码。",
+      "pinyin": "qǐng shuō diàn huà hào mǎ",
+      "meaningVi": "Xin đọc số điện thoại.",
+      "focus": [
+        "说 shuō cuộn lưỡi, bật hơi."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-25",
+      "level": "HSK1-2",
+      "text": "你的电话号码是多少？我的号码是二三。请再说一遍。",
+      "pinyin": "nǐ de diàn huà hào mǎ shì duō shǎo wǒ de hào mǎ shì èr sān qǐng zài shuō yí biàn",
+      "meaningVi": "Số điện thoại của bạn là bao nhiêu? Số của tôi là hai ba. Xin nói lại một lần.",
+      "syllables": 21,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你的电话号码是多少",
+          "pinyin": "nǐ de diàn huà hào mǎ shì duō shǎo",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我的号码是二三",
+          "pinyin": "wǒ de hào mǎ shì èr sān",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请再说一遍",
+          "pinyin": "qǐng zài shuō yí biàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Đọc từng chữ số rõ, không nuốt âm cuối.",
+        "号码 giữ 码 thanh 3."
+      ]
+    }
+  ]
+}

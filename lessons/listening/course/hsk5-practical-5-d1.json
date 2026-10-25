@@ -1,0 +1,232 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-5-d1",
+  "level": "HSK5-6",
+  "title": "Thuê nhà và xác nhận điều kiện",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-133",
+      "level": "HSK5-6",
+      "hanzi": "租金包含水电费吗？",
+      "pinyin": "zū jīn bāo hán shuǐ diàn fèi ma",
+      "meaningVi": "Tiền thuê có bao gồm tiền điện nước không?",
+      "focus": [
+        "租金 zū jīn: 租 thanh 1.",
+        "包含 bāo hán: 含 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-134",
+      "level": "HSK5-6",
+      "hanzi": "押金是多少？",
+      "pinyin": "yā jīn shì duō shǎo",
+      "meaningVi": "Tiền đặt cọc là bao nhiêu?",
+      "focus": [
+        "押金 yā jīn: 押 thanh 1."
+      ]
+    },
+    {
+      "id": "dt-3-135",
+      "level": "HSK5-6",
+      "hanzi": "合同里写了维修吗？",
+      "pinyin": "hé tong lí xiě le wéi xiū ma",
+      "meaningVi": "Trong hợp đồng có ghi việc sửa chữa không?",
+      "focus": [
+        "Biến điệu 3+3: lǐ xiě → lí xiě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "合同 hé tong: 同 nhẹ.",
+        "维修 wéi xiū: 修 thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        5,
+        3,
+        3,
+        5,
+        2,
+        1,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          5,
+          2,
+          3,
+          5,
+          2,
+          1,
+          5
+        ],
+        [
+          2,
+          5,
+          3,
+          3,
+          5,
+          2,
+          1,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: lǐ xiě → lí xiě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-5-2-3-5-2-1-5 lẫn 2-5-3-3-5-2-1-5."
+    },
+    {
+      "id": "dt-3-136",
+      "level": "HSK5-6",
+      "hanzi": "如果要提前退租，需要通知房东。",
+      "pinyin": "rú guǒ yào tí qián tuì zū xū yào tōng zhī fáng dōng",
+      "meaningVi": "Nếu muốn trả nhà sớm, cần thông báo cho chủ nhà.",
+      "focus": [
+        "提前 tí qián: 前 đóng -n."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-29",
+      "level": "HSK5-6",
+      "text": "我想确认一下，租金包含水电费吗？押金是多少？合同里的维修条款也要看清楚。",
+      "pinyin": "wó xiǎng què rèn yí xià zū jīn bāo hán shuǐ diàn fèi ma yā jīn shì duō shǎo hé tong lǐ de wéi xiū tiáo kuán yě yào kàn qīng chǔ",
+      "meaningVi": "Tôi muốn xác nhận một chút, tiền thuê có bao gồm điện nước không? Tiền đặt cọc là bao nhiêu? Điều khoản sửa chữa trong hợp đồng cũng phải xem rõ.",
+      "syllables": 32,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我想确认一下",
+          "pinyin": "wó xiǎng què rèn yí xià",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "租金包含水电费吗",
+          "pinyin": "zū jīn bāo hán shuǐ diàn fèi ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "押金是多少",
+          "pinyin": "yā jīn shì duō shǎo",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "合同里的维修条款也要看清楚",
+          "pinyin": "hé tong lǐ de wéi xiū tiáo kuán yě yào kàn qīng chǔ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng; kuǎn yě → kuán yě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "合同 hé tong: 同 đọc nhẹ.",
+        "维修 wéi xiū: 修 thanh 1 cao."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        4,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        1,
+        1,
+        4,
+        1,
+        3,
+        2,
+        5,
+        3,
+        5,
+        2,
+        1,
+        2,
+        3,
+        3,
+        4,
+        4,
+        1,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          4,
+          2,
+          4,
+          1,
+          1,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          1,
+          1,
+          4,
+          1,
+          3,
+          2,
+          5,
+          3,
+          5,
+          2,
+          1,
+          2,
+          2,
+          3,
+          4,
+          4,
+          1,
+          3
+        ],
+        [
+          3,
+          3,
+          4,
+          4,
+          2,
+          4,
+          1,
+          1,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          1,
+          1,
+          4,
+          1,
+          3,
+          2,
+          5,
+          3,
+          5,
+          2,
+          1,
+          2,
+          3,
+          3,
+          4,
+          4,
+          1,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng; kuǎn yě → kuán yě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-4-2-4-1-1-1-2-3-4-4-5-1-1-4-1-3-2-5-3-5-2-1-2-2-3-4-4-1-3 lẫn 3-3-4-4-2-4-1-1-1-2-3-4-4-5-1-1-4-1-3-2-5-3-5-2-1-2-3-3-4-4-1-3."
+    }
+  ]
+}

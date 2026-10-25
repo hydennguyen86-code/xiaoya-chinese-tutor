@@ -64,3 +64,24 @@ test('Unihan character readings are not mislabeled as authoritative Sino-Vietnam
   assert.match(memory, /AI soạn, chưa duyệt/);
   assert.match(memory, /học/);
 });
+
+test('course practice exposes lesson-linked dictation and shadowing, with global fallback', () => {
+  const content = JSON.parse(fs.readFileSync(new URL('../../lessons/courses/hsk1-practical-1-d1.json', import.meta.url), 'utf8'));
+  const linked = JSON.parse(fs.readFileSync(new URL('../../lessons/listening/course/hsk1-practical-1-d1.json', import.meta.url), 'utf8'));
+  const render = (value: typeof content) =>
+    renderToStaticMarkup(
+      <CoursePractice
+        content={value}
+        learnerId="fixture"
+        voice="fixture"
+        ask={async () => ''}
+        micReady={false}
+        voicePhase={null}
+        onBusy={() => {}}
+      />,
+    );
+  assert.match(render({ ...content, listeningPractice: linked }), /Nghe của bài/);
+  assert.ok(render({ ...content, listeningPractice: linked }).includes(linked.shadowing[0].text));
+  assert.doesNotMatch(render(content), /Nghe của bài/);
+  assert.match(render(content), /Bộ DeepSeek/);
+});

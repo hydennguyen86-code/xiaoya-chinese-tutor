@@ -153,3 +153,15 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - C8: (đã vào commit A7–A9) lượt thu mới báo micro đang bận, không âm thầm hủy lượt của component khác. C9 dùng prop localStt thật.
 - C10: client/server dùng chung module citation pinyin và chính sách Claude đã sửa, không sinh lại âm theo mặc định khác. C11 mẹo Hán Việt khớp đúng từ, không tự gắn chữ đơn vào từ dài.
 - Chưa thử lifecycle abort audio/micro bằng thiết bị thật; build và regression dữ liệu không thay thế kiểm thử phần cứng.
+
+## HANDOFF Qoder — xử lý tại app
+
+- Tìm thấy HANDOFF ở gốc repo nguồn (không ở content-for-misu như đường dẫn ban đầu). Không sửa tài liệu ở repo nguồn; trạng thái thực hiện ghi tại đây theo yêu cầu người dùng.
+- P0.1/P1.1–P1.5, D1/D2: Claude đã xử lý A1–A6 trong 335717c/910b17a, giữ nguyên và không làm lại. Module policy nay dùng chung client/server; kiểm tra lại pinyin 30 bài mới không lệch sau các sửa của Claude.
+- **P0.2 đã làm**: 48 JSON riêng trong lessons/listening/course, 198 dictation + 48 shadowing, đủ 246 id duy nhất. Không trộn vào bank chung, không sửa đè bài gốc. Loader theo tên khóa whitelist, gắn listeningPractice vào bài đóng gói. UI có nguồn “Nghe của bài”, giữ Bộ DeepSeek/Ví dụ buổi học; shadowing ưu tiên mục của bài và fallback bank khi thiếu. Đổi bài reset nguồn/lượt luyện.
+- Giữ nguyên pinyin biên soạn và acceptTones/baseTones; checker dùng policy âm nhẹ hiện tại + utility đọc biến điệu từ bộ nguồn, giữ POLICY_TRAPS, kiểm cụm hơi/ý nghĩa/từ vựng bài. Không chép script _author/_make, không sinh lại pinyin lúc tải bài.
+- D3/D4/D5: API fluency/âm lỗi đã thêm ở commit sửa thấp; checker đầy đủ + assert runtime 48/198/48/246, id/cụm/nguồn; test loader giữ nguyên listening/speaking/checkpoint khi merge. SSR kiểm nguồn nghe của bài/fallback, không thay thế thao tác micro thật.
+- P2.1: giữ mô hình LAN PIN dùng chung hiện tại và ghi rõ endpoint giọng nói/quyền chung trong README. Không tự khóa micro điện thoại thành owner-only vì sẽ phá luồng LAN đang có; tách quyền tài khoản cần thiết kế riêng nếu chia sẻ ngoài nhóm tin cậy.
+- P2.2/P2.3: hạ bộ nhớ phát lại còn 5 lượt, tổng 20 MB, có test ngân sách; object URL đã được xử lý ở C2.
+- P3: A7–A9 và C1–C11 đã xử lý trong 2 commit sửa thấp 2cdecae/72edbf5. Không đánh dấu nhãn học liệu/giọng là đã duyệt.
+- Chưa có nhãn người; HANDOFF xác nhận bộ cắt hiện có chỉ 55/56 audio và một mục cần thu lại. Không dùng số khớp expected làm độ chính xác, không chỉnh ngưỡng.

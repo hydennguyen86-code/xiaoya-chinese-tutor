@@ -1,3 +1,4 @@
+import type { DictationItem, ShadowingItem } from './authoredListening';
 import type { Syllabus } from './lessonPlan';
 
 export interface LessonWord {
@@ -40,6 +41,7 @@ export interface SpeakingExercise {
   checklist: string[];
 }
 export interface LessonContent {
+  listeningPractice?: { source: string; dictation: DictationItem[]; shadowing: ShadowingItem[] } | null;
   authored?: boolean;
   level?: string;
   targetLevel?: string;

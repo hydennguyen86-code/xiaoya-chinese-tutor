@@ -1,0 +1,194 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-1-d2",
+  "level": "HSK1-2",
+  "title": "Nghe âm, chào hỏi và xin nhắc lại",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-105",
+      "level": "HSK1-2",
+      "hanzi": "认识你，很高兴。",
+      "pinyin": "rèn shi nǐ hěn gāo xìng",
+      "meaningVi": "Rất vui được biết bạn.",
+      "focus": [
+        "认识 rèn shi: 识 đọc nhẹ.",
+        "高兴 gāo xìng: 兴 đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-1-106",
+      "level": "HSK1-2",
+      "hanzi": "我认识王老师。",
+      "pinyin": "wǒ rèn shi wáng lǎo shī",
+      "meaningVi": "Tôi biết thầy Vương.",
+      "focus": [
+        "王 wáng thanh 2 đi lên.",
+        "老师 lǎo shī: hai thanh khác nhau."
+      ]
+    },
+    {
+      "id": "dt-1-107",
+      "level": "HSK1-2",
+      "hanzi": "你好，请坐。",
+      "pinyin": "ní hǎo qǐng zuò",
+      "meaningVi": "Xin chào, mời ngồi.",
+      "focus": [
+        "Biến điệu 3+3: nǐ hǎo → ní hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "坐 zuò không bật hơi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          3,
+          4
+        ],
+        [
+          3,
+          3,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ hǎo → ní hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-3-4 lẫn 3-3-3-4."
+    },
+    {
+      "id": "dt-1-108",
+      "level": "HSK1-2",
+      "hanzi": "谢谢，再见。",
+      "pinyin": "xiè xie zài jiàn",
+      "meaningVi": "Cảm ơn, tạm biệt.",
+      "focus": [
+        "谢谢 xiè xie; 再见 zài jiàn."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-22",
+      "level": "HSK1-2",
+      "text": "你好，认识你很高兴。我认识王老师。请坐，谢谢，再见！",
+      "pinyin": "ní hǎo rèn shi ní hěn gāo xìng wǒ rèn shi wáng lǎo shī qǐng zuò xiè xie zài jiàn",
+      "meaningVi": "Xin chào, rất vui được biết bạn. Tôi biết thầy Vương. Mời ngồi, cảm ơn, tạm biệt!",
+      "syllables": 20,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你好",
+          "pinyin": "ní hǎo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "认识你很高兴",
+          "pinyin": "rèn shi ní hěn gāo xìng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我认识王老师",
+          "pinyin": "wǒ rèn shi wáng lǎo shī",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请坐",
+          "pinyin": "qǐng zuò",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "谢谢",
+          "pinyin": "xiè xie",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "再见",
+          "pinyin": "zài jiàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: nǐ hǎo → ní hǎo; nǐ hěn → ní hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "认识 luôn đọc nhẹ ở chữ thứ hai.",
+        "Giữ nhịp đều giữa các cụm ngắn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        5,
+        3,
+        3,
+        1,
+        4,
+        3,
+        4,
+        5,
+        2,
+        3,
+        1,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          5,
+          2,
+          3,
+          1,
+          4,
+          3,
+          4,
+          5,
+          2,
+          3,
+          1,
+          3,
+          4,
+          4,
+          5,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          4,
+          5,
+          3,
+          3,
+          1,
+          4,
+          3,
+          4,
+          5,
+          2,
+          3,
+          1,
+          3,
+          4,
+          4,
+          5,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ hǎo → ní hǎo; nǐ hěn → ní hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-5-2-3-1-4-3-4-5-2-3-1-3-4-4-5-4-4 lẫn 3-3-4-5-3-3-1-4-3-4-5-2-3-1-3-4-4-5-4-4."
+    }
+  ]
+}

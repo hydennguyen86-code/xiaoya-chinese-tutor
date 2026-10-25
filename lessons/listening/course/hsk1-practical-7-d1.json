@@ -1,0 +1,88 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-7-d1",
+  "level": "HSK1-2",
+  "title": "Gọi món và hỏi giá",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-149",
+      "level": "HSK1-2",
+      "hanzi": "我吃米饭。",
+      "pinyin": "wǒ chī mǐ fàn",
+      "meaningVi": "Tôi ăn cơm.",
+      "focus": [
+        "吃 chī cuộn lưỡi; 米饭 mǐ fàn."
+      ]
+    },
+    {
+      "id": "dt-1-150",
+      "level": "HSK1-2",
+      "hanzi": "面条多少钱？",
+      "pinyin": "miàn tiáo duō shǎo qián",
+      "meaningVi": "Mì bao nhiêu tiền?",
+      "focus": [
+        "面条 miàn tiáo: 条 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-1-151",
+      "level": "HSK1-2",
+      "hanzi": "这个菜太辣。",
+      "pinyin": "zhè ge cài tài là",
+      "meaningVi": "Món này cay quá.",
+      "focus": [
+        "辣 là, không phải nà."
+      ]
+    },
+    {
+      "id": "dt-1-152",
+      "level": "HSK1-2",
+      "hanzi": "米饭三块。",
+      "pinyin": "mǐ fàn sān kuài",
+      "meaningVi": "Cơm ba tệ.",
+      "focus": [
+        "块 kuài đóng bằng -i."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-33",
+      "level": "HSK1-2",
+      "text": "我吃米饭，你吃面条吗？面条多少钱？米饭三块。",
+      "pinyin": "wǒ chī mǐ fàn nǐ chī miàn tiáo ma miàn tiáo duō shǎo qián mǐ fàn sān kuài",
+      "meaningVi": "Tôi ăn cơm, bạn ăn mì không? Mì bao nhiêu tiền? Cơm ba tệ.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我吃米饭",
+          "pinyin": "wǒ chī mǐ fàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "你吃面条吗",
+          "pinyin": "nǐ chī miàn tiáo ma",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "面条多少钱",
+          "pinyin": "miàn tiáo duō shǎo qián",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "米饭三块",
+          "pinyin": "mǐ fàn sān kuài",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "米饭 mǐ fàn: thanh 3 rồi thanh 4.",
+        "Giữ 钱 qián đóng -n."
+      ]
+    }
+  ]
+}

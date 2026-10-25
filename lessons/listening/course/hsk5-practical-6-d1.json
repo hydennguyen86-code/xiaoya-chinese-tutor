@@ -1,0 +1,307 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-6-d1",
+  "level": "HSK5-6",
+  "title": "Khiếu nại dịch vụ và tìm giải pháp",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-141",
+      "level": "HSK5-6",
+      "hanzi": "我要投诉这个服务。",
+      "pinyin": "wǒ yào tóu sù zhè ge fú wù",
+      "meaningVi": "Tôi muốn khiếu nại dịch vụ này.",
+      "focus": [
+        "投诉 tóu sù: 诉 không cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-3-142",
+      "level": "HSK5-6",
+      "hanzi": "公司承诺三天内退款。",
+      "pinyin": "gōng sī chéng nuò sān tiān nèi tuì kuǎn",
+      "meaningVi": "Công ty cam kết hoàn tiền trong ba ngày.",
+      "focus": [
+        "承诺 chéng nuò: 诺 thanh 4.",
+        "退款 tuì kuǎn: 款 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-143",
+      "level": "HSK5-6",
+      "hanzi": "这个商品可以更换吗？",
+      "pinyin": "zhè ge shāng pín ké yǐ gēng huàn ma",
+      "meaningVi": "Món hàng này có thể đổi không?",
+      "focus": [
+        "Biến điệu 3+3: pǐn kě → pín ké; kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "更换 gēng huàn: 更 gēng thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        5,
+        1,
+        3,
+        3,
+        3,
+        1,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          4,
+          5,
+          1,
+          2,
+          2,
+          3,
+          1,
+          4,
+          5
+        ],
+        [
+          4,
+          5,
+          1,
+          3,
+          3,
+          3,
+          1,
+          4,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: pǐn kě → pín ké; kě yǐ → ké yǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-5-1-2-2-3-1-4-5 lẫn 4-5-1-3-3-3-1-4-5."
+    },
+    {
+      "id": "dt-3-144",
+      "level": "HSK5-6",
+      "hanzi": "请保留好购物凭证。",
+      "pinyin": "qíng bǎo liú hǎo gòu wù píng zhèng",
+      "meaningVi": "Xin giữ kỹ chứng từ mua hàng.",
+      "focus": [
+        "Biến điệu 3+3: qǐng bǎo → qíng bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "保留 bǎo liú; 凭证 píng zhèng."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        2,
+        3,
+        4,
+        4,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          2,
+          3,
+          4,
+          4,
+          2,
+          4
+        ],
+        [
+          3,
+          3,
+          2,
+          3,
+          4,
+          4,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng bǎo → qíng bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-2-3-4-4-2-4 lẫn 3-3-2-3-4-4-2-4."
+    },
+    {
+      "id": "dt-3-145",
+      "level": "HSK5-6",
+      "hanzi": "客服会尽快处理。",
+      "pinyin": "kè fú huì jǐn kuài chú lǐ",
+      "meaningVi": "Chăm sóc khách hàng sẽ xử lý sớm.",
+      "focus": [
+        "Biến điệu 3+3: chǔ lǐ → chú lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        2,
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          4,
+          3,
+          4,
+          2,
+          3
+        ],
+        [
+          4,
+          2,
+          4,
+          3,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: chǔ lǐ → chú lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-4-3-4-2-3 lẫn 4-2-4-3-4-3-3."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-31",
+      "level": "HSK5-6",
+      "text": "我要投诉这个服务。公司承诺三天内退款，我也希望更换商品。请保留好凭证。",
+      "pinyin": "wǒ yào tóu sù zhè gè fú wù gōng sī chéng nuò sān tiān nèi tuì kuǎn wó yě xī wàng gēng huàn shāng pǐn qíng bǎo liú hǎo píng zhèng",
+      "meaningVi": "Tôi muốn khiếu nại dịch vụ này. Công ty cam kết hoàn tiền trong ba ngày, tôi cũng muốn đổi hàng. Xin giữ kỹ chứng từ.",
+      "syllables": 31,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我要投诉这个服务",
+          "pinyin": "wǒ yào tóu sù zhè gè fú wù",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "公司承诺三天内退款",
+          "pinyin": "gōng sī chéng nuò sān tiān nèi tuì kuǎn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我也希望更换商品",
+          "pinyin": "wó yě xī wàng gēng huàn shāng pǐn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请保留好凭证",
+          "pinyin": "qíng bǎo liú hǎo píng zhèng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ yě → wó yě; qǐng bǎo → qíng bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "投诉 tóu sù: 诉 là s phẳng.",
+        "退款 tuì kuǎn: 款 đóng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        2,
+        4,
+        4,
+        4,
+        2,
+        4,
+        1,
+        1,
+        2,
+        4,
+        1,
+        1,
+        4,
+        4,
+        3,
+        3,
+        3,
+        1,
+        4,
+        1,
+        4,
+        1,
+        3,
+        3,
+        3,
+        2,
+        3,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          2,
+          4,
+          4,
+          4,
+          2,
+          4,
+          1,
+          1,
+          2,
+          4,
+          1,
+          1,
+          4,
+          4,
+          3,
+          2,
+          3,
+          1,
+          4,
+          1,
+          4,
+          1,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          4
+        ],
+        [
+          3,
+          4,
+          2,
+          4,
+          4,
+          4,
+          2,
+          4,
+          1,
+          1,
+          2,
+          4,
+          1,
+          1,
+          4,
+          4,
+          3,
+          3,
+          3,
+          1,
+          4,
+          1,
+          4,
+          1,
+          3,
+          3,
+          3,
+          2,
+          3,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ yě → wó yě; qǐng bǎo → qíng bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-2-4-4-4-2-4-1-1-2-4-1-1-4-4-3-2-3-1-4-1-4-1-3-2-3-2-3-2-4 lẫn 3-4-2-4-4-4-2-4-1-1-2-4-1-1-4-4-3-3-3-1-4-1-4-1-3-3-3-2-3-2-4."
+    }
+  ]
+}

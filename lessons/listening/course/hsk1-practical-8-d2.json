@@ -1,0 +1,193 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-8-d2",
+  "level": "HSK1-2",
+  "title": "Vị trí và xác nhận đường đi",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-162",
+      "level": "HSK1-2",
+      "hanzi": "商店在前面。",
+      "pinyin": "shāng diàn zài qián miàn",
+      "meaningVi": "Cửa hàng ở phía trước.",
+      "focus": [
+        "商店 shāng diàn: 店 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-1-163",
+      "level": "HSK1-2",
+      "hanzi": "请往右边走。",
+      "pinyin": "qíng wǎng yòu bian zǒu",
+      "meaningVi": "Xin đi về bên phải.",
+      "focus": [
+        "Biến điệu 3+3: qǐng wǎng → qíng wǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "往 wǎng đóng -ng; 走 zǒu."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        1,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          3,
+          4,
+          5,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng wǎng → qíng wǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-5-3 lẫn 3-3-4-5-3."
+    },
+    {
+      "id": "dt-1-164",
+      "level": "HSK1-2",
+      "hanzi": "你往哪里走？",
+      "pinyin": "ní wáng ná lí zǒu",
+      "meaningVi": "Bạn đi về phía nào?",
+      "focus": [
+        "Biến điệu 3+3: nǐ wǎng → ní wáng; wǎng nǎ → wáng ná; nǎ lǐ → ná lí; lǐ zǒu → lí zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ wǎng → ní wáng; wǎng nǎ → wáng ná; nǎ lǐ → ná lí; lǐ zǒu → lí zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-2-2-3 lẫn 3-3-3-3-3."
+    },
+    {
+      "id": "dt-1-165",
+      "level": "HSK1-2",
+      "hanzi": "咖啡店在左边。",
+      "pinyin": "kā fēi diàn zài zuǒ bian",
+      "meaningVi": "Quán cà phê ở bên trái.",
+      "focus": [
+        "左边 zuǒ bian: 边 nhẹ."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-36",
+      "level": "HSK1-2",
+      "text": "商店在前面。请往右边走。咖啡店在左边。",
+      "pinyin": "shāng diàn zài qián miàn qíng wǎng yòu bian zǒu kā fēi diàn zài zuǒ bian",
+      "meaningVi": "Cửa hàng ở phía trước. Xin đi về bên phải. Quán cà phê ở bên trái.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "商店在前面",
+          "pinyin": "shāng diàn zài qián miàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请往右边走",
+          "pinyin": "qíng wǎng yòu bian zǒu",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "咖啡店在左边",
+          "pinyin": "kā fēi diàn zài zuǒ bian",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: qǐng wǎng → qíng wǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "Phân biệt 往 wǎng (-ng) và 前 qián (-n).",
+        "Giữ nhẹ 边 trong 右边, 左边."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        4,
+        4,
+        2,
+        4,
+        3,
+        3,
+        4,
+        1,
+        3,
+        1,
+        1,
+        4,
+        4,
+        3,
+        1
+      ],
+      "acceptTones": [
+        [
+          1,
+          4,
+          4,
+          2,
+          4,
+          2,
+          3,
+          4,
+          5,
+          3,
+          1,
+          1,
+          4,
+          4,
+          3,
+          5
+        ],
+        [
+          1,
+          4,
+          4,
+          2,
+          4,
+          3,
+          3,
+          4,
+          5,
+          3,
+          1,
+          1,
+          4,
+          4,
+          3,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng wǎng → qíng wǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-4-2-4-2-3-4-5-3-1-1-4-4-3-5 lẫn 1-4-4-2-4-3-3-4-5-3-1-1-4-4-3-5."
+    }
+  ]
+}

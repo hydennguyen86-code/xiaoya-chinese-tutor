@@ -1,0 +1,232 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-9-d2",
+  "level": "HSK1-2",
+  "title": "Mua đồ và chọn phương án",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-170",
+      "level": "HSK1-2",
+      "hanzi": "我想买这个杯子。",
+      "pinyin": "wó xiáng mǎi zhè ge bēi zi",
+      "meaningVi": "Tôi muốn mua cái cốc này.",
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiáng; xiǎng mǎi → xiáng mǎi — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "杯子 bēi zi: 子 nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        1,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          3,
+          4,
+          5,
+          1,
+          5
+        ],
+        [
+          3,
+          3,
+          3,
+          4,
+          5,
+          1,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiáng; xiǎng mǎi → xiáng mǎi — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-3-4-5-1-5 lẫn 3-3-3-4-5-1-5."
+    },
+    {
+      "id": "dt-1-171",
+      "level": "HSK1-2",
+      "hanzi": "那个杯子太大。",
+      "pinyin": "nà ge bēi zi tài dà",
+      "meaningVi": "Cái cốc kia quá to.",
+      "focus": [
+        "那个 nà ge; 太 tài."
+      ]
+    },
+    {
+      "id": "dt-1-172",
+      "level": "HSK1-2",
+      "hanzi": "你喜欢这个杯子吗？",
+      "pinyin": "ní xǐ huan zhè ge bēi zi ma",
+      "meaningVi": "Bạn thích cái cốc này không?",
+      "focus": [
+        "Biến điệu 3+3: nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "喜欢 xǐ huan; 杯子 bēi zi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        5,
+        4,
+        5,
+        1,
+        5,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          5,
+          4,
+          5,
+          1,
+          5,
+          5
+        ],
+        [
+          3,
+          3,
+          5,
+          4,
+          5,
+          1,
+          5,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-4-5-1-5-5 lẫn 3-3-5-4-5-1-5-5."
+    },
+    {
+      "id": "dt-1-173",
+      "level": "HSK1-2",
+      "hanzi": "这个杯子太小。",
+      "pinyin": "zhè ge bēi zi tài xiǎo",
+      "meaningVi": "Cái cốc này quá nhỏ.",
+      "focus": [
+        "小 xiǎo thanh 3."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-38",
+      "level": "HSK1-2",
+      "text": "我想买这个杯子。那个杯子太大，这个太小。你喜欢哪个？",
+      "pinyin": "wó xiáng mǎi zhè ge bēi zi nà ge bēi zi tài dà zhè ge tài xiǎo ní xǐ huan nǎ gè",
+      "meaningVi": "Tôi muốn mua cái cốc này. Cái kia quá to, cái này quá nhỏ. Bạn thích cái nào?",
+      "syllables": 22,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我想买这个杯子",
+          "pinyin": "wó xiáng mǎi zhè ge bēi zi",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "那个杯子太大",
+          "pinyin": "nà ge bēi zi tài dà",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "这个太小",
+          "pinyin": "zhè ge tài xiǎo",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "你喜欢哪个",
+          "pinyin": "ní xǐ huan nǎ gè",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiáng; xiǎng mǎi → xiáng mǎi; nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "杯子 luôn đọc bēi zi.",
+        "Ngắt hơi trước 这个 nhỏ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        1,
+        5,
+        4,
+        5,
+        1,
+        5,
+        4,
+        4,
+        4,
+        5,
+        4,
+        3,
+        3,
+        3,
+        5,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          3,
+          4,
+          5,
+          1,
+          5,
+          4,
+          5,
+          1,
+          5,
+          4,
+          4,
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          5,
+          3,
+          4
+        ],
+        [
+          3,
+          3,
+          3,
+          4,
+          5,
+          1,
+          5,
+          4,
+          5,
+          1,
+          5,
+          4,
+          4,
+          4,
+          5,
+          4,
+          3,
+          3,
+          3,
+          5,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiáng; xiǎng mǎi → xiáng mǎi; nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-3-4-5-1-5-4-5-1-5-4-4-4-5-4-3-2-3-5-3-4 lẫn 3-3-3-4-5-1-5-4-5-1-5-4-4-4-5-4-3-3-3-5-3-4."
+    }
+  ]
+}

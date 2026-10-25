@@ -1,3 +1,4 @@
+import type { ShadowingItem } from '../lib/authoredListening';
 import { useEffect, useRef, useState } from 'react';
 import bank from '../../lessons/listening/shadowing.json';
 import { listen, type VoiceHandle, type VoiceResult } from '../lib/voiceInput';
@@ -9,18 +10,22 @@ export function ShadowingPractice({
   level,
   voice,
   onBusy,
+  items: supplied,
 }: {
+  items?: ShadowingItem[];
   learnerId: string;
   level: string;
   voice: string;
   onBusy: (busy: boolean) => void;
 }) {
-  const items = bank.items.filter((i) => i.level === level && !('uncertain' in i && i.uncertain));
+  const items = (supplied?.length ? supplied : bank.items).filter((i) => i.level === level && !('uncertain' in i && i.uncertain));
   return (
     <details className="course-practice">
       <summary>Nói đuổi · nghe mẫu rồi nói ngay</summary>
-      <p>{bank.source}. Cao độ và ngắt câu chỉ tham khảo; không quy đổi điểm thi.</p>
-      <ShadowRound key={`${learnerId}:${level}`} {...{ items, learnerId, voice, onBusy }} />
+      <p>
+        {bank.source} · {supplied?.length ? 'Nghe của bài' : 'Bộ DeepSeek'}. Cao độ và ngắt câu chỉ tham khảo; không quy đổi điểm thi.
+      </p>
+      <ShadowRound key={`${learnerId}:${level}:${items.map((i) => i.id).join(',')}`} {...{ items, learnerId, voice, onBusy }} />
     </details>
   );
 }
@@ -30,7 +35,7 @@ function ShadowRound({
   voice,
   onBusy,
 }: {
-  items: typeof bank.items;
+  items: ShadowingItem[];
   learnerId: string;
   voice: string;
   onBusy: (busy: boolean) => void;

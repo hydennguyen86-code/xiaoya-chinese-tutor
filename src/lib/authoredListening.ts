@@ -49,3 +49,18 @@ export function gradeDictation(item: DictationItem, answer: string) {
   const tonesCorrect = variants.some((v) => actual.length === v.length && actual.every((s, i) => !s.tone || s.tone === v[i]));
   return { parts, tonesCorrect, correct: parts.every((p) => p.ok) && tonesCorrect };
 }
+
+export interface ShadowingItem {
+  id: string;
+  level: string;
+  text: string;
+  pinyin: string;
+  meaningVi: string;
+  syllables: number;
+  pace: string;
+  chunks: Array<{ hanzi: string; pinyin: string; pause: string }>;
+  focus: string[];
+  uncertain?: boolean;
+  baseTones?: number[];
+  acceptTones?: number[][];
+}

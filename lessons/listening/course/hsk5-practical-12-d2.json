@@ -1,0 +1,89 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-12-d2",
+  "level": "HSK5-6",
+  "title": "Bài tích hợp: nghe, tóm tắt và đề xuất",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-197",
+      "level": "HSK5-6",
+      "hanzi": "这个阶段的工作已经完成。",
+      "pinyin": "zhè ge jiē duàn de gōng zuò yǐ jīng wán chéng",
+      "meaningVi": "Công việc của giai đoạn này đã hoàn thành.",
+      "focus": [
+        "阶段 jiē duàn: 段 thanh 4."
+      ]
+    },
+    {
+      "id": "dt-3-198",
+      "level": "HSK5-6",
+      "hanzi": "验收的时间和标准要确认。",
+      "pinyin": "yàn shōu de shí jiān hé biāo zhǔn yào què rèn",
+      "meaningVi": "Thời gian và tiêu chuẩn nghiệm thu phải xác nhận.",
+      "focus": [
+        "验收 yàn shōu: 收 thanh 1.",
+        "确认 què rèn."
+      ]
+    },
+    {
+      "id": "dt-3-199",
+      "level": "HSK5-6",
+      "hanzi": "我们分两个阶段落实。",
+      "pinyin": "wǒ men fēn liǎng gè jiē duàn luò shí",
+      "meaningVi": "Chúng tôi triển khai theo hai giai đoạn.",
+      "focus": [
+        "阶段 jiē duàn; 落实 luò shí."
+      ]
+    },
+    {
+      "id": "dt-3-200",
+      "level": "HSK5-6",
+      "hanzi": "总结之后，关键是落实。",
+      "pinyin": "zǒng jié zhī hòu guān jiàn shì luò shí",
+      "meaningVi": "Sau khi tổng kết, then chốt là thực hiện.",
+      "focus": [
+        "总结 zǒng jié; 关键 guān jiàn; 落实 luò shí."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-44",
+      "level": "HSK5-6",
+      "text": "这个阶段的工作已经完成。验收的时间和标准要确认，总结之后，关键是落实。",
+      "pinyin": "zhè ge jiē duàn de gōng zuò yǐ jīng wán chéng yàn shōu de shí jiān hé biāo zhǔn yào què rèn zǒng jié zhī hòu guān jiàn shì luò shí",
+      "meaningVi": "Công việc của giai đoạn này đã hoàn thành. Thời gian và tiêu chuẩn nghiệm thu cần xác nhận, sau khi tổng kết, then chốt là thực hiện.",
+      "syllables": 31,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这个阶段的工作已经完成",
+          "pinyin": "zhè ge jiē duàn de gōng zuò yǐ jīng wán chéng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "验收的时间和标准要确认",
+          "pinyin": "yàn shōu de shí jiān hé biāo zhǔn yào què rèn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "总结之后",
+          "pinyin": "zǒng jié zhī hòu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "关键是落实",
+          "pinyin": "guān jiàn shì luò shí",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "阶段 jiē duàn: 段 thanh 4.",
+        "验收 yàn shōu: 收 thanh 1."
+      ]
+    }
+  ]
+}

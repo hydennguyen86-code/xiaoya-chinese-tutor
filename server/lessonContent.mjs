@@ -1,3 +1,4 @@
+import { readCourseListening } from './courseListening.mjs';
 import { reviewProblems } from './lessonReview.mjs';
 import { readCourseLesson } from './courseContent.mjs';
 import { createHash } from 'node:crypto';
@@ -235,7 +236,15 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
       const original = packaged.patterns.find((p) => p.pattern === item.pattern);
       return { ...item, examplePinyin: original?.examplePinyin || item.examplePinyin };
     });
-    return { ...packaged, ...content, vocab, patterns, reviewed: false, authored: true };
+    return {
+      ...packaged,
+      ...content,
+      vocab,
+      patterns,
+      listeningPractice: readCourseListening(volumeId, lessonNo, day),
+      reviewed: false,
+      authored: true,
+    };
   }
   const file = cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day, level });
   if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));

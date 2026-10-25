@@ -1,0 +1,233 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-6-d2",
+  "level": "HSK5-6",
+  "title": "Khiếu nại dịch vụ và tìm giải pháp",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-146",
+      "level": "HSK5-6",
+      "hanzi": "运单上的信息不对。",
+      "pinyin": "yùn dān shàng de xìn xī bú duì",
+      "meaningVi": "Thông tin trên vận đơn không đúng.",
+      "focus": [
+        "运单 yùn dān: 单 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-147",
+      "level": "HSK5-6",
+      "hanzi": "这次物流的时效太慢。",
+      "pinyin": "zhè cì wù liú de shí xiào tài màn",
+      "meaningVi": "Thời gian giao của lần vận chuyển này quá chậm.",
+      "focus": [
+        "物流 wù liú; 时效 shí xiào."
+      ]
+    },
+    {
+      "id": "dt-3-148",
+      "level": "HSK5-6",
+      "hanzi": "客服说会尽快处理退款。",
+      "pinyin": "kè fú shuō huì jǐn kuài chú lǐ tuì kuǎn",
+      "meaningVi": "Chăm sóc khách hàng nói sẽ xử lý hoàn tiền sớm.",
+      "focus": [
+        "Biến điệu 3+3: chǔ lǐ → chú lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "退款 tuì kuǎn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        2,
+        1,
+        4,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          1,
+          4,
+          3,
+          4,
+          2,
+          3,
+          4,
+          3
+        ],
+        [
+          4,
+          2,
+          1,
+          4,
+          3,
+          4,
+          3,
+          3,
+          4,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: chǔ lǐ → chú lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-1-4-3-4-2-3-4-3 lẫn 4-2-1-4-3-4-3-3-4-3."
+    },
+    {
+      "id": "dt-3-149",
+      "level": "HSK5-6",
+      "hanzi": "请提供运单和凭证。",
+      "pinyin": "qǐng tí gōng yùn dān hé píng zhèng",
+      "meaningVi": "Xin cung cấp vận đơn và chứng từ.",
+      "focus": [
+        "运单 yùn dān; 凭证 píng zhèng."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-32",
+      "level": "HSK5-6",
+      "text": "运单上的信息不对，这次物流的时效也太慢。客服承诺尽快处理，请提供凭证。",
+      "pinyin": "yùn dān shàng de xìn xī bú duì zhè cì wù liú de shí xiào yě tài màn kè fú chéng nuò jǐn kuài chú lǐ qǐng tí gōng píng zhèng",
+      "meaningVi": "Thông tin trên vận đơn không đúng, thời gian giao lần này cũng quá chậm. Chăm sóc khách hàng cam kết xử lý sớm, xin cung cấp chứng từ.",
+      "syllables": 31,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "运单上的信息不对",
+          "pinyin": "yùn dān shàng de xìn xī bú duì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "这次物流的时效也太慢",
+          "pinyin": "zhè cì wù liú de shí xiào yě tài màn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "客服承诺尽快处理",
+          "pinyin": "kè fú chéng nuò jǐn kuài chú lǐ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "请提供凭证",
+          "pinyin": "qǐng tí gōng píng zhèng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: chǔ lǐ → chú lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "处理 chǔ lǐ: 处 thanh 3.",
+        "时效 shí xiào: 效 thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        1,
+        4,
+        5,
+        4,
+        1,
+        2,
+        4,
+        4,
+        4,
+        4,
+        2,
+        5,
+        2,
+        4,
+        3,
+        4,
+        4,
+        4,
+        2,
+        2,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        2,
+        1,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          1,
+          4,
+          5,
+          4,
+          1,
+          2,
+          4,
+          4,
+          4,
+          4,
+          2,
+          5,
+          2,
+          4,
+          3,
+          4,
+          4,
+          4,
+          2,
+          2,
+          4,
+          3,
+          4,
+          2,
+          3,
+          3,
+          2,
+          1,
+          2,
+          4
+        ],
+        [
+          4,
+          1,
+          4,
+          5,
+          4,
+          1,
+          2,
+          4,
+          4,
+          4,
+          4,
+          2,
+          5,
+          2,
+          4,
+          3,
+          4,
+          4,
+          4,
+          2,
+          2,
+          4,
+          3,
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: chǔ lǐ → chú lǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-1-4-5-4-1-2-4-4-4-4-2-5-2-4-3-4-4-4-2-2-4-3-4-2-3-3-2-1-2-4 lẫn 4-1-4-5-4-1-2-4-4-4-4-2-5-2-4-3-4-4-4-2-2-4-3-4-3-3-3-2-1-2-4."
+    }
+  ]
+}

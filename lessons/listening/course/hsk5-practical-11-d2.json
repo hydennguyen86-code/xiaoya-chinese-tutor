@@ -1,0 +1,84 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-11-d2",
+  "level": "HSK5-6",
+  "title": "Trình bày quan điểm và phản hồi câu hỏi",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-188",
+      "level": "HSK5-6",
+      "hanzi": "谢谢你的提醒。",
+      "pinyin": "xiè xie nǐ de tí xǐng",
+      "meaningVi": "Cảm ơn lời nhắc của bạn.",
+      "focus": [
+        "提醒 tí xǐng: 醒 đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-3-189",
+      "level": "HSK5-6",
+      "hanzi": "运动的频率不用太高。",
+      "pinyin": "yùn dòng de pín lù bú yòng tài gāo",
+      "meaningVi": "Tần suất vận động không cần quá cao.",
+      "focus": [
+        "频率 pín lǜ: 率 lǜ.",
+        "运动 yùn dòng."
+      ]
+    },
+    {
+      "id": "dt-3-190",
+      "level": "HSK5-6",
+      "hanzi": "我会提醒他确认时间。",
+      "pinyin": "wǒ huì tí xǐng tā què rèn shí jiān",
+      "meaningVi": "Tôi sẽ nhắc anh ấy xác nhận thời gian.",
+      "focus": [
+        "提醒 tí xǐng; 确认 què rèn."
+      ]
+    },
+    {
+      "id": "dt-3-191",
+      "level": "HSK5-6",
+      "hanzi": "这个提醒的频率太高了。",
+      "pinyin": "zhè ge tí xǐng de pín lù tài gāo le",
+      "meaningVi": "Tần suất nhắc nhở này quá cao.",
+      "focus": [
+        "频率 pín lǜ: 率 đọc lǜ."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-42",
+      "level": "HSK5-6",
+      "text": "谢谢你的提醒。运动的频率不用太高，我会提醒他确认时间。",
+      "pinyin": "xiè xie nǐ de tí xǐng yùn dòng de pín lù bú yòng tài gāo wǒ huì tí xǐng tā què rèn shí jiān",
+      "meaningVi": "Cảm ơn lời nhắc của bạn. Tần suất vận động không cần quá cao, tôi sẽ nhắc anh ấy xác nhận thời gian.",
+      "syllables": 24,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "谢谢你的提醒",
+          "pinyin": "xiè xie nǐ de tí xǐng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "运动的频率不用太高",
+          "pinyin": "yùn dòng de pín lù bú yòng tài gāo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我会提醒他确认时间",
+          "pinyin": "wǒ huì tí xǐng tā què rèn shí jiān",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "频率 pín lǜ: 率 đọc lǜ, không phải lù.",
+        "提醒 tí xǐng: 醒 đóng -ng."
+      ]
+    }
+  ]
+}

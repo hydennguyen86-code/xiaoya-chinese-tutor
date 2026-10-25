@@ -1,0 +1,264 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-4-d1",
+  "level": "HSK5-6",
+  "title": "Họp nhóm và bất đồng có lý do",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-125",
+      "level": "HSK5-6",
+      "hanzi": "我建议先执行这个方案。",
+      "pinyin": "wǒ jiàn yì xiān zhí xíng zhè ge fāng àn",
+      "meaningVi": "Tôi đề nghị thực hiện phương án này trước.",
+      "focus": [
+        "建议 jiàn yì: 议 thanh 4.",
+        "执行 zhí xíng: 行 xíng."
+      ]
+    },
+    {
+      "id": "dt-3-126",
+      "level": "HSK5-6",
+      "hanzi": "这个方案的成本太高。",
+      "pinyin": "zhè ge fāng àn de chéng běn tài gāo",
+      "meaningVi": "Chi phí của phương án này quá cao.",
+      "focus": [
+        "方案 fāng àn: 案 đóng -n.",
+        "成本 chéng běn."
+      ]
+    },
+    {
+      "id": "dt-3-127",
+      "level": "HSK5-6",
+      "hanzi": "新方案的效果很好。",
+      "pinyin": "xīn fāng àn de xiào guó hén hǎo",
+      "meaningVi": "Hiệu quả của phương án mới rất tốt.",
+      "focus": [
+        "Biến điệu 3+3: guǒ hěn → guó hén; hěn hǎo → hén hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "效果 xiào guǒ: 果 thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        4,
+        5,
+        4,
+        3,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          4,
+          5,
+          4,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          4,
+          5,
+          4,
+          3,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: guǒ hěn → guó hén; hěn hǎo → hén hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-1-4-5-4-2-2-3 lẫn 1-1-4-5-4-3-3-3."
+    },
+    {
+      "id": "dt-3-128",
+      "level": "HSK5-6",
+      "hanzi": "我保留自己的意见。",
+      "pinyin": "wó bǎo liú zì jǐ de yì jiàn",
+      "meaningVi": "Tôi giữ ý kiến của mình.",
+      "focus": [
+        "Biến điệu 3+3: wǒ bǎo → wó bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "保留 bǎo liú: 留 thanh 2."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        2,
+        4,
+        3,
+        5,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          2,
+          4,
+          3,
+          5,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          2,
+          4,
+          3,
+          5,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ bǎo → wó bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-2-4-3-5-4-4 lẫn 3-3-2-4-3-5-4-4."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-27",
+      "level": "HSK5-6",
+      "text": "我建议先执行这个方案。它的成本不高，效果也很好。不过我保留自己的意见。",
+      "pinyin": "wǒ jiàn yì xiān zhí xíng zhè gè fāng àn tā de chéng běn bù gāo xiào guó yé hén hǎo bú guò wó bǎo liú zì jǐ de yì jiàn",
+      "meaningVi": "Tôi đề nghị thực hiện phương án này trước. Chi phí không cao, hiệu quả cũng tốt. Nhưng tôi giữ ý kiến của mình.",
+      "syllables": 31,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我建议先执行这个方案",
+          "pinyin": "wǒ jiàn yì xiān zhí xíng zhè gè fāng àn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "它的成本不高",
+          "pinyin": "tā de chéng běn bù gāo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "效果也很好",
+          "pinyin": "xiào guó yé hén hǎo",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "不过我保留自己的意见",
+          "pinyin": "bú guò wó bǎo liú zì jǐ de yì jiàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: guǒ yě → guó yé; yě hěn → yé hén; hěn hǎo → hén hǎo; wǒ bǎo → wó bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "建议, 方案, 成本, 效果, 保留 là từ của bài.",
+        "Ngắt hơi nhẹ trước 不过."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        1,
+        2,
+        2,
+        4,
+        4,
+        1,
+        4,
+        1,
+        5,
+        2,
+        3,
+        4,
+        1,
+        4,
+        3,
+        3,
+        3,
+        3,
+        2,
+        4,
+        3,
+        3,
+        2,
+        4,
+        3,
+        5,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          1,
+          2,
+          2,
+          4,
+          4,
+          1,
+          4,
+          1,
+          5,
+          2,
+          3,
+          4,
+          1,
+          4,
+          2,
+          2,
+          2,
+          3,
+          2,
+          4,
+          2,
+          3,
+          2,
+          4,
+          3,
+          5,
+          4,
+          4
+        ],
+        [
+          3,
+          4,
+          4,
+          1,
+          2,
+          2,
+          4,
+          4,
+          1,
+          4,
+          1,
+          5,
+          2,
+          3,
+          4,
+          1,
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          4,
+          3,
+          3,
+          2,
+          4,
+          3,
+          5,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: guǒ yě → guó yé; yě hěn → yé hén; hěn hǎo → hén hǎo; wǒ bǎo → wó bǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-1-2-2-4-4-1-4-1-5-2-3-4-1-4-2-2-2-3-2-4-2-3-2-4-3-5-4-4 lẫn 3-4-4-1-2-2-4-4-1-4-1-5-2-3-4-1-4-3-3-3-3-2-4-3-3-2-4-3-5-4-4."
+    }
+  ]
+}

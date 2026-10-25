@@ -1,0 +1,121 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk1-practical-4-d1",
+  "level": "HSK1-2",
+  "title": "Gia đình và số người",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-125",
+      "level": "HSK1-2",
+      "hanzi": "我家有四口人。",
+      "pinyin": "wǒ jiā yǒu sì kǒu rén",
+      "meaningVi": "Nhà tôi có bốn người.",
+      "focus": [
+        "四 sì và 十 shí dễ lẫn.",
+        "口 kǒu là lượng từ đếm người trong nhà."
+      ]
+    },
+    {
+      "id": "dt-1-126",
+      "level": "HSK1-2",
+      "hanzi": "我有爸爸和妈妈。",
+      "pinyin": "wó yǒu bà ba hé mā ma",
+      "meaningVi": "Tôi có bố và mẹ.",
+      "focus": [
+        "Biến điệu 3+3: wǒ yǒu → wó yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "爸爸 bà ba; 妈妈 mā ma: chữ hai nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        5,
+        2,
+        1,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          5,
+          2,
+          1,
+          5
+        ],
+        [
+          3,
+          3,
+          4,
+          5,
+          2,
+          1,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ yǒu → wó yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-5-2-1-5 lẫn 3-3-4-5-2-1-5."
+    },
+    {
+      "id": "dt-1-127",
+      "level": "HSK1-2",
+      "hanzi": "哥哥在家。",
+      "pinyin": "gē ge zài jiā",
+      "meaningVi": "Anh trai ở nhà.",
+      "focus": [
+        "哥哥 gē ge: chữ hai nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-128",
+      "level": "HSK1-2",
+      "hanzi": "姐姐有电话。",
+      "pinyin": "jiě jie yǒu diàn huà",
+      "meaningVi": "Chị gái có điện thoại.",
+      "focus": [
+        "姐姐 jiě jie: chữ hai nhẹ."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-27",
+      "level": "HSK1-2",
+      "text": "我家有四口人：爸爸、妈妈、哥哥和我。",
+      "pinyin": "wǒ jiā yǒu sì kǒu rén bà ba mā ma gē ge hé wǒ",
+      "meaningVi": "Nhà tôi có bốn người: bố, mẹ, anh trai và tôi.",
+      "syllables": 14,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我家有四口人",
+          "pinyin": "wǒ jiā yǒu sì kǒu rén",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "爸爸",
+          "pinyin": "bà ba",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "妈妈",
+          "pinyin": "mā ma",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "哥哥和我",
+          "pinyin": "gē ge hé wǒ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Giữ nhẹ các chữ thứ hai của 爸爸, 妈妈, 哥哥.",
+        "Ngắt hơi sau dấu hai chấm và dấu phẩy."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk5-practical-1-d1",
+  "level": "HSK5-6",
+  "title": "Giới thiệu năng lực và mục tiêu công việc",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-3-101",
+      "level": "HSK5-6",
+      "hanzi": "我负责这个项目，有三年经验。",
+      "pinyin": "wǒ fù zé zhè ge xiàng mù yǒu sān nián jīng yàn",
+      "meaningVi": "Tôi phụ trách dự án này, có ba năm kinh nghiệm.",
+      "focus": [
+        "负责 fù zé: 责 thanh 2.",
+        "经验 jīng yàn: 验 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-102",
+      "level": "HSK5-6",
+      "hanzi": "我的优势是适应能力比较强。",
+      "pinyin": "wǒ de yōu shì shì shì yìng néng lì bǐ jiào qiáng",
+      "meaningVi": "Điểm mạnh của tôi là khả năng thích nghi khá tốt.",
+      "focus": [
+        "优势 yōu shì: 势 cuộn lưỡi.",
+        "适应 shì yìng: 应 đọc yìng."
+      ]
+    },
+    {
+      "id": "dt-3-103",
+      "level": "HSK5-6",
+      "hanzi": "我今年的目标是提高中文水平。",
+      "pinyin": "wǒ jīn nián de mù biāo shì tí gāo zhōng wén shuǐ píng",
+      "meaningVi": "Mục tiêu năm nay của tôi là nâng cao trình độ tiếng Trung.",
+      "focus": [
+        "目标 mù biāo: 标 thanh 1.",
+        "提高 tí gāo: 提 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-3-104",
+      "level": "HSK5-6",
+      "hanzi": "请你具体说一下。",
+      "pinyin": "qíng nǐ jù tǐ shuō yí xià",
+      "meaningVi": "Xin bạn nói cụ thể một chút.",
+      "focus": [
+        "Biến điệu 3+3: qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "具体 jù tǐ: 体 thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        3,
+        1,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          3,
+          1,
+          2,
+          4
+        ],
+        [
+          3,
+          3,
+          4,
+          3,
+          1,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-3-1-2-4 lẫn 3-3-4-3-1-2-4."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-3-21",
+      "level": "HSK5-6",
+      "text": "我负责这个项目，已经有三年经验。我的优势是适应能力比较强，今年的目标是提高中文水平。",
+      "pinyin": "wǒ fù zé zhè ge xiàng mù yǐ jīng yǒu sān nián jīng yàn wǒ de yōu shì shì shì yìng néng lì bǐ jiào qiáng jīn nián de mù biāo shì tí gāo zhōng wén shuǐ píng",
+      "meaningVi": "Tôi phụ trách dự án này, đã có ba năm kinh nghiệm. Điểm mạnh của tôi là khả năng thích nghi khá tốt, mục tiêu năm nay là nâng cao trình độ tiếng Trung.",
+      "syllables": 38,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我负责这个项目",
+          "pinyin": "wǒ fù zé zhè ge xiàng mù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "已经有三年经验",
+          "pinyin": "yǐ jīng yǒu sān nián jīng yàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我的优势是适应能力比较强",
+          "pinyin": "wǒ de yōu shì shì shì yìng néng lì bǐ jiào qiáng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "今年的目标是提高中文水平",
+          "pinyin": "jīn nián de mù biāo shì tí gāo zhōng wén shuǐ píng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "负责, 经验, 优势, 适应, 目标 đều là từ của bài.",
+        "Giữ nhịp chậm ở 经验 và 适应."
+      ]
+    }
+  ]
+}
