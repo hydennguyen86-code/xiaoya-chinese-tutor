@@ -60,6 +60,22 @@
       "exampleVi": "Giá này chưa bao gồm điện nước.",
       "pinyin": "bāo hán",
       "examplePinyin": "zhè ge jià gé bù bāo hán shuǐ diàn fèi 。"
+    },
+    {
+      "word": "水表",
+      "meaning": "đồng hồ nước",
+      "example": "请把水表的数字写下来。",
+      "exampleVi": "Xin ghi lại số trên đồng hồ nước.",
+      "pinyin": "shuǐ biǎo",
+      "examplePinyin": "qǐng bǎ shuǐ biǎo de shù zì xiě xià lái 。"
+    },
+    {
+      "word": "交接",
+      "meaning": "bàn giao",
+      "example": "我们周六交接房子。",
+      "exampleVi": "Thứ Bảy chúng ta bàn giao nhà.",
+      "pinyin": "jiāo jiē",
+      "examplePinyin": "wǒ men zhōu liù jiāo jiē fáng zi 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Thuê nhà; buổi 2 bàn giao nhà và đối chiếu khoản phí. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: bàn giao nhà, đối chiếu tiền cọc với tình trạng nhà và hóa đơn điện nước.",
     "avatarRole": "Chủ nhà",
-    "learnerRole": "Người thuê nhà",
+    "learnerRole": "Người thuê bàn giao nhà",
     "goals": [
-      "Hỏi rõ khoản bao gồm và chưa bao gồm",
-      "Xác nhận một điều kiện cần ghi bằng văn bản"
+      "Đối chiếu từng khoản trước khi trả cọc",
+      "Xác nhận ai kiểm tra gì và khi nào có kết quả"
     ],
-    "opening": "你看中了这套房子，签约前还想确认哪些条件？",
-    "openingVi": "Bạn đã ưng căn nhà này; trước khi ký còn muốn xác nhận điều kiện nào?"
+    "opening": "我们今天先看房屋状况，再算押金，可以吗？",
+    "openingVi": "Hôm nay chúng ta xem tình trạng nhà trước, rồi tính tiền cọc, được không?"
   },
   "freeTalk": {
-    "question": "租房时，价格和沟通透明度哪个更重要？请说明取舍。",
-    "questionVi": "Khi thuê nhà, giá hay sự minh bạch trong trao đổi quan trọng hơn? Xin giải thích sự đánh đổi."
+    "question": "退租时，押金应该先退还是先检查？请说明你的做法。",
+    "questionVi": "Khi trả nhà, nên trả cọc trước hay kiểm tra trước? Xin trình bày cách làm của bạn."
   },
   "learningNotes": [
     "Các điều khoản trong bài là tình huống giả định để luyện tiếng, không phải quy định thuê nhà áp dụng cho mọi nơi."
@@ -153,7 +169,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "押金是多少？ 租金包括网络费吗？ 我们先看一下合同。 空调需要维修。",
+      "text": "除了租金以外，水电费也要核对。如果空调有损坏，由谁负责维修？我们先把房屋状况拍照，再请把水表的数字写下来。押金结算需要等账单出来。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -165,8 +181,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "租房时，价格和沟通透明度哪个更重要？请说明取舍。",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "退租时，押金应该先退还是先检查？请说明你的做法。",
+      "promptVi": "Khi trả nhà, nên trả cọc trước hay kiểm tra trước? Xin trình bày cách làm của bạn.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -175,9 +191,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "租房时，我会先确定自己能承担的价格范围，再比较沟通是否透明。低租金如果伴随许多没有说明的费用，最后可能并不便宜。我会询问水电、押金和维修责任，并要求写清楚。当然，透明也不代表价格一定合理，还要比较位置和房屋状况。对我来说，负担得起和条件清楚应该同时满足。",
-      "sampleVi": "Khi thuê nhà tôi xác định khoảng giá chịu được trước rồi so độ minh bạch. Tiền thuê thấp nhưng nhiều phí không nói rõ chưa chắc rẻ. Tôi hỏi điện nước, cọc và trách nhiệm sửa chữa, xin ghi rõ. Minh bạch không đồng nghĩa giá hợp lý, còn phải xét vị trí và tình trạng. Với tôi cả khả năng chi trả lẫn điều kiện rõ đều cần có."
+      "sampleZh": "我认为应该先检查、再结算，但检查不能拖太久。做法是：交接当天一起看房屋状况，拍照记录；当场确认哪些是正常使用，哪些需要维修；水电账单出来后，按合同扣费，剩余部分在约定期限内退回。这样对双方都公平，因为房东有证据，租客也知道钱花在哪里。如果检查发现问题，应该先给维修报价，而不是直接从押金里扣一个数。关键是把时间和标准提前写清楚。",
+      "sampleVi": "Tôi cho rằng nên kiểm tra trước rồi mới quyết toán, nhưng kiểm tra không nên kéo dài. Cách làm là: ngày bàn giao cùng xem tình trạng nhà, chụp ảnh; tại chỗ xác nhận đâu là hao mòn bình thường, đâu cần sửa; sau khi có hóa đơn điện nước, trừ theo hợp đồng và hoàn phần còn lại trong thời hạn đã thỏa thuận. Như vậy công bằng cho cả hai bên vì chủ nhà có bằng chứng, người thuê biết tiền được trừ vào việc gì. Nếu phát hiện hư hỏng, nên đưa báo giá sửa trước thay vì trừ một con số từ tiền cọc. Điều quan trọng là ghi rõ thời gian và tiêu chí ngay từ đầu."
     }
   ],
-  "transferTask": "Thuê nhà; buổi 2 bàn giao nhà và đối chiếu khoản phí."
+  "transferTask": "Bàn giao nhà: đối chiếu cọc với tình trạng nhà và hóa đơn, xác nhận ai làm gì, khi nào có kết quả và khoản nào cần ghi bằng văn bản."
 }

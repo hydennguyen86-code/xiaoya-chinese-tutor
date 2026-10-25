@@ -60,6 +60,22 @@
       "exampleVi": "Tôi thích cái này.",
       "pinyin": "xǐ huan",
       "examplePinyin": "wǒ xǐ huan zhè ge 。"
+    },
+    {
+      "word": "杯子",
+      "meaning": "cái cốc",
+      "example": "这个杯子太小。",
+      "exampleVi": "Cái cốc này nhỏ quá.",
+      "pinyin": "bēi zi",
+      "examplePinyin": "zhè ge bēi zi tài xiǎo 。"
+    },
+    {
+      "word": "太",
+      "meaning": "quá",
+      "example": "这个太大了。",
+      "exampleVi": "Cái này to quá.",
+      "pinyin": "tài",
+      "examplePinyin": "zhè ge tài dà le 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Mua cốc; buổi 2 chọn giữa hai món có giá khác nhau. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: chọn giữa hai món có giá khác nhau; so giá, chọn một món và nói kích thước.",
     "avatarRole": "Người bán hàng",
     "learnerRole": "Người mua",
     "goals": [
-      "Hỏi giá hai lựa chọn",
-      "Chọn một món và nói yêu cầu về kích thước"
+      "Hỏi giá hai món",
+      "Chọn một món và nói muốn to hay nhỏ hơn"
     ],
-    "opening": "你好，你想买什么？",
-    "openingVi": "Chào bạn, bạn muốn mua gì?"
+    "opening": "你好，这个杯子二十块，那个十块。",
+    "openingVi": "Chào bạn, cái cốc này hai mươi đồng, cái kia mười đồng."
   },
   "freeTalk": {
-    "question": "请比较两个东西的价格，再选一个。",
-    "questionVi": "Xin so giá hai món đồ rồi chọn một."
+    "question": "请比较两个杯子的价格，选一个，再说要大一点还是小一点。",
+    "questionVi": "Hãy so giá hai cái cốc, chọn một cái, rồi nói muốn to hơn hay nhỏ hơn."
   },
   "learningNotes": [
     "Bổ trợ: 杯子 bēizi — cái cốc; 二十 èrshí — hai mươi; 太……了 tài...le — quá.",
@@ -136,18 +152,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "我想买这个。 这个多少钱？",
+      "reference": "这个杯子二十块。那个杯子十块。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "我想买这个。 这个多少钱？"
+      "audioText": "这个杯子二十块。那个杯子十块。"
     },
     {
       "kind": "answer",
-      "prompt": "请比较两个东西的价格，再选一个。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请比较两个杯子的价格，选一个，再说要大一点还是小一点。",
+      "promptVi": "Hãy so giá hai cái cốc, chọn một cái, rồi nói muốn to hơn hay nhỏ hơn.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -156,9 +172,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "这个多少钱？那个呢？我要那个。",
-      "sampleVi": "Cái này bao nhiêu tiền? Còn cái kia? Tôi lấy cái kia."
+      "sampleZh": "这个杯子太小。我要那个大一点儿的。那个多少钱？",
+      "sampleVi": "Cái cốc này nhỏ quá. Tôi lấy cái kia to hơn. Cái kia bao nhiêu tiền?"
     }
   ],
-  "transferTask": "Mua cốc; buổi 2 chọn giữa hai món có giá khác nhau."
+  "transferTask": "Ở cửa hàng: hỏi giá hai món, so sánh, chọn một món và nói muốn to hơn hay nhỏ hơn."
 }

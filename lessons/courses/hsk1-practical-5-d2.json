@@ -60,6 +60,22 @@
       "exampleVi": "Chúng ta gặp lúc hai giờ.",
       "pinyin": "jiàn miàn",
       "examplePinyin": "wǒ men liǎng diǎn jiàn miàn 。"
+    },
+    {
+      "word": "时间",
+      "meaning": "thời gian",
+      "example": "你明天有时间吗？",
+      "exampleVi": "Ngày mai bạn có thời gian không?",
+      "pinyin": "shí jiān",
+      "examplePinyin": "nǐ míng tiān yǒu shí jiān ma ？"
+    },
+    {
+      "word": "可以",
+      "meaning": "được; có thể",
+      "example": "我们三点见面，可以吗？",
+      "exampleVi": "Chúng ta gặp lúc ba giờ, được không?",
+      "pinyin": "kě yǐ",
+      "examplePinyin": "wǒ men sān diǎn jiàn miàn ， kě yǐ ma ？"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Hẹn bạn học; buổi 2 sửa lại lịch hẹn ở quán nước. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Người bạn",
-    "learnerRole": "Người hẹn gặp",
+    "setting": "Buổi 2: đổi lịch hẹn ở quán nước vì bận; thống nhất ngày, giờ mới và xác nhận lại.",
+    "avatarRole": "Bạn học",
+    "learnerRole": "Người đổi lịch hẹn",
     "goals": [
-      "Đề xuất ngày và giờ gặp",
-      "Đọc lại lịch hẹn để xác nhận"
+      "Đề xuất ngày giờ mới",
+      "Đọc lại lịch hẹn mới để xác nhận"
     ],
-    "opening": "你明天下午有时间吗？",
-    "openingVi": "Chiều mai bạn có thời gian không?"
+    "opening": "我们明天下午见面，可以吗？",
+    "openingVi": "Chiều mai chúng ta gặp nhau, được không?"
   },
   "freeTalk": {
-    "question": "请约一个见面时间，再确认一次。",
-    "questionVi": "Xin hẹn một thời gian gặp rồi xác nhận lại một lần."
+    "question": "请把见面改到明天上午，再确认一次。",
+    "questionVi": "Hãy đổi buổi gặp sang sáng mai, rồi xác nhận lại một lần."
   },
   "learningNotes": [
     "Bổ trợ: 现在 xiànzài — bây giờ; 时间 shíjiān — thời gian; 可以 kěyǐ — được/có thể.",
@@ -135,18 +151,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "今天我有时间。 明天我们见面。",
+      "reference": "我们明天上午见面。你有时间吗？",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "今天我有时间。 明天我们见面。"
+      "audioText": "我们明天上午见面。你有时间吗？"
     },
     {
       "kind": "answer",
-      "prompt": "请约一个见面时间，再确认一次。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请把见面改到明天上午，再确认一次。",
+      "promptVi": "Hãy đổi buổi gặp sang sáng mai, rồi xác nhận lại một lần.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -155,9 +171,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我们明天下午两点见面，好吗？是明天下午两点，对吗？",
-      "sampleVi": "Mai chúng ta gặp lúc hai giờ chiều nhé? Là hai giờ chiều mai, đúng không?"
+      "sampleZh": "明天上午我有时间。我们十点见面。你有时间吗？",
+      "sampleVi": "Sáng mai tôi có thời gian. Chúng ta gặp lúc mười giờ. Bạn có thời gian không?"
     }
   ],
-  "transferTask": "Hẹn bạn học; buổi 2 sửa lại lịch hẹn ở quán nước."
+  "transferTask": "Ở quán nước: đổi lịch hẹn sang ngày/giờ khác, đọc lại lịch mới và hỏi đối phương có thời gian không."
 }

@@ -43,7 +43,7 @@
       "example": "我晚上学习中文。",
       "exampleVi": "Tôi học tiếng Trung buổi tối.",
       "pinyin": "xué xí",
-      "examplePinyin": "wǒ wǎn shàng xué xí zhōng wén 。"
+      "examplePinyin": "wǒ wǎn shang xué xí zhōng wén 。"
     },
     {
       "word": "回家",
@@ -60,6 +60,22 @@
       "exampleVi": "Tôi ngủ lúc mười giờ.",
       "pinyin": "shuì jiào",
       "examplePinyin": "wǒ shí diǎn shuì jiào 。"
+    },
+    {
+      "word": "晚上",
+      "meaning": "buổi tối",
+      "example": "晚上我学习。",
+      "exampleVi": "Buổi tối tôi học.",
+      "pinyin": "wǎn shang",
+      "examplePinyin": "wǎn shang wǒ xué xí 。"
+    },
+    {
+      "word": "中文",
+      "meaning": "tiếng Trung",
+      "example": "我学习中文。",
+      "exampleVi": "Tôi học tiếng Trung.",
+      "pinyin": "zhōng wén",
+      "examplePinyin": "wǒ xué xí zhōng wén 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Chia sẻ lịch cá nhân; buổi 2 thay lịch làm việc bằng lịch học/ngày nghỉ. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Người bạn",
-    "learnerRole": "Người kể lịch",
+    "setting": "Buổi 2: kể lịch một ngày nghỉ, thay cho lịch làm việc của buổi 1.",
+    "avatarRole": "Bạn học",
+    "learnerRole": "Người kể lịch ngày nghỉ",
     "goals": [
-      "Kể hai hoạt động kèm thời gian",
-      "Hỏi một thời điểm trong lịch của bạn"
+      "Kể hai hoạt động trong ngày nghỉ kèm giờ",
+      "Hỏi giờ một hoạt động của bạn học"
     ],
-    "opening": "你每天几点起床？",
-    "openingVi": "Bạn thức dậy lúc mấy giờ mỗi ngày?"
+    "opening": "今天你几点起床？",
+    "openingVi": "Hôm nay bạn thức dậy lúc mấy giờ?"
   },
   "freeTalk": {
-    "question": "请说两个活动和时间，再问对方一个问题。",
-    "questionVi": "Xin nói hai hoạt động cùng thời gian, rồi hỏi người đối thoại một câu."
+    "question": "请说今天上午和晚上做什么，再问对方几点睡觉。",
+    "questionVi": "Hãy nói sáng nay và tối nay bạn làm gì, rồi hỏi người đối diện mấy giờ đi ngủ."
   },
   "learningNotes": [
     "Bổ trợ: 晚上 wǎnshang — buổi tối; 中文 Zhōngwén — tiếng Trung.",
@@ -135,18 +151,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "我每天学习。 我七点起床。",
+      "reference": "今天我八点起床。晚上我学习中文。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "我每天学习。 我七点起床。"
+      "audioText": "今天我八点起床。晚上我学习中文。"
     },
     {
       "kind": "answer",
-      "prompt": "请说两个活动和时间，再问对方一个问题。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请说今天上午和晚上做什么，再问对方几点睡觉。",
+      "promptVi": "Hãy nói sáng nay và tối nay bạn làm gì, rồi hỏi người đối diện mấy giờ đi ngủ.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -155,9 +171,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我七点起床，六点回家。你几点回家？",
-      "sampleVi": "Tôi thức dậy lúc bảy giờ, về nhà lúc sáu giờ. Bạn về nhà lúc mấy giờ?"
+      "sampleZh": "今天我九点起床。上午我学习，晚上我回家。你几点睡觉？",
+      "sampleVi": "Hôm nay tôi dậy lúc chín giờ. Buổi sáng tôi học, buổi tối tôi về nhà. Bạn ngủ lúc mấy giờ?"
     }
   ],
-  "transferTask": "Chia sẻ lịch cá nhân; buổi 2 thay lịch làm việc bằng lịch học/ngày nghỉ."
+  "transferTask": "Kể lịch ngày nghỉ: hai hoạt động kèm giờ, rồi hỏi lại một mốc giờ của bạn học."
 }

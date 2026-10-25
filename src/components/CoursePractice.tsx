@@ -1,3 +1,4 @@
+import { HanViet } from './HanViet';
 import { ShadowingPractice } from './ShadowingPractice';
 import { DictationPractice } from './DictationPractice';
 import { SoundListening } from './SoundListening';
@@ -80,6 +81,7 @@ export function CoursePractice(props: Props) {
           <ListeningCard
             key={`${prefix}:l${index}`}
             exercise={exercise}
+            glossary={checkpoint ? content.checkpoint?.glossary : undefined}
             storageKey={`${prefix}:l${index}`}
             voice={props.voice}
             onBusy={props.onBusy}
@@ -99,12 +101,14 @@ export function CoursePractice(props: Props) {
   );
 }
 function ListeningCard({
+  glossary,
   exercise,
   storageKey,
   voice,
   onBusy,
 }: {
   exercise: ListeningExercise;
+  glossary?: Array<{ word: string; pinyin: string; meaningVi: string; note?: string }>;
   storageKey: string;
   voice: string;
   onBusy: (busy: boolean) => void;
@@ -192,6 +196,20 @@ function ListeningCard({
             {exercise.pinyin && <p>{exercise.pinyin}</p>}
             <p>{exercise.translation}</p>
           </details>
+          {glossary?.length && (
+            <details>
+              <summary>Từ chú giải để ôn · AI soạn, chưa duyệt</summary>
+              {glossary.map((w) => (
+                <div key={w.word}>
+                  <p>
+                    {w.word} · {w.pinyin} · {w.meaningVi}
+                  </p>
+                  <HanViet word={w.word} />
+                  {w.note && <p>{w.note}</p>}
+                </div>
+              ))}
+            </details>
+          )}
           <button
             type="button"
             className="lesson-secondary"
@@ -313,6 +331,7 @@ function SpeakingCard({
       {reveal && (
         <>
           <p>{exercise.reference}</p>
+          {exercise.pinyin && <p>{exercise.pinyin}</p>}
           {exercise.sampleZh && (
             <>
               <p lang="zh">{exercise.sampleZh}</p>

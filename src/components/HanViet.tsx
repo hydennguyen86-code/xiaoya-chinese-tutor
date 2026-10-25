@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { hanVietParts, hanVietText, wordTraps, hanVietBank } from '../lib/hanviet';
-export function HanViet({ word, showTips = true }: { word: string; showTips?: boolean }) {
+export function HanViet({ word, showTips = true, compact = false }: { word: string; showTips?: boolean; compact?: boolean }) {
   const parts = hanVietParts(word);
   if (!parts.length) return null;
+  if (compact)
+    return (
+      <span className="hanviet" title="Unihan kVietnamese, âm theo chữ; không thay pinyin">
+        Hán Việt: {hanVietText(word)}
+      </span>
+    );
   const traps = showTips ? wordTraps(word) : [];
   return (
     <div className="hanviet">

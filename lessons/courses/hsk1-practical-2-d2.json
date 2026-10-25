@@ -19,7 +19,7 @@
       "example": "我是学生。",
       "exampleVi": "Tôi là học sinh.",
       "pinyin": "wǒ",
-      "examplePinyin": "wǒ shì xué shēng 。"
+      "examplePinyin": "wǒ shì xué sheng 。"
     },
     {
       "word": "你",
@@ -42,8 +42,8 @@
       "meaning": "tên",
       "example": "你的名字是什么？",
       "exampleVi": "Tên của bạn là gì?",
-      "pinyin": "míng zì",
-      "examplePinyin": "nǐ de míng zì shì shén me ？"
+      "pinyin": "míng zi",
+      "examplePinyin": "nǐ de míng zi shì shén me ？"
     },
     {
       "word": "是",
@@ -60,6 +60,22 @@
       "exampleVi": "Anh ấy là người Trung Quốc.",
       "pinyin": "rén",
       "examplePinyin": "tā shì zhōng guó rén 。"
+    },
+    {
+      "word": "不客气",
+      "meaning": "đừng khách sáo",
+      "example": "不客气。",
+      "exampleVi": "Đừng khách sáo.",
+      "pinyin": "bú kè qi",
+      "examplePinyin": "bú kè qi 。"
+    },
+    {
+      "word": "也",
+      "meaning": "cũng",
+      "example": "我也是越南人。",
+      "exampleVi": "Tôi cũng là người Việt Nam.",
+      "pinyin": "yě",
+      "examplePinyin": "wǒ yě shì yuè nán rén 。"
     }
   ],
   "patterns": [
@@ -75,23 +91,23 @@
       "explanation": "Câu hỏi tên có từ hỏi 什么 nên không thêm 吗.",
       "example": "你叫什么名字？",
       "exampleVi": "Bạn tên gì?",
-      "examplePinyin": "nǐ jiào shén me míng zì ？"
+      "examplePinyin": "nǐ jiào shén me míng zi ？"
     }
   ],
   "roleplay": {
-    "setting": "Làm quen với bạn học; buổi 2 xác nhận lại tên ở quầy đăng ký. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Người đăng ký",
-    "learnerRole": "Người giới thiệu",
+    "setting": "Buổi 2: xác nhận tên và quốc tịch ở quầy đăng ký; nghe nhân viên đọc lại tên và sửa nếu sai.",
+    "avatarRole": "Nhân viên quầy đăng ký",
+    "learnerRole": "Người xác nhận thông tin",
     "goals": [
       "Nói tên và quốc tịch của mình",
-      "Hỏi tên người đối thoại"
+      "Nghe lại tên và sửa một thông tin sai"
     ],
-    "opening": "你好，你叫什么名字？",
-    "openingVi": "Chào bạn, bạn tên gì?"
+    "opening": "你好，请说你的名字。",
+    "openingVi": "Chào bạn, xin nói tên của bạn."
   },
   "freeTalk": {
-    "question": "请说你的名字和你是哪国人。",
-    "questionVi": "Xin nói tên của bạn và bạn là người nước nào."
+    "question": "请确认你的名字，再问对方叫什么。",
+    "questionVi": "Hãy xác nhận tên của bạn, rồi hỏi tên người đối diện."
   },
   "learningNotes": [
     "Cụm bổ trợ: 越南 Yuènán — Việt Nam; 中国 Zhōngguó — Trung Quốc; 不 bù — không.",
@@ -136,18 +152,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "我是学生。 你是老师吗？",
+      "reference": "我叫小安。我是越南人。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "我是学生。 你是老师吗？"
+      "audioText": "我叫小安。我是越南人。"
     },
     {
       "kind": "answer",
-      "prompt": "请说你的名字和你是哪国人。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请确认你的名字，再问对方叫什么。",
+      "promptVi": "Hãy xác nhận tên của bạn, rồi hỏi tên người đối diện.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -156,9 +172,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我叫小安。我是越南人。你叫什么名字？",
-      "sampleVi": "Tôi tên Tiểu An. Tôi là người Việt Nam. Bạn tên gì?"
+      "sampleZh": "你好，我叫小安，我也是越南人。你叫什么名字？",
+      "sampleVi": "Chào bạn, tôi tên Tiểu An, tôi cũng là người Việt Nam. Bạn tên gì?"
     }
   ],
-  "transferTask": "Làm quen với bạn học; buổi 2 xác nhận lại tên ở quầy đăng ký."
+  "transferTask": "Ở quầy đăng ký: nói tên và quốc tịch, nghe lại rồi xác nhận; nếu tên bị đọc sai thì sửa bằng 我叫……, và đáp 不客气 khi được giúp."
 }

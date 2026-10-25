@@ -60,6 +60,22 @@
       "exampleVi": "Tôi đã giữ chứng từ thanh toán.",
       "pinyin": "píng zhèng",
       "examplePinyin": "wǒ bǎo liú le fù kuǎn píng zhèng 。"
+    },
+    {
+      "word": "运单",
+      "meaning": "vận đơn",
+      "example": "请把运单号发给我。",
+      "exampleVi": "Xin gửi cho tôi mã vận đơn.",
+      "pinyin": "yùn dān",
+      "examplePinyin": "qǐng bǎ yùn dān hào fā gěi wǒ 。"
+    },
+    {
+      "word": "时效",
+      "meaning": "thời hạn giao; tốc độ đúng hạn",
+      "example": "这个时效我们不能接受。",
+      "exampleVi": "Thời hạn giao này chúng tôi không thể chấp nhận.",
+      "pinyin": "shí xiào",
+      "examplePinyin": "zhè ge shí xiào wǒ men bù néng jiē shòu 。"
     }
   ],
   "patterns": [
@@ -79,20 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Sản phẩm hỏng; buổi 2 giao trễ, không dùng nguyên lời khiếu nại sản phẩm. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: khiếu nại một đơn giao trễ; đề xuất đổi khung giờ và xin xác nhận bằng tin nhắn.",
     "avatarRole": "Nhân viên dịch vụ",
-    "learnerRole": "Người khiếu nại",
+    "learnerRole": "Người khiếu nại giao trễ",
     "goals": [
-      "Nêu sự việc và bằng chứng mà không công kích",
-      "Đề xuất giải pháp phù hợp nhu cầu",
-      "Chốt thời gian và cách xác nhận"
+      "Nêu sự việc, tác động và yêu cầu cụ thể",
+      "Chốt khung giờ mới và cách xác nhận"
     ],
-    "opening": "请说明发生了什么问题，以及你希望我们怎样处理。",
-    "openingVi": "Xin nói rõ đã xảy ra vấn đề gì và bạn mong chúng tôi xử lý ra sao."
+    "opening": "订单说上午送到，现在还没有到，是什么情况？",
+    "openingVi": "Đơn hàng nói giao buổi sáng, giờ vẫn chưa đến, chuyện gì vậy?"
   },
   "freeTalk": {
-    "question": "服务出问题时，怎样表达不满才更容易解决问题？",
-    "questionVi": "Khi dịch vụ có vấn đề, bày tỏ bất mãn thế nào để dễ giải quyết hơn?"
+    "question": "道歉和补偿，哪一个更能解决服务问题？请说明。",
+    "questionVi": "Xin lỗi và bồi thường, cái nào giải quyết vấn đề dịch vụ tốt hơn? Xin giải thích."
   },
   "learningNotes": [
     "Tách sự kiện, tác động và yêu cầu. Tránh dùng lời quy kết không có bằng chứng."
@@ -155,7 +170,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "我想投诉这次配送服务。 服务没有达到之前的承诺。 请说明退款需要多久。 我希望更换有问题的商品。",
+      "text": "我理解配送有困难，但我希望今天得到一个明确答复。如果不能按原时间送到，是否可以改到明天上午？请把运单号发给我，并确认新的时效。我需要一条确认消息。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -167,8 +182,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "服务出问题时，怎样表达不满才更容易解决问题？",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "道歉和补偿，哪一个更能解决服务问题？请说明。",
+      "promptVi": "Xin lỗi và bồi thường, cái nào giải quyết vấn đề dịch vụ tốt hơn? Xin giải thích.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -177,11 +192,11 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "服务出问题时，我会先说明发生了什么，再讲它对我的影响，最后提出具体要求。例如商品坏了，可以说明问题、提供照片，再询问换货或退款的时间。表达不满并不等于指责对方的人格。当然，态度平和也不代表接受没有结果的拖延。关键是确认谁处理、什么时候回复，以及下一步怎么做。",
-      "sampleVi": "Khi dịch vụ có vấn đề tôi nêu sự việc, ảnh hưởng và yêu cầu cụ thể. Với hàng hỏng, có thể cung cấp ảnh rồi hỏi thời gian đổi hoặc hoàn. Bày tỏ bất mãn không có nghĩa công kích cá nhân. Bình tĩnh cũng không có nghĩa chấp nhận trì hoãn vô hạn. Cần chốt ai xử lý, lúc nào trả lời và bước tiếp theo."
+      "sampleZh": "两者都需要，但顺序很重要。道歉要先有，因为它承认了问题；补偿不能代替道歉，否则像在用钱结束对话。比如配送迟到，我会先说明已经影响到什么，再给两个可选方案：今天晚一点送到，或者明天上午送到并免运费。客户选哪个，就按哪个执行，然后发确认消息。只有道歉没有方案，问题还在；只有补偿没有道歉，客户会觉得不被尊重。所以我先道歉，再补偿，最后确认。",
+      "sampleVi": "Cả hai đều cần, nhưng thứ tự quan trọng. Xin lỗi phải có trước vì nó thừa nhận vấn đề; bồi thường không thể thay lời xin lỗi, nếu không sẽ giống dùng tiền để kết thúc cuộc nói chuyện. Chẳng hạn khi giao hàng trễ, tôi sẽ nói rõ đã ảnh hưởng đến việc gì, rồi đưa hai lựa chọn: hôm nay giao muộn hơn, hoặc sáng mai giao và miễn phí vận chuyển. Khách chọn cách nào thì làm theo cách đó, sau đó gửi tin xác nhận. Chỉ xin lỗi mà không có phương án thì vấn đề vẫn còn; chỉ bồi thường mà không xin lỗi thì khách thấy không được tôn trọng. Vì vậy tôi xin lỗi trước, bồi thường sau, cuối cùng xác nhận."
     }
   ],
-  "transferTask": "Sản phẩm hỏng; buổi 2 giao trễ, không dùng nguyên lời khiếu nại sản phẩm.",
+  "transferTask": "Khiếu nại đơn trễ: nêu sự việc và tác động, đề xuất hai khung giờ, chốt một khung và xin xác nhận bằng tin nhắn.",
   "checkpoint": {
     "title": "Kiểm tra chặng 1 — nghe và nói ứng dụng",
     "practiceMinutes": 20,

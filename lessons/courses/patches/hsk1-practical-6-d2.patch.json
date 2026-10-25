@@ -1,0 +1,71 @@
+{
+  "patchVersion": 1,
+  "target": "lessons/courses/hsk1-practical-6-d2.json",
+  "lesson": "hsk1-practical-6-d2",
+  "reason": "Lỗi 3.2: thêm pinyin cho 2 đoạn nghe và 2 nhiệm vụ nói; thêm chú giải từ khóa để người mới tự kiểm tra phát âm.",
+  "status": "AI đề xuất, chưa có giáo viên duyệt",
+  "reviewed": false,
+  "note": "Chỉ thêm trường mới vào checkpoint; không sửa trường gốc, không đổi official=false.",
+  "ops": [
+    {
+      "op": "add",
+      "path": "/checkpoint/listening/0/pinyin",
+      "source": "/checkpoint/listening/0/transcript",
+      "value": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo lín 。 yǐ ： nǐ shì lǎo shī ma ？ jiǎ ： bú shì ， wǒ shì xué sheng 。 wǒ jiā yǒu sān kǒu rén 。"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/listening/1/pinyin",
+      "source": "/checkpoint/listening/1/transcript",
+      "value": "jiǎ ： nǐ míng tiān xià wǔ yǒu shí jiān ma ？ yǐ ： yǒu ， wǒ men sì diǎn jiàn miàn ba 。 jiǎ ： hǎo 。 nǐ xiǎng hē shén me ？ yǐ ： yì bēi shuǐ ， xiè xie 。"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/speaking/0/pinyin",
+      "source": "/checkpoint/speaking/0/audioText",
+      "value": "xiàn zài shì xià wǔ sì diǎn 。 wǒ men zài xué xiào jiàn miàn 。"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/speaking/1/pinyin",
+      "source": "/checkpoint/speaking/1/reference",
+      "value": "wǒ jiào xiǎo ān 。 wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/glossary",
+      "value": [
+        {
+          "word": "老师",
+          "pinyin": "lǎo shī",
+          "meaningVi": "giáo viên"
+        },
+        {
+          "word": "学生",
+          "pinyin": "xué sheng",
+          "meaningVi": "học sinh; sinh viên"
+        },
+        {
+          "word": "三口人",
+          "pinyin": "sān kǒu rén",
+          "meaningVi": "ba người (trong một gia đình)"
+        },
+        {
+          "word": "下午",
+          "pinyin": "xià wǔ",
+          "meaningVi": "buổi chiều"
+        },
+        {
+          "word": "见面",
+          "pinyin": "jiàn miàn",
+          "meaningVi": "gặp mặt"
+        },
+        {
+          "word": "水",
+          "pinyin": "shuǐ",
+          "meaningVi": "nước"
+        }
+      ]
+    }
+  ]
+}

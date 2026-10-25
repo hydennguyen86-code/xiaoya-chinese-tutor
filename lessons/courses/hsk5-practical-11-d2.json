@@ -60,6 +60,22 @@
       "exampleVi": "Những người khác nhau có thể có lựa chọn khác nhau.",
       "pinyin": "xuǎn zé",
       "examplePinyin": "bù tóng de rén kě néng yǒu bù tóng de xuǎn zé 。"
+    },
+    {
+      "word": "提醒",
+      "meaning": "nhắc nhở",
+      "example": "请每天提醒我一次。",
+      "exampleVi": "Xin nhắc tôi mỗi ngày một lần.",
+      "pinyin": "tí xǐng",
+      "examplePinyin": "qǐng měi tiān tí xǐng wǒ yí cì 。"
+    },
+    {
+      "word": "频率",
+      "meaning": "tần suất",
+      "example": "这个频率太高了。",
+      "exampleVi": "Tần suất này cao quá.",
+      "pinyin": "pín lǜ",
+      "examplePinyin": "zhè ge pín lǜ tài gāo le 。"
     }
   ],
   "patterns": [
@@ -79,20 +95,20 @@
     }
   ],
   "roleplay": {
-    "setting": "Làm việc từ xa; buổi 2 thiết kế nhắc học phù hợp từng người. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: thiết kế nhắc học phù hợp từng người, không dùng một tần suất cho tất cả.",
     "avatarRole": "Người nêu quan điểm khác",
-    "learnerRole": "Người trình bày lập luận",
+    "learnerRole": "Người thiết kế nhắc học",
     "goals": [
-      "Nêu quan điểm và hai lý do hoặc hai mặt",
-      "Đưa một ví dụ và một giới hạn",
-      "Trả lời câu hỏi phản biện mà không đổi chủ đề"
+      "Nêu quan điểm về tần suất nhắc",
+      "Đưa ví dụ cho hai nhóm người học",
+      "Nêu một giới hạn và cách đo"
     ],
-    "opening": "请先表明观点，再给出理由和一个具体例子。",
-    "openingVi": "Xin nêu quan điểm trước, rồi đưa lý do và một ví dụ cụ thể."
+    "opening": "所有学习应用都应该每天提醒用户吗？请说明你的看法。",
+    "openingVi": "Mọi ứng dụng học đều nên nhắc người dùng hằng ngày không? Xin trình bày quan điểm."
   },
   "freeTalk": {
-    "question": "学习工具应该追求让人多用，还是让人用得有效？请解释。",
-    "questionVi": "Công cụ học nên nhắm đến việc khiến người ta dùng nhiều hay dùng hiệu quả? Xin giải thích."
+    "question": "提醒越多，学习效果就越好吗？请说明。",
+    "questionVi": "Nhắc càng nhiều thì hiệu quả học càng tốt sao? Xin giải thích."
   },
   "learningNotes": [
     "Nói 90–120 giây: quan điểm → lý do → ví dụ → giới hạn → kết luận. Không chấm theo việc có cùng quan điểm với gia sư hay không."
@@ -156,7 +172,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "我的观点跟你不完全一样。 请说明你的理由。 我们需要平衡效率和公平。 这个办法也有一定的限制。",
+      "text": "一方面提醒可以帮助新用户养成习惯，另一方面太频繁也会让人反感。我的观点跟你不完全一样。我们需要平衡效率和感受。这个办法也有一定的限制。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -168,8 +184,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "学习工具应该追求让人多用，还是让人用得有效？请解释。",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "提醒越多，学习效果就越好吗？请说明。",
+      "promptVi": "Nhắc càng nhiều thì hiệu quả học càng tốt sao? Xin giải thích.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -178,9 +194,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "我认为学习工具首先应该帮助人有效学习，而不是单纯增加使用时间。打开次数可以说明参与程度，却不能直接证明会用了。比如每天点很多选择题，到了真实对话仍然说不出来，就需要改变练习方式。当然，适当提醒和有趣的设计也有价值，因为坚持很重要。更好的办法是兼顾持续练习和实际任务表现。",
-      "sampleVi": "Tôi cho rằng công cụ học trước hết phải giúp học hiệu quả, không chỉ tăng thời gian dùng. Lượt mở cho biết mức tham gia chứ chưa chứng minh dùng được. Làm nhiều trắc nghiệm nhưng vẫn bí khi hội thoại thì cần đổi bài tập. Nhắc học vừa phải và thiết kế thú vị vẫn có giá trị để duy trì. Nên xét cả sự đều đặn lẫn kết quả nhiệm vụ thật."
+      "sampleZh": "不一定。提醒的作用是降低忘记的概率，但效果取决于时机和内容。对刚开始的人，每天一次、固定在晚上可能有用；对已经有习惯的人，频繁提醒反而会被关掉。一方面要看打开率，另一方面更要看任务完成率和几天后还能不能用出来。我的做法是让用户自己选时间和频率，再用两周数据调整。提醒是工具，不是目标。",
+      "sampleVi": "Không nhất thiết. Tác dụng của nhắc là giảm khả năng quên, nhưng hiệu quả phụ thuộc thời điểm và nội dung. Với người mới, mỗi ngày một lần vào buổi tối có thể hữu ích; với người đã có thói quen, nhắc quá nhiều sẽ bị tắt. Một mặt cần xem tỷ lệ mở, mặt khác quan trọng hơn là tỷ lệ hoàn thành nhiệm vụ và sau vài ngày còn dùng được hay không. Cách tôi làm là để người dùng tự chọn thời gian và tần suất, rồi dùng dữ liệu hai tuần để điều chỉnh. Nhắc chỉ là công cụ, không phải mục tiêu."
     }
   ],
-  "transferTask": "Làm việc từ xa; buổi 2 thiết kế nhắc học phù hợp từng người."
+  "transferTask": "Thiết kế nhắc học cho hai nhóm: nêu quan điểm, ví dụ cho người mới và người đã có thói quen, một giới hạn và cách đo sau hai tuần."
 }

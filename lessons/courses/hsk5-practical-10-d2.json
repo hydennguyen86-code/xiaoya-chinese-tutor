@@ -60,6 +60,22 @@
       "exampleVi": "Sau việc đó, nhìn lại để rút kinh nghiệm hữu ích hơn đổ lỗi cho nhau.",
       "pinyin": "fǎn sī",
       "examplePinyin": "shì hòu fǎn sī bǐ hù xiāng zhǐ zé gèng yǒu yòng 。"
+    },
+    {
+      "word": "复盘",
+      "meaning": "nhìn lại và rút kinh nghiệm",
+      "example": "每周复盘一次学习。",
+      "exampleVi": "Mỗi tuần nhìn lại việc học một lần.",
+      "pinyin": "fù pán",
+      "examplePinyin": "měi zhōu fù pán yí cì xué xí 。"
+    },
+    {
+      "word": "积累",
+      "meaning": "tích lũy",
+      "example": "词汇需要慢慢积累。",
+      "exampleVi": "Từ vựng cần tích lũy dần.",
+      "pinyin": "jī lěi",
+      "examplePinyin": "cí huì xū yào màn màn jī lěi 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Lỗi tổ chức hoạt động; buổi 2 kể việc học ngoại ngữ hoặc trải nghiệm của chính mình. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: kể một trải nghiệm học ngoại ngữ; nêu thay đổi cụ thể sau trải nghiệm.",
     "avatarRole": "Người nghe và hỏi thêm",
-    "learnerRole": "Người kể trải nghiệm",
+    "learnerRole": "Người kể trải nghiệm học ngoại ngữ",
     "goals": [
-      "Kể trải nghiệm có trình tự và nguyên nhân",
-      "Nêu một thay đổi cụ thể sau trải nghiệm"
+      "Kể trải nghiệm theo trình tự và nguyên nhân",
+      "Nêu một thay đổi cụ thể và kết quả"
     ],
-    "opening": "请讲一次你处理失误的经历：发生了什么，你后来怎样改进？",
-    "openingVi": "Xin kể một lần bạn xử lý sai sót: chuyện gì xảy ra và sau đó bạn cải tiến thế nào?"
+    "opening": "请讲一次你学外语时遇到的困难，后来怎样调整？",
+    "openingVi": "Xin kể một lần bạn gặp khó khăn khi học ngoại ngữ và sau đó điều chỉnh thế nào."
   },
   "freeTalk": {
-    "question": "一次不顺利的经历一定是坏事吗？请用例子说明。",
-    "questionVi": "Một trải nghiệm không thuận lợi có nhất thiết là điều xấu không? Xin giải thích bằng ví dụ."
+    "question": "背很多句子和真正会交流，是一回事吗？请用例子说明。",
+    "questionVi": "Học thuộc nhiều câu và thực sự giao tiếp được, có phải một việc không? Xin lấy ví dụ."
   },
   "learningNotes": [
     "Khi nghe kể lại: giữ đúng ai, vấn đề, hành động, kết quả; không tự thêm hậu quả.",
@@ -155,7 +171,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "这次经历让我改变了想法。 我承认这是一次沟通失误。 我意识到自己没有确认时间。 我们需要改进交接方式。",
+      "text": "直到一次真实对话，我才发现背答案不够。这次经历让我意识到练习任务更重要。我承认自己以前没有确认对方的问题。后来我改进了练习方式：每周复盘一次，才能慢慢积累经验。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -167,8 +183,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "一次不顺利的经历一定是坏事吗？请用例子说明。",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "背很多句子和真正会交流，是一回事吗？请用例子说明。",
+      "promptVi": "Học thuộc nhiều câu và thực sự giao tiếp được, có phải một việc không? Xin lấy ví dụ.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -177,9 +193,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "不顺利的经历不一定是坏事，但也不会自动变成收获。重要的是事后有没有分析原因，并改变下一次的做法。比如因为时间没有写清楚而产生误会，以后就应该同时写日期和时间，并请对方确认。当然，有些损失不能靠一句“学到了”来弥补，还需要承担责任。反思只有落实到行动，才真正有用。",
-      "sampleVi": "Trải nghiệm không thuận lợi chưa chắc xấu, nhưng cũng không tự biến thành bài học. Quan trọng là phân tích nguyên nhân rồi đổi cách làm. Ví dụ hiểu nhầm giờ thì sau đó ghi đủ ngày giờ và xin xác nhận. Có thiệt hại không thể bù bằng câu “đã học được”, còn cần chịu trách nhiệm. Suy xét chỉ hữu ích khi thành hành động."
+      "sampleZh": "不是一回事。背句子能帮助发音和熟悉结构，但真实对话里，对方的问题不会按顺序出现。我以前背过一段自我介绍，结果对方问我为什么学中文，我就接不下去。后来我改成练任务：约时间、解释原因、确认信息，每次换一个细节。这样说的句子不总一样，却更能应对变化。背是起点，用才是目标。",
+      "sampleVi": "Không phải một việc. Học thuộc câu giúp phát âm và quen cấu trúc, nhưng trong hội thoại thật, câu hỏi của đối phương không đến theo thứ tự. Trước đây tôi từng thuộc một đoạn tự giới thiệu, nhưng khi đối phương hỏi vì sao học tiếng Trung, tôi không trả lời tiếp được. Sau đó tôi chuyển sang luyện nhiệm vụ: hẹn giờ, giải thích lý do, xác nhận thông tin, mỗi lần đổi một chi tiết. Cách này không nói giống hệt từng câu nhưng ứng phó với thay đổi tốt hơn. Học thuộc là điểm bắt đầu, sử dụng được mới là mục tiêu."
     }
   ],
-  "transferTask": "Lỗi tổ chức hoạt động; buổi 2 kể việc học ngoại ngữ hoặc trải nghiệm của chính mình."
+  "transferTask": "Kể trải nghiệm học ngoại ngữ: bối cảnh, vấn đề, điều chỉnh và kết quả; nêu một thay đổi cụ thể có thể kiểm chứng."
 }

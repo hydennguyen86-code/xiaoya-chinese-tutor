@@ -60,6 +60,22 @@
       "exampleVi": "Xin giải thích phí đổi vé.",
       "pinyin": "fèi yòng",
       "examplePinyin": "qǐng shuō míng gǎi qiān de fèi yòng 。"
+    },
+    {
+      "word": "前台",
+      "meaning": "quầy lễ tân",
+      "example": "请确认前台有人。",
+      "exampleVi": "Xin xác nhận quầy lễ tân có người.",
+      "pinyin": "qián tái",
+      "examplePinyin": "qǐng què rèn qián tái yǒu rén 。"
+    },
+    {
+      "word": "入住",
+      "meaning": "nhận phòng",
+      "example": "我们晚上九点入住。",
+      "exampleVi": "Chúng tôi nhận phòng lúc chín giờ tối.",
+      "pinyin": "rù zhù",
+      "examplePinyin": "wǒ men wǎn shang jiǔ diǎn rù zhù 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Đổi chuyến; buổi 2 xử lý nhận phòng muộn. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: máy bay hạ cánh muộn, xử lý nhận phòng muộn và xác nhận quầy lễ tân.",
     "avatarRole": "Nhân viên hỗ trợ chuyến đi",
-    "learnerRole": "Người có lịch thay đổi",
+    "learnerRole": "Người nhận phòng muộn",
     "goals": [
-      "Nêu mốc giờ quan trọng và giới hạn có thể chấp nhận",
-      "Hỏi phí/điều kiện trước khi đồng ý thay đổi"
+      "Nêu giờ đến thực tế và giới hạn giữ phòng",
+      "Xác nhận nhận phòng muộn, phí và quầy trực"
     ],
-    "opening": "你的行程突然变了，你最需要先确认什么？",
-    "openingVi": "Lịch trình của bạn đột ngột thay đổi; bạn cần xác nhận điều gì trước tiên?"
+    "opening": "酒店房间只能保留到晚上八点，我们九点才到，怎么办？",
+    "openingVi": "Khách sạn chỉ giữ phòng đến tám giờ tối, chín giờ chúng ta mới đến, phải làm sao?"
   },
   "freeTalk": {
-    "question": "出行计划变化时，你怎样比较时间、费用和风险？",
-    "questionVi": "Khi lịch đi lại thay đổi, bạn so sánh thời gian, chi phí và rủi ro thế nào?"
+    "question": "晚到酒店时，你会先确认房间、费用还是交通？为什么？",
+    "questionVi": "Khi đến khách sạn muộn, bạn xác nhận phòng, chi phí hay di chuyển trước? Vì sao?"
   },
   "learningNotes": [
     "Lịch và phí là ví dụ giả định; phân biệt ngày mai/ngày kia và giờ đến/giờ khởi hành."
@@ -154,7 +170,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "我们需要调整行程。 下午的会议取消了。 这张车票可以改签吗？ 我们不想耽误第二天的会议。",
+      "text": "我们原本八点到，现在要改到九点。只要酒店确认保留房间，我就可以接受。这张预订可以改时间吗？我们需要确认前台还有人。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -166,8 +182,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "出行计划变化时，你怎样比较时间、费用和风险？",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "晚到酒店时，你会先确认房间、费用还是交通？为什么？",
+      "promptVi": "Khi đến khách sạn muộn, bạn xác nhận phòng, chi phí hay di chuyển trước? Vì sao?",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -176,9 +192,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "行程变化时，我先找出不能改变的时间，比如会议开始时间，再比较其他选择。如果便宜的方案很容易误事，就不一定划算。我会确认到达时间、额外费用和取消条件，也准备一个备用办法。当然，不是所有风险都能消除，所以最后要选择自己能承担后果的方案，并及时通知受影响的人。",
-      "sampleVi": "Khi đổi lịch tôi xác định mốc không thể thay như giờ họp trước rồi so phương án. Cách rẻ mà dễ lỡ việc chưa chắc đáng chọn. Tôi xác nhận giờ đến, phí thêm, điều kiện hủy và chuẩn bị dự phòng. Không thể xóa mọi rủi ro nên chọn hậu quả mình chịu được, đồng thời báo kịp cho người bị ảnh hưởng."
+      "sampleZh": "我会先确认房间还在不在，再问费用，最后安排交通。原因是房间是这次安排里最难替代的；如果房间被取消，其他两项都要重新计划。确认时我会说清楚到达时间，请酒店回复是否保留，以及晚到有没有额外费用。费用也要问，但不能先谈钱而忘了保留房间。交通放在最后，因为机场到酒店通常还有选择。顺序清楚，沟通就短。",
+      "sampleVi": "Tôi sẽ xác nhận phòng còn hay không trước, rồi hỏi phí, cuối cùng mới sắp xếp di chuyển. Lý do là phòng là thứ khó thay thế nhất trong kế hoạch này; nếu phòng bị hủy, hai việc kia đều phải tính lại. Khi xác nhận, tôi sẽ nói rõ giờ đến, xin khách sạn trả lời có giữ phòng không và đến muộn có phụ phí không. Phí cũng phải hỏi, nhưng không nên bàn tiền trước mà quên giữ phòng. Di chuyển để sau vì từ sân bay đến khách sạn thường còn lựa chọn. Thứ tự rõ ràng thì trao đổi ngắn hơn."
     }
   ],
-  "transferTask": "Đổi chuyến; buổi 2 xử lý nhận phòng muộn."
+  "transferTask": "Nhận phòng muộn: nêu giờ đến, xin xác nhận giữ phòng, hỏi phí và quầy trực; chốt cách liên hệ khi đến."
 }

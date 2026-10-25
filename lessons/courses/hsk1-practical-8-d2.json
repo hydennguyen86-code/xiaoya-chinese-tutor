@@ -42,16 +42,16 @@
       "meaning": "bên trái",
       "example": "学校在左边。",
       "exampleVi": "Trường ở bên trái.",
-      "pinyin": "zuǒ biān",
-      "examplePinyin": "xué xiào zài zuǒ biān 。"
+      "pinyin": "zuǒ bian",
+      "examplePinyin": "xué xiào zài zuǒ bian 。"
     },
     {
       "word": "右边",
       "meaning": "bên phải",
       "example": "商店在右边。",
       "exampleVi": "Cửa hàng ở bên phải.",
-      "pinyin": "yòu biān",
-      "examplePinyin": "shāng diàn zài yòu biān 。"
+      "pinyin": "yòu bian",
+      "examplePinyin": "shāng diàn zài yòu bian 。"
     },
     {
       "word": "走",
@@ -60,6 +60,22 @@
       "exampleVi": "Xin đi thẳng về phía trước.",
       "pinyin": "zǒu",
       "examplePinyin": "qǐng wǎng qián zǒu 。"
+    },
+    {
+      "word": "往",
+      "meaning": "về phía",
+      "example": "请往右走。",
+      "exampleVi": "Xin đi sang phải.",
+      "pinyin": "wǎng",
+      "examplePinyin": "qǐng wǎng yòu zǒu 。"
+    },
+    {
+      "word": "商店",
+      "meaning": "cửa hàng",
+      "example": "商店在学校前面。",
+      "exampleVi": "Cửa hàng ở phía trước trường.",
+      "pinyin": "shāng diàn",
+      "examplePinyin": "shāng diàn zài xué xiào qián miàn 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Hỏi cửa hàng; buổi 2 tìm trường ở một ngã rẽ khác. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: tìm trường ở một ngã rẽ khác; hỏi vị trí, nghe hướng đi và xác nhận lại.",
     "avatarRole": "Người đi đường",
     "learnerRole": "Người hỏi đường",
     "goals": [
-      "Hỏi vị trí một địa điểm",
-      "Xác nhận lại hướng nghe được"
+      "Hỏi trường ở đâu",
+      "Xác nhận đi sang phải hay sang trái"
     ],
-    "opening": "你好，你想去哪里？",
-    "openingVi": "Chào bạn, bạn muốn đi đâu?"
+    "opening": "你好，你在找学校吗？",
+    "openingVi": "Chào bạn, bạn đang tìm trường à?"
   },
   "freeTalk": {
-    "question": "请问一个地方在哪里，再确认方向。",
-    "questionVi": "Xin hỏi một địa điểm ở đâu rồi xác nhận hướng đi."
+    "question": "请在学校门口问商店在哪里，再确认往左还是往右。",
+    "questionVi": "Hãy hỏi ở cổng trường xem cửa hàng ở đâu, rồi xác nhận đi sang trái hay sang phải."
   },
   "learningNotes": [
     "Bổ trợ: 学校 xuéxiào — trường; 商店 shāngdiàn — cửa hàng; 往 wǎng — về phía; 对 duì — đúng.",
@@ -128,7 +144,7 @@
         "explanation": "A nói 往右走."
       }
     ],
-    "pinyin": "jiǎ ： xué xiào zài zuǒ biān ma ？ yǐ ： bú zài zuǒ biān ， zài yòu biān 。 jiǎ ： hǎo ， wǎng yòu zǒu 。 xiè xiè ！"
+    "pinyin": "jiǎ ： xué xiào zài zuǒ bian ma ？ yǐ ： bú zài zuǒ bian ， zài yòu bian 。 jiǎ ： hǎo ， wǎng yòu zǒu 。 xiè xie ！"
   },
   "speaking": [
     {
@@ -136,18 +152,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "老师在学校。 学校在哪里？",
+      "reference": "学校在前面。商店在右边。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "老师在学校。 学校在哪里？"
+      "audioText": "学校在前面。商店在右边。"
     },
     {
       "kind": "answer",
-      "prompt": "请问一个地方在哪里，再确认方向。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请在学校门口问商店在哪里，再确认往左还是往右。",
+      "promptVi": "Hãy hỏi ở cổng trường xem cửa hàng ở đâu, rồi xác nhận đi sang trái hay sang phải.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -156,9 +172,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "请问，学校在哪里？是往右走吗？谢谢。",
-      "sampleVi": "Xin hỏi trường ở đâu? Là đi sang phải phải không? Cảm ơn."
+      "sampleZh": "请问，商店在哪里？在学校前面吗？是往左走吗？",
+      "sampleVi": "Xin hỏi, cửa hàng ở đâu? Ở phía trước trường phải không? Đi sang trái phải không?"
     }
   ],
-  "transferTask": "Hỏi cửa hàng; buổi 2 tìm trường ở một ngã rẽ khác."
+  "transferTask": "Ở ngã rẽ mới: hỏi trường ở đâu, nghe hướng, xác nhận bằng 是往……走吗 rồi cảm ơn."
 }

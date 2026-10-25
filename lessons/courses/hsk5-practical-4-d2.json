@@ -60,6 +60,22 @@
       "exampleVi": "Sau khi quyết định cần có người chịu trách nhiệm thực hiện.",
       "pinyin": "zhí xíng",
       "examplePinyin": "jué dìng yǐ hòu yào yǒu rén fù zé zhí xíng 。"
+    },
+    {
+      "word": "问卷",
+      "meaning": "bảng hỏi; phiếu khảo sát",
+      "example": "我们做了一份问卷。",
+      "exampleVi": "Chúng tôi đã làm một bảng hỏi.",
+      "pinyin": "wèn juàn",
+      "examplePinyin": "wǒ men zuò le yí fèn wèn juàn 。"
+    },
+    {
+      "word": "指标",
+      "meaning": "chỉ số",
+      "example": "请先确定评价指标。",
+      "exampleVi": "Xin xác định chỉ số đánh giá trước.",
+      "pinyin": "zhǐ biāo",
+      "examplePinyin": "qǐng xiān què dìng píng jià zhǐ biāo 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Chọn hệ thống; buổi 2 đánh giá một hoạt động cộng đồng. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Người đề xuất phương án",
-    "learnerRole": "Người phản biện và đề xuất",
+    "setting": "Buổi 2: đánh giá một hoạt động cộng đồng, so với năm trước và đề xuất cách đo hiệu quả.",
+    "avatarRole": "Người đề xuất cách đánh giá",
+    "learnerRole": "Người phản biện",
     "goals": [
-      "Nêu bất đồng lịch sự kèm một lý do",
-      "Đề xuất cách kiểm chứng và tiêu chí quyết định"
+      "Nêu bất đồng với kết luận “đông hơn là thành công hơn”",
+      "Đề xuất hai chỉ số và một bước kiểm chứng"
     ],
-    "opening": "你对这个方案有什么看法？请提出一个具体建议。",
-    "openingVi": "Bạn có ý kiến gì về phương án này? Xin đưa ra một đề xuất cụ thể."
+    "opening": "今年参加的人比去年多，你怎么看这个结果？",
+    "openingVi": "Năm nay số người tham gia đông hơn năm ngoái, bạn nghĩ gì về kết quả này?"
   },
   "freeTalk": {
-    "question": "做决定时，数字越多就越可靠吗？请举例说明。",
-    "questionVi": "Khi quyết định, càng nhiều số liệu có nhất thiết càng đáng tin không? Xin lấy ví dụ."
+    "question": "活动免费以后人数增加，这能说明活动更成功吗？请说明。",
+    "questionVi": "Sau khi miễn phí, số người tăng; điều đó có chứng minh hoạt động thành công hơn không? Xin giải thích."
   },
   "learningNotes": [
     "Tóm tắt ai đề xuất gì, ai phản biện bằng chứng nào, nhóm chốt việc gì."
@@ -154,7 +170,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "我建议先做一个小规模测试。 这个方案比较容易执行。 我们还没有计算维护成本。 我们需要观察实际效果。",
+      "text": "我理解人数增加是好事，不过今年免费，不能直接和去年比较。与其马上增加预算，不如先做一次反馈调查。我们需要观察参与者是否完成活动。这个方案还需要一个可以检查的指标。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -166,8 +182,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "做决定时，数字越多就越可靠吗？请举例说明。",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "活动免费以后人数增加，这能说明活动更成功吗？请说明。",
+      "promptVi": "Sau khi miễn phí, số người tăng; điều đó có chứng minh hoạt động thành công hơn không? Xin giải thích.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -176,9 +192,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "数字多并不一定说明结论可靠。首先要看数据从哪里来，统计对象和条件是否一致。比如免费活动和收费活动的参加人数不能直接比较。其次，还要明确我们想解决什么问题，避免收集很多无关数字。当然，信息太少也可能误判，所以关键不是越多越好，而是数据是否合适、解释是否有依据。",
-      "sampleVi": "Nhiều số liệu chưa chắc làm kết luận đáng tin. Cần xét nguồn, đối tượng và điều kiện thống kê. Ví dụ không thể so trực tiếp số người dự hoạt động miễn phí và có phí. Cần xác định vấn đề để tránh gom số liệu không liên quan. Quá ít thông tin cũng dễ sai, nên quan trọng là dữ liệu phù hợp và cách giải thích có căn cứ."
+      "sampleZh": "不能只看人数。人数增加可能来自免费，也可能来自宣传或地点变化。要判断是否更成功，我会看三个指标：完成活动的比例、愿意再参加的比例、以及参与者是否真的学到了东西。比如今年免费，来的人多，但如果很多人中途离开，就不能说效果更好。与其争论数字，不如先做问卷和回访，再决定明年的预算。免费本身不是问题，问题是不能用人数代替效果。",
+      "sampleVi": "Không thể chỉ nhìn số người. Số người tăng có thể do miễn phí, do truyền thông hoặc do địa điểm thay đổi. Để biết có thành công hơn không, tôi sẽ xem ba chỉ số: tỷ lệ hoàn thành hoạt động, tỷ lệ muốn tham gia lại và việc người tham gia có thực sự học được điều gì. Chẳng hạn năm nay miễn phí nên đông hơn, nhưng nếu nhiều người rời giữa chừng thì không thể nói hiệu quả tốt hơn. Thay vì tranh cãi con số, nên làm bảng hỏi và phỏng vấn lại trước khi quyết định ngân sách năm sau. Miễn phí không phải vấn đề; vấn đề là không dùng số người thay cho hiệu quả."
     }
   ],
-  "transferTask": "Chọn hệ thống; buổi 2 đánh giá một hoạt động cộng đồng."
+  "transferTask": "Trong cuộc họp đánh giá hoạt động: nêu một bất đồng có lý do, đề xuất hai chỉ số, một bước kiểm chứng và tiêu chí chốt."
 }

@@ -34,8 +34,8 @@
       "meaning": "cảm ơn",
       "example": "谢谢你。",
       "exampleVi": "Cảm ơn bạn.",
-      "pinyin": "xiè xiè",
-      "examplePinyin": "xiè xiè nǐ 。"
+      "pinyin": "xiè xie",
+      "examplePinyin": "xiè xie nǐ 。"
     },
     {
       "word": "再见",
@@ -60,6 +60,14 @@
       "exampleVi": "Mời bạn nói.",
       "pinyin": "shuō",
       "examplePinyin": "qǐng shuō 。"
+    },
+    {
+      "word": "认识",
+      "meaning": "làm quen; biết",
+      "example": "认识你很高兴。",
+      "exampleVi": "Rất vui được làm quen với bạn.",
+      "pinyin": "rèn shi",
+      "examplePinyin": "rèn shi nǐ hěn gāo xìng 。"
     }
   ],
   "patterns": [
@@ -79,19 +87,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Bạn mới quen ở lớp học; buổi 2 chuyển sang gặp người ở sảnh tòa nhà. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Bạn mới quen",
+    "setting": "Buổi 2: gặp người mới quen ở sảnh tòa nhà, chào hỏi, mời ngồi và xin nhắc lại khi chưa nghe rõ.",
+    "avatarRole": "Người mới quen ở sảnh",
     "learnerRole": "Người chào hỏi",
     "goals": [
-      "Chào và đáp lời chào",
-      "Xin nhắc lại khi nghe chưa rõ"
+      "Chào, hỏi thăm và mời người mới quen ngồi",
+      "Xin nhắc lại một câu chưa nghe rõ"
     ],
-    "opening": "你好，你好吗？",
-    "openingVi": "Chào bạn, bạn khỏe không?"
+    "opening": "你好，认识你很高兴。请坐，你好吗？",
+    "openingVi": "Chào bạn, rất vui được làm quen. Mời ngồi, bạn khỏe không?"
   },
   "freeTalk": {
-    "question": "请打个招呼，再说一句谢谢。",
-    "questionVi": "Hãy chào hỏi rồi nói một câu cảm ơn."
+    "question": "请跟对方打招呼，再问对方好不好。",
+    "questionVi": "Hãy chào người đối diện, rồi hỏi xem họ có khỏe không."
   },
   "learningNotes": [
     "Làm quen pinyin: chữ ghi âm, dấu thanh ghi trên nguyên âm; ü khác u.",
@@ -127,7 +135,7 @@
         "explanation": "B cảm ơn sau 请坐."
       }
     ],
-    "pinyin": "jiǎ ： nǐ hǎo ， qǐng zuò 。 yǐ ： xiè xiè 。 jiǎ ： nǐ hǎo ma ？ yǐ ： qǐng zài shuō yí biàn 。"
+    "pinyin": "jiǎ ： nǐ hǎo ， qǐng zuò 。 yǐ ： xiè xie 。 jiǎ ： nǐ hǎo ma ？ yǐ ： qǐng zài shuō yí biàn 。"
   },
   "speaking": [
     {
@@ -135,18 +143,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "你好，我是小安。 我很好。",
+      "reference": "你好，请坐。我很好，谢谢。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "你好，我是小安。 我很好。"
+      "audioText": "你好，请坐。我很好，谢谢。"
     },
     {
       "kind": "answer",
-      "prompt": "请打个招呼，再说一句谢谢。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请跟对方打招呼，再问对方好不好。",
+      "promptVi": "Hãy chào người đối diện, rồi hỏi xem họ có khỏe không.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -155,11 +163,11 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "你好！我很好，谢谢。再见！",
-      "sampleVi": "Chào bạn! Tôi khỏe, cảm ơn. Tạm biệt!"
+      "sampleZh": "你好！请坐。你好吗？我很好，谢谢。",
+      "sampleVi": "Chào bạn! Mời ngồi. Bạn khỏe không? Tôi khỏe, cảm ơn."
     }
   ],
-  "transferTask": "Bạn mới quen ở lớp học; buổi 2 chuyển sang gặp người ở sảnh tòa nhà.",
+  "transferTask": "Đóng vai gặp người mới quen ở sảnh: chào, mời ngồi, hỏi thăm sức khỏe; nếu nghe chưa rõ thì dùng 请再说一遍.",
   "pronunciation": [
     {
       "text": "妈",

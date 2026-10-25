@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "updated": "2026-10-25",
+  "status": "AI đề xuất, chưa có giáo viên duyệt",
+  "sourceOfTruth": "lessons/courses/policies/neutral-tone-policy.json; implementation: server/coursePinyin.mjs",
+  "registers": {
+    "citation": {
+      "name": "Trích dẫn (từ điển)",
+      "usedIn": [
+        "course-day2/*.json: vocab.pinyin, vocab.examplePinyin, patterns[].examplePinyin",
+        "course-day2/*.json: listening.pinyin",
+        "course-fixes/*.patch.json: checkpoint listening/speaking pinyin, glossary pinyin"
+      ],
+      "thirdToneSandhi": false,
+      "yiBuSandhi": "giữ dạng đọc bề mặt do pinyin-pro trả về (yì, bú)",
+      "neutral": "bỏ dấu thanh, không ghi số 5"
+    },
+    "spoken": {
+      "name": "Đọc thành tiếng",
+      "usedIn": [
+        "dictation.json",
+        "shadowing.json"
+      ],
+      "thirdToneSandhi": "hạ mọi cặp 3+3 trong cùng cụm hơi; dấu câu chặn biến điệu",
+      "yiBuSandhi": "giữ dạng đọc bề mặt",
+      "neutral": "bỏ dấu thanh, không ghi số 5"
+    }
+  },
+  "lexicalNeutral": {
+    "朋友": [
+      1
+    ],
+    "妈妈": [
+      1
+    ],
+    "爸爸": [
+      1
+    ],
+    "哥哥": [
+      1
+    ],
+    "姐姐": [
+      1
+    ],
+    "弟弟": [
+      1
+    ],
+    "妹妹": [
+      1
+    ],
+    "什么": [
+      1
+    ],
+    "桌子": [
+      1
+    ],
+    "椅子": [
+      1
+    ],
+    "东西": [
+      1
+    ],
+    "谢谢": [
+      1
+    ],
+    "觉得": [
+      1
+    ],
+    "知道": [
+      1
+    ],
+    "时候": [
+      1
+    ],
+    "漂亮": [
+      1
+    ],
+    "衣服": [
+      1
+    ],
+    "玻璃": [
+      1
+    ],
+    "豆腐": [
+      1
+    ],
+    "萝卜": [
+      1
+    ],
+    "葡萄": [
+      1
+    ],
+    "客气": [
+      1
+    ],
+    "便宜": [
+      1
+    ],
+    "休息": [
+      1
+    ],
+    "名字": [
+      1
+    ],
+    "右边": [
+      1
+    ],
+    "左边": [
+      1
+    ],
+    "爷爷": [
+      1
+    ],
+    "奶奶": [
+      1
+    ],
+    "早上": [
+      1
+    ],
+    "晚上": [
+      1
+    ],
+    "商量": [
+      1
+    ],
+    "明白": [
+      1
+    ],
+    "学生": [
+      1
+    ],
+    "喜欢": [
+      1
+    ],
+    "杯子": [
+      1
+    ],
+    "舒服": [
+      1
+    ],
+    "认识": [
+      1
+    ],
+    "先生": [
+      1
+    ],
+    "小姐": [
+      1
+    ],
+    "意思": [
+      1
+    ]
+  },
+  "suffixNeutral": [
+    "们",
+    "么",
+    "的",
+    "了",
+    "吧",
+    "吗",
+    "呢",
+    "啊",
+    "呀",
+    "哦",
+    "嘛",
+    "子"
+  ],
+  "exemplars": [
+    {
+      "word": "谢谢",
+      "pinyin": "xiè xie"
+    },
+    {
+      "word": "朋友",
+      "pinyin": "péng you"
+    },
+    {
+      "word": "名字",
+      "pinyin": "míng zi"
+    },
+    {
+      "word": "学生",
+      "pinyin": "xué sheng"
+    },
+    {
+      "word": "晚上",
+      "pinyin": "wǎn shang"
+    },
+    {
+      "word": "什么",
+      "pinyin": "shén me"
+    },
+    {
+      "word": "喜欢",
+      "pinyin": "xǐ huan"
+    },
+    {
+      "word": "弟弟",
+      "pinyin": "dì di"
+    },
+    {
+      "word": "妹妹",
+      "pinyin": "mèi mei"
+    },
+    {
+      "word": "杯子",
+      "pinyin": "bēi zi"
+    },
+    {
+      "word": "认识",
+      "pinyin": "rèn shi"
+    },
+    {
+      "word": "意思",
+      "pinyin": "yì si"
+    },
+    {
+      "word": "先生",
+      "pinyin": "xiān sheng"
+    },
+    {
+      "word": "小姐",
+      "pinyin": "xiǎo jie"
+    },
+    {
+      "word": "舒服",
+      "pinyin": "shū fu"
+    },
+    {
+      "word": "客气",
+      "pinyin": "kè qi"
+    },
+    {
+      "word": "左边",
+      "pinyin": "zuǒ bian"
+    },
+    {
+      "word": "右边",
+      "pinyin": "yòu bian"
+    },
+    {
+      "word": "早上",
+      "pinyin": "zǎo shang"
+    }
+  ],
+  "sandhi": [
+    {
+      "text": "你好",
+      "citation": "nǐ hǎo",
+      "spoken": "ní hǎo"
+    },
+    {
+      "text": "只好",
+      "citation": "zhǐ hǎo",
+      "spoken": "zhí hǎo"
+    }
+  ],
+  "candidates": [
+    {
+      "word": "哪里",
+      "current": "nǎ lǐ",
+      "pinyinPro": "nǎ lǐ",
+      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+    },
+    {
+      "word": "多少",
+      "current": "duō shǎo",
+      "pinyinPro": "duō shǎo",
+      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+    },
+    {
+      "word": "这里",
+      "current": "zhè lǐ",
+      "pinyinPro": "zhè lǐ",
+      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+    },
+    {
+      "word": "那里",
+      "current": "nà lǐ",
+      "pinyinPro": "nà lǐ",
+      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+    },
+    {
+      "word": "哪儿",
+      "current": "nǎ ér",
+      "pinyinPro": "nǎ ér",
+      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+    }
+  ]
+}

@@ -60,6 +60,22 @@
       "exampleVi": "Tôi sẵn sàng đảm nhận việc điều phối.",
       "pinyin": "chéng dān",
       "examplePinyin": "wǒ yuàn yì chéng dān xié tiáo gōng zuò 。"
+    },
+    {
+      "word": "物流",
+      "meaning": "logistics; vận chuyển",
+      "example": "物流信息还没有更新。",
+      "exampleVi": "Thông tin vận chuyển vẫn chưa cập nhật.",
+      "pinyin": "wù liú",
+      "examplePinyin": "wù liú xìn xī hái méi yǒu gēng xīn 。"
+    },
+    {
+      "word": "补偿",
+      "meaning": "bồi thường; bù",
+      "example": "我们可以补偿一部分运费。",
+      "exampleVi": "Chúng tôi có thể bù một phần phí vận chuyển.",
+      "pinyin": "bǔ cháng",
+      "examplePinyin": "wǒ men kě yǐ bǔ cháng yí bù fen yùn fèi 。"
     }
   ],
   "patterns": [
@@ -79,20 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Tiến độ phần mềm; buổi 2 điều phối giao hàng. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Khách hàng/quản lý",
-    "learnerRole": "Người báo tiến độ",
+    "setting": "Buổi 2: điều phối một đơn giao trễ; nêu tác động, đề xuất hai phương án và chốt bước tiếp theo.",
+    "avatarRole": "Khách hàng",
+    "learnerRole": "Người điều phối giao hàng",
     "goals": [
-      "Báo vấn đề kèm tác động cụ thể",
-      "Đề xuất hai phương án có đánh đổi",
-      "Xác nhận lựa chọn và bước tiếp theo"
+      "Báo mức trễ kèm tác động cụ thể",
+      "Đề xuất giao hai đợt hoặc bù phí, rồi chốt xác nhận"
     ],
-    "opening": "你发现原定时间可能来不及，你准备怎么跟我沟通？",
-    "openingVi": "Bạn phát hiện có thể không kịp thời hạn ban đầu; bạn định trao đổi với tôi thế nào?"
+    "opening": "原定周三到货，现在是什么情况？",
+    "openingVi": "Dự kiến thứ Tư có hàng, hiện giờ tình hình thế nào?"
   },
   "freeTalk": {
-    "question": "按时交付和保证质量发生冲突时，你会怎样处理？",
-    "questionVi": "Khi giao đúng hạn mâu thuẫn với bảo đảm chất lượng, bạn sẽ xử lý thế nào?"
+    "question": "供应商第一次延误时，应该先解释原因还是先给方案？为什么？",
+    "questionVi": "Khi nhà cung cấp trễ lần đầu, nên giải thích nguyên nhân trước hay đưa phương án trước? Vì sao?"
   },
   "learningNotes": [
     "Phân biệt cam kết chắc chắn với dự kiến/争取. Không dùng lý do để né trách nhiệm."
@@ -155,7 +170,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "目前的进度比计划慢一天。 截止日期是周五。 材料延迟送到了。 我们需要调整时间安排。",
+      "text": "物流信息显示，包装材料晚到，第一批货需要推迟两天。目前的进度比计划慢一天。如果先发一半，就能保证门店不断货。我们需要调整交接时间。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -167,8 +182,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "按时交付和保证质量发生冲突时，你会怎样处理？",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "供应商第一次延误时，应该先解释原因还是先给方案？为什么？",
+      "promptVi": "Khi nhà cung cấp trễ lần đầu, nên giải thích nguyên nhân trước hay đưa phương án trước? Vì sao?",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -177,9 +192,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "我会先判断质量问题会造成什么影响，再跟相关人员讨论。如果问题影响基本使用，就不能为了按时交付而隐瞒。可以考虑分阶段交付，先完成最重要的部分，再补上其他功能。当然，调整之前必须说明范围和时间，得到对方确认。我的原则是让对方了解真实情况，再共同选择可接受的方案。",
-      "sampleVi": "Tôi sẽ đánh giá tác động của vấn đề chất lượng rồi trao đổi với bên liên quan. Nếu ảnh hưởng sử dụng cơ bản thì không được giấu để kịp hạn. Có thể giao theo giai đoạn, ưu tiên phần quan trọng rồi bổ sung. Nhưng phải nêu rõ phạm vi, thời gian và được xác nhận trước. Nguyên tắc là cùng chọn phương án trên cơ sở thông tin thật."
+      "sampleZh": "我认为应该先给方案，再简短解释原因。原因是客户最先关心货什么时候到、影响多大；如果只解释原因，听起来像在推责任。比如我会先说：周三可以先到一半，剩下周五到；如果必须一次收齐，我们承担加急费作为补偿。然后再用一句话说明是包装材料延误。解释不能代替方案，方案也不能没有解释。最后要确认客户选哪一种，并把数量和时间写下来。",
+      "sampleVi": "Tôi cho rằng nên đưa phương án trước, rồi giải thích ngắn nguyên nhân. Lý do là khách quan tâm trước hết hàng đến khi nào và ảnh hưởng bao nhiêu; nếu chỉ giải thích nguyên nhân, nghe như đang đẩy trách nhiệm. Chẳng hạn tôi sẽ nói: thứ Tư có thể giao một nửa, phần còn lại đến thứ Sáu; nếu buộc phải nhận đủ một lần, chúng tôi chịu phí giao nhanh. Sau đó mới nói một câu là bao bì đến muộn. Giải thích không thay được phương án, phương án cũng không thể thiếu giải thích. Cuối cùng phải xác nhận khách chọn cách nào và ghi rõ số lượng, thời gian."
     }
   ],
-  "transferTask": "Tiến độ phần mềm; buổi 2 điều phối giao hàng."
+  "transferTask": "Điều phối đơn trễ: báo mức trễ và tác động, đưa hai phương án có đánh đổi, chốt lựa chọn và ghi rõ số lượng, mốc thời gian."
 }

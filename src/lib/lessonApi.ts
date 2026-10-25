@@ -26,6 +26,7 @@ export interface ListeningExercise {
   questions: Array<{ prompt: string; options: string[]; answer: number; explanation: string }>;
 }
 export interface SpeakingExercise {
+  pinyin?: string;
   kind: 'repeat' | 'retell' | 'read' | 'answer' | 'opinion';
   prompt: string;
   promptVi?: string;
@@ -51,6 +52,7 @@ export interface LessonContent {
   checkpoint?: {
     title: string;
     practiceMinutes: number;
+    glossary?: Array<{ word: string; pinyin: string; meaningVi: string; note?: string }>;
     instructions: string;
     listening: ListeningExercise[];
     speaking: SpeakingExercise[];

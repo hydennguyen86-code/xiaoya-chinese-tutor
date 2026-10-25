@@ -60,6 +60,22 @@
       "exampleVi": "Chúng ta còn cần bàn một vài chi tiết.",
       "pinyin": "xì jié",
       "examplePinyin": "wǒ men hái xū yào tǎo lùn jǐ gè xì jié 。"
+    },
+    {
+      "word": "讲义",
+      "meaning": "giáo án; tài liệu giảng",
+      "example": "我先写讲义的第一部分。",
+      "exampleVi": "Tôi viết phần đầu của tài liệu giảng trước.",
+      "pinyin": "jiǎng yì",
+      "examplePinyin": "wǒ xiān xiě jiǎng yì de dì yī bù fen 。"
+    },
+    {
+      "word": "反馈",
+      "meaning": "phản hồi",
+      "example": "请给我一些反馈。",
+      "exampleVi": "Xin cho tôi một số phản hồi.",
+      "pinyin": "fǎn kuì",
+      "examplePinyin": "qǐng gěi wǒ yì xiē fǎn kuì 。"
     }
   ],
   "patterns": [
@@ -68,7 +84,7 @@
       "explanation": "Diễn đạt lại yêu cầu để xác nhận; không coi suy đoán của mình là điều người kia đã đồng ý.",
       "example": "你的意思是先做中文版本，对吗？",
       "exampleVi": "Ý bạn là làm bản tiếng Trung trước, đúng không?",
-      "examplePinyin": "nǐ de yì sī shì xiān zuò zhōng wén bǎn běn ， duì ma ？"
+      "examplePinyin": "nǐ de yì si shì xiān zuò zhōng wén bǎn běn ， duì ma ？"
     },
     {
       "pattern": "在……之前，先……",
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Buổi 1 trang hoạt động; buổi 2 chuẩn bị tài liệu đào tạo. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: chuẩn bị tài liệu đào tạo; ngày mai chỉ cần mục lục và mục tiêu học cho quản lý xem trước.",
     "avatarRole": "Người giao việc",
     "learnerRole": "Người nhận việc",
     "goals": [
-      "Hỏi hai chi tiết chưa rõ",
-      "Đọc lại phạm vi và thời hạn để xin xác nhận"
+      "Hỏi rõ sản phẩm nào cần giao trước",
+      "Đọc lại phạm vi, thời hạn và phần chưa cần làm"
     ],
-    "opening": "这项任务你打算怎么做？有哪些需要先确认的地方？",
-    "openingVi": "Bạn định thực hiện nhiệm vụ này thế nào? Có những điểm nào cần xác nhận trước?"
+    "opening": "明天先交什么？你把范围和截止时间说一遍。",
+    "openingVi": "Ngày mai giao gì trước? Bạn nói lại phạm vi và thời hạn."
   },
   "freeTalk": {
-    "question": "遇到要求不清楚的任务，你会先行动还是先提问？为什么？",
-    "questionVi": "Gặp nhiệm vụ chưa rõ yêu cầu, bạn sẽ làm trước hay hỏi trước? Vì sao?"
+    "question": "当对方说“先做个大概”，你会怎样确认范围？请举例。",
+    "questionVi": "Khi đối phương nói “làm đại khái trước”, bạn xác nhận phạm vi thế nào? Xin lấy ví dụ."
   },
   "learningNotes": [
     "Tách điều được nói rõ khỏi suy luận. Ghi ba cột: phải làm, chưa làm, cần hỏi."
@@ -153,7 +169,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "我们需要先确认客户需求。 我再确认一下交货时间。 这项任务的范围是什么？ 请优先处理紧急问题。",
+      "text": "你的意思是明天只交目录，对吗？在开始写讲义之前，先确认学习目标。这项任务的范围不包括完整案例。我需要先发一个样本，再请对方给一个简短反馈。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -165,8 +181,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "遇到要求不清楚的任务，你会先行动还是先提问？为什么？",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "当对方说“先做个大概”，你会怎样确认范围？请举例。",
+      "promptVi": "Khi đối phương nói “làm đại khái trước”, bạn xác nhận phạm vi thế nào? Xin lấy ví dụ.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -175,9 +191,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "遇到要求不清楚的任务，我会先确认最重要的目标、时间和范围，而不是把所有细节都问完才开始。如果任务容易修改，可以先做一个简单版本，请对方看看。但涉及较大费用或重要承诺时，就应该先取得明确确认。这样既能避免重复工作，也不会因为一直等待而完全没有进展。",
-      "sampleVi": "Với nhiệm vụ chưa rõ, tôi xác nhận mục tiêu, thời gian và phạm vi quan trọng trước, không đợi hỏi hết mọi chi tiết. Nếu dễ sửa, có thể làm bản đơn giản để xin phản hồi. Nhưng khi liên quan khoản phí lớn hoặc cam kết quan trọng thì cần xác nhận rõ trước. Cách này vừa tránh làm lại vừa không chờ vô hạn."
+      "sampleZh": "我会先把“大概”拆成可以检查的几项：交什么、给谁看、什么时候要、哪些内容暂时不做。然后用一句话复述给对方确认。比如对方说先做个大概，我会问：是只要目录和学习目标，还是也要一页案例？如果对方说案例下周再补，我就把这句话写进邮件。这样做的原因不是怕多做，而是避免在错误的方向上花时间。确认范围只需要几分钟，返工却可能要几天。",
+      "sampleVi": "Tôi sẽ tách “đại khái” thành vài mục có thể kiểm tra: giao gì, cho ai xem, khi nào cần, phần nào tạm chưa làm. Sau đó tóm tắt lại bằng một câu để đối phương xác nhận. Chẳng hạn khi đối phương nói làm đại khái trước, tôi sẽ hỏi: chỉ cần mục lục và mục tiêu học, hay cần thêm một trang ví dụ? Nếu họ nói ví dụ để tuần sau, tôi ghi câu đó vào email. Làm vậy không phải vì sợ làm nhiều, mà để tránh dành thời gian sai hướng. Xác nhận phạm vi chỉ mất vài phút, làm lại có khi mất vài ngày."
     }
   ],
-  "transferTask": "Buổi 1 trang hoạt động; buổi 2 chuẩn bị tài liệu đào tạo."
+  "transferTask": "Nhận việc chuẩn bị tài liệu: hỏi hai điểm chưa rõ, đọc lại phạm vi và thời hạn, tách rõ phần làm ngay và phần để sau."
 }

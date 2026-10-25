@@ -26,8 +26,8 @@
       "meaning": "người bạn",
       "example": "我和朋友见面。",
       "exampleVi": "Tôi gặp bạn.",
-      "pinyin": "péng yǒu",
-      "examplePinyin": "wǒ hé péng yǒu jiàn miàn 。"
+      "pinyin": "péng you",
+      "examplePinyin": "wǒ hé péng you jiàn miàn 。"
     },
     {
       "word": "现在",
@@ -79,20 +79,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: chuyến gặp bạn ở địa điểm khác, có gọi món và trả tiền; sửa một thông tin nghe nhầm.",
     "avatarRole": "Người bạn",
     "learnerRole": "Người lên kế hoạch",
     "goals": [
-      "Xác nhận thời gian và nơi gặp",
-      "Gọi một món hoặc đồ uống rồi hỏi giá",
-      "Sửa một thông tin nghe nhầm"
+      "Xác nhận giờ và nơi gặp mới",
+      "Gọi món, hỏi giá và sửa một thông tin sai"
     ],
-    "opening": "你好，我们几点在哪里见面？",
-    "openingVi": "Chào bạn, chúng ta gặp lúc mấy giờ và ở đâu?"
+    "opening": "明天我们先去哪里？",
+    "openingVi": "Ngày mai chúng ta đi đâu trước?"
   },
   "freeTalk": {
-    "question": "请安排一次见面，说时间、地点和一个活动。",
-    "questionVi": "Xin sắp xếp một cuộc gặp, nêu thời gian, địa điểm và một hoạt động."
+    "question": "请安排明天下午的见面：说时间、地点、先做什么再做什么，再说一样东西的价钱。",
+    "questionVi": "Hãy sắp xếp buổi gặp chiều mai: nói thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món."
   },
   "learningNotes": [
     "Bài tích hợp, ưu tiên dùng lại vốn đã học. Không yêu cầu học nhiều từ mới.",
@@ -112,8 +111,8 @@
   "listening": {
     "title": "Nghe buổi 2: Chuyến đi nhỏ: nghe rồi tự xử lý",
     "playLimit": 2,
-    "transcript": "甲：我们三点在商店前面见面吗？乙：不是商店，是学校前面。甲：好，三点在学校前面。乙：对。",
-    "translation": "A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải cửa hàng, mà là trước trường. A: Được, ba giờ trước trường. B: Đúng.",
+    "transcript": "甲：我们三点在商店前面见面吗？乙：不是三点，是四点。甲：好，四点在学校前面。乙：对，面条一碗八块。",
+    "translation": "A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải ba giờ, mà là bốn giờ. A: Được, bốn giờ trước trường. B: Đúng, mì một bát tám đồng.",
     "questions": [
       {
         "prompt": "Địa điểm đúng?",
@@ -126,17 +125,17 @@
         "explanation": "B sửa thành 学校前面."
       },
       {
-        "prompt": "Giờ gặp có thay đổi không?",
+        "prompt": "Một bát mì giá bao nhiêu?",
         "options": [
-          "Không, vẫn ba giờ",
-          "Không nói giờ",
-          "Có, thành hai giờ"
+          "Tám đồng",
+          "Bốn đồng",
+          "Ba đồng"
         ],
         "answer": 0,
-        "explanation": "A xác nhận 三点."
+        "explanation": "B nói 面条一碗八块."
       }
     ],
-    "pinyin": "jiǎ ： wǒ men sān diǎn zài shāng diàn qián miàn jiàn miàn ma ？ yǐ ： bú shì shāng diàn ， shì xué xiào qián miàn 。 jiǎ ： hǎo ， sān diǎn zài xué xiào qián miàn 。 yǐ ： duì 。"
+    "pinyin": "jiǎ ： wǒ men sān diǎn zài shāng diàn qián miàn jiàn miàn ma ？ yǐ ： bú shì sān diǎn ， shì sì diǎn 。 jiǎ ： hǎo ， sì diǎn zài xué xiào qián miàn 。 yǐ ： duì ， miàn tiáo yì wǎn bā kuài 。"
   },
   "speaking": [
     {
@@ -144,18 +143,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "我想去商店。 我和朋友见面。",
+      "reference": "我们先去商店，再去学校。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "我想去商店。 我和朋友见面。"
+      "audioText": "我们先去商店，再去学校。"
     },
     {
       "kind": "answer",
-      "prompt": "请安排一次见面，说时间、地点和一个活动。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请安排明天下午的见面：说时间、地点、先做什么再做什么，再说一样东西的价钱。",
+      "promptVi": "Hãy sắp xếp buổi gặp chiều mai: nói thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -164,11 +163,11 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我们明天下午三点在学校前面见面。先喝茶，再去商店。",
-      "sampleVi": "Mai chúng ta gặp lúc ba giờ chiều trước trường. Uống trà trước, rồi đi cửa hàng."
+      "sampleZh": "明天下午三点我们在学校见面。先去商店，再去吃饭。一碗面条八块。",
+      "sampleVi": "Chiều mai ba giờ chúng ta gặp ở trường. Đi cửa hàng trước, rồi đi ăn. Một bát mì tám đồng."
     }
   ],
-  "transferTask": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền.",
+  "transferTask": "Lên kế hoạch chuyến gặp mới: hẹn giờ và nơi, nói việc trước–sau, gọi món và trả tiền; sửa lại nếu nghe nhầm giờ hoặc giá.",
   "checkpoint": {
     "title": "Kiểm tra chặng 2 — nghe và nói ứng dụng",
     "practiceMinutes": 12,
@@ -201,7 +200,8 @@
           }
         ],
         "playLimit": 2,
-        "title": "Đoạn 1"
+        "title": "Đoạn 1",
+        "pinyin": "jiǎ ： qǐng wèn ， shāng diàn zài nǎ lǐ ？ yǐ ： wǎng zuǒ zǒu ， shāng diàn zài xué xiào páng biān 。 jiǎ ： shì wǎng zuǒ zǒu ma ？ yǐ ： duì 。"
       },
       {
         "transcript": "甲：我要一碗面条和两杯水。乙：面条八块，水一杯两块，一共十二块。甲：好，请不要放辣椒。",
@@ -229,7 +229,8 @@
           }
         ],
         "playLimit": 2,
-        "title": "Đoạn 2"
+        "title": "Đoạn 2",
+        "pinyin": "jiǎ ： wǒ yào yì wǎn miàn tiáo hé liǎng bēi shuǐ 。 yǐ ： miàn tiáo bā kuài ， shuǐ yì bēi liǎng kuài ， yí gòng shí èr kuài 。 jiǎ ： hǎo ， qǐng bú yào fàng là jiāo 。"
       }
     ],
     "speaking": [
@@ -244,7 +245,8 @@
           "Giữ đúng dữ kiện",
           "Không thêm sự kiện không có trong bài",
           "Nói rõ và có trình tự"
-        ]
+        ],
+        "pinyin": "xiàn zài shì xià wǔ sì diǎn 。 wǒ men zài xué xiào jiàn miàn 。"
       },
       {
         "kind": "answer",
@@ -257,7 +259,57 @@
           "Đúng trọng tâm",
           "Có chi tiết cụ thể",
           "Tự nói không nhìn mẫu"
-        ]
+        ],
+        "pinyin": "wǒ jiào xiǎo ān 。 wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "商店",
+        "pinyin": "shāng diàn",
+        "meaningVi": "cửa hàng"
+      },
+      {
+        "word": "学校",
+        "pinyin": "xué xiào",
+        "meaningVi": "trường học"
+      },
+      {
+        "word": "旁边",
+        "pinyin": "páng biān",
+        "meaningVi": "bên cạnh",
+        "note": "Từ chưa có trong vocab bài 1–11; chú giải ngay tại checkpoint."
+      },
+      {
+        "word": "往",
+        "pinyin": "wǎng",
+        "meaningVi": "về phía"
+      },
+      {
+        "word": "碗",
+        "pinyin": "wǎn",
+        "meaningVi": "bát"
+      },
+      {
+        "word": "面条",
+        "pinyin": "miàn tiáo",
+        "meaningVi": "mì"
+      },
+      {
+        "word": "辣椒",
+        "pinyin": "là jiāo",
+        "meaningVi": "ớt"
+      },
+      {
+        "word": "一共",
+        "pinyin": "yí gòng",
+        "meaningVi": "tổng cộng; tất cả",
+        "note": "Từ chưa có trong vocab bài 1–11; chú giải ngay tại checkpoint."
+      },
+      {
+        "word": "十二",
+        "pinyin": "shí èr",
+        "meaningVi": "mười hai"
       }
     ]
   }

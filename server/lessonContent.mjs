@@ -225,7 +225,17 @@ export async function getLessonContent({ dataDir, syllabus, volumeId, lessonNo, 
   if (packaged) {
     const { content, problems } = normalizeLesson(packaged, lesson, { day });
     if (problems.length) throw Object.assign(new Error(`Bài đóng gói chưa hợp lệ: ${problems.join('; ')}`), { status: 500 });
-    return { ...packaged, ...content, reviewed: false, authored: true };
+    // Packaged pinyin has its own checked citation/neutral-tone convention.
+    // Do not overwrite authored readings with runtime pinyin-pro defaults.
+    const vocab = content.vocab.map((item) => {
+      const original = packaged.vocab.find((v) => v.word === item.word);
+      return { ...item, pinyin: original?.pinyin || item.pinyin, examplePinyin: original?.examplePinyin || item.examplePinyin };
+    });
+    const patterns = content.patterns.map((item) => {
+      const original = packaged.patterns.find((p) => p.pattern === item.pattern);
+      return { ...item, examplePinyin: original?.examplePinyin || item.examplePinyin };
+    });
+    return { ...packaged, ...content, vocab, patterns, reviewed: false, authored: true };
   }
   const file = cacheFile(dataDir, { volume, lesson, volumeId, lessonNo, day, level });
   if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));

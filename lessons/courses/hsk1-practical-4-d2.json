@@ -51,7 +51,7 @@
       "example": "我姐姐是学生。",
       "exampleVi": "Chị gái tôi là học sinh.",
       "pinyin": "jiě jie",
-      "examplePinyin": "wǒ jiě jie shì xué shēng 。"
+      "examplePinyin": "wǒ jiě jie shì xué sheng 。"
     },
     {
       "word": "有",
@@ -60,6 +60,22 @@
       "exampleVi": "Tôi có hai chị gái.",
       "pinyin": "yǒu",
       "examplePinyin": "wǒ yǒu liǎng gè jiě jie 。"
+    },
+    {
+      "word": "弟弟",
+      "meaning": "em trai",
+      "example": "我有一个弟弟。",
+      "exampleVi": "Tôi có một em trai.",
+      "pinyin": "dì di",
+      "examplePinyin": "wǒ yǒu yí gè dì di 。"
+    },
+    {
+      "word": "妹妹",
+      "meaning": "em gái",
+      "example": "我没有妹妹。",
+      "exampleVi": "Tôi không có em gái.",
+      "pinyin": "mèi mei",
+      "examplePinyin": "wǒ méi yǒu mèi mei 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Giới thiệu gia đình với bạn; buổi 2 giới thiệu một gia đình giả định khác. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Bạn học",
-    "learnerRole": "Người giới thiệu gia đình",
+    "setting": "Buổi 2: giới thiệu một gia đình giả định cho bạn học; đổi số người và người thân so với buổi 1.",
+    "avatarRole": "Bạn học nghe giới thiệu",
+    "learnerRole": "Người giới thiệu gia đình giả định",
     "goals": [
-      "Nói số người trong gia đình",
-      "Giới thiệu một người thân hoặc nói không có anh/chị/em"
+      "Nói số người của gia đình giả định",
+      "Giới thiệu hai người thân, nói có hoặc không có anh/chị/em"
     ],
-    "opening": "你家有几口人？",
-    "openingVi": "Gia đình bạn có mấy người?"
+    "opening": "你有哥哥吗？",
+    "openingVi": "Bạn có anh trai không?"
   },
   "freeTalk": {
-    "question": "请介绍你的家人，也可以介绍一个虚构的家庭。",
-    "questionVi": "Xin giới thiệu gia đình bạn, hoặc một gia đình giả định."
+    "question": "请介绍一个有三个人的家庭，再说家里有谁。",
+    "questionVi": "Hãy giới thiệu một gia đình có ba người, rồi nói trong nhà có những ai."
   },
   "learningNotes": [
     "Bổ trợ: 弟弟 dìdi — em trai; 妹妹 mèimei — em gái; 没有 méiyǒu — không có; 几 jǐ — mấy; 口 kǒu — lượng từ đếm người trong gia đình.",
@@ -136,18 +152,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "我家有三口人。 我爸爸是老师。",
+      "reference": "我家有三口人。我有一个妹妹。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "我家有三口人。 我爸爸是老师。"
+      "audioText": "我家有三口人。我有一个妹妹。"
     },
     {
       "kind": "answer",
-      "prompt": "请介绍你的家人，也可以介绍一个虚构的家庭。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请介绍一个有三个人的家庭，再说家里有谁。",
+      "promptVi": "Hãy giới thiệu một gia đình có ba người, rồi nói trong nhà có những ai.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -156,9 +172,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我家有三口人：妈妈、姐姐和我。我姐姐是学生。",
-      "sampleVi": "Gia đình tôi có ba người: mẹ, chị gái và tôi. Chị gái tôi là học sinh."
+      "sampleZh": "我家有四口人：爸爸、妈妈、姐姐和我。",
+      "sampleVi": "Gia đình tôi có bốn người: bố, mẹ, chị gái và tôi."
     }
   ],
-  "transferTask": "Giới thiệu gia đình với bạn; buổi 2 giới thiệu một gia đình giả định khác."
+  "transferTask": "Giới thiệu một gia đình giả định 3–4 người: số người, hai người thân, có/không có anh chị em; trả lời một câu hỏi của bạn học."
 }

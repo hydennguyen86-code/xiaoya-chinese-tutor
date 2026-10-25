@@ -60,6 +60,22 @@
       "exampleVi": "Những ý kiến này không thể đại diện cho tất cả mọi người.",
       "pinyin": "dài biǎo",
       "examplePinyin": "zhè xiē yì jiàn bù néng dài biǎo suǒ yǒu rén 。"
+    },
+    {
+      "word": "客流",
+      "meaning": "lượng khách ra vào",
+      "example": "这个月客流增加了。",
+      "exampleVi": "Tháng này lượng khách tăng.",
+      "pinyin": "kè liú",
+      "examplePinyin": "zhè ge yuè kè liú zēng jiā le 。"
+    },
+    {
+      "word": "核实",
+      "meaning": "xác minh; kiểm chứng",
+      "example": "请先核实数据的来源。",
+      "exampleVi": "Xin xác minh nguồn số liệu trước.",
+      "pinyin": "hé shí",
+      "examplePinyin": "qǐng xiān hé shí shù jù de lái yuán 。"
     }
   ],
   "patterns": [
@@ -79,20 +95,20 @@
     }
   ],
   "roleplay": {
-    "setting": "Bản tin khảo sát; buổi 2 trao đổi số liệu cửa hàng. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: trao đổi số liệu của cửa hàng sau khi đổi biển hiệu; tách sự kiện khỏi suy luận.",
     "avatarRole": "Người đưa ra kết luận",
-    "learnerRole": "Người kiểm chứng thông tin",
+    "learnerRole": "Người kiểm chứng số liệu",
     "goals": [
-      "Tóm tắt sự kiện chính mà không thêm suy đoán",
-      "Nêu một giới hạn của bằng chứng",
-      "Đề xuất thông tin cần kiểm chứng"
+      "Tóm tắt số liệu đã biết và điều chưa biết",
+      "Nêu một yếu tố khác có thể ảnh hưởng",
+      "Đề xuất cách thu thập thêm"
     ],
-    "opening": "你听完这条消息以后，哪些是事实，哪些还不能确定？",
-    "openingVi": "Sau khi nghe tin này, điều nào là sự thật, điều nào chưa thể xác định?"
+    "opening": "换招牌以后顾客多了，这是不是说明新招牌有效？",
+    "openingVi": "Sau khi đổi biển hiệu, khách đông hơn; có phải điều đó chứng minh biển hiệu mới hiệu quả?"
   },
   "freeTalk": {
-    "question": "听到一个很有吸引力的结论时，你会怎样核实？",
-    "questionVi": "Nghe một kết luận rất hấp dẫn, bạn sẽ xác minh thế nào?"
+    "question": "看到营业额上升，你会先庆祝还是先检查数据？为什么？",
+    "questionVi": "Thấy doanh thu tăng, bạn ăn mừng trước hay kiểm tra số liệu trước? Vì sao?"
   },
   "learningNotes": [
     "Mọi khảo sát và số liệu trong bài đều tự soạn, không phải tin tức thật."
@@ -154,7 +170,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "这条消息还需要核实。 请说明消息的来源。 目前没有足够的证据。 不要急着下结论。",
+      "text": "根据目前的记录，只能说顾客增加了，不能说都是新招牌的作用。旁边地铁站刚开放，也可能影响客流。目前还不能确定各占多少。我们需要继续记录数据。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -166,8 +182,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "听到一个很有吸引力的结论时，你会怎样核实？",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "看到营业额上升，你会先庆祝还是先检查数据？为什么？",
+      "promptVi": "Thấy doanh thu tăng, bạn ăn mừng trước hay kiểm tra số liệu trước? Vì sao?",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -176,9 +192,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "听到很吸引人的结论时，我会先确认原话和来源，再看有什么证据。尤其要区分调查发现、个人经验和推测。如果只访问一个社区，就不能轻易代表所有人。当然，我也不会因为信息不完整就认定它是假的。更合理的做法是说明哪些已经知道、哪些还不确定，并继续寻找能够比较的资料。",
-      "sampleVi": "Khi nghe kết luận hấp dẫn tôi xác nhận nguyên lời và nguồn rồi xem bằng chứng. Cần phân biệt phát hiện khảo sát, trải nghiệm và suy đoán. Một cộng đồng không tự động đại diện mọi người. Nhưng thông tin chưa đầy đủ cũng không đồng nghĩa là giả. Hợp lý hơn là nói điều đã biết, điều chưa chắc và tiếp tục tìm tài liệu có thể đối chiếu."
+      "sampleZh": "我会先核实，再庆祝。营业额上升是好消息，但先要确认三件事：统计口径有没有变、有没有一次性因素、同期还有什么变化。比如这家店旁边新开地铁站，客流增加可能和招牌无关。根据现有数据，只能说顾客变多，不能说招牌一定有效。核实不代表否定成绩，而是避免把偶然当成方法。确认之后，再决定要不要继续投入。",
+      "sampleVi": "Tôi sẽ xác minh trước rồi mới ăn mừng. Doanh thu tăng là tin tốt, nhưng trước hết cần xác nhận ba việc: cách thống kê có thay đổi không, có yếu tố một lần nào không, cùng thời điểm còn thay đổi gì khác. Chẳng hạn cửa hàng này có ga tàu mới mở bên cạnh, lượng khách tăng có thể không liên quan đến biển hiệu. Theo dữ liệu hiện có, chỉ có thể nói khách đông hơn, không thể nói biển hiệu chắc chắn hiệu quả. Kiểm tra không phải phủ nhận thành tích mà để tránh nhầm may mắn thành phương pháp. Xác nhận xong mới quyết định có tiếp tục đầu tư."
     }
   ],
-  "transferTask": "Bản tin khảo sát; buổi 2 trao đổi số liệu cửa hàng."
+  "transferTask": "Trong cuộc trao đổi số liệu: tách sự kiện khỏi suy luận, nêu một giới hạn của bằng chứng, đề xuất dữ liệu cần ghi thêm."
 }

@@ -59,7 +59,23 @@
       "example": "谢谢你的帮助。",
       "exampleVi": "Cảm ơn sự giúp đỡ của bạn.",
       "pinyin": "bāng zhù",
-      "examplePinyin": "xiè xiè nǐ de bāng zhù 。"
+      "examplePinyin": "xiè xie nǐ de bāng zhù 。"
+    },
+    {
+      "word": "不舒服",
+      "meaning": "không khỏe",
+      "example": "今天我不舒服。",
+      "exampleVi": "Hôm nay tôi không khỏe.",
+      "pinyin": "bù shū fu",
+      "examplePinyin": "jīn tiān wǒ bù shū fu 。"
+    },
+    {
+      "word": "帮",
+      "meaning": "giúp",
+      "example": "请帮我找医院。",
+      "exampleVi": "Xin giúp tôi tìm bệnh viện.",
+      "pinyin": "bāng",
+      "examplePinyin": "qǐng bāng wǒ zhǎo yī yuàn 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Đổi lịch vì mưa; buổi 2 xin giúp tìm nơi khám khi không khỏe. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: không khỏe ở nơi lạ, xin giúp tìm bệnh viện và xin nhắc lại hướng đi.",
     "avatarRole": "Người hỗ trợ",
     "learnerRole": "Người cần giúp",
     "goals": [
-      "Mô tả thời tiết bằng một câu",
-      "Xin giúp tìm một địa điểm và xin nhắc lại nếu cần"
+      "Nói mình không khỏe và cần tìm bệnh viện",
+      "Xin nhắc lại hướng đi khi chưa rõ"
     ],
-    "opening": "你好，你需要什么帮助？",
-    "openingVi": "Chào bạn, bạn cần giúp việc gì?"
+    "opening": "你好，你不舒服吗？",
+    "openingVi": "Chào bạn, bạn không khỏe à?"
   },
   "freeTalk": {
-    "question": "请说明一个需要，再请对方帮忙。",
-    "questionVi": "Xin nói một nhu cầu rồi nhờ người đối thoại giúp."
+    "question": "请说不舒服，再请对方帮你找医院，最后请他说一遍。",
+    "questionVi": "Hãy nói bạn không khỏe, nhờ người đối diện giúp tìm bệnh viện, cuối cùng nhờ họ nói lại một lần."
   },
   "learningNotes": [
     "Bổ trợ: 不舒服 bù shūfu — không khỏe; 帮 bāng — giúp; 找 zhǎo — tìm.",
@@ -129,7 +145,7 @@
         "explanation": "B nói 往前走."
       }
     ],
-    "pinyin": "jiǎ ： nǐ hǎo ， wǒ bù shū fú 。 qǐng bāng wǒ zhǎo yī yuàn 。 yǐ ： yī yuàn zài qián miàn 。 jiǎ ： xiè xiè ， qǐng zài shuō yí biàn 。 yǐ ： wǎng qián zǒu 。"
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ bù shū fu 。 qǐng bāng wǒ zhǎo yī yuàn 。 yǐ ： yī yuàn zài qián miàn 。 jiǎ ： xiè xie ， qǐng zài shuō yí biàn 。 yǐ ： wǎng qián zǒu 。"
   },
   "speaking": [
     {
@@ -137,18 +153,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "今天天气很好。 今天很冷。",
+      "reference": "我不舒服。请帮我找医院。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "今天天气很好。 今天很冷。"
+      "audioText": "我不舒服。请帮我找医院。"
     },
     {
       "kind": "answer",
-      "prompt": "请说明一个需要，再请对方帮忙。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请说不舒服，再请对方帮你找医院，最后请他说一遍。",
+      "promptVi": "Hãy nói bạn không khỏe, nhờ người đối diện giúp tìm bệnh viện, cuối cùng nhờ họ nói lại một lần.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -157,9 +173,9 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我不舒服。请帮我找医院。请再说一遍。",
-      "sampleVi": "Tôi không khỏe. Xin giúp tôi tìm bệnh viện. Xin nói lại một lần nữa."
+      "sampleZh": "你好，我不舒服。请帮我找医院。医院在哪里？请再说一遍。",
+      "sampleVi": "Chào bạn, tôi không khỏe. Xin giúp tôi tìm bệnh viện. Bệnh viện ở đâu? Xin nói lại một lần."
     }
   ],
-  "transferTask": "Đổi lịch vì mưa; buổi 2 xin giúp tìm nơi khám khi không khỏe."
+  "transferTask": "Ở nơi lạ: nói không khỏe, nhờ tìm bệnh viện, hỏi vị trí và xin nhắc lại nếu chưa rõ."
 }

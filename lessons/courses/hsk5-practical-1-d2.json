@@ -59,7 +59,23 @@
       "example": "请举一个具体的例子。",
       "exampleVi": "Xin đưa ra một ví dụ cụ thể.",
       "pinyin": "jù tǐ",
-      "examplePinyin": "qǐng jǔ yí gè jù tǐ de lì zǐ 。"
+      "examplePinyin": "qǐng jǔ yí gè jù tǐ de lì zi 。"
+    },
+    {
+      "word": "汇报",
+      "meaning": "báo cáo",
+      "example": "下周我向新同事汇报项目。",
+      "exampleVi": "Tuần sau tôi báo cáo dự án với đồng nghiệp mới.",
+      "pinyin": "huì bào",
+      "examplePinyin": "xià zhōu wǒ xiàng xīn tóng shì huì bào xiàng mù 。"
+    },
+    {
+      "word": "同事",
+      "meaning": "đồng nghiệp",
+      "example": "同事帮我确认了数据。",
+      "exampleVi": "Đồng nghiệp giúp tôi xác nhận số liệu.",
+      "pinyin": "tóng shì",
+      "examplePinyin": "tóng shì bāng wǒ què rèn le shù jù 。"
     }
   ],
   "patterns": [
@@ -79,19 +95,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Buổi 1 phỏng vấn; buổi 2 giới thiệu với nhóm mới, không lặp nguyên bài nói. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
-    "avatarRole": "Người phỏng vấn/đồng nghiệp mới",
-    "learnerRole": "Người giới thiệu năng lực",
+    "setting": "Buổi 2: giới thiệu bản thân với nhóm mới trong hai phút, chọn một ví dụ thay vì liệt kê mọi dự án.",
+    "avatarRole": "Đồng nghiệp mới",
+    "learnerRole": "Người giới thiệu trước nhóm",
     "goals": [
-      "Giới thiệu năng lực bằng một ví dụ có hành động và kết quả",
-      "Nêu mục tiêu phát triển và trả lời một câu hỏi làm rõ"
+      "Giới thiệu một ví dụ có hành động và kết quả trong hai phút",
+      "Nêu mục tiêu học hỏi và phần việc nhóm đã làm"
     ],
-    "opening": "请用一个具体例子介绍你的工作能力。",
-    "openingVi": "Xin dùng một ví dụ cụ thể để giới thiệu năng lực công việc của bạn."
+    "opening": "请你用两分钟介绍自己，重点讲一个例子。",
+    "openingVi": "Xin dùng hai phút giới thiệu bản thân, tập trung vào một ví dụ."
   },
   "freeTalk": {
-    "question": "工作经验和学习能力，哪一个更重要？请结合例子说明。",
-    "questionVi": "Kinh nghiệm công việc và khả năng học hỏi, điều nào quan trọng hơn? Xin giải thích bằng ví dụ."
+    "question": "介绍自己时，应该先讲能力还是先讲合作？请说明理由。",
+    "questionVi": "Khi giới thiệu bản thân, nên nói năng lực trước hay hợp tác trước? Xin giải thích lý do."
   },
   "learningNotes": [
     "Điều kiện đầu vào: đã giao tiếp được về sinh hoạt, công việc và kể việc quá khứ; đây không phải khóa từ số không lên HSK 5.",
@@ -152,7 +168,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "我负责安排项目进度。 我有三年客户服务经验。 我的优势是善于沟通。 我的目标是提高工作效率。",
+      "text": "我不仅负责项目进度，还协助新人适应工作。通过整理常见问题，我提高了团队回复效率。我的目标是学习项目管理。我也会定期向同事汇报进度。这个例子也说明团队合作很重要。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -164,8 +180,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "工作经验和学习能力，哪一个更重要？请结合例子说明。",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "介绍自己时，应该先讲能力还是先讲合作？请说明理由。",
+      "promptVi": "Khi giới thiệu bản thân, nên nói năng lực trước hay hợp tác trước? Xin giải thích lý do.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -174,9 +190,9 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "我认为两者都重要，但在工作内容经常变化的情况下，学习能力更关键。经验能帮助我们快速判断常见问题，却不一定适合新的任务。比如以前处理订单的方法，可能需要随着系统变化而调整。当然，没有基本经验的人也需要时间练习。因此，我会用经验作为起点，同时保持学习和确认的习惯。",
-      "sampleVi": "Tôi cho rằng cả hai đều quan trọng, nhưng khi công việc thay đổi thường xuyên thì khả năng học hỏi quan trọng hơn. Kinh nghiệm giúp xử lý việc quen thuộc nhanh, nhưng chưa chắc hợp nhiệm vụ mới. Chẳng hạn cách xử lý đơn cần điều chỉnh khi hệ thống đổi. Người chưa có kinh nghiệm vẫn cần thời gian luyện, vì vậy tôi lấy kinh nghiệm làm điểm xuất phát và tiếp tục học, xác nhận."
+      "sampleZh": "我认为应该先讲合作，再讲能力。原因有两个：第一，新同事更关心以后怎样一起工作；第二，能力如果没有具体例子，听起来只是自我评价。比如介绍项目时，我会说明自己负责哪一部分、团队完成了什么、结果怎样。当然，如果岗位特别强调专业能力，也可以先用一个具体成果开头。因此，顺序要看听众，但都要有例子和结果。",
+      "sampleVi": "Tôi cho rằng nên nói về hợp tác trước, rồi mới nói năng lực. Có hai lý do: thứ nhất, đồng nghiệp mới quan tâm sau này sẽ làm việc cùng nhau thế nào; thứ hai, năng lực nếu không có ví dụ cụ thể chỉ giống như tự đánh giá. Chẳng hạn khi giới thiệu dự án, tôi sẽ nói rõ mình phụ trách phần nào, nhóm đã hoàn thành gì và kết quả ra sao. Tất nhiên, nếu vị trí đặc biệt nhấn mạnh chuyên môn, có thể mở đầu bằng một thành quả cụ thể. Vì vậy, thứ tự tùy người nghe, nhưng đều cần ví dụ và kết quả."
     }
   ],
-  "transferTask": "Buổi 1 phỏng vấn; buổi 2 giới thiệu với nhóm mới, không lặp nguyên bài nói."
+  "transferTask": "Trước nhóm mới: giới thiệu hai phút, chọn một ví dụ có hành động, kết quả và phần việc nhóm; nêu mục tiêu học hỏi, rồi trả lời một câu hỏi làm rõ."
 }

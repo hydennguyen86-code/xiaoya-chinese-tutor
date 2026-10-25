@@ -176,3 +176,11 @@ hay thiết bị Windows thật. E23 vẫn chờ bộ câu thử DeepSeek, khôn
 - Trường âm hiển thị trong thẻ từ bài học, từ mới hội thoại, kho từ và thẻ ôn. Ôn hỏi đáp chỉ mở ghi chú sau khi hiện đáp án để không lộ nghĩa. Phần hồ sơ có danh mục riêng 42 mục DeepSeek, chia Bẫy nghĩa / Mẹo âm; giữ nhãn AI soạn, chưa duyệt và ghi rõ mẹo âm gần đúng.
 - kVietnamese là âm Quốc ngữ theo chữ, không phải nguồn phân giải từ/ngữ cảnh và không thay pinyin/nghĩa hiện đại. Không đoán âm khi thiếu: hiện chữ + chưa có dữ liệu. Tại thời điểm kiểm tra 143 từ khác nhau của khóa học có 26 chữ thiếu dữ liệu Unihan; không tuyên bố bao phủ mọi chữ Hán hoặc chọn đúng âm cho mọi từ đa âm.
 - Test giản/phồn, nhiều âm, ký tự thiếu, tách nhóm bẫy/mẹo; checker DeepSeek chạy trong repo. Chưa có người dạy duyệt các ghi chú DeepSeek hay âm theo ngữ cảnh.
+
+## Nội dung DeepSeek course-day2 / course-fixes
+
+- Đã có đủ 24 buổi 2 (12 HSK1 + 12 HSK5), áp vào lessons/courses. Trước nhập đã chạy checker DeepSeek trong repo đối chiếu bản cũ: đủ 24/24, thêm 46 lượt từ mở rộng, opening/freeTalk/transferTask/toàn bộ speaking không trùng buổi 1 ở cả 24 buổi. Hai cảnh báo giữ nguyên: “em trai” không dấu là từ hợp lệ; đoạn nghe bài HSK1-12 buổi 2 đổi nên cần người dạy xem lại câu hỏi/đáp án.
+- Áp 2 patch checkpoint HSK1 bài 6/12: chỉ thêm pinyin và glossary, không ghi đè nội dung cũ hay đổi official=false/reviewed=false. Có script áp lại idempotent, chặn ghi đè và đường dẫn ngoài whitelist.
+- Nhập JSON/chính sách thanh nhẹ vào policies và module coursePinyin, không chép _author/_make scripts. Các nhãn vẫn AI đề xuất/chưa duyệt. Quy tắc này dùng cho kiểm tra học liệu, không đổi bộ chấm thanh/segment.
+- Sửa loader bài đóng gói giữ pinyin tác giả đã kiểm tra, không tự tái sinh đè thanh nhẹ bằng mặc định pinyin-pro. Chú giải checkpoint/pinyin hiện khi mở đáp án để ôn; thêm âm Hán Việt cho từ chú giải. Thẻ kho từ nhỏ dùng dòng âm gọn để không lồng details tương tác vào button.
+- Test thêm 24 buổi với từ gốc buổi 1, giới hạn 3 từ mới, tình huống mới, pinyin/chính sách, loader giữ xiè xie, 2 checkpoint, patch add-only/idempotent. Validator toàn bộ 48 buổi vẫn chạy. Chưa duyệt sư phạm và chưa thử người học thật.

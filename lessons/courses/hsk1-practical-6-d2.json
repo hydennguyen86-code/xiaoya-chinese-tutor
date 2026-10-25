@@ -60,6 +60,30 @@
       "exampleVi": "Cốc trà này rất nóng.",
       "pinyin": "rè",
       "examplePinyin": "zhè bēi chá hěn rè 。"
+    },
+    {
+      "word": "糖",
+      "meaning": "đường",
+      "example": "请加糖。",
+      "exampleVi": "Xin thêm đường.",
+      "pinyin": "táng",
+      "examplePinyin": "qǐng jiā táng 。"
+    },
+    {
+      "word": "冰",
+      "meaning": "đá",
+      "example": "一杯加冰的茶。",
+      "exampleVi": "Một cốc trà thêm đá.",
+      "pinyin": "bīng",
+      "examplePinyin": "yì bēi jiā bīng de chá 。"
+    },
+    {
+      "word": "加",
+      "meaning": "thêm",
+      "example": "请加水。",
+      "exampleVi": "Xin thêm nước.",
+      "pinyin": "jiā",
+      "examplePinyin": "qǐng jiā shuǐ 。"
     }
   ],
   "patterns": [
@@ -79,19 +103,19 @@
     }
   ],
   "roleplay": {
-    "setting": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: mua hai đồ uống mang đi, một nóng một thêm đá; đổi số lượng và yêu cầu so với buổi 1.",
     "avatarRole": "Nhân viên đồ uống",
-    "learnerRole": "Khách gọi nước",
+    "learnerRole": "Khách mua mang đi",
     "goals": [
-      "Gọi đồ uống kèm số lượng",
-      "Nói một yêu cầu về đường hoặc đá"
+      "Gọi hai đồ uống kèm số lượng",
+      "Nói yêu cầu về đá hoặc đường cho từng cốc"
     ],
-    "opening": "你好，你想喝什么？",
-    "openingVi": "Chào bạn, bạn muốn uống gì?"
+    "opening": "你好，你要几杯？",
+    "openingVi": "Chào bạn, bạn lấy mấy cốc?"
   },
   "freeTalk": {
-    "question": "请点一杯饮料，再说一个要求。",
-    "questionVi": "Xin gọi một đồ uống rồi đưa ra một yêu cầu."
+    "question": "请买两杯不同的饮料，一杯热，一杯加冰。",
+    "questionVi": "Hãy mua hai cốc đồ uống khác nhau, một cốc nóng, một cốc thêm đá."
   },
   "learningNotes": [
     "Bổ trợ: 糖 táng — đường; 冰 bīng — đá; 加 jiā — thêm; 不要 bú yào — không muốn/đừng.",
@@ -136,18 +160,18 @@
       "prompt": "Nghe rồi nhắc lại hai câu ngắn, không cần giống giọng mẫu.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
-      "reference": "我想喝水。 我要一杯茶。",
+      "reference": "我要两杯咖啡。一杯热的，一杯加冰。",
       "checklist": [
         "Giữ đúng thông tin trọng tâm",
         "Người nghe hiểu được ý",
         "Không nhìn câu mẫu khi thử lại"
       ],
-      "audioText": "我想喝水。 我要一杯茶。"
+      "audioText": "我要两杯咖啡。一杯热的，一杯加冰。"
     },
     {
       "kind": "answer",
-      "prompt": "请点一杯饮料，再说一个要求。",
-      "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
+      "prompt": "请买两杯不同的饮料，一杯热，一杯加冰。",
+      "promptVi": "Hãy mua hai cốc đồ uống khác nhau, một cốc nóng, một cốc thêm đá.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",
@@ -156,11 +180,11 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我要一杯热茶。请不要加糖。谢谢。",
-      "sampleVi": "Tôi lấy một cốc trà nóng. Xin đừng thêm đường. Cảm ơn."
+      "sampleZh": "我要两杯茶。一杯热茶，一杯加冰。请不要加糖。谢谢。",
+      "sampleVi": "Tôi lấy hai cốc trà. Một cốc trà nóng, một cốc thêm đá. Xin đừng thêm đường. Cảm ơn."
     }
   ],
-  "transferTask": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người.",
+  "transferTask": "Mua mang đi cho hai người: gọi hai cốc khác loại, nói nóng/đá cho từng cốc và nhắc lại tổng số cốc.",
   "checkpoint": {
     "title": "Kiểm tra chặng 1 — nghe và nói ứng dụng",
     "practiceMinutes": 12,
@@ -193,7 +217,8 @@
           }
         ],
         "playLimit": 2,
-        "title": "Đoạn 1"
+        "title": "Đoạn 1",
+        "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo lín 。 yǐ ： nǐ shì lǎo shī ma ？ jiǎ ： bú shì ， wǒ shì xué sheng 。 wǒ jiā yǒu sān kǒu rén 。"
       },
       {
         "transcript": "甲：你明天下午有时间吗？乙：有，我们四点见面吧。甲：好。你想喝什么？乙：一杯水，谢谢。",
@@ -221,7 +246,8 @@
           }
         ],
         "playLimit": 2,
-        "title": "Đoạn 2"
+        "title": "Đoạn 2",
+        "pinyin": "jiǎ ： nǐ míng tiān xià wǔ yǒu shí jiān ma ？ yǐ ： yǒu ， wǒ men sì diǎn jiàn miàn ba 。 jiǎ ： hǎo 。 nǐ xiǎng hē shén me ？ yǐ ： yì bēi shuǐ ， xiè xie 。"
       }
     ],
     "speaking": [
@@ -236,7 +262,8 @@
           "Giữ đúng dữ kiện",
           "Không thêm sự kiện không có trong bài",
           "Nói rõ và có trình tự"
-        ]
+        ],
+        "pinyin": "xiàn zài shì xià wǔ sì diǎn 。 wǒ men zài xué xiào jiàn miàn 。"
       },
       {
         "kind": "answer",
@@ -249,7 +276,40 @@
           "Đúng trọng tâm",
           "Có chi tiết cụ thể",
           "Tự nói không nhìn mẫu"
-        ]
+        ],
+        "pinyin": "wǒ jiào xiǎo ān 。 wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "老师",
+        "pinyin": "lǎo shī",
+        "meaningVi": "giáo viên"
+      },
+      {
+        "word": "学生",
+        "pinyin": "xué sheng",
+        "meaningVi": "học sinh; sinh viên"
+      },
+      {
+        "word": "三口人",
+        "pinyin": "sān kǒu rén",
+        "meaningVi": "ba người (trong một gia đình)"
+      },
+      {
+        "word": "下午",
+        "pinyin": "xià wǔ",
+        "meaningVi": "buổi chiều"
+      },
+      {
+        "word": "见面",
+        "pinyin": "jiàn miàn",
+        "meaningVi": "gặp mặt"
+      },
+      {
+        "word": "水",
+        "pinyin": "shuǐ",
+        "meaningVi": "nước"
       }
     ]
   }

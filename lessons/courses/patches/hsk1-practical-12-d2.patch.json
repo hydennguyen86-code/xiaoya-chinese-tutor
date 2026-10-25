@@ -1,0 +1,88 @@
+{
+  "patchVersion": 1,
+  "target": "lessons/courses/hsk1-practical-12-d2.json",
+  "lesson": "hsk1-practical-12-d2",
+  "reason": "Lỗi 3.2: thêm pinyin cho 2 đoạn nghe và 2 nhiệm vụ nói; chú giải 旁边/一共 — hai từ chưa có trong vocab bài 1–11.",
+  "status": "AI đề xuất, chưa có giáo viên duyệt",
+  "reviewed": false,
+  "note": "Chỉ thêm trường mới vào checkpoint; không sửa trường gốc, không đổi official=false.",
+  "ops": [
+    {
+      "op": "add",
+      "path": "/checkpoint/listening/0/pinyin",
+      "source": "/checkpoint/listening/0/transcript",
+      "value": "jiǎ ： qǐng wèn ， shāng diàn zài nǎ lǐ ？ yǐ ： wǎng zuǒ zǒu ， shāng diàn zài xué xiào páng biān 。 jiǎ ： shì wǎng zuǒ zǒu ma ？ yǐ ： duì 。"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/listening/1/pinyin",
+      "source": "/checkpoint/listening/1/transcript",
+      "value": "jiǎ ： wǒ yào yì wǎn miàn tiáo hé liǎng bēi shuǐ 。 yǐ ： miàn tiáo bā kuài ， shuǐ yì bēi liǎng kuài ， yí gòng shí èr kuài 。 jiǎ ： hǎo ， qǐng bú yào fàng là jiāo 。"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/speaking/0/pinyin",
+      "source": "/checkpoint/speaking/0/audioText",
+      "value": "xiàn zài shì xià wǔ sì diǎn 。 wǒ men zài xué xiào jiàn miàn 。"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/speaking/1/pinyin",
+      "source": "/checkpoint/speaking/1/reference",
+      "value": "wǒ jiào xiǎo ān 。 wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？"
+    },
+    {
+      "op": "add",
+      "path": "/checkpoint/glossary",
+      "value": [
+        {
+          "word": "商店",
+          "pinyin": "shāng diàn",
+          "meaningVi": "cửa hàng"
+        },
+        {
+          "word": "学校",
+          "pinyin": "xué xiào",
+          "meaningVi": "trường học"
+        },
+        {
+          "word": "旁边",
+          "pinyin": "páng biān",
+          "meaningVi": "bên cạnh",
+          "note": "Từ chưa có trong vocab bài 1–11; chú giải ngay tại checkpoint."
+        },
+        {
+          "word": "往",
+          "pinyin": "wǎng",
+          "meaningVi": "về phía"
+        },
+        {
+          "word": "碗",
+          "pinyin": "wǎn",
+          "meaningVi": "bát"
+        },
+        {
+          "word": "面条",
+          "pinyin": "miàn tiáo",
+          "meaningVi": "mì"
+        },
+        {
+          "word": "辣椒",
+          "pinyin": "là jiāo",
+          "meaningVi": "ớt"
+        },
+        {
+          "word": "一共",
+          "pinyin": "yí gòng",
+          "meaningVi": "tổng cộng; tất cả",
+          "note": "Từ chưa có trong vocab bài 1–11; chú giải ngay tại checkpoint."
+        },
+        {
+          "word": "十二",
+          "pinyin": "shí èr",
+          "meaningVi": "mười hai"
+        }
+      ]
+    }
+  ]
+}

@@ -60,6 +60,22 @@
       "exampleVi": "Sau khi quyết định phải giao cụ thể cho người phụ trách thực hiện.",
       "pinyin": "luò shí",
       "examplePinyin": "jué dìng yǐ hòu yào luò shí dào jù tǐ fù zé rén 。"
+    },
+    {
+      "word": "阶段",
+      "meaning": "giai đoạn",
+      "example": "我们分两个阶段完成。",
+      "exampleVi": "Chúng tôi hoàn thành theo hai giai đoạn.",
+      "pinyin": "jiē duàn",
+      "examplePinyin": "wǒ men fēn liǎng gè jiē duàn wán chéng 。"
+    },
+    {
+      "word": "验收",
+      "meaning": "nghiệm thu",
+      "example": "请先确定验收标准。",
+      "exampleVi": "Xin xác định tiêu chuẩn nghiệm thu trước.",
+      "pinyin": "yàn shōu",
+      "examplePinyin": "qǐng xiān què dìng yàn shōu biāo zhǔn 。"
     }
   ],
   "patterns": [
@@ -79,20 +95,20 @@
     }
   ],
   "roleplay": {
-    "setting": "Hoạt động cộng đồng; buổi 2 kế hoạch đào tạo doanh nghiệp, chuyển kiến thức sang tình huống mới. Thực hiện tình huống buổi 2; đổi dữ kiện, không yêu cầu lặp nguyên câu đã học.",
+    "setting": "Buổi 2: lập kế hoạch đào tạo doanh nghiệp theo giai đoạn; chốt đầu ra, người phụ trách và cách nghiệm thu.",
     "avatarRole": "Người phụ trách dự án",
     "learnerRole": "Người tổng hợp và đề xuất",
     "goals": [
-      "Tóm tắt đúng nhu cầu và giới hạn của ít nhất hai bên",
-      "Đề xuất một phương án có căn cứ và một rủi ro",
-      "Chốt người phụ trách, thời gian và cách kiểm tra"
+      "Tóm tắt nhu cầu của khách và giới hạn của giảng viên",
+      "Đề xuất phương án theo giai đoạn kèm một rủi ro",
+      "Chốt người phụ trách, mốc thời gian và cách nghiệm thu"
     ],
-    "opening": "请先总结各方的需求，再提出一个可执行的方案。",
-    "openingVi": "Xin tóm tắt nhu cầu của các bên trước, sau đó đề xuất một phương án thực hiện được."
+    "opening": "客户希望一天就熟练，你觉得应该怎样安排？",
+    "openingVi": "Khách muốn thành thạo trong một ngày; bạn thấy nên sắp xếp thế nào?"
   },
   "freeTalk": {
-    "question": "在真实工作中，怎样判断一次沟通是否成功？请结合这次任务回答。",
-    "questionVi": "Trong công việc thực tế, đánh giá một lần trao đổi thành công bằng cách nào? Xin trả lời dựa trên nhiệm vụ lần này."
+    "question": "培训结束时，应该按满意度还是按任务完成情况验收？请说明。",
+    "questionVi": "Khi kết thúc đào tạo, nên nghiệm thu theo mức hài lòng hay theo mức hoàn thành nhiệm vụ? Xin giải thích."
   },
   "learningNotes": [
     "Bài cuối giai đoạn: nghe một lần để nắm ý, lần hai ghi mốc và hạn chế; sau đó nói 2 phút không nhìn bản chép.",
@@ -165,7 +181,7 @@
     {
       "kind": "read",
       "prompt": "Đọc đoạn sau thành tiếng, chia cụm theo ý, không đọc từng chữ rời rạc.",
-      "text": "请先总结双方的主要需求。 关键是先确认截止时间。 双方的分歧主要在费用上。 你的建议有什么依据？",
+      "text": "综合考虑时间和成本，我建议先做课前调查。为了避免误解，需要先书面确认学习目标。双方的分歧主要在验收标准上。关键是先确认每个阶段能做到什么。",
       "prepareSeconds": 30,
       "responseSeconds": 60,
       "reference": "Chú ý ngắt câu, phát âm rõ từ trọng tâm. Không suy ra điểm phát âm từ văn bản nhận dạng.",
@@ -177,8 +193,8 @@
     },
     {
       "kind": "opinion",
-      "prompt": "在真实工作中，怎样判断一次沟通是否成功？请结合这次任务回答。",
-      "promptVi": "Trình bày 90–120 giây: quan điểm, lý do, ví dụ, một giới hạn và kết luận.",
+      "prompt": "培训结束时，应该按满意度还是按任务完成情况验收？请说明。",
+      "promptVi": "Khi kết thúc đào tạo, nên nghiệm thu theo mức hài lòng hay theo mức hoàn thành nhiệm vụ? Xin giải thích.",
       "prepareSeconds": 45,
       "responseSeconds": 120,
       "reference": "Không có một đáp án quan điểm duy nhất. Dùng cấu trúc: Tôi cho rằng…; lý do thứ nhất…; ví dụ…; tuy nhiên…; vì vậy…",
@@ -187,11 +203,11 @@
         "Có lý do và ví dụ cụ thể",
         "Nêu một giới hạn hoặc phản biện, rồi kết luận"
       ],
-      "sampleZh": "我会看双方是否对目标、限制和下一步有相同的理解，而不只看谈话是否愉快。以培训任务为例，如果客户仍然以为一天后所有人都能熟练处理复杂问题，沟通就没有完成。需要说明每阶段能做什么，再确认负责人和检查方式。当然，暂时有分歧不等于失败，只要分歧明确，双方知道怎样继续，就有进展。",
-      "sampleVi": "Tôi xét hai bên có hiểu giống nhau về mục tiêu, giới hạn và bước tiếp theo không, chứ không chỉ cuộc nói chuyện vui vẻ. Với đào tạo, nếu khách vẫn nghĩ một ngày đủ để mọi người xử lý thành thạo việc phức tạp thì chưa trao đổi xong. Cần chuẩn đầu ra từng giai đoạn, người phụ trách và cách kiểm tra. Còn bất đồng chưa hẳn thất bại nếu đã làm rõ và biết tiếp tục ra sao."
+      "sampleZh": "我会以任务完成情况为主，满意度为辅。原因是满意度能说明感受，但不能证明会用。比如培训目标是独立操作系统，就应该让学员完成几个真实任务，看能不能做对、需要多少帮助；满意度问卷可以了解讲解是否清楚。综合考虑，验收要有三项：任务清单、完成标准、补考或答疑安排。为了避免把参加过当成已经熟练，最好在培训前就把这三项写清楚。",
+      "sampleVi": "Tôi sẽ lấy mức hoàn thành nhiệm vụ làm chính, mức hài lòng làm phụ. Lý do là hài lòng nói lên cảm nhận nhưng không chứng minh biết dùng. Chẳng hạn mục tiêu là tự vận hành hệ thống, thì nên để học viên làm vài nhiệm vụ thật, xem có làm đúng không, cần hỗ trợ bao nhiêu; bảng hỏi hài lòng chỉ giúp biết cách giảng có rõ không. Tổng hợp lại, nghiệm thu cần ba mục: danh sách nhiệm vụ, tiêu chuẩn hoàn thành, kế hoạch bổ sung hoặc giải đáp. Để tránh nhầm “đã tham gia” với “đã thành thạo”, nên ghi rõ ba mục này trước khi đào tạo."
     }
   ],
-  "transferTask": "Hoạt động cộng đồng; buổi 2 kế hoạch đào tạo doanh nghiệp, chuyển kiến thức sang tình huống mới.",
+  "transferTask": "Lập kế hoạch đào tạo theo giai đoạn: tóm tắt nhu cầu hai bên, đề xuất đầu ra từng giai đoạn kèm rủi ro, chốt người phụ trách và cách nghiệm thu.",
   "checkpoint": {
     "title": "Kiểm tra chặng 2 — nghe và nói ứng dụng",
     "practiceMinutes": 20,
