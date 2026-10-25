@@ -1,0 +1,2438 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "dictation",
+  "version": 1,
+  "note": "Chính tả nghe: app phát câu bằng TTS, người học nghe rồi viết lại. File không chứa audio. pinyin ghi ở dạng đọc thành tiếng (đã áp biến điệu 一/不, 3+3 và thanh nhẹ); các mục sandhi=true có baseTones để dạy cả thanh gốc.",
+  "levels": [
+    "HSK1-2",
+    "HSK3-4",
+    "HSK5-6"
+  ],
+  "schema": {
+    "id": "dt-<1|2|3>-<số 3 chữ số>",
+    "level": "HSK1-2 | HSK3-4 | HSK5-6",
+    "hanzi": "câu chữ Hán, có dấu câu",
+    "pinyin": "pinyin có dấu thanh, đúng thứ tự từng chữ, không chứa dấu câu",
+    "meaningVi": "nghĩa tiếng Việt tự nhiên",
+    "focus": "mảng: người học cần nghe ra gì (thanh, biến điệu, cặp âm, lượng từ, hư từ)",
+    "baseTones": "chuỗi thanh gốc trước biến điệu, chỉ có khi sandhi=true",
+    "sandhi": "true khi chuỗi thanh bề mặt khác pinyin-pro",
+    "hint": "giải thích ngắn cho mục có biến điệu",
+    "uncertain": "true khi người soạn chưa chắc, kèm uncertainReason"
+  },
+  "items": [
+    {
+      "id": "dt-1-001",
+      "level": "HSK1-2",
+      "hanzi": "你好。",
+      "pinyin": "ní hǎo",
+      "meaningVi": "Chào bạn.",
+      "focus": [
+        "Biến điệu 3+3: hai thanh 3 đi liền, chữ đầu chuyển thành thanh 2 → ní hǎo."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 0 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 2-3 lẫn 3-3."
+    },
+    {
+      "id": "dt-1-002",
+      "level": "HSK1-2",
+      "hanzi": "谢谢！",
+      "pinyin": "xiè xie",
+      "meaningVi": "Cảm ơn!",
+      "focus": [
+        "Chữ thứ hai đọc nhẹ: xiè xie, không phải xiè xiè."
+      ]
+    },
+    {
+      "id": "dt-1-003",
+      "level": "HSK1-2",
+      "hanzi": "再见。",
+      "pinyin": "zài jiàn",
+      "meaningVi": "Tạm biệt.",
+      "focus": [
+        "Hai thanh 4 liên tiếp: zài jiàn, cả hai rơi mạnh và ngắn."
+      ]
+    },
+    {
+      "id": "dt-1-004",
+      "level": "HSK1-2",
+      "hanzi": "我吃饭。",
+      "pinyin": "wǒ chī fàn",
+      "meaningVi": "Tôi ăn cơm.",
+      "focus": [
+        "吃 chī là âm cuộn lưỡi, bật hơi — dễ lẫn với cī.",
+        "Vần sau ch là nguyên âm cuộn lưỡi, môi bè sang hai bên."
+      ]
+    },
+    {
+      "id": "dt-1-005",
+      "level": "HSK1-2",
+      "hanzi": "他很高。",
+      "pinyin": "tā hěn gāo",
+      "meaningVi": "Anh ấy rất cao.",
+      "focus": [
+        "h trong tiếng Trung gần \"h\" tiếng Việt, không bật thành \"kh\".",
+        "很 hěn đứng trước tính từ, thanh 3 ngắn gọn."
+      ]
+    },
+    {
+      "id": "dt-1-006",
+      "level": "HSK1-2",
+      "hanzi": "水很热。",
+      "pinyin": "shuǐ hěn rè",
+      "meaningVi": "Nước rất nóng.",
+      "focus": [
+        "水 shuǐ: sh cuộn lưỡi, khác sǔi.",
+        "热 rè: r không rung như \"l\" tiếng Việt."
+      ]
+    },
+    {
+      "id": "dt-1-007",
+      "level": "HSK1-2",
+      "hanzi": "太贵了。",
+      "pinyin": "tài guì le",
+      "meaningVi": "Đắt quá.",
+      "focus": [
+        "贵 guì: u + i, rơi mạnh từ cao xuống thấp.",
+        "了 cuối câu đọc nhẹ le."
+      ]
+    },
+    {
+      "id": "dt-1-008",
+      "level": "HSK1-2",
+      "hanzi": "十块钱。",
+      "pinyin": "shí kuài qián",
+      "meaningVi": "Mười tệ.",
+      "focus": [
+        "十 shí cuộn lưỡi, phân biệt với 四 sì.",
+        "块 kuài: âm u + a + i, đọc liền một hơi."
+      ]
+    },
+    {
+      "id": "dt-1-009",
+      "level": "HSK1-2",
+      "hanzi": "那是本书。",
+      "pinyin": "nà shì běn shū",
+      "meaningVi": "Kia là một quyển sách.",
+      "focus": [
+        "本 bǎn là lượng từ đi với sách.",
+        "那 đọc nà, không phải lā."
+      ]
+    },
+    {
+      "id": "dt-1-010",
+      "level": "HSK1-2",
+      "hanzi": "爸爸在家。",
+      "pinyin": "bà ba zài jiā",
+      "meaningVi": "Bố ở nhà.",
+      "focus": [
+        "爸爸: chữ thứ hai đọc nhẹ → bà ba.",
+        "Trọng tâm câu rơi vào 家, không rơi vào âm nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-011",
+      "level": "HSK1-2",
+      "hanzi": "我叫小明。",
+      "pinyin": "wǒ jiào xiǎo míng",
+      "meaningVi": "Tôi tên là Tiểu Minh.",
+      "focus": [
+        "叫 jiào không bật hơi, đọc gần \"d\" cứng.",
+        "明 míng đóng bằng -ng, mũi vang."
+      ]
+    },
+    {
+      "id": "dt-1-012",
+      "level": "HSK1-2",
+      "hanzi": "我是老师。",
+      "pinyin": "wǒ shì lǎo shī",
+      "meaningVi": "Tôi là giáo viên.",
+      "focus": [
+        "师 shī cuộn lưỡi, kéo hơi rít dài.",
+        "shī và sī là hai âm khác hẳn nhau."
+      ]
+    },
+    {
+      "id": "dt-1-013",
+      "level": "HSK1-2",
+      "hanzi": "这是什么？",
+      "pinyin": "zhè shì shén me",
+      "meaningVi": "Đây là cái gì?",
+      "focus": [
+        "什么: chữ thứ hai đọc nhẹ → shén me.",
+        "是 shì cuộn lưỡi, thanh 4 rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-1-014",
+      "level": "HSK1-2",
+      "hanzi": "现在几点？",
+      "pinyin": "xiàn zài jǐ diǎn",
+      "meaningVi": "Bây giờ mấy giờ?",
+      "focus": [
+        "几 jǐ (mấy) là thanh 3, khác 七 qī (bảy).",
+        "点 diǎn: i + e + n, kết thúc bằng -n."
+      ]
+    },
+    {
+      "id": "dt-1-015",
+      "level": "HSK1-2",
+      "hanzi": "现在八点。",
+      "pinyin": "xiàn zài bā diǎn",
+      "meaningVi": "Bây giờ tám giờ.",
+      "focus": [
+        "八 bā thanh 1, cao và phẳng, giữ đều từ đầu đến cuối.",
+        "Giờ nói 点 diǎn, không phải 个 ge."
+      ]
+    },
+    {
+      "id": "dt-1-016",
+      "level": "HSK1-2",
+      "hanzi": "明天有雨。",
+      "pinyin": "míng tiān yǒu yǔ",
+      "meaningVi": "Ngày mai có mưa.",
+      "focus": [
+        "有 yǒu đứng trước danh từ, thanh 3.",
+        "雨 yǔ mang âm ü, môi tròn chặt."
+      ]
+    },
+    {
+      "id": "dt-1-017",
+      "level": "HSK1-2",
+      "hanzi": "昨天很冷。",
+      "pinyin": "zuó tiān hěn lěng",
+      "meaningVi": "Hôm qua rất lạnh.",
+      "focus": [
+        "昨 zuó là z, không cuộn lưỡi.",
+        "冷 lěng đóng bằng -ng."
+      ]
+    },
+    {
+      "id": "dt-1-018",
+      "level": "HSK1-2",
+      "hanzi": "我买这个。",
+      "pinyin": "wǒ mǎi zhè ge",
+      "meaningVi": "Tôi mua cái này.",
+      "focus": [
+        "这 zhè cuộn lưỡi; 个 trong 这个 đọc nhẹ → zhè ge.",
+        "买 mǎi: a + i nối tiếp, môi mở rồi hẹp."
+      ]
+    },
+    {
+      "id": "dt-1-019",
+      "level": "HSK1-2",
+      "hanzi": "请写下来。",
+      "pinyin": "qǐng xiě xià lái",
+      "meaningVi": "Xin viết ra.",
+      "focus": [
+        "请 qǐng bật hơi q, lưỡi áp vòm cứng.",
+        "来 lái thanh 2 đi lên, kết thúc bằng -i mở."
+      ]
+    },
+    {
+      "id": "dt-1-020",
+      "level": "HSK1-2",
+      "hanzi": "他喜欢猫。",
+      "pinyin": "tā xǐ huan māo",
+      "meaningVi": "Anh ấy thích mèo.",
+      "focus": [
+        "喜欢 xǐ huan: 欢 đọc nhẹ, chỉ còn nghe rõ âm an.",
+        "猫 māo: a + o môi tròn, thanh 1 phẳng."
+      ]
+    },
+    {
+      "id": "dt-1-021",
+      "level": "HSK1-2",
+      "hanzi": "几点起床？",
+      "pinyin": "jǐ diǎn qǐ chuáng",
+      "meaningVi": "Mấy giờ dậy?",
+      "focus": [
+        "起床 qǐ chuáng: 起 không bật hơi, 床 bật hơi và có -uang.",
+        "chuáng mở rộng miệng, kết thúc -ng."
+      ]
+    },
+    {
+      "id": "dt-1-022",
+      "level": "HSK1-2",
+      "hanzi": "你喝茶吗？",
+      "pinyin": "nǐ hē chá ma",
+      "meaningVi": "Bạn uống trà không?",
+      "focus": [
+        "茶 chá cuộn lưỡi bật hơi, khác 擦 cā.",
+        "吗 cuối câu đọc nhẹ ma."
+      ]
+    },
+    {
+      "id": "dt-1-023",
+      "level": "HSK1-2",
+      "hanzi": "他在看书。",
+      "pinyin": "tā zài kàn shū",
+      "meaningVi": "Anh ấy đang đọc sách.",
+      "focus": [
+        "看 kān đóng -n, khác 帮 bāng (-ng).",
+        "书 shū cuộn lưỡi, khác 出 chū bật hơi."
+      ]
+    },
+    {
+      "id": "dt-1-024",
+      "level": "HSK1-2",
+      "hanzi": "我们去学校。",
+      "pinyin": "wǒ men qù xué xiào",
+      "meaningVi": "Chúng tôi đi trường học.",
+      "focus": [
+        "去 qù là âm ü, môi tròn chặt — không đọc \"u\" thường.",
+        "学 xué = x + üe, không phải \"xuê\"."
+      ]
+    },
+    {
+      "id": "dt-1-025",
+      "level": "HSK1-2",
+      "hanzi": "你住在哪里？",
+      "pinyin": "nǐ zhù zài ná lǐ",
+      "meaningVi": "Bạn sống ở đâu?",
+      "focus": [
+        "住 zhù cuộn lưỡi, thanh 4.",
+        "哪里 hai thanh 3 liền nhau → nái lǐ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 3 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 3-4-4-2-3 lẫn 3-4-4-3-3."
+    },
+    {
+      "id": "dt-1-026",
+      "level": "HSK1-2",
+      "hanzi": "今天是几号？",
+      "pinyin": "jīn tiān shì jǐ hào",
+      "meaningVi": "Hôm nay là ngày mấy?",
+      "focus": [
+        "今 jīn đóng bằng -n; khác 京 jīng (-ng).",
+        "号 hào thanh 2 hỏi ngày dương lịch."
+      ]
+    },
+    {
+      "id": "dt-1-027",
+      "level": "HSK1-2",
+      "hanzi": "今天星期三。",
+      "pinyin": "jīn tiān xīng qī sān",
+      "meaningVi": "Hôm nay thứ Tư.",
+      "focus": [
+        "三 sān vần -an, không phải -ang.",
+        "星期 xīng qī: hai thanh 1 liên tiếp, đọc đều và phẳng."
+      ]
+    },
+    {
+      "id": "dt-1-028",
+      "level": "HSK1-2",
+      "hanzi": "学校在哪里？",
+      "pinyin": "xué xiào zài ná lǐ",
+      "meaningVi": "Trường ở đâu?",
+      "focus": [
+        "学校 xué xiào: hai âm đều có i-u, đừng lẫn với \"xao\".",
+        "哪里 đọc biến điệu 3+3 → nái lǐ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        4,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 3 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 2-4-4-2-3 lẫn 2-4-4-3-3."
+    },
+    {
+      "id": "dt-1-029",
+      "level": "HSK1-2",
+      "hanzi": "学校在前面。",
+      "pinyin": "xué xiào zài qián miàn",
+      "meaningVi": "Trường ở phía trước.",
+      "focus": [
+        "前 qián kết thúc -n, khác 墙 qiáng (-ng).",
+        "面 miàn thanh 4 rơi mạnh, đóng -n."
+      ]
+    },
+    {
+      "id": "dt-1-030",
+      "level": "HSK1-2",
+      "hanzi": "这个多少钱？",
+      "pinyin": "zhè ge duō shǎo qián",
+      "meaningVi": "Cái này bao nhiêu tiền?",
+      "focus": [
+        "多 duō: u + o môi tròn, không có \"ua\".",
+        "钱 qián bật hơi q, đóng -n."
+      ]
+    },
+    {
+      "id": "dt-1-031",
+      "level": "HSK1-2",
+      "hanzi": "我喜欢下雪。",
+      "pinyin": "wǒ xǐ huan xià xuě",
+      "meaningVi": "Tôi thích tuyết rơi.",
+      "focus": [
+        "下雪 xià xuě: 雪 là x + üe, môi tròn — không đọc \"xoe\".",
+        "下 xià thanh 4, 雪 xuě thanh 3 — xuống rồi lên."
+      ]
+    },
+    {
+      "id": "dt-1-032",
+      "level": "HSK1-2",
+      "hanzi": "请再说一遍。",
+      "pinyin": "qǐng zài shuō yí biàn",
+      "meaningVi": "Xin nói lại một lần.",
+      "focus": [
+        "一 trước thanh 4 đọc thành thanh 2: yí biàn.",
+        "遍 biàn là lượng từ cho số lần hành động."
+      ]
+    },
+    {
+      "id": "dt-1-033",
+      "level": "HSK1-2",
+      "hanzi": "我们回家吧。",
+      "pinyin": "wǒ men huí jiā ba",
+      "meaningVi": "Chúng ta về nhà thôi.",
+      "focus": [
+        "们 luôn đọc nhẹ: wǒ men.",
+        "吧 cuối câu đọc nhẹ, hạ giọng xuống."
+      ]
+    },
+    {
+      "id": "dt-1-034",
+      "level": "HSK1-2",
+      "hanzi": "坐公交车去。",
+      "pinyin": "zuò gōng jiāo chē qù",
+      "meaningVi": "Đi bằng xe buýt.",
+      "focus": [
+        "坐 zuò là z, không cuộn lưỡi.",
+        "公交 gōng jiāo: -ng ở 公, -n ở 交 — hai âm cuối khác nhau."
+      ]
+    },
+    {
+      "id": "dt-1-035",
+      "level": "HSK1-2",
+      "hanzi": "我六点起床。",
+      "pinyin": "wǒ liù diǎn qǐ chuáng",
+      "meaningVi": "Tôi dậy lúc sáu giờ.",
+      "focus": [
+        "六 liù: i + ou, môi tròn dần về cuối.",
+        "起床 qǐ chuáng — 2 thanh khác nhau, không đều nhau."
+      ]
+    },
+    {
+      "id": "dt-1-036",
+      "level": "HSK1-2",
+      "hanzi": "他九点睡觉。",
+      "pinyin": "tā jiǔ diǎn shuì jiào",
+      "meaningVi": "Anh ấy ngủ lúc chín giờ.",
+      "focus": [
+        "九 jiǔ bắt đầu bằng j, không có âm z.",
+        "睡觉 shuì jiào: hai thanh 4; 觉 trong từ này đọc jiào."
+      ]
+    },
+    {
+      "id": "dt-1-037",
+      "level": "HSK1-2",
+      "hanzi": "我住在河边。",
+      "pinyin": "wǒ zhù zài hé biān",
+      "meaningVi": "Tôi sống bên sông.",
+      "focus": [
+        "住 zhù cuộn lưỡi, 在 zài phẳng.",
+        "边 biān thanh 1, kết thúc bằng -i; 河 hé là âm h thường."
+      ]
+    },
+    {
+      "id": "dt-1-038",
+      "level": "HSK1-2",
+      "hanzi": "我住在北京。",
+      "pinyin": "wǒ zhù zài běi jīng",
+      "meaningVi": "Tôi sống ở Bắc Kinh.",
+      "focus": [
+        "北京 běi jīng: 北 kết thúc -i, 京 kết thúc -ng.",
+        "在 zài là âm phẳng không cuộn, 住 zhù cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-1-039",
+      "level": "HSK1-2",
+      "hanzi": "我有一个哥哥。",
+      "pinyin": "wǒ yǒu yí gè gē ge",
+      "meaningVi": "Tôi có một người anh.",
+      "focus": [
+        "一 trước thanh 4 đọc thành thanh 2: yí gè.",
+        "哥哥: chữ thứ hai đọc nhẹ → gē ge."
+      ]
+    },
+    {
+      "id": "dt-1-040",
+      "level": "HSK1-2",
+      "hanzi": "今天天气很好。",
+      "pinyin": "jīn tiān tiān qì hén hǎo",
+      "meaningVi": "Hôm nay thời tiết rất tốt.",
+      "focus": [
+        "天 tiān: i + a + n, đóng -n.",
+        "很好 biến điệu 3+3 → hén hǎo."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        1,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          1,
+          4,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 4 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-1-1-4-2-3 lẫn 1-1-1-4-3-3."
+    },
+    {
+      "id": "dt-1-041",
+      "level": "HSK1-2",
+      "hanzi": "我家有四口人。",
+      "pinyin": "wǒ jiā yǒu sì kǒu rén",
+      "meaningVi": "Nhà tôi có bốn người.",
+      "focus": [
+        "有 yǒu thanh 3, đọc ngắn khi đứng giữa câu.",
+        "人 rén đóng -n, khác 仍 réng (-ng)."
+      ]
+    },
+    {
+      "id": "dt-1-042",
+      "level": "HSK1-2",
+      "hanzi": "请给我一杯水。",
+      "pinyin": "qǐng gěi wǒ yì bēi shuǐ",
+      "meaningVi": "Xin cho tôi một cốc nước.",
+      "focus": [
+        "一 trước thanh 1 đọc thành thanh 4: yì bēi.",
+        "杯 bēi: môi mở răng, âm e rõ."
+      ]
+    },
+    {
+      "id": "dt-1-043",
+      "level": "HSK1-2",
+      "hanzi": "你会说汉语吗？",
+      "pinyin": "nǐ huì shuō hàn yǔ ma",
+      "meaningVi": "Bạn nói được tiếng Trung không?",
+      "focus": [
+        "汉 hàn đóng -n; 语 yǔ là âm ü.",
+        "说 shuō cuộn lưỡi, không phải \"so\"."
+      ]
+    },
+    {
+      "id": "dt-1-044",
+      "level": "HSK1-2",
+      "hanzi": "这个字怎么读？",
+      "pinyin": "zhè ge zì zěn me dú",
+      "meaningVi": "Chữ này đọc thế nào?",
+      "focus": [
+        "字 zì là z, không cuộn lưỡi.",
+        "怎么 zěn me: 么 đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-045",
+      "level": "HSK1-2",
+      "hanzi": "我在公司上班。",
+      "pinyin": "wǒ zài gōng sī shàng bān",
+      "meaningVi": "Tôi làm việc ở công ty.",
+      "focus": [
+        "公司 gōng sī: -ng ở 公, còn 司 là s phẳng.",
+        "上班 shàng bān: -ang mở, 班 thanh 1."
+      ]
+    },
+    {
+      "id": "dt-1-046",
+      "level": "HSK1-2",
+      "hanzi": "他八点到公司。",
+      "pinyin": "tā bā diǎn dào gōng sī",
+      "meaningVi": "Anh ấy đến công ty lúc tám giờ.",
+      "focus": [
+        "到 dào thanh 4 rơi mạnh, không bật hơi.",
+        "八点 bā diǎn: i + e + n, đừng đọc thành \"đen\"."
+      ]
+    },
+    {
+      "id": "dt-1-047",
+      "level": "HSK1-2",
+      "hanzi": "他是我的朋友。",
+      "pinyin": "tā shì wǒ de péng you",
+      "meaningVi": "Anh ấy là bạn của tôi.",
+      "focus": [
+        "朋友 péng you: chữ thứ hai đọc nhẹ.",
+        "péng bật hơi p, -ng vang ở cuối."
+      ]
+    },
+    {
+      "id": "dt-1-048",
+      "level": "HSK1-2",
+      "hanzi": "手机在桌子上。",
+      "pinyin": "shǒu jī zài zhuō zi shàng",
+      "meaningVi": "Điện thoại ở trên bàn.",
+      "focus": [
+        "手机 shǒu jī: sh cuộn lưỡi, j không cuộn.",
+        "子 trong 桌子 đọc nhẹ: zhuō zi."
+      ]
+    },
+    {
+      "id": "dt-1-049",
+      "level": "HSK1-2",
+      "hanzi": "你叫什么名字？",
+      "pinyin": "nǐ jiào shén me míng zi",
+      "meaningVi": "Bạn tên là gì?",
+      "focus": [
+        "名字 míng zi: chữ thứ hai đọc nhẹ.",
+        "叫 jiào không bật hơi, 什 shén cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-1-050",
+      "level": "HSK1-2",
+      "hanzi": "你的名字怎么写？",
+      "pinyin": "nǐ de míng zi zěn me xiě",
+      "meaningVi": "Tên bạn viết thế nào?",
+      "focus": [
+        "的 đọc nhẹ de, gần như trượt qua.",
+        "怎么 zěn me: 么 nhẹ; 写 xiě thanh 3."
+      ]
+    },
+    {
+      "id": "dt-1-051",
+      "level": "HSK1-2",
+      "hanzi": "我们一起去游泳。",
+      "pinyin": "wǒ men yì qǐ qù yóu yǒng",
+      "meaningVi": "Chúng ta cùng đi bơi.",
+      "focus": [
+        "一 trước thanh 3 đọc thành thanh 4: yì qǐ.",
+        "游泳 yóu yǒng: thanh 2 rồi thanh 3, hai âm rất gần nhau."
+      ]
+    },
+    {
+      "id": "dt-1-052",
+      "level": "HSK1-2",
+      "hanzi": "医院在楼的右边。",
+      "pinyin": "yī yuàn zài lóu de yòu bian",
+      "meaningVi": "Bệnh viện ở bên phải tòa nhà.",
+      "focus": [
+        "医院 yī yuàn: 院 là ü + an, không phải \"oan\".",
+        "右边 yòu bian: chữ thứ hai đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-053",
+      "level": "HSK1-2",
+      "hanzi": "这附近有医院吗？",
+      "pinyin": "zhè fù jìn yǒu yī yuàn ma",
+      "meaningVi": "Gần đây có bệnh viện không?",
+      "focus": [
+        "附近 fù jìn: f môi dưới chạm răng, j lưỡi áp vòm.",
+        "近 jìn đóng -n, khác 敬 jìng (-ng)."
+      ]
+    },
+    {
+      "id": "dt-1-054",
+      "level": "HSK1-2",
+      "hanzi": "妈妈在厨房做饭。",
+      "pinyin": "mā ma zài chú fáng zuò fàn",
+      "meaningVi": "Mẹ đang nấu ăn trong bếp.",
+      "focus": [
+        "厨房 chú fáng: 厨 thanh 2, không phải thanh 1.",
+        "房 -ang mở, 饭 -an đóng — cặp dễ lẫn."
+      ]
+    },
+    {
+      "id": "dt-1-055",
+      "level": "HSK1-2",
+      "hanzi": "你喝茶还是喝咖啡？",
+      "pinyin": "nǐ hē chá hái shì hē kā fēi",
+      "meaningVi": "Bạn uống trà hay uống cà phê?",
+      "focus": [
+        "还是 hái shì: sh cuộn lưỡi ở 是.",
+        "喝 hē và 咖 kā đều là âm mềm, khác nhau ở vị trí lưỡi."
+      ]
+    },
+    {
+      "id": "dt-1-056",
+      "level": "HSK1-2",
+      "hanzi": "我每天坐地铁上班。",
+      "pinyin": "wǒ měi tiān zuò dì tiě shàng bān",
+      "meaningVi": "Ngày nào tôi cũng đi tàu điện ngầm đi làm.",
+      "focus": [
+        "地铁 dì tiě: hai âm i, 铁 thanh 3.",
+        "坐 zuò là z; 每天 měi tiān đọc liền, không ngắt."
+      ]
+    },
+    {
+      "id": "dt-1-057",
+      "level": "HSK1-2",
+      "hanzi": "不好意思，我没听懂。",
+      "pinyin": "bù hǎo yì si wǒ méi tīng dǒng",
+      "meaningVi": "Xin lỗi, tôi nghe không hiểu.",
+      "focus": [
+        "不好意思: 不 trước 好 vẫn giữ bù, còn 思 trong 意思 đọc nhẹ.",
+        "听 tīng và 懂 dǒng: một âm đóng -ng với i, một âm có -ong."
+      ]
+    },
+    {
+      "id": "dt-1-058",
+      "level": "HSK1-2",
+      "hanzi": "他不在家，去学校了。",
+      "pinyin": "tā bú zài jiā qù xué xiào le",
+      "meaningVi": "Anh ấy không ở nhà, đi trường rồi.",
+      "focus": [
+        "不 trước thanh 4 đọc thành thanh 2: bú zài.",
+        "了 cuối câu đọc nhẹ le."
+      ]
+    },
+    {
+      "id": "dt-1-059",
+      "level": "HSK1-2",
+      "hanzi": "请把这个发给老师。",
+      "pinyin": "qǐng bǎ zhè ge fā gěi lǎo shī",
+      "meaningVi": "Xin gửi cái này cho thầy cô.",
+      "focus": [
+        "把 bǎ đọc khác bà; 发 ở nghĩa \"gửi\" là fā.",
+        "老师 lǎo shī: thanh 3 rồi thanh 1, không biến điệu."
+      ]
+    },
+    {
+      "id": "dt-1-060",
+      "level": "HSK1-2",
+      "hanzi": "你能明天早上来吗？",
+      "pinyin": "nǐ néng míng tiān zǎo shang lái ma",
+      "meaningVi": "Bạn đến vào sáng mai được không?",
+      "focus": [
+        "你 nǐ và 能 néng: một âm có -i, một âm có -n.",
+        "早上 zǎo shang: 上 đọc nhẹ, ngắn."
+      ]
+    },
+    {
+      "id": "dt-2-001",
+      "level": "HSK3-4",
+      "hanzi": "她汉语比我好。",
+      "pinyin": "tā hàn yǔ bǐ wǒ hǎo",
+      "meaningVi": "Tiếng Trung của cô ấy tốt hơn tôi.",
+      "focus": [
+        "语 yǔ mang ü, môi tròn chặt.",
+        "好 hǎo thanh 3, xuống rồi lên, không đọc háo."
+      ]
+    },
+    {
+      "id": "dt-2-002",
+      "level": "HSK3-4",
+      "hanzi": "我最近比较忙。",
+      "pinyin": "wǒ zuì jìn bǐ jiào máng",
+      "meaningVi": "Dạo này tôi khá bận.",
+      "focus": [
+        "近 jìn đóng -n, khác 静 jìng đóng -ng.",
+        "较 jiào bắt đầu bằng j, không có âm z."
+      ]
+    },
+    {
+      "id": "dt-2-003",
+      "level": "HSK3-4",
+      "hanzi": "他跑得比我还快。",
+      "pinyin": "tā pǎo dé bǐ wǒ hái kuài",
+      "meaningVi": "Anh ấy chạy nhanh hơn tôi.",
+      "focus": [
+        "得 sau động từ đọc nhẹ de.",
+        "比 bǐ là hai môi, không cuộn lưỡi; 还 hái kết thúc bằng i."
+      ]
+    },
+    {
+      "id": "dt-2-004",
+      "level": "HSK3-4",
+      "hanzi": "每次开会他都迟到。",
+      "pinyin": "měi cì kāi huì tā dōu chí dào",
+      "meaningVi": "Lần nào họp anh ấy cũng đến muộn.",
+      "focus": [
+        "迟 chí cuộn lưỡi bật hơi, khác từ cí.",
+        "都 trong câu này đọc dōu, thanh 1."
+      ]
+    },
+    {
+      "id": "dt-2-005",
+      "level": "HSK3-4",
+      "hanzi": "你第一次来北京吗？",
+      "pinyin": "nǐ dì yī cì lái běi jīng ma",
+      "meaningVi": "Đây là lần đầu bạn đến Bắc Kinh?",
+      "focus": [
+        "第 dì và 次 cí đều không cuộn lưỡi.",
+        "京 jīng đóng -ng; 北 běi kết thúc bằng i."
+      ]
+    },
+    {
+      "id": "dt-2-006",
+      "level": "HSK3-4",
+      "hanzi": "这件事跟我没关系。",
+      "pinyin": "zhè jiàn shì gēn wǒ méi guān xì",
+      "meaningVi": "Chuyện này không liên quan đến tôi.",
+      "focus": [
+        "关 guān đóng -n, khác 光 guāng mở -ng.",
+        "系 trong 关系 đọc xi, không đọc xì."
+      ]
+    },
+    {
+      "id": "dt-2-007",
+      "level": "HSK3-4",
+      "hanzi": "他对音乐很感兴趣。",
+      "pinyin": "tā duì yīn yuè hěn gǎn xìng qù",
+      "meaningVi": "Anh ấy rất hứng thú với âm nhạc.",
+      "focus": [
+        "乐 trong 音乐 đọc yuè, khác 快乐 lè.",
+        "感 gǎn đóng -n; 兴 xìng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-008",
+      "level": "HSK3-4",
+      "hanzi": "他从小在城市长大。",
+      "pinyin": "tā cóng xiǎo zài chéng shì zhǎng dà",
+      "meaningVi": "Anh ấy lớn lên ở thành phố từ nhỏ.",
+      "focus": [
+        "城 chéng cuộn lưỡi + -ng; 市 shì cuộn lưỡi.",
+        "从 đọc cóng, không phải chóng."
+      ]
+    },
+    {
+      "id": "dt-2-009",
+      "level": "HSK3-4",
+      "hanzi": "她的汉语进步很快。",
+      "pinyin": "tā de hàn yǔ jìn bù hěn kuài",
+      "meaningVi": "Tiếng Trung của cô ấy tiến bộ rất nhanh.",
+      "focus": [
+        "进 jìn đóng -n; 步 bù tròn môi.",
+        "很 hěn thanh 3, đọc gọn khi đứng cuối."
+      ]
+    },
+    {
+      "id": "dt-2-010",
+      "level": "HSK3-4",
+      "hanzi": "身体比以前好多了。",
+      "pinyin": "shēn tǐ bǐ yǐ qián hǎo duō le",
+      "meaningVi": "Sức khỏe tốt hơn trước nhiều.",
+      "focus": [
+        "身 shēn cuộn lưỡi + -n; 体 tǐ thanh 3.",
+        "多 duō tròn môi, khác 朵 duǒ thanh 3."
+      ]
+    },
+    {
+      "id": "dt-2-011",
+      "level": "HSK3-4",
+      "hanzi": "这个软件不太方便。",
+      "pinyin": "zhè ge ruǎn jiàn bú tài fāng biàn",
+      "meaningVi": "Phần mềm này không tiện lắm.",
+      "focus": [
+        "软 ruǎn bắt đầu bằng r, không rung như l tiếng Việt.",
+        "方 fāng mở -ang; 便 biàn đóng -n."
+      ]
+    },
+    {
+      "id": "dt-2-012",
+      "level": "HSK3-4",
+      "hanzi": "这次考试比上次难。",
+      "pinyin": "zhè cì kǎo shì bǐ shàng cì nán",
+      "meaningVi": "Kỳ thi này khó hơn kỳ trước.",
+      "focus": [
+        "考 kǎo thanh 3; 试 shì cuộn lưỡi.",
+        "难 nán đóng -n, khác 狼 láng."
+      ]
+    },
+    {
+      "id": "dt-2-013",
+      "level": "HSK3-4",
+      "hanzi": "我在机场等了很久。",
+      "pinyin": "wǒ zài jī chǎng děng le hěn jiǔ",
+      "meaningVi": "Tôi đã đợi ở sân bay rất lâu.",
+      "focus": [
+        "场 chǎng cuộn lưỡi + -ng.",
+        "得 de sau 等 đọc nhẹ; 久 jiǔ thanh 3."
+      ]
+    },
+    {
+      "id": "dt-2-014",
+      "level": "HSK3-4",
+      "hanzi": "因为堵车，我迟到了。",
+      "pinyin": "yīn wèi dǔ chē wǒ chí dào le",
+      "meaningVi": "Vì tắc đường nên tôi đến muộn.",
+      "focus": [
+        "堵 dǔ tròn môi; 车 chē cuộn lưỡi bật hơi.",
+        "为 trong 因为 đọc wèi."
+      ]
+    },
+    {
+      "id": "dt-2-015",
+      "level": "HSK3-4",
+      "hanzi": "我们应该提前订机票。",
+      "pinyin": "wǒ men yīng gāi tí qián dìng jī piào",
+      "meaningVi": "Chúng ta nên đặt vé máy bay sớm.",
+      "focus": [
+        "前 qián đóng -n; 机 jī bắt đầu bằng i, không cuộn.",
+        "票 piào: p bật hơi, rồi i + a + o."
+      ]
+    },
+    {
+      "id": "dt-2-016",
+      "level": "HSK3-4",
+      "hanzi": "会议改到星期五上午。",
+      "pinyin": "huì yì gǎi dào xīng qī wǔ shàng wǔ",
+      "meaningVi": "Cuộc họp dời sang sáng thứ Năm.",
+      "focus": [
+        "改 gǎi xuống rồi lên; 到 dào rơi mạnh.",
+        "上 shàng cuộn lưỡi + -ang; 午 wǔ tròn môi."
+      ]
+    },
+    {
+      "id": "dt-2-017",
+      "level": "HSK3-4",
+      "hanzi": "请把门关上，外面太吵。",
+      "pinyin": "qǐng bǎ mén guān shàng wài miàn tài chǎo",
+      "meaningVi": "Xin đóng cửa lại, bên ngoài ồn quá.",
+      "focus": [
+        "把 bǎ thanh 3, khác bà.",
+        "吵 chǎo cuộn lưỡi bật hơi, khác 早 zǎo."
+      ]
+    },
+    {
+      "id": "dt-2-018",
+      "level": "HSK3-4",
+      "hanzi": "他先回答，再解释原因。",
+      "pinyin": "tā xiān huí dá zài jiě shì yuán yīn",
+      "meaningVi": "Anh ấy trả lời trước, giải thích sau.",
+      "focus": [
+        "释 shì cuộn lưỡi, khác sự.",
+        "原 yuán là ü + an, không phải oan."
+      ]
+    },
+    {
+      "id": "dt-2-019",
+      "level": "HSK3-4",
+      "hanzi": "麻烦你再说一遍好吗？",
+      "pinyin": "má fán nǐ zài shuō yí biàn hǎo ma",
+      "meaningVi": "Phiền bạn nói lại một lần được không?",
+      "focus": [
+        "烦 fan và 遍 bian đều đóng -n.",
+        "麻 má thanh 2 đi lên; 再 zài thanh 4 rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-2-020",
+      "level": "HSK3-4",
+      "hanzi": "你先坐着，他马上就来。",
+      "pinyin": "nǐ xiān zuò zhe tā mǎ shàng jiù lái",
+      "meaningVi": "Bạn ngồi chờ, anh ấy đến ngay.",
+      "focus": [
+        "着 sau động từ đọc nhẹ zhe.",
+        "马 mǎ thanh 3; 上 shàng cuộn lưỡi + -ang."
+      ]
+    },
+    {
+      "id": "dt-2-021",
+      "level": "HSK3-4",
+      "hanzi": "他把钥匙忘在车里了。",
+      "pinyin": "tā bǎ yào shi wàng zài chē lǐ le",
+      "meaningVi": "Anh ấy để quên chìa khóa trong xe.",
+      "focus": [
+        "忘 wàng mở -ng, khác 晚 wǎn đóng -n.",
+        "车 chē cuộn lưỡi bật hơi; 里 lǐ thanh 3."
+      ],
+      "uncertain": true,
+      "uncertainReason": "钥匙 thường đọc yào shi, chữ thứ hai nhẹ; TTS đôi khi đọc đầy đủ yào chí nên người dạy cần nghe lại."
+    },
+    {
+      "id": "dt-2-022",
+      "level": "HSK3-4",
+      "hanzi": "这道菜太辣，我吃不惯。",
+      "pinyin": "zhè dào cài tài là wǒ chī bú guàn",
+      "meaningVi": "Món này cay quá, tôi ăn không quen.",
+      "focus": [
+        "辣 là l + a, không phải n.",
+        "惯 guàn đóng -n, khác 光 guāng."
+      ]
+    },
+    {
+      "id": "dt-2-023",
+      "level": "HSK3-4",
+      "hanzi": "我建议你早点去看医生。",
+      "pinyin": "wǒ jiàn yì nǐ záo diǎn qù kàn yī shēng",
+      "meaningVi": "Tôi khuyên bạn nên đi khám sớm.",
+      "focus": [
+        "议 yì bắt đầu bằng nguyên âm i.",
+        "生 trong 医生 đóng -ng; 医 đọc yī."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        1,
+        1
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          3,
+          2,
+          3,
+          4,
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          4,
+          4,
+          3,
+          3,
+          3,
+          4,
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          4,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4,
+          1,
+          1
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 4 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 3-4-4-3-2-3-4-4-1-1 lẫn 3-4-4-3-3-3-4-4-1-1."
+    },
+    {
+      "id": "dt-2-024",
+      "level": "HSK3-4",
+      "hanzi": "钱包在地铁上被人拿了。",
+      "pinyin": "qián bāo zài dì tiě shàng bèi rén ná le",
+      "meaningVi": "Ví bị ai lấy trên tàu điện rồi.",
+      "focus": [
+        "被 bèi là dấu hiệu câu bị động.",
+        "包 bāo thanh 1, khác 抱 bào thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-025",
+      "level": "HSK3-4",
+      "hanzi": "虽然很累，但他一直坚持。",
+      "pinyin": "suī rán hěn lèi dàn tā yì zhí jiān chí",
+      "meaningVi": "Tuy rất mệt nhưng anh ấy luôn kiên trì.",
+      "focus": [
+        "虽 suī là s phẳng + ui.",
+        "持 chí cuộn lưỡi, kéo dài hơi."
+      ]
+    },
+    {
+      "id": "dt-2-026",
+      "level": "HSK3-4",
+      "hanzi": "这里的天气比家乡干燥。",
+      "pinyin": "zhè lǐ de tiān qì bǐ jiā xiāng gān zào",
+      "meaningVi": "Thời tiết ở đây khô hơn quê tôi.",
+      "focus": [
+        "燥 zào là z phẳng, không cuộn lưỡi.",
+        "干燥 gān zào: 干 đóng -n, khác 光 guāng (-ng)."
+      ]
+    },
+    {
+      "id": "dt-2-027",
+      "level": "HSK3-4",
+      "hanzi": "你有什么建议，可以直说。",
+      "pinyin": "nǐ yǒu shén me jiàn yì kě yǐ zhí shuō",
+      "meaningVi": "Bạn có góp ý gì thì cứ nói thẳng.",
+      "focus": [
+        "议 yì và 以 yǐ đều bắt đầu bằng i.",
+        "直 zhí cuộn lưỡi; 说 shuō cũng cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-028",
+      "level": "HSK3-4",
+      "hanzi": "他比我更擅长处理投诉。",
+      "pinyin": "tā bǐ wǒ gèng shàn cháng chú lǐ tóu sù",
+      "meaningVi": "Anh ấy giỏi xử lý khiếu nại hơn tôi.",
+      "focus": [
+        "处 trong 处理 đọc chǔ, thanh 3.",
+        "投 tóu thanh 2; 诉 su đọc su, không cuộn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        3,
+        4,
+        4,
+        2,
+        3,
+        3,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          3,
+          3,
+          4,
+          4,
+          2,
+          2,
+          3,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          3,
+          4,
+          4,
+          2,
+          3,
+          3,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          4,
+          2,
+          2,
+          3,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-3-3-4-4-2-2-3-2-4 lẫn 1-3-3-4-4-2-3-3-2-4."
+    },
+    {
+      "id": "dt-2-029",
+      "level": "HSK3-4",
+      "hanzi": "这件事需要再讨论一下。",
+      "pinyin": "zhè jiàn shì xū yào zài tǎo lùn yí xià",
+      "meaningVi": "Chuyện này cần bàn bạc thêm.",
+      "focus": [
+        "需 xū là ü, không phải u thường.",
+        "讨 tǎo thanh 3; 论 lùn = u + en, đóng -n."
+      ]
+    },
+    {
+      "id": "dt-2-030",
+      "level": "HSK3-4",
+      "hanzi": "请帮我检查文件有没有错。",
+      "pinyin": "qǐng bāng wǒ jiǎn chá wén jiàn yǒu méi yǒu cuò",
+      "meaningVi": "Xin giúp tôi kiểm tra tài liệu có lỗi không.",
+      "focus": [
+        "检 jiǎn đóng -n; 查 chá cuộn lưỡi bật hơi.",
+        "没 ở đây đọc méi, thanh 2."
+      ]
+    },
+    {
+      "id": "dt-2-031",
+      "level": "HSK3-4",
+      "hanzi": "他听得出这两个音的差别。",
+      "pinyin": "tā tīng dé chū zhè liǎng gè yīn de chā bié",
+      "meaningVi": "Anh ấy phân biệt được hai âm này.",
+      "focus": [
+        "得 trong 听得出 đọc de nhẹ.",
+        "差 chā cuộn lưỡi, khác 擦 cā."
+      ]
+    },
+    {
+      "id": "dt-2-032",
+      "level": "HSK3-4",
+      "hanzi": "这家公司去年增加三十人。",
+      "pinyin": "zhè jiā gōng sī qù nián zēng jiā sān shí rén",
+      "meaningVi": "Công ty này năm ngoái tăng thêm ba mươi người.",
+      "focus": [
+        "增 zēng phẳng, đóng -ng.",
+        "司 sī là s, khác 失 shī cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-033",
+      "level": "HSK3-4",
+      "hanzi": "老师让我们把课文读三遍。",
+      "pinyin": "lǎo shī ràng wǒ men bǎ kè wén dú sān biàn",
+      "meaningVi": "Thầy cô yêu cầu chúng tôi đọc bài ba lần.",
+      "focus": [
+        "课 kè rơi mạnh; 文 wén = u + en, đọc liền.",
+        "遍 biàn đóng -n, khác 饼 bǐng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-034",
+      "level": "HSK3-4",
+      "hanzi": "不管多忙，他都抽时间运动。",
+      "pinyin": "bù guǎn duō máng tā dōu chōu shí jiān yùn dòng",
+      "meaningVi": "Dù bận thế nào anh ấy cũng dành thời gian vận động.",
+      "focus": [
+        "管 guǎn đóng -n, khác 光 guāng.",
+        "抽 chōu cuộn lưỡi + ou."
+      ]
+    },
+    {
+      "id": "dt-2-035",
+      "level": "HSK3-4",
+      "hanzi": "只有多练习，发音才能准确。",
+      "pinyin": "zhǐ yǒu duō liàn xí fā yīn cái néng zhǔn què",
+      "meaningVi": "Chỉ có luyện nhiều thì phát âm mới chuẩn.",
+      "focus": [
+        "只 zhǐ cuộn lưỡi; 有 yǒu thanh 3.",
+        "确 què là ü + e, tròn rồi dẹt."
+      ]
+    },
+    {
+      "id": "dt-2-036",
+      "level": "HSK3-4",
+      "hanzi": "照顾孩子还要上课，她很忙。",
+      "pinyin": "zhào gù hái zi hái yào shàng kè tā hěn máng",
+      "meaningVi": "Vừa chăm con vừa phải lên lớp, cô ấy rất bận.",
+      "focus": [
+        "照 zhào cuộn lưỡi; 顾 gù tròn môi.",
+        "子 trong 孩子 đọc zi nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-037",
+      "level": "HSK3-4",
+      "hanzi": "我还没准备好，请等我一下。",
+      "pinyin": "wǒ hái méi zhǔn bèi hǎo qǐng děng wǒ yí xià",
+      "meaningVi": "Tôi vẫn chưa sẵn sàng, chờ tôi một chút.",
+      "focus": [
+        "准 zhǔn cuộn lưỡi, có u và đóng -n.",
+        "备 bèi kết thúc bằng i; 请 qǐng bật hơi."
+      ]
+    },
+    {
+      "id": "dt-2-038",
+      "level": "HSK3-4",
+      "hanzi": "我本来想去，后来改了计划。",
+      "pinyin": "wǒ běn lái xiǎng qù hòu lái gǎi le jì huà",
+      "meaningVi": "Vốn tôi định đi, sau đó đổi kế hoạch.",
+      "focus": [
+        "本 běn đóng -n, khác 帮 bāng.",
+        "划 trong 计划 đọc huà, thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-039",
+      "level": "HSK3-4",
+      "hanzi": "我们一步一步地解决问题。",
+      "pinyin": "wǒ men yí bù yi bù dì jiě jué wèn tí",
+      "meaningVi": "Chúng tôi giải quyết vấn đề từng bước một.",
+      "focus": [
+        "步 bù tròn môi; 地 trong 一步一步地 đọc de nhẹ.",
+        "解 jiě không bật hơi; 决 jué là ü + e."
+      ]
+    },
+    {
+      "id": "dt-2-040",
+      "level": "HSK3-4",
+      "hanzi": "你什么时候方便，我们再约。",
+      "pinyin": "nǐ shén me shí hou fāng biàn wǒ men zài yuē",
+      "meaningVi": "Khi nào bạn tiện thì chúng ta hẹn sau.",
+      "focus": [
+        "候 trong 时候 đọc hou nhẹ.",
+        "约 yuē tròn môi rồi dẹt."
+      ]
+    },
+    {
+      "id": "dt-2-041",
+      "level": "HSK3-4",
+      "hanzi": "由于天气原因，航班推迟了。",
+      "pinyin": "yóu yú tiān qì yuán yīn háng bān tuī chí le",
+      "meaningVi": "Do thời tiết, chuyến bay bị hoãn.",
+      "focus": [
+        "于 yú là ü; 由 yóu là iu.",
+        "推 tuī = u + ei, tròn môi ở đầu; 迟 chí cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-042",
+      "level": "HSK3-4",
+      "hanzi": "我们在会上决定了新方案。",
+      "pinyin": "wǒ men zài huì shàng jué dìng le xīn fāng àn",
+      "meaningVi": "Chúng tôi đã quyết định phương án mới trong cuộc họp.",
+      "focus": [
+        "案 àn mở rồi đóng -n.",
+        "决 jué là ü + e; 定 dìng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-043",
+      "level": "HSK3-4",
+      "hanzi": "这项技术还没有完全成熟。",
+      "pinyin": "zhè xiàng jì shù hái méi yǒu wán quán chéng shú",
+      "meaningVi": "Công nghệ này vẫn chưa thật sự hoàn thiện.",
+      "focus": [
+        "术 shù cuộn lưỡi, kết thúc bằng u.",
+        "成 chéng cuộn lưỡi + -ng; 熟 shú cũng cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-044",
+      "level": "HSK3-4",
+      "hanzi": "他临时接手项目，压力很大。",
+      "pinyin": "tā lín shí jiē shǒu xiàng mù yā lì hěn dà",
+      "meaningVi": "Anh ấy tiếp quản dự án đột xuất, áp lực lớn.",
+      "focus": [
+        "临 lín đóng -n; 时 shí cuộn lưỡi.",
+        "压 trong 压力 đọc yā, thanh 1."
+      ]
+    },
+    {
+      "id": "dt-2-045",
+      "level": "HSK3-4",
+      "hanzi": "随着假期临近，酒店涨价了。",
+      "pinyin": "suí zhe jià qī lín jìn jiǔ diàn zhǎng jià le",
+      "meaningVi": "Khi kỳ nghỉ đến gần, giá khách sạn đã tăng.",
+      "focus": [
+        "着 trong 随着 đọc zhe nhẹ.",
+        "临 lín và 近 jìn đều đóng -n."
+      ]
+    },
+    {
+      "id": "dt-2-046",
+      "level": "HSK3-4",
+      "hanzi": "由于人手不足，订单延迟了。",
+      "pinyin": "yóu yú rén shǒu bù zú dìng dān yán chí le",
+      "meaningVi": "Do thiếu nhân lực, đơn hàng bị trễ.",
+      "focus": [
+        "延 yán là i + a + n, đóng -n.",
+        "不足: 不 đọc bù, 足 zú là z phẳng, khác 竹 zhú cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-047",
+      "level": "HSK3-4",
+      "hanzi": "他说话含蓄，外人很难听懂。",
+      "pinyin": "tā shuō huà hán xù wài rén hěn nán tīng dǒng",
+      "meaningVi": "Anh ấy nói ẩn ý, người ngoài khó hiểu.",
+      "focus": [
+        "含 hàn đóng -n; 蓄 xù là ü.",
+        "听 tīng và 懂 dǒng đều đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-048",
+      "level": "HSK3-4",
+      "hanzi": "这本书是我昨天在书店买的。",
+      "pinyin": "zhè běn shū shì wǒ zuó tiān zài shū diàn mǎi de",
+      "meaningVi": "Quyển sách này tôi mua ở hiệu sách hôm qua.",
+      "focus": [
+        "的 cuối câu đọc nhẹ de.",
+        "店 diàn phẳng, không cuộn lưỡi; 书 shū cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-049",
+      "level": "HSK3-4",
+      "hanzi": "经理让我下午三点去办公室。",
+      "pinyin": "jīng lǐ ràng wǒ xià wǔ sān diǎn qù bàn gōng shì",
+      "meaningVi": "Sếp bảo tôi ba giờ chiều đến phòng làm việc.",
+      "focus": [
+        "理 lǐ thanh 3; 办 bàn thanh 4.",
+        "室 shì cuộn lưỡi, kết thúc bằng i."
+      ]
+    },
+    {
+      "id": "dt-2-050",
+      "level": "HSK3-4",
+      "hanzi": "如果明天天气好，我们去爬山。",
+      "pinyin": "rú guǒ míng tiān tiān qì hǎo wǒ men qù pá shān",
+      "meaningVi": "Nếu mai thời tiết đẹp, chúng ta đi leo núi.",
+      "focus": [
+        "如 r bắt đầu bằng âm cuộn lưỡi, không rung.",
+        "爬 pá bật hơi p; 山 shān cuộn lưỡi + -n."
+      ]
+    },
+    {
+      "id": "dt-2-051",
+      "level": "HSK3-4",
+      "hanzi": "我们原本约七点，他八点才到。",
+      "pinyin": "wǒ men yuán běn yuē qī diǎn tā bā diǎn cái dào",
+      "meaningVi": "Chúng tôi định hẹn bảy giờ, mãi tám giờ anh ấy mới đến.",
+      "focus": [
+        "约 yuē là ü + e, tròn rồi dẹt.",
+        "才 cái thanh 2, không cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-052",
+      "level": "HSK3-4",
+      "hanzi": "请把发票和合同一起发给我。",
+      "pinyin": "qǐng bǎ fā piào hé hé tong yì qǐ fā gěi wǒ",
+      "meaningVi": "Xin gửi hóa đơn và hợp đồng cùng một lúc.",
+      "focus": [
+        "发 trong 发票 và 发给 đều đọc fā.",
+        "和 khi nối danh từ đọc hé, thanh 2."
+      ]
+    },
+    {
+      "id": "dt-2-053",
+      "level": "HSK3-4",
+      "hanzi": "他的报告数据准确，分析清楚。",
+      "pinyin": "tā de bào gào shù jù zhǔn què fēn xī qīng chǔ",
+      "meaningVi": "Báo cáo của anh ấy số liệu chính xác, phân tích rõ ràng.",
+      "focus": [
+        "数 trong 数据 đọc shù.",
+        "析 xī là x + i, không phải sī."
+      ]
+    },
+    {
+      "id": "dt-2-054",
+      "level": "HSK3-4",
+      "hanzi": "双方就细节进行了充分沟通。",
+      "pinyin": "shuāng fāng jiù xì jié jìn xíng le chōng fèn gōu tōng",
+      "meaningVi": "Hai bên đã trao đổi kỹ lưỡng về chi tiết.",
+      "focus": [
+        "细 xì là x + i; 节 jié không cuộn.",
+        "沟 gōu và 通 tōng đều đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-055",
+      "level": "HSK3-4",
+      "hanzi": "公司要求员工按时提交周报。",
+      "pinyin": "gōng sī yāo qiú yuán gōng àn shí tí jiāo zhōu bào",
+      "meaningVi": "Công ty yêu cầu nhân viên nộp báo cáo tuần đúng hạn.",
+      "focus": [
+        "员 yuán là ü + an; 工 gōng đóng -ng.",
+        "求 qiú bật hơi; 报 bào thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-056",
+      "level": "HSK3-4",
+      "hanzi": "合同修改后还需要法务审核。",
+      "pinyin": "hé tong xiū gǎi hòu hái xū yào fǎ wù shěn hé",
+      "meaningVi": "Sau khi sửa hợp đồng vẫn cần pháp chế rà soát.",
+      "focus": [
+        "审 shěn cuộn lưỡi + -n.",
+        "核 trong 审核 đọc hé, không đọc hú."
+      ]
+    },
+    {
+      "id": "dt-2-057",
+      "level": "HSK3-4",
+      "hanzi": "这个成语的来源还没有定论。",
+      "pinyin": "zhè ge chéng yǔ de lái yuán hái méi yǒu dìng lùn",
+      "meaningVi": "Nguồn gốc thành ngữ này vẫn chưa có kết luận.",
+      "focus": [
+        "成 chéng cuộn lưỡi + -ng.",
+        "论 lùn có ü + n; 定 dìng đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-058",
+      "level": "HSK3-4",
+      "hanzi": "我们不但学了生词，还练了听力。",
+      "pinyin": "wǒ men bú dàn xué le shēng cí hái liàn le tīng lì",
+      "meaningVi": "Chúng tôi không chỉ học từ mới mà còn luyện nghe.",
+      "focus": [
+        "不 trước 但 (thanh 4) đổi thành thanh 2: bú dàn.",
+        "词 cí là c phẳng, khác 迟 chí cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-059",
+      "level": "HSK3-4",
+      "hanzi": "他说话很快，我只记住了几个词。",
+      "pinyin": "tā shuō huà hěn kuài wǒ zhī jì zhù le jǐ gè cí",
+      "meaningVi": "Anh ấy nói rất nhanh, tôi chỉ nhớ vài từ.",
+      "focus": [
+        "只 zhǐ cuộn lưỡi; 记 jì không cuộn.",
+        "几 jǐ thanh 3; 个 trong 几个 đọc nhẹ ge."
+      ]
+    },
+    {
+      "id": "dt-2-060",
+      "level": "HSK3-4",
+      "hanzi": "他刚发完邮件，服务器就出了问题。",
+      "pinyin": "tā gāng fā wán yóu jiàn fú wù qì jiù chū le wèn tí",
+      "meaningVi": "Anh ấy vừa gửi xong email thì máy chủ hỏng.",
+      "focus": [
+        "服 trong 服务器 đọc fú, thanh 2.",
+        "器 qì bật hơi; 务 wù tròn môi."
+      ]
+    },
+    {
+      "id": "dt-3-001",
+      "level": "HSK5-6",
+      "hanzi": "与其争论，不如拿出数据。",
+      "pinyin": "yǔ qí zhēng lùn bù rú ná chū shù jù",
+      "meaningVi": "Thay vì tranh luận, chi bằng đưa ra số liệu.",
+      "focus": [
+        "争论 zhēng lùn: 争 cuộn lưỡi và đóng -ng; 论 là l.",
+        "数据 shù jù: 数 cuộn lưỡi, 据 tròn môi."
+      ]
+    },
+    {
+      "id": "dt-3-002",
+      "level": "HSK5-6",
+      "hanzi": "这个方案存在明显的漏洞。",
+      "pinyin": "zhè ge fāng àn cún zài míng xiǎn de lòu dòng",
+      "meaningVi": "Phương án này có lỗ hổng rõ ràng.",
+      "focus": [
+        "漏洞 lòu dòng: 漏 là l, 洞 đóng -ng.",
+        "存在 cún zài: 存 là c phẳng, khác 春 chūn cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-3-003",
+      "level": "HSK5-6",
+      "hanzi": "这项政策还需要进一步评估。",
+      "pinyin": "zhè xiàng zhèng cè hái xū yào jìn yí bù píng gū",
+      "meaningVi": "Chính sách này còn cần đánh giá thêm.",
+      "focus": [
+        "政策 zhèng cè: 策 là c phẳng, không cuộn lưỡi.",
+        "评 píng đóng -ng; 估 gū tròn môi, kết thúc bằng u."
+      ]
+    },
+    {
+      "id": "dt-3-004",
+      "level": "HSK5-6",
+      "hanzi": "他说的话前后矛盾，让人怀疑。",
+      "pinyin": "tā shuō de huà qián hòu máo dùn ràng rén huái yí",
+      "meaningVi": "Lời anh ấy nói trước sau mâu thuẫn, khiến người ta nghi ngờ.",
+      "focus": [
+        "矛盾 máo dùn: 盾 đóng -n, khác 动 dòng (-ng).",
+        "怀疑 huái yí: 怀 là âm h thường, không bật thành \"kh\"."
+      ]
+    },
+    {
+      "id": "dt-3-005",
+      "level": "HSK5-6",
+      "hanzi": "请把这个案例的背景讲清楚。",
+      "pinyin": "qǐng bǎ zhè ge àn lì de bèi jǐng jiǎng qīng chǔ",
+      "meaningVi": "Xin nói rõ bối cảnh của ví dụ này.",
+      "focus": [
+        "案例 àn lì: 案 mở rồi đóng -n.",
+        "清楚 qīng chu: hai âm đều bật hơi, chữ sau ngắn và nhẹ hơn."
+      ]
+    },
+    {
+      "id": "dt-3-006",
+      "level": "HSK5-6",
+      "hanzi": "这笔款项目前还没结算完毕。",
+      "pinyin": "zhè bǐ kuǎn xiàng mù qián hái méi jié suàn wán bì",
+      "meaningVi": "Khoản này hiện vẫn chưa quyết toán xong.",
+      "focus": [
+        "结算 jié suàn: 结 không bật hơi, 算 đóng -n.",
+        "完毕 wán bì: 完 mở -an, 毕 đóng -i."
+      ]
+    },
+    {
+      "id": "dt-3-007",
+      "level": "HSK5-6",
+      "hanzi": "学习外语的关键是坚持练习。",
+      "pinyin": "xué xí wài yǔ de guān jiàn shì jiān chí liàn xí",
+      "meaningVi": "Mấu chốt học ngoại ngữ là kiên trì luyện tập.",
+      "focus": [
+        "外语 wài yǔ: 语 là ü, không đọc \"u\" thường.",
+        "练习 liàn xí: 练 đóng -n, 习 là x + i."
+      ]
+    },
+    {
+      "id": "dt-3-008",
+      "level": "HSK5-6",
+      "hanzi": "这个理论的解释力有待验证。",
+      "pinyin": "zhè ge lǐ lùn de jiě shì lì yǒu dài yàn zhèng",
+      "meaningVi": "Sức giải thích của lý thuyết này còn cần kiểm chứng.",
+      "focus": [
+        "理论 lǐ lùn: hai âm đều là l, đừng lẫn n.",
+        "解释 jiě shì: 释 cuộn lưỡi, khác 西 xī."
+      ]
+    },
+    {
+      "id": "dt-3-009",
+      "level": "HSK5-6",
+      "hanzi": "这个建议值得借鉴，但要调整。",
+      "pinyin": "zhè ge jiàn yì zhí dé jiè jiàn dàn yào tiáo zhěng",
+      "meaningVi": "Gợi ý này đáng học hỏi nhưng phải điều chỉnh.",
+      "focus": [
+        "借鉴 jiè jiàn: hai âm đều bắt đầu bằng j, chữ sau mở rồi đóng -n.",
+        "调整 tiáo zhěng: 整 cuộn lưỡi + -ng, 调 đọc tiáo."
+      ]
+    },
+    {
+      "id": "dt-3-010",
+      "level": "HSK5-6",
+      "hanzi": "我们要权衡利弊后再做决定。",
+      "pinyin": "wǒ men yào quán héng lì bì hòu zài zuò jué dìng",
+      "meaningVi": "Chúng ta phải cân nhắc thiệt hơn rồi mới quyết định.",
+      "focus": [
+        "权衡 quán héng: 衡 đóng -ng, là âm h thường.",
+        "利弊 lì bì: hai âm cùng kết thúc bằng i, khác nhau ở l và b."
+      ]
+    },
+    {
+      "id": "dt-3-011",
+      "level": "HSK5-6",
+      "hanzi": "一旦失去信任，重建非常困难。",
+      "pinyin": "yí dàn shī qù xìn rèn chóng jiàn fēi cháng kùn nán",
+      "meaningVi": "Một khi mất lòng tin, xây dựng lại rất khó.",
+      "focus": [
+        "重建 chóng jiàn: 重 đọc chóng (làm lại), không đọc zhòng.",
+        "信任 xìn rèn: 信 đóng -n, 任 cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-3-012",
+      "level": "HSK5-6",
+      "hanzi": "这个决定涉及多方面的利益。",
+      "pinyin": "zhè ge jué dìng shè jí duō fāng miàn de lì yì",
+      "meaningVi": "Quyết định này liên quan đến lợi ích của nhiều bên.",
+      "focus": [
+        "涉及 shè jí: 涉 cuộn lưỡi, 集 đóng -i.",
+        "利益 lì yì: hai thanh 4 liên tiếp, rơi mạnh và ngắn."
+      ]
+    },
+    {
+      "id": "dt-3-013",
+      "level": "HSK5-6",
+      "hanzi": "这项研究耗时三年，代价不小。",
+      "pinyin": "zhè xiàng yán jiū hào shí sān nián dài jià bù xiǎo",
+      "meaningVi": "Nghiên cứu này mất ba năm, cái giá không nhỏ.",
+      "focus": [
+        "耗时 hào shí: 时 cuộn lưỡi, phân biệt với 四 sì.",
+        "代价 dài jià: 价 đọc jià, rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-3-014",
+      "level": "HSK5-6",
+      "hanzi": "他习惯于在细节上反复推敲。",
+      "pinyin": "tā xí guàn yú zài xì jié shàng fǎn fù tuī qiāo",
+      "meaningVi": "Anh ấy quen mài giũa đi mài giũa lại từng chi tiết.",
+      "focus": [
+        "细节 xì jié: 节 không bật hơi, đóng -i.",
+        "推敲 tuī qiāo: 敲 bật hơi q, mở rồi khép bằng o."
+      ]
+    },
+    {
+      "id": "dt-3-015",
+      "level": "HSK5-6",
+      "hanzi": "这个结论的证据还不够充分。",
+      "pinyin": "zhè ge jié lùn de zhèng jù hái bú gòu chōng fèn",
+      "meaningVi": "Bằng chứng cho kết luận này vẫn chưa đủ.",
+      "focus": [
+        "结论 jié lùn: 结 không bật hơi, 论 là l.",
+        "证据 zhèng jù: 据 là j + ü, môi tròn chặt."
+      ]
+    },
+    {
+      "id": "dt-3-016",
+      "level": "HSK5-6",
+      "hanzi": "双方分歧太大，谈判暂时搁置。",
+      "pinyin": "shuāng fāng fēn qí tài dà tán pàn zàn shí gē zhì",
+      "meaningVi": "Bất đồng quá lớn, cuộc đàm phán tạm thời bị gác lại.",
+      "focus": [
+        "分歧 fēn qí: 歧 bật hơi q, khác 起 qǐ thanh 3.",
+        "谈判 tán pàn: cả hai đóng -n, 判 rơi mạnh."
+      ],
+      "uncertain": true,
+      "uncertainReason": "chữ 搁 có hai đọc gē và gé; trong 搁置 thường là gē — cần nghe TTS thật."
+    },
+    {
+      "id": "dt-3-017",
+      "level": "HSK5-6",
+      "hanzi": "传统手工艺正面临失传的风险。",
+      "pinyin": "chuán tǒng shǒu gōng yì zhèng miàn lín shī chuán de fēng xiǎn",
+      "meaningVi": "Nghề thủ công truyền thống đang đứng trước nguy cơ thất truyền.",
+      "focus": [
+        "传统 chuán tǒng: 统 đóng -ng, khác 通 tōng.",
+        "风险 fēng xiǎn: một âm -ng, một âm -n cạnh nhau."
+      ]
+    },
+    {
+      "id": "dt-3-018",
+      "level": "HSK5-6",
+      "hanzi": "这项发现填补了该领域的空白。",
+      "pinyin": "zhè xiàng fā xiàn tián bǔ le gāi lǐng yù de kòng bái",
+      "meaningVi": "Phát hiện này lấp vào khoảng trống của lĩnh vực đó.",
+      "focus": [
+        "填补 tián bǔ: 填 đóng -n, 补 tròn môi.",
+        "领域 lǐng yù: 域 đọc yù, âm ü."
+      ]
+    },
+    {
+      "id": "dt-3-019",
+      "level": "HSK5-6",
+      "hanzi": "这种材料耐高温，适合航空工业。",
+      "pinyin": "zhè zhǒng cái liào nài gāo wēn shì hé háng kōng gōng yè",
+      "meaningVi": "Vật liệu này chịu nhiệt cao, phù hợp với công nghiệp hàng không.",
+      "focus": [
+        "材料 cái liào: 材 là c phẳng, 料 kết thúc bằng iu.",
+        "航空 háng kōng: cả hai đóng -ng, 空 không bật hơi."
+      ]
+    },
+    {
+      "id": "dt-3-020",
+      "level": "HSK5-6",
+      "hanzi": "他不仅没有道歉，反而怪罪同事。",
+      "pinyin": "tā bù jǐn méi yǒu dào qiàn fǎn ér guài zuì tóng shì",
+      "meaningVi": "Anh ấy không những không xin lỗi mà còn đổ lỗi cho đồng nghiệp.",
+      "focus": [
+        "不仅 bù jǐn: 仅 đóng -n, khác 尽 jìn.",
+        "道歉 dào qiàn: 歉 bật hơi q, đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-021",
+      "level": "HSK5-6",
+      "hanzi": "他把复杂的概念讲得通俗易懂。",
+      "pinyin": "tā bǎ fù zá de gài niàn jiǎng dé tōng sú yì dǒng",
+      "meaningVi": "Anh ấy giải thích khái niệm phức tạp rất dễ hiểu.",
+      "focus": [
+        "复杂 fù zá: 杂 là z phẳng, khác 查 chá cuộn lưỡi.",
+        "通俗 tōng sú: 俗 là s phẳng, không cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-3-022",
+      "level": "HSK5-6",
+      "hanzi": "这笔投资回报周期长，风险可控。",
+      "pinyin": "zhè bǐ tóu zī huí bào zhōu qī cháng fēng xiǎn kě kòng",
+      "meaningVi": "Khoản đầu tư này hoàn vốn lâu, rủi ro kiểm soát được.",
+      "focus": [
+        "投资 tóu zī: 资 là z phẳng, khác 知 zhī cuộn lưỡi.",
+        "周期 zhōu qī: 周 cuộn lưỡi, 期 bật hơi."
+      ]
+    },
+    {
+      "id": "dt-3-023",
+      "level": "HSK5-6",
+      "hanzi": "这个问题牵扯到历史遗留因素。",
+      "pinyin": "zhè ge wèn tí qiān chě dào lì shǐ yí liú yīn sù",
+      "meaningVi": "Vấn đề này liên quan đến những yếu tố lịch sử để lại.",
+      "focus": [
+        "牵扯 qiān chě: 扯 cuộn lưỡi, ngắn.",
+        "遗留 yí liú: 遗 đọc yí, 留 kết thúc bằng i."
+      ]
+    },
+    {
+      "id": "dt-3-024",
+      "level": "HSK5-6",
+      "hanzi": "新能源的发展离不开政策支持。",
+      "pinyin": "xīn néng yuán de fā zhǎn lí bù kāi zhèng cè zhī chí",
+      "meaningVi": "Sự phát triển năng lượng mới không thể thiếu hỗ trợ chính sách.",
+      "focus": [
+        "能源 néng yuán: 能 đóng -ng, 源 đóng -n.",
+        "支持 zhī chí: hai âm cuộn lưỡi liên tiếp, đừng đọc \"tr\"."
+      ]
+    },
+    {
+      "id": "dt-3-025",
+      "level": "HSK5-6",
+      "hanzi": "她拒绝了加薪，理由是责任太重。",
+      "pinyin": "tā jù jué le jiā xīn lǐ yóu shì zé rèn tài zhòng",
+      "meaningVi": "Cô ấy từ chối tăng lương vì trách nhiệm quá nặng.",
+      "focus": [
+        "加薪 jiā xīn: 加 không bật hơi, 薪 đóng -n.",
+        "责任 zé rèn: 任 đọc rèn, cuộn lưỡi."
+      ],
+      "uncertain": true,
+      "uncertainReason": "chữ 重 có hai đọc zhòng (nặng) và chóng (lặp lại); ở nghĩa \"nặng\" phải là zhòng — cần nghe TTS thật trước khi dùng."
+    },
+    {
+      "id": "dt-3-026",
+      "level": "HSK5-6",
+      "hanzi": "双方经过三轮磋商才达成协议。",
+      "pinyin": "shuāng fāng jīng guò sān lún cuō shāng cái dá chéng xié yì",
+      "meaningVi": "Hai bên phải qua ba vòng thương lượng mới đạt thỏa thuận.",
+      "focus": [
+        "磋商 cuó shāng: 磋 là c phẳng, 商 cuộn lưỡi + -ang.",
+        "协议 xié yì: 协 là x + ie, đừng đọc \"xê\"."
+      ]
+    },
+    {
+      "id": "dt-3-027",
+      "level": "HSK5-6",
+      "hanzi": "由于证据不足，案件被发回重审。",
+      "pinyin": "yóu yú zhèng jù bù zú àn jiàn bèi fā huí chóng shěn",
+      "meaningVi": "Vì chứng cứ không đủ, vụ án bị trả để xét xử lại.",
+      "focus": [
+        "证据 zhèng jù: 据 đọc jù, môi tròn.",
+        "发回 fā huí: 发 ở nghĩa \"gửi/trả\" đọc fā; 回 là h thường."
+      ],
+      "uncertain": true,
+      "uncertainReason": "chữ 重 trong 重审 đọc chóng (xét lại); TTS có thể trả zhòng."
+    },
+    {
+      "id": "dt-3-028",
+      "level": "HSK5-6",
+      "hanzi": "这项措施短期内很难看到效果。",
+      "pinyin": "zhè xiàng cuò shī duǎn qī nèi hěn nán kàn dào xiào guǒ",
+      "meaningVi": "Biện pháp này ngắn hạn khó thấy hiệu quả.",
+      "focus": [
+        "很难 hěn nán: hai thanh 3 đi liền → hén nán.",
+        "效果 xiào guǒ: 果 thanh 3, môi tròn ở cuối."
+      ]
+    },
+    {
+      "id": "dt-3-029",
+      "level": "HSK5-6",
+      "hanzi": "尽管困难重重，他仍坚持完成实验。",
+      "pinyin": "jǐn guǎn kùn nán chóng chóng tā réng jiān chí wán chéng shí yàn",
+      "meaningVi": "Dù khó khăn chồng chất, anh ấy vẫn kiên trì hoàn thành thí nghiệm.",
+      "focus": [
+        "困难 kùn nán: 困 tròn môi, 难 đóng -n.",
+        "仍 réng và 持 chí đều cuộn lưỡi; 仍 có -ng vang."
+      ]
+    },
+    {
+      "id": "dt-3-030",
+      "level": "HSK5-6",
+      "hanzi": "市场竞争激烈，企业必须不断创新。",
+      "pinyin": "shì chǎng jìng zhēng jī liè qǐ yè bì xū bú duàn chuàng xīn",
+      "meaningVi": "Cạnh tranh thị trường khốc liệt, doanh nghiệp phải không ngừng đổi mới.",
+      "focus": [
+        "竞争 jìng zhēng: 争 cuộn lưỡi + -ng, khác 净 jìng.",
+        "创新 chuàng xīn: 创 bật hơi ch, 新 đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-031",
+      "level": "HSK5-6",
+      "hanzi": "她处理突发状况的经验还很不足。",
+      "pinyin": "tā chú lǐ tū fā zhuàng kuàng de jīng yàn hái hěn bù zú",
+      "meaningVi": "Kinh nghiệm xử lý tình huống đột xuất của cô ấy còn rất ít.",
+      "focus": [
+        "经验 jīng yàn: 验 là i + an, đóng -n.",
+        "处理 chǔ lǐ: hai thanh 3 đi liền, âm đầu đi lên."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        3,
+        1,
+        1,
+        4,
+        4,
+        5,
+        1,
+        4,
+        2,
+        3,
+        4,
+        2
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          3,
+          1,
+          1,
+          4,
+          4,
+          5,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          3,
+          3,
+          1,
+          1,
+          4,
+          4,
+          5,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 1 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-2-3-1-1-4-4-5-1-4-2-3-4-2 lẫn 1-3-3-1-1-4-4-5-1-4-2-3-4-2."
+    },
+    {
+      "id": "dt-3-032",
+      "level": "HSK5-6",
+      "hanzi": "他对这项技术的前景持保留态度。",
+      "pinyin": "tā duì zhè xiàng jì shù de qián jǐng chí bǎo liú tài dù",
+      "meaningVi": "Anh ấy giữ thái độ dè dặt về triển vọng của công nghệ này.",
+      "focus": [
+        "前景 qián jǐng: 景 đóng -ng, khác 紧 jǐn (-n).",
+        "保留 bǎo liú: 保 là b hai môi, 留 là l."
+      ]
+    },
+    {
+      "id": "dt-3-033",
+      "level": "HSK5-6",
+      "hanzi": "因为准备充分，演讲进行得很顺利。",
+      "pinyin": "yīn wéi zhǔn bèi chōng fèn yán jiǎng jìn xíng dé hěn shùn lì",
+      "meaningVi": "Vì chuẩn bị kỹ, bài diễn tiến hành rất thuận lợi.",
+      "focus": [
+        "演讲 yǎn jiǎng: hai thanh 3 đi liền → yán jiǎng.",
+        "顺利 shùn lì: 顺 cuộn lưỡi + -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        2,
+        3,
+        4,
+        1,
+        4,
+        3,
+        3,
+        4,
+        2,
+        2,
+        3,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          3,
+          4,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          1,
+          4,
+          3,
+          3,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-2-3-4-1-4-2-3-4-2-2-3-4-4 lẫn 1-2-3-4-1-4-3-3-4-2-2-3-4-4."
+    },
+    {
+      "id": "dt-3-034",
+      "level": "HSK5-6",
+      "hanzi": "他在会上阐述了自己的研究方向。",
+      "pinyin": "tā zài huì shàng chǎn shù le zì jǐ de yán jiū fāng xiàng",
+      "meaningVi": "Anh ấy trình bày hướng nghiên cứu của mình trong cuộc họp.",
+      "focus": [
+        "阐述 chǎn shù: 产 phẳng + -n, 述 cuộn lưỡi.",
+        "方向 fāng xiàng: cả hai mở -ang."
+      ]
+    },
+    {
+      "id": "dt-3-035",
+      "level": "HSK5-6",
+      "hanzi": "合同条款含糊，日后可能产生纠纷。",
+      "pinyin": "hé tong tiáo kuǎn hán hu rì hòu kě néng chǎn shēng jiū fēn",
+      "meaningVi": "Điều khoản hợp đồng mơ hồ, sau này dễ phát sinh tranh chấp.",
+      "focus": [
+        "条款 tiáo kuǎn: 款 bật hơi k, đóng -n.",
+        "纠纷 jiū fēn: 纷 đóng -n, khác 风 fēng (-ng)."
+      ]
+    },
+    {
+      "id": "dt-3-036",
+      "level": "HSK5-6",
+      "hanzi": "这批货物因手续不全被海关扣留。",
+      "pinyin": "zhè pī huò wù yīn shǒu xù bù quán bèi hǎi guān kòu liú",
+      "meaningVi": "Lô hàng này bị hải quan giữ lại vì thủ tục không đầy đủ.",
+      "focus": [
+        "手续 shǒu xù: 续 là x + ü, môi tròn chặt.",
+        "扣留 kòu liú: 扣 không bật hơi, 留 kết thúc bằng i mở."
+      ]
+    },
+    {
+      "id": "dt-3-037",
+      "level": "HSK5-6",
+      "hanzi": "我们应该重视老年人的数字素养。",
+      "pinyin": "wǒ men yīng gāi zhòng shì lǎo nián rén de shù zì sù yǎng",
+      "meaningVi": "Chúng ta nên coi trọng năng lực số của người cao tuổi.",
+      "focus": [
+        "素养 sù yǎng: 素 là s phẳng, 养 mở -ang.",
+        "数字 shù zì: một âm cuộn lưỡi, một âm phẳng — lưỡi đặt khác nhau."
+      ]
+    },
+    {
+      "id": "dt-3-038",
+      "level": "HSK5-6",
+      "hanzi": "他临时提出修改，打乱了整个计划。",
+      "pinyin": "tā lín shí tí chū xiū gǎi dǎ luàn le zhěng gè jì huà",
+      "meaningVi": "Anh ấy đề nghị sửa vào phút chót, làm đảo lộn cả kế hoạch.",
+      "focus": [
+        "修改 xiū gǎi: 修 là x + iu, 改 xuống rồi lên.",
+        "打乱 dǎ luàn: 乱 đóng -n, đọc gọn."
+      ]
+    },
+    {
+      "id": "dt-3-039",
+      "level": "HSK5-6",
+      "hanzi": "这个软件界面简洁，操作逻辑清晰。",
+      "pinyin": "zhè ge ruǎn jiàn jiè miàn jiǎn jié cāo zuò luó jí qīng xī",
+      "meaningVi": "Giao diện phần mềm này gọn gàng, logic thao tác rõ ràng.",
+      "focus": [
+        "简洁 jiǎn jié: 洁 thanh 2, đi lên.",
+        "逻辑 luó ji: chữ thứ hai đọc nhẹ, gần còn nghe rõ âm i."
+      ]
+    },
+    {
+      "id": "dt-3-040",
+      "level": "HSK5-6",
+      "hanzi": "公司在海外市场的份额持续扩大。",
+      "pinyin": "gōng sī zài hǎi wài shì chǎng de fèn é chí xù kuò dà",
+      "meaningVi": "Thị phần của công ty ở nước ngoài tiếp tục mở rộng.",
+      "focus": [
+        "份额 fèn é: 份 đóng -n, khác 峰 fēng.",
+        "持续 chí xù: 持 cuộn lưỡi, 续 là ü."
+      ]
+    },
+    {
+      "id": "dt-3-041",
+      "level": "HSK5-6",
+      "hanzi": "团队士气低落，主管决定调整分工。",
+      "pinyin": "tuán duì shì qì dī luò zhǔ guǎn jué dìng tiáo zhěng fēn gōng",
+      "meaningVi": "Tinh thần đội đi xuống, quản lý quyết định chia việc lại.",
+      "focus": [
+        "士气 shì qì: 士 cuộn lưỡi, 气 bật hơi.",
+        "分工 fēn gōng: 分 đóng -n, 工 đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-3-042",
+      "level": "HSK5-6",
+      "hanzi": "城市扩张带来了环境和交通压力。",
+      "pinyin": "chéng shì kuò zhāng dài lái le huán jìng hé jiāo tōng yā lì",
+      "meaningVi": "Đô thị mở rộng tạo áp lực lên môi trường và giao thông.",
+      "focus": [
+        "扩张 kuò zhāng: 张 cuộn lưỡi + -ng.",
+        "压力 yā lì: 力 đọc nặng, kết thúc bằng i mở."
+      ]
+    },
+    {
+      "id": "dt-3-043",
+      "level": "HSK5-6",
+      "hanzi": "她对音乐的理解超越了技巧层面。",
+      "pinyin": "tā duì yīn yuè de lǐ jiě chāo yuè le jì qiǎo céng miàn",
+      "meaningVi": "Cô ấy hiểu âm nhạc vượt trên tầng kỹ thuật.",
+      "focus": [
+        "理解 lǐ jiě: 解 đọc không bật hơi.",
+        "层面 céng miàn: 层 là c phẳng, khác 成 chéng."
+      ]
+    },
+    {
+      "id": "dt-3-044",
+      "level": "HSK5-6",
+      "hanzi": "这本书探讨了技术与伦理的关系。",
+      "pinyin": "zhè běn shū tàn tǎo le jì shù yǔ lún lǐ de guān xì",
+      "meaningVi": "Cuốn sách bàn về quan hệ giữa công nghệ và đạo đức.",
+      "focus": [
+        "伦理 lún lǐ: cả hai là âm l, đừng lẫn n.",
+        "技术 jì shù: 术 cuộn lưỡi, kết thúc bằng u tròn."
+      ]
+    },
+    {
+      "id": "dt-3-045",
+      "level": "HSK5-6",
+      "hanzi": "团队合作的前提是信息充分共享。",
+      "pinyin": "tuán duì hé zuò de qián tí shì xìn xī chōng fèn gòng xiǎng",
+      "meaningVi": "Điều kiện để hợp tác nhóm là chia sẻ thông tin đầy đủ.",
+      "focus": [
+        "前提 qián tí: 提 đọc tí, không bật thành \"th\".",
+        "共享 gòng xiǎng: cả hai mở -ang, 共 rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-3-046",
+      "level": "HSK5-6",
+      "hanzi": "他的观点过于理想，缺乏可操作性。",
+      "pinyin": "tā de guān diǎn guò yú lí xiǎng quē fá kě cāo zuò xìng",
+      "meaningVi": "Quan điểm của anh ấy quá lý tưởng, thiếu tính khả thi.",
+      "focus": [
+        "理想 lǐ xiǎng: hai thanh 3 đi liền → lí xiǎng.",
+        "操作 cāo zuò: hai âm đều không cuộn lưỡi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        5,
+        1,
+        3,
+        4,
+        2,
+        3,
+        3,
+        1,
+        2,
+        3,
+        1,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          5,
+          1,
+          3,
+          4,
+          2,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          4,
+          4
+        ],
+        [
+          1,
+          5,
+          1,
+          3,
+          4,
+          2,
+          3,
+          3,
+          1,
+          2,
+          3,
+          1,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-5-1-3-4-2-2-3-1-2-3-1-4-4 lẫn 1-5-1-3-4-2-3-3-1-2-3-1-4-4."
+    },
+    {
+      "id": "dt-3-047",
+      "level": "HSK5-6",
+      "hanzi": "他的书法作品笔力遒劲，结构严谨。",
+      "pinyin": "tā de shū fǎ zuò pǐn bǐ lì qiú jìng jié gòu yán jǐn",
+      "meaningVi": "Thư pháp của anh ấy nét bút mạnh mẽ, kết cấu chặt chẽ.",
+      "focus": [
+        "书法 shū fǎ: 书 cuộn lưỡi, 法 là f môi-răng.",
+        "严谨 yán jǐn: cả hai đóng -n, đọc gọn."
+      ],
+      "uncertain": true,
+      "uncertainReason": "chữ 遒 (qiú) ít gặp, TTS có thể đọc sai thành jiù — nên kiểm tra audio thật."
+    },
+    {
+      "id": "dt-3-048",
+      "level": "HSK5-6",
+      "hanzi": "他说的话容易引起不必要的误会。",
+      "pinyin": "tā shuō de huà róng yì yǐn qǐ bú bì yào de wù huì",
+      "meaningVi": "Lời anh ấy nói dễ gây hiểu lầm không cần thiết.",
+      "focus": [
+        "引起 yǐn qǐ: hai âm cùng đi lên, 起 thanh 3.",
+        "必要 bì yào: 要 đọc yào, rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-3-049",
+      "level": "HSK5-6",
+      "hanzi": "他的解释含糊，没有回答核心问题。",
+      "pinyin": "tā de jiě shì hán hu méi yǒu huí dá hé xīn wèn tí",
+      "meaningVi": "Giải thích của anh ấy mơ hồ, không trả lời câu hỏi trọng tâm.",
+      "focus": [
+        "含糊 hán hu: cả hai là âm h, 糊 đọc nhẹ.",
+        "核心 hé xīn: 心 đóng -n, khác 星 xīng."
+      ]
+    },
+    {
+      "id": "dt-3-050",
+      "level": "HSK5-6",
+      "hanzi": "城市的交通拥堵问题短期难以缓解。",
+      "pinyin": "chéng shì de jiāo tōng yōng dǔ wèn tí duǎn qī nán yǐ huán jiě",
+      "meaningVi": "Tình trạng tắc đường ở thành phố khó giảm trong thời gian ngắn.",
+      "focus": [
+        "拥堵 yōng dǔ: 拥 đóng -ng, 堵 là d không bật hơi.",
+        "缓解 huǎn jiě: 缓 đóng -n, khác 换 huàn thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        4,
+        5,
+        1,
+        1,
+        1,
+        3,
+        4,
+        2,
+        3,
+        1,
+        2,
+        3,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          4,
+          5,
+          1,
+          1,
+          1,
+          3,
+          4,
+          2,
+          3,
+          1,
+          2,
+          3,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          5,
+          1,
+          1,
+          1,
+          3,
+          4,
+          2,
+          3,
+          1,
+          2,
+          3,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          5,
+          1,
+          1,
+          1,
+          3,
+          4,
+          2,
+          3,
+          1,
+          2,
+          2,
+          2,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 13 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 2-4-5-1-1-1-3-4-2-3-1-2-3-2-3 lẫn 2-4-5-1-1-1-3-4-2-3-1-2-3-3-3."
+    },
+    {
+      "id": "dt-3-051",
+      "level": "HSK5-6",
+      "hanzi": "老师的点评一针见血，让我受益匪浅。",
+      "pinyin": "lǎo shī de diǎn píng yì zhēn jiàn xuè ràng wǒ shòu yì fěi qiǎn",
+      "meaningVi": "Thầy cô nhận xét rất trúng, khiến tôi thu hoạch nhiều.",
+      "focus": [
+        "受益 shòu yì: 受 cuộn lưỡi, 益 rơi mạnh.",
+        "匪浅 fěi qiǎn: 浅 bật hơi q, đóng -n."
+      ]
+    },
+    {
+      "id": "dt-3-052",
+      "level": "HSK5-6",
+      "hanzi": "这家餐厅的口碑在网络上迅速传播。",
+      "pinyin": "zhè jiā cān tīng de kǒu bēi zài wǎng luò shàng xùn sù chuán bō",
+      "meaningVi": "Tiếng của nhà hàng này lan nhanh trên mạng.",
+      "focus": [
+        "餐厅 cān tīng: 餐 là c không cuộn, 厅 đóng -ng.",
+        "迅速 xùn sù: 迅 cuộn lưỡi + -n, 速 là s phẳng."
+      ]
+    },
+    {
+      "id": "dt-3-053",
+      "level": "HSK5-6",
+      "hanzi": "实验结果与假设不符，需要重新设计。",
+      "pinyin": "shí yàn jié guǒ yǔ jiǎ shè bù fú xū yào chóng xīn shè jì",
+      "meaningVi": "Kết quả thí nghiệm không khớp giả thuyết, phải thiết kế lại.",
+      "focus": [
+        "假设 jiǎ shè: 设 cuộn lưỡi, khác 色 sè.",
+        "设计 shè jì: 设 cuộn lưỡi, 计 là âm phẳng."
+      ]
+    },
+    {
+      "id": "dt-3-054",
+      "level": "HSK5-6",
+      "hanzi": "她边工作边读书，时间安排非常紧凑。",
+      "pinyin": "tā biān gōng zuò biān dú shū shí jiān ān pái fēi cháng jǐn còu",
+      "meaningVi": "Cô ấy vừa làm vừa học, thời gian sắp xếp rất chật.",
+      "focus": [
+        "紧凑 jǐn còu: 紧 đóng -n, khác 景 jǐng (-ng).",
+        "安排 ān pái: 排 bật hơi p, kết thúc bằng i."
+      ]
+    },
+    {
+      "id": "dt-3-055",
+      "level": "HSK5-6",
+      "hanzi": "面对质疑，他用事实回应了所有疑问。",
+      "pinyin": "miàn duì zhì yí tā yòng shì shí huí yìng le suǒ yǒu yí wèn",
+      "meaningVi": "Trước sự nghi ngờ, anh ấy dùng thực tế để đáp lại mọi thắc mắc.",
+      "focus": [
+        "质疑 zhì yí: 质 cuộn lưỡi, 疑 bắt đầu bằng i.",
+        "回应 huí yìng: 回 là h thường, 应 đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-3-056",
+      "level": "HSK5-6",
+      "hanzi": "这种植物只在湿度较高的山区生长。",
+      "pinyin": "zhè zhǒng zhí wù zhī zài shī dù jiào gāo de shān qū shēng zhǎng",
+      "meaningVi": "Loại cây này chỉ mọc ở vùng núi ẩm cao.",
+      "focus": [
+        "湿度 shī dù: 度 đọc nặng, kết thúc bằng u.",
+        "山区 shān qū: 山 cuộn lưỡi + -n, 区 là ü."
+      ]
+    },
+    {
+      "id": "dt-3-057",
+      "level": "HSK5-6",
+      "hanzi": "培训结束后还要通过考核才能上岗。",
+      "pinyin": "péi xùn jié shù hòu hái yào tōng guò kǎo hé cái néng shàng gǎng",
+      "meaningVi": "Sau khóa bồi dưỡng còn phải qua kiểm tra mới được lên vị trí.",
+      "focus": [
+        "培训 péi xùn: 培 bật hơi p, 训 đóng -n.",
+        "考核 kǎo hé: 核 đọc hé, không đọc hú."
+      ]
+    },
+    {
+      "id": "dt-3-058",
+      "level": "HSK5-6",
+      "hanzi": "这个问题需要结合具体案例来分析。",
+      "pinyin": "zhè ge wèn tí xū yào jié hé jù tǐ àn lì lái fēn xī",
+      "meaningVi": "Vấn đề này cần phân tích gắn với ví dụ cụ thể.",
+      "focus": [
+        "结合 jié hé: 结 không bật hơi, 合 là h thường.",
+        "具体 jù tǐ: 具 là j không cuộn, 体 thanh 3."
+      ]
+    },
+    {
+      "id": "dt-3-059",
+      "level": "HSK5-6",
+      "hanzi": "公司决定把部分业务交给外部团队。",
+      "pinyin": "gōng sī jué dìng bǎ bù fen yè wù jiāo gěi wài bù tuán duì",
+      "meaningVi": "Công ty quyết định giao một phần việc cho nhóm bên ngoài.",
+      "focus": [
+        "部分 bù fen: chữ thứ hai đọc nhẹ fen.",
+        "交给 jiāo gěi: 给 thanh 3, đọc gọn."
+      ]
+    },
+    {
+      "id": "dt-3-060",
+      "level": "HSK5-6",
+      "hanzi": "他的成功并非偶然，而是长期积累的结果。",
+      "pinyin": "tā de chéng gōng bìng fēi ǒu rán ér shì cháng qī jī lěi de jié guǒ",
+      "meaningVi": "Thành công của anh ấy không phải ngẫu nhiên mà là kết quả tích lũy lâu dài.",
+      "focus": [
+        "成功 chéng gōng: cả hai đóng -ng, 成 cuộn lưỡi.",
+        "积累 jī lěi: 累 đọc lěi thanh 3, không đọc lèi."
+      ]
+    }
+  ]
+}

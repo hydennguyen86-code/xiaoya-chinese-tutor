@@ -45,3 +45,10 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Chép JSON + checker DeepSeek, 12 nhóm âm, giữ nhãn AI soạn, chưa duyệt. Checker kiểm tra cả tính cặp tối thiểu và pinyin; các mục uncertain không đưa vào phần chấm.
 - Nghe rồi chọn pinyin A/B, phát âm mẫu tổng hợp, có nghe chậm và giải thích khẩu hình sau trả lời. Không gọi STT để quyết định đáp án. Lịch sử nhầm theo người học được giữ riêng để ôn phát âm ở mục 7.
 - Typecheck/test/build đạt trước commit; chưa được người dạy xác nhận độ chính xác từng giọng mẫu hoặc mẹo khẩu hình.
+
+## Mục 3 — Nghe chép DeepSeek và câu buổi học
+
+- 180 câu JSON DeepSeek, giữ nhãn AI soạn, chưa duyệt; checker kiểm tra cấu trúc/pinyin/biến điệu chạy trong test repo. Không chép script tác giả.
+- Nghe cả câu hoặc từng cụm ngắt theo dấu câu, nhập chữ Hán hoặc pinyin cách âm tiết. Edit-distance tránh lỗi thiếu một chữ kéo sai cả phần sau. Hiện chữ/âm/nghĩa sau nộp. Nhập không dấu được chấp nhận; có dấu/số thanh thì kiểm tra các chuỗi acceptTones, giữ baseTones để giải thích.
+- Có lựa chọn câu ví dụ của chính buổi học và câu mở đầu nhập vai. Cách đọc câu hiện có dùng metadata pinyin của bài, hoặc pinyin-pro cho câu mở đầu; không ghi đè pinyin DeepSeek.
+- Typecheck/test/build trước commit; chưa được giáo viên duyệt hoặc kiểm tra từng câu TTS thật.
