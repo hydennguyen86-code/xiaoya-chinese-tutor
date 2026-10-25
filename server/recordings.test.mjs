@@ -60,3 +60,31 @@ test('human-eval pipeline aggregates labels without retaining identities or audi
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+import { readRecordingDataset } from '../eval/recordings.mjs';
+test('external sidecars use human tones, never expected/app guesses, detect conflicts and stay read-only', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-sidecar-fixture-'));
+  try {
+    fs.writeFileSync(path.join(dir, 'single-1-1.audio'), Buffer.alloc(1200));
+    fs.writeFileSync(
+      path.join(dir, 'manifest.json'),
+      JSON.stringify({ version: 1, recordings: [{ id: 'single-1-1', text: '妈', file: 'single-1-1.audio', expected: [1], label: null }] }),
+    );
+    fs.writeFileSync(path.join(dir, 'app-scores.json'), JSON.stringify({ items: [{ id: 'single-1-1', heard: [1] }] }));
+    assert.equal(readRecordingDataset(dir).inventory.labeledItems, 0);
+    const label = { version: 1, source: 'self', reviewedBy: 'SYNTHETIC', labels: [{ id: 'single-1-1', tones: [4], expected: [1] }] };
+    const serialized = JSON.stringify(label);
+    fs.writeFileSync(path.join(dir, 'labels.self.json'), serialized);
+    const data = readRecordingDataset(dir);
+    assert.deepEqual(data.recordings[0].label.tones, [4]);
+    assert.equal(data.inventory.complete, false);
+    assert.equal(fs.readFileSync(path.join(dir, 'labels.self.json'), 'utf8'), serialized);
+    label.labels[0].tones = [2];
+    fs.writeFileSync(path.join(dir, 'labels.second.json'), JSON.stringify(label));
+    assert.throws(() => readRecordingDataset(dir), /Conflicting/);
+    assert.deepEqual(readRecordingDataset(dir, { labelsFile: 'labels.self.json' }).recordings[0].label.tones, [4]);
+    assert.throws(() => readRecordingDataset(dir, { labelsFile: '../outside.json' }), /filename/);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

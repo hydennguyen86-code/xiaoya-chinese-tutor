@@ -123,3 +123,10 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Nút “Misu chấm sai?” ở kết quả từ/câu, shadowing, vòng sửa và ôn phát âm. Người nghe chọn từng thanh độc lập, không điền sẵn theo máy; ghi tên và vai trò tự nghe/chuyên môn. 0 không rõ, 5 thanh nhẹ; không tự coi vai trò chuyên môn là giáo viên đã duyệt.
 - Chỉ lưu khi có bản thu còn trong bộ nhớ, vào eval-recordings/<hồ sơ>/feedback trong XIAOYA_DATA_DIR; nhãn người tách khỏi expected/heard của máy. Không sửa bộ chấm, không đưa audio vào repo. Mẫu phản hồi không tự tính là đủ bộ đo 56 mục.
 - Cài đặt đọc số mục 56 đã gắn nhãn và mẫu phản hồi của từng hồ sơ. Test dữ liệu tổng hợp kiểm tra nhãn khác máy, cách ly hồ sơ, lỗi đường dẫn/nhãn, file âm chỉ ở thư mục tạm. Chưa thử bằng giọng người thật hoặc trên Windows.
+
+## 2026-10-25 — Nhập bản thu cắt sẵn và điều kiện chỉnh ngưỡng
+
+- eval/tones.mjs nhận cả --recordings=<thư mục> và --recordings <thư mục>, đọc manifest v1/.audio tại chỗ; hỗ trợ labels.*.json v1 có labels/items/recordings dạng mảng hoặc map id. Nhãn cần tones, source=self/expert và reviewedBy ở từng dòng hoặc cấp đầu. Không đọc app-scores/expected làm nhãn người. Xung đột nhãn phải chọn --labels=<tên file> cụ thể. Chặn filename/symlink ra ngoài.
+- Không có sidecar thực tế để đối chiếu schema Qoder tại thời điểm chạy; các dạng trên có test tổng hợp, cần kiểm tra lại khi Qoder xuất file. Nhãn 0 không rõ/5 thanh nhẹ thống kê riêng, chỉ đo thanh 1–4. Nếu có sentence-* dùng chúng học dải giọng; nếu không, báo rõ học từ chính tập đo, không phải held-out.
+- Lần chạy đọc bản thu hiện có: **0 mục gắn nhãn người**, kết quả tổng hợp lưu eval/results/, không chứa tên người, đường dẫn hay audio. Không suy ra nhãn từ thanh mong đợi hoặc điểm máy.
+- **Bỏ qua chỉnh classifyIsolated**: chưa có người nào gắn nhãn đủ 56 mục. Không có kết quả trước/sau hay tuyên bố cải thiện; giữ nguyên ngưỡng và số liệu TTS cũ.

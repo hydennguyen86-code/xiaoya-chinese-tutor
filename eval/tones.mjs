@@ -16,10 +16,13 @@ import path from 'node:path';
 import { saveResult } from './record.mjs';
 
 const args = process.argv.slice(2);
-const recordingsDir = args.find((arg) => arg.startsWith('--recordings='))?.slice(13);
+const recordingsDir =
+  args.find((arg) => arg.startsWith('--recordings='))?.slice(13) ||
+  (args.includes('--recordings') ? args[args.indexOf('--recordings') + 1] : undefined);
+const labelsFile = args.find((arg) => arg.startsWith('--labels='))?.slice(9);
 if (recordingsDir) {
   const { evaluateRecordings } = await import('./recordings.mjs');
-  await evaluateRecordings(recordingsDir);
+  await evaluateRecordings(recordingsDir, { labelsFile });
   process.exit(0);
 }
 const base = args.find((a) => a.startsWith('http')) || 'http://127.0.0.1:8787';
