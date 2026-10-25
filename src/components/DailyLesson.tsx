@@ -234,8 +234,8 @@ export function DailyLesson(props: DailyLessonProps) {
         onPhase: setVoicePhase,
         learnerId: learner.id,
         pronounce,
-        maxMs: content?.targetLevel === 'HSK5' ? 125000 : 45000,
-        silenceMs: content?.targetLevel === 'HSK5' ? 3000 : 1600,
+        maxMs: content?.targetLevel === 'HSK5' || content?.targetLevel === 'HSK5-6' ? 125000 : 45000,
+        silenceMs: content?.targetLevel === 'HSK5' || content?.targetLevel === 'HSK5-6' ? 3000 : 1600,
       });
       voiceRef.current = handle;
       try {
@@ -295,7 +295,13 @@ export function DailyLesson(props: DailyLessonProps) {
     };
     const base = current ?? beginSession(null, syllabus, level, pointer, dayKey());
     save({ ...base, ...pointer, current: lessonNo ? null : (remembered?.current ?? null), finished: false, lastCompletedDate: '' });
-    const nextLevel: Level = volume.targetLevel === 'HSK5' ? 'HSK5-6' : volume.targetLevel === 'HSK1' ? 'HSK1-2' : level;
+    const nextLevel: Level = ['HSK1-2', 'HSK3-4', 'HSK5-6'].includes(volume.targetLevel || '')
+      ? (volume.targetLevel as Level)
+      : volume.targetLevel === 'HSK5'
+        ? 'HSK5-6'
+        : volume.targetLevel === 'HSK1'
+          ? 'HSK1-2'
+          : level;
     if (nextLevel !== level && props.onLevelChange) props.onLevelChange(nextLevel);
     else void load();
   }
@@ -347,7 +353,13 @@ export function DailyLesson(props: DailyLessonProps) {
       )}
     </div>
   );
-  const teachingLevel: Level = content?.targetLevel === 'HSK5' ? 'HSK5-6' : content?.targetLevel === 'HSK1' ? 'HSK1-2' : level;
+  const teachingLevel: Level = ['HSK1-2', 'HSK3-4', 'HSK5-6'].includes(content?.targetLevel || '')
+    ? (content?.targetLevel as Level)
+    : content?.targetLevel === 'HSK5'
+      ? 'HSK5-6'
+      : content?.targetLevel === 'HSK1'
+        ? 'HSK1-2'
+        : level;
   const handleCourseBusy = useCallback(
     (value: boolean) => {
       if (value) getAvatar()?.stopSpeech();
@@ -676,7 +688,7 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
       <p className="lesson-count">
         Ôn tập {session.item + 1}/{items.length}
       </p>
-      {item.kind === 'word' && result && <HanViet word={item.word}/>}
+      {item.kind === 'word' && result && <HanViet word={item.word} />}
       {item.kind === 'word' ? (
         <>
           <p className="lesson-prompt">
@@ -762,7 +774,7 @@ function VocabSection(props: SharedProps) {
       <p className="lesson-word">
         <Han text={word.word} pinyinText={word.pinyin} />
       </p>
-      <HanViet word={word.word}/>
+      <HanViet word={word.word} />
       <p className="lesson-meaning">{word.meaning}</p>
       <p className="lesson-example">
         <Han text={word.example} pinyinText={word.examplePinyin} />

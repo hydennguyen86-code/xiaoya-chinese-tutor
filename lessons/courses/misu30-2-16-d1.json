@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 16,
+  "lessonTitle": "我想租一个房子 · Thuê nhà",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "租",
+      "meaning": "thuê",
+      "example": "我想租一个一居室。",
+      "exampleVi": "Mình muốn thuê một căn hộ một phòng ngủ.",
+      "pinyin": "zū",
+      "examplePinyin": "wǒ xiǎng zū yí gè yì jū shì 。"
+    },
+    {
+      "word": "房租",
+      "meaning": "tiền thuê nhà",
+      "example": "房租一个月多少钱？",
+      "exampleVi": "Tiền thuê nhà một tháng bao nhiêu?",
+      "pinyin": "fáng zū",
+      "examplePinyin": "fáng zū yí gè yuè duō shǎo qián ？"
+    },
+    {
+      "word": "水电费",
+      "meaning": "tiền điện nước",
+      "example": "水电费包括在房租里吗？",
+      "exampleVi": "Tiền điện nước có bao gồm trong tiền thuê không?",
+      "pinyin": "shuǐ diàn fèi",
+      "examplePinyin": "shuǐ diàn fèi bāo kuò zài fáng zū lǐ ma ？"
+    },
+    {
+      "word": "合同",
+      "meaning": "hợp đồng",
+      "example": "我们什么时候签合同？",
+      "exampleVi": "Khi nào chúng ta ký hợp đồng?",
+      "pinyin": "hé tong",
+      "examplePinyin": "wǒ men shén me shí hou qiān hé tong ？"
+    },
+    {
+      "word": "押金",
+      "meaning": "tiền đặt cọc",
+      "example": "押金是几个月的房租？",
+      "exampleVi": "Tiền đặt cọc là mấy tháng tiền thuê?",
+      "pinyin": "yā jīn",
+      "examplePinyin": "yā jīn shì jǐ gè yuè de fáng zū ？"
+    },
+    {
+      "word": "家具",
+      "meaning": "đồ nội thất",
+      "example": "房间里有家具吗？",
+      "exampleVi": "Trong phòng có đồ nội thất không?",
+      "pinyin": "jiā jù",
+      "examplePinyin": "fáng jiān lǐ yǒu jiā jù ma ？"
+    },
+    {
+      "word": "附近",
+      "meaning": "gần đây",
+      "example": "附近有地铁站吗？",
+      "exampleVi": "Gần đây có ga tàu điện không?",
+      "pinyin": "fù jìn",
+      "examplePinyin": "fù jìn yǒu dì tiě zhàn ma ？"
+    },
+    {
+      "word": "搬",
+      "meaning": "chuyển (nhà)",
+      "example": "我下个月搬进去。",
+      "exampleVi": "Tháng sau mình chuyển vào.",
+      "pinyin": "bān",
+      "examplePinyin": "wǒ xià gè yuè bān jìn qù 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想租……",
+      "explanation": "Dùng để nói loại nhà muốn thuê.",
+      "example": "我想租一个离公司近的房子。",
+      "exampleVi": "Mình muốn thuê một căn nhà gần công ty.",
+      "examplePinyin": "wǒ xiǎng zū yí gè lí gōng sī jìn de fáng zi 。"
+    },
+    {
+      "pattern": "……包括在房租里吗？",
+      "explanation": "Dùng để hỏi chi phí nào đã gồm trong tiền thuê.",
+      "example": "水电费包括在房租里吗？",
+      "exampleVi": "Tiền điện nước có gồm trong tiền thuê không?",
+      "examplePinyin": "shuǐ diàn fèi bāo kuò zài fáng zū lǐ ma ？"
+    },
+    {
+      "pattern": "附近有……吗？",
+      "explanation": "Dùng để hỏi tiện ích quanh nhà.",
+      "example": "附近有超市吗？",
+      "exampleVi": "Gần đây có siêu thị không?",
+      "examplePinyin": "fù jìn yǒu chāo shì ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Một căn hộ cho thuê.",
+    "avatarRole": "Misu, người cho thuê",
+    "learnerRole": "Người đi xem nhà",
+    "goals": [
+      "Hỏi giá thuê và tiền cọc",
+      "Hỏi chi phí điện nước",
+      "Hỏi đồ nội thất và tiện ích gần đó"
+    ],
+    "opening": "这就是你要看的房子。你觉得怎么样？",
+    "openingVi": "Đây là căn nhà bạn muốn xem. Bạn thấy thế nào?"
+  },
+  "freeTalk": {
+    "question": "你理想中的房子是什么样的？",
+    "questionVi": "Ngôi nhà lý tưởng của bạn như thế nào?"
+  },
+  "prerequisites": [
+    15
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我想租一个一居室。 房租一个月多少钱？ 水电费包括在房租里吗？",
+    "translation": "Mình muốn thuê một căn hộ một phòng ngủ. Tiền thuê nhà một tháng bao nhiêu? Tiền điện nước có bao gồm trong tiền thuê không?",
+    "pinyin": "wǒ xiǎng zū yí gè yì jū shì 。   fáng zū yí gè yuè duō shǎo qián ？   shuǐ diàn fèi bāo kuò zài fáng zū lǐ ma ？",
+    "questions": [
+      {
+        "prompt": "Cụm “租” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tiền điện nước",
+          "thuê",
+          "hợp đồng"
+        ],
+        "answer": 1,
+        "explanation": "“租”: thuê. Ví dụ đã nghe: 我想租一个一居室。"
+      },
+      {
+        "prompt": "Cụm “房租” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hợp đồng",
+          "tiền đặt cọc",
+          "tiền thuê nhà"
+        ],
+        "answer": 2,
+        "explanation": "“房租”: tiền thuê nhà. Ví dụ đã nghe: 房租一个月多少钱？"
+      },
+      {
+        "prompt": "Cụm “水电费” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tiền điện nước",
+          "tiền đặt cọc",
+          "đồ nội thất"
+        ],
+        "answer": 0,
+        "explanation": "“水电费”: tiền điện nước. Ví dụ đã nghe: 水电费包括在房租里吗？"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我想租一个一居室。",
+      "reference": "我想租一个一居室。",
+      "pinyin": "wǒ xiǎng zū yí gè yì jū shì 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你理想中的房子是什么样的？",
+      "promptVi": "Ngôi nhà lý tưởng của bạn như thế nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Một căn hộ cho thuê."
+}

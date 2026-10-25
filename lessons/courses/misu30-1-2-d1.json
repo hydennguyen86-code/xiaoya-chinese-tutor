@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 2,
+  "lessonTitle": "你今年几岁？ · Số đếm, tuổi và số điện thoại",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "几",
+      "meaning": "mấy",
+      "example": "你今年几岁？",
+      "exampleVi": "Bạn năm nay mấy tuổi?",
+      "pinyin": "jǐ",
+      "examplePinyin": "nǐ jīn nián jǐ suì ？"
+    },
+    {
+      "word": "岁",
+      "meaning": "tuổi",
+      "example": "我今年二十岁。",
+      "exampleVi": "Mình năm nay hai mươi tuổi.",
+      "pinyin": "suì",
+      "examplePinyin": "wǒ jīn nián èr shí suì 。"
+    },
+    {
+      "word": "多少",
+      "meaning": "bao nhiêu",
+      "example": "你的电话是多少？",
+      "exampleVi": "Số điện thoại của bạn là bao nhiêu?",
+      "pinyin": "duō shǎo",
+      "examplePinyin": "nǐ de diàn huà shì duō shǎo ？"
+    },
+    {
+      "word": "电话",
+      "meaning": "điện thoại",
+      "example": "请给我你的电话。",
+      "exampleVi": "Hãy cho mình số điện thoại của bạn.",
+      "pinyin": "diàn huà",
+      "examplePinyin": "qǐng gěi wǒ nǐ de diàn huà 。"
+    },
+    {
+      "word": "号码",
+      "meaning": "số (điện thoại)",
+      "example": "你的号码是多少？",
+      "exampleVi": "Số của bạn là bao nhiêu?",
+      "pinyin": "hào mǎ",
+      "examplePinyin": "nǐ de hào mǎ shì duō shǎo ？"
+    },
+    {
+      "word": "两",
+      "meaning": "hai (dùng trước lượng từ)",
+      "example": "我有两本书。",
+      "exampleVi": "Mình có hai quyển sách.",
+      "pinyin": "liǎng",
+      "examplePinyin": "wǒ yǒu liǎng běn shū 。"
+    },
+    {
+      "word": "百",
+      "meaning": "trăm",
+      "example": "这个手机三百块。",
+      "exampleVi": "Chiếc điện thoại này ba trăm tệ.",
+      "pinyin": "bǎi",
+      "examplePinyin": "zhè ge shǒu jī sān bǎi kuài 。"
+    },
+    {
+      "word": "零",
+      "meaning": "số không",
+      "example": "我的号码里有两个零。",
+      "exampleVi": "Số của mình có hai số không.",
+      "pinyin": "líng",
+      "examplePinyin": "wǒ de hào mǎ lǐ yǒu liǎng gè líng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你今年几岁？",
+      "explanation": "Dùng để hỏi tuổi của người ngang hàng hoặc nhỏ hơn.",
+      "example": "你今年几岁？",
+      "exampleVi": "Bạn năm nay mấy tuổi?",
+      "examplePinyin": "nǐ jīn nián jǐ suì ？"
+    },
+    {
+      "pattern": "我今年……岁。",
+      "explanation": "Dùng để trả lời tuổi.",
+      "example": "我今年十八岁。",
+      "exampleVi": "Mình năm nay mười tám tuổi.",
+      "examplePinyin": "wǒ jīn nián shí bā suì 。"
+    },
+    {
+      "pattern": "……是多少？",
+      "explanation": "Dùng để hỏi số điện thoại, giá tiền hoặc một con số.",
+      "example": "你的电话号码是多少？",
+      "exampleVi": "Số điện thoại của bạn là bao nhiêu?",
+      "examplePinyin": "nǐ de diàn huà hào mǎ shì duō shǎo ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Quầy đăng ký lớp học tiếng Trung.",
+    "avatarRole": "Misu, nhân viên tư vấn của trung tâm",
+    "learnerRole": "Học viên mới đến đăng ký",
+    "goals": [
+      "Cho biết tên và tuổi",
+      "Đọc số điện thoại",
+      "Hỏi lại giờ học"
+    ],
+    "opening": "你好！欢迎来报名。请先告诉我你的名字，好吗？",
+    "openingVi": "Xin chào! Chào mừng bạn đến đăng ký. Trước tiên hãy cho mình biết tên bạn, nhé?"
+  },
+  "freeTalk": {
+    "question": "你今年几岁？你的电话号码是多少？",
+    "questionVi": "Bạn năm nay bao nhiêu tuổi? Số điện thoại của bạn là gì?"
+  },
+  "prerequisites": [
+    1
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "你今年几岁？ 我今年二十岁。 你的电话是多少？",
+    "translation": "Bạn năm nay mấy tuổi? Mình năm nay hai mươi tuổi. Số điện thoại của bạn là bao nhiêu?",
+    "pinyin": "nǐ jīn nián jǐ suì ？   wǒ jīn nián èr shí suì 。   nǐ de diàn huà shì duō shǎo ？",
+    "questions": [
+      {
+        "prompt": "Cụm “几” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "bao nhiêu",
+          "điện thoại",
+          "mấy"
+        ],
+        "answer": 2,
+        "explanation": "“几”: mấy. Ví dụ đã nghe: 你今年几岁？"
+      },
+      {
+        "prompt": "Cụm “岁” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tuổi",
+          "điện thoại",
+          "số (điện thoại)"
+        ],
+        "answer": 0,
+        "explanation": "“岁”: tuổi. Ví dụ đã nghe: 我今年二十岁。"
+      },
+      {
+        "prompt": "Cụm “多少” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "số (điện thoại)",
+          "bao nhiêu",
+          "hai (dùng trước lượng từ)"
+        ],
+        "answer": 1,
+        "explanation": "“多少”: bao nhiêu. Ví dụ đã nghe: 你的电话是多少？"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "你今年几岁？",
+      "reference": "你今年几岁？",
+      "pinyin": "nǐ jīn nián jǐ suì ？",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你今年几岁？你的电话号码是多少？",
+      "promptVi": "Bạn năm nay bao nhiêu tuổi? Số điện thoại của bạn là gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Quầy đăng ký lớp học tiếng Trung."
+}

@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 19,
+  "lessonTitle": "今天我请客 · Mời khách và ứng xử",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "请客",
+      "meaning": "mời khách, bao ăn",
+      "example": "今天我请客。",
+      "exampleVi": "Hôm nay mình mời.",
+      "pinyin": "qǐng kè",
+      "examplePinyin": "jīn tiān wǒ qǐng kè 。"
+    },
+    {
+      "word": "客气",
+      "meaning": "khách sáo",
+      "example": "你别客气，多吃一点。",
+      "exampleVi": "Bạn đừng khách sáo, ăn nhiều một chút.",
+      "pinyin": "kè qi",
+      "examplePinyin": "nǐ bié kè qi ， duō chī yì diǎn 。"
+    },
+    {
+      "word": "随便",
+      "meaning": "tùy ý",
+      "example": "你随便点，不用问我。",
+      "exampleVi": "Bạn cứ gọi tùy ý, không cần hỏi mình.",
+      "pinyin": "suí biàn",
+      "examplePinyin": "nǐ suí biàn diǎn ， bú yòng wèn wǒ 。"
+    },
+    {
+      "word": "点菜",
+      "meaning": "gọi món",
+      "example": "我们来点菜吧。",
+      "exampleVi": "Chúng mình gọi món nhé.",
+      "pinyin": "diǎn cài",
+      "examplePinyin": "wǒ men lái diǎn cài ba 。"
+    },
+    {
+      "word": "敬",
+      "meaning": "kính (rượu)",
+      "example": "我敬你一杯。",
+      "exampleVi": "Mình kính bạn một ly.",
+      "pinyin": "jìng",
+      "examplePinyin": "wǒ jìng nǐ yì bēi 。"
+    },
+    {
+      "word": "招待",
+      "meaning": "tiếp đãi",
+      "example": "谢谢你的热情招待。",
+      "exampleVi": "Cảm ơn sự tiếp đãi nhiệt tình của bạn.",
+      "pinyin": "zhāo dài",
+      "examplePinyin": "xiè xie nǐ de rè qíng zhāo dài 。"
+    },
+    {
+      "word": "礼物",
+      "meaning": "quà",
+      "example": "这是我给你准备的礼物。",
+      "exampleVi": "Đây là món quà mình chuẩn bị cho bạn.",
+      "pinyin": "lǐ wù",
+      "examplePinyin": "zhè shì wǒ gěi nǐ zhǔn bèi de lǐ wù 。"
+    },
+    {
+      "word": "感谢",
+      "meaning": "cảm ơn",
+      "example": "非常感谢你的帮助。",
+      "exampleVi": "Rất cảm ơn sự giúp đỡ của bạn.",
+      "pinyin": "gǎn xiè",
+      "examplePinyin": "fēi cháng gǎn xiè nǐ de bāng zhù 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "今天我请客。",
+      "explanation": "Dùng để nói hôm nay mình mời khách.",
+      "example": "今天我请客，你想吃什么？",
+      "exampleVi": "Hôm nay mình mời, bạn muốn ăn gì?",
+      "examplePinyin": "jīn tiān wǒ qǐng kè ， nǐ xiǎng chī shén me ？"
+    },
+    {
+      "pattern": "你别客气。",
+      "explanation": "Câu nói để người khác đừng khách sáo.",
+      "example": "你别客气，就像在自己家一样。",
+      "exampleVi": "Bạn đừng khách sáo, cứ như ở nhà mình vậy.",
+      "examplePinyin": "nǐ bié kè qi ， jiù xiàng zài zì jǐ jiā yí yàng 。"
+    },
+    {
+      "pattern": "谢谢你的……",
+      "explanation": "Dùng để cảm ơn cụ thể.",
+      "example": "谢谢你的礼物。",
+      "exampleVi": "Cảm ơn món quà của bạn.",
+      "examplePinyin": "xiè xie nǐ de lǐ wù 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Bữa tối tại nhà Misu.",
+    "avatarRole": "Misu, chủ nhà",
+    "learnerRole": "Khách được mời",
+    "goals": [
+      "Cảm ơn chủ nhà",
+      "Nói món mình muốn ăn",
+      "Mời lại Misu lần sau"
+    ],
+    "opening": "欢迎来我家！你想喝点什么？",
+    "openingVi": "Chào mừng đến nhà mình! Bạn muốn uống gì?"
+  },
+  "freeTalk": {
+    "question": "在越南，请客吃饭有什么习惯？",
+    "questionVi": "Ở Việt Nam, mời khách ăn cơm có phong tục gì?"
+  },
+  "prerequisites": [
+    18
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "今天我请客。 你别客气，多吃一点。 你随便点，不用问我。",
+    "translation": "Hôm nay mình mời. Bạn đừng khách sáo, ăn nhiều một chút. Bạn cứ gọi tùy ý, không cần hỏi mình.",
+    "pinyin": "jīn tiān wǒ qǐng kè 。   nǐ bié kè qi ， duō chī yì diǎn 。   nǐ suí biàn diǎn ， bú yòng wèn wǒ 。",
+    "questions": [
+      {
+        "prompt": "Cụm “请客” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tùy ý",
+          "mời khách, bao ăn",
+          "gọi món"
+        ],
+        "answer": 1,
+        "explanation": "“请客”: mời khách, bao ăn. Ví dụ đã nghe: 今天我请客。"
+      },
+      {
+        "prompt": "Cụm “客气” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "gọi món",
+          "kính (rượu)",
+          "khách sáo"
+        ],
+        "answer": 2,
+        "explanation": "“客气”: khách sáo. Ví dụ đã nghe: 你别客气，多吃一点。"
+      },
+      {
+        "prompt": "Cụm “随便” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tùy ý",
+          "kính (rượu)",
+          "tiếp đãi"
+        ],
+        "answer": 0,
+        "explanation": "“随便”: tùy ý. Ví dụ đã nghe: 你随便点，不用问我。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "今天我请客。",
+      "reference": "今天我请客。",
+      "pinyin": "jīn tiān wǒ qǐng kè 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "在越南，请客吃饭有什么习惯？",
+      "promptVi": "Ở Việt Nam, mời khách ăn cơm có phong tục gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Bữa tối tại nhà Misu."
+}

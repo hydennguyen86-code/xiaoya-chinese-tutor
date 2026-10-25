@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 5,
+  "lessonTitle": "这个多少钱？ · Mua sắm và trả giá",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "买",
+      "meaning": "mua",
+      "example": "我想买一件衣服。",
+      "exampleVi": "Mình muốn mua một bộ quần áo.",
+      "pinyin": "mǎi",
+      "examplePinyin": "wǒ xiǎng mǎi yí jiàn yī fu 。"
+    },
+    {
+      "word": "卖",
+      "meaning": "bán",
+      "example": "这里卖水果。",
+      "exampleVi": "Ở đây bán hoa quả.",
+      "pinyin": "mài",
+      "examplePinyin": "zhè lǐ mài shuǐ guǒ 。"
+    },
+    {
+      "word": "多少钱",
+      "meaning": "bao nhiêu tiền",
+      "example": "这件衣服多少钱？",
+      "exampleVi": "Bộ quần áo này bao nhiêu tiền?",
+      "pinyin": "duō shǎo qián",
+      "examplePinyin": "zhè jiàn yī fu duō shǎo qián ？"
+    },
+    {
+      "word": "贵",
+      "meaning": "đắt",
+      "example": "这个太贵了。",
+      "exampleVi": "Cái này đắt quá.",
+      "pinyin": "guì",
+      "examplePinyin": "zhè ge tài guì le 。"
+    },
+    {
+      "word": "便宜",
+      "meaning": "rẻ",
+      "example": "那个很便宜。",
+      "exampleVi": "Cái kia rất rẻ.",
+      "pinyin": "pián yi",
+      "examplePinyin": "nà ge hěn pián yi 。"
+    },
+    {
+      "word": "块",
+      "meaning": "tệ (đơn vị tiền)",
+      "example": "这个十块。",
+      "exampleVi": "Cái này mười tệ.",
+      "pinyin": "kuài",
+      "examplePinyin": "zhè ge shí kuài 。"
+    },
+    {
+      "word": "衣服",
+      "meaning": "quần áo",
+      "example": "这件衣服很好看。",
+      "exampleVi": "Bộ quần áo này rất đẹp.",
+      "pinyin": "yī fu",
+      "examplePinyin": "zhè jiàn yī fu hěn hǎo kàn 。"
+    },
+    {
+      "word": "试",
+      "meaning": "thử",
+      "example": "我可以试一下吗？",
+      "exampleVi": "Mình có thể thử một chút không?",
+      "pinyin": "shì",
+      "examplePinyin": "wǒ kě yǐ shì yí xià ma ？"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……多少钱？",
+      "explanation": "Dùng để hỏi giá.",
+      "example": "这件衣服多少钱？",
+      "exampleVi": "Bộ quần áo này bao nhiêu tiền?",
+      "examplePinyin": "zhè jiàn yī fu duō shǎo qián ？"
+    },
+    {
+      "pattern": "太……了。",
+      "explanation": "Dùng để nhấn mạnh mức độ, thường là quá mức.",
+      "example": "这个太贵了。",
+      "exampleVi": "Cái này đắt quá.",
+      "examplePinyin": "zhè ge tài guì le 。"
+    },
+    {
+      "pattern": "可以……吗？",
+      "explanation": "Dùng để xin phép hoặc hỏi có thể làm gì không.",
+      "example": "我可以试一下吗？",
+      "exampleVi": "Mình có thể thử một chút không?",
+      "examplePinyin": "wǒ kě yǐ shì yí xià ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Một cửa hàng quần áo nhỏ.",
+    "avatarRole": "Misu, nhân viên bán hàng",
+    "learnerRole": "Khách đang muốn mua áo",
+    "goals": [
+      "Hỏi giá",
+      "Thử đồ",
+      "Chọn món khác hoặc trả giá"
+    ],
+    "opening": "欢迎光临！你想买什么？",
+    "openingVi": "Chào mừng! Bạn muốn mua gì?"
+  },
+  "freeTalk": {
+    "question": "你平时去哪儿买衣服？你觉得贵吗？",
+    "questionVi": "Bạn thường đi đâu mua quần áo? Bạn thấy có đắt không?"
+  },
+  "prerequisites": [
+    4
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我想买一件衣服。 这里卖水果。 这件衣服多少钱？",
+    "translation": "Mình muốn mua một bộ quần áo. Ở đây bán hoa quả. Bộ quần áo này bao nhiêu tiền?",
+    "pinyin": "wǒ xiǎng mǎi yí jiàn yī fu 。   zhè lǐ mài shuǐ guǒ 。   zhè jiàn yī fu duō shǎo qián ？",
+    "questions": [
+      {
+        "prompt": "Cụm “买” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "bao nhiêu tiền",
+          "đắt",
+          "mua"
+        ],
+        "answer": 2,
+        "explanation": "“买”: mua. Ví dụ đã nghe: 我想买一件衣服。"
+      },
+      {
+        "prompt": "Cụm “卖” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "bán",
+          "đắt",
+          "rẻ"
+        ],
+        "answer": 0,
+        "explanation": "“卖”: bán. Ví dụ đã nghe: 这里卖水果。"
+      },
+      {
+        "prompt": "Cụm “多少钱” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "rẻ",
+          "bao nhiêu tiền",
+          "tệ (đơn vị tiền)"
+        ],
+        "answer": 1,
+        "explanation": "“多少钱”: bao nhiêu tiền. Ví dụ đã nghe: 这件衣服多少钱？"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我想买一件衣服。",
+      "reference": "我想买一件衣服。",
+      "pinyin": "wǒ xiǎng mǎi yí jiàn yī fu 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你平时去哪儿买衣服？你觉得贵吗？",
+      "promptVi": "Bạn thường đi đâu mua quần áo? Bạn thấy có đắt không?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Một cửa hàng quần áo nhỏ."
+}

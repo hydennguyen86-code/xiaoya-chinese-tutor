@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 14,
+  "lessonTitle": "我想取五百块钱 · Ngân hàng và thanh toán",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "取钱",
+      "meaning": "rút tiền",
+      "example": "我想去银行取钱。",
+      "exampleVi": "Mình muốn đến ngân hàng rút tiền.",
+      "pinyin": "qǔ qián",
+      "examplePinyin": "wǒ xiǎng qù yín háng qǔ qián 。"
+    },
+    {
+      "word": "换钱",
+      "meaning": "đổi tiền",
+      "example": "这里可以换钱吗？",
+      "exampleVi": "Ở đây có thể đổi tiền không?",
+      "pinyin": "huàn qián",
+      "examplePinyin": "zhè lǐ kě yǐ huàn qián ma ？"
+    },
+    {
+      "word": "刷卡",
+      "meaning": "quẹt thẻ",
+      "example": "可以刷卡吗？",
+      "exampleVi": "Có thể quẹt thẻ không?",
+      "pinyin": "shuā kǎ",
+      "examplePinyin": "kě yǐ shuā kǎ ma ？"
+    },
+    {
+      "word": "现金",
+      "meaning": "tiền mặt",
+      "example": "我没有现金。",
+      "exampleVi": "Mình không có tiền mặt.",
+      "pinyin": "xiàn jīn",
+      "examplePinyin": "wǒ méi yǒu xiàn jīn 。"
+    },
+    {
+      "word": "密码",
+      "meaning": "mật khẩu",
+      "example": "请输入密码。",
+      "exampleVi": "Hãy nhập mật khẩu.",
+      "pinyin": "mì mǎ",
+      "examplePinyin": "qǐng shū rù mì mǎ 。"
+    },
+    {
+      "word": "账户",
+      "meaning": "tài khoản",
+      "example": "我想开一个银行账户。",
+      "exampleVi": "Mình muốn mở một tài khoản ngân hàng.",
+      "pinyin": "zhàng hù",
+      "examplePinyin": "wǒ xiǎng kāi yí gè yín háng zhàng hù 。"
+    },
+    {
+      "word": "手续费",
+      "meaning": "phí giao dịch",
+      "example": "手续费是多少？",
+      "exampleVi": "Phí giao dịch là bao nhiêu?",
+      "pinyin": "shǒu xù fèi",
+      "examplePinyin": "shǒu xù fèi shì duō shǎo ？"
+    },
+    {
+      "word": "汇率",
+      "meaning": "tỷ giá",
+      "example": "今天的汇率怎么样？",
+      "exampleVi": "Tỷ giá hôm nay thế nào?",
+      "pinyin": "huì lǜ",
+      "examplePinyin": "jīn tiān de huì lǜ zěn me yàng ？"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想取……",
+      "explanation": "Dùng để nói số tiền muốn rút.",
+      "example": "我想取五百块钱。",
+      "exampleVi": "Mình muốn rút năm trăm tệ.",
+      "examplePinyin": "wǒ xiǎng qǔ wǔ bǎi kuài qián 。"
+    },
+    {
+      "pattern": "可以刷卡吗？",
+      "explanation": "Dùng để hỏi có thể quẹt thẻ không.",
+      "example": "可以刷卡吗？",
+      "exampleVi": "Có thể quẹt thẻ không?",
+      "examplePinyin": "kě yǐ shuā kǎ ma ？"
+    },
+    {
+      "pattern": "手续费是多少？",
+      "explanation": "Dùng để hỏi phí giao dịch.",
+      "example": "手续费是多少？",
+      "exampleVi": "Phí giao dịch là bao nhiêu?",
+      "examplePinyin": "shǒu xù fèi shì duō shǎo ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Quầy giao dịch ngân hàng.",
+    "avatarRole": "Misu, nhân viên ngân hàng",
+    "learnerRole": "Khách muốn rút và đổi tiền",
+    "goals": [
+      "Nói muốn rút bao nhiêu",
+      "Hỏi phí giao dịch",
+      "Hỏi tỷ giá"
+    ],
+    "opening": "您好，请问您要办理什么业务？",
+    "openingVi": "Xin chào, xin hỏi bạn muốn làm giao dịch gì?"
+  },
+  "freeTalk": {
+    "question": "你平时用现金还是手机支付？为什么？",
+    "questionVi": "Bạn thường dùng tiền mặt hay thanh toán bằng điện thoại? Vì sao?"
+  },
+  "prerequisites": [
+    13
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我想去银行取钱。 这里可以换钱吗？ 可以刷卡吗？",
+    "translation": "Mình muốn đến ngân hàng rút tiền. Ở đây có thể đổi tiền không? Có thể quẹt thẻ không?",
+    "pinyin": "wǒ xiǎng qù yín háng qǔ qián 。   zhè lǐ kě yǐ huàn qián ma ？   kě yǐ shuā kǎ ma ？",
+    "questions": [
+      {
+        "prompt": "Cụm “取钱” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "quẹt thẻ",
+          "tiền mặt",
+          "rút tiền"
+        ],
+        "answer": 2,
+        "explanation": "“取钱”: rút tiền. Ví dụ đã nghe: 我想去银行取钱。"
+      },
+      {
+        "prompt": "Cụm “换钱” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đổi tiền",
+          "tiền mặt",
+          "mật khẩu"
+        ],
+        "answer": 0,
+        "explanation": "“换钱”: đổi tiền. Ví dụ đã nghe: 这里可以换钱吗？"
+      },
+      {
+        "prompt": "Cụm “刷卡” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "mật khẩu",
+          "quẹt thẻ",
+          "tài khoản"
+        ],
+        "answer": 1,
+        "explanation": "“刷卡”: quẹt thẻ. Ví dụ đã nghe: 可以刷卡吗？"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我想去银行取钱。",
+      "reference": "我想去银行取钱。",
+      "pinyin": "wǒ xiǎng qù yín háng qǔ qián 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你平时用现金还是手机支付？为什么？",
+      "promptVi": "Bạn thường dùng tiền mặt hay thanh toán bằng điện thoại? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Quầy giao dịch ngân hàng."
+}

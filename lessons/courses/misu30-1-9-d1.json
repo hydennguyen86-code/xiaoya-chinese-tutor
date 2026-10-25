@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 9,
+  "lessonTitle": "今天天气怎么样？ · Thời tiết và cảm xúc",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "天气",
+      "meaning": "thời tiết",
+      "example": "今天天气很好。",
+      "exampleVi": "Hôm nay thời tiết rất đẹp.",
+      "pinyin": "tiān qì",
+      "examplePinyin": "jīn tiān tiān qì hěn hǎo 。"
+    },
+    {
+      "word": "冷",
+      "meaning": "lạnh",
+      "example": "冬天很冷。",
+      "exampleVi": "Mùa đông rất lạnh.",
+      "pinyin": "lěng",
+      "examplePinyin": "dōng tiān hěn lěng 。"
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "夏天很热。",
+      "exampleVi": "Mùa hè rất nóng.",
+      "pinyin": "rè",
+      "examplePinyin": "xià tiān hěn rè 。"
+    },
+    {
+      "word": "下雨",
+      "meaning": "mưa",
+      "example": "今天下雨了。",
+      "exampleVi": "Hôm nay trời mưa rồi.",
+      "pinyin": "xià yǔ",
+      "examplePinyin": "jīn tiān xià yǔ le 。"
+    },
+    {
+      "word": "高兴",
+      "meaning": "vui",
+      "example": "我很高兴。",
+      "exampleVi": "Mình rất vui.",
+      "pinyin": "gāo xìng",
+      "examplePinyin": "wǒ hěn gāo xìng 。"
+    },
+    {
+      "word": "累",
+      "meaning": "mệt",
+      "example": "今天我很累。",
+      "exampleVi": "Hôm nay mình rất mệt.",
+      "pinyin": "lèi",
+      "examplePinyin": "jīn tiān wǒ hěn lèi 。"
+    },
+    {
+      "word": "舒服",
+      "meaning": "thoải mái, dễ chịu",
+      "example": "不冷不热，很舒服。",
+      "exampleVi": "Không lạnh không nóng, rất dễ chịu.",
+      "pinyin": "shū fu",
+      "examplePinyin": "bù lěng bú rè ， hěn shū fu 。"
+    },
+    {
+      "word": "担心",
+      "meaning": "lo lắng",
+      "example": "妈妈很担心我。",
+      "exampleVi": "Mẹ rất lo cho mình.",
+      "pinyin": "dān xīn",
+      "examplePinyin": "mā ma hěn dān xīn wǒ 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "今天天气怎么样？",
+      "explanation": "Dùng để hỏi thời tiết hôm nay.",
+      "example": "今天天气怎么样？",
+      "exampleVi": "Hôm nay thời tiết thế nào?",
+      "examplePinyin": "jīn tiān tiān qì zěn me yàng ？"
+    },
+    {
+      "pattern": "我觉得……",
+      "explanation": "Dùng để nói cảm nhận của mình.",
+      "example": "我觉得今天很热。",
+      "exampleVi": "Mình thấy hôm nay rất nóng.",
+      "examplePinyin": "wǒ jué de jīn tiān hěn rè 。"
+    },
+    {
+      "pattern": "因为……，所以……",
+      "explanation": "Dùng để nói nguyên nhân và kết quả.",
+      "example": "因为下雨，所以我没去商店。",
+      "exampleVi": "Vì trời mưa nên mình không đi cửa hàng.",
+      "examplePinyin": "yīn wèi xià yǔ ， suǒ yǐ wǒ méi qù shāng diàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi sáng ở trường, hai bạn nói chuyện trước giờ học.",
+    "avatarRole": "Misu, bạn cùng lớp",
+    "learnerRole": "Học viên",
+    "goals": [
+      "Hỏi thời tiết hôm nay",
+      "Nói cảm giác nóng hoặc lạnh",
+      "Nói lý do mình thích hay không thích"
+    ],
+    "opening": "今天天气怎么样？你觉得舒服吗？",
+    "openingVi": "Hôm nay thời tiết thế nào? Bạn thấy dễ chịu không?"
+  },
+  "freeTalk": {
+    "question": "你喜欢什么天气？为什么？",
+    "questionVi": "Bạn thích thời tiết nào? Vì sao?"
+  },
+  "prerequisites": [
+    8
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "今天天气很好。 冬天很冷。 夏天很热。",
+    "translation": "Hôm nay thời tiết rất đẹp. Mùa đông rất lạnh. Mùa hè rất nóng.",
+    "pinyin": "jīn tiān tiān qì hěn hǎo 。   dōng tiān hěn lěng 。   xià tiān hěn rè 。",
+    "questions": [
+      {
+        "prompt": "Cụm “天气” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "thời tiết",
+          "nóng",
+          "mưa"
+        ],
+        "answer": 0,
+        "explanation": "“天气”: thời tiết. Ví dụ đã nghe: 今天天气很好。"
+      },
+      {
+        "prompt": "Cụm “冷” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "mưa",
+          "lạnh",
+          "vui"
+        ],
+        "answer": 1,
+        "explanation": "“冷”: lạnh. Ví dụ đã nghe: 冬天很冷。"
+      },
+      {
+        "prompt": "Cụm “热” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "vui",
+          "mệt",
+          "nóng"
+        ],
+        "answer": 2,
+        "explanation": "“热”: nóng. Ví dụ đã nghe: 夏天很热。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "今天天气很好。",
+      "reference": "今天天气很好。",
+      "pinyin": "jīn tiān tiān qì hěn hǎo 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你喜欢什么天气？为什么？",
+      "promptVi": "Bạn thích thời tiết nào? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Buổi sáng ở trường, hai bạn nói chuyện trước giờ học."
+}

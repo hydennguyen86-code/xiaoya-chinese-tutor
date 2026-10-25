@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 11,
+  "lessonTitle": "这个周末你有空吗？ · Hẹn bạn và lên kế hoạch",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "有空",
+      "meaning": "rảnh",
+      "example": "你周末有空吗？",
+      "exampleVi": "Cuối tuần bạn có rảnh không?",
+      "pinyin": "yǒu kōng",
+      "examplePinyin": "nǐ zhōu mò yǒu kōng ma ？"
+    },
+    {
+      "word": "一起",
+      "meaning": "cùng nhau",
+      "example": "我们一起吃饭吧。",
+      "exampleVi": "Chúng mình cùng ăn cơm nhé.",
+      "pinyin": "yì qǐ",
+      "examplePinyin": "wǒ men yì qǐ chī fàn ba 。"
+    },
+    {
+      "word": "打算",
+      "meaning": "dự định",
+      "example": "我打算学开车。",
+      "exampleVi": "Mình dự định học lái xe.",
+      "pinyin": "dǎ suàn",
+      "examplePinyin": "wǒ dǎ suàn xué kāi chē 。"
+    },
+    {
+      "word": "计划",
+      "meaning": "kế hoạch",
+      "example": "你有什么计划？",
+      "exampleVi": "Bạn có kế hoạch gì?",
+      "pinyin": "jì huà",
+      "examplePinyin": "nǐ yǒu shén me jì huà ？"
+    },
+    {
+      "word": "约",
+      "meaning": "hẹn",
+      "example": "我约了朋友看电影。",
+      "exampleVi": "Mình đã hẹn bạn đi xem phim.",
+      "pinyin": "yuē",
+      "examplePinyin": "wǒ yuē le péng you kàn diàn yǐng 。"
+    },
+    {
+      "word": "方便",
+      "meaning": "thuận tiện",
+      "example": "你什么时候方便？",
+      "exampleVi": "Bạn thuận tiện khi nào?",
+      "pinyin": "fāng biàn",
+      "examplePinyin": "nǐ shén me shí hou fāng biàn ？"
+    },
+    {
+      "word": "迟到",
+      "meaning": "đến muộn",
+      "example": "对不起，我迟到了。",
+      "exampleVi": "Xin lỗi, mình đến muộn.",
+      "pinyin": "chí dào",
+      "examplePinyin": "duì bù qǐ ， wǒ chí dào le 。"
+    },
+    {
+      "word": "见面",
+      "meaning": "gặp mặt",
+      "example": "我们八点在校门口见面。",
+      "exampleVi": "Chúng mình gặp nhau ở cổng trường lúc tám giờ.",
+      "pinyin": "jiàn miàn",
+      "examplePinyin": "wǒ men bā diǎn zài xiào mén kǒu jiàn miàn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你……有空吗？",
+      "explanation": "Dùng để hỏi người khác có thời gian không.",
+      "example": "你明天有空吗？",
+      "exampleVi": "Ngày mai bạn có rảnh không?",
+      "examplePinyin": "nǐ míng tiān yǒu kōng ma ？"
+    },
+    {
+      "pattern": "我们一起……吧。",
+      "explanation": "Dùng để rủ rê cùng làm gì đó.",
+      "example": "我们一起去看电影吧。",
+      "exampleVi": "Chúng mình cùng đi xem phim nhé.",
+      "examplePinyin": "wǒ men yì qǐ qù kàn diàn yǐng ba 。"
+    },
+    {
+      "pattern": "你什么时候方便？",
+      "explanation": "Dùng để hỏi thời gian thuận tiện.",
+      "example": "你什么时候方便？",
+      "exampleVi": "Bạn thuận tiện khi nào?",
+      "examplePinyin": "nǐ shén me shí hou fāng biàn ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Cuối tuần, Misu rủ bạn đi chơi.",
+    "avatarRole": "Misu, bạn thân",
+    "learnerRole": "Học viên đang có kế hoạch riêng",
+    "goals": [
+      "Hỏi và trả lời có rảnh không",
+      "Đề xuất hoạt động cùng nhau",
+      "Thống nhất giờ và địa điểm gặp"
+    ],
+    "opening": "这个周末你有空吗？我们一起出去走走吧。",
+    "openingVi": "Cuối tuần này bạn có rảnh không? Chúng mình cùng ra ngoài dạo chơi nhé."
+  },
+  "freeTalk": {
+    "question": "这个周末你有什么计划？",
+    "questionVi": "Cuối tuần này bạn có kế hoạch gì?"
+  },
+  "prerequisites": [
+    10
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "你周末有空吗？ 我们一起吃饭吧。 我打算学开车。",
+    "translation": "Cuối tuần bạn có rảnh không? Chúng mình cùng ăn cơm nhé. Mình dự định học lái xe.",
+    "pinyin": "nǐ zhōu mò yǒu kōng ma ？   wǒ men yì qǐ chī fàn ba 。   wǒ dǎ suàn xué kāi chē 。",
+    "questions": [
+      {
+        "prompt": "Cụm “有空” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "dự định",
+          "kế hoạch",
+          "rảnh"
+        ],
+        "answer": 2,
+        "explanation": "“有空”: rảnh. Ví dụ đã nghe: 你周末有空吗？"
+      },
+      {
+        "prompt": "Cụm “一起” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "cùng nhau",
+          "kế hoạch",
+          "hẹn"
+        ],
+        "answer": 0,
+        "explanation": "“一起”: cùng nhau. Ví dụ đã nghe: 我们一起吃饭吧。"
+      },
+      {
+        "prompt": "Cụm “打算” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hẹn",
+          "dự định",
+          "thuận tiện"
+        ],
+        "answer": 1,
+        "explanation": "“打算”: dự định. Ví dụ đã nghe: 我打算学开车。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "你周末有空吗？",
+      "reference": "你周末有空吗？",
+      "pinyin": "nǐ zhōu mò yǒu kōng ma ？",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "这个周末你有什么计划？",
+      "promptVi": "Cuối tuần này bạn có kế hoạch gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Cuối tuần, Misu rủ bạn đi chơi."
+}

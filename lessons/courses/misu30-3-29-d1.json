@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-3",
+  "volumeTitle": "30 bài giao tiếp · Tập 3 · HSK5–6",
+  "lessonNo": 29,
+  "lessonTitle": "你怎么看这条新闻？ · Tin tức và quan điểm",
+  "day": 1,
+  "days": 1,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5-6",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-3.json",
+    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+  },
+  "vocab": [
+    {
+      "word": "新闻",
+      "meaning": "tin tức",
+      "example": "这条新闻今天刷屏了。",
+      "exampleVi": "Tin này hôm nay tràn ngập mạng.",
+      "pinyin": "xīn wén",
+      "examplePinyin": "zhè tiáo xīn wén jīn tiān shuā píng le 。"
+    },
+    {
+      "word": "媒体",
+      "meaning": "truyền thông",
+      "example": "媒体报道的未必都是事实。",
+      "exampleVi": "Những gì truyền thông đưa tin không nhất thiết đều là sự thật.",
+      "pinyin": "méi tǐ",
+      "examplePinyin": "méi tǐ bào dào de wèi bì dōu shì shì shí 。"
+    },
+    {
+      "word": "观点",
+      "meaning": "quan điểm",
+      "example": "每个人都有自己的观点。",
+      "exampleVi": "Mỗi người đều có quan điểm riêng.",
+      "pinyin": "guān diǎn",
+      "examplePinyin": "měi gè rén dōu yǒu zì jǐ de guān diǎn 。"
+    },
+    {
+      "word": "影响",
+      "meaning": "ảnh hưởng",
+      "example": "网络舆论对社会有很大的影响。",
+      "exampleVi": "Dư luận mạng có ảnh hưởng lớn đến xã hội.",
+      "pinyin": "yǐng xiǎng",
+      "examplePinyin": "wǎng luò yú lùn duì shè huì yǒu hěn dà de yǐng xiǎng 。"
+    },
+    {
+      "word": "事实",
+      "meaning": "sự thật",
+      "example": "我们应该先了解事实，再下结论。",
+      "exampleVi": "Chúng ta nên hiểu rõ sự thật trước rồi mới kết luận.",
+      "pinyin": "shì shí",
+      "examplePinyin": "wǒ men yīng gāi xiān liǎo jiě shì shí ， zài xià jié lùn 。"
+    },
+    {
+      "word": "争论",
+      "meaning": "tranh cãi",
+      "example": "这个问题在网上引起了激烈的争论。",
+      "exampleVi": "Vấn đề này đã gây ra tranh cãi gay gắt trên mạng.",
+      "pinyin": "zhēng lùn",
+      "examplePinyin": "zhè ge wèn tí zài wǎng shàng yǐn qǐ le jī liè de zhēng lùn 。"
+    },
+    {
+      "word": "客观",
+      "meaning": "khách quan",
+      "example": "看问题要尽量客观。",
+      "exampleVi": "Nhìn vấn đề nên cố gắng khách quan.",
+      "pinyin": "kè guān",
+      "examplePinyin": "kàn wèn tí yào jǐn liàng kè guān 。"
+    },
+    {
+      "word": "判断",
+      "meaning": "phán đoán",
+      "example": "不要只看标题就做出判断。",
+      "exampleVi": "Đừng chỉ nhìn tiêu đề mà đưa ra phán đoán.",
+      "pinyin": "pàn duàn",
+      "examplePinyin": "bú yào zhī kàn biāo tí jiù zuò chū pàn duàn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "据……报道，……",
+      "explanation": "Dùng để trích dẫn nguồn tin.",
+      "example": "据媒体报道，这项政策下个月开始实施。",
+      "exampleVi": "Theo truyền thông đưa tin, chính sách này sẽ bắt đầu thực hiện từ tháng sau.",
+      "examplePinyin": "jù méi tǐ bào dào ， zhè xiàng zhèng cè xià gè yuè kāi shǐ shí shī 。"
+    },
+    {
+      "pattern": "有人认为……，也有人认为……",
+      "explanation": "Dùng để trình bày hai luồng ý kiến.",
+      "example": "有人认为这是好事，也有人认为风险太大。",
+      "exampleVi": "Có người cho rằng đây là việc tốt, cũng có người cho rằng rủi ro quá lớn.",
+      "examplePinyin": "yǒu rén rèn wéi zhè shì hǎo shì ， yě yǒu rén rèn wéi fēng xiǎn tài dà 。"
+    },
+    {
+      "pattern": "在我看来，……",
+      "explanation": "Dùng để nêu quan điểm cá nhân.",
+      "example": "在我看来，独立思考比什么都重要。",
+      "exampleVi": "Theo mình, tư duy độc lập quan trọng hơn mọi thứ.",
+      "examplePinyin": "zài wǒ kàn lái ， dú lì sī kǎo bǐ shén me dōu zhòng yào 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hai người bàn về một tin nóng trên mạng.",
+    "avatarRole": "Misu, người đọc tin hoài nghi",
+    "learnerRole": "Học viên có quan điểm riêng",
+    "goals": [
+      "Tóm tắt tin bằng hai câu",
+      "Nêu hai ý kiến trái chiều",
+      "Đưa ra quan điểm cá nhân"
+    ],
+    "opening": "你看到今天的新闻了吗？你怎么看？",
+    "openingVi": "Bạn đã xem tin hôm nay chưa? Bạn nghĩ thế nào?"
+  },
+  "freeTalk": {
+    "question": "你平时从哪里获取新闻？你怎样判断真假？",
+    "questionVi": "Bạn thường lấy tin tức từ đâu? Bạn phân biệt thật giả thế nào?"
+  },
+  "prerequisites": [
+    28
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "这条新闻今天刷屏了。 媒体报道的未必都是事实。 每个人都有自己的观点。",
+    "translation": "Tin này hôm nay tràn ngập mạng. Những gì truyền thông đưa tin không nhất thiết đều là sự thật. Mỗi người đều có quan điểm riêng.",
+    "pinyin": "zhè tiáo xīn wén jīn tiān shuā píng le 。   méi tǐ bào dào de wèi bì dōu shì shì shí 。   měi gè rén dōu yǒu zì jǐ de guān diǎn 。",
+    "questions": [
+      {
+        "prompt": "Cụm “新闻” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "quan điểm",
+          "ảnh hưởng",
+          "tin tức"
+        ],
+        "answer": 2,
+        "explanation": "“新闻”: tin tức. Ví dụ đã nghe: 这条新闻今天刷屏了。"
+      },
+      {
+        "prompt": "Cụm “媒体” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "truyền thông",
+          "ảnh hưởng",
+          "sự thật"
+        ],
+        "answer": 0,
+        "explanation": "“媒体”: truyền thông. Ví dụ đã nghe: 媒体报道的未必都是事实。"
+      },
+      {
+        "prompt": "Cụm “观点” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "sự thật",
+          "quan điểm",
+          "tranh cãi"
+        ],
+        "answer": 1,
+        "explanation": "“观点”: quan điểm. Ví dụ đã nghe: 每个人都有自己的观点。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "这条新闻今天刷屏了。",
+      "reference": "这条新闻今天刷屏了。",
+      "pinyin": "zhè tiáo xīn wén jīn tiān shuā píng le 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你平时从哪里获取新闻？你怎样判断真假？",
+      "promptVi": "Bạn thường lấy tin tức từ đâu? Bạn phân biệt thật giả thế nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Hai người bàn về một tin nóng trên mạng."
+}

@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 13,
+  "lessonTitle": "我预订了房间 · Khách sạn",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "预订",
+      "meaning": "đặt trước",
+      "example": "我在网上预订了一个房间。",
+      "exampleVi": "Mình đã đặt một phòng trên mạng.",
+      "pinyin": "yù dìng",
+      "examplePinyin": "wǒ zài wǎng shàng yù dìng le yí gè fáng jiān 。"
+    },
+    {
+      "word": "房间",
+      "meaning": "phòng",
+      "example": "房间里有空调吗？",
+      "exampleVi": "Trong phòng có điều hòa không?",
+      "pinyin": "fáng jiān",
+      "examplePinyin": "fáng jiān lǐ yǒu kōng tiáo ma ？"
+    },
+    {
+      "word": "入住",
+      "meaning": "nhận phòng",
+      "example": "我想现在办理入住。",
+      "exampleVi": "Mình muốn làm thủ tục nhận phòng bây giờ.",
+      "pinyin": "rù zhù",
+      "examplePinyin": "wǒ xiǎng xiàn zài bàn lǐ rù zhù 。"
+    },
+    {
+      "word": "退房",
+      "meaning": "trả phòng",
+      "example": "请问几点退房？",
+      "exampleVi": "Xin hỏi mấy giờ trả phòng?",
+      "pinyin": "tuì fáng",
+      "examplePinyin": "qǐng wèn jǐ diǎn tuì fáng ？"
+    },
+    {
+      "word": "押金",
+      "meaning": "tiền đặt cọc",
+      "example": "押金是多少？",
+      "exampleVi": "Tiền đặt cọc là bao nhiêu?",
+      "pinyin": "yā jīn",
+      "examplePinyin": "yā jīn shì duō shǎo ？"
+    },
+    {
+      "word": "早餐",
+      "meaning": "bữa sáng",
+      "example": "早餐几点开始？",
+      "exampleVi": "Bữa sáng bắt đầu lúc mấy giờ?",
+      "pinyin": "zǎo cān",
+      "examplePinyin": "zǎo cān jǐ diǎn kāi shǐ ？"
+    },
+    {
+      "word": "登记",
+      "meaning": "đăng ký",
+      "example": "请在这里登记一下。",
+      "exampleVi": "Hãy đăng ký ở đây một chút.",
+      "pinyin": "dēng jì",
+      "examplePinyin": "qǐng zài zhè lǐ dēng jì yí xià 。"
+    },
+    {
+      "word": "前台",
+      "meaning": "quầy lễ tân",
+      "example": "前台在那边。",
+      "exampleVi": "Quầy lễ tân ở đằng kia.",
+      "pinyin": "qián tái",
+      "examplePinyin": "qián tái zài nà biān 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我预订了……",
+      "explanation": "Dùng để nói mình đã đặt trước gì.",
+      "example": "我预订了一个双人房间。",
+      "exampleVi": "Mình đã đặt một phòng đôi.",
+      "examplePinyin": "wǒ yù dìng le yí gè shuāng rén fáng jiān 。"
+    },
+    {
+      "pattern": "房间里有……吗？",
+      "explanation": "Dùng để hỏi tiện nghi trong phòng.",
+      "example": "房间里有无线网络吗？",
+      "exampleVi": "Trong phòng có wifi không?",
+      "examplePinyin": "fáng jiān lǐ yǒu wú xiàn wǎng luò ma ？"
+    },
+    {
+      "pattern": "几点退房？",
+      "explanation": "Dùng để hỏi giờ trả phòng.",
+      "example": "请问几点退房？",
+      "exampleVi": "Xin hỏi mấy giờ trả phòng?",
+      "examplePinyin": "qǐng wèn jǐ diǎn tuì fáng ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Quầy lễ tân khách sạn.",
+    "avatarRole": "Misu, nhân viên lễ tân",
+    "learnerRole": "Khách đã đặt phòng",
+    "goals": [
+      "Xác nhận đặt phòng",
+      "Hỏi tiện nghi trong phòng",
+      "Hỏi giờ ăn sáng và trả phòng"
+    ],
+    "opening": "您好，欢迎入住。请问您预订了吗？",
+    "openingVi": "Xin chào, chào mừng bạn đến lưu trú. Xin hỏi bạn đã đặt phòng chưa?"
+  },
+  "freeTalk": {
+    "question": "你住酒店时最在意什么？",
+    "questionVi": "Khi ở khách sạn, bạn quan tâm nhất điều gì?"
+  },
+  "prerequisites": [
+    12
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我在网上预订了一个房间。 房间里有空调吗？ 我想现在办理入住。",
+    "translation": "Mình đã đặt một phòng trên mạng. Trong phòng có điều hòa không? Mình muốn làm thủ tục nhận phòng bây giờ.",
+    "pinyin": "wǒ zài wǎng shàng yù dìng le yí gè fáng jiān 。   fáng jiān lǐ yǒu kōng tiáo ma ？   wǒ xiǎng xiàn zài bàn lǐ rù zhù 。",
+    "questions": [
+      {
+        "prompt": "Cụm “预订” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "nhận phòng",
+          "đặt trước",
+          "trả phòng"
+        ],
+        "answer": 1,
+        "explanation": "“预订”: đặt trước. Ví dụ đã nghe: 我在网上预订了一个房间。"
+      },
+      {
+        "prompt": "Cụm “房间” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "trả phòng",
+          "tiền đặt cọc",
+          "phòng"
+        ],
+        "answer": 2,
+        "explanation": "“房间”: phòng. Ví dụ đã nghe: 房间里有空调吗？"
+      },
+      {
+        "prompt": "Cụm “入住” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "nhận phòng",
+          "tiền đặt cọc",
+          "bữa sáng"
+        ],
+        "answer": 0,
+        "explanation": "“入住”: nhận phòng. Ví dụ đã nghe: 我想现在办理入住。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我在网上预订了一个房间。",
+      "reference": "我在网上预订了一个房间。",
+      "pinyin": "wǒ zài wǎng shàng yù dìng le yí gè fáng jiān 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你住酒店时最在意什么？",
+      "promptVi": "Khi ở khách sạn, bạn quan tâm nhất điều gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Quầy lễ tân khách sạn."
+}

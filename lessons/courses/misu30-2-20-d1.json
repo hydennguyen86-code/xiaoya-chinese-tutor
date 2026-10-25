@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 20,
+  "lessonTitle": "我想投诉一下 · Phàn nàn và xin lỗi",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "投诉",
+      "meaning": "phàn nàn, khiếu nại",
+      "example": "我想投诉这个房间。",
+      "exampleVi": "Mình muốn khiếu nại về phòng này.",
+      "pinyin": "tóu sù",
+      "examplePinyin": "wǒ xiǎng tóu sù zhè ge fáng jiān 。"
+    },
+    {
+      "word": "抱歉",
+      "meaning": "xin lỗi",
+      "example": "很抱歉给您添麻烦了。",
+      "exampleVi": "Rất xin lỗi vì đã làm phiền bạn.",
+      "pinyin": "bào qiàn",
+      "examplePinyin": "hěn bào qiàn gěi nín tiān má fán le 。"
+    },
+    {
+      "word": "解决",
+      "meaning": "giải quyết",
+      "example": "我们会尽快解决这个问题。",
+      "exampleVi": "Chúng tôi sẽ giải quyết vấn đề này sớm nhất.",
+      "pinyin": "jiě jué",
+      "examplePinyin": "wǒ men huì jǐn kuài jiě jué zhè ge wèn tí 。"
+    },
+    {
+      "word": "问题",
+      "meaning": "vấn đề",
+      "example": "房间的空调有问题。",
+      "exampleVi": "Điều hòa trong phòng có vấn đề.",
+      "pinyin": "wèn tí",
+      "examplePinyin": "fáng jiān de kōng tiáo yǒu wèn tí 。"
+    },
+    {
+      "word": "换",
+      "meaning": "đổi",
+      "example": "可以给我换一个房间吗？",
+      "exampleVi": "Có thể đổi cho mình một phòng khác không?",
+      "pinyin": "huàn",
+      "examplePinyin": "kě yǐ gěi wǒ huàn yí gè fáng jiān ma ？"
+    },
+    {
+      "word": "退款",
+      "meaning": "hoàn tiền",
+      "example": "我想申请退款。",
+      "exampleVi": "Mình muốn yêu cầu hoàn tiền.",
+      "pinyin": "tuì kuǎn",
+      "examplePinyin": "wǒ xiǎng shēn qǐng tuì kuǎn 。"
+    },
+    {
+      "word": "态度",
+      "meaning": "thái độ",
+      "example": "服务员的态度不太好。",
+      "exampleVi": "Thái độ của nhân viên không được tốt lắm.",
+      "pinyin": "tài dù",
+      "examplePinyin": "fú wù yuán de tài dù bú tài hǎo 。"
+    },
+    {
+      "word": "理解",
+      "meaning": "hiểu, thông cảm",
+      "example": "我理解您的心情。",
+      "exampleVi": "Tôi hiểu tâm trạng của bạn.",
+      "pinyin": "lǐ jiě",
+      "examplePinyin": "wǒ lǐ jiě nín de xīn qíng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想投诉……",
+      "explanation": "Dùng để nói muốn khiếu nại điều gì.",
+      "example": "我想投诉你们的服务。",
+      "exampleVi": "Mình muốn khiếu nại dịch vụ của các bạn.",
+      "examplePinyin": "wǒ xiǎng tóu sù nǐ men de fú wù 。"
+    },
+    {
+      "pattern": "可以……吗？",
+      "explanation": "Dùng để đề nghị lịch sự.",
+      "example": "可以给我换一个房间吗？",
+      "exampleVi": "Có thể đổi cho mình một phòng khác không?",
+      "examplePinyin": "kě yǐ gěi wǒ huàn yí gè fáng jiān ma ？"
+    },
+    {
+      "pattern": "很抱歉，……",
+      "explanation": "Dùng để xin lỗi và giải thích.",
+      "example": "很抱歉，这是我们的问题。",
+      "exampleVi": "Rất xin lỗi, đây là lỗi của chúng tôi.",
+      "examplePinyin": "hěn bào qiàn ， zhè shì wǒ men de wèn tí 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Quầy lễ tân khách sạn, có sự cố về phòng.",
+    "avatarRole": "Misu, quản lý lễ tân",
+    "learnerRole": "Khách đang không hài lòng",
+    "goals": [
+      "Nêu vấn đề của phòng",
+      "Yêu cầu đổi phòng hoặc hoàn tiền",
+      "Nói rõ thái độ phục vụ"
+    ],
+    "opening": "您好，请问有什么可以帮您？",
+    "openingVi": "Xin chào, xin hỏi có gì có thể giúp bạn?"
+  },
+  "freeTalk": {
+    "question": "遇到服务不好的时候，你会怎么做？",
+    "questionVi": "Khi gặp dịch vụ không tốt, bạn sẽ làm gì?"
+  },
+  "prerequisites": [
+    19
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我想投诉这个房间。 很抱歉给您添麻烦了。 我们会尽快解决这个问题。",
+    "translation": "Mình muốn khiếu nại về phòng này. Rất xin lỗi vì đã làm phiền bạn. Chúng tôi sẽ giải quyết vấn đề này sớm nhất.",
+    "pinyin": "wǒ xiǎng tóu sù zhè ge fáng jiān 。   hěn bào qiàn gěi nín tiān má fán le 。   wǒ men huì jǐn kuài jiě jué zhè ge wèn tí 。",
+    "questions": [
+      {
+        "prompt": "Cụm “投诉” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "giải quyết",
+          "vấn đề",
+          "phàn nàn, khiếu nại"
+        ],
+        "answer": 2,
+        "explanation": "“投诉”: phàn nàn, khiếu nại. Ví dụ đã nghe: 我想投诉这个房间。"
+      },
+      {
+        "prompt": "Cụm “抱歉” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "xin lỗi",
+          "vấn đề",
+          "đổi"
+        ],
+        "answer": 0,
+        "explanation": "“抱歉”: xin lỗi. Ví dụ đã nghe: 很抱歉给您添麻烦了。"
+      },
+      {
+        "prompt": "Cụm “解决” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đổi",
+          "giải quyết",
+          "hoàn tiền"
+        ],
+        "answer": 1,
+        "explanation": "“解决”: giải quyết. Ví dụ đã nghe: 我们会尽快解决这个问题。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我想投诉这个房间。",
+      "reference": "我想投诉这个房间。",
+      "pinyin": "wǒ xiǎng tóu sù zhè ge fáng jiān 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "遇到服务不好的时候，你会怎么做？",
+      "promptVi": "Khi gặp dịch vụ không tốt, bạn sẽ làm gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Quầy lễ tân khách sạn, có sự cố về phòng."
+}

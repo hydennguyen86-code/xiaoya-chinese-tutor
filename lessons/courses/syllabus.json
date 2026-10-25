@@ -1,5 +1,5 @@
 {
-  "book": "Misu — Nghe nói thực tế HSK 1 & HSK 5 (giai đoạn 1)",
+  "book": "Misu · Nghe nói thực tế và 30 bài giao tiếp HSK1–6",
   "authored": true,
   "volumes": [
     {
@@ -1036,6 +1036,1531 @@
             9,
             10,
             11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misu30-1",
+      "title": "30 bài giao tiếp · Tập 1 · HSK1–2",
+      "levels": [
+        "HSK1-2"
+      ],
+      "authored": true,
+      "targetLevel": "HSK1-2",
+      "trackId": "misu30",
+      "trackTitle": "30 bài giao tiếp HSK1–6",
+      "nextVolumeId": "misu30-2",
+      "source": {
+        "file": "curriculum/volume-1.json",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+      },
+      "lessons": [
+        {
+          "no": 1,
+          "title": "你好！我叫…… · Chào hỏi và giới thiệu bản thân",
+          "topics": [
+            "chào hỏi",
+            "tên",
+            "quốc tịch",
+            "làm quen"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "你好",
+              "meaning": "xin chào"
+            },
+            {
+              "word": "叫",
+              "meaning": "gọi là, tên là"
+            },
+            {
+              "word": "名字",
+              "meaning": "tên"
+            },
+            {
+              "word": "认识",
+              "meaning": "quen biết, làm quen"
+            },
+            {
+              "word": "哪",
+              "meaning": "nào"
+            },
+            {
+              "word": "国",
+              "meaning": "nước, quốc gia"
+            },
+            {
+              "word": "越南",
+              "meaning": "Việt Nam"
+            },
+            {
+              "word": "中国",
+              "meaning": "Trung Quốc"
+            }
+          ],
+          "patterns": [
+            "我叫……",
+            "我是……人",
+            "很高兴认识你。"
+          ]
+        },
+        {
+          "no": 2,
+          "title": "你今年几岁？ · Số đếm, tuổi và số điện thoại",
+          "topics": [
+            "số đếm",
+            "tuổi",
+            "số điện thoại"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "几",
+              "meaning": "mấy"
+            },
+            {
+              "word": "岁",
+              "meaning": "tuổi"
+            },
+            {
+              "word": "多少",
+              "meaning": "bao nhiêu"
+            },
+            {
+              "word": "电话",
+              "meaning": "điện thoại"
+            },
+            {
+              "word": "号码",
+              "meaning": "số (điện thoại)"
+            },
+            {
+              "word": "两",
+              "meaning": "hai (dùng trước lượng từ)"
+            },
+            {
+              "word": "百",
+              "meaning": "trăm"
+            },
+            {
+              "word": "零",
+              "meaning": "số không"
+            }
+          ],
+          "patterns": [
+            "你今年几岁？",
+            "我今年……岁。",
+            "……是多少？"
+          ]
+        },
+        {
+          "no": 3,
+          "title": "我家有四口人 · Gia đình",
+          "topics": [
+            "gia đình",
+            "thành viên",
+            "nơi ở"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "家",
+              "meaning": "nhà, gia đình"
+            },
+            {
+              "word": "爸爸",
+              "meaning": "bố"
+            },
+            {
+              "word": "妈妈",
+              "meaning": "mẹ"
+            },
+            {
+              "word": "哥哥",
+              "meaning": "anh trai"
+            },
+            {
+              "word": "妹妹",
+              "meaning": "em gái"
+            },
+            {
+              "word": "孩子",
+              "meaning": "con, trẻ em"
+            },
+            {
+              "word": "口",
+              "meaning": "nhân khẩu (lượng từ đếm người trong nhà)"
+            },
+            {
+              "word": "住",
+              "meaning": "sống, ở"
+            }
+          ],
+          "patterns": [
+            "我家有……口人。",
+            "我有一个……",
+            "你家里有谁？"
+          ]
+        },
+        {
+          "no": 4,
+          "title": "今天星期几？ · Ngày tháng và giờ giấc",
+          "topics": [
+            "thứ trong tuần",
+            "giờ",
+            "buổi trong ngày"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "今天",
+              "meaning": "hôm nay"
+            },
+            {
+              "word": "明天",
+              "meaning": "ngày mai"
+            },
+            {
+              "word": "昨天",
+              "meaning": "hôm qua"
+            },
+            {
+              "word": "星期",
+              "meaning": "tuần, thứ"
+            },
+            {
+              "word": "点",
+              "meaning": "giờ (điểm)"
+            },
+            {
+              "word": "分",
+              "meaning": "phút"
+            },
+            {
+              "word": "上午",
+              "meaning": "buổi sáng"
+            },
+            {
+              "word": "下午",
+              "meaning": "buổi chiều"
+            }
+          ],
+          "patterns": [
+            "今天星期几？",
+            "现在几点？",
+            "我……点……分……"
+          ]
+        },
+        {
+          "no": 5,
+          "title": "这个多少钱？ · Mua sắm và trả giá",
+          "topics": [
+            "mua quần áo",
+            "hỏi giá",
+            "thử đồ"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "买",
+              "meaning": "mua"
+            },
+            {
+              "word": "卖",
+              "meaning": "bán"
+            },
+            {
+              "word": "多少钱",
+              "meaning": "bao nhiêu tiền"
+            },
+            {
+              "word": "贵",
+              "meaning": "đắt"
+            },
+            {
+              "word": "便宜",
+              "meaning": "rẻ"
+            },
+            {
+              "word": "块",
+              "meaning": "tệ (đơn vị tiền)"
+            },
+            {
+              "word": "衣服",
+              "meaning": "quần áo"
+            },
+            {
+              "word": "试",
+              "meaning": "thử"
+            }
+          ],
+          "patterns": [
+            "……多少钱？",
+            "太……了。",
+            "可以……吗？"
+          ]
+        },
+        {
+          "no": 6,
+          "title": "我要一碗面条 · Gọi món ăn",
+          "topics": [
+            "gọi món",
+            "đồ uống",
+            "khẩu vị"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "吃",
+              "meaning": "ăn"
+            },
+            {
+              "word": "喝",
+              "meaning": "uống"
+            },
+            {
+              "word": "米饭",
+              "meaning": "cơm"
+            },
+            {
+              "word": "面条",
+              "meaning": "mì sợi"
+            },
+            {
+              "word": "菜",
+              "meaning": "món ăn, rau"
+            },
+            {
+              "word": "辣",
+              "meaning": "cay"
+            },
+            {
+              "word": "杯",
+              "meaning": "cốc, ly"
+            },
+            {
+              "word": "服务员",
+              "meaning": "nhân viên phục vụ"
+            }
+          ],
+          "patterns": [
+            "我要……",
+            "请给我……",
+            "……好吃吗？"
+          ]
+        },
+        {
+          "no": 7,
+          "title": "请问，地铁站怎么走？ · Hỏi đường",
+          "topics": [
+            "hỏi đường",
+            "vị trí",
+            "phương hướng"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "在",
+              "meaning": "ở, tại"
+            },
+            {
+              "word": "哪儿",
+              "meaning": "ở đâu"
+            },
+            {
+              "word": "怎么走",
+              "meaning": "đi thế nào"
+            },
+            {
+              "word": "左边",
+              "meaning": "bên trái"
+            },
+            {
+              "word": "右边",
+              "meaning": "bên phải"
+            },
+            {
+              "word": "前面",
+              "meaning": "phía trước"
+            },
+            {
+              "word": "附近",
+              "meaning": "gần đây"
+            },
+            {
+              "word": "走",
+              "meaning": "đi, bước"
+            }
+          ],
+          "patterns": [
+            "……在哪儿？",
+            "请问，……怎么走？",
+            "一直走，然后……"
+          ]
+        },
+        {
+          "no": 8,
+          "title": "你喜欢做什么？ · Sở thích",
+          "topics": [
+            "sở thích",
+            "thời gian rảnh",
+            "hoạt động"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "喜欢",
+              "meaning": "thích"
+            },
+            {
+              "word": "爱好",
+              "meaning": "sở thích"
+            },
+            {
+              "word": "看电影",
+              "meaning": "xem phim"
+            },
+            {
+              "word": "听音乐",
+              "meaning": "nghe nhạc"
+            },
+            {
+              "word": "运动",
+              "meaning": "vận động, thể thao"
+            },
+            {
+              "word": "看书",
+              "meaning": "đọc sách"
+            },
+            {
+              "word": "唱歌",
+              "meaning": "hát"
+            },
+            {
+              "word": "有空",
+              "meaning": "rảnh"
+            }
+          ],
+          "patterns": [
+            "我喜欢……",
+            "你的爱好是什么？",
+            "你平时……吗？"
+          ]
+        },
+        {
+          "no": 9,
+          "title": "今天天气怎么样？ · Thời tiết và cảm xúc",
+          "topics": [
+            "thời tiết",
+            "cảm xúc",
+            "nguyên nhân"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "天气",
+              "meaning": "thời tiết"
+            },
+            {
+              "word": "冷",
+              "meaning": "lạnh"
+            },
+            {
+              "word": "热",
+              "meaning": "nóng"
+            },
+            {
+              "word": "下雨",
+              "meaning": "mưa"
+            },
+            {
+              "word": "高兴",
+              "meaning": "vui"
+            },
+            {
+              "word": "累",
+              "meaning": "mệt"
+            },
+            {
+              "word": "舒服",
+              "meaning": "thoải mái, dễ chịu"
+            },
+            {
+              "word": "担心",
+              "meaning": "lo lắng"
+            }
+          ],
+          "patterns": [
+            "今天天气怎么样？",
+            "我觉得……",
+            "因为……，所以……"
+          ]
+        },
+        {
+          "no": 10,
+          "title": "我的一天 · Ôn tập sinh hoạt hằng ngày",
+          "topics": [
+            "sinh hoạt hằng ngày",
+            "giờ giấc",
+            "thói quen"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "起床",
+              "meaning": "thức dậy, ngủ dậy"
+            },
+            {
+              "word": "睡觉",
+              "meaning": "ngủ"
+            },
+            {
+              "word": "上班",
+              "meaning": "đi làm"
+            },
+            {
+              "word": "下班",
+              "meaning": "tan làm"
+            },
+            {
+              "word": "早饭",
+              "meaning": "bữa sáng"
+            },
+            {
+              "word": "每天",
+              "meaning": "mỗi ngày"
+            },
+            {
+              "word": "忙",
+              "meaning": "bận"
+            },
+            {
+              "word": "休息",
+              "meaning": "nghỉ ngơi"
+            }
+          ],
+          "patterns": [
+            "我每天……",
+            "你几点……？",
+            "先……，然后……"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misu30-2",
+      "title": "30 bài giao tiếp · Tập 2 · HSK3–4",
+      "levels": [
+        "HSK3-4"
+      ],
+      "authored": true,
+      "targetLevel": "HSK3-4",
+      "trackId": "misu30",
+      "trackTitle": "30 bài giao tiếp HSK1–6",
+      "nextVolumeId": "misu30-3",
+      "source": {
+        "file": "curriculum/volume-2.json",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+      },
+      "lessons": [
+        {
+          "no": 11,
+          "title": "这个周末你有空吗？ · Hẹn bạn và lên kế hoạch",
+          "topics": [
+            "rủ rê",
+            "kế hoạch",
+            "hẹn gặp"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "有空",
+              "meaning": "rảnh"
+            },
+            {
+              "word": "一起",
+              "meaning": "cùng nhau"
+            },
+            {
+              "word": "打算",
+              "meaning": "dự định"
+            },
+            {
+              "word": "计划",
+              "meaning": "kế hoạch"
+            },
+            {
+              "word": "约",
+              "meaning": "hẹn"
+            },
+            {
+              "word": "方便",
+              "meaning": "thuận tiện"
+            },
+            {
+              "word": "迟到",
+              "meaning": "đến muộn"
+            },
+            {
+              "word": "见面",
+              "meaning": "gặp mặt"
+            }
+          ],
+          "patterns": [
+            "你……有空吗？",
+            "我们一起……吧。",
+            "你什么时候方便？"
+          ]
+        },
+        {
+          "no": 12,
+          "title": "坐地铁还是打车？ · Đi lại và mua vé",
+          "topics": [
+            "phương tiện",
+            "vé",
+            "tắc đường"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "地铁",
+              "meaning": "tàu điện ngầm"
+            },
+            {
+              "word": "公交",
+              "meaning": "xe buýt công cộng"
+            },
+            {
+              "word": "票",
+              "meaning": "vé"
+            },
+            {
+              "word": "出发",
+              "meaning": "xuất phát"
+            },
+            {
+              "word": "到",
+              "meaning": "đến"
+            },
+            {
+              "word": "换乘",
+              "meaning": "chuyển tuyến"
+            },
+            {
+              "word": "打车",
+              "meaning": "gọi taxi"
+            },
+            {
+              "word": "堵车",
+              "meaning": "tắc đường"
+            }
+          ],
+          "patterns": [
+            "坐……去……",
+            "从……到……",
+            "几点出发？"
+          ]
+        },
+        {
+          "no": 13,
+          "title": "我预订了房间 · Khách sạn",
+          "topics": [
+            "đặt phòng",
+            "nhận phòng",
+            "tiện nghi"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "预订",
+              "meaning": "đặt trước"
+            },
+            {
+              "word": "房间",
+              "meaning": "phòng"
+            },
+            {
+              "word": "入住",
+              "meaning": "nhận phòng"
+            },
+            {
+              "word": "退房",
+              "meaning": "trả phòng"
+            },
+            {
+              "word": "押金",
+              "meaning": "tiền đặt cọc"
+            },
+            {
+              "word": "早餐",
+              "meaning": "bữa sáng"
+            },
+            {
+              "word": "登记",
+              "meaning": "đăng ký"
+            },
+            {
+              "word": "前台",
+              "meaning": "quầy lễ tân"
+            }
+          ],
+          "patterns": [
+            "我预订了……",
+            "房间里有……吗？",
+            "几点退房？"
+          ]
+        },
+        {
+          "no": 14,
+          "title": "我想取五百块钱 · Ngân hàng và thanh toán",
+          "topics": [
+            "rút tiền",
+            "đổi tiền",
+            "phí giao dịch"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "取钱",
+              "meaning": "rút tiền"
+            },
+            {
+              "word": "换钱",
+              "meaning": "đổi tiền"
+            },
+            {
+              "word": "刷卡",
+              "meaning": "quẹt thẻ"
+            },
+            {
+              "word": "现金",
+              "meaning": "tiền mặt"
+            },
+            {
+              "word": "密码",
+              "meaning": "mật khẩu"
+            },
+            {
+              "word": "账户",
+              "meaning": "tài khoản"
+            },
+            {
+              "word": "手续费",
+              "meaning": "phí giao dịch"
+            },
+            {
+              "word": "汇率",
+              "meaning": "tỷ giá"
+            }
+          ],
+          "patterns": [
+            "我想取……",
+            "可以刷卡吗？",
+            "手续费是多少？"
+          ]
+        },
+        {
+          "no": 15,
+          "title": "你哪里不舒服？ · Khám bệnh",
+          "topics": [
+            "triệu chứng",
+            "bác sĩ",
+            "uống thuốc"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "不舒服",
+              "meaning": "không khỏe"
+            },
+            {
+              "word": "头疼",
+              "meaning": "đau đầu"
+            },
+            {
+              "word": "发烧",
+              "meaning": "sốt"
+            },
+            {
+              "word": "咳嗽",
+              "meaning": "ho"
+            },
+            {
+              "word": "吃药",
+              "meaning": "uống thuốc"
+            },
+            {
+              "word": "医院",
+              "meaning": "bệnh viện"
+            },
+            {
+              "word": "医生",
+              "meaning": "bác sĩ"
+            },
+            {
+              "word": "过敏",
+              "meaning": "dị ứng"
+            }
+          ],
+          "patterns": [
+            "我……不舒服。",
+            "我……两天了。",
+            "医生说我……"
+          ]
+        },
+        {
+          "no": 16,
+          "title": "我想租一个房子 · Thuê nhà",
+          "topics": [
+            "thuê nhà",
+            "tiền cọc",
+            "nội thất"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "租",
+              "meaning": "thuê"
+            },
+            {
+              "word": "房租",
+              "meaning": "tiền thuê nhà"
+            },
+            {
+              "word": "水电费",
+              "meaning": "tiền điện nước"
+            },
+            {
+              "word": "合同",
+              "meaning": "hợp đồng"
+            },
+            {
+              "word": "押金",
+              "meaning": "tiền đặt cọc"
+            },
+            {
+              "word": "家具",
+              "meaning": "đồ nội thất"
+            },
+            {
+              "word": "附近",
+              "meaning": "gần đây"
+            },
+            {
+              "word": "搬",
+              "meaning": "chuyển (nhà)"
+            }
+          ],
+          "patterns": [
+            "我想租……",
+            "……包括在房租里吗？",
+            "附近有……吗？"
+          ]
+        },
+        {
+          "no": 17,
+          "title": "请介绍一下你自己 · Công việc và phỏng vấn",
+          "topics": [
+            "phỏng vấn",
+            "kinh nghiệm",
+            "lương"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "面试",
+              "meaning": "phỏng vấn"
+            },
+            {
+              "word": "经验",
+              "meaning": "kinh nghiệm"
+            },
+            {
+              "word": "优点",
+              "meaning": "ưu điểm"
+            },
+            {
+              "word": "缺点",
+              "meaning": "nhược điểm"
+            },
+            {
+              "word": "负责",
+              "meaning": "phụ trách"
+            },
+            {
+              "word": "团队",
+              "meaning": "đội nhóm"
+            },
+            {
+              "word": "加班",
+              "meaning": "làm thêm giờ"
+            },
+            {
+              "word": "工资",
+              "meaning": "lương"
+            }
+          ],
+          "patterns": [
+            "我有……经验。",
+            "我负责……",
+            "你的优点是什么？"
+          ]
+        },
+        {
+          "no": 18,
+          "title": "那是一次难忘的旅行 · Du lịch và trải nghiệm",
+          "topics": [
+            "du lịch",
+            "phong cảnh",
+            "kỷ niệm"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "旅行",
+              "meaning": "du lịch"
+            },
+            {
+              "word": "去过",
+              "meaning": "đã từng đến"
+            },
+            {
+              "word": "风景",
+              "meaning": "phong cảnh"
+            },
+            {
+              "word": "拍照",
+              "meaning": "chụp ảnh"
+            },
+            {
+              "word": "导游",
+              "meaning": "hướng dẫn viên"
+            },
+            {
+              "word": "纪念品",
+              "meaning": "đồ lưu niệm"
+            },
+            {
+              "word": "安排",
+              "meaning": "sắp xếp"
+            },
+            {
+              "word": "难忘",
+              "meaning": "khó quên"
+            }
+          ],
+          "patterns": [
+            "你去过……吗？",
+            "我觉得……很美。",
+            "……让我很难忘。"
+          ]
+        },
+        {
+          "no": 19,
+          "title": "今天我请客 · Mời khách và ứng xử",
+          "topics": [
+            "mời khách",
+            "gọi món",
+            "quà tặng"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "请客",
+              "meaning": "mời khách, bao ăn"
+            },
+            {
+              "word": "客气",
+              "meaning": "khách sáo"
+            },
+            {
+              "word": "随便",
+              "meaning": "tùy ý"
+            },
+            {
+              "word": "点菜",
+              "meaning": "gọi món"
+            },
+            {
+              "word": "敬",
+              "meaning": "kính (rượu)"
+            },
+            {
+              "word": "招待",
+              "meaning": "tiếp đãi"
+            },
+            {
+              "word": "礼物",
+              "meaning": "quà"
+            },
+            {
+              "word": "感谢",
+              "meaning": "cảm ơn"
+            }
+          ],
+          "patterns": [
+            "今天我请客。",
+            "你别客气。",
+            "谢谢你的……"
+          ]
+        },
+        {
+          "no": 20,
+          "title": "我想投诉一下 · Phàn nàn và xin lỗi",
+          "topics": [
+            "khiếu nại",
+            "xin lỗi",
+            "giải quyết"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "投诉",
+              "meaning": "phàn nàn, khiếu nại"
+            },
+            {
+              "word": "抱歉",
+              "meaning": "xin lỗi"
+            },
+            {
+              "word": "解决",
+              "meaning": "giải quyết"
+            },
+            {
+              "word": "问题",
+              "meaning": "vấn đề"
+            },
+            {
+              "word": "换",
+              "meaning": "đổi"
+            },
+            {
+              "word": "退款",
+              "meaning": "hoàn tiền"
+            },
+            {
+              "word": "态度",
+              "meaning": "thái độ"
+            },
+            {
+              "word": "理解",
+              "meaning": "hiểu, thông cảm"
+            }
+          ],
+          "patterns": [
+            "我想投诉……",
+            "可以……吗？",
+            "很抱歉，……"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misu30-3",
+      "title": "30 bài giao tiếp · Tập 3 · HSK5–6",
+      "levels": [
+        "HSK5-6",
+        "free"
+      ],
+      "authored": true,
+      "targetLevel": "HSK5-6",
+      "trackId": "misu30",
+      "trackTitle": "30 bài giao tiếp HSK1–6",
+      "source": {
+        "file": "curriculum/volume-3.json",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+      },
+      "lessons": [
+        {
+          "no": 21,
+          "title": "工作压力太大 · Công việc và áp lực",
+          "topics": [
+            "áp lực công việc",
+            "hiệu suất",
+            "cân bằng cuộc sống"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "加班",
+              "meaning": "làm thêm giờ"
+            },
+            {
+              "word": "压力",
+              "meaning": "áp lực"
+            },
+            {
+              "word": "效率",
+              "meaning": "hiệu suất"
+            },
+            {
+              "word": "平衡",
+              "meaning": "cân bằng"
+            },
+            {
+              "word": "焦虑",
+              "meaning": "lo lắng, bồn chồn"
+            },
+            {
+              "word": "调整",
+              "meaning": "điều chỉnh"
+            },
+            {
+              "word": "优先",
+              "meaning": "ưu tiên"
+            },
+            {
+              "word": "放松",
+              "meaning": "thư giãn"
+            }
+          ],
+          "patterns": [
+            "与其……，不如……",
+            "让我……的是……",
+            "学会……"
+          ]
+        },
+        {
+          "no": 22,
+          "title": "成绩和兴趣哪个更重要？ · Giáo dục và nuôi dạy con",
+          "topics": [
+            "giáo dục",
+            "điểm số",
+            "giao tiếp gia đình"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "教育",
+              "meaning": "giáo dục"
+            },
+            {
+              "word": "独立",
+              "meaning": "độc lập"
+            },
+            {
+              "word": "兴趣",
+              "meaning": "hứng thú, sở thích"
+            },
+            {
+              "word": "成绩",
+              "meaning": "thành tích, điểm số"
+            },
+            {
+              "word": "压力",
+              "meaning": "áp lực"
+            },
+            {
+              "word": "沟通",
+              "meaning": "giao tiếp, trao đổi"
+            },
+            {
+              "word": "习惯",
+              "meaning": "thói quen"
+            },
+            {
+              "word": "鼓励",
+              "meaning": "khuyến khích, động viên"
+            }
+          ],
+          "patterns": [
+            "与其……，不如……",
+            "应该……",
+            "对……来说，……很重要"
+          ]
+        },
+        {
+          "no": 23,
+          "title": "我最近总是睡不好 · Sức khỏe và lối sống",
+          "topics": [
+            "giấc ngủ",
+            "vận động",
+            "thói quen sinh hoạt"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "作息",
+              "meaning": "giờ giấc sinh hoạt"
+            },
+            {
+              "word": "锻炼",
+              "meaning": "rèn luyện, tập thể dục"
+            },
+            {
+              "word": "失眠",
+              "meaning": "mất ngủ"
+            },
+            {
+              "word": "饮食",
+              "meaning": "ăn uống, chế độ ăn"
+            },
+            {
+              "word": "熬夜",
+              "meaning": "thức khuya"
+            },
+            {
+              "word": "免疫力",
+              "meaning": "sức miễn dịch"
+            },
+            {
+              "word": "坚持",
+              "meaning": "kiên trì"
+            },
+            {
+              "word": "恢复",
+              "meaning": "hồi phục"
+            }
+          ],
+          "patterns": [
+            "……对身体不好",
+            "坚持……，就会……",
+            "与其……，不如……"
+          ]
+        },
+        {
+          "no": 24,
+          "title": "手机会取代一切吗？ · Công nghệ và đời sống",
+          "topics": [
+            "trí tuệ nhân tạo",
+            "quyền riêng tư",
+            "phụ thuộc công nghệ"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "人工智能",
+              "meaning": "trí tuệ nhân tạo"
+            },
+            {
+              "word": "隐私",
+              "meaning": "quyền riêng tư"
+            },
+            {
+              "word": "方便",
+              "meaning": "thuận tiện"
+            },
+            {
+              "word": "依赖",
+              "meaning": "phụ thuộc"
+            },
+            {
+              "word": "效率",
+              "meaning": "hiệu suất"
+            },
+            {
+              "word": "取代",
+              "meaning": "thay thế"
+            },
+            {
+              "word": "适应",
+              "meaning": "thích nghi"
+            },
+            {
+              "word": "影响",
+              "meaning": "ảnh hưởng"
+            }
+          ],
+          "patterns": [
+            "随着……，……",
+            "一方面……，另一方面……",
+            "与其……，不如……"
+          ]
+        },
+        {
+          "no": 25,
+          "title": "越南的春节有什么不一样？ · Văn hóa và phong tục",
+          "topics": [
+            "ngày lễ",
+            "phong tục",
+            "khác biệt văn hóa"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "传统",
+              "meaning": "truyền thống"
+            },
+            {
+              "word": "节日",
+              "meaning": "ngày lễ"
+            },
+            {
+              "word": "习俗",
+              "meaning": "phong tục"
+            },
+            {
+              "word": "尊重",
+              "meaning": "tôn trọng"
+            },
+            {
+              "word": "红包",
+              "meaning": "phong bao lì xì"
+            },
+            {
+              "word": "团圆",
+              "meaning": "đoàn viên, sum họp"
+            },
+            {
+              "word": "礼仪",
+              "meaning": "lễ nghi, phép lịch sự"
+            },
+            {
+              "word": "差异",
+              "meaning": "khác biệt"
+            }
+          ],
+          "patterns": [
+            "……是……的象征",
+            "在……的时候，人们会……",
+            "虽然……，但是……"
+          ]
+        },
+        {
+          "no": 26,
+          "title": "环保从身边做起 · Môi trường",
+          "topics": [
+            "ô nhiễm",
+            "tái chế",
+            "trách nhiệm cộng đồng"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "污染",
+              "meaning": "ô nhiễm"
+            },
+            {
+              "word": "回收",
+              "meaning": "tái chế, thu hồi"
+            },
+            {
+              "word": "浪费",
+              "meaning": "lãng phí"
+            },
+            {
+              "word": "可持续",
+              "meaning": "bền vững"
+            },
+            {
+              "word": "环保",
+              "meaning": "bảo vệ môi trường"
+            },
+            {
+              "word": "能源",
+              "meaning": "năng lượng"
+            },
+            {
+              "word": "减少",
+              "meaning": "giảm bớt"
+            },
+            {
+              "word": "责任",
+              "meaning": "trách nhiệm"
+            }
+          ],
+          "patterns": [
+            "越来越……",
+            "从……做起",
+            "是……的责任"
+          ]
+        },
+        {
+          "no": 27,
+          "title": "这是我们的底线 · Thương lượng và đàm phán",
+          "topics": [
+            "đàm phán",
+            "nhượng bộ",
+            "điều khoản hợp đồng"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "让步",
+              "meaning": "nhượng bộ"
+            },
+            {
+              "word": "条件",
+              "meaning": "điều kiện"
+            },
+            {
+              "word": "合作",
+              "meaning": "hợp tác"
+            },
+            {
+              "word": "底线",
+              "meaning": "giới hạn cuối cùng"
+            },
+            {
+              "word": "谈判",
+              "meaning": "đàm phán"
+            },
+            {
+              "word": "妥协",
+              "meaning": "thỏa hiệp"
+            },
+            {
+              "word": "目标",
+              "meaning": "mục tiêu"
+            },
+            {
+              "word": "条款",
+              "meaning": "điều khoản"
+            }
+          ],
+          "patterns": [
+            "如果……，我们就……",
+            "在……方面，我们可以……",
+            "我们的底线是……"
+          ]
+        },
+        {
+          "no": 28,
+          "title": "那段经历让我成长 · Chia sẻ trải nghiệm",
+          "topics": [
+            "trải nghiệm",
+            "trưởng thành",
+            "cảm xúc"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "经历",
+              "meaning": "trải nghiệm"
+            },
+            {
+              "word": "难忘",
+              "meaning": "khó quên"
+            },
+            {
+              "word": "成长",
+              "meaning": "trưởng thành"
+            },
+            {
+              "word": "后悔",
+              "meaning": "hối hận"
+            },
+            {
+              "word": "勇气",
+              "meaning": "dũng khí"
+            },
+            {
+              "word": "感动",
+              "meaning": "cảm động"
+            },
+            {
+              "word": "释怀",
+              "meaning": "buông bỏ, nhẹ lòng"
+            },
+            {
+              "word": "珍惜",
+              "meaning": "trân trọng"
+            }
+          ],
+          "patterns": [
+            "那段经历让我……",
+            "如果当时……，也许……",
+            "我终于……"
+          ]
+        },
+        {
+          "no": 29,
+          "title": "你怎么看这条新闻？ · Tin tức và quan điểm",
+          "topics": [
+            "tin tức",
+            "truyền thông",
+            "phán đoán"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "新闻",
+              "meaning": "tin tức"
+            },
+            {
+              "word": "媒体",
+              "meaning": "truyền thông"
+            },
+            {
+              "word": "观点",
+              "meaning": "quan điểm"
+            },
+            {
+              "word": "影响",
+              "meaning": "ảnh hưởng"
+            },
+            {
+              "word": "事实",
+              "meaning": "sự thật"
+            },
+            {
+              "word": "争论",
+              "meaning": "tranh cãi"
+            },
+            {
+              "word": "客观",
+              "meaning": "khách quan"
+            },
+            {
+              "word": "判断",
+              "meaning": "phán đoán"
+            }
+          ],
+          "patterns": [
+            "据……报道，……",
+            "有人认为……，也有人认为……",
+            "在我看来，……"
+          ]
+        },
+        {
+          "no": 30,
+          "title": "我的目标是…… · Tổng kết và kế hoạch tương lai",
+          "topics": [
+            "mục tiêu",
+            "kế hoạch",
+            "tương lai"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "目标",
+              "meaning": "mục tiêu"
+            },
+            {
+              "word": "坚持",
+              "meaning": "kiên trì"
+            },
+            {
+              "word": "进步",
+              "meaning": "tiến bộ"
+            },
+            {
+              "word": "计划",
+              "meaning": "kế hoạch"
+            },
+            {
+              "word": "挑战",
+              "meaning": "thách thức"
+            },
+            {
+              "word": "机会",
+              "meaning": "cơ hội"
+            },
+            {
+              "word": "未来",
+              "meaning": "tương lai"
+            },
+            {
+              "word": "实现",
+              "meaning": "thực hiện"
+            }
+          ],
+          "patterns": [
+            "我的目标是……",
+            "只要……，就……",
+            "我计划……"
           ]
         }
       ]

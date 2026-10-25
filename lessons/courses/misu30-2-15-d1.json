@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 15,
+  "lessonTitle": "你哪里不舒服？ · Khám bệnh",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "不舒服",
+      "meaning": "không khỏe",
+      "example": "我今天有点不舒服。",
+      "exampleVi": "Hôm nay mình hơi không khỏe.",
+      "pinyin": "bù shū fu",
+      "examplePinyin": "wǒ jīn tiān yǒu diǎn bù shū fu 。"
+    },
+    {
+      "word": "头疼",
+      "meaning": "đau đầu",
+      "example": "我从早上开始头疼。",
+      "exampleVi": "Mình đau đầu từ sáng.",
+      "pinyin": "tóu téng",
+      "examplePinyin": "wǒ cóng zǎo shang kāi shǐ tóu téng 。"
+    },
+    {
+      "word": "发烧",
+      "meaning": "sốt",
+      "example": "你发烧了，需要休息。",
+      "exampleVi": "Bạn bị sốt rồi, cần nghỉ ngơi.",
+      "pinyin": "fā shāo",
+      "examplePinyin": "nǐ fā shāo le ， xū yào xiū xi 。"
+    },
+    {
+      "word": "咳嗽",
+      "meaning": "ho",
+      "example": "我咳嗽两天了。",
+      "exampleVi": "Mình ho hai ngày rồi.",
+      "pinyin": "ké sou",
+      "examplePinyin": "wǒ ké sou liǎng tiān le 。"
+    },
+    {
+      "word": "吃药",
+      "meaning": "uống thuốc",
+      "example": "你要按时吃药。",
+      "exampleVi": "Bạn phải uống thuốc đúng giờ.",
+      "pinyin": "chī yào",
+      "examplePinyin": "nǐ yào àn shí chī yào 。"
+    },
+    {
+      "word": "医院",
+      "meaning": "bệnh viện",
+      "example": "医院离这里远吗？",
+      "exampleVi": "Bệnh viện cách đây xa không?",
+      "pinyin": "yī yuàn",
+      "examplePinyin": "yī yuàn lí zhè lǐ yuǎn ma ？"
+    },
+    {
+      "word": "医生",
+      "meaning": "bác sĩ",
+      "example": "医生让我多喝水。",
+      "exampleVi": "Bác sĩ bảo mình uống nhiều nước.",
+      "pinyin": "yī shēng",
+      "examplePinyin": "yī shēng ràng wǒ duō hē shuǐ 。"
+    },
+    {
+      "word": "过敏",
+      "meaning": "dị ứng",
+      "example": "我对青霉素过敏。",
+      "exampleVi": "Mình bị dị ứng với penicillin.",
+      "pinyin": "guò mǐn",
+      "examplePinyin": "wǒ duì qīng méi sù guò mǐn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我……不舒服。",
+      "explanation": "Dùng để nói bộ phận cơ thể không khỏe.",
+      "example": "我肚子有点不舒服。",
+      "exampleVi": "Bụng mình hơi khó chịu.",
+      "examplePinyin": "wǒ dù zi yǒu diǎn bù shū fu 。"
+    },
+    {
+      "pattern": "我……两天了。",
+      "explanation": "Dùng để nói triệu chứng đã kéo dài bao lâu.",
+      "example": "我咳嗽两天了。",
+      "exampleVi": "Mình ho hai ngày rồi.",
+      "examplePinyin": "wǒ ké sou liǎng tiān le 。"
+    },
+    {
+      "pattern": "医生说我……",
+      "explanation": "Dùng để thuật lại lời bác sĩ.",
+      "example": "医生说我需要休息。",
+      "exampleVi": "Bác sĩ nói mình cần nghỉ ngơi.",
+      "examplePinyin": "yī shēng shuō wǒ xū yào xiū xi 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Phòng khám nhỏ.",
+    "avatarRole": "Misu, bác sĩ",
+    "learnerRole": "Bệnh nhân",
+    "goals": [
+      "Mô tả triệu chứng",
+      "Nói đã bị bao lâu",
+      "Hỏi cách uống thuốc"
+    ],
+    "opening": "你好，你哪里不舒服？",
+    "openingVi": "Xin chào, bạn thấy khó chịu ở đâu?"
+  },
+  "freeTalk": {
+    "question": "你生病的时候一般怎么办？",
+    "questionVi": "Khi bị ốm, bạn thường làm gì?"
+  },
+  "prerequisites": [
+    14
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我今天有点不舒服。 我从早上开始头疼。 你发烧了，需要休息。",
+    "translation": "Hôm nay mình hơi không khỏe. Mình đau đầu từ sáng. Bạn bị sốt rồi, cần nghỉ ngơi.",
+    "pinyin": "wǒ jīn tiān yǒu diǎn bù shū fu 。   wǒ cóng zǎo shang kāi shǐ tóu téng 。   nǐ fā shāo le ， xū yào xiū xi 。",
+    "questions": [
+      {
+        "prompt": "Cụm “不舒服” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "không khỏe",
+          "sốt",
+          "ho"
+        ],
+        "answer": 0,
+        "explanation": "“不舒服”: không khỏe. Ví dụ đã nghe: 我今天有点不舒服。"
+      },
+      {
+        "prompt": "Cụm “头疼” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "ho",
+          "đau đầu",
+          "uống thuốc"
+        ],
+        "answer": 1,
+        "explanation": "“头疼”: đau đầu. Ví dụ đã nghe: 我从早上开始头疼。"
+      },
+      {
+        "prompt": "Cụm “发烧” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "uống thuốc",
+          "bệnh viện",
+          "sốt"
+        ],
+        "answer": 2,
+        "explanation": "“发烧”: sốt. Ví dụ đã nghe: 你发烧了，需要休息。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我今天有点不舒服。",
+      "reference": "我今天有点不舒服。",
+      "pinyin": "wǒ jīn tiān yǒu diǎn bù shū fu 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你生病的时候一般怎么办？",
+      "promptVi": "Khi bị ốm, bạn thường làm gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Phòng khám nhỏ."
+}

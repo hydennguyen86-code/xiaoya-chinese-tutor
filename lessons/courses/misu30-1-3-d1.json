@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 3,
+  "lessonTitle": "我家有四口人 · Gia đình",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "家",
+      "meaning": "nhà, gia đình",
+      "example": "我家有四口人。",
+      "exampleVi": "Nhà mình có bốn người.",
+      "pinyin": "jiā",
+      "examplePinyin": "wǒ jiā yǒu sì kǒu rén 。"
+    },
+    {
+      "word": "爸爸",
+      "meaning": "bố",
+      "example": "我爸爸是老师。",
+      "exampleVi": "Bố mình là giáo viên.",
+      "pinyin": "bà ba",
+      "examplePinyin": "wǒ bà ba shì lǎo shī 。"
+    },
+    {
+      "word": "妈妈",
+      "meaning": "mẹ",
+      "example": "妈妈在家做饭。",
+      "exampleVi": "Mẹ ở nhà nấu cơm.",
+      "pinyin": "mā ma",
+      "examplePinyin": "mā ma zài jiā zuò fàn 。"
+    },
+    {
+      "word": "哥哥",
+      "meaning": "anh trai",
+      "example": "我哥哥在上海工作。",
+      "exampleVi": "Anh trai mình làm việc ở Thượng Hải.",
+      "pinyin": "gē ge",
+      "examplePinyin": "wǒ gē ge zài shàng hǎi gōng zuò 。"
+    },
+    {
+      "word": "妹妹",
+      "meaning": "em gái",
+      "example": "妹妹今年八岁。",
+      "exampleVi": "Em gái mình năm nay tám tuổi.",
+      "pinyin": "mèi mei",
+      "examplePinyin": "mèi mei jīn nián bā suì 。"
+    },
+    {
+      "word": "孩子",
+      "meaning": "con, trẻ em",
+      "example": "他们有一个孩子。",
+      "exampleVi": "Họ có một đứa con.",
+      "pinyin": "hái zi",
+      "examplePinyin": "tā men yǒu yí gè hái zi 。"
+    },
+    {
+      "word": "口",
+      "meaning": "nhân khẩu (lượng từ đếm người trong nhà)",
+      "example": "我家有三口人。",
+      "exampleVi": "Nhà mình có ba người.",
+      "pinyin": "kǒu",
+      "examplePinyin": "wǒ jiā yǒu sān kǒu rén 。"
+    },
+    {
+      "word": "住",
+      "meaning": "sống, ở",
+      "example": "我住在河内。",
+      "exampleVi": "Mình sống ở Hà Nội.",
+      "pinyin": "zhù",
+      "examplePinyin": "wǒ zhù zài hé nèi 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我家有……口人。",
+      "explanation": "Dùng để nói số người trong gia đình.",
+      "example": "我家有四口人。",
+      "exampleVi": "Nhà mình có bốn người.",
+      "examplePinyin": "wǒ jiā yǒu sì kǒu rén 。"
+    },
+    {
+      "pattern": "我有一个……",
+      "explanation": "Dùng để nói mình có một người thân nào đó.",
+      "example": "我有一个妹妹。",
+      "exampleVi": "Mình có một em gái.",
+      "examplePinyin": "wǒ yǒu yí gè mèi mei 。"
+    },
+    {
+      "pattern": "你家里有谁？",
+      "explanation": "Dùng để hỏi gia đình có những ai.",
+      "example": "你家里有谁？",
+      "exampleVi": "Nhà bạn có những ai?",
+      "examplePinyin": "nǐ jiā lǐ yǒu shuí ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Misu xem ảnh gia đình trên điện thoại của bạn.",
+    "avatarRole": "Misu, bạn học cùng lớp",
+    "learnerRole": "Học viên đang giới thiệu gia đình",
+    "goals": [
+      "Nói nhà có mấy người",
+      "Kể tên các thành viên",
+      "Hỏi về gia đình Misu"
+    ],
+    "opening": "这是你家人的照片吗？你家有几口人？",
+    "openingVi": "Đây là ảnh gia đình bạn à? Nhà bạn có mấy người?"
+  },
+  "freeTalk": {
+    "question": "你家有几口人？他们都是谁？",
+    "questionVi": "Nhà bạn có mấy người? Họ là những ai?"
+  },
+  "prerequisites": [
+    2
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我家有四口人。 我爸爸是老师。 妈妈在家做饭。",
+    "translation": "Nhà mình có bốn người. Bố mình là giáo viên. Mẹ ở nhà nấu cơm.",
+    "pinyin": "wǒ jiā yǒu sì kǒu rén 。   wǒ bà ba shì lǎo shī 。   mā ma zài jiā zuò fàn 。",
+    "questions": [
+      {
+        "prompt": "Cụm “家” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "nhà, gia đình",
+          "mẹ",
+          "anh trai"
+        ],
+        "answer": 0,
+        "explanation": "“家”: nhà, gia đình. Ví dụ đã nghe: 我家有四口人。"
+      },
+      {
+        "prompt": "Cụm “爸爸” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "anh trai",
+          "bố",
+          "em gái"
+        ],
+        "answer": 1,
+        "explanation": "“爸爸”: bố. Ví dụ đã nghe: 我爸爸是老师。"
+      },
+      {
+        "prompt": "Cụm “妈妈” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "em gái",
+          "con, trẻ em",
+          "mẹ"
+        ],
+        "answer": 2,
+        "explanation": "“妈妈”: mẹ. Ví dụ đã nghe: 妈妈在家做饭。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我家有四口人。",
+      "reference": "我家有四口人。",
+      "pinyin": "wǒ jiā yǒu sì kǒu rén 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你家有几口人？他们都是谁？",
+      "promptVi": "Nhà bạn có mấy người? Họ là những ai?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Misu xem ảnh gia đình trên điện thoại của bạn."
+}

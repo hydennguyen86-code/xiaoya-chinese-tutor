@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 17,
+  "lessonTitle": "请介绍一下你自己 · Công việc và phỏng vấn",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "面试",
+      "meaning": "phỏng vấn",
+      "example": "我明天有一个面试。",
+      "exampleVi": "Ngày mai mình có một buổi phỏng vấn.",
+      "pinyin": "miàn shì",
+      "examplePinyin": "wǒ míng tiān yǒu yí gè miàn shì 。"
+    },
+    {
+      "word": "经验",
+      "meaning": "kinh nghiệm",
+      "example": "我有两年的工作经验。",
+      "exampleVi": "Mình có hai năm kinh nghiệm làm việc.",
+      "pinyin": "jīng yàn",
+      "examplePinyin": "wǒ yǒu liǎng nián de gōng zuò jīng yàn 。"
+    },
+    {
+      "word": "优点",
+      "meaning": "ưu điểm",
+      "example": "我的优点是认真。",
+      "exampleVi": "Ưu điểm của mình là nghiêm túc.",
+      "pinyin": "yōu diǎn",
+      "examplePinyin": "wǒ de yōu diǎn shì rèn zhēn 。"
+    },
+    {
+      "word": "缺点",
+      "meaning": "nhược điểm",
+      "example": "我的缺点是没有耐心。",
+      "exampleVi": "Nhược điểm của mình là thiếu kiên nhẫn.",
+      "pinyin": "quē diǎn",
+      "examplePinyin": "wǒ de quē diǎn shì méi yǒu nài xīn 。"
+    },
+    {
+      "word": "负责",
+      "meaning": "phụ trách",
+      "example": "我负责市场推广。",
+      "exampleVi": "Mình phụ trách quảng bá thị trường.",
+      "pinyin": "fù zé",
+      "examplePinyin": "wǒ fù zé shì chǎng tuī guǎng 。"
+    },
+    {
+      "word": "团队",
+      "meaning": "đội nhóm",
+      "example": "我喜欢和团队一起工作。",
+      "exampleVi": "Mình thích làm việc cùng đội nhóm.",
+      "pinyin": "tuán duì",
+      "examplePinyin": "wǒ xǐ huan hé tuán duì yì qǐ gōng zuò 。"
+    },
+    {
+      "word": "加班",
+      "meaning": "làm thêm giờ",
+      "example": "这个工作经常加班吗？",
+      "exampleVi": "Công việc này có thường xuyên làm thêm giờ không?",
+      "pinyin": "jiā bān",
+      "examplePinyin": "zhè ge gōng zuò jīng cháng jiā bān ma ？"
+    },
+    {
+      "word": "工资",
+      "meaning": "lương",
+      "example": "工资可以谈吗？",
+      "exampleVi": "Lương có thể thương lượng không?",
+      "pinyin": "gōng zī",
+      "examplePinyin": "gōng zī kě yǐ tán ma ？"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我有……经验。",
+      "explanation": "Dùng để nói số năm kinh nghiệm.",
+      "example": "我有三年销售经验。",
+      "exampleVi": "Mình có ba năm kinh nghiệm bán hàng.",
+      "examplePinyin": "wǒ yǒu sān nián xiāo shòu jīng yàn 。"
+    },
+    {
+      "pattern": "我负责……",
+      "explanation": "Dùng để nói mảng mình phụ trách.",
+      "example": "我负责一个新项目。",
+      "exampleVi": "Mình phụ trách một dự án mới.",
+      "examplePinyin": "wǒ fù zé yí gè xīn xiàng mù 。"
+    },
+    {
+      "pattern": "你的优点是什么？",
+      "explanation": "Dùng để hỏi ưu điểm.",
+      "example": "你的优点是什么？",
+      "exampleVi": "Ưu điểm của bạn là gì?",
+      "examplePinyin": "nǐ de yōu diǎn shì shén me ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Phòng phỏng vấn xin việc.",
+    "avatarRole": "Misu, nhà tuyển dụng",
+    "learnerRole": "Ứng viên",
+    "goals": [
+      "Giới thiệu kinh nghiệm",
+      "Nói ưu điểm và nhược điểm",
+      "Hỏi về lương và làm thêm giờ"
+    ],
+    "opening": "请先简单介绍一下你自己，好吗？",
+    "openingVi": "Trước tiên hãy giới thiệu ngắn gọn về bản thân, nhé?"
+  },
+  "freeTalk": {
+    "question": "你理想的工作是什么样的？",
+    "questionVi": "Công việc lý tưởng của bạn như thế nào?"
+  },
+  "prerequisites": [
+    16
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我明天有一个面试。 我有两年的工作经验。 我的优点是认真。",
+    "translation": "Ngày mai mình có một buổi phỏng vấn. Mình có hai năm kinh nghiệm làm việc. Ưu điểm của mình là nghiêm túc.",
+    "pinyin": "wǒ míng tiān yǒu yí gè miàn shì 。   wǒ yǒu liǎng nián de gōng zuò jīng yàn 。   wǒ de yōu diǎn shì rèn zhēn 。",
+    "questions": [
+      {
+        "prompt": "Cụm “面试” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "ưu điểm",
+          "nhược điểm",
+          "phỏng vấn"
+        ],
+        "answer": 2,
+        "explanation": "“面试”: phỏng vấn. Ví dụ đã nghe: 我明天有一个面试。"
+      },
+      {
+        "prompt": "Cụm “经验” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "kinh nghiệm",
+          "nhược điểm",
+          "phụ trách"
+        ],
+        "answer": 0,
+        "explanation": "“经验”: kinh nghiệm. Ví dụ đã nghe: 我有两年的工作经验。"
+      },
+      {
+        "prompt": "Cụm “优点” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "phụ trách",
+          "ưu điểm",
+          "đội nhóm"
+        ],
+        "answer": 1,
+        "explanation": "“优点”: ưu điểm. Ví dụ đã nghe: 我的优点是认真。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我明天有一个面试。",
+      "reference": "我明天有一个面试。",
+      "pinyin": "wǒ míng tiān yǒu yí gè miàn shì 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你理想的工作是什么样的？",
+      "promptVi": "Công việc lý tưởng của bạn như thế nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Phòng phỏng vấn xin việc."
+}

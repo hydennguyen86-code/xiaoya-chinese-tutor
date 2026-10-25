@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 6,
+  "lessonTitle": "我要一碗面条 · Gọi món ăn",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "吃",
+      "meaning": "ăn",
+      "example": "我想吃米饭。",
+      "exampleVi": "Mình muốn ăn cơm.",
+      "pinyin": "chī",
+      "examplePinyin": "wǒ xiǎng chī mǐ fàn 。"
+    },
+    {
+      "word": "喝",
+      "meaning": "uống",
+      "example": "你喝什么？",
+      "exampleVi": "Bạn uống gì?",
+      "pinyin": "hē",
+      "examplePinyin": "nǐ hē shén me ？"
+    },
+    {
+      "word": "米饭",
+      "meaning": "cơm",
+      "example": "一碗米饭多少钱？",
+      "exampleVi": "Một bát cơm bao nhiêu tiền?",
+      "pinyin": "mǐ fàn",
+      "examplePinyin": "yì wǎn mǐ fàn duō shǎo qián ？"
+    },
+    {
+      "word": "面条",
+      "meaning": "mì sợi",
+      "example": "我喜欢吃面条。",
+      "exampleVi": "Mình thích ăn mì.",
+      "pinyin": "miàn tiáo",
+      "examplePinyin": "wǒ xǐ huan chī miàn tiáo 。"
+    },
+    {
+      "word": "菜",
+      "meaning": "món ăn, rau",
+      "example": "这个菜很好吃。",
+      "exampleVi": "Món này rất ngon.",
+      "pinyin": "cài",
+      "examplePinyin": "zhè ge cài hěn hǎo chī 。"
+    },
+    {
+      "word": "辣",
+      "meaning": "cay",
+      "example": "这个菜很辣。",
+      "exampleVi": "Món này rất cay.",
+      "pinyin": "là",
+      "examplePinyin": "zhè ge cài hěn là 。"
+    },
+    {
+      "word": "杯",
+      "meaning": "cốc, ly",
+      "example": "我要一杯水。",
+      "exampleVi": "Mình muốn một cốc nước.",
+      "pinyin": "bēi",
+      "examplePinyin": "wǒ yào yì bēi shuǐ 。"
+    },
+    {
+      "word": "服务员",
+      "meaning": "nhân viên phục vụ",
+      "example": "服务员，请给我菜单。",
+      "exampleVi": "Nhân viên ơi, cho mình xin thực đơn.",
+      "pinyin": "fú wù yuán",
+      "examplePinyin": "fú wù yuán ， qǐng gěi wǒ cài dān 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……",
+      "explanation": "Dùng để gọi món hoặc nói mình muốn gì.",
+      "example": "我要一碗面条。",
+      "exampleVi": "Mình muốn một bát mì.",
+      "examplePinyin": "wǒ yào yì wǎn miàn tiáo 。"
+    },
+    {
+      "pattern": "请给我……",
+      "explanation": "Câu lịch sự khi nhờ người khác đưa đồ.",
+      "example": "请给我一杯水。",
+      "exampleVi": "Cho mình xin một cốc nước.",
+      "examplePinyin": "qǐng gěi wǒ yì bēi shuǐ 。"
+    },
+    {
+      "pattern": "……好吃吗？",
+      "explanation": "Dùng để hỏi món ăn có ngon không.",
+      "example": "这个菜好吃吗？",
+      "exampleVi": "Món này ngon không?",
+      "examplePinyin": "zhè ge cài hǎo chī ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Một quán ăn Trung Quốc nhỏ.",
+    "avatarRole": "Misu, nhân viên phục vụ",
+    "learnerRole": "Khách gọi món",
+    "goals": [
+      "Gọi một món ăn và một đồ uống",
+      "Hỏi món có cay không",
+      "Gọi thêm cơm"
+    ],
+    "opening": "你好，欢迎光临！你想吃什么？",
+    "openingVi": "Xin chào, chào mừng! Bạn muốn ăn gì?"
+  },
+  "freeTalk": {
+    "question": "你喜欢吃什么中国菜？你能吃辣吗？",
+    "questionVi": "Bạn thích ăn món Trung Quốc nào? Bạn ăn cay được không?"
+  },
+  "prerequisites": [
+    5
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我想吃米饭。 你喝什么？ 一碗米饭多少钱？",
+    "translation": "Mình muốn ăn cơm. Bạn uống gì? Một bát cơm bao nhiêu tiền?",
+    "pinyin": "wǒ xiǎng chī mǐ fàn 。   nǐ hē shén me ？   yì wǎn mǐ fàn duō shǎo qián ？",
+    "questions": [
+      {
+        "prompt": "Cụm “吃” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "ăn",
+          "cơm",
+          "mì sợi"
+        ],
+        "answer": 0,
+        "explanation": "“吃”: ăn. Ví dụ đã nghe: 我想吃米饭。"
+      },
+      {
+        "prompt": "Cụm “喝” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "mì sợi",
+          "uống",
+          "món ăn, rau"
+        ],
+        "answer": 1,
+        "explanation": "“喝”: uống. Ví dụ đã nghe: 你喝什么？"
+      },
+      {
+        "prompt": "Cụm “米饭” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "món ăn, rau",
+          "cay",
+          "cơm"
+        ],
+        "answer": 2,
+        "explanation": "“米饭”: cơm. Ví dụ đã nghe: 一碗米饭多少钱？"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我想吃米饭。",
+      "reference": "我想吃米饭。",
+      "pinyin": "wǒ xiǎng chī mǐ fàn 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你喜欢吃什么中国菜？你能吃辣吗？",
+      "promptVi": "Bạn thích ăn món Trung Quốc nào? Bạn ăn cay được không?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Một quán ăn Trung Quốc nhỏ."
+}

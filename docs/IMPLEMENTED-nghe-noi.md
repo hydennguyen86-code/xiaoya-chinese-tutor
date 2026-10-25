@@ -130,3 +130,10 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Không có sidecar thực tế để đối chiếu schema Qoder tại thời điểm chạy; các dạng trên có test tổng hợp, cần kiểm tra lại khi Qoder xuất file. Nhãn 0 không rõ/5 thanh nhẹ thống kê riêng, chỉ đo thanh 1–4. Nếu có sentence-* dùng chúng học dải giọng; nếu không, báo rõ học từ chính tập đo, không phải held-out.
 - Lần chạy đọc bản thu hiện có: **0 mục gắn nhãn người**, kết quả tổng hợp lưu eval/results/, không chứa tên người, đường dẫn hay audio. Không suy ra nhãn từ thanh mong đợi hoặc điểm máy.
 - **Bỏ qua chỉnh classifyIsolated**: chưa có người nào gắn nhãn đủ 56 mục. Không có kết quả trước/sau hay tuyên bố cải thiện; giữ nguyên ngưỡng và số liệu TTS cũ.
+
+## 2026-10-25 — 30 bài giao tiếp HSK1–6
+
+- Chuyển đủ volume-1..3 của bộ curriculum người dùng chỉ định thành 30 buổi đóng gói, giữ số bài 1–30 và toàn bộ 8 từ/3 mẫu câu, nhập vai/nói tự do mỗi bài. Ghi nguồn tương đối + SHA-256, không ghi đường dẫn tuyệt đối; nhãn AI soạn, chưa duyệt. Mức HSK chỉ là định hướng chủ đề, chưa đối chiếu đầy đủ từ vựng/đề thi.
+- Ba tập cùng track, nối 10→11 và 20→21 bằng liên kết rõ; kết thúc bài 30, không tự nhảy sang khóa khác. Giữ nguyên hai khóa thực tế 48 buổi và dữ liệu tiến độ cũ. Chọn tập trung cấp dùng đúng mức HSK3–4 trong hội thoại.
+- Thêm bài nghe nhận nghĩa từ ba câu ví dụ gốc và hai lượt nói (nhắc lại/ứng dụng câu hỏi tự do), đáp án nghe cân bằng vị trí. Không tạo audio hay chép sách. Đây là bài nhận nghĩa ngắn, chưa phải đề luyện thi nghe dài.
+- Script import có kiểm tra toàn bộ trước khi ghi; cả 30 bài qua normalizeLesson và loader không cần model. Test vẫn kiểm tra riêng 48 buổi cũ, bổ sung 30 bài mới, đáp án/nhãn/chuyển tập. Chưa được giáo viên hoặc người học thẩm định sư phạm.

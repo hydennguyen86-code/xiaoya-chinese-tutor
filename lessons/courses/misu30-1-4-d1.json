@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 4,
+  "lessonTitle": "今天星期几？ · Ngày tháng và giờ giấc",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "今天",
+      "meaning": "hôm nay",
+      "example": "今天天气很好。",
+      "exampleVi": "Hôm nay thời tiết rất đẹp.",
+      "pinyin": "jīn tiān",
+      "examplePinyin": "jīn tiān tiān qì hěn hǎo 。"
+    },
+    {
+      "word": "明天",
+      "meaning": "ngày mai",
+      "example": "明天见！",
+      "exampleVi": "Mai gặp lại!",
+      "pinyin": "míng tiān",
+      "examplePinyin": "míng tiān jiàn ！"
+    },
+    {
+      "word": "昨天",
+      "meaning": "hôm qua",
+      "example": "昨天我很忙。",
+      "exampleVi": "Hôm qua mình rất bận.",
+      "pinyin": "zuó tiān",
+      "examplePinyin": "zuó tiān wǒ hěn máng 。"
+    },
+    {
+      "word": "星期",
+      "meaning": "tuần, thứ",
+      "example": "今天星期几？",
+      "exampleVi": "Hôm nay là thứ mấy?",
+      "pinyin": "xīng qī",
+      "examplePinyin": "jīn tiān xīng qī jǐ ？"
+    },
+    {
+      "word": "点",
+      "meaning": "giờ (điểm)",
+      "example": "现在八点。",
+      "exampleVi": "Bây giờ là tám giờ.",
+      "pinyin": "diǎn",
+      "examplePinyin": "xiàn zài bā diǎn 。"
+    },
+    {
+      "word": "分",
+      "meaning": "phút",
+      "example": "我们九点十分上课。",
+      "exampleVi": "Chúng mình học lúc chín giờ mười phút.",
+      "pinyin": "fēn",
+      "examplePinyin": "wǒ men jiǔ diǎn shí fēn shàng kè 。"
+    },
+    {
+      "word": "上午",
+      "meaning": "buổi sáng",
+      "example": "上午我有课。",
+      "exampleVi": "Buổi sáng mình có tiết học.",
+      "pinyin": "shàng wǔ",
+      "examplePinyin": "shàng wǔ wǒ yǒu kè 。"
+    },
+    {
+      "word": "下午",
+      "meaning": "buổi chiều",
+      "example": "下午我去商店。",
+      "exampleVi": "Buổi chiều mình đi cửa hàng.",
+      "pinyin": "xià wǔ",
+      "examplePinyin": "xià wǔ wǒ qù shāng diàn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "今天星期几？",
+      "explanation": "Dùng để hỏi hôm nay là thứ mấy.",
+      "example": "今天星期几？",
+      "exampleVi": "Hôm nay là thứ mấy?",
+      "examplePinyin": "jīn tiān xīng qī jǐ ？"
+    },
+    {
+      "pattern": "现在几点？",
+      "explanation": "Dùng để hỏi giờ hiện tại.",
+      "example": "现在几点？",
+      "exampleVi": "Bây giờ là mấy giờ?",
+      "examplePinyin": "xiàn zài jǐ diǎn ？"
+    },
+    {
+      "pattern": "我……点……分……",
+      "explanation": "Dùng để nói giờ chính xác.",
+      "example": "我七点三十分吃早饭。",
+      "exampleVi": "Mình ăn sáng lúc bảy giờ ba mươi phút.",
+      "examplePinyin": "wǒ qī diǎn sān shí fēn chī zǎo fàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hai bạn đang hẹn giờ đi học cùng nhau.",
+    "avatarRole": "Misu, bạn cùng lớp",
+    "learnerRole": "Học viên đang hỏi giờ",
+    "goals": [
+      "Hỏi hôm nay là thứ mấy",
+      "Hỏi giờ hiện tại",
+      "Hẹn giờ gặp nhau"
+    ],
+    "opening": "我们明天一起上课吧。你知道明天星期几吗？",
+    "openingVi": "Ngày mai chúng mình cùng đi học nhé. Bạn biết mai là thứ mấy không?"
+  },
+  "freeTalk": {
+    "question": "今天星期几？你明天有什么课？",
+    "questionVi": "Hôm nay là thứ mấy? Ngày mai bạn có tiết học gì?"
+  },
+  "prerequisites": [
+    3
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "今天天气很好。 明天见！ 昨天我很忙。",
+    "translation": "Hôm nay thời tiết rất đẹp. Mai gặp lại! Hôm qua mình rất bận.",
+    "pinyin": "jīn tiān tiān qì hěn hǎo 。   míng tiān jiàn ！   zuó tiān wǒ hěn máng 。",
+    "questions": [
+      {
+        "prompt": "Cụm “今天” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hôm qua",
+          "hôm nay",
+          "tuần, thứ"
+        ],
+        "answer": 1,
+        "explanation": "“今天”: hôm nay. Ví dụ đã nghe: 今天天气很好。"
+      },
+      {
+        "prompt": "Cụm “明天” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tuần, thứ",
+          "giờ (điểm)",
+          "ngày mai"
+        ],
+        "answer": 2,
+        "explanation": "“明天”: ngày mai. Ví dụ đã nghe: 明天见！"
+      },
+      {
+        "prompt": "Cụm “昨天” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hôm qua",
+          "giờ (điểm)",
+          "phút"
+        ],
+        "answer": 0,
+        "explanation": "“昨天”: hôm qua. Ví dụ đã nghe: 昨天我很忙。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "今天天气很好。",
+      "reference": "今天天气很好。",
+      "pinyin": "jīn tiān tiān qì hěn hǎo 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "今天星期几？你明天有什么课？",
+      "promptVi": "Hôm nay là thứ mấy? Ngày mai bạn có tiết học gì?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Hai bạn đang hẹn giờ đi học cùng nhau."
+}

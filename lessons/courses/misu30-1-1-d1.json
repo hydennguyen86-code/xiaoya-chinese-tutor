@@ -1,0 +1,199 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 1,
+  "lessonTitle": "你好！我叫…… · Chào hỏi và giới thiệu bản thân",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "你好",
+      "meaning": "xin chào",
+      "example": "你好，我叫阿兰。",
+      "exampleVi": "Xin chào, mình tên là Lan.",
+      "pinyin": "nǐ hǎo",
+      "examplePinyin": "nǐ hǎo ， wǒ jiào ā lán 。"
+    },
+    {
+      "word": "叫",
+      "meaning": "gọi là, tên là",
+      "example": "你叫什么名字？",
+      "exampleVi": "Bạn tên là gì?",
+      "pinyin": "jiào",
+      "examplePinyin": "nǐ jiào shén me míng zi ？"
+    },
+    {
+      "word": "名字",
+      "meaning": "tên",
+      "example": "我的名字是阿明。",
+      "exampleVi": "Tên của mình là Minh.",
+      "pinyin": "míng zi",
+      "examplePinyin": "wǒ de míng zi shì ā míng 。"
+    },
+    {
+      "word": "认识",
+      "meaning": "quen biết, làm quen",
+      "example": "很高兴认识你。",
+      "exampleVi": "Rất vui được biết bạn.",
+      "pinyin": "rèn shi",
+      "examplePinyin": "hěn gāo xìng rèn shi nǐ 。"
+    },
+    {
+      "word": "哪",
+      "meaning": "nào",
+      "example": "你是哪国人？",
+      "exampleVi": "Bạn là người nước nào?",
+      "pinyin": "nǎ",
+      "examplePinyin": "nǐ shì nǎ guó rén ？"
+    },
+    {
+      "word": "国",
+      "meaning": "nước, quốc gia",
+      "example": "中国很大。",
+      "exampleVi": "Trung Quốc rất rộng lớn.",
+      "pinyin": "guó",
+      "examplePinyin": "zhōng guó hěn dà 。"
+    },
+    {
+      "word": "越南",
+      "meaning": "Việt Nam",
+      "example": "我是越南人。",
+      "exampleVi": "Mình là người Việt Nam.",
+      "pinyin": "yuè nán",
+      "examplePinyin": "wǒ shì yuè nán rén 。"
+    },
+    {
+      "word": "中国",
+      "meaning": "Trung Quốc",
+      "example": "他来中国学中文。",
+      "exampleVi": "Anh ấy đến Trung Quốc học tiếng Trung.",
+      "pinyin": "zhōng guó",
+      "examplePinyin": "tā lái zhōng guó xué zhōng wén 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我叫……",
+      "explanation": "Dùng để nói tên của mình.",
+      "example": "我叫阿兰。",
+      "exampleVi": "Mình tên là Lan.",
+      "examplePinyin": "wǒ jiào ā lán 。"
+    },
+    {
+      "pattern": "我是……人",
+      "explanation": "Dùng để nói mình đến từ nước nào.",
+      "example": "我是越南人。",
+      "exampleVi": "Mình là người Việt Nam.",
+      "examplePinyin": "wǒ shì yuè nán rén 。"
+    },
+    {
+      "pattern": "很高兴认识你。",
+      "explanation": "Câu nói lịch sự khi gặp ai lần đầu.",
+      "example": "你好，我叫阿明，很高兴认识你。",
+      "exampleVi": "Xin chào, mình tên Minh, rất vui được biết bạn.",
+      "examplePinyin": "nǐ hǎo ， wǒ jiào ā míng ， hěn gāo xìng rèn shi nǐ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi gặp mặt đầu tiên ở lớp học tiếng Trung.",
+    "avatarRole": "Misu, bạn cùng lớp người Trung Quốc",
+    "learnerRole": "Học viên mới từ Việt Nam",
+    "goals": [
+      "Chào hỏi và giới thiệu tên",
+      "Nói mình là người nước nào",
+      "Hỏi tên và quốc tịch của Misu"
+    ],
+    "opening": "你好！我叫米苏，你叫什么名字？",
+    "openingVi": "Xin chào! Mình tên là Misu, bạn tên là gì?"
+  },
+  "freeTalk": {
+    "question": "你叫什么名字？你是哪国人？请介绍一下自己。",
+    "questionVi": "Bạn tên là gì? Bạn là người nước nào? Hãy giới thiệu về bản thân nhé."
+  },
+  "prerequisites": [],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "你好，我叫阿兰。 你叫什么名字？ 我的名字是阿明。",
+    "translation": "Xin chào, mình tên là Lan. Bạn tên là gì? Tên của mình là Minh.",
+    "pinyin": "nǐ hǎo ， wǒ jiào ā lán 。   nǐ jiào shén me míng zi ？   wǒ de míng zi shì ā míng 。",
+    "questions": [
+      {
+        "prompt": "Cụm “你好” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tên",
+          "xin chào",
+          "quen biết, làm quen"
+        ],
+        "answer": 1,
+        "explanation": "“你好”: xin chào. Ví dụ đã nghe: 你好，我叫阿兰。"
+      },
+      {
+        "prompt": "Cụm “叫” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "quen biết, làm quen",
+          "nào",
+          "gọi là, tên là"
+        ],
+        "answer": 2,
+        "explanation": "“叫”: gọi là, tên là. Ví dụ đã nghe: 你叫什么名字？"
+      },
+      {
+        "prompt": "Cụm “名字” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tên",
+          "nào",
+          "nước, quốc gia"
+        ],
+        "answer": 0,
+        "explanation": "“名字”: tên. Ví dụ đã nghe: 我的名字是阿明。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "你好，我叫阿兰。",
+      "reference": "你好，我叫阿兰。",
+      "pinyin": "nǐ hǎo ， wǒ jiào ā lán 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你叫什么名字？你是哪国人？请介绍一下自己。",
+      "promptVi": "Bạn tên là gì? Bạn là người nước nào? Hãy giới thiệu về bản thân nhé.",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Buổi gặp mặt đầu tiên ở lớp học tiếng Trung."
+}

@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 12,
+  "lessonTitle": "坐地铁还是打车？ · Đi lại và mua vé",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "地铁",
+      "meaning": "tàu điện ngầm",
+      "example": "我每天坐地铁上班。",
+      "exampleVi": "Mình đi tàu điện đi làm mỗi ngày.",
+      "pinyin": "dì tiě",
+      "examplePinyin": "wǒ měi tiān zuò dì tiě shàng bān 。"
+    },
+    {
+      "word": "公交",
+      "meaning": "xe buýt công cộng",
+      "example": "坐公交比地铁慢。",
+      "exampleVi": "Đi xe buýt chậm hơn tàu điện.",
+      "pinyin": "gōng jiāo",
+      "examplePinyin": "zuò gōng jiāo bǐ dì tiě màn 。"
+    },
+    {
+      "word": "票",
+      "meaning": "vé",
+      "example": "我买了两张票。",
+      "exampleVi": "Mình đã mua hai tấm vé.",
+      "pinyin": "piào",
+      "examplePinyin": "wǒ mǎi le liǎng zhāng piào 。"
+    },
+    {
+      "word": "出发",
+      "meaning": "xuất phát",
+      "example": "我们八点出发。",
+      "exampleVi": "Chúng mình xuất phát lúc tám giờ.",
+      "pinyin": "chū fā",
+      "examplePinyin": "wǒ men bā diǎn chū fā 。"
+    },
+    {
+      "word": "到",
+      "meaning": "đến",
+      "example": "坐地铁到火车站要二十分钟。",
+      "exampleVi": "Đi tàu điện đến ga tàu mất hai mươi phút.",
+      "pinyin": "dào",
+      "examplePinyin": "zuò dì tiě dào huǒ chē zhàn yào èr shí fēn zhōng 。"
+    },
+    {
+      "word": "换乘",
+      "meaning": "chuyển tuyến",
+      "example": "你需要在下一站换乘。",
+      "exampleVi": "Bạn cần chuyển tuyến ở ga tiếp theo.",
+      "pinyin": "huàn chéng",
+      "examplePinyin": "nǐ xū yào zài xià yí zhàn huàn chéng 。"
+    },
+    {
+      "word": "打车",
+      "meaning": "gọi taxi",
+      "example": "时间来不及了，我们打车吧。",
+      "exampleVi": "Không kịp thời gian rồi, chúng mình gọi taxi đi.",
+      "pinyin": "dǎ chē",
+      "examplePinyin": "shí jiān lái bù jí le ， wǒ men dǎ chē ba 。"
+    },
+    {
+      "word": "堵车",
+      "meaning": "tắc đường",
+      "example": "现在路上堵车，我可能迟到。",
+      "exampleVi": "Bây giờ đường tắc, mình có thể đến muộn.",
+      "pinyin": "dǔ chē",
+      "examplePinyin": "xiàn zài lù shang dǔ chē ， wǒ kě néng chí dào 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "坐……去……",
+      "explanation": "Dùng để nói phương tiện đi đến đâu.",
+      "example": "我坐地铁去公司。",
+      "exampleVi": "Mình đi tàu điện đến công ty.",
+      "examplePinyin": "wǒ zuò dì tiě qù gōng sī 。"
+    },
+    {
+      "pattern": "从……到……",
+      "explanation": "Dùng để nói khoảng cách hoặc lộ trình.",
+      "example": "从家到学校要半个小时。",
+      "exampleVi": "Từ nhà đến trường mất nửa tiếng.",
+      "examplePinyin": "cóng jiā dào xué xiào yào bàn gè xiǎo shí 。"
+    },
+    {
+      "pattern": "几点出发？",
+      "explanation": "Dùng để hỏi giờ xuất phát.",
+      "example": "我们几点出发？",
+      "exampleVi": "Chúng mình xuất phát lúc mấy giờ?",
+      "examplePinyin": "wǒ men jǐ diǎn chū fā ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Sân ga, hai người đang bàn cách đi đến ga tàu.",
+    "avatarRole": "Misu, người bạn rành đường",
+    "learnerRole": "Học viên cần đến ga đúng giờ",
+    "goals": [
+      "So sánh tàu điện và taxi",
+      "Hỏi giờ xuất phát",
+      "Hỏi có phải chuyển tuyến không"
+    ],
+    "opening": "我们要去火车站，你觉得坐地铁还是打车好？",
+    "openingVi": "Chúng ta phải đến ga tàu, bạn thấy đi tàu điện hay taxi tốt hơn?"
+  },
+  "freeTalk": {
+    "question": "你平时怎么去上班或上学？为什么？",
+    "questionVi": "Bạn thường đi làm hoặc đi học bằng gì? Vì sao?"
+  },
+  "prerequisites": [
+    11
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我每天坐地铁上班。 坐公交比地铁慢。 我买了两张票。",
+    "translation": "Mình đi tàu điện đi làm mỗi ngày. Đi xe buýt chậm hơn tàu điện. Mình đã mua hai tấm vé.",
+    "pinyin": "wǒ měi tiān zuò dì tiě shàng bān 。   zuò gōng jiāo bǐ dì tiě màn 。   wǒ mǎi le liǎng zhāng piào 。",
+    "questions": [
+      {
+        "prompt": "Cụm “地铁” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tàu điện ngầm",
+          "vé",
+          "xuất phát"
+        ],
+        "answer": 0,
+        "explanation": "“地铁”: tàu điện ngầm. Ví dụ đã nghe: 我每天坐地铁上班。"
+      },
+      {
+        "prompt": "Cụm “公交” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "xuất phát",
+          "xe buýt công cộng",
+          "đến"
+        ],
+        "answer": 1,
+        "explanation": "“公交”: xe buýt công cộng. Ví dụ đã nghe: 坐公交比地铁慢。"
+      },
+      {
+        "prompt": "Cụm “票” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đến",
+          "chuyển tuyến",
+          "vé"
+        ],
+        "answer": 2,
+        "explanation": "“票”: vé. Ví dụ đã nghe: 我买了两张票。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我每天坐地铁上班。",
+      "reference": "我每天坐地铁上班。",
+      "pinyin": "wǒ měi tiān zuò dì tiě shàng bān 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你平时怎么去上班或上学？为什么？",
+      "promptVi": "Bạn thường đi làm hoặc đi học bằng gì? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Sân ga, hai người đang bàn cách đi đến ga tàu."
+}

@@ -70,6 +70,9 @@ export function validateSyllabus(raw) {
       levels: levels.length ? levels : [...LEVELS],
       lessons,
       authored: Boolean(vol.authored),
+      trackId: cleanStr(vol.trackId, 40),
+      trackTitle: cleanStr(vol.trackTitle, 100),
+      nextVolumeId: cleanStr(vol.nextVolumeId, 40).replace(/[^A-Za-z0-9_-]/g, ''),
       targetLevel: cleanStr(vol.targetLevel, 20),
     };
   });

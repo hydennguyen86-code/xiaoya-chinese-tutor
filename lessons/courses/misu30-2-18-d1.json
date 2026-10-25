@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-2",
+  "volumeTitle": "30 bài giao tiếp · Tập 2 · HSK3–4",
+  "lessonNo": 18,
+  "lessonTitle": "那是一次难忘的旅行 · Du lịch và trải nghiệm",
+  "day": 1,
+  "days": 1,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3-4",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-2.json",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+  },
+  "vocab": [
+    {
+      "word": "旅行",
+      "meaning": "du lịch",
+      "example": "我喜欢一个人旅行。",
+      "exampleVi": "Mình thích du lịch một mình.",
+      "pinyin": "lǚ xíng",
+      "examplePinyin": "wǒ xǐ huan yí gè rén lǚ xíng 。"
+    },
+    {
+      "word": "去过",
+      "meaning": "đã từng đến",
+      "example": "你去过北京吗？",
+      "exampleVi": "Bạn đã từng đến Bắc Kinh chưa?",
+      "pinyin": "qù guò",
+      "examplePinyin": "nǐ qù guò běi jīng ma ？"
+    },
+    {
+      "word": "风景",
+      "meaning": "phong cảnh",
+      "example": "这里的风景很美。",
+      "exampleVi": "Phong cảnh ở đây rất đẹp.",
+      "pinyin": "fēng jǐng",
+      "examplePinyin": "zhè lǐ de fēng jǐng hěn měi 。"
+    },
+    {
+      "word": "拍照",
+      "meaning": "chụp ảnh",
+      "example": "我们在这里拍照吧。",
+      "exampleVi": "Chúng mình chụp ảnh ở đây nhé.",
+      "pinyin": "pāi zhào",
+      "examplePinyin": "wǒ men zài zhè lǐ pāi zhào ba 。"
+    },
+    {
+      "word": "导游",
+      "meaning": "hướng dẫn viên",
+      "example": "导游给我们讲了很多故事。",
+      "exampleVi": "Hướng dẫn viên kể cho chúng mình nhiều câu chuyện.",
+      "pinyin": "dǎo yóu",
+      "examplePinyin": "dǎo yóu gěi wǒ men jiǎng le hěn duō gù shì 。"
+    },
+    {
+      "word": "纪念品",
+      "meaning": "đồ lưu niệm",
+      "example": "我想买一些纪念品。",
+      "exampleVi": "Mình muốn mua vài món đồ lưu niệm.",
+      "pinyin": "jì niàn pǐn",
+      "examplePinyin": "wǒ xiǎng mǎi yì xiē jì niàn pǐn 。"
+    },
+    {
+      "word": "安排",
+      "meaning": "sắp xếp",
+      "example": "这次旅行是你安排的吗？",
+      "exampleVi": "Chuyến du lịch này do bạn sắp xếp à?",
+      "pinyin": "ān pái",
+      "examplePinyin": "zhè cì lǚ xíng shì nǐ ān pái de ma ？"
+    },
+    {
+      "word": "难忘",
+      "meaning": "khó quên",
+      "example": "那是一次难忘的旅行。",
+      "exampleVi": "Đó là một chuyến du lịch khó quên.",
+      "pinyin": "nán wàng",
+      "examplePinyin": "nà shì yí cì nán wàng de lǚ xíng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你去过……吗？",
+      "explanation": "Dùng để hỏi đã từng đến đâu chưa.",
+      "example": "你去过上海吗？",
+      "exampleVi": "Bạn đã từng đến Thượng Hải chưa?",
+      "examplePinyin": "nǐ qù guò shàng hǎi ma ？"
+    },
+    {
+      "pattern": "我觉得……很美。",
+      "explanation": "Dùng để khen cảnh đẹp.",
+      "example": "我觉得这里的风景很美。",
+      "exampleVi": "Mình thấy phong cảnh ở đây rất đẹp.",
+      "examplePinyin": "wǒ jué de zhè lǐ de fēng jǐng hěn měi 。"
+    },
+    {
+      "pattern": "……让我很难忘。",
+      "explanation": "Dùng để nói điều gì khiến mình khó quên.",
+      "example": "这次旅行让我很难忘。",
+      "exampleVi": "Chuyến đi này khiến mình rất khó quên.",
+      "examplePinyin": "zhè cì lǚ xíng ràng wǒ hěn nán wàng 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Quán cà phê, hai người kể chuyện du lịch.",
+    "avatarRole": "Misu, người bạn thích đi du lịch",
+    "learnerRole": "Học viên đang kể chuyến đi",
+    "goals": [
+      "Kể mình đã từng đến đâu",
+      "Miêu tả phong cảnh",
+      "Nói điều khó quên"
+    ],
+    "opening": "你去过哪些地方？最喜欢哪里？",
+    "openingVi": "Bạn đã từng đến những đâu? Thích nơi nào nhất?"
+  },
+  "freeTalk": {
+    "question": "说一次你难忘的旅行。",
+    "questionVi": "Hãy kể một chuyến du lịch khó quên của bạn."
+  },
+  "prerequisites": [
+    17
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我喜欢一个人旅行。 你去过北京吗？ 这里的风景很美。",
+    "translation": "Mình thích du lịch một mình. Bạn đã từng đến Bắc Kinh chưa? Phong cảnh ở đây rất đẹp.",
+    "pinyin": "wǒ xǐ huan yí gè rén lǚ xíng 。   nǐ qù guò běi jīng ma ？   zhè lǐ de fēng jǐng hěn měi 。",
+    "questions": [
+      {
+        "prompt": "Cụm “旅行” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "du lịch",
+          "phong cảnh",
+          "chụp ảnh"
+        ],
+        "answer": 0,
+        "explanation": "“旅行”: du lịch. Ví dụ đã nghe: 我喜欢一个人旅行。"
+      },
+      {
+        "prompt": "Cụm “去过” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "chụp ảnh",
+          "đã từng đến",
+          "hướng dẫn viên"
+        ],
+        "answer": 1,
+        "explanation": "“去过”: đã từng đến. Ví dụ đã nghe: 你去过北京吗？"
+      },
+      {
+        "prompt": "Cụm “风景” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hướng dẫn viên",
+          "đồ lưu niệm",
+          "phong cảnh"
+        ],
+        "answer": 2,
+        "explanation": "“风景”: phong cảnh. Ví dụ đã nghe: 这里的风景很美。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我喜欢一个人旅行。",
+      "reference": "我喜欢一个人旅行。",
+      "pinyin": "wǒ xǐ huan yí gè rén lǚ xíng 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "说一次你难忘的旅行。",
+      "promptVi": "Hãy kể một chuyến du lịch khó quên của bạn.",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Quán cà phê, hai người kể chuyện du lịch."
+}

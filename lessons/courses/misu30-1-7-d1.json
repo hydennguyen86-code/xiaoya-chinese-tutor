@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 7,
+  "lessonTitle": "请问，地铁站怎么走？ · Hỏi đường",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "在",
+      "meaning": "ở, tại",
+      "example": "银行在哪儿？",
+      "exampleVi": "Ngân hàng ở đâu?",
+      "pinyin": "zài",
+      "examplePinyin": "yín háng zài nǎ ér ？"
+    },
+    {
+      "word": "哪儿",
+      "meaning": "ở đâu",
+      "example": "洗手间在哪儿？",
+      "exampleVi": "Nhà vệ sinh ở đâu?",
+      "pinyin": "nǎ ér",
+      "examplePinyin": "xǐ shǒu jiān zài nǎ ér ？"
+    },
+    {
+      "word": "怎么走",
+      "meaning": "đi thế nào",
+      "example": "请问，地铁站怎么走？",
+      "exampleVi": "Xin hỏi, ga tàu điện đi thế nào?",
+      "pinyin": "zěn me zǒu",
+      "examplePinyin": "qǐng wèn ， dì tiě zhàn zěn me zǒu ？"
+    },
+    {
+      "word": "左边",
+      "meaning": "bên trái",
+      "example": "商店在左边。",
+      "exampleVi": "Cửa hàng ở bên trái.",
+      "pinyin": "zuǒ bian",
+      "examplePinyin": "shāng diàn zài zuǒ bian 。"
+    },
+    {
+      "word": "右边",
+      "meaning": "bên phải",
+      "example": "学校在右边。",
+      "exampleVi": "Trường học ở bên phải.",
+      "pinyin": "yòu bian",
+      "examplePinyin": "xué xiào zài yòu bian 。"
+    },
+    {
+      "word": "前面",
+      "meaning": "phía trước",
+      "example": "车站在前面。",
+      "exampleVi": "Bến xe ở phía trước.",
+      "pinyin": "qián miàn",
+      "examplePinyin": "chē zhàn zài qián miàn 。"
+    },
+    {
+      "word": "附近",
+      "meaning": "gần đây",
+      "example": "附近有超市吗？",
+      "exampleVi": "Gần đây có siêu thị không?",
+      "pinyin": "fù jìn",
+      "examplePinyin": "fù jìn yǒu chāo shì ma ？"
+    },
+    {
+      "word": "走",
+      "meaning": "đi, bước",
+      "example": "一直走，然后向右转。",
+      "exampleVi": "Đi thẳng, sau đó rẽ phải.",
+      "pinyin": "zǒu",
+      "examplePinyin": "yì zhí zǒu ， rán hòu xiàng yòu zhuǎn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……在哪儿？",
+      "explanation": "Dùng để hỏi vị trí.",
+      "example": "银行在哪儿？",
+      "exampleVi": "Ngân hàng ở đâu?",
+      "examplePinyin": "yín háng zài nǎ ér ？"
+    },
+    {
+      "pattern": "请问，……怎么走？",
+      "explanation": "Dùng để hỏi đường một cách lịch sự.",
+      "example": "请问，地铁站怎么走？",
+      "exampleVi": "Xin hỏi, ga tàu điện đi thế nào?",
+      "examplePinyin": "qǐng wèn ， dì tiě zhàn zěn me zǒu ？"
+    },
+    {
+      "pattern": "一直走，然后……",
+      "explanation": "Dùng để chỉ đường.",
+      "example": "一直走，然后向左转。",
+      "exampleVi": "Đi thẳng, sau đó rẽ trái.",
+      "examplePinyin": "yì zhí zǒu ， rán hòu xiàng zuǒ zhuǎn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Trên đường phố, bạn đang tìm ga tàu điện.",
+    "avatarRole": "Misu, người đi đường",
+    "learnerRole": "Du khách bị lạc",
+    "goals": [
+      "Hỏi đường đến ga tàu điện",
+      "Nhắc lại hướng đi",
+      "Cảm ơn người chỉ đường"
+    ],
+    "opening": "你好，你在找什么地方吗？",
+    "openingVi": "Xin chào, bạn đang tìm chỗ nào à?"
+  },
+  "freeTalk": {
+    "question": "从你家到学校怎么走？",
+    "questionVi": "Từ nhà bạn đến trường đi thế nào?"
+  },
+  "prerequisites": [
+    6
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "银行在哪儿？ 洗手间在哪儿？ 请问，地铁站怎么走？",
+    "translation": "Ngân hàng ở đâu? Nhà vệ sinh ở đâu? Xin hỏi, ga tàu điện đi thế nào?",
+    "pinyin": "yín xíng zài nǎ ér ？   xǐ shǒu jiān zài nǎ ér ？   qǐng wèn ， dì tiě zhàn zěn me zǒu ？",
+    "questions": [
+      {
+        "prompt": "Cụm “在” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đi thế nào",
+          "ở, tại",
+          "bên trái"
+        ],
+        "answer": 1,
+        "explanation": "“在”: ở, tại. Ví dụ đã nghe: 银行在哪儿？"
+      },
+      {
+        "prompt": "Cụm “哪儿” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "bên trái",
+          "bên phải",
+          "ở đâu"
+        ],
+        "answer": 2,
+        "explanation": "“哪儿”: ở đâu. Ví dụ đã nghe: 洗手间在哪儿？"
+      },
+      {
+        "prompt": "Cụm “怎么走” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đi thế nào",
+          "bên phải",
+          "phía trước"
+        ],
+        "answer": 0,
+        "explanation": "“怎么走”: đi thế nào. Ví dụ đã nghe: 请问，地铁站怎么走？"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "银行在哪儿？",
+      "reference": "银行在哪儿？",
+      "pinyin": "yín háng zài nǎ ér ？",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "从你家到学校怎么走？",
+      "promptVi": "Từ nhà bạn đến trường đi thế nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Trên đường phố, bạn đang tìm ga tàu điện."
+}

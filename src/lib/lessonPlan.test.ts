@@ -135,3 +135,21 @@ test('finishing an authored course never jumps from HSK 1 to HSK 5', () => {
   };
   assert.equal(nextPointer(syllabus, { volumeId: 'one', lessonNo: 1, day: 2 }), null);
 });
+
+test('explicit communication track links 10 to 11 and 20 to 21 without entering other courses', () => {
+  const make = (id: string, no: number, nextVolumeId?: string) => ({
+    id,
+    title: id,
+    levels: ['HSK1-2'],
+    authored: true,
+    trackId: 'misu30',
+    nextVolumeId,
+    lessons: [{ no, title: 'Bài', pages: '', topics: [], days: 1 }],
+  });
+  const syllabus = { book: 'Test', volumes: [make('misu30-1', 10, 'misu30-2'), make('misu30-2', 20, 'misu30-3'), make('misu30-3', 30)] };
+  assert.deepEqual(nextPointer(syllabus, { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), { volumeId: 'misu30-2', lessonNo: 20, day: 1 });
+  assert.deepEqual(nextPointer(syllabus, { volumeId: 'misu30-2', lessonNo: 20, day: 1 }), { volumeId: 'misu30-3', lessonNo: 30, day: 1 });
+  assert.equal(nextPointer(syllabus, { volumeId: 'misu30-3', lessonNo: 30, day: 1 }), null);
+  syllabus.volumes[1].trackId = 'another';
+  assert.equal(nextPointer(syllabus, { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), null);
+});

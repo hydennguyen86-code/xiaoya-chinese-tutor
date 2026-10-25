@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 8,
+  "lessonTitle": "你喜欢做什么？ · Sở thích",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "喜欢",
+      "meaning": "thích",
+      "example": "我喜欢看电影。",
+      "exampleVi": "Mình thích xem phim.",
+      "pinyin": "xǐ huan",
+      "examplePinyin": "wǒ xǐ huan kàn diàn yǐng 。"
+    },
+    {
+      "word": "爱好",
+      "meaning": "sở thích",
+      "example": "你的爱好是什么？",
+      "exampleVi": "Sở thích của bạn là gì?",
+      "pinyin": "ài hào",
+      "examplePinyin": "nǐ de ài hào shì shén me ？"
+    },
+    {
+      "word": "看电影",
+      "meaning": "xem phim",
+      "example": "周末我喜欢看电影。",
+      "exampleVi": "Cuối tuần mình thích xem phim.",
+      "pinyin": "kàn diàn yǐng",
+      "examplePinyin": "zhōu mò wǒ xǐ huan kàn diàn yǐng 。"
+    },
+    {
+      "word": "听音乐",
+      "meaning": "nghe nhạc",
+      "example": "他喜欢听音乐。",
+      "exampleVi": "Anh ấy thích nghe nhạc.",
+      "pinyin": "tīng yīn yuè",
+      "examplePinyin": "tā xǐ huan tīng yīn yuè 。"
+    },
+    {
+      "word": "运动",
+      "meaning": "vận động, thể thao",
+      "example": "我每天运动。",
+      "exampleVi": "Mình vận động mỗi ngày.",
+      "pinyin": "yùn dòng",
+      "examplePinyin": "wǒ měi tiān yùn dòng 。"
+    },
+    {
+      "word": "看书",
+      "meaning": "đọc sách",
+      "example": "晚上我看书。",
+      "exampleVi": "Buổi tối mình đọc sách.",
+      "pinyin": "kàn shū",
+      "examplePinyin": "wǎn shang wǒ kàn shū 。"
+    },
+    {
+      "word": "唱歌",
+      "meaning": "hát",
+      "example": "她唱歌很好听。",
+      "exampleVi": "Cô ấy hát rất hay.",
+      "pinyin": "chàng gē",
+      "examplePinyin": "tā chàng gē hěn hǎo tīng 。"
+    },
+    {
+      "word": "有空",
+      "meaning": "rảnh",
+      "example": "你明天有空吗？",
+      "exampleVi": "Ngày mai bạn có rảnh không?",
+      "pinyin": "yǒu kōng",
+      "examplePinyin": "nǐ míng tiān yǒu kōng ma ？"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我喜欢……",
+      "explanation": "Dùng để nói sở thích.",
+      "example": "我喜欢听音乐。",
+      "exampleVi": "Mình thích nghe nhạc.",
+      "examplePinyin": "wǒ xǐ huan tīng yīn yuè 。"
+    },
+    {
+      "pattern": "你的爱好是什么？",
+      "explanation": "Dùng để hỏi sở thích của người khác.",
+      "example": "你的爱好是什么？",
+      "exampleVi": "Sở thích của bạn là gì?",
+      "examplePinyin": "nǐ de ài hào shì shén me ？"
+    },
+    {
+      "pattern": "你平时……吗？",
+      "explanation": "Dùng để hỏi thói quen hằng ngày.",
+      "example": "你平时运动吗？",
+      "exampleVi": "Bạn có thường vận động không?",
+      "examplePinyin": "nǐ píng shí yùn dòng ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Ngày hội câu lạc bộ ở trường.",
+    "avatarRole": "Misu, thành viên câu lạc bộ",
+    "learnerRole": "Học viên mới tìm câu lạc bộ",
+    "goals": [
+      "Nói sở thích của mình",
+      "Hỏi sở thích của Misu",
+      "Rủ nhau cùng tham gia"
+    ],
+    "opening": "你好！你平时喜欢做什么？",
+    "openingVi": "Xin chào! Bạn thường thích làm gì?"
+  },
+  "freeTalk": {
+    "question": "你有什么爱好？为什么喜欢它？",
+    "questionVi": "Bạn có sở thích gì? Vì sao bạn thích nó?"
+  },
+  "prerequisites": [
+    7
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我喜欢看电影。 你的爱好是什么？ 周末我喜欢看电影。",
+    "translation": "Mình thích xem phim. Sở thích của bạn là gì? Cuối tuần mình thích xem phim.",
+    "pinyin": "wǒ xǐ huan kàn diàn yǐng 。   nǐ de ài hào shì shén me ？   zhōu mò wǒ xǐ huan kàn diàn yǐng 。",
+    "questions": [
+      {
+        "prompt": "Cụm “喜欢” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "xem phim",
+          "nghe nhạc",
+          "thích"
+        ],
+        "answer": 2,
+        "explanation": "“喜欢”: thích. Ví dụ đã nghe: 我喜欢看电影。"
+      },
+      {
+        "prompt": "Cụm “爱好” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "sở thích",
+          "nghe nhạc",
+          "vận động, thể thao"
+        ],
+        "answer": 0,
+        "explanation": "“爱好”: sở thích. Ví dụ đã nghe: 你的爱好是什么？"
+      },
+      {
+        "prompt": "Cụm “看电影” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "vận động, thể thao",
+          "xem phim",
+          "đọc sách"
+        ],
+        "answer": 1,
+        "explanation": "“看电影”: xem phim. Ví dụ đã nghe: 周末我喜欢看电影。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我喜欢看电影。",
+      "reference": "我喜欢看电影。",
+      "pinyin": "wǒ xǐ huan kàn diàn yǐng 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你有什么爱好？为什么喜欢它？",
+      "promptVi": "Bạn có sở thích gì? Vì sao bạn thích nó?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Ngày hội câu lạc bộ ở trường."
+}

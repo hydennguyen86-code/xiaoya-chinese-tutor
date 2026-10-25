@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-3",
+  "volumeTitle": "30 bài giao tiếp · Tập 3 · HSK5–6",
+  "lessonNo": 22,
+  "lessonTitle": "成绩和兴趣哪个更重要？ · Giáo dục và nuôi dạy con",
+  "day": 1,
+  "days": 1,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5-6",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-3.json",
+    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+  },
+  "vocab": [
+    {
+      "word": "教育",
+      "meaning": "giáo dục",
+      "example": "教育孩子不能只看成绩。",
+      "exampleVi": "Giáo dục con cái không thể chỉ nhìn vào điểm số.",
+      "pinyin": "jiào yù",
+      "examplePinyin": "jiào yù hái zi bù néng zhī kàn chéng jì 。"
+    },
+    {
+      "word": "独立",
+      "meaning": "độc lập",
+      "example": "父母应该让孩子学会独立。",
+      "exampleVi": "Cha mẹ nên để con học cách tự lập.",
+      "pinyin": "dú lì",
+      "examplePinyin": "fù mǔ yīng gāi ràng hái zi xué huì dú lì 。"
+    },
+    {
+      "word": "兴趣",
+      "meaning": "hứng thú, sở thích",
+      "example": "他对科学很感兴趣。",
+      "exampleVi": "Cậu ấy rất hứng thú với khoa học.",
+      "pinyin": "xìng qù",
+      "examplePinyin": "tā duì kē xué hěn gǎn xìng qù 。"
+    },
+    {
+      "word": "成绩",
+      "meaning": "thành tích, điểm số",
+      "example": "成绩固然重要，但不是全部。",
+      "exampleVi": "Điểm số tất nhiên quan trọng, nhưng không phải là tất cả.",
+      "pinyin": "chéng jì",
+      "examplePinyin": "chéng jì gù rán zhòng yào ， dàn bú shì quán bù 。"
+    },
+    {
+      "word": "压力",
+      "meaning": "áp lực",
+      "example": "给孩子太大压力反而不好。",
+      "exampleVi": "Gây áp lực quá lớn cho con lại không tốt.",
+      "pinyin": "yā lì",
+      "examplePinyin": "gěi hái zi tài dà yā lì fǎn ér bù hǎo 。"
+    },
+    {
+      "word": "沟通",
+      "meaning": "giao tiếp, trao đổi",
+      "example": "多和孩子沟通，才能了解他们的想法。",
+      "exampleVi": "Trao đổi nhiều với con mới hiểu được suy nghĩ của chúng.",
+      "pinyin": "gōu tōng",
+      "examplePinyin": "duō hé hái zi gōu tōng ， cái néng liǎo jiě tā men de xiǎng fǎ 。"
+    },
+    {
+      "word": "习惯",
+      "meaning": "thói quen",
+      "example": "好的学习习惯要从小培养。",
+      "exampleVi": "Thói quen học tốt phải được nuôi dưỡng từ nhỏ.",
+      "pinyin": "xí guàn",
+      "examplePinyin": "hǎo de xué xí xí guàn yào cóng xiǎo péi yǎng 。"
+    },
+    {
+      "word": "鼓励",
+      "meaning": "khuyến khích, động viên",
+      "example": "孩子需要的是鼓励，不是批评。",
+      "exampleVi": "Trẻ con cần sự động viên chứ không phải lời chỉ trích.",
+      "pinyin": "gǔ lì",
+      "examplePinyin": "hái zi xū yào de shì gǔ lì ， bú shì pī píng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "与其……，不如……",
+      "explanation": "Dùng để chọn cách làm tốt hơn.",
+      "example": "与其逼孩子学习，不如培养他的兴趣。",
+      "exampleVi": "Thay vì ép con học, chi bằng nuôi dưỡng sở thích của con.",
+      "examplePinyin": "yǔ qí bī hái zi xué xí ， bù rú péi yǎng tā de xìng qù 。"
+    },
+    {
+      "pattern": "应该……",
+      "explanation": "Dùng để đưa ra lời khuyên.",
+      "example": "父母应该多鼓励孩子。",
+      "exampleVi": "Cha mẹ nên động viên con nhiều hơn.",
+      "examplePinyin": "fù mǔ yīng gāi duō gǔ lì hái zi 。"
+    },
+    {
+      "pattern": "对……来说，……很重要",
+      "explanation": "Dùng để nhấn mạnh điều quan trọng với ai.",
+      "example": "对孩子来说，快乐的童年很重要。",
+      "exampleVi": "Đối với trẻ con, tuổi thơ vui vẻ rất quan trọng.",
+      "examplePinyin": "duì hái zi lái shuō ， kuài lè de tóng nián hěn zhòng yào 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Hai người bạn nói về chuyện nuôi dạy con.",
+    "avatarRole": "Misu, người bạn đã có con",
+    "learnerRole": "Học viên đang tìm hiểu",
+    "goals": [
+      "So sánh điểm số và sở thích",
+      "Nói tầm quan trọng của giao tiếp",
+      "Đề xuất cách động viên con"
+    ],
+    "opening": "你觉得对孩子来说，成绩和兴趣哪个更重要？",
+    "openingVi": "Bạn thấy đối với trẻ con, điểm số hay sở thích quan trọng hơn?"
+  },
+  "freeTalk": {
+    "question": "你小时候父母是怎样教育你的？",
+    "questionVi": "Hồi nhỏ bố mẹ đã giáo dục bạn như thế nào?"
+  },
+  "prerequisites": [
+    21
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "教育孩子不能只看成绩。 父母应该让孩子学会独立。 他对科学很感兴趣。",
+    "translation": "Giáo dục con cái không thể chỉ nhìn vào điểm số. Cha mẹ nên để con học cách tự lập. Cậu ấy rất hứng thú với khoa học.",
+    "pinyin": "jiào yù hái zi bù néng zhī kàn chéng jì 。   fù mǔ yīng gāi ràng hái zi xué huì dú lì 。   tā duì kē xué hěn gǎn xìng qù 。",
+    "questions": [
+      {
+        "prompt": "Cụm “教育” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hứng thú, sở thích",
+          "giáo dục",
+          "thành tích, điểm số"
+        ],
+        "answer": 1,
+        "explanation": "“教育”: giáo dục. Ví dụ đã nghe: 教育孩子不能只看成绩。"
+      },
+      {
+        "prompt": "Cụm “独立” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "thành tích, điểm số",
+          "áp lực",
+          "độc lập"
+        ],
+        "answer": 2,
+        "explanation": "“独立”: độc lập. Ví dụ đã nghe: 父母应该让孩子学会独立。"
+      },
+      {
+        "prompt": "Cụm “兴趣” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hứng thú, sở thích",
+          "áp lực",
+          "giao tiếp, trao đổi"
+        ],
+        "answer": 0,
+        "explanation": "“兴趣”: hứng thú, sở thích. Ví dụ đã nghe: 他对科学很感兴趣。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "教育孩子不能只看成绩。",
+      "reference": "教育孩子不能只看成绩。",
+      "pinyin": "jiào yù hái zi bù néng zhī kàn chéng jì 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你小时候父母是怎样教育你的？",
+      "promptVi": "Hồi nhỏ bố mẹ đã giáo dục bạn như thế nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Hai người bạn nói về chuyện nuôi dạy con."
+}

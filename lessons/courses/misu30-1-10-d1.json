@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-1",
+  "volumeTitle": "30 bài giao tiếp · Tập 1 · HSK1–2",
+  "lessonNo": 10,
+  "lessonTitle": "我的一天 · Ôn tập sinh hoạt hằng ngày",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1-2",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-1.json",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+  },
+  "vocab": [
+    {
+      "word": "起床",
+      "meaning": "thức dậy, ngủ dậy",
+      "example": "我每天七点起床。",
+      "exampleVi": "Mình thức dậy lúc bảy giờ mỗi ngày.",
+      "pinyin": "qǐ chuáng",
+      "examplePinyin": "wǒ měi tiān qī diǎn qǐ chuáng 。"
+    },
+    {
+      "word": "睡觉",
+      "meaning": "ngủ",
+      "example": "我晚上十点睡觉。",
+      "exampleVi": "Mình ngủ lúc mười giờ tối.",
+      "pinyin": "shuì jiào",
+      "examplePinyin": "wǒ wǎn shang shí diǎn shuì jiào 。"
+    },
+    {
+      "word": "上班",
+      "meaning": "đi làm",
+      "example": "爸爸八点上班。",
+      "exampleVi": "Bố đi làm lúc tám giờ.",
+      "pinyin": "shàng bān",
+      "examplePinyin": "bà ba bā diǎn shàng bān 。"
+    },
+    {
+      "word": "下班",
+      "meaning": "tan làm",
+      "example": "妈妈五点下班。",
+      "exampleVi": "Mẹ tan làm lúc năm giờ.",
+      "pinyin": "xià bān",
+      "examplePinyin": "mā ma wǔ diǎn xià bān 。"
+    },
+    {
+      "word": "早饭",
+      "meaning": "bữa sáng",
+      "example": "我早饭吃面条。",
+      "exampleVi": "Mình ăn mì vào bữa sáng.",
+      "pinyin": "zǎo fàn",
+      "examplePinyin": "wǒ zǎo fàn chī miàn tiáo 。"
+    },
+    {
+      "word": "每天",
+      "meaning": "mỗi ngày",
+      "example": "我每天学中文。",
+      "exampleVi": "Mình học tiếng Trung mỗi ngày.",
+      "pinyin": "měi tiān",
+      "examplePinyin": "wǒ měi tiān xué zhōng wén 。"
+    },
+    {
+      "word": "忙",
+      "meaning": "bận",
+      "example": "今天我很忙。",
+      "exampleVi": "Hôm nay mình rất bận.",
+      "pinyin": "máng",
+      "examplePinyin": "jīn tiān wǒ hěn máng 。"
+    },
+    {
+      "word": "休息",
+      "meaning": "nghỉ ngơi",
+      "example": "星期天我在家休息。",
+      "exampleVi": "Chủ nhật mình nghỉ ở nhà.",
+      "pinyin": "xiū xi",
+      "examplePinyin": "xīng qī tiān wǒ zài jiā xiū xi 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我每天……",
+      "explanation": "Dùng để nói thói quen hằng ngày.",
+      "example": "我每天七点起床。",
+      "exampleVi": "Mình thức dậy lúc bảy giờ mỗi ngày.",
+      "examplePinyin": "wǒ měi tiān qī diǎn qǐ chuáng 。"
+    },
+    {
+      "pattern": "你几点……？",
+      "explanation": "Dùng để hỏi thời gian làm việc gì đó.",
+      "example": "你几点睡觉？",
+      "exampleVi": "Bạn ngủ lúc mấy giờ?",
+      "examplePinyin": "nǐ jǐ diǎn shuì jiào ？"
+    },
+    {
+      "pattern": "先……，然后……",
+      "explanation": "Dùng để nói hai việc theo thứ tự.",
+      "example": "我先吃早饭，然后去上班。",
+      "exampleVi": "Mình ăn sáng trước, sau đó đi làm.",
+      "examplePinyin": "wǒ xiān chī zǎo fàn ， rán hòu qù shàng bān 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Cuối tuần, hai bạn kể cho nhau nghe một ngày điển hình.",
+    "avatarRole": "Misu, bạn cùng lớp",
+    "learnerRole": "Học viên kể về sinh hoạt của mình",
+    "goals": [
+      "Nói giờ thức dậy và đi ngủ",
+      "Kể việc buổi sáng và buổi tối",
+      "Mô tả một ngày bận rộn"
+    ],
+    "opening": "你每天几点起床？一天是不是很忙？",
+    "openingVi": "Bạn thức dậy lúc mấy giờ mỗi ngày? Một ngày có bận lắm không?"
+  },
+  "freeTalk": {
+    "question": "请说说你的一天：你几点起床，几点睡觉？",
+    "questionVi": "Hãy kể về một ngày của bạn: bạn thức dậy lúc mấy giờ, ngủ lúc mấy giờ?"
+  },
+  "prerequisites": [
+    9
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "我每天七点起床。 我晚上十点睡觉。 爸爸八点上班。",
+    "translation": "Mình thức dậy lúc bảy giờ mỗi ngày. Mình ngủ lúc mười giờ tối. Bố đi làm lúc tám giờ.",
+    "pinyin": "wǒ měi tiān qī diǎn qǐ chuáng 。   wǒ wǎn shang shí diǎn shuì jiào 。   bà ba bā diǎn shàng bān 。",
+    "questions": [
+      {
+        "prompt": "Cụm “起床” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đi làm",
+          "thức dậy, ngủ dậy",
+          "tan làm"
+        ],
+        "answer": 1,
+        "explanation": "“起床”: thức dậy, ngủ dậy. Ví dụ đã nghe: 我每天七点起床。"
+      },
+      {
+        "prompt": "Cụm “睡觉” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "tan làm",
+          "bữa sáng",
+          "ngủ"
+        ],
+        "answer": 2,
+        "explanation": "“睡觉”: ngủ. Ví dụ đã nghe: 我晚上十点睡觉。"
+      },
+      {
+        "prompt": "Cụm “上班” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "đi làm",
+          "bữa sáng",
+          "mỗi ngày"
+        ],
+        "answer": 0,
+        "explanation": "“上班”: đi làm. Ví dụ đã nghe: 爸爸八点上班。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "我每天七点起床。",
+      "reference": "我每天七点起床。",
+      "pinyin": "wǒ měi tiān qī diǎn qǐ chuáng 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "请说说你的一天：你几点起床，几点睡觉？",
+      "promptVi": "Hãy kể về một ngày của bạn: bạn thức dậy lúc mấy giờ, ngủ lúc mấy giờ?",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Cuối tuần, hai bạn kể cho nhau nghe một ngày điển hình."
+}

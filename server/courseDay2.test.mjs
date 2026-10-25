@@ -8,7 +8,7 @@ import { getLessonContent, normalizeLesson } from './lessonContent.mjs';
 import { pinyinCitation } from './coursePinyin.mjs';
 import { applyCoursePatches } from '../scripts/apply-course-patches.mjs';
 test('all 24 second sessions retain day-one vocab, introduce new situations and checked citation pinyin', () => {
-  for (const volume of bundledSyllabus().volumes)
+  for (const volume of bundledSyllabus().volumes.filter((v) => v.id.endsWith('-practical')))
     for (const lesson of volume.lessons) {
       const d1 = readCourseLesson(volume.id, lesson.no, 1),
         d2 = readCourseLesson(volume.id, lesson.no, 2);

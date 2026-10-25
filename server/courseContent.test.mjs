@@ -9,9 +9,9 @@ import { normalizeLesson, getLessonContent } from './lessonContent.mjs';
 
 test('48 fixed sessions include aligned vocabulary, goals, listening and speaking', () => {
   const syllabus = validateSyllabus(bundledSyllabus());
-  assert.equal(syllabus.volumes.length, 2);
+  assert.equal(syllabus.volumes.filter((v) => !v.trackId).length, 2);
   let sessions = 0;
-  for (const vol of syllabus.volumes) {
+  for (const vol of syllabus.volumes.filter((v) => !v.trackId)) {
     assert.equal(vol.lessons.length, 12);
     for (const lesson of vol.lessons)
       for (const day of [1, 2]) {
@@ -61,7 +61,7 @@ test('packaged syllabus is default and a fixed session loads without any model',
 
 test('course prerequisite graph is ordered and answer positions are not a single-position shortcut', () => {
   const syllabus = bundledSyllabus();
-  for (const vol of syllabus.volumes) {
+  for (const vol of syllabus.volumes.filter((v) => !v.trackId)) {
     const positions = [0, 0, 0];
     for (const lesson of vol.lessons) {
       const raw = readCourseLesson(vol.id, lesson.no, 1);
@@ -69,5 +69,54 @@ test('course prerequisite graph is ordered and answer positions are not a single
       for (const day of [1, 2]) for (const q of readCourseLesson(vol.id, lesson.no, day).listening.questions) positions[q.answer]++;
     }
     assert.ok(Math.max(...positions) - Math.min(...positions) <= 2, vol.id);
+  }
+});
+
+test('30 communication lessons form an independent 3-volume draft track and all load without a model', async () => {
+  const syllabus = validateSyllabus(bundledSyllabus());
+  const volumes = syllabus.volumes.filter((v) => v.trackId === 'misu30');
+  assert.equal(volumes.length, 3);
+  const numbers = [];
+  const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu30-test-'));
+  try {
+    for (const [index, volume] of volumes.entries()) {
+      assert.equal(volume.nextVolumeId, index < 2 ? volumes[index + 1].id : '');
+      assert.equal(volume.trackTitle, '30 bài giao tiếp HSK1–6');
+      const positions = [0, 0, 0];
+      for (const lesson of volume.lessons) {
+        numbers.push(lesson.no);
+        assert.equal(lesson.days, 1);
+        const raw = readCourseLesson(volume.id, lesson.no, 1);
+        assert.equal(raw.reviewed, false);
+        assert.equal(raw.editorialStatus, 'AI soạn, chưa duyệt');
+        assert.deepEqual(normalizeLesson(raw, lesson).problems, []);
+        assert.equal(raw.vocab.length, 8);
+        for (const q of raw.listening.questions) {
+          assert.equal(new Set(q.options).size, 3);
+          positions[q.answer]++;
+        }
+        assert.equal(raw.speaking.length, 2);
+        const material = await getLessonContent({
+          dataDir,
+          syllabus,
+          volumeId: volume.id,
+          lessonNo: lesson.no,
+          day: 1,
+          level: volume.levels[0],
+          provider: '',
+          model: '',
+        });
+        assert.equal(material.reviewed, false);
+        assert.ok(material.listening.transcript);
+      }
+      assert.deepEqual(positions, [10, 10, 10]);
+    }
+    assert.deepEqual(
+      numbers,
+      Array.from({ length: 30 }, (_, i) => i + 1),
+    );
+    assert.equal(fs.existsSync(path.join(dataDir, 'lessons')), false);
+  } finally {
+    fs.rmSync(dataDir, { recursive: true, force: true });
   }
 });

@@ -1,0 +1,201 @@
+{
+  "volumeId": "misu30-3",
+  "volumeTitle": "30 bài giao tiếp · Tập 3 · HSK5–6",
+  "lessonNo": 28,
+  "lessonTitle": "那段经历让我成长 · Chia sẻ trải nghiệm",
+  "day": 1,
+  "days": 1,
+  "level": "HSK5-6",
+  "targetLevel": "HSK5-6",
+  "trackTitle": "30 bài giao tiếp HSK1–6",
+  "authored": true,
+  "reviewed": false,
+  "placeholder": false,
+  "editorialStatus": "AI soạn, chưa duyệt",
+  "recommendedMinutes": 20,
+  "source": {
+    "file": "curriculum/volume-3.json",
+    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+  },
+  "vocab": [
+    {
+      "word": "经历",
+      "meaning": "trải nghiệm",
+      "example": "那段经历改变了我。",
+      "exampleVi": "Trải nghiệm đó đã thay đổi mình.",
+      "pinyin": "jīng lì",
+      "examplePinyin": "nà duàn jīng lì gǎi biàn le wǒ 。"
+    },
+    {
+      "word": "难忘",
+      "meaning": "khó quên",
+      "example": "第一次上台演讲，我至今难忘。",
+      "exampleVi": "Lần đầu lên sân khấu thuyết trình, đến nay mình vẫn không quên.",
+      "pinyin": "nán wàng",
+      "examplePinyin": "dì yī cì shàng tái yǎn jiǎng ， wǒ zhì jīn nán wàng 。"
+    },
+    {
+      "word": "成长",
+      "meaning": "trưởng thành",
+      "example": "挫折让我成长了很多。",
+      "exampleVi": "Thất bại khiến mình trưởng thành hơn nhiều.",
+      "pinyin": "chéng zhǎng",
+      "examplePinyin": "cuò zhé ràng wǒ chéng zhǎng le hěn duō 。"
+    },
+    {
+      "word": "后悔",
+      "meaning": "hối hận",
+      "example": "我唯一后悔的是没有早点开始。",
+      "exampleVi": "Điều duy nhất mình hối hận là không bắt đầu sớm hơn.",
+      "pinyin": "hòu huǐ",
+      "examplePinyin": "wǒ wéi yī hòu huǐ de shì méi yǒu zǎo diǎn kāi shǐ 。"
+    },
+    {
+      "word": "勇气",
+      "meaning": "dũng khí",
+      "example": "承认错误需要很大的勇气。",
+      "exampleVi": "Thừa nhận sai lầm cần rất nhiều dũng khí.",
+      "pinyin": "yǒng qì",
+      "examplePinyin": "chéng rèn cuò wù xū yào hěn dà de yǒng qì 。"
+    },
+    {
+      "word": "感动",
+      "meaning": "cảm động",
+      "example": "她的那番话让我很感动。",
+      "exampleVi": "Những lời cô ấy nói khiến mình rất cảm động.",
+      "pinyin": "gǎn dòng",
+      "examplePinyin": "tā de nà fān huà ràng wǒ hěn gǎn dòng 。"
+    },
+    {
+      "word": "释怀",
+      "meaning": "buông bỏ, nhẹ lòng",
+      "example": "多年以后，我终于释怀了。",
+      "exampleVi": "Nhiều năm sau, cuối cùng mình đã nhẹ lòng.",
+      "pinyin": "shì huái",
+      "examplePinyin": "duō nián yǐ hòu ， wǒ zhōng yú shì huái le 。"
+    },
+    {
+      "word": "珍惜",
+      "meaning": "trân trọng",
+      "example": "我们要珍惜身边的人。",
+      "exampleVi": "Chúng ta phải trân trọng những người bên cạnh.",
+      "pinyin": "zhēn xī",
+      "examplePinyin": "wǒ men yào zhēn xī shēn biān de rén 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "那段经历让我……",
+      "explanation": "Dùng để nói trải nghiệm đã ảnh hưởng thế nào.",
+      "example": "那段经历让我变得更坚强。",
+      "exampleVi": "Trải nghiệm đó khiến mình trở nên mạnh mẽ hơn.",
+      "examplePinyin": "nà duàn jīng lì ràng wǒ biàn de gèng jiān qiáng 。"
+    },
+    {
+      "pattern": "如果当时……，也许……",
+      "explanation": "Dùng để nói điều ước về quá khứ.",
+      "example": "如果当时再努力一点，也许结果会不一样。",
+      "exampleVi": "Nếu lúc đó cố gắng thêm một chút, có lẽ kết quả đã khác.",
+      "examplePinyin": "rú guǒ dāng shí zài nǔ lì yì diǎn ， yě xǔ jié guǒ huì bù yí yàng 。"
+    },
+    {
+      "pattern": "我终于……",
+      "explanation": "Dùng để nói điều cuối cùng đã đạt được.",
+      "example": "我终于走出了那段低谷。",
+      "exampleVi": "Cuối cùng mình đã bước ra khỏi khoảng thời gian khó khăn đó.",
+      "examplePinyin": "wǒ zhōng yú zǒu chū le nà duàn dī gǔ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Một buổi trò chuyện sâu giữa hai người bạn.",
+    "avatarRole": "Misu, người bạn biết lắng nghe",
+    "learnerRole": "Học viên đang kể trải nghiệm",
+    "goals": [
+      "Kể một trải nghiệm khó quên",
+      "Nói bài học mình rút ra",
+      "Nói điều mình muốn thay đổi"
+    ],
+    "opening": "有没有一段经历，让你到现在还记得很清楚？",
+    "openingVi": "Có trải nghiệm nào khiến bạn đến giờ vẫn nhớ rất rõ không?"
+  },
+  "freeTalk": {
+    "question": "分享一次让你成长的经历。",
+    "questionVi": "Hãy chia sẻ một trải nghiệm khiến bạn trưởng thành."
+  },
+  "prerequisites": [
+    27
+  ],
+  "learningNotes": [
+    "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
+    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+  ],
+  "listening": {
+    "title": "Nghe ví dụ thực tế",
+    "playLimit": 2,
+    "transcript": "那段经历改变了我。 第一次上台演讲，我至今难忘。 挫折让我成长了很多。",
+    "translation": "Trải nghiệm đó đã thay đổi mình. Lần đầu lên sân khấu thuyết trình, đến nay mình vẫn không quên. Thất bại khiến mình trưởng thành hơn nhiều.",
+    "pinyin": "nà duàn jīng lì gǎi biàn le wǒ 。   dì yī cì shàng tái yǎn jiǎng ， wǒ zhì jīn nán wàng 。   cuò zhé ràng wǒ chéng zhǎng le hěn duō 。",
+    "questions": [
+      {
+        "prompt": "Cụm “经历” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "trưởng thành",
+          "trải nghiệm",
+          "hối hận"
+        ],
+        "answer": 1,
+        "explanation": "“经历”: trải nghiệm. Ví dụ đã nghe: 那段经历改变了我。"
+      },
+      {
+        "prompt": "Cụm “难忘” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "hối hận",
+          "dũng khí",
+          "khó quên"
+        ],
+        "answer": 2,
+        "explanation": "“难忘”: khó quên. Ví dụ đã nghe: 第一次上台演讲，我至今难忘。"
+      },
+      {
+        "prompt": "Cụm “成长” trong đoạn nghe có nghĩa gì?",
+        "options": [
+          "trưởng thành",
+          "dũng khí",
+          "cảm động"
+        ],
+        "answer": 0,
+        "explanation": "“成长”: trưởng thành. Ví dụ đã nghe: 挫折让我成长了很多。"
+      }
+    ]
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu ví dụ, sau đó đổi thông tin cho phù hợp với bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "audioText": "那段经历改变了我。",
+      "reference": "那段经历改变了我。",
+      "pinyin": "nà duàn jīng lì gǎi biàn le wǒ 。",
+      "checklist": [
+        "Giữ thông tin chính",
+        "Nói rõ để người nghe hiểu",
+        "Tự thay ít nhất một thông tin khi thử lại"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "分享一次让你成长的经历。",
+      "promptVi": "Hãy chia sẻ một trải nghiệm khiến bạn trưởng thành.",
+      "prepareSeconds": 20,
+      "responseSeconds": 60,
+      "reference": "Không có một đáp án duy nhất. Dùng mẫu của bài để nói về hoàn cảnh của bạn.",
+      "checklist": [
+        "Trả lời đúng việc được hỏi",
+        "Dùng ít nhất một mẫu của bài",
+        "Nêu chi tiết cụ thể"
+      ]
+    }
+  ],
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Một buổi trò chuyện sâu giữa hai người bạn."
+}
