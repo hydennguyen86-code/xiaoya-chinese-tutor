@@ -1,3 +1,4 @@
+import { scoreCorrection } from './correctionScore.mjs';
 // Deterministic rule evaluation. This does NOT measure the LLM correction pipeline.
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -6,7 +7,6 @@ import { candidateRules } from './candidates/grammar-deepseek.mjs';
 import { ruleCorrections as baseline } from './candidates/grammar-baseline.mjs';
 import { saveResult } from './record.mjs';
 
-const applyAll = (text, hits) => hits.reduce((out, c) => out.split(c.original).join(c.corrected), text);
 const cases = JSON.parse(fs.readFileSync(new URL('./corrections.json', import.meta.url), 'utf8'));
 export function evaluate(corrector) {
   const falseCorrections = cases.correct.flatMap((text) => {
@@ -15,12 +15,15 @@ export function evaluate(corrector) {
   });
   const wrong = cases.wrong.map(([text, expected]) => {
     const hits = corrector(text);
+    const score = scoreCorrection(text, expected, hits);
     return {
       text,
       expected,
       detected: hits.length > 0,
       // apply every fix to the whole sentence; a fix only counts if the result reads as expected
-      fixed: hits.length > 0 && applyAll(text, hits).includes(expected),
+      fixed: score.exact,
+      partial: score.partial,
+      ambiguous: score.ambiguous,
     };
   });
   return {
@@ -30,6 +33,7 @@ export function evaluate(corrector) {
     falseCorrectionDetails: falseCorrections,
     detected: wrong.filter((c) => c.detected).length,
     fixed: wrong.filter((c) => c.fixed).length,
+    partial: wrong.filter((c) => c.partial).length,
     missed: wrong.filter((c) => !c.fixed),
   };
 }
@@ -76,6 +80,7 @@ console.log(
         wrong: cases.wrong.length,
         detected: result.final.detected,
         fixed: result.final.fixed,
+        partial: result.final.partial,
       },
     },
     null,

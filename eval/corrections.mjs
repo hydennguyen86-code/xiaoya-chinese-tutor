@@ -1,11 +1,10 @@
+import { scoreCorrection } from './correctionScore.mjs';
 // Measures the correction pipeline against eval/corrections.json through the
 // running server: false corrections of correct sentences, detected errors and
 // errors fixed as expected.
 //   npm run eval:corrections -- [model] [server-url]
 import fs from 'node:fs';
 import { saveResult } from './record.mjs';
-
-const applyAll = (text, hits) => hits.reduce((out, c) => out.split(c.original).join(c.corrected), text);
 
 const provider = process.env.EVAL_PROVIDER || 'ollama';
 const model = process.argv[2] || 'qwen3.5:4b';
@@ -24,6 +23,7 @@ async function check(text) {
 let falseFixes = 0;
 let detected = 0;
 let fixed = 0;
+let partial = 0;
 const notes = [];
 for (const text of cases.correct) {
   const found = await check(text);
@@ -40,14 +40,16 @@ for (const [text, expected] of cases.wrong) {
   }
   detected += 1;
   // apply every fix to the whole sentence; it only counts if the result reads as expected
-  const ok = applyAll(text, found).includes(expected);
-  if (ok) fixed += 1;
+  const score = scoreCorrection(text, expected, found);
+  if (score.exact) fixed += 1;
+  else if (score.partial) partial += 1;
   else notes.push(`off target ${text} -> ${found.map((c) => `${c.original}→${c.corrected}`).join('; ')}`);
 }
 console.log(`model ${model}`);
 console.log(`false corrections of correct sentences: ${falseFixes}/${cases.correct.length}`);
 console.log(`errors detected:                        ${detected}/${cases.wrong.length}`);
 console.log(`errors fixed as expected:               ${fixed}/${cases.wrong.length}`);
+console.log(`expected fragment only (not full proof): ${partial}/${cases.wrong.length}`);
 if (notes.length) console.log(`\n${notes.join('\n')}`);
 saveResult(
   'corrections',
@@ -57,6 +59,7 @@ saveResult(
     correctSentences: cases.correct.length,
     detected,
     fixed,
+    partial,
     wrongSentences: cases.wrong.length,
     notes,
   },

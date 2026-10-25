@@ -221,3 +221,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Giữ sourceBook/sourceTitle và source.book/volumeTitle/lessonTitle/SHA-256 gốc; bỏ source.file không tồn tại ở repo app. Đây là hash nguồn ngoài, không khẳng định có kèm bản nguồn trong app.
 - Bài đầu mỗi tập có prerequisites=[]; nối tập vẫn qua nextVolumeId rõ ràng. Áp bằng patch metadata idempotent, kiểm hash/đúng bài/nhãn chưa duyệt trước khi ghi; không sửa nội dung từ/mẫu câu/hội thoại.
 - Importer dùng metadata mới, từ chối ghi đè bài có sẵn khác nội dung. Test chạy lại patch không đổi file, nguồn và prerequisite; validator toàn bộ khóa vẫn chạy.
+
+## HANDOFF — T5 số liệu sửa câu
+
+- fixed chỉ tính khi toàn câu sau áp các khoảng sửa đúng bằng câu kỳ vọng (chuẩn hoá dấu câu/khoảng trắng); expected dạng đoạn chỉ được tính partial, không coi là sửa xong câu.
+- Không thay mọi lần xuất hiện bằng split/join: dùng index, thiếu vị trí mà original lặp thì đánh dấu ambiguous. Dùng chung cho audit luật và eval pipeline. Bộ đáp án cũ nhiều đoạn chưa có đáp án toàn câu, nên số fixed nghiêm ngặt sẽ thấp hơn; không tự bịa câu chuẩn để tăng điểm.
+- Test hai chỗ sai giống nhau, một chỗ chưa sửa, kỳ vọng chỉ là đoạn và trường hợp không mơ hồ. Chưa chạy lại pipeline model thật.
