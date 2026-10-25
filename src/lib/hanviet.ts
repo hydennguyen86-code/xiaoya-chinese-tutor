@@ -14,6 +14,6 @@ export function hanVietText(word: string) {
     .join(' ');
 }
 export function wordTraps(word: string) {
-  return bank.items.filter((t) => t.hanzi === word || (t.trap !== 'nghĩa' && [...t.hanzi].length === 1 && word.includes(t.hanzi)));
+  return bank.items.filter((t) => t.hanzi === word);
 }
 export const hanVietBank = bank;

@@ -18,12 +18,12 @@ export function FluencyHistory({ learnerId }: { learnerId: string }) {
         hơi hoặc cố ý; nói nhanh hơn không đồng nghĩa nói tốt hơn. Không tính vào điểm thi.
       </p>
       {!rows.length ? (
-        <p>Chưa có lượt nói cục bộ đủ dữ liệu.</p>
+        <p>Chưa có lượt nói cục bộ đủ dữ liệu. Cần Whisper sẵn sàng, nhận được lời nói và âm thanh đủ rõ.</p>
       ) : (
         <table>
           <thead>
             <tr>
-              <th>Tuần từ (UTC)</th>
+              <th>Tuần từ (giờ máy)</th>
               <th>Lượt</th>
               <th>Âm tiết/giây</th>
               <th>Ngắt &gt;1s/phút</th>

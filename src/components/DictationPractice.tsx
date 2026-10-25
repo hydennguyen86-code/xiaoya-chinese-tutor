@@ -1,4 +1,4 @@
-import { pinyin } from 'pinyin-pro';
+import { pinyinCitation } from '../lib/coursePinyin.mjs';
 import { useState } from 'react';
 import bank from '../../lessons/listening/dictation.json';
 import { gradeDictation, type DictationItem } from '../lib/authoredListening';
@@ -21,7 +21,7 @@ export function DictationPractice({ content, voice, onBusy }: { content: LessonC
       id: 'roleplay',
       level: content.level || 'HSK1-2',
       hanzi: content.roleplay.opening,
-      pinyin: pinyin(content.roleplay.opening, { type: 'array' }).join(' '),
+      pinyin: pinyinCitation(content.roleplay.opening),
       meaningVi: content.roleplay.openingVi,
     },
   ].filter((x) => x.pinyin);

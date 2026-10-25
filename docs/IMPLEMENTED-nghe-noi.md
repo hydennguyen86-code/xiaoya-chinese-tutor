@@ -143,3 +143,13 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - A7: ruleCorrections chọn hit dài hơn khi khoảng ký tự chồng nhau, trả theo thứ tự câu; merge lọc trùng cả rule–rule và rule–model. Giữ nguyên các sửa A1–A6 của Claude (335717c/910b17a).
 - A8: mỗi request transcribe/pronounce giải mã compressed audio một lần thành PCM 16 kHz; dùng lại cho cao độ/năng lượng và đóng gói WAV cho Whisper. Không cache giọng người ra đĩa; không đổi ngưỡng chấm thanh. Whisper vẫn đọc WAV đầu vào, chưa benchmark CPU máy yếu.
 - A9: trả fluencyReason rõ khi STT chưa sẵn sàng/lỗi/chưa có lời; kết quả thanh hiển thị lý do. Không ghi lịch sử fluency rỗng. Test WAV từ PCM, chồng gợi ý, API fluency và audio lỗi (D3).
+
+## Review mức thấp — C1–C11
+
+- C1/C2: yêu cầu phát mới khi đang tải chỉ báo thất bại cho lượt mới; callback từng lượt chạy một lần. Thu hồi object URL khi xong/lỗi/abort/unmount; callback cũ không kết thúc lượt mới.
+- C3/C4: bỏ nhánh checker rỗng, nextTone trả null khi hết câu hợp lệ.
+- C5/C6: bỏ lịch phát âm rỗng/thiếu hạn, khử trùng id; ôn id không tồn tại không đổi updatedAt. Test dữ liệu hỏng.
+- C7: nhóm tuần theo giờ địa phương và nhãn “giờ máy”, test ca UTC còn Chủ nhật nhưng Việt Nam đã thứ Hai; từ chối lưu fluency rỗng.
+- C8: (đã vào commit A7–A9) lượt thu mới báo micro đang bận, không âm thầm hủy lượt của component khác. C9 dùng prop localStt thật.
+- C10: client/server dùng chung module citation pinyin và chính sách Claude đã sửa, không sinh lại âm theo mặc định khác. C11 mẹo Hán Việt khớp đúng từ, không tự gắn chữ đơn vào từ dài.
+- Chưa thử lifecycle abort audio/micro bằng thiết bị thật; build và regression dữ liệu không thay thế kiểm thử phần cứng.

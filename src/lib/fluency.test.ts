@@ -21,3 +21,25 @@ test('weekly fluency weights by speech span, groups by Monday and never invents 
   assert.equal(weeks[0].rate, 10 / 8);
   assert.equal(weeks[0].turns, 2);
 });
+
+test('week uses the local Monday even when UTC is still Sunday', () => {
+  const old = process.env.TZ;
+  process.env.TZ = 'Asia/Ho_Chi_Minh';
+  try {
+    const rows = weeklyFluency([
+      {
+        at: Date.parse('2026-10-25T18:00:00Z'),
+        syllables: 3,
+        speechSeconds: 2,
+        syllablesPerSecond: 1.5,
+        pausesOverOneSecond: 0,
+        pauseSeconds: 0,
+        advisory: true,
+      },
+    ]);
+    assert.equal(rows[0].week, '2026-10-26');
+  } finally {
+    if (old === undefined) delete process.env.TZ;
+    else process.env.TZ = old;
+  }
+});

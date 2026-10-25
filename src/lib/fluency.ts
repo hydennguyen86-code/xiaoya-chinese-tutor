@@ -19,7 +19,15 @@ export function loadFluency(scope: string): FluencyEntry[] {
   }
 }
 export function saveFluency(scope: string, metrics: Fluency, at = Date.now()) {
-  if (!scope) return;
+  if (
+    !scope ||
+    !metrics ||
+    !Number.isFinite(metrics.syllables) ||
+    metrics.syllables <= 0 ||
+    !Number.isFinite(metrics.speechSeconds) ||
+    metrics.speechSeconds <= 0
+  )
+    return;
   try {
     localStorage.setItem(`xiaoya.fluency.v1:${scope}`, JSON.stringify([...loadFluency(scope), { ...metrics, at }].slice(-500)));
     window.dispatchEvent(new Event('misu:fluency-update'));
@@ -31,9 +39,9 @@ export function weeklyFluency(entries: FluencyEntry[]) {
   const groups = new Map<string, { week: string; turns: number; syllables: number; seconds: number; pauses: number }>();
   for (const e of entries) {
     const date = new Date(e.at);
-    date.setUTCHours(0, 0, 0, 0);
-    date.setUTCDate(date.getUTCDate() - ((date.getUTCDay() + 6) % 7));
-    const week = date.toISOString().slice(0, 10);
+    date.setHours(0, 0, 0, 0);
+    date.setDate(date.getDate() - ((date.getDay() + 6) % 7));
+    const week = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
     const g = groups.get(week) || { week, turns: 0, syllables: 0, seconds: 0, pauses: 0 };
     g.turns++;
     g.syllables += e.syllables;

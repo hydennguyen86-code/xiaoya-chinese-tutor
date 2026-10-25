@@ -587,10 +587,19 @@ export function hasAnalysisData(profile: LearningProfile) {
 const PRONUNCIATION_MS = [5 * 60_000, 30 * 60_000, 6 * 3600_000, 24 * 3600_000, 3 * 24 * 3600_000];
 function cleanPronunciation(value: unknown): PronunciationReviewRecord[] {
   if (!Array.isArray(value)) return [];
+  const seen = new Set<string>();
   return value
     .filter(
       (v) =>
-        v && ['tone', 'sound'].includes(v.kind) && typeof v.target === 'string' && v.target.length <= 120 && typeof v.contrast === 'string',
+        v &&
+        ['tone', 'sound'].includes(v.kind) &&
+        typeof v.target === 'string' &&
+        v.target.trim().length > 0 &&
+        v.target.length <= 120 &&
+        typeof v.contrast === 'string' &&
+        v.contrast.trim().length > 0 &&
+        Number.isFinite(v.dueAt) &&
+        v.dueAt > 0,
     )
     .map((v) => ({
       id: `${v.kind}|${v.target}|${v.contrast}`,
@@ -605,6 +614,11 @@ function cleanPronunciation(value: unknown): PronunciationReviewRecord[] {
       lapses: Math.max(0, asNumber(v.lapses)),
       lastSeen: asNumber(v.lastSeen),
     }))
+    .filter((v) => {
+      if (seen.has(v.id)) return false;
+      seen.add(v.id);
+      return true;
+    })
     .slice(-200);
 }
 export function recordPronunciation(
@@ -625,7 +639,7 @@ export function recordPronunciation(
   return { ...profile, version: 2, pronunciation: entries.slice(-200), updatedAt: now };
 }
 export function reviewPronunciation(profile: LearningProfile, id: string, correct: boolean | null, now = Date.now()): LearningProfile {
-  if (correct === null) return profile;
+  if (correct === null || !(profile.pronunciation || []).some((e) => e.id === id)) return profile;
   return {
     ...profile,
     pronunciation: (profile.pronunciation || []).map((e) => {

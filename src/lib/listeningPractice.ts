@@ -95,5 +95,5 @@ export function nextTone(items: ToneItem[], history: ListeningHistory, previous 
   const candidates = pool.length ? pool : items.filter((i) => !i.uncertain);
   const total = candidates.reduce((n, i) => n + tonePriority(i, history), 0);
   let cursor = random * total;
-  return candidates.find((i) => (cursor -= tonePriority(i, history)) <= 0) || candidates.at(-1);
+  return candidates.find((i) => (cursor -= tonePriority(i, history)) <= 0) || candidates.at(-1) || null;
 }

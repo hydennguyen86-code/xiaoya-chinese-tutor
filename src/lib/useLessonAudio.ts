@@ -3,32 +3,22 @@ import { fetchTts } from './api';
 import { speakBrowser } from './browserVoice';
 import { speechText } from './coursePractice';
 let stopCurrentCourseAudio: (() => void) | null = null;
-
 export function stopLessonAudio() {
   stopCurrentCourseAudio?.();
 }
 export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
-  const player = useRef<HTMLAudioElement | null>(null);
-  const request = useRef<AbortController | null>(null);
-  const url = useRef('');
-  const alive = useRef(true);
-  const [playing, setPlaying] = useState(false);
-  const loading = useRef(false);
-  const finished = useRef<((success: boolean) => void) | undefined>(undefined);
-  const finish = (ok: boolean) => {
-    const done = finished.current;
-    finished.current = undefined;
-    done?.(ok);
-  };
-  const [error, setError] = useState('');
-  const [provider, setProvider] = useState('');
+  const player = useRef<HTMLAudioElement | null>(null),
+    request = useRef<AbortController | null>(null),
+    cleanup = useRef<() => void>(() => {}),
+    alive = useRef(true),
+    loading = useRef(false);
+  const [playing, setPlaying] = useState(false),
+    [error, setError] = useState(''),
+    [provider, setProvider] = useState('');
   const stop = useCallback(() => {
-    finish(false);
     request.current?.abort();
-    player.current?.pause();
+    cleanup.current();
     player.current = null;
-    if (url.current) URL.revokeObjectURL(url.current);
-    url.current = '';
     loading.current = false;
     setPlaying(false);
     onBusy(false);
@@ -38,80 +28,83 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
     alive.current = true;
     return () => {
       alive.current = false;
-      finish(false);
       request.current?.abort();
-      player.current?.pause();
-      if (url.current) URL.revokeObjectURL(url.current);
+      cleanup.current();
       if (stopCurrentCourseAudio === stop) stopCurrentCourseAudio = null;
       onBusy(false);
     };
   }, []);
   async function play(text: string, onStarted?: () => void, onFinished?: (success: boolean) => void) {
+    // Reject only the new request. The playing request keeps its own completion.
     if (loading.current) {
-      stop();
       onFinished?.(false);
       return;
     }
     stopCurrentCourseAudio?.();
     stopCurrentCourseAudio = stop;
-    loading.current = true;
-    finished.current = onFinished;
     const controller = new AbortController();
     request.current = controller;
+    let completed = false,
+      objectUrl = '',
+      audio: HTMLAudioElement | null = null;
+    const current = () => alive.current && request.current === controller;
+    const complete = (success: boolean) => {
+      if (completed) return;
+      completed = true;
+      if (audio) {
+        audio.onended = null;
+        audio.onerror = null;
+        audio.onabort = null;
+        audio.pause();
+      }
+      if (objectUrl) {
+        URL.revokeObjectURL(objectUrl);
+        objectUrl = '';
+      }
+      if (current()) {
+        loading.current = false;
+        setPlaying(false);
+        onBusy(false);
+      }
+      onFinished?.(success);
+    };
+    cleanup.current = () => complete(false);
+    loading.current = true;
     setPlaying(true);
     setError('');
     onBusy(true);
     try {
       const result = await fetchTts(speechText(text), voice, controller.signal);
-      if (!alive.current || controller.signal.aborted) return;
+      if (!current() || controller.signal.aborted) {
+        complete(false);
+        return;
+      }
       if (result.browserText) {
         setProvider('Giọng dự phòng trình duyệt; tuỳ giọng có thể dùng mạng.');
         await speakBrowser(result.browserText, result.browserLocale ?? 'zh-CN', controller.signal, onStarted, result.browserRate);
-        if (alive.current && !controller.signal.aborted) {
-          loading.current = false;
-          setPlaying(false);
-          onBusy(false);
-        }
-        finish(true);
+        complete(!controller.signal.aborted);
         return;
       }
       const bytes = Uint8Array.from(atob(result.audioBase64), (ch) => ch.charCodeAt(0));
-      if (url.current) URL.revokeObjectURL(url.current);
-      url.current = URL.createObjectURL(new Blob([bytes], { type: result.mime }));
-      const audio = new Audio(url.current);
+      objectUrl = URL.createObjectURL(new Blob([bytes], { type: result.mime }));
+      audio = new Audio(objectUrl);
       player.current = audio;
-      audio.onended = () => {
-        finish(true);
-        if (alive.current) {
-          loading.current = false;
-          setPlaying(false);
-          onBusy(false);
-        }
-      };
+      audio.onended = () => complete(true);
       audio.onerror = () => {
-        finish(false);
-        if (alive.current) {
-          setError('Không phát được âm thanh. Hãy thử lại.');
-          loading.current = false;
-          setPlaying(false);
-          onBusy(false);
-        }
+        if (current()) setError('Không phát được âm thanh. Hãy thử lại.');
+        complete(false);
       };
+      audio.onabort = () => complete(false);
       await audio.play();
-      if (!alive.current || controller.signal.aborted) {
-        audio.pause();
+      if (!current() || controller.signal.aborted) {
+        complete(false);
         return;
       }
       setProvider(result.fallbackReason ?? `Giọng ${result.provider}`);
       onStarted?.();
     } catch (e) {
-      finish(false);
-      if (alive.current && !controller.signal.aborted) {
-        setError(e instanceof Error ? e.message : 'Chưa phát được.');
-        loading.current = false;
-        setPlaying(false);
-        onBusy(false);
-      }
+      if (current() && !controller.signal.aborted) setError(e instanceof Error ? e.message : 'Chưa phát được.');
+      complete(false);
     }
   }
   return { play, stop, playing, error, provider };

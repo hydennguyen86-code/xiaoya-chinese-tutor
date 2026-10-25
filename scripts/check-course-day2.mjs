@@ -243,7 +243,6 @@ for (const base of names) {
       if (new Set(out.roleplay.goals).size !== out.roleplay.goals.length) fail(id, 'goal trùng nhau');
     }
     if (out.roleplay.opening === d1.roleplay.opening) fail(id, 'roleplay.opening vẫn trùng buổi 1');
-    else dupStats.opening += 0;
   }
 
   // ── freeTalk ──
@@ -290,9 +289,7 @@ for (const base of names) {
       fail(id, 'bản gốc không có listening.pinyin, không thêm');
     }
     if (L.transcript === d1.listening.transcript) fail(id, 'listening trùng hẳn buổi 1');
-    if (orig.listening.transcript === d1.listening.transcript) {
-      // bản gốc đã trùng thì buổi 2 bắt buộc phải đổi
-    } else if (L.transcript !== orig.listening.transcript) {
+    if (orig.listening.transcript !== d1.listening.transcript && L.transcript !== orig.listening.transcript) {
       warnings.push(`${id}: listening đã đổi so với bản gốc buổi 2 — kiểm tra lại câu hỏi/đáp án`);
     }
   }

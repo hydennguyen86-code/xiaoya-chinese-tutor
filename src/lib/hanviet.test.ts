@@ -19,3 +19,9 @@ test('semantic traps and sound mnemonics remain separate AI drafts', () => {
   assert.ok(wordTraps('学习').every((t) => t.trap !== 'nghĩa'));
   for (const t of hanVietBank.items.filter((t) => t.trap === 'âm')) assert.match(t.noteVi, /gần đúng/i);
 });
+
+test('single-character hints do not attach to unrelated long words', () => {
+  const single = hanVietBank.items.find((t) => t.trap === 'âm' && [...t.hanzi].length === 1)!;
+  assert.ok(wordTraps(single.hanzi).some((t) => t.id === single.id));
+  assert.deepEqual(wordTraps(single.hanzi + '未知'), []);
+});

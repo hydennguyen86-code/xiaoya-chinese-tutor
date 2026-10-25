@@ -28,3 +28,22 @@ test('legacy learning loads with a new pronunciation list without losing words, 
     Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: original });
   }
 });
+
+test('broken pronunciation schedules are discarded and duplicate IDs cannot multiply due cards', () => {
+  const original = globalThis.localStorage;
+  const entry = recordPronunciation(emptyLearning(), { kind: 'tone', target: '好', contrast: '3', heard: '2' }, 100).pronunciation[0];
+  Object.defineProperty(globalThis, 'localStorage', {
+    configurable: true,
+    value: {
+      getItem: () =>
+        JSON.stringify({ ...emptyLearning(), pronunciation: [entry, entry, { ...entry, target: '' }, { ...entry, dueAt: undefined }] }),
+    },
+  });
+  try {
+    const p = loadLearning('synthetic');
+    assert.equal(p.pronunciation.length, 1);
+    assert.equal(reviewPronunciation(p, 'absent', true, 200), p);
+  } finally {
+    Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: original });
+  }
+});

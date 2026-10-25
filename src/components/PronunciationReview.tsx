@@ -39,7 +39,7 @@ export function PronunciationReview({
     if (!item) return;
     audio.stop();
     try {
-      const h = listen({ local: true, learnerId, pronounce: item.target, onPhase: setPhase });
+      const h = listen({ local: localStt, learnerId, pronounce: item.target, onPhase: setPhase });
       handle.current = h;
       const result = await h.details;
       if (!alive.current) return;
