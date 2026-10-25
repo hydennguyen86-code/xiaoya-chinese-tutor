@@ -1,6 +1,7 @@
 // Convert the user's AI curriculum, not textbook material. No audio is imported.
 // Usage: node scripts/import-misu30.mjs <curriculum directory>
 import fs from 'node:fs';
+import { isDeepStrictEqual } from 'node:util';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { pinyinCitation } from '../server/coursePinyin.mjs';
@@ -26,7 +27,9 @@ for (let v = 1; v <= 3; v++) {
     trackId: 'misu30',
     trackTitle: title,
     ...(v < 3 ? { nextVolumeId: `misu30-${v + 1}` } : {}),
-    source: { file: `curriculum/volume-${v}.json`, sha256: createHash('sha256').update(bytes).digest('hex') },
+    sourceBook: input.book,
+    sourceTitle: input.title,
+    source: { book: input.book, volumeTitle: input.title, sha256: createHash('sha256').update(bytes).digest('hex') },
     lessons: input.lessons.map((l) => ({
       no: l.no,
       title: l.title,
@@ -76,12 +79,14 @@ for (let v = 1; v <= 3; v++) {
       placeholder: false,
       editorialStatus: 'AI soạn, chưa duyệt',
       recommendedMinutes: 20,
-      source: volume.source,
+      sourceBook: input.book,
+      sourceTitle: input.title,
+      source: { ...volume.source, lessonTitle: lesson.title },
       vocab: words.map((w) => ({ ...w, pinyin: pinyinCitation(w.word), examplePinyin: pinyinCitation(w.example) })),
       patterns: lesson.patterns.map((p) => ({ ...p, examplePinyin: pinyinCitation(p.example) })),
       roleplay: lesson.roleplay,
       freeTalk: lesson.freeTalk,
-      prerequisites: lesson.no > 1 ? [lesson.no - 1] : [],
+      prerequisites: index > 0 ? [lesson.no - 1] : [],
       learningNotes: [
         'AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.',
         'Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin.',
@@ -125,8 +130,15 @@ for (let v = 1; v <= 3; v++) {
     prepared.push([`${id}-${lesson.no}-d1.json`, raw]);
   }
 }
+// Existing lesson files must be changed through an idempotent patch, never overwritten.
+for (const [name, raw] of prepared) {
+  const file = new URL(name, root);
+  if (fs.existsSync(file) && !isDeepStrictEqual(JSON.parse(fs.readFileSync(file, 'utf8')), raw))
+    throw new Error(`Existing lesson ${name}: use a patch.`);
+}
 // Validate everything before writing any file.
-for (const [name, raw] of prepared) fs.writeFileSync(new URL(name, root), JSON.stringify(raw, null, 2) + '\n');
+for (const [name, raw] of prepared)
+  if (!fs.existsSync(new URL(name, root))) fs.writeFileSync(new URL(name, root), JSON.stringify(raw, null, 2) + '\n');
 syllabus.volumes = [...syllabus.volumes.filter((v) => v.trackId !== 'misu30'), ...volumes];
 syllabus.book = 'Misu · Nghe nói thực tế và 30 bài giao tiếp HSK1–6';
 fs.writeFileSync(new URL('syllabus.json', root), JSON.stringify(syllabus, null, 2) + '\n');

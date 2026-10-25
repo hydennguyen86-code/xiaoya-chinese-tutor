@@ -14,8 +14,10 @@
   "editorialStatus": "AI soạn, chưa duyệt",
   "recommendedMinutes": 20,
   "source": {
-    "file": "curriculum/volume-3.json",
-    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+    "book": "Misu · 30 bài nói tiếng Trung",
+    "volumeTitle": "Trung cao cấp · HSK 5–6",
+    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+    "lessonTitle": "工作压力太大 · Công việc và áp lực"
   },
   "vocab": [
     {
@@ -122,9 +124,7 @@
     "question": "你怎样平衡工作和生活？",
     "questionVi": "Bạn cân bằng công việc và cuộc sống như thế nào?"
   },
-  "prerequisites": [
-    20
-  ],
+  "prerequisites": [],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
     "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
@@ -197,5 +197,7 @@
       ]
     }
   ],
-  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Sau giờ làm, hai đồng nghiệp nói chuyện."
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Sau giờ làm, hai đồng nghiệp nói chuyện.",
+  "sourceBook": "Misu · 30 bài nói tiếng Trung",
+  "sourceTitle": "Trung cao cấp · HSK 5–6"
 }

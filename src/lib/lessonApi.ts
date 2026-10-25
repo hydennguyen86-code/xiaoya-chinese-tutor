@@ -41,6 +41,9 @@ export interface SpeakingExercise {
   checklist: string[];
 }
 export interface LessonContent {
+  sourceBook?: string;
+  sourceTitle?: string;
+  source?: { book: string; volumeTitle: string; lessonTitle?: string; sha256: string };
   listeningPractice?: { source: string; dictation: DictationItem[]; shadowing: ShadowingItem[] } | null;
   authored?: boolean;
   level?: string;

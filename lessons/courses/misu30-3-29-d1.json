@@ -14,8 +14,10 @@
   "editorialStatus": "AI soạn, chưa duyệt",
   "recommendedMinutes": 20,
   "source": {
-    "file": "curriculum/volume-3.json",
-    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+    "book": "Misu · 30 bài nói tiếng Trung",
+    "volumeTitle": "Trung cao cấp · HSK 5–6",
+    "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+    "lessonTitle": "你怎么看这条新闻？ · Tin tức và quan điểm"
   },
   "vocab": [
     {
@@ -197,5 +199,7 @@
       ]
     }
   ],
-  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Hai người bàn về một tin nóng trên mạng."
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Hai người bàn về một tin nóng trên mạng.",
+  "sourceBook": "Misu · 30 bài nói tiếng Trung",
+  "sourceTitle": "Trung cao cấp · HSK 5–6"
 }

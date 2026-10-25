@@ -215,3 +215,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Bộ chọn lộ trình có lựa chọn riêng “30 bài giao tiếp HSK1–6”, rồi chọn tập. Chọn lộ trình này mở Tập 1; người vào Tập 2/3 thấy thông báo đang vào giữa lộ trình và nút về bài 1.
 - Giữ mặc định HSK1/HSK5 và tiến độ cũ theo quyết định Q2; HSK3–4 vẫn vào Tập 2 nhưng được nhắc rõ bài 1–10 ở đâu. Test default/pointer đã lưu; không đổi startingVolume.
+
+## Review vòng 2 — M3 nguồn bộ 30 bài
+
+- Giữ sourceBook/sourceTitle và source.book/volumeTitle/lessonTitle/SHA-256 gốc; bỏ source.file không tồn tại ở repo app. Đây là hash nguồn ngoài, không khẳng định có kèm bản nguồn trong app.
+- Bài đầu mỗi tập có prerequisites=[]; nối tập vẫn qua nextVolumeId rõ ràng. Áp bằng patch metadata idempotent, kiểm hash/đúng bài/nhãn chưa duyệt trước khi ghi; không sửa nội dung từ/mẫu câu/hội thoại.
+- Importer dùng metadata mới, từ chối ghi đè bài có sẵn khác nội dung. Test chạy lại patch không đổi file, nguồn và prerequisite; validator toàn bộ khóa vẫn chạy.

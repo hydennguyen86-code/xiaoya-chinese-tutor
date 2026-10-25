@@ -120,3 +120,27 @@ test('30 communication lessons form an independent 3-volume draft track and all 
     fs.rmSync(dataDir, { recursive: true, force: true });
   }
 });
+
+import { applyMisu30Provenance } from '../scripts/patch-misu30-provenance.mjs';
+test('misu30 provenance retains original titles and patch is repeatable without changing lesson content', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-provenance-'));
+  try {
+    fs.copyFileSync('lessons/courses/syllabus.json', path.join(root, 'syllabus.json'));
+    for (const file of fs.readdirSync('lessons/courses').filter((f) => f.startsWith('misu30-')))
+      fs.copyFileSync(path.join('lessons/courses', file), path.join(root, file));
+    assert.equal(applyMisu30Provenance(root), 0);
+    for (const volume of bundledSyllabus().volumes.filter((v) => v.trackId === 'misu30'))
+      for (const [index, l] of volume.lessons.entries()) {
+        const raw = readCourseLesson(volume.id, l.no, 1);
+        assert.equal(raw.source.book, 'Misu · 30 bài nói tiếng Trung');
+        assert.ok(raw.source.volumeTitle);
+        assert.equal(raw.source.lessonTitle, raw.lessonTitle);
+        assert.equal(raw.source.file, undefined);
+        assert.equal(raw.sourceBook, raw.source.book);
+        assert.equal(raw.sourceTitle, raw.source.volumeTitle);
+        if (index === 0) assert.deepEqual(raw.prerequisites, []);
+      }
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});

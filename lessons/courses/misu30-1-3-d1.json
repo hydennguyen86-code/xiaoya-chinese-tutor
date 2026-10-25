@@ -14,8 +14,10 @@
   "editorialStatus": "AI soạn, chưa duyệt",
   "recommendedMinutes": 20,
   "source": {
-    "file": "curriculum/volume-1.json",
-    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+    "book": "Misu · 30 bài nói tiếng Trung",
+    "volumeTitle": "Nhập môn · HSK 1–2",
+    "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+    "lessonTitle": "我家有四口人 · Gia đình"
   },
   "vocab": [
     {
@@ -197,5 +199,7 @@
       ]
     }
   ],
-  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Misu xem ảnh gia đình trên điện thoại của bạn."
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Misu xem ảnh gia đình trên điện thoại của bạn.",
+  "sourceBook": "Misu · 30 bài nói tiếng Trung",
+  "sourceTitle": "Nhập môn · HSK 1–2"
 }

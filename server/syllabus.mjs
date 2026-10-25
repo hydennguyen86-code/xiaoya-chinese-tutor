@@ -72,6 +72,8 @@ export function validateSyllabus(raw) {
       authored: Boolean(vol.authored),
       trackId: cleanStr(vol.trackId, 40),
       trackTitle: cleanStr(vol.trackTitle, 100),
+      sourceBook: cleanStr(vol.sourceBook, 100),
+      sourceTitle: cleanStr(vol.sourceTitle, 100),
       nextVolumeId: cleanStr(vol.nextVolumeId, 40).replace(/[^A-Za-z0-9_-]/g, ''),
       targetLevel: cleanStr(vol.targetLevel, 20),
     };

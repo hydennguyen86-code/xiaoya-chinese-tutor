@@ -14,8 +14,10 @@
   "editorialStatus": "AI soạn, chưa duyệt",
   "recommendedMinutes": 20,
   "source": {
-    "file": "curriculum/volume-2.json",
-    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+    "book": "Misu · 30 bài nói tiếng Trung",
+    "volumeTitle": "Sơ trung cấp · HSK 3–4",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+    "lessonTitle": "你哪里不舒服？ · Khám bệnh"
   },
   "vocab": [
     {
@@ -197,5 +199,7 @@
       ]
     }
   ],
-  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Phòng khám nhỏ."
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Phòng khám nhỏ.",
+  "sourceBook": "Misu · 30 bài nói tiếng Trung",
+  "sourceTitle": "Sơ trung cấp · HSK 3–4"
 }

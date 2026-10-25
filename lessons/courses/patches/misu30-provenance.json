@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "volumes": [
+    {
+      "id": "misu30-1",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
+      }
+    },
+    {
+      "id": "misu30-2",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+      }
+    },
+    {
+      "id": "misu30-3",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "file": "misu30-1-1-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "你好！我叫…… · Chào hỏi và giới thiệu bản thân"
+      },
+      "prerequisites": []
+    },
+    {
+      "file": "misu30-1-2-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "你今年几岁？ · Số đếm, tuổi và số điện thoại"
+      },
+      "prerequisites": [
+        1
+      ]
+    },
+    {
+      "file": "misu30-1-3-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "我家有四口人 · Gia đình"
+      },
+      "prerequisites": [
+        2
+      ]
+    },
+    {
+      "file": "misu30-1-4-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "今天星期几？ · Ngày tháng và giờ giấc"
+      },
+      "prerequisites": [
+        3
+      ]
+    },
+    {
+      "file": "misu30-1-5-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "这个多少钱？ · Mua sắm và trả giá"
+      },
+      "prerequisites": [
+        4
+      ]
+    },
+    {
+      "file": "misu30-1-6-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "我要一碗面条 · Gọi món ăn"
+      },
+      "prerequisites": [
+        5
+      ]
+    },
+    {
+      "file": "misu30-1-7-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "请问，地铁站怎么走？ · Hỏi đường"
+      },
+      "prerequisites": [
+        6
+      ]
+    },
+    {
+      "file": "misu30-1-8-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "你喜欢做什么？ · Sở thích"
+      },
+      "prerequisites": [
+        7
+      ]
+    },
+    {
+      "file": "misu30-1-9-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "今天天气怎么样？ · Thời tiết và cảm xúc"
+      },
+      "prerequisites": [
+        8
+      ]
+    },
+    {
+      "file": "misu30-1-10-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
+        "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57",
+        "lessonTitle": "我的一天 · Ôn tập sinh hoạt hằng ngày"
+      },
+      "prerequisites": [
+        9
+      ]
+    },
+    {
+      "file": "misu30-2-11-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "这个周末你有空吗？ · Hẹn bạn và lên kế hoạch"
+      },
+      "prerequisites": []
+    },
+    {
+      "file": "misu30-2-12-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "坐地铁还是打车？ · Đi lại và mua vé"
+      },
+      "prerequisites": [
+        11
+      ]
+    },
+    {
+      "file": "misu30-2-13-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "我预订了房间 · Khách sạn"
+      },
+      "prerequisites": [
+        12
+      ]
+    },
+    {
+      "file": "misu30-2-14-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "我想取五百块钱 · Ngân hàng và thanh toán"
+      },
+      "prerequisites": [
+        13
+      ]
+    },
+    {
+      "file": "misu30-2-15-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "你哪里不舒服？ · Khám bệnh"
+      },
+      "prerequisites": [
+        14
+      ]
+    },
+    {
+      "file": "misu30-2-16-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "我想租一个房子 · Thuê nhà"
+      },
+      "prerequisites": [
+        15
+      ]
+    },
+    {
+      "file": "misu30-2-17-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "请介绍一下你自己 · Công việc và phỏng vấn"
+      },
+      "prerequisites": [
+        16
+      ]
+    },
+    {
+      "file": "misu30-2-18-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "那是一次难忘的旅行 · Du lịch và trải nghiệm"
+      },
+      "prerequisites": [
+        17
+      ]
+    },
+    {
+      "file": "misu30-2-19-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "今天我请客 · Mời khách và ứng xử"
+      },
+      "prerequisites": [
+        18
+      ]
+    },
+    {
+      "file": "misu30-2-20-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
+        "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+        "lessonTitle": "我想投诉一下 · Phàn nàn và xin lỗi"
+      },
+      "prerequisites": [
+        19
+      ]
+    },
+    {
+      "file": "misu30-3-21-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "工作压力太大 · Công việc và áp lực"
+      },
+      "prerequisites": []
+    },
+    {
+      "file": "misu30-3-22-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "成绩和兴趣哪个更重要？ · Giáo dục và nuôi dạy con"
+      },
+      "prerequisites": [
+        21
+      ]
+    },
+    {
+      "file": "misu30-3-23-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "我最近总是睡不好 · Sức khỏe và lối sống"
+      },
+      "prerequisites": [
+        22
+      ]
+    },
+    {
+      "file": "misu30-3-24-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "手机会取代一切吗？ · Công nghệ và đời sống"
+      },
+      "prerequisites": [
+        23
+      ]
+    },
+    {
+      "file": "misu30-3-25-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "越南的春节有什么不一样？ · Văn hóa và phong tục"
+      },
+      "prerequisites": [
+        24
+      ]
+    },
+    {
+      "file": "misu30-3-26-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "环保从身边做起 · Môi trường"
+      },
+      "prerequisites": [
+        25
+      ]
+    },
+    {
+      "file": "misu30-3-27-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "这是我们的底线 · Thương lượng và đàm phán"
+      },
+      "prerequisites": [
+        26
+      ]
+    },
+    {
+      "file": "misu30-3-28-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "那段经历让我成长 · Chia sẻ trải nghiệm"
+      },
+      "prerequisites": [
+        27
+      ]
+    },
+    {
+      "file": "misu30-3-29-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "你怎么看这条新闻？ · Tin tức và quan điểm"
+      },
+      "prerequisites": [
+        28
+      ]
+    },
+    {
+      "file": "misu30-3-30-d1.json",
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6",
+      "source": {
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
+        "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52",
+        "lessonTitle": "我的目标是…… · Tổng kết và kế hoạch tương lai"
+      },
+      "prerequisites": [
+        29
+      ]
+    }
+  ]
+}

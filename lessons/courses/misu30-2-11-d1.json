@@ -14,8 +14,10 @@
   "editorialStatus": "AI soạn, chưa duyệt",
   "recommendedMinutes": 20,
   "source": {
-    "file": "curriculum/volume-2.json",
-    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
+    "book": "Misu · 30 bài nói tiếng Trung",
+    "volumeTitle": "Sơ trung cấp · HSK 3–4",
+    "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e",
+    "lessonTitle": "这个周末你有空吗？ · Hẹn bạn và lên kế hoạch"
   },
   "vocab": [
     {
@@ -122,9 +124,7 @@
     "question": "这个周末你有什么计划？",
     "questionVi": "Cuối tuần này bạn có kế hoạch gì?"
   },
-  "prerequisites": [
-    10
-  ],
+  "prerequisites": [],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
     "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
@@ -197,5 +197,7 @@
       ]
     }
   ],
-  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Cuối tuần, Misu rủ bạn đi chơi."
+  "transferTask": "Đổi tên, địa điểm hoặc thời gian trong tình huống: Cuối tuần, Misu rủ bạn đi chơi.",
+  "sourceBook": "Misu · 30 bài nói tiếng Trung",
+  "sourceTitle": "Sơ trung cấp · HSK 3–4"
 }

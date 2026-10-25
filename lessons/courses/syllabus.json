@@ -1052,7 +1052,8 @@
       "trackTitle": "30 bài giao tiếp HSK1–6",
       "nextVolumeId": "misu30-2",
       "source": {
-        "file": "curriculum/volume-1.json",
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Nhập môn · HSK 1–2",
         "sha256": "422f4d6051a19944d611e670b57b90b0626c452eb70c4690f5c4191219cead57"
       },
       "lessons": [
@@ -1547,7 +1548,9 @@
             "先……，然后……"
           ]
         }
-      ]
+      ],
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Nhập môn · HSK 1–2"
     },
     {
       "id": "misu30-2",
@@ -1561,7 +1564,8 @@
       "trackTitle": "30 bài giao tiếp HSK1–6",
       "nextVolumeId": "misu30-3",
       "source": {
-        "file": "curriculum/volume-2.json",
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Sơ trung cấp · HSK 3–4",
         "sha256": "ed5f0f42b084a6f51dac332ccd5ccbfa1d9da0ac4d4f07b0928021726ac3343e"
       },
       "lessons": [
@@ -2055,7 +2059,9 @@
             "很抱歉，……"
           ]
         }
-      ]
+      ],
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Sơ trung cấp · HSK 3–4"
     },
     {
       "id": "misu30-3",
@@ -2069,7 +2075,8 @@
       "trackId": "misu30",
       "trackTitle": "30 bài giao tiếp HSK1–6",
       "source": {
-        "file": "curriculum/volume-3.json",
+        "book": "Misu · 30 bài nói tiếng Trung",
+        "volumeTitle": "Trung cao cấp · HSK 5–6",
         "sha256": "25836a15638fe220efd34f577663e0bacbdfcfbb09c607a1089631748a53ac52"
       },
       "lessons": [
@@ -2563,7 +2570,9 @@
             "我计划……"
           ]
         }
-      ]
+      ],
+      "sourceBook": "Misu · 30 bài nói tiếng Trung",
+      "sourceTitle": "Trung cao cấp · HSK 5–6"
     }
   ]
 }
