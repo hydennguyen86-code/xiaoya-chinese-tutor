@@ -90,3 +90,26 @@ test('analyseTones exposes ordered bounded timestamps for words and sentences', 
     });
   }
 });
+
+test('a short, high, creaky syllable is left unjudged instead of being called tone 3', () => {
+  // measured on a Vietnamese learner: 爸/费/骂 clipped like thanh nặng, little pitch left
+  const high = {
+    start: 3,
+    end: 3,
+    min: 3,
+    change: 0,
+    rise: 0.4,
+    fall: 0.2,
+    minPos: 0,
+    range: 0.8,
+    height: 1.2,
+    startHeight: 1.2,
+    endHeight: 1.2,
+    minHeight: 1.2,
+    voicedRatio: 0.4,
+    frames: 10,
+  };
+  assert.equal(classifyIsolated(high, true), 0);
+  const low = { ...high, height: 0.1, startHeight: 0.2, endHeight: 0, minHeight: 0 };
+  assert.equal(classifyIsolated(low, true), 3);
+});

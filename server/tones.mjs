@@ -266,6 +266,10 @@ export function classifyIsolated(f, knownRange, { single = true } = {}) {
     if (f.height <= 0.35) return 3;
     return 0;
   }
+  // creak usually means a low tone 3, but a short, high, creaky syllable is a
+  // Vietnamese-style clipped tone 4 or 1 (爸 费 骂 read like thanh nặng): too
+  // little pitch to tell which, so leave it unjudged rather than call it 3
+  if (creaky && knownRange && f.height > 0.5) return 0;
   if (creaky || (knownRange && f.height <= 0.35)) return 3;
   if (f.fall >= 4) return 4;
   return 0;

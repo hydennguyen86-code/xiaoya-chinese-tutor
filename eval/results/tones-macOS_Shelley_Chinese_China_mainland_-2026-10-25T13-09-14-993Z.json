@@ -1,0 +1,54 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-25T13:09:14.993Z",
+ "commit": "6eab2dc",
+ "dirty": true,
+ "settings": {
+  "voice": "macOS Shelley (Chinese (China mainland))"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    0,
+    10,
+    0,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    10,
+    0,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    0,
+    10,
+    0
+   ],
+   "4": [
+    0,
+    0,
+    0,
+    0,
+    10
+   ]
+  },
+  "singles": {
+   "correct": 40,
+   "total": 40,
+   "unclear": 0
+  },
+  "words": {
+   "correct": 31,
+   "judged": 32,
+   "syllables": 32
+  },
+  "misses": [
+   "学习 学: expected 2, heard 1"
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-25T13:09:14.699Z",
+ "commit": "6eab2dc",
+ "dirty": true,
+ "settings": {
+  "voice": "macOS Reed (Chinese (China mainland))"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    0,
+    10,
+    0,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    10,
+    0,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    1,
+    9,
+    0
+   ],
+   "4": [
+    1,
+    0,
+    0,
+    2,
+    7
+   ]
+  },
+  "singles": {
+   "correct": 36,
+   "total": 40,
+   "unclear": 1
+  },
+  "words": {
+   "correct": 27,
+   "judged": 29,
+   "syllables": 32
+  },
+  "misses": [
+   "银行 银: expected 2, heard 1",
+   "回家 回: expected 2, heard 1"
+  ]
+ }
+}
