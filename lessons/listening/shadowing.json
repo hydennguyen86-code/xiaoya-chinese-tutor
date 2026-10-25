@@ -1,0 +1,3521 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "shadowing",
+  "version": 1,
+  "note": "Đọc theo (shadowing): app phát đoạn bằng TTS, người học đọc đuổi theo. File không chứa audio. chunks là các cụm hơi — pause=soft ngắt ở dấu phẩy, pause=hard ngắt ở dấu chấm/hỏi, pause=end kết thúc đoạn. pinyin ghi ở dạng đọc thành tiếng.",
+  "levels": [
+    "HSK1-2",
+    "HSK3-4",
+    "HSK5-6"
+  ],
+  "schema": {
+    "id": "sh-<1|2|3>-<số 2 chữ số>",
+    "level": "HSK1-2 | HSK3-4 | HSK5-6",
+    "text": "đoạn chữ Hán có dấu câu",
+    "pinyin": "pinyin cả đoạn, có dấu thanh, đúng thứ tự từng chữ",
+    "meaningVi": "nghĩa tiếng Việt của cả đoạn",
+    "syllables": "số âm tiết Hán trong đoạn",
+    "pace": "chậm | vừa | nhanh — tốc độ TTS gợi ý khi luyện",
+    "chunks[].hanzi": "một cụm hơi",
+    "chunks[].pinyin": "pinyin của cụm, cắt từ pinyin cả đoạn",
+    "chunks[].pause": "soft | hard | end",
+    "focus": "mảng: điểm cần bắt chước (thanh, nhịp, biến điệu, cặp âm)",
+    "baseTones": "chuỗi thanh gốc, chỉ có khi sandhi=true",
+    "uncertain": "true khi người soạn chưa chắc, kèm uncertainReason"
+  },
+  "items": [
+    {
+      "id": "sh-1-01",
+      "level": "HSK1-2",
+      "text": "这是我的朋友。她叫兰，她很喜欢猫。",
+      "pinyin": "zhè shì wǒ de péng you tā jiào lán tā hén xǐ huan māo",
+      "meaningVi": "Đây là bạn của tôi. Cô ấy tên Lan, cô ấy rất thích mèo.",
+      "syllables": 14,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "这是我的朋友",
+          "pinyin": "zhè shì wǒ de péng you",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "她叫兰",
+          "pinyin": "tā jiào lán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "她很喜欢猫",
+          "pinyin": "tā hén xǐ huan māo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "朋友 péng you: chữ thứ hai đọc nhẹ.",
+        "喜欢 xǐ huan: 欢 đọc nhẹ, chỉ còn rõ âm an."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        3,
+        5,
+        2,
+        3,
+        1,
+        4,
+        2,
+        1,
+        3,
+        3,
+        5,
+        1
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          3,
+          5,
+          2,
+          5,
+          1,
+          4,
+          2,
+          1,
+          2,
+          3,
+          5,
+          1
+        ],
+        [
+          4,
+          4,
+          3,
+          5,
+          2,
+          5,
+          1,
+          4,
+          2,
+          1,
+          3,
+          3,
+          5,
+          1
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 10 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-02",
+      "level": "HSK1-2",
+      "text": "我正在吃饭，你先坐一下，马上就好。",
+      "pinyin": "wǒ zhèng zài chī fàn nǐ xiān zuò yí xià mǎ shàng jiù hǎo",
+      "meaningVi": "Tôi đang ăn cơm, bạn ngồi một lát, tôi xong ngay.",
+      "syllables": 14,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我正在吃饭",
+          "pinyin": "wǒ zhèng zài chī fàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "你先坐一下",
+          "pinyin": "nǐ xiān zuò yí xià",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "马上就好",
+          "pinyin": "mǎ shàng jiù hǎo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "一下 yí xià: 一 trước thanh 4 đổi thành thanh 2.",
+        "马上 mǎ shàng: 马 thanh 3 gọn, 上 cuộn lưỡi + -ang."
+      ]
+    },
+    {
+      "id": "sh-1-03",
+      "level": "HSK1-2",
+      "text": "请给我一杯水，谢谢。这里有没有茶？",
+      "pinyin": "qǐng gěi wǒ yì bēi shuǐ xiè xie zhè lǐ yǒu méi yǒu chá",
+      "meaningVi": "Xin cho tôi một cốc nước, cảm ơn. Ở đây có trà không?",
+      "syllables": 14,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "请给我一杯水",
+          "pinyin": "qǐng gěi wǒ yì bēi shuǐ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "谢谢",
+          "pinyin": "xiè xie",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "这里有没有茶",
+          "pinyin": "zhè lǐ yǒu méi yǒu chá",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "一杯 yì bēi: 一 trước thanh 1 đổi thành thanh 4.",
+        "有没有 yǒu méi yǒu: 没 ở giữa đọc méi thanh 2."
+      ]
+    },
+    {
+      "id": "sh-1-04",
+      "level": "HSK1-2",
+      "text": "他九点睡觉，六点起床。每天都很忙。",
+      "pinyin": "tā jiǔ diǎn shuì jiào liù diǎn qǐ chuáng měi tiān dōu hěn máng",
+      "meaningVi": "Anh ấy chín giờ ngủ, sáu giờ dậy. Ngày nào cũng rất bận.",
+      "syllables": 14,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "他九点睡觉",
+          "pinyin": "tā jiǔ diǎn shuì jiào",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "六点起床",
+          "pinyin": "liù diǎn qǐ chuáng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "每天都很忙",
+          "pinyin": "měi tiān dōu hěn máng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "睡觉 shuì jiào: hai thanh 4 liên tiếp.",
+        "起床 qǐ chuáng: 床 bật hơi và có -uang."
+      ]
+    },
+    {
+      "id": "sh-1-05",
+      "level": "HSK1-2",
+      "text": "你喜欢喝什么？我喜欢喝茶，不喝咖啡。",
+      "pinyin": "nǐ xǐ huan hē shén me wǒ xǐ huan hē chá bù hē kā fēi",
+      "meaningVi": "Bạn thích uống gì? Tôi thích uống trà, không uống cà phê.",
+      "syllables": 15,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你喜欢喝什么",
+          "pinyin": "nǐ xǐ huan hē shén me",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我喜欢喝茶",
+          "pinyin": "wǒ xǐ huan hē chá",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "不喝咖啡",
+          "pinyin": "bù hē kā fēi",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "什么 shén me: 么 đọc nhẹ.",
+        "咖啡 kā fēi: 咖 là âm mềm mặt lưỡi, 飞 đóng -n."
+      ]
+    },
+    {
+      "id": "sh-1-06",
+      "level": "HSK1-2",
+      "text": "明天有雨，很冷。记得带伞，别忘穿外套。",
+      "pinyin": "míng tiān yǒu yǔ hén lěng jì de dài sǎn bié wàng chuān wài tào",
+      "meaningVi": "Ngày mai có mưa, lạnh lắm. Nhớ mang ô, đừng quên mặc áo khoác.",
+      "syllables": 15,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "明天有雨",
+          "pinyin": "míng tiān yǒu yǔ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "很冷",
+          "pinyin": "hén lěng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "记得带伞",
+          "pinyin": "jì de dài sǎn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "别忘穿外套",
+          "pinyin": "bié wàng chuān wài tào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "有 yǒu đứng trước danh từ, thanh 3 gọn.",
+        "外套 wài tào: hai âm mở -ai, rơi rồi đi lên."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        1,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        4,
+        1,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          1,
+          3,
+          3,
+          2,
+          3,
+          4,
+          5,
+          4,
+          3,
+          2,
+          4,
+          1,
+          4,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          3,
+          3,
+          3,
+          4,
+          5,
+          4,
+          3,
+          2,
+          4,
+          1,
+          4,
+          4
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          3,
+          2,
+          4,
+          1,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 4 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-07",
+      "level": "HSK1-2",
+      "text": "你好，我叫小明。我是越南人，现在学汉语。",
+      "pinyin": "ní hǎo wǒ jiào xiǎo míng wǒ shì yuè nán rén xiàn zài xué hàn yǔ",
+      "meaningVi": "Xin chào, tôi tên Tiểu Minh. Tôi là người Việt Nam, hiện đang học tiếng Trung.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你好",
+          "pinyin": "ní hǎo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我叫小明",
+          "pinyin": "wǒ jiào xiǎo míng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我是越南人",
+          "pinyin": "wǒ shì yuè nán rén",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "现在学汉语",
+          "pinyin": "xiàn zài xué hàn yǔ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "你好 biến điệu 3+3 → ní hǎo, chữ đầu đi lên.",
+        "越南 Yuènán: 越 là ü + e rồi rơi mạnh; 南 đóng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        4,
+        3,
+        2,
+        3,
+        4,
+        4,
+        2,
+        2,
+        4,
+        4,
+        2,
+        4,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          3,
+          4,
+          3,
+          2,
+          3,
+          4,
+          4,
+          2,
+          2,
+          4,
+          4,
+          2,
+          4,
+          3
+        ],
+        [
+          3,
+          3,
+          3,
+          4,
+          3,
+          2,
+          3,
+          4,
+          4,
+          2,
+          2,
+          4,
+          4,
+          2,
+          4,
+          3
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          3,
+          2,
+          3,
+          4,
+          4,
+          2,
+          2,
+          4,
+          4,
+          2,
+          4,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 0 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-08",
+      "level": "HSK1-2",
+      "text": "今天星期几？今天星期三。我们上午有课。",
+      "pinyin": "jīn tiān xīng qī jǐ jīn tiān xīng qī sān wǒ men shàng wǔ yǒu kè",
+      "meaningVi": "Hôm nay thứ mấy? Hôm nay thứ Tư. Buổi sáng chúng tôi có tiết.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "今天星期几",
+          "pinyin": "jīn tiān xīng qī jǐ",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "今天星期三",
+          "pinyin": "jīn tiān xīng qī sān",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我们上午有课",
+          "pinyin": "wǒ men shàng wǔ yǒu kè",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "星期 xīng qī: hai thanh 1 phẳng và đều.",
+        "上午 shàng wǔ: 上 cuộn lưỡi + -ang, 午 tròn môi."
+      ]
+    },
+    {
+      "id": "sh-1-09",
+      "level": "HSK1-2",
+      "text": "现在几点？现在八点十分。我该去学校了。",
+      "pinyin": "xiàn zài jí diǎn xiàn zài bā diǎn shí fēn wǒ gāi qù xué xiào le",
+      "meaningVi": "Bây giờ mấy giờ? Bây giờ tám giờ mười phút. Tôi phải đi trường rồi.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "现在几点",
+          "pinyin": "xiàn zài jí diǎn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "现在八点十分",
+          "pinyin": "xiàn zài bā diǎn shí fēn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我该去学校了",
+          "pinyin": "wǒ gāi qù xué xiào le",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "十 shí cuộn lưỡi, khác 四 sì.",
+        "点 diǎn đóng -n; 该 gāi mở -ai."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        3,
+        3,
+        4,
+        4,
+        1,
+        3,
+        2,
+        1,
+        3,
+        1,
+        4,
+        2,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          2,
+          3,
+          4,
+          4,
+          1,
+          3,
+          2,
+          1,
+          3,
+          1,
+          4,
+          2,
+          4,
+          5
+        ],
+        [
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          1,
+          3,
+          2,
+          1,
+          3,
+          1,
+          4,
+          2,
+          4,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 2 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-10",
+      "level": "HSK1-2",
+      "text": "这个多少钱？太贵了。我买那个，不买这个。",
+      "pinyin": "zhè ge duō shǎo qián tài guì le wǒ mǎi nà ge bù mǎi zhè ge",
+      "meaningVi": "Cái này bao nhiêu tiền? Đắt quá. Tôi mua cái kia, không mua cái này.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "这个多少钱",
+          "pinyin": "zhè ge duō shǎo qián",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "太贵了",
+          "pinyin": "tài guì le",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我买那个",
+          "pinyin": "wǒ mǎi nà ge",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "不买这个",
+          "pinyin": "bù mǎi zhè ge",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "贵 guì rơi mạnh từ cao xuống thấp.",
+        "不 trước 买 (thanh 3) giữ bù, còn 太贵了 了 đọc nhẹ le."
+      ]
+    },
+    {
+      "id": "sh-1-11",
+      "level": "HSK1-2",
+      "text": "不好意思，请再说一遍。我没听懂这句话。",
+      "pinyin": "bù hǎo yì si qǐng zài shuō yí biàn wǒ méi tīng dǒng zhè jù huà",
+      "meaningVi": "Xin lỗi, bạn nói lại một lần nữa nhé. Tôi chưa hiểu câu này.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "不好意思",
+          "pinyin": "bù hǎo yì si",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "请再说一遍",
+          "pinyin": "qǐng zài shuō yí biàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我没听懂这句话",
+          "pinyin": "wǒ méi tīng dǒng zhè jù huà",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "意思 yì si: 思 đọc nhẹ si.",
+        "听懂 tīng dǒng: một âm đóng -ng với i, một âm có -ong."
+      ]
+    },
+    {
+      "id": "sh-1-12",
+      "level": "HSK1-2",
+      "text": "这个字怎么写？请写在纸上，我看不清楚。",
+      "pinyin": "zhè ge zì zěn me xiě qǐng xiě zài zhǐ shàng wǒ kàn bù qīng chǔ",
+      "meaningVi": "Chữ này viết thế nào? Xin viết trên giấy, tôi nhìn không rõ.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "这个字怎么写",
+          "pinyin": "zhè ge zì zěn me xiě",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请写在纸上",
+          "pinyin": "qǐng xiě zài zhǐ shàng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我看不清楚",
+          "pinyin": "wǒ kàn bù qīng chǔ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "纸 zhǐ cuộn lưỡi, thanh 3.",
+        "清楚 qīng chu: 楚 đọc ngắn và nhẹ hơn 清."
+      ]
+    },
+    {
+      "id": "sh-1-13",
+      "level": "HSK1-2",
+      "text": "你叫什么名字？名字怎么写？请再说一遍。",
+      "pinyin": "nǐ jiào shén me míng zi míng zi zěn me xiě qǐng zài shuō yí biàn",
+      "meaningVi": "Bạn tên là gì? Tên viết thế nào? Xin nói lại một lần.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你叫什么名字",
+          "pinyin": "nǐ jiào shén me míng zi",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "名字怎么写",
+          "pinyin": "míng zi zěn me xiě",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请再说一遍",
+          "pinyin": "qǐng zài shuō yí biàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "名字 míng zi: 子 đọc nhẹ.",
+        "叫 jiào không bật hơi; 什 shén cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "sh-1-14",
+      "level": "HSK1-2",
+      "text": "我的手机在哪儿？桌子上没有，可能在包里。",
+      "pinyin": "wǒ de shǒu jī zài nǎ ér zhuō zi shàng méi yǒu kě néng zài bāo lǐ",
+      "meaningVi": "Điện thoại của tôi đâu? Không có trên bàn, có lẽ ở trong cặp.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我的手机在哪儿",
+          "pinyin": "wǒ de shǒu jī zài nǎ ér",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "桌子上没有",
+          "pinyin": "zhuō zi shàng méi yǒu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "可能在包里",
+          "pinyin": "kě néng zài bāo lǐ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "手机 shǒu jī: sh cuộn lưỡi, j không cuộn.",
+        "可能 kě néng: 能 đóng -ng, đọc vang."
+      ]
+    },
+    {
+      "id": "sh-1-15",
+      "level": "HSK1-2",
+      "text": "妈妈在家做饭，爸爸在上班，我在学校学习。",
+      "pinyin": "mā ma zài jiā zuò fàn bà ba zài shàng bān wǒ zài xué xiào xué xí",
+      "meaningVi": "Mẹ ở nhà nấu ăn, bố đi làm, tôi học ở trường.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "妈妈在家做饭",
+          "pinyin": "mā ma zài jiā zuò fàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "爸爸在上班",
+          "pinyin": "bà ba zài shàng bān",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我在学校学习",
+          "pinyin": "wǒ zài xué xiào xué xí",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "做饭 zuò fàn: 坐 là z phẳng, 饭 đóng -n.",
+        "学习 xué xí: hai âm x, môi dẹt, đừng lẫn sh."
+      ]
+    },
+    {
+      "id": "sh-1-16",
+      "level": "HSK1-2",
+      "text": "你家有几口人？我家有四口人，爸爸、妈妈和我。",
+      "pinyin": "nǐ jiā yǒu jí kǒu rén wǒ jiā yǒu sì kǒu rén bà ba mā ma hé wǒ",
+      "meaningVi": "Nhà bạn có mấy người? Nhà tôi có bốn người: bố, mẹ và tôi.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你家有几口人",
+          "pinyin": "nǐ jiā yǒu jí kǒu rén",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我家有四口人",
+          "pinyin": "wǒ jiā yǒu sì kǒu rén",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "爸爸",
+          "pinyin": "bà ba",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "妈妈和我",
+          "pinyin": "mā ma hé wǒ",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "几 jǐ thanh 3, khác 七 qī thanh 1.",
+        "爸爸 bà ba、妈妈 mā ma: chữ thứ hai đều đọc nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        1,
+        3,
+        3,
+        3,
+        2,
+        3,
+        1,
+        3,
+        4,
+        3,
+        2,
+        4,
+        5,
+        1,
+        5,
+        2,
+        3
+      ],
+      "acceptTones": [
+        [
+          3,
+          1,
+          3,
+          2,
+          3,
+          2,
+          3,
+          1,
+          3,
+          4,
+          3,
+          2,
+          4,
+          5,
+          1,
+          5,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          3,
+          3,
+          3,
+          2,
+          3,
+          1,
+          3,
+          4,
+          3,
+          2,
+          4,
+          5,
+          1,
+          5,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          2,
+          2,
+          3,
+          2,
+          3,
+          1,
+          3,
+          4,
+          3,
+          2,
+          4,
+          5,
+          1,
+          5,
+          2,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 3 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-17",
+      "level": "HSK1-2",
+      "text": "你在哪里工作？我在公司上班，每天坐地铁去。",
+      "pinyin": "nǐ zài ná lǐ gōng zuò wǒ zài gōng sī shàng bān měi tiān zuò dì tiě qù",
+      "meaningVi": "Bạn làm việc ở đâu? Tôi làm ở công ty, ngày nào cũng đi tàu điện ngầm.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你在哪里工作",
+          "pinyin": "nǐ zài ná lǐ gōng zuò",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我在公司上班",
+          "pinyin": "wǒ zài gōng sī shàng bān",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "每天坐地铁去",
+          "pinyin": "měi tiān zuò dì tiě qù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "哪里 hai thanh 3 liền nhau → nái lǐ.",
+        "工作 gōng zuò、公司 gōng sī: cùng âm 公 đóng -ng, nhưng 作 là z bật hơi nhẹ còn 司 là s."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        3,
+        3,
+        1,
+        4,
+        3,
+        4,
+        1,
+        1,
+        4,
+        1,
+        3,
+        1,
+        4,
+        4,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          2,
+          3,
+          1,
+          4,
+          3,
+          4,
+          1,
+          1,
+          4,
+          1,
+          3,
+          1,
+          4,
+          4,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          3,
+          3,
+          1,
+          4,
+          3,
+          4,
+          1,
+          1,
+          4,
+          1,
+          3,
+          1,
+          4,
+          4,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 2 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-18",
+      "level": "HSK1-2",
+      "text": "你住在哪里？我住在河边。医院在学校的右边。",
+      "pinyin": "nǐ zhù zài ná lǐ wǒ zhù zài hé biān yī yuàn zài xué xiào de yòu bian",
+      "meaningVi": "Bạn sống ở đâu? Tôi sống bên sông. Bệnh viện ở bên phải trường học.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "你住在哪里",
+          "pinyin": "nǐ zhù zài ná lǐ",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我住在河边",
+          "pinyin": "wǒ zhù zài hé biān",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "医院在学校的右边",
+          "pinyin": "yī yuàn zài xué xiào de yòu bian",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "哪里 hai thanh 3 liền nhau → nái lǐ.",
+        "右边 yòu bian: 边 đọc nhẹ, ngắn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        2,
+        1,
+        1,
+        4,
+        4,
+        2,
+        4,
+        5,
+        4,
+        1
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          2,
+          3,
+          3,
+          4,
+          4,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          4,
+          5,
+          4,
+          5
+        ],
+        [
+          3,
+          4,
+          4,
+          3,
+          3,
+          3,
+          4,
+          4,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          4,
+          5,
+          4,
+          5
+        ],
+        [
+          3,
+          4,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          4,
+          5,
+          4,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 3 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-1-19",
+      "level": "HSK1-2",
+      "text": "她是老师，我也是老师。我们学校的老师很多。",
+      "pinyin": "tā shì lǎo shī wǒ yě shì lǎo shī wǒ men xué xiào de lǎo shī hěn duō",
+      "meaningVi": "Cô ấy là giáo viên, tôi cũng là giáo viên. Giáo viên trường tôi nhiều lắm.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "她是老师",
+          "pinyin": "tā shì lǎo shī",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我也是老师",
+          "pinyin": "wǒ yě shì lǎo shī",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我们学校的老师很多",
+          "pinyin": "wǒ men xué xiào de lǎo shī hěn duō",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "老师 lǎo shī: thanh 3 rồi thanh 1, 师 kéo hơi rít.",
+        "学校 xué xiào: hai âm đều có i-u, đừng đọc \"xao\"."
+      ]
+    },
+    {
+      "id": "sh-1-20",
+      "level": "HSK1-2",
+      "text": "我们一起去游泳吧。今天天气热，水不冷。你喜欢什么运动？",
+      "pinyin": "wǒ men yì qǐ qù yóu yǒng ba jīn tiān tiān qì rè shuǐ bù lěng nǐ xǐ huan shén me yùn dòng",
+      "meaningVi": "Chúng ta cùng đi bơi nhé. Hôm nay trời nóng, nước không lạnh. Bạn thích môn thể thao nào?",
+      "syllables": 23,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我们一起去游泳吧",
+          "pinyin": "wǒ men yì qǐ qù yóu yǒng ba",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "今天天气热",
+          "pinyin": "jīn tiān tiān qì rè",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "水不冷",
+          "pinyin": "shuǐ bù lěng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "你喜欢什么运动",
+          "pinyin": "nǐ xǐ huan shén me yùn dòng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "游泳 yóu yǒng: thanh 2 rồi thanh 3, hai âm rất gần nhau.",
+        "运动 yùn dòng: 运 là ü + n; 动 đóng -ng."
+      ]
+    },
+    {
+      "id": "sh-2-01",
+      "level": "HSK3-4",
+      "text": "我还没准备好，请等我五分钟，我马上就来。",
+      "pinyin": "wǒ hái méi zhǔn bèi hǎo qǐng děng wǒ wǔ fēn zhōng wǒ mǎ shàng jiù lái",
+      "meaningVi": "Tôi vẫn chưa chuẩn bị xong, chờ tôi năm phút, tôi đến ngay.",
+      "syllables": 17,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我还没准备好",
+          "pinyin": "wǒ hái méi zhǔn bèi hǎo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "请等我五分钟",
+          "pinyin": "qǐng děng wǒ wǔ fēn zhōng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我马上就来",
+          "pinyin": "wǒ mǎ shàng jiù lái",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "准备 zhǔn bèi: 准 cuộn lưỡi, có u và đóng -n.",
+        "马上 mǎ shàng: 马 thanh 3 gọn, 上 cuộn lưỡi + -ang."
+      ]
+    },
+    {
+      "id": "sh-2-02",
+      "level": "HSK3-4",
+      "text": "他解释说，延误是因为材料没到，不是他的责任。",
+      "pinyin": "tā jiě shì shuō yán wù shì yīn wèi cái liào méi dào bú shì tā de zé rèn",
+      "meaningVi": "Anh ấy giải thích rằng giao hàng trễ là do vật liệu chưa về, không phải trách nhiệm của anh ấy.",
+      "syllables": 19,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "他解释说",
+          "pinyin": "tā jiě shì shuō",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "延误是因为材料没到",
+          "pinyin": "yán wù shì yīn wèi cái liào méi dào",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "不是他的责任",
+          "pinyin": "bú shì tā de zé rèn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "解释 jiě shì: 释 cuộn lưỡi, khác 西 xī.",
+        "责任 zé rèn: 任 đọc rèn, cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "sh-2-03",
+      "level": "HSK3-4",
+      "text": "这次考试比上次难，我只复习了一半，所以没通过。",
+      "pinyin": "zhè cì kǎo shì bǐ shàng cì nán wǒ zhī fù xí le yí bàn suó yǐ méi tōng guò",
+      "meaningVi": "Kỳ thi này khó hơn kỳ trước, tôi chỉ ôn được một nửa nên không đỗ.",
+      "syllables": 20,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这次考试比上次难",
+          "pinyin": "zhè cì kǎo shì bǐ shàng cì nán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我只复习了一半",
+          "pinyin": "wǒ zhī fù xí le yí bàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "所以没通过",
+          "pinyin": "suó yǐ méi tōng guò",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "复习 fù xí: hai âm ngắn, 习 là x + i.",
+        "通过 tōng guò: cả hai đóng -ng, 过 tròn môi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        3,
+        4,
+        3,
+        4,
+        4,
+        2,
+        3,
+        1,
+        4,
+        2,
+        5,
+        2,
+        4,
+        3,
+        3,
+        2,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          3,
+          4,
+          3,
+          4,
+          4,
+          2,
+          3,
+          1,
+          4,
+          2,
+          5,
+          2,
+          4,
+          2,
+          3,
+          2,
+          1,
+          4
+        ],
+        [
+          4,
+          4,
+          3,
+          4,
+          3,
+          4,
+          4,
+          2,
+          3,
+          1,
+          4,
+          2,
+          5,
+          2,
+          4,
+          3,
+          3,
+          2,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 15 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-04",
+      "level": "HSK3-4",
+      "text": "他汉语说得很流利，写得更漂亮，大家都很佩服他。",
+      "pinyin": "tā hàn yǔ shuō dé hěn liú lì xiě dé gèng piào liang dà jiā dōu hěn pèi fú tā",
+      "meaningVi": "Anh ấy nói tiếng Trung rất trôi chảy, viết còn đẹp hơn, mọi người đều nể phục.",
+      "syllables": 20,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "他汉语说得很流利",
+          "pinyin": "tā hàn yǔ shuō dé hěn liú lì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "写得更漂亮",
+          "pinyin": "xiě dé gèng piào liang",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "大家都很佩服他",
+          "pinyin": "dà jiā dōu hěn pèi fú tā",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "流利 liú lì: hai âm cùng đi xuống, chỉ khác l và i.",
+        "佩服 pèi fú: 配 bật hơi, 服 đọc fú chứ không phải fù."
+      ]
+    },
+    {
+      "id": "sh-2-05",
+      "level": "HSK3-4",
+      "text": "我建议你早点去看医生，别拖着。身体比工作重要。",
+      "pinyin": "wǒ jiàn yì nǐ záo diǎn qù kàn yī shēng bié tuō zhe shēn tǐ bǐ gōng zuò zhòng yào",
+      "meaningVi": "Tôi khuyên bạn nên đi khám sớm, đừng để lâu. Sức khỏe quan trọng hơn công việc.",
+      "syllables": 20,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我建议你早点去看医生",
+          "pinyin": "wǒ jiàn yì nǐ záo diǎn qù kàn yī shēng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "别拖着",
+          "pinyin": "bié tuō zhe",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "身体比工作重要",
+          "pinyin": "shēn tǐ bǐ gōng zuò zhòng yào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "医生 yī shēng: 生 đóng -ng; hai âm đều bắt đầu bằng nguyên âm/i.",
+        "重要 zhòng yào: 重 đọc zhòng (nặng), rơi mạnh."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        1,
+        1,
+        2,
+        1,
+        5,
+        1,
+        3,
+        3,
+        1,
+        4,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          3,
+          2,
+          3,
+          4,
+          4,
+          1,
+          1,
+          2,
+          1,
+          5,
+          1,
+          3,
+          3,
+          1,
+          4,
+          4,
+          4
+        ],
+        [
+          3,
+          4,
+          4,
+          3,
+          3,
+          3,
+          4,
+          4,
+          1,
+          1,
+          2,
+          1,
+          5,
+          1,
+          3,
+          3,
+          1,
+          4,
+          4,
+          4
+        ],
+        [
+          3,
+          4,
+          4,
+          2,
+          2,
+          3,
+          4,
+          4,
+          1,
+          1,
+          2,
+          1,
+          5,
+          1,
+          2,
+          3,
+          1,
+          4,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 4 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-06",
+      "level": "HSK3-4",
+      "text": "我们本来打算坐火车去，可是票卖完了，只好订机票。",
+      "pinyin": "wǒ men běn lái dǎ suàn zuò huǒ chē qù kě shì piào mài wán le zhí hǎo dìng jī piào",
+      "meaningVi": "Vốn chúng tôi định đi tàu hỏa, nhưng vé bán hết, đành phải đặt vé máy bay.",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我们本来打算坐火车去",
+          "pinyin": "wǒ men běn lái dǎ suàn zuò huǒ chē qù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "可是票卖完了",
+          "pinyin": "kě shì piào mài wán le",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "只好订机票",
+          "pinyin": "zhí hǎo dìng jī piào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "本来 běn lái: 本 đóng -n, khác 帮 bāng.",
+        "只好 zhǐ hǎo: hai thanh 3 liền nhau, âm đầu đi lên."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        5,
+        3,
+        2,
+        3,
+        4,
+        4,
+        3,
+        1,
+        4,
+        3,
+        4,
+        4,
+        4,
+        2,
+        5,
+        3,
+        3,
+        4,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          5,
+          3,
+          2,
+          3,
+          4,
+          4,
+          3,
+          1,
+          4,
+          3,
+          4,
+          4,
+          4,
+          2,
+          5,
+          2,
+          3,
+          4,
+          1,
+          4
+        ],
+        [
+          3,
+          5,
+          3,
+          2,
+          3,
+          4,
+          4,
+          3,
+          1,
+          4,
+          3,
+          4,
+          4,
+          4,
+          2,
+          5,
+          3,
+          3,
+          4,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 16 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-07",
+      "level": "HSK3-4",
+      "text": "去年夏天我们去了云南，那里天气凉爽，风景也很美。",
+      "pinyin": "qù nián xià tiān wǒ men qù le yún nán nà lǐ tiān qì liáng shuǎng fēng jǐng yě hén měi",
+      "meaningVi": "Mùa hè năm ngoái chúng tôi đi Vân Nam, ở đó thời tiết mát mẻ, phong cảnh cũng đẹp.",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "去年夏天我们去了云南",
+          "pinyin": "qù nián xià tiān wǒ men qù le yún nán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "那里天气凉爽",
+          "pinyin": "nà lǐ tiān qì liáng shuǎng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "风景也很美",
+          "pinyin": "fēng jǐng yě hén měi",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "凉爽 liáng shuǎng: 爽 cuộn lưỡi + -ang.",
+        "风景 fēng jǐng: 景 đóng -ng, khác 紧 jǐn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        2,
+        4,
+        1,
+        3,
+        5,
+        4,
+        5,
+        2,
+        2,
+        4,
+        3,
+        1,
+        4,
+        2,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          4,
+          1,
+          3,
+          5,
+          4,
+          5,
+          2,
+          2,
+          4,
+          3,
+          1,
+          4,
+          2,
+          3,
+          1,
+          3,
+          3,
+          2,
+          3
+        ],
+        [
+          4,
+          2,
+          4,
+          1,
+          3,
+          5,
+          4,
+          5,
+          2,
+          2,
+          4,
+          3,
+          1,
+          4,
+          2,
+          3,
+          1,
+          3,
+          3,
+          3,
+          3
+        ],
+        [
+          4,
+          2,
+          4,
+          1,
+          3,
+          5,
+          4,
+          5,
+          2,
+          2,
+          4,
+          3,
+          1,
+          4,
+          2,
+          3,
+          1,
+          2,
+          2,
+          2,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 19 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-08",
+      "level": "HSK3-4",
+      "text": "这个软件功能多，可是操作有点复杂，先看看说明再用。",
+      "pinyin": "zhè ge ruǎn jiàn gōng néng duō kě shì cāo zuò yóu diǎn fù zá xiān kàn kàn shuō míng zài yòng",
+      "meaningVi": "Phần mềm này nhiều tính năng nhưng thao tác hơi phức tạp, xem hướng dẫn rồi hãy dùng.",
+      "syllables": 22,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这个软件功能多",
+          "pinyin": "zhè ge ruǎn jiàn gōng néng duō",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "可是操作有点复杂",
+          "pinyin": "kě shì cāo zuò yóu diǎn fù zá",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "先看看说明再用",
+          "pinyin": "xiān kàn kàn shuō míng zài yòng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "功能 gōng néng: cả hai đóng -ng.",
+        "复杂 fù zá: 杂 là z phẳng, khác 查 chá cuộn lưỡi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        5,
+        3,
+        4,
+        1,
+        2,
+        1,
+        3,
+        4,
+        1,
+        4,
+        3,
+        3,
+        4,
+        2,
+        1,
+        4,
+        4,
+        1,
+        2,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          5,
+          3,
+          4,
+          1,
+          2,
+          1,
+          3,
+          4,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2,
+          1,
+          4,
+          4,
+          1,
+          2,
+          4,
+          4
+        ],
+        [
+          4,
+          5,
+          3,
+          4,
+          1,
+          2,
+          1,
+          3,
+          4,
+          1,
+          4,
+          3,
+          3,
+          4,
+          2,
+          1,
+          4,
+          4,
+          1,
+          2,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 11 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-09",
+      "level": "HSK3-4",
+      "text": "我最近比较忙，每天都加班到很晚。虽然累，但我觉得值得。",
+      "pinyin": "wǒ zuì jìn bǐ jiào máng měi tiān dōu jiā bān dào hén wǎn suī rán lèi dàn wǒ jué de zhí dé",
+      "meaningVi": "Dạo này tôi khá bận, ngày nào cũng tăng ca đến khuya. Tuy mệt nhưng tôi thấy đáng.",
+      "syllables": 23,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我最近比较忙",
+          "pinyin": "wǒ zuì jìn bǐ jiào máng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "每天都加班到很晚",
+          "pinyin": "měi tiān dōu jiā bān dào hén wǎn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "虽然累",
+          "pinyin": "suī rán lèi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "但我觉得值得",
+          "pinyin": "dàn wǒ jué de zhí dé",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "比较 bǐ jiào: hai âm đều không cuộn lưỡi.",
+        "虽然 suī rán: 虽 là s phẳng + ui, 然 đóng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        3,
+        4,
+        2,
+        3,
+        1,
+        1,
+        1,
+        1,
+        4,
+        3,
+        3,
+        1,
+        2,
+        4,
+        4,
+        3,
+        2,
+        5,
+        2,
+        2
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          3,
+          4,
+          2,
+          3,
+          1,
+          1,
+          1,
+          1,
+          4,
+          2,
+          3,
+          1,
+          2,
+          4,
+          4,
+          3,
+          2,
+          5,
+          2,
+          2
+        ],
+        [
+          3,
+          4,
+          4,
+          3,
+          4,
+          2,
+          3,
+          1,
+          1,
+          1,
+          1,
+          4,
+          3,
+          3,
+          1,
+          2,
+          4,
+          4,
+          3,
+          2,
+          5,
+          2,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 12 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-10",
+      "level": "HSK3-4",
+      "text": "她一边工作一边学法语，已经坚持两年了，进步非常明显。",
+      "pinyin": "tā yì biān gōng zuò yì biān xué fá yǔ yǐ jīng jiān chí liǎng nián le jìn bù fēi cháng míng xiǎn",
+      "meaningVi": "Cô ấy vừa làm vừa học tiếng Pháp, đã kiên trì hai năm, tiến bộ rất rõ.",
+      "syllables": 23,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "她一边工作一边学法语",
+          "pinyin": "tā yì biān gōng zuò yì biān xué fá yǔ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "已经坚持两年了",
+          "pinyin": "yǐ jīng jiān chí liǎng nián le",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "进步非常明显",
+          "pinyin": "jìn bù fēi cháng míng xiǎn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "坚持 jiān chí: 持 cuộn lưỡi, 坚 đóng -n.",
+        "明显 míng xiǎn: một âm -ng, một âm -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        4,
+        1,
+        1,
+        4,
+        4,
+        1,
+        2,
+        3,
+        3,
+        3,
+        1,
+        1,
+        2,
+        3,
+        2,
+        5,
+        4,
+        4,
+        1,
+        2,
+        2,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          4,
+          1,
+          1,
+          4,
+          4,
+          1,
+          2,
+          2,
+          3,
+          3,
+          1,
+          1,
+          2,
+          3,
+          2,
+          5,
+          4,
+          4,
+          1,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          1,
+          1,
+          4,
+          4,
+          1,
+          2,
+          3,
+          3,
+          3,
+          1,
+          1,
+          2,
+          3,
+          2,
+          5,
+          4,
+          4,
+          1,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          1,
+          1,
+          4,
+          4,
+          1,
+          2,
+          2,
+          2,
+          3,
+          1,
+          1,
+          2,
+          3,
+          2,
+          5,
+          4,
+          4,
+          1,
+          2,
+          2,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 8 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-11",
+      "level": "HSK3-4",
+      "text": "他迟到了三次，老板不太满意。他答应以后提前十分钟到。",
+      "pinyin": "tā chí dào le sān cì láo bǎn bú tài mǎn yì tā dā ying yǐ hòu tí qián shí fēn zhōng dào",
+      "meaningVi": "Anh ấy đi muộn ba lần, sếp không hài lòng lắm. Anh ấy hứa từ sau sẽ đến sớm mười phút.",
+      "syllables": 23,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "他迟到了三次",
+          "pinyin": "tā chí dào le sān cì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "老板不太满意",
+          "pinyin": "láo bǎn bú tài mǎn yì",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "他答应以后提前十分钟到",
+          "pinyin": "tā dā ying yǐ hòu tí qián shí fēn zhōng dào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "迟到 chí dào: 迟 cuộn lưỡi bật hơi, khác 次 cí.",
+        "满意 mǎn yì: 满 đóng -n; 意 rơi mạnh."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        2,
+        4,
+        5,
+        1,
+        4,
+        3,
+        3,
+        2,
+        4,
+        3,
+        4,
+        1,
+        1,
+        5,
+        3,
+        4,
+        2,
+        2,
+        2,
+        1,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          4,
+          5,
+          1,
+          4,
+          2,
+          3,
+          2,
+          4,
+          3,
+          4,
+          1,
+          1,
+          5,
+          3,
+          4,
+          2,
+          2,
+          2,
+          1,
+          1,
+          4
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          1,
+          4,
+          3,
+          3,
+          2,
+          4,
+          3,
+          4,
+          1,
+          1,
+          5,
+          3,
+          4,
+          2,
+          2,
+          2,
+          1,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-2-12",
+      "level": "HSK3-4",
+      "text": "你的建议我认真考虑过了，方向是对的，但细节还得再讨论。",
+      "pinyin": "nǐ de jiàn yì wǒ rèn zhēn kǎo lù guò le fāng xiàng shì duì de dàn xì jié hái dé zài tǎo lùn",
+      "meaningVi": "Góp ý của bạn tôi đã cân nhắc kỹ, hướng là đúng, nhưng chi tiết vẫn phải bàn thêm.",
+      "syllables": 24,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "你的建议我认真考虑过了",
+          "pinyin": "nǐ de jiàn yì wǒ rèn zhēn kǎo lù guò le",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "方向是对的",
+          "pinyin": "fāng xiàng shì duì de",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "但细节还得再讨论",
+          "pinyin": "dàn xì jié hái dé zài tǎo lùn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "考虑 kǎo lǜ: 虑 là ü, môi tròn chặt.",
+        "细节 xì jié: 节 không bật hơi, đóng -i."
+      ]
+    },
+    {
+      "id": "sh-2-13",
+      "level": "HSK3-4",
+      "text": "他在会上提到一个问题：新系统上线以后，老数据怎么迁移。",
+      "pinyin": "tā zài huì shàng tí dào yí gè wèn tí xīn xì tǒng shàng xiàn yǐ hòu lǎo shù jù zěn me qiān yí",
+      "meaningVi": "Anh ấy nêu một vấn đề: sau khi hệ thống mới chạy, dữ liệu cũ chuyển đi thế nào.",
+      "syllables": 24,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "他在会上提到一个问题",
+          "pinyin": "tā zài huì shàng tí dào yí gè wèn tí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "新系统上线以后",
+          "pinyin": "xīn xì tǒng shàng xiàn yǐ hòu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "老数据怎么迁移",
+          "pinyin": "lǎo shù jù zěn me qiān yí",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "系统 xì tǒng: 统 đóng -ng, 系 đọc xì.",
+        "迁移 qiān yí: 迁 bật hơi q, đóng -n."
+      ]
+    },
+    {
+      "id": "sh-2-14",
+      "level": "HSK3-4",
+      "text": "学汉语不能只背单词，还要多听多说。方法对了，效果才会好。",
+      "pinyin": "xué hàn yǔ bù néng zhī bèi dān cí hái yào duō tīng duō shuō fāng fǎ duì le xiào guǒ cái huì hǎo",
+      "meaningVi": "Học tiếng Trung không thể chỉ học thuộc từ vựng, còn phải nghe và nói nhiều. Đúng phương pháp thì hiệu quả mới tốt.",
+      "syllables": 24,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "学汉语不能只背单词",
+          "pinyin": "xué hàn yǔ bù néng zhī bèi dān cí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "还要多听多说",
+          "pinyin": "hái yào duō tīng duō shuō",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "方法对了",
+          "pinyin": "fāng fǎ duì le",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "效果才会好",
+          "pinyin": "xiào guǒ cái huì hǎo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "单词 dān cí: 词 là c phẳng, khác 迟 chí.",
+        "效果 xiào guǒ: 果 thanh 3, môi tròn ở cuối."
+      ]
+    },
+    {
+      "id": "sh-2-15",
+      "level": "HSK3-4",
+      "text": "堵车耽误了半个小时，我赶到会场时，会议已经开始十分钟了。",
+      "pinyin": "dǔ chē dān wù le bàn gè xiǎo shí wǒ gǎn dào huì chǎng shí huì yì yǐ jīng kāi shǐ shí fēn zhōng le",
+      "meaningVi": "Kẹt xe mất nửa tiếng, khi tôi đến hội trường thì cuộc họp đã bắt đầu được mười phút.",
+      "syllables": 25,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "堵车耽误了半个小时",
+          "pinyin": "dǔ chē dān wù le bàn gè xiǎo shí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我赶到会场时",
+          "pinyin": "wǒ gǎn dào huì chǎng shí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "会议已经开始十分钟了",
+          "pinyin": "huì yì yǐ jīng kāi shǐ shí fēn zhōng le",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "耽误 dān wu: chữ thứ hai đọc nhẹ wu.",
+        "会场 huì chǎng: 场 cuộn lưỡi + -ng."
+      ]
+    },
+    {
+      "id": "sh-2-16",
+      "level": "HSK3-4",
+      "text": "这次谈判没谈成，主要原因是价格差距太大，双方都不肯让步。",
+      "pinyin": "zhè cì tán pàn méi tán chéng zhǔ yào yuán yīn shì jià gé chā jù tài dà shuāng fāng dōu bù kěn ràng bù",
+      "meaningVi": "Lần đàm phán này không thành, chủ yếu là vì giá chênh quá lớn, hai bên đều không chịu nhường.",
+      "syllables": 25,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这次谈判没谈成",
+          "pinyin": "zhè cì tán pàn méi tán chéng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "主要原因是价格差距太大",
+          "pinyin": "zhǔ yào yuán yīn shì jià gé chā jù tài dà",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "双方都不肯让步",
+          "pinyin": "shuāng fāng dōu bù kěn ràng bù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "谈判 tán pàn: cả hai đóng -n, 判 rơi mạnh.",
+        "让步 ràng bù: 让 đọc ràng cuộn lưỡi + -ng."
+      ]
+    },
+    {
+      "id": "sh-2-17",
+      "level": "HSK3-4",
+      "text": "这个项目时间紧、人手不够，我们必须合理安排，才能按时交付。",
+      "pinyin": "zhè gè xiàng mù shí jiān jǐn rén shǒu bú gòu wǒ men bì xū hé lǐ ān pái cái néng àn shí jiāo fù",
+      "meaningVi": "Dự án này gấp thời gian, thiếu người, chúng tôi phải bố trí hợp lý mới giao đúng hạn.",
+      "syllables": 25,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这个项目时间紧",
+          "pinyin": "zhè gè xiàng mù shí jiān jǐn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "人手不够",
+          "pinyin": "rén shǒu bú gòu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我们必须合理安排",
+          "pinyin": "wǒ men bì xū hé lǐ ān pái",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "才能按时交付",
+          "pinyin": "cái néng àn shí jiāo fù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "安排 ān pái: 排 bật hơi p, kết thúc bằng i.",
+        "交付 jiāo fù: 付 đọc nặng, ngắn."
+      ]
+    },
+    {
+      "id": "sh-2-18",
+      "level": "HSK3-4",
+      "text": "这家公司去年利润下降，经理决定削减预算，还取消了两个项目。",
+      "pinyin": "zhè jiā gōng sī qù nián lì rùn xià jiàng jīng lǐ jué dìng xuē jiǎn yù suàn hái qǔ xiāo le liǎng gè xiàng mù",
+      "meaningVi": "Năm ngoái lợi nhuận công ty giảm, giám đốc quyết định cắt ngân sách và hủy hai dự án.",
+      "syllables": 26,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这家公司去年利润下降",
+          "pinyin": "zhè jiā gōng sī qù nián lì rùn xià jiàng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "经理决定削减预算",
+          "pinyin": "jīng lǐ jué dìng xuē jiǎn yù suàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "还取消了两个项目",
+          "pinyin": "hái qǔ xiāo le liǎng gè xiàng mù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "利润 lì rùn: 润 là r cuộn lưỡi, đừng đọc \"l\".",
+        "削减 xuē jiǎn: 削 là x + üe, môi tròn rồi dẹt."
+      ]
+    },
+    {
+      "id": "sh-2-19",
+      "level": "HSK3-4",
+      "text": "她刚来北京的时候不太习惯，常常想家，现在完全喜欢这里的饮食了。",
+      "pinyin": "tā gāng lái běi jīng de shí hou bú tài xí guàn cháng cháng xiǎng jiā xiàn zài wán quán xǐ huan zhè lǐ de yǐn shí le",
+      "meaningVi": "Hồi mới đến Bắc Kinh cô ấy chưa quen, thường nhớ nhà, giờ thì hoàn toàn thích ẩm thực ở đây.",
+      "syllables": 28,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "她刚来北京的时候不太习惯",
+          "pinyin": "tā gāng lái běi jīng de shí hou bú tài xí guàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "常常想家",
+          "pinyin": "cháng cháng xiǎng jiā",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "现在完全喜欢这里的饮食了",
+          "pinyin": "xiàn zài wán quán xǐ huan zhè lǐ de yǐn shí le",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "习惯 xǐ guàn: 惯 đóng -n, khác 光 guāng.",
+        "完全 wán quán: 完 mở -an, đọc liền."
+      ]
+    },
+    {
+      "id": "sh-2-20",
+      "level": "HSK3-4",
+      "text": "麻烦你帮我把这份文件打印两份，下午开会的时候要用。打印好请放到我桌上。",
+      "pinyin": "má fán nǐ bāng wǒ bǎ zhè fèn wén jiàn dǎ yìn liǎng fèn xià wǔ kāi huì de shí hou yào yòng dǎ yìn hǎo qǐng fàng dào wǒ zhuō shàng",
+      "meaningVi": "Phiền bạn in giúp tôi tài liệu này hai bản, chiều họp sẽ dùng. In xong để lên bàn tôi.",
+      "syllables": 32,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "麻烦你帮我把这份文件打印两份",
+          "pinyin": "má fán nǐ bāng wǒ bǎ zhè fèn wén jiàn dǎ yìn liǎng fèn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "下午开会的时候要用",
+          "pinyin": "xià wǔ kāi huì de shí hou yào yòng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "打印好请放到我桌上",
+          "pinyin": "dǎ yìn hǎo qǐng fàng dào wǒ zhuō shàng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "麻烦 má fan: chữ thứ hai đọc nhẹ fan.",
+        "打印 dǎ yìn: 印 đóng -n, bắt đầu bằng i."
+      ]
+    },
+    {
+      "id": "sh-3-01",
+      "level": "HSK5-6",
+      "text": "合同条款含糊，一旦履行过程中出现分歧，双方都可能陷入被动。",
+      "pinyin": "hé tóng tiáo kuǎn hán hu yí dàn lǔ xíng guò chéng zhōng chū xiàn fēn qí shuāng fāng dōu kě néng xiàn rù bèi dòng",
+      "meaningVi": "Điều khoản hợp đồng mơ hồ, một khi phát sinh bất đồng trong quá trình thực hiện, hai bên đều có thể bị động.",
+      "syllables": 26,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "合同条款含糊",
+          "pinyin": "hé tóng tiáo kuǎn hán hu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "一旦履行过程中出现分歧",
+          "pinyin": "yí dàn lǔ xíng guò chéng zhōng chū xiàn fēn qí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "双方都可能陷入被动",
+          "pinyin": "shuāng fāng dōu kě néng xiàn rù bèi dòng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "履行 lǚ xíng: 履 là ü, 行 đóng -ng.",
+        "分歧 fēn qí: 歧 bật hơi q, khác 起 qǐ."
+      ]
+    },
+    {
+      "id": "sh-3-02",
+      "level": "HSK5-6",
+      "text": "由于人手不足，订单交付延迟，客户提出索赔，法务正在评估风险。",
+      "pinyin": "yóu yú rén shǒu bù zú dìng dān jiāo fù yán chí kè hù tí chū suǒ péi fǎ wù zhèng zài píng gū fēng xiǎn",
+      "meaningVi": "Vì thiếu nhân lực, giao hàng bị trễ, khách đòi bồi thường, bộ phận pháp chế đang đánh giá rủi ro.",
+      "syllables": 26,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "由于人手不足",
+          "pinyin": "yóu yú rén shǒu bù zú",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "订单交付延迟",
+          "pinyin": "dìng dān jiāo fù yán chí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "客户提出索赔",
+          "pinyin": "kè hù tí chū suǒ péi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "法务正在评估风险",
+          "pinyin": "fǎ wù zhèng zài píng gū fēng xiǎn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "索赔 suǒ péi: 索 là s phẳng, 赔 bật hơi p.",
+        "评估 píng gū: 估 tròn môi, đóng bằng u."
+      ]
+    },
+    {
+      "id": "sh-3-03",
+      "level": "HSK5-6",
+      "text": "这种材料耐高温、重量轻，已用于航空领域，但成本仍是推广的瓶颈。",
+      "pinyin": "zhè zhǒng cái liào nài gāo wēn zhòng liàng qīng yǐ yòng yú háng kōng lǐng yù dàn chéng běn réng shì tuī guǎng de píng jǐng",
+      "meaningVi": "Vật liệu này chịu nhiệt cao, nhẹ, đã dùng trong hàng không, nhưng chi phí vẫn là điểm nghẽn khi nhân rộng.",
+      "syllables": 27,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "这种材料耐高温",
+          "pinyin": "zhè zhǒng cái liào nài gāo wēn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "重量轻",
+          "pinyin": "zhòng liàng qīng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "已用于航空领域",
+          "pinyin": "yǐ yòng yú háng kōng lǐng yù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "但成本仍是推广的瓶颈",
+          "pinyin": "dàn chéng běn réng shì tuī guǎng de píng jǐng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "耐高温 nài gāo wēn: ba âm khác nhau rõ, đừng đọc đều tăm tắp.",
+        "瓶颈 píng jǐng: cả hai đóng -ng, 颈 thanh 3."
+      ]
+    },
+    {
+      "id": "sh-3-04",
+      "level": "HSK5-6",
+      "text": "研究假设未能通过检验，课题组决定调整参数，重新采集一批数据。",
+      "pinyin": "yán jiū jiǎ shè wèi néng tōng guò jiǎn yàn kè tí zǔ jué dìng tiáo zhěng cān shù chóng xīn cǎi jí yì pī shù jù",
+      "meaningVi": "Giả thuyết nghiên cứu không vượt qua kiểm định, nhóm quyết định điều chỉnh tham số và thu thập lại một loạt số liệu.",
+      "syllables": 27,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "研究假设未能通过检验",
+          "pinyin": "yán jiū jiǎ shè wèi néng tōng guò jiǎn yàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "课题组决定调整参数",
+          "pinyin": "kè tí zǔ jué dìng tiáo zhěng cān shù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "重新采集一批数据",
+          "pinyin": "chóng xīn cǎi jí yì pī shù jù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "假设 jiǎ shè: 设 cuộn lưỡi, khác 色 sè.",
+        "参数 cān shù: 参 là c phẳng, 数 cuộn lưỡi."
+      ]
+    },
+    {
+      "id": "sh-3-05",
+      "level": "HSK5-6",
+      "text": "这本书以大量案例切入，把抽象的伦理问题讲得通俗，而不失严谨。",
+      "pinyin": "zhè běn shū yǐ dà liàng àn lì qiē rù bǎ chōu xiàng de lún lǐ wèn tí jiǎng dé tōng sú ér bù shī yán jǐn",
+      "meaningVi": "Cuốn sách đi vào từ nhiều ví dụ, nêu vấn đề đạo đức trừu tượng một cách dễ hiểu mà vẫn chặt chẽ.",
+      "syllables": 27,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "这本书以大量案例切入",
+          "pinyin": "zhè běn shū yǐ dà liàng àn lì qiē rù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "把抽象的伦理问题讲得通俗",
+          "pinyin": "bǎ chōu xiàng de lún lǐ wèn tí jiǎng dé tōng sú",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "而不失严谨",
+          "pinyin": "ér bù shī yán jǐn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "切入 qiē rù: 切 không bật hơi, 入 cuộn lưỡi.",
+        "严谨 yán jǐn: cả hai đóng -n, 谨 đọc gọn."
+      ]
+    },
+    {
+      "id": "sh-3-06",
+      "level": "HSK5-6",
+      "text": "团队士气低落，根源往往不是薪资，而是目标模糊与反馈机制的缺失。",
+      "pinyin": "tuán duì shì qì dī luò gēn yuán wáng wǎng bú shì xīn zī ér shì mù biāo mó hu yǔ fǎn kuì jī zhì de quē shī",
+      "meaningVi": "Tinh thần đội đi xuống, gốc rễ thường không phải lương, mà là mục tiêu mơ hồ và thiếu cơ chế phản hồi.",
+      "syllables": 28,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "团队士气低落",
+          "pinyin": "tuán duì shì qì dī luò",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "根源往往不是薪资",
+          "pinyin": "gēn yuán wáng wǎng bú shì xīn zī",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "而是目标模糊与反馈机制的缺失",
+          "pinyin": "ér shì mù biāo mó hu yǔ fǎn kuì jī zhì de quē shī",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "根源 gēn yuán: 根 đóng -n, 源 là ü + an.",
+        "模糊 mó hu: 糊 đọc nhẹ, hai âm không đều nhau."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        4,
+        4,
+        4,
+        1,
+        4,
+        1,
+        2,
+        3,
+        3,
+        2,
+        4,
+        1,
+        1,
+        2,
+        4,
+        4,
+        1,
+        2,
+        5,
+        3,
+        3,
+        4,
+        1,
+        4,
+        5,
+        1,
+        1
+      ],
+      "acceptTones": [
+        [
+          2,
+          4,
+          4,
+          4,
+          1,
+          4,
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          1,
+          1,
+          2,
+          4,
+          4,
+          1,
+          2,
+          5,
+          3,
+          3,
+          4,
+          1,
+          4,
+          5,
+          1,
+          1
+        ],
+        [
+          2,
+          4,
+          4,
+          4,
+          1,
+          4,
+          1,
+          2,
+          3,
+          3,
+          2,
+          4,
+          1,
+          1,
+          2,
+          4,
+          4,
+          1,
+          2,
+          5,
+          3,
+          3,
+          4,
+          1,
+          4,
+          5,
+          1,
+          1
+        ],
+        [
+          2,
+          4,
+          4,
+          4,
+          1,
+          4,
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          1,
+          1,
+          2,
+          4,
+          4,
+          1,
+          2,
+          5,
+          2,
+          3,
+          4,
+          1,
+          4,
+          5,
+          1,
+          1
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 8 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-3-07",
+      "level": "HSK5-6",
+      "text": "数据披露之后，外界质疑其统计口径，研究机构随即补充了方法说明。",
+      "pinyin": "shù jù pī lù zhī hòu wài jiè zhì yí qí tǒng jì kǒu jìng yán jiū jī gòu suí jí bǔ chōng le fāng fǎ shuō míng",
+      "meaningVi": "Sau khi công bố số liệu, bên ngoài nghi ngờ cách tính thống kê, viện nghiên cứu liền bổ sung phần giải thích phương pháp.",
+      "syllables": 28,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "数据披露之后",
+          "pinyin": "shù jù pī lù zhī hòu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "外界质疑其统计口径",
+          "pinyin": "wài jiè zhì yí qí tǒng jì kǒu jìng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "研究机构随即补充了方法说明",
+          "pinyin": "yán jiū jī gòu suí jí bǔ chōng le fāng fǎ shuō míng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "披露 pī lù: 披 bật hơi p, 露 là l.",
+        "随即 suí jí: 随 là s phẳng + ui, đọc liền."
+      ]
+    },
+    {
+      "id": "sh-3-08",
+      "level": "HSK5-6",
+      "text": "与其争论概念，不如先界定范围；否则讨论只会停留在表层，难以深入。",
+      "pinyin": "yǔ qí zhēng lùn gài niàn bù rú xiān jiè dìng fàn wéi fǒu zé tǎo lùn zhī huì tíng liú zài biǎo céng nán yǐ shēn rù",
+      "meaningVi": "Thay vì tranh luận khái niệm, chi bằng xác định phạm vi trước; nếu không thảo luận chỉ dừng ở bề mặt, khó đi sâu.",
+      "syllables": 28,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "与其争论概念",
+          "pinyin": "yǔ qí zhēng lùn gài niàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "不如先界定范围",
+          "pinyin": "bù rú xiān jiè dìng fàn wéi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "否则讨论只会停留在表层",
+          "pinyin": "fǒu zé tǎo lùn zhī huì tíng liú zài biǎo céng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "难以深入",
+          "pinyin": "nán yǐ shēn rù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "界定 jiè dìng: 界 kết thúc bằng -i, 定 đóng -ng.",
+        "范围 fàn wéi: 围 kết thúc bằng i, đọc nhẹ hơn 范."
+      ]
+    },
+    {
+      "id": "sh-3-09",
+      "level": "HSK5-6",
+      "text": "城市扩张带来便利的同时，也推高了生活成本，部分老居民迁往郊区。",
+      "pinyin": "chéng shì kuò zhāng dài lái biàn lì de tóng shí yě tuī gāo le shēng huó chéng běn bù fen lǎo jū mín qiān wǎng jiāo qū",
+      "meaningVi": "Cùng với việc mở rộng đô thị mang lại tiện lợi, chi phí sống cũng bị đội lên, một cư dân cũ phải dời ra vùng ngoại ô.",
+      "syllables": 28,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "城市扩张带来便利的同时",
+          "pinyin": "chéng shì kuò zhāng dài lái biàn lì de tóng shí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也推高了生活成本",
+          "pinyin": "yě tuī gāo le shēng huó chéng běn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "部分老居民迁往郊区",
+          "pinyin": "bù fen lǎo jū mín qiān wǎng jiāo qū",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "扩张 kuò zhāng: 张 cuộn lưỡi + -ng.",
+        "郊区 jiāo qū: 区 là ü, môi tròn chặt."
+      ]
+    },
+    {
+      "id": "sh-3-10",
+      "level": "HSK5-6",
+      "text": "他的发言含糊其辞，既没有正面回应质疑，也没有给出可行的时间表。",
+      "pinyin": "tā de fā yán hán hú qí cí jì méi yǒu zhèng miàn huí yìng zhì yí yě méi yǒu gěi chū kě xíng de shí jiān biǎo",
+      "meaningVi": "Phát biểu của anh ấy vòng vo, vừa không trả lời thẳng sự nghi ngờ, vừa không đưa ra lộ trình khả thi.",
+      "syllables": 28,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "他的发言含糊其辞",
+          "pinyin": "tā de fā yán hán hú qí cí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "既没有正面回应质疑",
+          "pinyin": "jì méi yǒu zhèng miàn huí yìng zhì yí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也没有给出可行的时间表",
+          "pinyin": "yě méi yǒu gěi chū kě xíng de shí jiān biǎo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "含糊 hán hu: 糊 đọc nhẹ, gần như trượt qua.",
+        "正面 zhèng miàn: 正 cuộn lưỡi + -ng, 面 đóng -n."
+      ]
+    },
+    {
+      "id": "sh-3-11",
+      "level": "HSK5-6",
+      "text": "随着假期临近，酒店陆续涨价，业内人士提醒旅客提前预订，理性消费。",
+      "pinyin": "suí zhe jiǎ qī lín jìn jiǔ diàn lù xù zhǎng jià yè nèi rén shì tí xǐng lǔ kè tí qián yù dìng lǐ xìng xiāo fèi",
+      "meaningVi": "Khi kỳ nghỉ đến gần, khách sạn liên tục tăng giá, người trong nghề nhắc khách đặt sớm và tiêu dùng hợp lý.",
+      "syllables": 28,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "随着假期临近",
+          "pinyin": "suí zhe jiǎ qī lín jìn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "酒店陆续涨价",
+          "pinyin": "jiǔ diàn lù xù zhǎng jià",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "业内人士提醒旅客提前预订",
+          "pinyin": "yè nèi rén shì tí xǐng lǔ kè tí qián yù dìng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "理性消费",
+          "pinyin": "lǐ xìng xiāo fèi",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "临近 lín jìn: cả hai đóng -n, phân biệt với 敬 jìng.",
+        "理性 lǐ xìng: 性 đóng -ng, khác 信 xìn (-n)."
+      ]
+    },
+    {
+      "id": "sh-3-12",
+      "level": "HSK5-6",
+      "text": "由于证据链存在瑕疵，法院将案件发回重审，这一结果在学界引发讨论。",
+      "pinyin": "yóu yú zhèng jù liàn cún zài xiá cī fǎ yuàn jiāng àn jiàn fā huí chóng shěn zhè yì jié guǒ zài xué jiè yǐn fā tǎo lùn",
+      "meaningVi": "Vì chuỗi chứng cứ có tì vết, tòa trả hồ sơ xét xử lại, kết quả này gây tranh luận trong giới học thuật.",
+      "syllables": 29,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "由于证据链存在瑕疵",
+          "pinyin": "yóu yú zhèng jù liàn cún zài xiá cī",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "法院将案件发回重审",
+          "pinyin": "fǎ yuàn jiāng àn jiàn fā huí chóng shěn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "这一结果在学界引发讨论",
+          "pinyin": "zhè yì jié guǒ zài xué jiè yǐn fā tǎo lùn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "瑕疵 xiá cī: hai âm khác nhau ở x và c, môi cùng dẹt.",
+        "学界 xué jiè: 界 đóng -i, đọc gọn."
+      ],
+      "uncertain": true,
+      "uncertainReason": "chữ 重 trong 重审 đọc chóng (xét lại); TTS có thể trả zhòng — nên nghe audio thật."
+    },
+    {
+      "id": "sh-3-13",
+      "level": "HSK5-6",
+      "text": "她在演讲中强调，语言学习的关键在于高频接触，而不是死记硬背规则。",
+      "pinyin": "tā zài yán jiǎng zhōng qiáng diào yǔ yán xué xí de guān jiàn zài yú gāo pín jiē chù ér bú shì sǐ jì yìng bèi guī zé",
+      "meaningVi": "Trong bài nói, cô nhấn mạnh chìa khóa học ngôn ngữ là tiếp xúc thường xuyên, không phải ghi nhớ máy móc quy tắc.",
+      "syllables": 29,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "她在演讲中强调",
+          "pinyin": "tā zài yán jiǎng zhōng qiáng diào",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "语言学习的关键在于高频接触",
+          "pinyin": "yǔ yán xué xí de guān jiàn zài yú gāo pín jiē chù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "而不是死记硬背规则",
+          "pinyin": "ér bú shì sǐ jì yìng bèi guī zé",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "强调 qiáng diào: 调 đọc diào, rơi mạnh.",
+        "关键 guān jiàn: cả hai đóng -n, đọc gọn."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        4,
+        3,
+        3,
+        1,
+        2,
+        4,
+        3,
+        2,
+        2,
+        2,
+        5,
+        1,
+        4,
+        4,
+        2,
+        1,
+        2,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3,
+        4,
+        4,
+        4,
+        1,
+        2
+      ],
+      "acceptTones": [
+        [
+          1,
+          4,
+          2,
+          3,
+          1,
+          2,
+          4,
+          3,
+          2,
+          2,
+          2,
+          5,
+          1,
+          4,
+          4,
+          2,
+          1,
+          2,
+          1,
+          4,
+          2,
+          2,
+          4,
+          3,
+          4,
+          4,
+          4,
+          1,
+          2
+        ],
+        [
+          1,
+          4,
+          3,
+          3,
+          1,
+          2,
+          4,
+          3,
+          2,
+          2,
+          2,
+          5,
+          1,
+          4,
+          4,
+          2,
+          1,
+          2,
+          1,
+          4,
+          2,
+          2,
+          4,
+          3,
+          4,
+          4,
+          4,
+          1,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 2 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-3-14",
+      "level": "HSK5-6",
+      "text": "这份报告逻辑严密，唯有一处结论证据不足，建议在下一稿中补充调研。",
+      "pinyin": "zhè fèn bào gào luó jí yán mì wéi yǒu yí chù jié lùn zhèng jù bù zú jiàn yì zài xià yì gǎo zhōng bǔ chōng diào yán",
+      "meaningVi": "Báo cáo này mạch lạc, chặt chẽ, chỉ có một kết luận thiếu bằng chứng, nên bổ sung khảo sát ở bản tới.",
+      "syllables": 29,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "这份报告逻辑严密",
+          "pinyin": "zhè fèn bào gào luó jí yán mì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "唯有一处结论证据不足",
+          "pinyin": "wéi yǒu yí chù jié lùn zhèng jù bù zú",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "建议在下一稿中补充调研",
+          "pinyin": "jiàn yì zài xià yì gǎo zhōng bǔ chōng diào yán",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "严密 yán mì: 密 đóng -i, ngắn.",
+        "调研 diào yán: hai âm cùng -an, khác nhau ở thanh."
+      ]
+    },
+    {
+      "id": "sh-3-15",
+      "level": "HSK5-6",
+      "text": "这项政策意在缓解中小企业的融资压力，但能否落地，还取决于执行环节。",
+      "pinyin": "zhè xiàng zhèng cè yì zài huán jiě zhōng xiǎo qǐ yè de róng zī yā lì dàn néng fǒu luò dì hái qǔ jué yú zhí xíng huán jié",
+      "meaningVi": "Chính sách này nhằm giảm áp lực vốn cho doanh nghiệp vừa và nhỏ, nhưng có áp dụng được hay không còn tùy vào khâu thực thi.",
+      "syllables": 30,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "这项政策意在缓解中小企业的融资压力",
+          "pinyin": "zhè xiàng zhèng cè yì zài huán jiě zhōng xiǎo qǐ yè de róng zī yā lì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "但能否落地",
+          "pinyin": "dàn néng fǒu luò dì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "还取决于执行环节",
+          "pinyin": "hái qǔ jué yú zhí xíng huán jié",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "缓解 huǎn jiě: 缓 đóng -n, khác 换 huàn.",
+        "取决于 qǔ jué yú: 取 không bật hơi, 决 là ü + e."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        1,
+        3,
+        3,
+        4,
+        5,
+        2,
+        1,
+        1,
+        4,
+        4,
+        2,
+        3,
+        4,
+        4,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          3,
+          1,
+          3,
+          3,
+          4,
+          5,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          3,
+          4,
+          4,
+          2,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          1,
+          3,
+          3,
+          4,
+          5,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          3,
+          4,
+          4,
+          2,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          3,
+          1,
+          2,
+          3,
+          4,
+          5,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          3,
+          4,
+          4,
+          2,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-3-16",
+      "level": "HSK5-6",
+      "text": "传统手工艺面临失传，并非无人感兴趣，而是从业者难以获得体面的收入。",
+      "pinyin": "chuán tǒng shǒu gōng yì miàn lín shī chuán bìng fēi wú rén gǎn xìng qù ér shì cóng yè zhě nán yǐ huò dé tǐ miàn de shōu rù",
+      "meaningVi": "Nghề thủ công truyền thống đứng trước nguy cơ thất truyền, không phải là không ai thích, mà là người hành nghề khó có thu nhập tử tế.",
+      "syllables": 30,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "传统手工艺面临失传",
+          "pinyin": "chuán tǒng shǒu gōng yì miàn lín shī chuán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "并非无人感兴趣",
+          "pinyin": "bìng fēi wú rén gǎn xìng qù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "而是从业者难以获得体面的收入",
+          "pinyin": "ér shì cóng yè zhě nán yǐ huò dé tǐ miàn de shōu rù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "失传 shī chuán: 失 cuộn lưỡi không bật hơi, 传 bật hơi ch.",
+        "体面 tǐ miàn: 面 đóng -n, thanh 4 rơi mạnh."
+      ]
+    },
+    {
+      "id": "sh-3-17",
+      "level": "HSK5-6",
+      "text": "他认为，技术进步并不必然带来幸福；如果制度滞后，工具反而可能放大不公。",
+      "pinyin": "tā rèn wéi jì shù jìn bù bìng bú bì rán dài lái xìng fú rú guǒ zhì dù zhì hòu gōng jù fǎn ér kě néng fàng dà bù gōng",
+      "meaningVi": "Ông cho rằng tiến bộ công nghệ không hẳn mang lại hạnh phúc; nếu thể chế chậm trễ, công cụ trái lại có thể phóng đại bất công.",
+      "syllables": 31,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "他认为",
+          "pinyin": "tā rèn wéi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "技术进步并不必然带来幸福",
+          "pinyin": "jì shù jìn bù bìng bú bì rán dài lái xìng fú",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "如果制度滞后",
+          "pinyin": "rú guǒ zhì dù zhì hòu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "工具反而可能放大不公",
+          "pinyin": "gōng jù fǎn ér kě néng fàng dà bù gōng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "必然 bì rán: 然 đóng -n, bắt đầu bằng r cuộn lưỡi.",
+        "滞后 zhì hòu: 滞 cuộn lưỡi, 后 rơi mạnh."
+      ]
+    },
+    {
+      "id": "sh-3-18",
+      "level": "HSK5-6",
+      "text": "她婉言拒绝了邀请，理由是那一阶段要专注于论文的实验部分，不方便分心。",
+      "pinyin": "tā wǎn yán jù jué le yāo qǐng lǐ yóu shì nà yì jiē duàn yào zhuān zhù yú lùn wén de shí yàn bù fen bù fāng biàn fēn xīn",
+      "meaningVi": "Cô khéo léo từ chối lời mời, lý do là giai đoạn đó phải tập trung vào phần thực nghiệm của luận văn, không tiện chia trí.",
+      "syllables": 31,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "她婉言拒绝了邀请",
+          "pinyin": "tā wǎn yán jù jué le yāo qǐng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "理由是那一阶段要专注于论文的实验部分",
+          "pinyin": "lǐ yóu shì nà yì jiē duàn yào zhuān zhù yú lùn wén de shí yàn bù fen",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "不方便分心",
+          "pinyin": "bù fāng biàn fēn xīn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "婉言 wǎn yán: cả hai đóng -n, 婉 xuống rồi lên.",
+        "专注 zhuān zhù: 专 cuộn lưỡi + -n, 注 tròn môi."
+      ]
+    },
+    {
+      "id": "sh-3-19",
+      "level": "HSK5-6",
+      "text": "公司在海外市场的份额持续扩大，管理层却担心，扩张过快会削弱品控，损害声誉。",
+      "pinyin": "gōng sī zài hǎi wài shì chǎng de fèn é chí xù kuò dà guán lǐ céng què dān xīn kuò zhāng guò kuài huì xuē ruò pǐn kòng sǔn hài shēng yù",
+      "meaningVi": "Thị phần ở nước ngoài liên tục mở rộng, nhưng ban lãnh đạo lo rằng tăng nhanh quá sẽ làm yếu kiểm soát chất lượng và hỏng uy tín.",
+      "syllables": 33,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "公司在海外市场的份额持续扩大",
+          "pinyin": "gōng sī zài hǎi wài shì chǎng de fèn é chí xù kuò dà",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "管理层却担心",
+          "pinyin": "guán lǐ céng què dān xīn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "扩张过快会削弱品控",
+          "pinyin": "kuò zhāng guò kuài huì xuē ruò pǐn kòng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "损害声誉",
+          "pinyin": "sǔn hài shēng yù",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "份额 fèn é: 份 đóng -n, khác 峰 fēng.",
+        "削弱 xuē ruò: 弱 là r cuộn lưỡi, đừng đọc \"d\"."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5,
+        4,
+        2,
+        2,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        4,
+        1,
+        1,
+        4,
+        1,
+        4,
+        4,
+        4,
+        1,
+        4,
+        3,
+        4,
+        3,
+        4,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          4,
+          3,
+          4,
+          4,
+          3,
+          5,
+          4,
+          2,
+          2,
+          4,
+          4,
+          4,
+          2,
+          3,
+          2,
+          4,
+          1,
+          1,
+          4,
+          1,
+          4,
+          4,
+          4,
+          1,
+          4,
+          3,
+          4,
+          3,
+          4,
+          1,
+          4
+        ],
+        [
+          1,
+          1,
+          4,
+          3,
+          4,
+          4,
+          3,
+          5,
+          4,
+          2,
+          2,
+          4,
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          1,
+          1,
+          4,
+          1,
+          4,
+          4,
+          4,
+          1,
+          4,
+          3,
+          4,
+          3,
+          4,
+          1,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3 áp ở vị trí 14 (đếm theo chữ Hán của cả đoạn, bắt đầu từ 0)."
+    },
+    {
+      "id": "sh-3-20",
+      "level": "HSK5-6",
+      "text": "教育评价若只盯住分数，学生的创造力与协作能力便容易被忽视，长远看代价不小。",
+      "pinyin": "jiào yù píng jià ruò zhī dīng zhù fēn shù xué shēng de chuàng zào lì yǔ xié zuò néng lì biàn róng yì bèi hū shì cháng yuǎn kàn dài jià bù xiǎo",
+      "meaningVi": "Nếu đánh giá giáo dục chỉ nhìn điểm số, năng lực sáng tạo và hợp tác của học sinh dễ bị xem nhẹ, về lâu dài cái giá không nhỏ.",
+      "syllables": 34,
+      "pace": "nhanh",
+      "chunks": [
+        {
+          "hanzi": "教育评价若只盯住分数",
+          "pinyin": "jiào yù píng jià ruò zhī dīng zhù fēn shù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "学生的创造力与协作能力便容易被忽视",
+          "pinyin": "xué shēng de chuàng zào lì yǔ xié zuò néng lì biàn róng yì bèi hū shì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "长远看代价不小",
+          "pinyin": "cháng yuǎn kàn dài jià bù xiǎo",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "评价 píng jià: 评 đóng -ng, 价 rơi mạnh.",
+        "忽视 hū shì: 忽 đọc hū ngắn, 视 cuộn lưỡi."
+      ]
+    }
+  ]
+}

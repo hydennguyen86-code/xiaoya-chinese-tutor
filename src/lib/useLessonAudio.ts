@@ -12,9 +12,12 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
   const alive = useRef(true);
   const [playing, setPlaying] = useState(false);
   const loading = useRef(false);
+  const finished = useRef<((success: boolean) => void) | undefined>(undefined);
+  const finish = (ok: boolean) => { const done=finished.current;finished.current=undefined;done?.(ok); };
   const [error, setError] = useState('');
   const [provider, setProvider] = useState('');
   const stop = useCallback(() => {
+    finish(false);
     request.current?.abort();
     player.current?.pause();
     player.current = null;
@@ -29,6 +32,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
     alive.current = true;
     return () => {
       alive.current = false;
+      finish(false);
       request.current?.abort();
       player.current?.pause();
       if (url.current) URL.revokeObjectURL(url.current);
@@ -36,7 +40,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
       onBusy(false);
     };
   }, []);
-  async function play(text: string, onStarted?: () => void) {
+  async function play(text: string, onStarted?: () => void, onFinished?: (success: boolean) => void) {
     if (loading.current) {
       stop();
       return;
@@ -44,6 +48,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
     stopCurrentCourseAudio?.();
     stopCurrentCourseAudio = stop;
     loading.current = true;
+    finished.current = onFinished;
     const controller = new AbortController();
     request.current = controller;
     setPlaying(true);
@@ -60,6 +65,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
           setPlaying(false);
           onBusy(false);
         }
+        finish(true);
         return;
       }
       const bytes = Uint8Array.from(atob(result.audioBase64), (ch) => ch.charCodeAt(0));
@@ -68,6 +74,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
       const audio = new Audio(url.current);
       player.current = audio;
       audio.onended = () => {
+        finish(true);
         if (alive.current) {
           loading.current = false;
           setPlaying(false);
@@ -75,6 +82,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
         }
       };
       audio.onerror = () => {
+        finish(false);
         if (alive.current) {
           setError('Không phát được âm thanh. Hãy thử lại.');
           loading.current = false;
@@ -90,6 +98,7 @@ export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
       setProvider(result.fallbackReason ?? `Giọng ${result.provider}`);
       onStarted?.();
     } catch (e) {
+      finish(false);
       if (alive.current && !controller.signal.aborted) {
         setError(e instanceof Error ? e.message : 'Chưa phát được.');
         loading.current = false;

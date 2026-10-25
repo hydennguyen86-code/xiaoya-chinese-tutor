@@ -1,3 +1,4 @@
+import { energyTiming } from './audioTiming.mjs';
 import { mediaToolPath } from './mediaTools.mjs';
 import { spawn } from 'node:child_process';
 import { pinyin } from 'pinyin-pro';
@@ -326,7 +327,7 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     start: (a * HOP) / SR,
     end: Math.min(duration, (b * HOP) / SR),
   }));
-  Object.assign(base, { duration, segments, curve: contour(f0, median), boundaryMethod: 'energy-estimate' });
+  Object.assign(base, { timing: energyTiming(pcm), duration, segments, curve: contour(f0, median), boundaryMethod: 'energy-estimate' });
   if (syllables.length > 2) {
     return { ...base, mode: 'sentence', curve: contour(f0, median) };
   }

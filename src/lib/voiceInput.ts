@@ -19,10 +19,12 @@ export interface ToneSegment {
   start: number;
   end: number;
 }
+export interface AudioTiming { duration:number; speechStart:number; speechEnd:number; voicedSeconds:number; pauses:{start:number;end:number}[] }
 export interface ToneReport {
+  timing?: AudioTiming | null;
   duration?: number;
   segments?: ToneSegment[];
-  model?: { segments: ToneSegment[]; duration: number; audioBase64: string; mime: string };
+  model?: { timing?: AudioTiming | null; segments: ToneSegment[]; duration: number; audioBase64: string; mime: string };
   mode?: 'word' | 'sentence';
   syllables: ToneSyllable[];
   checked: number;
@@ -59,6 +61,7 @@ interface Options {
   learnerId?: string;
   /** the text being read aloud; with local speech-to-text its tones are checked */
   pronounce?: string;
+  modelRate?: number;
 }
 
 export function voiceSupported(local: boolean) {
@@ -75,7 +78,7 @@ export function listen(options: Options): VoiceHandle {
   return handle;
 }
 
-function listenLocal({ onPhase, learnerId, pronounce, silenceMs = 1600, noSpeechMs = 8000, maxMs = 30000 }: Options): VoiceHandle {
+function listenLocal({ onPhase, learnerId, pronounce, modelRate = 1, silenceMs = 1600, noSpeechMs = 8000, maxMs = 30000 }: Options): VoiceHandle {
   let stopRequested = false;
   let cancelled = false;
   let finish: () => void = () => {
@@ -155,7 +158,7 @@ function listenLocal({ onPhase, learnerId, pronounce, silenceMs = 1600, noSpeech
     const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
     const query = new URLSearchParams();
     if (learnerId) query.set('learner', learnerId);
-    if (pronounce) query.set('target', pronounce);
+    if (pronounce) { query.set('target', pronounce); query.set('rate', String(modelRate)); }
     const res = await fetch(`${pronounce ? '/api/pronounce' : '/api/transcribe'}?${query}`, {
       method: 'POST',
       headers: { 'Content-Type': blob.type },

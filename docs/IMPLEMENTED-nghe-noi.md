@@ -52,3 +52,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Nghe cả câu hoặc từng cụm ngắt theo dấu câu, nhập chữ Hán hoặc pinyin cách âm tiết. Edit-distance tránh lỗi thiếu một chữ kéo sai cả phần sau. Hiện chữ/âm/nghĩa sau nộp. Nhập không dấu được chấp nhận; có dấu/số thanh thì kiểm tra các chuỗi acceptTones, giữ baseTones để giải thích.
 - Có lựa chọn câu ví dụ của chính buổi học và câu mở đầu nhập vai. Cách đọc câu hiện có dùng metadata pinyin của bài, hoặc pinyin-pro cho câu mở đầu; không ghi đè pinyin DeepSeek.
 - Typecheck/test/build trước commit; chưa được giáo viên duyệt hoặc kiểm tra từng câu TTS thật.
+
+## Mục 8 — Shadowing DeepSeek
+
+- Chép 60 đoạn JSON và checker, giữ nhãn AI soạn, chưa duyệt. Phát mẫu theo tốc độ chung 0.7/0.85/1×; hết tiếng mẫu mới mở thu tự động theo thao tác chủ động của người học. Có dừng, hủy khi rời màn hình; bản ghi chỉ ở bộ nhớ.
+- Hiện đường cao độ sẵn có, độ dài và số chỗ ngắt nội bộ hơn một giây theo năng lượng. Giọng tham chiếu theo đúng tốc độ đã chọn; cache tách theo tốc độ. Không sửa ngưỡng thanh điệu hay cách cắt chữ, không dùng timestamp Whisper.
+- Test timing dùng tín hiệu tổng hợp kiểm tra loại khoảng lặng đầu/cuối; checker nội dung chạy trong test repo. Chưa kiểm chứng với micro người thật hoặc so sánh chuyên gia, không gắn điểm/nhãn thành thạo.

@@ -117,18 +117,20 @@ function loadPitchProfile(key) {
 }
 
 const modelCurves = new Map();
-async function modelCurve(target) {
-  if (modelCurves.has(target)) return modelCurves.get(target);
-  const speech = await synthesizeSpeech({ text: target, voice: DEFAULT_VOICE });
+async function modelCurve(target, rate = 1) {
+  const cacheKey = `${rate}:${target}`;
+  if (modelCurves.has(cacheKey)) return modelCurves.get(cacheKey);
+  const speech = await synthesizeSpeech({ text: target, voice: DEFAULT_VOICE, rate });
   const report = await analyseTones(Buffer.from(speech.audioBase64, 'base64'), target);
   const curve = {
     curve: report.curve || [],
     segments: report.segments || [],
     duration: report.duration,
+    timing: report.timing,
     audioBase64: speech.audioBase64,
     mime: speech.mime,
   };
-  modelCurves.set(target, curve);
+  modelCurves.set(cacheKey, curve);
   if (modelCurves.size > 200) modelCurves.delete(modelCurves.keys().next().value);
   return curve;
 }
@@ -150,7 +152,7 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
     if (key) dataStore.write(key, JSON.stringify(report.profile));
     const { profile: _profile, ...tones } = report;
     if (req.query.reference !== '0') {
-      const reference = await modelCurve(target).catch(() => null);
+      const reference = await modelCurve(target, [0.7, 0.85, 1].includes(Number(req.query.rate)) ? Number(req.query.rate) : 1).catch(() => null);
       if (reference) {
         tones.modelCurve = reference.curve;
         tones.model = reference;
