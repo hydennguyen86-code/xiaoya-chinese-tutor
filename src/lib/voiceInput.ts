@@ -29,6 +29,7 @@ export interface AudioTiming {
   pauses: { start: number; end: number }[];
 }
 export interface ToneReport {
+  fluencyReason?: string | null;
   timing?: AudioTiming | null;
   duration?: number;
   segments?: ToneSegment[];
@@ -45,6 +46,7 @@ export interface ToneReport {
 
 export interface VoiceResult {
   fluency?: Fluency | null;
+  fluencyReason?: string | null;
   timing?: VoiceTiming;
   text: string;
   tones: ToneReport | null;
@@ -82,7 +84,12 @@ export function voiceSupported(local: boolean) {
 
 let currentVoice: VoiceHandle | null = null;
 export function listen(options: Options): VoiceHandle {
-  currentVoice?.cancel();
+  if (currentVoice) {
+    const details = Promise.reject<VoiceResult>(new Error('Micro đang được dùng ở lượt khác. Hãy dừng lượt đó trước.'));
+    const result = details.then(d => d.text);
+    details.catch(() => {}); result.catch(() => {});
+    return { details, result, stop() {}, cancel() {} };
+  }
   const handle = options.local ? listenLocal(options) : listenBrowser(options);
   currentVoice = handle;
   handle.details
@@ -198,7 +205,7 @@ function listenLocal({
       body: blob,
     });
     if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
-    const data = (await res.json()) as { text?: string; tones?: ToneReport; fluency?: Fluency };
+    const data = (await res.json()) as { text?: string; tones?: ToneReport; fluency?: Fluency; fluencyReason?: string };
     if (learnerId && !pronounce && data.fluency) saveFluency(learnerId, data.fluency);
     if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones, blob);
     return {
@@ -206,6 +213,7 @@ function listenLocal({
       tones: data.tones ?? null,
       audio: blob,
       fluency: data.fluency ?? null,
+      fluencyReason: data.fluencyReason ?? null,
       timing: { speechEnd: lastVoice, recordingEnd, sttStart, sttEnd: performance.now() },
     };
   })();

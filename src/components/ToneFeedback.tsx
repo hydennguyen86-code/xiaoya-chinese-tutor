@@ -74,6 +74,17 @@ export function ToneFeedback({
   const segments = report.segments ?? [];
   const comparison = (
     <>
+      {report.fluencyReason && (
+        <p className="lesson-hint">
+          Chưa đo độ trôi chảy:{' '}
+          {report.fluencyReason === 'stt-not-ready'
+            ? 'nhận dạng cục bộ chưa sẵn sàng.'
+            : report.fluencyReason === 'stt-failed'
+              ? 'nhận dạng cục bộ gặp lỗi.'
+              : 'chưa đủ lời nhận dạng hoặc âm thanh có tiếng nói.'}{' '}
+          Không ghi điểm rỗng.
+        </p>
+      )}
       {report.curve?.some((v) => v !== null) && (
         <PitchCurve learner={report.curve} model={report.modelCurve ?? []} segments={segments} duration={report.duration ?? 0} />
       )}

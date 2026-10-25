@@ -37,3 +37,12 @@ test('STT adapter checks readiness and sends multipart Chinese audio to mocked b
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+import { pcmWav } from './stt.mjs';
+test('shared decoded PCM is packed as mono 16 kHz WAV for Whisper', () => {
+  const wav = pcmWav(new Float32Array([-2, 0, 2]));
+  assert.equal(wav.toString('ascii', 0, 4), 'RIFF');
+  assert.equal(wav.readUInt32LE(24), 16000);
+  assert.equal(wav.readInt16LE(44), -32767);
+  assert.equal(wav.readInt16LE(48), 32767);
+});

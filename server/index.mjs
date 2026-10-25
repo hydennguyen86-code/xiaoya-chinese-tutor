@@ -1,3 +1,4 @@
+import { transcribePcm } from './stt.mjs';
 import { warmLocalModel } from './warmup.mjs';
 import { energyTiming } from './audioTiming.mjs';
 import { measureFluency } from './fluency.mjs';
@@ -53,10 +54,13 @@ app.get('/api/lan/certificate', (req, res) =>
 mountToneEvaluation(app, dataStore.dir);
 mountListeningCorpus(app, dataStore.dir);
 const isOwner = ownerRequest;
-app.post('/api/warmup', async (req,res)=>{
-  if(!ownerRequest(req))return res.sendStatus(403);
-  try { res.json(await warmLocalModel(req.body?.provider,req.body?.model)); }
-  catch { res.status(400).json({error:'Không làm nóng được model cục bộ; vẫn có thể thử trò chuyện.'}); }
+app.post('/api/warmup', async (req, res) => {
+  if (!ownerRequest(req)) return res.sendStatus(403);
+  try {
+    res.json(await warmLocalModel(req.body?.provider, req.body?.model));
+  } catch {
+    res.status(400).json({ error: 'Không làm nóng được model cục bộ; vẫn có thể thử trò chuyện.' });
+  }
 });
 app.get('/api/provider-config', (req, res) => (isOwner(req) ? res.json(publicRemoteSettings()) : res.sendStatus(403)));
 app.put('/api/provider-config', (req, res) => {
@@ -95,12 +99,15 @@ app.post('/api/transcribe', express.raw({ type: () => true, limit: '15mb' }), as
     return;
   }
   try {
-    const [text,timing] = await Promise.all([transcribe(req.body, String(req.headers['content-type'] || 'audio/webm')),decodeToPcm(req.body).then(energyTiming).catch(()=>null)]);
-    res.json({ text, fluency: measureFluency(timing,text) });
+    const pcm = await decodeToPcm(req.body);
+    const text = await transcribePcm(pcm),
+      timing = energyTiming(pcm);
+    const fluency = measureFluency(timing, text);
+    res.json({ text, fluency, fluencyReason: fluency ? null : !text ? 'empty-transcript' : 'insufficient-speech' });
     // learn the speaker's pitch range in the background (used by tone checks)
     const key = pitchKey(String(req.query.learner || ''));
     if (key) {
-      profileFromAudio(req.body, loadPitchProfile(key))
+      profileFromAudio(req.body, loadPitchProfile(key), pcm)
         .then((profile) => dataStore.write(key, JSON.stringify(profile)))
         .catch(() => {});
     }
@@ -152,21 +159,41 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
   }
   try {
     const key = pitchKey(String(req.query.learner || ''));
-    const mime = String(req.headers['content-type'] || 'audio/webm');
+    const pcm = await decodeToPcm(req.body);
+    const ready = sttReady();
+    let transcriptFailed = false;
     const [text, report] = await Promise.all([
-      sttReady() ? transcribe(req.body, mime).catch(() => '') : Promise.resolve(''),
-      analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1' }),
+      ready
+        ? transcribePcm(pcm).catch(() => {
+            transcriptFailed = true;
+            return '';
+          })
+        : Promise.resolve(''),
+      analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1', pcm }),
     ]);
     if (key) dataStore.write(key, JSON.stringify(report.profile));
     const { profile: _profile, ...tones } = report;
     if (req.query.reference !== '0') {
-      const reference = await modelCurve(target, [0.7, 0.85, 1].includes(Number(req.query.rate)) ? Number(req.query.rate) : 1).catch(() => null);
+      const reference = await modelCurve(target, [0.7, 0.85, 1].includes(Number(req.query.rate)) ? Number(req.query.rate) : 1).catch(
+        () => null,
+      );
       if (reference) {
         tones.modelCurve = reference.curve;
         tones.model = reference;
       }
     }
-    res.json({ text, tones, fluency: measureFluency(tones.timing,text) });
+    const fluency = measureFluency(tones.timing, text);
+    const fluencyReason = fluency
+      ? null
+      : !ready
+        ? 'stt-not-ready'
+        : transcriptFailed
+          ? 'stt-failed'
+          : !text
+            ? 'empty-transcript'
+            : 'insufficient-speech';
+    tones.fluencyReason = fluencyReason;
+    res.json({ text, tones, fluency, fluencyReason });
   } catch (error) {
     console.error('[pronounce]', error.message);
     res.status(error.status || 500).json({ error: 'Không chấm được phát âm. Thử lại nhé.' });

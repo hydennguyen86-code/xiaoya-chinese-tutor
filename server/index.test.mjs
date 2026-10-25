@@ -120,6 +120,8 @@ test('real index server routes work with temporary data and local synthetic back
     await get('/api/transcribe', { method: 'POST', headers: { 'content-type': 'audio/wav' }, body: fixtureWav() })
   ).json();
   assert.equal(transcription.text, '你好');
+  assert.equal(transcription.fluencyReason, null);
+  assert.ok(transcription.fluency.syllables > 0);
   assert.equal(
     (await get('/api/transcribe', { method: 'POST', headers: { 'content-type': 'audio/wav' }, body: Buffer.alloc(2) })).status,
     400,
@@ -128,6 +130,22 @@ test('real index server routes work with temporary data and local synthetic back
     await get('/api/pronounce?target=你好&reference=0', { method: 'POST', headers: { 'content-type': 'audio/wav' }, body: fixtureWav() })
   ).json();
   assert.equal(tones.tones.syllables.length, 2);
+  assert.equal(tones.fluencyReason, null);
+  assert.ok(tones.fluency);
+  assert.equal(
+    (
+      await get('/api/pronounce?target=你好&reference=0', {
+        method: 'POST',
+        headers: { 'content-type': 'audio/wav' },
+        body: Buffer.alloc(1200),
+      })
+    ).status,
+    500,
+  );
+  assert.equal(
+    (await get('/api/transcribe', { method: 'POST', headers: { 'content-type': 'audio/wav' }, body: Buffer.alloc(1200) })).status,
+    500,
+  );
   assert.equal((await post('/api/corrections', { provider: 'invalid', model: 'fixture', text: '你好' })).status, 400);
   const fixes = await (await post('/api/corrections', { provider: 'ollama', model: 'fixture', text: '你好' })).json();
   assert.deepEqual(fixes.corrections, []);

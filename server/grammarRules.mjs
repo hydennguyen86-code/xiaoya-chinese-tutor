@@ -122,7 +122,13 @@ const RULES = [
     const m = text.match(new RegExp(`^(${SUBJECTS})([${HANZI}]{1,10}?)(${TIMES})([。！？!?]?)$`));
     if (!m) return null;
     const middle = m[2];
-    if (new RegExp(TIMES).test(middle) || /(是|在|到|等|从|喜欢|定|改|选|过|的|知道|希望|觉得|认为|相信|担心|听说|记得|忘记|忘了|打算|安排|决定|发现|说明|准备|计划|想|要)$/.test(middle)) return null;
+    if (
+      new RegExp(TIMES).test(middle) ||
+      /(是|在|到|等|从|喜欢|定|改|选|过|的|知道|希望|觉得|认为|相信|担心|听说|记得|忘记|忘了|打算|安排|决定|发现|说明|准备|计划|想|要)$/.test(
+        middle,
+      )
+    )
+      return null;
     return fix(
       `${m[1]}${middle}${m[3]}`,
       `${m[1]}${m[3]}${middle}`,
@@ -175,13 +181,20 @@ export function ruleCorrections(sentence) {
     const hit = rule(text);
     if (hit && text.includes(hit.original)) found.push(hit);
   }
-  return found;
+  // Prefer the longest hit when rules touch the same span, then show in text order.
+  const accepted = [];
+  for (const hit of found.sort((a, b) => b.original.length - a.original.length)) {
+    const start = text.indexOf(hit.original),
+      end = start + hit.original.length;
+    if (!accepted.some((r) => start < r.end && end > r.start)) accepted.push({ hit, start, end });
+  }
+  return accepted.sort((a, b) => a.start - b.start).map((r) => r.hit);
 }
 
 /** Rule hits first, then model corrections that do not touch the same words. */
 export function mergeCorrections(ruleHits, modelHits, limit = 2) {
-  const out = [...ruleHits];
-  for (const item of modelHits) {
+  const out = [];
+  for (const item of [...ruleHits].sort((a, b) => b.original.length - a.original.length).concat(modelHits)) {
     const overlaps = out.some(
       (r) => r.original.includes(item.original) || item.original.includes(r.original) || sharedRun(r.original, item.original) >= 2,
     );

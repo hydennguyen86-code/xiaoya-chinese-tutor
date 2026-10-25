@@ -283,8 +283,8 @@ export function expectedTones(text) {
 }
 
 /** Fold a recording's voiced frames into a speaker's pitch profile. */
-export async function profileFromAudio(audio, profile) {
-  const { f0 } = pitchTrack(await decodeToPcm(audio));
+export async function profileFromAudio(audio, profile, pcm = null) {
+  const { f0 } = pitchTrack(pcm ?? (await decodeToPcm(audio)));
   return addToProfile(profile, f0);
 }
 
@@ -311,9 +311,9 @@ function contour(f0, median, points = 60) {
  * `profile` is the speaker's accumulated pitch histogram (or null); the
  * updated profile is returned so the caller can store it.
  */
-export async function analyseTones(audio, target, { profile = null, debug = false } = {}) {
+export async function analyseTones(audio, target, { profile = null, debug = false, pcm: decoded = null } = {}) {
   const syllables = expectedTones(target);
-  const pcm = await decodeToPcm(audio);
+  const pcm = decoded ?? (await decodeToPcm(audio));
   const { f0, rms, median } = pitchTrack(pcm);
   const nextProfile = addToProfile(profile, f0);
   const base = { syllables: syllables.map((s) => ({ ...s, heard: 0, ok: null })), checked: 0, correct: 0, profile: nextProfile };

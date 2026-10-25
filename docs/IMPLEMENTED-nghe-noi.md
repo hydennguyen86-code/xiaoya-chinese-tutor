@@ -137,3 +137,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Ba tập cùng track, nối 10→11 và 20→21 bằng liên kết rõ; kết thúc bài 30, không tự nhảy sang khóa khác. Giữ nguyên hai khóa thực tế 48 buổi và dữ liệu tiến độ cũ. Chọn tập trung cấp dùng đúng mức HSK3–4 trong hội thoại.
 - Thêm bài nghe nhận nghĩa từ ba câu ví dụ gốc và hai lượt nói (nhắc lại/ứng dụng câu hỏi tự do), đáp án nghe cân bằng vị trí. Không tạo audio hay chép sách. Đây là bài nhận nghĩa ngắn, chưa phải đề luyện thi nghe dài.
 - Script import có kiểm tra toàn bộ trước khi ghi; cả 30 bài qua normalizeLesson và loader không cần model. Test vẫn kiểm tra riêng 48 buổi cũ, bổ sung 30 bài mới, đáp án/nhãn/chuyển tập. Chưa được giáo viên hoặc người học thẩm định sư phạm.
+
+## Review mức thấp — A7–A9 (sau misu30)
+
+- A7: ruleCorrections chọn hit dài hơn khi khoảng ký tự chồng nhau, trả theo thứ tự câu; merge lọc trùng cả rule–rule và rule–model. Giữ nguyên các sửa A1–A6 của Claude (335717c/910b17a).
+- A8: mỗi request transcribe/pronounce giải mã compressed audio một lần thành PCM 16 kHz; dùng lại cho cao độ/năng lượng và đóng gói WAV cho Whisper. Không cache giọng người ra đĩa; không đổi ngưỡng chấm thanh. Whisper vẫn đọc WAV đầu vào, chưa benchmark CPU máy yếu.
+- A9: trả fluencyReason rõ khi STT chưa sẵn sàng/lỗi/chưa có lời; kết quả thanh hiển thị lý do. Không ghi lịch sử fluency rỗng. Test WAV từ PCM, chồng gợi ý, API fluency và audio lỗi (D3).
