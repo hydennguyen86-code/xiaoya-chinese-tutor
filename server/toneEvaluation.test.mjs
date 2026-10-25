@@ -61,3 +61,57 @@ test('captured audio stays per learner; rerecording invalidates labels and rejec
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('human disagreement saves audio and independent labels privately, counts per learner and rejects invalid labels', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-feedback-test-'));
+  const routes = new Map();
+  const app = Object.fromEntries(
+    ['get', 'post', 'put'].map((method) => [method, (url, ...handlers) => routes.set(`${method} ${url}`, handlers.at(-1))]),
+  );
+  mountToneEvaluation(app, dir);
+  function call(method, body, learner = 'synthetic') {
+    const res = {
+      code: 200,
+      status(code) {
+        this.code = code;
+        return this;
+      },
+      json(data) {
+        this.data = data;
+      },
+    };
+    routes.get(`${method} /api/tone-feedback/:learner`)({ params: { learner }, body }, res);
+    return res;
+  }
+  try {
+    const body = {
+      text: '你好',
+      mime: 'audio/wav',
+      audioBase64: Buffer.alloc(1200).toString('base64'),
+      machine: [
+        { expected: 3, heard: 1 },
+        { expected: 3, heard: 4 },
+      ],
+      label: { source: 'self', reviewedBy: 'Synthetic reviewer', tones: [2, 3] },
+    };
+    assert.equal(call('post', { ...body, label: { ...body.label, tones: [3] } }).code, 400);
+    assert.equal(call('post', body, '../escape').code, 400);
+    assert.equal(call('post', body).code, 200);
+    const folder = path.join(dir, 'eval-recordings/synthetic/feedback');
+    const entry = JSON.parse(
+      fs.readFileSync(
+        path.join(
+          folder,
+          fs.readdirSync(folder).find((f) => f.endsWith('.json')),
+        ),
+      ),
+    );
+    assert.deepEqual(entry.label.tones, [2, 3]);
+    assert.equal(entry.machine[0].heard, 1);
+    assert.equal(fs.readFileSync(path.join(folder, entry.file)).length, 1200);
+    assert.deepEqual(call('get').data, { labeled: 0, feedback: 1 });
+    assert.deepEqual(call('get', null, 'other').data, { labeled: 0, feedback: 0 });
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

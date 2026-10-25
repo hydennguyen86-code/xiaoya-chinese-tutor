@@ -1,3 +1,4 @@
+import { ToneLabelFeedback } from './ToneLabelFeedback';
 import { PronunciationRepair, type RepairContext } from './PronunciationRepair';
 import { useEffect, useRef, useState } from 'react';
 import type { ToneReport } from '../lib/voiceInput';
@@ -10,7 +11,17 @@ const TONE_HINT: Record<number, string> = {
 };
 
 /** Per-syllable tone verdicts for a word, or the pitch curve for a sentence. */
-export function ToneFeedback({ report, audio, repair }: { report: ToneReport; audio?: Blob; repair?: RepairContext }) {
+export function ToneFeedback({
+  report,
+  audio,
+  repair,
+  learnerId,
+}: {
+  report: ToneReport;
+  audio?: Blob;
+  repair?: RepairContext;
+  learnerId?: string;
+}) {
   const context = useRef<AudioContext | null>(null);
   const source = useRef<AudioBufferSourceNode | null>(null);
   const sequence = useRef(0);
@@ -95,6 +106,12 @@ export function ToneFeedback({ report, audio, repair }: { report: ToneReport; au
     return (
       <div className="tone-feedback">
         {comparison}
+        <ToneLabelFeedback
+          key={report.syllables.map((s) => s.char).join('') + String(audio?.size)}
+          report={report}
+          audio={audio}
+          learnerId={learnerId || repair?.learnerId}
+        />
         {report.curve && report.curve.some((v) => v !== null) ? (
           <>
             <p className="lesson-hint">
@@ -114,6 +131,12 @@ export function ToneFeedback({ report, audio, repair }: { report: ToneReport; au
     <div className="tone-feedback">
       <p className="lesson-hint">Chấm tự động mới được thử trên giọng máy; hãy xem kết quả là gợi ý.</p>
       {comparison}
+      <ToneLabelFeedback
+        key={report.syllables.map((s) => s.char).join('') + String(audio?.size)}
+        report={report}
+        audio={audio}
+        learnerId={learnerId || repair?.learnerId}
+      />
       {repair &&
         wrong.map((s, i) => (
           <button type="button" key={i} onClick={() => setRepairChar(s.char)}>

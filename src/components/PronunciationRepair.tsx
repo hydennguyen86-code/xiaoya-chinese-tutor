@@ -1,3 +1,4 @@
+import { ToneLabelFeedback } from './ToneLabelFeedback';
 import { useEffect, useRef, useState } from 'react';
 import { listen, type VoiceHandle, type VoiceResult } from '../lib/voiceInput';
 import { repairOutcome, repairStep } from '../lib/pronunciationRepair';
@@ -88,6 +89,7 @@ export function PronunciationRepair({ context, char, onClose }: { context: Repai
           {heard.tones?.syllables.map((s) => `${s.char}: ${s.ok === null ? 'chưa rõ' : s.heard}`).join(' · ')}
         </p>
       )}
+      {heard?.tones && <ToneLabelFeedback report={heard.tones} audio={heard.audio} learnerId={context.learnerId} />}
       <p role="status">{notice}</p>
       <button type="button" onClick={onClose}>
         Đóng vòng luyện

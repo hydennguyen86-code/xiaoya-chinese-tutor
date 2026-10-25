@@ -1,7 +1,8 @@
+import { ToneLabelFeedback } from './ToneLabelFeedback';
 import { useEffect, useRef, useState } from 'react';
 import type { LearningProfile } from '../types';
 import { duePronunciation, reviewPronunciation } from '../lib/learning';
-import { listen, type VoiceHandle } from '../lib/voiceInput';
+import { listen, type VoiceResult, type VoiceHandle } from '../lib/voiceInput';
 import { repairOutcome } from '../lib/pronunciationRepair';
 import { useLessonAudio } from '../lib/useLessonAudio';
 import { SoundReview } from './SoundListening';
@@ -24,6 +25,7 @@ export function PronunciationReview({
     audio = useLessonAudio(voice, noop),
     handle = useRef<VoiceHandle | null>(null),
     alive = useRef(true);
+  const [heard, setHeard] = useState<VoiceResult | null>(null);
   const [phase, setPhase] = useState(''),
     [notice, setNotice] = useState('');
   useEffect(() => {
@@ -41,6 +43,7 @@ export function PronunciationReview({
       handle.current = h;
       const result = await h.details;
       if (!alive.current) return;
+      setHeard(result);
       const outcome = repairOutcome(result, item.target, [[Number(item.contrast)]]);
       onUpdate((p) => reviewPronunciation(p, item.id, outcome));
       setNotice(outcome === null ? 'Chưa chấm rõ; giữ nguyên lịch.' : outcome ? 'Đã khớp; hẹn ôn lại.' : 'Chưa khớp; ôn lại sau 5 phút.');
@@ -83,6 +86,7 @@ export function PronunciationReview({
           )}
         </>
       )}
+      {heard?.tones && <ToneLabelFeedback report={heard.tones} audio={heard.audio} learnerId={learnerId} />}
       <p role="status">{notice}</p>
       <p>Lịch phát âm ngắn hơn lịch từ vựng; kết quả tự động chỉ tham khảo. Chưa rõ thì không đổi lịch.</p>
     </section>

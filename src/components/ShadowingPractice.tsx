@@ -116,7 +116,7 @@ function ShadowRound({
       )}
       {heard?.tones && (
         <>
-          <ToneFeedback report={heard.tones} audio={heard.audio} />
+          <ToneFeedback learnerId={learnerId} report={heard.tones} audio={heard.audio} />
           <p>
             Độ dài bạn: {heard.tones.duration?.toFixed(2) ?? '—'}s · mẫu: {heard.tones.model?.duration?.toFixed(2) ?? '—'}s. Ngắt hơn 1
             giây: {heard.tones.timing?.pauses.length ?? 'chưa đo'} / mẫu {heard.tones.model?.timing?.pauses.length ?? 'chưa đo'}. Mốc ngắt

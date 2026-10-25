@@ -1,3 +1,4 @@
+import { ToneSampleCounts } from './ToneLabelFeedback';
 import { ConnectivitySettings } from './ConnectivitySettings';
 import { useEffect, useRef } from 'react';
 import type { AvatarMode, Level, Progress, Settings, StatusResponse } from '../types';
@@ -132,6 +133,7 @@ export function SettingsDialog({
         </header>
 
         <div className="settings-body">
+          <ToneSampleCounts />
           <section className="settings-section">
             <div className="section-heading">
               <div>

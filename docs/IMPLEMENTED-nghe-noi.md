@@ -117,3 +117,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 - Thống nhất khoảng cách/nút/select/input và trạng thái disabled cho các drill mới, tránh nút dính chữ trong giao diện thật.
 - Cùng một Blob bản ghi xem phát âm nhiều lần chỉ ghi ma trận nhầm một lần cho mỗi learner (WeakMap, không tạo định danh/audio lưu bền). Có test chống tăng giả số lỗi khi bấm lại. Chuẩn hóa cờ sống của màn ôn khi effect được thiết lập lại.
 - Bản vá cuối qua 91 test (87 backend/lib + 4 component), typecheck và build/dist. Giao diện shadowing đã mở lại từ bản build mới để kiểm tra bố cục; chưa thu micro người thật.
+
+## 2026-10-25 — Nhãn sửa kết quả chấm thanh
+
+- Nút “Misu chấm sai?” ở kết quả từ/câu, shadowing, vòng sửa và ôn phát âm. Người nghe chọn từng thanh độc lập, không điền sẵn theo máy; ghi tên và vai trò tự nghe/chuyên môn. 0 không rõ, 5 thanh nhẹ; không tự coi vai trò chuyên môn là giáo viên đã duyệt.
+- Chỉ lưu khi có bản thu còn trong bộ nhớ, vào eval-recordings/<hồ sơ>/feedback trong XIAOYA_DATA_DIR; nhãn người tách khỏi expected/heard của máy. Không sửa bộ chấm, không đưa audio vào repo. Mẫu phản hồi không tự tính là đủ bộ đo 56 mục.
+- Cài đặt đọc số mục 56 đã gắn nhãn và mẫu phản hồi của từng hồ sơ. Test dữ liệu tổng hợp kiểm tra nhãn khác máy, cách ly hồ sơ, lỗi đường dẫn/nhãn, file âm chỉ ở thư mục tạm. Chưa thử bằng giọng người thật hoặc trên Windows.
