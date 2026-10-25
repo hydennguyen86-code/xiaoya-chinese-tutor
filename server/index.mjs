@@ -28,7 +28,7 @@ import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
 import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
-import { analyseTones, profileFromAudio, decodeToPcm } from './tones.mjs';
+import { analyseTones, profileFromAudio, decodeToPcm, expectedTones } from './tones.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 
@@ -99,14 +99,18 @@ app.post('/api/transcribe', express.raw({ type: () => true, limit: '15mb' }), as
     return;
   }
   try {
-    const pcm = await decodeToPcm(req.body);
-    const text = await transcribePcm(pcm),
-      timing = energyTiming(pcm);
+    const pcm = await decodeToPcm(req.body).catch(() => null);
+    const text = pcm ? await transcribePcm(pcm) : await transcribe(req.body, String(req.headers['content-type'] || 'audio/webm')),
+      timing = pcm ? energyTiming(pcm) : null;
     const fluency = measureFluency(timing, text);
-    res.json({ text, fluency, fluencyReason: fluency ? null : !text ? 'empty-transcript' : 'insufficient-speech' });
+    res.json({
+      text,
+      fluency,
+      fluencyReason: !pcm ? 'decode-failed' : fluency ? null : !text ? 'empty-transcript' : 'insufficient-speech',
+    });
     // learn the speaker's pitch range in the background (used by tone checks)
     const key = pitchKey(String(req.query.learner || ''));
-    if (key) {
+    if (key && pcm) {
       profileFromAudio(req.body, loadPitchProfile(key), pcm)
         .then((profile) => dataStore.write(key, JSON.stringify(profile)))
         .catch(() => {});
@@ -159,21 +163,29 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
   }
   try {
     const key = pitchKey(String(req.query.learner || ''));
-    const pcm = await decodeToPcm(req.body);
+    const pcm = await decodeToPcm(req.body).catch(() => null);
     const ready = sttReady();
     let transcriptFailed = false;
     const [text, report] = await Promise.all([
       ready
-        ? transcribePcm(pcm).catch(() => {
+        ? (pcm ? transcribePcm(pcm) : transcribe(req.body, String(req.headers['content-type'] || 'audio/webm'))).catch(() => {
             transcriptFailed = true;
             return '';
           })
         : Promise.resolve(''),
-      analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1', pcm }),
+      pcm
+        ? analyseTones(req.body, target, { profile: loadPitchProfile(key), debug: req.query.debug === '1', pcm })
+        : Promise.resolve({
+            syllables: expectedTones(target).map((s) => ({ ...s, heard: 0, ok: null })),
+            checked: 0,
+            correct: 0,
+            note: 'Không giải mã được audio để chấm thanh; bản chép lời chỉ tham khảo.',
+            timing: null,
+          }),
     ]);
-    if (key) dataStore.write(key, JSON.stringify(report.profile));
+    if (key && report.profile) dataStore.write(key, JSON.stringify(report.profile));
     const { profile: _profile, ...tones } = report;
-    if (req.query.reference !== '0') {
+    if (pcm && req.query.reference !== '0') {
       const reference = await modelCurve(target, [0.7, 0.85, 1].includes(Number(req.query.rate)) ? Number(req.query.rate) : 1).catch(
         () => null,
       );
@@ -183,15 +195,17 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
       }
     }
     const fluency = measureFluency(tones.timing, text);
-    const fluencyReason = fluency
-      ? null
-      : !ready
-        ? 'stt-not-ready'
-        : transcriptFailed
-          ? 'stt-failed'
-          : !text
-            ? 'empty-transcript'
-            : 'insufficient-speech';
+    const fluencyReason = !pcm
+      ? 'decode-failed'
+      : fluency
+        ? null
+        : !ready
+          ? 'stt-not-ready'
+          : transcriptFailed
+            ? 'stt-failed'
+            : !text
+              ? 'empty-transcript'
+              : 'insufficient-speech';
     tones.fluencyReason = fluencyReason;
     res.json({ text, tones, fluency, fluencyReason });
   } catch (error) {

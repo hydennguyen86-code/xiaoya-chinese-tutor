@@ -196,3 +196,8 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Cài đặt có xuất ZIP riêng và xoá bộ thu/nhãn theo hồ sơ, cảnh báo ZIP có audio/tên người nghe, xác nhận trước xoá. Không tự hết hạn; README chỉ cách xoá thủ công.
 - Export chỉ file trong hồ sơ, không theo symlink/manifest tuỳ ý; delete kiểm mã hồ sơ và xác nhận. Test ZIP/xoá dữ liệu tổng hợp tạm, giữ hồ sơ khác. Không xuất/xoá bộ thu người thật lần này.
+
+## Review vòng 2 — N1 lỗi giải mã
+
+- Khi ffmpeg không giải mã được, transcribe vẫn thử audio gốc qua Whisper, fluency=null/decode-failed. Pronounce cũng giữ bản chép nếu STT đọc được nhưng trả mọi thanh chưa rõ/0 chữ chấm, không giả điểm hay ghi profile hỏng; không gọi giọng mẫu vô ích.
+- Test API với audio mà ffmpeg từ chối và Whisper giả lập nhận được lời: không làm mất lượt nhận dạng, có lý do decode-failed. Chưa thử codec lạ trên Whisper thật.
