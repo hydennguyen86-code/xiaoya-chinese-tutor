@@ -25,7 +25,13 @@ export function readRecordingDataset(directory, { labelsFile } = {}) {
   const labels = new Map();
   // rows that cannot be used are counted with a reason instead of vanishing
   const rejected = [];
+  const badCuts = new Set();
   function add(id, label) {
+    if (label?.badCut) {
+      badCuts.add(id);
+      rejected.push({ id, reason: 'bad cut' });
+      return;
+    }
     const count = TONE_ITEMS.find((i) => i.id === id)?.text.length ?? -1;
     if (!validateToneLabel(label, count, 5)) {
       const reason =
@@ -42,11 +48,14 @@ export function readRecordingDataset(directory, { labelsFile } = {}) {
       return;
     }
     const old = labels.get(id);
-    if (old && JSON.stringify(old.tones) !== JSON.stringify(label.tones))
+    if (
+      old &&
+      (JSON.stringify(old.tones) !== JSON.stringify(label.tones) || old.source !== label.source || old.reviewedBy !== label.reviewedBy)
+    )
       throw new Error('Conflicting human labels. Select one sidecar explicitly with --labels=<filename>.');
     labels.set(id, { ...label, reviewedBy: label.reviewedBy.trim() });
   }
-  for (const entry of manifest.recordings) if (entry.label) add(entry.id, entry.label);
+  if (!labelsFile) for (const entry of manifest.recordings) if (entry.label) add(entry.id, entry.label);
   for (const name of sidecars) {
     const data = JSON.parse(fs.readFileSync(localFile(name), 'utf8'));
     if (data.version !== 1) throw new Error('Unsupported labels version.');
@@ -55,7 +64,7 @@ export function readRecordingDataset(directory, { labelsFile } = {}) {
     const list = Array.isArray(rows)
       ? rows
       : Object.entries(rows).map(([id, label]) => ({ id, ...(Array.isArray(label) ? { tones: label } : label) }));
-    for (const row of list)
+    for (const row of [...list, ...(Array.isArray(data.incomplete) ? data.incomplete : [])])
       add(row.id, row.label ?? { ...row, source: row.source ?? data.source, reviewedBy: row.reviewedBy ?? data.reviewedBy });
   }
   const seen = new Set(),
@@ -69,20 +78,31 @@ export function readRecordingDataset(directory, { labelsFile } = {}) {
     const isCalibration = /^sentence-[1-9][0-9]*$/.test(entry.id) && typeof entry.text === 'string';
     if (!item && !isCalibration) continue;
     if (entry.file !== `${entry.id}.audio`) throw new Error('Invalid recording filename.');
+    if (!fs.existsSync(path.join(root, entry.file))) {
+      rejected.push({ id: entry.id, reason: 'missing audio' });
+      continue;
+    }
     const file = localFile(entry.file);
     if (item) availableItems++;
     const label = labels.get(entry.id);
-    if (item && label) recordings.push({ ...entry, label, file });
+    if (item && label && !badCuts.has(entry.id)) recordings.push({ ...entry, label, file });
     if (isCalibration) calibration.push({ ...entry, file });
   }
+  const usableItems =
+    availableItems - manifest.recordings.filter((r) => badCuts.has(r.id) && fs.existsSync(path.join(root, r.file))).length;
+  if (rejected.length) console.error('Rejected rows:', JSON.stringify(rejected));
+  if (labelsFile && !recordings.length) throw new Error('Selected labels file has zero usable human labels. See rejected rows.');
   return {
     recordings,
     calibration,
     inventory: {
       availableItems,
+      usableItems,
+      badCut: badCuts.size,
+      fullSetLabeled: recordings.length === TONE_ITEMS.length,
       labeledItems: recordings.length,
       requiredItems: TONE_ITEMS.length,
-      complete: recordings.length === TONE_ITEMS.length,
+      complete: usableItems > 0 && recordings.length === usableItems,
       sidecars: sidecars.length,
       rejectedLabels: rejected.length,
       rejected,

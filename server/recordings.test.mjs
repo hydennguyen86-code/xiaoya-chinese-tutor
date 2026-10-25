@@ -77,7 +77,8 @@ test('external sidecars use human tones, never expected/app guesses, detect conf
     fs.writeFileSync(path.join(dir, 'labels.self.json'), serialized);
     const data = readRecordingDataset(dir);
     assert.deepEqual(data.recordings[0].label.tones, [4]);
-    assert.equal(data.inventory.complete, false);
+    assert.equal(data.inventory.complete, true);
+    assert.equal(data.inventory.fullSetLabeled, false);
     assert.equal(fs.readFileSync(path.join(dir, 'labels.self.json'), 'utf8'), serialized);
     label.labels[0].tones = [2];
     fs.writeFileSync(path.join(dir, 'labels.second.json'), JSON.stringify(label));
@@ -147,6 +148,39 @@ test('external manifest loads six separate calibration sentences and legacy mani
     assert.equal(data.calibration.length, 6);
     assert.equal(data.inventory.availableItems, 1);
     assert.equal(data.inventory.labeledItems, 0);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('L3 counts incomplete and bad cuts, covers usable set without claiming full 56 and rejects empty selected sidecar', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-l3-fixture-'));
+  try {
+    const recordings = [
+      { id: 'single-1-1', text: '妈', file: 'single-1-1.audio' },
+      { id: 'word-1', text: '中国', file: 'word-1.audio' },
+    ];
+    for (const r of recordings) fs.writeFileSync(path.join(dir, r.file), Buffer.alloc(1200));
+    fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ version: 1, recordings }));
+    const sidecar = {
+      version: 1,
+      kind: 'misu-blind-tone-labels',
+      source: 'peer',
+      reviewedBy: 'Synthetic peer',
+      labeler: 'Synthetic peer',
+      items: { 'single-1-1': { order: 1, text: '妈', tones: [4] }, 'word-1': { order: 2, text: '中国', badCut: true } },
+      incomplete: [{ id: 'word-2', text: '学习', tones: [1, null] }],
+    };
+    fs.writeFileSync(path.join(dir, 'labels.synthetic.json'), JSON.stringify(sidecar));
+    const data = readRecordingDataset(dir, { labelsFile: 'labels.synthetic.json' });
+    assert.equal(data.inventory.usableItems, 1);
+    assert.equal(data.inventory.badCut, 1);
+    assert.equal(data.inventory.complete, true);
+    assert.equal(data.inventory.fullSetLabeled, false);
+    assert.deepEqual(data.inventory.rejected.map((r) => r.reason).sort(), ['bad cut', 'incomplete tones']);
+    sidecar.items = {};
+    fs.writeFileSync(path.join(dir, 'labels.synthetic.json'), JSON.stringify(sidecar));
+    assert.throws(() => readRecordingDataset(dir, { labelsFile: 'labels.synthetic.json' }), /zero usable/);
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }

@@ -179,3 +179,9 @@ Phần này thay thế cách sao chép audio và trạng thái chờ dữ liệu
 
 - Giữ nguyên L1 trong 0f7702f (peer/nhãn bị loại) và format voiceInput d03f43a; bỏ các sửa trùng đang làm.
 - L2: test manifest có 6 sentence-* được nạp riêng làm calibration, không tính vào 56 mục đánh giá; manifest cũ không có câu vẫn chạy, fallback được ghi rõ là cùng bộ đo. Qoder đã sửa manifest ở ngoài repo; app không ghi lại file nguồn/không chép audio.
+
+## Review vòng 2 — L3 còn lại
+
+- Giữ định dạng peer/thống kê L1 của Claude; bổ sung đọc incomplete riêng, badCut không được tính dù có tones, lỗi khi chọn sidecar cụ thể mà không có nhãn dùng được. In rejected ngay khi đọc, không đợi decode.
+- complete là đủ tập audio dùng được; fullSetLabeled mới là đủ 56 nhãn. Mục cắt hỏng không thể làm lách điều kiện 56 mục để chỉnh ngưỡng. Nhiều nguồn/người khác nhau cùng mục yêu cầu chọn sidecar, không âm thầm đè nguồn.
+- Test đúng schema label-server cho incomplete/badCut và coverage một tập nhỏ tổng hợp; chưa có nhãn người thật để công bố độ chính xác.
