@@ -1,12 +1,18 @@
 import { useState } from 'react';
-import { hanVietParts, hanVietText, wordTraps, hanVietBank } from '../lib/hanviet';
+import { HANVIET_AUTHORED_SOURCE, hanVietParts, hanVietText, wordTraps, hanVietBank } from '../lib/hanviet';
 export function HanViet({ word, showTips = true, compact = false }: { word: string; showTips?: boolean; compact?: boolean }) {
   const parts = hanVietParts(word);
   if (!parts.length) return null;
+  const readingText = hanVietText(word);
+  if (!readingText) return null;
+  const hasAuthored = parts.some((p) => p.source === 'authored');
+  const label = hasAuthored
+    ? `Âm Hán Việt (AI soạn, chưa duyệt${parts.some((p) => p.source === 'unihan') ? '; Unihan dự phòng' : ''}):`
+    : 'Âm theo chữ (Unihan dự phòng):';
   if (compact)
     return (
-      <span className="hanviet" title="Unihan kVietnamese, âm theo chữ; không thay pinyin">
-        Âm Việt (Unihan): {hanVietText(word)}
+      <span className="hanviet" title="Âm Hán Việt để gợi nhớ; không thay pinyin hoặc nghĩa hiện đại">
+        {label} {readingText}
       </span>
     );
   const traps = showTips ? wordTraps(word) : [];
@@ -15,9 +21,9 @@ export function HanViet({ word, showTips = true, compact = false }: { word: stri
     <div className="hanviet">
       <p
         className="hanviet-reading"
-        title="Unihan 17.0.0 kVietnamese, tra từng chữ. kVietnamese ghi âm Quốc ngữ theo chữ, không phân giải theo ngữ cảnh. Đây không phải phiên âm tiếng Trung hay nghĩa từ."
+        title="Bảng Hán Việt AI là gợi ý chưa duyệt. Chữ chưa có trong bảng dùng Unihan kVietnamese làm dự phòng; Unihan ghi theo chữ, không phân giải theo ngữ cảnh. Đây không phải phiên âm tiếng Trung hay nghĩa từ."
       >
-        Âm Việt theo chữ (Unihan): {hanVietText(word)}
+        {label} {readingText}
       </p>
       {authoredReadings.length > 0 && <p>Hán Việt gợi nhớ (AI soạn, chưa duyệt): {authoredReadings.join(' / ')}</p>}
       {parts.some((p) => p.via.length || p.readings.length > 1) && (
@@ -61,8 +67,8 @@ export function HanVietGuide({ onSpeak }: { onSpeak: (text: string) => void }) {
     <details className="hanviet-guide">
       <summary>Hán Việt: bẫy nghĩa / mẹo âm</summary>
       <p>
-        {hanVietBank.source}. Âm tra Unihan theo chữ; ghi chú DeepSeek chỉ là gợi ý. kVietnamese không bảo đảm một âm Hán Việt chuẩn theo
-        ngữ cảnh. Hán Việt không thay pinyin hay nghĩa hiện đại.
+        Bảng âm Hán Việt chính: {HANVIET_AUTHORED_SOURCE}; chữ chưa có dữ liệu dùng Unihan kVietnamese dự phòng. Âm theo chữ không phân giải
+        ngữ cảnh; ghi chú học tập cũng chưa duyệt. Hán Việt không thay pinyin hay nghĩa hiện đại.
       </p>
       <label>
         Nhóm

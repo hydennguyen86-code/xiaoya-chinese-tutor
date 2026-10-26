@@ -1,0 +1,7808 @@
+{
+ "source": "AI soạn, chưa duyệt",
+ "kind": "hanviet",
+ "version": 1,
+ "scope": [
+  "lessons/courses",
+  "lessons/listening"
+ ],
+ "note": "Âm Hán Việt thông dụng nhất cho từng chữ Hán xuất hiện trong lessons/courses và lessons/listening. Chữ thuần Trung không có âm Hán Việt thông dụng được ghi âm truyền thống và đánh dấu \"ít dùng\". Mục uncertain nêu lý do khi người soạn chưa chắc. Không chép từ từ điển có bản quyền; phần đối chiếu Unihan chỉ để liệt kê khác biệt.",
+ "schema": {
+  "char": "một chữ Hán (giản thể hoặc dạng xuất hiện trong bài)",
+  "readings": "các âm Hán Việt, âm thông dụng nhất đứng trước",
+  "note": "ghi chú dùng, ví dụ \"ít dùng\"",
+  "uncertain": "true khi chưa chắc",
+  "uncertainReason": "lý do chưa chắc"
+ },
+ "stats": {
+  "uniqueChars": 1279,
+  "totalHan": 52154,
+  "filesScanned": 142,
+  "withNote": 21,
+  "uncertain": 5,
+  "multipleReadings": 76
+ },
+ "entries": [
+  {
+   "char": "我",
+   "readings": [
+    "ngã"
+   ]
+  },
+  {
+   "char": "一",
+   "readings": [
+    "nhất"
+   ]
+  },
+  {
+   "char": "的",
+   "readings": [
+    "đích"
+   ]
+  },
+  {
+   "char": "不",
+   "readings": [
+    "bất"
+   ]
+  },
+  {
+   "char": "是",
+   "readings": [
+    "thị"
+   ]
+  },
+  {
+   "char": "有",
+   "readings": [
+    "hữu"
+   ]
+  },
+  {
+   "char": "你",
+   "readings": [
+    "nhĩ",
+    "nễ"
+   ]
+  },
+  {
+   "char": "要",
+   "readings": [
+    "yếu",
+    "yêu"
+   ]
+  },
+  {
+   "char": "天",
+   "readings": [
+    "thiên"
+   ]
+  },
+  {
+   "char": "个",
+   "readings": [
+    "cá"
+   ]
+  },
+  {
+   "char": "请",
+   "readings": [
+    "thỉnh"
+   ]
+  },
+  {
+   "char": "这",
+   "readings": [
+    "giá"
+   ],
+   "note": "ít dùng; chữ thuần Trung, âm Hán Việt cổ"
+  },
+  {
+   "char": "在",
+   "readings": [
+    "tại"
+   ]
+  },
+  {
+   "char": "时",
+   "readings": [
+    "thời"
+   ]
+  },
+  {
+   "char": "点",
+   "readings": [
+    "điểm"
+   ]
+  },
+  {
+   "char": "能",
+   "readings": [
+    "năng"
+   ]
+  },
+  {
+   "char": "明",
+   "readings": [
+    "minh"
+   ]
+  },
+  {
+   "char": "人",
+   "readings": [
+    "nhân"
+   ]
+  },
+  {
+   "char": "吗",
+   "readings": [
+    "ma"
+   ],
+   "note": "ít dùng; chữ thuần Trung, chỉ có âm đọc theo thanh mẫu",
+   "uncertain": true,
+   "uncertainReason": "Không có âm Hán Việt thông dụng; \"ma\" là âm truyền thống, chưa đối chiếu được từ điển Hán Việt."
+  },
+  {
+   "char": "们",
+   "readings": [
+    "môn"
+   ],
+   "note": "ít dùng; chữ thuần Trung"
+  },
+  {
+   "char": "说",
+   "readings": [
+    "thuyết",
+    "thuế"
+   ]
+  },
+  {
+   "char": "么",
+   "readings": [
+    "mô"
+   ],
+   "note": "ít dùng; chữ thuần Trung"
+  },
+  {
+   "char": "了",
+   "readings": [
+    "liễu"
+   ]
+  },
+  {
+   "char": "好",
+   "readings": [
+    "hảo",
+    "hiếu"
+   ]
+  },
+  {
+   "char": "先",
+   "readings": [
+    "tiên"
+   ]
+  },
+  {
+   "char": "面",
+   "readings": [
+    "diện",
+    "miến"
+   ]
+  },
+  {
+   "char": "下",
+   "readings": [
+    "hạ"
+   ]
+  },
+  {
+   "char": "学",
+   "readings": [
+    "học"
+   ]
+  },
+  {
+   "char": "方",
+   "readings": [
+    "phương"
+   ]
+  },
+  {
+   "char": "以",
+   "readings": [
+    "dĩ"
+   ]
+  },
+  {
+   "char": "间",
+   "readings": [
+    "gian",
+    "gián"
+   ]
+  },
+  {
+   "char": "再",
+   "readings": [
+    "tái"
+   ]
+  },
+  {
+   "char": "很",
+   "readings": [
+    "hẫn"
+   ]
+  },
+  {
+   "char": "可",
+   "readings": [
+    "khả"
+   ]
+  },
+  {
+   "char": "什",
+   "readings": [
+    "thập"
+   ]
+  },
+  {
+   "char": "上",
+   "readings": [
+    "thượng"
+   ]
+  },
+  {
+   "char": "认",
+   "readings": [
+    "nhận"
+   ]
+  },
+  {
+   "char": "到",
+   "readings": [
+    "đáo"
+   ]
+  },
+  {
+   "char": "多",
+   "readings": [
+    "đa"
+   ]
+  },
+  {
+   "char": "今",
+   "readings": [
+    "kim"
+   ]
+  },
+  {
+   "char": "确",
+   "readings": [
+    "xác"
+   ]
+  },
+  {
+   "char": "需",
+   "readings": [
+    "nhu"
+   ]
+  },
+  {
+   "char": "问",
+   "readings": [
+    "vấn"
+   ]
+  },
+  {
+   "char": "和",
+   "readings": [
+    "hòa"
+   ]
+  },
+  {
+   "char": "会",
+   "readings": [
+    "hội"
+   ]
+  },
+  {
+   "char": "前",
+   "readings": [
+    "tiền"
+   ]
+  },
+  {
+   "char": "对",
+   "readings": [
+    "đối"
+   ]
+  },
+  {
+   "char": "家",
+   "readings": [
+    "gia"
+   ]
+  },
+  {
+   "char": "用",
+   "readings": [
+    "dụng"
+   ]
+  },
+  {
+   "char": "工",
+   "readings": [
+    "công"
+   ]
+  },
+  {
+   "char": "子",
+   "readings": [
+    "tử"
+   ]
+  },
+  {
+   "char": "客",
+   "readings": [
+    "khách"
+   ]
+  },
+  {
+   "char": "想",
+   "readings": [
+    "tưởng"
+   ]
+  },
+  {
+   "char": "果",
+   "readings": [
+    "quả"
+   ]
+  },
+  {
+   "char": "理",
+   "readings": [
+    "lý"
+   ]
+  },
+  {
+   "char": "作",
+   "readings": [
+    "tác"
+   ]
+  },
+  {
+   "char": "成",
+   "readings": [
+    "thành"
+   ]
+  },
+  {
+   "char": "还",
+   "readings": [
+    "hoàn"
+   ]
+  },
+  {
+   "char": "三",
+   "readings": [
+    "tam"
+   ]
+  },
+  {
+   "char": "哪",
+   "readings": [
+    "na"
+   ],
+   "note": "ít dùng; chữ thuần Trung"
+  },
+  {
+   "char": "经",
+   "readings": [
+    "kinh"
+   ]
+  },
+  {
+   "char": "午",
+   "readings": [
+    "ngọ"
+   ]
+  },
+  {
+   "char": "见",
+   "readings": [
+    "kiến",
+    "hiện"
+   ]
+  },
+  {
+   "char": "少",
+   "readings": [
+    "thiểu",
+    "thiếu"
+   ]
+  },
+  {
+   "char": "谢",
+   "readings": [
+    "tạ"
+   ]
+  },
+  {
+   "char": "也",
+   "readings": [
+    "dã"
+   ]
+  },
+  {
+   "char": "次",
+   "readings": [
+    "thứ"
+   ]
+  },
+  {
+   "char": "费",
+   "readings": [
+    "phí"
+   ]
+  },
+  {
+   "char": "里",
+   "readings": [
+    "lý"
+   ]
+  },
+  {
+   "char": "结",
+   "readings": [
+    "kết"
+   ]
+  },
+  {
+   "char": "两",
+   "readings": [
+    "lưỡng"
+   ]
+  },
+  {
+   "char": "没",
+   "readings": [
+    "một",
+    "mạt"
+   ]
+  },
+  {
+   "char": "习",
+   "readings": [
+    "tập"
+   ]
+  },
+  {
+   "char": "后",
+   "readings": [
+    "hậu"
+   ]
+  },
+  {
+   "char": "如",
+   "readings": [
+    "như"
+   ]
+  },
+  {
+   "char": "同",
+   "readings": [
+    "đồng"
+   ]
+  },
+  {
+   "char": "条",
+   "readings": [
+    "điều"
+   ]
+  },
+  {
+   "char": "杯",
+   "readings": [
+    "bôi"
+   ]
+  },
+  {
+   "char": "来",
+   "readings": [
+    "lai"
+   ]
+  },
+  {
+   "char": "目",
+   "readings": [
+    "mục"
+   ]
+  },
+  {
+   "char": "提",
+   "readings": [
+    "đề"
+   ]
+  },
+  {
+   "char": "服",
+   "readings": [
+    "phục"
+   ]
+  },
+  {
+   "char": "加",
+   "readings": [
+    "gia"
+   ]
+  },
+  {
+   "char": "看",
+   "readings": [
+    "khán",
+    "khản"
+   ]
+  },
+  {
+   "char": "务",
+   "readings": [
+    "vụ"
+   ]
+  },
+  {
+   "char": "定",
+   "readings": [
+    "định"
+   ]
+  },
+  {
+   "char": "去",
+   "readings": [
+    "khứ"
+   ]
+  },
+  {
+   "char": "数",
+   "readings": [
+    "số",
+    "sổ"
+   ]
+  },
+  {
+   "char": "行",
+   "readings": [
+    "hành",
+    "hàng"
+   ]
+  },
+  {
+   "char": "调",
+   "readings": [
+    "điều",
+    "điệu"
+   ]
+  },
+  {
+   "char": "分",
+   "readings": [
+    "phân",
+    "phận"
+   ]
+  },
+  {
+   "char": "题",
+   "readings": [
+    "đề"
+   ]
+  },
+  {
+   "char": "合",
+   "readings": [
+    "hợp"
+   ]
+  },
+  {
+   "char": "为",
+   "readings": [
+    "vi",
+    "vị"
+   ]
+  },
+  {
+   "char": "每",
+   "readings": [
+    "mỗi"
+   ]
+  },
+  {
+   "char": "比",
+   "readings": [
+    "tỷ"
+   ]
+  },
+  {
+   "char": "小",
+   "readings": [
+    "tiểu"
+   ]
+  },
+  {
+   "char": "几",
+   "readings": [
+    "kỷ",
+    "cơ"
+   ]
+  },
+  {
+   "char": "房",
+   "readings": [
+    "phòng"
+   ]
+  },
+  {
+   "char": "中",
+   "readings": [
+    "trung",
+    "trúng"
+   ]
+  },
+  {
+   "char": "重",
+   "readings": [
+    "trọng",
+    "trùng"
+   ]
+  },
+  {
+   "char": "甲",
+   "readings": [
+    "giáp"
+   ]
+  },
+  {
+   "char": "起",
+   "readings": [
+    "khởi"
+   ]
+  },
+  {
+   "char": "周",
+   "readings": [
+    "chu"
+   ]
+  },
+  {
+   "char": "钱",
+   "readings": [
+    "tiền"
+   ]
+  },
+  {
+   "char": "应",
+   "readings": [
+    "ứng",
+    "ưng"
+   ]
+  },
+  {
+   "char": "怎",
+   "readings": [
+    "chẩm"
+   ]
+  },
+  {
+   "char": "就",
+   "readings": [
+    "tựu"
+   ]
+  },
+  {
+   "char": "做",
+   "readings": [
+    "tố"
+   ]
+  },
+  {
+   "char": "十",
+   "readings": [
+    "thập"
+   ]
+  },
+  {
+   "char": "只",
+   "readings": [
+    "chỉ",
+    "chích"
+   ]
+  },
+  {
+   "char": "发",
+   "readings": [
+    "phát"
+   ]
+  },
+  {
+   "char": "改",
+   "readings": [
+    "cải"
+   ]
+  },
+  {
+   "char": "样",
+   "readings": [
+    "dạng"
+   ]
+  },
+  {
+   "char": "更",
+   "readings": [
+    "canh",
+    "cánh"
+   ]
+  },
+  {
+   "char": "实",
+   "readings": [
+    "thực"
+   ]
+  },
+  {
+   "char": "现",
+   "readings": [
+    "hiện"
+   ]
+  },
+  {
+   "char": "生",
+   "readings": [
+    "sinh"
+   ]
+  },
+  {
+   "char": "他",
+   "readings": [
+    "tha"
+   ]
+  },
+  {
+   "char": "叫",
+   "readings": [
+    "khiếu"
+   ]
+  },
+  {
+   "char": "任",
+   "readings": [
+    "nhiệm",
+    "nhậm"
+   ]
+  },
+  {
+   "char": "大",
+   "readings": [
+    "đại"
+   ]
+  },
+  {
+   "char": "解",
+   "readings": [
+    "giải",
+    "giới"
+   ]
+  },
+  {
+   "char": "商",
+   "readings": [
+    "thương"
+   ]
+  },
+  {
+   "char": "边",
+   "readings": [
+    "biên"
+   ]
+  },
+  {
+   "char": "据",
+   "readings": [
+    "cứ"
+   ]
+  },
+  {
+   "char": "乙",
+   "readings": [
+    "ất"
+   ]
+  },
+  {
+   "char": "本",
+   "readings": [
+    "bản"
+   ]
+  },
+  {
+   "char": "价",
+   "readings": [
+    "giá"
+   ]
+  },
+  {
+   "char": "出",
+   "readings": [
+    "xuất"
+   ]
+  },
+  {
+   "char": "件",
+   "readings": [
+    "kiện"
+   ]
+  },
+  {
+   "char": "气",
+   "readings": [
+    "khí"
+   ]
+  },
+  {
+   "char": "责",
+   "readings": [
+    "trách"
+   ]
+  },
+  {
+   "char": "通",
+   "readings": [
+    "thông"
+   ]
+  },
+  {
+   "char": "水",
+   "readings": [
+    "thủy"
+   ]
+  },
+  {
+   "char": "标",
+   "readings": [
+    "tiêu"
+   ]
+  },
+  {
+   "char": "二",
+   "readings": [
+    "nhị"
+   ]
+  },
+  {
+   "char": "意",
+   "readings": [
+    "ý"
+   ]
+  },
+  {
+   "char": "店",
+   "readings": [
+    "điếm"
+   ]
+  },
+  {
+   "char": "欢",
+   "readings": [
+    "hoan"
+   ]
+  },
+  {
+   "char": "那",
+   "readings": [
+    "na"
+   ],
+   "note": "ít dùng; chữ thuần Trung"
+  },
+  {
+   "char": "年",
+   "readings": [
+    "niên"
+   ]
+  },
+  {
+   "char": "否",
+   "readings": [
+    "phủ"
+   ]
+  },
+  {
+   "char": "交",
+   "readings": [
+    "giao"
+   ]
+  },
+  {
+   "char": "论",
+   "readings": [
+    "luận"
+   ]
+  },
+  {
+   "char": "字",
+   "readings": [
+    "tự"
+   ]
+  },
+  {
+   "char": "口",
+   "readings": [
+    "khẩu"
+   ]
+  },
+  {
+   "char": "让",
+   "readings": [
+    "nhượng"
+   ]
+  },
+  {
+   "char": "效",
+   "readings": [
+    "hiệu"
+   ]
+  },
+  {
+   "char": "把",
+   "readings": [
+    "bả"
+   ]
+  },
+  {
+   "char": "爸",
+   "readings": [
+    "bá"
+   ],
+   "note": "ít dùng; khẩu ngữ thường nói \"ba\""
+  },
+  {
+   "char": "完",
+   "readings": [
+    "hoàn"
+   ]
+  },
+  {
+   "char": "得",
+   "readings": [
+    "đắc"
+   ]
+  },
+  {
+   "char": "事",
+   "readings": [
+    "sự"
+   ]
+  },
+  {
+   "char": "进",
+   "readings": [
+    "tiến"
+   ]
+  },
+  {
+   "char": "名",
+   "readings": [
+    "danh"
+   ]
+  },
+  {
+   "char": "安",
+   "readings": [
+    "an"
+   ]
+  },
+  {
+   "char": "户",
+   "readings": [
+    "hộ"
+   ]
+  },
+  {
+   "char": "妈",
+   "readings": [
+    "ma"
+   ],
+   "note": "ít dùng; khẩu ngữ thường nói \"mẹ\""
+  },
+  {
+   "char": "试",
+   "readings": [
+    "thí"
+   ]
+  },
+  {
+   "char": "电",
+   "readings": [
+    "điện"
+   ]
+  },
+  {
+   "char": "都",
+   "readings": [
+    "đô"
+   ]
+  },
+  {
+   "char": "过",
+   "readings": [
+    "quá"
+   ]
+  },
+  {
+   "char": "但",
+   "readings": [
+    "đãn"
+   ]
+  },
+  {
+   "char": "回",
+   "readings": [
+    "hồi"
+   ]
+  },
+  {
+   "char": "开",
+   "readings": [
+    "khai"
+   ]
+  },
+  {
+   "char": "校",
+   "readings": [
+    "hiệu",
+    "giáo"
+   ]
+  },
+  {
+   "char": "案",
+   "readings": [
+    "án"
+   ]
+  },
+  {
+   "char": "喜",
+   "readings": [
+    "hỷ"
+   ]
+  },
+  {
+   "char": "取",
+   "readings": [
+    "thủ"
+   ]
+  },
+  {
+   "char": "变",
+   "readings": [
+    "biến"
+   ]
+  },
+  {
+   "char": "租",
+   "readings": [
+    "tô"
+   ]
+  },
+  {
+   "char": "老",
+   "readings": [
+    "lão"
+   ]
+  },
+  {
+   "char": "包",
+   "readings": [
+    "bao"
+   ]
+  },
+  {
+   "char": "饭",
+   "readings": [
+    "phạn"
+   ]
+  },
+  {
+   "char": "师",
+   "readings": [
+    "sư"
+   ]
+  },
+  {
+   "char": "走",
+   "readings": [
+    "tẩu"
+   ]
+  },
+  {
+   "char": "议",
+   "readings": [
+    "nghị"
+   ]
+  },
+  {
+   "char": "期",
+   "readings": [
+    "kỳ"
+   ]
+  },
+  {
+   "char": "保",
+   "readings": [
+    "bảo"
+   ]
+  },
+  {
+   "char": "话",
+   "readings": [
+    "thoại"
+   ]
+  },
+  {
+   "char": "验",
+   "readings": [
+    "nghiệm"
+   ]
+  },
+  {
+   "char": "越",
+   "readings": [
+    "việt"
+   ]
+  },
+  {
+   "char": "吃",
+   "readings": [
+    "khiết"
+   ],
+   "note": "ít dùng; khẩu ngữ thường nói \"ăn\""
+  },
+  {
+   "char": "地",
+   "readings": [
+    "địa"
+   ]
+  },
+  {
+   "char": "最",
+   "readings": [
+    "tối"
+   ]
+  },
+  {
+   "char": "订",
+   "readings": [
+    "đính"
+   ]
+  },
+  {
+   "char": "负",
+   "readings": [
+    "phụ"
+   ]
+  },
+  {
+   "char": "然",
+   "readings": [
+    "nhiên"
+   ]
+  },
+  {
+   "char": "整",
+   "readings": [
+    "chỉnh"
+   ]
+  },
+  {
+   "char": "证",
+   "readings": [
+    "chứng"
+   ]
+  },
+  {
+   "char": "报",
+   "readings": [
+    "báo"
+   ]
+  },
+  {
+   "char": "五",
+   "readings": [
+    "ngũ"
+   ]
+  },
+  {
+   "char": "项",
+   "readings": [
+    "hạng"
+   ]
+  },
+  {
+   "char": "员",
+   "readings": [
+    "viên"
+   ]
+  },
+  {
+   "char": "帮",
+   "readings": [
+    "bang"
+   ]
+  },
+  {
+   "char": "接",
+   "readings": [
+    "tiếp"
+   ]
+  },
+  {
+   "char": "碗",
+   "readings": [
+    "uyển"
+   ]
+  },
+  {
+   "char": "消",
+   "readings": [
+    "tiêu"
+   ]
+  },
+  {
+   "char": "持",
+   "readings": [
+    "trì"
+   ]
+  },
+  {
+   "char": "动",
+   "readings": [
+    "động"
+   ]
+  },
+  {
+   "char": "而",
+   "readings": [
+    "nhi"
+   ]
+  },
+  {
+   "char": "关",
+   "readings": [
+    "quan"
+   ]
+  },
+  {
+   "char": "免",
+   "readings": [
+    "miễn"
+   ]
+  },
+  {
+   "char": "息",
+   "readings": [
+    "tức"
+   ]
+  },
+  {
+   "char": "自",
+   "readings": [
+    "tự"
+   ]
+  },
+  {
+   "char": "度",
+   "readings": [
+    "độ"
+   ]
+  },
+  {
+   "char": "金",
+   "readings": [
+    "kim"
+   ]
+  },
+  {
+   "char": "决",
+   "readings": [
+    "quyết"
+   ]
+  },
+  {
+   "char": "误",
+   "readings": [
+    "ngộ"
+   ]
+  },
+  {
+   "char": "医",
+   "readings": [
+    "y"
+   ]
+  },
+  {
+   "char": "姐",
+   "readings": [
+    "thư"
+   ]
+  },
+  {
+   "char": "量",
+   "readings": [
+    "lượng",
+    "lường"
+   ]
+  },
+  {
+   "char": "计",
+   "readings": [
+    "kế"
+   ]
+  },
+  {
+   "char": "节",
+   "readings": [
+    "tiết",
+    "tiệt"
+   ]
+  },
+  {
+   "char": "查",
+   "readings": [
+    "tra"
+   ]
+  },
+  {
+   "char": "放",
+   "readings": [
+    "phóng"
+   ]
+  },
+  {
+   "char": "款",
+   "readings": [
+    "khoản"
+   ]
+  },
+  {
+   "char": "买",
+   "readings": [
+    "mãi"
+   ]
+  },
+  {
+   "char": "清",
+   "readings": [
+    "thanh"
+   ]
+  },
+  {
+   "char": "太",
+   "readings": [
+    "thái"
+   ]
+  },
+  {
+   "char": "表",
+   "readings": [
+    "biểu"
+   ]
+  },
+  {
+   "char": "四",
+   "readings": [
+    "tứ"
+   ]
+  },
+  {
+   "char": "新",
+   "readings": [
+    "tân"
+   ]
+  },
+  {
+   "char": "给",
+   "readings": [
+    "cấp"
+   ]
+  },
+  {
+   "char": "喝",
+   "readings": [
+    "hát"
+   ],
+   "note": "ít dùng; khẩu ngữ thường nói \"uống\""
+  },
+  {
+   "char": "觉",
+   "readings": [
+    "giác",
+    "giáo"
+   ]
+  },
+  {
+   "char": "力",
+   "readings": [
+    "lực"
+   ]
+  },
+  {
+   "char": "晚",
+   "readings": [
+    "vãn"
+   ]
+  },
+  {
+   "char": "当",
+   "readings": [
+    "đương",
+    "đáng"
+   ]
+  },
+  {
+   "char": "法",
+   "readings": [
+    "pháp"
+   ]
+  },
+  {
+   "char": "由",
+   "readings": [
+    "do"
+   ]
+  },
+  {
+   "char": "原",
+   "readings": [
+    "nguyên"
+   ]
+  },
+  {
+   "char": "月",
+   "readings": [
+    "nguyệt"
+   ]
+  },
+  {
+   "char": "床",
+   "readings": [
+    "sàng"
+   ]
+  },
+  {
+   "char": "该",
+   "readings": [
+    "cai"
+   ]
+  },
+  {
+   "char": "高",
+   "readings": [
+    "cao"
+   ]
+  },
+  {
+   "char": "求",
+   "readings": [
+    "cầu"
+   ]
+  },
+  {
+   "char": "热",
+   "readings": [
+    "nhiệt"
+   ]
+  },
+  {
+   "char": "因",
+   "readings": [
+    "nhân"
+   ]
+  },
+  {
+   "char": "优",
+   "readings": [
+    "ưu"
+   ]
+  },
+  {
+   "char": "班",
+   "readings": [
+    "ban"
+   ]
+  },
+  {
+   "char": "较",
+   "readings": [
+    "giác"
+   ]
+  },
+  {
+   "char": "退",
+   "readings": [
+    "thoái"
+   ]
+  },
+  {
+   "char": "些",
+   "readings": [
+    "ta"
+   ]
+  },
+  {
+   "char": "并",
+   "readings": [
+    "tính"
+   ]
+  },
+  {
+   "char": "楚",
+   "readings": [
+    "sở"
+   ]
+  },
+  {
+   "char": "处",
+   "readings": [
+    "xử",
+    "xứ"
+   ]
+  },
+  {
+   "char": "步",
+   "readings": [
+    "bộ"
+   ]
+  },
+  {
+   "char": "儿",
+   "readings": [
+    "nhi"
+   ]
+  },
+  {
+   "char": "机",
+   "readings": [
+    "cơ"
+   ]
+  },
+  {
+   "char": "块",
+   "readings": [
+    "khối"
+   ]
+  },
+  {
+   "char": "例",
+   "readings": [
+    "lệ"
+   ]
+  },
+  {
+   "char": "写",
+   "readings": [
+    "tả"
+   ]
+  },
+  {
+   "char": "八",
+   "readings": [
+    "bát"
+   ]
+  },
+  {
+   "char": "活",
+   "readings": [
+    "hoạt"
+   ]
+  },
+  {
+   "char": "率",
+   "readings": [
+    "suất",
+    "luật"
+   ]
+  },
+  {
+   "char": "识",
+   "readings": [
+    "thức",
+    "chí"
+   ]
+  },
+  {
+   "char": "往",
+   "readings": [
+    "vãng"
+   ]
+  },
+  {
+   "char": "茶",
+   "readings": [
+    "trà"
+   ]
+  },
+  {
+   "char": "单",
+   "readings": [
+    "đơn",
+    "thiền"
+   ]
+  },
+  {
+   "char": "复",
+   "readings": [
+    "phục",
+    "phức"
+   ]
+  },
+  {
+   "char": "号",
+   "readings": [
+    "hiệu",
+    "hào"
+   ]
+  },
+  {
+   "char": "换",
+   "readings": [
+    "hoán"
+   ]
+  },
+  {
+   "char": "历",
+   "readings": [
+    "lịch"
+   ]
+  },
+  {
+   "char": "手",
+   "readings": [
+    "thủ"
+   ]
+  },
+  {
+   "char": "影",
+   "readings": [
+    "ảnh"
+   ]
+  },
+  {
+   "char": "预",
+   "readings": [
+    "dự"
+   ]
+  },
+  {
+   "char": "承",
+   "readings": [
+    "thừa"
+   ]
+  },
+  {
+   "char": "己",
+   "readings": [
+    "kỷ"
+   ]
+  },
+  {
+   "char": "码",
+   "readings": [
+    "mã"
+   ]
+  },
+  {
+   "char": "米",
+   "readings": [
+    "mễ"
+   ]
+  },
+  {
+   "char": "平",
+   "readings": [
+    "bình"
+   ]
+  },
+  {
+   "char": "文",
+   "readings": [
+    "văn"
+   ]
+  },
+  {
+   "char": "院",
+   "readings": [
+    "viện"
+   ]
+  },
+  {
+   "char": "公",
+   "readings": [
+    "công"
+   ]
+  },
+  {
+   "char": "核",
+   "readings": [
+    "hạch"
+   ]
+  },
+  {
+   "char": "建",
+   "readings": [
+    "kiến"
+   ]
+  },
+  {
+   "char": "于",
+   "readings": [
+    "vu"
+   ]
+  },
+  {
+   "char": "辣",
+   "readings": [
+    "lạt"
+   ]
+  },
+  {
+   "char": "沟",
+   "readings": [
+    "câu"
+   ]
+  },
+  {
+   "char": "体",
+   "readings": [
+    "thể"
+   ]
+  },
+  {
+   "char": "友",
+   "readings": [
+    "hữu"
+   ]
+  },
+  {
+   "char": "便",
+   "readings": [
+    "tiện"
+   ]
+  },
+  {
+   "char": "难",
+   "readings": [
+    "nan",
+    "nạn"
+   ]
+  },
+  {
+   "char": "培",
+   "readings": [
+    "bồi"
+   ]
+  },
+  {
+   "char": "朋",
+   "readings": [
+    "bằng"
+   ]
+  },
+  {
+   "char": "睡",
+   "readings": [
+    "thuỵ"
+   ]
+  },
+  {
+   "char": "所",
+   "readings": [
+    "sở"
+   ]
+  },
+  {
+   "char": "围",
+   "readings": [
+    "vi"
+   ]
+  },
+  {
+   "char": "运",
+   "readings": [
+    "vận"
+   ]
+  },
+  {
+   "char": "迟",
+   "readings": [
+    "trì"
+   ]
+  },
+  {
+   "char": "打",
+   "readings": [
+    "đả"
+   ]
+  },
+  {
+   "char": "段",
+   "readings": [
+    "đoạn"
+   ]
+  },
+  {
+   "char": "范",
+   "readings": [
+    "phạm"
+   ]
+  },
+  {
+   "char": "功",
+   "readings": [
+    "công"
+   ]
+  },
+  {
+   "char": "空",
+   "readings": [
+    "không",
+    "khống"
+   ]
+  },
+  {
+   "char": "收",
+   "readings": [
+    "thu"
+   ]
+  },
+  {
+   "char": "舒",
+   "readings": [
+    "thư"
+   ]
+  },
+  {
+   "char": "坐",
+   "readings": [
+    "tọa"
+   ]
+  },
+  {
+   "char": "流",
+   "readings": [
+    "lưu"
+   ]
+  },
+  {
+   "char": "排",
+   "readings": [
+    "bài"
+   ]
+  },
+  {
+   "char": "算",
+   "readings": [
+    "toán"
+   ]
+  },
+  {
+   "char": "训",
+   "readings": [
+    "huấn"
+   ]
+  },
+  {
+   "char": "右",
+   "readings": [
+    "hữu"
+   ]
+  },
+  {
+   "char": "哥",
+   "readings": [
+    "ca"
+   ]
+  },
+  {
+   "char": "全",
+   "readings": [
+    "toàn"
+   ]
+  },
+  {
+   "char": "失",
+   "readings": [
+    "thất"
+   ]
+  },
+  {
+   "char": "诉",
+   "readings": [
+    "tố"
+   ]
+  },
+  {
+   "char": "主",
+   "readings": [
+    "chủ"
+   ]
+  },
+  {
+   "char": "化",
+   "readings": [
+    "hóa"
+   ]
+  },
+  {
+   "char": "近",
+   "readings": [
+    "cận"
+   ]
+  },
+  {
+   "char": "修",
+   "readings": [
+    "tu"
+   ]
+  },
+  {
+   "char": "选",
+   "readings": [
+    "tuyển"
+   ]
+  },
+  {
+   "char": "车",
+   "readings": [
+    "xa"
+   ]
+  },
+  {
+   "char": "讲",
+   "readings": [
+    "giảng"
+   ]
+  },
+  {
+   "char": "九",
+   "readings": [
+    "cửu"
+   ]
+  },
+  {
+   "char": "冷",
+   "readings": [
+    "lãnh"
+   ]
+  },
+  {
+   "char": "其",
+   "readings": [
+    "kỳ"
+   ]
+  },
+  {
+   "char": "适",
+   "readings": [
+    "thích"
+   ]
+  },
+  {
+   "char": "住",
+   "readings": [
+    "trú"
+   ]
+  },
+  {
+   "char": "常",
+   "readings": [
+    "thường"
+   ]
+  },
+  {
+   "char": "代",
+   "readings": [
+    "đại"
+   ]
+  },
+  {
+   "char": "反",
+   "readings": [
+    "phản"
+   ]
+  },
+  {
+   "char": "具",
+   "readings": [
+    "cụ"
+   ]
+  },
+  {
+   "char": "六",
+   "readings": [
+    "lục"
+   ]
+  },
+  {
+   "char": "七",
+   "readings": [
+    "thất"
+   ]
+  },
+  {
+   "char": "望",
+   "readings": [
+    "vọng"
+   ]
+  },
+  {
+   "char": "维",
+   "readings": [
+    "duy"
+   ]
+  },
+  {
+   "char": "部",
+   "readings": [
+    "bộ"
+   ]
+  },
+  {
+   "char": "格",
+   "readings": [
+    "cách"
+   ]
+  },
+  {
+   "char": "候",
+   "readings": [
+    "hậu"
+   ]
+  },
+  {
+   "char": "键",
+   "readings": [
+    "kiện"
+   ]
+  },
+  {
+   "char": "留",
+   "readings": [
+    "lưu"
+   ]
+  },
+  {
+   "char": "希",
+   "readings": [
+    "hi"
+   ]
+  },
+  {
+   "char": "响",
+   "readings": [
+    "hưởng"
+   ]
+  },
+  {
+   "char": "付",
+   "readings": [
+    "phó"
+   ]
+  },
+  {
+   "char": "妹",
+   "readings": [
+    "muội"
+   ]
+  },
+  {
+   "char": "书",
+   "readings": [
+    "thư"
+   ]
+  },
+  {
+   "char": "铁",
+   "readings": [
+    "thiết"
+   ]
+  },
+  {
+   "char": "统",
+   "readings": [
+    "thống"
+   ]
+  },
+  {
+   "char": "之",
+   "readings": [
+    "chi"
+   ]
+  },
+  {
+   "char": "才",
+   "readings": [
+    "tài"
+   ]
+  },
+  {
+   "char": "弟",
+   "readings": [
+    "đệ"
+   ]
+  },
+  {
+   "char": "判",
+   "readings": [
+    "phán"
+   ]
+  },
+  {
+   "char": "双",
+   "readings": [
+    "song"
+   ]
+  },
+  {
+   "char": "延",
+   "readings": [
+    "diên"
+   ]
+  },
+  {
+   "char": "准",
+   "readings": [
+    "chuẩn"
+   ]
+  },
+  {
+   "char": "左",
+   "readings": [
+    "tả"
+   ]
+  },
+  {
+   "char": "遍",
+   "readings": [
+    "biến"
+   ]
+  },
+  {
+   "char": "补",
+   "readings": [
+    "bổ"
+   ]
+  },
+  {
+   "char": "划",
+   "readings": [
+    "hoạch"
+   ]
+  },
+  {
+   "char": "投",
+   "readings": [
+    "đầu"
+   ]
+  },
+  {
+   "char": "系",
+   "readings": [
+    "hệ"
+   ]
+  },
+  {
+   "char": "醒",
+   "readings": [
+    "tỉnh"
+   ]
+  },
+  {
+   "char": "办",
+   "readings": [
+    "biện"
+   ]
+  },
+  {
+   "char": "担",
+   "readings": [
+    "đảm",
+    "đam"
+   ]
+  },
+  {
+   "char": "观",
+   "readings": [
+    "quan"
+   ]
+  },
+  {
+   "char": "国",
+   "readings": [
+    "quốc"
+   ]
+  },
+  {
+   "char": "含",
+   "readings": [
+    "hàm"
+   ]
+  },
+  {
+   "char": "日",
+   "readings": [
+    "nhật"
+   ]
+  },
+  {
+   "char": "续",
+   "readings": [
+    "tục"
+   ]
+  },
+  {
+   "char": "押",
+   "readings": [
+    "áp"
+   ]
+  },
+  {
+   "char": "与",
+   "readings": [
+    "dữ",
+    "dự"
+   ]
+  },
+  {
+   "char": "增",
+   "readings": [
+    "tăng"
+   ]
+  },
+  {
+   "char": "从",
+   "readings": [
+    "tòng"
+   ]
+  },
+  {
+   "char": "括",
+   "readings": [
+    "quát"
+   ]
+  },
+  {
+   "char": "南",
+   "readings": [
+    "nam"
+   ]
+  },
+  {
+   "char": "入",
+   "readings": [
+    "nhập"
+   ]
+  },
+  {
+   "char": "谁",
+   "readings": [
+    "thuỳ"
+   ]
+  },
+  {
+   "char": "受",
+   "readings": [
+    "thụ"
+   ]
+  },
+  {
+   "char": "思",
+   "readings": [
+    "tư"
+   ]
+  },
+  {
+   "char": "源",
+   "readings": [
+    "nguyên"
+   ]
+  },
+  {
+   "char": "找",
+   "readings": [
+    "trảo"
+   ]
+  },
+  {
+   "char": "知",
+   "readings": [
+    "tri"
+   ]
+  },
+  {
+   "char": "记",
+   "readings": [
+    "ký"
+   ]
+  },
+  {
+   "char": "考",
+   "readings": [
+    "khảo"
+   ]
+  },
+  {
+   "char": "快",
+   "readings": [
+    "khoái"
+   ]
+  },
+  {
+   "char": "长",
+   "readings": [
+    "trường",
+    "trưởng"
+   ]
+  },
+  {
+   "char": "避",
+   "readings": [
+    "tị"
+   ]
+  },
+  {
+   "char": "程",
+   "readings": [
+    "trình"
+   ]
+  },
+  {
+   "char": "介",
+   "readings": [
+    "giới"
+   ]
+  },
+  {
+   "char": "咖",
+   "readings": [
+    "ca"
+   ]
+  },
+  {
+   "char": "料",
+   "readings": [
+    "liệu"
+   ]
+  },
+  {
+   "char": "绍",
+   "readings": [
+    "thiệu"
+   ]
+  },
+  {
+   "char": "外",
+   "readings": [
+    "ngoại"
+   ]
+  },
+  {
+   "char": "已",
+   "readings": [
+    "dĩ"
+   ]
+  },
+  {
+   "char": "真",
+   "readings": [
+    "chân"
+   ]
+  },
+  {
+   "char": "总",
+   "readings": [
+    "tổng"
+   ]
+  },
+  {
+   "char": "道",
+   "readings": [
+    "đạo"
+   ]
+  },
+  {
+   "char": "签",
+   "readings": [
+    "thiêm"
+   ]
+  },
+  {
+   "char": "听",
+   "readings": [
+    "thính"
+   ]
+  },
+  {
+   "char": "按",
+   "readings": [
+    "án"
+   ]
+  },
+  {
+   "char": "啡",
+   "readings": [
+    "phê"
+   ]
+  },
+  {
+   "char": "管",
+   "readings": [
+    "quản"
+   ]
+  },
+  {
+   "char": "椒",
+   "readings": [
+    "tiêu"
+   ]
+  },
+  {
+   "char": "练",
+   "readings": [
+    "luyện"
+   ]
+  },
+  {
+   "char": "心",
+   "readings": [
+    "tâm"
+   ]
+  },
+  {
+   "char": "兴",
+   "readings": [
+    "hưng",
+    "hứng"
+   ]
+  },
+  {
+   "char": "参",
+   "readings": [
+    "tham",
+    "sâm"
+   ]
+  },
+  {
+   "char": "测",
+   "readings": [
+    "trắc"
+   ]
+  },
+  {
+   "char": "货",
+   "readings": [
+    "hóa"
+   ]
+  },
+  {
+   "char": "际",
+   "readings": [
+    "tế"
+   ]
+  },
+  {
+   "char": "虑",
+   "readings": [
+    "lự"
+   ]
+  },
+  {
+   "char": "歧",
+   "readings": [
+    "kỳ"
+   ]
+  },
+  {
+   "char": "容",
+   "readings": [
+    "dung"
+   ]
+  },
+  {
+   "char": "早",
+   "readings": [
+    "tảo"
+   ]
+  },
+  {
+   "char": "者",
+   "readings": [
+    "giả"
+   ]
+  },
+  {
+   "char": "制",
+   "readings": [
+    "chế"
+   ]
+  },
+  {
+   "char": "东",
+   "readings": [
+    "đông"
+   ]
+  },
+  {
+   "char": "顾",
+   "readings": [
+    "cố"
+   ]
+  },
+  {
+   "char": "居",
+   "readings": [
+    "cư"
+   ]
+  },
+  {
+   "char": "慢",
+   "readings": [
+    "mạn"
+   ]
+  },
+  {
+   "char": "司",
+   "readings": [
+    "ty"
+   ]
+  },
+  {
+   "char": "讨",
+   "readings": [
+    "thảo"
+   ]
+  },
+  {
+   "char": "协",
+   "readings": [
+    "hiệp"
+   ]
+  },
+  {
+   "char": "直",
+   "readings": [
+    "trực"
+   ]
+  },
+  {
+   "char": "助",
+   "readings": [
+    "trợ"
+   ]
+  },
+  {
+   "char": "风",
+   "readings": [
+    "phong"
+   ]
+  },
+  {
+   "char": "坚",
+   "readings": [
+    "kiên"
+   ]
+  },
+  {
+   "char": "况",
+   "readings": [
+    "huống"
+   ]
+  },
+  {
+   "char": "释",
+   "readings": [
+    "thích"
+   ]
+  },
+  {
+   "char": "细",
+   "readings": [
+    "tế"
+   ]
+  },
+  {
+   "char": "星",
+   "readings": [
+    "tinh"
+   ]
+  },
+  {
+   "char": "止",
+   "readings": [
+    "chỉ"
+   ]
+  },
+  {
+   "char": "截",
+   "readings": [
+    "tiệt"
+   ]
+  },
+  {
+   "char": "忘",
+   "readings": [
+    "vong"
+   ]
+  },
+  {
+   "char": "雨",
+   "readings": [
+    "vũ"
+   ]
+  },
+  {
+   "char": "语",
+   "readings": [
+    "ngữ"
+   ]
+  },
+  {
+   "char": "择",
+   "readings": [
+    "trạch"
+   ]
+  },
+  {
+   "char": "着",
+   "readings": [
+    "trứ",
+    "trước"
+   ]
+  },
+  {
+   "char": "质",
+   "readings": [
+    "chất"
+   ]
+  },
+  {
+   "char": "旅",
+   "readings": [
+    "lữ"
+   ]
+  },
+  {
+   "char": "支",
+   "readings": [
+    "chi"
+   ]
+  },
+  {
+   "char": "百",
+   "readings": [
+    "bách",
+    "bá"
+   ]
+  },
+  {
+   "char": "半",
+   "readings": [
+    "bán"
+   ]
+  },
+  {
+   "char": "断",
+   "readings": [
+    "đoạn"
+   ]
+  },
+  {
+   "char": "衡",
+   "readings": [
+    "hành"
+   ]
+  },
+  {
+   "char": "落",
+   "readings": [
+    "lạc"
+   ]
+  },
+  {
+   "char": "品",
+   "readings": [
+    "phẩm"
+   ]
+  },
+  {
+   "char": "送",
+   "readings": [
+    "tống"
+   ]
+  },
+  {
+   "char": "岁",
+   "readings": [
+    "tuế"
+   ]
+  },
+  {
+   "char": "限",
+   "readings": [
+    "hạn"
+   ]
+  },
+  {
+   "char": "压",
+   "readings": [
+    "áp"
+   ]
+  },
+  {
+   "char": "易",
+   "readings": [
+    "dịch"
+   ]
+  },
+  {
+   "char": "内",
+   "readings": [
+    "nội"
+   ]
+  },
+  {
+   "char": "始",
+   "readings": [
+    "thủy"
+   ]
+  },
+  {
+   "char": "团",
+   "readings": [
+    "đoàn"
+   ]
+  },
+  {
+   "char": "物",
+   "readings": [
+    "vật"
+   ]
+  },
+  {
+   "char": "线",
+   "readings": [
+    "tuyến"
+   ]
+  },
+  {
+   "char": "吧",
+   "readings": [
+    "ba"
+   ],
+   "note": "ít dùng; trợ từ ngữ khí"
+  },
+  {
+   "char": "必",
+   "readings": [
+    "tất"
+   ]
+  },
+  {
+   "char": "达",
+   "readings": [
+    "đạt"
+   ]
+  },
+  {
+   "char": "答",
+   "readings": [
+    "đáp"
+   ]
+  },
+  {
+   "char": "惯",
+   "readings": [
+    "quán"
+   ]
+  },
+  {
+   "char": "利",
+   "readings": [
+    "lợi"
+   ]
+  },
+  {
+   "char": "零",
+   "readings": [
+    "linh"
+   ]
+  },
+  {
+   "char": "满",
+   "readings": [
+    "mãn"
+   ]
+  },
+  {
+   "char": "末",
+   "readings": [
+    "mạt"
+   ]
+  },
+  {
+   "char": "情",
+   "readings": [
+    "tình"
+   ]
+  },
+  {
+   "char": "设",
+   "readings": [
+    "thiết"
+   ]
+  },
+  {
+   "char": "束",
+   "readings": [
+    "thúc"
+   ]
+  },
+  {
+   "char": "随",
+   "readings": [
+    "tùy"
+   ]
+  },
+  {
+   "char": "台",
+   "readings": [
+    "đài",
+    "thai"
+   ]
+  },
+  {
+   "char": "推",
+   "readings": [
+    "suy",
+    "thôi"
+   ]
+  },
+  {
+   "char": "正",
+   "readings": [
+    "chính"
+   ]
+  },
+  {
+   "char": "冰",
+   "readings": [
+    "băng"
+   ]
+  },
+  {
+   "char": "材",
+   "readings": [
+    "tài"
+   ]
+  },
+  {
+   "char": "菜",
+   "readings": [
+    "thái"
+   ]
+  },
+  {
+   "char": "低",
+   "readings": [
+    "đê"
+   ]
+  },
+  {
+   "char": "录",
+   "readings": [
+    "lục"
+   ]
+  },
+  {
+   "char": "民",
+   "readings": [
+    "dân"
+   ]
+  },
+  {
+   "char": "票",
+   "readings": [
+    "phiếu"
+   ]
+  },
+  {
+   "char": "使",
+   "readings": [
+    "sử"
+   ]
+  },
+  {
+   "char": "式",
+   "readings": [
+    "thức"
+   ]
+  },
+  {
+   "char": "她",
+   "readings": [
+    "tha"
+   ],
+   "note": "ít dùng; đại từ hiện đại"
+  },
+  {
+   "char": "糖",
+   "readings": [
+    "đường"
+   ]
+  },
+  {
+   "char": "依",
+   "readings": [
+    "y"
+   ]
+  },
+  {
+   "char": "传",
+   "readings": [
+    "truyền",
+    "truyện"
+   ]
+  },
+  {
+   "char": "份",
+   "readings": [
+    "phần"
+   ]
+  },
+  {
+   "char": "供",
+   "readings": [
+    "cung",
+    "cúng"
+   ]
+  },
+  {
+   "char": "孩",
+   "readings": [
+    "hài"
+   ]
+  },
+  {
+   "char": "阶",
+   "readings": [
+    "giai"
+   ]
+  },
+  {
+   "char": "马",
+   "readings": [
+    "mã"
+   ]
+  },
+  {
+   "char": "诺",
+   "readings": [
+    "nặc"
+   ]
+  },
+  {
+   "char": "歉",
+   "readings": [
+    "khiểm"
+   ]
+  },
+  {
+   "char": "身",
+   "readings": [
+    "thân"
+   ]
+  },
+  {
+   "char": "网",
+   "readings": [
+    "võng"
+   ]
+  },
+  {
+   "char": "向",
+   "readings": [
+    "hướng"
+   ]
+  },
+  {
+   "char": "信",
+   "readings": [
+    "tín"
+   ]
+  },
+  {
+   "char": "张",
+   "readings": [
+    "trương"
+   ]
+  },
+  {
+   "char": "足",
+   "readings": [
+    "túc"
+   ]
+  },
+  {
+   "char": "错",
+   "readings": [
+    "thác"
+   ]
+  },
+  {
+   "char": "第",
+   "readings": [
+    "đệ"
+   ]
+  },
+  {
+   "char": "跟",
+   "readings": [
+    "cân"
+   ]
+  },
+  {
+   "char": "护",
+   "readings": [
+    "hộ"
+   ]
+  },
+  {
+   "char": "环",
+   "readings": [
+    "hoàn"
+   ]
+  },
+  {
+   "char": "及",
+   "readings": [
+    "cập"
+   ]
+  },
+  {
+   "char": "急",
+   "readings": [
+    "cấp"
+   ]
+  },
+  {
+   "char": "检",
+   "readings": [
+    "kiểm"
+   ]
+  },
+  {
+   "char": "馈",
+   "readings": [
+    "quỹ"
+   ]
+  },
+  {
+   "char": "区",
+   "readings": [
+    "khu"
+   ]
+  },
+  {
+   "char": "市",
+   "readings": [
+    "thị"
+   ]
+  },
+  {
+   "char": "谈",
+   "readings": [
+    "đàm"
+   ]
+  },
+  {
+   "char": "约",
+   "readings": [
+    "ước"
+   ]
+  },
+  {
+   "char": "争",
+   "readings": [
+    "tranh"
+   ]
+  },
+  {
+   "char": "执",
+   "readings": [
+    "chấp"
+   ]
+  },
+  {
+   "char": "备",
+   "readings": [
+    "bị"
+   ]
+  },
+  {
+   "char": "场",
+   "readings": [
+    "trường"
+   ]
+  },
+  {
+   "char": "队",
+   "readings": [
+    "đội"
+   ]
+  },
+  {
+   "char": "附",
+   "readings": [
+    "phụ"
+   ]
+  },
+  {
+   "char": "感",
+   "readings": [
+    "cảm"
+   ]
+  },
+  {
+   "char": "够",
+   "readings": [
+    "cấu"
+   ]
+  },
+  {
+   "char": "坏",
+   "readings": [
+    "hoại"
+   ]
+  },
+  {
+   "char": "趣",
+   "readings": [
+    "thú"
+   ]
+  },
+  {
+   "char": "西",
+   "readings": [
+    "tây"
+   ]
+  },
+  {
+   "char": "站",
+   "readings": [
+    "trạm"
+   ]
+  },
+  {
+   "char": "招",
+   "readings": [
+    "chiêu"
+   ]
+  },
+  {
+   "char": "耽",
+   "readings": [
+    "đam"
+   ]
+  },
+  {
+   "char": "等",
+   "readings": [
+    "đẳng"
+   ]
+  },
+  {
+   "char": "惠",
+   "readings": [
+    "huệ"
+   ]
+  },
+  {
+   "char": "累",
+   "readings": [
+    "lụy",
+    "lũy"
+   ]
+  },
+  {
+   "char": "忙",
+   "readings": [
+    "mang"
+   ]
+  },
+  {
+   "char": "景",
+   "readings": [
+    "cảnh"
+   ]
+  },
+  {
+   "char": "课",
+   "readings": [
+    "khóa"
+   ]
+  },
+  {
+   "char": "扩",
+   "readings": [
+    "khuếch"
+   ]
+  },
+  {
+   "char": "乐",
+   "readings": [
+    "lạc",
+    "nhạc"
+   ]
+  },
+  {
+   "char": "另",
+   "readings": [
+    "lánh"
+   ]
+  },
+  {
+   "char": "您",
+   "readings": [
+    "nâm"
+   ],
+   "note": "ít dùng; kính ngữ hiện đại",
+   "uncertain": true,
+   "uncertainReason": "Chưa chắc âm Hán Việt chuẩn; \"nâm\" là âm truyền thống ít gặp."
+  },
+  {
+   "char": "配",
+   "readings": [
+    "phối"
+   ]
+  },
+  {
+   "char": "频",
+   "readings": [
+    "tần"
+   ]
+  },
+  {
+   "char": "仍",
+   "readings": [
+    "nhưng"
+   ]
+  },
+  {
+   "char": "位",
+   "readings": [
+    "vị"
+   ]
+  },
+  {
+   "char": "告",
+   "readings": [
+    "cáo"
+   ]
+  },
+  {
+   "char": "句",
+   "readings": [
+    "cú",
+    "câu"
+   ]
+  },
+  {
+   "char": "联",
+   "readings": [
+    "liên"
+   ]
+  },
+  {
+   "char": "势",
+   "readings": [
+    "thế"
+   ]
+  },
+  {
+   "char": "闻",
+   "readings": [
+    "văn"
+   ]
+  },
+  {
+   "char": "业",
+   "readings": [
+    "nghiệp"
+   ]
+  },
+  {
+   "char": "宜",
+   "readings": [
+    "nghi"
+   ]
+  },
+  {
+   "char": "音",
+   "readings": [
+    "âm"
+   ]
+  },
+  {
+   "char": "钟",
+   "readings": [
+    "chung"
+   ]
+  },
+  {
+   "char": "资",
+   "readings": [
+    "tư"
+   ]
+  },
+  {
+   "char": "别",
+   "readings": [
+    "biệt"
+   ]
+  },
+  {
+   "char": "除",
+   "readings": [
+    "trừ"
+   ]
+  },
+  {
+   "char": "共",
+   "readings": [
+    "cộng"
+   ]
+  },
+  {
+   "char": "立",
+   "readings": [
+    "lập"
+   ]
+  },
+  {
+   "char": "却",
+   "readings": [
+    "khước"
+   ]
+  },
+  {
+   "char": "熟",
+   "readings": [
+    "thục"
+   ]
+  },
+  {
+   "char": "顺",
+   "readings": [
+    "thuận"
+   ]
+  },
+  {
+   "char": "险",
+   "readings": [
+    "hiểm"
+   ]
+  },
+  {
+   "char": "衣",
+   "readings": [
+    "y"
+   ]
+  },
+  {
+   "char": "疑",
+   "readings": [
+    "nghi"
+   ]
+  },
+  {
+   "char": "照",
+   "readings": [
+    "chiếu"
+   ]
+  },
+  {
+   "char": "偿",
+   "readings": [
+    "thường"
+   ]
+  },
+  {
+   "char": "根",
+   "readings": [
+    "căn"
+   ]
+  },
+  {
+   "char": "贵",
+   "readings": [
+    "quý"
+   ]
+  },
+  {
+   "char": "降",
+   "readings": [
+    "giáng",
+    "hàng"
+   ]
+  },
+  {
+   "char": "紧",
+   "readings": [
+    "khẩn"
+   ]
+  },
+  {
+   "char": "久",
+   "readings": [
+    "cửu"
+   ]
+  },
+  {
+   "char": "酒",
+   "readings": [
+    "tửu"
+   ]
+  },
+  {
+   "char": "卖",
+   "readings": [
+    "mại"
+   ]
+  },
+  {
+   "char": "凭",
+   "readings": [
+    "bằng"
+   ]
+  },
+  {
+   "char": "刷",
+   "readings": [
+    "loát"
+   ]
+  },
+  {
+   "char": "它",
+   "readings": [
+    "tha"
+   ],
+   "note": "ít dùng; đại từ hiện đại"
+  },
+  {
+   "char": "须",
+   "readings": [
+    "tu"
+   ]
+  },
+  {
+   "char": "指",
+   "readings": [
+    "chỉ"
+   ]
+  },
+  {
+   "char": "白",
+   "readings": [
+    "bạch"
+   ]
+  },
+  {
+   "char": "待",
+   "readings": [
+    "đãi"
+   ]
+  },
+  {
+   "char": "底",
+   "readings": [
+    "để",
+    "đế"
+   ]
+  },
+  {
+   "char": "独",
+   "readings": [
+    "độc"
+   ]
+  },
+  {
+   "char": "额",
+   "readings": [
+    "ngạch"
+   ]
+  },
+  {
+   "char": "刚",
+   "readings": [
+    "cương"
+   ]
+  },
+  {
+   "char": "规",
+   "readings": [
+    "quy"
+   ]
+  },
+  {
+   "char": "糊",
+   "readings": [
+    "hồ"
+   ]
+  },
+  {
+   "char": "汇",
+   "readings": [
+    "hối"
+   ]
+  },
+  {
+   "char": "或",
+   "readings": [
+    "hoặc"
+   ]
+  },
+  {
+   "char": "绩",
+   "readings": [
+    "tích"
+   ]
+  },
+  {
+   "char": "假",
+   "readings": [
+    "giả",
+    "giá"
+   ]
+  },
+  {
+   "char": "减",
+   "readings": [
+    "giảm"
+   ]
+  },
+  {
+   "char": "教",
+   "readings": [
+    "giáo"
+   ]
+  },
+  {
+   "char": "仅",
+   "readings": [
+    "cẩn"
+   ]
+  },
+  {
+   "char": "络",
+   "readings": [
+    "lạc"
+   ]
+  },
+  {
+   "char": "盘",
+   "readings": [
+    "bàn"
+   ]
+  },
+  {
+   "char": "评",
+   "readings": [
+    "bình"
+   ]
+  },
+  {
+   "char": "俗",
+   "readings": [
+    "tục"
+   ]
+  },
+  {
+   "char": "象",
+   "readings": [
+    "tượng"
+   ]
+  },
+  {
+   "char": "椅",
+   "readings": [
+    "ỷ"
+   ]
+  },
+  {
+   "char": "义",
+   "readings": [
+    "nghĩa"
+   ]
+  },
+  {
+   "char": "银",
+   "readings": [
+    "ngân"
+   ]
+  },
+  {
+   "char": "引",
+   "readings": [
+    "dẫn"
+   ]
+  },
+  {
+   "char": "遇",
+   "readings": [
+    "ngộ"
+   ]
+  },
+  {
+   "char": "愿",
+   "readings": [
+    "nguyện"
+   ]
+  },
+  {
+   "char": "则",
+   "readings": [
+    "tắc"
+   ]
+  },
+  {
+   "char": "致",
+   "readings": [
+    "trí"
+   ]
+  },
+  {
+   "char": "爱",
+   "readings": [
+    "ái"
+   ]
+  },
+  {
+   "char": "抱",
+   "readings": [
+    "bão"
+   ]
+  },
+  {
+   "char": "背",
+   "readings": [
+    "bối",
+    "bội"
+   ]
+  },
+  {
+   "char": "被",
+   "readings": [
+    "bị"
+   ]
+  },
+  {
+   "char": "差",
+   "readings": [
+    "sai",
+    "soa"
+   ]
+  },
+  {
+   "char": "带",
+   "readings": [
+    "đới"
+   ]
+  },
+  {
+   "char": "继",
+   "readings": [
+    "kế"
+   ]
+  },
+  {
+   "char": "京",
+   "readings": [
+    "kinh"
+   ]
+  },
+  {
+   "char": "举",
+   "readings": [
+    "cử"
+   ]
+  },
+  {
+   "char": "卷",
+   "readings": [
+    "quyển",
+    "quyến"
+   ]
+  },
+  {
+   "char": "临",
+   "readings": [
+    "lâm"
+   ]
+  },
+  {
+   "char": "麻",
+   "readings": [
+    "ma"
+   ]
+  },
+  {
+   "char": "旁",
+   "readings": [
+    "bàng"
+   ]
+  },
+  {
+   "char": "社",
+   "readings": [
+    "xã"
+   ]
+  },
+  {
+   "char": "室",
+   "readings": [
+    "thất"
+   ]
+  },
+  {
+   "char": "速",
+   "readings": [
+    "tốc"
+   ]
+  },
+  {
+   "char": "询",
+   "readings": [
+    "tuần"
+   ]
+  },
+  {
+   "char": "育",
+   "readings": [
+    "dục"
+   ]
+  },
+  {
+   "char": "账",
+   "readings": [
+    "trướng"
+   ]
+  },
+  {
+   "char": "春",
+   "readings": [
+    "xuân"
+   ]
+  },
+  {
+   "char": "切",
+   "readings": [
+    "thiết",
+    "thế"
+   ]
+  },
+  {
+   "char": "省",
+   "readings": [
+    "tỉnh"
+   ]
+  },
+  {
+   "char": "虽",
+   "readings": [
+    "tuy"
+   ]
+  },
+  {
+   "char": "研",
+   "readings": [
+    "nghiên",
+    "nghiền"
+   ]
+  },
+  {
+   "char": "游",
+   "readings": [
+    "du"
+   ]
+  },
+  {
+   "char": "杂",
+   "readings": [
+    "tạp"
+   ]
+  },
+  {
+   "char": "暂",
+   "readings": [
+    "tạm"
+   ]
+  },
+  {
+   "char": "值",
+   "readings": [
+    "trị"
+   ]
+  },
+  {
+   "char": "座",
+   "readings": [
+    "tọa"
+   ]
+  },
+  {
+   "char": "版",
+   "readings": [
+    "bản"
+   ]
+  },
+  {
+   "char": "北",
+   "readings": [
+    "bắc"
+   ]
+  },
+  {
+   "char": "操",
+   "readings": [
+    "thao"
+   ]
+  },
+  {
+   "char": "此",
+   "readings": [
+    "thử"
+   ]
+  },
+  {
+   "char": "各",
+   "readings": [
+    "các"
+   ]
+  },
+  {
+   "char": "积",
+   "readings": [
+    "tích"
+   ]
+  },
+  {
+   "char": "技",
+   "readings": [
+    "kỹ"
+   ]
+  },
+  {
+   "char": "简",
+   "readings": [
+    "giản"
+   ]
+  },
+  {
+   "char": "界",
+   "readings": [
+    "giới"
+   ]
+  },
+  {
+   "char": "扣",
+   "readings": [
+    "khấu"
+   ]
+  },
+  {
+   "char": "困",
+   "readings": [
+    "khốn"
+   ]
+  },
+  {
+   "char": "门",
+   "readings": [
+    "môn"
+   ]
+  },
+  {
+   "char": "模",
+   "readings": [
+    "mô"
+   ]
+  },
+  {
+   "char": "呢",
+   "readings": [
+    "ni"
+   ],
+   "note": "ít dùng; trợ từ ngữ khí"
+  },
+  {
+   "char": "牌",
+   "readings": [
+    "bài"
+   ]
+  },
+  {
+   "char": "强",
+   "readings": [
+    "cường",
+    "cưỡng"
+   ]
+  },
+  {
+   "char": "染",
+   "readings": [
+    "nhiễm"
+   ]
+  },
+  {
+   "char": "态",
+   "readings": [
+    "thái"
+   ]
+  },
+  {
+   "char": "途",
+   "readings": [
+    "đồ"
+   ]
+  },
+  {
+   "char": "相",
+   "readings": [
+    "tương",
+    "tướng"
+   ]
+  },
+  {
+   "char": "饮",
+   "readings": [
+    "ẩm"
+   ]
+  },
+  {
+   "char": "元",
+   "readings": [
+    "nguyên"
+   ]
+  },
+  {
+   "char": "智",
+   "readings": [
+    "trí"
+   ]
+  },
+  {
+   "char": "状",
+   "readings": [
+    "trạng"
+   ]
+  },
+  {
+   "char": "昨",
+   "readings": [
+    "tạc"
+   ]
+  },
+  {
+   "char": "阿",
+   "readings": [
+    "a"
+   ]
+  },
+  {
+   "char": "察",
+   "readings": [
+    "sát"
+   ]
+  },
+  {
+   "char": "产",
+   "readings": [
+    "sản"
+   ]
+  },
+  {
+   "char": "词",
+   "readings": [
+    "từ"
+   ]
+  },
+  {
+   "char": "堵",
+   "readings": [
+    "đổ"
+   ]
+  },
+  {
+   "char": "汉",
+   "readings": [
+    "hán"
+   ]
+  },
+  {
+   "char": "集",
+   "readings": [
+    "tập"
+   ]
+  },
+  {
+   "char": "尽",
+   "readings": [
+    "tận",
+    "tẫn"
+   ]
+  },
+  {
+   "char": "究",
+   "readings": [
+    "cứu"
+   ]
+  },
+  {
+   "char": "卡",
+   "readings": [
+    "tạp"
+   ]
+  },
+  {
+   "char": "靠",
+   "readings": [
+    "kháo"
+   ]
+  },
+  {
+   "char": "透",
+   "readings": [
+    "thấu"
+   ]
+  },
+  {
+   "char": "未",
+   "readings": [
+    "vị"
+   ]
+  },
+  {
+   "char": "污",
+   "readings": [
+    "ô"
+   ]
+  },
+  {
+   "char": "屋",
+   "readings": [
+    "ốc"
+   ]
+  },
+  {
+   "char": "无",
+   "readings": [
+    "vô"
+   ]
+  },
+  {
+   "char": "性",
+   "readings": [
+    "tính"
+   ]
+  },
+  {
+   "char": "演",
+   "readings": [
+    "diễn"
+   ]
+  },
+  {
+   "char": "隐",
+   "readings": [
+    "ẩn"
+   ]
+  },
+  {
+   "char": "折",
+   "readings": [
+    "chiết",
+    "triết"
+   ]
+  },
+  {
+   "char": "餐",
+   "readings": [
+    "xan"
+   ]
+  },
+  {
+   "char": "充",
+   "readings": [
+    "sung"
+   ]
+  },
+  {
+   "char": "访",
+   "readings": [
+    "phỏng"
+   ]
+  },
+  {
+   "char": "构",
+   "readings": [
+    "cấu"
+   ]
+  },
+  {
+   "char": "光",
+   "readings": [
+    "quang"
+   ]
+  },
+  {
+   "char": "航",
+   "readings": [
+    "hàng"
+   ]
+  },
+  {
+   "char": "健",
+   "readings": [
+    "kiện"
+   ]
+  },
+  {
+   "char": "境",
+   "readings": [
+    "cảnh"
+   ]
+  },
+  {
+   "char": "兰",
+   "readings": [
+    "lan"
+   ]
+  },
+  {
+   "char": "浪",
+   "readings": [
+    "lãng"
+   ]
+  },
+  {
+   "char": "媒",
+   "readings": [
+    "môi"
+   ]
+  },
+  {
+   "char": "批",
+   "readings": [
+    "phê"
+   ]
+  },
+  {
+   "char": "术",
+   "readings": [
+    "thuật"
+   ]
+  },
+  {
+   "char": "私",
+   "readings": [
+    "tư"
+   ]
+  },
+  {
+   "char": "头",
+   "readings": [
+    "đầu"
+   ]
+  },
+  {
+   "char": "吸",
+   "readings": [
+    "hấp"
+   ]
+  },
+  {
+   "char": "休",
+   "readings": [
+    "hưu"
+   ]
+  },
+  {
+   "char": "夜",
+   "readings": [
+    "dạ"
+   ]
+  },
+  {
+   "char": "展",
+   "readings": [
+    "triển"
+   ]
+  },
+  {
+   "char": "注",
+   "readings": [
+    "chú"
+   ]
+  },
+  {
+   "char": "专",
+   "readings": [
+    "chuyên"
+   ]
+  },
+  {
+   "char": "桌",
+   "readings": [
+    "trác"
+   ]
+  },
+  {
+   "char": "综",
+   "readings": [
+    "tổng"
+   ]
+  },
+  {
+   "char": "搬",
+   "readings": [
+    "ban"
+   ]
+  },
+  {
+   "char": "布",
+   "readings": [
+    "bố"
+   ]
+  },
+  {
+   "char": "层",
+   "readings": [
+    "tầng"
+   ]
+  },
+  {
+   "char": "懂",
+   "readings": [
+    "đổng"
+   ]
+  },
+  {
+   "char": "锻",
+   "readings": [
+    "đoán"
+   ]
+  },
+  {
+   "char": "烦",
+   "readings": [
+    "phiền"
+   ]
+  },
+  {
+   "char": "非",
+   "readings": [
+    "phi"
+   ]
+  },
+  {
+   "char": "父",
+   "readings": [
+    "phụ"
+   ]
+  },
+  {
+   "char": "概",
+   "readings": [
+    "khái"
+   ]
+  },
+  {
+   "char": "广",
+   "readings": [
+    "quảng"
+   ]
+  },
+  {
+   "char": "获",
+   "readings": [
+    "hoạch"
+   ]
+  },
+  {
+   "char": "基",
+   "readings": [
+    "cơ"
+   ]
+  },
+  {
+   "char": "即",
+   "readings": [
+    "tức"
+   ]
+  },
+  {
+   "char": "康",
+   "readings": [
+    "khang"
+   ]
+  },
+  {
+   "char": "炼",
+   "readings": [
+    "luyện"
+   ]
+  },
+  {
+   "char": "美",
+   "readings": [
+    "mỹ"
+   ]
+  },
+  {
+   "char": "眠",
+   "readings": [
+    "miên"
+   ]
+  },
+  {
+   "char": "山",
+   "readings": [
+    "sơn"
+   ]
+  },
+  {
+   "char": "审",
+   "readings": [
+    "thẩm"
+   ]
+  },
+  {
+   "char": "食",
+   "readings": [
+    "thực"
+   ]
+  },
+  {
+   "char": "视",
+   "readings": [
+    "thị"
+   ]
+  },
+  {
+   "char": "素",
+   "readings": [
+    "tố"
+   ]
+  },
+  {
+   "char": "拖",
+   "readings": [
+    "tha"
+   ]
+  },
+  {
+   "char": "享",
+   "readings": [
+    "hưởng"
+   ]
+  },
+  {
+   "char": "严",
+   "readings": [
+    "nghiêm"
+   ]
+  },
+  {
+   "char": "言",
+   "readings": [
+    "ngôn"
+   ]
+  },
+  {
+   "char": "页",
+   "readings": [
+    "hiệt"
+   ]
+  },
+  {
+   "char": "志",
+   "readings": [
+    "chí"
+   ]
+  },
+  {
+   "char": "置",
+   "readings": [
+    "trí"
+   ]
+  },
+  {
+   "char": "种",
+   "readings": [
+    "chủng",
+    "chúng"
+   ]
+  },
+  {
+   "char": "组",
+   "readings": [
+    "tổ"
+   ]
+  },
+  {
+   "char": "策",
+   "readings": [
+    "sách"
+   ]
+  },
+  {
+   "char": "超",
+   "readings": [
+    "siêu"
+   ]
+  },
+  {
+   "char": "城",
+   "readings": [
+    "thành"
+   ]
+  },
+  {
+   "char": "创",
+   "readings": [
+    "sáng",
+    "sang"
+   ]
+  },
+  {
+   "char": "干",
+   "readings": [
+    "can",
+    "cán"
+   ]
+  },
+  {
+   "char": "购",
+   "readings": [
+    "cấu"
+   ]
+  },
+  {
+   "char": "海",
+   "readings": [
+    "hải"
+   ]
+  },
+  {
+   "char": "缓",
+   "readings": [
+    "hoãn"
+   ]
+  },
+  {
+   "char": "礼",
+   "readings": [
+    "lễ"
+   ]
+  },
+  {
+   "char": "列",
+   "readings": [
+    "liệt"
+   ]
+  },
+  {
+   "char": "轮",
+   "readings": [
+    "luân"
+   ]
+  },
+  {
+   "char": "密",
+   "readings": [
+    "mật"
+   ]
+  },
+  {
+   "char": "千",
+   "readings": [
+    "thiên"
+   ]
+  },
+  {
+   "char": "轻",
+   "readings": [
+    "khinh"
+   ]
+  },
+  {
+   "char": "色",
+   "readings": [
+    "sắc"
+   ]
+  },
+  {
+   "char": "烧",
+   "readings": [
+    "thiêu"
+   ]
+  },
+  {
+   "char": "深",
+   "readings": [
+    "thâm"
+   ]
+  },
+  {
+   "char": "士",
+   "readings": [
+    "sĩ"
+   ]
+  },
+  {
+   "char": "疼",
+   "readings": [
+    "đông"
+   ]
+  },
+  {
+   "char": "妥",
+   "readings": [
+    "thỏa"
+   ]
+  },
+  {
+   "char": "析",
+   "readings": [
+    "tích"
+   ]
+  },
+  {
+   "char": "许",
+   "readings": [
+    "hứa"
+   ]
+  },
+  {
+   "char": "削",
+   "readings": [
+    "tước"
+   ]
+  },
+  {
+   "char": "养",
+   "readings": [
+    "dưỡng"
+   ]
+  },
+  {
+   "char": "政",
+   "readings": [
+    "chính"
+   ]
+  },
+  {
+   "char": "装",
+   "readings": [
+    "trang"
+   ]
+  },
+  {
+   "char": "追",
+   "readings": [
+    "truy"
+   ]
+  },
+  {
+   "char": "唱",
+   "readings": [
+    "xướng"
+   ]
+  },
+  {
+   "char": "估",
+   "readings": [
+    "cổ"
+   ]
+  },
+  {
+   "char": "河",
+   "readings": [
+    "hà"
+   ]
+  },
+  {
+   "char": "呼",
+   "readings": [
+    "hô"
+   ]
+  },
+  {
+   "char": "怀",
+   "readings": [
+    "hoài"
+   ]
+  },
+  {
+   "char": "街",
+   "readings": [
+    "nhai"
+   ]
+  },
+  {
+   "char": "谨",
+   "readings": [
+    "cẩn"
+   ]
+  },
+  {
+   "char": "敬",
+   "readings": [
+    "kính"
+   ]
+  },
+  {
+   "char": "科",
+   "readings": [
+    "khoa"
+   ]
+  },
+  {
+   "char": "骂",
+   "readings": [
+    "mạ"
+   ]
+  },
+  {
+   "char": "母",
+   "readings": [
+    "mẫu"
+   ]
+  },
+  {
+   "char": "耐",
+   "readings": [
+    "nại"
+   ]
+  },
+  {
+   "char": "念",
+   "readings": [
+    "niệm"
+   ]
+  },
+  {
+   "char": "拍",
+   "readings": [
+    "phách"
+   ]
+  },
+  {
+   "char": "片",
+   "readings": [
+    "phiến"
+   ]
+  },
+  {
+   "char": "聘",
+   "readings": [
+    "sính"
+   ]
+  },
+  {
+   "char": "迁",
+   "readings": [
+    "thiên"
+   ]
+  },
+  {
+   "char": "且",
+   "readings": [
+    "thả"
+   ]
+  },
+  {
+   "char": "缺",
+   "readings": [
+    "khuyết"
+   ]
+  },
+  {
+   "char": "善",
+   "readings": [
+    "thiện"
+   ]
+  },
+  {
+   "char": "舍",
+   "readings": [
+    "xá",
+    "xả"
+   ]
+  },
+  {
+   "char": "涉",
+   "readings": [
+    "thiệp"
+   ]
+  },
+  {
+   "char": "声",
+   "readings": [
+    "thanh"
+   ]
+  },
+  {
+   "char": "首",
+   "readings": [
+    "thủ"
+   ]
+  },
+  {
+   "char": "输",
+   "readings": [
+    "thâu"
+   ]
+  },
+  {
+   "char": "损",
+   "readings": [
+    "tổn"
+   ]
+  },
+  {
+   "char": "庭",
+   "readings": [
+    "đình"
+   ]
+  },
+  {
+   "char": "突",
+   "readings": [
+    "đột"
+   ]
+  },
+  {
+   "char": "印",
+   "readings": [
+    "ấn"
+   ]
+  },
+  {
+   "char": "英",
+   "readings": [
+    "anh"
+   ]
+  },
+  {
+   "char": "泳",
+   "readings": [
+    "vịnh"
+   ]
+  },
+  {
+   "char": "造",
+   "readings": [
+    "tạo"
+   ]
+  },
+  {
+   "char": "转",
+   "readings": [
+    "chuyển"
+   ]
+  },
+  {
+   "char": "采",
+   "readings": [
+    "thái"
+   ]
+  },
+  {
+   "char": "冲",
+   "readings": [
+    "xung",
+    "trùng"
+   ]
+  },
+  {
+   "char": "存",
+   "readings": [
+    "tồn"
+   ]
+  },
+  {
+   "char": "刀",
+   "readings": [
+    "đao"
+   ]
+  },
+  {
+   "char": "读",
+   "readings": [
+    "độc"
+   ]
+  },
+  {
+   "char": "短",
+   "readings": [
+    "đoản"
+   ]
+  },
+  {
+   "char": "富",
+   "readings": [
+    "phú"
+   ]
+  },
+  {
+   "char": "官",
+   "readings": [
+    "quan"
+   ]
+  },
+  {
+   "char": "火",
+   "readings": [
+    "hỏa"
+   ]
+  },
+  {
+   "char": "圾",
+   "readings": [
+    "tắc"
+   ]
+  },
+  {
+   "char": "既",
+   "readings": [
+    "ký"
+   ]
+  },
+  {
+   "char": "静",
+   "readings": [
+    "tĩnh"
+   ]
+  },
+  {
+   "char": "肯",
+   "readings": [
+    "khẳng"
+   ]
+  },
+  {
+   "char": "垃",
+   "readings": [
+    "lạp"
+   ]
+  },
+  {
+   "char": "领",
+   "readings": [
+    "lãnh"
+   ]
+  },
+  {
+   "char": "路",
+   "readings": [
+    "lộ"
+   ]
+  },
+  {
+   "char": "律",
+   "readings": [
+    "luật"
+   ]
+  },
+  {
+   "char": "猫",
+   "readings": [
+    "miêu"
+   ]
+  },
+  {
+   "char": "屏",
+   "readings": [
+    "bình"
+   ]
+  },
+  {
+   "char": "器",
+   "readings": [
+    "khí"
+   ]
+  },
+  {
+   "char": "软",
+   "readings": [
+    "nhuyễn"
+   ]
+  },
+  {
+   "char": "升",
+   "readings": [
+    "thăng"
+   ]
+  },
+  {
+   "char": "剩",
+   "readings": [
+    "thặng"
+   ]
+  },
+  {
+   "char": "王",
+   "readings": [
+    "vương"
+   ]
+  },
+  {
+   "char": "唯",
+   "readings": [
+    "duy"
+   ]
+  },
+  {
+   "char": "稳",
+   "readings": [
+    "ổn"
+   ]
+  },
+  {
+   "char": "夏",
+   "readings": [
+    "hạ"
+   ]
+  },
+  {
+   "char": "显",
+   "readings": [
+    "hiển"
+   ]
+  },
+  {
+   "char": "薪",
+   "readings": [
+    "tân"
+   ]
+  },
+  {
+   "char": "移",
+   "readings": [
+    "di"
+   ]
+  },
+  {
+   "char": "异",
+   "readings": [
+    "dị"
+   ]
+  },
+  {
+   "char": "益",
+   "readings": [
+    "ích"
+   ]
+  },
+  {
+   "char": "迎",
+   "readings": [
+    "nghênh"
+   ]
+  },
+  {
+   "char": "域",
+   "readings": [
+    "vực"
+   ]
+  },
+  {
+   "char": "终",
+   "readings": [
+    "chung"
+   ]
+  },
+  {
+   "char": "熬",
+   "readings": [
+    "ngao"
+   ]
+  },
+  {
+   "char": "播",
+   "readings": [
+    "bá"
+   ]
+  },
+  {
+   "char": "藏",
+   "readings": [
+    "tàng",
+    "tạng"
+   ]
+  },
+  {
+   "char": "抽",
+   "readings": [
+    "trừu"
+   ]
+  },
+  {
+   "char": "盾",
+   "readings": [
+    "thuẫn"
+   ]
+  },
+  {
+   "char": "繁",
+   "readings": [
+    "phồn"
+   ]
+  },
+  {
+   "char": "飞",
+   "readings": [
+    "phi"
+   ]
+  },
+  {
+   "char": "丰",
+   "readings": [
+    "phong"
+   ]
+  },
+  {
+   "char": "赶",
+   "readings": [
+    "cản"
+   ]
+  },
+  {
+   "char": "歌",
+   "readings": [
+    "ca"
+   ]
+  },
+  {
+   "char": "鼓",
+   "readings": [
+    "cổ"
+   ]
+  },
+  {
+   "char": "咳",
+   "readings": [
+    "khái"
+   ]
+  },
+  {
+   "char": "红",
+   "readings": [
+    "hồng"
+   ]
+  },
+  {
+   "char": "忽",
+   "readings": [
+    "hốt"
+   ]
+  },
+  {
+   "char": "花",
+   "readings": [
+    "hoa"
+   ]
+  },
+  {
+   "char": "辑",
+   "readings": [
+    "tập"
+   ]
+  },
+  {
+   "char": "将",
+   "readings": [
+    "tương",
+    "tướng"
+   ]
+  },
+  {
+   "char": "焦",
+   "readings": [
+    "tiêu"
+   ]
+  },
+  {
+   "char": "洁",
+   "readings": [
+    "khiết"
+   ]
+  },
+  {
+   "char": "惊",
+   "readings": [
+    "kinh"
+   ]
+  },
+  {
+   "char": "颈",
+   "readings": [
+    "cảnh"
+   ]
+  },
+  {
+   "char": "拒",
+   "readings": [
+    "cự"
+   ]
+  },
+  {
+   "char": "绝",
+   "readings": [
+    "tuyệt"
+   ]
+  },
+  {
+   "char": "赖",
+   "readings": [
+    "lại"
+   ]
+  },
+  {
+   "char": "离",
+   "readings": [
+    "ly"
+   ]
+  },
+  {
+   "char": "励",
+   "readings": [
+    "lệ"
+   ]
+  },
+  {
+   "char": "林",
+   "readings": [
+    "lâm"
+   ]
+  },
+  {
+   "char": "漏",
+   "readings": [
+    "lậu"
+   ]
+  },
+  {
+   "char": "露",
+   "readings": [
+    "lộ",
+    "lậu"
+   ]
+  },
+  {
+   "char": "履",
+   "readings": [
+    "lý"
+   ]
+  },
+  {
+   "char": "伦",
+   "readings": [
+    "luân"
+   ]
+  },
+  {
+   "char": "逻",
+   "readings": [
+    "la"
+   ]
+  },
+  {
+   "char": "弄",
+   "readings": [
+    "lộng"
+   ]
+  },
+  {
+   "char": "努",
+   "readings": [
+    "nỗ"
+   ]
+  },
+  {
+   "char": "暖",
+   "readings": [
+    "noãn"
+   ]
+  },
+  {
+   "char": "赔",
+   "readings": [
+    "bồi"
+   ]
+  },
+  {
+   "char": "披",
+   "readings": [
+    "phi"
+   ]
+  },
+  {
+   "char": "润",
+   "readings": [
+    "nhuận"
+   ]
+  },
+  {
+   "char": "弱",
+   "readings": [
+    "nhược"
+   ]
+  },
+  {
+   "char": "施",
+   "readings": [
+    "thi"
+   ]
+  },
+  {
+   "char": "售",
+   "readings": [
+    "thụ"
+   ]
+  },
+  {
+   "char": "述",
+   "readings": [
+    "thuật"
+   ]
+  },
+  {
+   "char": "爽",
+   "readings": [
+    "sảng"
+   ]
+  },
+  {
+   "char": "嗽",
+   "readings": [
+    "thấu"
+   ]
+  },
+  {
+   "char": "索",
+   "readings": [
+    "sách"
+   ]
+  },
+  {
+   "char": "套",
+   "readings": [
+    "sáo"
+   ]
+  },
+  {
+   "char": "替",
+   "readings": [
+    "thế"
+   ]
+  },
+  {
+   "char": "婉",
+   "readings": [
+    "uyển"
+   ]
+  },
+  {
+   "char": "温",
+   "readings": [
+    "ôn"
+   ]
+  },
+  {
+   "char": "惜",
+   "readings": [
+    "tích"
+   ]
+  },
+  {
+   "char": "销",
+   "readings": [
+    "tiêu"
+   ]
+  },
+  {
+   "char": "幸",
+   "readings": [
+    "hạnh"
+   ]
+  },
+  {
+   "char": "虚",
+   "readings": [
+    "hư"
+   ]
+  },
+  {
+   "char": "序",
+   "readings": [
+    "tự"
+   ]
+  },
+  {
+   "char": "雪",
+   "readings": [
+    "tuyết"
+   ]
+  },
+  {
+   "char": "寻",
+   "readings": [
+    "tầm"
+   ]
+  },
+  {
+   "char": "颜",
+   "readings": [
+    "nhan"
+   ]
+  },
+  {
+   "char": "药",
+   "readings": [
+    "dược"
+   ]
+  },
+  {
+   "char": "营",
+   "readings": [
+    "doanh"
+   ]
+  },
+  {
+   "char": "邮",
+   "readings": [
+    "bưu"
+   ]
+  },
+  {
+   "char": "圆",
+   "readings": [
+    "viên"
+   ]
+  },
+  {
+   "char": "赞",
+   "readings": [
+    "tán"
+   ]
+  },
+  {
+   "char": "噪",
+   "readings": [
+    "táo"
+   ]
+  },
+  {
+   "char": "征",
+   "readings": [
+    "chinh"
+   ]
+  },
+  {
+   "char": "职",
+   "readings": [
+    "chức"
+   ]
+  },
+  {
+   "char": "纸",
+   "readings": [
+    "chỉ"
+   ]
+  },
+  {
+   "char": "滞",
+   "readings": [
+    "trệ"
+   ]
+  },
+  {
+   "char": "尊",
+   "readings": [
+    "tôn"
+   ]
+  },
+  {
+   "char": "败",
+   "readings": [
+    "bại"
+   ]
+  },
+  {
+   "char": "板",
+   "readings": [
+    "bản"
+   ]
+  },
+  {
+   "char": "伴",
+   "readings": [
+    "bạn"
+   ]
+  },
+  {
+   "char": "笔",
+   "readings": [
+    "bút"
+   ]
+  },
+  {
+   "char": "毕",
+   "readings": [
+    "tất"
+   ]
+  },
+  {
+   "char": "宾",
+   "readings": [
+    "tân"
+   ]
+  },
+  {
+   "char": "病",
+   "readings": [
+    "bệnh"
+   ]
+  },
+  {
+   "char": "擦",
+   "readings": [
+    "sát"
+   ]
+  },
+  {
+   "char": "拆",
+   "readings": [
+    "sách"
+   ]
+  },
+  {
+   "char": "扯",
+   "readings": [
+    "xả"
+   ]
+  },
+  {
+   "char": "乘",
+   "readings": [
+    "thừa"
+   ]
+  },
+  {
+   "char": "酬",
+   "readings": [
+    "thù"
+   ]
+  },
+  {
+   "char": "厨",
+   "readings": [
+    "trù"
+   ]
+  },
+  {
+   "char": "纯",
+   "readings": [
+    "thuần"
+   ]
+  },
+  {
+   "char": "疵",
+   "readings": [
+    "tỳ"
+   ]
+  },
+  {
+   "char": "磋",
+   "readings": [
+    "tha"
+   ]
+  },
+  {
+   "char": "挫",
+   "readings": [
+    "tỏa"
+   ]
+  },
+  {
+   "char": "措",
+   "readings": [
+    "thố"
+   ]
+  },
+  {
+   "char": "旦",
+   "readings": [
+    "đán"
+   ]
+  },
+  {
+   "char": "导",
+   "readings": [
+    "đạo"
+   ]
+  },
+  {
+   "char": "登",
+   "readings": [
+    "đăng"
+   ]
+  },
+  {
+   "char": "掉",
+   "readings": [
+    "điệu"
+   ]
+  },
+  {
+   "char": "冬",
+   "readings": [
+    "đông"
+   ]
+  },
+  {
+   "char": "洞",
+   "readings": [
+    "động"
+   ]
+  },
+  {
+   "char": "肚",
+   "readings": [
+    "đỗ"
+   ]
+  },
+  {
+   "char": "纷",
+   "readings": [
+    "phân"
+   ]
+  },
+  {
+   "char": "稿",
+   "readings": [
+    "cảo"
+   ]
+  },
+  {
+   "char": "搁",
+   "readings": [
+    "các"
+   ]
+  },
+  {
+   "char": "归",
+   "readings": [
+    "quy"
+   ]
+  },
+  {
+   "char": "害",
+   "readings": [
+    "hại"
+   ]
+  },
+  {
+   "char": "何",
+   "readings": [
+    "hà"
+   ]
+  },
+  {
+   "char": "横",
+   "readings": [
+    "hoành"
+   ]
+  },
+  {
+   "char": "互",
+   "readings": [
+    "hỗ"
+   ]
+  },
+  {
+   "char": "恢",
+   "readings": [
+    "khôi"
+   ]
+  },
+  {
+   "char": "悔",
+   "readings": [
+    "hối"
+   ]
+  },
+  {
+   "char": "级",
+   "readings": [
+    "cấp"
+   ]
+  },
+  {
+   "char": "纪",
+   "readings": [
+    "kỷ"
+   ]
+  },
+  {
+   "char": "兼",
+   "readings": [
+    "kiêm"
+   ]
+  },
+  {
+   "char": "鉴",
+   "readings": [
+    "giám"
+   ]
+  },
+  {
+   "char": "郊",
+   "readings": [
+    "giao"
+   ]
+  },
+  {
+   "char": "径",
+   "readings": [
+    "kính"
+   ]
+  },
+  {
+   "char": "旧",
+   "readings": [
+    "cựu"
+   ]
+  },
+  {
+   "char": "控",
+   "readings": [
+    "khống"
+   ]
+  },
+  {
+   "char": "类",
+   "readings": [
+    "loại"
+   ]
+  },
+  {
+   "char": "凉",
+   "readings": [
+    "lương"
+   ]
+  },
+  {
+   "char": "亮",
+   "readings": [
+    "lượng"
+   ]
+  },
+  {
+   "char": "乱",
+   "readings": [
+    "loạn"
+   ]
+  },
+  {
+   "char": "瞒",
+   "readings": [
+    "man"
+   ]
+  },
+  {
+   "char": "矛",
+   "readings": [
+    "mâu"
+   ]
+  },
+  {
+   "char": "弥",
+   "readings": [
+    "di"
+   ]
+  },
+  {
+   "char": "敏",
+   "readings": [
+    "mẫn"
+   ]
+  },
+  {
+   "char": "某",
+   "readings": [
+    "mỗ"
+   ]
+  },
+  {
+   "char": "拿",
+   "readings": [
+    "nã"
+   ]
+  },
+  {
+   "char": "奶",
+   "readings": [
+    "nãi"
+   ]
+  },
+  {
+   "char": "女",
+   "readings": [
+    "nữ"
+   ]
+  },
+  {
+   "char": "佩",
+   "readings": [
+    "bội"
+   ]
+  },
+  {
+   "char": "漂",
+   "readings": [
+    "phiêu",
+    "phiếu"
+   ]
+  },
+  {
+   "char": "瓶",
+   "readings": [
+    "bình"
+   ]
+  },
+  {
+   "char": "齐",
+   "readings": [
+    "tề"
+   ]
+  },
+  {
+   "char": "企",
+   "readings": [
+    "xí"
+   ]
+  },
+  {
+   "char": "浅",
+   "readings": [
+    "thiển"
+   ]
+  },
+  {
+   "char": "敲",
+   "readings": [
+    "xao"
+   ]
+  },
+  {
+   "char": "亲",
+   "readings": [
+    "thân"
+   ]
+  },
+  {
+   "char": "青",
+   "readings": [
+    "thanh"
+   ]
+  },
+  {
+   "char": "庆",
+   "readings": [
+    "khánh"
+   ]
+  },
+  {
+   "char": "权",
+   "readings": [
+    "quyền"
+   ]
+  },
+  {
+   "char": "松",
+   "readings": [
+    "tùng"
+   ]
+  },
+  {
+   "char": "趟",
+   "readings": [
+    "thảng"
+   ],
+   "uncertain": true,
+   "uncertainReason": "Chữ ít gặp; âm \"thảng\" chưa đối chiếu từ điển."
+  },
+  {
+   "char": "添",
+   "readings": [
+    "thiêm"
+   ]
+  },
+  {
+   "char": "填",
+   "readings": [
+    "điền"
+   ]
+  },
+  {
+   "char": "挑",
+   "readings": [
+    "khiêu",
+    "thiêu"
+   ]
+  },
+  {
+   "char": "厅",
+   "readings": [
+    "sảnh"
+   ]
+  },
+  {
+   "char": "停",
+   "readings": [
+    "đình"
+   ]
+  },
+  {
+   "char": "悉",
+   "readings": [
+    "tất"
+   ]
+  },
+  {
+   "char": "洗",
+   "readings": [
+    "tẩy"
+   ]
+  },
+  {
+   "char": "瑕",
+   "readings": [
+    "hà"
+   ]
+  },
+  {
+   "char": "陷",
+   "readings": [
+    "hãm"
+   ]
+  },
+  {
+   "char": "乡",
+   "readings": [
+    "hương"
+   ]
+  },
+  {
+   "char": "箱",
+   "readings": [
+    "tương"
+   ]
+  },
+  {
+   "char": "像",
+   "readings": [
+    "tượng"
+   ]
+  },
+  {
+   "char": "宣",
+   "readings": [
+    "tuyên"
+   ]
+  },
+  {
+   "char": "迅",
+   "readings": [
+    "tấn"
+   ]
+  },
+  {
+   "char": "仪",
+   "readings": [
+    "nghi"
+   ]
+  },
+  {
+   "char": "遗",
+   "readings": [
+    "di"
+   ]
+  },
+  {
+   "char": "艺",
+   "readings": [
+    "nghệ"
+   ]
+  },
+  {
+   "char": "疫",
+   "readings": [
+    "dịch"
+   ]
+  },
+  {
+   "char": "拥",
+   "readings": [
+    "ủng"
+   ]
+  },
+  {
+   "char": "勇",
+   "readings": [
+    "dũng"
+   ]
+  },
+  {
+   "char": "尤",
+   "readings": [
+    "vưu"
+   ]
+  },
+  {
+   "char": "愉",
+   "readings": [
+    "du"
+   ]
+  },
+  {
+   "char": "远",
+   "readings": [
+    "viễn"
+   ]
+  },
+  {
+   "char": "脏",
+   "readings": [
+    "tạng"
+   ]
+  },
+  {
+   "char": "燥",
+   "readings": [
+    "táo"
+   ]
+  },
+  {
+   "char": "占",
+   "readings": [
+    "chiếm",
+    "chiêm"
+   ]
+  },
+  {
+   "char": "战",
+   "readings": [
+    "chiến"
+   ]
+  },
+  {
+   "char": "涨",
+   "readings": [
+    "trướng"
+   ]
+  },
+  {
+   "char": "珍",
+   "readings": [
+    "trân"
+   ]
+  },
+  {
+   "char": "至",
+   "readings": [
+    "chí"
+   ]
+  },
+  {
+   "char": "逐",
+   "readings": [
+    "trục"
+   ]
+  },
+  {
+   "char": "祝",
+   "readings": [
+    "chúc"
+   ]
+  },
+  {
+   "char": "踪",
+   "readings": [
+    "tung"
+   ]
+  },
+  {
+   "char": "啊",
+   "readings": [
+    "a"
+   ],
+   "note": "ít dùng; thán từ"
+  },
+  {
+   "char": "傲",
+   "readings": [
+    "ngạo"
+   ]
+  },
+  {
+   "char": "般",
+   "readings": [
+    "ban"
+   ]
+  },
+  {
+   "char": "闭",
+   "readings": [
+    "bế"
+   ]
+  },
+  {
+   "char": "弊",
+   "readings": [
+    "tệ"
+   ]
+  },
+  {
+   "char": "饼",
+   "readings": [
+    "bính"
+   ]
+  },
+  {
+   "char": "财",
+   "readings": [
+    "tài"
+   ]
+  },
+  {
+   "char": "阐",
+   "readings": [
+    "xiển"
+   ]
+  },
+  {
+   "char": "吵",
+   "readings": [
+    "sảo"
+   ]
+  },
+  {
+   "char": "称",
+   "readings": [
+    "xưng",
+    "xứng"
+   ]
+  },
+  {
+   "char": "础",
+   "readings": [
+    "sở"
+   ]
+  },
+  {
+   "char": "触",
+   "readings": [
+    "xúc"
+   ]
+  },
+  {
+   "char": "穿",
+   "readings": [
+    "xuyên"
+   ]
+  },
+  {
+   "char": "辞",
+   "readings": [
+    "từ"
+   ]
+  },
+  {
+   "char": "凑",
+   "readings": [
+    "thấu"
+   ]
+  },
+  {
+   "char": "醋",
+   "readings": [
+    "thố"
+   ]
+  },
+  {
+   "char": "灯",
+   "readings": [
+    "đăng"
+   ]
+  },
+  {
+   "char": "盯",
+   "readings": [
+    "đinh"
+   ]
+  },
+  {
+   "char": "丢",
+   "readings": [
+    "đâu"
+   ],
+   "uncertain": true,
+   "uncertainReason": "Chưa chắc; \"đâu\" là âm truyền thống ít gặp."
+  },
+  {
+   "char": "豆",
+   "readings": [
+    "đậu"
+   ]
+  },
+  {
+   "char": "仿",
+   "readings": [
+    "phảng",
+    "phỏng"
+   ]
+  },
+  {
+   "char": "匪",
+   "readings": [
+    "phỉ"
+   ]
+  },
+  {
+   "char": "峰",
+   "readings": [
+    "phong"
+   ]
+  },
+  {
+   "char": "福",
+   "readings": [
+    "phúc"
+   ]
+  },
+  {
+   "char": "岗",
+   "readings": [
+    "cương"
+   ]
+  },
+  {
+   "char": "固",
+   "readings": [
+    "cố"
+   ]
+  },
+  {
+   "char": "馆",
+   "readings": [
+    "quán"
+   ]
+  },
+  {
+   "char": "毫",
+   "readings": [
+    "hào"
+   ]
+  },
+  {
+   "char": "耗",
+   "readings": [
+    "hao"
+   ]
+  },
+  {
+   "char": "画",
+   "readings": [
+    "họa"
+   ]
+  },
+  {
+   "char": "激",
+   "readings": [
+    "khích"
+   ]
+  },
+  {
+   "char": "寄",
+   "readings": [
+    "ký"
+   ]
+  },
+  {
+   "char": "嘉",
+   "readings": [
+    "gia"
+   ]
+  },
+  {
+   "char": "奖",
+   "readings": [
+    "tưởng"
+   ]
+  },
+  {
+   "char": "骄",
+   "readings": [
+    "kiêu"
+   ]
+  },
+  {
+   "char": "饺",
+   "readings": [
+    "giảo"
+   ]
+  },
+  {
+   "char": "借",
+   "readings": [
+    "tá"
+   ]
+  },
+  {
+   "char": "竞",
+   "readings": [
+    "cạnh"
+   ]
+  },
+  {
+   "char": "竟",
+   "readings": [
+    "cánh"
+   ]
+  },
+  {
+   "char": "纠",
+   "readings": [
+    "củ"
+   ]
+  },
+  {
+   "char": "局",
+   "readings": [
+    "cục"
+   ]
+  },
+  {
+   "char": "距",
+   "readings": [
+    "cự"
+   ]
+  },
+  {
+   "char": "哭",
+   "readings": [
+    "khốc"
+   ]
+  },
+  {
+   "char": "筐",
+   "readings": [
+    "khuông"
+   ]
+  },
+  {
+   "char": "览",
+   "readings": [
+    "lãm"
+   ]
+  },
+  {
+   "char": "狼",
+   "readings": [
+    "lang"
+   ]
+  },
+  {
+   "char": "劳",
+   "readings": [
+    "lao"
+   ]
+  },
+  {
+   "char": "链",
+   "readings": [
+    "liên"
+   ]
+  },
+  {
+   "char": "疗",
+   "readings": [
+    "liệu"
+   ]
+  },
+  {
+   "char": "烈",
+   "readings": [
+    "liệt"
+   ]
+  },
+  {
+   "char": "龄",
+   "readings": [
+    "linh"
+   ]
+  },
+  {
+   "char": "浏",
+   "readings": [
+    "lưu"
+   ]
+  },
+  {
+   "char": "鲁",
+   "readings": [
+    "lỗ"
+   ]
+  },
+  {
+   "char": "陆",
+   "readings": [
+    "lục"
+   ]
+  },
+  {
+   "char": "嘛",
+   "readings": [
+    "ma"
+   ],
+   "note": "ít dùng; trợ từ ngữ khí"
+  },
+  {
+   "char": "脑",
+   "readings": [
+    "não"
+   ]
+  },
+  {
+   "char": "哦",
+   "readings": [
+    "nga"
+   ],
+   "note": "ít dùng; thán từ"
+  },
+  {
+   "char": "偶",
+   "readings": [
+    "ngẫu"
+   ]
+  },
+  {
+   "char": "爬",
+   "readings": [
+    "ba"
+   ]
+  },
+  {
+   "char": "跑",
+   "readings": [
+    "bào"
+   ]
+  },
+  {
+   "char": "牵",
+   "readings": [
+    "khiên"
+   ]
+  },
+  {
+   "char": "抢",
+   "readings": [
+    "thương"
+   ]
+  },
+  {
+   "char": "秋",
+   "readings": [
+    "thu"
+   ]
+  },
+  {
+   "char": "遒",
+   "readings": [
+    "cầu"
+   ],
+   "uncertain": true,
+   "uncertainReason": "Chưa chắc; chữ hiếm, \"cầu\" theo âm truyền thống."
+  },
+  {
+   "char": "融",
+   "readings": [
+    "dung"
+   ]
+  },
+  {
+   "char": "若",
+   "readings": [
+    "nhược"
+   ]
+  },
+  {
+   "char": "伞",
+   "readings": [
+    "tán"
+   ]
+  },
+  {
+   "char": "僧",
+   "readings": [
+    "tăng"
+   ]
+  },
+  {
+   "char": "湿",
+   "readings": [
+    "thấp"
+   ]
+  },
+  {
+   "char": "匙",
+   "readings": [
+    "thì"
+   ]
+  },
+  {
+   "char": "拴",
+   "readings": [
+    "thuyên"
+   ]
+  },
+  {
+   "char": "死",
+   "readings": [
+    "tử"
+   ]
+  },
+  {
+   "char": "田",
+   "readings": [
+    "điền"
+   ]
+  },
+  {
+   "char": "腿",
+   "readings": [
+    "thối"
+   ]
+  },
+  {
+   "char": "席",
+   "readings": [
+    "tịch"
+   ]
+  },
+  {
+   "char": "闲",
+   "readings": [
+    "nhàn"
+   ]
+  },
+  {
+   "char": "鞋",
+   "readings": [
+    "hài"
+   ]
+  },
+  {
+   "char": "恤",
+   "readings": [
+    "tuất"
+   ]
+  },
+  {
+   "char": "蓄",
+   "readings": [
+    "súc"
+   ]
+  },
+  {
+   "char": "呀",
+   "readings": [
+    "nha"
+   ],
+   "note": "ít dùng; thán từ"
+  },
+  {
+   "char": "邀",
+   "readings": [
+    "yêu"
+   ]
+  },
+  {
+   "char": "钥",
+   "readings": [
+    "dược"
+   ]
+  },
+  {
+   "char": "爷",
+   "readings": [
+    "gia"
+   ]
+  },
+  {
+   "char": "硬",
+   "readings": [
+    "ngạnh"
+   ]
+  },
+  {
+   "char": "永",
+   "readings": [
+    "vĩnh"
+   ]
+  },
+  {
+   "char": "余",
+   "readings": [
+    "dư"
+   ]
+  },
+  {
+   "char": "誉",
+   "readings": [
+    "dự"
+   ]
+  },
+  {
+   "char": "云",
+   "readings": [
+    "vân"
+   ]
+  },
+  {
+   "char": "阵",
+   "readings": [
+    "trận"
+   ]
+  },
+  {
+   "char": "址",
+   "readings": [
+    "chỉ"
+   ]
+  },
+  {
+   "char": "抓",
+   "readings": [
+    "trảo"
+   ]
+  },
+  {
+   "char": "绑",
+   "readings": [
+    "bảng"
+   ]
+  },
+  {
+   "char": "碑",
+   "readings": [
+    "bi"
+   ]
+  },
+  {
+   "char": "倍",
+   "readings": [
+    "bội"
+   ]
+  },
+  {
+   "char": "辈",
+   "readings": [
+    "bối"
+   ]
+  },
+  {
+   "char": "奔",
+   "readings": [
+    "bôn"
+   ]
+  },
+  {
+   "char": "崩",
+   "readings": [
+    "băng"
+   ]
+  },
+  {
+   "char": "逼",
+   "readings": [
+    "bức"
+   ]
+  },
+  {
+   "char": "鼻",
+   "readings": [
+    "tỵ"
+   ]
+  },
+  {
+   "char": "玻",
+   "readings": [
+    "pha"
+   ]
+  },
+  {
+   "char": "博",
+   "readings": [
+    "bác"
+   ]
+  },
+  {
+   "char": "卜",
+   "readings": [
+    "bốc"
+   ]
+  },
+  {
+   "char": "捕",
+   "readings": [
+    "bổ"
+   ]
+  },
+  {
+   "char": "裁",
+   "readings": [
+    "tài"
+   ]
+  },
+  {
+   "char": "惨",
+   "readings": [
+    "thảm"
+   ]
+  },
+  {
+   "char": "册",
+   "readings": [
+    "sách"
+   ]
+  },
+  {
+   "char": "曾",
+   "readings": [
+    "tằng"
+   ]
+  },
+  {
+   "char": "插",
+   "readings": [
+    "sáp"
+   ]
+  },
+  {
+   "char": "柴",
+   "readings": [
+    "sài"
+   ]
+  },
+  {
+   "char": "臣",
+   "readings": [
+    "thần"
+   ]
+  },
+  {
+   "char": "橙",
+   "readings": [
+    "chanh"
+   ]
+  },
+  {
+   "char": "虫",
+   "readings": [
+    "trùng"
+   ]
+  },
+  {
+   "char": "宠",
+   "readings": [
+    "sủng"
+   ]
+  },
+  {
+   "char": "筹",
+   "readings": [
+    "trù"
+   ]
+  },
+  {
+   "char": "船",
+   "readings": [
+    "thuyền"
+   ]
+  },
+  {
+   "char": "锤",
+   "readings": [
+    "chùy"
+   ]
+  },
+  {
+   "char": "粗",
+   "readings": [
+    "thô"
+   ]
+  },
+  {
+   "char": "村",
+   "readings": [
+    "thôn"
+   ]
+  },
+  {
+   "char": "袋",
+   "readings": [
+    "đại"
+   ]
+  },
+  {
+   "char": "胆",
+   "readings": [
+    "đảm"
+   ]
+  },
+  {
+   "char": "党",
+   "readings": [
+    "đảng"
+   ]
+  },
+  {
+   "char": "稻",
+   "readings": [
+    "đạo"
+   ]
+  },
+  {
+   "char": "垫",
+   "readings": [
+    "điếm"
+   ]
+  },
+  {
+   "char": "碟",
+   "readings": [
+    "điệp"
+   ]
+  },
+  {
+   "char": "朵",
+   "readings": [
+    "đóa"
+   ]
+  },
+  {
+   "char": "乏",
+   "readings": [
+    "phạp"
+   ]
+  },
+  {
+   "char": "番",
+   "readings": [
+    "phiên"
+   ]
+  },
+  {
+   "char": "返",
+   "readings": [
+    "phản"
+   ]
+  },
+  {
+   "char": "疯",
+   "readings": [
+    "phong"
+   ]
+  },
+  {
+   "char": "符",
+   "readings": [
+    "phù"
+   ]
+  },
+  {
+   "char": "府",
+   "readings": [
+    "phủ"
+   ]
+  },
+  {
+   "char": "辅",
+   "readings": [
+    "phụ"
+   ]
+  },
+  {
+   "char": "腐",
+   "readings": [
+    "hủ"
+   ]
+  },
+  {
+   "char": "尬",
+   "readings": [
+    "giới"
+   ]
+  },
+  {
+   "char": "尴",
+   "readings": [
+    "giám"
+   ]
+  },
+  {
+   "char": "港",
+   "readings": [
+    "cảng"
+   ]
+  },
+  {
+   "char": "耕",
+   "readings": [
+    "canh"
+   ]
+  },
+  {
+   "char": "梗",
+   "readings": [
+    "ngạnh"
+   ]
+  },
+  {
+   "char": "咕",
+   "readings": [
+    "cô"
+   ]
+  },
+  {
+   "char": "谷",
+   "readings": [
+    "cốc"
+   ]
+  },
+  {
+   "char": "故",
+   "readings": [
+    "cố"
+   ]
+  },
+  {
+   "char": "怪",
+   "readings": [
+    "quái"
+   ]
+  },
+  {
+   "char": "罐",
+   "readings": [
+    "quán"
+   ]
+  },
+  {
+   "char": "逛",
+   "readings": [
+    "cuống"
+   ]
+  },
+  {
+   "char": "锅",
+   "readings": [
+    "oa"
+   ]
+  },
+  {
+   "char": "黑",
+   "readings": [
+    "hắc"
+   ]
+  },
+  {
+   "char": "痕",
+   "readings": [
+    "ngân"
+   ]
+  },
+  {
+   "char": "乎",
+   "readings": [
+    "hồ"
+   ]
+  },
+  {
+   "char": "壶",
+   "readings": [
+    "hồ"
+   ]
+  },
+  {
+   "char": "湖",
+   "readings": [
+    "hồ"
+   ]
+  },
+  {
+   "char": "虎",
+   "readings": [
+    "hổ"
+   ]
+  },
+  {
+   "char": "慌",
+   "readings": [
+    "hoảng"
+   ]
+  },
+  {
+   "char": "伙",
+   "readings": [
+    "hỏa"
+   ]
+  },
+  {
+   "char": "鸡",
+   "readings": [
+    "kê"
+   ]
+  },
+  {
+   "char": "极",
+   "readings": [
+    "cực"
+   ]
+  },
+  {
+   "char": "伎",
+   "readings": [
+    "kỹ"
+   ]
+  },
+  {
+   "char": "济",
+   "readings": [
+    "tế"
+   ]
+  },
+  {
+   "char": "剪",
+   "readings": [
+    "tiễn"
+   ]
+  },
+  {
+   "char": "渐",
+   "readings": [
+    "tiệm"
+   ]
+  },
+  {
+   "char": "江",
+   "readings": [
+    "giang"
+   ]
+  },
+  {
+   "char": "斤",
+   "readings": [
+    "cân"
+   ]
+  },
+  {
+   "char": "劲",
+   "readings": [
+    "kính"
+   ]
+  },
+  {
+   "char": "警",
+   "readings": [
+    "cảnh"
+   ]
+  },
+  {
+   "char": "净",
+   "readings": [
+    "tịnh"
+   ]
+  },
+  {
+   "char": "镜",
+   "readings": [
+    "kính"
+   ]
+  },
+  {
+   "char": "救",
+   "readings": [
+    "cứu"
+   ]
+  },
+  {
+   "char": "橘",
+   "readings": [
+    "quất"
+   ]
+  },
+  {
+   "char": "俱",
+   "readings": [
+    "cụ"
+   ]
+  },
+  {
+   "char": "剧",
+   "readings": [
+    "kịch"
+   ]
+  },
+  {
+   "char": "聚",
+   "readings": [
+    "tụ"
+   ]
+  },
+  {
+   "char": "均",
+   "readings": [
+    "quân"
+   ]
+  },
+  {
+   "char": "裤",
+   "readings": [
+    "khố"
+   ]
+  },
+  {
+   "char": "宽",
+   "readings": [
+    "khoan"
+   ]
+  },
+  {
+   "char": "懒",
+   "readings": [
+    "lãn"
+   ]
+  },
+  {
+   "char": "滥",
+   "readings": [
+    "lạm"
+   ]
+  },
+  {
+   "char": "梨",
+   "readings": [
+    "lê"
+   ]
+  },
+  {
+   "char": "璃",
+   "readings": [
+    "ly"
+   ]
+  },
+  {
+   "char": "李",
+   "readings": [
+    "lý"
+   ]
+  },
+  {
+   "char": "栗",
+   "readings": [
+    "lật"
+   ]
+  },
+  {
+   "char": "俩",
+   "readings": [
+    "lưỡng"
+   ],
+   "note": "ít dùng; khẩu ngữ"
+  },
+  {
+   "char": "连",
+   "readings": [
+    "liên"
+   ]
+  },
+  {
+   "char": "帘",
+   "readings": [
+    "liêm"
+   ]
+  },
+  {
+   "char": "龙",
+   "readings": [
+    "long"
+   ]
+  },
+  {
+   "char": "楼",
+   "readings": [
+    "lâu"
+   ]
+  },
+  {
+   "char": "噜",
+   "readings": [
+    "lỗ"
+   ]
+  },
+  {
+   "char": "芦",
+   "readings": [
+    "lô"
+   ]
+  },
+  {
+   "char": "驴",
+   "readings": [
+    "lư"
+   ]
+  },
+  {
+   "char": "吕",
+   "readings": [
+    "lã"
+   ]
+  },
+  {
+   "char": "绿",
+   "readings": [
+    "lục"
+   ]
+  },
+  {
+   "char": "萝",
+   "readings": [
+    "la"
+   ]
+  },
+  {
+   "char": "蛮",
+   "readings": [
+    "man"
+   ]
+  },
+  {
+   "char": "毛",
+   "readings": [
+    "mao"
+   ]
+  },
+  {
+   "char": "帽",
+   "readings": [
+    "mão"
+   ]
+  },
+  {
+   "char": "霉",
+   "readings": [
+    "môi"
+   ]
+  },
+  {
+   "char": "萌",
+   "readings": [
+    "manh"
+   ]
+  },
+  {
+   "char": "梦",
+   "readings": [
+    "mộng"
+   ]
+  },
+  {
+   "char": "寞",
+   "readings": [
+    "mịch"
+   ]
+  },
+  {
+   "char": "谋",
+   "readings": [
+    "mưu"
+   ]
+  },
+  {
+   "char": "牛",
+   "readings": [
+    "ngưu"
+   ]
+  },
+  {
+   "char": "怒",
+   "readings": [
+    "nộ"
+   ]
+  },
+  {
+   "char": "怕",
+   "readings": [
+    "phạ"
+   ]
+  },
+  {
+   "char": "贫",
+   "readings": [
+    "bần"
+   ]
+  },
+  {
+   "char": "苹",
+   "readings": [
+    "bình"
+   ]
+  },
+  {
+   "char": "破",
+   "readings": [
+    "phá"
+   ]
+  },
+  {
+   "char": "扑",
+   "readings": [
+    "phác"
+   ]
+  },
+  {
+   "char": "葡",
+   "readings": [
+    "bồ"
+   ]
+  },
+  {
+   "char": "普",
+   "readings": [
+    "phổ"
+   ]
+  },
+  {
+   "char": "妻",
+   "readings": [
+    "thê"
+   ]
+  },
+  {
+   "char": "奇",
+   "readings": [
+    "kỳ"
+   ]
+  },
+  {
+   "char": "汽",
+   "readings": [
+    "khí"
+   ]
+  },
+  {
+   "char": "掐",
+   "readings": [
+    "kháp"
+   ]
+  },
+  {
+   "char": "欠",
+   "readings": [
+    "khiếm"
+   ]
+  },
+  {
+   "char": "墙",
+   "readings": [
+    "tường"
+   ]
+  },
+  {
+   "char": "巧",
+   "readings": [
+    "xảo"
+   ]
+  },
+  {
+   "char": "俏",
+   "readings": [
+    "tiếu"
+   ]
+  },
+  {
+   "char": "穷",
+   "readings": [
+    "cùng"
+   ]
+  },
+  {
+   "char": "球",
+   "readings": [
+    "cầu"
+   ]
+  },
+  {
+   "char": "趋",
+   "readings": [
+    "xu"
+   ]
+  },
+  {
+   "char": "裙",
+   "readings": [
+    "quần"
+   ]
+  },
+  {
+   "char": "群",
+   "readings": [
+    "quần"
+   ]
+  },
+  {
+   "char": "饶",
+   "readings": [
+    "nhiêu"
+   ]
+  },
+  {
+   "char": "绕",
+   "readings": [
+    "nhiễu"
+   ]
+  },
+  {
+   "char": "仁",
+   "readings": [
+    "nhân"
+   ]
+  },
+  {
+   "char": "绒",
+   "readings": [
+    "nhung"
+   ]
+  },
+  {
+   "char": "柔",
+   "readings": [
+    "nhu"
+   ]
+  },
+  {
+   "char": "肉",
+   "readings": [
+    "nhục"
+   ]
+  },
+  {
+   "char": "乳",
+   "readings": [
+    "nhũ"
+   ]
+  },
+  {
+   "char": "扫",
+   "readings": [
+    "tảo"
+   ]
+  },
+  {
+   "char": "森",
+   "readings": [
+    "sâm"
+   ]
+  },
+  {
+   "char": "傻",
+   "readings": [
+    "sá"
+   ]
+  },
+  {
+   "char": "擅",
+   "readings": [
+    "thiện"
+   ]
+  },
+  {
+   "char": "伤",
+   "readings": [
+    "thương"
+   ]
+  },
+  {
+   "char": "勺",
+   "readings": [
+    "thược"
+   ]
+  },
+  {
+   "char": "申",
+   "readings": [
+    "thân"
+   ]
+  },
+  {
+   "char": "神",
+   "readings": [
+    "thần"
+   ]
+  },
+  {
+   "char": "婶",
+   "readings": [
+    "thẩm"
+   ]
+  },
+  {
+   "char": "盛",
+   "readings": [
+    "thịnh",
+    "thạnh"
+   ]
+  },
+  {
+   "char": "史",
+   "readings": [
+    "sử"
+   ]
+  },
+  {
+   "char": "示",
+   "readings": [
+    "thị"
+   ]
+  },
+  {
+   "char": "梳",
+   "readings": [
+    "sơ"
+   ]
+  },
+  {
+   "char": "树",
+   "readings": [
+    "thụ"
+   ]
+  },
+  {
+   "char": "恕",
+   "readings": [
+    "thứ"
+   ]
+  },
+  {
+   "char": "丝",
+   "readings": [
+    "ty"
+   ]
+  },
+  {
+   "char": "似",
+   "readings": [
+    "tự"
+   ]
+  },
+  {
+   "char": "搜",
+   "readings": [
+    "sưu"
+   ]
+  },
+  {
+   "char": "苏",
+   "readings": [
+    "tô"
+   ]
+  },
+  {
+   "char": "塑",
+   "readings": [
+    "tố"
+   ]
+  },
+  {
+   "char": "孙",
+   "readings": [
+    "tôn"
+   ]
+  },
+  {
+   "char": "坛",
+   "readings": [
+    "đàn"
+   ]
+  },
+  {
+   "char": "毯",
+   "readings": [
+    "thảm"
+   ]
+  },
+  {
+   "char": "探",
+   "readings": [
+    "thám"
+   ]
+  },
+  {
+   "char": "桃",
+   "readings": [
+    "đào"
+   ]
+  },
+  {
+   "char": "萄",
+   "readings": [
+    "đào"
+   ]
+  },
+  {
+   "char": "特",
+   "readings": [
+    "đặc"
+   ]
+  },
+  {
+   "char": "贴",
+   "readings": [
+    "thiếp"
+   ]
+  },
+  {
+   "char": "童",
+   "readings": [
+    "đồng"
+   ]
+  },
+  {
+   "char": "桶",
+   "readings": [
+    "thùng"
+   ]
+  },
+  {
+   "char": "玩",
+   "readings": [
+    "ngoạn"
+   ]
+  },
+  {
+   "char": "卫",
+   "readings": [
+    "vệ"
+   ]
+  },
+  {
+   "char": "喂",
+   "readings": [
+    "uy"
+   ],
+   "note": "ít dùng; thán từ gọi"
+  },
+  {
+   "char": "蚊",
+   "readings": [
+    "văn"
+   ]
+  },
+  {
+   "char": "晰",
+   "readings": [
+    "tích"
+   ]
+  },
+  {
+   "char": "戏",
+   "readings": [
+    "hí"
+   ]
+  },
+  {
+   "char": "虾",
+   "readings": [
+    "hà"
+   ]
+  },
+  {
+   "char": "香",
+   "readings": [
+    "hương"
+   ]
+  },
+  {
+   "char": "笑",
+   "readings": [
+    "tiếu"
+   ]
+  },
+  {
+   "char": "谐",
+   "readings": [
+    "hài"
+   ]
+  },
+  {
+   "char": "姓",
+   "readings": [
+    "tính"
+   ]
+  },
+  {
+   "char": "袖",
+   "readings": [
+    "tụ"
+   ]
+  },
+  {
+   "char": "徐",
+   "readings": [
+    "từ"
+   ]
+  },
+  {
+   "char": "悬",
+   "readings": [
+    "huyền"
+   ]
+  },
+  {
+   "char": "血",
+   "readings": [
+    "huyết"
+   ]
+  },
+  {
+   "char": "循",
+   "readings": [
+    "tuần"
+   ]
+  },
+  {
+   "char": "烟",
+   "readings": [
+    "yên"
+   ]
+  },
+  {
+   "char": "眼",
+   "readings": [
+    "nhãn"
+   ]
+  },
+  {
+   "char": "又",
+   "readings": [
+    "hựu"
+   ]
+  },
+  {
+   "char": "舆",
+   "readings": [
+    "dư"
+   ]
+  },
+  {
+   "char": "羽",
+   "readings": [
+    "vũ"
+   ]
+  },
+  {
+   "char": "园",
+   "readings": [
+    "viên"
+   ]
+  },
+  {
+   "char": "赠",
+   "readings": [
+    "tặng"
+   ]
+  },
+  {
+   "char": "针",
+   "readings": [
+    "châm"
+   ]
+  },
+  {
+   "char": "震",
+   "readings": [
+    "chấn"
+   ]
+  },
+  {
+   "char": "蒸",
+   "readings": [
+    "chưng"
+   ]
+  },
+  {
+   "char": "植",
+   "readings": [
+    "thực"
+   ]
+  },
+  {
+   "char": "众",
+   "readings": [
+    "chúng"
+   ]
+  },
+  {
+   "char": "朱",
+   "readings": [
+    "chu"
+   ]
+  },
+  {
+   "char": "珠",
+   "readings": [
+    "châu"
+   ]
+  },
+  {
+   "char": "竹",
+   "readings": [
+    "trúc"
+   ]
+  },
+  {
+   "char": "仔",
+   "readings": [
+    "tử"
+   ]
+  },
+  {
+   "char": "紫",
+   "readings": [
+    "tử"
+   ]
+  },
+  {
+   "char": "宗",
+   "readings": [
+    "tông"
+   ]
+  },
+  {
+   "char": "罪",
+   "readings": [
+    "tội"
+   ]
+  }
+ ]
+}

@@ -56,13 +56,18 @@ test('listen-first role-play hides both Chinese and translation by default', asy
   assert.match(html, /Nghe chậm/);
 });
 
-test('Unihan character readings are not mislabeled as authoritative Sino-Vietnamese word readings', () => {
+test('AI-authored Sino-Vietnamese readings are labeled as drafts and Unihan is a fallback', () => {
   const html = renderToStaticMarkup(<HanViet word="你好" />);
-  assert.match(html, /Âm Việt theo chữ/);
-  assert.doesNotMatch(html, /Âm Hán Việt:/);
+  assert.match(html, /AI soạn, chưa duyệt/);
+  assert.match(html, /nhĩ hảo/);
+  assert.doesNotMatch(html, /Unihan dự phòng/);
+  const fallback = renderToStaticMarkup(<HanViet word="學" />);
+  assert.match(fallback, /Unihan dự phòng/);
+  assert.doesNotMatch(fallback, /chưa có dữ liệu/);
   const memory = renderToStaticMarkup(<HanViet word="学" />);
   assert.match(memory, /AI soạn, chưa duyệt/);
   assert.match(memory, /học/);
+  assert.equal(renderToStaticMarkup(<HanViet word={String.fromCodePoint(0x323af)} />), '');
 });
 
 test('course practice exposes lesson-linked dictation and shadowing, with global fallback', () => {
