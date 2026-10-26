@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 10,
+  "lessonTitle": "Nhận phòng khách sạn và hỏi dịch vụ",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "预订",
+      "meaning": "đặt trước",
+      "example": "房间是我在网上预订的。",
+      "exampleVi": "Phòng này tôi đặt trước trên mạng.",
+      "pinyin": "yù dìng",
+      "examplePinyin": "fáng jiān shì wǒ zài wǎng shàng yù dìng de 。"
+    },
+    {
+      "word": "入住",
+      "meaning": "nhận phòng; vào ở",
+      "example": "下午三点以后才能入住。",
+      "exampleVi": "Sau ba giờ chiều mới được nhận phòng.",
+      "pinyin": "rù zhù",
+      "examplePinyin": "xià wǔ sān diǎn yǐ hòu cái néng rù zhù 。"
+    },
+    {
+      "word": "退房",
+      "meaning": "trả phòng",
+      "example": "退房是中午十二点以前。",
+      "exampleVi": "Trả phòng là trước mười hai giờ trưa.",
+      "pinyin": "tuì fáng",
+      "examplePinyin": "tuì fáng shì zhōng wǔ shí èr diǎn yǐ qián 。"
+    },
+    {
+      "word": "发票",
+      "meaning": "hóa đơn",
+      "example": "开发票要公司的名字。",
+      "exampleVi": "Xuất hóa đơn thì cần tên công ty.",
+      "pinyin": "fā piào",
+      "examplePinyin": "kāi fā piào yào gōng sī de míng zi 。"
+    },
+    {
+      "word": "行李",
+      "meaning": "hành lý",
+      "example": "行李先放在前台。",
+      "exampleVi": "Hành lý để ở quầy lễ tân trước đã.",
+      "pinyin": "xíng li",
+      "examplePinyin": "xíng li xiān fàng zài qián tái 。"
+    },
+    {
+      "word": "电梯",
+      "meaning": "thang máy",
+      "example": "电梯在右边，房间在八楼。",
+      "exampleVi": "Thang máy ở bên phải, phòng ở tầng tám.",
+      "pinyin": "diàn tī",
+      "examplePinyin": "diàn tī zài yòu bian ， fáng jiān zài bā lóu 。"
+    },
+    {
+      "word": "早餐",
+      "meaning": "bữa sáng",
+      "example": "早餐七点开始，在二楼。",
+      "exampleVi": "Bữa sáng bắt đầu lúc bảy giờ, ở tầng hai.",
+      "pinyin": "zǎo cān",
+      "examplePinyin": "zǎo cān qī diǎn kāi shǐ ， zài èr lóu 。"
+    },
+    {
+      "word": "叫醒",
+      "meaning": "gọi dậy",
+      "example": "明天六点半能叫醒我吗？",
+      "exampleVi": "Sáu giờ rưỡi sáng mai gọi tôi dậy được không?",
+      "pinyin": "jiào xǐng",
+      "examplePinyin": "míng tiān liù diǎn bàn néng jiào xǐng wǒ ma ？"
+    },
+    {
+      "word": "干净",
+      "meaning": "sạch sẽ",
+      "example": "床单不干净，麻烦换一下。",
+      "exampleVi": "Ga giường không sạch, phiền đổi giúp một bộ.",
+      "pinyin": "gān jìng",
+      "examplePinyin": "chuáng dān bù gān jìng ， má fán huàn yí xià 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我订了……",
+      "explanation": "Báo với lễ tân là đã đặt trước: 我订了 rồi thêm số đêm hoặc loại phòng; nếu chưa thấy đơn, họ sẽ hỏi lại tên hoặc số điện thoại.",
+      "example": "我订了两晚，一个大床房。",
+      "exampleVi": "Tôi đặt hai đêm, một phòng giường đôi.",
+      "examplePinyin": "wǒ dìng le liǎng wǎn ， yí gè dà chuáng fáng 。"
+    },
+    {
+      "pattern": "几点……？",
+      "explanation": "Hỏi giờ của một việc trong khách sạn: 几点 rồi thêm động từ như 退房、入住、开始吃饭; trả lời bằng giờ cụ thể, có thể thêm 以前 或 以后.",
+      "example": "请问几点要退房？",
+      "exampleVi": "Cho hỏi mấy giờ phải trả phòng?",
+      "examplePinyin": "qǐng wèn jǐ diǎn yào tuì fáng ？"
+    },
+    {
+      "pattern": "可以……一下吗？",
+      "explanation": "Nhờ nhân viên giúp một việc ngắn gọn: 可以 rồi thêm 帮我、换、送 và 一下吗; muốn lịch sự hơn thì đặt 麻烦你 ở trước.",
+      "example": "我的房卡打不开门，可以帮我一下吗？",
+      "exampleVi": "Thẻ phòng của tôi không mở được cửa, giúp tôi một chút được không?",
+      "examplePinyin": "wǒ de fáng kǎ dǎ bù kāi mén ， kě yǐ bāng wǒ yí xià ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: đang ở trong phòng, bạn gọi xuống quầy lễ tân vì ga giường còn bẩn; bạn nhờ đổi đồ, xin hai chai nước, đặt báo thức sáu giờ rưỡi rồi hỏi bữa sáng bắt đầu mấy giờ và ở tầng nào.",
+    "avatarRole": "Nhân viên phục vụ khách sạn",
+    "learnerRole": "Khách đang ở trong phòng",
+    "goals": [
+      "Nói rõ phòng chưa sạch và nhờ đổi đồ",
+      "Nhờ mang lên phòng hai chai nước và đặt báo thức",
+      "Hỏi bữa sáng bắt đầu mấy giờ và ở tầng nào"
+    ],
+    "opening": "您好，前台，请问有什么需要？",
+    "openingVi": "Xin chào, quầy lễ tân đây, xin hỏi anh/chị cần gì ạ?"
+  },
+  "freeTalk": {
+    "question": "住酒店时遇到问题，你是马上找服务员还是自己想办法？为什么？",
+    "questionVi": "Khi gặp vấn đề ở khách sạn, bạn tìm nhân viên ngay hay tự xoay xở? Vì sao?"
+  },
+  "learningNotes": [
+    "Nhận phòng: nói 我订了 + số đêm hoặc loại phòng rồi đưa hộ chiếu; lễ tân chưa thấy đơn thì thêm 我是在网上订的，您查一下我的名字.",
+    "Giờ giấc: dùng 几点 + 入住、退房、开始; muốn hỏi hạn chót thì nói 最晚几点退房？, còn 几点以前 thì trả lời bằng một mốc giờ.",
+    "Phát âm: 预订 là hai thanh 4 liền nhau, cả hai rơi dứt khoát, đừng đọc âm sau thành thanh nhẹ; 电梯 là thanh 4 rồi thanh 1, âm sau giữ cao và bằng.",
+    "发票 là hóa đơn để công ty thanh toán nên phải nói 我要开发票; 行李 chỉ đồ mang theo nói chung, 箱子 là một chiếc vali cụ thể."
+  ],
+  "prerequisites": [
+    9
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Nhận phòng khách sạn và hỏi dịch vụ",
+    "playLimit": 1,
+    "transcript": "客人：你好，我是八零八房，地上还有头发，床单也不干净，麻烦换一下。前台：对不起，我马上让人去换，再给您送两瓶水。客人：谢谢。明天六点半能叫醒我吗？前台：可以，早餐七点开始，在二楼。客人：我晚上坐火车，能晚一点退房吗？前台：可以，行李先放这儿。",
+    "translation": "Khách ở phòng tám không tám báo trên sàn còn tóc, ga giường chưa sạch và nhờ đổi giúp. Lễ tân xin lỗi, hẹn cho người lên đổi và gửi thêm hai chai nước. Khách đặt báo thức sáu giờ rưỡi, được biết bữa sáng bảy giờ bắt đầu ở tầng hai, rồi xin trả phòng muộn vì tối có tàu; lễ tân đồng ý và cho gửi hành lý lại tại quầy.",
+    "questions": [
+      {
+        "prompt": "Khách phàn nàn chuyện gì trong phòng?",
+        "options": [
+          "Phòng không có nước nóng",
+          "Thang máy buổi sáng quá đông",
+          "Ga giường bẩn, trên sàn còn tóc"
+        ],
+        "answer": 2,
+        "explanation": "客人 nói 地上还有头发，床单也不干净，麻烦换一下."
+      },
+      {
+        "prompt": "Bữa sáng phục vụ từ mấy giờ và ở đâu?",
+        "options": [
+          "Bảy giờ, ở tầng hai",
+          "Sáu giờ rưỡi, ở tầng tám",
+          "Sáu giờ, ngay quầy lễ tân"
+        ],
+        "answer": 0,
+        "explanation": "前台 nói 早餐七点开始，在二楼."
+      },
+      {
+        "prompt": "Khách xin thêm điều gì vì tối có tàu?",
+        "options": [
+          "Xin đổi sang một phòng khác",
+          "Xin ở thêm một đêm miễn phí",
+          "Xin trả phòng muộn và gửi hành lý lại"
+        ],
+        "answer": 2,
+        "explanation": "客人 nói 我晚上坐火车，能晚一点退房吗，前台说 可以，行李先放这儿."
+      }
+    ],
+    "pinyin": "kè rén ： nǐ hǎo ， wǒ shì bā líng bā fáng ， dì shàng hái yǒu tóu fa ， chuáng dān yě bù gān jìng ， má fán huàn yí xià 。 qián tái ： duì bù qǐ ， wǒ mǎ shàng ràng rén qù huàn ， zài gěi nín sòng liǎng píng shuǐ 。 kè rén ： xiè xie 。 míng tiān liù diǎn bàn néng jiào xǐng wǒ ma ？ qián tái ： kě yǐ ， zǎo cān qī diǎn kāi shǐ ， zài èr lóu 。 kè rén ： wǒ wǎn shang zuò huǒ chē ， néng wǎn yì diǎn tuì fáng ma ？ qián tái ： kě yǐ ， xíng li xiān fàng zhè ér 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu nhờ đổi đồ trong phòng, một câu nhờ gọi dậy.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "床单不干净，麻烦换一下。明天六点半能叫醒我吗？",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng giờ nhờ gọi dậy",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "床单不干净，麻烦换一下。明天六点半能叫醒我吗？"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách báo gì, lễ tân hứa làm gì, khách hỏi hai việc nào, cuối cùng xin gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách ở phòng tám không tám báo trên sàn còn tóc, ga giường chưa sạch và nhờ đổi giúp. Lễ tân xin lỗi, hẹn cho người lên đổi và gửi thêm hai chai nước. Khách đặt báo thức sáu giờ rưỡi, được biết bữa sáng bảy giờ bắt đầu ở tầng hai, rồi xin trả phòng muộn vì tối có tàu; lễ tân đồng ý và cho gửi hành lý lại tại quầy.",
+      "checklist": [
+        "Nói đủ: phòng bẩn, giờ báo thức, bữa sáng, xin trả phòng muộn",
+        "Người nghe hiểu được nội dung",
+        "Không tự đổi số phòng hoặc giờ giấc"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau như đang nói chuyện điện thoại với quầy lễ tân.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Câu nhờ vả đọc nhẹ và hạ giọng; ba mốc giờ trong đoạn phải nói rõ.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "我是八零八房，房间的床单不干净，麻烦帮我换一下，再送两瓶水上来。明天六点半叫醒我，早餐七点在二楼开始。晚上的火车，我想晚一点退房，行李先放在前台。"
+    },
+    {
+      "kind": "opinion",
+      "prompt": "住酒店时遇到问题，你是马上找服务员还是自己想办法？为什么？",
+      "promptVi": "Khi gặp vấn đề ở khách sạn, bạn tìm nhân viên ngay hay tự xoay xở? Vì sao?",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Phân biệt một việc phải nhờ nhân viên và một việc tự xử lý được, kèm lý do và một câu nói lịch sự khi nhờ.",
+      "checklist": [
+        "Nêu rõ việc nào nhờ, việc nào tự làm",
+        "Có ví dụ cụ thể",
+        "Dùng được câu nhờ lịch sự"
+      ],
+      "sampleZh": "房间里的东西不干净或者没有热水，我一定打给前台，让他们换，因为我自己弄不了。可是找不到电梯、不知道早餐几点开始，我就先问旁边的人，这样更快。不管哪种情况，我都会先说一声麻烦您，人家更愿意帮忙。",
+      "sampleVi": "Nếu đồ trong phòng không sạch hoặc không có nước nóng, tôi chắc chắn gọi quầy lễ tân để họ đổi, vì tôi tự xử lý không được. Nhưng chuyện không tìm thấy thang máy hay không biết bữa sáng mấy giờ thì tôi hỏi người bên cạnh trước, nhanh hơn. Dù là cách nào, tôi cũng nói lời  phiền bạn trước, người ta sẽ sẵn lòng giúp hơn."
+    }
+  ],
+  "transferTask": "Tối nay, một người bạn ở cùng phòng khách sạn than ga giường chưa sạch và sáng mai phải ra ga tàu sớm: hãy gọi xuống quầy lễ tân bằng tiếng Trung để nhờ đổi đồ, xin hai chai nước, đặt báo thức và hỏi bữa sáng bắt đầu mấy giờ, ở tầng nào.",
+  "pronunciation": [
+    {
+      "text": "预订",
+      "pinyin": "yù dìng",
+      "hint": "Cả hai chữ đều thanh 4, rơi mạnh ở cả hai âm; đừng để âm sau thành thanh nhẹ."
+    },
+    {
+      "text": "入住",
+      "pinyin": "rù zhù",
+      "hint": "Hai thanh 4 liên tiếp: hai âm ngắn và dứt khoát, không kéo dài âm đầu."
+    },
+    {
+      "text": "电梯",
+      "pinyin": "diàn tī",
+      "hint": "Chữ đầu thanh 4 rơi mạnh, chữ sau thanh 1 cao và bằng; giữ đều độ cao ở âm thứ hai."
+    },
+    {
+      "text": "行李",
+      "pinyin": "xíng li",
+      "hint": "Chữ đầu thanh 2 (xíng) kéo lên, chữ sau theo bảng pinyin của bài đọc nhẹ (li); đừng đọc thành hai thanh 2."
+    }
+  ]
+}

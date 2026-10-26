@@ -1,0 +1,199 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-8-d2",
+  "level": "HSK3-4",
+  "title": "Ngân hàng, đổi tiền và trả bằng điện thoại",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-163",
+      "level": "HSK3-4",
+      "hanzi": "前面排队的人太多了。",
+      "pinyin": "qián miàn pái duì de rén tài duō le",
+      "meaningVi": "Người xếp phía trước đông quá.",
+      "focus": [
+        "排队 pái duì: 队 rơi thanh 4.",
+        "的人 de đọc nhẹ, nối hai cụm thành một hơi.",
+        "前面 qián miàn: hai âm đóng -n, đừng nghe thành 后面."
+      ]
+    },
+    {
+      "id": "dt-2-164",
+      "level": "HSK3-4",
+      "hanzi": "这里只能用现金吗？",
+      "pinyin": "zhè lí zhǐ néng yòng xiàn jīn ma",
+      "meaningVi": "Ở đây chỉ dùng tiền mặt được thôi à?",
+      "focus": [
+        "Biến điệu 3+3: lǐ zhǐ → lí zhǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "现金 xiàn jīn: 金 đóng -n, không phải -ng.",
+        "吗 ở cuối câu hỏi đọc nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        3,
+        3,
+        2,
+        4,
+        4,
+        1,
+        5
+      ],
+      "acceptTones": [
+        [
+          4,
+          2,
+          3,
+          2,
+          4,
+          4,
+          1,
+          5
+        ],
+        [
+          4,
+          3,
+          3,
+          2,
+          4,
+          4,
+          1,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: lǐ zhǐ → lí zhǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-3-2-4-4-1-5 lẫn 4-3-3-2-4-4-1-5."
+    },
+    {
+      "id": "dt-2-165",
+      "level": "HSK3-4",
+      "hanzi": "到账以后告诉我一声。",
+      "pinyin": "dào zhàng yǐ hòu gào sù wǒ yì shēng",
+      "meaningVi": "Tiền vào tài khoản rồi thì báo tôi một tiếng.",
+      "focus": [
+        "到账 dào zhàng: 账 đóng -ng.",
+        "一声: 一 đọc yì trước âm thanh 1.",
+        "以后 yǐ hòu: hai âm đi lên rồi rơi."
+      ]
+    },
+    {
+      "id": "dt-2-166",
+      "level": "HSK3-4",
+      "hanzi": "密码输错了，转账没成功。",
+      "pinyin": "mì mǎ shū cuò le zhuǎn zhàng méi chéng gōng",
+      "meaningVi": "Nhập sai mật mã nên chuyển khoản không thành công.",
+      "focus": [
+        "输错了: 了读 le, không dấu ở cuối vế.",
+        "成功 chéng gōng: 成 đóng -ng, 公 mở.",
+        "没 méi phủ định toàn bộ cụm 成功."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-36",
+      "level": "HSK3-4",
+      "text": "银行排队的人真多，我先取点现金。转账到账比较快。",
+      "pinyin": "yín háng pái duì de rén zhēn duō wǒ xiān qú diǎn xiàn jīn zhuǎn zhàng dào zhàng bǐ jiào kuài",
+      "meaningVi": "Người xếp hàng ở ngân hàng đông thật, tôi rút ít tiền mặt trước. Chuyển khoản thì tiền về nhanh hơn.",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "银行排队的人真多",
+          "pinyin": "yín háng pái duì de rén zhēn duō",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我先取点现金",
+          "pinyin": "wǒ xiān qú diǎn xiàn jīn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "转账到账比较快",
+          "pinyin": "zhuǎn zhàng dào zhàng bǐ jiào kuài",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: qǔ diǎn → qú diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "转账 rồi 到账: hai từ gần âm, khác ở 账/账 đầu tiên là danh từ việc, cái sau là tiền về.",
+        "比较 jiào đọc nặng, đừng thành 叫."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        2,
+        2,
+        4,
+        5,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3,
+        3,
+        4,
+        1,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          2,
+          4,
+          5,
+          2,
+          1,
+          1,
+          3,
+          1,
+          2,
+          3,
+          4,
+          1,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2,
+          4,
+          5,
+          2,
+          1,
+          1,
+          3,
+          1,
+          3,
+          3,
+          4,
+          1,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǔ diǎn → qú diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-2-4-5-2-1-1-3-1-2-3-4-1-3-4-4-4-3-4-4 lẫn 2-2-2-4-5-2-1-1-3-1-3-3-4-1-3-4-4-4-3-4-4."
+    }
+  ]
+}

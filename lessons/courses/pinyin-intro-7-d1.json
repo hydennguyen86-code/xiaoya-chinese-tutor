@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 7,
+  "lessonTitle": "Vận mẫu mũi: an en in ang eng ong và er",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "看",
+      "meaning": "nhìn; xem",
+      "example": "我看山上的人。",
+      "exampleVi": "Tôi nhìn người trên núi.",
+      "pinyin": "kàn",
+      "examplePinyin": "wǒ kàn shān shàng de rén 。"
+    },
+    {
+      "word": "人",
+      "meaning": "người",
+      "example": "山上有三个人。",
+      "exampleVi": "Trên núi có ba người.",
+      "pinyin": "rén",
+      "examplePinyin": "shān shàng yǒu sān gè rén 。"
+    },
+    {
+      "word": "三",
+      "meaning": "ba",
+      "example": "三个儿子都上山。",
+      "exampleVi": "Cả ba người con trai đều lên núi.",
+      "pinyin": "sān",
+      "examplePinyin": "sān gè ér zi dōu shàng shān 。"
+    },
+    {
+      "word": "上",
+      "meaning": "trên",
+      "example": "我们全家上山。",
+      "exampleVi": "Cả nhà tôi lên núi.",
+      "pinyin": "shàng",
+      "examplePinyin": "wǒ men quán jiā shàng shān 。"
+    },
+    {
+      "word": "生",
+      "meaning": "sống; sinh",
+      "example": "他生在山上。",
+      "exampleVi": "Anh ấy sinh ra trên núi.",
+      "pinyin": "shēng",
+      "examplePinyin": "tā shēng zài shān shàng 。"
+    },
+    {
+      "word": "儿子",
+      "meaning": "con trai",
+      "example": "他有三个儿子。",
+      "exampleVi": "Anh ấy có ba người con trai.",
+      "pinyin": "ér zi",
+      "examplePinyin": "tā yǒu sān gè ér zi 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我看……",
+      "explanation": "Kể lại điều mình đang nhìn thấy: 我看 rồi đến cảnh hoặc người; 看 là vần an, kết thúc bằng đầu lưỡi chạm lợi.",
+      "example": "我看山，也看人。",
+      "exampleVi": "Tôi nhìn núi, cũng nhìn người.",
+      "examplePinyin": "wǒ kàn shān ， yě kàn rén 。"
+    },
+    {
+      "pattern": "他三……",
+      "explanation": "Nói số lượng trong khẩu ngữ nhanh: 他 rồi đến thẳng số và lượng từ; 三 mang vần an, đừng lẫn với 山.",
+      "example": "他三个儿子都在山下。",
+      "exampleVi": "Ba người con trai của anh ấy đều ở dưới chân núi.",
+      "examplePinyin": "tā sān gè ér zi dōu zài shān xià 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi chiều ở chân núi: hai người đứng nhìn lên triền núi, đếm người và đoán xem ai vừa lên, trời nhiều gió nên muốn xuống núi trước khi lạnh.",
+    "avatarRole": "Người cùng đi đường",
+    "learnerRole": "Người chỉ và đếm người trên núi",
+    "goals": [
+      "Kể người mình nhìn thấy bằng mẫu wǒ kàn ……",
+      "Nói số con của ai đó bằng mẫu tā sān ……",
+      "Phân biệt cuối -n và -ng khi nói chậm"
+    ],
+    "opening": "你看，山上有谁？是他三个儿子吗？",
+    "openingVi": "Bạn nhìn kìa, trên núi là ai? Có phải ba người con trai của anh ấy không?"
+  },
+  "freeTalk": {
+    "question": "你看山上有谁？他们为什么快下山？",
+    "questionVi": "Bạn thấy ai trên núi? Họ vì sao sắp xuống núi?"
+  },
+  "learningNotes": [
+    "Vần -n như an, en, in: đầu lưỡi chạm lợi trên rồi chặn hơi tại đó, miệng không rung thêm.",
+    "Vần -ng như ang, eng, ong: gốc lưỡi nâng lên chạm vòm mềm, hơi ra qua mũi, độ mở lớn và dài hơn -n; riêng ong phải bo tròn môi.",
+    "er là một âm tiết cuộn lưỡi: lưỡi cuộn nhẹ ra sau, môi trung tính; từ con trai gồm hai âm tiết, âm sau đọc nhẹ.",
+    "CẢNH BÁO cho người Việt: 人 rất dễ đọc thành 'dần' và 生 thành 'xinh'; 生 phải cong lưỡi và giữ -ng, 三 phải mở miệng rộng hơn 'tam'.",
+    "上 và 山 cùng âm đầu cong lưỡi, chỉ khác vận mẫu -ng so với -n; giữ thanh 4 của 上 dứt khoát."
+  ],
+  "prerequisites": [
+    6
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Vận mẫu mũi: an en in ang eng ong và er",
+    "playLimit": 1,
+    "transcript": "甲：你看，山上有三个人。乙：是谁？甲：那是王老师，他生在山上。乙：他两个儿子也上山了？甲：对，今天山上风大，很冷。咱们快下山吧，别让爸爸等。乙：好，回家吃饭。",
+    "translation": "A chỉ trên núi có ba người. B hỏi là ai. A nói đó là thầy Vương, người sinh ra trên núi, và hai con trai của thầy cũng lên núi. A bảo hôm nay trên núi gió to, rất lạnh, mọi người xuống nhanh để bố còn không phải chờ. B đồng ý về nhà ăn cơm.",
+    "questions": [
+      {
+        "prompt": "Trên núi lúc đó có mấy người?",
+        "options": [
+          "Hai người",
+          "Ba người",
+          "Bốn người"
+        ],
+        "answer": 1,
+        "explanation": "A mở đầu bằng 山上有三个人。"
+      },
+      {
+        "prompt": "Người sinh ra trên núi là ai?",
+        "options": [
+          "Người bán vé",
+          "Một học sinh",
+          "Thầy Vương"
+        ],
+        "answer": 2,
+        "explanation": "A nói 那是王老师，他生在山上。"
+      },
+      {
+        "prompt": "Vì sao hai người muốn xuống núi ngay?",
+        "options": [
+          "Trên núi gió to và lạnh",
+          "Trời sắp mưa",
+          "Bố đã đợi ở cổng trường"
+        ],
+        "answer": 0,
+        "explanation": "A nói 今天山上风大，很冷 rồi rủ xuống núi."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ kàn ， shān shàng yǒu sān gè rén 。 yǐ ： shì shuí ？ jiǎ ： nà shì wáng lǎo shī ， tā shēng zài shān shàng 。 yǐ ： tā liǎng gè ér zi yě shàng shān le ？ jiǎ ： duì ， jīn tiān shān shàng fēng dà ， hěn lěng 。 zán men kuài xià shān ba ， bié ràng bà ba děng 。 yǐ ： hǎo ， huí jiā chī fàn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại mười tiếng mang vần mũi, chia làm ba nhóm.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Bốn tiếng đầu đóng hơi bằng đầu lưỡi, bốn tiếng sau bằng gốc lưỡi, tiếng cuối cùng là -ng bo tròn môi.",
+      "checklist": [
+        "Không nuốt âm cuối mũi",
+        "Thấy khác nhau rõ giữa -n và -ng",
+        "Giữ cao độ đúng trong từng tiếng"
+      ],
+      "audioText": "看，三，人，门。上，生，冷，天。朋，风。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu kể và nói số lượng.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 我看…… và 他三…… của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "三 mở khẩu hình -an, không lẫn với 山",
+        "儿子 đọc đúng: âm đầu cuộn lưỡi, âm sau nhẹ"
+      ],
+      "audioText": "我看山上有三个人。他三个儿子都在山下。"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "山上的人生在三月。他三个儿子都在山下。今天风大，山上很冷，咱们快回家吃饭。",
+      "reference": "Đoạn trộn cả sáu vần mũi: so sánh 看, 三, 人 với 上, 生, 风 khi đọc chậm.",
+      "checklist": [
+        "Đọc đủ ba câu",
+        "Không lẫn shān với shàng",
+        "Giữ ong tròn môi ở 风"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你看山上有谁？他们为什么快下山？",
+      "promptVi": "Bạn thấy ai trên núi? Họ vì sao sắp xuống núi?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: nói bạn thấy ai hoặc bao nhiêu người và lý do xuống núi; không có đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đủ cả hai câu hỏi",
+        "Dùng được mẫu wǒ kàn ……",
+        "Người nghe phân biệt được -n và -ng của bạn"
+      ],
+      "sampleZh": "我看山上有三个人。山上风大，很冷，所以他们快下山。",
+      "sampleVi": "Tôi thấy trên núi có ba người. Trên núi gió to, rất lạnh, nên họ xuống núi nhanh."
+    }
+  ],
+  "transferTask": "Nhờ một người thật đọc chậm sáu tiếng kàn, rén, sān, shàng, shēng, ér rồi cặp shān và sān; bạn nhắm mắt đoán họ chặn hơi ở đầu lưỡi hay ở gốc lưỡi, sau đó mở mắt đối chiếu.",
+  "pronunciation": [
+    {
+      "text": "看，上",
+      "pinyin": "kàn ， shàng",
+      "hint": "Cùng thanh 4, chỉ khác âm cuối: tiếng đầu chạm lợi bằng đầu lưỡi, tiếng sau nâng gốc lưỡi và mở miệng dài hơn."
+    },
+    {
+      "text": "人，生",
+      "pinyin": "rén ， shēng",
+      "hint": "Tiếng đầu là -en ngắn, tiếng sau cong lưỡi và mang -ng vang; đừng đọc tiếng thứ hai như 'xinh'."
+    },
+    {
+      "text": "门，风",
+      "pinyin": "mén ， fēng",
+      "hint": "Cặp kiểm tra -n so với -ng: môi ở cả hai đều gần như mở, điểm khác nằm ở chỗ lưỡi chặn hơi sớm hay muộn."
+    },
+    {
+      "text": "儿子",
+      "pinyin": "ér zi",
+      "hint": "Âm đầu cuộn lưỡi trong một hơi, không tách thành e rồi r; âm thứ hai ngắn, thấp, không dấu."
+    },
+    {
+      "text": "三个儿子",
+      "pinyin": "sān gè ér zi",
+      "hint": "Cụm đếm ba người con trai: tiếng mở đầu cao phẳng với -an, tiếng cuộn lưỡi thứ ba nhô nhẹ, hai tiếng cuối rơi nhanh."
+    }
+  ]
+}

@@ -7,14 +7,20 @@ import { bundledSyllabus, readCourseLesson } from './courseContent.mjs';
 import { validateSyllabus, loadSyllabus } from './syllabus.mjs';
 import { normalizeLesson, getLessonContent } from './lessonContent.mjs';
 
-test('48 fixed sessions include aligned vocabulary, goals, listening and speaking', () => {
+// Sessions in the standalone courses: pinyin intro (10 x 1) + HSK1, HSK3, HSK5 (12 x 2 each).
+test('standalone courses carry aligned vocabulary, goals, listening and speaking', () => {
   const syllabus = validateSyllabus(bundledSyllabus());
-  assert.equal(syllabus.volumes.filter((v) => !v.trackId).length, 2);
+  const volumes = syllabus.volumes.filter((v) => !v.trackId);
+  assert.deepEqual(
+    volumes.map((v) => v.id),
+    ['pinyin-intro', 'hsk1-practical', 'hsk3-practical', 'hsk5-practical'],
+  );
   let sessions = 0;
-  for (const vol of syllabus.volumes.filter((v) => !v.trackId)) {
-    assert.equal(vol.lessons.length, 12);
-    for (const lesson of vol.lessons)
-      for (const day of [1, 2]) {
+  for (const vol of volumes) {
+    assert.equal(vol.lessons.length, vol.id === 'pinyin-intro' ? 10 : 12);
+    for (const lesson of vol.lessons) {
+      const days = Array.from({ length: lesson.days }, (_, i) => i + 1);
+      for (const day of days) {
         const raw = readCourseLesson(vol.id, lesson.no, day);
         assert.deepEqual(normalizeLesson(raw, lesson, { day }).problems, [], `${vol.id}/${lesson.no}/${day}`);
         assert.equal(raw.reviewed, false);
@@ -28,12 +34,15 @@ test('48 fixed sessions include aligned vocabulary, goals, listening and speakin
             assert.equal(new Set(q.options).size, q.options.length);
           }
         }
-        const other = readCourseLesson(vol.id, lesson.no, day === 1 ? 2 : 1);
-        assert.notEqual(raw.listening.transcript, other.listening.transcript);
+        if (days.length > 1) {
+          const other = readCourseLesson(vol.id, lesson.no, day === 1 ? 2 : 1);
+          assert.notEqual(raw.listening.transcript, other.listening.transcript);
+        }
         sessions++;
       }
+    }
   }
-  assert.equal(sessions, 48);
+  assert.equal(sessions, 82);
 });
 test('packaged syllabus is default and a fixed session loads without any model', async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-course-'));
@@ -66,7 +75,8 @@ test('course prerequisite graph is ordered and answer positions are not a single
     for (const lesson of vol.lessons) {
       const raw = readCourseLesson(vol.id, lesson.no, 1);
       for (const prior of raw.prerequisites) assert.ok(prior >= 1 && prior < lesson.no);
-      for (const day of [1, 2]) for (const q of readCourseLesson(vol.id, lesson.no, day).listening.questions) positions[q.answer]++;
+      for (let day = 1; day <= lesson.days; day++)
+        for (const q of readCourseLesson(vol.id, lesson.no, day).listening.questions) positions[q.answer]++;
     }
     assert.ok(Math.max(...positions) - Math.min(...positions) <= 2, vol.id);
   }

@@ -1,0 +1,213 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-8-d1",
+  "level": "HSK3-4",
+  "title": "Ngân hàng, đổi tiền và trả bằng điện thoại",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-159",
+      "level": "HSK3-4",
+      "hanzi": "我去银行换钱，下午就回来。",
+      "pinyin": "wǒ qù yín háng huàn qián xià wǔ jiù huí lái",
+      "meaningVi": "Tôi đến ngân hàng đổi tiền, chiều sẽ về ngay.",
+      "focus": [
+        "银行 yín háng: 行 đọc háng ở đây, không phải xíng.",
+        "换钱 huàn qián: hai âm đều đóng -n.",
+        "下午 xià wǔ: 午 thanh 3, phân biệt với 上午."
+      ]
+    },
+    {
+      "id": "dt-2-160",
+      "level": "HSK3-4",
+      "hanzi": "转账要输密码，别输错。",
+      "pinyin": "zhuǎn zhàng yào shū mì mǎ bié shū cuò",
+      "meaningVi": "Chuyển khoản phải nhập mật mã, đừng nhập sai.",
+      "focus": [
+        "转账 zhuǎn zhàng: hai âm cuộn lưỡi, 账 đóng -ng.",
+        "密码 mì mǎ: 马 thanh 3 đi lên rồi rơi.",
+        "错 cuò bật hơi, khác 坐 zuò."
+      ]
+    },
+    {
+      "id": "dt-2-161",
+      "level": "HSK3-4",
+      "hanzi": "你扫码还是用收款码？",
+      "pinyin": "ní sáo mǎ hái shì yòng shōu kuán mǎ",
+      "meaningVi": "Bạn quét mã hay dùng mã thu tiền?",
+      "focus": [
+        "Biến điệu 3+3: nǐ sǎo → ní sáo; sǎo mǎ → sáo mǎ; kuǎn mǎ → kuán mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "还是 hai âm tiết, dấu hiệu câu hỏi lựa chọn.",
+        "收款 shōu kuǎn: 收 mở, 款 đóng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        2,
+        4,
+        4,
+        1,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          3,
+          2,
+          4,
+          4,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          3,
+          2,
+          4,
+          4,
+          1,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ sǎo → ní sáo; sǎo mǎ → sáo mǎ; kuǎn mǎ → kuán mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-3-2-4-4-1-2-3 lẫn 3-3-3-2-4-4-1-3-3."
+    },
+    {
+      "id": "dt-2-162",
+      "level": "HSK3-4",
+      "hanzi": "我在银行办转账，你呢？",
+      "pinyin": "wǒ zài yín háng bàn zhuǎn zhàng nǐ ne",
+      "meaningVi": "Tôi đang làm chuyển khoản ở ngân hàng, còn bạn?",
+      "focus": [
+        "呢 cuối câu hỏi đọc nhẹ.",
+        "办 bàn và 半 cùng âm, ở đây nghĩa là \"làm thủ tục\".",
+        "转账 zhàng rơi mạnh, đóng -ng."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-35",
+      "level": "HSK3-4",
+      "text": "我想去银行换钱，顺便办转账。请扫码输密码，我马上收款。",
+      "pinyin": "wó xiǎng qù yín háng huàn qián shùn biàn bàn zhuǎn zhàng qíng sáo mǎ shū mì mǎ wó mǎ shàng shōu kuǎn",
+      "meaningVi": "Tôi muốn đến ngân hàng đổi tiền, tiện thể làm chuyển khoản. Xin quét mã nhập mật mã, tôi nhận tiền ngay.",
+      "syllables": 23,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我想去银行换钱",
+          "pinyin": "wó xiǎng qù yín háng huàn qián",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "顺便办转账",
+          "pinyin": "shùn biàn bàn zhuǎn zhàng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请扫码输密码",
+          "pinyin": "qíng sáo mǎ shū mì mǎ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我马上收款",
+          "pinyin": "wó mǎ shàng shōu kuǎn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng; qǐng sǎo → qíng sáo; sǎo mǎ → sáo mǎ; wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "顺便 biàn đọc nặng, đừng lẫn 便利.",
+        "Ba hơi rõ: đổi tiền / chuyển khoản / nhận tiền."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        2,
+        2,
+        4,
+        2,
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        1,
+        3
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          2,
+          2,
+          4,
+          2,
+          4,
+          4,
+          4,
+          3,
+          4,
+          2,
+          2,
+          3,
+          1,
+          4,
+          3,
+          2,
+          3,
+          4,
+          1,
+          3
+        ],
+        [
+          3,
+          3,
+          4,
+          2,
+          2,
+          4,
+          2,
+          4,
+          4,
+          4,
+          3,
+          4,
+          3,
+          3,
+          3,
+          1,
+          4,
+          3,
+          3,
+          3,
+          4,
+          1,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng; qǐng sǎo → qíng sáo; sǎo mǎ → sáo mǎ; wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-2-2-4-2-4-4-4-3-4-2-2-3-1-4-3-2-3-4-1-3 lẫn 3-3-4-2-2-4-2-4-4-4-3-4-3-3-3-1-4-3-3-3-4-1-3."
+    }
+  ]
+}

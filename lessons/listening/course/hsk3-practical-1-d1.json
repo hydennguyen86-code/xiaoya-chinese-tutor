@@ -1,0 +1,87 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-1-d1",
+  "level": "HSK3-4",
+  "title": "Hỏi đường và chỉ đường trong thành phố",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-101",
+      "level": "HSK3-4",
+      "hanzi": "请问，去地铁站怎么走？",
+      "pinyin": "qǐng wèn qù dì tiě zhàn zěn me zǒu",
+      "meaningVi": "Xin hỏi, đi tới ga tàu điện ngầm thì đi thế nào?",
+      "focus": [
+        "请问 qǐng wèn: mở đầu lịch sự khi hỏi người lạ.",
+        "怎么走 zěn me: 么 đọc nhẹ, không có dấu thanh.",
+        "Phân biệt 站 zhàn cuộn lưỡi với 走 zǒu phẳng lưỡi."
+      ]
+    },
+    {
+      "id": "dt-2-102",
+      "level": "HSK3-4",
+      "hanzi": "你沿着这条路往前走。",
+      "pinyin": "nǐ yán zhe zhè tiáo lù wǎng qián zǒu",
+      "meaningVi": "Bạn cứ dọc theo con đường này đi về phía trước.",
+      "focus": [
+        "沿着 yán zhe: 着 đọc nhẹ zhe, rất ngắn.",
+        "这条路 zhè tiáo lù: 条 thanh 2 ở giữa câu.",
+        "往前走: 前 thanh 2 đi lên, 走 thanh 3 hạ thấp rồi lên nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-103",
+      "level": "HSK3-4",
+      "hanzi": "超市就在对面，附近也有车站。",
+      "pinyin": "chāo shì jiù zài duì miàn fù jìn yé yǒu chē zhàn",
+      "meaningVi": "Siêu thị ngay bên kia đường, gần đây cũng có bến xe.",
+      "focus": [
+        "Biến điệu 3+3: yě yǒu → yé yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "对面 duì miàn: hai thanh 4 liên tiếp, rơi mạnh.",
+        "车站 chē zhàn: 站 thanh 4 dứt khoát, đứng cuối câu."
+      ],
+      "sandhi": true,
+      "baseTones": [1, 4, 4, 4, 4, 4, 4, 4, 3, 3, 1, 4],
+      "acceptTones": [
+        [1, 4, 4, 4, 4, 4, 4, 4, 2, 3, 1, 4],
+        [1, 4, 4, 4, 4, 4, 4, 4, 3, 3, 1, 4]
+      ],
+      "hint": "Biến điệu 3+3: yě yǒu → yé yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-4-4-4-4-4-4-2-3-1-4 lẫn 1-4-4-4-4-4-4-4-3-3-1-4."
+    },
+    {
+      "id": "dt-2-104",
+      "level": "HSK3-4",
+      "hanzi": "下一站换车，往这边走。",
+      "pinyin": "xià yí zhàn huàn chē wǎng zhè biān zǒu",
+      "meaningVi": "Đến bến kế tiếp thì đổi xe, đi về phía này.",
+      "focus": [
+        "下一站 xià yí zhàn: 一 đọc yí vì đứng trước thanh 4.",
+        "换车 huàn chē: 换 hạ mạnh, 车 thanh 1 cuộn lưỡi.",
+        "往这边走 wǎng zhè biān zǒu: 往 và 走 hai thanh 3 đứng xa nhau."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-21",
+      "level": "HSK3-4",
+      "text": "去地铁站怎么走？往前走，到对面那站换车。",
+      "pinyin": "qù dì tiě zhàn zěn me zǒu wǎng qián zǒu dào duì miàn nà zhàn huàn chē",
+      "meaningVi": "Đi ga tàu điện thế nào? Cứ đi về phía trước, tới bến bên kia đường thì đổi xe.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        { "hanzi": "去地铁站怎么走", "pinyin": "qù dì tiě zhàn zěn me zǒu", "pause": "hard" },
+        { "hanzi": "往前走", "pinyin": "wǎng qián zǒu", "pause": "soft" },
+        { "hanzi": "到对面那站换车", "pinyin": "dào duì miàn nà zhàn huàn chē", "pause": "end" }
+      ],
+      "focus": [
+        "Ngắt hơi rõ sau dấu hỏi rồi nối hai bước chỉ đường.",
+        "那站 nà zhàn: 那 thanh 4, 站 thanh 4 cuộn lưỡi.",
+        "换车 huàn chē: giữ 车 thanh 1 cao bằng đến hết cụm."
+      ]
+    }
+  ]
+}

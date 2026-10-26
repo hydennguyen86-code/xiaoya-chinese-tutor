@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 2,
+  "lessonTitle": "Gọi món, hỏi vị và thanh toán ở quán",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "点",
+      "meaning": "gọi; chọn",
+      "example": "我们人不多，先点两个菜。",
+      "exampleVi": "Người chúng tôi không đông, gọi hai món trước đã.",
+      "pinyin": "diǎn",
+      "examplePinyin": "wǒ men rén bù duō ， xiān diǎn liǎng gè cài 。"
+    },
+    {
+      "word": "菜",
+      "meaning": "món; rau",
+      "example": "这家店的菜不贵，也很好吃。",
+      "exampleVi": "Món ở quán này không đắt, cũng rất ngon.",
+      "pinyin": "cài",
+      "examplePinyin": "zhè jiā diàn de cài bú guì ， yě hěn hǎo chī 。"
+    },
+    {
+      "word": "辣",
+      "meaning": "cay",
+      "example": "我不会吃辣，这个菜辣不辣？",
+      "exampleVi": "Tôi không ăn cay được, món này có cay không?",
+      "pinyin": "là",
+      "examplePinyin": "wǒ bú huì chī là ， zhè ge cài là bu là ？"
+    },
+    {
+      "word": "杯",
+      "meaning": "cốc; tách",
+      "example": "请给我们一杯热水，谢谢。",
+      "exampleVi": "Xin cho chúng tôi một cốc nước nóng, cảm ơn.",
+      "pinyin": "bēi",
+      "examplePinyin": "qǐng gěi wǒ men yì bēi rè shuǐ ， xiè xie 。"
+    },
+    {
+      "word": "要",
+      "meaning": "muốn; cần",
+      "example": "我要一碗牛肉面，请少放辣椒。",
+      "exampleVi": "Tôi muốn một bát mì bò, xin cho ít ớt.",
+      "pinyin": "yào",
+      "examplePinyin": "wǒ yào yì wǎn niú ròu miàn ， qǐng shǎo fàng là jiāo 。"
+    },
+    {
+      "word": "贵",
+      "meaning": "đắt",
+      "example": "我第一次来，不知道这家店贵不贵。",
+      "exampleVi": "Tôi đến đây lần đầu, không biết quán này có đắt không.",
+      "pinyin": "guì",
+      "examplePinyin": "wǒ dì yī cì lái ， bù zhī dao zhè jiā diàn guì bu guì 。"
+    },
+    {
+      "word": "服务员",
+      "meaning": "nhân viên phục vụ",
+      "example": "服务员，我们要买单。",
+      "exampleVi": "Nhân viên ơi, chúng tôi muốn thanh toán.",
+      "pinyin": "fú wù yuán",
+      "examplePinyin": "fú wù yuán ， wǒ men yào mǎi dān 。"
+    },
+    {
+      "word": "菜单",
+      "meaning": "bảng gọi món; thực đơn",
+      "example": "能给我们一张菜单吗？",
+      "exampleVi": "Có thể cho chúng tôi một bảng gọi món không?",
+      "pinyin": "cài dān",
+      "examplePinyin": "néng gěi wǒ men yì zhāng cài dān ma ？"
+    },
+    {
+      "word": "打包",
+      "meaning": "gói lại, mang đồ ăn về",
+      "example": "这两个菜麻烦打包。",
+      "exampleVi": "Hai món này làm ơn gói giúp tôi.",
+      "pinyin": "dǎ bāo",
+      "examplePinyin": "zhè liǎng gè cài má fán dǎ bāo 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……",
+      "explanation": "Nói món mình muốn gọi; đặt lượng từ trước tên món, như 一碗面、一杯豆浆.",
+      "example": "我要一杯热豆浆，不要糖。",
+      "exampleVi": "Tôi muốn một cốc sữa đậu nành nóng, không đường.",
+      "examplePinyin": "wǒ yào yì bēi rè dòu jiāng ， bú yào táng 。"
+    },
+    {
+      "pattern": "有没有……？",
+      "explanation": "Hỏi quán có món hoặc yêu cầu nào đó không; người bán trả lời 有 hay 没有, không dùng 是.",
+      "example": "有没有不辣的菜？我们带着孩子。",
+      "exampleVi": "Có món nào không cay không? Chúng tôi có dẫn theo trẻ nhỏ.",
+      "examplePinyin": "yǒu méi yǒu bú là de cài ？ wǒ men dài zhe hái zi 。"
+    },
+    {
+      "pattern": "太……了",
+      "explanation": "Nhấn mạnh một tính chất quá mức: 太 + tính từ + 了; dùng khi phàn nàn hoặc khen.",
+      "example": "这碗面太辣了，请给我一杯水。",
+      "exampleVi": "Bát mì này cay quá, xin cho tôi một cốc nước.",
+      "examplePinyin": "zhè wǎn miàn tài là le ， qǐng gěi wǒ yì bēi shuǐ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: món đã lên bàn nhưng một bát quá cay và còn thừa một đĩa; bạn nhờ nhân viên đổi món, xin bảng gọi món để gọi thêm, rồi thanh toán và gói phần còn lại mang về.",
+    "avatarRole": "Nhân viên phục vụ tại bàn",
+    "learnerRole": "Khách phản hồi món ăn",
+    "goals": [
+      "Nói rõ bát nào cần đổi và đổi ra sao",
+      "Nhờ tính tiền và xin gói phần ăn còn lại",
+      "Xác nhận lại số tiền phải trả"
+    ],
+    "opening": "你们的菜都上齐了吗？还需要什么？",
+    "openingVi": "Món của mọi người lên đủ chưa? Còn cần gì nữa không ạ?"
+  },
+  "freeTalk": {
+    "question": "在饭店，菜上错了或者太辣，应该怎么跟服务员说？",
+    "questionVi": "Ở quán ăn, nếu món bị lên nhầm hoặc quá cay, nên nói với nhân viên thế nào?"
+  },
+  "learningNotes": [
+    "Gọi món: 我要 + lượng từ + tên món, ví dụ 一碗面、一杯豆浆; hai món thì nói 两个菜.",
+    "Hỏi vị bằng 有没有……？ — 有没有不辣的菜？; câu trả lời dùng 有 hoặc 没有, không dùng 是.",
+    "Phát âm: 辣 là phụ âm l- ghép vần a, thanh 4 hạ nhanh; khi nghe nhanh dễ lẫn với âm la thanh ngang, hãy để ý dấu hạ giọng.",
+    "Nghe mức độ đầu bếp nhắc lại: 少放 là cho ít, 多放 là cho nhiều; hai từ này quyết định món vừa hay nhạt."
+  ],
+  "prerequisites": [
+    1
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Gọi món, hỏi vị và thanh toán ở quán",
+    "playLimit": 1,
+    "transcript": "甲：服务员，这碗面太辣了，能不能换一碗不辣的？乙：我去问厨房。您还要别的吗？甲：请给我一张菜单，我想再看看。乙：这个青菜可以打包，明天热一下还能吃。甲：好，买单，一共多少钱？乙：四十八块。甲：我扫手机付，行吗？乙：可以，扫这儿。",
+    "translation": "Khách báo bát mì quá cay và xin đổi bát không cay; nhân viên xuống bếp hỏi. Khách xin bảng gọi món để xem thêm, được gợi ý gói đĩa rau mang về hôm sau hâm lại, rồi hỏi tổng cộng bao nhiêu. Khách trả bằng cách quét điện thoại và được đồng ý.",
+    "questions": [
+      {
+        "prompt": "Khách phàn nàn điều gì?",
+        "options": [
+          "Bát mì quá cay",
+          "Món lên quá chậm",
+          "Giá quá cao"
+        ],
+        "answer": 0,
+        "explanation": "Khách nói 这碗面太辣了."
+      },
+      {
+        "prompt": "Nhân viên gợi ý làm gì với đĩa rau?",
+        "options": [
+          "Bỏ đi",
+          "Gói mang về",
+          "Nấu lại"
+        ],
+        "answer": 1,
+        "explanation": "Câu gợi ý là 可以打包，明天热一下还能吃."
+      },
+      {
+        "prompt": "Khách thanh toán bằng cách nào?",
+        "options": [
+          "Bằng tiền mặt",
+          "Bằng thẻ ngân hàng",
+          "Bằng cách quét điện thoại"
+        ],
+        "answer": 2,
+        "explanation": "Khách hỏi 我扫手机付，行吗 và được trả lời 可以."
+      }
+    ],
+    "pinyin": "jiǎ ： fú wù yuán ， zhè wǎn miàn tài là le ， néng bu néng huàn yì wǎn bú là de ？ yǐ ： wǒ qù wèn chú fáng 。 nín hái yào bié de ma ？ jiǎ ： qǐng gěi wǒ yì zhāng cài dān ， wǒ xiǎng zài kàn kàn 。 yǐ ： zhè ge qīng cài kě yǐ dǎ bāo ， míng tiān rè yí xià hái néng chī 。 jiǎ ： hǎo ， mǎi dān ， yí gòng duō shǎo qián ？ yǐ ： sì shí bā kuài 。 jiǎ ： wǒ sǎo shǒu jī fù ， xíng ma ？ yǐ ： kě yǐ ， sǎo zhè ér 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu, giữ đúng giọng lịch sự khi nhờ đổi món.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "这碗面太辣了，能不能换一碗？麻烦帮我打包。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ nguyên từ nhờ đổi và từ gói mang về",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "这碗面太辣了，能不能换一碗？麻烦帮我打包。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách phản hồi gì, hai bên quyết định gì, trả tiền ra sao. Không tự thêm chi tiết.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách báo bát mì quá cay và xin đổi bát không cay; nhân viên xuống bếp hỏi. Khách xin bảng gọi món để xem thêm, được gợi ý gói đĩa rau mang về hôm sau hâm lại, rồi hỏi tổng cộng bao nhiêu. Khách trả bằng cách quét điện thoại và được đồng ý.",
+      "checklist": [
+        "Nói đủ ba ý: phản hồi, gói mang về, cách trả tiền",
+        "Người nghe hiểu được nội dung",
+        "Không bịa thêm món hoặc số tiền"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi rõ giữa các câu và nhấn mạnh từ cần nhờ vả.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "服务员，这碗面太辣了。请给我一张菜单，我再看看。这两个菜打包，明天还能吃。买单，一共多少钱？",
+      "reference": "Đọc mạch lạc, hạ giọng ở câu nhờ vả và lên giọng ở câu hỏi giá.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "在饭店，菜上错了或者太辣，应该怎么跟服务员说？",
+      "promptVi": "Ở quán ăn, nếu món bị lên nhầm hoặc quá cay, nên nói với nhân viên thế nào?",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Nêu cách nói rõ vấn đề mà vẫn lịch sự: gọi nhân viên, nói món nào sai, đề nghị đổi hoặc nhờ nấu lại, cảm ơn khi họ giúp.",
+      "checklist": [
+        "Nói đúng vấn đề và đúng người nghe",
+        "Đưa được một đề nghị cụ thể",
+        "Giọng lịch sự, người nghe hiểu được ý"
+      ],
+      "sampleZh": "我会先叫服务员，再说清楚哪儿不对。比如：这碗面太辣了，能不能换一碗不辣的？如果厨房正忙，我可以等，或者请他们少放辣椒。最后说一句谢谢，大家都好办。",
+      "sampleVi": "Tôi sẽ gọi nhân viên trước, rồi nói rõ chỗ nào chưa ổn. Ví dụ: bát mì này cay quá, có thể đổi bát không cay được không? Nếu bếp đang bận, tôi có thể đợi hoặc nhờ họ cho ít ớt. Cuối cùng nói một câu cảm ơn thì mọi người đều dễ xử lý."
+    }
+  ],
+  "transferTask": "Tối nay ở một quán khác: báo với nhân viên rằng món quá cay hoặc bị lên nhầm, xin đổi món, gọi thêm một đồ uống rồi hỏi hóa đơn và gói phần còn lại mang về.",
+  "pronunciation": [
+    {
+      "text": "辣",
+      "pinyin": "là",
+      "hint": "Phụ âm đầu l-, vần mở như 'a', thanh 4 hạ dứt khoát; đừng đọc thành âm thanh ngang."
+    },
+    {
+      "text": "菜",
+      "pinyin": "cài",
+      "hint": "Âm đầu cong lưỡi bật mạnh, vần gần 'ai', thanh 4; nghe hơi nặng hơn 'cải'."
+    },
+    {
+      "text": "杯",
+      "pinyin": "bēi",
+      "hint": "Phụ âm môi b- ghép vần 'ui', thanh 1 cao và bằng, môi tròn dần khi kết thúc."
+    },
+    {
+      "text": "豆浆",
+      "pinyin": "dòu jiāng",
+      "hint": "Chữ đầu thanh 4, chữ sau thanh 1; tách hai âm rõ ràng, không nối liền thành một âm tiết."
+    }
+  ]
+}

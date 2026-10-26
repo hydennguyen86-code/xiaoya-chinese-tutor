@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 3,
+  "lessonTitle": "Đi mua sắm: hỏi giá, thử đồ, trả giá",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "多少",
+      "meaning": "bao nhiêu",
+      "example": "这双鞋要多少钱，我还没问。",
+      "exampleVi": "Đôi giày này giá bao nhiêu thì tôi vẫn chưa hỏi.",
+      "pinyin": "duō shǎo",
+      "examplePinyin": "zhè shuāng xié yào duō shǎo qián ， wǒ hái méi wèn 。"
+    },
+    {
+      "word": "便宜",
+      "meaning": "rẻ",
+      "example": "这家店的衣服比商场便宜。",
+      "exampleVi": "Quần áo ở quán này rẻ hơn trong trung tâm thương mại.",
+      "pinyin": "pián yi",
+      "examplePinyin": "zhè jiā diàn de yī fu bǐ shāng chǎng pián yi 。"
+    },
+    {
+      "word": "试",
+      "meaning": "thử",
+      "example": "我想试一下这件外套。",
+      "exampleVi": "Tôi muốn thử chiếc áo khoác này một chút.",
+      "pinyin": "shì",
+      "examplePinyin": "wǒ xiǎng shì yí xià zhè jiàn wài tào 。"
+    },
+    {
+      "word": "号",
+      "meaning": "cỡ; số",
+      "example": "有没有大一号的？这件有点儿小。",
+      "exampleVi": "Có cỡ lớn hơn không? Cái này hơi nhỏ.",
+      "pinyin": "hào",
+      "examplePinyin": "yǒu méi yǒu dà yī hào de ？ zhè jiàn yǒu diǎn er xiǎo 。"
+    },
+    {
+      "word": "付款",
+      "meaning": "trả tiền",
+      "example": "我先去付款，你在这儿等我。",
+      "exampleVi": "Tôi đi trả tiền trước, bạn đợi ở đây.",
+      "pinyin": "fù kuǎn",
+      "examplePinyin": "wǒ xiān qù fù kuǎn ， nǐ zài zhè ér děng wǒ 。"
+    },
+    {
+      "word": "零钱",
+      "meaning": "tiền lẻ",
+      "example": "我没有带多少零钱。",
+      "exampleVi": "Tôi không mang theo bao nhiêu tiền lẻ.",
+      "pinyin": "líng qián",
+      "examplePinyin": "wǒ méi yǒu dài duō shǎo líng qián 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "多少钱？",
+      "explanation": "Hỏi giá: 多少 đứng ngay trước 钱; muốn hỏi tổng thì thêm 一共 ở đầu.",
+      "example": "这条裙子多少钱？我想试一下。",
+      "exampleVi": "Chiếc váy này bao nhiêu tiền? Tôi muốn thử một chút.",
+      "examplePinyin": "zhè tiáo qún zi duō shǎo qián ？ wǒ xiǎng shì yí xià 。"
+    },
+    {
+      "pattern": "能便宜一点吗？",
+      "explanation": "Nhờ người bán giảm một chút; nói nguyên cụm, thêm lý do như mua nhiều sau dấu phẩy.",
+      "example": "能便宜一点吗？我买两件。",
+      "exampleVi": "Bớt cho tôi một chút được không? Tôi mua hai chiếc.",
+      "examplePinyin": "néng pián yi yì diǎn ma ？ wǒ mǎi liǎng jiàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Cuối tuần ở một cửa hàng quần áo nhỏ, bạn thích một chiếc váy nhưng chưa biết giá và chưa chắc vừa cỡ; buổi 2 chuyển sang quầy tính tiền, mặc cả và chọn cách trả.",
+    "avatarRole": "Người bán hàng",
+    "learnerRole": "Người mua áo quần",
+    "goals": [
+      "Hỏi giá món đồ mình thích",
+      "Xin thử và hỏi cỡ lớn hơn",
+      "Hỏi xem có bớt được không"
+    ],
+    "opening": "你好，你想买什么样的衣服？",
+    "openingVi": "Chào bạn, bạn muốn mua loại quần áo nào?"
+  },
+  "freeTalk": {
+    "question": "你买衣服的时候先看价钱还是先看大小？为什么？",
+    "questionVi": "Khi mua quần áo, bạn xem giá trước hay xem cỡ trước? Vì sao?"
+  },
+  "learningNotes": [
+    "Hỏi giá: 多少钱 đứng cuối câu, muốn hỏi tổng thì nói 一共多少钱？; trả lời thường kèm 块.",
+    "Nói cỡ bằng 号: 大一号 là lớn hơn một cỡ, 小一号 là nhỏ hơn một cỡ; xin thử thì nói 我想试一下.",
+    "Phát âm: 便宜 đọc pián yi, âm đầu là p bật hơi chứ không phải b, âm thứ hai nhẹ; người Việt hay đọc thành âm nặng như 'tiện nghị'.",
+    "零钱 là tiền lẻ còn 付款 là trả tiền; khi nhờ thối tiền nói 找我零钱, đừng nhầm với 换钱 (đổi tiền)."
+  ],
+  "prerequisites": [
+    2
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Đi mua sắm: hỏi giá, thử đồ, trả giá",
+    "playLimit": 1,
+    "transcript": "甲：这条裙子多少钱？乙：一百二十块。甲：能便宜一点吗？我买两件。乙：两件算你一百一。甲：有没有大一号的？我想试一下。乙：有，你拿这件去试。甲：这件挺大，小一号的有吗？乙：也有。甲：那我付款。我没有零钱，给你一百五十块。乙：找你四十。",
+    "translation": "Khách hỏi giá chiếc váy và được báo một trăm hai mươi tệ. Khi xin bớt, khách mua hai chiếc được tính một trăm mười một. Khách hỏi cỡ lớn hơn, thử thấy rộng nên hỏi lại cỡ nhỏ hơn. Cuối cùng khách trả tiền: không có tiền lẻ nên đưa một trăm năm mươi và được thối lại bốn mươi.",
+    "questions": [
+      {
+        "prompt": "Giá của hai chiếc váy là bao nhiêu?",
+        "options": [
+          "Một trăm hai mươi tệ",
+          "Một trăm mười một tệ",
+          "Một trăm năm mươi tệ"
+        ],
+        "answer": 1,
+        "explanation": "Người bán nói 两件算你一百一."
+      },
+      {
+        "prompt": "Khách thử cỡ nào?",
+        "options": [
+          "Cỡ lớn hơn rồi hỏi cỡ nhỏ hơn",
+          "Chỉ thử cỡ lớn nhất",
+          "Chỉ thử cỡ nhỏ nhất"
+        ],
+        "answer": 0,
+        "explanation": "Khách hỏi 有没有大一号的 rồi lại hỏi 小一号的有吗."
+      },
+      {
+        "prompt": "Người bán thối lại bao nhiêu?",
+        "options": [
+          "Một trăm mười tệ",
+          "Bảy mươi tệ",
+          "Bốn mươi tệ"
+        ],
+        "answer": 2,
+        "explanation": "Câu cuối là 找你四十."
+      }
+    ],
+    "pinyin": "jiǎ ： zhè tiáo qún zi duō shǎo qián ？ yǐ ： yì bǎi èr shí kuài 。 jiǎ ： néng pián yi yì diǎn ma ？ wǒ mǎi liǎng jiàn 。 yǐ ： liǎng jiàn suàn nǐ yì bǎi yī 。 jiǎ ： yǒu méi yǒu dà yī hào de ？ wǒ xiǎng shì yí xià 。 yǐ ： yǒu ， nǐ ná zhè jiàn qù shì 。 jiǎ ： zhè jiàn tǐng dà ， xiǎo yī hào de yǒu ma ？ yǐ ： yě yǒu 。 jiǎ ： nà wǒ fù kuǎn 。 wǒ méi yǒu líng qián ， gěi nǐ yì bǎi wǔ shí kuài 。 yǐ ： zhǎo nǐ sì shí 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu, giữ đúng giọng hỏi lịch sự.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "这条裙子多少钱？有没有大一号的？",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu hỏi",
+        "Lên giọng ở cuối mỗi câu",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "这条裙子多少钱？有没有大一号的？"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách hỏi gì, được trả lời giá nào, cuối cùng trả tiền ra sao.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách hỏi giá chiếc váy và được báo một trăm hai mươi tệ. Khi xin bớt, khách mua hai chiếc được tính một trăm mười một. Khách hỏi cỡ lớn hơn, thử thấy rộng nên hỏi lại cỡ nhỏ hơn. Cuối cùng khách trả tiền: không có tiền lẻ nên đưa một trăm năm mươi và được thối lại bốn mươi.",
+      "checklist": [
+        "Nói đủ: giá, cỡ, cách trả tiền",
+        "Người nghe hiểu được nội dung",
+        "Không tự thêm món đồ khác"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt theo dấu phẩy và hạ giọng ở câu trả lời giá.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "这条裙子多少钱？能便宜一点吗？我买两件。有没有大一号的？我想试一下这件。我去付款，我没有零钱。",
+      "reference": "Tách rõ câu hỏi và câu nhờ vả; nhấn mạnh số lượng và từ chỉ cỡ.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你买衣服的时候先看价钱还是先看大小？为什么？",
+      "promptVi": "Khi mua quần áo, bạn xem giá trước hay xem cỡ trước? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Chọn một thứ tự, nói lý do ngắn và thêm một ví dụ thật của bạn.",
+      "checklist": [
+        "Trả lời rõ chọn cái nào trước",
+        "Có lý do hoặc ví dụ",
+        "Người nghe hiểu được thói quen mua sắm của bạn"
+      ],
+      "sampleZh": "我先看大小，再问价钱。如果穿着不合适，再便宜我也不会买。所以我一般先试一下，然后问能不能便宜一点。",
+      "sampleVi": "Tôi xem cỡ trước rồi mới hỏi giá. Nếu mặc không vừa thì rẻ mấy tôi cũng không mua. Vì vậy tôi thường thử trước, sau đó hỏi có thể bớt được không."
+    }
+  ],
+  "transferTask": "Cuối tuần này ở một cửa hàng gần nhà: hỏi giá hai món đồ, xin thử cỡ lớn hơn, nhờ bớt giá rồi trả tiền bằng số tiền bạn đang có.",
+  "pronunciation": [
+    {
+      "text": "便宜",
+      "pinyin": "pián yi",
+      "hint": "Âm đầu là p bật hơi, không phải b; âm thứ hai đọc nhẹ, không nhấn mạnh."
+    },
+    {
+      "text": "试",
+      "pinyin": "shì",
+      "hint": "Âm đầu cong lưỡi, vần gần 'ư'; thanh 4 hạ dứt khoát, ngắn gọn."
+    },
+    {
+      "text": "号",
+      "pinyin": "hào",
+      "hint": "Vần 'ao' mở rộng, thanh 4; đọc rõ khi nói cỡ để người bán không nghe nhầm."
+    },
+    {
+      "text": "付款",
+      "pinyin": "fù kuǎn",
+      "hint": "Chữ đầu thanh 4, chữ sau thanh 3 hạ thấp rồi lên nhẹ; giữ hai âm tách bạch."
+    }
+  ]
+}

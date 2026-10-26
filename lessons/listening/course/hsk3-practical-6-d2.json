@@ -1,0 +1,97 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-6-d2",
+  "level": "HSK3-4",
+  "title": "Thời tiết, mùa và mặc gì",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-145",
+      "level": "HSK3-4",
+      "hanzi": "记得带外套，今天有太阳。",
+      "pinyin": "jì de dài wài tào jīn tiān yǒu tài yáng",
+      "meaningVi": "Nhớ mang áo khoác, hôm nay có nắng.",
+      "focus": [
+        "记得 jì de: 得 đọc nhẹ de.",
+        "外套 wài tào: 套 thanh 4 rơi mạnh.",
+        "太阳 tài yáng: 阳 đọc yáng, không phải iáng."
+      ]
+    },
+    {
+      "id": "dt-2-146",
+      "level": "HSK3-4",
+      "hanzi": "明天是晴天，天气不冷。",
+      "pinyin": "míng tiān shì qíng tiān tiān qì bù lěng",
+      "meaningVi": "Ngày mai trời quang, thời tiết không lạnh.",
+      "focus": [
+        "晴天 qíng tiān: 晴 đóng -ng, thanh 2 đi lên.",
+        "不冷 bù lěng: 不 giữ bù vì 冷 là thanh 3.",
+        "天气 tiān qì: hai âm nhanh gọn, 气 thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-147",
+      "level": "HSK3-4",
+      "hanzi": "好像要下雨，快穿外套。",
+      "pinyin": "hǎo xiàng yào xià yǔ kuài chuān wài tào",
+      "meaningVi": "Có vẻ sắp mưa, mặc áo khoác nhanh lên.",
+      "focus": [
+        "好像 hǎo xiàng: 好 thanh 3, 像 thanh 4.",
+        "快穿 kuài chuān: 穿 cuộn lưỡi, khác 酸.",
+        "外套 wài tào: hai thanh 4 liên tiếp."
+      ]
+    },
+    {
+      "id": "dt-2-148",
+      "level": "HSK3-4",
+      "hanzi": "外套有点儿长，天热了不穿。",
+      "pinyin": "wài tào yóu diǎn er cháng tiān rè le bù chuān",
+      "meaningVi": "Áo khoác hơi dài, trời nóng rồi nên không mặc.",
+      "focus": [
+        "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "有点儿 yóu diǎn er: 儿 tách thành âm riêng er.",
+        "天热了 tiān rè le: 了 đọc nhẹ le.",
+        "不穿 bù chuān: 不 giữ bù trước thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 4, 3, 3, 5, 2, 1, 4, 5, 4, 1],
+      "acceptTones": [
+        [4, 4, 2, 3, 5, 2, 1, 4, 5, 4, 1],
+        [4, 4, 3, 3, 5, 2, 1, 4, 5, 4, 1]
+      ],
+      "hint": "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-2-3-5-2-1-4-5-4-1 lẫn 4-4-3-3-5-2-1-4-5-4-1."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-32",
+      "level": "HSK3-4",
+      "text": "明天上午是晴天，太阳很大，下午好像要下雨，记得穿外套。",
+      "pinyin": "míng tiān shàng wǔ shì qíng tiān tài yáng hěn dà xià wú hǎo xiàng yào xià yǔ jì de chuān wài tào",
+      "meaningVi": "Sáng mai trời quang, nắng rất to, chiều có vẻ trở mưa, nhớ mặc áo khoác.",
+      "syllables": 23,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "明天上午是晴天", "pinyin": "míng tiān shàng wǔ shì qíng tiān", "pause": "soft" },
+        { "hanzi": "太阳很大", "pinyin": "tài yáng hěn dà", "pause": "soft" },
+        { "hanzi": "下午好像要下雨", "pinyin": "xià wú hǎo xiàng yào xià yǔ", "pause": "soft" },
+        { "hanzi": "记得穿外套", "pinyin": "jì de chuān wài tào", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǔ hǎo → wú hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "晴天 qíng tiān và 太阳 tài yáng: hai từ chỉ nắng.",
+        "上午 shàng wǔ giữ nguyên thanh 3 vì chữ sau là thanh 4.",
+        "记得 jì de: 得 đọc nhẹ de."
+      ],
+      "sandhi": true,
+      "baseTones": [2, 1, 4, 3, 4, 2, 1, 4, 2, 3, 4, 4, 3, 3, 4, 4, 4, 3, 4, 5, 1, 4, 4],
+      "acceptTones": [
+        [2, 1, 4, 3, 4, 2, 1, 4, 2, 3, 4, 4, 2, 3, 4, 4, 4, 3, 4, 5, 1, 4, 4],
+        [2, 1, 4, 3, 4, 2, 1, 4, 2, 3, 4, 4, 3, 3, 4, 4, 4, 3, 4, 5, 1, 4, 4]
+      ],
+      "hint": "Biến điệu 3+3: wǔ hǎo → wú hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-1-4-3-4-2-1-4-2-3-4-4-2-3-4-4-4-3-4-5-1-4-4 lẫn 2-1-4-3-4-2-1-4-2-3-4-4-3-3-4-4-4-3-4-5-1-4-4."
+    }
+  ]
+}

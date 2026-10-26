@@ -1,0 +1,137 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-11-d2",
+  "level": "HSK3-4",
+  "title": "Thói quen sinh hoạt và rèn luyện",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-187",
+      "level": "HSK3-4",
+      "hanzi": "昨天熬夜到一点半。",
+      "pinyin": "zuó tiān áo yè dào yì diǎn bàn",
+      "meaningVi": "Hôm qua bạn ấy thức khuya đến một giờ rưỡi.",
+      "focus": [
+        "熬夜 áo yè: 夜 rơi mạnh, đóng bằng âm mở.",
+        "一点: 一 đọc yì trước âm thanh 3.",
+        "到… chỉ giới hạn thời gian, nghe rõ  dào dài."
+      ]
+    },
+    {
+      "id": "dt-2-188",
+      "level": "HSK3-4",
+      "hanzi": "午睡一会儿，下午有精神。",
+      "pinyin": "wǔ shuì yí huì er xià wú yǒu jīng shén",
+      "meaningVi": "Ngủ trưa một lát, chiều là tỉnh táo hơn.",
+      "focus": [
+        "Biến điệu 3+3: wǔ yǒu → wú yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "一 trong 一会儿 đọc yí, 儿 đi liền sau 会.",
+        "精神 jīng shén: hai âm đi lên, 精 đóng -ng rồi 神 đóng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        2,
+        4,
+        5,
+        4,
+        3,
+        3,
+        1,
+        2
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          2,
+          4,
+          5,
+          4,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2,
+          4,
+          5,
+          4,
+          3,
+          3,
+          1,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǔ yǒu → wú yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-2-4-5-4-2-3-1-2 lẫn 3-4-2-4-5-4-3-3-1-2."
+    },
+    {
+      "id": "dt-2-189",
+      "level": "HSK3-4",
+      "hanzi": "他的作息不太规律。",
+      "pinyin": "tā de zuò xī bú tài guī lù",
+      "meaningVi": "Sinh hoạt của bạn ấy không đều đặn lắm.",
+      "focus": [
+        "作息 zuò xī: 作 đọc zuò,  xī thanh 1 cao.",
+        "不 trong 不太 đọc bú vì 太 mang thanh 4.",
+        "规律 guī lù: 律 rơi thanh 4,  quy giữ âm mở."
+      ]
+    },
+    {
+      "id": "dt-2-190",
+      "level": "HSK3-4",
+      "hanzi": "别总熬夜，对身体不好。",
+      "pinyin": "bié zǒng áo yè duì shēn tǐ bù hǎo",
+      "meaningVi": "Đừng thức khuya mãi, có hại cho sức khỏe.",
+      "focus": [
+        "别总 zǒng thanh 3, 别 rơi mạnh.",
+        "身体 tǐ thanh 3, giữ nguyên vì âm sau là 不.",
+        "不好 bù hǎo: 不 giữ bù trước thanh 3."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-42",
+      "level": "HSK3-4",
+      "text": "他天天熬夜，作息全乱了。午睡一会儿，下午才有精神。",
+      "pinyin": "tā tiān tiān áo yè zuò xī quán luàn le wǔ shuì yí huì er xià wǔ cái yǒu jīng shén",
+      "meaningVi": "Bạn ấy ngày nào cũng thức khuya, sinh hoạt rối hết. Ngủ trưa một lát, chiều mới tỉnh táo.",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "他天天熬夜",
+          "pinyin": "tā tiān tiān áo yè",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "作息全乱了",
+          "pinyin": "zuò xī quán luàn le",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "午睡一会儿",
+          "pinyin": "wǔ shuì yí huì er",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "下午才有精神",
+          "pinyin": "xià wǔ cái yǒu jīng shén",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "天天 đọc hai âm 1 đều nhau, nhấn ý \"ngày nào cũng\".",
+        "乱了 le đọc nhẹ sau 乱.",
+        "Nối hơi ở 才有精神, đừng ngắt trước 精."
+      ]
+    }
+  ]
+}

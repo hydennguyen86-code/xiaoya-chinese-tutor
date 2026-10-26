@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 12,
+  "lessonTitle": "Mời bạn, nhận lời và từ chối khéo",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "邀请",
+      "meaning": "mời; mời mọc",
+      "example": "同事邀请我周六去吃火锅。",
+      "exampleVi": "Đồng nghiệp mời tôi thứ bảy đi ăn lẩu.",
+      "pinyin": "yāo qǐng",
+      "examplePinyin": "tóng shì yāo qǐng wǒ zhōu liù qù chī huǒ guō 。"
+    },
+    {
+      "word": "参加",
+      "meaning": "tham gia",
+      "example": "下周有个聚会，我去参加一下。",
+      "exampleVi": "Tuần sau có buổi họp mặt, tôi sẽ tham gia một chút.",
+      "pinyin": "cān jiā",
+      "examplePinyin": "xià zhōu yǒu gè jù huì ， wǒ qù cān jiā yí xià 。"
+    },
+    {
+      "word": "有空",
+      "meaning": "rảnh",
+      "example": "你晚上有空吗？一起吃个饭。",
+      "exampleVi": "Tối nay bạn rảnh không? Cùng đi ăn một bữa.",
+      "pinyin": "yǒu kōng",
+      "examplePinyin": "nǐ wǎn shang yǒu kōng ma ？ yì qǐ chī gè fàn 。"
+    },
+    {
+      "word": "可惜",
+      "meaning": "đáng tiếc",
+      "example": "你不能来，真可惜。",
+      "exampleVi": "Bạn không đến được, thật đáng tiếc.",
+      "pinyin": "kě xī",
+      "examplePinyin": "nǐ bù néng lái ， zhēn kě xī 。"
+    },
+    {
+      "word": "改天",
+      "meaning": "hôm khác; dịp khác",
+      "example": "今天不行，改天我请你。",
+      "exampleVi": "Hôm nay không được, dịp khác tôi mời bạn.",
+      "pinyin": "gǎi tiān",
+      "examplePinyin": "jīn tiān bù xíng ， gǎi tiān wǒ qǐng nǐ 。"
+    },
+    {
+      "word": "抱歉",
+      "meaning": "xin lỗi; ngại",
+      "example": "抱歉，那天我家里有点儿事儿。",
+      "exampleVi": "Ngại quá, hôm đó nhà tôi có chút việc.",
+      "pinyin": "bào qiàn",
+      "examplePinyin": "bào qiàn ， nà tiān wǒ jiā lǐ yǒu diǎn er shì ér 。"
+    },
+    {
+      "word": "加班",
+      "meaning": "làm thêm giờ",
+      "example": "周六我得加班，去不了。",
+      "exampleVi": "Thứ bảy tôi phải làm thêm giờ, đi không được.",
+      "pinyin": "jiā bān",
+      "examplePinyin": "zhōu liù wǒ dé jiā bān ， qù bù liǎo 。"
+    },
+    {
+      "word": "请客",
+      "meaning": "mời ăn; bao tiền",
+      "example": "说好了，这次我请客。",
+      "exampleVi": "Nói chắc rồi nhé, lần này tôi bao.",
+      "pinyin": "qǐng kè",
+      "examplePinyin": "shuō hǎo le ， zhè cì wǒ qǐng kè 。"
+    },
+    {
+      "word": "一定",
+      "meaning": "nhất định (sẽ làm)",
+      "example": "改天我一定请你吃顿好的。",
+      "exampleVi": "Dịp khác tôi nhất định mời bạn ăn một bữa thật ngon.",
+      "pinyin": "yí dìng",
+      "examplePinyin": "gǎi tiān wǒ yí dìng qǐng nǐ chī dùn hǎo de 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你……有空吗？",
+      "explanation": "Mở lời mời: 你 rồi thêm thời gian và 有空吗？, sau đó nêu việc cùng làm; hỏi cho cả nhóm thì đổi thành 你们.",
+      "example": "你周六晚上有空吗？我们一起去吃火锅。",
+      "exampleVi": "Tối thứ bảy bạn rảnh không? Mình cùng đi ăn lẩu.",
+      "examplePinyin": "nǐ zhōu liù wǎn shang yǒu kōng ma ？ wǒ men yì qǐ qù chī huǒ guō 。"
+    },
+    {
+      "pattern": "不好意思，我……",
+      "explanation": "Từ chối mà không làm mất lòng: 不好意思 rồi nêu lý do thật, cuối câu thêm một lời hẹn như 改天我请你.",
+      "example": "不好意思，我那天家里有事，改天我请你吃饭。",
+      "exampleVi": "Ngại quá, hôm đó nhà tôi có việc, dịp khác tôi mời bạn ăn.",
+      "examplePinyin": "bù hǎo yì si ， wǒ nà tiān jiā lǐ yǒu shì ， gǎi tiān wǒ qǐng nǐ chī fàn 。"
+    },
+    {
+      "pattern": "如果……的话，就……",
+      "explanation": "Đặt điều kiện rồi mới chốt: phần trước 的话 là việc giả định, sau 就 nói quyết định của bạn; dùng khi nhận lời có kèm điều kiện.",
+      "example": "如果你也去的话，我就跟你一起走。",
+      "exampleVi": "Nếu bạn cũng đi thì tôi sẽ đi cùng bạn.",
+      "examplePinyin": "rú guǒ nǐ yě qù de huà ， wǒ jiù gēn nǐ yì qǐ zǒu 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: ở công ty, một đồng nghiệp người Trung Quốc mời cả nhóm đi hát tối thứ bảy; bạn phải làm thêm giờ nên chỉ đến được một tiếng, bạn nhận lời một phần, nói rõ lý do và nhờ bạn ấy nhắn giúp cho hai người khác.",
+    "avatarRole": "Đồng nghiệp cùng công ty",
+    "learnerRole": "Người được mời trong nhóm",
+    "goals": [
+      "Nói rõ bạn chỉ đến được một tiếng và vì sao",
+      "Hẹn sẽ mời lại và nói chắc bằng một câu",
+      "Nhờ đồng nghiệp nhắn giúp cho hai người còn lại"
+    ],
+    "opening": "周六晚上大家一起去唱歌，你也去吗？",
+    "openingVi": "Tối thứ bảy cả nhóm đi hát, bạn có đi không?"
+  },
+  "freeTalk": {
+    "question": "只能去一小会儿的话，你应该提前说还是到时候再说？为什么？",
+    "questionVi": "Khi chỉ đi được một lát, bạn nên nói trước hay nói lúc gặp nhau? Vì sao?"
+  },
+  "learningNotes": [
+    "Mở lời mời: 你周六晚上有空吗？ rồi nêu việc muốn cùng làm; thân thiết thì nói 我请你吃饭, và người được mời hay trả lời 客气什么.",
+    "Từ chối khéo: 不好意思 + lý do thật + một lời hẹn (改天我请你); 可惜 thường là người mời nói khi thấy bạn không đến được.",
+    "Phát âm: 邀请 là thanh 1 rồi thanh 3, âm thứ hai hạ thấp rồi bật lên, đừng đọc thành hai thanh 1; 抱歉 là thanh 2 rồi thanh 4, chữ đầu kéo lên còn chữ sau rơi mạnh.",
+    "改天 và 下次 đều để hẹn lần sau, nhưng nếu thật sự muốn mời lại thì nói thêm 我提前给你打电话, nếu không người nghe sẽ nghĩ bạn chỉ nói cho qua."
+  ],
+  "prerequisites": [
+    11
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Mời bạn, nhận lời và từ chối khéo",
+    "playLimit": 1,
+    "transcript": "甲：周六晚上大家一起唱歌，我请客，你有空吗？乙：我本来想去，可是那天我得加班到九点。甲：那你忙完了再来，十点才散。乙：要是不加班的话，我一定去。我先跟大家说一声，七点半到那儿找你们，不过我只能待一个小时。甲：行，人来就好。",
+    "translation": "Người thứ nhất mời bạn ấy đi hát cùng cả nhóm tối thứ bảy và nói sẽ bao tiền. Bạn ấy vốn muốn đi nhưng hôm đó phải làm thêm giờ đến chín giờ; người mời bảo cứ tới sau cũng được vì mười giờ mới tan. Bạn ấy nói nếu không tăng ca thì nhất định đi, sẽ nhắn trước cho mọi người để bảy giờ rưỡi tới tìm, chỉ có điều ở được một tiếng thôi. Người mời trả lời tới được là quý rồi.",
+    "questions": [
+      {
+        "prompt": "Người mời nói sẽ làm gì cho cả nhóm?",
+        "options": [
+          "Bao tiền cho buổi đi hát tối thứ bảy",
+          "Đặt trước vé tàu cho mọi người",
+          "Góp tiền mỗi người một nửa"
+        ],
+        "answer": 0,
+        "explanation": "甲 nói 大家一起唱歌，我请客."
+      },
+      {
+        "prompt": "Vì sao người được mời lúc đầu định không đi?",
+        "options": [
+          "Vì bạn ấy ngại hát trước đám đông",
+          "Vì hôm ấy phải làm thêm giờ đến chín giờ",
+          "Vì phải đưa em đi học buổi tối"
+        ],
+        "answer": 1,
+        "explanation": "乙 nói 可是那天我得加班到九点."
+      },
+      {
+        "prompt": "Cuối cùng hai người hẹn nhau thế nào?",
+        "options": [
+          "Bỏ luôn buổi đi hát vì quá muộn",
+          "Hẹn sang tối chủ nhật",
+          "Bạn ấy nhắn trước với mọi người, bảy giờ rưỡi tới và chỉ ở một tiếng"
+        ],
+        "answer": 2,
+        "explanation": "乙 nói 我先跟大家说一声，七点半到那儿找你们，不过我只能待一个小时."
+      }
+    ],
+    "pinyin": "jiǎ ： zhōu liù wǎn shang dà jiā yì qǐ chàng gē ， wǒ qǐng kè ， nǐ yǒu kōng ma ？ yǐ ： wǒ běn lái xiǎng qù ， kě shì nà tiān wǒ dé jiā bān dào jiǔ diǎn 。 jiǎ ： nà nǐ máng wán le zài lái ， shí diǎn cái sàn 。 yǐ ： yào shi bù jiā bān de huà ， wǒ yí dìng qù 。 wǒ xiān gēn dà jiā shuō yì shēng ， qī diǎn bàn dào nà ér zhǎo nǐ men ， bú guò wǒ zhǐ néng dài yí gè xiǎo shí 。 jiǎ ： xíng ， rén lái jiù hǎo 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu nói bạn chỉ đi được một lát, một câu nhận lời có điều kiện.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "那天我得加班，只能去一个小时。要是不加班的话，我一定去。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng khoảng thời gian nói tới",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "那天我得加班，只能去一个小时。要是不加班的话，我一定去。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai mời đi đâu, bạn kia vướng gì, hai người chốt giờ nào, bạn ấy nhắc thêm điều gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Người thứ nhất mời bạn ấy đi hát cùng cả nhóm tối thứ bảy và nói sẽ bao tiền. Bạn ấy vốn muốn đi nhưng hôm đó phải làm thêm giờ đến chín giờ; người mời bảo cứ tới sau cũng được vì mười giờ mới tan. Bạn ấy nói nếu không tăng ca thì nhất định đi, sẽ nhắn trước cho mọi người để bảy giờ rưỡi tới tìm, chỉ có điều ở được một tiếng thôi. Người mời trả lời tới được là quý rồi.",
+      "checklist": [
+        "Nói đủ: lời mời, lý do, giờ tới, thời gian ở lại",
+        "Người nghe hiểu được nội dung",
+        "Không tự đổi giờ giấc trong đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau như đang kể lại cho người khác nghe buổi hẹn.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Hai mốc giờ trong đoạn nói rõ; câu từ chối đọc chậm, câu nhận lời đọc nhanh, giọng mở hơn.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "周六大家一起唱歌，说好了他请客。可是我那天要加班，只能去一个小时。我跟同事说，七点半到那儿找你们，不加班我一定去。我还让他帮忙通知另外两个人，大家一起参加。"
+    },
+    {
+      "kind": "opinion",
+      "prompt": "只能去一小会儿的话，你应该提前说还是到时候再说？为什么？",
+      "promptVi": "Khi chỉ đi được một lát, bạn nên nói trước hay nói lúc gặp nhau? Vì sao?",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Chọn nói trước hay nói sau, nêu hai lý do, thêm một câu mẫu bằng tiếng Trung và nói hệ quả nếu nói muộn.",
+      "checklist": [
+        "Nêu rõ nên nói trước hay sau",
+        "Có hai lý do cụ thể",
+        "Đưa được một câu tiếng Trung mẫu"
+      ],
+      "sampleZh": "我会提前说，因为别人能按我的时间安排位置和车。我会说：不好意思，我七点半才能到，只能待一个小时。要是等大家到齐了才说，我就得站着跟大家解释，反而更麻烦。所以我宁可提前发一条消息。",
+      "sampleVi": "Tôi sẽ nói trước, vì mọi người có thể sắp xếp chỗ ngồi và xe theo giờ của tôi. Tôi sẽ nói: ngại quá, bảy giờ rưỡi tôi mới tới và chỉ ở được một tiếng. Nếu đợi cả nhóm đông đủ mới nói thì tôi phải đứng giải thích, lại phiền hơn. Cho nên tôi thà nhắn một tin trước."
+    }
+  ],
+  "transferTask": "Cả nhóm hẹn đi ăn vào tối thứ sáu nhưng bạn phải làm thêm giờ: hãy nhắn cho người mời bằng tiếng Trung, nói rõ bạn chỉ đến được một tiếng, hứa sẽ mời lại vào một ngày khác và nhờ bạn ấy nhắn giúp cho hai người còn lại.",
+  "pronunciation": [
+    {
+      "text": "邀请",
+      "pinyin": "yāo qǐng",
+      "hint": "Âm đầu thanh 1 cao và bằng, âm sau thanh 3 hạ thấp rồi bật lên; đừng đọc cả hai thành thanh 1."
+    },
+    {
+      "text": "抱歉",
+      "pinyin": "bào qiàn",
+      "hint": "Thanh 2 rồi thanh 4: chữ đầu kéo lên, chữ sau rơi dứt khoát; đừng đọc thành hai thanh 4."
+    },
+    {
+      "text": "改天",
+      "pinyin": "gǎi tiān",
+      "hint": "Thanh 3 rồi thanh 1: chữ đầu uốn thấp, chữ sau giữ cao và bằng; đừng biến âm sau thành thanh nhẹ."
+    },
+    {
+      "text": "有空",
+      "pinyin": "yǒu kōng",
+      "hint": "Thanh 3 rồi thanh 1: hai âm tách rõ; chữ sau đọc kōng, không phải kòng."
+    }
+  ]
+}

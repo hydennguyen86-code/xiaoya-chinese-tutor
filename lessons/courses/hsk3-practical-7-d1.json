@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 7,
+  "lessonTitle": "Không khỏe: mô tả triệu chứng và nghe lời dặn",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "舒服",
+      "meaning": "thoải mái; khỏe",
+      "example": "我今天有点儿不舒服。",
+      "exampleVi": "Hôm nay tôi hơi khó ở.",
+      "pinyin": "shū fu",
+      "examplePinyin": "wǒ jīn tiān yǒu diǎn er bù shū fu 。"
+    },
+    {
+      "word": "感冒",
+      "meaning": "cảm cúm",
+      "example": "他感冒三天了，还没好。",
+      "exampleVi": "Bạn ấy cảm ba ngày rồi, vẫn chưa khỏi.",
+      "pinyin": "gǎn mào",
+      "examplePinyin": "tā gǎn mào sān tiān le ， hái méi hǎo 。"
+    },
+    {
+      "word": "医院",
+      "meaning": "bệnh viện",
+      "example": "医院离公司很近，下午就去。",
+      "exampleVi": "Bệnh viện gần công ty, chiều đi luôn.",
+      "pinyin": "yī yuàn",
+      "examplePinyin": "yī yuàn lí gōng sī hěn jìn ， xià wǔ jiù qù 。"
+    },
+    {
+      "word": "药",
+      "meaning": "thuốc",
+      "example": "这个药饭后吃，一天两次。",
+      "exampleVi": "Thuốc này uống sau bữa ăn, ngày hai lần.",
+      "pinyin": "yào",
+      "examplePinyin": "zhè ge yào fàn hòu chī ， yì tiān liǎng cì 。"
+    },
+    {
+      "word": "休息",
+      "meaning": "nghỉ ngơi",
+      "example": "周末在家好好休息。",
+      "exampleVi": "Cuối tuần nghỉ ngơi cho tốt ở nhà.",
+      "pinyin": "xiū xi",
+      "examplePinyin": "zhōu mò zài jiā hǎo hǎo xiū xi 。"
+    },
+    {
+      "word": "检查",
+      "meaning": "kiểm tra; khám",
+      "example": "先做个检查，再拿结果。",
+      "exampleVi": "Khám trước rồi lấy kết quả.",
+      "pinyin": "jiǎn chá",
+      "examplePinyin": "xiān zuò gè jiǎn chá ， zài ná jié guǒ 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我怎么……？",
+      "explanation": "Hỏi nguyên nhân khi thấy lạ: 我怎么 rồi thêm cảm giác, dịch là sao mà…; không dùng để hỏi đường đi.",
+      "example": "我怎么咳嗽三天了还不好？",
+      "exampleVi": "Sao tôi ho ba ngày rồi mà vẫn chưa khỏi?",
+      "examplePinyin": "wǒ zěn me ké sou sān tiān le hái bù hǎo ？"
+    },
+    {
+      "pattern": "医生让我……",
+      "explanation": "Kể lời dặn của bác sĩ: 医生让我 rồi thêm việc cần làm; muốn thêm ý thì nói 还让我多喝水.",
+      "example": "医生让我休息两天，多喝水。",
+      "exampleVi": "Bác sĩ cho tôi nghỉ hai ngày, uống nhiều nước.",
+      "examplePinyin": "yī shēng ràng wǒ xiū xi liǎng tiān ， duō hē shuǐ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Đầu giờ sáng, bạn đến công ty trong tình trạng không khỏe và nói chuyện với đồng nghiệp về triệu chứng, cách xử lý; buổi 2 chuyển sang phòng khám.",
+    "avatarRole": "Đồng nghiệp",
+    "learnerRole": "Người không khỏe",
+    "goals": [
+      "Mô tả hai hoặc ba triệu chứng",
+      "Nói hôm nay bạn định làm gì",
+      "Hỏi đồng nghiệp kinh nghiệm xử lý"
+    ],
+    "opening": "你脸色不太好，是不是哪儿不舒服？",
+    "openingVi": "Sắc mặt bạn không được tốt, có phải khó ở chỗ nào không?"
+  },
+  "freeTalk": {
+    "question": "不舒服的时候，你更愿意在家休息还是马上去医院？",
+    "questionVi": "Khi không khỏe, bạn muốn nghỉ ở nhà hơn hay đến bệnh viện ngay?"
+  },
+  "learningNotes": [
+    "Mở đầu câu than mệt: 我今天有点儿不舒服 rồi kể cụ thể bằng 有点儿 + cảm giác: 头有点儿晕、喉咙有点儿疼.",
+    "Kể lời dặn: 医生让我 + việc cần làm; nếu là thứ tự hai bước thì nói 先量体温，再做检查.",
+    "Hỏi khi thấy lạ: 我怎么 + cảm giác? (我怎么觉得这么冷？) là hỏi nguyên nhân, không phải hỏi cách làm.",
+    "Phát âm: 检查 là thanh 3 rồi thanh 2, phải hạ thấp chữ đầu rồi kéo lên chữ sau; 感冒 hai âm tiết rõ ràng, đừng nuốt mất âm thứ hai."
+  ],
+  "prerequisites": [
+    6
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Không khỏe: mô tả triệu chứng và nghe lời dặn",
+    "playLimit": 1,
+    "transcript": "甲：你脸色那么红，是不是感冒了？要不要陪你去检查？乙：喉咙疼，头有点儿晕，昨晚也没睡好。甲：我怎么觉得你比我还难受。乙：先吃药观察一天吧，不太严重。甲：要是明天还发烧，你可别硬扛，一早就去医院。乙：好，我知道。",
+    "translation": "A thấy bạn đỏ mặt, đoán là cảm và hỏi có cần đi khám cùng không. B kể họng đau, hơi chóng mặt, đêm qua ngủ kém rồi định uống thuốc theo dõi một ngày. A dặn nếu mai còn sốt thì đừng cố chịu, sáng sớm phải đến bệnh viện.",
+    "questions": [
+      {
+        "prompt": "B khó chịu ở những chỗ nào?",
+        "options": [
+          "Chỉ đau bụng",
+          "Sốt cao, không đau họng",
+          "Họng đau, hơi chóng mặt, đêm ngủ không ngon"
+        ],
+        "answer": 2,
+        "explanation": "B nói 喉咙疼，头有点儿晕，昨晚也没睡好."
+      },
+      {
+        "prompt": "Trước mắt B định làm gì?",
+        "options": [
+          "Uống thuốc rồi nghỉ một hôm",
+          "Đi khám ngay",
+          "Nghỉ làm một tuần"
+        ],
+        "answer": 0,
+        "explanation": "B nói 先吃药观察一天吧."
+      },
+      {
+        "prompt": "Câu nào thể hiện lời khuyên của A?",
+        "options": [
+          "A khuyên B cố chịu thêm",
+          "A bảo đừng cố chịu, mai còn sốt thì đi khám",
+          "A sẽ mua thuốc giúp B"
+        ],
+        "answer": 1,
+        "explanation": "Câu cuối của A là 要是明天还发烧，你可别硬扛，一早就去医院."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ liǎn sè nà me hóng ， shì bu shì gǎn mào le ？ yào bu yào péi nǐ qù jiǎn chá ？ yǐ ： hóu lóng téng ， tóu yǒu diǎn er yūn ， zuó wǎn yě méi shuì hǎo 。 jiǎ ： wǒ zěn me jué de nǐ bǐ wǒ hái nán shòu 。 yǐ ： xiān chī yào guān chá yì tiān ba ， bú tài yán zhòng 。 jiǎ ： yào shi míng tiān hái fā shāo ， nǐ kě bié yìng káng ， yì zǎo jiù qù yī yuàn 。 yǐ ： hǎo ， wǒ zhī dao 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu than mệt, một câu kể lời dặn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我今天有点儿不舒服，喉咙疼。医生让我多喝水，早点休息。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng triệu chứng",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我今天有点儿不舒服，喉咙疼。医生让我多喝水，早点休息。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: A thấy gì, B kể triệu chứng gì, B định làm gì, A khuyên câu nào.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "A thấy bạn đỏ mặt, đoán là cảm và hỏi có cần đi khám cùng không. B kể họng đau, hơi chóng mặt, đêm qua ngủ kém rồi định uống thuốc theo dõi một ngày. A dặn nếu mai còn sốt thì đừng cố chịu, sáng sớm phải đến bệnh viện.",
+      "checklist": [
+        "Nói đủ: dấu hiệu, triệu chứng, dự định, lời khuyên",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, hạ giọng ở các từ chỉ triệu chứng.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Câu hỏi giữa đoạn đọc hơi lên giọng cuối câu; đoạn kể triệu chứng đọc chậm.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "从昨天晚上起，我就喉咙疼、头有点儿晕。今天我先在家吃药休息，怎么还是不舒服？要是明天还发烧，一早就去医院检查。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "不舒服的时候，你更愿意在家休息还是马上去医院？",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Nêu lựa chọn của bạn kèm một tình huống buộc phải chọn cách còn lại.",
+      "checklist": [
+        "Trả lời rõ chọn cách nào",
+        "Có tình huống cụ thể",
+        "Người nghe hiểu được lý do"
+      ],
+      "promptVi": "Khi không khỏe, bạn muốn nghỉ ở nhà hơn hay đến bệnh viện ngay?",
+      "sampleZh": "感冒的时候，我一般先在家休息，多喝热水，睡一觉。要是发烧两天还不好，我就马上去医院检查，因为去年我硬扛，结果拖成了一个星期。",
+      "sampleVi": "Bị cảm, tôi thường nghỉ ở nhà trước, uống nhiều nước nóng, ngủ một giấc. Nếu sốt hai ngày vẫn không khỏi, tôi đi khám ngay, vì năm ngoái tôi cố chịu, kết cục kéo dài cả tuần."
+    }
+  ],
+  "transferTask": "Sáng nay bạn không khỏe và phải nhắn cho quản lý: mô tả triệu chứng, nói hôm nay bạn sẽ làm gì và cho biết nếu ngày mai chưa đỡ thì bạn sẽ đi khám.",
+  "pronunciation": [
+    {
+      "text": "感冒",
+      "pinyin": "gǎn mào",
+      "hint": "Chữ đầu thanh 3 uốn thấp, chữ sau thanh 4 rơi dứt khoát; giữ đủ hai âm tiết."
+    },
+    {
+      "text": "医院",
+      "pinyin": "yī yuàn",
+      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh; tròn môi ở âm đầu."
+    },
+    {
+      "text": "休息",
+      "pinyin": "xiū xi",
+      "hint": "Hai chữ đều thanh 1; khi nói nhanh chữ sau nhẹ đi, tập đọc đủ thanh trước cho chắc."
+    },
+    {
+      "text": "检查",
+      "pinyin": "jiǎn chá",
+      "hint": "Chữ đầu thanh 3, chữ sau thanh 2: hạ rồi kéo lên; đừng đọc cả hai thành thanh 1."
+    }
+  ]
+}

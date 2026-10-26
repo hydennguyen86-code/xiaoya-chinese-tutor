@@ -1,0 +1,221 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 1,
+  "lessonTitle": "Hỏi đường và chỉ đường trong thành phố",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "路",
+      "meaning": "đường; lộ",
+      "example": "这条路能走到地铁站。",
+      "exampleVi": "Đường này đi bộ ra được ga tàu điện ngầm.",
+      "pinyin": "lù",
+      "examplePinyin": "zhè tiáo lù néng zǒu dào dì tiě zhàn 。"
+    },
+    {
+      "word": "站",
+      "meaning": "trạm; bến",
+      "example": "你坐两站，在火车站下车。",
+      "exampleVi": "Bạn đi hai bến rồi xuống ở ga tàu hoả.",
+      "pinyin": "zhàn",
+      "examplePinyin": "nǐ zuò liǎng zhàn ， zài huǒ chē zhàn xià chē 。"
+    },
+    {
+      "word": "附近",
+      "meaning": "gần đó; quanh đây",
+      "example": "这附近有没有超市？",
+      "exampleVi": "Quanh đây có siêu thị không?",
+      "pinyin": "fù jìn",
+      "examplePinyin": "zhè fù jìn yǒu méi yǒu chāo shì ？"
+    },
+    {
+      "word": "对面",
+      "meaning": "đối diện",
+      "example": "银行就在邮局对面。",
+      "exampleVi": "Ngân hàng ngay đối diện bưu điện.",
+      "pinyin": "duì miàn",
+      "examplePinyin": "yín háng jiù zài yóu jú duì miàn 。"
+    },
+    {
+      "word": "走",
+      "meaning": "đi; bước",
+      "example": "往前走十分钟就到了。",
+      "exampleVi": "Cứ đi về phía trước mười phút là tới nơi.",
+      "pinyin": "zǒu",
+      "examplePinyin": "wǎng qián zǒu shí fēn zhōng jiù dào le 。"
+    },
+    {
+      "word": "换",
+      "meaning": "đổi; chuyển",
+      "example": "你可以在这儿换二号线。",
+      "exampleVi": "Bạn có thể chuyển sang tuyến số hai ở chỗ này.",
+      "pinyin": "huàn",
+      "examplePinyin": "nǐ kě yǐ zài zhè ér huàn èr hào xiàn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "……怎么走？",
+      "explanation": "Hỏi đường tới một nơi: tên nơi đứng trước 怎么走, thêm 请问 cho lịch sự.",
+      "example": "请问，去地铁站怎么走？",
+      "exampleVi": "Xin hỏi, đi tới ga tàu điện ngầm thì đi thế nào?",
+      "examplePinyin": "qǐng wèn ， qù dì tiě zhàn zěn me zǒu ？"
+    },
+    {
+      "pattern": "在……附近",
+      "explanation": "Nói một chỗ nằm gần chỗ khác; 就在 nhấn mạnh rất gần, tiện đường.",
+      "example": "药店就在学校附近。",
+      "exampleVi": "Hiệu thuốc ngay gần trường học.",
+      "examplePinyin": "yào diàn jiù zài xué xiào fù jìn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Giờ cao điểm trên phố đi bộ, bạn muốn ra ga tàu điện nhưng không nhìn thấy biển chỉ đường; buổi 2 chuyển sang bến xe buýt khi chính bạn được nhờ chỉ đường. Bắt đầu với tình huống buổi 1.",
+    "avatarRole": "Người đi đường",
+    "learnerRole": "Người hỏi đường",
+    "goals": [
+      "Hỏi đường ra ga tàu điện và nắm đủ hai bước chỉ dẫn",
+      "Nhắc lại hướng rẽ để xác nhận với người chỉ",
+      "Hỏi xem có phải đổi xe hay không"
+    ],
+    "opening": "你好，请问你要去哪儿？",
+    "openingVi": "Chào bạn, xin hỏi bạn muốn đi đâu?"
+  },
+  "freeTalk": {
+    "question": "从你家到地铁站远吗？你平时怎么走？",
+    "questionVi": "Từ nhà bạn tới ga tàu điện có xa không? Bạn thường đi bằng cách nào?"
+  },
+  "learningNotes": [
+    "Hỏi đường: đặt tên nơi trước 怎么走？ — 去地铁站怎么走？; mở đầu bằng 请问 khi hỏi người lạ.",
+    "Nghe chỉ đường cần bắt ba ý: hướng (往前走), chỗ rẽ (到路口右转), độ dài (再走五分钟).",
+    "Phát âm: 走 zǒu phẳng lưỡi, 站 zhàn cong lưỡi; hai âm dễ lẫn. 走 là thanh 3 hạ thấp rồi lên nhẹ, 站 là thanh 4 dứt khoát.",
+    "换 không chỉ dùng cho xe: 换车 là đổi tuyến, 换钱 là đổi tiền; một chuyến đi thẳng không đổi có thể nói 一趟就到."
+  ],
+  "prerequisites": [],
+  "listening": {
+    "title": "Nghe buổi 1: Hỏi đường và chỉ đường trong thành phố",
+    "playLimit": 1,
+    "transcript": "甲：你好，请问去地铁站怎么走？乙：你往前走，到路口右转，再走五分钟就到。甲：远吗？我拿了很多东西。乙：不太远。你也可以坐公交，车站就在超市对面，一趟就到，不用换车。甲：太好了，谢谢你。乙：不客气。",
+    "translation": "Người hỏi muốn ra ga tàu điện ngầm. Người được hỏi bảo cứ đi về phía trước, tới ngã tư rẽ phải rồi đi thêm năm phút. Vì người hỏi mang nhiều đồ, người này gợi ý đi xe buýt: bến nằm ngay đối diện siêu thị, một chuyến là tới, không cần đổi xe.",
+    "questions": [
+      {
+        "prompt": "Người hỏi muốn tới đâu?",
+        "options": [
+          "Ga tàu điện ngầm",
+          "Bến xe buýt",
+          "Siêu thị"
+        ],
+        "answer": 0,
+        "explanation": "Câu mở đầu hỏi 去地铁站怎么走."
+      },
+      {
+        "prompt": "Đi bộ từ chỗ rẽ tới nơi mất bao lâu?",
+        "options": [
+          "Hai phút",
+          "Năm phút",
+          "Mười phút"
+        ],
+        "answer": 1,
+        "explanation": "Người chỉ đường nói 再走五分钟就到."
+      },
+      {
+        "prompt": "Vì sao người được hỏi gợi ý đi xe buýt?",
+        "options": [
+          "Người hỏi mang nhiều đồ",
+          "Bến xe ở rất xa",
+          "Người hỏi không có tiền"
+        ],
+        "answer": 0,
+        "explanation": "Người hỏi nói 我拿了很多东西 nên được gợi ý đi xe."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， qǐng wèn qù dì tiě zhàn zěn me zǒu ？ yǐ ： nǐ wǎng qián zǒu ， dào lù kǒu yòu zhuǎn ， zài zǒu wǔ fēn zhōng jiù dào 。 jiǎ ： yuǎn ma ？ wǒ ná le hěn duō dōng xi 。 yǐ ： bú tài yuǎn 。 nǐ yě kě yǐ zuò gōng jiāo ， chē zhàn jiù zài chāo shì duì miàn ， yí tàng jiù dào ， bú yòng huàn chē 。 jiǎ ： tài hǎo le ， xiè xie nǐ 。 yǐ ： bú kè qi 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu chỉ đường, không cần giống giọng mẫu.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "往前走，到路口右转。",
+      "checklist": [
+        "Nhắc lại đủ cả hai bước",
+        "Giữ đúng hướng rẽ",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "往前走，到路口右转。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: người hỏi muốn tới đâu, được chỉ đi thế nào, cuối cùng chọn cách nào. Không tự thêm chi tiết.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Người hỏi muốn ra ga tàu điện ngầm. Người được hỏi bảo cứ đi về phía trước, tới ngã tư rẽ phải rồi đi thêm năm phút. Vì người hỏi mang nhiều đồ, người này gợi ý đi xe buýt: bến nằm ngay đối diện siêu thị, một chuyến là tới, không cần đổi xe.",
+      "checklist": [
+        "Giữ đủ ba ý: nơi cần tới, đường đi, cách chọn cuối",
+        "Người nghe hiểu được nội dung",
+        "Không bịa thêm số phút hay địa danh"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt theo cụm nghĩa, nhấn mạnh hướng đi và chỗ rẽ.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "去地铁站怎么走？往前走，到路口右转。车站就在超市对面。坐一趟就到，不用换车。",
+      "reference": "Ngắt hơi sau dấu hỏi và sau mỗi dấu phẩy; hạ giọng ở hai từ chỉ hướng rồi giữ nhịp đều đến hết câu.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "从你家到地铁站远吗？你平时怎么走？",
+      "promptVi": "Từ nhà bạn tới ga tàu điện có xa không? Bạn thường đi bằng cách nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Trả lời 2–4 câu bằng thông tin của bạn; nói khoảng cách, số phút và chỗ rẽ.",
+      "checklist": [
+        "Trả lời đúng cả hai phần câu hỏi",
+        "Dùng ít nhất một mẫu câu của bài",
+        "Người nghe hiểu được đường bạn đi"
+      ],
+      "sampleZh": "我家离地铁站不太远。下楼往前走，到前面左转，走八分钟就到。",
+      "sampleVi": "Nhà tôi cách ga tàu điện không xa lắm. Xuống lầu cứ đi tới, ra phía trước rẽ trái, đi tám phút là tới."
+    }
+  ],
+  "transferTask": "Ở một ngã tư gần nơi bạn ở: hỏi một người lạ đường tới bến xe buýt gần nhất, nhắc lại hướng rẽ và hỏi xem có phải đổi xe không.",
+  "pronunciation": [
+    {
+      "text": "路",
+      "pinyin": "lù",
+      "hint": "Đọc gần giống 'lộ' trong tiếng Việt: phụ âm l-, vần u, thanh 4 hạ dứt khoát, không kéo dài."
+    },
+    {
+      "text": "站",
+      "pinyin": "zhàn",
+      "hint": "Âm đầu cong lưỡi, môi tròn rồi mở nhanh, thanh 4; nghe nặng và cong hơn 'trạm' trong tiếng Việt."
+    },
+    {
+      "text": "走",
+      "pinyin": "zǒu",
+      "hint": "Âm đầu phẳng lưỡi, khác hẳn âm cong ở chữ 'bến'; vần gần 'âu', thanh 3 hạ thấp rồi lên nhẹ."
+    },
+    {
+      "text": "换车",
+      "pinyin": "huàn chē",
+      "hint": "Chữ đầu thanh 4 hạ dứt khoát, chữ sau thanh 1 cao bằng và cong lưỡi; cả cụm nghĩa là đổi sang xe khác hoặc đổi tuyến."
+    }
+  ]
+}

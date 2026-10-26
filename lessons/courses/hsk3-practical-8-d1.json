@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 8,
+  "lessonTitle": "Ngân hàng, đổi tiền và trả bằng điện thoại",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "银行",
+      "meaning": "ngân hàng",
+      "example": "银行五点关门，得早点去。",
+      "exampleVi": "Ngân hàng năm giờ đóng cửa, phải đi sớm.",
+      "pinyin": "yín háng",
+      "examplePinyin": "yín háng wǔ diǎn guān mén ， dé zǎo diǎn qù 。"
+    },
+    {
+      "word": "换钱",
+      "meaning": "đổi tiền",
+      "example": "我想去银行换钱。",
+      "exampleVi": "Tôi muốn đến ngân hàng đổi tiền.",
+      "pinyin": "huàn qián",
+      "examplePinyin": "wǒ xiǎng qù yín háng huàn qián 。"
+    },
+    {
+      "word": "密码",
+      "meaning": "mật khẩu",
+      "example": "请输入你的密码。",
+      "exampleVi": "Vui lòng nhập mật khẩu của bạn.",
+      "pinyin": "mì mǎ",
+      "examplePinyin": "qǐng shū rù nǐ de mì mǎ 。"
+    },
+    {
+      "word": "转账",
+      "meaning": "chuyển khoản",
+      "example": "我在手机上就能转账。",
+      "exampleVi": "Tôi trên điện thoại là chuyển khoản được.",
+      "pinyin": "zhuǎn zhàng",
+      "examplePinyin": "wǒ zài shǒu jī shàng jiù néng zhuǎn zhàng 。"
+    },
+    {
+      "word": "扫码",
+      "meaning": "quét mã",
+      "example": "扫码就行，不用填单子。",
+      "exampleVi": "Quét mã là được, không cần điền giấy tờ.",
+      "pinyin": "sǎo mǎ",
+      "examplePinyin": "sǎo mǎ jiù xíng ， bú yòng tián dān zi 。"
+    },
+    {
+      "word": "收款",
+      "meaning": "thu tiền; nhận tiền",
+      "example": "老板把收款码放在桌上。",
+      "exampleVi": "Chủ quán đặt mã nhận tiền trên bàn.",
+      "pinyin": "shōu kuǎn",
+      "examplePinyin": "lǎo bǎn bǎ shōu kuǎn mǎ fàng zài zhuō shàng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想……",
+      "explanation": "Nêu việc cần làm khi gặp nhân viên: 我想 rồi thêm động từ và nội dung; muốn lịch sự thì mở đầu bằng 您好.",
+      "example": "您好，我想换两千块人民币。",
+      "exampleVi": "Xin chào, tôi muốn đổi hai nghìn nhân dân tệ.",
+      "examplePinyin": "nín hǎo ， wǒ xiǎng huàn liǎng qiān kuài rén mín bì 。"
+    },
+    {
+      "pattern": "可以用手机付吗？",
+      "explanation": "Hỏi cách thanh toán: dùng nguyên cụm này ở cuối câu; nếu được, chủ quán thường trả 扫这个码.",
+      "example": "服务员，可以用手机付吗？",
+      "exampleVi": "Bạn phục vụ ơi, trả bằng điện thoại được không?",
+      "examplePinyin": "fú wù yuán ， kě yǐ yòng shǒu jī fù ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Sáng thứ hai, bạn đến ngân hàng đổi tiền và hỏi thủ tục mở thẻ, chuyển khoản; buổi 2 chuyển sang quán ăn phải trả bằng điện thoại.",
+    "avatarRole": "Nhân viên ngân hàng",
+    "learnerRole": "Khách đến đổi tiền",
+    "goals": [
+      "Nói rõ số tiền muốn đổi",
+      "Hỏi có mất phí và bao lâu thì tiền vào",
+      "Hỏi sau đó có chuyển khoản bằng điện thoại được không"
+    ],
+    "opening": "您好，请问您要办什么业务？",
+    "openingVi": "Xin chào, anh/chị muốn làm thủ tục gì ạ?"
+  },
+  "freeTalk": {
+    "question": "平时出门买东西，你带现金还是用手机付？为什么？",
+    "questionVi": "Bình thường đi mua đồ, bạn mang tiền mặt hay trả bằng điện thoại? Vì sao?"
+  },
+  "learningNotes": [
+    "Ở ngân hàng, mở đầu bằng 我想 + việc cần làm: 我想换钱、我想办张卡; chưa nghe rõ thì hỏi lại 请问手续费多少？",
+    "Trả bằng điện thoại ở quán nhỏ: 可以用手机付吗？; chủ quán nói 扫这个码 tức là đưa mã để bạn quét, còn 我扫你就是 tôi quét mã của bạn.",
+    "Phát âm: 扫码 là hai thanh 3 liền nhau, chữ đầu đọc thấp và ngắn rồi nhấn lên chữ sau; 密码 là thanh 4 rồi thanh 3, đừng biến âm thứ hai thành thanh nhẹ.",
+    "换钱 là đổi ngoại tệ, 转账 là chuyển giữa hai tài khoản, 收款 là người bán nhận tiền; nói lẫn ba từ này sẽ bị hiểu nhầm ngay."
+  ],
+  "prerequisites": [
+    7
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Ngân hàng, đổi tiền và trả bằng điện thoại",
+    "playLimit": 1,
+    "transcript": "顾客：你好，我想换两千块人民币，有手续费吗？职员：换人民币不收手续费，按今天的汇率算。顾客：那我再办一张卡，以后可以在手机上转账吗？职员：可以，钱五分钟就到。密码别告诉别人。顾客：好，这是我的护照，在哪儿签字？职员：在这儿签，然后给我。",
+    "translation": "Khách muốn đổi hai nghìn nhân dân tệ và hỏi về phí. Nhân viên nói đổi tiền không mất phí, tính theo tỷ giá hôm nay. Khách mở thêm một thẻ để chuyển khoản trên điện thoại, tiền về trong năm phút và được nhắc không kể mật khẩu cho ai. Khách đưa hộ chiếu và ký vào giấy.",
+    "questions": [
+      {
+        "prompt": "Khách làm những việc gì ở ngân hàng?",
+        "options": [
+          "Đổi tiền rồi mở thẻ",
+          "Rút tiền mặt",
+          "Hỏi chỗ đổi ngoại tệ"
+        ],
+        "answer": 0,
+        "explanation": "顾客 nói 我想换两千块人民币、那我再办一张卡."
+      },
+      {
+        "prompt": "Nhân viên nói gì về phí đổi tiền?",
+        "options": [
+          "Lúc nào cũng mất phí",
+          "Đổi nhân dân tệ không mất phí",
+          "Phí rất cao"
+        ],
+        "answer": 1,
+        "explanation": "职员 nói 换人民币不收手续费."
+      },
+      {
+        "prompt": "Nhân viên nhắc khách điều quan trọng nào?",
+        "options": [
+          "Giữ kỹ giấy tờ",
+          "Ký tên trước",
+          "Không được nói mật khẩu cho người khác"
+        ],
+        "answer": 2,
+        "explanation": "职员 nói 密码别告诉别人."
+      }
+    ],
+    "pinyin": "gù kè ： nǐ hǎo ， wǒ xiǎng huàn liǎng qiān kuài rén mín bì ， yǒu shǒu xù fèi ma ？ zhí yuán ： huàn rén mín bì bù shōu shǒu xù fèi ， àn jīn tiān de huì lǜ suàn 。 gù kè ： nà wǒ zài bàn yì zhāng kǎ ， yǐ hòu kě yǐ zài shǒu jī shàng zhuǎn zhàng ma ？ zhí yuán ： kě yǐ ， qián wǔ fēn zhōng jiù dào 。 mì mǎ bié gào sù bié rén 。 gù kè ： hǎo ， zhè shì wǒ de hù zhào ， zài nǎ ér qiān zì ？ zhí yuán ： zài zhè ér qiān ， rán hòu gěi wǒ 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu nêu việc cần làm, một câu hỏi dịch vụ.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想换两千块人民币。可以在手机上转账吗？",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng số tiền",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想换两千块人民币。可以在手机上转账吗？"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách đổi bao nhiêu tiền, phí thế nào, mở thẻ để làm gì, nhân viên nhắc câu nào.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách muốn đổi hai nghìn nhân dân tệ và hỏi về phí. Nhân viên nói đổi tiền không mất phí, tính theo tỷ giá hôm nay. Khách mở thêm một thẻ để chuyển khoản trên điện thoại, tiền về trong năm phút và được nhắc không kể mật khẩu cho ai. Khách đưa hộ chiếu và ký vào giấy.",
+      "checklist": [
+        "Nói đủ: số tiền, phí, mục đích mở thẻ, lời nhắc",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, giữ giọng lịch sự khi nhờ vả.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Câu nhờ vả đọc nhẹ; câu nhắc nhở về mật khẩu nói chậm và rõ.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "我到银行换两千块人民币，不收手续费，按当天的汇率算。柜员让我办一张卡，以后在手机上转账，钱五分钟就到，密码不能告诉别人。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "平时出门买东西，你带现金还是用手机付？为什么？",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Chọn một cách, nêu lý do và nói khi nào buộc phải dùng cách còn lại.",
+      "checklist": [
+        "Trả lời rõ chọn cách nào",
+        "Có lý do cụ thể",
+        "Nêu được trường hợp còn lại"
+      ],
+      "promptVi": "Bình thường đi mua đồ, bạn mang tiền mặt hay trả bằng điện thoại? Vì sao?",
+      "sampleZh": "我平时用手机付，因为扫码就行，不用找零钱。可是手机没电或者密码输错的时候，我就得用现金，所以我包里总放一百块。",
+      "sampleVi": "Bình thường tôi trả bằng điện thoại vì quét mã là xong, khỏi lo tiền lẻ. Nhưng lúc hết pin hoặc nhập sai mật khẩu, tôi phải dùng tiền mặt, nên trong cặp tôi luôn để một trăm tệ."
+    }
+  ],
+  "transferTask": "Người nhà ở quê hỏi chuyện mang tiền khi sang Trung Quốc: hãy hướng dẫn họ đến ngân hàng đổi tiền, nói có mất phí hay không và nhắc giữ bí mật mật khẩu.",
+  "pronunciation": [
+    {
+      "text": "银行",
+      "pinyin": "yín háng",
+      "hint": "Cả hai chữ đều thanh 2; trong chuỗi hai thanh 2, chữ đầu ngắn rồi nhấn lên ở chữ sau."
+    },
+    {
+      "text": "密码",
+      "pinyin": "mì mǎ",
+      "hint": "Chữ đầu thanh 4 rơi mạnh, chữ sau thanh 3 uốn thấp; phụ âm môi cuối bật rõ."
+    },
+    {
+      "text": "转账",
+      "pinyin": "zhuǎn zhàng",
+      "hint": "Âm đầu ở đây đọc thanh 3, âm sau thanh 4 rơi dứt khoát; chữ thứ nhất có hai cách đọc, trong bài này dùng cách thanh 3."
+    },
+    {
+      "text": "扫码",
+      "pinyin": "sǎo mǎ",
+      "hint": "Hai thanh 3 liên tiếp: chữ đầu thấp và ngắn, chữ sau nâng lên rõ; răng gần chạm khi đọc."
+    }
+  ]
+}

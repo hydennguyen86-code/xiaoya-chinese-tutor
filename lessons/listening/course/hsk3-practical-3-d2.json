@@ -1,0 +1,105 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-3-d2",
+  "level": "HSK3-4",
+  "title": "Đi mua sắm: hỏi giá, thử đồ, trả giá",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-121",
+      "level": "HSK3-4",
+      "hanzi": "这件合适吗？有没有打折？",
+      "pinyin": "zhè jiàn hé shì ma yǒu méi yóu dǎ zhé",
+      "meaningVi": "Cái này có vừa không? Có giảm giá không?",
+      "focus": [
+        "Biến điệu 3+3: yǒu dǎ → yóu dǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "合适 hé shì: hai âm đầy đủ, không đọc nhẹ.",
+        "打折 dǎ zhé: 折 thanh 2 đi lên, vần -e.",
+        "这件 zhè jiàn: 件 thanh 4 rơi mạnh."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 4, 2, 4, 5, 3, 2, 3, 3, 2],
+      "acceptTones": [
+        [4, 4, 2, 4, 5, 3, 2, 2, 3, 2],
+        [4, 4, 2, 4, 5, 3, 2, 3, 3, 2]
+      ],
+      "hint": "Biến điệu 3+3: yǒu dǎ → yóu dǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-2-4-5-3-2-2-3-2 lẫn 4-4-2-4-5-3-2-3-3-2."
+    },
+    {
+      "id": "dt-2-122",
+      "level": "HSK3-4",
+      "hanzi": "能便宜一点吗？",
+      "pinyin": "néng pián yi yì diǎn ma",
+      "meaningVi": "Hỏi nhỏ giá: rẻ hơn một chút được không?",
+      "focus": [
+        "便宜 pián yi: 宜 đọc nhẹ yi.",
+        "一点 yì diǎn: 一 thành yì trước thanh 3.",
+        "吗 ma: âm cuối rất nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-123",
+      "level": "HSK3-4",
+      "hanzi": "我没带现金，能扫码付款吗？",
+      "pinyin": "wǒ méi dài xiàn jīn néng sáo mǎ fù kuǎn ma",
+      "meaningVi": "Tôi không mang tiền mặt, quét mã thanh toán được không?",
+      "focus": [
+        "Biến điệu 3+3: sǎo mǎ → sáo mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "现金 xiàn jīn: 金 đóng -n, không phải -ng.",
+        "付款 fù kuǎn: 款 thanh 3, đứng trước 吗.",
+        "我没带 wǒ méi dài: 没 thanh 2, nghĩa là không mang theo."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 2, 4, 4, 1, 2, 3, 3, 4, 3, 5],
+      "acceptTones": [
+        [3, 2, 4, 4, 1, 2, 2, 3, 4, 3, 5],
+        [3, 2, 4, 4, 1, 2, 3, 3, 4, 3, 5]
+      ],
+      "hint": "Biến điệu 3+3: sǎo mǎ → sáo mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-2-4-4-1-2-2-3-4-3-5 lẫn 3-2-4-4-1-2-3-3-4-3-5."
+    },
+    {
+      "id": "dt-2-124",
+      "level": "HSK3-4",
+      "hanzi": "试完合适就付款，打折吗？",
+      "pinyin": "shì wán hé shì jiù fù kuǎn dǎ zhé ma",
+      "meaningVi": "Thử xong thấy vừa thì trả tiền, có giảm giá không?",
+      "focus": [
+        "试完 shì wán: 完 thanh 2 đi lên.",
+        "打折吗 dǎ zhé ma: 打 thanh 3, 吗 nhẹ.",
+        "合适 hé shì: giữ đủ hai thanh, đừng đọc thành hé shi."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-26",
+      "level": "HSK3-4",
+      "text": "这件挺合适，可是打折吗？我没带现金，扫码付款。",
+      "pinyin": "zhè jiàn tǐng hé shì kě shì dǎ zhé ma wǒ méi dài xiàn jīn sáo mǎ fù kuǎn",
+      "meaningVi": "Cái này khá vừa, nhưng có giảm giá không? Tôi không mang tiền mặt, quét mã trả tiền.",
+      "syllables": 19,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "这件挺合适", "pinyin": "zhè jiàn tǐng hé shì", "pause": "soft" },
+        { "hanzi": "可是打折吗", "pinyin": "kě shì dǎ zhé ma", "pause": "hard" },
+        { "hanzi": "我没带现金", "pinyin": "wǒ méi dài xiàn jīn", "pause": "soft" },
+        { "hanzi": "扫码付款", "pinyin": "sáo mǎ fù kuǎn", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: sǎo mǎ → sáo mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "这件挺合适 zhè jiàn tǐng hé shì: năm âm, nhấn vào 合适.",
+        "可是 kě shì: 可 thanh 3 mở đầu cụm hỏi.",
+        "Ngắt sau dấu hỏi, cụm cuối 扫码付款 nói gọn."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 4, 3, 2, 4, 3, 4, 3, 2, 5, 3, 2, 4, 4, 1, 3, 3, 4, 3],
+      "acceptTones": [
+        [4, 4, 3, 2, 4, 3, 4, 3, 2, 5, 3, 2, 4, 4, 1, 2, 3, 4, 3],
+        [4, 4, 3, 2, 4, 3, 4, 3, 2, 5, 3, 2, 4, 4, 1, 3, 3, 4, 3]
+      ],
+      "hint": "Biến điệu 3+3: sǎo mǎ → sáo mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-3-2-4-3-4-3-2-5-3-2-4-4-1-2-3-4-3 lẫn 4-4-3-2-4-3-4-3-2-5-3-2-4-4-1-3-3-4-3."
+    }
+  ]
+}

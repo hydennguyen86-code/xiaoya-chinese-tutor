@@ -1,0 +1,98 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-4-d2",
+  "level": "HSK3-4",
+  "title": "Gọi điện và hẹn gặp",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-129",
+      "level": "HSK3-4",
+      "hanzi": "我要迟到了，你在哪个位置？",
+      "pinyin": "wǒ yào chí dào le nǐ zài nǎ gè wèi zhì",
+      "meaningVi": "Tôi sắp trễ rồi, bạn đang ở vị trí nào?",
+      "focus": [
+        "迟到 chí dào: chí cuộn lưỡi thanh 2.",
+        "哪个 nǎ gè: 个 ở đây giữ thanh 4.",
+        "位置 wèi zhì: hai thanh 4, đọc đầy đủ.",
+        "了 le: âm nhẹ đứng sau 到."
+      ]
+    },
+    {
+      "id": "dt-2-130",
+      "level": "HSK3-4",
+      "hanzi": "把位置发给我，我马上联系。",
+      "pinyin": "bǎ wèi zhì fā géi wǒ wó mǎ shàng lián xì",
+      "meaningVi": "Gửi vị trí cho tôi, tôi liên hệ ngay.",
+      "focus": [
+        "Biến điệu 3+3: gěi wǒ → géi wǒ; wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "联系 lián xì: 联 thanh 2, 系 thanh 4.",
+        "把 bǎ: mở đầu câu yêu cầu, thanh 3.",
+        "位置 wèi zhì: hai thanh 4, không đọc nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 4, 4, 1, 3, 3, 3, 3, 4, 2, 4],
+      "acceptTones": [
+        [3, 4, 4, 1, 2, 3, 2, 3, 4, 2, 4],
+        [3, 4, 4, 1, 3, 3, 3, 3, 4, 2, 4]
+      ],
+      "hint": "Biến điệu 3+3: gěi wǒ → géi wǒ; wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-1-2-3-2-3-4-2-4 lẫn 3-4-4-1-3-3-3-3-4-2-4."
+    },
+    {
+      "id": "dt-2-131",
+      "level": "HSK3-4",
+      "hanzi": "是不是六点在门口见面？",
+      "pinyin": "shì bu shì liù diǎn zài mén kǒu jiàn miàn",
+      "meaningVi": "Có phải sáu giờ gặp nhau ở cửa không?",
+      "focus": [
+        "是不是 shì bu shì: 不 ở giữa đọc nhẹ bu.",
+        "六点 liù diǎn: 六 thanh 4, 点 thanh 3.",
+        "门口 mén kǒu: 口 thanh 3, rồi hai thanh 4 ở 见面."
+      ]
+    },
+    {
+      "id": "dt-2-132",
+      "level": "HSK3-4",
+      "hanzi": "不好意思，我迟到了，马上联系你。",
+      "pinyin": "bù hǎo yì si wǒ chí dào le mǎ shàng lián xì nǐ",
+      "meaningVi": "Xin lỗi, tôi trễ rồi, sẽ liên hệ với bạn ngay.",
+      "focus": [
+        "不好意思 bù hǎo yì si: 思 đọc nhẹ si.",
+        "迟到了 chí dào le: 了 đọc nhẹ le.",
+        "马上联系 mǎ shàng lián xì: bốn âm, giữ nhịp đều."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-28",
+      "level": "HSK3-4",
+      "text": "你好，我想预约周六的晚会，位置发给我，我马上联系你。",
+      "pinyin": "ní hǎo wó xiǎng yù yuē zhōu liù de wǎn huì wèi zhì fā géi wǒ wó mǎ shàng lián xì nǐ",
+      "meaningVi": "Chào bạn, tôi muốn đặt tiệc tối thứ bảy, gửi vị trí cho tôi, tôi sẽ liên hệ ngay.",
+      "syllables": 22,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "你好", "pinyin": "ní hǎo", "pause": "soft" },
+        { "hanzi": "我想预约周六的晚会", "pinyin": "wó xiǎng yù yuē zhōu liù de wǎn huì", "pause": "soft" },
+        { "hanzi": "位置发给我", "pinyin": "wèi zhì fā géi wǒ", "pause": "soft" },
+        { "hanzi": "我马上联系你", "pinyin": "wó mǎ shàng lián xì nǐ", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: nǐ hǎo → ní hǎo; wǒ xiǎng → wó xiǎng; gěi wǒ → géi wǒ; wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "预约 yù yuē và 晚会 wǎn huì: hai từ khóa của cuộc hẹn.",
+        "周六的 zhōu liù de: 的 đọc nhẹ de.",
+        "Bốn cụm hơi, dừng rõ sau 位置发给我."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 3, 3, 4, 1, 1, 4, 5, 3, 4, 4, 4, 1, 3, 3, 3, 3, 4, 2, 4, 3],
+      "acceptTones": [
+        [2, 3, 2, 3, 4, 1, 1, 4, 5, 3, 4, 4, 4, 1, 2, 3, 2, 3, 4, 2, 4, 3],
+        [3, 3, 3, 3, 4, 1, 1, 4, 5, 3, 4, 4, 4, 1, 3, 3, 3, 3, 4, 2, 4, 3]
+      ],
+      "hint": "Biến điệu 3+3: nǐ hǎo → ní hǎo; wǒ xiǎng → wó xiǎng; gěi wǒ → géi wǒ; wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-2-3-4-1-1-4-5-3-4-4-4-1-2-3-2-3-4-2-4-3 lẫn 3-3-3-3-4-1-1-4-5-3-4-4-4-1-3-3-3-3-4-2-4-3."
+    }
+  ]
+}

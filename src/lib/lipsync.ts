@@ -47,7 +47,7 @@ const FINAL_VISEME: Record<string, string> = {
   eng: 'E',
   er: 'E',
   ie: 'E',
-  üe: 'E',
+  üe: 'Y',
   i: 'I',
   in: 'I',
   ing: 'I',
@@ -58,10 +58,11 @@ const FINAL_VISEME: Record<string, string> = {
   uo: 'O',
   iong: 'O',
   u: 'U',
-  ü: 'U',
+  ü: 'Y',
   un: 'U',
   ui: 'U',
-  ün: 'U',
+  üan: 'Y',
+  ün: 'Y',
 };
 
 interface VisemeEvent {
@@ -83,7 +84,8 @@ function finalToViseme(final: string) {
   if (final.includes('o')) return 'O';
   if (final.includes('e')) return 'E';
   if (final.includes('i')) return 'I';
-  if (final.includes('u') || final.includes('ü') || final.includes('v')) return 'U';
+  if (final.includes('ü') || final.includes('v')) return 'Y';
+  if (final.includes('u')) return 'U';
   return 'aa';
 }
 
@@ -134,9 +136,16 @@ function addWordVisemes(events: VisemeEvent[], word: TtsWord) {
       final = '';
     }
 
+    // pinyin-pro writes yu/yue/yun/yuan with a plain u, although these
+    // syllables have the front rounded vowel ü. Apical -i after retroflex
+    // and dental initials is also different from the spread vowel in yi.
+    const apicalI = final === 'i' && /^(zh|ch|sh|r|z|c|s)$/.test(initial);
+    const frontRounded = initial === 'y' && /^(u|ue|un|uan)$/.test(final);
     if (initial === 'y' || initial === 'w') initial = '';
     const initialViseme = INITIAL_VISEME[initial];
-    const vowelViseme = finalToViseme(final);
+    const vowelViseme = apicalI
+      ? (initialViseme ?? 'SS')
+      : frontRounded ? 'Y' : finalToViseme(final);
 
     if (!initialViseme || slice < 95) {
       events.push({

@@ -1,0 +1,138 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-9-d1",
+  "level": "HSK3-4",
+  "title": "Đi xem phòng và hỏi chủ nhà",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-167",
+      "level": "HSK3-4",
+      "hanzi": "房间朝南，租金包括水电吗？",
+      "pinyin": "fáng jiān cháo nán zū jīn bāo kuò shuǐ diàn ma",
+      "meaningVi": "Phòng hướng nam, tiền thuê đã gồm điện nước chưa?",
+      "focus": [
+        "租金 zū jīn: 租 không bật hơi, khác 出.",
+        "包括 bāo kuò: 括 rơi thanh 4, đóng -u.",
+        "水电 shuǐ diàn: 水 thanh 3 rồi rơi mạnh ở diàn."
+      ]
+    },
+    {
+      "id": "dt-2-168",
+      "level": "HSK3-4",
+      "hanzi": "签合同以前要先交押金。",
+      "pinyin": "qiān hé tong yǐ qián yào xiān jiāo yā jīn",
+      "meaningVi": "Trước khi ký hợp đồng phải đặt cọc trước.",
+      "focus": [
+        "合同 hé tong: 同 đọc nhẹ.",
+        "押金 yā jīn: 押 rơi nhẹ rồi 金 đóng -n.",
+        "签 qiān và 先 xiān gần âm, chú ý phụ âm đầu."
+      ]
+    },
+    {
+      "id": "dt-2-169",
+      "level": "HSK3-4",
+      "hanzi": "家具是房东的，坏了找他。",
+      "pinyin": "jiā jù shì fáng dōng de huài le zhǎo tā",
+      "meaningVi": "Đồ đạc là của chủ nhà, hỏng thì tìm anh ấy.",
+      "focus": [
+        "家具 jiā jù: 具 đọc jù, không phải zù.",
+        "坏了 le đọc nhẹ sau 坏.",
+        "的 trong 房东的 đọc nhẹ, chỉ sở hữu."
+      ]
+    },
+    {
+      "id": "dt-2-170",
+      "level": "HSK3-4",
+      "hanzi": "每个月一号转租金给你。",
+      "pinyin": "měi gè yuè yī hào zhuǎn zū jīn géi nǐ",
+      "meaningVi": "Mỗi tháng ngày mốt tôi chuyển tiền thuê cho bạn.",
+      "focus": [
+        "Biến điệu 3+3: gěi nǐ → géi nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "一号 yī hào: số hiệu ngày, 一 giữ thanh 1.",
+        "转 zhuǎn cuộn lưỡi, 租金 zū jīn giữ -n cuối."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        1,
+        4,
+        3,
+        1,
+        1,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          1,
+          4,
+          3,
+          1,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4,
+          1,
+          4,
+          3,
+          1,
+          1,
+          3,
+          3
+        ]
+      ],
+      "hint": "Biến điệu 3+3: gěi nǐ → géi nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-1-4-3-1-1-2-3 lẫn 3-4-4-1-4-3-1-1-3-3."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-37",
+      "level": "HSK3-4",
+      "text": "房间朝南，家具挺新，租金包括水电。合同看完再交押金。",
+      "pinyin": "fáng jiān cháo nán jiā jù tǐng xīn zū jīn bāo kuò shuǐ diàn hé tong kàn wán zài jiāo yā jīn",
+      "meaningVi": "Phòng hướng nam, đồ đạc khá mới, tiền thuê gồm cả điện nước. Đọc xong hợp đồng rồi mới đặt cọc.",
+      "syllables": 22,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "房间朝南",
+          "pinyin": "fáng jiān cháo nán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "家具挺新",
+          "pinyin": "jiā jù tǐng xīn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "租金包括水电",
+          "pinyin": "zū jīn bāo kuò shuǐ diàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "合同看完再交押金",
+          "pinyin": "hé tong kàn wán zài jiāo yā jīn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Bốn hơi, mỗi hơi một thông tin: phòng / đồ đạc / tiền thuê / hợp đồng.",
+        "合同 hé tong: 同 đọc nhẹ.",
+        "挺新 rồi 押金: hai âm 1 cuối đoạn, giữ đều tay.",
+        "押金 hai âm đầu môi, đừng nuốt 押."
+      ]
+    }
+  ]
+}

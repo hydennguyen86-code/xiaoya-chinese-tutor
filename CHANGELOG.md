@@ -1,11 +1,18 @@
 # Changelog
 
+## 2026-10-26 — Bản tạm
+
+- Giảm biên độ há miệng của avatar LAM; âm lượng không còn ép mở môi ở âm khép. Phân biệt khẩu hình a, i, u, ü và các phụ âm tiếng Trung theo pinyin. Khẩu hình vẫn dùng mốc TTS/ước lượng, chưa phải đồng bộ phoneme chính xác.
+- Thêm lộ trình nhập môn Pinyin (10 buổi) và HSK 3 thực tế (24 buổi), nâng tổng số buổi đóng gói lên 82; giữ vị trí học đã lưu. Thêm 24 bộ nghe dictation/shadowing HSK 3; Pinyin nhập môn dùng bài nghe sẵn trong từng buổi. Học liệu AI soạn, chưa có giáo viên duyệt.
+- Thêm giọng nam Yunjian và Yunxi, chọn giọng Edge theo giới tính khuôn mặt; giữ nguyên giọng nhân bản khi đã chọn.
+- Phản hồi thanh điệu không chấm sai những âm đo chưa đủ chắc; làm rõ trạng thái chưa chấm trong giao diện.
+
 ## v0.1.0 — Chưa phát hành
 
-Bản dự kiến, chưa tạo tag/release và chưa push. Cần bộ ghi âm người học thật
+Bản dự kiến, chưa tạo tag/release. Cần bộ ghi âm người học thật
 có nhãn và kiểm tra cài đặt trên máy macOS thứ hai trước khi kết luận sẵn sàng.
 
-- Hai lộ trình HSK 1/HSK 5 thực tế: 48 buổi tự soạn, nghe hiểu, nói, kiểm tra chặng và hướng dẫn học. Chưa được giáo viên duyệt, không phải đề thi chính thức.
+- Bốn lộ trình Nhập môn Pinyin, HSK 1, HSK 3 và HSK 5: 82 buổi tự soạn, nghe hiểu, nói, kiểm tra chặng và hướng dẫn học. Chưa được giáo viên duyệt, không phải đề thi chính thức.
 - Kiểm tra tuần/tháng theo lịch sử từng người học, mục tiêu giao tiếp và kiểm tra thiết lập.
 - Bộ thu 40 chữ/16 từ, nghe lại, gắn nhãn self/expert, đánh giá bản ghi local với kết quả tổng hợp.
 - Mốc âm tiết ước lượng cho từ/câu, biểu đồ chia chữ và phát lại bản ghi rồi đoạn giọng mẫu.

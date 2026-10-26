@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 4,
+  "lessonTitle": "Tròn môi hay dẹt môi: zh ch sh r / z c s",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "是",
+      "meaning": "là",
+      "example": "我是学生。",
+      "exampleVi": "Tôi là học sinh.",
+      "pinyin": "shì",
+      "examplePinyin": "wǒ shì xué sheng 。"
+    },
+    {
+      "word": "十",
+      "meaning": "mười",
+      "example": "他今年十岁。",
+      "exampleVi": "Năm nay cậu ấy mười tuổi.",
+      "pinyin": "shí",
+      "examplePinyin": "tā jīn nián shí suì 。"
+    },
+    {
+      "word": "四",
+      "meaning": "bốn",
+      "example": "我要四个。",
+      "exampleVi": "Tôi muốn bốn cái.",
+      "pinyin": "sì",
+      "examplePinyin": "wǒ yào sì gè 。"
+    },
+    {
+      "word": "诗",
+      "meaning": "bài thơ",
+      "example": "这首诗很长。",
+      "exampleVi": "Bài thơ này rất dài.",
+      "pinyin": "shī",
+      "examplePinyin": "zhè shǒu shī hěn cháng 。"
+    },
+    {
+      "word": "子",
+      "meaning": "hạt; con (thanh nhẹ)",
+      "example": "桌子上有杯子。",
+      "exampleVi": "Trên bàn có cái cốc.",
+      "pinyin": "zǐ",
+      "examplePinyin": "zhuō zi shàng yǒu bēi zi 。"
+    },
+    {
+      "word": "字",
+      "meaning": "chữ",
+      "example": "我写十个字。",
+      "exampleVi": "Tôi viết mười chữ.",
+      "pinyin": "zì",
+      "examplePinyin": "wǒ xiě shí gè zì 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "这是……",
+      "explanation": "Chỉ và giới thiệu thứ gì đó: 这 + 是 + vật; 是 là âm cong lưỡi, đừng đọc thành x.",
+      "example": "这是十个字。",
+      "exampleVi": "Đây là mười chữ.",
+      "examplePinyin": "zhè shì shí gè zì 。"
+    },
+    {
+      "pattern": "是不是？",
+      "explanation": "Xác nhận nhanh ở cuối câu: lặp 是不是 sau một nhận định, hai chữ 是 đều cong lưỡi.",
+      "example": "这是你的字，是不是？",
+      "exampleVi": "Đây là chữ của bạn, phải không?",
+      "examplePinyin": "zhè shì nǐ de zì ， shì bu shì ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Giờ luyện viết trên vở: bạn chỉ vào dòng chữ của bạn cùng bàn và hỏi đó là số nào, chữ nào; người kia đọc nhanh nên hai số dễ lẫn.",
+    "avatarRole": "Bạn cùng bàn",
+    "learnerRole": "Người chỉ chữ trên vở",
+    "goals": [
+      "Chỉ chữ bằng mẫu zhè shì ……",
+      "Xác nhận bằng cụm shì bu shì",
+      "Nghe ra sì và shí chỉ bằng cao độ và vị trí lưỡi"
+    ],
+    "opening": "这是你写的字吗？是四十还是十四？",
+    "openingVi": "Đây là chữ bạn viết à? Là bốn mươi hay mười bốn?"
+  },
+  "freeTalk": {
+    "question": "这是十个字吗？是四十还是十四？",
+    "questionVi": "Đây có phải mười chữ không? Là bốn mươi hay mười bốn?"
+  },
+  "learningNotes": [
+    "zh, ch, sh, r là âm cong lưỡi: đầu lưỡi cuộn lên chạm vòm trước, hai môi hơi bo tròn; ch bật hơi, zh không.",
+    "z, c, s là âm phẳng lưỡi: đầu lưỡi dựa sau răng cửa trên, khóe miệng dẹt kéo ngang, nghe gọn và thấp hơn.",
+    "CẢNH BÁO cho người Việt: tiếng Việt có tr và s nhưng không có âm cong lưỡi; đừng đọc 十 thành 'tập' hay 诗 thành 'xì', cũng đừng thay thanh 3 bằng dấu hỏi.",
+    "子 đứng cuối danh từ luôn đọc nhẹ: 桌子, 杯子; còn 字 đứng một mình vẫn hạ mạnh ở thanh 4.",
+    "四 và 十 là cặp dễ nghe sai nhất: một bên phẳng lưỡi thanh 4 hạ, một bên cong lưỡi thanh 2 lên."
+  ],
+  "prerequisites": [
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Tròn môi hay dẹt môi: zh ch sh r / z c s",
+    "playLimit": 1,
+    "transcript": "甲：这是谁写的字？乙：是我写的，我写四和十。甲：这是四十还是十四？乙：这是十四。甲：对，十和四的声调不一样。乙：我再写一首诗。",
+    "translation": "A hỏi ai viết chữ này. B nói B viết số bốn và số mười. A hỏi đó là bốn mươi hay mười bốn. B đáp mười bốn. A đồng ý và nói hai số khác nhau ở thanh điệu. B nói sẽ viết thêm một bài thơ.",
+    "questions": [
+      {
+        "prompt": "Ai viết chữ trong đoạn?",
+        "options": [
+          "Người B",
+          "Người A",
+          "Thầy giáo"
+        ],
+        "answer": 0,
+        "explanation": "B trả lời 是我写的。"
+      },
+      {
+        "prompt": "Người B nói con số nào?",
+        "options": [
+          "Bốn mươi",
+          "Mười bốn",
+          "Mười"
+        ],
+        "answer": 1,
+        "explanation": "B chốt lại bằng 这是十四。"
+      },
+      {
+        "prompt": "A chỉ ra điểm khác nhau giữa 十 và 四 ở chỗ nào?",
+        "options": [
+          "Độ dài nguyên âm",
+          "Nghĩa của số",
+          "Cao độ của hai âm"
+        ],
+        "answer": 2,
+        "explanation": "A nói 十和四的声调不一样, tức thanh điệu khác nhau."
+      }
+    ],
+    "pinyin": "jiǎ ： zhè shì shuí xiě de zì ？ yǐ ： shì wǒ xiě de ， wǒ xiě sì hé shí 。 jiǎ ： zhè shì sì shí hái shì shí sì ？ yǐ ： zhè shì shí sì 。 jiǎ ： duì ， shí hé sì de shēng diào bù yí yàng 。 yǐ ： wǒ zài xiě yì shǒu shī 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại các cặp cong lưỡi và phẳng lưỡi.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Đọc từng cặp, nghỉ ngắn giữa hai chữ để nghe rõ lưỡi có cuộn lên hay không.",
+      "checklist": [
+        "Phân biệt rõ sì và shí",
+        "Giữ âm zi cuối từ thật nhẹ",
+        "Không biến sh thành x"
+      ],
+      "audioText": "四，十。子，字。是，四。四十，十四。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu hỏi về số chữ.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 这是…… và 是不是？ của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "Ba âm shì trong câu đều cong lưỡi",
+        "Giữ nhịp đều, không nuốt chữ"
+      ],
+      "audioText": "这是谁的字？是不是十个字？"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, chậm và rõ đầu lưỡi.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "四是四，十是十。桌子上有一首诗，诗里有十四个字。这是你的名字吗？是不是？",
+      "reference": "Đoạn luyện cặp 四 và 十: đổi thứ tự là đổi số; câu hỏi cuối dùng 是不是 để xác nhận.",
+      "checklist": [
+        "Đọc đúng thứ tự các số",
+        "Hai từ có zi phải đọc nhẹ âm cuối",
+        "Người nghe phân biệt được sì và shí"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "这是十个字吗？是四十还是十四？",
+      "promptVi": "Đây có phải mười chữ không? Là bốn mươi hay mười bốn?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: xác nhận số chữ bằng 这是…… rồi chọn một trong hai số và nói lại cho người khác nghe.",
+      "checklist": [
+        "Trả lời đủ hai câu hỏi",
+        "Dùng được cụm xác nhận shì bu shì",
+        "Đọc rõ cặp sì và shí"
+      ],
+      "sampleZh": "这是十四个字，不是十个字。这是四十，不是十四。",
+      "sampleVi": "Đây là mười bốn chữ, không phải mười chữ. Đây là bốn mươi, không phải mười bốn."
+    }
+  ],
+  "transferTask": "Nhờ một người thật đọc nhanh dãy sì, shí, sìshí, shísì và hai từ zhuō zi, bēi zi; bạn viết lại những gì nghe được rồi đối chiếu xem mình lẫn ở cặp nào.",
+  "pronunciation": [
+    {
+      "text": "四，十",
+      "pinyin": "sì ， shí",
+      "hint": "Cùng vần i: sì để lưỡi phẳng sau răng, thanh 4 hạ mạnh; shí cuộn lưỡi lên, môi tròn hơn, thanh 2 đi lên."
+    },
+    {
+      "text": "四十，十四",
+      "pinyin": "sì shí ， shí sì",
+      "hint": "Đổi thứ tự là đổi số: hãy nghe cao độ chữ đầu trước, rồi mới kiểm tra lưỡi cong hay phẳng."
+    },
+    {
+      "text": "桌子，杯子",
+      "pinyin": "zhuō zi ， bēi zi",
+      "hint": "Hai danh từ kết thúc bằng zi nhẹ: âm đầu cong lưỡi rõ, âm thứ hai ngắn, thấp và rơi ngay."
+    },
+    {
+      "text": "是不是",
+      "pinyin": "shì bu shì",
+      "hint": "Cụm xác nhận: ba âm cùng cong lưỡi, chữ giữa đọc nhẹ; giữ miệng dẹt để không thành sh-sh-sh đều."
+    },
+    {
+      "text": "诗，字",
+      "pinyin": "shī ， zì",
+      "hint": "Cặp tối thiểu của bài: shī cong lưỡi, thanh 1 cao bằng; zì phẳng lưỡi, thanh 4 cắt ngắn."
+    }
+  ]
+}

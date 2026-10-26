@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 8,
+  "lessonTitle": "Ngân hàng, đổi tiền và trả bằng điện thoại",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "银行",
+      "meaning": "ngân hàng",
+      "example": "银行五点关门，得早点去。",
+      "exampleVi": "Ngân hàng năm giờ đóng cửa, phải đi sớm.",
+      "pinyin": "yín háng",
+      "examplePinyin": "yín háng wǔ diǎn guān mén ， dé zǎo diǎn qù 。"
+    },
+    {
+      "word": "换钱",
+      "meaning": "đổi tiền",
+      "example": "我想去银行换钱。",
+      "exampleVi": "Tôi muốn đến ngân hàng đổi tiền.",
+      "pinyin": "huàn qián",
+      "examplePinyin": "wǒ xiǎng qù yín háng huàn qián 。"
+    },
+    {
+      "word": "密码",
+      "meaning": "mật khẩu",
+      "example": "请输入你的密码。",
+      "exampleVi": "Vui lòng nhập mật khẩu của bạn.",
+      "pinyin": "mì mǎ",
+      "examplePinyin": "qǐng shū rù nǐ de mì mǎ 。"
+    },
+    {
+      "word": "转账",
+      "meaning": "chuyển khoản",
+      "example": "我在手机上就能转账。",
+      "exampleVi": "Tôi trên điện thoại là chuyển khoản được.",
+      "pinyin": "zhuǎn zhàng",
+      "examplePinyin": "wǒ zài shǒu jī shàng jiù néng zhuǎn zhàng 。"
+    },
+    {
+      "word": "扫码",
+      "meaning": "quét mã",
+      "example": "扫码就行，不用填单子。",
+      "exampleVi": "Quét mã là được, không cần điền giấy tờ.",
+      "pinyin": "sǎo mǎ",
+      "examplePinyin": "sǎo mǎ jiù xíng ， bú yòng tián dān zi 。"
+    },
+    {
+      "word": "收款",
+      "meaning": "thu tiền; nhận tiền",
+      "example": "老板把收款码放在桌上。",
+      "exampleVi": "Chủ quán đặt mã nhận tiền trên bàn.",
+      "pinyin": "shōu kuǎn",
+      "examplePinyin": "lǎo bǎn bǎ shōu kuǎn mǎ fàng zài zhuō shàng 。"
+    },
+    {
+      "word": "排队",
+      "meaning": "xếp hàng",
+      "example": "银行人很多，要排队。",
+      "exampleVi": "Ngân hàng đông người, phải xếp hàng.",
+      "pinyin": "pái duì",
+      "examplePinyin": "yín xíng rén hěn duō ， yào pái duì 。"
+    },
+    {
+      "word": "现金",
+      "meaning": "tiền mặt",
+      "example": "我身上没带现金。",
+      "exampleVi": "Tôi không mang tiền mặt theo người.",
+      "pinyin": "xiàn jīn",
+      "examplePinyin": "wǒ shēn shàng méi dài xiàn jīn 。"
+    },
+    {
+      "word": "到账",
+      "meaning": "tiền vào tài khoản",
+      "example": "转账五分钟就到账。",
+      "exampleVi": "Chuyển khoản năm phút là tiền vào.",
+      "pinyin": "dào zhàng",
+      "examplePinyin": "zhuǎn zhàng wǔ fēn zhōng jiù dào zhàng 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我想……",
+      "explanation": "Nêu việc cần làm khi gặp nhân viên: 我想 rồi thêm động từ và nội dung; muốn lịch sự thì mở đầu bằng 您好.",
+      "example": "您好，我想换两千块人民币。",
+      "exampleVi": "Xin chào, tôi muốn đổi hai nghìn nhân dân tệ.",
+      "examplePinyin": "nín hǎo ， wǒ xiǎng huàn liǎng qiān kuài rén mín bì 。"
+    },
+    {
+      "pattern": "可以用手机付吗？",
+      "explanation": "Hỏi cách thanh toán: dùng nguyên cụm này ở cuối câu; nếu được, chủ quán thường trả 扫这个码.",
+      "example": "服务员，可以用手机付吗？",
+      "exampleVi": "Bạn phục vụ ơi, trả bằng điện thoại được không?",
+      "examplePinyin": "fú wù yuán ， kě yǐ yòng shǒu jī fù ma ？"
+    },
+    {
+      "pattern": "先……然后……",
+      "explanation": "Kể các bước thao tác: 先 rồi bước một, 然后 rồi bước tiếp theo; khi nhắc lại cho người khác, nói rõ từng bước.",
+      "example": "我先扫码，然后输金额。",
+      "exampleVi": "Tôi quét mã trước rồi nhập số tiền.",
+      "examplePinyin": "wǒ xiān sǎo mǎ ， rán hòu shū jīn é 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: ở quán ăn, thẻ không dùng được nên bạn hỏi chủ quán cách trả bằng điện thoại, xác nhận tiền đã vào và chuyển một nửa cho bạn đi cùng.",
+    "avatarRole": "Chủ quán",
+    "learnerRole": "Khách trả tiền",
+    "goals": [
+      "Hỏi trả bằng điện thoại được không",
+      "Kể lại hai bước thao tác để xác nhận",
+      "Nói mình sẽ chuyển một nửa cho bạn đi cùng"
+    ],
+    "opening": "一共三十六块，可以扫码吗？",
+    "openingVi": "Tổng cộng ba mươi sáu tệ, quét mã được không ạ?"
+  },
+  "freeTalk": {
+    "question": "用手机付款有什么好处，又有什么不方便？",
+    "questionVi": "Trả bằng điện thoại có gì tiện, có gì bất tiện?"
+  },
+  "learningNotes": [
+    "Ở ngân hàng, mở đầu bằng 我想 + việc cần làm: 我想换钱、我想办张卡; chưa nghe rõ thì hỏi lại 请问手续费多少？",
+    "Trả bằng điện thoại ở quán nhỏ: 可以用手机付吗？; chủ quán nói 扫这个码 tức là đưa mã để bạn quét, còn 我扫你就是 tôi quét mã của bạn.",
+    "Phát âm: 扫码 là hai thanh 3 liền nhau, chữ đầu đọc thấp và ngắn rồi nhấn lên chữ sau; 密码 là thanh 4 rồi thanh 3, đừng biến âm thứ hai thành thanh nhẹ.",
+    "换钱 là đổi ngoại tệ, 转账 là chuyển giữa hai tài khoản, 收款 là người bán nhận tiền; nói lẫn ba từ này sẽ bị hiểu nhầm ngay."
+  ],
+  "prerequisites": [
+    7
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Ngân hàng, đổi tiền và trả bằng điện thoại",
+    "playLimit": 1,
+    "transcript": "顾客：老板，一共多少钱？老板：八十六块，收款码在这儿。顾客：我手机里没钱了，可以转账吗？老板：可以，你扫这个，备注写一下名字。顾客：好，我先扫码，然后输数，你到账了给我发个消息。老板：没问题。顾客：我朋友付他那一半，我现在给他转账。",
+    "translation": "Hóa đơn hết tám mươi sáu tệ, chủ quán chỉ mã nhận tiền. Khách hết tiền trong điện thoại nên xin chuyển khoản, được hướng dẫn quét mã và ghi tên vào phần chú thích. Khách kể lại hai bước, nhờ chủ quán nhắn khi tiền vào, đồng thời chuyển tiền cho bạn đi cùng để người ấy trả phần của mình.",
+    "questions": [
+      {
+        "prompt": "Hóa đơn hết bao nhiêu?",
+        "options": [
+          "Sáu mươi tám tệ",
+          "Tám mươi sáu tệ",
+          "Tám mươi tệ"
+        ],
+        "answer": 1,
+        "explanation": "Chủ quán nói 八十六块."
+      },
+      {
+        "prompt": "Vì sao khách phải xin chuyển khoản?",
+        "options": [
+          "Thẻ của khách bị mất",
+          "Chủ quán không cho quét mã",
+          "Trong điện thoại không còn tiền"
+        ],
+        "answer": 2,
+        "explanation": "顾客 nói 我手机里没钱了."
+      },
+      {
+        "prompt": "Khách chuyển tiền cho bạn đi cùng để làm gì?",
+        "options": [
+          "Để bạn ấy trả phần của mình",
+          "Để bạn ấy trả cả hóa đơn",
+          "Để mượn thêm tiền"
+        ],
+        "answer": 0,
+        "explanation": "顾客 nói 我朋友付他那一半，我现在给他转账."
+      }
+    ],
+    "pinyin": "gù kè ： lǎo bǎn ， yí gòng duō shǎo qián ？ lǎo bǎn ： bā shí liù kuài ， shōu kuǎn mǎ zài zhè ér 。 gù kè ： wǒ shǒu jī lǐ méi qián le ， kě yǐ zhuǎn zhàng ma ？ lǎo bǎn ： kě yǐ ， nǐ sǎo zhè ge ， bèi zhù xiě yí xià míng zi 。 gù kè ： hǎo ， wǒ xiān sǎo mǎ ， rán hòu shū shù ， nǐ dào zhàng le gěi wǒ fā gè xiāo xī 。 lǎo bǎn ： méi wèn tí 。 gù kè ： wǒ péng you fù tā nà yí bàn ， wǒ xiàn zài gěi tā zhuǎn zhàng 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu xin trả bằng điện thoại, một câu nhờ xác nhận tiền đã vào.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我手机里没钱了，可以转账吗？到账以后给我发个消息。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng lời nhờ xác nhận",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我手机里没钱了，可以转账吗？到账以后给我发个消息。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: hóa đơn bao nhiêu, khách gặp vấn đề gì, làm theo hai bước nào, nhờ chủ quán điều gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Hóa đơn hết tám mươi sáu tệ, chủ quán chỉ mã nhận tiền. Khách hết tiền trong điện thoại nên xin chuyển khoản, được hướng dẫn quét mã và ghi tên vào phần chú thích. Khách kể lại hai bước, nhờ chủ quán nhắn khi tiền vào, đồng thời chuyển tiền cho bạn đi cùng để người ấy trả phần của mình.",
+      "checklist": [
+        "Nói đủ: số tiền, vướng mắc, hai bước, lời nhờ",
+        "Người nghe hiểu được nội dung",
+        "Không tự đổi số tiền"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau như đang hướng dẫn bạn cách trả tiền.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Đọc rõ ba từ chỉ thứ tự ở giữa đoạn; câu điều kiện hạ giọng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "在饭馆付钱很方便：先扫桌上的码，然后输金额，最后请老板确认到账。要是手机里没钱，就给朋友转账，让他先付，回来我再还给他。"
+    },
+    {
+      "kind": "opinion",
+      "prompt": "用手机付款有什么好处，又有什么不方便？",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Nêu một lợi ích, một bất tiện kèm ví dụ thật, kết bằng cách bạn xử lý bất tiện đó.",
+      "checklist": [
+        "Nêu đủ lợi ích và bất tiện",
+        "Có ví dụ cụ thể",
+        "Đưa được cách khắc phục"
+      ],
+      "promptVi": "Trả bằng điện thoại có gì tiện, có gì bất tiện?",
+      "sampleZh": "手机付款的好处是不用排队找零钱，扫个码就行，到账还有消息。不方便的是手机一没电就付不了，而且密码输错别人也能看见。所以我出门会留一百块现金。",
+      "sampleVi": "Cái tiện của trả bằng điện thoại là khỏi xếp hàng lấy tiền lẻ, quét mã là xong, tiền vào còn có tin nhắn. Cái bất tiện là điện thoại hết pin là không trả được, với lại nhập sai mật khẩu người khác cũng nhìn thấy. Nên tôi đi ra ngoài luôn để một trăm tệ tiền mặt."
+    }
+  ],
+  "transferTask": "Ở siêu thị, một người bạn lớn tuổi không biết trả bằng điện thoại: hãy hướng dẫn ba bước bằng tiếng Trung, nhắc người đó kiểm tra tin nhắn xem tiền đã vào chưa và nói nếu chưa vào thì chuyển khoản cho thu ngân.",
+  "pronunciation": [
+    {
+      "text": "银行",
+      "pinyin": "yín háng",
+      "hint": "Cả hai chữ đều thanh 2; trong chuỗi hai thanh 2, chữ đầu ngắn rồi nhấn lên ở chữ sau."
+    },
+    {
+      "text": "密码",
+      "pinyin": "mì mǎ",
+      "hint": "Chữ đầu thanh 4 rơi mạnh, chữ sau thanh 3 uốn thấp; phụ âm môi cuối bật rõ."
+    },
+    {
+      "text": "转账",
+      "pinyin": "zhuǎn zhàng",
+      "hint": "Âm đầu ở đây đọc thanh 3, âm sau thanh 4 rơi dứt khoát; chữ thứ nhất có hai cách đọc, trong bài này dùng cách thanh 3."
+    },
+    {
+      "text": "扫码",
+      "pinyin": "sǎo mǎ",
+      "hint": "Hai thanh 3 liên tiếp: chữ đầu thấp và ngắn, chữ sau nâng lên rõ; răng gần chạm khi đọc."
+    }
+  ]
+}

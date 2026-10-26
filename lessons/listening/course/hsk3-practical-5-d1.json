@@ -1,0 +1,112 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-5-d1",
+  "level": "HSK3-4",
+  "title": "Nói về cuối tuần và sở thích",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-133",
+      "level": "HSK3-4",
+      "hanzi": "周末你有什么爱好？",
+      "pinyin": "zhōu mò ní yǒu shén me ài hào",
+      "meaningVi": "Cuối tuần bạn có sở thích gì?",
+      "focus": [
+        "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "什么 shén me: 么 đọc nhẹ me.",
+        "爱好 ài hào: cả hai thanh 4, 好 ở đây đọc hào.",
+        "周末 zhōu mò: 周 thanh 1 cao bằng."
+      ],
+      "sandhi": true,
+      "baseTones": [1, 4, 3, 3, 2, 5, 4, 4],
+      "acceptTones": [
+        [1, 4, 2, 3, 2, 5, 4, 4],
+        [1, 4, 3, 3, 2, 5, 4, 4]
+      ],
+      "hint": "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-2-3-2-5-4-4 lẫn 1-4-3-3-2-5-4-4."
+    },
+    {
+      "id": "dt-2-134",
+      "level": "HSK3-4",
+      "hanzi": "太累了，我想睡到十点。",
+      "pinyin": "tài lèi le wó xiǎng shuì dào shí diǎn",
+      "meaningVi": "Mệt quá, tôi muốn ngủ tới mười giờ.",
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "太累了 tài lèi le: 了 đọc nhẹ le.",
+        "睡到 shuì dào: hai thanh 4 liền nhau.",
+        "十点 shí diǎn: 十 đọc shí trước thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 4, 5, 3, 3, 4, 4, 2, 3],
+      "acceptTones": [
+        [4, 4, 5, 2, 3, 4, 4, 2, 3],
+        [4, 4, 5, 3, 3, 4, 4, 2, 3]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-5-2-3-4-4-2-3 lẫn 4-4-5-3-3-4-4-2-3."
+    },
+    {
+      "id": "dt-2-135",
+      "level": "HSK3-4",
+      "hanzi": "你喜欢看电影吗？",
+      "pinyin": "ní xǐ huan kàn diàn yǐng ma",
+      "meaningVi": "Bạn có thích xem phim không?",
+      "focus": [
+        "Biến điệu 3+3: nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "喜欢 xǐ huan: 欢 đọc nhẹ huan.",
+        "电影 diàn yǐng: 影 thanh 3, đóng -ng.",
+        "吗 ma: âm cuối rất nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 5, 4, 4, 3, 5],
+      "acceptTones": [
+        [2, 3, 5, 4, 4, 3, 5],
+        [3, 3, 5, 4, 4, 3, 5]
+      ],
+      "hint": "Biến điệu 3+3: nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-4-4-3-5 lẫn 3-3-5-4-4-3-5."
+    },
+    {
+      "id": "dt-2-136",
+      "level": "HSK3-4",
+      "hanzi": "周末我一般在家运动。",
+      "pinyin": "zhōu mò wǒ yì bān zài jiā yùn dòng",
+      "meaningVi": "Cuối tuần tôi thường tập thể dục ở nhà.",
+      "focus": [
+        "一般 yì bān: 一 thành yì trước thanh 1.",
+        "运动 yùn dòng: cả hai thanh 4.",
+        "在家 zài jiā: 家 thanh 1, rõ ở cuối câu."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-29",
+      "level": "HSK3-4",
+      "text": "周末你有什么打算？我平时喜欢运动，也爱看电影。",
+      "pinyin": "zhōu mò ní yǒu shén me dǎ suàn wǒ píng shí xǐ huan yùn dòng yě ài kàn diàn yǐng",
+      "meaningVi": "Cuối tuần bạn định làm gì? Bình thường tôi thích vận động, cũng thích xem phim.",
+      "syllables": 20,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "周末你有什么打算", "pinyin": "zhōu mò ní yǒu shén me dǎ suàn", "pause": "hard" },
+        { "hanzi": "我平时喜欢运动", "pinyin": "wǒ píng shí xǐ huan yùn dòng", "pause": "soft" },
+        { "hanzi": "也爱看电影", "pinyin": "yě ài kàn diàn yǐng", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "喜欢 xǐ huan: 欢 đọc nhẹ huan.",
+        "打算 dǎ suàn: 算 thanh 4, đóng -n.",
+        "Ba cụm hơi, nhấn 运动 và 电影 ở hai ý cuối."
+      ],
+      "sandhi": true,
+      "baseTones": [1, 4, 3, 3, 2, 5, 3, 4, 3, 2, 2, 3, 5, 4, 4, 3, 4, 4, 4, 3],
+      "acceptTones": [
+        [1, 4, 2, 3, 2, 5, 3, 4, 3, 2, 2, 3, 5, 4, 4, 3, 4, 4, 4, 3],
+        [1, 4, 3, 3, 2, 5, 3, 4, 3, 2, 2, 3, 5, 4, 4, 3, 4, 4, 4, 3]
+      ],
+      "hint": "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-2-3-2-5-3-4-3-2-2-3-5-4-4-3-4-4-4-3 lẫn 1-4-3-3-2-5-3-4-3-2-2-3-5-4-4-3-4-4-4-3."
+    }
+  ]
+}

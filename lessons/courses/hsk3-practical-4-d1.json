@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 4,
+  "lessonTitle": "Gọi điện và hẹn gặp",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "预约",
+      "meaning": "đặt trước; hẹn",
+      "example": "饭店太忙，要提前预约。",
+      "exampleVi": "Nhà hàng đông quá, phải đặt trước.",
+      "pinyin": "yù yuē",
+      "examplePinyin": "fàn diàn tài máng ， yào tí qián yù yuē 。"
+    },
+    {
+      "word": "方便",
+      "meaning": "thuận tiện",
+      "example": "你明天晚上方便吗？",
+      "exampleVi": "Tối mai bạn có tiện không?",
+      "pinyin": "fāng biàn",
+      "examplePinyin": "nǐ míng tiān wǎn shang fāng biàn ma ？"
+    },
+    {
+      "word": "打扰",
+      "meaning": "phiền; làm phiền",
+      "example": "不好意思，打扰你了。",
+      "exampleVi": "Xin lỗi, tôi làm phiền bạn rồi.",
+      "pinyin": "dǎ rǎo",
+      "examplePinyin": "bù hǎo yì si ， dǎ rǎo nǐ le 。"
+    },
+    {
+      "word": "回",
+      "meaning": "quay lại; trả lời",
+      "example": "我看到消息就回你。",
+      "exampleVi": "Tôi thấy tin nhắn là trả lời bạn ngay.",
+      "pinyin": "huí",
+      "examplePinyin": "wǒ kàn dào xiāo xī jiù huí nǐ 。"
+    },
+    {
+      "word": "见面",
+      "meaning": "gặp mặt",
+      "example": "我们几点在哪儿见面？",
+      "exampleVi": "Mấy giờ và ở đâu chúng ta gặp nhau?",
+      "pinyin": "jiàn miàn",
+      "examplePinyin": "wǒ men jǐ diǎn zài nǎ ér jiàn miàn ？"
+    },
+    {
+      "word": "晚会",
+      "meaning": "buổi tiệc tối",
+      "example": "周六晚上有一个晚会。",
+      "exampleVi": "Tối thứ bảy có một buổi tiệc tối.",
+      "pinyin": "wǎn huì",
+      "examplePinyin": "zhōu liù wǎn shang yǒu yí gè wǎn huì 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "您现在方便吗？",
+      "explanation": "Mở đầu lịch sự khi gọi cho người lớn tuổi hoặc người mới quen; 您 là ngôi thứ hai lịch sự.",
+      "example": "马老师，您现在方便吗？",
+      "exampleVi": "Thầy Mã, bây giờ thầy có tiện không ạ?",
+      "examplePinyin": "mǎ lǎo shī ， nín xiàn zài fāng biàn ma ？"
+    },
+    {
+      "pattern": "我们约在……",
+      "explanation": "Hẹn giờ hoặc địa điểm gặp: 我们约在 rồi thêm thời gian hoặc nơi, cuối câu có thể nói 见面.",
+      "example": "我们约在七点，饭店门口见面。",
+      "exampleVi": "Mình hẹn bảy giờ, gặp nhau ở cổng nhà hàng.",
+      "examplePinyin": "wǒ men yuē zài qī diǎn ， fàn diàn mén kǒu jiàn miàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Tối thứ sáu, bạn gọi cho một người bạn để rủ đi dự tiệc tối ngày hôm sau; buổi 2 chuyển sang gọi cho nhà hàng đặt chỗ rồi báo đổi giờ gặp.",
+    "avatarRole": "Bạn nghe điện thoại",
+    "learnerRole": "Người gọi rủ đi dự tiệc",
+    "goals": [
+      "Mời bạn tới buổi tiệc tối",
+      "Hỏi giờ bắt đầu và chỗ gặp",
+      "Hẹn sẽ gọi lại nếu chưa nghe rõ"
+    ],
+    "opening": "喂，你好，你周末有事儿吗？",
+    "openingVi": "A lô, chào bạn, cuối tuần bạn có bận gì không?"
+  },
+  "freeTalk": {
+    "question": "跟朋友约见面，你喜欢打电话还是发信息？为什么？",
+    "questionVi": "Khi hẹn gặp bạn bè, bạn thích gọi điện hay nhắn tin? Vì sao?"
+  },
+  "learningNotes": [
+    "Mở đầu cuộc gọi: nói 喂 rồi hỏi 您现在方便吗？; gọi cho người chưa thân thì thêm 不好意思，打扰一下.",
+    "Hẹn gặp: 我们约在 + giờ hoặc nơi; muốn chốt lại cho chắc thì hỏi 是不是……？",
+    "Phát âm: 预约 là hai thanh 4 liền nhau, cả hai đều hạ dứt khoát; 方便 là thanh 1 rồi thanh 4, đừng biến âm thứ hai thành thanh nhẹ.",
+    "回 vừa nghĩa là quay về vừa nghĩa là trả lời: 回学校 là về trường, 回电话 là gọi lại cho người ta."
+  ],
+  "prerequisites": [
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Gọi điện và hẹn gặp",
+    "playLimit": 1,
+    "transcript": "甲：喂，小李吗？我是小王。乙：是我，你有什么事儿？甲：周六晚上有个晚会，你去吗？乙：几点开始？在哪儿见面？甲：七点开始。我们约在饭店门口见面，你看方便吗？乙：可以。我明天回你电话，现在外面太吵了。甲：好，那我等你电话。",
+    "translation": "Tiểu Vương gọi cho Tiểu Lý để rủ đi dự tiệc tối thứ bảy. Người được rủ hỏi mấy giờ bắt đầu và hẹn gặp ở đâu, rồi được trả lời bảy giờ, gặp ở cổng nhà hàng và hỏi xem có tiện không. Vì đang ở ngoài đường ồn, người này hẹn sẽ gọi lại vào hôm sau.",
+    "questions": [
+      {
+        "prompt": "Cuộc gọi bàn chuyện gì?",
+        "options": [
+          "Mời đi dự tiệc tối",
+          "Hỏi bài tập về nhà",
+          "Đổi giờ làm việc"
+        ],
+        "answer": 0,
+        "explanation": "Người gọi nói 周六晚上有个晚会，你去吗."
+      },
+      {
+        "prompt": "Hai người hẹn gặp ở đâu?",
+        "options": [
+          "Ở rạp chiếu phim",
+          "Ở cổng nhà hàng",
+          "Ở ga tàu điện"
+        ],
+        "answer": 1,
+        "explanation": "Câu hẹn là 我们约在饭店门口见面."
+      },
+      {
+        "prompt": "Vì sao người nghe sẽ gọi lại sau?",
+        "options": [
+          "Vì đã quên cuộc hẹn",
+          "Vì đang bận họp",
+          "Vì ngoài đường quá ồn"
+        ],
+        "answer": 2,
+        "explanation": "Người nghe nói 现在外面太吵了."
+      }
+    ],
+    "pinyin": "jiǎ ： wèi ， xiǎo lǐ ma ？ wǒ shì xiǎo wáng 。 yǐ ： shì wǒ ， nǐ yǒu shén me shì ér ？ jiǎ ： zhōu liù wǎn shang yǒu gè wǎn huì ， nǐ qù ma ？ yǐ ： jǐ diǎn kāi shǐ ？ zài nǎ ér jiàn miàn ？ jiǎ ： qī diǎn kāi shǐ 。 wǒ men yuē zài fàn diàn mén kǒu jiàn miàn ， nǐ kàn fāng biàn ma ？ yǐ ： kě yǐ 。 wǒ míng tiān huí nǐ diàn huà ， xiàn zài wài miàn tài chǎo le 。 jiǎ ： hǎo ， nà wǒ děng nǐ diàn huà 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu mở đầu cuộc gọi, giữ giọng tự nhiên.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "喂，小李吗？我们约在饭店门口见面。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng tên người được gọi",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "喂，小李吗？我们约在饭店门口见面。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai gọi cho ai, rủ đi đâu, hẹn mấy giờ và ở đâu, cuối cùng quyết định gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Tiểu Vương gọi cho Tiểu Lý để rủ đi dự tiệc tối thứ bảy. Người được rủ hỏi mấy giờ bắt đầu và hẹn gặp ở đâu, rồi được trả lời bảy giờ, gặp ở cổng nhà hàng và hỏi xem có tiện không. Vì đang ở ngoài đường ồn, người này hẹn sẽ gọi lại vào hôm sau.",
+      "checklist": [
+        "Nói đủ: lời mời, giờ, chỗ gặp, hứa gọi lại",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt theo dấu phẩy và hạ giọng ở câu hỏi lịch sự.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "喂，小李吗？我是小王。周六晚上有个晚会，你去吗？我们约在饭店门口见面，你看方便吗？我明天回你电话。",
+      "reference": "Đọc như đang nói điện thoại: mở đầu ngắn gọn, hỏi xong thì dừng một nhịp.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "跟朋友约见面，你喜欢打电话还是发信息？为什么？",
+      "promptVi": "Khi hẹn gặp bạn bè, bạn thích gọi điện hay nhắn tin? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Chọn một cách, nêu lý do và nói khi nào bạn buộc phải dùng cách còn lại.",
+      "checklist": [
+        "Trả lời rõ chọn cách nào",
+        "Có lý do cụ thể",
+        "Người nghe hiểu được thói quen của bạn"
+      ],
+      "sampleZh": "我一般先发信息，因为对方可以在方便的时候再回我。如果是着急的事，我就打电话，听到声音就知道怎么办。",
+      "sampleVi": "Tôi thường nhắn tin trước, vì người kia có thể trả lời lúc họ thấy tiện. Nếu là việc gấp, tôi gọi điện, nghe giọng là biết phải làm thế nào."
+    }
+  ],
+  "transferTask": "Tối nay, gọi cho một người quen để rủ đi ăn ngày mai: hỏi xem họ có tiện không, hẹn giờ, hẹn chỗ gặp và nói rằng bạn sẽ gọi lại nếu chưa nghe rõ.",
+  "pronunciation": [
+    {
+      "text": "方便",
+      "pinyin": "fāng biàn",
+      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh; giữ rõ cả hai âm tiết."
+    },
+    {
+      "text": "预约",
+      "pinyin": "yù yuē",
+      "hint": "Hai thanh 4 liền nhau, cả hai đều hạ dứt khoát; âm thứ hai có môi tròn."
+    },
+    {
+      "text": "电话",
+      "pinyin": "diàn huà",
+      "hint": "Cả hai chữ đều thanh 4; đọc tách bạch, không nối liền thành một âm."
+    },
+    {
+      "text": "见面",
+      "pinyin": "jiàn miàn",
+      "hint": "Chữ đầu là âm cong lưỡi không bật hơi, vần gần 'iên'; chữ sau gần 'miện', thanh 4."
+    }
+  ]
+}

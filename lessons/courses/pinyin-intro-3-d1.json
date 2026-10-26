@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 3,
+  "lessonTitle": "Cuối lưỡi và mặt lưỡi: g k h / j q x",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "个",
+      "meaning": "cái (lượng từ)",
+      "example": "我要两个。",
+      "exampleVi": "Tôi muốn hai cái.",
+      "pinyin": "gè",
+      "examplePinyin": "wǒ yào liǎng gè 。"
+    },
+    {
+      "word": "和",
+      "meaning": "và; hòa",
+      "example": "我喝茶和咖啡。",
+      "exampleVi": "Tôi uống trà và cà phê.",
+      "pinyin": "hé",
+      "examplePinyin": "wǒ hē chá hé kā fēi 。"
+    },
+    {
+      "word": "家",
+      "meaning": "nhà",
+      "example": "我家有三个人。",
+      "exampleVi": "Nhà tôi có ba người.",
+      "pinyin": "jiā",
+      "examplePinyin": "wǒ jiā yǒu sān gè rén 。"
+    },
+    {
+      "word": "去",
+      "meaning": "đi",
+      "example": "我去学校。",
+      "exampleVi": "Tôi đến trường.",
+      "pinyin": "qù",
+      "examplePinyin": "wǒ qù xué xiào 。"
+    },
+    {
+      "word": "学",
+      "meaning": "học",
+      "example": "我学中文。",
+      "exampleVi": "Tôi học tiếng Trung.",
+      "pinyin": "xué",
+      "examplePinyin": "wǒ xué zhōng wén 。"
+    },
+    {
+      "word": "吃",
+      "meaning": "ăn",
+      "example": "我吃饺子和米饭。",
+      "exampleVi": "Tôi ăn há cảo và cơm.",
+      "pinyin": "chī",
+      "examplePinyin": "wǒ chī jiǎo zi hé mǐ fàn 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我去……",
+      "explanation": "Nói mình đi đến đâu hoặc đi làm gì: 我去 rồi đến nơi hoặc động từ; 去 có hai môi tròn.",
+      "example": "我去学校吃饭。",
+      "exampleVi": "Tôi đến trường ăn cơm.",
+      "examplePinyin": "wǒ qù xué xiào chī fàn 。"
+    },
+    {
+      "pattern": "你吃什么？",
+      "explanation": "Hỏi món ăn của người đối thoại; 吃 là âm cong lưỡi, 么 ở cuối đọc nhẹ.",
+      "example": "你吃什么？我喝咖啡。",
+      "exampleVi": "Bạn ăn gì? Tôi uống cà phê.",
+      "examplePinyin": "nǐ chī shén me ？ wǒ hē kā fēi 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Giờ nghỉ ở căng-tin trường: bạn nói mình đi đâu rồi hỏi bạn cùng bàn chọn món gì, cả hai chỉ nghe và lặp các âm cổ họng và mặt lưỡi.",
+    "avatarRole": "Người bán ở căng-tin",
+    "learnerRole": "Học viên đi ăn",
+    "goals": [
+      "Nói mình đi đâu bằng mẫu wǒ qù ……",
+      "Hỏi món ăn bằng nǐ chī shén me",
+      "Giữ jiā, qù, xué ở mặt lưỡi, không tụt về cổ họng"
+    ],
+    "opening": "你好，你去哪儿？你吃什么？",
+    "openingVi": "Chào bạn, bạn đi đâu? Bạn ăn gì?"
+  },
+  "freeTalk": {
+    "question": "你去哪儿？你吃什么？",
+    "questionVi": "Bạn đi đâu? Bạn ăn gì?"
+  },
+  "learningNotes": [
+    "g, k, h phát âm ở cuối lưỡi: lưỡi rút về phía cổ họng, miệng hơi mở; k bật hơi, g thì không.",
+    "j, q, x là âm mặt lưỡi: đầu tựa lợi dưới, hai khóe miệng kéo sang ngang như đang mỉm cười.",
+    "j, q, x chỉ đi với i và ü; sau ba âm này ü viết thành u, nên 去 qù và 学 xué thật ra mang nguyên âm ü.",
+    "CẢNH BÁO cho người Việt: tiếng Việt không có âm mặt lưỡi kiểu này; đừng đọc 学 gần 'xộc' hay 去 gần 'cu', và đừng thay thanh 3 bằng dấu hỏi.",
+    "和 hé đi lên đều, 个 giữ thanh 4 dứt khoát; hai âm h đầu câu khác hẳn nhau về cao độ."
+  ],
+  "prerequisites": [
+    2
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Cuối lưỡi và mặt lưỡi: g k h / j q x",
+    "playLimit": 1,
+    "transcript": "甲：你好，我叫小刚。乙：我叫小丽。小刚，你回家吃什么？甲：我回家吃米饭，也喝咖啡。你呢？乙：我吃饺子，在学校学习中文。",
+    "translation": "Hai người tự giới thiệu là Tiểu Cương và Tiểu Lệ. Tiểu Cương về nhà ăn cơm và uống cà phê. Tiểu Lệ ăn há cảo và học tiếng Trung ở trường.",
+    "questions": [
+      {
+        "prompt": "Ai nói tên mình là Tiểu Cương?",
+        "options": [
+          "Người mở đầu cuộc trò chuyện",
+          "Người vừa được hỏi tên",
+          "Không ai cả"
+        ],
+        "answer": 0,
+        "explanation": "Câu đầu 我叫小刚 là của người A."
+      },
+      {
+        "prompt": "Người A về nhà ăn và uống gì?",
+        "options": [
+          "Há cảo và trà",
+          "Cơm và cà phê",
+          "Mỳ và nước"
+        ],
+        "answer": 1,
+        "explanation": "A nói 我回家吃米饭，也喝咖啡。"
+      },
+      {
+        "prompt": "Người B làm gì ở trường?",
+        "options": [
+          "Ngủ trưa",
+          "Ăn sáng",
+          "Học tiếng Trung"
+        ],
+        "answer": 2,
+        "explanation": "B nói 在学校学习中文。"
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo gāng 。 yǐ ： wǒ jiào xiǎo lì 。 xiǎo gāng ， nǐ huí jiā chī shén me ？ jiǎ ： wǒ huí jiā chī mǐ fàn ， yě hē kā fēi 。 nǐ ne ？ yǐ ： wǒ chī jiǎo zi ， zài xué xiào xué xí zhōng wén 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại các cặp cổ họng và mặt lưỡi.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Cặp trước rút lưỡi về cổ họng, cặp sau kéo khóe miệng sang ngang.",
+      "checklist": [
+        "Thấy khác nhau rõ giữa hai hàng",
+        "Không bật hơi ở g",
+        "Giữ nguyên khẩu hình khi đổi thanh"
+      ],
+      "audioText": "哥，机。科，七。喝，西。姑，居。家，瓜。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu hỏi và câu trả lời về món ăn.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 我去…… và 你吃什么？ của bài.",
+      "checklist": [
+        "Nói đủ cả hai câu",
+        "Âm đầu ch cong lưỡi, âm cuối rơi nhẹ",
+        "qù bo môi đúng, không đọc thành 'cu'"
+      ],
+      "audioText": "我去学校吃饭。你吃什么？"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "小刚回家吃饺子，也喝咖啡。小丽去学校学习中文。咱们几个人一起吃吧。",
+      "reference": "Đoạn trộn hai hàng âm: để ý 和, 喝 ở cổ họng và 去, 学, 饺 ở mặt lưỡi.",
+      "checklist": [
+        "Đọc đủ ba câu",
+        "Không lẫn jiā với guā",
+        "Giữ hơi bật rõ ở k, q"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你去哪儿？你吃什么？",
+      "promptVi": "Bạn đi đâu? Bạn ăn gì?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: nói nơi bạn đi và món bạn ăn, có thể thêm số lượng bằng 个.",
+      "checklist": [
+        "Trả lời đủ cả hai câu hỏi",
+        "Dùng được mẫu wǒ qù ……",
+        "Người nghe phân biệt được qù và qì"
+      ],
+      "sampleZh": "我去学校。我吃两个饺子，喝一杯茶。",
+      "sampleVi": "Tôi đến trường. Tôi ăn hai cái há cảo và uống một ly trà."
+    }
+  ],
+  "transferTask": "Nhờ một người thật đọc chậm jiā, qù, xué, gē, hē; bạn chỉ tay lên cổ họng hoặc ra khóe miệng tùy họ dùng hàng âm nào, rồi đối chiếu lại.",
+  "pronunciation": [
+    {
+      "text": "哥，科，喝",
+      "pinyin": "gē ， kē ， hē",
+      "hint": "Cả ba cùng rút lưỡi về cổ họng: gē không hơi, kē bật hơi mạnh, hē ma sát nhẹ; hàm mở vừa, giữ họng thư giãn."
+    },
+    {
+      "text": "家，去，学",
+      "pinyin": "jiā ， qù ， xué",
+      "hint": "Mặt lưỡi áp vòm miệng, khóe miệng kéo ngang như mỉm cười; jiā, qù, xué đều thuộc hàng này, trong đó qù và xué mang ü."
+    },
+    {
+      "text": "吃，七",
+      "pinyin": "chī ， qī",
+      "hint": "chī cong lưỡi, đầu lưỡi hướng lên lợi sau; qī dẹt và sắc ở mặt lưỡi, hai khóe miệng mở rộng."
+    },
+    {
+      "text": "喝水",
+      "pinyin": "hē shuǐ",
+      "hint": "Cụm uống nước: hē mở hơi ở cổ họng, shuǐ có ü nên môi tròn rồi mở; đừng biến thành 'uê' kiểu tiếng Việt."
+    },
+    {
+      "text": "吃什么",
+      "pinyin": "chī shén me",
+      "hint": "Cụm hỏi món: chī cong lưỡi, shén ở mặt lưỡi, âm cuối me rơi nhẹ, ngắn và thấp."
+    }
+  ]
+}

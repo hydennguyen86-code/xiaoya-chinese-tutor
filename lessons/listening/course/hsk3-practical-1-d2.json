@@ -1,0 +1,97 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-1-d2",
+  "level": "HSK3-4",
+  "title": "Hỏi đường và chỉ đường trong thành phố",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-105",
+      "level": "HSK3-4",
+      "hanzi": "请问，这个路口往哪个方向走？",
+      "pinyin": "qǐng wèn zhè ge lù kóu wáng nǎ gè fāng xiàng zǒu",
+      "meaningVi": "Xin hỏi, ngã tư này phải đi theo hướng nào?",
+      "focus": [
+        "Biến điệu 3+3: kǒu wǎng → kóu wáng; wǎng nǎ → wáng nǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "这个 zhè ge: 个 đọc nhẹ.",
+        "路口往哪 lù kóu wáng nǎ: ba âm 3 nối tiếp, chỉ âm cuối giữ dấu 3.",
+        "方向 fāng xiàng: 方 thanh 1 cao bằng, 向 thanh 4 rơi."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 4, 4, 5, 4, 3, 3, 3, 4, 1, 4, 3],
+      "acceptTones": [
+        [3, 4, 4, 5, 4, 2, 2, 3, 4, 1, 4, 3],
+        [3, 4, 4, 5, 4, 3, 3, 3, 4, 1, 4, 3]
+      ],
+      "hint": "Biến điệu 3+3: kǒu wǎng → kóu wáng; wǎng nǎ → wáng nǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-5-4-2-2-3-4-1-4-3 lẫn 3-4-4-5-4-3-3-3-4-1-4-3."
+    },
+    {
+      "id": "dt-2-106",
+      "level": "HSK3-4",
+      "hanzi": "火车站离这儿远不远？",
+      "pinyin": "huǒ chē zhàn lí zhè ér yuǎn bu yuǎn",
+      "meaningVi": "Ga tàu cách đây có xa không?",
+      "focus": [
+        "远不远 yuǎn bu yuǎn: 不 chen giữa hai thanh 3, đọc nhẹ.",
+        "这儿 zhè ér: 儿 tách ra đọc gọn, gắn vào sau 这.",
+        "离 lí thanh 2 đi lên, phân biệt với 里 lǐ."
+      ]
+    },
+    {
+      "id": "dt-2-107",
+      "level": "HSK3-4",
+      "hanzi": "往前走，到对面那个车站换车。",
+      "pinyin": "wǎng qián zǒu dào duì miàn nà ge chē zhàn huàn chē",
+      "meaningVi": "Đi về phía trước, tới bến xe đối diện kia rồi đổi xe.",
+      "focus": [
+        "那个 nà ge: 个 đọc nhẹ, đừng đọc thành gè.",
+        "对面 duì miàn: hai thanh 4 liền nhau.",
+        "换车 huàn chē: 换 thanh 4, 车 thanh 1."
+      ]
+    },
+    {
+      "id": "dt-2-108",
+      "level": "HSK3-4",
+      "hanzi": "不远，先走到路口，再换车。",
+      "pinyin": "bù yuǎn xiān zǒu dào lù kǒu zài huàn chē",
+      "meaningVi": "Không xa, đi bộ tới ngã tư trước, sau đó đổi xe.",
+      "focus": [
+        "先 và 再 đánh dấu hai bước: nghe 先 mở đầu, 再 nối sau.",
+        "路口 lù kǒu: 口 thanh 3 đứng cuối cụm hơi nên giữ nguyên dấu.",
+        "不远 bù yuǎn: 不 giữ bù vì 远 là thanh 3."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-22",
+      "level": "HSK3-4",
+      "text": "先去路口，再往左走，方向对，车站不远。",
+      "pinyin": "xiān qù lù kǒu zài wáng zuó zǒu fāng xiàng duì chē zhàn bù yuǎn",
+      "meaningVi": "Đến ngã tư trước, rồi rẽ trái đi tiếp, hướng đúng, bến xe không xa.",
+      "syllables": 15,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "先去路口", "pinyin": "xiān qù lù kǒu", "pause": "soft" },
+        { "hanzi": "再往左走", "pinyin": "zài wáng zuó zǒu", "pause": "soft" },
+        { "hanzi": "方向对", "pinyin": "fāng xiàng duì", "pause": "soft" },
+        { "hanzi": "车站不远", "pinyin": "chē zhàn bù yuǎn", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǎng zuǒ → wáng zuǒ; zuǒ zǒu → zuó zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "Bốn cụm hơi ngắn, nhấn 先 và 再 để rõ thứ tự.",
+        "左走 zuó zǒu: hai âm cuối cụm, lên rồi hạ.",
+        "方向 fāng xiàng và 车站 chē zhàn: giữ rõ hai từ khóa."
+      ],
+      "sandhi": true,
+      "baseTones": [1, 4, 4, 3, 4, 3, 3, 3, 1, 4, 4, 1, 4, 4, 3],
+      "acceptTones": [
+        [1, 4, 4, 3, 4, 2, 2, 3, 1, 4, 4, 1, 4, 4, 3],
+        [1, 4, 4, 3, 4, 3, 3, 3, 1, 4, 4, 1, 4, 4, 3]
+      ],
+      "hint": "Biến điệu 3+3: wǎng zuǒ → wáng zuǒ; zuǒ zǒu → zuó zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-4-3-4-2-2-3-1-4-4-1-4-4-3 lẫn 1-4-4-3-4-3-3-3-1-4-4-1-4-4-3."
+    }
+  ]
+}

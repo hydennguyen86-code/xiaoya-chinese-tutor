@@ -1,0 +1,97 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-10-d2",
+  "level": "HSK3-4",
+  "title": "Nhận phòng khách sạn và hỏi dịch vụ",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-179",
+      "level": "HSK3-4",
+      "hanzi": "早餐从六点开到十点。",
+      "pinyin": "zǎo cān cóng liù diǎn kāi dào shí diǎn",
+      "meaningVi": "Bữa sáng mở từ sáu giờ đến mười giờ.",
+      "focus": [
+        "早餐 cān đóng -n, 早 zǎo thanh 3 đi lên.",
+        "六 liù rơi mạnh, khác 楼 đi lên.",
+        "从…开到… nghe hai mốc giờ liền nhau."
+      ]
+    },
+    {
+      "id": "dt-2-180",
+      "level": "HSK3-4",
+      "hanzi": "六点半有叫醒服务吗？",
+      "pinyin": "liù diǎn bàn yǒu jiào xǐng fú wù ma",
+      "meaningVi": "Lúc sáu giờ rưỡi có dịch vụ gọi dậy không?",
+      "focus": [
+        "叫醒 jiào xǐng: 醒 thanh 3, để ý sau 叫.",
+        "服务 fú wù: hai âm 2 rồi 4, đọc đầy đủ thanh.",
+        "吗 ở cuối câu hỏi đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-181",
+      "level": "HSK3-4",
+      "hanzi": "房间比照片干净多了。",
+      "pinyin": "fáng jiān bǐ zhào piàn gān jìng duō le",
+      "meaningVi": "Phòng sạch hơn trong ảnh nhiều.",
+      "focus": [
+        "干净 gān jìng: 净 đóng -ng, rơi thanh 4.",
+        "照片 piàn đóng -n, khác 票.",
+        "多了 le đọc nhẹ sau 多."
+      ]
+    },
+    {
+      "id": "dt-2-182",
+      "level": "HSK3-4",
+      "hanzi": "吃完早餐再去办退房。",
+      "pinyin": "chī wán zǎo cān zài qù bàn tuì fáng",
+      "meaningVi": "Ăn sáng xong rồi hãy đi làm thủ tục trả phòng.",
+      "focus": [
+        "吃完 wán đóng -n, bổ ngữ kết quả.",
+        "再 zài rơi mạnh, đánh dấu bước sau.",
+        "办退房 bàn tuì fáng: ba âm cuối đi liền."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-40",
+      "level": "HSK3-4",
+      "text": "房间很干净，早餐七点开始。麻烦加个叫醒服务，六点半。",
+      "pinyin": "fáng jiān hěn gān jìng zǎo cān qī diǎn kāi shǐ má fán jiā gè jiào xǐng fú wù liù diǎn bàn",
+      "meaningVi": "Phòng rất sạch, bữa sáng bắt đầu lúc bảy giờ. Phiền thêm cho tôi dịch vụ gọi dậy lúc sáu giờ rưỡi.",
+      "syllables": 22,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "房间很干净",
+          "pinyin": "fáng jiān hěn gān jìng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "早餐七点开始",
+          "pinyin": "zǎo cān qī diǎn kāi shǐ",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "麻烦加个叫醒服务",
+          "pinyin": "má fán jiā gè jiào xǐng fú wù",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "六点半",
+          "pinyin": "liù diǎn bàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "麻烦 fán đi lên, mở lời nhờ lịch sự.",
+        "加个 jiā gè: 个 vẫn giữ thanh 4, nối nhanh vào 叫醒.",
+        "开始 shǐ thanh 3, giữ hơi gọn trước số giờ."
+      ]
+    }
+  ]
+}

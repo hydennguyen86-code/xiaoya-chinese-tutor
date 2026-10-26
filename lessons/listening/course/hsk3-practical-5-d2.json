@@ -1,0 +1,96 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-5-d2",
+  "level": "HSK3-4",
+  "title": "Nói về cuối tuần và sở thích",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-137",
+      "level": "HSK3-4",
+      "hanzi": "一起去打篮球吧！",
+      "pinyin": "yì qǐ qù dǎ lán qiú ba",
+      "meaningVi": "Cùng đi đánh bóng rổ nào!",
+      "focus": [
+        "一起 yì qǐ: 一 thành yì trước thanh 3.",
+        "打篮球 dǎ lán qiú: 篮 giữa l- và -an, dễ lẫn 蓝.",
+        "吧 ba: âm cuối rất nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-138",
+      "level": "HSK3-4",
+      "hanzi": "你喜欢拍照吗？",
+      "pinyin": "ní xǐ huan pāi zhào ma",
+      "meaningVi": "Bạn có thích chụp ảnh không?",
+      "focus": [
+        "Biến điệu 3+3: nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "喜欢 xǐ huan: 欢 đọc nhẹ huan.",
+        "拍照 pāi zhào: 照 cuộn lưỡi thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 5, 1, 4, 5],
+      "acceptTones": [
+        [2, 3, 5, 1, 4, 5],
+        [3, 3, 5, 1, 4, 5]
+      ],
+      "hint": "Biến điệu 3+3: nǐ xǐ → ní xǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-1-4-5 lẫn 3-3-5-1-4-5."
+    },
+    {
+      "id": "dt-2-139",
+      "level": "HSK3-4",
+      "hanzi": "周末一起去看电影。",
+      "pinyin": "zhōu mò yì qǐ qù kàn diàn yǐng",
+      "meaningVi": "Cuối tuần cùng đi xem phim.",
+      "focus": [
+        "一起去看 yì qǐ qù kàn: hai thanh 4 kẹp thanh 3 ở giữa.",
+        "周末 zhōu mò: 莫 thanh 4.",
+        "电影 diàn yǐng: đừng nuốt mất 影 thanh 3."
+      ]
+    },
+    {
+      "id": "dt-2-140",
+      "level": "HSK3-4",
+      "hanzi": "打完篮球我们一起去吃饭。",
+      "pinyin": "dǎ wán lán qiú wǒ men yì qǐ qù chī fàn",
+      "meaningVi": "Đánh bóng rổ xong rồi mình cùng đi ăn.",
+      "focus": [
+        "我们 wǒ men: 们 đọc nhẹ men.",
+        "打完 dǎ wán: 完 thanh 2 đi lên.",
+        "吃饭 chī fàn: 吃 cuộn lưỡi thanh 1.",
+        "一起去 yì qǐ qù: 一 thành yì trước thanh 3."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-30",
+      "level": "HSK3-4",
+      "text": "周六下午我们去打篮球，然后一起拍照，再去电影院。",
+      "pinyin": "zhōu liù xià wú wǒ men qù dǎ lán qiú rán hòu yì qǐ pāi zhào zài qù diàn yǐng yuàn",
+      "meaningVi": "Chiều thứ bảy chúng tôi đi đánh bóng rổ, sau đó cùng chụp ảnh, rồi tới rạp phim.",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "周六下午我们去打篮球", "pinyin": "zhōu liù xià wú wǒ men qù dǎ lán qiú", "pause": "soft" },
+        { "hanzi": "然后一起拍照", "pinyin": "rán hòu yì qǐ pāi zhào", "pause": "soft" },
+        { "hanzi": "再去电影院", "pinyin": "zài qù diàn yǐng yuàn", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǔ wǒ → wú wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "打篮球 dǎ lán qiú và 拍照 pāi zhào: hai hoạt động chính.",
+        "电影院 diàn yǐng yuàn: ba âm, giữ đủ 影 thanh 3.",
+        "Ba cụm hơi, nhấn 然后 và 再 để rõ thứ tự."
+      ],
+      "sandhi": true,
+      "baseTones": [1, 4, 4, 3, 3, 5, 4, 3, 2, 2, 2, 4, 4, 3, 1, 4, 4, 4, 4, 3, 4],
+      "acceptTones": [
+        [1, 4, 4, 2, 3, 5, 4, 3, 2, 2, 2, 4, 4, 3, 1, 4, 4, 4, 4, 3, 4],
+        [1, 4, 4, 3, 3, 5, 4, 3, 2, 2, 2, 4, 4, 3, 1, 4, 4, 4, 4, 3, 4]
+      ],
+      "hint": "Biến điệu 3+3: wǔ wǒ → wú wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-4-2-3-5-4-3-2-2-2-4-4-3-1-4-4-4-4-3-4 lẫn 1-4-4-3-3-5-4-3-2-2-2-4-4-3-1-4-4-4-4-3-4."
+    }
+  ]
+}

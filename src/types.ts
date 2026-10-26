@@ -58,6 +58,7 @@ export interface Settings {
   autoReadTranslation: boolean;
   showPinyin: boolean;
   avatarMode: AvatarMode;
+  avatarGender: 'female' | 'male';
 }
 
 export interface ProviderInfo {
@@ -74,6 +75,7 @@ export interface VoiceInfo {
   id: string;
   label: string;
   short: string;
+  gender?: 'female' | 'male';
 }
 
 export interface StatusResponse {

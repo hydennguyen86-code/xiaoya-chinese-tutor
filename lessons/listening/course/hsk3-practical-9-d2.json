@@ -1,0 +1,170 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-9-d2",
+  "level": "HSK3-4",
+  "title": "Đi xem phòng và hỏi chủ nhà",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-171",
+      "level": "HSK3-4",
+      "hanzi": "空调坏了，能找人维修吗？",
+      "pinyin": "kōng tiáo huài le néng zhǎo rén wéi xiū ma",
+      "meaningVi": "Điều hòa hỏng rồi, có gọi người sửa được không?",
+      "focus": [
+        "空调 kōng tiáo: 调 đọc tiáo ở đây, không phải diào.",
+        "坏了 le đọc nhẹ sau 坏.",
+        "维修 wéi xiū: 修 không bật hơi, khác 休 trong 休息."
+      ]
+    },
+    {
+      "id": "dt-2-172",
+      "level": "HSK3-4",
+      "hanzi": "进门的钥匙你带了吗？",
+      "pinyin": "jìn mén de yào shi nǐ dài le ma",
+      "meaningVi": "Chìa khóa cửa vào, bạn có mang không?",
+      "focus": [
+        "钥匙 yào shi: 匙 đọc nhẹ.",
+        "带了 le nhẹ, 吗 cuối câu cũng nhẹ.",
+        "进门 jìn mén: hai âm đóng -n."
+      ]
+    },
+    {
+      "id": "dt-2-173",
+      "level": "HSK3-4",
+      "hanzi": "房间的灯不太亮。",
+      "pinyin": "fáng jiān de dēng bú tài liàng",
+      "meaningVi": "Đèn trong phòng không sáng lắm.",
+      "focus": [
+        "不 trong 不太 đọc bú vì đứng trước thanh 4.",
+        "灯 dēng đóng -ng, khác 登.",
+        "亮 liàng rơi mạnh, đóng -ng."
+      ]
+    },
+    {
+      "id": "dt-2-174",
+      "level": "HSK3-4",
+      "hanzi": "租金什么时候交给房东？",
+      "pinyin": "zū jīn shén me shí hou jiāo gěi fáng dōng",
+      "meaningVi": "Tiền thuê nộp cho chủ nhà vào lúc nào?",
+      "focus": [
+        "什么 shén me: me đọc nhẹ, đừng nghe thành měi.",
+        "时候 shí hou: hou đọc nhẹ trong cụm hỏi thời gian.",
+        "交给 jiāo gěi: hai âm 1 rồi 3, giữ rõ 交 trước 给."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-38",
+      "level": "HSK3-4",
+      "text": "空调坏了，师傅来维修。钥匙在你那儿，水电我也交了。",
+      "pinyin": "kōng tiáo huài le shī fu lái wéi xiū yào shi zài nǐ nà ér shuǐ diàn wó yě jiāo le",
+      "meaningVi": "Điều hòa hỏng, thợ đến sửa. Chìa khóa ở chỗ bạn, tiền điện nước tôi nộp rồi.",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "空调坏了",
+          "pinyin": "kōng tiáo huài le",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "师傅来维修",
+          "pinyin": "shī fu lái wéi xiū",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "钥匙在你那儿",
+          "pinyin": "yào shi zài nǐ nà ér",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "水电我也交了",
+          "pinyin": "shuǐ diàn wó yě jiāo le",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ yě → wó yě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "师傅 shī fu: 傅 đọc nhẹ, 师 vẫn thanh 1.",
+        "钥匙 shi nhẹ rồi nối 在你那儿, giữ hơi thật đều."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        2,
+        4,
+        5,
+        1,
+        5,
+        2,
+        2,
+        1,
+        4,
+        5,
+        4,
+        3,
+        4,
+        2,
+        3,
+        4,
+        3,
+        3,
+        1,
+        5
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          4,
+          5,
+          1,
+          5,
+          2,
+          2,
+          1,
+          4,
+          5,
+          4,
+          3,
+          4,
+          2,
+          3,
+          4,
+          2,
+          3,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          1,
+          5,
+          2,
+          2,
+          1,
+          4,
+          5,
+          4,
+          3,
+          4,
+          2,
+          3,
+          4,
+          3,
+          3,
+          1,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ yě → wó yě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-2-4-5-1-5-2-2-1-4-5-4-3-4-2-3-4-2-3-1-5 lẫn 1-2-4-5-1-5-2-2-1-4-5-4-3-4-2-3-4-3-3-1-5."
+    }
+  ]
+}

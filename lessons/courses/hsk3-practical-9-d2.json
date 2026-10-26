@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 9,
+  "lessonTitle": "Đi xem phòng và hỏi chủ nhà",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "房间",
+      "meaning": "căn phòng",
+      "example": "房间不大，可是很安静。",
+      "exampleVi": "Phòng không rộng nhưng rất yên tĩnh.",
+      "pinyin": "fáng jiān",
+      "examplePinyin": "fáng jiān bú dà ， kě shì hěn ān jìng 。"
+    },
+    {
+      "word": "家具",
+      "meaning": "đồ nội thất",
+      "example": "家具都是新的，有床和桌子。",
+      "exampleVi": "Đồ nội thất đều mới, có giường và bàn.",
+      "pinyin": "jiā jù",
+      "examplePinyin": "jiā jù dōu shì xīn de ， yǒu chuáng hé zhuō zi 。"
+    },
+    {
+      "word": "租金",
+      "meaning": "tiền thuê",
+      "example": "租金一个月一千八百块，有点贵。",
+      "exampleVi": "Tiền thuê một nghìn tám trăm tệ một tháng, hơi đắt.",
+      "pinyin": "zū jīn",
+      "examplePinyin": "zū jīn yí gè yuè yī qiān bā bǎi kuài ， yǒu diǎn guì 。"
+    },
+    {
+      "word": "押金",
+      "meaning": "tiền cọc",
+      "example": "押金付两个月，退房的时候还。",
+      "exampleVi": "Cọc hai tháng, lúc trả phòng thì nhận lại.",
+      "pinyin": "yā jīn",
+      "examplePinyin": "yā jīn fù liǎng gè yuè ， tuì fáng de shí hou hái 。"
+    },
+    {
+      "word": "合同",
+      "meaning": "hợp đồng",
+      "example": "合同签一年，中间不能退。",
+      "exampleVi": "Hợp đồng ký một năm, giữa chừng không được trả.",
+      "pinyin": "hé tong",
+      "examplePinyin": "hé tong qiān yì nián ， zhōng jiān bù néng tuì 。"
+    },
+    {
+      "word": "水电",
+      "meaning": "tiền điện nước",
+      "example": "水电按表算，一个月大概一百块。",
+      "exampleVi": "Điện nước tính theo đồng hồ, một tháng khoảng một trăm tệ.",
+      "pinyin": "shuǐ diàn",
+      "examplePinyin": "shuǐ diàn àn biǎo suàn ， yí gè yuè dà gài yì bǎi kuài 。"
+    },
+    {
+      "word": "空调",
+      "meaning": "điều hòa",
+      "example": "空调开了两个小时还不凉。",
+      "exampleVi": "Bật điều hòa hai tiếng rồi mà vẫn chưa mát.",
+      "pinyin": "kōng tiáo",
+      "examplePinyin": "kōng tiáo kāi le liǎng gè xiǎo shí hái bù liáng 。"
+    },
+    {
+      "word": "维修",
+      "meaning": "sửa chữa; bảo trì",
+      "example": "我打电话叫维修的人过来。",
+      "exampleVi": "Tôi gọi điện nhờ người sửa đến.",
+      "pinyin": "wéi xiū",
+      "examplePinyin": "wǒ dǎ diàn huà jiào wéi xiū de rén guò lái 。"
+    },
+    {
+      "word": "钥匙",
+      "meaning": "chìa khóa",
+      "example": "我只有一把钥匙，能再配一把吗？",
+      "exampleVi": "Tôi chỉ có một chìa, làm thêm một chiếc được không?",
+      "pinyin": "yào shi",
+      "examplePinyin": "wǒ zhǐ yǒu yì bǎ yào shi ， néng zài pèi yì bǎ ma ？"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "这个房间怎么样？",
+      "explanation": "Hỏi nhận xét ngay sau khi bước vào phòng; nói nguyên cụm này, người xem trả lời bằng 有点儿小、朝向不错 或者 太贵了.",
+      "example": "这个房间怎么样？朝向好不好？",
+      "exampleVi": "Căn phòng này thế nào? Hướng có tốt không?",
+      "examplePinyin": "zhè ge fáng jiān zěn me yàng ？ cháo xiàng hǎo bu hǎo ？"
+    },
+    {
+      "pattern": "包括……吗？",
+      "explanation": "Hỏi khoản nào nằm trong giá: 包括 rồi thêm mục cần hỏi, cuối câu có 吗; chủ nhà trả 都包括 或 水电另算.",
+      "example": "租金包括水电和网费吗？",
+      "exampleVi": "Tiền thuê có gồm điện nước và tiền mạng không?",
+      "examplePinyin": "zū jīn bāo kuò shuǐ diàn hé wǎng fèi ma ？"
+    },
+    {
+      "pattern": "……坏了",
+      "explanation": "Báo một đồ dùng trong phòng đã hỏng: nói tên đồ rồi thêm 坏了; muốn nhờ người xử lý thì nối 麻烦你叫维修的人过来.",
+      "example": "空调坏了，麻烦你叫人来修一下。",
+      "exampleVi": "Điều hòa hỏng rồi, phiền bạn gọi người đến sửa một chút.",
+      "examplePinyin": "kōng tiáo huài le ， má fán nǐ jiào rén lái xiū yí xià 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: bạn chuyển vào ở được hai tuần thì điều hòa bỗng không lạnh, mà chìa khóa chỉ có một chiếc; bạn gọi cho chủ nhà nhờ sắp xếp người đến sửa, hỏi ai trả tiền và xin làm thêm chìa.",
+    "avatarRole": "Chủ nhà",
+    "learnerRole": "Người đang thuê phòng",
+    "goals": [
+      "Nói rõ đồ nào hỏng và hỏng từ lúc nào",
+      "Hỏi người sửa đến giờ nào và ai trả tiền",
+      "Xin làm thêm chìa khóa và hẹn giờ có mặt ở phòng"
+    ],
+    "opening": "空调今天才坏的？维修的人下午两点能到，那时候你在房子吗？",
+    "openingVi": "Điều hòa hôm nay mới hỏng à? Người sửa có thể đến lúc hai giờ chiều, lúc đó bạn có ở phòng không?"
+  },
+  "freeTalk": {
+    "question": "东西坏了，你是先自己想办法还是先打电话给房东？为什么？",
+    "questionVi": "Khi đồ trong phòng bị hỏng, bạn tự lo trước hay gọi cho chủ nhà trước? Vì sao?"
+  },
+  "learningNotes": [
+    "Khi xem phòng, hỏi ba việc ngay: 租金多少？包括什么？押金付几个月？; thiếu một trong ba câu này thì rất dễ bị tính thêm tiền sau.",
+    "Chưa chốt tại chỗ thì nói 我先看看合同，明天给你回电话; 我考虑一下 cũng lịch sự nhưng nên hẹn rõ khi nào trả lời.",
+    "Phát âm: 租金 và 押金 đều là hai thanh 1 liền nhau, giữ cao và bằng suốt hai âm tiết, đừng rơi xuống như thanh 4; 水电 là thanh 3 rồi thanh 4, chữ đầu hạ thấp và ngắn rồi nhấn rơi ở chữ sau.",
+    "房间 là một phòng, 房子 là cả căn nhà; đếm phòng dùng 间: 一间房、两间卧室. 家具 chỉ bàn ghế giường tủ nói chung, muốn hỏi từng món thì hỏi 床和桌子有吗？"
+  ],
+  "prerequisites": [
+    8
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Đi xem phòng và hỏi chủ nhà",
+    "playLimit": 1,
+    "transcript": "房客：喂，我是五楼的小李，空调今天不凉了，能叫维修的人过来吗？房东：师傅今天下午排满了，明天下午行吗？房客：行，我明天在房间等。钥匙我只有一把，能再配一把吗？房东：可以，配钥匙五十块，我从下个月的租金里给你扣。房客：那就说定了，明天见。",
+    "translation": "Khách ở tầng năm gọi báo điều hòa hôm nay không lạnh và nhờ gọi người sửa. Chủ nhà nói chiều hôm nay thợ đã kín lịch nên hẹn chiều ngày mai, khách đồng ý ở phòng chờ. Khách xin làm thêm một chìa và được chủ nhà báo tiền làm chìa là năm mươi tệ, sẽ trừ vào tiền thuê của tháng sau.",
+    "questions": [
+      {
+        "prompt": "Người thuê gọi điện để làm gì?",
+        "options": [
+          "Hẹn xem một phòng khác",
+          "Xin khất tiền thuê tháng này",
+          "Báo điều hòa không lạnh và nhờ gọi thợ"
+        ],
+        "answer": 2,
+        "explanation": "房客 nói 空调今天不凉了，能叫维修的人过来吗."
+      },
+      {
+        "prompt": "Người sửa sẽ đến lúc nào?",
+        "options": [
+          "Chiều ngày mai",
+          "Ngay chiều hôm nay",
+          "Sáng ngày kia"
+        ],
+        "answer": 0,
+        "explanation": "房东 hẹn 明天下午行吗, khách đồng ý 我明天在房间等."
+      },
+      {
+        "prompt": "Tiền làm thêm chìa khóa tính thế nào?",
+        "options": [
+          "Chủ nhà trả, không trừ vào tiền thuê",
+          "Trừ vào tiền thuê của tháng sau",
+          "Khách trả riêng bằng tiền mặt"
+        ],
+        "answer": 1,
+        "explanation": "房东 nói 配钥匙五十块，我从下个月的租金里给你扣."
+      }
+    ],
+    "pinyin": "fáng kè ： wèi ， wǒ shì wǔ lóu de xiǎo lǐ ， kōng tiáo jīn tiān bù liáng le ， néng jiào wéi xiū de rén guò lái ma ？ fáng dōng ： shī fu jīn tiān xià wǔ pái mǎn le ， míng tiān xià wǔ xíng ma ？ fáng kè ： xíng ， wǒ míng tiān zài fáng jiān děng 。 yào shi wǒ zhǐ yǒu yì bǎ ， néng zài pèi yì bǎ ma ？ fáng dōng ： kě yǐ ， pèi yào shi wǔ shí kuài ， wǒ cóng xià gè yuè de zū jīn lǐ gěi nǐ kòu 。 fáng kè ： nà jiù shuō dìng le ， míng tiān jiàn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu báo đồ bị hỏng, một câu nhờ làm thêm chìa khóa.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "空调坏了，下午两点维修的人可以到吗？钥匙帮我再配一把，谢谢您。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng giờ và việc nhờ vả",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "空调坏了，下午两点维修的人可以到吗？钥匙帮我再配一把，谢谢您。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai gọi, báo đồ nào hỏng, chủ nhà hẹn lúc nào, tiền chìa khóa tính ra sao.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách ở tầng năm gọi báo điều hòa hôm nay không lạnh và nhờ gọi người sửa. Chủ nhà nói chiều hôm nay thợ đã kín lịch nên hẹn chiều ngày mai, khách đồng ý ở phòng chờ. Khách xin làm thêm một chìa và được chủ nhà báo tiền làm chìa là năm mươi tệ, sẽ trừ vào tiền thuê của tháng sau.",
+      "checklist": [
+        "Nói đủ: việc hỏng, giờ hẹn, chìa khóa, tiền sửa",
+        "Người nghe hiểu được nội dung",
+        "Không tự đổi số tiền hoặc ngày hẹn"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau như đang kể cho bạn cùng phòng nghe.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Ba mốc thời gian trong đoạn phải rõ; câu nhờ vả đọc nhẹ và chậm.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "我上个星期租的这个房间，空调今天忽然不凉了。维修的人明天下午才来，麻烦您提前说一声。我还想再配一把钥匙，五十块从下个月的租金里面扣就行。"
+    },
+    {
+      "kind": "opinion",
+      "prompt": "东西坏了，你是先自己想办法还是先打电话给房东？为什么？",
+      "promptVi": "Khi đồ trong phòng bị hỏng, bạn tự lo trước hay gọi cho chủ nhà trước? Vì sao?",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Nêu một trường hợp tự xử lý, một trường hợp bắt buộc gọi chủ nhà, rồi nói cách bạn giữ tiền và hợp đồng cho rõ.",
+      "checklist": [
+        "Phân biệt được hỏng nhỏ và hỏng lớn",
+        "Có ví dụ cụ thể",
+        "Nhắc tới tiền sửa và hợp đồng"
+      ],
+      "sampleZh": "灯泡坏了这种小事我就自己换，快，而且不用等人。可是空调和水管的问题我一定先给房东打电话，让他找维修的人，因为这种修法贵，钱该谁出要说在前面。我还会把日期和修了什么写在纸上，退房的时候两边都明白。",
+      "sampleVi": "Những chuyện nhỏ như cháy bóng đèn thì tôi tự thay, nhanh và không phải chờ. Nhưng điều hòa hay đường nước thì tôi chắc chắn gọi chủ nhà trước, nhờ họ tìm người sửa, vì tiền sửa thường tính cho chủ nhà hoặc trừ vào tiền thuê. Tôi còn ghi ngày và việc đã sửa ra giấy, lúc trả phòng hai bên đều rõ."
+    }
+  ],
+  "transferTask": "Tối nay, phòng bạn ở bị hỏng điều hòa hoặc mất nước: hãy gọi cho chủ nhà bằng tiếng Trung, nói rõ đồ nào hỏng và hỏng từ khi nào, hỏi người sửa đến lúc nào, hỏi ai trả tiền, và xin đổi giờ nếu lúc đó bạn không có mặt ở phòng.",
+  "pronunciation": [
+    {
+      "text": "租金",
+      "pinyin": "zū jīn",
+      "hint": "Cả hai chữ đều thanh 1: giữ cao và bằng suốt hai âm tiết, đừng để âm sau rơi xuống như thanh 4."
+    },
+    {
+      "text": "押金",
+      "pinyin": "yā jīn",
+      "hint": "Chữ đầu là thanh 1 (yā), người Việt hay đọc thành thanh 3; chữ sau cũng thanh 1, hai âm ngang nhau."
+    },
+    {
+      "text": "水电",
+      "pinyin": "shuǐ diàn",
+      "hint": "Thanh 3 rồi thanh 4: chữ đầu hạ thấp rồi uốn ngắn, chữ sau rơi dứt khoát; đừng đọc thành hai thanh 4."
+    },
+    {
+      "text": "家具",
+      "pinyin": "jiā jù",
+      "hint": "Thanh 1 rồi thanh 4: âm đầu cao bằng, âm sau rơi mạnh; chữ thứ hai đọc jù, không phải jū."
+    }
+  ]
+}

@@ -358,8 +358,16 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     const [a, b] = parts[i];
     const frames = f0.slice(a, b + 1).map((v) => (v ? semis(v, ref) : null));
     const features = toneFeatures(frames, low, high);
-    const heard = s.expected ? classifyIsolated(features, Boolean(range), { single: syllables.length === 1, first: i === 0 }) : 0;
-    return { ...s, heard, ok: s.expected && heard ? heard === s.expected : null, ...(debug ? { features } : {}) };
+    const single = syllables.length === 1;
+    const heard = s.expected ? classifyIsolated(features, Boolean(range), { single, first: i === 0 }) : 0;
+    // A mismatch is only a failure when the measurement can actually support it:
+    // before the speaker's pitch range is learned, on a short or creaky syllable,
+    // and for the 2/3 pair inside a word (where the previous syllable drags the
+    // pitch, and even reference speech is misread), report "not judged" instead.
+    const sure = !heard || heard === s.expected || (Boolean(range) && features && features.frames >= 6 && features.voicedRatio >= 0.8);
+    const confusable = !single && s.expected === 2 && heard === 3;
+    const ok = s.expected && heard ? (heard === s.expected ? true : sure && !confusable ? false : null) : null;
+    return { ...s, heard, ok, ...(debug ? { features } : {}) };
   });
   const scored = result.filter((s) => s.ok !== null);
   return {

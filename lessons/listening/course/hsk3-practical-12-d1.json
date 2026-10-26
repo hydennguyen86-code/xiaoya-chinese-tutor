@@ -1,0 +1,247 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-12-d1",
+  "level": "HSK3-4",
+  "title": "Mời bạn, nhận lời và từ chối khéo",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-191",
+      "level": "HSK3-4",
+      "hanzi": "这周六晚上你有空吗？",
+      "pinyin": "zhè zhōu liù wǎn shang ní yǒu kōng ma",
+      "meaningVi": "Tối thứ bảy này bạn có rảnh không?",
+      "focus": [
+        "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "有空 kōng thanh 1 cao, nghĩa là \"có thời gian rảnh\".",
+        "晚上 wǎn shang: 上 đọc nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        1,
+        4,
+        3,
+        4,
+        3,
+        3,
+        1,
+        5
+      ],
+      "acceptTones": [
+        [
+          4,
+          1,
+          4,
+          3,
+          5,
+          2,
+          3,
+          1,
+          5
+        ],
+        [
+          4,
+          1,
+          4,
+          3,
+          5,
+          3,
+          3,
+          1,
+          5
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-1-4-3-5-2-3-1-5 lẫn 4-1-4-3-5-3-3-1-5."
+    },
+    {
+      "id": "dt-2-192",
+      "level": "HSK3-4",
+      "hanzi": "抱歉，我那天有安排了。",
+      "pinyin": "bào qiàn wǒ nà tiān yǒu ān pái le",
+      "meaningVi": "Xin lỗi, hôm đó tôi đã có sắp xếp rồi.",
+      "focus": [
+        "抱歉 bào qiàn: hai âm rơi, mở lời từ chối.",
+        "那天 nà rơi, chỉ hôm đã nói tới.",
+        "安排了 le đọc nhẹ, báo đã chốt."
+      ]
+    },
+    {
+      "id": "dt-2-193",
+      "level": "HSK3-4",
+      "hanzi": "你的邀请我当然想参加。",
+      "pinyin": "nǐ de yāo qíng wǒ dāng rán xiǎng cān jiā",
+      "meaningVi": "Lời mời của bạn, dĩ nhiên tôi muốn tham gia.",
+      "focus": [
+        "Biến điệu 3+3: qǐng wǒ → qíng wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "的 nối 你的 đọc nhẹ.",
+        "参加 cān jiā: 加 mở, giữ thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        5,
+        1,
+        3,
+        3,
+        1,
+        2,
+        3,
+        1,
+        1
+      ],
+      "acceptTones": [
+        [
+          3,
+          5,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          5,
+          1,
+          3,
+          3,
+          1,
+          2,
+          3,
+          1,
+          1
+        ]
+      ],
+      "hint": "Biến điệu 3+3: qǐng wǒ → qíng wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-5-1-2-3-1-2-3-1-1 lẫn 3-5-1-3-3-1-2-3-1-1."
+    },
+    {
+      "id": "dt-2-194",
+      "level": "HSK3-4",
+      "hanzi": "这次太可惜了，改天再约！",
+      "pinyin": "zhè cì tài kě xī le gǎi tiān zài yuē",
+      "meaningVi": "Lần này tiếc quá, hẹn hôm khác vậy!",
+      "focus": [
+        "可惜 kě xī: 可 đi lên,  xī cao đều.",
+        "了 sau 可惜 đọc nhẹ.",
+        "改天 gǎi tiān rồi 再约 zài yuē: 约 đọc ngắn."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-43",
+      "level": "HSK3-4",
+      "text": "谢谢你的邀请，可惜我那天没空。改天我请你，行不行？",
+      "pinyin": "xiè xie nǐ de yāo qǐng kě xī wǒ nà tiān méi kòng gǎi tiān wó qíng nǐ xíng bù xíng",
+      "meaningVi": "Cảm ơn lời mời của bạn, tiếc là hôm đó tôi không rảnh. Hôm khác tôi mời lại, được không?",
+      "syllables": 21,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "谢谢你的邀请",
+          "pinyin": "xiè xie nǐ de yāo qǐng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "可惜我那天没空",
+          "pinyin": "kě xī wǒ nà tiān méi kòng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "改天我请你",
+          "pinyin": "gǎi tiān wó qíng nǐ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "行不行",
+          "pinyin": "xíng bù xíng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ qǐng → wó qíng; qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "谢谢 xiè xie: chữ thứ hai đọc nhẹ.",
+        "没空 kòng rơi mạnh, khác 有空 ở buổi trước."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        3,
+        5,
+        1,
+        3,
+        3,
+        1,
+        3,
+        4,
+        1,
+        2,
+        4,
+        3,
+        1,
+        3,
+        3,
+        3,
+        2,
+        4,
+        2
+      ],
+      "acceptTones": [
+        [
+          4,
+          5,
+          3,
+          5,
+          1,
+          3,
+          3,
+          1,
+          3,
+          4,
+          1,
+          2,
+          4,
+          3,
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          2
+        ],
+        [
+          4,
+          5,
+          3,
+          5,
+          1,
+          3,
+          3,
+          1,
+          3,
+          4,
+          1,
+          2,
+          4,
+          3,
+          1,
+          3,
+          3,
+          3,
+          2,
+          4,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: wǒ qǐng → wó qíng; qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-5-3-5-1-3-3-1-3-4-1-2-4-3-1-2-2-3-2-4-2 lẫn 4-5-3-5-1-3-3-1-3-4-1-2-4-3-1-3-3-3-2-4-2."
+    }
+  ]
+}

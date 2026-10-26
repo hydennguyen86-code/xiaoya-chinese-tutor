@@ -1,0 +1,88 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-6-d1",
+  "level": "HSK3-4",
+  "title": "Thời tiết, mùa và mặc gì",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-141",
+      "level": "HSK3-4",
+      "hanzi": "今天天气怎么样？",
+      "pinyin": "jīn tiān tiān qì zěn me yàng",
+      "meaningVi": "Hôm nay thời tiết thế nào?",
+      "focus": [
+        "怎么样 zěn me yàng: 么 đọc nhẹ me.",
+        "天气 tiān qì: 气 thanh 4 rơi nhanh.",
+        "今天 jīn tiān: hai thanh 1 cao bằng, đóng -n."
+      ]
+    },
+    {
+      "id": "dt-2-142",
+      "level": "HSK3-4",
+      "hanzi": "外面下雨了，带伞了吗？",
+      "pinyin": "wài miàn xià yǔ le dài sǎn le ma",
+      "meaningVi": "Bên ngoài mưa rồi, bạn mang ô chưa?",
+      "focus": [
+        "下雨了 xià yǔ le: 了 đọc nhẹ le.",
+        "带伞 dài sǎn: 伞 thanh 3, vần -an.",
+        "了吗 le ma: hai âm nhẹ cuối câu."
+      ]
+    },
+    {
+      "id": "dt-2-143",
+      "level": "HSK3-4",
+      "hanzi": "天气这么热，外面还下雨。",
+      "pinyin": "tiān qì zhè me rè wài miàn hái xià yǔ",
+      "meaningVi": "Trời nóng thế này, bên ngoài vẫn còn mưa.",
+      "focus": [
+        "这么 zhè me: 么 đọc nhẹ me.",
+        "还下雨 hái xià yǔ: 还 đọc hái, nghĩa vẫn còn.",
+        "热 rè: âm ướt thanh 4, khác lè."
+      ]
+    },
+    {
+      "id": "dt-2-144",
+      "level": "HSK3-4",
+      "hanzi": "有点儿冷，多穿一件。",
+      "pinyin": "yóu diǎn er lěng duō chuān yí jiàn",
+      "meaningVi": "Hơi lạnh, mặc thêm một cái đi.",
+      "focus": [
+        "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "有点儿 yóu diǎn er: 儿 tách thành âm riêng er.",
+        "一件 yí jiàn: 一 thành yí trước thanh 4.",
+        "穿 chuān cuộn lưỡi, khác 船 chuán."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 5, 3, 1, 1, 2, 4],
+      "acceptTones": [
+        [2, 3, 5, 3, 1, 1, 2, 4],
+        [3, 3, 5, 3, 1, 1, 2, 4]
+      ],
+      "hint": "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-3-1-1-2-4 lẫn 3-3-5-3-1-1-2-4."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-31",
+      "level": "HSK3-4",
+      "text": "今天天气怎么样？外面还在下雨，记得带伞。",
+      "pinyin": "jīn tiān tiān qì zěn me yàng wài miàn hái zài xià yǔ jì de dài sǎn",
+      "meaningVi": "Hôm nay thời tiết thế nào? Bên ngoài vẫn đang mưa, nhớ mang theo ô.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        { "hanzi": "今天天气怎么样", "pinyin": "jīn tiān tiān qì zěn me yàng", "pause": "hard" },
+        { "hanzi": "外面还在下雨", "pinyin": "wài miàn hái zài xià yǔ", "pause": "soft" },
+        { "hanzi": "记得带伞", "pinyin": "jì de dài sǎn", "pause": "end" }
+      ],
+      "focus": [
+        "记得 jì de: 得 đọc nhẹ de.",
+        "还在下雨 hái zài xià yǔ: 还 đọc hái.",
+        "Ba cụm hơi, nhấn 带伞 ở cụm cuối."
+      ]
+    }
+  ]
+}

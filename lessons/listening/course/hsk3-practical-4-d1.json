@@ -1,0 +1,111 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-4-d1",
+  "level": "HSK3-4",
+  "title": "Gọi điện và hẹn gặp",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-125",
+      "level": "HSK3-4",
+      "hanzi": "我想预约看病，现在方便吗？",
+      "pinyin": "wó xiǎng yù yuē kàn bìng xiàn zài fāng biàn ma",
+      "meaningVi": "Tôi muốn đặt lịch khám bệnh, bây giờ có tiện không?",
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "预约 yù yuē: 约 thanh 1, vần -üe.",
+        "现在 xiàn zài: 在 thanh 4 rơi mạnh.",
+        "方便 fāng biàn: 方 thanh 1 cao bằng, đọc đủ hai thanh."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 4, 1, 4, 4, 4, 4, 1, 4, 5],
+      "acceptTones": [
+        [2, 3, 4, 1, 4, 4, 4, 4, 1, 4, 5],
+        [3, 3, 4, 1, 4, 4, 4, 4, 1, 4, 5]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-1-4-4-4-4-1-4-5 lẫn 3-3-4-1-4-4-4-4-1-4-5."
+    },
+    {
+      "id": "dt-2-126",
+      "level": "HSK3-4",
+      "hanzi": "晚会七点，饭店门口见面。",
+      "pinyin": "wǎn huì qī diǎn fàn diàn mén kǒu jiàn miàn",
+      "meaningVi": "Tiệc tối bắt đầu bảy giờ, gặp nhau ở cửa nhà hàng.",
+      "focus": [
+        "晚会 wǎn huì: 晚 thanh 3, 会 thanh 4.",
+        "门口 mén kǒu: 口 thanh 3 đứng cuối cụm.",
+        "见面 jiàn miàn: hai thanh 4 liền, rơi dứt khoát.",
+        "七点 qī diǎn: 七 giữ qī trước thanh 3."
+      ]
+    },
+    {
+      "id": "dt-2-127",
+      "level": "HSK3-4",
+      "hanzi": "不好意思，打扰一下。",
+      "pinyin": "bù hǎo yì si dá rǎo yí xià",
+      "meaningVi": "Xin lỗi, làm phiền bạn một chút.",
+      "focus": [
+        "Biến điệu 3+3: dǎ rǎo → dá rǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "不好意思 bù hǎo yì si: 思 đọc nhẹ si.",
+        "一下 yí xià: 一 thành yí trước thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 3, 4, 5, 3, 3, 2, 4],
+      "acceptTones": [
+        [4, 3, 4, 5, 2, 3, 2, 4],
+        [4, 3, 4, 5, 3, 3, 2, 4]
+      ],
+      "hint": "Biến điệu 3+3: dǎ rǎo → dá rǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-3-4-5-2-3-2-4 lẫn 4-3-4-5-3-3-2-4."
+    },
+    {
+      "id": "dt-2-128",
+      "level": "HSK3-4",
+      "hanzi": "我马上回你电话。",
+      "pinyin": "wó mǎ shàng huí nǐ diàn huà",
+      "meaningVi": "Tôi sẽ gọi lại cho bạn ngay.",
+      "focus": [
+        "Biến điệu 3+3: wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "回你电话 huí nǐ diàn huà: 回 thanh 2 đi lên, khác 会 huì.",
+        "马上 mǎ shàng: 上 thanh 4, hai âm sát nhau."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 4, 2, 3, 4, 4],
+      "acceptTones": [
+        [2, 3, 4, 2, 3, 4, 4],
+        [3, 3, 4, 2, 3, 4, 4]
+      ],
+      "hint": "Biến điệu 3+3: wǒ mǎ → wó mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-2-3-4-4 lẫn 3-3-4-2-3-4-4."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-27",
+      "level": "HSK3-4",
+      "text": "马老师，现在打电话方便吗？我们约七点见面。",
+      "pinyin": "má lǎo shī xiàn zài dǎ diàn huà fāng biàn ma wǒ men yuē qī diǎn jiàn miàn",
+      "meaningVi": "Thầy Mã ơi, gọi điện bây giờ có tiện không? Mình hẹn bảy giờ gặp nhau.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        { "hanzi": "马老师", "pinyin": "má lǎo shī", "pause": "soft" },
+        { "hanzi": "现在打电话方便吗", "pinyin": "xiàn zài dǎ diàn huà fāng biàn ma", "pause": "hard" },
+        { "hanzi": "我们约七点见面", "pinyin": "wǒ men yuē qī diǎn jiàn miàn", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: mǎ lǎo → má lǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "我们 wǒ men: 们 đọc nhẹ men.",
+        "打电话 dǎ diàn huà: 打 thanh 3, 话 thanh 4.",
+        "约七点见面: nhấn 七点 và 见面 rồi dừng hẳn."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 1, 4, 4, 3, 4, 4, 1, 4, 5, 3, 5, 1, 1, 3, 4, 4],
+      "acceptTones": [
+        [2, 3, 1, 4, 4, 3, 4, 4, 1, 4, 5, 3, 5, 1, 1, 3, 4, 4],
+        [3, 3, 1, 4, 4, 3, 4, 4, 1, 4, 5, 3, 5, 1, 1, 3, 4, 4]
+      ],
+      "hint": "Biến điệu 3+3: mǎ lǎo → má lǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-1-4-4-3-4-4-1-4-5-3-5-1-1-3-4-4 lẫn 3-3-1-4-4-3-4-4-1-4-5-3-5-1-1-3-4-4."
+    }
+  ]
+}

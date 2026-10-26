@@ -1,0 +1,104 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-3-d1",
+  "level": "HSK3-4",
+  "title": "Đi mua sắm: hỏi giá, thử đồ, trả giá",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-117",
+      "level": "HSK3-4",
+      "hanzi": "这条裙子多少钱？能便宜一点吗？",
+      "pinyin": "zhè tiáo qún zi duō shǎo qián néng pián yi yì diǎn ma",
+      "meaningVi": "Chiếc váy này bao nhiêu tiền? Rẻ hơn một chút được không?",
+      "focus": [
+        "裙子 qún zi: 子 đọc nhẹ zi.",
+        "便宜 pián yi: 宜 đọc nhẹ yi, cả từ chỉ hai âm.",
+        "多少 duō shǎo: 少 thanh 3 đứng cuối cụm hỏi giá.",
+        "一点吗 yì diǎn ma: 一 thành yì, 吗 rất nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-118",
+      "level": "HSK3-4",
+      "hanzi": "有没有大一号的？我想试一下。",
+      "pinyin": "yǒu méi yǒu dà yī hào de wó xiǎng shì yí xià",
+      "meaningVi": "Có cỡ lớn hơn không? Tôi muốn thử một lượt.",
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "有没有 yǒu méi yǒu: hai chữ 有 giữ thanh 3, âm giữa là méi.",
+        "大一号 dà yī hào: 一 giữ yī khi đọc số cỡ.",
+        "试一下 shì yí xià: 一 thành yí trước thanh 4, 下 rơi mạnh."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4],
+      "acceptTones": [
+        [3, 2, 3, 4, 1, 4, 5, 2, 3, 4, 2, 4],
+        [3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-2-3-4-1-4-5-2-3-4-2-4 lẫn 3-2-3-4-1-4-5-3-3-4-2-4."
+    },
+    {
+      "id": "dt-2-119",
+      "level": "HSK3-4",
+      "hanzi": "怎么付款？有没有零钱？",
+      "pinyin": "zěn me fù kuǎn yǒu méi yǒu líng qián",
+      "meaningVi": "Thanh toán thế nào? Có tiền lẻ không?",
+      "focus": [
+        "怎么 zěn me: 么 đọc nhẹ me.",
+        "零钱 líng qián: líng đóng -ng, khác lín trong 林.",
+        "付款 fù kuǎn: 款 thanh 3, hạ rồi lên nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-120",
+      "level": "HSK3-4",
+      "hanzi": "请给我一点零钱。",
+      "pinyin": "qíng géi wǒ yì diǎn líng qián",
+      "meaningVi": "Làm ơn thối cho tôi ít tiền lẻ.",
+      "focus": [
+        "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "零钱 líng qián: hai âm đi lên, nghe rõ ở cuối câu.",
+        "一点 yì diǎn: 一 thành yì trước thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [3, 3, 3, 4, 3, 2, 2],
+      "acceptTones": [
+        [2, 2, 3, 4, 3, 2, 2],
+        [3, 3, 3, 4, 3, 2, 2]
+      ],
+      "hint": "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-3-4-3-2-2 lẫn 3-3-3-4-3-2-2."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-25",
+      "level": "HSK3-4",
+      "text": "这条裙子多少钱？有没有大一号的？我想试一下。",
+      "pinyin": "zhè tiáo qún zi duō shǎo qián yǒu méi yǒu dà yī hào de wó xiǎng shì yí xià",
+      "meaningVi": "Chiếc váy này bao nhiêu tiền? Có cỡ lớn hơn không? Tôi muốn thử một lượt.",
+      "syllables": 19,
+      "pace": "chậm",
+      "chunks": [
+        { "hanzi": "这条裙子多少钱", "pinyin": "zhè tiáo qún zi duō shǎo qián", "pause": "hard" },
+        { "hanzi": "有没有大一号的", "pinyin": "yǒu méi yǒu dà yī hào de", "pause": "hard" },
+        { "hanzi": "我想试一下", "pinyin": "wó xiǎng shì yí xià", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "裙子 qún zi: 子 đọc nhẹ zi.",
+        "大一号的 dà yī hào de: 的 đọc nhẹ de.",
+        "Ba câu ngắn, hạ giọng sau mỗi dấu hỏi."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 2, 2, 3, 1, 3, 2, 3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4],
+      "acceptTones": [
+        [4, 2, 2, 5, 1, 3, 2, 3, 2, 3, 4, 1, 4, 5, 2, 3, 4, 2, 4],
+        [4, 2, 2, 5, 1, 3, 2, 3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4]
+      ],
+      "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-2-5-1-3-2-3-2-3-4-1-4-5-2-3-4-2-4 lẫn 4-2-2-5-1-3-2-3-2-3-4-1-4-5-3-3-4-2-4."
+    }
+  ]
+}

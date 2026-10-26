@@ -1,0 +1,223 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 1,
+  "lessonTitle": "Bốn thanh và thanh nhẹ: nghe ra cao độ",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "妈",
+      "meaning": "mẹ",
+      "example": "这是我妈。",
+      "exampleVi": "Đây là mẹ tôi.",
+      "pinyin": "mā",
+      "examplePinyin": "zhè shì wǒ mā 。"
+    },
+    {
+      "word": "麻",
+      "meaning": "gai; tê",
+      "example": "我的手麻了。",
+      "exampleVi": "Tay tôi bị tê.",
+      "pinyin": "má",
+      "examplePinyin": "wǒ de shǒu má le 。"
+    },
+    {
+      "word": "马",
+      "meaning": "con ngựa",
+      "example": "马跑得很快。",
+      "exampleVi": "Ngựa chạy rất nhanh.",
+      "pinyin": "mǎ",
+      "examplePinyin": "mǎ pǎo dé hěn kuài 。"
+    },
+    {
+      "word": "骂",
+      "meaning": "mắng",
+      "example": "妈妈骂我。",
+      "exampleVi": "Mẹ mắng tôi.",
+      "pinyin": "mà",
+      "examplePinyin": "mā ma mà wǒ 。"
+    },
+    {
+      "word": "吗",
+      "meaning": "chăng (hỏi)",
+      "example": "这是你的猫吗？",
+      "exampleVi": "Đây là mèo của bạn phải không?",
+      "pinyin": "ma",
+      "examplePinyin": "zhè shì nǐ de māo ma ？"
+    },
+    {
+      "word": "猫",
+      "meaning": "con mèo",
+      "example": "我家有一只猫。",
+      "exampleVi": "Nhà tôi có một con mèo.",
+      "pinyin": "māo",
+      "examplePinyin": "wǒ jiā yǒu yì zhī māo 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你好吗？",
+      "explanation": "Chào rồi hỏi thăm: thêm 吗 vào sau câu trần thuật là thành câu hỏi; 吗 đọc nhẹ, thấp và ngắn.",
+      "example": "你好吗？",
+      "exampleVi": "Bạn khỏe không?",
+      "examplePinyin": "nǐ hǎo ma ？"
+    },
+    {
+      "pattern": "这是……吗？",
+      "explanation": "Hỏi để xác nhận một người hoặc một vật: 这是 đứng trước, 吗 đứng cuối câu, phần được hỏi nằm giữa.",
+      "example": "这是你的猫吗？",
+      "exampleVi": "Đây là mèo của bạn à?",
+      "examplePinyin": "zhè shì nǐ de māo ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Ngày đầu vào lớp: bạn gặp người trực ở cửa, trên bàn có một con mèo đồ chơi và bức ảnh con ngựa; hai người chỉ nói vài câu ngắn toàn âm ma.",
+    "avatarRole": "Người trực lớp học",
+    "learnerRole": "Học viên mới đến",
+    "goals": [
+      "Chào và hỏi thăm bằng câu kết thúc với âm hỏi nhẹ",
+      "Xác nhận con mèo bằng mẫu zhè shì …… ma",
+      "Nghe và nhắc lại bốn thanh của cùng một âm"
+    ],
+    "opening": "你好，这是你的猫吗？",
+    "openingVi": "Chào bạn, đây là mèo của bạn à?"
+  },
+  "freeTalk": {
+    "question": "你好吗？这是你的猫吗？",
+    "questionVi": "Bạn khỏe không? Đây có phải là mèo của bạn không?"
+  },
+  "learningNotes": [
+    "Bốn thanh là bốn đường cao độ trên cùng một âm: 1 cao và bằng, 2 đi lên, 3 thấp rồi hơi nhô lên, 4 hạ dứt khoát.",
+    "Giữ nguyên khẩu hình khi đổi thanh: hàm mở như nhau, chỉ đổi đường hơi; đừng bóp cổ họng ở thanh 4.",
+    "Thanh 3 trong lời nói thật thường thấp và ngắn, không phải lúc nào cũng xuống rồi lên đầy đủ như hình vẽ.",
+    "吗 ở cuối câu luôn đọc nhẹ: ngắn, thấp, không có dấu thanh, rơi ngay theo âm trước.",
+    "CẢNH BÁO cho người Việt: đừng đọc 骂 mà như 'má' (thanh sắc) và đừng thay thanh 3 bằng dấu hỏi hay dấu ngã tiếng Việt; thanh 1 khác 'ma' tiếng Việt ở chỗ cao và bằng suốt."
+  ],
+  "prerequisites": [],
+  "listening": {
+    "title": "Nghe buổi 1: Bốn thanh và thanh nhẹ: nghe ra cao độ",
+    "playLimit": 1,
+    "transcript": "甲：你好！这是你妈吗？乙：不是。这是我妈的马，还有我的猫。甲：马、骂、麻、吗，这四个音不一样。乙：对，声调不一样。",
+    "translation": "A chào và hỏi có phải mẹ của B không. B nói không, đó là con ngựa của mẹ B và con mèo của B. A nghe bốn âm đều là ma nhưng khác nhau; B giải thích là thanh điệu khác nhau.",
+    "questions": [
+      {
+        "prompt": "Câu hỏi mở đầu của A nói về ai?",
+        "options": [
+          "Mẹ của B",
+          "Con ngựa của A",
+          "Người thầy mới"
+        ],
+        "answer": 0,
+        "explanation": "A hỏi 这是你妈吗。"
+      },
+      {
+        "prompt": "Con vật nào thuộc về B?",
+        "options": [
+          "Con ngựa",
+          "Con mèo",
+          "Không có con vật nào"
+        ],
+        "answer": 1,
+        "explanation": "B nói ngựa là của mẹ, còn 我的猫 là mèo của B."
+      },
+      {
+        "prompt": "Bốn âm 马、骂、麻、吗 khác nhau ở điểm nào?",
+        "options": [
+          "Âm chính khác nhau",
+          "Độ dài khác nhau",
+          "Chỉ cao độ khác nhau"
+        ],
+        "answer": 2,
+        "explanation": "B chốt lại bằng 声调不一样, tức thanh điệu khác nhau."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ！ zhè shì nǐ mā ma ？ yǐ ： bú shì 。 zhè shì wǒ mā de mǎ ， hái yǒu wǒ de māo 。 jiǎ ： mǎ 、 mà 、 má 、 ma ， zhè sì gè yīn bù yí yàng 。 yǐ ： duì ， shēng diào bù yí yàng 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại sáu âm tiết chỉ khác nhau về cao độ.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Đọc sáu âm rời nhau, không dính vào thành một từ; âm 吗 cuối cùng ngắn và không có dấu thanh.",
+      "checklist": [
+        "Giữ sáu âm tách biệt",
+        "Thanh bốn hạ dứt khoát",
+        "Âm cuối câu đọc nhẹ, không dấu"
+      ],
+      "audioText": "妈，麻，马，骂，吗，猫。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu hỏi ngắn.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu đều kết thúc bằng 吗 đọc nhẹ; giữa câu lấy hơi một lần.",
+      "checklist": [
+        "Không bỏ âm hỏi ở cuối câu",
+        "Giữ cao độ câu hỏi tự nhiên",
+        "Nói đủ hai câu"
+      ],
+      "audioText": "你好吗？这是你的猫吗？"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "妈妈骂马。马怕妈妈。猫不怕马，猫怕妈妈吗？",
+      "reference": "Cả đoạn chỉ dùng âm m: phân biệt 马 thấp rồi nhô lên và 骂 hạ mạnh; câu hỏi cuối nhẹ dần.",
+      "checklist": [
+        "Đọc đủ bốn câu",
+        "Không lẫn thanh 3 và thanh 4",
+        "Giữ nhịp chậm, dễ nghe"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你好吗？这是你的猫吗？",
+      "promptVi": "Bạn khỏe không? Đây có phải là mèo của bạn không?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: một câu hỏi thăm hoặc cảm ơn, một câu xác nhận bằng 这是……吗；không có đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đủ cả hai câu hỏi",
+        "Dùng được mẫu xác nhận có âm hỏi ở cuối",
+        "Người nghe nhận ra thanh của bạn"
+      ],
+      "sampleZh": "我很好，谢谢。这是我的猫，那不是马。",
+      "sampleVi": "Tôi rất khỏe, cảm ơn. Đây là mèo của tôi, còn kia không phải ngựa."
+    }
+  ],
+  "transferTask": "Nhờ một người thật nói chậm bốn âm tiết mā, má, mǎ, mà rồi một câu hỏi có âm ma nhẹ; bạn nhắm mắt đoán cao độ từng âm, sau đó mở mắt đối chiếu.",
+  "pronunciation": [
+    {
+      "text": "妈麻马骂",
+      "pinyin": "mā má mǎ mà",
+      "hint": "Bốn thanh trên cùng một âm: cao bằng, đi lên, thấp rồi hơi nhô lên, hạ dứt khoát; khẩu hình không đổi."
+    },
+    {
+      "text": "妈妈",
+      "pinyin": "mā ma",
+      "hint": "Âm đầu thanh 1 kéo đều và cao, âm thứ hai rơi nhẹ, ngắn; đây là dạng thanh nhẹ hay gặp nhất."
+    },
+    {
+      "text": "猫骂",
+      "pinyin": "māo mà",
+      "hint": "Cặp māo thanh 1 và mà thanh 4: chữ đầu giữ cao độ phẳng suốt, chữ sau cắt hơi nhanh; người Việt hay đọc hai chữ ngang ngang nhau."
+    },
+    {
+      "text": "你好吗",
+      "pinyin": "nǐ hǎo ma",
+      "hint": "Hai thanh 3 đứng cạnh: chữ viết vẫn ghi thanh gốc, khi nói thanh đầu đi lên gần giống thanh 2 và âm cuối đọc nhẹ."
+    }
+  ]
+}

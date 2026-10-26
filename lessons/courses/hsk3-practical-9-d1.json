@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 9,
+  "lessonTitle": "Đi xem phòng và hỏi chủ nhà",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "房间",
+      "meaning": "căn phòng",
+      "example": "房间不大，可是很安静。",
+      "exampleVi": "Phòng không rộng nhưng rất yên tĩnh.",
+      "pinyin": "fáng jiān",
+      "examplePinyin": "fáng jiān bú dà ， kě shì hěn ān jìng 。"
+    },
+    {
+      "word": "家具",
+      "meaning": "đồ nội thất",
+      "example": "家具都是新的，有床和桌子。",
+      "exampleVi": "Đồ nội thất đều mới, có giường và bàn.",
+      "pinyin": "jiā jù",
+      "examplePinyin": "jiā jù dōu shì xīn de ， yǒu chuáng hé zhuō zi 。"
+    },
+    {
+      "word": "租金",
+      "meaning": "tiền thuê",
+      "example": "租金一个月一千八百块，有点贵。",
+      "exampleVi": "Tiền thuê một nghìn tám trăm tệ một tháng, hơi đắt.",
+      "pinyin": "zū jīn",
+      "examplePinyin": "zū jīn yí gè yuè yī qiān bā bǎi kuài ， yǒu diǎn guì 。"
+    },
+    {
+      "word": "押金",
+      "meaning": "tiền cọc",
+      "example": "押金付两个月，退房的时候还。",
+      "exampleVi": "Cọc hai tháng, lúc trả phòng thì nhận lại.",
+      "pinyin": "yā jīn",
+      "examplePinyin": "yā jīn fù liǎng gè yuè ， tuì fáng de shí hou hái 。"
+    },
+    {
+      "word": "合同",
+      "meaning": "hợp đồng",
+      "example": "合同签一年，中间不能退。",
+      "exampleVi": "Hợp đồng ký một năm, giữa chừng không được trả.",
+      "pinyin": "hé tong",
+      "examplePinyin": "hé tong qiān yì nián ， zhōng jiān bù néng tuì 。"
+    },
+    {
+      "word": "水电",
+      "meaning": "tiền điện nước",
+      "example": "水电按表算，一个月大概一百块。",
+      "exampleVi": "Điện nước tính theo đồng hồ, một tháng khoảng một trăm tệ.",
+      "pinyin": "shuǐ diàn",
+      "examplePinyin": "shuǐ diàn àn biǎo suàn ， yí gè yuè dà gài yì bǎi kuài 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "这个房间怎么样？",
+      "explanation": "Hỏi nhận xét ngay sau khi bước vào phòng; nói nguyên cụm này, người xem trả lời bằng 有点儿小、朝向不错 或者 太贵了.",
+      "example": "这个房间怎么样？朝向好不好？",
+      "exampleVi": "Căn phòng này thế nào? Hướng có tốt không?",
+      "examplePinyin": "zhè ge fáng jiān zěn me yàng ？ cháo xiàng hǎo bu hǎo ？"
+    },
+    {
+      "pattern": "包括……吗？",
+      "explanation": "Hỏi khoản nào nằm trong giá: 包括 rồi thêm mục cần hỏi, cuối câu có 吗; chủ nhà trả 都包括 或 水电另算.",
+      "example": "租金包括水电和网费吗？",
+      "exampleVi": "Tiền thuê có gồm điện nước và tiền mạng không?",
+      "examplePinyin": "zū jīn bāo kuò shuǐ diàn hé wǎng fèi ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Cuối tuần, bạn đến xem một phòng cho thuê và chủ nhà dẫn bạn đi xem phòng; hai người nói về hướng phòng, đồ có sẵn, tiền thuê, tiền cọc và hợp đồng, rồi bạn xin mang hợp đồng về xem trước.",
+    "avatarRole": "Chủ nhà",
+    "learnerRole": "Người đi xem phòng",
+    "goals": [
+      "Hỏi giá tiền thuê và phòng có sẵn những gì",
+      "Hỏi tiền thuê có gồm điện nước và tiền mạng không",
+      "Xin xem hợp đồng trước và hẹn ngày trả lời"
+    ],
+    "opening": "这就是网上那个房间，朝南，阳台挺大。你打算住几个人？",
+    "openingVi": "Đây chính là căn phòng trên mạng, hướng nam, ban công khá rộng. Bạn dự định ở mấy người?"
+  },
+  "freeTalk": {
+    "question": "租房的时候，你更看重价钱还是位置？为什么？",
+    "questionVi": "Khi thuê nhà, bạn quan tâm giá tiền hay vị trí hơn? Vì sao?"
+  },
+  "learningNotes": [
+    "Khi xem phòng, hỏi ba việc ngay: 租金多少？包括什么？押金付几个月？; thiếu một trong ba câu này thì rất dễ bị tính thêm tiền sau.",
+    "Chưa chốt tại chỗ thì nói 我先看看合同，明天给你回电话; 我考虑一下 cũng lịch sự nhưng nên hẹn rõ khi nào trả lời.",
+    "Phát âm: 租金 và 押金 đều là hai thanh 1 liền nhau, giữ cao và bằng suốt hai âm tiết, đừng rơi xuống như thanh 4; 水电 là thanh 3 rồi thanh 4, chữ đầu hạ thấp và ngắn rồi nhấn rơi ở chữ sau.",
+    "房间 là một phòng, 房子 là cả căn nhà; đếm phòng dùng 间: 一间房、两间卧室. 家具 chỉ bàn ghế giường tủ nói chung, muốn hỏi từng món thì hỏi 床和桌子有吗？"
+  ],
+  "prerequisites": [
+    8
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Đi xem phòng và hỏi chủ nhà",
+    "playLimit": 1,
+    "transcript": "房客：您好，我是来看房间的。房东：就是这个房间，朝南，家具有床和桌子。房客：租金一个月多少？包括水电吗？房东：一千八百块，水电和网费另算。押金两个月，合同一年。房客：我能先看看合同吗？房东：可以，你拿一份回去看，想住的话明天就能搬进来。",
+    "translation": "Khách đến xem phòng, chủ nhà giới thiệu phòng hướng nam, có sẵn giường và bàn. Khách hỏi một tháng bao nhiêu và tiền thuê có gồm điện nước hay không; chủ nhà nói một nghìn tám trăm tệ, điện nước và mạng tính riêng, cọc hai tháng, hợp đồng một năm. Khách xin xem hợp đồng trước, được chủ nhà đưa một bản mang về và hẹn nếu ở thì ngày hôm sau chuyển vào được ngay.",
+    "questions": [
+      {
+        "prompt": "Người đến xem phòng hỏi những gì?",
+        "options": [
+          "Giá thuê và tiền thuê gồm những khoản nào",
+          "Giờ mở cửa và chỗ để xe",
+          "Tên người ở trước đó"
+        ],
+        "answer": 0,
+        "explanation": "房客 hỏi 租金一个月多少？包括水电吗？"
+      },
+      {
+        "prompt": "Tiền điện nước và tiền mạng tính thế nào?",
+        "options": [
+          "Đã nằm trong tiền thuê",
+          "Tính riêng, không gồm trong tiền thuê",
+          "Chủ nhà trả giúp một nửa"
+        ],
+        "answer": 1,
+        "explanation": "房东 nói 水电和网费另算."
+      },
+      {
+        "prompt": "Khách xin làm gì trước khi quyết định?",
+        "options": [
+          "Xin giảm tiền cọc",
+          "Xin ở thử một tháng",
+          "Xin mang hợp đồng về xem"
+        ],
+        "answer": 2,
+        "explanation": "房客 nói 我能先看看合同吗， rồi được chủ nhà cho 拿一份回去看."
+      }
+    ],
+    "pinyin": "fáng kè ： nín hǎo ， wǒ shì lái kàn fáng jiān de 。 fáng dōng ： jiù shì zhè gè fáng jiān ， cháo nán ， jiā jù yǒu chuáng hé zhuō zi 。 fáng kè ： zū jīn yí gè yuè duō shǎo ？ bāo kuò shuǐ diàn ma ？ fáng dōng ： yì qiān bā bǎi kuài ， shuǐ diàn hé wǎng fèi lìng suàn 。 yā jīn liǎng gè yuè ， hé tong yì nián 。 fáng kè ： wǒ néng xiān kàn kàn hé tong ma ？ fáng dōng ： kě yǐ ， nǐ ná yí fèn huí qù kàn ， xiǎng zhù de huà míng tiān jiù néng bān jìn lái 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu hỏi giá, một câu hỏi khoản đi kèm trong giá.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "租金一个月多少？包括水电和网费吗？",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng hai mục cần hỏi",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "租金一个月多少？包括水电和网费吗？"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai đến làm gì, chủ nhà giới thiệu phòng thế nào, giá và cọc ra sao, khách xin gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách đến xem phòng, chủ nhà giới thiệu phòng hướng nam, có sẵn giường và bàn. Khách hỏi một tháng bao nhiêu và tiền thuê có gồm điện nước hay không; chủ nhà nói một nghìn tám trăm tệ, điện nước và mạng tính riêng, cọc hai tháng, hợp đồng một năm. Khách xin xem hợp đồng trước, được chủ nhà đưa một bản mang về và hẹn nếu ở thì ngày hôm sau chuyển vào được ngay.",
+      "checklist": [
+        "Nói đủ: mục đích, giá, cọc, lời xin",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt theo dấu phẩy và hạ giọng ở câu hỏi.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Hai câu hỏi về tiền nói chậm và rõ từng chữ; câu cuối giữ giọng bình thường, không lên giọng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "这个房间朝南，家具都是新的。租金一个月一千八百块，水电和网费另算。押金付两个月，合同签一年，我先看看合同，明天再给房东回电话。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "租房的时候，你更看重价钱还是位置？为什么？",
+      "promptVi": "Khi thuê nhà, bạn quan tâm giá tiền hay vị trí hơn? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Chọn một phía, nêu lý do cụ thể rồi nói thêm khi nào bạn buộc phải chấp nhận phía còn lại.",
+      "checklist": [
+        "Trả lời rõ chọn giá hay vị trí",
+        "Có lý do cụ thể",
+        "Nêu được trường hợp còn lại"
+      ],
+      "sampleZh": "我看重位置，因为每天走路去地铁站能省一个小时。可是位置好的房间租金贵，所以我先问清楚水电另算多少，再决定。",
+      "sampleVi": "Tôi chọn vị trí, vì đi bộ ra ga tàu điện mỗi ngày tiết kiệm được một tiếng. Nhưng phòng ở chỗ tốt thì tiền thuê đắt, nên tôi hỏi kỹ điện nước tính riêng bao nhiêu rồi mới quyết."
+    }
+  ],
+  "transferTask": "Cuối tuần này, đi xem cùng một người bạn một phòng cho thuê: hỏi nhận xét về phòng, hỏi tiền thuê gồm những khoản nào, cọc mấy tháng, hợp đồng bao lâu, rồi xin hẹn ngày trả lời chủ nhà.",
+  "pronunciation": [
+    {
+      "text": "租金",
+      "pinyin": "zū jīn",
+      "hint": "Cả hai chữ đều thanh 1: giữ cao và bằng suốt hai âm tiết, đừng để âm sau rơi xuống như thanh 4."
+    },
+    {
+      "text": "押金",
+      "pinyin": "yā jīn",
+      "hint": "Chữ đầu là thanh 1 (yā), người Việt hay đọc thành thanh 3; chữ sau cũng thanh 1, hai âm ngang nhau."
+    },
+    {
+      "text": "水电",
+      "pinyin": "shuǐ diàn",
+      "hint": "Thanh 3 rồi thanh 4: chữ đầu hạ thấp rồi uốn ngắn, chữ sau rơi dứt khoát; đừng đọc thành hai thanh 4."
+    },
+    {
+      "text": "家具",
+      "pinyin": "jiā jù",
+      "hint": "Thanh 1 rồi thanh 4: âm đầu cao bằng, âm sau rơi mạnh; chữ thứ hai đọc jù, không phải jū."
+    }
+  ]
+}

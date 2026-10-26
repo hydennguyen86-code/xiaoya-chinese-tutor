@@ -329,6 +329,13 @@ export function SettingsDialog({
               .zip là bản dựng LAM từ ảnh/video thật (cần máy GPU để tạo). .glb là avatar 3D kiểu Ready Player Me. Chọn xong, Misu đổi gương
               mặt ngay.
             </p>
+
+            <Toggle
+              checked={settings.avatarGender === 'male'}
+              onChange={(checked) => onChange({ avatarGender: checked ? 'male' : 'female' })}
+              label="Khuôn mặt này là nam"
+              description="Misu đổi giọng nói theo giới tính khuôn mặt: nữ dùng Xiaoxiao/Xiaoyi, nam dùng Yunjian/Yunxi."
+            />
           </section>
 
           <section className="settings-section">

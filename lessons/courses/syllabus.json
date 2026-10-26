@@ -3,6 +3,407 @@
   "authored": true,
   "volumes": [
     {
+      "id": "pinyin-intro",
+      "title": "Nhập môn Pinyin · thanh điệu và đánh vần",
+      "levels": [
+        "HSK1-2"
+      ],
+      "targetLevel": "HSK1",
+      "authored": true,
+      "lessons": [
+        {
+          "no": 1,
+          "title": "Bốn thanh và thanh nhẹ: nghe ra cao độ",
+          "topics": [
+            "Bốn thanh và thanh nhẹ: nghe ra cao độ"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "妈",
+              "meaning": "mẹ"
+            },
+            {
+              "word": "麻",
+              "meaning": "gai; tê"
+            },
+            {
+              "word": "马",
+              "meaning": "con ngựa"
+            },
+            {
+              "word": "骂",
+              "meaning": "mắng"
+            },
+            {
+              "word": "吗",
+              "meaning": "chăng (hỏi)"
+            },
+            {
+              "word": "猫",
+              "meaning": "con mèo"
+            }
+          ],
+          "patterns": [
+            "你好吗？",
+            "这是……吗？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 2,
+          "title": "Môi và môi-răng: b p m f d t n l",
+          "topics": [
+            "Môi và môi-răng: b p m f d t n l"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "吧",
+              "meaning": "nhé; quán"
+            },
+            {
+              "word": "怕",
+              "meaning": "sợ"
+            },
+            {
+              "word": "米",
+              "meaning": "gạo; cơm"
+            },
+            {
+              "word": "咖啡",
+              "meaning": "cà phê"
+            },
+            {
+              "word": "打",
+              "meaning": "đánh; gọi"
+            },
+            {
+              "word": "多",
+              "meaning": "nhiều"
+            }
+          ],
+          "patterns": [
+            "我要……",
+            "太多了。"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 3,
+          "title": "Cuối lưỡi và mặt lưỡi: g k h / j q x",
+          "topics": [
+            "Cuối lưỡi và mặt lưỡi: g k h / j q x"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "个",
+              "meaning": "cái (lượng từ)"
+            },
+            {
+              "word": "和",
+              "meaning": "và; hòa"
+            },
+            {
+              "word": "家",
+              "meaning": "nhà"
+            },
+            {
+              "word": "去",
+              "meaning": "đi"
+            },
+            {
+              "word": "学",
+              "meaning": "học"
+            },
+            {
+              "word": "吃",
+              "meaning": "ăn"
+            }
+          ],
+          "patterns": [
+            "我去……",
+            "你吃什么？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 4,
+          "title": "Tròn môi hay dẹt môi: zh ch sh r / z c s",
+          "topics": [
+            "Tròn môi hay dẹt môi: zh ch sh r / z c s"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "是",
+              "meaning": "là"
+            },
+            {
+              "word": "十",
+              "meaning": "mười"
+            },
+            {
+              "word": "四",
+              "meaning": "bốn"
+            },
+            {
+              "word": "诗",
+              "meaning": "bài thơ"
+            },
+            {
+              "word": "子",
+              "meaning": "hạt; con (thanh nhẹ)"
+            },
+            {
+              "word": "字",
+              "meaning": "chữ"
+            }
+          ],
+          "patterns": [
+            "这是……",
+            "是不是？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 5,
+          "title": "Nguyên âm đơn: a o e i u ü",
+          "topics": [
+            "Nguyên âm đơn: a o e i u ü"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "伯",
+              "meaning": "bác"
+            },
+            {
+              "word": "鹅",
+              "meaning": "con ngỗng"
+            },
+            {
+              "word": "衣",
+              "meaning": "áo"
+            },
+            {
+              "word": "乌",
+              "meaning": "đen; quạ"
+            },
+            {
+              "word": "鱼",
+              "meaning": "cá"
+            },
+            {
+              "word": "绿",
+              "meaning": "xanh lá"
+            }
+          ],
+          "patterns": [
+            "我穿……",
+            "什么颜色？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 6,
+          "title": "Nguyên âm đôi: ai ei ao ou / ia ie ua uo üe",
+          "topics": [
+            "Nguyên âm đôi: ai ei ao ou / ia ie ua uo üe"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "来",
+              "meaning": "đến"
+            },
+            {
+              "word": "白",
+              "meaning": "trắng"
+            },
+            {
+              "word": "高",
+              "meaning": "cao"
+            },
+            {
+              "word": "走",
+              "meaning": "đi bộ"
+            },
+            {
+              "word": "家",
+              "meaning": "nhà"
+            },
+            {
+              "word": "车",
+              "meaning": "xe"
+            }
+          ],
+          "patterns": [
+            "他来……",
+            "你家有……吗？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 7,
+          "title": "Vận mẫu mũi: an en in ang eng ong và er",
+          "topics": [
+            "Vận mẫu mũi: an en in ang eng ong và er"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "看",
+              "meaning": "nhìn; xem"
+            },
+            {
+              "word": "人",
+              "meaning": "người"
+            },
+            {
+              "word": "三",
+              "meaning": "ba"
+            },
+            {
+              "word": "上",
+              "meaning": "trên"
+            },
+            {
+              "word": "生",
+              "meaning": "sống; sinh"
+            },
+            {
+              "word": "儿子",
+              "meaning": "con trai"
+            }
+          ],
+          "patterns": [
+            "我看……",
+            "他三……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 8,
+          "title": "Biến điệu: hai thanh 3 đứng cạnh, và 一 / 不变 điệu",
+          "topics": [
+            "Biến điệu: hai thanh 3 đứng cạnh, và 一 / 不变 điệu"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "你好",
+              "meaning": "xin chào"
+            },
+            {
+              "word": "很好",
+              "meaning": "rất tốt"
+            },
+            {
+              "word": "一起",
+              "meaning": "cùng nhau"
+            },
+            {
+              "word": "一把",
+              "meaning": "một nắm"
+            },
+            {
+              "word": "不是",
+              "meaning": "không phải"
+            },
+            {
+              "word": "不对",
+              "meaning": "sai rồi"
+            }
+          ],
+          "patterns": [
+            "你好吗？",
+            "一点也不……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 9,
+          "title": "Thanh nhẹ trong từ hai âm tiết",
+          "topics": [
+            "Thanh nhẹ trong từ hai âm tiết"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "妈妈",
+              "meaning": "mẹ"
+            },
+            {
+              "word": "爸爸",
+              "meaning": "bố"
+            },
+            {
+              "word": "喜欢",
+              "meaning": "thích"
+            },
+            {
+              "word": "什么",
+              "meaning": "gì"
+            },
+            {
+              "word": "谢谢",
+              "meaning": "cảm ơn"
+            },
+            {
+              "word": "朋友",
+              "meaning": "bạn bè"
+            }
+          ],
+          "patterns": [
+            "我喜欢……",
+            "你有什么朋友？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 10,
+          "title": "Phân biệt cặp dễ nhầm trong câu ngắn",
+          "topics": [
+            "Phân biệt cặp dễ nhầm trong câu ngắn"
+          ],
+          "days": 1,
+          "vocab": [
+            {
+              "word": "四",
+              "meaning": "bốn"
+            },
+            {
+              "word": "十",
+              "meaning": "mười"
+            },
+            {
+              "word": "山",
+              "meaning": "núi"
+            },
+            {
+              "word": "三",
+              "meaning": "ba"
+            },
+            {
+              "word": "晚",
+              "meaning": "muộn; tối"
+            },
+            {
+              "word": "王",
+              "meaning": "họ Vương"
+            }
+          ],
+          "patterns": [
+            "十点四十。",
+            "山上有……"
+          ],
+          "prerequisites": []
+        }
+      ]
+    },
+    {
       "id": "hsk1-practical",
       "title": "HSK 1 · Nghe nói thực tế",
       "levels": [
@@ -516,6 +917,485 @@
             10,
             11
           ]
+        }
+      ]
+    },
+    {
+      "id": "hsk3-practical",
+      "title": "HSK 3 · Nghe nói thực tế",
+      "levels": [
+        "HSK3-4"
+      ],
+      "targetLevel": "HSK3",
+      "authored": true,
+      "lessons": [
+        {
+          "no": 1,
+          "title": "Hỏi đường và chỉ đường trong thành phố",
+          "topics": [
+            "Hỏi đường và chỉ đường trong thành phố"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "路",
+              "meaning": "đường; lộ"
+            },
+            {
+              "word": "站",
+              "meaning": "trạm; bến"
+            },
+            {
+              "word": "附近",
+              "meaning": "gần đó; quanh đây"
+            },
+            {
+              "word": "对面",
+              "meaning": "đối diện"
+            },
+            {
+              "word": "走",
+              "meaning": "đi; bước"
+            },
+            {
+              "word": "换",
+              "meaning": "đổi; chuyển"
+            }
+          ],
+          "patterns": [
+            "……怎么走？",
+            "在……附近"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 2,
+          "title": "Gọi món, hỏi vị và thanh toán ở quán",
+          "topics": [
+            "Gọi món, hỏi vị và thanh toán ở quán"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "点",
+              "meaning": "gọi; chọn"
+            },
+            {
+              "word": "菜",
+              "meaning": "món; rau"
+            },
+            {
+              "word": "辣",
+              "meaning": "cay"
+            },
+            {
+              "word": "杯",
+              "meaning": "cốc; tách"
+            },
+            {
+              "word": "要",
+              "meaning": "muốn; cần"
+            },
+            {
+              "word": "贵",
+              "meaning": "đắt"
+            }
+          ],
+          "patterns": [
+            "我要……",
+            "有没有……？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 3,
+          "title": "Đi mua sắm: hỏi giá, thử đồ, trả giá",
+          "topics": [
+            "Đi mua sắm: hỏi giá, thử đồ, trả giá"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "多少",
+              "meaning": "bao nhiêu"
+            },
+            {
+              "word": "便宜",
+              "meaning": "rẻ"
+            },
+            {
+              "word": "试",
+              "meaning": "thử"
+            },
+            {
+              "word": "号",
+              "meaning": "cỡ; số"
+            },
+            {
+              "word": "付款",
+              "meaning": "trả tiền"
+            },
+            {
+              "word": "零钱",
+              "meaning": "tiền lẻ"
+            }
+          ],
+          "patterns": [
+            "多少钱？",
+            "能便宜一点吗？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 4,
+          "title": "Gọi điện và hẹn gặp",
+          "topics": [
+            "Gọi điện và hẹn gặp"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "预约",
+              "meaning": "đặt trước; hẹn"
+            },
+            {
+              "word": "方便",
+              "meaning": "thuận tiện"
+            },
+            {
+              "word": "打扰",
+              "meaning": "phiền; làm phiền"
+            },
+            {
+              "word": "回",
+              "meaning": "quay lại; trả lời"
+            },
+            {
+              "word": "见面",
+              "meaning": "gặp mặt"
+            },
+            {
+              "word": "晚会",
+              "meaning": "buổi tiệc tối"
+            }
+          ],
+          "patterns": [
+            "您现在方便吗？",
+            "我们约在……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 5,
+          "title": "Nói về cuối tuần và sở thích",
+          "topics": [
+            "Nói về cuối tuần và sở thích"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "周末",
+              "meaning": "cuối tuần"
+            },
+            {
+              "word": "爱好",
+              "meaning": "sở thích"
+            },
+            {
+              "word": "运动",
+              "meaning": "vận động; thể thao"
+            },
+            {
+              "word": "电影",
+              "meaning": "phim; rạp phim"
+            },
+            {
+              "word": "累",
+              "meaning": "mệt"
+            },
+            {
+              "word": "睡",
+              "meaning": "ngủ"
+            }
+          ],
+          "patterns": [
+            "你平时喜欢……吗？",
+            "我一般……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 6,
+          "title": "Thời tiết, mùa và mặc gì",
+          "topics": [
+            "Thời tiết, mùa và mặc gì"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "天气",
+              "meaning": "thời tiết"
+            },
+            {
+              "word": "下雨",
+              "meaning": "mưa; trời mưa"
+            },
+            {
+              "word": "冷",
+              "meaning": "lạnh"
+            },
+            {
+              "word": "热",
+              "meaning": "nóng"
+            },
+            {
+              "word": "穿",
+              "meaning": "mặc; mặc đồ"
+            },
+            {
+              "word": "伞",
+              "meaning": "cái dù"
+            }
+          ],
+          "patterns": [
+            "明天天气怎么样？",
+            "记得带……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 7,
+          "title": "Không khỏe: mô tả triệu chứng và nghe lời dặn",
+          "topics": [
+            "Không khỏe: mô tả triệu chứng và nghe lời dặn"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "舒服",
+              "meaning": "thoải mái; khỏe"
+            },
+            {
+              "word": "感冒",
+              "meaning": "cảm cúm"
+            },
+            {
+              "word": "医院",
+              "meaning": "bệnh viện"
+            },
+            {
+              "word": "药",
+              "meaning": "thuốc"
+            },
+            {
+              "word": "休息",
+              "meaning": "nghỉ ngơi"
+            },
+            {
+              "word": "检查",
+              "meaning": "kiểm tra; khám"
+            }
+          ],
+          "patterns": [
+            "我怎么……？",
+            "医生让我……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 8,
+          "title": "Ngân hàng, đổi tiền và trả bằng điện thoại",
+          "topics": [
+            "Ngân hàng, đổi tiền và trả bằng điện thoại"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "银行",
+              "meaning": "ngân hàng"
+            },
+            {
+              "word": "换钱",
+              "meaning": "đổi tiền"
+            },
+            {
+              "word": "密码",
+              "meaning": "mật khẩu"
+            },
+            {
+              "word": "转账",
+              "meaning": "chuyển khoản"
+            },
+            {
+              "word": "扫码",
+              "meaning": "quét mã"
+            },
+            {
+              "word": "收款",
+              "meaning": "thu tiền; nhận tiền"
+            }
+          ],
+          "patterns": [
+            "我想……",
+            "可以用手机付吗？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 9,
+          "title": "Đi xem phòng và hỏi chủ nhà",
+          "topics": [
+            "Đi xem phòng và hỏi chủ nhà"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "房间",
+              "meaning": "căn phòng"
+            },
+            {
+              "word": "家具",
+              "meaning": "đồ nội thất"
+            },
+            {
+              "word": "租金",
+              "meaning": "tiền thuê"
+            },
+            {
+              "word": "押金",
+              "meaning": "tiền cọc"
+            },
+            {
+              "word": "合同",
+              "meaning": "hợp đồng"
+            },
+            {
+              "word": "水电",
+              "meaning": "tiền điện nước"
+            }
+          ],
+          "patterns": [
+            "这个房间怎么样？",
+            "包括……吗？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 10,
+          "title": "Nhận phòng khách sạn và hỏi dịch vụ",
+          "topics": [
+            "Nhận phòng khách sạn và hỏi dịch vụ"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "预订",
+              "meaning": "đặt trước"
+            },
+            {
+              "word": "入住",
+              "meaning": "nhận phòng; vào ở"
+            },
+            {
+              "word": "退房",
+              "meaning": "trả phòng"
+            },
+            {
+              "word": "发票",
+              "meaning": "hóa đơn"
+            },
+            {
+              "word": "行李",
+              "meaning": "hành lý"
+            },
+            {
+              "word": "电梯",
+              "meaning": "thang máy"
+            }
+          ],
+          "patterns": [
+            "我订了……",
+            "几点……？"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 11,
+          "title": "Thói quen sinh hoạt và rèn luyện",
+          "topics": [
+            "Thói quen sinh hoạt và rèn luyện"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "锻炼",
+              "meaning": "rèn luyện; tập"
+            },
+            {
+              "word": "起床",
+              "meaning": "dậy; thức dậy"
+            },
+            {
+              "word": "跑步",
+              "meaning": "chạy bộ"
+            },
+            {
+              "word": "习惯",
+              "meaning": "thói quen; làm quen"
+            },
+            {
+              "word": "健康",
+              "meaning": "khỏe mạnh; sức khỏe"
+            },
+            {
+              "word": "保持",
+              "meaning": "giữ; duy trì"
+            }
+          ],
+          "patterns": [
+            "你通常几点……？",
+            "最好……"
+          ],
+          "prerequisites": []
+        },
+        {
+          "no": 12,
+          "title": "Mời bạn, nhận lời và từ chối khéo",
+          "topics": [
+            "Mời bạn, nhận lời và từ chối khéo"
+          ],
+          "days": 2,
+          "vocab": [
+            {
+              "word": "邀请",
+              "meaning": "mời; mời mọc"
+            },
+            {
+              "word": "参加",
+              "meaning": "tham gia"
+            },
+            {
+              "word": "有空",
+              "meaning": "rảnh"
+            },
+            {
+              "word": "可惜",
+              "meaning": "đáng tiếc"
+            },
+            {
+              "word": "改天",
+              "meaning": "hôm khác; dịp khác"
+            },
+            {
+              "word": "抱歉",
+              "meaning": "xin lỗi; ngại"
+            }
+          ],
+          "patterns": [
+            "你……有空吗？",
+            "不好意思，我……"
+          ],
+          "prerequisites": []
         }
       ]
     },

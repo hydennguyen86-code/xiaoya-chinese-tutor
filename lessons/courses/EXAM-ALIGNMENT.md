@@ -9,6 +9,10 @@ Kiểm tra nguồn ngày 24/10/2026. Đây là nội dung Misu tự soạn, khô
   bài HSK 1 đó. Khóa này dùng nghe câu/hội thoại ngắn, nhận biết thông tin và
   chọn đáp án; phần nghe–nhắc lại, trả lời và nhập vai là mở rộng thực dụng.
   [Cấu trúc HSK 1 của CTI](https://www.chinesetest.cn/HSK/1).
+- HSK 3: khóa nghe–nói thực tế 12 chủ đề × 2 buổi, chỉ luyện nghe câu/hội thoại
+  ngắn và nói lại trong tình huống đời thường; không mô phỏng phần đọc và viết của
+  đề. Cấu trúc theo phiên bản CTI công bố, cần xác nhận lại khi đăng ký — áp dụng
+  đầy đủ các cảnh báo ở cuối tài liệu này.
 - HSK 5: trang cấu trúc hiện hành công bố nghe, đọc và viết. Khóa chỉ tập trung
   nghe/nói: nghe hội thoại/đoạn văn, lấy ý chính, chi tiết, thái độ hoặc kết luận
   có căn cứ. Không thay thế phần đọc/viết khi ôn cả kỳ thi.

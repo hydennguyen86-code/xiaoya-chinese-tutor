@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 6,
+  "lessonTitle": "Thời tiết, mùa và mặc gì",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "天气",
+      "meaning": "thời tiết",
+      "example": "今天天气不太好。",
+      "exampleVi": "Hôm nay thời tiết không đẹp lắm.",
+      "pinyin": "tiān qì",
+      "examplePinyin": "jīn tiān tiān qì bú tài hǎo 。"
+    },
+    {
+      "word": "下雨",
+      "meaning": "mưa; trời mưa",
+      "example": "外面在下雨，路上很滑。",
+      "exampleVi": "Bên ngoài đang mưa, đường trơn lắm.",
+      "pinyin": "xià yǔ",
+      "examplePinyin": "wài miàn zài xià yǔ ， lù shang hěn huá 。"
+    },
+    {
+      "word": "冷",
+      "meaning": "lạnh",
+      "example": "这儿冬天很冷，零下十度。",
+      "exampleVi": "Mùa đông ở đây rất lạnh, âm mười độ.",
+      "pinyin": "lěng",
+      "examplePinyin": "zhè ér dōng tiān hěn lěng ， líng xià shí dù 。"
+    },
+    {
+      "word": "热",
+      "meaning": "nóng",
+      "example": "夏天特别热，我一般晚上才出门。",
+      "exampleVi": "Mùa hè nóng lắm, tôi thường tối mới ra ngoài.",
+      "pinyin": "rè",
+      "examplePinyin": "xià tiān tè bié rè ， wǒ yì bān wǎn shang cái chū mén 。"
+    },
+    {
+      "word": "穿",
+      "meaning": "mặc; mặc đồ",
+      "example": "今天你穿外套了吗？",
+      "exampleVi": "Hôm nay bạn mặc áo khoác chưa?",
+      "pinyin": "chuān",
+      "examplePinyin": "jīn tiān nǐ chuān wài tào le ma ？"
+    },
+    {
+      "word": "伞",
+      "meaning": "cái dù",
+      "example": "雨这么大，你带伞了没有？",
+      "exampleVi": "Mưa to thế này, bạn có mang dù chưa?",
+      "pinyin": "sǎn",
+      "examplePinyin": "yǔ zhè me dà ， nǐ dài sǎn le méi yǒu ？"
+    },
+    {
+      "word": "外套",
+      "meaning": "áo khoác ngoài",
+      "example": "天有点儿冷，穿一件外套再走。",
+      "exampleVi": "Trời hơi lạnh, mặc một chiếc áo khoác rồi hãy đi.",
+      "pinyin": "wài tào",
+      "examplePinyin": "tiān yǒu diǎn er lěng ， chuān yí jiàn wài tào zài zǒu 。"
+    },
+    {
+      "word": "晴天",
+      "meaning": "trời nắng đẹp",
+      "example": "周末是晴天，很适合出去。",
+      "exampleVi": "Cuối tuần trời nắng, rất hợp đi ra ngoài.",
+      "pinyin": "qíng tiān",
+      "examplePinyin": "zhōu mò shì qíng tiān ， hěn shì hé chū qù 。"
+    },
+    {
+      "word": "太阳",
+      "meaning": "mặt trời",
+      "example": "太阳很大，我不想出门。",
+      "exampleVi": "Nắng gắt quá, tôi không muốn ra ngoài.",
+      "pinyin": "tài yáng",
+      "examplePinyin": "tài yáng hěn dà ， wǒ bù xiǎng chū mén 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "明天天气怎么样？",
+      "explanation": "Hỏi dự báo: 明天天气怎么样 đứng nguyên một câu, không thêm 吗; muốn biết mặc gì thì hỏi tiếp 要不要带……？",
+      "example": "你看一下明天天气怎么样，我得决定穿什么。",
+      "exampleVi": "Bạn xem giúp mai thời tiết thế nào, tôi phải quyết định mặc gì.",
+      "examplePinyin": "nǐ kàn yí xià míng tiān tiān qì zěn me yàng ， wǒ dé jué dìng chuān shén me 。"
+    },
+    {
+      "pattern": "记得带……",
+      "explanation": "Nhắc nhau trước khi ra ngoài: 记得带 rồi thêm đồ vật; với quần áo thì nói 记得穿.",
+      "example": "记得带伞，外面还在下雨。",
+      "exampleVi": "Nhớ mang dù nhé, bên ngoài vẫn đang mưa.",
+      "examplePinyin": "jì de dài sǎn ， wài miàn hái zài xià yǔ 。"
+    },
+    {
+      "pattern": "好像……",
+      "explanation": "Phỏng đoán dựa vào dấu hiệu: 好像 rồi thêm cụm cần đoán, như 好像要下雨; khi hỏi lại thì nói 好像……，是吗？",
+      "example": "外面那么多云，好像要下雨。",
+      "exampleVi": "Bên ngoài nhiều mây thế, chắc sắp mưa.",
+      "examplePinyin": "wài miàn nà me duō yún ， hǎo xiàng yào xià yǔ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: trước chuyến đi chơi cuối tuần, hai bạn nghe dự báo rồi phân công nhau mang đồ; nếu mưa thì đổi kế hoạch.",
+    "avatarRole": "Bạn cùng đi",
+    "learnerRole": "Người kiểm tra dự báo",
+    "goals": [
+      "Kể dự báo thời tiết cho ngày đi chơi",
+      "Thống nhất mỗi người mang gì",
+      "Nêu phương án nếu trời mưa"
+    ],
+    "opening": "周六到底是晴天还是下雨？你看预报了没有？",
+    "openingVi": "Thứ bảy rốt cuộc trời nắng hay mưa? Bạn xem dự báo chưa?"
+  },
+  "freeTalk": {
+    "question": "出门以前，你会先看天气预报吗？为什么？",
+    "questionVi": "Trước khi ra khỏi nhà, bạn có xem dự báo thời tiết không? Vì sao?"
+  },
+  "learningNotes": [
+    "Hỏi thời tiết: 明天天气怎么样？ đã đủ, không thêm 吗; muốn chốt việc mang đồ thì hỏi 要不要带伞？",
+    "Nhắc nhau: 记得带 + đồ vật, 记得穿 + quần áo; phủ định thì nói 别穿太少、别忘了外套.",
+    "Phát âm: 下雨 là thanh 4 rồi thanh 3, hạ nhanh rồi uốn thấp; 外套 hai thanh 4 liên tiếp, đọc rõ cả hai, không biến âm sau thành thanh nhẹ.",
+    "冷/热 đi với 很、有点儿、特别: 今天有点儿冷、夏天特别热; khi mặc đồ dùng 穿 + thành phần bổ ngữ: 穿一件外套."
+  ],
+  "prerequisites": [
+    5
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Thời tiết, mùa và mặc gì",
+    "playLimit": 1,
+    "transcript": "甲：我看了一下预报，周六上午是晴天，太阳很大，下午好像要下雨。乙：上午穿短袖就行吧？那外套带不带？甲：带一件，下午就冷了。乙：伞我拿两把，你带太阳帽吧。甲：行，看完天气我再查几点出发。",
+    "translation": "A xem dự báo: sáng thứ bảy trời nắng, nắng to, chiều có khả năng mưa. Hai bạn thống nhất sáng mặc áo ngắn tay, mang theo một chiếc áo khoác vì chiều sẽ lạnh; B cầm hai cái dù, A đội nón rộng vành. Sau đó A sẽ xem giờ khởi hành.",
+    "questions": [
+      {
+        "prompt": "Dự báo nói gì về thời tiết thứ bảy?",
+        "options": [
+          "Sáng nắng, chiều có khả năng mưa",
+          "Cả ngày mưa to",
+          "Sáng lạnh, chiều nắng"
+        ],
+        "answer": 0,
+        "explanation": "A nói 周六上午是晴天，下午好像要下雨."
+      },
+      {
+        "prompt": "Bạn nào sẽ cầm dù?",
+        "options": [
+          "A mang hai cái",
+          "B mang hai cái",
+          "Hai bạn không mang"
+        ],
+        "answer": 1,
+        "explanation": "B nói 伞我拿两把."
+      },
+      {
+        "prompt": "A nhận mang gì?",
+        "options": [
+          "Áo khoác",
+          "Nón che nắng",
+          "Nước uống"
+        ],
+        "answer": 2,
+        "explanation": "B dặn 你带太阳帽吧，A trả lời 行."
+      }
+    ],
+    "pinyin": "jiǎ ： wǒ kàn le yí xià yù bào ， zhōu liù shàng wǔ shì qíng tiān ， tài yáng hěn dà ， xià wǔ hǎo xiàng yào xià yǔ 。 yǐ ： shàng wǔ chuān duǎn xiù jiù xíng ba ？ nà wài tào dài bu dài ？ jiǎ ： dài yí jiàn ， xià wǔ jiù lěng le 。 yǐ ： sǎn wǒ ná liǎng bǎ ， nǐ dài tài yáng mào ba 。 jiǎ ： xíng ， kàn wán tiān qì wǒ zài chá jǐ diǎn chū fā 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu phỏng đoán thời tiết, một câu nhắc mặc đồ.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "下午好像要下雨，带一件外套吧。别忘了太阳帽。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng lời nhắc nhở",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "下午好像要下雨，带一件外套吧。别忘了太阳帽。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: dự báo thế nào, hai bạn mặc gì, ai mang dù, ai mang nón.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "A xem dự báo: sáng thứ bảy trời nắng, nắng to, chiều có khả năng mưa. Hai bạn thống nhất sáng mặc áo ngắn tay, mang theo một chiếc áo khoác vì chiều sẽ lạnh; B cầm hai cái dù, A đội nón rộng vành. Sau đó A sẽ xem giờ khởi hành.",
+      "checklist": [
+        "Nói đủ: dự báo, quần áo, người mang dù, người mang nón",
+        "Người nghe hiểu được nội dung",
+        "Không tự thêm đồ vật khác"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, nhấn vào các từ thời tiết và đồ mang theo.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Câu phỏng đoán đọc chậm; câu chốt đồ mang theo nhấn từng từ.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "周六上午是晴天，太阳很大，穿短袖就行。下午好像要下雨，天会冷一点儿，所以带上外套和伞。"
+    },
+    {
+      "kind": "opinion",
+      "prompt": "出门以前，你会先看天气预报吗？为什么？",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Nêu thói quen của bạn, nói một lần quên xem dự báo và hậu quả, rồi rút kinh nghiệm.",
+      "checklist": [
+        "Trả lời rõ có hoặc không",
+        "Kể được một trải nghiệm",
+        "Nói được bài học"
+      ],
+      "promptVi": "Trước khi ra khỏi nhà, bạn có xem dự báo thời tiết không? Vì sao?",
+      "sampleZh": "出门以前我一定会看天气预报。有一次我没看，穿了短袖出去，下午下雨，冷得直发抖，只能跑回宿舍拿外套。现在下雨的日子，我包里总放一把伞。",
+      "sampleVi": "Trước khi ra ngoài tôi chắc chắn xem dự báo. Có lần không xem, tôi mặc áo ngắn tay đi, chiều mưa, lạnh run, phải chạy về phòng lấy áo khoác. Giờ những ngày có mưa, trong cặp tôi luôn có một cây dù."
+    }
+  ],
+  "transferTask": "Tuần sau gia đình bạn đi chơi hai ngày: kể dự báo thời tiết của hai ngày đó, thống nhất mỗi người mặc gì và nhắc người đi cùng mang áo khoác cùng đồ che nắng.",
+  "pronunciation": [
+    {
+      "text": "天气",
+      "pinyin": "tiān qì",
+      "hint": "Chữ đầu thanh 1 cao và bằng, giữ hơi dài; chữ sau thanh 4 rơi dứt khoát."
+    },
+    {
+      "text": "下雨",
+      "pinyin": "xià yǔ",
+      "hint": "Chữ đầu thanh 4 hạ mạnh, chữ sau thanh 3 uốn thấp; tròn môi ở cả hai âm tiết."
+    },
+    {
+      "text": "外套",
+      "pinyin": "wài tào",
+      "hint": "Hai thanh 4 liên tiếp, âm đầu ngắn, âm sau rơi sâu; giữ rõ phụ âm đầu."
+    },
+    {
+      "text": "怎么样",
+      "pinyin": "zěn me yàng",
+      "hint": "Chữ đầu thanh 3, âm giữa đọc nhẹ, chữ cuối thanh 4; hỏi xong hạ giọng."
+    }
+  ]
+}

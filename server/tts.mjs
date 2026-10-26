@@ -21,23 +21,39 @@ export const DEFAULT_VI_VOICE = 'vi-VN-HoaiMyNeural';
 export const TTS_VOICES = [
   {
     id: 'zh-CN-XiaoxiaoNeural',
-    label: 'Xiaoxiao · ấm áp, tự nhiên',
+    label: 'Xiaoxiao · nữ, ấm áp, tự nhiên',
     short: 'Xiaoxiao',
+    gender: 'female',
   },
   {
     id: 'zh-CN-XiaoyiNeural',
-    label: 'Xiaoyi · trong trẻo, trẻ trung',
+    label: 'Xiaoyi · nữ, trong trẻo, trẻ trung',
     short: 'Xiaoyi',
+    gender: 'female',
   },
   {
     id: 'zh-CN-liaoning-XiaobeiNeural',
-    label: 'Xiaobei · giọng Đông Bắc',
+    label: 'Xiaobei · nữ, giọng Đông Bắc',
     short: 'Xiaobei',
+    gender: 'female',
   },
   {
     id: 'zh-CN-shaanxi-XiaoniNeural',
-    label: 'Xiaoni · giọng Thiểm Tây',
+    label: 'Xiaoni · nữ, giọng Thiểm Tây',
     short: 'Xiaoni',
+    gender: 'female',
+  },
+  {
+    id: 'zh-CN-YunjianNeural',
+    label: 'Yunjian · nam, trầm và rõ',
+    short: 'Yunjian',
+    gender: 'male',
+  },
+  {
+    id: 'zh-CN-YunxiNeural',
+    label: 'Yunxi · nam, trẻ, nhanh',
+    short: 'Yunxi',
+    gender: 'male',
   },
 ];
 
@@ -46,11 +62,13 @@ export const VI_TTS_VOICES = [
     id: 'vi-VN-HoaiMyNeural',
     label: 'HoaiMy · tiếng Việt chuẩn, nữ',
     short: 'HoaiMy',
+    gender: 'female',
   },
   {
     id: 'vi-VN-NamMinhNeural',
     label: 'NamMinh · tiếng Việt, nam',
     short: 'NamMinh',
+    gender: 'male',
   },
 ];
 

@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 5,
+  "lessonTitle": "Nguyên âm đơn: a o e i u ü",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "伯",
+      "meaning": "bác",
+      "example": "我大伯在家。",
+      "exampleVi": "Bác cả tôi ở nhà.",
+      "pinyin": "bó",
+      "examplePinyin": "wǒ dà bó zài jiā 。"
+    },
+    {
+      "word": "鹅",
+      "meaning": "con ngỗng",
+      "example": "白鹅在水里。",
+      "exampleVi": "Ngỗng trắng ở dưới nước.",
+      "pinyin": "é",
+      "examplePinyin": "bái é zài shuǐ lǐ 。"
+    },
+    {
+      "word": "衣",
+      "meaning": "áo",
+      "example": "我买一件衣服。",
+      "exampleVi": "Tôi mua một chiếc áo.",
+      "pinyin": "yī",
+      "examplePinyin": "wǒ mǎi yí jiàn yī fu 。"
+    },
+    {
+      "word": "乌",
+      "meaning": "đen; quạ",
+      "example": "乌鸦是黑的。",
+      "exampleVi": "Con quạ màu đen.",
+      "pinyin": "wū",
+      "examplePinyin": "wū yā shì hēi de 。"
+    },
+    {
+      "word": "鱼",
+      "meaning": "cá",
+      "example": "猫爱吃鱼。",
+      "exampleVi": "Mèo thích ăn cá.",
+      "pinyin": "yú",
+      "examplePinyin": "māo ài chī yú 。"
+    },
+    {
+      "word": "绿",
+      "meaning": "xanh lá",
+      "example": "这件衣服是绿的。",
+      "exampleVi": "Chiếc áo này màu xanh lá.",
+      "pinyin": "lǜ",
+      "examplePinyin": "zhè jiàn yī fu shì lǜ de 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我穿……",
+      "explanation": "Nói mình mặc gì: 穿 là âm cong lưỡi, phía sau là đồ mặc hoặc màu.",
+      "example": "我穿绿衣服。",
+      "exampleVi": "Tôi mặc áo màu xanh lá.",
+      "examplePinyin": "wǒ chuān lǜ yī fu 。"
+    },
+    {
+      "pattern": "什么颜色？",
+      "explanation": "Hỏi màu: đặt 什么颜色 ở cuối câu; 么 đọc nhẹ, 色 là âm phẳng lưỡi.",
+      "example": "这是什么颜色？",
+      "exampleVi": "Đây là màu gì?",
+      "examplePinyin": "zhè shì shén me yán sè ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Cửa hàng quần áo nhỏ: người bán đưa hai chiếc áo chỉ khác nhau một nguyên âm, bạn phải hỏi màu và nói mình mặc màu nào.",
+    "avatarRole": "Người bán quần áo",
+    "learnerRole": "Khách mua áo",
+    "goals": [
+      "Hỏi màu bằng cụm shén me yán sè",
+      "Nói mình mặc gì bằng mẫu wǒ chuān ……",
+      "Giữ tròn môi ở o, u, ü và dẹt môi ở i, e"
+    ],
+    "opening": "这件衣服是什么颜色？你要绿的吗？",
+    "openingVi": "Chiếc áo này màu gì? Bạn lấy màu xanh lá không?"
+  },
+  "freeTalk": {
+    "question": "你喜欢什么颜色？你穿什么衣服？",
+    "questionVi": "Bạn thích màu gì? Bạn hay mặc áo gì?"
+  },
+  "learningNotes": [
+    "a há hàm rộng và lưỡi hạ; o bo môi vừa, lưỡi lui sau; e dẹt môi, hai khóe miệng kéo ngang.",
+    "i là nguyên âm cao trước, u cao sau; ü lấy lưỡi của i nhưng bo môi như u: nói i rồi từ từ túm môi lại sẽ ra ü.",
+    "Sáu nguyên âm đơn giữ một khẩu hình từ đầu đến cuối âm tiết; đừng thêm âm cuối và đừng trượt thành nguyên âm đôi.",
+    "CẢNH BÁO cho người Việt: i và ü dễ bị đọc lẫn vì tiếng Việt có y và i gần giống i; đừng đọc 鱼 thành 'du', 绿 thành 'lưa', và đừng đọc 鹅 bằng o tiếng Việt.",
+    "Sau j, q, x, y thì ü viết thành u: 去 qù, 学 xué, 鱼 yú, 绿 lǜ; mắt thấy chữ u nhưng miệng vẫn phải tròn."
+  ],
+  "prerequisites": [
+    4
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Nguyên âm đơn: a o e i u ü",
+    "playLimit": 1,
+    "transcript": "甲：大伯，这是你的衣服吗？乙：不是，那是黑的。你看，鹅在水里，鱼也在水里。甲：绿的衣服和白衣服，你要哪一件？乙：我要绿的。",
+    "translation": "A hỏi bác cả có phải chiếc áo này của bác không. B nói không, cái kia màu đen. B chỉ A xem ngỗng và cá đang ở dưới nước. A hỏi giữa áo xanh lá và áo trắng thì B lấy cái nào. B nói lấy áo xanh lá.",
+    "questions": [
+      {
+        "prompt": "Người được hỏi trong đoạn là ai?",
+        "options": [
+          "Bác cả",
+          "Em trai",
+          "Thầy giáo"
+        ],
+        "answer": 0,
+        "explanation": "A mở đầu bằng 大伯, tức gọi bác."
+      },
+      {
+        "prompt": "Con ngỗng và con cá đang ở đâu?",
+        "options": [
+          "Trên bàn",
+          "Dưới nước",
+          "Trong sân"
+        ],
+        "answer": 1,
+        "explanation": "B nói 鹅在水里，鱼也在水里。"
+      },
+      {
+        "prompt": "Người B chọn chiếc áo nào?",
+        "options": [
+          "Áo trắng",
+          "Áo đen",
+          "Áo xanh lá"
+        ],
+        "answer": 2,
+        "explanation": "Câu cuối B nói 我要绿的。"
+      }
+    ],
+    "pinyin": "jiǎ ： dà bó ， zhè shì nǐ de yī fu ma ？ yǐ ： bú shì ， nà shì hēi de 。 nǐ kàn ， é zài shuǐ lǐ ， yú yě zài shuǐ lǐ 。 jiǎ ： lǜ de yī fu hé bái yī fu ， nǐ yào nǎ yí jiàn ？ yǐ ： wǒ yào lǜ de 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại sáu nguyên âm đơn theo đúng khẩu hình.",
+      "prepareSeconds": 10,
+      "responseSeconds": 25,
+      "reference": "Ba âm đầu theo thứ tự há rộng, bo tròn, dẹt ngang; ba âm sau cao trước, tròn sau, tròn trước.",
+      "checklist": [
+        "Giữ khẩu hình không đổi trong mỗi âm",
+        "Bo môi rõ ở âm cuối",
+        "Không thêm âm thừa"
+      ],
+      "audioText": "啊，哦，鹅。衣，乌，鱼，绿。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu ngắn về áo và nước.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 我穿…… và 什么颜色？ của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "Âm đầu chuān cong lưỡi, môi tròn",
+        "Giữ yú và lǜ tròn môi"
+      ],
+      "audioText": "我穿绿衣服。鱼在水里。"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "大伯有黑衣服，也有白衣服。鹅在水里，鱼也在水里。绿衣服在桌子上。你穿什么颜色的衣服？",
+      "reference": "Đoạn toàn nguyên âm đơn: so sánh e ở 鹅, i ở 衣 và ü ở 鱼, 绿 khi đọc chậm.",
+      "checklist": [
+        "Đọc đủ bốn câu",
+        "Không lẫn yú với wū",
+        "Câu hỏi cuối lên nhẹ, rõ màu"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你喜欢什么颜色？你穿什么衣服？",
+      "promptVi": "Bạn thích màu gì? Bạn hay mặc áo gì?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: nói màu bạn thích và áo bạn mặc, có thể thêm một câu hỏi lại bằng 什么颜色？",
+      "checklist": [
+        "Trả lời đủ hai câu hỏi",
+        "Dùng được mẫu wǒ chuān ……",
+        "Người nghe nhận ra ü trong màu bạn nói"
+      ],
+      "sampleZh": "我喜欢绿色。我穿绿衣服，不穿黑衣服。",
+      "sampleVi": "Tôi thích màu xanh lá. Tôi mặc áo xanh lá, không mặc áo đen."
+    }
+  ],
+  "transferTask": "Nhờ một người thật đọc chậm sáu nguyên âm a, o, e, i, u, ü rồi hai từ yú và lǜ; bạn nhìn miệng họ để chỉ ra âm nào tròn môi, sau đó tự đọc lại và nhờ họ sửa.",
+  "pronunciation": [
+    {
+      "text": "啊，哦，鹅",
+      "pinyin": "a ， o ， é",
+      "hint": "Cùng một cao độ, ba khẩu hình: há rộng, bo tròn vừa, dẹt ngang; hãy soi gương để thấy môi khác nhau rõ."
+    },
+    {
+      "text": "衣，乌，鱼",
+      "pinyin": "yī ， wū ， yú",
+      "hint": "i dẹt cao trước, u tròn cao sau, ü tròn nhưng lưỡi trước: nói i rồi bo môi mà lưỡi không dịch ra sau."
+    },
+    {
+      "text": "绿，路",
+      "pinyin": "lǜ ， lù",
+      "hint": "Cùng âm đầu l: lǜ có ü nên lưỡi trước và môi tròn, lù có u nên lưỡi lui về sau; đây là cặp kiểm tra ü."
+    },
+    {
+      "text": "大鱼",
+      "pinyin": "dà yú",
+      "hint": "Cụm 'cá lớn': âm đầu hạ mạnh ở thanh 4, âm sau đi lên ở thanh 2 và giữ tròn môi suốt vần."
+    },
+    {
+      "text": "衣服",
+      "pinyin": "yī fu",
+      "hint": "Âm đầu cao bằng, âm thứ hai rơi nhẹ và ngắn; môi dẹt rồi buông, không thêm hơi ở cuối."
+    }
+  ]
+}

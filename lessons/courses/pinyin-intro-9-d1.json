@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 9,
+  "lessonTitle": "Thanh nhẹ trong từ hai âm tiết",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "妈妈",
+      "meaning": "mẹ",
+      "example": "妈妈，我回来了。",
+      "exampleVi": "Mẹ ơi, con về rồi.",
+      "pinyin": "mā ma",
+      "examplePinyin": "mā ma ， wǒ huí lái le 。"
+    },
+    {
+      "word": "爸爸",
+      "meaning": "bố",
+      "example": "爸爸是老师。",
+      "exampleVi": "Bố tôi là thầy giáo.",
+      "pinyin": "bà ba",
+      "examplePinyin": "bà ba shì lǎo shī 。"
+    },
+    {
+      "word": "喜欢",
+      "meaning": "thích",
+      "example": "我喜欢喝茶。",
+      "exampleVi": "Tôi thích uống trà.",
+      "pinyin": "xǐ huan",
+      "examplePinyin": "wǒ xǐ huan hē chá 。"
+    },
+    {
+      "word": "什么",
+      "meaning": "gì",
+      "example": "这是什么？",
+      "exampleVi": "Đây là cái gì?",
+      "pinyin": "shén me",
+      "examplePinyin": "zhè shì shén me ？"
+    },
+    {
+      "word": "谢谢",
+      "meaning": "cảm ơn",
+      "example": "谢谢妈妈。",
+      "exampleVi": "Cảm ơn mẹ.",
+      "pinyin": "xiè xie",
+      "examplePinyin": "xiè xie mā ma 。"
+    },
+    {
+      "word": "朋友",
+      "meaning": "bạn bè",
+      "example": "他是我的朋友。",
+      "exampleVi": "Anh ấy là bạn của tôi.",
+      "pinyin": "péng you",
+      "examplePinyin": "tā shì wǒ de péng you 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我喜欢……",
+      "explanation": "Nói món hoặc đồ mình thích: 我喜欢 rồi đến vật; âm thứ hai của 喜欢 rơi nhẹ, ngắn, không dấu.",
+      "example": "我喜欢白色的车。",
+      "exampleVi": "Tôi thích chiếc xe màu trắng.",
+      "examplePinyin": "wǒ xǐ huan bái sè de chē 。"
+    },
+    {
+      "pattern": "你有什么朋友？",
+      "explanation": "Hỏi về bạn bè của người đối diện: 什么 và 朋友 đều có âm thứ hai đọc nhẹ, giữ nhịp nặng-nhẹ.",
+      "example": "你有什么朋友？",
+      "exampleVi": "Bạn có những người bạn nào?",
+      "examplePinyin": "nǐ yǒu shén me péng you ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi tối ở nhà bạn cùng lớp: mẹ bạn vừa làm xong bánh bao, bố là thầy giáo; bạn giới thiệu người nhà và kể về người bạn thân của mình.",
+    "avatarRole": "Bạn cùng lớp",
+    "learnerRole": "Khách đến chơi nhà",
+    "goals": [
+      "Giới thiệu người nhà bằng các từ hai âm tiết có âm nhẹ",
+      "Hỏi bạn của người khác bằng nǐ yǒu shén me péng you",
+      "Đọc âm thứ hai thật ngắn và thấp, không gán dấu cho nó"
+    ],
+    "opening": "你好，我叫小李。妈妈做了包子，你喜欢吃吗？",
+    "openingVi": "Chào bạn, tôi là Tiểu Lý. Mẹ tôi làm bánh bao, bạn có thích ăn không?"
+  },
+  "freeTalk": {
+    "question": "你有什么朋友？你谢谢他什么？",
+    "questionVi": "Bạn có những người bạn nào? Bạn cảm ơn bạn ấy vì điều gì?"
+  },
+  "learningNotes": [
+    "Âm nhẹ là âm bị yếu đi: ngắn hơn, thấp hơn và cao độ bị âm đứng trước kéo theo, không phải một thanh thứ năm tự chọn.",
+    "Nhịp nặng-nhẹ: âm đầu giữ gần hết độ dài của từ, âm sau chỉ lướt qua; đừng chia đôi đều hai âm tiết.",
+    "Trong pinyin trích dẫn, âm nhẹ không ghi dấu: hai tiếng của từ mẹ đều viết ma nhưng tiếng thứ hai mất dấu thanh; từ điển vẫn ghi thanh gốc cho từng chữ.",
+    "Hư từ cuối câu như 吗 cũng theo cùng nguyên tắc: ngắn, thấp, rơi theo âm liền trước.",
+    "CẢNH BÁO cho người Việt: đừng đánh dấu cho âm thứ hai rồi đọc cả hai như 'má má'; tiếng Việt không có kiểu âm lướt nhẹ này, nên 谢谢 rất dễ bị đọc thành hai âm đều nhau."
+  ],
+  "prerequisites": [
+    8
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Thanh nhẹ trong từ hai âm tiết",
+    "playLimit": 1,
+    "transcript": "甲：你好，我叫小王。乙：我叫小李。你妈妈做什么工作？甲：我妈妈是医生，我爸爸才是老师。乙：你有什么朋友？甲：他是我最好的朋友，也是我的同学，他对我很好。乙：谢谢你。",
+    "translation": "A tự giới thiệu là Tiểu Vương, B là Tiểu Lý. B hỏi mẹ của A làm nghề gì. A nói mẹ là bác sĩ, còn bố mới là thầy giáo. B hỏi A có những người bạn nào; A kể về người bạn thân nhất, cũng là bạn cùng lớp, đối xử rất tốt với mình. B cảm ơn A.",
+    "questions": [
+      {
+        "prompt": "Mẹ của người A làm nghề gì?",
+        "options": [
+          "Bác sĩ",
+          "Thầy giáo",
+          "Người bán bánh bao"
+        ],
+        "answer": 0,
+        "explanation": "A nói 我妈妈是医生。"
+      },
+      {
+        "prompt": "Bố của người A làm nghề gì?",
+        "options": [
+          "Bác sĩ",
+          "Lái xe",
+          "Thầy giáo"
+        ],
+        "answer": 2,
+        "explanation": "A nói 我爸爸才是老师, tức chính bố mới là thầy giáo."
+      },
+      {
+        "prompt": "Người bạn mà A nhắc đến là ai?",
+        "options": [
+          "Anh trai của B",
+          "Cũng là bạn cùng lớp của A",
+          "Người cùng xóm"
+        ],
+        "answer": 1,
+        "explanation": "A nói bạn thân nhất 也是我的同学。"
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo wáng 。 yǐ ： wǒ jiào xiǎo lǐ 。 nǐ mā ma zuò shén me gōng zuò ？ jiǎ ： wǒ mā ma shì yī shēng ， wǒ bà ba cái shì lǎo shī 。 yǐ ： nǐ yǒu shén me péng you ？ jiǎ ： tā shì wǒ zuì hǎo de péng you ， yě shì wǒ de tóng xué ， tā duì wǒ hěn hǎo 。 yǐ ： xiè xie nǐ 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại sáu từ hai âm tiết có âm nhẹ.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Mỗi từ một nhịp nặng-nhẹ: âm đầu đủ thanh, âm sau ngắn và thấp, không gán thêm dấu.",
+      "checklist": [
+        "Không đọc đều hai âm tiết",
+        "Giữ đúng âm đầu của từng từ",
+        "Âm thứ hai của mỗi từ buông nhẹ"
+      ],
+      "audioText": "妈妈，爸爸。喜欢，谢谢。朋友，什么。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu thích và câu hỏi về bạn bè.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 我喜欢…… và 你有什么朋友？ của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "hai âm nhẹ trong câu hỏi đều rơi",
+        "Giữ tốc độ vừa, không ngập ngừng"
+      ],
+      "audioText": "我喜欢喝茶。你有什么朋友？"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "我妈妈是医生，我爸爸是老师。我有一个很好的朋友，他也是我的同学。他对我很好，我谢谢他。你妈妈做什么工作？",
+      "reference": "Đoạn có đủ sáu từ đã học: để ý cặp nặng-nhẹ ở 妈妈, 爸爸, 朋友, 什么, 谢谢, 喜欢.",
+      "checklist": [
+        "Đọc đủ bốn câu",
+        "Không gán dấu cho âm nhẹ",
+        "Câu hỏi cuối giữ nhịp tự nhiên"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你有什么朋友？你谢谢他什么？",
+      "promptVi": "Bạn có những người bạn nào? Bạn cảm ơn bạn ấy vì điều gì?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: giới thiệu một người bạn và nói lý do cảm ơn; không có đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đủ cả hai câu hỏi",
+        "Dùng được mẫu wǒ xǐ huan ……",
+        "Người nghe nhận ra nhịp nặng-nhẹ của bạn"
+      ],
+      "sampleZh": "我有一个中国朋友，他对我很好。我很喜欢和他一起走路，谢谢他。",
+      "sampleVi": "Tôi có một người bạn Trung Quốc, bạn ấy đối xử rất tốt với tôi. Tôi thích cùng bạn ấy đi bộ, cảm ơn bạn ấy."
+    }
+  ],
+  "transferTask": "Ghi âm lại ba từ mā ma, bà ba, péng you do chính bạn đọc rồi nghe lại: nếu hai âm tiết dài bằng nhau thì bạn chưa tạo nhịp nặng-nhẹ; sửa cho đến khi âm thứ hai ngắn và thấp hơn rõ rệt.",
+  "pronunciation": [
+    {
+      "text": "妈妈",
+      "pinyin": "mā ma",
+      "hint": "Âm đầu cao bằng, đầy đủ; âm sau chỉ lướt qua, thấp và ngắn, không có dấu thanh."
+    },
+    {
+      "text": "爸爸",
+      "pinyin": "bà ba",
+      "hint": "Âm đầu rơi dứt từ cao, âm sau buông nhẹ theo; hai âm không cách nhau một nhịp đều."
+    },
+    {
+      "text": "喜欢",
+      "pinyin": "xǐ huan",
+      "hint": "Âm đầu thấp rồi nhô, âm sau rơi mất dấu; đừng đọc âm sau như 'hoàn' có dấu."
+    },
+    {
+      "text": "朋友",
+      "pinyin": "péng you",
+      "hint": "Âm đầu đi lên đầy đủ và vang, âm sau lướt nhẹ; đây là cặp nặng-nhẹ hay bị người Việt đọc thành hai thanh bằng."
+    },
+    {
+      "text": "谢谢",
+      "pinyin": "xiè xie",
+      "hint": "Âm đầu rơi mạnh, âm sau chỉ là hơi theo sau; nói nhanh hai âm vẫn phải rõ âm đầu."
+    }
+  ]
+}

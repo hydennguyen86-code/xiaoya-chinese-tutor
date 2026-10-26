@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 4,
+  "lessonTitle": "Gọi điện và hẹn gặp",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "预约",
+      "meaning": "đặt trước; hẹn",
+      "example": "饭店太忙，要提前预约。",
+      "exampleVi": "Nhà hàng đông quá, phải đặt trước.",
+      "pinyin": "yù yuē",
+      "examplePinyin": "fàn diàn tài máng ， yào tí qián yù yuē 。"
+    },
+    {
+      "word": "方便",
+      "meaning": "thuận tiện",
+      "example": "你明天晚上方便吗？",
+      "exampleVi": "Tối mai bạn có tiện không?",
+      "pinyin": "fāng biàn",
+      "examplePinyin": "nǐ míng tiān wǎn shang fāng biàn ma ？"
+    },
+    {
+      "word": "打扰",
+      "meaning": "phiền; làm phiền",
+      "example": "不好意思，打扰你了。",
+      "exampleVi": "Xin lỗi, tôi làm phiền bạn rồi.",
+      "pinyin": "dǎ rǎo",
+      "examplePinyin": "bù hǎo yì si ， dǎ rǎo nǐ le 。"
+    },
+    {
+      "word": "回",
+      "meaning": "quay lại; trả lời",
+      "example": "我看到消息就回你。",
+      "exampleVi": "Tôi thấy tin nhắn là trả lời bạn ngay.",
+      "pinyin": "huí",
+      "examplePinyin": "wǒ kàn dào xiāo xī jiù huí nǐ 。"
+    },
+    {
+      "word": "见面",
+      "meaning": "gặp mặt",
+      "example": "我们几点在哪儿见面？",
+      "exampleVi": "Mấy giờ và ở đâu chúng ta gặp nhau?",
+      "pinyin": "jiàn miàn",
+      "examplePinyin": "wǒ men jǐ diǎn zài nǎ ér jiàn miàn ？"
+    },
+    {
+      "word": "晚会",
+      "meaning": "buổi tiệc tối",
+      "example": "周六晚上有一个晚会。",
+      "exampleVi": "Tối thứ bảy có một buổi tiệc tối.",
+      "pinyin": "wǎn huì",
+      "examplePinyin": "zhōu liù wǎn shang yǒu yí gè wǎn huì 。"
+    },
+    {
+      "word": "迟到",
+      "meaning": "đến muộn; trễ giờ",
+      "example": "对不起，我要迟到了。",
+      "exampleVi": "Xin lỗi, tôi sẽ đến muộn.",
+      "pinyin": "chí dào",
+      "examplePinyin": "duì bù qǐ ， wǒ yào chí dào le 。"
+    },
+    {
+      "word": "位置",
+      "meaning": "vị trí; địa chỉ",
+      "example": "请把饭店的位置发给我。",
+      "exampleVi": "Xin gửi cho tôi vị trí của nhà hàng.",
+      "pinyin": "wèi zhì",
+      "examplePinyin": "qǐng bǎ fàn diàn de wèi zhì fā gěi wǒ 。"
+    },
+    {
+      "word": "联系",
+      "meaning": "liên hệ; liên lạc",
+      "example": "找不到路的时候再联系我。",
+      "exampleVi": "Lúc không tìm được đường thì hãy liên hệ với tôi.",
+      "pinyin": "lián xì",
+      "examplePinyin": "zhǎo bú dào lù de shí hou zài lián xì wǒ 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "您现在方便吗？",
+      "explanation": "Mở đầu lịch sự khi gọi cho người lớn tuổi hoặc người mới quen; 您 là ngôi thứ hai lịch sự.",
+      "example": "马老师，您现在方便吗？",
+      "exampleVi": "Thầy Mã, bây giờ thầy có tiện không ạ?",
+      "examplePinyin": "mǎ lǎo shī ， nín xiàn zài fāng biàn ma ？"
+    },
+    {
+      "pattern": "我们约在……",
+      "explanation": "Hẹn giờ hoặc địa điểm gặp: 我们约在 rồi thêm thời gian hoặc nơi, cuối câu có thể nói 见面.",
+      "example": "我们约在七点，饭店门口见面。",
+      "exampleVi": "Mình hẹn bảy giờ, gặp nhau ở cổng nhà hàng.",
+      "examplePinyin": "wǒ men yuē zài qī diǎn ， fàn diàn mén kǒu jiàn miàn 。"
+    },
+    {
+      "pattern": "是不是……？",
+      "explanation": "Hỏi lại để xác nhận thông tin vừa hẹn: 是不是 đứng trước phần cần kiểm tra, cuối câu thêm dấu hỏi, không cần 吗.",
+      "example": "是不是六点半在饭店门口见面？",
+      "exampleVi": "Có phải sáu giờ rưỡi gặp nhau ở cổng nhà hàng không?",
+      "examplePinyin": "shì bu shì liù diǎn bàn zài fàn diàn mén kǒu jiàn miàn ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: bạn gọi cho nhà hàng để đặt bàn tối thứ bảy cho bốn người, xin địa chỉ vì đi lần đầu, sau đó báo với bạn rằng mình sẽ đến muộn và đề nghị đổi chỗ gặp.",
+    "avatarRole": "Chủ nhà hàng",
+    "learnerRole": "Người gọi đặt bàn",
+    "goals": [
+      "Đặt được bàn cho bốn người vào tối thứ bảy",
+      "Xin địa chỉ và xác nhận lại giờ bằng một câu hỏi",
+      "Báo là sẽ đến muộn và đề nghị một chỗ gặp khác"
+    ],
+    "opening": "您好，请问有什么事？",
+    "openingVi": "Xin chào, anh chị cần gì ạ?"
+  },
+  "freeTalk": {
+    "question": "约好见面以后，如果发现要迟到，应该怎么办？",
+    "questionVi": "Sau khi đã hẹn gặp, nếu biết mình sẽ đến muộn thì nên làm gì?"
+  },
+  "learningNotes": [
+    "Mở đầu cuộc gọi: nói 喂 rồi hỏi 您现在方便吗？; gọi cho người chưa thân thì thêm 不好意思，打扰一下.",
+    "Hẹn gặp: 我们约在 + giờ hoặc nơi; muốn chốt lại cho chắc thì hỏi 是不是……？",
+    "Phát âm: 预约 là hai thanh 4 liền nhau, cả hai đều hạ dứt khoát; 方便 là thanh 1 rồi thanh 4, đừng biến âm thứ hai thành thanh nhẹ.",
+    "回 vừa nghĩa là quay về vừa nghĩa là trả lời: 回学校 là về trường, 回电话 là gọi lại cho người ta."
+  ],
+  "prerequisites": [
+    3
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Gọi điện và hẹn gặp",
+    "playLimit": 1,
+    "transcript": "甲：您好，我想预约周六晚上的桌子，我们四个人。乙：六点半可以吗？甲：可以。请把饭店的位置发给我，我第一次去。乙：好的。甲：喂，小李，我要迟到了，我们不在饭店门口见面了吧？乙：那在哪里？甲：我们在地铁站出口见面，我在那里等你。乙：好，一会儿联系。",
+    "translation": "Khách gọi đặt bàn bốn người cho tối thứ bảy và chốt lúc sáu giờ rưỡi, xin chủ nhà hàng gửi vị trí vì đây là lần đầu tới. Sau đó người này gọi cho bạn báo rằng mình sẽ đến muộn, đề nghị không gặp ở cổng nhà hàng mà hẹn nhau ở lối ra của ga tàu điện và chờ ở đó; hai bên sẽ liên lạc lại.",
+    "questions": [
+      {
+        "prompt": "Bàn được đặt cho mấy người và lúc nào?",
+        "options": [
+          "Bốn người, sáu giờ rưỡi tối thứ bảy",
+          "Bốn người, bảy giờ tối chủ nhật",
+          "Sáu người, bốn giờ chiều thứ bảy"
+        ],
+        "answer": 0,
+        "explanation": "Khách nói 我想预约周六晚上的桌子，我们四个人 rồi chốt 六点半."
+      },
+      {
+        "prompt": "Vì sao khách xin gửi vị trí nhà hàng?",
+        "options": [
+          "Vì muốn gọi xe",
+          "Vì đây là lần đầu đến",
+          "Vì muốn gửi cho bạn cùng đi"
+        ],
+        "answer": 1,
+        "explanation": "Khách nói 我第一次去."
+      },
+      {
+        "prompt": "Hai người đổi chỗ gặp ở đâu?",
+        "options": [
+          "Ở cổng nhà hàng",
+          "Ở trước siêu thị",
+          "Ở lối ra ga tàu điện"
+        ],
+        "answer": 2,
+        "explanation": "Câu đổi hẹn là 我们在地铁站出口见面."
+      }
+    ],
+    "pinyin": "jiǎ ： nín hǎo ， wǒ xiǎng yù yuē zhōu liù wǎn shang de zhuō zi ， wǒ men sì gè rén 。 yǐ ： liù diǎn bàn kě yǐ ma ？ jiǎ ： kě yǐ 。 qǐng bǎ fàn diàn de wèi zhì fā gěi wǒ ， wǒ dì yí cì qù 。 yǐ ： hǎo de 。 jiǎ ： wèi ， xiǎo lǐ ， wǒ yào chí dào le ， wǒ men bú zài fàn diàn mén kǒu jiàn miàn le ba ？ yǐ ： nà zài nǎ lǐ ？ jiǎ ： wǒ men zài dì tiě zhàn chū kǒu jiàn miàn ， wǒ zài nà lǐ děng nǐ 。 yǐ ： hǎo ， yí huì er lián xì 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu đặt bàn, một câu hẹn chỗ gặp.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我想预约周六晚上的桌子。我们约在地铁站出口见面。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng thời gian và địa điểm",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我想预约周六晚上的桌子。我们约在地铁站出口见面。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai đặt gì, chốt giờ nào, xin thêm gì, sau đó đổi chỗ gặp ra sao.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách gọi đặt bàn bốn người cho tối thứ bảy và chốt lúc sáu giờ rưỡi, xin chủ nhà hàng gửi vị trí vì đây là lần đầu tới. Sau đó người này gọi cho bạn báo rằng mình sẽ đến muộn, đề nghị không gặp ở cổng nhà hàng mà hẹn nhau ở lối ra của ga tàu điện và chờ ở đó; hai bên sẽ liên lạc lại.",
+      "checklist": [
+        "Nói đủ: đặt bàn, giờ, xin vị trí, đổi chỗ gặp",
+        "Người nghe hiểu được nội dung",
+        "Không tự thêm người hoặc số giờ khác"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau như đang nói điện thoại, ngắt hơi giữa hai lượt lời.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "您好，我想预约周六晚上的桌子。请把饭店的位置发给我，我第一次去。对不起，我要迟到了，不在门口见面吧？我们在地铁站出口见面，一会儿联系。",
+      "reference": "Câu nhờ vả đọc nhẹ và nhanh; câu xin lỗi hạ giọng, câu hẹn chỗ gặp nói rõ từng từ.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "约好见面以后，如果发现要迟到，应该怎么办？",
+      "promptVi": "Sau khi đã hẹn gặp, nếu biết mình sẽ đến muộn thì nên làm gì?",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Nêu hai việc nên làm: báo sớm kèm thời gian dự kiến, đề nghị cách xử lý (đợi, đổi chỗ gặp, đổi giờ); nói thêm một câu xin lỗi.",
+      "checklist": [
+        "Báo trễ sớm và nói rõ mấy phút nữa tới",
+        "Đưa được một đề nghị thay thế",
+        "Giọng lịch sự, người nghe hiểu được ý"
+      ],
+      "sampleZh": "我会马上打电话或者发信息，说清楚还要多久。比如：对不起，我要迟到了，二十分钟以后到。要是你不方便等，我们就约在别的地方见面，或者改一个时间。",
+      "sampleVi": "Tôi sẽ gọi điện hoặc nhắn tin ngay và nói rõ còn bao lâu nữa. Chẳng hạn: xin lỗi, tôi sẽ đến muộn, hai mươi phút nữa mới tới. Nếu bạn không tiện chờ, mình hẹn gặp ở chỗ khác hoặc đổi sang giờ khác."
+    }
+  ],
+  "transferTask": "Ngày mai, gọi cho một cửa hàng hoặc nhà hàng để đặt trước giờ tới, xác nhận lại địa điểm, rồi nhắn cho người đi cùng nếu bạn đến muộn và đề nghị một chỗ gặp khác.",
+  "pronunciation": [
+    {
+      "text": "方便",
+      "pinyin": "fāng biàn",
+      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh; giữ rõ cả hai âm tiết."
+    },
+    {
+      "text": "预约",
+      "pinyin": "yù yuē",
+      "hint": "Hai thanh 4 liền nhau, cả hai đều hạ dứt khoát; âm thứ hai có môi tròn."
+    },
+    {
+      "text": "电话",
+      "pinyin": "diàn huà",
+      "hint": "Cả hai chữ đều thanh 4; đọc tách bạch, không nối liền thành một âm."
+    },
+    {
+      "text": "见面",
+      "pinyin": "jiàn miàn",
+      "hint": "Chữ đầu là âm cong lưỡi không bật hơi, vần gần 'iên'; chữ sau gần 'miện', thanh 4."
+    }
+  ]
+}

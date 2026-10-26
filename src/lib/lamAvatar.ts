@@ -6,28 +6,10 @@ import type { Emotion, Gesture, TtsResult } from '../types';
 import type { AvatarApi } from './avatarApi';
 import { fetchTts } from './api';
 import { buildSpeechTimeline, type SpeechTimeline } from './lipsync';
+import { mouthShape } from './lamMouth';
 import { splitSpeechSegments } from './text';
 
 type Weights = Record<string, number>;
-
-// Mouth shapes for the viseme names produced by lipsync.ts, expressed as ARKit
-// blendshape weights (0–1).
-const VISEMES: Record<string, Weights> = {
-  sil: {},
-  PP: { mouthClose: 0.55, mouthPressLeft: 0.45, mouthPressRight: 0.45, jawOpen: 0.03 },
-  FF: { mouthRollLower: 0.5, mouthUpperUpLeft: 0.25, mouthUpperUpRight: 0.25, jawOpen: 0.12 },
-  DD: { jawOpen: 0.22, mouthLowerDownLeft: 0.2, mouthLowerDownRight: 0.2 },
-  nn: { jawOpen: 0.16, mouthLowerDownLeft: 0.1, mouthLowerDownRight: 0.1 },
-  RR: { mouthPucker: 0.3, mouthFunnel: 0.18, jawOpen: 0.2 },
-  kk: { jawOpen: 0.26, mouthLowerDownLeft: 0.12, mouthLowerDownRight: 0.12 },
-  CH: { mouthPucker: 0.32, mouthFunnel: 0.3, jawOpen: 0.18 },
-  SS: { mouthStretchLeft: 0.3, mouthStretchRight: 0.3, mouthSmileLeft: 0.18, mouthSmileRight: 0.18, jawOpen: 0.1 },
-  aa: { jawOpen: 0.62, mouthLowerDownLeft: 0.3, mouthLowerDownRight: 0.3 },
-  E: { jawOpen: 0.34, mouthSmileLeft: 0.35, mouthSmileRight: 0.35, mouthStretchLeft: 0.22, mouthStretchRight: 0.22 },
-  I: { jawOpen: 0.2, mouthSmileLeft: 0.45, mouthSmileRight: 0.45, mouthStretchLeft: 0.38, mouthStretchRight: 0.38 },
-  O: { jawOpen: 0.4, mouthFunnel: 0.7, mouthPucker: 0.2 },
-  U: { jawOpen: 0.2, mouthPucker: 0.7, mouthFunnel: 0.5 },
-};
 
 const MOODS: Record<Emotion, Weights> = {
   neutral: { mouthSmileLeft: 0.04, mouthSmileRight: 0.04 },
@@ -107,6 +89,10 @@ export class LamAvatarController implements AvatarApi {
   private lastFrame = 0;
   private nextBlinkAt = 0;
   private blinkStartedAt = -1;
+  private analyser: AnalyserNode | null = null;
+  private fft = new Uint8Array(0);
+  private level = 0;
+  private browserSpeaking = false;
 
   constructor(
     private container: HTMLElement,
@@ -115,6 +101,9 @@ export class LamAvatarController implements AvatarApi {
 
   async load(url: string, onProgress?: (ratio: number) => void) {
     this.ctx = new AudioContext();
+    this.analyser = this.ctx.createAnalyser();
+    this.analyser.fftSize = 512;
+    this.fft = new Uint8Array(this.analyser.fftSize);
     const creatable = GaussianSplatRenderer as unknown as CreatableRenderer;
     // The viewer reads window.devicePixelRatio once, when it is built, and uses
     // the same value to scale every splat. Report the real ratio (capped) so the
@@ -262,6 +251,9 @@ export class LamAvatarController implements AvatarApi {
         markLatency(traceId, 'ttsReady');
         if (session !== this.session || this.destroyed || !this.ctx) return;
         if (result.browserText) {
+          // speechSynthesis gives no audio tap, so move the mouth on an
+          // estimated envelope instead of leaving the face frozen.
+          this.browserSpeaking = true;
           try {
             await speakBrowser(
               result.browserText,
@@ -274,6 +266,7 @@ export class LamAvatarController implements AvatarApi {
               result.browserRate,
             );
           } finally {
+            this.browserSpeaking = false;
             this.callbacks.onAudioState?.(false);
           }
           return;
@@ -289,6 +282,7 @@ export class LamAvatarController implements AvatarApi {
         const source = this.ctx.createBufferSource();
         source.buffer = buffer;
         source.connect(this.ctx.destination);
+        if (this.analyser) source.connect(this.analyser);
         const start = Math.max(this.ctx.currentTime + 0.05, this.audioEndAt);
         const end = start + buffer.duration;
         source.start(start);
@@ -331,6 +325,8 @@ export class LamAvatarController implements AvatarApi {
       // ignore
     }
     this.renderer = null;
+    this.analyser = null;
+    this.browserSpeaking = false;
     if (this.ctx && this.ctx.state !== 'closed') this.ctx.close().catch(() => {});
     this.ctx = null;
     this.container.replaceChildren();
@@ -348,6 +344,28 @@ export class LamAvatarController implements AvatarApi {
   private gaze() {
     const thinking = this.userState === 'Thinking' && performance.now() < this.userStateUntil;
     return thinking ? { yawDeg: 10, pitchDeg: 7 } : { yawDeg: 0, pitchDeg: 0 };
+  }
+
+  /** Loudness of what is being played right now, smoothed, 0–1. */
+  private audioLevel(dt: number, now: number) {
+    let rms = 0;
+    if (this.analyser && this.isSpeaking) {
+      this.analyser.getByteTimeDomainData(this.fft);
+      let sum = 0;
+      for (let i = 0; i < this.fft.length; i += 1) {
+        const d = (this.fft[i] - 128) / 128;
+        sum += d * d;
+      }
+      rms = Math.sqrt(sum / this.fft.length);
+    }
+    let goal = clamp(rms * 2, 0, 1);
+    if (this.browserSpeaking) {
+      // two incommensurate sines read as syllable-ish bursts of jaw movement
+      goal = Math.max(goal, 0.12 + 0.5 * Math.abs(Math.sin(now / 90)) * Math.abs(Math.sin(now / 41)));
+    }
+    const rate = 1 - Math.exp(-dt * (goal > this.level ? 30 : 9));
+    this.level += (goal - this.level) * rate;
+    return this.level;
   }
 
   private currentViseme(audioTime: number): string | null {
@@ -375,21 +393,22 @@ export class LamAvatarController implements AvatarApi {
     }
 
     const viseme = this.currentViseme(audioTime);
-    const speaking = viseme !== null;
+    const level = this.audioLevel(dt, now);
+    const speaking = viseme !== null || this.browserSpeaking || level > 0.03;
     const target: Weights = {};
 
     const mood = this.mood;
     const moodScale = speaking ? 0.55 : 1;
     for (const [key, value] of Object.entries(mood)) target[key] = value * moodScale;
 
-    const shape = viseme ? (VISEMES[viseme] ?? {}) : {};
+    const shape = mouthShape(viseme, level);
     for (const [key, value] of Object.entries(shape)) {
       target[key] = Math.max(target[key] ?? 0, value);
     }
 
     if (speaking) {
-      const open = shape.jawOpen ?? 0;
-      target.browInnerUp = Math.max(target.browInnerUp ?? 0, 0.06 + open * 0.14);
+      const jaw = target.jawOpen ?? 0;
+      target.browInnerUp = Math.max(target.browInnerUp ?? 0, 0.06 + jaw * 0.14);
     }
     if (this.userState === 'Thinking' && now < this.userStateUntil) {
       target.browInnerUp = Math.max(target.browInnerUp ?? 0, 0.28);
@@ -440,6 +459,7 @@ export class LamAvatarController implements AvatarApi {
     }
     this.segments = [];
     this.audioEndAt = 0;
+    this.level = 0;
   }
 
   private async getTts(text: string, voice: string, rate: number): Promise<TtsResult> {

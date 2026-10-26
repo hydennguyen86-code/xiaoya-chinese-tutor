@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 6,
+  "lessonTitle": "Nguyên âm đôi: ai ei ao ou / ia ie ua uo üe",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "来",
+      "meaning": "đến",
+      "example": "你来我家。",
+      "exampleVi": "Bạn đến nhà tôi.",
+      "pinyin": "lái",
+      "examplePinyin": "nǐ lái wǒ jiā 。"
+    },
+    {
+      "word": "白",
+      "meaning": "trắng",
+      "example": "白云在天上。",
+      "exampleVi": "Mây trắng ở trên trời.",
+      "pinyin": "bái",
+      "examplePinyin": "bái yún zài tiān shàng 。"
+    },
+    {
+      "word": "高",
+      "meaning": "cao",
+      "example": "高山很高。",
+      "exampleVi": "Ngọn núi rất cao.",
+      "pinyin": "gāo",
+      "examplePinyin": "gāo shān hěn gāo 。"
+    },
+    {
+      "word": "走",
+      "meaning": "đi bộ",
+      "example": "我们慢慢走。",
+      "exampleVi": "Chúng ta đi chậm.",
+      "pinyin": "zǒu",
+      "examplePinyin": "wǒ men màn màn zǒu 。"
+    },
+    {
+      "word": "家",
+      "meaning": "nhà",
+      "example": "我家有小白车。",
+      "exampleVi": "Nhà tôi có chiếc xe nhỏ màu trắng.",
+      "pinyin": "jiā",
+      "examplePinyin": "wǒ jiā yǒu xiǎo bái chē 。"
+    },
+    {
+      "word": "车",
+      "meaning": "xe",
+      "example": "这是白色的车。",
+      "exampleVi": "Đây là chiếc xe màu trắng.",
+      "pinyin": "chē",
+      "examplePinyin": "zhè shì bái sè de chē 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "他来……",
+      "explanation": "Nói ai đó đến đâu hoặc đến làm gì: 他来 rồi đến nơi hoặc việc; 来 là vần ai, môi mở rồi khép lại.",
+      "example": "他来我家吃饭。",
+      "exampleVi": "Anh ấy đến nhà tôi ăn cơm.",
+      "examplePinyin": "tā lái wǒ jiā chī fàn 。"
+    },
+    {
+      "pattern": "你家有……吗？",
+      "explanation": "Hỏi nhà người đối thoại có gì: 你家有 đứng trước, 吗 ở cuối đọc nhẹ; 家 mang vần ia.",
+      "example": "你家有车吗？",
+      "exampleVi": "Nhà bạn có xe không?",
+      "examplePinyin": "nǐ jiā yǒu chē ma ？"
+    }
+  ],
+  "roleplay": {
+    "setting": "Giờ tan học ở cổng trường: bạn mời bạn cùng lớp về nhà, hai người vừa đi bộ vừa chỉ chiếc xe màu trắng đậu ngoài cổng.",
+    "avatarRole": "Bạn cùng lớp",
+    "learnerRole": "Người mời bạn về nhà",
+    "goals": [
+      "Mời bạn đến nhà bằng mẫu tā lái …… hoặc nǐ lái wǒ jiā",
+      "Hỏi nhà bạn có xe không bằng nǐ jiā yǒu chē ma",
+      "Kéo dài hai âm tiết của vần ai, ao, ou cho đủ độ dài"
+    ],
+    "opening": "你家有车吗？今天你来我家，好吗？",
+    "openingVi": "Nhà bạn có xe không? Hôm nay bạn đến nhà tôi nhé?"
+  },
+  "freeTalk": {
+    "question": "你家有车吗？你来我家怎么走？",
+    "questionVi": "Nhà bạn có xe không? Bạn đến nhà tôi thì đi thế nào?"
+  },
+  "learningNotes": [
+    "Vần đôi ai, ei, ao, ou là một trượt liền mạch: miệng mở ở âm đầu rồi khép dần ở âm cuối, đừng cắt thành hai âm.",
+    "ia, ie, ua, uo, üe có âm đệm ở đầu: môi bo hoặc dẹt ngay rồi mới mở ra âm chính; ue viết sau j, q, x, y thật ra là üe, như 学 xué và 月 yuè.",
+    "CẢNH BÁO cho người Việt: ai của tiếng Trung ngắn hơn 'ai' tiếng Việt vì phần cuối khép gọn; ao mở to và kéo dài, còn 'ao' tiếng Việt thì hai âm rời nhau.",
+    "CẢNH BÁO về thanh: 来 lái rất dễ bị đọc thành 'lải'; dấu sắc tiếng Việt gần thanh 2 nhưng ngắn hơn, còn thanh 4 của 白 phải hạ dứt khoát.",
+    "Ba nguyên âm đôi mở đầu bằng a có độ dài lớn nhất; ou và uo ngắn hơn vì môi khép sớm."
+  ],
+  "prerequisites": [
+    5
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Nguyên âm đôi: ai ei ao ou / ia ie ua uo üe",
+    "playLimit": 1,
+    "transcript": "甲：小白，你家有车吗？乙：没有，我们家只有白色的自行车。甲：那今天你怎么来学校？乙：我走路来，我家就在高山上。甲：山上冷不冷？乙：不冷，山下很热，山上很凉快。",
+    "translation": "A hỏi nhà Tiểu Bạch có xe không. B nói nhà B chỉ có một chiếc xe đạp màu trắng. B đi bộ đến trường vì nhà ở trên núi cao. A hỏi trên núi có lạnh không, B nói dưới chân núi rất nóng còn trên núi mát.",
+    "questions": [
+      {
+        "prompt": "Nhà người B có gì?",
+        "options": [
+          "Chỉ có một chiếc xe đạp màu trắng",
+          "Một chiếc xe hơi màu trắng",
+          "Không có xe nào"
+        ],
+        "answer": 0,
+        "explanation": "B nói 我们家只有白色的自行车, tức chỉ có xe đạp."
+      },
+      {
+        "prompt": "Người B đến trường bằng cách nào?",
+        "options": [
+          "Đi xe buýt",
+          "Đi bộ",
+          "Ngồi xe của bố"
+        ],
+        "answer": 1,
+        "explanation": "B trả lời 我走路来, nghĩa là đi bộ."
+      },
+      {
+        "prompt": "Thời tiết trên núi so với dưới chân núi thế nào?",
+        "options": [
+          "Trên núi nóng hơn",
+          "Hai bên như nhau",
+          "Trên núi mát hơn"
+        ],
+        "answer": 2,
+        "explanation": "B chốt 山下很热，山上很凉快."
+      }
+    ],
+    "pinyin": "jiǎ ： xiǎo bái ， nǐ jiā yǒu chē ma ？ yǐ ： méi yǒu ， wǒ men jiā zhǐ yǒu bái sè de zì xíng chē 。 jiǎ ： nà jīn tiān nǐ zěn me lái xué xiào ？ yǐ ： wǒ zǒu lù lái ， wǒ jiā jiù zài gāo shān shàng 。 jiǎ ： shān shàng lěng bu lěng ？ yǐ ： bù lěng ， shān xià hěn rè ， shān shàng hěn liáng kuai 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại tám vần đôi, giữ một lần trượt cho mỗi vần.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Bốn vần đầu mở rồi khép dần, bốn vần sau có âm đệm tròn môi trước khi mở.",
+      "checklist": [
+        "Không cắt một vần thành hai âm",
+        "Bo môi rõ ở uo và üe",
+        "Giữ cao độ không đổi trong mỗi vần"
+      ],
+      "audioText": "来，白。黑，给。高，走。家，车。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu mời và hỏi ngắn.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 他来…… và 你家有……吗？ của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "Âm hỏi ở cuối câu rơi nhẹ",
+        "lái và jiā trượt liền, không ngắt"
+      ],
+      "audioText": "你来我家。你家有车吗？"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "我家在高山上，山下有白色的水。小白来我家，我们慢慢走。白色的车在山上，不在山下。你走哪一条路？",
+      "reference": "Đoạn trộn đủ sáu vần: để ý ai ở 白, ao ở 高, ou ở 走, ia ở 家, uo ở 车.",
+      "checklist": [
+        "Đọc đủ ba câu",
+        "Không lẫn gāo với gē",
+        "Giữ độ dài ngắn khác nhau giữa các vần"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你家有车吗？你来我家怎么走？",
+      "promptVi": "Nhà bạn có xe không? Bạn đến nhà tôi thì đi thế nào?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: nói nhà bạn có phương tiện gì và bạn đi đến bằng cách nào; không có đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đủ cả hai câu hỏi",
+        "Dùng được mẫu nǐ jiā yǒu …… ma",
+        "Người nghe nhận ra vần ai, ao, ou của bạn"
+      ],
+      "sampleZh": "我家没有车。我来学校走路，山上很近。",
+      "sampleVi": "Nhà tôi không có xe. Tôi đến trường đi bộ, từ trên núi gần lắm."
+    }
+  ],
+  "transferTask": "Nhờ một người thật đọc chậm bốn tiếng lái, bái, gāo, zǒu rồi hai tiếng jiā, chē; bạn nhắm mắt chỉ nghe phần cuối của nguyên âm đôi để đoán vần, sau đó mở mắt đối chiếu.",
+  "pronunciation": [
+    {
+      "text": "来，白",
+      "pinyin": "lái ， bái",
+      "hint": "Cả hai đều mang vần ai, chỉ khác cao độ: đi lên đều rồi hạ dứt khoát; miệng mở rộng ở a rồi khép nhanh ở i."
+    },
+    {
+      "text": "高，走",
+      "pinyin": "gāo ， zǒu",
+      "hint": "Vần ao kéo dài vì a mở to, môi bo tròn; vần ou ngắn hơn vì môi khép sớm, hai âm này không đọc dài bằng nhau."
+    },
+    {
+      "text": "家，车",
+      "pinyin": "jiā ， chē",
+      "hint": "j- và ch- là hai hàng lưỡi khác nhau, nhưng miệng phải mở rộng cho ia rồi dẹt cho e."
+    },
+    {
+      "text": "白水",
+      "pinyin": "bái shuǐ",
+      "hint": "Cụm nước trắng: âm đầu thanh 4 cắt nhanh, âm sau thanh 3 thấp rồi hơi nhô; hai vần ai và ui gần nhau nên phải tách rõ."
+    },
+    {
+      "text": "山上",
+      "pinyin": "shān shàng",
+      "hint": "Hai chữ cùng âm cong lưỡi sh, khác nhau ở cao độ: chữ trước cao bằng, chữ sau hạ mạnh; chữ sau mang vần ang nhưng miệng vẫn mở đủ."
+    }
+  ]
+}

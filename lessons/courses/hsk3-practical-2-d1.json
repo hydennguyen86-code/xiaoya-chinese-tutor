@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 2,
+  "lessonTitle": "Gọi món, hỏi vị và thanh toán ở quán",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "点",
+      "meaning": "gọi; chọn",
+      "example": "我们人不多，先点两个菜。",
+      "exampleVi": "Người chúng tôi không đông, gọi hai món trước đã.",
+      "pinyin": "diǎn",
+      "examplePinyin": "wǒ men rén bù duō ， xiān diǎn liǎng gè cài 。"
+    },
+    {
+      "word": "菜",
+      "meaning": "món; rau",
+      "example": "这家店的菜不贵，也很好吃。",
+      "exampleVi": "Món ở quán này không đắt, cũng rất ngon.",
+      "pinyin": "cài",
+      "examplePinyin": "zhè jiā diàn de cài bú guì ， yě hěn hǎo chī 。"
+    },
+    {
+      "word": "辣",
+      "meaning": "cay",
+      "example": "我不会吃辣，这个菜辣不辣？",
+      "exampleVi": "Tôi không ăn cay được, món này có cay không?",
+      "pinyin": "là",
+      "examplePinyin": "wǒ bú huì chī là ， zhè ge cài là bu là ？"
+    },
+    {
+      "word": "杯",
+      "meaning": "cốc; tách",
+      "example": "请给我们一杯热水，谢谢。",
+      "exampleVi": "Xin cho chúng tôi một cốc nước nóng, cảm ơn.",
+      "pinyin": "bēi",
+      "examplePinyin": "qǐng gěi wǒ men yì bēi rè shuǐ ， xiè xie 。"
+    },
+    {
+      "word": "要",
+      "meaning": "muốn; cần",
+      "example": "我要一碗牛肉面，请少放辣椒。",
+      "exampleVi": "Tôi muốn một bát mì bò, xin cho ít ớt.",
+      "pinyin": "yào",
+      "examplePinyin": "wǒ yào yì wǎn niú ròu miàn ， qǐng shǎo fàng là jiāo 。"
+    },
+    {
+      "word": "贵",
+      "meaning": "đắt",
+      "example": "我第一次来，不知道这家店贵不贵。",
+      "exampleVi": "Tôi đến đây lần đầu, không biết quán này có đắt không.",
+      "pinyin": "guì",
+      "examplePinyin": "wǒ dì yī cì lái ， bù zhī dao zhè jiā diàn guì bu guì 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……",
+      "explanation": "Nói món mình muốn gọi; đặt lượng từ trước tên món, như 一碗面、一杯豆浆.",
+      "example": "我要一杯热豆浆，不要糖。",
+      "exampleVi": "Tôi muốn một cốc sữa đậu nành nóng, không đường.",
+      "examplePinyin": "wǒ yào yì bēi rè dòu jiāng ， bú yào táng 。"
+    },
+    {
+      "pattern": "有没有……？",
+      "explanation": "Hỏi quán có món hoặc yêu cầu nào đó không; người bán trả lời 有 hay 没有, không dùng 是.",
+      "example": "有没有不辣的菜？我们带着孩子。",
+      "exampleVi": "Có món nào không cay không? Chúng tôi có dẫn theo trẻ nhỏ.",
+      "examplePinyin": "yǒu méi yǒu bú là de cài ？ wǒ men dài zhe hái zi 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Bữa trưa đông khách ở một quán ăn nhỏ, bạn mới tới lần đầu và chưa biết món nào cay; buổi 2 chuyển sang bàn đã có món, phải nhắc lại vị và tính tiền.",
+    "avatarRole": "Nhân viên nhận món",
+    "learnerRole": "Khách gọi món",
+    "goals": [
+      "Gọi được hai món và một đồ uống",
+      "Hỏi món nào cay, món nào nhạt",
+      "Hỏi giá trước khi gọi thêm"
+    ],
+    "opening": "你好，你们想吃点什么？",
+    "openingVi": "Chào bạn, mọi người muốn ăn gì ạ?"
+  },
+  "freeTalk": {
+    "question": "你们家吃饭的时候谁点菜？一般点几个菜？",
+    "questionVi": "Ở nhà bạn, khi ăn ai là người gọi món? Thường gọi mấy món?"
+  },
+  "learningNotes": [
+    "Gọi món: 我要 + lượng từ + tên món, ví dụ 一碗面、一杯豆浆; hai món thì nói 两个菜.",
+    "Hỏi vị bằng 有没有……？ — 有没有不辣的菜？; câu trả lời dùng 有 hoặc 没有, không dùng 是.",
+    "Phát âm: 辣 là phụ âm l- ghép vần a, thanh 4 hạ nhanh; khi nghe nhanh dễ lẫn với âm la thanh ngang, hãy để ý dấu hạ giọng.",
+    "Nghe mức độ đầu bếp nhắc lại: 少放 là cho ít, 多放 là cho nhiều; hai từ này quyết định món vừa hay nhạt."
+  ],
+  "prerequisites": [
+    1
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Gọi món, hỏi vị và thanh toán ở quán",
+    "playLimit": 1,
+    "transcript": "甲：你好，我们要一个番茄鸡蛋面，还要一个青菜。乙：番茄面有点儿辣。甲：有没有不辣的菜？小孩子不能吃辣。乙：有，我给你少放辣椒。甲：好，再来一杯热豆浆。一共多少钱？乙：二十六块。",
+    "translation": "Khách gọi một bát mì cà chua trứng và một đĩa rau. Bếp nhắc mì hơi cay; vì trẻ nhỏ không ăn được cay, khách hỏi món không cay và được nhân viên cho ít ớt. Khách gọi thêm một cốc sữa đậu nành nóng rồi hỏi giá, tổng cộng hai mươi sáu tệ.",
+    "questions": [
+      {
+        "prompt": "Vì sao khách xin nấu bớt cay?",
+        "options": [
+          "Vì trẻ nhỏ không ăn được cay",
+          "Vì món quá đắt",
+          "Vì khách đã no"
+        ],
+        "answer": 0,
+        "explanation": "Khách nói 小孩子不能吃辣."
+      },
+      {
+        "prompt": "Khách gọi thêm đồ uống gì?",
+        "options": [
+          "Một cốc nước nóng",
+          "Một cốc sữa đậu nành",
+          "Một bát canh"
+        ],
+        "answer": 1,
+        "explanation": "Câu gọi thêm là 再来一杯热豆浆."
+      },
+      {
+        "prompt": "Tổng cộng bao nhiêu tiền?",
+        "options": [
+          "Hai mươi tư tệ",
+          "Hai mươi sáu tệ",
+          "Ba mươi sáu tệ"
+        ],
+        "answer": 1,
+        "explanation": "Nhân viên trả lời 二十六块."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ men yào yí gè fān qié jī dàn miàn ， hái yào yí gè qīng cài 。 yǐ ： fān qié miàn yǒu diǎn er là 。 jiǎ ： yǒu méi yǒu bú là de cài ？ xiǎo hái zi bù néng chī là 。 yǐ ： yǒu ， wǒ gěi nǐ shǎo fàng là jiāo 。 jiǎ ： hǎo ， zài lái yì bēi rè dòu jiāng 。 yí gòng duō shǎo qián ？ yǐ ： èr shí liù kuài 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu gọi món, giữ đúng ngữ điệu câu hỏi.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我要一杯热豆浆。有没有不辣的菜？",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Lên giọng ở cuối câu hỏi",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我要一杯热豆浆。有没有不辣的菜？"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách gọi những gì, vì sao phải đổi món, cuối cùng trả bao nhiêu. Không tự thêm chi tiết.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách gọi một bát mì cà chua trứng và một đĩa rau. Bếp nhắc mì hơi cay; vì trẻ nhỏ không ăn được cay, khách hỏi món không cay và được nhân viên cho ít ớt. Khách gọi thêm một cốc sữa đậu nành nóng rồi hỏi giá, tổng cộng hai mươi sáu tệ.",
+      "checklist": [
+        "Nói đủ ba ý: món gọi, lý do đổi món, số tiền",
+        "Người nghe hiểu được nội dung",
+        "Không tự thêm món khác"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn gọi món sau, ngắt theo dấu phẩy và hạ giọng ở cuối câu kể.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "我们点两个菜，一个番茄鸡蛋面，一个青菜。这个菜辣不辣？小孩子不能吃辣。再来一杯热豆浆，一共二十六块。",
+      "reference": "Nhấn số lượng và tên món; câu hỏi lên giọng ở âm cuối, câu kể hạ giọng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你们家吃饭的时候谁点菜？一般点几个菜？",
+      "promptVi": "Ở nhà bạn, khi ăn ai là người gọi món? Thường gọi mấy món?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Trả lời 2–4 câu về nhà bạn: ai gọi món, gọi mấy món, món nào hay được chọn.",
+      "checklist": [
+        "Trả lời đúng cả hai phần câu hỏi",
+        "Dùng ít nhất một mẫu câu của bài",
+        "Người nghe hiểu được thói quen của nhà bạn"
+      ],
+      "sampleZh": "我家是妈妈点菜。她一般点三个菜，还要一个汤。我不太能吃辣，她就少放辣椒。",
+      "sampleVi": "Nhà tôi mẹ gọi món. Bà thường gọi ba món và thêm một bát canh. Tôi không ăn cay được nhiều nên bà cho ít ớt."
+    }
+  ],
+  "transferTask": "Tối nay ở một quán ăn gần nhà: tự gọi hai món và một đồ uống, hỏi xem món nào cay và hỏi giá trước khi gọi thêm.",
+  "pronunciation": [
+    {
+      "text": "辣",
+      "pinyin": "là",
+      "hint": "Phụ âm đầu l-, vần mở như 'a', thanh 4 hạ dứt khoát; đừng đọc thành âm thanh ngang."
+    },
+    {
+      "text": "菜",
+      "pinyin": "cài",
+      "hint": "Âm đầu cong lưỡi bật mạnh, vần gần 'ai', thanh 4; nghe hơi nặng hơn 'cải'."
+    },
+    {
+      "text": "杯",
+      "pinyin": "bēi",
+      "hint": "Phụ âm môi b- ghép vần 'ui', thanh 1 cao và bằng, môi tròn dần khi kết thúc."
+    },
+    {
+      "text": "豆浆",
+      "pinyin": "dòu jiāng",
+      "hint": "Chữ đầu thanh 4, chữ sau thanh 1; tách hai âm rõ ràng, không nối liền thành một âm tiết."
+    }
+  ]
+}

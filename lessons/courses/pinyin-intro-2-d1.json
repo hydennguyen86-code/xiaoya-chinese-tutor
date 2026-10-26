@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 2,
+  "lessonTitle": "Môi và môi-răng: b p m f d t n l",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "吧",
+      "meaning": "nhé; quán",
+      "example": "我们走吧。",
+      "exampleVi": "Chúng ta đi thôi.",
+      "pinyin": "ba",
+      "examplePinyin": "wǒ men zǒu ba 。"
+    },
+    {
+      "word": "怕",
+      "meaning": "sợ",
+      "example": "小猫怕狗。",
+      "exampleVi": "Mèo con sợ chó.",
+      "pinyin": "pà",
+      "examplePinyin": "xiǎo māo pà gǒu 。"
+    },
+    {
+      "word": "米",
+      "meaning": "gạo; cơm",
+      "example": "我吃米饭。",
+      "exampleVi": "Tôi ăn cơm.",
+      "pinyin": "mǐ",
+      "examplePinyin": "wǒ chī mǐ fàn 。"
+    },
+    {
+      "word": "咖啡",
+      "meaning": "cà phê",
+      "example": "我喝咖啡。",
+      "exampleVi": "Tôi uống cà phê.",
+      "pinyin": "kā fēi",
+      "examplePinyin": "wǒ hē kā fēi 。"
+    },
+    {
+      "word": "打",
+      "meaning": "đánh; gọi",
+      "example": "我打电话。",
+      "exampleVi": "Tôi gọi điện thoại.",
+      "pinyin": "dǎ",
+      "examplePinyin": "wǒ dǎ diàn huà 。"
+    },
+    {
+      "word": "多",
+      "meaning": "nhiều",
+      "example": "人太多了。",
+      "exampleVi": "Đông người quá.",
+      "pinyin": "duō",
+      "examplePinyin": "rén tài duō le 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "我要……",
+      "explanation": "Muốn một món, một thứ: 我要 rồi đến đồ vật; thêm 一杯, 两个 ở giữa cũng được.",
+      "example": "我要一杯咖啡。",
+      "exampleVi": "Cho tôi một ly cà phê.",
+      "examplePinyin": "wǒ yào yì bēi kā fēi 。"
+    },
+    {
+      "pattern": "太多了。",
+      "explanation": "Nói rằng quá nhiều, dùng như một phản xạ ngắn; 太 mở miệng, 多 bo môi, 了 đọc nhẹ.",
+      "example": "人太多了。",
+      "exampleVi": "Đông người quá.",
+      "examplePinyin": "rén tài duō le 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Quán nước đầu ngõ giờ sớm: bạn gọi hai món, người bán mang dư một ly và bạn phải nói ngắn rằng quá nhiều.",
+    "avatarRole": "Người bán hàng",
+    "learnerRole": "Khách gọi đồ",
+    "goals": [
+      "Gọi hai món bằng mẫu wǒ yào ……",
+      "Nói rằng quá nhiều bằng tài duō le",
+      "Bật hơi rõ ở p, t để người bán không nghe lẫn với b, d"
+    ],
+    "opening": "你好，你要咖啡还是米？",
+    "openingVi": "Chào bạn, bạn muốn cà phê hay cơm?"
+  },
+  "freeTalk": {
+    "question": "你要什么？你要多少？",
+    "questionVi": "Bạn muốn gì? Bạn muốn bao nhiêu?"
+  },
+  "learningNotes": [
+    "b, d trong pinyin là vô thanh không bật hơi: miệng bật ra giống p, t tiếng Việt nhưng không có luồng hơi.",
+    "p, t bật hơi mạnh: đặt bàn tay trước môi, đọc 怕 và 他 phải thấy hơi chạm tay; 爸 và 打 thì không.",
+    "m ngậm hai môi rồi mở cho hơi ra mũi; f chỉ môi dưới chạm răng trên, rung nhẹ như ph trong phở.",
+    "n và l đều đặt đầu lưỡi lên lợi trên: n đẩy hơi ra mũi, l thả hơi ra hai bên má.",
+    "CẢNH BÁO cho người Việt: tiếng Việt không đối lập bật hơi và không bật hơi, nên 爸 dễ bị đọc như 'ba' hữu thanh; một số giọng Việt cũng lẫn l và n, hãy đọc chậm từng cặp."
+  ],
+  "prerequisites": [
+    1
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Môi và môi-răng: b p m f d t n l",
+    "playLimit": 1,
+    "transcript": "甲：你好，我叫小安。你叫什么名字？乙：我叫小明。咱们去咖啡店喝咖啡吧。甲：太好了，我要两杯。乙：太多了，一杯就够了。",
+    "translation": "Hai người tự giới thiệu tên. Một người rủ đi quán cà phê uống cà phê. Người kia vui quá, muốn hai ly. Người bán nói hai ly là quá nhiều, một ly là đủ.",
+    "questions": [
+      {
+        "prompt": "Người B tên gì?",
+        "options": [
+          "Tiểu Minh",
+          "Tiểu An",
+          "Tiểu Ba"
+        ],
+        "answer": 0,
+        "explanation": "B trả lời 我叫小明。"
+      },
+      {
+        "prompt": "Hai người định đi đâu?",
+        "options": [
+          "Về nhà",
+          "Đến quán cà phê",
+          "Đến lớp học"
+        ],
+        "answer": 1,
+        "explanation": "Trong đoạn có 咱们去咖啡店喝咖啡吧。"
+      },
+      {
+        "prompt": "Người B nghĩ thế nào về hai ly?",
+        "options": [
+          "Muốn thêm ly thứ ba",
+          "Không uống cà phê",
+          "Cho rằng hai ly là quá nhiều"
+        ],
+        "answer": 2,
+        "explanation": "B nói 太多了，一杯就够了, tức hai ly là dư."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo ān 。 nǐ jiào shén me míng zi ？ yǐ ： wǒ jiào xiǎo míng 。 zán men qù kā fēi diàn hē kā fēi ba 。 jiǎ ： tài hǎo le ， wǒ yào liǎng bēi 。 yǐ ： tài duō le ， yì bēi jiù gòu le 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại năm cặp âm môi và đầu lưỡi, tách bạch hơi bật và hơi không bật.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Đọc từng cặp, nghỉ ngắn giữa hai chữ của một cặp.",
+      "checklist": [
+        "Phát hiện hơi bật ở chữ thứ hai",
+        "Không lẫn n và l",
+        "Giữ thanh của từng chữ"
+      ],
+      "audioText": "爸，怕。妈，发。打，他。那，拉。多，拖。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu gọi đồ ở quán.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu này dùng mẫu 我要…… và 太多了。 của bài.",
+      "checklist": [
+        "Nói đủ cả hai câu",
+        "Bo môi rõ ở kā fēi",
+        "Giữ hai âm cuối đọc nhẹ"
+      ],
+      "audioText": "我要一杯咖啡。人太多了，走吧。"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, chú ý môi và đầu lưỡi.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "妈妈卖米。爸爸泡茶。他打电话，她怕打雷。那人太多，咱们走吧。",
+      "reference": "Đoạn này chỉ xoay quanh b, p, m, f, d, t, n, l: đọc chậm, nghe hơi bật ở 怕 và 打电话.",
+      "checklist": [
+        "Đọc đủ năm câu",
+        "Không nuốt hơi ở p, t",
+        "Người nghe phân biệt được nà và lā"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你要什么？你要多少？",
+      "promptVi": "Bạn muốn gì? Bạn muốn bao nhiêu?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu bằng 我要…… và một câu than quá nhiều; tự chọn món, không có đáp án duy nhất.",
+      "checklist": [
+        "Nói rõ tên món",
+        "Dùng được mẫu wǒ yào …… và tài duō le",
+        "Bật hơi ở p, t cho rõ"
+      ],
+      "sampleZh": "我要咖啡和米饭。两杯太多了，我要一杯。",
+      "sampleVi": "Tôi muốn cà phê và cơm. Hai ly thì quá nhiều, tôi muốn một ly."
+    }
+  ],
+  "transferTask": "Ở một quán nước thật, gọi hai món bằng mẫu wǒ yào …… rồi nói thêm tài duō le khi người ta mang dư, và nhờ người bán nhắc lại xem họ nghe ra âm bật hơi hay không bật hơi.",
+  "pronunciation": [
+    {
+      "text": "爸，怕",
+      "pinyin": "bà ， pà",
+      "hint": "Cùng vần a và cùng vị trí môi: bà bật ra không có luồng hơi, pà phóng hơi rõ; đặt tay trước môi để thấy hơi ở chữ thứ hai."
+    },
+    {
+      "text": "妈，发",
+      "pinyin": "mā ， fā",
+      "hint": "mā: ngậm hai môi rồi mở cho hơi ra mũi; fā: chỉ môi dưới chạm răng trên, không khép hai môi."
+    },
+    {
+      "text": "打，他",
+      "pinyin": "dǎ ， tā",
+      "hint": "Cùng vần a: lưỡi giữ nguyên, chỉ đổi luồng hơi; dǎ gọn và không có hơi, tā dài hơn và phóng hơi."
+    },
+    {
+      "text": "那，拉",
+      "pinyin": "nà ， lā",
+      "hint": "Đầu lưỡi cùng chạm lợi trên rồi rời: nà đẩy hơi qua mũi, lā cho hơi trượt ra hai bên má."
+    },
+    {
+      "text": "太多了",
+      "pinyin": "tài duō le",
+      "hint": "Cụm phản xạ tài duō le: tài mở hàm, duō bo môi rồi nở, le rơi nhẹ ở cuối, không thêm dấu."
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 8,
+  "lessonTitle": "Biến điệu: hai thanh 3 đứng cạnh, và 一 / 不",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "你好",
+      "meaning": "xin chào",
+      "example": "老师，你好！",
+      "exampleVi": "Chào thầy cô.",
+      "pinyin": "nǐ hǎo",
+      "examplePinyin": "lǎo shī ， nǐ hǎo ！"
+    },
+    {
+      "word": "很好",
+      "meaning": "rất tốt",
+      "example": "今天天气很好。",
+      "exampleVi": "Hôm nay thời tiết rất tốt.",
+      "pinyin": "hěn hǎo",
+      "examplePinyin": "jīn tiān tiān qì hěn hǎo 。"
+    },
+    {
+      "word": "一起",
+      "meaning": "cùng nhau",
+      "example": "我们一起去学校。",
+      "exampleVi": "Chúng ta cùng đi đến trường.",
+      "pinyin": "yì qǐ",
+      "examplePinyin": "wǒ men yì qǐ qù xué xiào 。"
+    },
+    {
+      "word": "一把",
+      "meaning": "một nắm; một chiếc",
+      "example": "请给我一把伞。",
+      "exampleVi": "Xin đưa cho tôi một chiếc ô.",
+      "pinyin": "yì bǎ",
+      "examplePinyin": "qǐng gěi wǒ yì bǎ sǎn 。"
+    },
+    {
+      "word": "不是",
+      "meaning": "không phải",
+      "example": "这不是我的书。",
+      "exampleVi": "Đây không phải sách của tôi.",
+      "pinyin": "bú shì",
+      "examplePinyin": "zhè bú shì wǒ de shū 。"
+    },
+    {
+      "word": "不对",
+      "meaning": "sai rồi",
+      "example": "你说得不对。",
+      "exampleVi": "Bạn nói không đúng.",
+      "pinyin": "bú duì",
+      "examplePinyin": "nǐ shuō dé bú duì 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你好吗？",
+      "explanation": "Chào rồi hỏi thăm: hai thanh 3 đứng cạnh nên chữ đầu khi nói đi lên gần thanh 2; âm hỏi cuối câu rơi nhẹ.",
+      "example": "早上好，你好吗？",
+      "exampleVi": "Chào buổi sáng, bạn khỏe không?",
+      "examplePinyin": "zǎo shang hǎo ， nǐ hǎo ma ？"
+    },
+    {
+      "pattern": "一点也不……",
+      "explanation": "Phủ định hoàn toàn một tính chất: 一 rồi đến 一点, 不 phía trước thanh 3 giữ thanh gốc; cả cụm đọc liền một hơi.",
+      "example": "这条路一点也不好走。",
+      "exampleVi": "Con đường này hoàn toàn khó đi.",
+      "examplePinyin": "zhè tiáo lù yì diǎn yě bù hǎo zǒu 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Đầu giờ học, trời đổ mưa: bạn đến lớp tay không có ô, gặp bạn cùng lớp ở cửa, hai người hẹn cùng đi và nhắc nhau lấy ô.",
+    "avatarRole": "Bạn cùng lớp",
+    "learnerRole": "Học viên quên mang ô",
+    "goals": [
+      "Chào và hỏi thăm bằng nǐ hǎo ma sao cho hai thanh 3 liền nhau nghe tự nhiên",
+      "Rủ bạn cùng đi bằng mẫu yì qǐ",
+      "Nói đúng biến điệu của yì và bù trong cụm nhanh mà không cần nhìn chữ"
+    ],
+    "opening": "你好，你好吗？今天下雨，我们一起去学校，好吗？",
+    "openingVi": "Chào bạn, bạn khỏe không? Hôm nay mưa, chúng ta cùng đi đến trường nhé?"
+  },
+  "freeTalk": {
+    "question": "你好吗？下雨天你愿意和朋友一起做什么？",
+    "questionVi": "Bạn khỏe không? Ngày mưa bạn muốn cùng bạn bè làm gì?"
+  },
+  "learningNotes": [
+    "Hai thanh 3 liền nhau trong cùng một cụm hơi: âm đầu thực tế đi lên gần thanh 2, nên hai chữ chào nhau nghe như ní hǎo.",
+    "Ba thanh 3 liền: hai âm đầu cùng đi lên, chỉ âm cuối giữ đường thấp-ngang; đừng đọc ba âm rời rạc.",
+    "一 đứng trước thanh 1, 2, 3 đọc rơi mạnh như thanh 4; trước thanh 4 đọc đi lên như thanh 2.",
+    "不 đứng trước thanh 4 đọc đi lên thành bú; chữ viết và pinyin trích dẫn trong bài này vẫn ghi thanh gốc.",
+    "CẢNH BÁO cho người Việt: đừng thay âm đầu của cặp 3+3 bằng dấu hỏi hay dấu ngã; dấu sắc tiếng Việt quá ngắn để làm thanh 4 của 不, phải rơi từ cao xuống dứt khoát."
+  ],
+  "prerequisites": [
+    7
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Biến điệu: hai thanh 3 đứng cạnh, và 一 / 不",
+    "playLimit": 1,
+    "transcript": "甲：你好，你好吗？乙：我很好，谢谢。甲：我们一起去学校吧。乙：今天下雨，这条路一点也不好走。甲：那带上伞。乙：好，我拿一把伞。山上冷，你也带上伞。",
+    "translation": "A chào và hỏi thăm; B nói rất khỏe và cảm ơn. A rủ cùng đi đến trường. B bảo hôm nay trời mưa, con đường này hoàn toàn khó đi. A nhắc mang ô, B nói sẽ lấy một chiếc ô và mời A mang theo ô nữa vì trên núi lạnh.",
+    "questions": [
+      {
+        "prompt": "Hôm nay thời tiết và con đường thế nào?",
+        "options": [
+          "Nắng đẹp, đường dễ đi",
+          "Lạnh khô, đường rất gần",
+          "Trời mưa, đường khó đi"
+        ],
+        "answer": 2,
+        "explanation": "B nói 今天下雨，这条路一点也不好走。"
+      },
+      {
+        "prompt": "A rủ B làm việc gì?",
+        "options": [
+          "Cùng đi đến trường",
+          "Cùng lên núi chơi",
+          "Cùng về nhà ăn cơm"
+        ],
+        "answer": 0,
+        "explanation": "A nói 我们一起去学校吧。"
+      },
+      {
+        "prompt": "Ai là người đi lấy ô trước?",
+        "options": [
+          "A lấy hai chiếc",
+          "B đi lấy một chiếc ô",
+          "Không ai mang ô cả"
+        ],
+        "answer": 1,
+        "explanation": "B trả lời 好，我拿一把伞。"
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ hǎo ， nǐ hǎo ma ？ yǐ ： wǒ hěn hǎo ， xiè xie 。 jiǎ ： wǒ men yì qǐ qù xué xiào ba 。 yǐ ： jīn tiān xià yǔ ， zhè tiáo lù yì diǎn yě bù hǎo zǒu 。 jiǎ ： nà dài shàng sǎn 。 yǐ ： hǎo ， wǒ ná yì bǎ sǎn 。 shān shàng lěng ， nǐ yě dài shàng sǎn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại sáu cụm có biến điệu, đọc như lời nói thật.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Trong cặp hai thanh 3, âm đầu đi lên gần thanh 2; trước thanh 3 thì hai chữ số và phủ định cùng rơi mạnh.",
+      "checklist": [
+        "Cặp 3+3 nghe liền, tự nhiên",
+        "一 không bị đọc thành âm dài",
+        "不 giữ đủ lực, không gãy giữa chừng"
+      ],
+      "audioText": "你好，很好，一起。一把，不是，不对。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu hỏi thăm và câu phủ định cả đường.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 你好吗？ và 一点也不…… của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "Âm hỏi cuối câu rơi nhẹ",
+        "一点也不 đọc gọn thành một cụm hơi"
+      ],
+      "audioText": "你好吗？这条路一点也不好走。"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "老师，你好！今天天气很好，可是下大雨。我们一起去学校，这条路一点也不好走。请拿一把伞，你说得对，我带上伞，妈妈才放心。",
+      "reference": "Đoạn có cả ba kiểu biến điệu: cặp 3+3 như 你好, 很好; 一 như trong 一把, 一点; 不 như trong 不对.",
+      "checklist": [
+        "Đọc đủ bốn câu",
+        "Không đọc hai thanh 3 rời nhau",
+        "Giữ đúng chỗ ngắt hơi sau dấu câu"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "你好吗？下雨天你愿意和朋友一起做什么？",
+      "promptVi": "Bạn khỏe không? Ngày mưa bạn muốn cùng bạn bè làm gì?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-3 câu: một câu hỏi thăm lại, một câu nói bạn muốn cùng làm gì khi mưa; không có đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đủ cả hai câu hỏi",
+        "Dùng được yì qǐ trong câu của bạn",
+        "Người nghe nhận ra biến điệu 3+3 của bạn"
+      ],
+      "sampleZh": "我很好，你好吗？下雨天我愿意和朋友一起喝茶。",
+      "sampleVi": "Tôi rất khỏe, bạn khỏe không? Ngày mưa tôi muốn cùng bạn uống trà."
+    }
+  ],
+  "transferTask": "Nhờ một người thật nói nhanh rồi nói chậm cụm nǐ hǎo và hěn hǎo; bạn nhắm mắt đoán âm đầu đi lên hay đi xuống, sau đó đổi vai để chính bạn nói và nhờ họ nhận xét.",
+  "pronunciation": [
+    {
+      "text": "你好",
+      "pinyin": "nǐ hǎo",
+      "hint": "Khi nói thật, âm đầu đi lên gần thanh 2, nghe như ní hǎo; chữ pinyin trích dẫn vẫn ghi thanh gốc nǐ hǎo."
+    },
+    {
+      "text": "很好",
+      "pinyin": "hěn hǎo",
+      "hint": "Cùng kiểu với chào hỏi: chữ đầu hất lên, chữ sau thấp rồi nhô; hai chữ phải dính thành một cụm hơi."
+    },
+    {
+      "text": "一起",
+      "pinyin": "yì qǐ",
+      "hint": "一 đứng trước thanh 3 rơi mạnh như thanh 4, ngắn và dứt; qǐ thấp, đừng hất lên ở đầu."
+    },
+    {
+      "text": "不对",
+      "pinyin": "bú duì",
+      "hint": "不 đứng trước thanh 4 đi lên thành bú; từ điển ghi thanh gốc, pinyin ở đây theo dạng đọc bề mặt; duì cắt hơi nhanh."
+    },
+    {
+      "text": "你好吗",
+      "pinyin": "nǐ hǎo ma",
+      "hint": "Ba chữ một hơi: hai chữ đầu cùng thấp nhưng chữ thứ nhất được hất lên khi nói, chữ cuối nhẹ, ngắn, không dấu."
+    }
+  ]
+}

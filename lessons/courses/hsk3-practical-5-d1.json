@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 5,
+  "lessonTitle": "Nói về cuối tuần và sở thích",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "周末",
+      "meaning": "cuối tuần",
+      "example": "周末我跟朋友去看电影。",
+      "exampleVi": "Cuối tuần tôi đi xem phim với bạn.",
+      "pinyin": "zhōu mò",
+      "examplePinyin": "zhōu mò wǒ gēn péng you qù kàn diàn yǐng 。"
+    },
+    {
+      "word": "爱好",
+      "meaning": "sở thích",
+      "example": "打篮球是我的爱好。",
+      "exampleVi": "Chơi bóng rổ là sở thích của tôi.",
+      "pinyin": "ài hào",
+      "examplePinyin": "dǎ lán qiú shì wǒ de ài hào 。"
+    },
+    {
+      "word": "运动",
+      "meaning": "vận động; thể thao",
+      "example": "我每周运动三次。",
+      "exampleVi": "Tôi tập thể thao ba lần mỗi tuần.",
+      "pinyin": "yùn dòng",
+      "examplePinyin": "wǒ měi zhōu yùn dòng sān cì 。"
+    },
+    {
+      "word": "电影",
+      "meaning": "phim; rạp phim",
+      "example": "这部电影很有意思，推荐给你。",
+      "exampleVi": "Bộ phim này rất hay, giới thiệu cho bạn.",
+      "pinyin": "diàn yǐng",
+      "examplePinyin": "zhè bù diàn yǐng hěn yǒu yì si ， tuī jiàn gěi nǐ 。"
+    },
+    {
+      "word": "累",
+      "meaning": "mệt",
+      "example": "忙了一天，我很累。",
+      "exampleVi": "Bận cả ngày, tôi rất mệt.",
+      "pinyin": "lèi",
+      "examplePinyin": "máng le yì tiān ， wǒ hěn lèi 。"
+    },
+    {
+      "word": "睡",
+      "meaning": "ngủ",
+      "example": "我周末睡到十点才起。",
+      "exampleVi": "Cuối tuần tôi ngủ đến mười giờ mới dậy.",
+      "pinyin": "shuì",
+      "examplePinyin": "wǒ zhōu mò shuì dào shí diǎn cái qǐ 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你平时喜欢……吗？",
+      "explanation": "Hỏi sở thích thường ngày: 你平时喜欢 rồi thêm hoạt động, cuối câu giữ 吗; khi trả lời nên nói rõ tần suất.",
+      "example": "你平时喜欢运动吗？我周末经常打球。",
+      "exampleVi": "Bạn bình thường có thích thể thao không? Cuối tuần tôi hay chơi bóng.",
+      "examplePinyin": "nǐ píng shí xǐ huan yùn dòng ma ？ wǒ zhōu mò jīng cháng dǎ qiú 。"
+    },
+    {
+      "pattern": "我一般……",
+      "explanation": "Kể thói quen của bản thân: 我一般 rồi thêm hoạt động; thời gian như 周末 có thể đặt trước 我一般.",
+      "example": "周末我一般睡到十点才起。",
+      "exampleVi": "Cuối tuần tôi thường ngủ đến mười giờ mới dậy.",
+      "examplePinyin": "zhōu mò wǒ yì bān shuì dào shí diǎn cái qǐ 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Trưa thứ sáu, hai bạn cùng lớp hỏi nhau về lịch cuối tuần và sở thích; buổi 2 chuyển sang hai bạn cùng lên kế hoạch cho một hoạt động cuối tuần.",
+    "avatarRole": "Bạn cùng lớp",
+    "learnerRole": "Người kể về cuối tuần của mình",
+    "goals": [
+      "Kể hai hoạt động mình thường làm cuối tuần",
+      "Hỏi bạn cùng lớp có thích hoạt động đó không",
+      "Nêu lý do mình chọn hoạt động"
+    ],
+    "opening": "这周末你有什么打算？你平时喜欢运动吗？",
+    "openingVi": "Cuối tuần này bạn định làm gì? Bạn bình thường có thích thể thao không?"
+  },
+  "freeTalk": {
+    "question": "周末你喜欢一个人待着还是跟朋友一起活动？为什么？",
+    "questionVi": "Cuối tuần bạn thích ở một mình hay hoạt động cùng bạn bè? Vì sao?"
+  },
+  "learningNotes": [
+    "Hỏi sở thích: 你平时喜欢 + hoạt động + 吗？; trả lời thì thêm 一般、每周、经常 để câu tự nhiên hơn.",
+    "Kể thói quen: 我一般 + hoạt động; muốn hẹn giờ thì nói 睡到十点 là ngủ tới mười giờ, 八点起 là dậy lúc tám giờ.",
+    "Phát âm: 爱好 và 运动 đều là hai thanh 4 liền nhau, cả hai âm tiết đều hạ dứt khoát, đừng biến âm thứ hai thành thanh nhẹ.",
+    "累 mô tả tình trạng: 我很累、工作太累; 睡 hay đi kèm bổ ngữ thời gian: 睡到十点、早点睡."
+  ],
+  "prerequisites": [
+    4
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Nói về cuối tuần và sở thích",
+    "playLimit": 1,
+    "transcript": "甲：这周末你有什么打算？乙：我哪儿都不想去，就在家看电影。甲：你平时不是喜欢运动吗？乙：平时上班太累，周末我就想睡到十点。甲：那下午跟我去打篮球吧，学校旁边就有球场。乙：好吧，不过打完球咱们一起吃饭。甲：行，周六下午两点见。",
+    "translation": "Tiểu Lý than cuối tuần chỉ muốn ở nhà xem phim và ngủ nướng vì đi làm mệt. Người bạn nhắc rằng bạn ấy vốn thích thể thao rồi rủ chiều xuống đánh bóng rổ ở sân cạnh trường. Hai bên chốt sau khi chơi sẽ cùng ăn cơm, gặp nhau lúc hai giờ chiều thứ bảy.",
+    "questions": [
+      {
+        "prompt": "Người B dự định làm gì trong cuối tuần?",
+        "options": [
+          "Ở nhà xem phim",
+          "Đi chơi xa cùng bạn",
+          "Đi làm thêm cả ngày"
+        ],
+        "answer": 0,
+        "explanation": "B nói 我哪儿都不想去，就在家看电影."
+      },
+      {
+        "prompt": "Vì sao B không muốn vận động?",
+        "options": [
+          "Vì sân bóng đóng cửa",
+          "Vì đi làm mệt, muốn ngủ nướng",
+          "Vì không biết chơi bóng"
+        ],
+        "answer": 1,
+        "explanation": "B nói 平时上班太累，周末我就想睡到十点."
+      },
+      {
+        "prompt": "Cuối cùng hai người hẹn nhau lúc mấy giờ?",
+        "options": [
+          "Sáng chủ nhật",
+          "Bốn giờ chiều thứ bảy",
+          "Hai giờ chiều thứ bảy"
+        ],
+        "answer": 2,
+        "explanation": "A chốt 周六下午两点见."
+      }
+    ],
+    "pinyin": "jiǎ ： zhè zhōu mò nǐ yǒu shén me dǎ suàn ？ yǐ ： wǒ nǎ ér dōu bù xiǎng qù ， jiù zài jiā kàn diàn yǐng 。 jiǎ ： nǐ píng shí bú shì xǐ huan yùn dòng ma ？ yǐ ： píng shí shàng bān tài lèi ， zhōu mò wǒ jiù xiǎng shuì dào shí diǎn 。 jiǎ ： nà xià wǔ gēn wǒ qù dǎ lán qiú ba ， xué xiào páng biān jiù yǒu qiú chǎng 。 yǐ ： hǎo ba ， bú guò dǎ wán qiú zán men yì qǐ chī fàn 。 jiǎ ： xíng ， zhōu liù xià wǔ liǎng diǎn jiàn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu hỏi sở thích, một câu kể thói quen.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "你平时喜欢运动吗？我周末一般睡到十点才起。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng từ chỉ thói quen",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "你平时喜欢运动吗？我周末一般睡到十点才起。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: B định làm gì, vì sao, A rủ đi đâu, hai người chốt gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Tiểu Lý than cuối tuần chỉ muốn ở nhà xem phim và ngủ nướng vì đi làm mệt. Người bạn nhắc rằng bạn ấy vốn thích thể thao rồi rủ chiều xuống đánh bóng rổ ở sân cạnh trường. Hai bên chốt sau khi chơi sẽ cùng ăn cơm, gặp nhau lúc hai giờ chiều thứ bảy.",
+      "checklist": [
+        "Nói đủ: dự định, lý do, lời rủ, giờ gặp",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt theo dấu phẩy, nhấn vào từ chỉ thói quen.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Đọc như đang kể chuyện quen thuộc: chậm lại ở các từ chỉ thói quen, hạ giọng ở cuối câu.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "我周末一般睡到十点才起。下午跟朋友去打篮球，累了就一起吃饭。虽然工作很累，但是周末我很开心。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "周末你喜欢一个人待着还是跟朋友一起活动？为什么？",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Chọn một cách, nêu lý do và nói khi nào bạn buộc phải dùng cách còn lại.",
+      "checklist": [
+        "Trả lời rõ chọn cách nào",
+        "Có lý do cụ thể",
+        "Người nghe hiểu được thói quen của bạn"
+      ],
+      "promptVi": "Cuối tuần bạn thích ở một mình hay hoạt động cùng bạn bè? Vì sao?",
+      "sampleZh": "平时上班说话太多，周末我先想一个人待着，睡够了再出去。要是朋友过生日，我就跟他们一起吃饭、看电影，因为平时很少见面。",
+      "sampleVi": "Đi làm nói nhiều quá, cuối tuần tôi muốn ở một mình trước, ngủ đủ rồi mới ra ngoài. Nếu bạn bè có sinh nhật, tôi đi ăn và xem phim cùng họ, vì bình thường ít khi gặp nhau."
+    }
+  ],
+  "transferTask": "Cuối tuần này, kể cho một người mới quen ở nơi bạn đến chơi về lịch sinh hoạt thường ngày của bạn, hỏi sở thích của người đó rồi nêu lý do bạn thích hoạt động nhất.",
+  "pronunciation": [
+    {
+      "text": "周末",
+      "pinyin": "zhōu mò",
+      "hint": "Chữ đầu thanh 2 kéo lên, chữ sau thanh 4 rơi mạnh; hai âm tiết đọc tách bạch."
+    },
+    {
+      "text": "爱好",
+      "pinyin": "ài hào",
+      "hint": "Hai thanh 4 liên tiếp, âm đầu ngắn và dứt khoát; môi mở rộng ở cả hai âm."
+    },
+    {
+      "text": "运动",
+      "pinyin": "yùn dòng",
+      "hint": "Âm đầu tròn môi, âm sau là âm mũi thanh 4 rơi; đọc tách hai âm tiết, đừng nối làm một."
+    },
+    {
+      "text": "电影",
+      "pinyin": "diàn yǐng",
+      "hint": "Chữ đầu thanh 4, chữ sau thanh 3: hạ nhanh rồi uốn thấp, giữ rõ phần cuối."
+    }
+  ]
+}

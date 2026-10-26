@@ -1,0 +1,254 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 3,
+  "lessonTitle": "Đi mua sắm: hỏi giá, thử đồ, trả giá",
+  "day": 2,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "多少",
+      "meaning": "bao nhiêu",
+      "example": "这双鞋要多少钱，我还没问。",
+      "exampleVi": "Đôi giày này giá bao nhiêu thì tôi vẫn chưa hỏi.",
+      "pinyin": "duō shǎo",
+      "examplePinyin": "zhè shuāng xié yào duō shǎo qián ， wǒ hái méi wèn 。"
+    },
+    {
+      "word": "便宜",
+      "meaning": "rẻ",
+      "example": "这家店的衣服比商场便宜。",
+      "exampleVi": "Quần áo ở quán này rẻ hơn trong trung tâm thương mại.",
+      "pinyin": "pián yi",
+      "examplePinyin": "zhè jiā diàn de yī fu bǐ shāng chǎng pián yi 。"
+    },
+    {
+      "word": "试",
+      "meaning": "thử",
+      "example": "我想试一下这件外套。",
+      "exampleVi": "Tôi muốn thử chiếc áo khoác này một chút.",
+      "pinyin": "shì",
+      "examplePinyin": "wǒ xiǎng shì yí xià zhè jiàn wài tào 。"
+    },
+    {
+      "word": "号",
+      "meaning": "cỡ; số",
+      "example": "有没有大一号的？这件有点儿小。",
+      "exampleVi": "Có cỡ lớn hơn không? Cái này hơi nhỏ.",
+      "pinyin": "hào",
+      "examplePinyin": "yǒu méi yǒu dà yī hào de ？ zhè jiàn yǒu diǎn er xiǎo 。"
+    },
+    {
+      "word": "付款",
+      "meaning": "trả tiền",
+      "example": "我先去付款，你在这儿等我。",
+      "exampleVi": "Tôi đi trả tiền trước, bạn đợi ở đây.",
+      "pinyin": "fù kuǎn",
+      "examplePinyin": "wǒ xiān qù fù kuǎn ， nǐ zài zhè ér děng wǒ 。"
+    },
+    {
+      "word": "零钱",
+      "meaning": "tiền lẻ",
+      "example": "我没有带多少零钱。",
+      "exampleVi": "Tôi không mang theo bao nhiêu tiền lẻ.",
+      "pinyin": "líng qián",
+      "examplePinyin": "wǒ méi yǒu dài duō shǎo líng qián 。"
+    },
+    {
+      "word": "合适",
+      "meaning": "vừa ý; thích hợp",
+      "example": "这件外套挺合适的。",
+      "exampleVi": "Chiếc áo khoác này khá vừa ý.",
+      "pinyin": "hé shì",
+      "examplePinyin": "zhè jiàn wài tào tǐng hé shì de 。"
+    },
+    {
+      "word": "打折",
+      "meaning": "giảm giá; chiết khấu",
+      "example": "听说这家店周末打折。",
+      "exampleVi": "Nghe nói quán này cuối tuần có giảm giá.",
+      "pinyin": "dǎ zhé",
+      "examplePinyin": "tīng shuō zhè jiā diàn zhōu mò dǎ zhé 。"
+    },
+    {
+      "word": "现金",
+      "meaning": "tiền mặt",
+      "example": "我可以用现金付款吗？",
+      "exampleVi": "Tôi có thể trả tiền bằng tiền mặt không?",
+      "pinyin": "xiàn jīn",
+      "examplePinyin": "wǒ kě yǐ yòng xiàn jīn fù kuǎn ma ？"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "多少钱？",
+      "explanation": "Hỏi giá: 多少 đứng ngay trước 钱; muốn hỏi tổng thì thêm 一共 ở đầu.",
+      "example": "这条裙子多少钱？我想试一下。",
+      "exampleVi": "Chiếc váy này bao nhiêu tiền? Tôi muốn thử một chút.",
+      "examplePinyin": "zhè tiáo qún zi duō shǎo qián ？ wǒ xiǎng shì yí xià 。"
+    },
+    {
+      "pattern": "能便宜一点吗？",
+      "explanation": "Nhờ người bán giảm một chút; nói nguyên cụm, thêm lý do như mua nhiều sau dấu phẩy.",
+      "example": "能便宜一点吗？我买两件。",
+      "exampleVi": "Bớt cho tôi một chút được không? Tôi mua hai chiếc.",
+      "examplePinyin": "néng pián yi yì diǎn ma ？ wǒ mǎi liǎng jiàn 。"
+    },
+    {
+      "pattern": "买……送……",
+      "explanation": "Nói chương trình mua tặng: số lượng mua đứng sau 买, số lượng được tặng đứng sau 送.",
+      "example": "这家店买两件送一件。",
+      "exampleVi": "Quán này mua hai chiếc được tặng một chiếc.",
+      "examplePinyin": "zhè jiā diàn mǎi liǎng jiàn sòng yí jiàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Buổi 2: ở quầy thu ngân của một trung tâm thương mại, bạn mặc cả, hỏi chương trình mua tặng, chọn cách trả tiền và xin tiền lẻ để đi xe về.",
+    "avatarRole": "Nhân viên quầy thu ngân",
+    "learnerRole": "Người mua sắm trả giá",
+    "goals": [
+      "Xác nhận lại giá sau khi hỏi giảm giá",
+      "Hỏi rõ quà tặng là cỡ nào",
+      "Chọn cách trả tiền và xin một ít tiền lẻ"
+    ],
+    "opening": "这条裙子一百二，您付现金还是手机？",
+    "openingVi": "Chiếc váy này một trăm hai mươi tệ, bạn trả bằng tiền mặt hay điện thoại?"
+  },
+  "freeTalk": {
+    "question": "在店里买东西，什么时候可以还价，什么时候不该还价？",
+    "questionVi": "Khi mua đồ ở cửa hàng, lúc nào nên trả giá và lúc nào không nên?"
+  },
+  "learningNotes": [
+    "Hỏi giá: 多少钱 đứng cuối câu, muốn hỏi tổng thì nói 一共多少钱？; trả lời thường kèm 块.",
+    "Nói cỡ bằng 号: 大一号 là lớn hơn một cỡ, 小一号 là nhỏ hơn một cỡ; xin thử thì nói 我想试一下.",
+    "Phát âm: 便宜 đọc pián yi, âm đầu là p bật hơi chứ không phải b, âm thứ hai nhẹ; người Việt hay đọc thành âm nặng như 'tiện nghị'.",
+    "零钱 là tiền lẻ còn 付款 là trả tiền; khi nhờ thối tiền nói 找我零钱, đừng nhầm với 换钱 (đổi tiền)."
+  ],
+  "prerequisites": [
+    2
+  ],
+  "listening": {
+    "title": "Nghe buổi 2: Đi mua sắm: hỏi giá, thử đồ, trả giá",
+    "playLimit": 1,
+    "transcript": "甲：这条裙子一百二，能便宜点吗？乙：买两件可以打折，打九折。甲：那我看看外套。这件外套挺合适，可是我没带多少现金。乙：你可以扫手机，也可以付现金。甲：买两件送一件，是真的吗？乙：真的，不过只送小号的。甲：好，我付款，请给我一点零钱。",
+    "translation": "Khách xin bớt giá chiếc váy một trăm hai mươi tệ và được báo mua hai chiếc sẽ được giảm, chỉ tính chín phần mười. Khách chuyển sang xem áo khoác, thấy vừa ý nhưng không mang theo nhiều tiền mặt, nên nhân viên gợi ý trả bằng điện thoại hoặc tiền mặt. Khách xác nhận chương trình mua hai tặng một, biết rằng quà chỉ là cỡ nhỏ, rồi trả tiền và xin một ít tiền lẻ.",
+    "questions": [
+      {
+        "prompt": "Điều kiện để được giảm giá là gì?",
+        "options": [
+          "Mua từ hai chiếc trở lên",
+          "Trả bằng tiền mặt",
+          "Quay lại vào tuần sau"
+        ],
+        "answer": 0,
+        "explanation": "Nhân viên nói 买两件可以打折."
+      },
+      {
+        "prompt": "Vì sao khách chưa trả tiền ngay?",
+        "options": [
+          "Khách đổi ý không mua nữa",
+          "Khách không mang nhiều tiền mặt",
+          "Khách muốn thử lại một cỡ khác"
+        ],
+        "answer": 1,
+        "explanation": "Khách nói 我没带多少现金 rồi được gợi ý quét điện thoại."
+      },
+      {
+        "prompt": "Phần quà tặng là cỡ nào?",
+        "options": [
+          "Cỡ lớn",
+          "Cỡ vừa",
+          "Cỡ nhỏ"
+        ],
+        "answer": 2,
+        "explanation": "Người bán trả lời 只送小号的."
+      }
+    ],
+    "pinyin": "jiǎ ： zhè tiáo qún zi yì bǎi èr ， néng pián yi diǎn ma ？ yǐ ： mǎi liǎng jiàn kě yǐ dǎ zhé ， dǎ jiǔ zhé 。 jiǎ ： nà wǒ kàn kàn wài tào 。 zhè jiàn wài tào tǐng hé shì ， kě shì wǒ méi dài duō shǎo xiàn jīn 。 yǐ ： nǐ kě yǐ sǎo shǒu jī ， yě kě yǐ fù xiàn jīn 。 jiǎ ： mǎi liǎng jiàn sòng yí jiàn ， shì zhēn de ma ？ yǐ ： zhēn de ， bú guò zhī sòng xiǎo hào de 。 jiǎ ： hǎo ， wǒ fù kuǎn ， qǐng gěi wǒ yì diǎn líng qián 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu, giữ rõ số lượng mua và số lượng được tặng.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "买两件送一件，是真的吗？麻烦给我一点零钱。",
+      "checklist": [
+        "Nhắc lại đủ hai câu",
+        "Giữ đúng số lượng trong câu đầu",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "买两件送一件，是真的吗？麻烦给我一点零钱。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách hỏi giảm giá thế nào, hai bên chốt ra sao, khách trả tiền bằng gì.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Khách xin bớt giá chiếc váy một trăm hai mươi tệ và được báo mua hai chiếc sẽ được giảm, chỉ tính chín phần mười. Khách chuyển sang xem áo khoác, thấy vừa ý nhưng không mang theo nhiều tiền mặt, nên nhân viên gợi ý trả bằng điện thoại hoặc tiền mặt. Khách xác nhận chương trình mua hai tặng một, biết rằng quà chỉ là cỡ nhỏ, rồi trả tiền và xin một ít tiền lẻ.",
+      "checklist": [
+        "Nói đủ: điều kiện giảm giá, cách trả tiền, cỡ của quà",
+        "Dùng được mẫu mua tặng của bài",
+        "Không bịa thêm giá mới"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt theo dấu chấm và nhấn mạnh từ chỉ ưu đãi.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "text": "这件外套挺合适，可是我没带多少现金。买两件可以打折，还能送一件。我去付款，请给我一点零钱。一共多少钱？",
+      "reference": "Đọc liền mạch ba câu đầu, lên giọng rõ ở câu hỏi giá cuối cùng.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ]
+    },
+    {
+      "kind": "opinion",
+      "prompt": "在店里买东西，什么时候可以还价，什么时候不该还价？",
+      "promptVi": "Khi mua đồ ở cửa hàng, lúc nào nên trả giá và lúc nào không nên?",
+      "prepareSeconds": 30,
+      "responseSeconds": 75,
+      "reference": "Phân biệt nơi có thể nói giá (chợ, cửa hàng nhỏ) và nơi giá đã in sẵn (siêu thị); nêu một cách hỏi lịch sự.",
+      "checklist": [
+        "Nêu được một trường hợp nên và một trường hợp không nên",
+        "Đưa một câu hỏi giá lịch sự",
+        "Người nghe hiểu được lập luận của bạn"
+      ],
+      "sampleZh": "我觉得在小店或者市场买东西的时候可以问问能不能便宜一点，尤其是买两件以上。可是在超市和商场，价钱已经写得很清楚，就不用还价了。这样说话既不尴尬，也省时间。",
+      "sampleVi": "Tôi cho rằng ở cửa hàng nhỏ hoặc chợ thì có thể hỏi liệu có bớt được không, nhất là khi mua từ hai món trở lên. Còn ở siêu thị và trung tâm thương mại, giá đã ghi rõ thì không cần trả giá. Cách nói này vừa khỏi ngại vừa tiết kiệm thời gian."
+    }
+  ],
+  "transferTask": "Cuối tuần này ở một quầy thu ngân khác: hỏi lại giá sau khi mặc cả, hỏi rõ quà tặng là cỡ nào, chọn cách trả tiền và xin tiền lẻ để đi xe về.",
+  "pronunciation": [
+    {
+      "text": "便宜",
+      "pinyin": "pián yi",
+      "hint": "Âm đầu là p bật hơi, không phải b; âm thứ hai đọc nhẹ, không nhấn mạnh."
+    },
+    {
+      "text": "试",
+      "pinyin": "shì",
+      "hint": "Âm đầu cong lưỡi, vần gần 'ư'; thanh 4 hạ dứt khoát, ngắn gọn."
+    },
+    {
+      "text": "号",
+      "pinyin": "hào",
+      "hint": "Vần 'ao' mở rộng, thanh 4; đọc rõ khi nói cỡ để người bán không nghe nhầm."
+    },
+    {
+      "text": "付款",
+      "pinyin": "fù kuǎn",
+      "hint": "Chữ đầu thanh 4, chữ sau thanh 3 hạ thấp rồi lên nhẹ; giữ hai âm tách bạch."
+    }
+  ]
+}

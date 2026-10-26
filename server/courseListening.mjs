@@ -1,8 +1,10 @@
 import fs from 'node:fs';
-// Only admit packaged course identifiers. Never resolve a user-supplied path.
+// Packaged courses that ship a listening bank, mapped to how many days a lesson has.
+// Only admit these identifiers. Never resolve a user-supplied path.
+const COURSE_LISTENING_DAYS = { 'hsk1-practical': 2, 'hsk3-practical': 2, 'hsk5-practical': 2 };
 export function readCourseListening(volumeId, lessonNo, day) {
-  if (!/^hsk[15]-practical$/.test(volumeId) || !Number.isInteger(lessonNo) || lessonNo < 1 || lessonNo > 12 || ![1, 2].includes(day))
-    return null;
+  const maxDay = COURSE_LISTENING_DAYS[volumeId];
+  if (!maxDay || !Number.isInteger(lessonNo) || lessonNo < 1 || !Number.isInteger(day) || day < 1 || day > maxDay) return null;
   const name = `${volumeId}-${lessonNo}-d${day}`;
   const file = new URL(`../lessons/listening/course/${name}.json`, import.meta.url);
   if (!fs.existsSync(file)) return null;

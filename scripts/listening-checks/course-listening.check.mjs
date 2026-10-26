@@ -1,11 +1,15 @@
-// Kiểm tra content-for-misu/course-listening/ (48 file, mỗi bài trong lessons/courses một file).
+// Kiểm tra lessons/listening/course/ (mỗi buổi của các khoá đóng gói một file).
 //
+// Danh sách file lấy từ lessons/courses/syllabus.json cho các khoá trong VOLUME_LEVEL
+// (hsk1-practical, hsk3-practical, hsk5-practical). Pinyin intro already
+// carries its listening task inside each course lesson, without a separate bank.
 // Kiểm tra: đủ/đúng file so với lessons/courses; 3–5 câu dictation + đúng 1 đoạn shadowing;
 // schema và id của dictation.json / shadowing.json; pinyin-pro + thanh nhẹ + biến điệu 3+3;
 // cụm hơi của shadowing; nghĩa tiếng Việt; focus; và mỗi câu/đoạn phải dùng từ của bài.
 // Chỉ đọc lessons/courses của xiaoya, không sửa.
 //
-// Dùng: ELECTRON_RUN_AS_NODE=1 Qoder course-listening.check.mjs [thư-mục-course-listening]
+// Dùng: node scripts/listening-checks/course-listening.check.mjs [thư-mục-course-listening]
+// Một khoá riêng: XIAOYA_LISTENING_VOLUME=hsk3-practical node scripts/listening-checks/course-listening.check.mjs
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,7 +26,9 @@ const fail = (id, msg) => errors.push(`${id}: ${msg}`);
 const warn = (id, msg) => warnings.push(`${id}: ${msg}`);
 
 const VI = /[àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]/iu;
-const LEVEL_BY_PREFIX = { 1: 'HSK1-2', 3: 'HSK5-6' };
+const VOLUME_LEVEL = { 'hsk1-practical': 'HSK1-2', 'hsk3-practical': 'HSK3-4', 'hsk5-practical': 'HSK5-6' };
+// Id prefix follows the level band: HSK1-2 → 1, HSK3-4 → 2, HSK5-6 → 3.
+const LEVEL_PREFIX = { 'HSK1-2': 1, 'HSK3-4': 2, 'HSK5-6': 3 };
 const PACE = new Set(['chậm', 'vừa', 'nhanh']);
 const DT_REQUIRED = ['id', 'level', 'hanzi', 'pinyin', 'meaningVi', 'focus'];
 const DT_OPTIONAL = ['sandhi', 'baseTones', 'hint', 'uncertain', 'uncertainReason', 'acceptTones'];
@@ -48,20 +54,24 @@ const POLICY_TRAPS = [
 ];
 
 function courseFiles() {
-  return fs
-    .readdirSync(COURSES)
-    .filter((f) => /^hsk[15]-practical-\d+-d[12]\.json$/.test(f))
-    .sort((a, b) => {
-      const parse = (s) =>
-        s
-          .match(/hsk(\d)-practical-(\d+)-d(\d)/)
-          .slice(1)
-          .map(Number);
-      const A = parse(a);
-      const B = parse(b);
-      return A[0] - B[0] || A[1] - B[1] || A[2] - B[2];
-    });
+  const syllabus = JSON.parse(fs.readFileSync(path.join(COURSES, 'syllabus.json'), 'utf8'));
+  const list = [];
+  for (const vol of syllabus.volumes) {
+    const volume = String(vol.id);
+    if (!VOLUME_LEVEL[volume]) continue;
+    for (const lesson of vol.lessons) for (let day = 1; day <= lesson.days; day++) list.push([volume, lesson.no, day]);
+  }
+  return list.filter(matchesScope).sort((a, b) => a[0].localeCompare(b[0]) || a[1] - b[1] || a[2] - b[2]);
 }
+
+// XIAOYA_LISTENING_VOLUME / XIAOYA_LISTENING_LESSONS hạn chế phạm vi kiểm khi soạn từng phần.
+const SCOPE_VOLUME = process.env.XIAOYA_LISTENING_VOLUME || '';
+const SCOPE_LESSONS = (process.env.XIAOYA_LISTENING_LESSONS || '').split(',').filter(Boolean).map(Number);
+const matchesScope = ([volume, no]) => (!SCOPE_VOLUME || volume === SCOPE_VOLUME) && (!SCOPE_LESSONS.length || SCOPE_LESSONS.includes(no));
+const inScope = (name) => {
+  const m = String(name).match(/^(.*)-(\d+)-d(\d)$/);
+  return m ? matchesScope([m[1], +m[2]]) : false;
+};
 
 function checkToneSurface(id, item, r, label) {
   const syls = String(item.pinyin).trim().split(/\s+/).filter(Boolean);
@@ -124,11 +134,12 @@ if (!fs.existsSync(DIR)) {
   process.exit(1);
 }
 
-const expected = courseFiles().map((f) => f.replace(/\.json$/, ''));
+const expected = courseFiles().map(([volume, no, day]) => `${volume}-${no}-d${day}`);
 const actual = fs
   .readdirSync(DIR)
   .filter((f) => f.endsWith('.json'))
   .map((f) => f.replace(/\.json$/, ''))
+  .filter(inScope)
   .sort();
 for (const f of expected) if (!actual.includes(f)) fail('file', `thiếu ${f}.json`);
 for (const f of actual) if (!expected.includes(f)) fail('file', `thừa ${f}.json (không có bài tương ứng)`);
@@ -138,7 +149,7 @@ for (const f of fs.readdirSync(DIR)) {
 
 const ids = new Map();
 const texts = new Map();
-const counts = { 'HSK1-2': 0, 'HSK5-6': 0 };
+const counts = {};
 let totalDt = 0;
 let totalSh = 0;
 
@@ -153,8 +164,9 @@ for (const file of expected) {
     continue;
   }
   const lesson = JSON.parse(fs.readFileSync(path.join(COURSES, `${file}.json`), 'utf8'));
-  const level = file.startsWith('hsk1') ? 'HSK1-2' : 'HSK5-6';
-  const prefix = file.startsWith('hsk1') ? 1 : 3;
+  const level = VOLUME_LEVEL[file.replace(/-\d+-d\d$/, '')];
+  const prefix = LEVEL_PREFIX[level];
+  counts[level] = counts[level] || 0;
   const vocab = lesson.vocab.map((v) => v.word);
   const prevFile = file.replace(/-d2$/, '-d1');
   const prevPath = path.join(COURSES, `${prevFile}.json`);
@@ -177,7 +189,7 @@ for (const file of expected) {
       const id = `${file}/dictation[${i}]`;
       for (const k of DT_REQUIRED) if (it[k] === undefined) fail(id, `thiếu ${k}`);
       for (const k of Object.keys(it)) if (!DT_REQUIRED.includes(k) && !DT_OPTIONAL.includes(k)) fail(id, `trường lạ ${k}`);
-      if (!/^dt-[13]-\d{3}$/.test(String(it.id))) fail(id, `id sai định dạng dt-<1|3>-<3 số>`);
+      if (!/^dt-[123]-\d{3}$/.test(String(it.id))) fail(id, `id sai định dạng dt-<1|2|3>-<3 số>`);
       if (String(it.id).split('-')[1] !== String(prefix)) fail(id, `id ${it.id} không khớp cấp ${prefix}`);
       if (ids.has(it.id)) fail(id, `trùng id với ${ids.get(it.id)}`);
       ids.set(it.id, file);
@@ -220,7 +232,7 @@ for (const file of expected) {
     const id = `${file}/shadowing[0]`;
     for (const k of SH_REQUIRED) if (it[k] === undefined) fail(id, `thiếu ${k}`);
     for (const k of Object.keys(it)) if (!SH_REQUIRED.includes(k) && !SH_OPTIONAL.includes(k)) fail(id, `trường lạ ${k}`);
-    if (!/^sh-[13]-\d{2}$/.test(String(it.id))) fail(id, 'id sai định dạng sh-<1|3>-<2 số>');
+    if (!/^sh-[123]-\d{2}$/.test(String(it.id))) fail(id, 'id sai định dạng sh-<1|2|3>-<2 số>');
     if (String(it.id).split('-')[1] !== String(prefix)) fail(id, `id ${it.id} không khớp cấp ${prefix}`);
     if (ids.has(it.id)) fail(id, `trùng id với ${ids.get(it.id)}`);
     ids.set(it.id, file);
@@ -282,7 +294,7 @@ for (const file of expected) {
 
 console.log(`Thư mục: ${DIR}`);
 console.log(`File: ${actual.length}/${expected.length}`);
-console.log(`Dictation: ${totalDt} câu — HSK1-2 ${counts['HSK1-2']} (gồm cả shadowing), HSK5-6 ${counts['HSK5-6']}`);
+console.log(`Dictation: ${totalDt} câu — ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', ')} (tính cả shadowing)`);
 console.log(`Shadowing: ${totalSh} đoạn`);
 console.log(`ID duy nhất: ${ids.size}`);
 

@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 12,
+  "lessonTitle": "Mời bạn, nhận lời và từ chối khéo",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "邀请",
+      "meaning": "mời; mời mọc",
+      "example": "同事邀请我周六去吃火锅。",
+      "exampleVi": "Đồng nghiệp mời tôi thứ bảy đi ăn lẩu.",
+      "pinyin": "yāo qǐng",
+      "examplePinyin": "tóng shì yāo qǐng wǒ zhōu liù qù chī huǒ guō 。"
+    },
+    {
+      "word": "参加",
+      "meaning": "tham gia",
+      "example": "下周有个聚会，我去参加一下。",
+      "exampleVi": "Tuần sau có buổi họp mặt, tôi sẽ tham gia một chút.",
+      "pinyin": "cān jiā",
+      "examplePinyin": "xià zhōu yǒu gè jù huì ， wǒ qù cān jiā yí xià 。"
+    },
+    {
+      "word": "有空",
+      "meaning": "rảnh",
+      "example": "你晚上有空吗？一起吃个饭。",
+      "exampleVi": "Tối nay bạn rảnh không? Cùng đi ăn một bữa.",
+      "pinyin": "yǒu kōng",
+      "examplePinyin": "nǐ wǎn shang yǒu kōng ma ？ yì qǐ chī gè fàn 。"
+    },
+    {
+      "word": "可惜",
+      "meaning": "đáng tiếc",
+      "example": "你不能来，真可惜。",
+      "exampleVi": "Bạn không đến được, thật đáng tiếc.",
+      "pinyin": "kě xī",
+      "examplePinyin": "nǐ bù néng lái ， zhēn kě xī 。"
+    },
+    {
+      "word": "改天",
+      "meaning": "hôm khác; dịp khác",
+      "example": "今天不行，改天我请你。",
+      "exampleVi": "Hôm nay không được, dịp khác tôi mời bạn.",
+      "pinyin": "gǎi tiān",
+      "examplePinyin": "jīn tiān bù xíng ， gǎi tiān wǒ qǐng nǐ 。"
+    },
+    {
+      "word": "抱歉",
+      "meaning": "xin lỗi; ngại",
+      "example": "抱歉，那天我家里有点儿事儿。",
+      "exampleVi": "Ngại quá, hôm đó nhà tôi có chút việc.",
+      "pinyin": "bào qiàn",
+      "examplePinyin": "bào qiàn ， nà tiān wǒ jiā lǐ yǒu diǎn er shì ér 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你……有空吗？",
+      "explanation": "Mở lời mời: 你 rồi thêm thời gian và 有空吗？, sau đó nêu việc cùng làm; hỏi cho cả nhóm thì đổi thành 你们.",
+      "example": "你周六晚上有空吗？我们一起去吃火锅。",
+      "exampleVi": "Tối thứ bảy bạn rảnh không? Mình cùng đi ăn lẩu.",
+      "examplePinyin": "nǐ zhōu liù wǎn shang yǒu kōng ma ？ wǒ men yì qǐ qù chī huǒ guō 。"
+    },
+    {
+      "pattern": "不好意思，我……",
+      "explanation": "Từ chối mà không làm mất lòng: 不好意思 rồi nêu lý do thật, cuối câu thêm một lời hẹn như 改天我请你.",
+      "example": "不好意思，我那天家里有事，改天我请你吃饭。",
+      "exampleVi": "Ngại quá, hôm đó nhà tôi có việc, dịp khác tôi mời bạn ăn.",
+      "examplePinyin": "bù hǎo yì si ， wǒ nà tiān jiā lǐ yǒu shì ， gǎi tiān wǒ qǐng nǐ chī fàn 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Chiều thứ năm, bạn gặp một người bạn cùng lớp ở thư viện và muốn mời bạn ấy đi ăn tối thứ bảy để cảm ơn đã giúp bạn chuyển đồ; bạn ấy lại phải trực nên hai người đổi sang một ngày khác.",
+    "avatarRole": "Bạn cùng lớp",
+    "learnerRole": "Người mời",
+    "goals": [
+      "Nêu lý do mời và mời bạn đi ăn tối thứ bảy",
+      "Hỏi xem bạn rảnh vào lúc nào",
+      "Chấp nhận lời từ chối và chốt lại một ngày khác"
+    ],
+    "opening": "今天怎么这么早？你是不是有事儿找我？",
+    "openingVi": "Hôm nay sao bạn đến sớm thế? Bạn có việc gì tìm mình à?"
+  },
+  "freeTalk": {
+    "question": "朋友邀请你，可是你不想去，应该怎么拒绝？",
+    "questionVi": "Khi bạn bè mời nhưng bạn không muốn đi, nên từ chối thế nào?"
+  },
+  "learningNotes": [
+    "Mở lời mời: 你周六晚上有空吗？ rồi nêu việc muốn cùng làm; thân thiết thì nói 我请你吃饭, và người được mời hay trả lời 客气什么.",
+    "Từ chối khéo: 不好意思 + lý do thật + một lời hẹn (改天我请你); 可惜 thường là người mời nói khi thấy bạn không đến được.",
+    "Phát âm: 邀请 là thanh 1 rồi thanh 3, âm thứ hai hạ thấp rồi bật lên, đừng đọc thành hai thanh 1; 抱歉 là thanh 2 rồi thanh 4, chữ đầu kéo lên còn chữ sau rơi mạnh.",
+    "改天 và 下次 đều để hẹn lần sau, nhưng nếu thật sự muốn mời lại thì nói thêm 我提前给你打电话, nếu không người nghe sẽ nghĩ bạn chỉ nói cho qua."
+  ],
+  "prerequisites": [
+    11
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Mời bạn, nhận lời và từ chối khéo",
+    "playLimit": 1,
+    "transcript": "甲：周六我弟弟过生日，我们想邀请你来吃饭，你有空吗？乙：谢谢你邀请我。可我周六要回老家，真抱歉。甲：那太可惜了，他常说想见你。乙：改天我一定请他。周日我在家，你们来一起吃个饭吧。甲：行，就这么说定了。乙：人来就行，别客气。",
+    "translation": "Người thứ nhất mời bạn đến bữa sinh nhật của em trai vào thứ bảy, nhưng bạn ấy phải về quê nên nói lời xin lỗi. Người thứ nhất thấy đáng tiếc vì em trai vẫn nhắc đến bạn ấy. Bạn ấy hẹn dịp khác sẽ mời lại, rồi mời cả nhóm đến ăn ở nhà mình vào chủ nhật; hai bên chốt như vậy và bạn ấy nhắc đến được là vui, đừng khách sáo.",
+    "questions": [
+      {
+        "prompt": "Lời mời ngày thứ bảy nhân chuyện gì?",
+        "options": [
+          "Người thứ nhất chuyển đến nhà mới",
+          "Sinh nhật em trai của người thứ nhất",
+          "Người thứ nhất vừa tìm được việc"
+        ],
+        "answer": 1,
+        "explanation": "甲 nói 周六我弟弟过生日，我们想邀请你来吃饭."
+      },
+      {
+        "prompt": "Vì sao người được mời không đến được?",
+        "options": [
+          "Vì phải trực ở chỗ làm cả tối",
+          "Vì sáng thứ bảy phải đi khám",
+          "Vì hôm ấy phải về quê"
+        ],
+        "answer": 2,
+        "explanation": "乙 nói 可我周六要回老家，真抱歉."
+      },
+      {
+        "prompt": "Hai người chốt lại thế nào?",
+        "options": [
+          "Hoãn sang tuần sau vì cả hai đều bận",
+          "Chỉ nhắn tin chúc mừng, không gặp",
+          "Dịp khác bạn ấy mời lại, còn chủ nhật thì ăn cơm ở nhà bạn ấy"
+        ],
+        "answer": 2,
+        "explanation": "乙 nói 改天我一定请他。周日我在家，你们来一起吃个饭吧."
+      }
+    ],
+    "pinyin": "jiǎ ： zhōu liù wǒ dì di guò shēng rì ， wǒ men xiǎng yāo qǐng nǐ lái chī fàn ， nǐ yǒu kōng ma ？ yǐ ： xiè xie nǐ yāo qǐng wǒ 。 kě wǒ zhōu liù yào huí lǎo jiā ， zhēn bào qiàn 。 jiǎ ： nà tài kě xī le ， tā cháng shuō xiǎng jiàn nǐ 。 yǐ ： gǎi tiān wǒ yí dìng qǐng tā 。 zhōu rì wǒ zài jiā ， nǐ men lái yì qǐ chī gè fàn ba 。 jiǎ ： xíng ， jiù zhè me shuō dìng le 。 yǐ ： rén lái jiù xíng ， bié kè qi 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu mời bạn, một câu từ chối vì đã có việc.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "周六我弟弟过生日，你有空吗？真抱歉，我那天要回老家。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng ngày và lý do",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "周六我弟弟过生日，你有空吗？真抱歉，我那天要回老家。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai mời, mời nhân chuyện gì, bạn ấy vì sao không đến, hai người hẹn lại ra sao.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Người thứ nhất mời bạn đến bữa sinh nhật của em trai vào thứ bảy, nhưng bạn ấy phải về quê nên nói lời xin lỗi. Người thứ nhất thấy đáng tiếc vì em trai vẫn nhắc đến bạn ấy. Bạn ấy hẹn dịp khác sẽ mời lại, rồi mời cả nhóm đến ăn ở nhà mình vào chủ nhật; hai bên chốt như vậy và bạn ấy nhắc đến được là vui, đừng khách sáo.",
+      "checklist": [
+        "Nói đủ: lời mời, lý do từ chối, lời hẹn lại",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, xuống giọng ở lời xin lỗi và giữ giọng vui ở lời hẹn.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Câu từ chối đọc chậm, rõ; câu hẹn lần sau nói nhanh hơn một chút, giọng mở.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "朋友邀请我参加聚会，我本来很想去。可是我周六要照顾家里人，不能去，真抱歉。我说改天请大家吃面，他还说太可惜了。后来我们约在下个周末，我提前给他打电话。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "朋友邀请你，可是你不想去，应该怎么拒绝？",
+      "promptVi": "Khi bạn bè mời nhưng bạn không muốn đi, nên từ chối thế nào?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Nêu hai việc bạn làm khi từ chối, nói một câu mẫu bằng tiếng Trung và thêm lý do vì sao nên nói sớm.",
+      "checklist": [
+        "Có lời cảm ơn trước khi từ chối",
+        "Nêu được lý do và một lời hẹn",
+        "Người nghe hiểu được ý bạn"
+      ],
+      "sampleZh": "我会先谢谢他，然后说不好意思，我那几天真的有事。接着我给一个时间，比如改天我请你吃早饭，并且提前打电话告诉他。这样朋友就知道我不是客气，是真的有事。",
+      "sampleVi": "Tôi sẽ cảm ơn trước, rồi nói ngại quá, mấy hôm đó tôi thật sự có việc. Tiếp theo tôi đưa một mốc thời gian, chẳng hạn dịp khác tôi mời bạn ăn sáng, và gọi điện báo trước. Như vậy bạn sẽ biết tôi không khách sáo mà là thật sự có việc."
+    }
+  ],
+  "transferTask": "Một người bạn Trung Quốc vừa giúp bạn chuyển đồ: hãy mời bạn ấy đi ăn để cảm ơn, hỏi bạn ấy rảnh vào lúc nào, từ chối khéo nếu giờ đó bạn đã có việc và chốt lại một ngày khác cho chắc.",
+  "pronunciation": [
+    {
+      "text": "邀请",
+      "pinyin": "yāo qǐng",
+      "hint": "Âm đầu thanh 1 cao và bằng, âm sau thanh 3 hạ thấp rồi bật lên; đừng đọc cả hai thành thanh 1."
+    },
+    {
+      "text": "抱歉",
+      "pinyin": "bào qiàn",
+      "hint": "Thanh 2 rồi thanh 4: chữ đầu kéo lên, chữ sau rơi dứt khoát; đừng đọc thành hai thanh 4."
+    },
+    {
+      "text": "改天",
+      "pinyin": "gǎi tiān",
+      "hint": "Thanh 3 rồi thanh 1: chữ đầu uốn thấp, chữ sau giữ cao và bằng; đừng biến âm sau thành thanh nhẹ."
+    },
+    {
+      "text": "有空",
+      "pinyin": "yǒu kōng",
+      "hint": "Thanh 3 rồi thanh 1: hai âm tách rõ; chữ sau đọc kōng, không phải kòng."
+    }
+  ]
+}

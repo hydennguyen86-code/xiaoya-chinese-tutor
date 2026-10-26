@@ -154,12 +154,18 @@ test('explicit communication track links 10 to 11 and 20 to 21 without entering 
   assert.equal(nextPointer(syllabus, { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), null);
 });
 
-test('adding communication track keeps existing HSK defaults and saved pointers', async () => {
+test('pinyin intro and HSK3 courses take their level defaults without moving saved pointers', async () => {
   const fs = await import('node:fs');
   const syllabus = JSON.parse(fs.readFileSync(new URL('../../lessons/courses/syllabus.json', import.meta.url), 'utf8'));
-  assert.equal(startingVolume(syllabus, 'HSK1-2').id, 'hsk1-practical');
+  assert.equal(startingVolume(syllabus, 'HSK1-2').id, 'pinyin-intro');
+  assert.equal(startingVolume(syllabus, 'HSK3-4').id, 'hsk3-practical');
   assert.equal(startingVolume(syllabus, 'HSK5-6').id, 'hsk5-practical');
-  assert.equal(startingVolume(syllabus, 'HSK3-4').id, 'misu30-2');
   const saved = { volumeId: 'hsk1-practical', lessonNo: 6, day: 2 };
   assert.deepEqual(resolvePointer(syllabus, 'HSK1-2', saved), saved);
+  // The communication track stays reachable by its own volume ids.
+  assert.deepEqual(resolvePointer(syllabus, 'HSK1-2', { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), {
+    volumeId: 'misu30-1',
+    lessonNo: 10,
+    day: 1,
+  });
 });

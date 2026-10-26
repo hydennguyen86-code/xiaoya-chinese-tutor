@@ -1,0 +1,287 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-11-d1",
+  "level": "HSK3-4",
+  "title": "Thói quen sinh hoạt và rèn luyện",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-183",
+      "level": "HSK3-4",
+      "hanzi": "你通常几点起床，几点跑步？",
+      "pinyin": "nǐ tōng cháng jí dián qǐ chuáng jí dián pǎo bù",
+      "meaningVi": "Bạn thường dậy mấy giờ, chạy bộ mấy giờ?",
+      "focus": [
+        "Biến điệu 3+3: jǐ diǎn → jí dián; diǎn qǐ → dián qǐ; jǐ diǎn → jí dián; diǎn pǎo → dián pǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "通常 tōng cháng: hai âm đọc đầy đủ thanh, đừng nuốt 常.",
+        "跑步 pǎo bù: 跑 là âm bật hơi,  bù rơi mạnh."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        1,
+        2,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          1,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: jǐ diǎn → jí dián; diǎn qǐ → dián qǐ; jǐ diǎn → jí dián; diǎn pǎo → dián pǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-1-2-2-2-3-2-2-2-3-4 lẫn 3-1-2-3-3-3-2-3-3-3-4."
+    },
+    {
+      "id": "dt-2-184",
+      "level": "HSK3-4",
+      "hanzi": "他每天早起锻炼半小时。",
+      "pinyin": "tā měi tiān záo qǐ duàn liàn bàn xiǎo shí",
+      "meaningVi": "Anh ấy mỗi ngày dậy sớm tập nửa tiếng.",
+      "focus": [
+        "Biến điệu 3+3: zǎo qǐ → záo qǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "锻炼 duàn liàn: hai âm đều đóng -n.",
+        "半小时: 小 xiǎo thanh 3 đứng giữa hai âm 4 và 2."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        1,
+        3,
+        3,
+        4,
+        4,
+        4,
+        3,
+        2
+      ],
+      "acceptTones": [
+        [
+          1,
+          3,
+          1,
+          2,
+          3,
+          4,
+          4,
+          4,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          3,
+          3,
+          4,
+          4,
+          4,
+          3,
+          2
+        ]
+      ],
+      "hint": "Biến điệu 3+3: zǎo qǐ → záo qǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-3-1-2-3-4-4-4-3-2 lẫn 1-3-1-3-3-4-4-4-3-2."
+    },
+    {
+      "id": "dt-2-185",
+      "level": "HSK3-4",
+      "hanzi": "早睡早起是个好习惯。",
+      "pinyin": "zǎo shuì záo qǐ shì gè hǎo xí guàn",
+      "meaningVi": "Ngủ sớm dậy sớm là một thói quen tốt.",
+      "focus": [
+        "Biến điệu 3+3: zǎo qǐ → záo qǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "习惯 xí guàn: 惯 rơi thanh 4, đóng -n.",
+        "是个 đọc nhanh, cả hai vẫn giữ thanh đầy đủ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        3,
+        3,
+        4,
+        4,
+        3,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          4
+        ],
+        [
+          3,
+          4,
+          3,
+          3,
+          4,
+          4,
+          3,
+          2,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: zǎo qǐ → záo qǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-2-3-4-4-3-2-4 lẫn 3-4-3-3-4-4-3-2-4."
+    },
+    {
+      "id": "dt-2-186",
+      "level": "HSK3-4",
+      "hanzi": "坚持锻炼的人更健康。",
+      "pinyin": "jiān chí duàn liàn de rén gèng jiàn kāng",
+      "meaningVi": "Người kiên trì tập luyện thì khỏe hơn.",
+      "focus": [
+        "坚持 chí thanh 2 đi lên.",
+        "的人 de đọc nhẹ, nối mệnh đề.",
+        "健康 kāng đóng -ng, đừng nghe thành 建."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-41",
+      "level": "HSK3-4",
+      "text": "七点起床，先跑步再锻炼。习惯要保持，身体才健康。",
+      "pinyin": "qī dián qǐ chuáng xiān pǎo bù zài duàn liàn xí guàn yào bǎo chí shēn tǐ cái jiàn kāng",
+      "meaningVi": "Bảy giờ dậy, chạy bộ trước rồi tập. Thói quen phải giữ thì người mới khỏe.",
+      "syllables": 20,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "七点起床",
+          "pinyin": "qī dián qǐ chuáng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "先跑步再锻炼",
+          "pinyin": "xiān pǎo bù zài duàn liàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "习惯要保持",
+          "pinyin": "xí guàn yào bǎo chí",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "身体才健康",
+          "pinyin": "shēn tǐ cái jiàn kāng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: diǎn qǐ → dián qǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "先… rồi …: nhấn xiān và zài để rõ hai bước buổi sáng.",
+        "保持 bǎo chí: 保 thanh 3 đứng trước 持 thanh 2."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        3,
+        2,
+        1,
+        3,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        3,
+        2,
+        1,
+        3,
+        2,
+        4,
+        1
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          3,
+          2,
+          1,
+          3,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          3,
+          2,
+          1,
+          3,
+          2,
+          4,
+          1
+        ],
+        [
+          1,
+          3,
+          3,
+          2,
+          1,
+          3,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          3,
+          2,
+          1,
+          3,
+          2,
+          4,
+          1
+        ]
+      ],
+      "hint": "Biến điệu 3+3: diǎn qǐ → dián qǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-2-3-2-1-3-4-4-4-4-2-4-4-3-2-1-3-2-4-1 lẫn 1-3-3-2-1-3-4-4-4-4-2-4-4-3-2-1-3-2-4-1."
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-12-d2",
+  "level": "HSK3-4",
+  "title": "Mời bạn, nhận lời và từ chối khéo",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-195",
+      "level": "HSK3-4",
+      "hanzi": "今晚还要加班呢。",
+      "pinyin": "jīn wǎn hái yào jiā bān ne",
+      "meaningVi": "Tối nay còn phải tăng ca nữa.",
+      "focus": [
+        "加班 jiā bān: hai âm 1 đều, 班 đóng -n.",
+        "还 ở đây đọc hái, nghĩa \"còn\".",
+        "呢 cuối câu giữ hơi, thêm ý than phiền."
+      ]
+    },
+    {
+      "id": "dt-2-196",
+      "level": "HSK3-4",
+      "hanzi": "这次说好了，你请客。",
+      "pinyin": "zhè cì shuō hǎo le ní qǐng kè",
+      "meaningVi": "Lần này đã chốt rồi, bạn mời nhé.",
+      "focus": [
+        "Biến điệu 3+3: nǐ qǐng → ní qǐng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "说好了 le đọc nhẹ sau 好.",
+        "请客 kè rơi mạnh, phân biệt 请 với 清."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        1,
+        3,
+        5,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          1,
+          3,
+          5,
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          4,
+          1,
+          3,
+          5,
+          3,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: nǐ qǐng → ní qǐng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-1-3-5-2-3-4 lẫn 4-4-1-3-5-3-3-4."
+    },
+    {
+      "id": "dt-2-197",
+      "level": "HSK3-4",
+      "hanzi": "你放心，我一定准时到。",
+      "pinyin": "nǐ fàng xīn wǒ yí dìng zhǔn shí dào",
+      "meaningVi": "Bạn yên tâm, tôi chắc chắn đến đúng giờ.",
+      "focus": [
+        "一定: 一 đọc yí vì 定 mang thanh 4.",
+        "准时 zhǔn shí: 准 cuộn lưỡi thanh 3.",
+        "放心 xīn đóng -n, lời an ủi trước cam kết."
+      ]
+    },
+    {
+      "id": "dt-2-198",
+      "level": "HSK3-4",
+      "hanzi": "如果明天不加班，一定到。",
+      "pinyin": "rú guǒ míng tiān bù jiā bān yí dìng dào",
+      "meaningVi": "Nếu ngày mai không tăng ca, tôi chắc chắn đến.",
+      "focus": [
+        "如果 guǒ thanh 3, mở mệnh đề điều kiện.",
+        "不 trong 不加班 giữ bù vì 加 thanh 1.",
+        "一定到 nối hơi, 定 và 到 đều rơi."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-44",
+      "level": "HSK3-4",
+      "text": "如果我今晚不加班，就请你吃饭，下次一定请客。",
+      "pinyin": "rú guó wǒ jīn wǎn bù jiā bān jiù qíng nǐ chī fàn xià cì yí dìng qǐng kè",
+      "meaningVi": "Nếu tối nay tôi không tăng ca, tôi sẽ mời bạn ăn, lần sau chắc chắn bạn mời.",
+      "syllables": 19,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "如果我今晚不加班",
+          "pinyin": "rú guó wǒ jīn wǎn bù jiā bān",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "就请你吃饭",
+          "pinyin": "jiù qíng nǐ chī fàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "下次一定请客",
+          "pinyin": "xià cì yí dìng qǐng kè",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: guǒ wǒ → guó wǒ; qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "如果… thì …: nghe 就 mở vế chính, đừng quên.",
+        "吃饭 fàn đóng -n, phân biệt với 请客 kè mở."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        3,
+        3,
+        1,
+        3,
+        4,
+        1,
+        1,
+        4,
+        3,
+        3,
+        1,
+        4,
+        4,
+        4,
+        2,
+        4,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          3,
+          1,
+          3,
+          4,
+          1,
+          1,
+          4,
+          2,
+          3,
+          1,
+          4,
+          4,
+          4,
+          2,
+          4,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          3,
+          1,
+          3,
+          4,
+          1,
+          1,
+          4,
+          3,
+          3,
+          1,
+          4,
+          4,
+          4,
+          2,
+          4,
+          3,
+          4
+        ]
+      ],
+      "hint": "Biến điệu 3+3: guǒ wǒ → guó wǒ; qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-3-1-3-4-1-1-4-2-3-1-4-4-4-2-4-3-4 lẫn 2-3-3-1-3-4-1-1-4-3-3-1-4-4-4-2-4-3-4."
+    }
+  ]
+}

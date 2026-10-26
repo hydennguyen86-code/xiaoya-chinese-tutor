@@ -22,6 +22,7 @@ export const DEFAULT_SETTINGS: Settings = {
   autoReadTranslation: false,
   showPinyin: false,
   avatarMode: 'lam',
+  avatarGender: 'female',
 };
 
 const LEVELS = new Set<Level>(['HSK1-2', 'HSK3-4', 'HSK5-6', 'free']);
@@ -67,6 +68,7 @@ export function loadSettings(): Settings {
           ? parsed.showPinyin
           : DEFAULT_SETTINGS.showPinyin,
       avatarMode: parsed.avatarMode === 'classic' ? 'classic' : 'lam',
+      avatarGender: parsed.avatarGender === 'male' ? 'male' : 'female',
     };
   } catch {
     return { ...DEFAULT_SETTINGS };

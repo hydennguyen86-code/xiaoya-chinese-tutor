@@ -179,9 +179,7 @@ export function ToneFeedback({
         (report.checked === report.syllables.filter((s) => s.expected).length ? (
           <p className="lesson-ok">Lần này Misu nghe các thanh khớp với mẫu.</p>
         ) : (
-          <p className="lesson-hint">
-            Các chữ chấm được đều đúng thanh. Chữ có dấu — thì chưa chấm được: đọc rõ và kéo dài hơn một chút nhé.
-          </p>
+          <p className="lesson-ok">Mọi chữ chấm được đều đúng thanh. Chữ có dấu — mình chưa đủ chắc để chấm, nên không tính là sai.</p>
         ))}
       {report.checked === 0 && !report.note && report.syllables.length > 0 && (
         <p className="lesson-hint">Chưa chấm được thanh điệu lần này: đọc rõ, chậm và kéo dài từng chữ hơn một chút nhé.</p>

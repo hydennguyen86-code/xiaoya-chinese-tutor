@@ -1,0 +1,105 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "hsk3-practical-2-d2",
+  "level": "HSK3-4",
+  "title": "Gọi món, hỏi vị và thanh toán ở quán",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-113",
+      "level": "HSK3-4",
+      "hanzi": "服务员，请给我一张菜单。",
+      "pinyin": "fú wù yuán qíng géi wǒ yì zhāng cài dān",
+      "meaningVi": "Anh phục vụ ơi, cho tôi một thực đơn.",
+      "focus": [
+        "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "服务员 fú wù yuán: 员 thanh 2 đi lên, ba âm rành mạch.",
+        "一张 yì zhāng: 一 thành yì trước thanh 1.",
+        "菜单 cài dān: 菜 thanh 4, 单 thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [2, 4, 2, 3, 3, 3, 4, 1, 4, 1],
+      "acceptTones": [
+        [2, 4, 2, 2, 2, 3, 4, 1, 4, 1],
+        [2, 4, 2, 3, 3, 3, 4, 1, 4, 1]
+      ],
+      "hint": "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-4-2-2-2-3-4-1-4-1 lẫn 2-4-2-3-3-3-4-1-4-1."
+    },
+    {
+      "id": "dt-2-114",
+      "level": "HSK3-4",
+      "hanzi": "这碗菜有点辣，能打包吗？",
+      "pinyin": "zhè wǎn cài yóu diǎn là néng dǎ bāo ma",
+      "meaningVi": "Bát này hơi cay, gói mang về được không?",
+      "focus": [
+        "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "打包 dǎ bāo: 包 thanh 1 cao bằng, từ mới cần nghe rõ.",
+        "这碗 zhè wǎn: 碗 thanh 3 hạ thấp rồi lên.",
+        "吗 ma: âm cuối rất nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [4, 3, 4, 3, 3, 4, 2, 3, 1, 5],
+      "acceptTones": [
+        [4, 3, 4, 2, 3, 4, 2, 3, 1, 5],
+        [4, 3, 4, 3, 3, 4, 2, 3, 1, 5]
+      ],
+      "hint": "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-3-4-2-3-4-2-3-1-5 lẫn 4-3-4-3-3-4-2-3-1-5."
+    },
+    {
+      "id": "dt-2-115",
+      "level": "HSK3-4",
+      "hanzi": "买单吧，我们再点一个菜。",
+      "pinyin": "mǎi dān ba wǒ men zài diǎn yí gè cài",
+      "meaningVi": "Tính tiền nhé, chúng tôi gọi thêm một món nữa.",
+      "focus": [
+        "买单 mǎi dān: 买 thanh 3, 单 thanh 1.",
+        "买单吧 mǎi dān ba: 吧 đọc nhẹ ba.",
+        "一个 yí gè: 一 thành yí trước thanh 4.",
+        "再点 zài diǎn: 点 thanh 3, thêm món."
+      ]
+    },
+    {
+      "id": "dt-2-116",
+      "level": "HSK3-4",
+      "hanzi": "服务员，还要一杯水。",
+      "pinyin": "fú wù yuán hái yào yì bēi shuǐ",
+      "meaningVi": "Anh phục vụ ơi, cho thêm một ly nước nữa.",
+      "focus": [
+        "还要 hái yào: 还 thanh 2, nghĩa là còn, nữa.",
+        "一杯水 yì bēi shuǐ: 一 thành yì trước thanh 1, 水 thanh 3.",
+        "服务员 fú wù yuán: gọi người, âm đầu đi lên."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-24",
+      "level": "HSK3-4",
+      "text": "服务员，请给我一张菜单，这个菜我要打包。",
+      "pinyin": "fú wù yuán qíng géi wǒ yì zhāng cài dān zhè ge cài wǒ yào dǎ bāo",
+      "meaningVi": "Anh phục vụ ơi, cho tôi một thực đơn, món này tôi muốn gói mang về.",
+      "syllables": 17,
+      "pace": "vừa",
+      "chunks": [
+        { "hanzi": "服务员", "pinyin": "fú wù yuán", "pause": "soft" },
+        { "hanzi": "请给我一张菜单", "pinyin": "qíng géi wǒ yì zhāng cài dān", "pause": "soft" },
+        { "hanzi": "这个菜我要打包", "pinyin": "zhè ge cài wǒ yào dǎ bāo", "pause": "end" }
+      ],
+      "focus": [
+        "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "这个 zhè ge: 个 đọc nhẹ.",
+        "打包 dǎ bāo ở cuối đoạn, giữ 包 thanh 1 đến hết.",
+        "Ba cụm hơi: gọi người, xin vật, nói ý muốn."
+      ],
+      "sandhi": true,
+      "baseTones": [2, 4, 2, 3, 3, 3, 4, 1, 4, 1, 4, 5, 4, 3, 4, 3, 1],
+      "acceptTones": [
+        [2, 4, 2, 2, 2, 3, 4, 1, 4, 1, 4, 5, 4, 3, 4, 3, 1],
+        [2, 4, 2, 3, 3, 3, 4, 1, 4, 1, 4, 5, 4, 3, 4, 3, 1]
+      ],
+      "hint": "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-4-2-2-2-3-4-1-4-1-4-5-4-3-4-3-1 lẫn 2-4-2-3-3-3-4-1-4-1-4-5-4-3-4-3-1."
+    }
+  ]
+}

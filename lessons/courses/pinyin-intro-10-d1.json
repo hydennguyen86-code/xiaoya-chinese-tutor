@@ -1,0 +1,230 @@
+{
+  "volumeId": "pinyin-intro",
+  "volumeTitle": "Nhập môn Pinyin · thanh điệu và đánh vần",
+  "lessonNo": 10,
+  "lessonTitle": "Phân biệt cặp dễ nhầm trong câu ngắn",
+  "day": 1,
+  "days": 1,
+  "level": "HSK1-2",
+  "targetLevel": "HSK1",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 15,
+  "vocab": [
+    {
+      "word": "四",
+      "meaning": "bốn",
+      "example": "现在是四点。",
+      "exampleVi": "Bây giờ là bốn giờ.",
+      "pinyin": "sì",
+      "examplePinyin": "xiàn zài shì sì diǎn 。"
+    },
+    {
+      "word": "十",
+      "meaning": "mười",
+      "example": "山上有十个人。",
+      "exampleVi": "Trên núi có mười người.",
+      "pinyin": "shí",
+      "examplePinyin": "shān shàng yǒu shí gè rén 。"
+    },
+    {
+      "word": "山",
+      "meaning": "núi",
+      "example": "山上有十个学生。",
+      "exampleVi": "Trên núi có mười học sinh.",
+      "pinyin": "shān",
+      "examplePinyin": "shān shàng yǒu shí gè xué sheng 。"
+    },
+    {
+      "word": "三",
+      "meaning": "ba",
+      "example": "山下有三只小猫。",
+      "exampleVi": "Dưới chân núi có ba con mèo nhỏ.",
+      "pinyin": "sān",
+      "examplePinyin": "shān xià yǒu sān zhī xiǎo māo 。"
+    },
+    {
+      "word": "晚",
+      "meaning": "muộn; tối",
+      "example": "晚上八点很冷。",
+      "exampleVi": "Tám giờ tối rất lạnh.",
+      "pinyin": "wǎn",
+      "examplePinyin": "wǎn shang bā diǎn hěn lěng 。"
+    },
+    {
+      "word": "王",
+      "meaning": "họ Vương",
+      "example": "王老师住在山下。",
+      "exampleVi": "Thầy Vương sống dưới chân núi.",
+      "pinyin": "wáng",
+      "examplePinyin": "wáng lǎo shī zhù zài shān xià 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "十点四十。",
+      "explanation": "Đọc giờ trong một câu cụt rất tự nhiên: 十点 rồi 四十; hai số 4 và 10 cạnh nhau chỉ khác nhau ở hướng đường hơi.",
+      "example": "现在是十点四十。",
+      "exampleVi": "Bây giờ là mười giờ bốn mươi phút.",
+      "examplePinyin": "xiàn zài shì shí diǎn sì shí 。"
+    },
+    {
+      "pattern": "山上有……",
+      "explanation": "Nói trên núi có gì: 山 rồi thẳng 上 rồi 有; 山 đóng hơi bằng đầu lưỡi, đừng để thành 三.",
+      "example": "山上有四个学生。",
+      "exampleVi": "Trên núi có bốn học sinh.",
+      "examplePinyin": "shān shàng yǒu sì gè xué sheng 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Trạm xe cuối ngày ở chân núi: bảng giờ đã tắt, bạn phải hỏi giờ và hẹn giờ lên xe; người bán vé đọc số chậm để bạn nghe đúng từng cặp 4 và 10, 3 và núi, tối và họ Vương.",
+    "avatarRole": "Người bán vé ở chân núi",
+    "learnerRole": "Hành khách chờ xe",
+    "goals": [
+      "Hỏi và đáp giờ bằng mẫu shí diǎn sì shí",
+      "Kể người trên núi bằng mẫu shān shàng yǒu ……",
+      "Nghe và lặp lại đúng các cặp sì/shí, shān/sān, wǎn/wáng"
+    ],
+    "opening": "现在十点四十，王老师四点才下山。你要几点走？",
+    "openingVi": "Bây giờ là mười giờ bốn mươi, thầy Vương bốn giờ mới xuống núi. Bạn muốn đi mấy giờ?"
+  },
+  "freeTalk": {
+    "question": "现在是几点？山上有几个人？你晚上做什么？",
+    "questionVi": "Bây giờ là mấy giờ? Trên núi có mấy người? Buổi tối bạn làm gì?"
+  },
+  "learningNotes": [
+    "四 sì rơi từ cao xuống, rất ngắn; 十 shí cong lưỡi, đi lên và dài hơn: cặp này chỉ khác nhau ở hướng đường hơi.",
+    "山 shān và 三 sān đều chặn hơi bằng đầu lưỡi ở -n; 王 wáng kết thúc bằng gốc lưỡi ở -ng: đặt tay lên yết hầu để cảm nhận chỗ rung khác nhau.",
+    "晚 wǎn thấp rồi nhô lên, 王 wáng đi lên liên tục: cặp này phân biệt bằng đường cao độ, không bằng âm đầu.",
+    "CẢNH BÁO cho người Việt: dấu nặng trong 'tư' tiếng Việt gãy giữa chừng, không tạo được cú rơi dứt khoát của 四; còn 'tam' có -n quá ngắn nên 三 dễ lẫn với 山.",
+    "Đọc giờ là ngữ cảnh luyện tốt nhất: chậm từng số, đối chiếu hai hướng đường hơi, chỉ tăng tốc khi tai đã phân biệt chắc."
+  ],
+  "prerequisites": [
+    9
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Phân biệt cặp dễ nhầm trong câu ngắn",
+    "playLimit": 1,
+    "transcript": "甲：现在是几点？乙：十点四十。甲：王老师什么时候下山？乙：他四点下山，晚上才回来。甲：你分得清四和十吗？乙：分得清。四往下掉，往上走的是十。山比三短，三的音平一些。",
+    "translation": "A hỏi giờ, B đáp mười giờ bốn mươi. A hỏi thầy Vương mấy giờ xuống núi; B nói thầy bốn giờ xuống, tối mới về. A hỏi B phân biệt được 4 và 10 không. B nói phân biệt được: 4 rơi xuống, 10 đi lên; còn núi ngắn hơn ba và ba phẳng hơn.",
+    "questions": [
+      {
+        "prompt": "Bây giờ là mấy giờ theo lời B?",
+        "options": [
+          "Bốn giờ",
+          "Mười giờ bốn mươi phút",
+          "Tám giờ tối"
+        ],
+        "answer": 1,
+        "explanation": "B mở đầu bằng 十点四十。"
+      },
+      {
+        "prompt": "Thầy Vương xuống núi lúc nào và về lúc nào?",
+        "options": [
+          "Bốn giờ xuống núi, tối mới về",
+          "Mười giờ sáng, về ngay",
+          "Bốn giờ chiều, ở lại núi"
+        ],
+        "answer": 0,
+        "explanation": "B nói 他四点下山，晚上才回来。"
+      },
+      {
+        "prompt": "B giải thích cách phân biệt hai số 4 và 10 như thế nào?",
+        "options": [
+          "Bốn dài hơn mười",
+          "Chỉ khác độ to nhỏ",
+          "Bốn rơi xuống, mười đi lên"
+        ],
+        "answer": 2,
+        "explanation": "B nói 四往下掉，往上走的是十。"
+      }
+    ],
+    "pinyin": "jiǎ ： xiàn zài shì jǐ diǎn ？ yǐ ： shí diǎn sì shí 。 jiǎ ： wáng lǎo shī shén me shí hou xià shān ？ yǐ ： tā sì diǎn xià shān ， wǎn shang cái huí lái 。 jiǎ ： nǐ fēn de qīng sì hé shí ma ？ yǐ ： fēn de qīng 。 sì wǎng xià diào ， wǎng shàng zǒu de shì shí 。 shān bǐ sān duǎn ， sān de yīn píng yì xiē 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại tám tiếng theo từng cặp đối lập.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Mỗi cặp một khác biệt: cặp đầu khác hướng cao độ, cặp giữa khác điểm chặn hơi, cặp cuối khác đường hơi.",
+      "checklist": [
+        "Không đọc lẫn cặp số 4 và 10",
+        "Cặp núi và ba giữ đúng -n",
+        "Cặp tối và họ Vương phân rõ -n với -ng"
+      ],
+      "audioText": "四，十。山，三。晚，王。十，四。"
+    },
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại câu giờ và câu kể người trên núi.",
+      "prepareSeconds": 10,
+      "responseSeconds": 30,
+      "reference": "Hai câu dùng mẫu 十点四十。 và 山上有…… của bài.",
+      "checklist": [
+        "Nói đủ hai câu",
+        "Đọc số giờ gọn, không thêm âm thừa",
+        "山 mở đầu cong lưỡi rồi đóng hơi bằng -n"
+      ],
+      "audioText": "现在是十点四十。山上有十个学生。"
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, ngắt hơi sau mỗi dấu chấm.",
+      "prepareSeconds": 15,
+      "responseSeconds": 45,
+      "text": "四点四十分，王老师还没下山。山上有三个人，山下有十个人。晚上八点很冷，王老师说：明天四点再上山。",
+      "reference": "Đoạn dày cả ba cặp đối lập: bắt 4 rơi mạnh, 10 đi lên, kết -n và -ng thật rõ khi đọc chậm.",
+      "checklist": [
+        "Đọc đủ ba câu",
+        "Không lẫn 四点 và 十点",
+        "Giữ đúng nhịp ngắt ở câu cuối"
+      ]
+    },
+    {
+      "kind": "answer",
+      "prompt": "现在是几点？山上有几个人？你晚上做什么？",
+      "promptVi": "Bây giờ là mấy giờ? Trên núi có mấy người? Buổi tối bạn làm gì?",
+      "prepareSeconds": 15,
+      "responseSeconds": 40,
+      "reference": "Trả lời 2-4 câu: một câu giờ có 4 hoặc 10, một câu đếm người trên núi, một câu kể việc buổi tối; không có đáp án duy nhất.",
+      "checklist": [
+        "Trả lời đủ ba câu hỏi",
+        "Dùng được mẫu shān shàng yǒu ……",
+        "Người nghe tách được các số bạn đọc"
+      ],
+      "sampleZh": "现在是四点四十。山上有三个人。晚上我在家喝茶，觉得很舒服。",
+      "sampleVi": "Bây giờ là bốn giờ bốn mươi. Trên núi có ba người. Buổi tối tôi uống trà ở nhà, thấy rất thoải mái."
+    }
+  ],
+  "transferTask": "Nhờ một người thật đọc ngẫu nhiên mười tiếng trong các cặp sì, shí, shān, sān, wǎn, wáng; bạn ghi lại cặp nào họ lẫn, rồi đổi vai để chính bạn đọc và nhờ họ bắt lỗi.",
+  "pronunciation": [
+    {
+      "text": "四，十",
+      "pinyin": "sì ， shí",
+      "hint": "Cùng là âm cong lưỡi nhưng ngược hướng: tiếng một rơi từ cao xuống, cắt nhanh; tiếng hai đi lên, cong lưỡi và dài hơn."
+    },
+    {
+      "text": "十四，四十",
+      "pinyin": "shí sì ， sì shí",
+      "hint": "Hai cụm đảo số: nhịp lên-xuống rồi xuống-lên; đọc chậm từng số trước khi nối thành cụm giờ."
+    },
+    {
+      "text": "山，三",
+      "pinyin": "shān ， sān",
+      "hint": "Cùng vần -n, khác âm đầu: một cong lưỡi áp lên lợi sau, một dẹt chạm lợi chân răng; đường hơi đều phẳng."
+    },
+    {
+      "text": "晚，王",
+      "pinyin": "wǎn ， wáng",
+      "hint": "Tiếng một thấp rồi nhô, chặn hơi ở đầu lưỡi; tiếng hai đi lên và kết ở gốc lưỡi, hơi rung trong mũi."
+    },
+    {
+      "text": "十点四十",
+      "pinyin": "shí diǎn sì shí",
+      "hint": "Cụm giờ đan ba số: đi lên, ngắn cao, rơi mạnh rồi đi lên; đừng để 4 giữa cụm thành một âm phẳng."
+    }
+  ]
+}

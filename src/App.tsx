@@ -199,7 +199,14 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
             ? previous.model
             : chosenProvider.recommendedModel || chosenProvider.models[0] || ''
           : '';
-        const voice = data.voices.some((item) => item.id === previous.voice) ? previous.voice : data.defaultVoice || previous.voice;
+        // A cloned voice has no declared gender, so it is never swapped; a named
+        // Edge voice must match the face it is speaking through.
+        const gender = previous.avatarGender || 'female';
+        const current = data.voices.find((item) => item.id === previous.voice);
+        const voice =
+          current && (!current.gender || current.gender === gender)
+            ? previous.voice
+            : (data.voices.find((item) => item.gender === gender)?.id ?? data.defaultVoice ?? previous.voice);
         const viVoice = data.viVoices?.some((item) => item.id === previous.viVoice)
           ? previous.viVoice
           : data.defaultViVoice || previous.viVoice;
@@ -783,6 +790,13 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       if (patch.providerId && patch.providerId !== previous.providerId) {
         const provider = statusRef.current?.providers.find((item) => item.id === patch.providerId);
         next.model = provider?.recommendedModel || provider?.models[0] || '';
+      }
+      if (patch.avatarGender && patch.avatarGender !== previous.avatarGender) {
+        const voices = statusRef.current?.voices ?? [];
+        const current = voices.find((item) => item.id === next.voice);
+        if (current?.gender && current.gender !== patch.avatarGender) {
+          next.voice = voices.find((item) => item.gender === patch.avatarGender)?.id ?? next.voice;
+        }
       }
       return next;
     });

@@ -1,0 +1,223 @@
+{
+  "volumeId": "hsk3-practical",
+  "volumeTitle": "HSK 3 · Nghe nói thực tế",
+  "lessonNo": 11,
+  "lessonTitle": "Thói quen sinh hoạt và rèn luyện",
+  "day": 1,
+  "days": 2,
+  "level": "HSK3-4",
+  "targetLevel": "HSK3",
+  "placeholder": false,
+  "authored": true,
+  "reviewed": false,
+  "editorialStatus": "AI biên soạn và rà soát; chưa có giáo viên duyệt",
+  "recommendedMinutes": 25,
+  "vocab": [
+    {
+      "word": "锻炼",
+      "meaning": "rèn luyện; tập",
+      "example": "傍晚我去操场锻炼半小时。",
+      "exampleVi": "Chiều tối tôi ra sân tập rèn luyện nửa tiếng.",
+      "pinyin": "duàn liàn",
+      "examplePinyin": "bàng wǎn wǒ qù cāo chǎng duàn liàn bàn xiǎo shí 。"
+    },
+    {
+      "word": "起床",
+      "meaning": "dậy; thức dậy",
+      "example": "我六点起床，先喝一杯水。",
+      "exampleVi": "Tôi sáu giờ dậy, uống một cốc nước trước đã.",
+      "pinyin": "qǐ chuáng",
+      "examplePinyin": "wǒ liù diǎn qǐ chuáng ， xiān hē yì bēi shuǐ 。"
+    },
+    {
+      "word": "跑步",
+      "meaning": "chạy bộ",
+      "example": "我每周跑步三次，每次三十分钟。",
+      "exampleVi": "Tôi chạy bộ ba lần mỗi tuần, mỗi lần ba mươi phút.",
+      "pinyin": "pǎo bù",
+      "examplePinyin": "wǒ měi zhōu pǎo bù sān cì ， měi cì sān shí fēn zhōng 。"
+    },
+    {
+      "word": "习惯",
+      "meaning": "thói quen; làm quen",
+      "example": "晚睡是个坏习惯，得改掉。",
+      "exampleVi": "Ngủ muộn là thói quen xấu, phải bỏ.",
+      "pinyin": "xí guàn",
+      "examplePinyin": "wǎn shuì shì gè huài xí guàn ， dé gǎi diào 。"
+    },
+    {
+      "word": "健康",
+      "meaning": "khỏe mạnh; sức khỏe",
+      "example": "每天多走路对健康有好处。",
+      "exampleVi": "Mỗi ngày đi bộ nhiều thì tốt cho sức khỏe.",
+      "pinyin": "jiàn kāng",
+      "examplePinyin": "měi tiān duō zǒu lù duì jiàn kāng yǒu hǎo chù 。"
+    },
+    {
+      "word": "保持",
+      "meaning": "giữ; duy trì",
+      "example": "重要的不是练多少，而是每天保持。",
+      "exampleVi": "Quan trọng không phải tập bao nhiêu mà là giữ đều mỗi ngày.",
+      "pinyin": "bǎo chí",
+      "examplePinyin": "zhòng yào de bú shì liàn duō shǎo ， ér shì měi tiān bǎo chí 。"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "你通常几点……？",
+      "explanation": "Hỏi thói quen hằng ngày của người khác: 你通常几点 rồi thêm động từ như 起床、睡觉、锻炼; trả lời bằng 我一般 + giờ.",
+      "example": "你通常几点睡觉？",
+      "exampleVi": "Bạn thường mấy giờ đi ngủ?",
+      "examplePinyin": "nǐ tōng cháng jǐ diǎn shuì jiào ？"
+    },
+    {
+      "pattern": "最好……",
+      "explanation": "Cho lời khuyên nhẹ: 最好 rồi việc nên làm; khuyên không nên làm thì 最好别 + động từ, vẫn giữ giọng lịch sự.",
+      "example": "你最好饭后走一走，别马上躺下。",
+      "exampleVi": "Bạn nên đi dạo sau khi ăn, đừng nằm liền.",
+      "examplePinyin": "nǐ zuì hǎo fàn hòu zǒu yi zǒu ， bié mǎ shàng tǎng xià 。"
+    }
+  ],
+  "roleplay": {
+    "setting": "Chiều thứ bảy, bạn gặp một người bạn Việt Nam ở sân thể dục gần khu nhà; hai người kể lịch một ngày của mình, hỏi nhau thường mấy giờ ngủ, tập môn nào và có giữ được đều không.",
+    "avatarRole": "Bạn cùng tập",
+    "learnerRole": "Người kể thói quen của mình",
+    "goals": [
+      "Kể lịch sinh hoạt một ngày của bạn theo giờ giấc",
+      "Hỏi bạn thường mấy giờ ngủ và tập môn gì",
+      "Nêu một thói quen bạn muốn đổi"
+    ],
+    "opening": "你最近每天都来锻炼吗？我晚上老是睡不着。",
+    "openingVi": "Dạo này bạn có đến tập mỗi ngày không? Tối nào tôi cũng khó ngủ."
+  },
+  "freeTalk": {
+    "question": "你觉得早上锻炼好还是晚上锻炼好？为什么？",
+    "questionVi": "Bạn cho rằng tập buổi sáng tốt hơn hay buổi tối tốt hơn? Vì sao?"
+  },
+  "learningNotes": [
+    "Kể một ngày: 我一般 + giờ + việc (我六点起床、七点出门); hỏi lại thì dùng 你通常几点睡觉？ và trả lời bằng 一般 或 通常.",
+    "Cho lời khuyên: 最好 + việc nên làm; khuyên tránh thì 最好别马上躺下; muốn nhẹ hơn thì nói 你可以试试每天走二十分钟.",
+    "Phát âm: 锻炼 là hai thanh 4 liên tiếp, cả hai rơi mạnh, đừng đọc thành thanh 4 rồi thanh nhẹ; 起床 là thanh 3 rồi thanh 2, chữ đầu hạ thấp rồi kéo lên ở chữ sau.",
+    "保持 đi với thói quen hoặc trạng thái (保持每天跑步、保持安静); 保护 đi với cơ thể hoặc đồ vật (保护眼睛), hai từ này không thay được cho nhau."
+  ],
+  "prerequisites": [
+    10
+  ],
+  "listening": {
+    "title": "Nghe buổi 1: Thói quen sinh hoạt và rèn luyện",
+    "playLimit": 1,
+    "transcript": "甲：你最近每天都锻炼吗？我六点起床，去河边跑步，跑三十分钟。乙：我起不来，晚上十二点才睡，早上没有精神。甲：你最好先十点睡觉，早上散步二十分钟，别一上来就跑。乙：好，我试试，坚持一个月就习惯了。甲：对，健康最重要，明天六点门口见。",
+    "translation": "Người thứ nhất kể lịch của mình: sáu giờ dậy rồi ra bờ sông chạy bộ ba mươi phút. Người thứ hai nói không dậy nổi vì mười hai giờ đêm mới ngủ nên buổi sáng không có tinh thần. Người thứ nhất khuyên nên ngủ lúc mười giờ và chỉ đi bộ hai mươi phút buổi sáng, đừng chạy ngay; người thứ hai hẹn thử một tháng cho thành thói quen, hai người chốt gặp nhau ở cửa lúc sáu giờ.",
+    "questions": [
+      {
+        "prompt": "Người thứ nhất tập môn nào và trong bao lâu?",
+        "options": [
+          "Chạy bộ ba mươi phút vào buổi sáng",
+          "Đi bộ hai mươi phút vào buổi tối",
+          "Tập gym một tiếng ở nhà"
+        ],
+        "answer": 0,
+        "explanation": "甲 nói 我六点起床，去河边跑步，跑三十分钟."
+      },
+      {
+        "prompt": "Vì sao người thứ hai không tập buổi sáng?",
+        "options": [
+          "Vì sáng nào cũng phải đi làm sớm",
+          "Vì phòng tập buổi sáng đóng cửa",
+          "Vì mười hai giờ đêm mới ngủ nên không dậy nổi"
+        ],
+        "answer": 2,
+        "explanation": "乙 nói 晚上十二点才睡，早上没有精神."
+      },
+      {
+        "prompt": "Người thứ nhất khuyên điều gì?",
+        "options": [
+          "Sáng mai chạy ngay ba mươi phút",
+          "Nên ngủ lúc mười giờ và đi bộ hai mươi phút",
+          "Nhịn bữa sáng để nhẹ người"
+        ],
+        "answer": 1,
+        "explanation": "甲 nói 你最好先十点睡觉，早上散步二十分钟."
+      }
+    ],
+    "pinyin": "jiǎ ： nǐ zuì jìn měi tiān dōu duàn liàn ma ？ wǒ liù diǎn qǐ chuáng ， qù hé biān pǎo bù ， pǎo sān shí fēn zhōng 。 yǐ ： wǒ qǐ bù lái ， wǎn shang shí èr diǎn cái shuì ， zǎo shang méi yǒu jīng shén 。 jiǎ ： nǐ zuì hǎo xiān shí diǎn shuì jiào ， zǎo shang sàn bù èr shí fēn zhōng ， bié yí shàng lái jiù pǎo 。 yǐ ： hǎo ， wǒ shì shì ， jiān chí yí gè yuè jiù xí guàn le 。 jiǎ ： duì ， jiàn kāng zuì zhòng yào ， míng tiān liù diǎn mén kǒu jiàn 。"
+  },
+  "speaking": [
+    {
+      "kind": "repeat",
+      "prompt": "Nghe rồi nhắc lại hai câu: một câu kể lịch của mình, một câu khuyên bạn.",
+      "prepareSeconds": 15,
+      "responseSeconds": 30,
+      "reference": "我六点起床，去河边跑步。你最好先十点睡觉。",
+      "checklist": [
+        "Nhắc lại đủ cả hai câu",
+        "Giữ đúng giờ và việc khuyên",
+        "Không nhìn câu mẫu khi thử lại"
+      ],
+      "audioText": "我六点起床，去河边跑步。你最好先十点睡觉。"
+    },
+    {
+      "kind": "retell",
+      "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai tập gì và bao lâu, bạn kia vì sao không dậy nổi, lời khuyên là gì, hai người hẹn lúc nào.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Người thứ nhất kể lịch của mình: sáu giờ dậy rồi ra bờ sông chạy bộ ba mươi phút. Người thứ hai nói không dậy nổi vì mười hai giờ đêm mới ngủ nên buổi sáng không có tinh thần. Người thứ nhất khuyên nên ngủ lúc mười giờ và chỉ đi bộ hai mươi phút buổi sáng, đừng chạy ngay; người thứ hai hẹn thử một tháng cho thành thói quen, hai người chốt gặp nhau ở cửa lúc sáu giờ.",
+      "checklist": [
+        "Nói đủ: môn tập, giờ ngủ, lời khuyên, giờ hẹn",
+        "Người nghe hiểu được nội dung",
+        "Không thêm chi tiết ngoài đoạn nghe"
+      ]
+    },
+    {
+      "kind": "read",
+      "prompt": "Đọc thành tiếng đoạn sau, giữ nhịp đều khi kể các mốc giờ.",
+      "prepareSeconds": 30,
+      "responseSeconds": 60,
+      "reference": "Bốn mốc giờ trong đoạn phải rõ; câu khuyên nói chậm, hạ giọng ở cuối.",
+      "checklist": [
+        "Không bỏ ý hoặc thay từ quan trọng",
+        "Ngắt theo cụm nghĩa",
+        "Giữ âm lượng đều, nói dễ nghe"
+      ],
+      "text": "我每天六点起床，先喝一杯水，再去跑步。晚上十二点才睡的人早上没有精神。想锻炼，最好从散步开始，每天二十分钟，慢慢养成习惯。重要的不是练得多，而是天天保持。"
+    },
+    {
+      "kind": "answer",
+      "prompt": "你觉得早上锻炼好还是晚上锻炼好？为什么？",
+      "promptVi": "Bạn cho rằng tập buổi sáng tốt hơn hay buổi tối tốt hơn? Vì sao?",
+      "prepareSeconds": 20,
+      "responseSeconds": 45,
+      "reference": "Chọn một buổi, nêu lý do và nói thêm khi nào bạn buộc phải đổi sang buổi còn lại.",
+      "checklist": [
+        "Trả lời rõ chọn sáng hay tối",
+        "Có lý do cụ thể",
+        "Nêu được trường hợp còn lại"
+      ],
+      "sampleZh": "我觉得晚上锻炼更好，因为我早上起不来，六点钟还在床上。可是跑太晚我会睡不着，所以我一般七点在楼下走四十分钟。要是第二天要早起，我就改成早上散步。",
+      "sampleVi": "Tôi thấy tập buổi tối tốt hơn vì buổi sáng tôi không dậy nổi, sáu giờ vẫn còn nằm trên giường. Nhưng chạy trễ quá thì tôi lại khó ngủ, nên thường bảy giờ tôi đi bộ bốn mươi phút dưới nhà. Nếu hôm sau phải dậy sớm, tôi đổi sang đi bộ buổi sáng."
+    }
+  ],
+  "transferTask": "Sáng chủ nhật, hãy kể cho một người bạn Trung Quốc nghe lịch một ngày của bạn bằng tiếng Trung: dậy mấy giờ, tập lúc nào, ăn tối mấy giờ, rồi hỏi bạn ấy thường đi ngủ lúc nào và cho bạn ấy một lời khuyên.",
+  "pronunciation": [
+    {
+      "text": "锻炼",
+      "pinyin": "duàn liàn",
+      "hint": "Cả hai chữ đều thanh 4: hai âm rơi mạnh liên tiếp, đừng để âm thứ hai thành thanh nhẹ."
+    },
+    {
+      "text": "起床",
+      "pinyin": "qǐ chuáng",
+      "hint": "Thanh 3 rồi thanh 2: chữ đầu hạ thấp rồi uốn, chữ sau kéo lên; hai âm phải tách rõ, không đọc rời."
+    },
+    {
+      "text": "习惯",
+      "pinyin": "xí guàn",
+      "hint": "Thanh 2 rồi thanh 4: chữ đầu kéo lên, chữ sau rơi dứt khoát; đừng đảo thành thanh 4 rồi thanh 2."
+    },
+    {
+      "text": "保持",
+      "pinyin": "bǎo chí",
+      "hint": "Thanh 3 rồi thanh 2: cả hai đi xuống rồi lên, chữ đầu ngắn hơn; chữ sau đọc chí, không phải chi."
+    }
+  ]
+}
