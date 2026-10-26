@@ -1,23 +1,94 @@
-# 米苏 · Misu — luyện nghe nói riêng tư cho người Việt
+# 米苏 · Misu — luyện nghe nói tiếng Trung cho người Việt
 
-[English](README.en.md)
+[English](README.en.md) · [![CI](https://github.com/hydennguyen86-code/xiaoya-chinese-tutor/actions/workflows/ci.yml/badge.svg)](https://github.com/hydennguyen86-code/xiaoya-chinese-tutor/actions/workflows/ci.yml)
 
-Misu là app **luyện nghe nói riêng tư cho người Việt**, tập trung vào tiếng Trung:
-nghe trước khi xem chữ, nói với avatar, xem lại phát âm và ôn đúng chỗ hay nhầm.
-App chạy trên máy của bạn; chưa hướng tới thay thế một khóa học hoàn chỉnh.
+Nói chuyện tiếng Trung với một avatar 3D, được sửa lỗi bằng tiếng Việt, chấm thanh
+điệu từng chữ và luyện tai mỗi ngày. **Miễn phí, mã nguồn mở, chạy ngay trên máy
+của bạn**: giọng nói và dữ liệu học không cần gửi lên dịch vụ nào.
 
-*Private Chinese listening and speaking practice for Vietnamese learners, with
-local models, local speech recognition and a talking avatar. Optional online
-voices and model APIs send the relevant text to those services.*
+![Misu: trò chuyện, sửa lỗi, chấm thanh điệu và luyện tai](docs/media/demo.gif)
 
-“Riêng tư” phụ thuộc cấu hình: Whisper và Ollama/LM Studio chạy cục bộ;
-giọng Edge cần mạng, API model và nhận dạng của trình duyệt là các lựa chọn
-có thể gửi dữ liệu tới dịch vụ tương ứng. Xem [Quyền riêng tư](#quyền-riêng-tư).
+▶ **Xem video nét hơn (50 giây):** [docs/media/demo.mp4](docs/media/demo.mp4)
 
-![Luyện nghe nói với avatar hoạt hình mẫu](docs/media/listening-sample.png)
+*Quay từ app thật, avatar 3D mẫu, người học thử trong dữ liệu tạm. Giọng mẫu do
+máy đọc. Nội dung bài học do AI soạn, chưa được giáo viên duyệt.*
 
-*Ảnh app thật, avatar 3D mẫu và hồ sơ học thử trong dữ liệu tạm; không phải ảnh
-người học thật. Nội dung AI chưa được giáo viên duyệt.*
+*Private Chinese listening and speaking practice for Vietnamese learners: talk to
+a 3D avatar, get corrections in Vietnamese, per-syllable tone feedback and daily
+listening drills, all running on your own computer.*
+
+## Điểm đặc biệt
+
+| | |
+|---|---|
+| 🗣️ **Nói chuyện với avatar** | Gõ hoặc nói tiếng Trung, avatar trả lời bằng giọng nói, cử động môi theo từng câu, kèm bản dịch tiếng Việt. Câu dài trình độ HSK 5, câu ngắn chậm cho người mới. |
+| ✍️ **Sửa đúng lỗi người Việt hay mắc** | Luật riêng cho các lỗi kiểu dịch từ tiếng Việt: 我工作在银行 → 在银行工作, 三个书 → 三本书, 比我很高 → 比我高… giải thích bằng tiếng Việt, cộng thêm góp ý của model. |
+| 🎯 **Chấm thanh điệu từng chữ** | Đọc theo một từ, Misu tô xanh/đỏ từng chữ, bảo bạn nghe như thanh mấy và cách sửa; câu dài thì vẽ đường cao độ của bạn cạnh giọng mẫu. Chạy hoàn toàn trên máy. |
+| 👂 **Luyện tai cho người Việt** | Chọn thanh nghe được, cặp âm hay lẫn (zh/z, ch/c, ü/u, an/ang, en/eng…), nghe chép, nói đuổi (shadowing), 3 tốc độ 0.7×/0.85×/1×. Câu sau ưu tiên đúng cặp bạn hay nhầm. |
+| 🈶 **Âm Hán Việt và bẫy nghĩa** | Mỗi từ có âm Hán Việt (家 = gia, 学生 = học sinh) để người Việt nhớ nhanh; cảnh báo từ "nhìn quen mà nghĩa khác" (骄傲 là *tự hào*, không phải *kiêu ngạo*). |
+| 📅 **Bài hôm nay, khỏi phải chọn** | Lộ trình có sẵn: HSK 1, HSK 5 (48 buổi) và 30 bài giao tiếp HSK1–6. Mỗi buổi: ôn → từ mới → mẫu câu → nhập vai (nghe trước, bấm mới hiện chữ) → nói tự do → tổng kết. |
+| 📝 **Kiểm tra tuần / tháng** | Đề lấy từ chính từ và lỗi của bạn, chấm từng phần, câu sai tự vào lịch ôn. Có nhiệm vụ giao tiếp ghi rõ bạn tự làm được hay cần gợi ý. |
+| 👨‍👩‍👧 **Cả nhà cùng học** | Nhiều người học trên một máy, mỗi người có trình độ, lịch sử, lịch ôn và hồ sơ giọng riêng. Dùng điện thoại làm micro qua Wi-Fi (HTTPS + mã PIN). |
+| 🔒 **Riêng tư** | Model (Ollama/LM Studio), nhận dạng giọng (whisper.cpp) và chấm thanh đều chạy trên máy; dữ liệu nằm trong thư mục `data/`. Giọng đọc Edge và API tuỳ chọn mới cần mạng. |
+
+**Nói thật về giới hạn:** chấm thanh điệu mới được đo trên giọng máy và **một**
+người học thật (đúng khoảng 80% số chữ chấm được, chữ không chắc thì báo "chưa
+chấm được"); bài học do AI soạn, chưa có giáo viên duyệt; âm Hán Việt lấy từ Unicode
+Unihan nên còn thiếu hoặc sai một số chữ. Số đo chi tiết ở phần [Độ chính xác](#độ-chính-xác-đo-được-bao-nhiêu).
+
+## Bắt đầu nhanh
+
+Cần [Node.js 24](https://nodejs.org) và [Ollama](https://ollama.com) (để trò chuyện; bài học cố định chạy được cả khi chưa có).
+
+```bash
+git clone https://github.com/hydennguyen86-code/xiaoya-chinese-tutor.git
+```
+
+```bash
+cd xiaoya-chinese-tutor && npm ci && ollama pull qwen3.5:4b
+```
+
+```bash
+npm run build && npm start
+```
+
+Mở **http://127.0.0.1:8787**. Lần đầu, app có màn hình kiểm tra model, micro và
+giọng đọc. Muốn chấm thanh điệu và nhận dạng giọng nói ngay trên máy thì chạy thêm
+`npm run setup:whisper` (Mac/Linux) hoặc `npm run setup:whisper:windows`, và cài ffmpeg.
+Trên Windows/Mac có thể bấm đúp `start-windows.bat` / `start-mac.command`.
+Chi tiết ở phần [Cài đặt](#cài-đặt).
+
+## Đổi avatar (khuôn mặt của Misu)
+
+Misu có 2 kiểu avatar và bạn có thể thay bằng bất kỳ khuôn mặt nào:
+
+![Cài đặt → Khuôn mặt của Misu](docs/media/settings-avatar.png)
+
+**Cách nhanh nhất, ngay trong app:** bấm ⚙️ **Cài đặt** → mục **Khuôn mặt của Misu**
+→ **Chọn file…** → chọn file `.glb` hoặc `.zip`. Misu đổi gương mặt ngay; bấm
+**Dùng mặc định** để quay lại. File chỉ lưu trong trình duyệt đó.
+
+**1. Avatar 3D hoạt hình (`.glb`)**, nhẹ, chạy mọi máy:
+- Tạo nhân vật trên [Ready Player Me](https://readyplayer.me) hoặc [PlayerZero](https://playerzero.me).
+- Tải file GLB **có kèm biểu cảm khuôn mặt** để miệng cử động được. Với Ready Player Me,
+  thêm vào cuối link tải:
+  `?morphTargets=ARKit,Oculus+Visemes,mouthOpen,mouthSmile,eyesClosed,eyesLookUp,eyesLookDown&textureSizeLimit=1024&textureFormat=png`
+- Chọn file đó trong Cài đặt như trên.
+
+**2. Avatar giống người thật từ một bức ảnh (`.zip`, LAM)**:
+- Dựng bằng [LAM](https://github.com/aigc3d/LAM) (có bản demo online; tự chạy thì cần máy có GPU),
+  tải về file `.zip` của avatar.
+- Chọn file `.zip` trong Cài đặt, hoặc bật công tắc **Avatar ảnh thật (LAM)** để dùng avatar ảnh thật mẫu.
+- Chỉ dùng ảnh của người đã đồng ý.
+
+**Muốn mọi trình duyệt trên máy đều dùng avatar riêng:** đặt file vào thư mục dữ liệu,
+`data/avatars/personal.glb` (3D) hoặc `data/avatars/personal-lam.zip` (ảnh thật), rồi
+khởi động lại app. Thư mục `data/` không bao giờ được đưa lên Git; khi quay demo hay chụp
+màn hình, chạy với `XIAOYA_SAMPLE_AVATARS=1` để chỉ dùng avatar mẫu.
+
+**Đổi giọng đọc:** Cài đặt → **Giọng của Misu** để chọn giọng tiếng Trung và giọng đọc
+bản dịch tiếng Việt. Có thể dùng giọng clone của riêng bạn qua một dịch vụ tự chạy, xem
+[docs/voice-clone.md](docs/voice-clone.md).
 
 ## Học ngay: HSK 1 và HSK 5 ứng dụng
 
@@ -179,14 +250,7 @@ gửi âm thanh lên máy chủ Google) và không chấm được thanh điệu
 
 ### Avatar của riêng bạn
 
-- Avatar 3D: đặt file `.glb` (Ready Player Me hoặc tương thích, có blendshape
-  ARKit + viseme) ở `data/avatars/personal.glb`.
-- Avatar LAM từ ảnh: dựng bằng [LAM](https://github.com/aigc3d/LAM) (bản demo
-  online hoặc máy có GPU), rồi đặt file `.zip` ở `data/avatars/personal-lam.zip`.
-- Hoặc chọn file ngay trong phần Cài đặt của ứng dụng.
-
-Các file `personal*` đã nằm trong `.gitignore`, không bị đưa lên git. Chỉ dùng ảnh
-của người đã đồng ý.
+Xem phần [Đổi avatar](#đổi-avatar-khuôn-mặt-của-misu) ở đầu trang.
 
 ### Mục lục sách
 

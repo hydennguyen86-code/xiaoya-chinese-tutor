@@ -9,10 +9,36 @@ course.
 voices need a network; model APIs and browser speech recognition are optional and send
 data to those services.
 
-![Listening practice with the sample avatar](docs/media/listening-sample.png)
+![Misu: chat, corrections, tone feedback and listening drills](docs/media/demo.gif)
 
-*Real app, sample 3D avatar and a test learner in temporary data; not a real learner.
-AI-authored content has not been reviewed by a teacher.*
+▶ **Sharper video (50 s):** [docs/media/demo.mp4](docs/media/demo.mp4)
+
+*Recorded from the real app with the sample 3D avatar and a test learner in temporary
+data; the model voice is synthetic. Lesson content is AI-authored and not teacher-reviewed.*
+
+## Highlights
+
+- **Talk to a 3D avatar** that answers by voice with lip-sync and a Vietnamese translation; reply length follows the learner's HSK level.
+- **Corrections for typical Vietnamese-learner errors** (我工作在银行 → 在银行工作, 三个书 → 三本书, 比我很高 → 比我高), explained in Vietnamese, plus model feedback.
+- **Per-syllable tone feedback** for words, a pitch curve next to the model voice for sentences, computed locally.
+- **Listening drills for Vietnamese ears**: tone identification, confusable sounds (zh/z, ch/c, ü/u, an/ang…), dictation, shadowing, three speeds; the next item favours the pairs you confuse.
+- **Sino-Vietnamese readings and meaning traps** (家 = gia; 骄傲 means *proud*, not *arrogant*).
+- **Ready-made daily lessons** (HSK 1, HSK 5, 30 communication lessons), weekly/monthly checks feeding a review schedule, several learners per computer, phone microphone over Wi-Fi (HTTPS + PIN).
+- **Private and free**: models, speech recognition and tone checking run on your machine; online voices and APIs are optional.
+
+Limits: tone checking has been measured on synthetic voices and **one** real learner
+(about 80% of judged syllables right); content is AI-authored; Sino-Vietnamese readings
+come from Unicode Unihan and still miss or misread some characters.
+
+## Change the avatar
+
+![Settings → Misu's face](docs/media/settings-avatar.png)
+
+- **In the app:** ⚙️ Settings → *Khuôn mặt của Misu* → *Chọn file…* → pick a `.glb` or `.zip`. *Dùng mặc định* restores the default. The file stays in that browser.
+- **3D cartoon avatar (`.glb`):** create one on [Ready Player Me](https://readyplayer.me) or [PlayerZero](https://playerzero.me) and download the GLB with facial morph targets, e.g. append `?morphTargets=ARKit,Oculus+Visemes,mouthOpen,mouthSmile,eyesClosed,eyesLookUp,eyesLookDown&textureSizeLimit=1024&textureFormat=png` to the Ready Player Me download link.
+- **Photo-real avatar from one photo (`.zip`, LAM):** build it with [LAM](https://github.com/aigc3d/LAM) (online demo, or a GPU machine), then pick the `.zip`. The *Avatar ảnh thật (LAM)* switch turns on the bundled photo-real sample. Only use photos of people who agreed.
+- **For every browser on the machine:** put `data/avatars/personal.glb` or `data/avatars/personal-lam.zip` in the data folder and restart. `data/` is never committed; use `XIAOYA_SAMPLE_AVATARS=1` for demos and screenshots.
+- **Voices:** Settings → *Giọng của Misu*; a self-hosted voice clone is described in [docs/voice-clone.md](docs/voice-clone.md).
 
 ## What is included
 
