@@ -19,6 +19,7 @@ interface SettingsDialogProps {
   onPreviewTranslation: () => void;
   onClearChat: () => void;
   onResetProgress: () => void;
+  onResetPitchProfile: () => void;
   customAvatar: { name: string; kind: AvatarMode } | null;
   onPickAvatar: (file: File) => void;
   onClearAvatar: () => void;
@@ -79,6 +80,7 @@ export function SettingsDialog({
   onPreviewTranslation,
   onClearChat,
   onResetProgress,
+  onResetPitchProfile,
   customAvatar,
   onPickAvatar,
   onClearAvatar,
@@ -457,6 +459,9 @@ export function SettingsDialog({
               </button>
               <button className="text-button danger" type="button" onClick={onResetProgress}>
                 Đặt lại tiến độ
+              </button>
+              <button className="text-button danger" type="button" onClick={onResetPitchProfile}>
+                Đặt lại hồ sơ giọng
               </button>
             </div>
           </section>

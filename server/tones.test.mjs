@@ -141,3 +141,42 @@ test('inside a word: a tone 1 gliding up from the previous syllable, and a low f
   const lowFall = { ...lowRise, rise: 0, fall: 2.7, change: -2.7, minPos: 1 };
   assert.equal(classifyIsolated(lowFall, true, { single: false, first: true }), 3);
 });
+
+test('a level syllable said at a middle-low pitch is tone 1, never tone 3 (learner complaint: 妈 flat → "thanh 3")', () => {
+  const flat = (height) => ({
+    start: 0,
+    end: 0,
+    min: -0.2,
+    change: 0,
+    rise: 0.2,
+    fall: 0.2,
+    minPos: 0.5,
+    range: 0.4,
+    height,
+    startHeight: height,
+    endHeight: height,
+    minHeight: height,
+    voicedRatio: 1,
+    frames: 30,
+  });
+  for (const h of [0.25, 0.3, 0.4, 0.6]) assert.equal(classifyIsolated(flat(h), true, { single: true }), 1, `height ${h}`);
+  for (const h of [0.12, 0.2]) assert.notEqual(classifyIsolated(flat(h), true, { single: true }), 3, `height ${h}`);
+  assert.equal(classifyIsolated(flat(0.05), true, { single: true }), 3);
+  // inside a word the stricter split stays
+  assert.equal(classifyIsolated(flat(0.3), true, { single: false, first: false }), 3);
+});
+
+test('a recording far from the learner profile is not judged against it and does not change it', async () => {
+  const { updateProfile, voiceFits, profileRange } = await import('./tones.mjs');
+  const female = Array.from({ length: 2000 }, (_, i) => 230 + (i % 60)); // ~230–290 Hz
+  let profile = updateProfile(null, female, 260);
+  assert.ok(voiceFits(profile, 250));
+  assert.equal(voiceFits(profile, 120), false); // a male voice (or the other way round) does not fit
+  const before = profile.frames;
+  profile = updateProfile(profile, Array(200).fill(120), 120);
+  assert.equal(profile.frames, before); // not added
+  // four consistent mismatches: the profile was the wrong voice; start again from the new one
+  for (let i = 0; i < 3; i++) profile = updateProfile(profile, Array(200).fill(120), 120);
+  assert.ok(profile.frames <= 200);
+  assert.ok(Math.abs(12 * Math.log2(120 / (profileRange({ ...profile, frames: Math.max(300, profile.frames) })?.median || 120))) < 1);
+});

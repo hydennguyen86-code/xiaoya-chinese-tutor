@@ -91,6 +91,9 @@ export function listen(options: Options): VoiceHandle {
     result.catch(() => {});
     return { details, result, stop() {}, cancel() {} };
   }
+  // Anything the app is playing (avatar, model voice) would be recorded through
+  // the speakers and judged as the learner's voice: stop it first.
+  if (typeof window !== 'undefined') window.dispatchEvent(new Event('misu:before-record'));
   const handle = options.local ? listenLocal(options) : listenBrowser(options);
   currentVoice = handle;
   handle.details

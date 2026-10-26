@@ -213,3 +213,8 @@ export async function assessmentRequest<T>(route: 'assess-task' | 'prepare-task'
   if (!res.ok) throw new Error(await readError(res));
   return res.json();
 }
+
+export async function resetPitchProfile(learnerId: string): Promise<void> {
+  const res = await fetch(`/api/profile?learner=${encodeURIComponent(learnerId)}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error(await readError(res));
+}

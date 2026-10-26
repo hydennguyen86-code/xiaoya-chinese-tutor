@@ -15,7 +15,7 @@ import { LearningDialog } from './components/LearningDialog';
 import { SettingsDialog } from './components/SettingsDialog';
 import { BookIcon, ChevronDownIcon, FlameIcon, MuteIcon, SettingsIcon, VolumeIcon } from './components/Icons';
 import type { AvatarApi } from './lib/avatarApi';
-import { analyzeLearning, fetchCorrections, fetchStatus, streamChat } from './lib/api';
+import { analyzeLearning, fetchCorrections, fetchStatus, resetPitchProfile, streamChat } from './lib/api';
 import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
 import { ChineseMic, configureSpeech, isSpeechSupported, micPermissionState } from './lib/speech';
 import {
@@ -357,6 +357,12 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   const learningDue = useMemo(() => dueWords(learning).length, [learning]);
 
   const getAvatar = useCallback(() => avatarRef.current, []);
+  useEffect(() => {
+    // the avatar's voice must not leak into a recording (see voiceInput.listen)
+    const silence = () => avatarRef.current?.stopSpeech();
+    window.addEventListener('misu:before-record', silence);
+    return () => window.removeEventListener('misu:before-record', silence);
+  }, []);
   const updateLearning = useCallback((update: (previous: LearningProfile) => LearningProfile) => {
     const next = update(learningRef.current);
     learningRef.current = next;
@@ -895,6 +901,18 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     showToast('Đã đặt lại tiến độ luyện tập.');
   };
 
+  const handleResetPitchProfile = async () => {
+    if (!window.confirm('Đặt lại hồ sơ giọng (khoảng cao độ và ngữ điệu đã học)? Dữ liệu khác không bị ảnh hưởng.')) {
+      return;
+    }
+    try {
+      await resetPitchProfile(learner.id);
+      showToast('Đã đặt lại hồ sơ giọng.');
+    } catch (error) {
+      showToast(error instanceof Error ? error.message : 'Không đặt lại được hồ sơ giọng.');
+    }
+  };
+
   const handlePreviewVoice = () => {
     const controller = avatarRef.current;
     if (!controller?.isLoaded) {
@@ -1133,6 +1151,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         onPreviewTranslation={handlePreviewTranslation}
         onClearChat={handleNewChat}
         onResetProgress={handleResetProgress}
+        onResetPitchProfile={() => void handleResetPitchProfile()}
         customAvatar={customAvatar}
         onPickAvatar={handlePickAvatar}
         onClearAvatar={handleClearAvatar}

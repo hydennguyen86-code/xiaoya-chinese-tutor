@@ -6,6 +6,7 @@ let stopCurrentCourseAudio: (() => void) | null = null;
 export function stopLessonAudio() {
   stopCurrentCourseAudio?.();
 }
+if (typeof window !== 'undefined') window.addEventListener('misu:before-record', () => stopCurrentCourseAudio?.());
 export function useLessonAudio(voice: string, onBusy: (busy: boolean) => void) {
   const player = useRef<HTMLAudioElement | null>(null),
     request = useRef<AbortController | null>(null),

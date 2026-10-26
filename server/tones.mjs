@@ -195,6 +195,30 @@ export function addToProfile(profile, f0) {
 }
 
 /** p10 / median / p90 in Hz, or null until there is enough speech (≈3 s voiced). */
+// A learner's profile only describes their own voice. A recording far from its
+// middle is someone else (the avatar or model voice through the speakers,
+// another family member): it must neither be judged against this range nor
+// change it. If several recordings in a row agree with each other but not with
+// the profile, the profile was the wrong voice to begin with and starts again.
+const FIT_SEMITONES = 7.5;
+const MISFITS_TO_RESET = 4;
+
+/** Does a recording with this median pitch belong to the profile's voice? */
+export function voiceFits(profile, utteranceHz) {
+  const range = profileRange(profile);
+  if (!range || !utteranceHz) return true; // too little to compare yet
+  return Math.abs(12 * Math.log2(utteranceHz / range.median)) <= FIT_SEMITONES;
+}
+
+/** Profile after a recording: add it when it fits, otherwise count the mismatch. */
+export function updateProfile(profile, f0, utteranceHz) {
+  if (voiceFits(profile, utteranceHz)) return { ...addToProfile(profile, f0), misfits: [] };
+  const misfits = [...(profile.misfits || []), toBin(utteranceHz)].slice(-MISFITS_TO_RESET);
+  const consistent = misfits.length === MISFITS_TO_RESET && Math.max(...misfits) - Math.min(...misfits) <= 10; // within 5 semitones
+  if (consistent) return { ...addToProfile(null, f0), misfits: [], resetAt: Date.now() };
+  return { ...profile, misfits };
+}
+
 export function profileRange(profile) {
   if (!profile || profile.frames < 300) return null;
   const at = (p) => {
@@ -253,6 +277,12 @@ export function toneFeatures(frames, low, high) {
  * Tone of an isolated word syllable from its shape and, when the speaker's
  * range is known, its height. 0 when it cannot be told apart.
  */
+// height of a level syllable within the speaker's range (0 = low end, 1 = high end)
+// (single syllables; measured on flat tone 1 read 0–6 semitones lower than usual by
+// six voices: wrongly called tone 3 dropped from 31/144 to 1/144)
+const FLAT_TONE1_FROM = 0.25;
+const FLAT_TONE3_UPTO = 0.1;
+
 export function classifyIsolated(f, knownRange, { single = true, first = false } = {}) {
   if (!f) return 0;
   if (f.fall >= 4 && f.minPos >= 0.6 && (!knownRange || f.startHeight >= 0.45)) return 4;
@@ -275,14 +305,20 @@ export function classifyIsolated(f, knownRange, { single = true, first = false }
   const creaky = f.voicedRatio < 0.8;
   if (f.range <= 2.5 && !creaky) {
     if (!knownRange) return 0; // flat: tone 1 (high) and tone 3 (low) differ only in height
-    if (f.height >= 0.5) return 1;
-    if (f.height <= 0.35) return 3;
+    // A level, clearly voiced syllable is the shape of tone 1. Vietnamese learners
+    // often say it at a middle pitch (like thanh ngang), so only a level syllable
+    // at the very bottom of the speaker's range is taken as a (flattened) tone 3.
+    // a word keeps the stricter split: its second syllable is often a lowered tone 3
+    const tone1From = single ? FLAT_TONE1_FROM : 0.5;
+    const tone3UpTo = single ? FLAT_TONE3_UPTO : 0.35;
+    if (f.height >= tone1From) return 1;
+    if (f.height <= tone3UpTo) return 3;
     return 0;
   }
   // creak usually means a low tone 3, but a short, high, creaky syllable is a
   // Vietnamese-style clipped tone 4 or 1 (爸 费 骂 read like thanh nặng): too
   // little pitch to tell which, so leave it unjudged rather than call it 3
-  if (creaky && knownRange && f.height > 0.5) return 0;
+  if (creaky && knownRange && f.height > 0.35) return 0;
   if (creaky || (knownRange && f.height <= 0.35)) return 3;
   if (f.fall >= 4) return 4;
   return 0;
@@ -301,8 +337,8 @@ export function expectedTones(text) {
 
 /** Fold a recording's voiced frames into a speaker's pitch profile. */
 export async function profileFromAudio(audio, profile, pcm = null) {
-  const { f0 } = pitchTrack(pcm ?? (await decodeToPcm(audio)));
-  return addToProfile(profile, f0);
+  const { f0, median } = pitchTrack(pcm ?? (await decodeToPcm(audio)));
+  return updateProfile(profile, f0, median);
 }
 
 /** Downsampled pitch curve (semitones re the speaker median) of the voiced speech. */
@@ -332,8 +368,15 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   const syllables = expectedTones(target);
   const pcm = decoded ?? (await decodeToPcm(audio));
   const { f0, rms, median } = pitchTrack(pcm);
-  const nextProfile = addToProfile(profile, f0);
-  const base = { syllables: syllables.map((s) => ({ ...s, heard: 0, ok: null })), checked: 0, correct: 0, profile: nextProfile };
+  const fits = voiceFits(profile, median);
+  const nextProfile = updateProfile(profile, f0, median);
+  const base = {
+    syllables: syllables.map((s) => ({ ...s, heard: 0, ok: null })),
+    checked: 0,
+    correct: 0,
+    profile: nextProfile,
+    ...(fits ? {} : { profileMismatch: true }),
+  };
   if (!syllables.length) return { ...base, note: 'Không có chữ Hán để chấm.' };
   if (!median) return { ...base, note: 'Không nghe rõ giọng. Đọc to, rõ và chậm hơn nhé.' };
 
@@ -349,7 +392,8 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     return { ...base, mode: 'sentence', curve: contour(f0, median) };
   }
 
-  const range = profileRange(nextProfile);
+  // judge high/low only against a profile that is this speaker's voice
+  const range = fits ? profileRange(nextProfile) : null;
   const ref = range ? range.median : median;
   const low = range ? semis(range.low, ref) : -3;
   const high = range ? semis(range.high, ref) : 3;

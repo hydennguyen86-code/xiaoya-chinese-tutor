@@ -214,6 +214,21 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
   }
 });
 
+app.delete('/api/profile', (req, res) => {
+  const learner = String(req.query.learner || '');
+  const key = pitchKey(learner);
+  if (!key) {
+    res.status(400).json({ error: 'Mã học viên không hợp lệ.' });
+    return;
+  }
+  try {
+    dataStore.remove(key);
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(error.status || 500).json({ error: error.message });
+  }
+});
+
 app.delete('/api/store/:key', (req, res) => {
   try {
     dataStore.remove(req.params.key);
