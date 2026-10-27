@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { loadActiveLearnerId, loadLearners } from '../lib/learners';
+import { useTeacher } from '../lib/persona';
 import type { ToneReport } from '../lib/voiceInput';
 export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneReport; audio?: Blob; learnerId?: string }) {
+  const teacher = useTeacher();
   const [open, setOpen] = useState(false),
     [reviewer, setReviewer] = useState(''),
     [source, setSource] = useState(''),
@@ -48,7 +50,7 @@ export function ToneLabelFeedback({ report, audio, learnerId }: { report: ToneRe
   return (
     <div className="tone-label-feedback">
       <button type="button" onClick={() => setOpen(!open)}>
-        Misu chấm sai?
+        {teacher.vi} chấm sai?
       </button>
       {open && (
         <fieldset>

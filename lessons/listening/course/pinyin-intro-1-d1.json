@@ -1,0 +1,192 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-1-d1",
+  "level": "HSK1-2",
+  "title": "Bốn thanh và thanh nhẹ: nghe ra cao độ",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-201",
+      "level": "HSK1-2",
+      "hanzi": "这是我的妈妈。",
+      "pinyin": "zhè shì wǒ de mā ma",
+      "meaningVi": "Đây là mẹ tôi.",
+      "focus": [
+        "妈 mā thanh 1: cao và phẳng, giữ nguyên cao độ đến hết âm.",
+        "Mẹ gọi thân mật là 妈妈 mā ma, chữ thứ hai đọc nhẹ.",
+        "Câu trần thuật: 是 shì thanh 4 rơi dứt khoát."
+      ]
+    },
+    {
+      "id": "dt-1-202",
+      "level": "HSK1-2",
+      "hanzi": "今天妈妈骂我。",
+      "pinyin": "jīn tiān mā ma mà wǒ",
+      "meaningVi": "Hôm nay mẹ mắng tôi.",
+      "focus": [
+        "妈妈 mā ma: chữ thứ hai nhẹ, thấp và ngắn.",
+        "骂 mà thanh 4 cắt hơi nhanh, 妈 mā thanh 1 phẳng: cùng âm, chỉ khác cao độ.",
+        "Bốn thanh của bài: 妈 mā, 麻 má, 马 mǎ, 骂 mà."
+      ]
+    },
+    {
+      "id": "dt-1-203",
+      "level": "HSK1-2",
+      "hanzi": "我的马跑得很快。",
+      "pinyin": "wǒ de má pǎo dé hěn kuài",
+      "meaningVi": "Ngựa của tôi chạy rất nhanh.",
+      "focus": [
+        "Biến điệu 3+3: mǎ pǎo → má pǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "马 mǎ thanh 3 thấp rồi nhô; 骂 mà thanh 4 rơi ngay.",
+        "快 kuài thanh 4 chặn hơi nhanh ở cuối cụm."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        5,
+        3,
+        3,
+        2,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          5,
+          2,
+          3,
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          5,
+          3,
+          3,
+          2,
+          3,
+          4
+        ]
+      ],
+      "hint": "App chấp nhận cả dạng đọc liền 3-5-2-3-2-3-4 lẫn dạng trích dẫn từng chữ 3-5-3-3-2-3-4."
+    },
+    {
+      "id": "dt-1-204",
+      "level": "HSK1-2",
+      "hanzi": "这是你的猫吗？",
+      "pinyin": "zhè shì nǐ de māo ma",
+      "meaningVi": "Đây là con mèo của bạn phải không?",
+      "focus": [
+        "吗 ở cuối câu hỏi đọc nhẹ, thấp và ngắn, không có dấu thanh.",
+        "猫 māo thanh 1: mở ở a rồi bo tròn ở o, cao độ phẳng suốt.",
+        "的 de giữa cụm rơi nhẹ: 你的 nǐ de."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-45",
+      "level": "HSK1-2",
+      "text": "这是我妈，她骂小马，也骂我的猫。我的手麻了。",
+      "pinyin": "zhè shì wǒ mā tā mà xiáo mǎ yě mà wǒ de māo wǒ de shǒu má le",
+      "meaningVi": "Đây là mẹ tôi, bà mắng chú ngựa nhỏ, cũng mắng con mèo của tôi. Tay tôi tê cả rồi.",
+      "syllables": 18,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "这是我妈",
+          "pinyin": "zhè shì wǒ mā",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "她骂小马",
+          "pinyin": "tā mà xiáo mǎ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也骂我的猫",
+          "pinyin": "yě mà wǒ de māo",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我的手麻了",
+          "pinyin": "wǒ de shǒu má le",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: xiǎo mǎ → xiáo mǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "Một âm ma với bốn thanh: 妈 mā, 麻 má, 马 mǎ, 骂 mà — chỉ cao độ khác nhau.",
+        "Âm cuối rơi nhẹ: 手麻了 shǒu má le, 了 không dấu."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        3,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        3,
+        5,
+        1,
+        3,
+        5,
+        3,
+        2,
+        5
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          3,
+          1,
+          1,
+          4,
+          2,
+          3,
+          3,
+          4,
+          3,
+          5,
+          1,
+          3,
+          5,
+          3,
+          2,
+          5
+        ],
+        [
+          4,
+          4,
+          3,
+          1,
+          1,
+          4,
+          3,
+          3,
+          3,
+          4,
+          3,
+          5,
+          1,
+          3,
+          5,
+          3,
+          2,
+          5
+        ]
+      ],
+      "hint": "App chấp nhận cả dạng đọc liền 4-4-3-1-1-4-2-3-3-4-3-5-1-3-5-3-2-5 lẫn dạng trích dẫn từng chữ 4-4-3-1-1-4-3-3-3-4-3-5-1-3-5-3-2-5."
+    }
+  ]
+}

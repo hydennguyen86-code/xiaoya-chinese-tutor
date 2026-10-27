@@ -31,6 +31,8 @@ export interface ChatRequest {
   provider: string;
   model: string;
   level: string;
+  /** which teacher persona the server should speak as */
+  gender?: 'female' | 'male';
   messages: ChatHistoryMessage[];
   learning?: string;
   /** role-play instructions for a lesson; the server puts them in the system prompt */

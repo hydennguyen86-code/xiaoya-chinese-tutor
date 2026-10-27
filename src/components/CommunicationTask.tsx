@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { assessmentRequest, streamChat } from '../lib/api';
 import type { CanDo, TaskSpec } from '../lib/assessment';
 import { taskLabel } from '../lib/assessment';
+import { renameTeacher, useTeacher } from '../lib/persona';
 import type { Level } from '../types';
 import { MicButton } from './LessonWidgets';
 import type { VoicePhase } from '../lib/voiceInput';
@@ -19,8 +20,9 @@ interface Props {
   onComplete: (result: CanDo[]) => void;
 }
 export function CommunicationTask({ task, provider, model, level, ask, say, micReady, voicePhase, onComplete }: Props) {
+  const teacher = useTeacher();
   const [dialog, setDialog] = useState<Array<{ role: 'user' | 'assistant'; content: string }>>([
-    { role: 'assistant', content: task.opening },
+    { role: 'assistant', content: renameTeacher(task.opening, teacher) },
   ]);
   const [draft, setDraft] = useState('');
   const [busy, setBusy] = useState(false);
@@ -39,7 +41,10 @@ export function CommunicationTask({ task, provider, model, level, ask, say, micR
     };
   }, []);
   const turns = dialog.filter((d) => d.role === 'user');
-  const scenario = `Kiểm tra giao tiếp: ${task.setting}. Bạn đóng vai ${task.avatarRole}, người học là ${task.learnerRole}. Mục tiêu: ${task.goals.join('; ')}. Đối thoại tiếng Trung ngắn đúng trình độ, hỏi một câu. Không đưa mẫu trả lời hoặc giải thích. Không tự hoàn thành mục tiêu thay người học.`;
+  const scenario = renameTeacher(
+    `Kiểm tra giao tiếp: ${task.setting}. Bạn đóng vai ${task.avatarRole}, người học là ${task.learnerRole}. Mục tiêu: ${task.goals.join('; ')}. Đối thoại tiếng Trung ngắn đúng trình độ, hỏi một câu. Không đưa mẫu trả lời hoặc giải thích. Không tự hoàn thành mục tiêu thay người học.`,
+    teacher,
+  );
   async function send(input: string, hintOnly = false) {
     if (locked.current || (!input.trim() && !hintOnly) || (!hintOnly && turns.length >= 4)) return;
     locked.current = true;
@@ -55,6 +60,7 @@ export function CommunicationTask({ task, provider, model, level, ask, say, micR
           provider,
           model,
           level,
+          gender: teacher.gender,
           scenario: hintOnly
             ? `${scenario} Người học đã xin gợi ý: suggestion phải là một câu trả lời ngắn phù hợp lượt hiện tại.`
             : scenario,
@@ -112,7 +118,7 @@ export function CommunicationTask({ task, provider, model, level, ask, say, micR
     <section className="lesson-card">
       <h3>Nhiệm vụ giao tiếp</h3>
       <p>
-        {task.setting} · Bạn: {task.learnerRole} · Misu: {task.avatarRole}
+        {renameTeacher(task.setting, teacher)} · Bạn: {task.learnerRole} · {teacher.vi}: {renameTeacher(task.avatarRole, teacher)}
       </p>
       <ul>
         {task.goals.map((g) => (

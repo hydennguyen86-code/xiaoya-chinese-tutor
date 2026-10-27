@@ -87,3 +87,23 @@ export function pinyinCitation(text) {
 export function pinyinWord(word) {
   return pinyinCitation(word);
 }
+
+const TONE_NUM = { 0x0304: 1, 0x0301: 2, 0x030c: 3, 0x0300: 4 };
+
+/** Nhãn thanh điệu của một chuỗi pinyin: 'thanh 1'…'thanh 4', hoặc 'thanh nhẹ' khi không có dấu. */
+export function toneLabel(text) {
+  const mark = [...String(text).normalize('NFD')].find((c) => c.codePointAt(0) in TONE_NUM);
+  const tone = mark ? TONE_NUM[mark.codePointAt(0)] : 0;
+  return tone ? `thanh ${tone}` : 'thanh nhẹ';
+}
+
+/** Hai chuỗi pinyin có cùng âm tiết gốc không (chỉ bỏ dấu thanh, giữ nguyên ü)? Rỗng là không so được. */
+export function sameSyllable(a, b) {
+  const dropTone = (s) =>
+    [...String(s).normalize('NFD')]
+      .filter((c) => !(c.codePointAt(0) in TONE_NUM))
+      .join('')
+      .normalize('NFC');
+  const x = dropTone(a);
+  return Boolean(x) && x === dropTone(b);
+}

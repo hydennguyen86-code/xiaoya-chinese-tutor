@@ -1,5 +1,6 @@
 import { ToneLabelFeedback } from './ToneLabelFeedback';
 import { PronunciationRepair, type RepairContext } from './PronunciationRepair';
+import { useTeacher } from '../lib/persona';
 import { useEffect, useRef, useState } from 'react';
 import type { ToneReport } from '../lib/voiceInput';
 
@@ -16,12 +17,15 @@ export function ToneFeedback({
   audio,
   repair,
   learnerId,
+  neutralTone = false,
 }: {
   report: ToneReport;
   audio?: Blob;
   repair?: RepairContext;
   learnerId?: string;
+  neutralTone?: boolean;
 }) {
+  const teacher = useTeacher();
   const context = useRef<AudioContext | null>(null);
   const source = useRef<AudioBufferSourceNode | null>(null);
   const sequence = useRef(0);
@@ -177,11 +181,14 @@ export function ToneFeedback({
       {report.checked > 0 &&
         !wrong.length &&
         (report.checked === report.syllables.filter((s) => s.expected).length ? (
-          <p className="lesson-ok">Lần này Misu nghe các thanh khớp với mẫu.</p>
+          <p className="lesson-ok">Lần này {teacher.vi} nghe các thanh khớp với mẫu.</p>
         ) : (
           <p className="lesson-ok">Mọi chữ chấm được đều đúng thanh. Chữ có dấu — mình chưa đủ chắc để chấm, nên không tính là sai.</p>
         ))}
-      {report.checked === 0 && !report.note && report.syllables.length > 0 && (
+      {report.checked === 0 && neutralTone && report.syllables.length > 0 && (
+        <p className="lesson-hint">Thanh nhẹ chưa được máy chấm cao độ. Nghe mẫu và đọc ngắn, nhẹ theo nhịp câu nhé.</p>
+      )}
+      {report.checked === 0 && !neutralTone && !report.note && report.syllables.length > 0 && (
         <p className="lesson-hint">Chưa chấm được thanh điệu lần này: đọc rõ, chậm và kéo dài từng chữ hơn một chút nhé.</p>
       )}
       {wrong.map((s, i) => (
@@ -189,7 +196,7 @@ export function ToneFeedback({
           <strong>{s.char}</strong> — {TONE_HINT[s.expected]}
         </p>
       ))}
-      {report.note && <p className="lesson-hint">{report.note}</p>}
+      {report.note && !(neutralTone && report.note.startsWith('Mình chưa quen giọng bạn:')) && <p className="lesson-hint">{report.note}</p>}
     </div>
   );
 }

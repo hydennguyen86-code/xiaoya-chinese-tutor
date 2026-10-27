@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 // Packaged courses that ship a listening bank, mapped to how many days a lesson has.
 // Only admit these identifiers. Never resolve a user-supplied path.
-const COURSE_LISTENING_DAYS = { 'hsk1-practical': 2, 'hsk3-practical': 2, 'hsk5-practical': 2 };
+const COURSE_LISTENING_DAYS = { 'pinyin-intro': 1, 'hsk1-practical': 2, 'hsk3-practical': 2, 'hsk5-practical': 2 };
 export function readCourseListening(volumeId, lessonNo, day) {
   const maxDay = COURSE_LISTENING_DAYS[volumeId];
   if (!maxDay || !Number.isInteger(lessonNo) || lessonNo < 1 || !Number.isInteger(day) || day < 1 || day > maxDay) return null;

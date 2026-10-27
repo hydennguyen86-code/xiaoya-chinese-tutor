@@ -14,24 +14,35 @@ export function useListeningPrefs() {
   return prefs;
 }
 export function ListeningControls() {
-  const prefs = useListeningPrefs();
   return (
     <div className="listening-controls">
-      <label>
-        Tốc độ nghe{' '}
-        <select aria-label="Tốc độ nghe" value={prefs.rate} onChange={(e) => updateListeningPrefs({ rate: Number(e.target.value) })}>
-          {SPEEDS.map((rate) => (
-            <option key={rate} value={rate}>
-              {rate.toFixed(2).replace(/0$/, '')}×
-            </option>
-          ))}
-        </select>
-      </label>
-      <label>
-        <input type="checkbox" checked={prefs.listenFirst} onChange={(e) => updateListeningPrefs({ listenFirst: e.target.checked })} />
-        Nhập vai: nghe trước, bấm mới hiện chữ
-      </label>
+      <ListeningRate />
+      <ListenFirstToggle />
     </div>
+  );
+}
+export function ListeningRate() {
+  const prefs = useListeningPrefs();
+  return (
+    <label className="listening-rate">
+      Tốc độ nghe{' '}
+      <select aria-label="Tốc độ nghe" value={prefs.rate} onChange={(e) => updateListeningPrefs({ rate: Number(e.target.value) })}>
+        {SPEEDS.map((rate) => (
+          <option key={rate} value={rate}>
+            {rate.toFixed(2).replace(/0$/, '')}×
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+export function ListenFirstToggle() {
+  const prefs = useListeningPrefs();
+  return (
+    <label className="listen-first-toggle">
+      <input type="checkbox" checked={prefs.listenFirst} onChange={(e) => updateListeningPrefs({ listenFirst: e.target.checked })} />
+      Nhập vai: nghe trước, bấm mới hiện chữ
+    </label>
   );
 }
 export function SlowListen({ onPlay, disabled = false }: { onPlay: () => unknown; disabled?: boolean }) {

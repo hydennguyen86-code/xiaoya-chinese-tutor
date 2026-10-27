@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pinyinCitation } from './coursePinyin.mjs';
+import { pinyinCitation, sameSyllable, toneLabel } from './coursePinyin.mjs';
 
 test('的/了/子 keep their tone where they are full morphemes', () => {
   for (const [word, expected] of [
@@ -37,4 +37,21 @@ test('known full-tone compound does not inherit the neutral meaning of its subst
   assert.equal(pinyinCitation('东西方'), 'dōng xī fāng');
   const { readSentence } = await import('./listeningPinyin.mjs');
   assert.equal(readSentence('东西方').pinyin, 'dōng xī fāng');
+});
+
+test('toneLabel names the light tone instead of calling it tone 1', () => {
+  assert.equal(toneLabel('mā'), 'thanh 1');
+  assert.equal(toneLabel('má'), 'thanh 2');
+  assert.equal(toneLabel('mǎ'), 'thanh 3');
+  assert.equal(toneLabel('mà'), 'thanh 4');
+  assert.equal(toneLabel('lǜ'), 'thanh 4');
+  assert.equal(toneLabel(pinyinCitation('吗')), 'thanh nhẹ');
+});
+
+test('sameSyllable lets a light-tone word pass on its sound, not the recognised character', () => {
+  assert.equal(sameSyllable('mā', 'ma'), true);
+  assert.equal(sameSyllable('mà', 'ma'), true);
+  assert.equal(sameSyllable('mā', 'māo'), false);
+  assert.equal(sameSyllable('lǜ', 'lu'), false);
+  assert.equal(sameSyllable('', 'ma'), false);
 });

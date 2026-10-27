@@ -4,3 +4,5 @@ export const NEUTRAL_SUFFIX: Set<string>;
 export function neutralPositions(text: string): Set<number>;
 export function pinyinCitation(text: string): string;
 export function pinyinWord(text: string): string;
+export function toneLabel(text: string): string;
+export function sameSyllable(a: string, b: string): boolean;

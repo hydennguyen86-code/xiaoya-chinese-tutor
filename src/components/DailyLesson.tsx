@@ -1,14 +1,15 @@
 import { HanViet } from './HanViet';
 import { PronunciationReview } from './PronunciationReview';
-import { ListeningControls, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
+import { ListenFirstToggle, ListeningControls, ListeningRate, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
 import { CoursePractice } from './CoursePractice';
 import { CommunicationTask } from './CommunicationTask';
 import { MicButton, Han } from './LessonWidgets';
 import { rememberLesson, loadAssessment, saveAssessment } from '../lib/assessment';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { AvatarApi } from '../lib/avatarApi';
 import { fetchCorrections, streamChat } from '../lib/api';
 import type { Learner } from '../lib/learners';
+import { renameTeacher, useTeacher, type Teacher } from '../lib/persona';
 import { dueWords, recordLearningCorrections, recordLearningTurn, reviewWord, topMistakes } from '../lib/learning';
 import { fetchLessonContent, fetchSyllabus, type LessonContent } from '../lib/lessonApi';
 import {
@@ -36,6 +37,7 @@ import {
   type VoicePhase,
   type VoiceResult,
 } from '../lib/voiceInput';
+import { pinyinWord, sameSyllable, toneLabel } from '../lib/coursePinyin.mjs';
 import type { Correction, LearningProfile, Level } from '../types';
 
 interface DailyLessonProps {
@@ -76,6 +78,7 @@ function lessonLabel(syllabus: Syllabus | null, pointer: Pointer | null) {
 
 export function DailyLesson(props: DailyLessonProps) {
   const { learner, level, provider, model, voice, localStt, getAvatar, onLearningUpdate, onClose } = props;
+  const teacher = useTeacher();
   const [screen, setScreen] = useState<Screen>({ kind: 'loading' });
   const [syllabus, setSyllabus] = useState<Syllabus | null>(null);
   const [content, setContent] = useState<LessonContent | null>(null);
@@ -136,7 +139,7 @@ export function DailyLesson(props: DailyLessonProps) {
         kind: 'loading',
         note: outline.volumes.find((v) => v.id === pointer.volumeId)?.authored
           ? 'Đang mở bài cố định trong lộ trình…'
-          : 'Misu đang soạn bài cho hôm nay. Lần đầu có thể mất khoảng 20–40 giây.',
+          : `${teacher.vi} đang soạn bài cho hôm nay. Lần đầu có thể mất khoảng 20–40 giây.`,
       });
       const material = await fetchLessonContent(
         {
@@ -403,8 +406,8 @@ export function DailyLesson(props: DailyLessonProps) {
   // ---------------------------------------------------------------- render
   if (screen.kind !== 'ready' || !session || !content) {
     return (
-      <section className="lesson-panel">
-        <LessonTop title="Bài hôm nay" subtitle={learner.name} onClose={onClose} />
+      <section className="lesson-panel" aria-label="Bài học hôm nay">
+        <LessonTop onClose={onClose} />
         {coursePicker}
         <ListeningControls />
         <div className="lesson-state">
@@ -480,65 +483,49 @@ export function DailyLesson(props: DailyLessonProps) {
   };
 
   return (
-    <section className="lesson-panel">
+    <section className="lesson-panel" aria-label="Bài học hôm nay">
       <LessonTop
-        title={`Bài ${content.lessonNo}: ${content.lessonTitle}`}
-        subtitle={`${content.volumeTitle} · buổi ${content.day}/${content.days} · ${learner.name}`}
         onClose={() => {
           if (progressRef.current) saveLessonProgress(learner.id, progressRef.current);
           onClose();
         }}
-      />
-      {coursePicker}
-      <ListeningControls />
-      <p className={`lesson-ref${content.placeholder ? ' is-warning' : ''}`}>
-        {content.authored
-          ? `${content.editorialStatus}. Thời lượng gợi ý ${content.recommendedMinutes} phút; tự chuyển phần khi sẵn sàng.`
-          : content.placeholder
-            ? 'Đang dùng chủ đề tạm vì chưa có mục lục sách 《体验汉语口语》. Nội dung do Misu tự soạn.'
-            : `Tham khảo: Bài ${content.lessonNo}, ${content.volumeTitle}${content.pages ? `, trang ${content.pages}` : ''} trong sách 《体验汉语口语》. Nội dung luyện tập do Misu tự soạn.`}
-      </p>
-
-      <p className={content.reviewed ? 'lesson-ok' : 'lesson-notice'}>
-        {content.reviewed ? `Đã duyệt bởi ${content.reviewedBy} · ${content.reviewedAt}` : 'Bài do AI soạn, chưa được giáo viên duyệt'}
-      </p>
-      {content.learningNotes && (
-        <details className="lesson-card">
-          <summary>Kiến thức cần biết và cách học buổi này</summary>
-          <ul>
-            {content.learningNotes.map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
+      >
+        <details className="lesson-setup">
+          <summary>Đổi lộ trình · bài · buổi · nhập vai</summary>
+          {coursePicker}
+          <ListenFirstToggle />
         </details>
-      )}
-      <div className="lesson-timeline" role="list">
-        {SECTIONS.map((item, index) => {
-          const spent = session.elapsedMs[index] || 0;
-          const pct = Math.min(100, (spent / sectionBudgetMs(index)) * 100);
-          return (
-            <button
-              key={item.id}
-              type="button"
-              role="listitem"
-              className={`lesson-step${index === section ? ' is-current' : ''}${index < section ? ' is-done' : ''}`}
-              onClick={() => goToSection(index)}
-              title={`${item.title} · khoảng ${Math.round(sectionBudgetMs(index) / 60000)} phút`}
-            >
-              <span className="lesson-step-bar">
-                <span style={{ width: `${index < section ? 100 : pct}%` }} />
-              </span>
-              <span className="lesson-step-name">{item.title}</span>
-            </button>
-          );
-        })}
-      </div>
+        <ListeningRate />
+      </LessonTop>
 
-      <div className="lesson-clockrow">
-        <span>
-          <strong>{sectionInfo.title}</strong> · còn {clock(sectionBudgetMs(section) - sectionElapsed)}
-        </span>
-        <span>Cả buổi còn {clock(Math.max(0, lessonBudget - session.elapsedMs.reduce((a, b) => a + b, 0)))}</span>
+      <div className="lesson-track">
+        <div className="lesson-timeline" role="list">
+          {SECTIONS.map((item, index) => {
+            const spent = session.elapsedMs[index] || 0;
+            const pct = Math.min(100, (spent / sectionBudgetMs(index)) * 100);
+            return (
+              <button
+                key={item.id}
+                type="button"
+                role="listitem"
+                className={`lesson-step${index === section ? ' is-current' : ''}${index < section ? ' is-done' : ''}`}
+                onClick={() => goToSection(index)}
+                title={`${item.title} · khoảng ${Math.round(sectionBudgetMs(index) / 60000)} phút`}
+              >
+                <span className="lesson-step-bar">
+                  <span style={{ width: `${index < section ? 100 : pct}%` }} />
+                </span>
+                <span className="lesson-step-name">{item.title}</span>
+              </button>
+            );
+          })}
+        </div>
+        <p className="lesson-clock">
+          <span>
+            <strong>{sectionInfo.title}</strong> · còn {clock(sectionBudgetMs(section) - sectionElapsed)}
+          </span>
+          <span>cả buổi còn {clock(Math.max(0, lessonBudget - session.elapsedMs.reduce((a, b) => a + b, 0)))}</span>
+        </p>
       </div>
       {overBudget && section < SECTIONS.length - 1 && (
         <p className="lesson-notice">Đã hết thời gian phần này. Làm nốt câu đang dở rồi bấm "Phần tiếp".</p>
@@ -550,6 +537,16 @@ export function DailyLesson(props: DailyLessonProps) {
       )}
 
       <div className="lesson-body">
+        {content.learningNotes && (
+          <details className="lesson-card">
+            <summary>Kiến thức cần biết và cách học buổi này</summary>
+            <ul>
+              {content.learningNotes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </details>
+        )}
         {sectionInfo.id === 'review' && (
           <>
             <PronunciationReview
@@ -581,7 +578,7 @@ export function DailyLesson(props: DailyLessonProps) {
               <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={teachingLevel} />
             ) : (
               <p className="lesson-notice">
-                Bài nghe và luyện nói cố định vẫn học được. Chọn model trong Cài đặt để nhập vai tương tác với Misu.
+                Bài nghe và luyện nói cố định vẫn học được. Chọn model trong Cài đặt để nhập vai tương tác với {teacher.vi}.
               </p>
             )}
           </>
@@ -627,15 +624,11 @@ export function DailyLesson(props: DailyLessonProps) {
 
 // ------------------------------------------------------------------ pieces
 
-function LessonTop({ title, subtitle, onClose }: { title: string; subtitle: string; onClose: () => void }) {
+function LessonTop({ onClose, children }: { onClose: () => void; children?: ReactNode }) {
   return (
     <header className="lesson-top">
-      <div>
-        <p className="lesson-kicker">Bài hôm nay · Nghe và nói</p>
-        <h2>{title}</h2>
-        <p className="lesson-sub">{subtitle}</p>
-      </div>
-      <button type="button" className="lesson-secondary" onClick={onClose}>
+      {children}
+      <button type="button" className="lesson-secondary lesson-exit" onClick={onClose}>
         Thoát
       </button>
     </header>
@@ -759,6 +752,53 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
   );
 }
 
+/** Pinyin của phần chữ Hán trong lời nhận dạng; rỗng khi không phân tích được. */
+function pinyinOf(text: string) {
+  const han = bareChinese(text).replace(/[^\p{Script=Han}]/gu, '');
+  if (!han) return '';
+  try {
+    return pinyinWord(han);
+  } catch {
+    return '';
+  }
+}
+
+// Only a single, explicitly unmarked syllable gets the neutral-tone fallback.
+function isLightSyllable(word: { word: string; pinyin: string }) {
+  return (
+    /^\p{Script=Han}$/u.test(word.word) &&
+    Boolean(word.pinyin.trim()) &&
+    !/\s/u.test(word.pinyin.trim()) &&
+    toneLabel(word.pinyin) === 'thanh nhẹ'
+  );
+}
+
+/** Feedback for one recognised vocabulary answer, shared by the card and its tests. */
+export function VocabReadFeedback({ word, target, text }: { word: { word: string; pinyin: string }; target: string; text: string }) {
+  if (!text) return null;
+  const cleanedTarget = bareChinese(target);
+  const exact = Boolean(cleanedTarget) && bareChinese(text).includes(cleanedTarget);
+  const readingWord = target === word.word;
+  const light = readingWord && isLightSyllable(word);
+  const heardWord = readingWord ? pinyinOf(text) : '';
+  const similar = light && Boolean(heardWord) && sameSyllable(heardWord, word.pinyin);
+  const want = word.pinyin ? `${word.pinyin} · ${toneLabel(word.pinyin)}` : '';
+
+  return (
+    <p className={exact || similar ? 'lesson-ok' : 'lesson-bad'}>
+      {light && exact
+        ? `Máy nhận đúng chữ ${word.word}. Thanh nhẹ chưa được chấm; nghe mẫu và đọc ngắn, nhẹ nhé.`
+        : exact
+          ? 'Mình nghe đúng chữ rồi.'
+          : similar
+            ? `Máy nhận thành “${text}” (${heardWord}), có cùng âm tiết ${word.pinyin}. Mình tạm chấp nhận; máy chưa xác nhận được thanh nhẹ. Nghe mẫu và đọc ngắn, nhẹ nhé.`
+            : heardWord && want
+              ? `Mình nghe thành “${text}” (${heardWord} · ${toneLabel(heardWord)}), còn ${word.word} cần “${want}”. Nghe mẫu rồi thử lại nhé.`
+              : `Mình nghe thành: “${text}”. Nghe lại rồi thử lần nữa nhé.`}
+    </p>
+  );
+}
+
 // 2. New words: listen, repeat, and they go into the learner's review list.
 function VocabSection(props: SharedProps) {
   const { content, session, say, read, voicePhase, micReady, updateSession, onLearningUpdate } = props;
@@ -795,7 +835,9 @@ function VocabSection(props: SharedProps) {
     );
     updateSession((s) => ({ ...s, item: s.item + 1, stats: { ...s.stats, newWords: s.stats.newWords + 1 } }));
   };
-  const ok = heard !== null && bareChinese(heard.text).includes(bareChinese(heard.target));
+  const light = isLightSyllable(word);
+  // a bare syllable reads as thanh ngang to a Vietnamese eye, so flag the light tone
+  const cardPinyin = light ? `${word.pinyin} (thanh nhẹ)` : word.pinyin;
 
   return (
     <div className="lesson-card">
@@ -803,7 +845,7 @@ function VocabSection(props: SharedProps) {
         {content.day === 1 ? 'Từ mới' : 'Ôn từ của bài'} {session.item + 1}/{content.vocab.length}
       </p>
       <p className="lesson-word">
-        <Han text={word.word} pinyinText={word.pinyin} />
+        <Han text={word.word} pinyinText={cardPinyin} />
       </p>
       <HanViet word={word.word} />
       <p className="lesson-meaning">{word.meaning}</p>
@@ -811,15 +853,12 @@ function VocabSection(props: SharedProps) {
         <Han text={word.example} pinyinText={word.examplePinyin} />
       </p>
       <p className="lesson-hint">{word.exampleVi}</p>
-      {heard !== null && heard.text && (
-        <p className={ok ? 'lesson-ok' : 'lesson-bad'}>
-          {ok ? 'Mình nghe đúng chữ rồi.' : `Mình nghe thành: "${heard.text}". Nghe lại rồi thử lần nữa nhé.`}
-        </p>
-      )}
+      {heard && <VocabReadFeedback word={word} target={heard.target} text={heard.text} />}
       {heard?.tones && (
         <ToneFeedback
           report={heard.tones}
           audio={heard.audio}
+          neutralTone={light && heard.target === word.word}
           repair={{ learnerId: props.learnerId, word: heard.target, sentence: word.example, voice: props.voice, local: props.localStt }}
         />
       )}
@@ -944,12 +983,18 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
 }
 
 // 4 and 5. Role-play and free talk with the avatar.
-function scenarioText(content: LessonContent, mode: 'roleplay' | 'freetalk') {
+function scenarioText(content: LessonContent, mode: 'roleplay' | 'freetalk', teacher: Teacher) {
   if (mode === 'freetalk') {
-    return `【课堂：自由表达】你和学生就这个问题聊天：「${content.freeTalk.question}」。鼓励学生多说，每次只追问一个细节，回答简短自然，不要讲解语法。`;
+    return renameTeacher(
+      `【课堂：自由表达】你和学生就这个问题聊天：「${content.freeTalk.question}」。鼓励学生多说，每次只追问一个细节，回答简短自然，不要讲解语法。`,
+      teacher,
+    );
   }
   const rp = content.roleplay;
-  return `【课堂：角色扮演】情境（越南语说明）：${rp.setting}。你扮演：${rp.avatarRole}。学生扮演：${rp.learnerRole}。学生的任务：${rp.goals.join('；')}。请一直留在角色里，用适合学生水平的口语对话，每次只说 1–3 句并以一个问题结尾，不要跳出角色，不要讲解语法。`;
+  return renameTeacher(
+    `【课堂：角色扮演】情境（越南语说明）：${rp.setting}。你扮演：${rp.avatarRole}。学生扮演：${rp.learnerRole}。学生的任务：${rp.goals.join('；')}。请一直留在角色里，用适合学生水平的口语对话，每次只说 1–3 句并以一个问题结尾，不要跳出角色，不要讲解语法。`,
+    teacher,
+  );
 }
 
 function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; provider: string; model: string; level: Level }) {
@@ -972,6 +1017,7 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
     level,
   } = props;
   const dialog = session.dialog ?? [];
+  const teacher = useTeacher();
   const [draft, setDraft] = useState('');
   const [streaming, setStreaming] = useState('');
   const active = useRef(true);
@@ -984,8 +1030,8 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
       setBusy(false);
     };
   }, []);
-  const opening = mode === 'roleplay' ? content.roleplay.opening : content.freeTalk.question;
-  const openingVi = mode === 'roleplay' ? content.roleplay.openingVi : content.freeTalk.questionVi;
+  const opening = renameTeacher(mode === 'roleplay' ? content.roleplay.opening : content.freeTalk.question, teacher);
+  const openingVi = renameTeacher(mode === 'roleplay' ? content.roleplay.openingVi : content.freeTalk.questionVi, teacher);
 
   useEffect(() => {
     if (dialog.length === 0) {
@@ -1034,7 +1080,8 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
           provider,
           model,
           level,
-          scenario: scenarioText(content, mode),
+          gender: teacher.gender,
+          scenario: scenarioText(content, mode, teacher),
           messages: history.slice(-12).map((line) => ({ role: line.role, content: line.text })),
         },
         {
@@ -1057,7 +1104,7 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
       );
     } catch (error) {
       if (active.current && !controller.signal.aborted)
-        setNotice(error instanceof Error ? error.message : 'Misu chưa trả lời được. Thử lại nhé.');
+        setNotice(error instanceof Error ? error.message : `${teacher.vi} chưa trả lời được. Thử lại nhé.`);
     } finally {
       if (active.current) {
         setStreaming('');
@@ -1076,10 +1123,11 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
       {mode === 'roleplay' ? (
         <div className="lesson-scenario">
           <p>
-            <strong>Tình huống:</strong> {content.roleplay.setting}
+            <strong>Tình huống:</strong> {renameTeacher(content.roleplay.setting, teacher)}
           </p>
           <p>
-            <strong>Misu:</strong> {content.roleplay.avatarRole} · <strong>Bạn:</strong> {content.roleplay.learnerRole}
+            <strong>{teacher.vi}:</strong> {renameTeacher(content.roleplay.avatarRole, teacher)} · <strong>Bạn:</strong>{' '}
+            {content.roleplay.learnerRole}
           </p>
           <ul>
             {content.roleplay.goals.map((goal) => (
@@ -1088,7 +1136,7 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
           </ul>
         </div>
       ) : (
-        <p className="lesson-prompt">Nói ít nhất 3–4 câu về câu hỏi này. Misu sẽ hỏi thêm.</p>
+        <p className="lesson-prompt">Nói ít nhất 3–4 câu về câu hỏi này. {teacher.vi} sẽ hỏi thêm.</p>
       )}
       <div className="lesson-chat">
         {dialog.map((line, i) => (

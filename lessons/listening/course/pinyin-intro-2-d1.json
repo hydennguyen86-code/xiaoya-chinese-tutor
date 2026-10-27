@@ -1,0 +1,172 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-2-d1",
+  "level": "HSK1-2",
+  "title": "Môi và môi-răng: b p m f d t n l",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-205",
+      "level": "HSK1-2",
+      "hanzi": "我要一杯咖啡。",
+      "pinyin": "wǒ yào yì bēi kā fēi",
+      "meaningVi": "Tôi muốn một ly cà phê.",
+      "focus": [
+        "咖啡 kā fēi: hai thanh 1 cao phẳng; f là môi dưới chạm răng trên.",
+        "一 trước 杯 (thanh 1) rơi mạnh: yì bēi.",
+        "要 yào thanh 4 đi xuống, mở hàm rồi khép."
+      ]
+    },
+    {
+      "id": "dt-1-206",
+      "level": "HSK1-2",
+      "hanzi": "今天人太多了吧！",
+      "pinyin": "jīn tiān rén tài duō le ba",
+      "meaningVi": "Đông người quá nhỉ!",
+      "focus": [
+        "Cụm phản xạ 太多了 tài duō le: hai âm cuối rơi nhẹ.",
+        "多 duō: bo môi ở u rồi mở ở o, thanh 1 phẳng.",
+        "吧 ba cuối câu cảm thán đọc nhẹ, ngắn."
+      ]
+    },
+    {
+      "id": "dt-1-207",
+      "level": "HSK1-2",
+      "hanzi": "妈妈也怕猫吗？",
+      "pinyin": "mā ma yě pà māo ma",
+      "meaningVi": "Mẹ có sợ mèo không?",
+      "focus": [
+        "怕 pà phóng hơi rõ từ hai môi; 爸 bà không có hơi: cặp b/p của bài.",
+        "妈妈 mā ma: chữ thứ hai nhẹ.",
+        "吗 ở cuối câu hỏi đọc nhẹ, thấp."
+      ]
+    },
+    {
+      "id": "dt-1-208",
+      "level": "HSK1-2",
+      "hanzi": "他打电话给我。",
+      "pinyin": "tā dǎ diàn huà géi wǒ",
+      "meaningVi": "Anh ấy gọi điện cho tôi.",
+      "focus": [
+        "Biến điệu 3+3: gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "打 dǎ thanh 3 thấp rồi nhô, không bật hơi.",
+        "电话 diàn huà: hai thanh 4 liên tiếp, đóng bằng -n."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        4,
+        4,
+        3,
+        3
+      ],
+      "acceptTones": [
+        [
+          1,
+          3,
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          4,
+          3,
+          3
+        ]
+      ],
+      "hint": "App chấp nhận cả dạng đọc liền 1-3-4-4-2-3 lẫn dạng trích dẫn từng chữ 1-3-4-4-3-3."
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-46",
+      "level": "HSK1-2",
+      "text": "我想吃米饭，也喝咖啡。人太多了吧！",
+      "pinyin": "wó xiǎng chī mǐ fàn yě hē kā fēi rén tài duō le ba",
+      "meaningVi": "Tôi muốn ăn cơm, cũng uống cà phê. Đông người quá nhỉ!",
+      "syllables": 14,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我想吃米饭",
+          "pinyin": "wó xiǎng chī mǐ fàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也喝咖啡",
+          "pinyin": "yě hē kā fēi",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "人太多了吧",
+          "pinyin": "rén tài duō le ba",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "Hơi qua mũi: 米 mǐ; hơi qua môi-răng: 咖啡 kā fēi.",
+        "Cụm 太多了 tài duō le: hai âm cuối nhẹ, không dấu."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        1,
+        3,
+        4,
+        3,
+        1,
+        1,
+        1,
+        2,
+        4,
+        1,
+        5,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          1,
+          3,
+          4,
+          3,
+          1,
+          1,
+          1,
+          2,
+          4,
+          1,
+          5,
+          5
+        ],
+        [
+          3,
+          3,
+          1,
+          3,
+          4,
+          3,
+          1,
+          1,
+          1,
+          2,
+          4,
+          1,
+          5,
+          5
+        ]
+      ],
+      "hint": "App chấp nhận cả dạng đọc liền 2-3-1-3-4-3-1-1-1-2-4-1-5-5 lẫn dạng trích dẫn từng chữ 3-3-1-3-4-3-1-1-1-2-4-1-5-5."
+    }
+  ]
+}

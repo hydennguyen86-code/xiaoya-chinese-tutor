@@ -8,16 +8,18 @@ import { readCourseListening } from './courseListening.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 import { bundledSyllabus } from './courseContent.mjs';
 
-test('72 course listening files validate authored pinyin sandhi meaning chunks and vocabulary', () => {
+test('82 course listening files validate authored pinyin sandhi meaning chunks and vocabulary', () => {
   const result = spawnSync(process.execPath, ['scripts/listening-checks/course-listening.check.mjs'], { encoding: 'utf8' });
   assert.equal(result.status, 0, result.stdout + result.stderr);
   const ids = new Set();
   let dictation = 0,
     shadowing = 0;
-  for (const volume of ['hsk1-practical', 'hsk3-practical', 'hsk5-practical'])
-    for (let no = 1; no <= 12; no++)
-      for (const day of [1, 2]) {
-        const data = readCourseListening(volume, no, day);
+  const syllabus = bundledSyllabus();
+  for (const volumeId of ['pinyin-intro', 'hsk1-practical', 'hsk3-practical', 'hsk5-practical']) {
+    const volume = syllabus.volumes.find((v) => v.id === volumeId);
+    for (const lesson of volume.lessons)
+      for (let day = 1; day <= lesson.days; day++) {
+        const data = readCourseListening(volumeId, lesson.no, day);
         assert.equal(data.source, 'AI soạn, chưa duyệt');
         assert.ok(data.dictation.length >= 3 && data.dictation.length <= 5);
         assert.equal(data.shadowing.length, 1);
@@ -34,12 +36,13 @@ test('72 course listening files validate authored pinyin sandhi meaning chunks a
           assert.equal(item.chunks.at(-1).pause, 'end');
         }
       }
-  assert.equal(ids.size, 366);
-  assert.equal(dictation, 294);
-  assert.equal(shadowing, 72);
+  }
+  assert.equal(ids.size, 416);
+  assert.equal(dictation, 334);
+  assert.equal(shadowing, 82);
   assert.equal(readCourseListening('../escape', 1, 1), null);
   assert.equal(readCourseListening('misu30-1', 1, 1), null);
-  assert.equal(readCourseListening('pinyin-intro', 1, 1), null);
+  assert.equal(readCourseListening('hsk1-practical', 1, 3), null);
 });
 test('loader preserves the exact listening practice and checkpoint pinyin through merge', async () => {
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-linked-listening-'));

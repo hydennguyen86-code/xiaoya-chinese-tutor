@@ -1,0 +1,120 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-6-d1",
+  "level": "HSK1-2",
+  "title": "Nguyên âm đôi: ai ei ao ou / ia ie ua uo üe",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-221",
+      "level": "HSK1-2",
+      "hanzi": "你家有白色的车吗？",
+      "pinyin": "nǐ jiā yǒu bái sè de chē ma",
+      "meaningVi": "Nhà bạn có xe không?",
+      "focus": [
+        "车 chē cong lưỡi, e dẹt; 家 jiā mở rộng miệng ở ia.",
+        "有 yǒu thanh 3 thấp rồi nhô nhẹ.",
+        "吗 ở cuối câu hỏi đọc nhẹ, thấp."
+      ]
+    },
+    {
+      "id": "dt-1-222",
+      "level": "HSK1-2",
+      "hanzi": "小明来我家吃饭。",
+      "pinyin": "xiǎo míng lái wǒ jiā chī fàn",
+      "meaningVi": "Tiểu Minh đến nhà tôi ăn cơm.",
+      "focus": [
+        "来 lái: vần ai mở ở a rồi khép nhanh ở i, thanh 2 đi đều.",
+        "明 míng kết ở -ng vang trong mũi; 家 jiā không chặn hơi.",
+        "来 đứng trước nơi đến: 我家 wǒ jiā."
+      ]
+    },
+    {
+      "id": "dt-1-223",
+      "level": "HSK1-2",
+      "hanzi": "山很高，雪很白。",
+      "pinyin": "shān hěn gāo xué hěn bái",
+      "meaningVi": "Núi rất cao, tuyết rất trắng.",
+      "focus": [
+        "Biến điệu 3+3: xuě hěn → xué hěn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "高 gāo vần ao kéo dài; 白 bái vần ai khép nhanh: hai vần đôi không dài bằng nhau.",
+        "山 shān cong lưỡi, -n chặn bằng đầu lưỡi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        3,
+        1,
+        3,
+        3,
+        2
+      ],
+      "acceptTones": [
+        [
+          1,
+          3,
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          3,
+          3,
+          2
+        ]
+      ],
+      "hint": "App chấp nhận cả dạng đọc liền 1-3-1-2-3-2 lẫn dạng trích dẫn từng chữ 1-3-1-3-3-2."
+    },
+    {
+      "id": "dt-1-224",
+      "level": "HSK1-2",
+      "hanzi": "我们慢慢走路。",
+      "pinyin": "wǒ men màn màn zǒu lù",
+      "meaningVi": "Chúng ta cứ đi chậm rãi.",
+      "focus": [
+        "我们 wǒ men: chữ thứ hai nhẹ, chỉ lướt qua.",
+        "慢慢 màn màn: hai thanh 4 liên tiếp, cùng vần -an.",
+        "走 zǒu vần ou ngắn vì môi khép sớm; 慢 dài hơn do -n."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-50",
+      "level": "HSK1-2",
+      "text": "我家在高山上，车不来，我们走路回家。",
+      "pinyin": "wǒ jiā zài gāo shān shàng chē bù lái wǒ men zǒu lù huí jiā",
+      "meaningVi": "Nhà tôi ở trên núi cao, xe không đến, chúng tôi đi bộ về nhà.",
+      "syllables": 15,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我家在高山上",
+          "pinyin": "wǒ jiā zài gāo shān shàng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "车不来",
+          "pinyin": "chē bù lái",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我们走路回家",
+          "pinyin": "wǒ men zǒu lù huí jiā",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "我们 wǒ men: âm sau rơi nhẹ.",
+        "Ba vần đôi trái nhau: 来 lái, 高 gāo, 走 zǒu: khác độ dài và khẩu hình.",
+        "车 chē cong lưỡi, 家 jiā mặt lưỡi; 不来 bù lái gọn ở cuối cụm."
+      ]
+    }
+  ]
+}

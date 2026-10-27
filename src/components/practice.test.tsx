@@ -1,10 +1,12 @@
 import { HanViet } from './HanViet';
+import { VocabReadFeedback } from './DailyLesson';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { ToneFeedback } from './ToneFeedback';
 import { SetupCheck } from './SetupCheck';
 import { CoursePractice } from './CoursePractice';
+import { LearnerPicker } from './LearnerPicker';
 import { DEFAULT_SETTINGS } from '../lib/storage';
 import fs from 'node:fs';
 test('tone feedback never marks unclear syllables correct and disables replay without recording', () => {
@@ -100,4 +102,55 @@ test('missing fluency explains transcript, audio and decoding failures separatel
     const html = renderToStaticMarkup(<ToneFeedback report={{ syllables: [], checked: 0, correct: 0, fluencyReason: reason }} />);
     assert.ok(html.includes(expected));
   }
+});
+
+test('a new learner is offered the opposite-gender teacher', () => {
+  const html = renderToStaticMarkup(<LearnerPicker learners={[]} onPick={() => {}} onCreate={() => {}} />);
+  const group = html.match(/aria-label="Giới tính của bạn"[\s\S]*?(?=<button class="learner-submit)/);
+  assert.ok(group, 'gender radiogroup is missing');
+  assert.match(group[0], /Bạn là Nữ[\s\S]*Giáo viên: Misu · 米苏/);
+  assert.match(group[0], /Bạn là Nam[\s\S]*Giáo viên: Tiểu Nhã · 小雅/);
+});
+
+test('vocabulary card accepts a recognised ma homophone only for the neutral syllable', () => {
+  const render = (word: string, pinyin: string, target: string, text: string) =>
+    renderToStaticMarkup(<VocabReadFeedback word={{ word, pinyin }} target={target} text={text} />);
+  for (const recognised of ['妈', '马', '骂']) {
+    const html = render('吗', 'ma', '吗', recognised);
+    assert.match(html, /lesson-ok/);
+    assert.match(html, /tạm chấp nhận/);
+    assert.match(html, /chưa xác nhận được thanh nhẹ/);
+  }
+  assert.match(render('吗', 'ma', '吗', '吗'), /chưa được chấm/);
+  assert.match(render('吗', 'ma', '吗', '猫'), /lesson-bad/);
+  assert.match(render('妈', 'mā', '妈', '马'), /lesson-bad/);
+  assert.match(render('吗', 'ma', '这是你的猫吗', '妈'), /lesson-bad/);
+  assert.equal(render('吗', 'ma', '吗', ''), '');
+});
+
+test('neutral-tone feedback does not ask the learner to prolong the syllable', () => {
+  const html = renderToStaticMarkup(
+    <ToneFeedback
+      neutralTone
+      report={{ mode: 'word', checked: 0, correct: 0, syllables: [{ char: '吗', pinyin: 'ma', expected: 0, heard: 0, ok: null }] }}
+    />,
+  );
+  assert.match(html, /Thanh nhẹ chưa được máy chấm/);
+  assert.doesNotMatch(html, /kéo dài từng chữ/);
+  const note = 'Mình chưa quen giọng bạn: nói thêm vài câu để mình phân biệt thanh 1 và thanh 3 chính xác hơn.';
+  const renderNote = (message: string) =>
+    renderToStaticMarkup(
+      <ToneFeedback
+        neutralTone
+        report={{
+          mode: 'word',
+          checked: 0,
+          correct: 0,
+          syllables: [{ char: '吗', pinyin: 'ma', expected: 0, heard: 0, ok: null }],
+          note: message,
+        }}
+      />,
+    );
+  assert.doesNotMatch(renderNote(note), /phân biệt thanh 1 và thanh 3/);
+  assert.match(renderNote('Không nghe rõ giọng.'), /Không nghe rõ giọng/);
 });

@@ -2,10 +2,13 @@ import type { Level } from '../types';
 import { CHAT_KEY, PROGRESS_KEY, scopedKey } from './storage';
 import { LEARNING_KEY } from './learning';
 
+export type LearnerGender = 'female' | 'male';
+
 export interface Learner {
   id: string;
   name: string;
   level: Level;
+  gender: LearnerGender;
   createdAt: number;
 }
 
@@ -16,7 +19,13 @@ interface Registry {
 
 const REGISTRY_KEY = 'xiaoya.learners.v2';
 const LEVELS = new Set<Level>(['HSK1-2', 'HSK3-4', 'HSK5-6', 'free']);
+const GENDERS = new Set<LearnerGender>(['female', 'male']);
 const NAME_MAX = 30;
+
+function asGender(value: unknown): LearnerGender {
+  // profiles saved before the gender question get the same teacher they always had
+  return GENDERS.has(value as LearnerGender) ? (value as LearnerGender) : 'female';
+}
 
 function newId() {
   if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
@@ -43,6 +52,7 @@ function readRegistry(): Registry {
         id: item.id,
         name: item.name.trim().slice(0, NAME_MAX) || 'Học viên',
         level: LEVELS.has(item.level) ? item.level : 'HSK5-6',
+        gender: asGender(item.gender),
         createdAt: Number.isFinite(item.createdAt) ? item.createdAt : 0,
       }));
     return {
@@ -94,12 +104,13 @@ function inheritLegacyData(id: string) {
   }
 }
 
-export function createLearner(name: string, level: Level): Learner {
+export function createLearner(name: string, level: Level, gender: LearnerGender = 'female'): Learner {
   const registry = readRegistry();
   const learner: Learner = {
     id: newId(),
     name: name.trim().slice(0, NAME_MAX) || 'Học viên',
     level: LEVELS.has(level) ? level : 'HSK5-6',
+    gender: GENDERS.has(gender) ? gender : 'female',
     createdAt: Date.now(),
   };
   if (registry.learners.length === 0) inheritLegacyData(learner.id);
@@ -110,10 +121,13 @@ export function createLearner(name: string, level: Level): Learner {
   return learner;
 }
 
-export function updateLearnerLevel(id: string, level: Level) {
+export function updateLearner(id: string, patch: { level?: Level; gender?: LearnerGender }) {
   const registry = readRegistry();
-  const learners = registry.learners.map((item) =>
-    item.id === id && item.level !== level ? { ...item, level } : item,
-  );
+  const learners = registry.learners.map((item) => {
+    if (item.id !== id) return item;
+    const level = patch.level && LEVELS.has(patch.level) ? patch.level : item.level;
+    const gender = patch.gender && GENDERS.has(patch.gender) ? patch.gender : item.gender;
+    return item.level === level && item.gender === gender ? item : { ...item, level, gender };
+  });
   writeRegistry({ ...registry, learners });
 }

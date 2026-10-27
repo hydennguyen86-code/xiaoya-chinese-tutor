@@ -1,0 +1,94 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-5-d1",
+  "level": "HSK1-2",
+  "title": "Nguyên âm đơn: a o e i u ü",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-217",
+      "level": "HSK1-2",
+      "hanzi": "这是你的衣服吗？",
+      "pinyin": "zhè shì nǐ de yī fu ma",
+      "meaningVi": "Đây là cái áo của bạn phải không?",
+      "focus": [
+        "衣服 yī fu: chữ thứ hai rơi nhẹ, môi dẹt rồi buông.",
+        "衣 yī: i dẹt cao trước, thanh 1 phẳng.",
+        "吗 ở cuối câu hỏi đọc nhẹ, ngắn."
+      ]
+    },
+    {
+      "id": "dt-1-218",
+      "level": "HSK1-2",
+      "hanzi": "大伯买一只鹅。",
+      "pinyin": "dà bó mǎi yì zhī é",
+      "meaningVi": "Bác cả mua một con ngỗng.",
+      "focus": [
+        "伯 bó: o tròn môi sau, thanh 2 đi lên.",
+        "鹅 é: e dẹt, lưỡi trước, không tròn môi.",
+        "一 trước 只 (thanh 1) rơi mạnh: yì zhī."
+      ]
+    },
+    {
+      "id": "dt-1-219",
+      "level": "HSK1-2",
+      "hanzi": "那是一条大鱼。",
+      "pinyin": "nà shì yì tiáo dà yú",
+      "meaningVi": "Đó là một con cá lớn.",
+      "focus": [
+        "鱼 yú: ü viết thành y, tròn môi, thanh 2 đi lên.",
+        "大鱼 dà yú: âm đầu rơi mạnh, âm sau đi lên và giữ tròn môi.",
+        "一 trước 条 (thanh 2) rơi: yì tiáo."
+      ]
+    },
+    {
+      "id": "dt-1-220",
+      "level": "HSK1-2",
+      "hanzi": "他去学校看绿色的树。",
+      "pinyin": "tā qù xué xiào kàn lù sè de shù",
+      "meaningVi": "Anh ấy đến trường xem cây xanh lá.",
+      "focus": [
+        "去 qù, 学 xué mang ü: tròn môi nhưng lưỡi trước: cặp kiểm tra ü của bài.",
+        "Chữ 绿 ở file này ghi là lù: âm đầu l, vần u tròn sau.",
+        "色 sè dẹt, thanh 4; 的 de ở giữa nhẹ.",
+        "树 shù cong lưỡi, giữ hơi ở sau."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-49",
+      "level": "HSK1-2",
+      "text": "天上有乌云，白鹅在河里，还有一条大鱼。",
+      "pinyin": "tiān shàng yǒu wū yún bái é zài hé lǐ hái yǒu yì tiáo dà yú",
+      "meaningVi": "Trên trời có mây đen, ngỗng trắng ở trong sông, còn có một con cá lớn.",
+      "syllables": 16,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "天上有乌云",
+          "pinyin": "tiān shàng yǒu wū yún",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "白鹅在河里",
+          "pinyin": "bái é zài hé lǐ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "还有一条大鱼",
+          "pinyin": "hái yǒu yì tiáo dà yú",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "乌云 wū yún: u tròn sau rồi ü tròn trước, môi không mở to.",
+        "鹅 é dẹt, 鱼 yú tròn: hai nguyên âm dễ lẫn khi nghe nhanh.",
+        "一 trước 条 (thanh 2) rơi: yì tiáo.",
+        "里 lǐ thanh 3 thấp rồi nhô, 在 zài thanh 4 rơi."
+      ]
+    }
+  ]
+}

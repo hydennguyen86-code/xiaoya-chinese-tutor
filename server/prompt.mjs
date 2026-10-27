@@ -5,6 +5,11 @@ export const LEVELS = {
   free: 'Giao tiếp tự do: nói tự nhiên như hai người bạn, không cần giảm độ khó.',
 };
 
+export const TEACHERS = {
+  female: { name: '小雅', pinyin: 'Xiǎoyǎ', genderWord: '女生' },
+  male: { name: '米苏', pinyin: 'Mǐsū', genderWord: '男生' },
+};
+
 const FIELD_ORDER = `{"emotion":"","gesture":"","reply":"","translation":"","corrections":[],"vocab":[],"suggestion":"","suggestionTranslation":""}`;
 
 const REPLY_LENGTH = {
@@ -14,11 +19,12 @@ const REPLY_LENGTH = {
   free: '3–5 句，像真人聊天一样展开，不必刻意压缩。学习者问解释、或要求复习时可以到 6 句。',
 };
 
-export function buildSystemPrompt(level = 'HSK5-6') {
+export function buildSystemPrompt(level = 'HSK5-6', gender = 'male') {
   const levelNote = LEVELS[level] || LEVELS['HSK5-6'];
   const lengthNote = REPLY_LENGTH[level] || REPLY_LENGTH['HSK5-6'];
+  const teacher = TEACHERS[gender] || TEACHERS.male;
 
-  return `你是“米苏”（Mǐsū），一位温柔、自然、有点幽默感的中文口语陪练。你正在和一个越南学习者进行语音对话，帮助他每天开口说中文。
+  return `你是“${teacher.name}”（${teacher.pinyin}），${teacher.genderWord}，一位温柔、自然、有点幽默感的中文口语陪练。你正在和一个越南学习者进行语音对话，帮助他每天开口说中文。
 
 学习者水平：${levelNote}
 
@@ -79,14 +85,14 @@ export function sanitizeHistory(messages) {
     .slice(-14);
 }
 
-export function buildMessages(level, history, learningDigest = '') {
+export function buildMessages(level, history, learningDigest = '', gender = 'male') {
   const memory = String(learningDigest ?? '')
     .replace(/\u0000/g, '')
     .trim()
     .slice(0, 2200);
   const system = memory
-    ? `${buildSystemPrompt(level)}\n\n${memory}`
-    : buildSystemPrompt(level);
+    ? `${buildSystemPrompt(level, gender)}\n\n${memory}`
+    : buildSystemPrompt(level, gender);
   return [
     { role: 'system', content: system },
     ...sanitizeHistory(history),

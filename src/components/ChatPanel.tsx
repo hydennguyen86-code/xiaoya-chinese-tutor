@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 import type { ChatMessage, Phase } from '../types';
 import { pinyinLine } from '../lib/text';
+import { useTeacher } from '../lib/persona';
 import { AlertIcon, ArrowRightIcon, CloseIcon, MicIcon, RefreshIcon, SendIcon, SparkIcon, VolumeIcon } from './Icons';
 
 interface ChatPanelProps {
@@ -48,8 +49,9 @@ function formatTime(timestamp: number) {
 }
 
 function TypingDots() {
+  const teacher = useTeacher();
   return (
-    <span className="typing-dots" aria-label="Misu đang viết">
+    <span className="typing-dots" aria-label={`${teacher.vi} đang viết`}>
       <i />
       <i />
       <i />
@@ -80,6 +82,7 @@ function MessageItem({
   onSpeakTranslation,
   onUseSuggestion,
 }: MessageItemProps) {
+  const teacher = useTeacher();
   const assistant = message.role === 'assistant';
   const pinyin = useMemo(() => (assistant && showPinyin ? pinyinLine(message.text) : ''), [assistant, message.text, showPinyin]);
   const hasText = Boolean(message.text.trim());
@@ -101,11 +104,11 @@ function MessageItem({
   return (
     <article className={`message message-assistant${message.streaming ? ' is-streaming' : ''}`}>
       <div className="speaker-avatar" aria-hidden="true">
-        苏
+        {teacher.seal}
       </div>
       <div className="message-content">
         <div className="message-meta">
-          <span className="speaker-name">米苏</span>
+          <span className="speaker-name">{teacher.cn}</span>
           {message.kind === 'greeting' && <span className="message-tag">Lời chào</span>}
           {message.streaming && hasText && <span className="message-tag">đang viết</span>}
           <time dateTime={new Date(message.createdAt).toISOString()}>{formatTime(message.createdAt)}</time>
@@ -241,6 +244,7 @@ export function ChatPanel({
   onNewChat,
   onDismissError,
 }: ChatPanelProps) {
+  const teacher = useTeacher();
   const listRef = useRef<HTMLDivElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -288,7 +292,7 @@ export function ChatPanel({
   };
 
   return (
-    <section className="chat-panel" aria-label="Cuộc trò chuyện với Misu">
+    <section className="chat-panel" aria-label={`Cuộc trò chuyện với ${teacher.vi}`}>
       <header className="chat-head">
         <div>
           <h2>Cuộc trò chuyện</h2>
@@ -389,7 +393,7 @@ export function ChatPanel({
             readOnly={listening}
             onChange={(event) => onDraftChange(event.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={listening ? 'Hãy nói bằng tiếng Trung…' : 'Nhắn cho Misu bằng tiếng Trung…'}
+            placeholder={listening ? 'Hãy nói bằng tiếng Trung…' : `Nhắn cho ${teacher.vi} bằng tiếng Trung…`}
             aria-label="Tin nhắn của bạn"
           />
           <button className="send-button" type="button" onClick={submit} disabled={!canSubmit} aria-label="Gửi tin nhắn">

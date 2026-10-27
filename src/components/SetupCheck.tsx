@@ -1,4 +1,5 @@
 import { speakBrowser } from '../lib/browserVoice';
+import { useTeacher } from '../lib/persona';
 import { useEffect, useRef, useState } from 'react';
 import { fetchStatus, fetchTts, streamChat } from '../lib/api';
 import type { Settings, StatusResponse } from '../types';
@@ -10,6 +11,7 @@ interface Props {
   onStatus: (s: StatusResponse) => void;
 }
 export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: Props) {
+  const teacher = useTeacher();
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [error, setError] = useState('');
   const [volume, setVolume] = useState(0);
@@ -124,7 +126,7 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
     setBusy(true);
     setError('');
     try {
-      const r = await fetchTts('你好，欢迎和米苏一起练习中文。', settings.voice, c.signal);
+      const r = await fetchTts(`你好，欢迎和${teacher.cn}一起练习中文。`, settings.voice, c.signal);
       if (!alive.current) return;
       if (r.browserText) {
         setTts('Đang thử giọng dự phòng trình duyệt…');
@@ -162,6 +164,7 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
           provider: settings.providerId,
           model: settings.model,
           level: settings.level,
+          gender: teacher.gender,
           messages: [{ role: 'user', content: '你好，我想练习中文。' }],
         },
         {

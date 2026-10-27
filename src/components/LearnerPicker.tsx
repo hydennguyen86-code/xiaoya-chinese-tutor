@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import type { Learner } from '../lib/learners';
+import type { Learner, LearnerGender } from '../lib/learners';
 import { loadProgress } from '../lib/storage';
+import { teacherFor, teacherGenderFor } from '../lib/persona';
 import type { Level } from '../types';
 
 const LEVEL_OPTIONS: { id: Level; label: string; hint: string }[] = [
@@ -10,16 +11,28 @@ const LEVEL_OPTIONS: { id: Level; label: string; hint: string }[] = [
   { id: 'free', label: 'Tự do', hint: 'Nói chuyện như bạn bè' },
 ];
 
+const GENDER_OPTIONS: { id: LearnerGender; label: string; hint: string }[] = (['female', 'male'] as LearnerGender[]).map(
+  (id) => {
+    const teacher = teacherFor(teacherGenderFor(id));
+    return {
+      id,
+      label: id === 'female' ? 'Nữ' : 'Nam',
+      hint: `Giáo viên: ${teacher.vi} · ${teacher.cn}`,
+    };
+  },
+);
+
 interface LearnerPickerProps {
   learners: Learner[];
   onPick: (id: string) => void;
-  onCreate: (name: string, level: Level) => void;
+  onCreate: (name: string, level: Level, gender: LearnerGender) => void;
 }
 
 export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps) {
   const [adding, setAdding] = useState(learners.length === 0);
   const [name, setName] = useState('');
   const [level, setLevel] = useState<Level>('HSK5-6');
+  const [gender, setGender] = useState<LearnerGender>('female');
   const trimmed = name.trim();
 
   return (
@@ -36,6 +49,7 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
             {learners.map((item) => {
               const progress = loadProgress(item.id);
               const levelLabel = LEVEL_OPTIONS.find((option) => option.id === item.level)?.label;
+              const teacher = teacherFor(teacherGenderFor(item.gender));
               return (
                 <button
                   key={item.id}
@@ -49,7 +63,7 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
                   <span className="learner-option-copy">
                     <strong>{item.name}</strong>
                     <small>
-                      {levelLabel} · {progress.totalTurns} lượt luyện · chuỗi {progress.streak} ngày
+                      {levelLabel} · {teacher.cn} · {progress.totalTurns} lượt luyện · chuỗi {progress.streak} ngày
                     </small>
                   </span>
                 </button>
@@ -70,7 +84,7 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
             onSubmit={(event) => {
               event.preventDefault();
               if (!trimmed) return;
-              onCreate(trimmed, level);
+              onCreate(trimmed, level, gender);
             }}
           >
             <label className="field">
@@ -95,6 +109,22 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
                   onClick={() => setLevel(option.id)}
                 >
                   <strong>{option.label}</strong>
+                  <small>{option.hint}</small>
+                </button>
+              ))}
+            </div>
+
+            <div className="learner-levels" role="radiogroup" aria-label="Giới tính của bạn">
+              {GENDER_OPTIONS.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={gender === option.id}
+                  className={`learner-level${gender === option.id ? ' is-active' : ''}`}
+                  onClick={() => setGender(option.id)}
+                >
+                  <strong>Bạn là {option.label}</strong>
                   <small>{option.hint}</small>
                 </button>
               ))}

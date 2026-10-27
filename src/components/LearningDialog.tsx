@@ -19,6 +19,7 @@ import {
   weakWords,
 } from '../lib/learning';
 import { AlertIcon, ArrowRightIcon, BookIcon, CheckIcon, CloseIcon, FlameIcon, PlayIcon, SparkIcon, VolumeIcon } from './Icons';
+import { useTeacher } from '../lib/persona';
 
 type LearningTab = 'overview' | 'review' | 'mistakes' | 'analysis';
 
@@ -124,6 +125,7 @@ export function LearningDialog({
   onSpeakVietnamese,
   onClearLearning,
 }: LearningDialogProps) {
+  const teacher = useTeacher();
   const [tab, setTab] = useState<LearningTab>('overview');
   const [session, setSession] = useState<string[]>([]);
   const [reviewed, setReviewed] = useState(0);
@@ -244,8 +246,8 @@ export function LearningDialog({
                   </span>
                   <h3>{totals.words ? `${totals.words} từ đã ghi, ${totals.due} từ đang chờ ôn` : 'Bắt đầu ghi lại hành trình của bạn'}</h3>
                   <p>
-                    Misu tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trên máy, được lưu trong trình duyệt và đồng bộ vào thư mục dữ
-                    liệu. Model local dùng hồ sơ để điều chỉnh bài luyện và phân tích khi bạn yêu cầu.
+                    {teacher.vi} tự lưu lỗi và từ mới sau mỗi lượt nói. Dữ liệu nằm trên máy, được lưu trong trình duyệt và đồng bộ vào thư
+                    mục dữ liệu. Model local dùng hồ sơ để điều chỉnh bài luyện và phân tích khi bạn yêu cầu.
                   </p>
                 </div>
                 <div className="learning-hero-seal" aria-hidden="true">
@@ -277,7 +279,7 @@ export function LearningDialog({
                 <div className="learning-section-head">
                   <div>
                     <h3>Kỹ năng cần chú ý</h3>
-                    <p>Dựa trên các lỗi đã được Misu ghi lại.</p>
+                    <p>Dựa trên các lỗi đã được {teacher.vi} ghi lại.</p>
                   </div>
                   <span className="learning-count">{totals.corrections} lỗi</span>
                 </div>
@@ -299,7 +301,7 @@ export function LearningDialog({
                     })}
                   </div>
                 ) : (
-                  <p className="learning-muted">Chưa có lỗi nào được ghi. Cứ nói tự nhiên, Misu sẽ để ý giúp bạn.</p>
+                  <p className="learning-muted">Chưa có lỗi nào được ghi. Cứ nói tự nhiên, {teacher.vi} sẽ để ý giúp bạn.</p>
                 )}
               </section>
 
@@ -469,7 +471,7 @@ export function LearningDialog({
                   description={
                     totals.words
                       ? `Kho từ có ${totals.words} từ. Từ gần nhất sẽ đến hạn ${untilLabel(nextReview)}.`
-                      : 'Hãy trò chuyện vài lượt, Misu sẽ ghi lại những từ đáng nhớ cho bạn.'
+                      : `Hãy trò chuyện vài lượt, ${teacher.vi} sẽ ghi lại những từ đáng nhớ cho bạn.`
                   }
                 >
                   {totals.words > 0 && (
@@ -534,7 +536,7 @@ export function LearningDialog({
               ) : (
                 <EmptyState
                   title="Chưa có lỗi nào"
-                  description="Khi Misu phát hiện một lỗi rõ ràng, lỗi đó sẽ được ghi ở đây để bạn xem lại."
+                  description={`Khi ${teacher.vi} phát hiện một lỗi rõ ràng, lỗi đó sẽ được ghi ở đây để bạn xem lại.`}
                 />
               )}
             </div>

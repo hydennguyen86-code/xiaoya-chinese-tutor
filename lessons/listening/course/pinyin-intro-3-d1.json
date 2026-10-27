@@ -1,0 +1,92 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-3-d1",
+  "level": "HSK1-2",
+  "title": "Cuối lưỡi và mặt lưỡi: g k h / j q x",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-209",
+      "level": "HSK1-2",
+      "hanzi": "我回家吃午饭。",
+      "pinyin": "wǒ huí jiā chī wǔ fàn",
+      "meaningVi": "Tôi về nhà ăn bữa trưa.",
+      "focus": [
+        "吃 chī cong lưỡi, đầu lưỡi hướng lên lợi sau.",
+        "家 jiā: mặt lưỡi áp vòm miệng, miệng mở rộng ở ia.",
+        "回 huí thanh 2 đi lên, 饭 fàn thanh 4 chặn -n."
+      ]
+    },
+    {
+      "id": "dt-1-210",
+      "level": "HSK1-2",
+      "hanzi": "你今天去学校吗？",
+      "pinyin": "nǐ jīn tiān qù xué xiào ma",
+      "meaningVi": "Hôm nay bạn đi đến trường phải không?",
+      "focus": [
+        "去 qù và 学 xué đều mang ü: tròn môi, lưỡi trước.",
+        "学校 xué xiào: hai âm mặt lưỡi liền nhau, âm sau thanh 4.",
+        "吗 ở cuối câu hỏi đọc nhẹ, ngắn."
+      ]
+    },
+    {
+      "id": "dt-1-211",
+      "level": "HSK1-2",
+      "hanzi": "他和我是朋友。",
+      "pinyin": "tā hé wǒ shì péng you",
+      "meaningVi": "Anh ấy và tôi là bạn bè.",
+      "focus": [
+        "和 hé thanh 2 đi lên; đừng đọc thành hè hay hú.",
+        "朋友 péng you: chữ thứ hai đọc nhẹ, lướt nhanh.",
+        "是 shì cong lưỡi, thanh 4 rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-1-212",
+      "level": "HSK1-2",
+      "hanzi": "他一个人喝水。",
+      "pinyin": "tā yí gè rén hē shuǐ",
+      "meaningVi": "Anh ấy uống nước một mình.",
+      "focus": [
+        "一 trước 个 (thanh 4) đi lên: yí gè.",
+        "个 ở đây vẫn đủ thanh: gè rơi dứt khoát.",
+        "喝水 hē shuǐ: h mở ở cổ họng, shuǐ tròn môi rồi nhô."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-47",
+      "level": "HSK1-2",
+      "text": "妈妈在家，我和她吃饭，也去学校。",
+      "pinyin": "mā ma zài jiā wǒ hé tā chī fàn yě qù xué xiào",
+      "meaningVi": "Mẹ ở nhà, tôi cùng bà ăn cơm, cũng đi đến trường.",
+      "syllables": 13,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "妈妈在家",
+          "pinyin": "mā ma zài jiā",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我和她吃饭",
+          "pinyin": "wǒ hé tā chī fàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也去学校",
+          "pinyin": "yě qù xué xiào",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "妈妈 mā ma: âm sau nhẹ, ngắn.",
+        "去 qù, 学 xué thuộc hàng mặt lưỡi với ü; 吃 chī cong lưỡi.",
+        "和 hé thanh 2 nối hai chủ thể, giữ cho gọn."
+      ]
+    }
+  ]
+}

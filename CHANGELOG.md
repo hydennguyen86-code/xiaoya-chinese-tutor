@@ -1,9 +1,16 @@
 # Changelog
 
+## 2026-10-27 — Bản tạm
+
+- Thẻ từ thanh nhẹ như 吗 chấp nhận tạm thời chữ nhận dạng có cùng âm tiết, đồng thời nói rõ máy chưa xác nhận được thanh nhẹ. Bài đọc câu giữ cách so sánh riêng; thông báo lỗi âm thanh vẫn được hiển thị.
+- Bổ sung 10 bộ nghe cho lộ trình Nhập môn Pinyin, đưa tổng số bộ nghe theo bài lên 82; học liệu do AI soạn và chưa có giáo viên duyệt.
+- Thêm hồ sơ giới tính người học và lựa chọn giáo viên Tiểu Nhã hoặc Misu; đồng bộ tên, giọng và ngữ cảnh hội thoại theo lựa chọn, cùng các chỉnh sửa giao diện học.
+- Nhận dạng chữ và khẩu hình chỉ là hỗ trợ luyện tập. Việc chấm thanh nhẹ và chất lượng nhận dạng từ giọng người học thực tế vẫn cần được kiểm tra thêm.
+
 ## 2026-10-26 — Bản tạm
 
 - Giảm biên độ há miệng của avatar LAM; âm lượng không còn ép mở môi ở âm khép. Phân biệt khẩu hình a, i, u, ü và các phụ âm tiếng Trung theo pinyin. Khẩu hình vẫn dùng mốc TTS/ước lượng, chưa phải đồng bộ phoneme chính xác.
-- Thêm lộ trình nhập môn Pinyin (10 buổi) và HSK 3 thực tế (24 buổi), nâng tổng số buổi đóng gói lên 82; giữ vị trí học đã lưu. Thêm 24 bộ nghe dictation/shadowing HSK 3; Pinyin nhập môn dùng bài nghe sẵn trong từng buổi. Học liệu AI soạn, chưa có giáo viên duyệt.
+- Thêm lộ trình nhập môn Pinyin (10 buổi) và HSK 3 thực tế (24 buổi), nâng tổng số buổi đóng gói lên 82; giữ vị trí học đã lưu. Thêm 34 bộ nghe dictation/shadowing cho hai khoá mới (24 HSK 3, 10 Pinyin), tổng 82 bộ/416 id. Học liệu AI soạn, chưa có giáo viên duyệt.
 - Thêm giọng nam Yunjian và Yunxi, chọn giọng Edge theo giới tính khuôn mặt; giữ nguyên giọng nhân bản khi đã chọn.
 - Phản hồi thanh điệu không chấm sai những âm đo chưa đủ chắc; làm rõ trạng thái chưa chấm trong giao diện.
 

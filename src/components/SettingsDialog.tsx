@@ -2,17 +2,26 @@ import { ToneSampleCounts } from './ToneLabelFeedback';
 import { ConnectivitySettings } from './ConnectivitySettings';
 import { useEffect, useRef } from 'react';
 import type { AvatarMode, Level, Progress, Settings, StatusResponse } from '../types';
+import type { Learner, LearnerGender } from '../lib/learners';
+import { teacherFor, teacherGenderFor, useTeacher } from '../lib/persona';
 import { DAILY_GOAL, lastSevenDays } from '../lib/storage';
 import { AlertIcon, CheckIcon, ChevronDownIcon, CloseIcon, FlameIcon, RefreshIcon, SparkIcon, VolumeIcon } from './Icons';
+
+const LEARNER_GENDERS: Array<{ value: LearnerGender; label: string }> = [
+  { value: 'female', label: 'Học viên nữ' },
+  { value: 'male', label: 'Học viên nam' },
+];
 
 interface SettingsDialogProps {
   open: boolean;
   status: StatusResponse | null;
   settings: Settings;
+  learner: Learner;
   progress: Progress;
   refreshing: boolean;
   onClose: () => void;
   onChange: (patch: Partial<Settings>) => void;
+  onLearnerChange: (patch: { gender?: LearnerGender }) => void;
   onRefresh: () => void;
   onSetup: () => void;
   onPreviewVoice: () => void;
@@ -70,10 +79,12 @@ export function SettingsDialog({
   open,
   status,
   settings,
+  learner,
   progress,
   refreshing,
   onClose,
   onChange,
+  onLearnerChange,
   onRefresh,
   onSetup,
   onPreviewVoice,
@@ -85,6 +96,7 @@ export function SettingsDialog({
   onPickAvatar,
   onClearAvatar,
 }: SettingsDialogProps) {
+  const teacher = useTeacher();
   const closeRef = useRef<HTMLButtonElement>(null);
   const providers = status?.providers ?? [];
   const provider = providers.find((item) => item.id === settings.providerId);
@@ -139,7 +151,7 @@ export function SettingsDialog({
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Bộ não của Misu</h3>
+                <h3>Bộ não của {teacher.vi}</h3>
                 <p>Chọn Ollama/LM Studio trên máy, hoặc tự cấu hình API bên ngoài ở phía dưới.</p>
               </div>
               <button className="refresh-button" type="button" onClick={onRefresh} disabled={refreshing}>
@@ -227,7 +239,7 @@ export function SettingsDialog({
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Giọng của Misu</h3>
+                <h3>Giọng của {teacher.vi}</h3>
                 <p>Giọng nữ tiếng Phổ thông, có nhịp môi khớp với từng câu.</p>
               </div>
             </div>
@@ -290,7 +302,36 @@ export function SettingsDialog({
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Khuôn mặt của Misu</h3>
+                <h3>Giáo viên của bạn</h3>
+                <p>
+                  {learner.name} luyện nói cùng {teacher.vi} · {teacher.cn}. {teacher.gender === 'female' ? 'Giọng nữ.' : 'Giọng nam.'}
+                </p>
+              </div>
+            </div>
+            <div className="level-grid gender-grid" role="radiogroup" aria-label="Giới tính của người học">
+              {LEARNER_GENDERS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  role="radio"
+                  aria-checked={learner.gender === option.value}
+                  className={`level-option${learner.gender === option.value ? ' is-selected' : ''}`}
+                  onClick={() => onLearnerChange({ gender: option.value })}
+                >
+                  <span className="level-check">{learner.gender === option.value && <CheckIcon size={13} />}</span>
+                  <span className="level-name">{option.label}</span>
+                  <span className="level-hint">
+                    Giáo viên: {teacherFor(teacherGenderFor(option.value)).vi} · {teacherFor(teacherGenderFor(option.value)).cn}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <section className="settings-section">
+            <div className="section-heading">
+              <div>
+                <h3>Khuôn mặt của {teacher.vi}</h3>
                 <p>File avatar chỉ lưu trong trình duyệt này, không gửi lên server.</p>
               </div>
             </div>
@@ -328,22 +369,24 @@ export function SettingsDialog({
             </div>
 
             <p className="field-hint">
-              .zip là bản dựng LAM từ ảnh/video thật (cần máy GPU để tạo). .glb là avatar 3D kiểu Ready Player Me. Chọn xong, Misu đổi gương
-              mặt ngay.
+              .zip là bản dựng LAM từ ảnh/video thật (cần máy GPU để tạo). .glb là avatar 3D kiểu Ready Player Me. Chọn xong, {teacher.vi}{' '}
+              đổi gương mặt ngay.
+              {teacher.fixedAvatar &&
+                ` ${teacher.vi} luôn dùng gương mặt nữ có sẵn; file tuỳ chỉnh chỉ áp dụng cho ${teacherFor('male').vi}.`}
             </p>
 
             <Toggle
               checked={settings.avatarGender === 'male'}
               onChange={(checked) => onChange({ avatarGender: checked ? 'male' : 'female' })}
-              label="Khuôn mặt này là nam"
-              description="Misu đổi giọng nói theo giới tính khuôn mặt: nữ dùng Xiaoxiao/Xiaoyi, nam dùng Yunjian/Yunxi."
+              label="Giáo viên dùng giọng nam"
+              description={`${teacher.vi} đổi giọng nói theo giới tính khuôn mặt: nữ dùng Xiaoxiao/Xiaoyi, nam dùng Yunjian/Yunxi. Giá trị này lấy theo hồ sơ người học và bạn có thể đổi thủ công.`}
             />
           </section>
 
           <section className="settings-section">
             <div className="section-heading">
               <div>
-                <h3>Cách Misu trò chuyện</h3>
+                <h3>Cách {teacher.vi} trò chuyện</h3>
                 <p>Chọn độ khó và những hỗ trợ bạn muốn thấy sau mỗi lượt.</p>
               </div>
             </div>
@@ -365,7 +408,7 @@ export function SettingsDialog({
             </div>
             {levelOption && (
               <p className="field-hint">
-                Misu sẽ dùng từ vựng và độ dài câu phù hợp với trình độ {settings.level === 'free' ? 'tự do' : settings.level}.
+                {teacher.vi} sẽ dùng từ vựng và độ dài câu phù hợp với trình độ {settings.level === 'free' ? 'tự do' : settings.level}.
               </p>
             )}
 
@@ -374,7 +417,7 @@ export function SettingsDialog({
                 checked={settings.autoSpeak}
                 onChange={(checked) => onChange({ autoSpeak: checked })}
                 label="Tự động đọc câu trả lời"
-                description="Nghe giọng nói và xem khẩu hình khi Misu trả lời."
+                description={`Nghe giọng nói và xem khẩu hình khi ${teacher.vi} trả lời.`}
               />
               <Toggle
                 checked={settings.autoReadTranslation}
@@ -407,7 +450,7 @@ export function SettingsDialog({
             <div className="section-heading">
               <div>
                 <h3>Tiến độ của bạn</h3>
-                <p>Mỗi lượt trả lời được tính khi Misu đã phản hồi xong.</p>
+                <p>Mỗi lượt trả lời được tính khi {teacher.vi} đã phản hồi xong.</p>
               </div>
               <div className="mini-streak">
                 <FlameIcon size={16} />

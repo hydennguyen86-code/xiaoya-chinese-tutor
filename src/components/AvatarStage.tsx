@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { AvatarApi } from '../lib/avatarApi';
+import { useTeacher } from '../lib/persona';
+import type { Teacher } from '../lib/persona';
 import type { AvatarMode, Phase } from '../types';
 import { AlertIcon, RefreshIcon } from './Icons';
 
@@ -15,32 +17,34 @@ interface AvatarStageProps {
   onUnavailable: (message: string) => void;
 }
 
-const PHASE_COPY: Record<Phase, { label: string; hint: string }> = {
-  loading: {
-    label: 'Đang chuẩn bị',
-    hint: 'Đang tải không gian trò chuyện…',
-  },
-  ready: {
-    label: 'Sẵn sàng',
-    hint: 'Nói hoặc viết bằng tiếng Trung — Misu sẽ trả lời ngay.',
-  },
-  listening: {
-    label: 'Đang lắng nghe',
-    hint: 'Nói tự nhiên bằng tiếng Trung. Ngừng nói một chút để mình gửi câu.',
-  },
-  thinking: {
-    label: 'Đang suy nghĩ',
-    hint: 'Misu đang chọn cách trả lời tự nhiên nhất…',
-  },
-  replying: {
-    label: 'Đang trả lời',
-    hint: 'Câu trả lời đang hiện dần trong khung chat.',
-  },
-  speaking: {
-    label: 'Đang nói',
-    hint: 'Bạn có thể gửi tin nhắn mới để ngắt lời.',
-  },
-};
+function phaseCopy(teacher: Teacher): Record<Phase, { label: string; hint: string }> {
+  return {
+    loading: {
+      label: 'Đang chuẩn bị',
+      hint: 'Đang tải không gian trò chuyện…',
+    },
+    ready: {
+      label: 'Sẵn sàng',
+      hint: `Nói hoặc viết bằng tiếng Trung — ${teacher.vi} sẽ trả lời ngay.`,
+    },
+    listening: {
+      label: 'Đang lắng nghe',
+      hint: 'Nói tự nhiên bằng tiếng Trung. Ngừng nói một chút để mình gửi câu.',
+    },
+    thinking: {
+      label: 'Đang suy nghĩ',
+      hint: `${teacher.vi} đang chọn cách trả lời tự nhiên nhất…`,
+    },
+    replying: {
+      label: 'Đang trả lời',
+      hint: 'Câu trả lời đang hiện dần trong khung chat.',
+    },
+    speaking: {
+      label: 'Đang nói',
+      hint: 'Bạn có thể gửi tin nhắn mới để ngắt lời.',
+    },
+  };
+}
 
 export function AvatarStage({
   avatarUrl,
@@ -53,6 +57,7 @@ export function AvatarStage({
   onAudioState,
   onUnavailable,
 }: AvatarStageProps) {
+  const teacher = useTeacher();
   const hostRef = useRef<HTMLDivElement>(null);
   const callbacksRef = useRef({ onReady, onAudioState, onUnavailable });
   callbacksRef.current = { onReady, onAudioState, onUnavailable };
@@ -103,7 +108,7 @@ export function AvatarStage({
     };
   }, [avatarUrl, lamAvatarUrl, customAvatarUrl, deferred, mode, attempt]);
 
-  const copy = PHASE_COPY[phase];
+  const copy = phaseCopy(teacher)[phase];
   const percent = Math.round(progress * 100);
   const showLoading = loadState === 'loading';
 
@@ -122,10 +127,10 @@ export function AvatarStage({
 
       <div className="stage-topline">
         <div className="nameplate">
-          <div className="nameplate-seal">苏</div>
+          <div className="nameplate-seal">{teacher.seal}</div>
           <div>
-            <p className="nameplate-cn">米苏</p>
-            <p className="nameplate-meta">Mǐsū · Gia sư luyện nói</p>
+            <p className="nameplate-cn">{teacher.cn}</p>
+            <p className="nameplate-meta">{teacher.pinyin} · Gia sư luyện nói</p>
           </div>
         </div>
         <div className={`phase-pill phase-pill-${phase}`} aria-live="polite">
@@ -145,7 +150,7 @@ export function AvatarStage({
           <div className="loader-orbit" aria-hidden="true">
             <span />
           </div>
-          <p className="overlay-title">Đang mời Misu…</p>
+          <p className="overlay-title">Đang mời {teacher.vi}…</p>
           <p className="overlay-sub">
             {avatarUrl ? 'Chuẩn bị gương mặt và nụ cười cho buổi luyện hôm nay' : 'Đang kết nối với server local'}
           </p>

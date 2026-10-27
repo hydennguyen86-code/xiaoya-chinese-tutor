@@ -1,0 +1,154 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-10-d1",
+  "level": "HSK1-2",
+  "title": "Phân biệt cặp dễ nhầm trong câu ngắn",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-237",
+      "level": "HSK1-2",
+      "hanzi": "现在是十点四十。",
+      "pinyin": "xiàn zài shì shí diǎn sì shí",
+      "meaningVi": "Bây giờ là mười giờ bốn mươi.",
+      "focus": [
+        "十 shí đi lên, 四 sì rơi mạnh: nghe cao độ chữ đầu trước tiên.",
+        "十点 shí diǎn: lên rồi hạ thấp; 四十 sì shí: rơi rồi lên.",
+        "是 shì cong lưỡi, thanh 4; đừng lẫn với sì phẳng lưỡi."
+      ]
+    },
+    {
+      "id": "dt-1-238",
+      "level": "HSK1-2",
+      "hanzi": "山上有三棵树。",
+      "pinyin": "shān shàng yǒu sān kē shù",
+      "meaningVi": "Trên núi có ba cái cây.",
+      "focus": [
+        "shān và sān cùng vần -an, khác âm đầu: cong lưỡi với phẳng lưỡi.",
+        "上 shàng -ng vang ở gốc lưỡi, miệng mở hơn -n.",
+        "三棵树 sān kē shù: cao phẳng, cao phẳng rồi rơi mạnh."
+      ]
+    },
+    {
+      "id": "dt-1-239",
+      "level": "HSK1-2",
+      "hanzi": "王老师晚上在家。",
+      "pinyin": "wáng lǎo shī wǎn shang zài jiā",
+      "meaningVi": "Thầy Vương ở nhà vào buổi tối.",
+      "focus": [
+        "晚 wǎn thấp rồi nhô, chặn hơi ở đầu lưỡi; 王 wáng đi lên và kết ở -ng.",
+        "晚上 wǎn shang: chữ thứ hai nhẹ, ngắn.",
+        "师 shī cong lưỡi, thanh 1 cao phẳng tới cuối."
+      ]
+    },
+    {
+      "id": "dt-1-240",
+      "level": "HSK1-2",
+      "hanzi": "三是三，四是四。",
+      "pinyin": "sān shì sān sì shì sì",
+      "meaningVi": "Ba là ba, bốn là bốn.",
+      "focus": [
+        "三 sān cao bằng, phẳng lưỡi; 四 sì phẳng lưỡi rơi mạnh.",
+        "Hai cụm đối xứng, mỗi cụm ba âm; ngắt hơi rõ ở dấu phẩy.",
+        "Trong cụm có 是 shì cong lưỡi; 三 và 四 mới là phẳng lưỡi."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-54",
+      "level": "HSK1-2",
+      "text": "山上很冷，王老师晚上四点下山，十点回来。",
+      "pinyin": "shān shàng hén lěng wáng lǎo shī wǎn shang sì diǎn xià shān shí diǎn huí lái",
+      "meaningVi": "Trên núi rất lạnh, thầy Vương bốn giờ xuống núi, mười giờ quay về.",
+      "syllables": 17,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "山上很冷",
+          "pinyin": "shān shàng hén lěng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "王老师晚上四点下山",
+          "pinyin": "wáng lǎo shī wǎn shang sì diǎn xià shān",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "十点回来",
+          "pinyin": "shí diǎn huí lái",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Biến điệu 3+3: hěn lěng → hén lěng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
+        "晚上 wǎn shang: chữ sau nhẹ, ngắn.",
+        "四 sì rơi, 十 shí đi lên: trong cụm giờ hãy đếm theo cao độ.",
+        "下山 xià shān: rơi rồi cao phẳng, hai âm tách rõ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        4,
+        3,
+        3,
+        2,
+        3,
+        1,
+        3,
+        4,
+        4,
+        3,
+        4,
+        1,
+        2,
+        3,
+        2,
+        2
+      ],
+      "acceptTones": [
+        [
+          1,
+          4,
+          2,
+          3,
+          2,
+          3,
+          1,
+          3,
+          5,
+          4,
+          3,
+          4,
+          1,
+          2,
+          3,
+          2,
+          2
+        ],
+        [
+          1,
+          4,
+          3,
+          3,
+          2,
+          3,
+          1,
+          3,
+          5,
+          4,
+          3,
+          4,
+          1,
+          2,
+          3,
+          2,
+          2
+        ]
+      ],
+      "hint": "App chấp nhận cả dạng đọc liền 1-4-2-3-2-3-1-3-5-4-3-4-1-2-3-2-2 lẫn dạng trích dẫn từng chữ 1-4-3-3-2-3-1-3-5-4-3-4-1-2-3-2-2."
+    }
+  ]
+}

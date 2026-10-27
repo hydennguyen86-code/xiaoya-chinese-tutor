@@ -45,8 +45,10 @@ import {
   saveLearning,
   seedLearningFromMessages,
 } from './lib/learning';
-import { createLearner, loadActiveLearnerId, loadLearners, setActiveLearner, updateLearnerLevel } from './lib/learners';
-import type { Learner } from './lib/learners';
+import { createLearner, loadActiveLearnerId, loadLearners, setActiveLearner, updateLearner } from './lib/learners';
+import type { Learner, LearnerGender } from './lib/learners';
+import { TeacherContext, teacherFor, teacherGenderFor } from './lib/persona';
+import type { Teacher, TeacherGender } from './lib/persona';
 import { DailyLesson } from './components/DailyLesson';
 import { extractSpeechSegments, makeGreeting, shortModelName, uid } from './lib/text';
 import type {
@@ -61,6 +63,7 @@ import type {
   Progress,
   Settings,
   StatusResponse,
+  VoiceInfo,
 } from './types';
 
 const LEVEL_LABEL: Record<Settings['level'], string> = {
@@ -70,30 +73,41 @@ const LEVEL_LABEL: Record<Settings['level'], string> = {
   free: 'Tự do',
 };
 
-function friendlyError(error: unknown) {
+function friendlyError(error: unknown, teacher: Teacher) {
   const message = error instanceof Error ? error.message : '';
   if (/failed to fetch|networkerror|load failed|fetch failed/i.test(message)) {
     return 'Không kết nối được server local. Hãy chạy npm run dev hoặc npm start rồi thử lại.';
   }
-  return message || 'Có lỗi xảy ra khi kết nối với Misu.';
+  return message || `Có lỗi xảy ra khi kết nối với ${teacher.vi}.`;
+}
+
+/** a face of the given gender needs a voice of the same gender; clones have no declared gender */
+function voiceForGender(voices: VoiceInfo[], gender: TeacherGender, currentVoice: string) {
+  const current = voices.find((item) => item.id === currentVoice);
+  if (!current?.gender || current.gender === gender) return currentVoice;
+  return voices.find((item) => item.gender === gender)?.id ?? currentVoice;
 }
 
 interface TutorProps {
   learner: Learner;
   onSwitchLearner: () => void;
+  onLearnerChange: (patch: { gender?: LearnerGender }) => void;
 }
 
-function Tutor({ learner, onSwitchLearner }: TutorProps) {
+function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   const scope = learner.id;
+  const derivedTeacherGender = teacherGenderFor(learner.gender);
   const pendingVoice = useRef<VoiceResult | null>(null);
   const [spokenTurns, setSpokenTurns] = useState<Record<string, VoiceResult>>({});
   const [settings, setSettings] = useState<Settings>(() => ({
     ...loadSettings(),
     level: learner.level,
+    avatarGender: derivedTeacherGender,
   }));
+  const teacher = teacherFor(settings.avatarGender);
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
     const saved = loadMessages(scope);
-    return saved.length ? saved : [makeGreeting(learner.name)];
+    return saved.length ? saved : [makeGreeting(learner.name, teacherFor(derivedTeacherGender))];
   });
   const [progress, setProgress] = useState<Progress>(() => loadProgress(scope));
   const [learning, setLearning] = useState<LearningProfile>(() => {
@@ -221,11 +235,11 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     } catch (requestError) {
       if (requestId !== statusRequestRef.current) return;
       console.error('[status]', requestError);
-      setStatusError(friendlyError(requestError));
+      setStatusError(friendlyError(requestError, teacher));
     } finally {
       if (requestId === statusRequestRef.current) setRefreshing(false);
     }
-  }, []);
+  }, [teacher]);
 
   useEffect(() => {
     void refreshStatus();
@@ -269,8 +283,22 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   }, []);
 
   useEffect(() => {
-    updateLearnerLevel(learner.id, settings.level);
+    updateLearner(learner.id, { level: settings.level });
   }, [learner.id, settings.level]);
+
+  // the teacher is the learner's counterpart, so a profile change replaces the
+  // manual pick in Settings; the manual pick still holds until the next change
+  useEffect(() => {
+    setSettings((previous) => {
+      if (previous.avatarGender === derivedTeacherGender) return previous;
+      const voices = statusRef.current?.voices ?? [];
+      return {
+        ...previous,
+        avatarGender: derivedTeacherGender,
+        voice: voiceForGender(voices, derivedTeacherGender, previous.voice),
+      };
+    });
+  }, [derivedTeacherGender]);
 
   useEffect(() => {
     configureSpeech({ learnerId: learner.id });
@@ -350,7 +378,10 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     }).catch(() => {});
     return () => abort.abort();
   }, [canChat, settings.providerId, settings.model]);
-  const avatarMode: AvatarMode = customAvatar?.kind ?? settings.avatarMode;
+  // the female teacher always uses the app's built-in female face; the stored
+  // custom avatar file is the male teacher's face
+  const fixedAvatar = teacher.fixedAvatar ?? null;
+  const avatarMode: AvatarMode = fixedAvatar?.mode ?? customAvatar?.kind ?? settings.avatarMode;
   const busy = phase === 'thinking' || phase === 'replying';
   const visibleError = error || statusError;
   const week = useMemo(() => lastSevenDays(progress), [progress]);
@@ -503,6 +534,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           provider: settingsRef.current.providerId,
           model: settingsRef.current.model,
           level: settingsRef.current.level,
+          gender: teacher.gender,
           messages: history,
           learning: [`Tên học viên: ${learner.name}`, buildLearningDigest(learningRef.current)].filter(Boolean).join('\n\n') || undefined,
         },
@@ -604,7 +636,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           if (abort.signal.aborted) return;
           console.error('[chat]', streamError);
           if (!completed) {
-            setError(friendlyError(streamError));
+            setError(friendlyError(streamError, teacher));
             setMessages((current) => {
               const target = current.find((message) => message.id === assistantId);
               if (target && !target.text.trim()) {
@@ -626,7 +658,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
           });
         });
     },
-    [showToast],
+    [showToast, teacher],
   );
 
   const sendRef = useRef(send);
@@ -715,7 +747,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   );
 
   const handlePreviewTranslation = () => {
-    speakText('Xin chào, mình là Misu. Đây là giọng đọc tiếng Việt của mình.', settingsRef.current.viVoice, 'warm');
+    speakText(`Xin chào, mình là ${teacher.vi}. Đây là giọng đọc tiếng Việt của mình.`, settingsRef.current.viVoice, 'warm');
   };
 
   const openLearning = useCallback(() => {
@@ -768,11 +800,11 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       showToast('Đã cập nhật phân tích điểm yếu.');
     } catch (analysisFailure) {
       console.error('[analysis]', analysisFailure);
-      setAnalysisError(friendlyError(analysisFailure));
+      setAnalysisError(friendlyError(analysisFailure, teacher));
     } finally {
       setAnalyzing(false);
     }
-  }, [analyzing, showToast]);
+  }, [analyzing, showToast, teacher]);
 
   const handleClearLearning = () => {
     if (
@@ -798,11 +830,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
         next.model = provider?.recommendedModel || provider?.models[0] || '';
       }
       if (patch.avatarGender && patch.avatarGender !== previous.avatarGender) {
-        const voices = statusRef.current?.voices ?? [];
-        const current = voices.find((item) => item.id === next.voice);
-        if (current?.gender && current.gender !== patch.avatarGender) {
-          next.voice = voices.find((item) => item.gender === patch.avatarGender)?.id ?? next.voice;
-        }
+        next.voice = voiceForGender(statusRef.current?.voices ?? [], patch.avatarGender, next.voice);
       }
       return next;
     });
@@ -861,7 +889,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     if (muting) {
       avatarRef.current?.stopSpeech();
       setPhase((current) => (current === 'speaking' ? 'ready' : current));
-      showToast('Đã tắt giọng đọc. Misu vẫn trả lời bằng chữ.');
+      showToast(`Đã tắt giọng đọc. ${teacher.vi} vẫn trả lời bằng chữ.`);
     } else {
       showToast('Đã bật giọng đọc cho câu trả lời tiếp theo.');
     }
@@ -885,7 +913,7 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
     setListening(false);
     avatarRef.current?.stopSpeech();
     clearMessages(scope);
-    setMessages([makeGreeting(learner.name)]);
+    setMessages([makeGreeting(learner.name, teacher)]);
     setError(null);
     setPhase(avatarReadyRef.current ? 'ready' : 'loading');
     showToast('Đã mở cuộc trò chuyện mới.');
@@ -919,7 +947,12 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
       setError('Avatar chưa sẵn sàng để nghe thử giọng.');
       return;
     }
-    const started = controller.speakAll('你好呀，我是米苏。很高兴和你一起练习中文。', settingsRef.current.voice, 'happy', 'handup');
+    const started = controller.speakAll(
+      `你好呀，我是${teacher.cn}。很高兴和你一起练习中文。`,
+      settingsRef.current.voice,
+      'happy',
+      'handup',
+    );
     if (started) setPhase('speaking');
   };
 
@@ -929,256 +962,260 @@ function Tutor({ learner, onSwitchLearner }: TutorProps) {
   };
 
   return (
-    <div className="app">
-      <header className="topbar">
-        <div className="brand">
-          <div className="brand-seal" aria-hidden="true">
-            苏
+    <TeacherContext.Provider value={teacher}>
+      <div className="app">
+        <header className="topbar">
+          <div className="brand">
+            <div className="brand-seal" aria-hidden="true">
+              {teacher.seal}
+            </div>
+            <div className="brand-copy">
+              <p className="brand-title">{teacher.cn}</p>
+              <p className="brand-subtitle">Luyện nói tiếng Trung mỗi ngày</p>
+            </div>
           </div>
-          <div className="brand-copy">
-            <p className="brand-title">米苏</p>
-            <p className="brand-subtitle">Luyện nói tiếng Trung mỗi ngày</p>
-          </div>
-        </div>
 
-        <div className="topbar-actions">
-          <button className="learner-chip" type="button" onClick={onSwitchLearner} title="Đổi người học">
-            {learner.name}
-          </button>
+          <div className="topbar-actions">
+            <button className="learner-chip" type="button" onClick={onSwitchLearner} title="Đổi người học">
+              {learner.name}
+            </button>
 
-          <button
-            className="lesson-launch"
-            type="button"
-            onClick={() => {
-              micRef.current?.abort();
-              avatarRef.current?.stopSpeech();
-              setAssessmentOpen(false);
-              setLessonOpen((open) => !open);
-            }}
-            title="Bài học theo lộ trình, có nghe hiểu và luyện nói"
-          >
-            {lessonOpen ? 'Về trò chuyện' : 'Bài hôm nay'}
-          </button>
+            <button
+              className="lesson-launch"
+              type="button"
+              onClick={() => {
+                micRef.current?.abort();
+                avatarRef.current?.stopSpeech();
+                setAssessmentOpen(false);
+                setLessonOpen((open) => !open);
+              }}
+              title="Bài học theo lộ trình, có nghe hiểu và luyện nói"
+            >
+              {lessonOpen ? 'Về trò chuyện' : 'Bài hôm nay'}
+            </button>
 
-          <button
-            type="button"
-            className={`lesson-launch${assessmentDue ? ' is-due' : ''}`}
-            onClick={() => {
-              micRef.current?.abort();
-              avatarRef.current?.stopSpeech();
-              setLessonOpen(false);
-              setAssessmentOpen((v) => !v);
-            }}
-          >
-            Kiểm tra{assessmentDue ? ' · đến hạn' : ''}
-          </button>
-          <button className="runtime-chip" type="button" onClick={openSettings} title="Xem hoặc đổi model local">
-            <span className={`status-dot${providerOnline ? ' is-online' : ''}`} />
-            <span className="runtime-chip-copy">
-              <strong>{activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}</strong>
-              <small>{settings.model ? shortModelName(settings.model, 26) : activeProvider ? 'Chọn model' : 'Ollama · LM Studio'}</small>
-            </span>
-            <ChevronDownIcon size={14} />
-          </button>
-
-          <button className="level-chip" type="button" onClick={openSettings} title="Đổi trình độ luyện tập">
-            {LEVEL_LABEL[settings.level]}
-          </button>
-
-          <button
-            className="icon-button learning-button"
-            type="button"
-            onClick={openLearning}
-            title="Hồ sơ học tập và ôn bài"
-            aria-label="Mở hồ sơ học tập và ôn bài"
-          >
-            <BookIcon size={19} />
-            {learningDue > 0 && <span className="learning-badge">{learningDue > 9 ? '9+' : learningDue}</span>}
-          </button>
-
-          <button
-            className="icon-button"
-            type="button"
-            onClick={handleToggleSound}
-            title={settings.autoSpeak ? 'Tắt giọng đọc' : 'Bật giọng đọc'}
-            aria-label={settings.autoSpeak ? 'Tắt giọng đọc' : 'Bật giọng đọc'}
-          >
-            {settings.autoSpeak ? <VolumeIcon size={19} /> : <MuteIcon size={19} />}
-          </button>
-
-          <button className="icon-button" type="button" onClick={openSettings} title="Cài đặt" aria-label="Mở cài đặt">
-            <SettingsIcon size={19} />
-          </button>
-        </div>
-      </header>
-
-      <main className="workspace">
-        <section className="stage-column">
-          <AvatarStage
-            avatarUrl={status?.avatarUrl}
-            lamAvatarUrl={status?.lamAvatarUrl}
-            customAvatarUrl={customAvatar?.url}
-            deferred={!avatarChecked}
-            mode={avatarMode}
-            phase={phase}
-            onReady={handleAvatarReady}
-            onAudioState={handleAudioState}
-            onUnavailable={handleAvatarIssue}
-          />
-
-          <div className="progress-strip">
-            <div className="streak-block">
-              <span className="streak-icon">
-                <FlameIcon size={18} />
+            <button
+              type="button"
+              className={`lesson-launch${assessmentDue ? ' is-due' : ''}`}
+              onClick={() => {
+                micRef.current?.abort();
+                avatarRef.current?.stopSpeech();
+                setLessonOpen(false);
+                setAssessmentOpen((v) => !v);
+              }}
+            >
+              Kiểm tra{assessmentDue ? ' · đến hạn' : ''}
+            </button>
+            <button className="runtime-chip" type="button" onClick={openSettings} title="Xem hoặc đổi model local">
+              <span className={`status-dot${providerOnline ? ' is-online' : ''}`} />
+              <span className="runtime-chip-copy">
+                <strong>{activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}</strong>
+                <small>{settings.model ? shortModelName(settings.model, 26) : activeProvider ? 'Chọn model' : 'Ollama · LM Studio'}</small>
               </span>
-              <div>
-                <strong>{progress.streak}</strong>
-                <span>ngày liên tiếp</span>
-              </div>
-            </div>
+              <ChevronDownIcon size={14} />
+            </button>
 
-            <div className="goal-block">
-              <div className="goal-labels">
-                <span>{goalReached ? 'Đã đạt mục tiêu hôm nay' : 'Mục tiêu hôm nay'}</span>
-                <span className="goal-count">
-                  {progress.todayTurns}/{DAILY_GOAL}
-                </span>
-              </div>
-              <div className="goal-track">
-                <span style={{ width: `${Math.max(3, goalPercent)}%` }} />
-              </div>
-            </div>
+            <button className="level-chip" type="button" onClick={openSettings} title="Đổi trình độ luyện tập">
+              {LEVEL_LABEL[settings.level]}
+            </button>
 
-            <div className="week-mini" title="Bảy ngày gần nhất">
-              {week.map((day) => (
-                <span
-                  key={day.key}
-                  className={`week-mini-dot${day.active ? ' is-active' : ''}${day.today ? ' is-today' : ''}`}
-                  title={day.key}
-                />
-              ))}
-            </div>
+            <button
+              className="icon-button learning-button"
+              type="button"
+              onClick={openLearning}
+              title="Hồ sơ học tập và ôn bài"
+              aria-label="Mở hồ sơ học tập và ôn bài"
+            >
+              <BookIcon size={19} />
+              {learningDue > 0 && <span className="learning-badge">{learningDue > 9 ? '9+' : learningDue}</span>}
+            </button>
+
+            <button
+              className="icon-button"
+              type="button"
+              onClick={handleToggleSound}
+              title={settings.autoSpeak ? 'Tắt giọng đọc' : 'Bật giọng đọc'}
+              aria-label={settings.autoSpeak ? 'Tắt giọng đọc' : 'Bật giọng đọc'}
+            >
+              {settings.autoSpeak ? <VolumeIcon size={19} /> : <MuteIcon size={19} />}
+            </button>
+
+            <button className="icon-button" type="button" onClick={openSettings} title="Cài đặt" aria-label="Mở cài đặt">
+              <SettingsIcon size={19} />
+            </button>
           </div>
-        </section>
+        </header>
 
-        {assessmentOpen ? (
-          <Assessment
-            learnerId={learner.id}
-            learning={learning}
-            provider={settings.providerId}
-            model={settings.model}
-            level={settings.level}
-            localStt={Boolean(status?.localStt)}
-            say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
-            onLearningUpdate={updateLearning}
-            onClose={() => setAssessmentOpen(false)}
-          />
-        ) : lessonOpen ? (
-          <DailyLesson
-            learner={learner}
-            onLevelChange={(level) => handleSettingsChange({ level })}
-            level={settings.level}
-            provider={settings.providerId}
-            model={settings.model}
-            voice={settings.voice}
-            localStt={Boolean(status?.localStt)}
-            getAvatar={getAvatar}
-            learning={learning}
-            onLearningUpdate={updateLearning}
-            onClose={() => setLessonOpen(false)}
-          />
-        ) : (
-          <ChatPanel
-            spokenTurns={spokenTurns}
-            learnerId={scope}
-            voice={settings.voice}
-            messages={messages}
-            phase={phase}
-            draft={draft}
-            listening={listening}
-            micSupported={isSpeechSupported()}
-            canSend={canChat && !busy}
-            showPinyin={settings.showPinyin}
-            todayTurns={progress.todayTurns}
-            goal={DAILY_GOAL}
-            error={visibleError}
-            onDraftChange={handleDraftChange}
-            onSend={() => send()}
-            onMicToggle={handleMicToggle}
-            onReplay={handleReplay}
-            onSpeakTranslation={handleSpeakTranslation}
-            onTogglePinyin={handleTogglePinyin}
-            onNewChat={handleNewChat}
-            onDismissError={handleDismissError}
+        <main className="workspace">
+          <section className="stage-column">
+            <AvatarStage
+              avatarUrl={fixedAvatar ? fixedAvatar.url : status?.avatarUrl}
+              lamAvatarUrl={fixedAvatar ? undefined : status?.lamAvatarUrl}
+              customAvatarUrl={fixedAvatar ? undefined : customAvatar?.url}
+              deferred={!avatarChecked}
+              mode={avatarMode}
+              phase={phase}
+              onReady={handleAvatarReady}
+              onAudioState={handleAudioState}
+              onUnavailable={handleAvatarIssue}
+            />
+
+            <div className="progress-strip">
+              <div className="streak-block">
+                <span className="streak-icon">
+                  <FlameIcon size={18} />
+                </span>
+                <div>
+                  <strong>{progress.streak}</strong>
+                  <span>ngày liên tiếp</span>
+                </div>
+              </div>
+
+              <div className="goal-block">
+                <div className="goal-labels">
+                  <span>{goalReached ? 'Đã đạt mục tiêu hôm nay' : 'Mục tiêu hôm nay'}</span>
+                  <span className="goal-count">
+                    {progress.todayTurns}/{DAILY_GOAL}
+                  </span>
+                </div>
+                <div className="goal-track">
+                  <span style={{ width: `${Math.max(3, goalPercent)}%` }} />
+                </div>
+              </div>
+
+              <div className="week-mini" title="Bảy ngày gần nhất">
+                {week.map((day) => (
+                  <span
+                    key={day.key}
+                    className={`week-mini-dot${day.active ? ' is-active' : ''}${day.today ? ' is-today' : ''}`}
+                    title={day.key}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {assessmentOpen ? (
+            <Assessment
+              learnerId={learner.id}
+              learning={learning}
+              provider={settings.providerId}
+              model={settings.model}
+              level={settings.level}
+              localStt={Boolean(status?.localStt)}
+              say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
+              onLearningUpdate={updateLearning}
+              onClose={() => setAssessmentOpen(false)}
+            />
+          ) : lessonOpen ? (
+            <DailyLesson
+              learner={learner}
+              onLevelChange={(level) => handleSettingsChange({ level })}
+              level={settings.level}
+              provider={settings.providerId}
+              model={settings.model}
+              voice={settings.voice}
+              localStt={Boolean(status?.localStt)}
+              getAvatar={getAvatar}
+              learning={learning}
+              onLearningUpdate={updateLearning}
+              onClose={() => setLessonOpen(false)}
+            />
+          ) : (
+            <ChatPanel
+              spokenTurns={spokenTurns}
+              learnerId={scope}
+              voice={settings.voice}
+              messages={messages}
+              phase={phase}
+              draft={draft}
+              listening={listening}
+              micSupported={isSpeechSupported()}
+              canSend={canChat && !busy}
+              showPinyin={settings.showPinyin}
+              todayTurns={progress.todayTurns}
+              goal={DAILY_GOAL}
+              error={visibleError}
+              onDraftChange={handleDraftChange}
+              onSend={() => send()}
+              onMicToggle={handleMicToggle}
+              onReplay={handleReplay}
+              onSpeakTranslation={handleSpeakTranslation}
+              onTogglePinyin={handleTogglePinyin}
+              onNewChat={handleNewChat}
+              onDismissError={handleDismissError}
+            />
+          )}
+        </main>
+
+        {setupOpen && (
+          <SetupCheck
+            settings={settings}
+            onChange={handleSettingsChange}
+            onStatus={setStatus}
+            onClose={closeSetup}
+            onStart={() => {
+              closeSetup();
+              setAssessmentOpen(false);
+              setLessonOpen(true);
+            }}
           />
         )}
-      </main>
-
-      {setupOpen && (
-        <SetupCheck
+        {settings.providerId === 'compatible' && (
+          <p className="remote-provider-notice" role="status">
+            Đang dùng API bên ngoài: bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến {activeProvider?.url}. Dịch vụ có thể
+            tính phí.
+          </p>
+        )}
+        <VoiceSourceNotice />
+        <SettingsDialog
+          open={settingsOpen}
+          status={status}
           settings={settings}
+          learner={learner}
+          onLearnerChange={onLearnerChange}
+          progress={progress}
+          refreshing={refreshing}
+          onClose={closeSettings}
           onChange={handleSettingsChange}
-          onStatus={setStatus}
-          onClose={closeSetup}
-          onStart={() => {
-            closeSetup();
-            setAssessmentOpen(false);
-            setLessonOpen(true);
+          onSetup={() => {
+            setSettingsOpen(false);
+            setSetupOpen(true);
           }}
+          onRefresh={() => void refreshStatus()}
+          onPreviewVoice={handlePreviewVoice}
+          onPreviewTranslation={handlePreviewTranslation}
+          onClearChat={handleNewChat}
+          onResetProgress={handleResetProgress}
+          onResetPitchProfile={() => void handleResetPitchProfile()}
+          customAvatar={customAvatar}
+          onPickAvatar={handlePickAvatar}
+          onClearAvatar={handleClearAvatar}
         />
-      )}
-      {settings.providerId === 'compatible' && (
-        <p className="remote-provider-notice" role="status">
-          Đang dùng API bên ngoài: bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến {activeProvider?.url}. Dịch vụ có thể tính
-          phí.
-        </p>
-      )}
-      <VoiceSourceNotice />
-      <SettingsDialog
-        open={settingsOpen}
-        status={status}
-        settings={settings}
-        progress={progress}
-        refreshing={refreshing}
-        onClose={closeSettings}
-        onChange={handleSettingsChange}
-        onSetup={() => {
-          setSettingsOpen(false);
-          setSetupOpen(true);
-        }}
-        onRefresh={() => void refreshStatus()}
-        onPreviewVoice={handlePreviewVoice}
-        onPreviewTranslation={handlePreviewTranslation}
-        onClearChat={handleNewChat}
-        onResetProgress={handleResetProgress}
-        onResetPitchProfile={() => void handleResetPitchProfile()}
-        customAvatar={customAvatar}
-        onPickAvatar={handlePickAvatar}
-        onClearAvatar={handleClearAvatar}
-      />
 
-      <LearningDialog
-        learnerId={scope}
-        open={learningOpen}
-        learning={learning}
-        levelLabel={LEVEL_LABEL[settings.level]}
-        canAnalyze={canChat}
-        analyzing={analyzing}
-        analysisError={analysisError}
-        onClose={closeLearning}
-        onReviewWord={handleReviewWord}
-        onAnalyze={() => void handleAnalyzeLearning()}
-        onSpeakChinese={handleSpeakChinese}
-        onSpeakVietnamese={handleSpeakVietnamese}
-        onClearLearning={handleClearLearning}
-      />
+        <LearningDialog
+          learnerId={scope}
+          open={learningOpen}
+          learning={learning}
+          levelLabel={LEVEL_LABEL[settings.level]}
+          canAnalyze={canChat}
+          analyzing={analyzing}
+          analysisError={analysisError}
+          onClose={closeLearning}
+          onReviewWord={handleReviewWord}
+          onAnalyze={() => void handleAnalyzeLearning()}
+          onSpeakChinese={handleSpeakChinese}
+          onSpeakVietnamese={handleSpeakVietnamese}
+          onClearLearning={handleClearLearning}
+        />
 
-      {toast && (
-        <div className="toast" role="status">
-          {toast}
-        </div>
-      )}
-    </div>
+        {toast && (
+          <div className="toast" role="status">
+            {toast}
+          </div>
+        )}
+      </div>
+    </TeacherContext.Provider>
   );
 }
 
@@ -1192,10 +1229,16 @@ export default function App() {
     setActiveId(id);
   };
 
-  const handleCreate = (name: string, level: Level) => {
-    const created = createLearner(name, level);
+  const handleCreate = (name: string, level: Level, gender: LearnerGender) => {
+    const created = createLearner(name, level, gender);
     setLearners(loadLearners());
     setActiveId(created.id);
+  };
+
+  const handleLearnerChange = (patch: { gender?: LearnerGender }) => {
+    if (!active || !patch.gender) return;
+    updateLearner(active.id, { gender: patch.gender });
+    setLearners(loadLearners());
   };
 
   const handleSwitch = () => {
@@ -1206,5 +1249,5 @@ export default function App() {
   if (!active) {
     return <LearnerPicker learners={learners} onPick={handlePick} onCreate={handleCreate} />;
   }
-  return <Tutor key={active.id} learner={active} onSwitchLearner={handleSwitch} />;
+  return <Tutor key={active.id} learner={active} onSwitchLearner={handleSwitch} onLearnerChange={handleLearnerChange} />;
 }

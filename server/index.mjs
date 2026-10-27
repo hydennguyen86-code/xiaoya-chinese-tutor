@@ -584,7 +584,7 @@ app.post('/api/lesson-content', async (req, res) => {
 });
 
 app.post('/api/chat', async (req, res) => {
-  const { provider = 'ollama', model, level = 'HSK5-6', messages = [], learning = '', scenario = '' } = req.body || {};
+  const { provider = 'ollama', model, level = 'HSK5-6', gender = 'male', messages = [], learning = '', scenario = '' } = req.body || {};
 
   if (!PROVIDER_DEFS[provider]) {
     res.status(400).json({ error: 'Provider không hợp lệ.' });
@@ -602,6 +602,7 @@ app.post('/api/chat', async (req, res) => {
   }
 
   const safeLevel = Object.hasOwn(LEVELS, level) ? level : 'HSK5-6';
+  const safeGender = gender === 'female' ? 'female' : 'male';
   const learningDigest =
     typeof learning === 'string'
       ? learning
@@ -617,7 +618,7 @@ app.post('/api/chat', async (req, res) => {
           .trim()
           .slice(0, 900)
       : '';
-  const conversation = buildMessages(safeLevel, history, [scenarioText, learningDigest].filter(Boolean).join('\n\n'));
+  const conversation = buildMessages(safeLevel, history, [scenarioText, learningDigest].filter(Boolean).join('\n\n'), safeGender);
 
   res.status(200);
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');

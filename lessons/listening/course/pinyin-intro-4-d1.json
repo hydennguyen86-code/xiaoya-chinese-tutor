@@ -1,0 +1,93 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "pinyin-intro-4-d1",
+  "level": "HSK1-2",
+  "title": "Tròn môi hay dẹt môi: zh ch sh r / z c s",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-213",
+      "level": "HSK1-2",
+      "hanzi": "他写的是十四。",
+      "pinyin": "tā xiě de shì shí sì",
+      "meaningVi": "Anh ấy viết là mười bốn.",
+      "focus": [
+        "十四 shí sì: chữ đầu cong lưỡi đi lên, chữ sau phẳng lưỡi rơi mạnh.",
+        "Đổi thứ tự là đổi số: 四十 sì shí là bốn mươi.",
+        "是 shì cong lưỡi, môi tròn hơn 四."
+      ]
+    },
+    {
+      "id": "dt-1-214",
+      "level": "HSK1-2",
+      "hanzi": "这个是四十吗？",
+      "pinyin": "zhè ge shì sì shí ma",
+      "meaningVi": "Đây là bốn mươi phải không?",
+      "focus": [
+        "四十 sì shí: xuống rồi lên; nghe chữ đầu có cuộn lưỡi hay không.",
+        "这个 zhè ge: 个 đọc nhẹ, ngắn.",
+        "是 shì cong lưỡi thanh 4; 这 zhè cũng cong lưỡi nhưng mở rộng ở e.",
+        "吗 ở cuối câu hỏi đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-215",
+      "level": "HSK1-2",
+      "hanzi": "他写十个字。",
+      "pinyin": "tā xiě shí gè zì",
+      "meaningVi": "Anh ấy viết mười chữ.",
+      "focus": [
+        "字 zì phẳng lưỡi, thanh 4 cắt ngắn.",
+        "十个 shí gè: shí đi lên, gè rơi mạnh.",
+        "写 xiě thanh 3 thấp rồi nhô, đừng đọc thành xiē."
+      ]
+    },
+    {
+      "id": "dt-1-216",
+      "level": "HSK1-2",
+      "hanzi": "我读一首新诗。",
+      "pinyin": "wǒ dú yì shǒu xīn shī",
+      "meaningVi": "Tôi đọc một bài thơ mới.",
+      "focus": [
+        "诗 shī cong lưỡi, thanh 1 cao và phẳng.",
+        "一 trước 首 (thanh 3) rơi mạnh: yì shǒu.",
+        "读 dú thanh 2 đi lên; 首 shǒu thanh 3 thấp rồi nhô."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-48",
+      "level": "HSK1-2",
+      "text": "这是我儿子，他会写字，也会写诗。",
+      "pinyin": "zhè shì wǒ ér zi tā huì xiě zì yě huì xiě shī",
+      "meaningVi": "Đây là con trai tôi, cậu ấy biết viết chữ, cũng biết viết thơ.",
+      "syllables": 13,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "这是我儿子",
+          "pinyin": "zhè shì wǒ ér zi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "他会写字",
+          "pinyin": "tā huì xiě zì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也会写诗",
+          "pinyin": "yě huì xiě shī",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "儿子 ér zi: 儿 cuộn lưỡi trong một hơi, chữ sau nhẹ, thấp, không dấu.",
+        "字 zì thanh 4 phẳng lưỡi, đối với 诗 shī thanh 1 cong lưỡi.",
+        "会 huì lặp lại hai lần: thanh 4 ngắn, rơi ngay."
+      ]
+    }
+  ]
+}

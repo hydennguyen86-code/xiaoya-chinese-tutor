@@ -1,4 +1,6 @@
 import { pinyin } from 'pinyin-pro';
+import { DEFAULT_TEACHER } from './persona';
+import type { Teacher } from './persona';
 import type { ChatMessage, Emotion, Gesture } from '../types';
 
 const SENTENCE_END = /[。！？!?…]/;
@@ -12,7 +14,7 @@ export function uid() {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-export function makeGreeting(name = ''): ChatMessage {
+export function makeGreeting(name = '', teacher: Teacher = DEFAULT_TEACHER): ChatMessage {
   const hour = new Date().getHours();
   const who = name ? `, ${name}` : '';
   let text: string;
@@ -21,18 +23,18 @@ export function makeGreeting(name = ''): ChatMessage {
   let suggestionTranslation: string;
 
   if (hour < 11) {
-    text = '早上好呀！我是米苏。新的一天，你今天有什么安排吗？';
-    translation = `Chào buổi sáng${who}! Mình là Misu. Một ngày mới, hôm nay bạn có kế hoạch gì chưa?`;
+    text = `早上好呀！我是${teacher.cn}。新的一天，你今天有什么安排吗？`;
+    translation = `Chào buổi sáng${who}! Mình là ${teacher.vi}. Một ngày mới, hôm nay bạn có kế hoạch gì chưa?`;
     suggestion = '我今天打算去图书馆看书。';
     suggestionTranslation = 'Hôm nay mình định đến thư viện đọc sách.';
   } else if (hour < 18) {
-    text = '下午好呀！我是米苏。今天过得怎么样？';
-    translation = `Chào buổi chiều${who}! Mình là Misu. Hôm nay của bạn thế nào?`;
+    text = `下午好呀！我是${teacher.cn}。今天过得怎么样？`;
+    translation = `Chào buổi chiều${who}! Mình là ${teacher.vi}. Hôm nay của bạn thế nào?`;
     suggestion = '还不错，就是有点忙。你呢？';
     suggestionTranslation = 'Cũng ổn, chỉ hơi bận. Còn bạn thì sao?';
   } else {
-    text = '晚上好呀！我是米苏。今天有什么想和我分享的吗？';
-    translation = `Chào buổi tối${who}! Mình là Misu. Hôm nay có điều gì bạn muốn chia sẻ với mình không?`;
+    text = `晚上好呀！我是${teacher.cn}。今天有什么想和我分享的吗？`;
+    translation = `Chào buổi tối${who}! Mình là ${teacher.vi}. Hôm nay có điều gì bạn muốn chia sẻ với mình không?`;
     suggestion = '今天挺顺利的，我下班后看了一部电影。';
     suggestionTranslation = 'Hôm nay khá suôn sẻ, sau giờ làm mình đã xem một bộ phim.';
   }
