@@ -12,8 +12,9 @@ import { AvatarStage } from './components/AvatarStage';
 import { ChatPanel } from './components/ChatPanel';
 import { LearnerPicker } from './components/LearnerPicker';
 import { LearningDialog } from './components/LearningDialog';
+import { MotivationBoard } from './components/MotivationBoard';
 import { SettingsDialog } from './components/SettingsDialog';
-import { BookIcon, ChevronDownIcon, FlameIcon, MuteIcon, SettingsIcon, VolumeIcon } from './components/Icons';
+import { BookIcon, ChevronDownIcon, FlameIcon, MuteIcon, SettingsIcon, SparkIcon, VolumeIcon } from './components/Icons';
 import type { AvatarApi } from './lib/avatarApi';
 import { analyzeLearning, fetchCorrections, fetchStatus, resetPitchProfile, streamChat } from './lib/api';
 import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
@@ -124,6 +125,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   const [error, setError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [learningOpen, setLearningOpen] = useState(false);
+  const [motivationOpen, setMotivationOpen] = useState(false);
+  const closeMotivation = useCallback(() => setMotivationOpen(false), []);
   const [lessonOpen, setLessonOpen] = useState(false);
   const [assessmentOpen, setAssessmentOpen] = useState(false);
   const [setupOpen, setSetupOpen] = useState(() => localStorage.getItem('xiaoya.setup.v1') !== 'done');
@@ -1006,6 +1009,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             >
               Kiểm tra{assessmentDue ? ' · đến hạn' : ''}
             </button>
+            <button className="lesson-launch motivation-trigger" type="button" onClick={() => setMotivationOpen(true)}>
+              <SparkIcon size={16} /> Bảng động lực
+            </button>
             <button className="runtime-chip" type="button" onClick={openSettings} title="Xem hoặc đổi model local">
               <span className={`status-dot${providerOnline ? ' is-online' : ''}`} />
               <span className="runtime-chip-copy">
@@ -1208,6 +1214,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           onSpeakVietnamese={handleSpeakVietnamese}
           onClearLearning={handleClearLearning}
         />
+
+        {motivationOpen && <MotivationBoard activeId={scope} onClose={closeMotivation} />}
 
         {toast && (
           <div className="toast" role="status">

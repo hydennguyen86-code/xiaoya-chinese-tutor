@@ -5127,3 +5127,49 @@ svg {
 .hanviet-guide { margin: 14px 0; padding: 14px; border: 1px solid var(--line-strong); border-radius: 12px; }
 .hanviet-guide select { margin: 8px; padding: 6px; border: 1px solid var(--line-strong); border-radius: 8px; }
 .hanviet-entry { padding: 12px 0; border-bottom: 1px solid var(--line); }
+
+/* A shared encouragement board, based on the learners' existing activity. */
+.motivation-trigger { display: inline-flex; align-items: center; gap: 6px; }
+.motivation-dialog { width: min(920px, 100%); }
+.motivation-body { padding: 22px 24px 26px; }
+.motivation-welcome {
+  display: flex; align-items: center; gap: 15px; padding: 18px 20px;
+  border: 1px solid #f0d6bd; border-radius: 18px;
+  background: linear-gradient(115deg, #fff3e5, #f9e8d5 60%, #f5e9dd);
+}
+.motivation-spark { width: 42px; height: 42px; display: grid; place-items: center; flex: none; border-radius: 14px; background: #fffaf3; color: #ae5d3d; }
+.motivation-welcome strong { display: block; font-size: 17px; color: #793c2b; }
+.motivation-welcome p { margin: 5px 0 0; font-size: 13px; line-height: 1.5; color: #80685c; }
+.motivation-table-scroll { margin-top: 18px; overflow-x: auto; border: 1px solid #e9d9cb; border-radius: 16px; background: #fffaf4; }
+.motivation-table { width: 100%; min-width: 670px; border-collapse: collapse; text-align: right; font-size: 14px; }
+.motivation-table caption { padding: 15px 16px 11px; text-align: left; font-size: 14px; font-weight: 700; color: #704938; }
+.motivation-table th, .motivation-table td { padding: 13px 14px; border-top: 1px solid #f0e4d8; white-space: nowrap; }
+.motivation-table thead th { color: #8b766a; font-size: 11px; font-weight: 650; }
+.motivation-table th:first-child { text-align: left; }
+.motivation-table tbody th { font-weight: 650; }
+.motivation-table tbody td { color: #685044; font-variant-numeric: tabular-nums; }
+.motivation-table tbody td strong { color: #ad5639; }
+.motivation-table .motivation-current { background: #fff0e2; }
+.motivation-name { white-space: normal; overflow-wrap: anywhere; }
+.motivation-you { display: inline-block; margin-left: 8px; padding: 3px 7px; border-radius: 999px; color: #955037; background: #f7deca; font-size: 10px; font-weight: 700; }
+.motivation-note, .motivation-empty { margin: 14px 2px 0; color: #806f63; font-size: 12px; line-height: 1.65; }
+@media (max-width: 600px) {
+  .motivation-body { padding: 16px; }
+  .motivation-welcome { align-items: flex-start; padding: 15px; }
+  .motivation-table-scroll { margin-top: 14px; }
+}
+
+.motivation-profile { display: inline-block; margin-left: 8px; color: #8b766a; font-size: 11px; font-weight: 500; }
+@media (max-width: 700px) {
+  .motivation-table-scroll { overflow: visible; }
+  .motivation-table, .motivation-table tbody { display: block; min-width: 0; }
+  .motivation-table caption { display: block; }
+  .motivation-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .motivation-table tbody tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 4px 13px 13px; border-top: 1px solid #f0e4d8; text-align: left; }
+  .motivation-table tbody th { grid-column: 1 / -1; padding: 12px 2px 5px; border: 0; }
+  .motivation-table tbody td { padding: 8px 2px 2px; border: 0; text-align: left; }
+  .motivation-table tbody td::before { content: attr(data-label); display: block; margin-bottom: 3px; color: #8b766a; font-size: 11px; }
+}
+@media (max-width: 400px) {
+  .motivation-table tbody tr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

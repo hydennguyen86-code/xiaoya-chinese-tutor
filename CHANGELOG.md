@@ -2,6 +2,7 @@
 
 ## 2026-10-27 — Bản tạm
 
+- Thêm Bảng động lực dùng dữ liệu từng học viên: lượt trò chuyện, chuỗi ngày, buổi hoàn thành và XP; phân biệt hồ sơ trùng tên, không xếp hạng trình độ.
 - Thẻ từ thanh nhẹ như 吗 chấp nhận tạm thời chữ nhận dạng có cùng âm tiết, đồng thời nói rõ máy chưa xác nhận được thanh nhẹ. Bài đọc câu giữ cách so sánh riêng; thông báo lỗi âm thanh vẫn được hiển thị.
 - Bổ sung 10 bộ nghe cho lộ trình Nhập môn Pinyin, đưa tổng số bộ nghe theo bài lên 82; học liệu do AI soạn và chưa có giáo viên duyệt.
 - Thêm hồ sơ giới tính người học và lựa chọn giáo viên Tiểu Nhã hoặc Misu; đồng bộ tên, giọng và ngữ cảnh hội thoại theo lựa chọn, cùng các chỉnh sửa giao diện học.
