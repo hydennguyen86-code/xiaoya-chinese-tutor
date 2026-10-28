@@ -26,7 +26,7 @@
       "example": "教育孩子不能只看成绩。",
       "exampleVi": "Giáo dục con cái không thể chỉ nhìn vào điểm số.",
       "pinyin": "jiào yù",
-      "examplePinyin": "jiào yù hái zi bù néng zhī kàn chéng jì 。"
+      "examplePinyin": "jiào yù hái zi bù néng zhǐ kàn chéng jì 。"
     },
     {
       "word": "独立",
@@ -55,10 +55,10 @@
     {
       "word": "压力",
       "meaning": "áp lực",
-      "example": "给孩子太大压力反而不好。",
+      "example": "给孩子太大的压力反而不好。",
       "exampleVi": "Gây áp lực quá lớn cho con lại không tốt.",
       "pinyin": "yā lì",
-      "examplePinyin": "gěi hái zi tài dà yā lì fǎn ér bù hǎo 。"
+      "examplePinyin": "gěi hái zi tài dà de yā lì fǎn ér bù hǎo 。"
     },
     {
       "word": "沟通",
@@ -136,7 +136,7 @@
     "playLimit": 2,
     "transcript": "教育孩子不能只看成绩。 父母应该让孩子学会独立。 他对科学很感兴趣。",
     "translation": "Giáo dục con cái không thể chỉ nhìn vào điểm số. Cha mẹ nên để con học cách tự lập. Cậu ấy rất hứng thú với khoa học.",
-    "pinyin": "jiào yù hái zi bù néng zhī kàn chéng jì 。   fù mǔ yīng gāi ràng hái zi xué huì dú lì 。   tā duì kē xué hěn gǎn xìng qù 。",
+    "pinyin": "jiào yù hái zi bù néng zhǐ kàn chéng jì 。   fù mǔ yīng gāi ràng hái zi xué huì dú lì 。   tā duì kē xué hěn gǎn xìng qù 。",
     "questions": [
       {
         "prompt": "Cụm “教育” trong đoạn nghe có nghĩa gì?",
@@ -178,7 +178,7 @@
       "responseSeconds": 30,
       "audioText": "教育孩子不能只看成绩。",
       "reference": "教育孩子不能只看成绩。",
-      "pinyin": "jiào yù hái zi bù néng zhī kàn chéng jì 。",
+      "pinyin": "jiào yù hái zi bù néng zhǐ kàn chéng jì 。",
       "checklist": [
         "Giữ thông tin chính",
         "Nói rõ để người nghe hiểu",

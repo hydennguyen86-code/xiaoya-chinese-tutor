@@ -128,7 +128,7 @@
         "explanation": "B nói 在右边."
       }
     ],
-    "pinyin": "jiǎ ： qǐng wèn ， shāng diàn zài nǎ lǐ ？ yǐ ： wǎng qián zǒu ， shāng diàn zài yòu biān 。 jiǎ ： zài yòu biān ， duì ma ？ yǐ ： duì 。"
+    "pinyin": "jiǎ ： qǐng wèn ， shāng diàn zài nǎ lǐ ？ yǐ ： wǎng qián zǒu ， shāng diàn zài yòu bian 。 jiǎ ： zài yòu bian ， duì ma ？ yǐ ： duì 。"
   },
   "speaking": [
     {
@@ -160,5 +160,32 @@
       "sampleVi": "Xin hỏi trường ở đâu? Là đi sang phải phải không? Cảm ơn."
     }
   ],
-  "transferTask": "Hỏi cửa hàng; buổi 2 tìm trường ở một ngã rẽ khác."
+  "transferTask": "Hỏi cửa hàng; buổi 2 tìm trường ở một ngã rẽ khác.",
+  "pronunciation": [
+    {
+      "text": "左边",
+      "pinyin": "zuǒ bian",
+      "hint": "Âm thứ hai đọc nhẹ, không dấu và rất ngắn; chỉ 左 mang thanh rõ, uốn thấp rồi nhô."
+    },
+    {
+      "text": "商店",
+      "pinyin": "shāng diàn",
+      "hint": "Tiếng đầu cong lưỡi và kết thúc -ng vang ở mũi sau; tiếng sau khép -n bằng đầu lưỡi chạm lợi."
+    },
+    {
+      "text": "哪里",
+      "pinyin": "nǎ lǐ",
+      "hint": "Âm đầu tiếng thứ nhất là mũi n, tiếng thứ hai là âm bên l; hai âm này người Việt hay lẫn khi nghe."
+    },
+    {
+      "text": "是，走",
+      "pinyin": "shì ， zǒu",
+      "hint": "shì bắt đầu bằng âm cong lưỡi; zǒu bắt đầu bằng z phẳng, đầu lưỡi sát lợi sau răng cửa."
+    },
+    {
+      "text": "前面",
+      "pinyin": "qián miàn",
+      "hint": "Cả hai tiếng đều kết thúc -n, lưỡi chặn hơi sớm ở lợi; đừng để hơi lọt ra thành -ng."
+    }
+  ]
 }

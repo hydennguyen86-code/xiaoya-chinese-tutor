@@ -174,9 +174,36 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "你好，我的号码是二零九五。不是二五九，是二零九五。谢谢。",
-      "sampleVi": "Chào bạn, số của tôi là 2095. Không phải 259, mà là 2095. Cảm ơn."
+      "sampleZh": "你好，我的号码是二零九。不是二九零，是二零九。谢谢。",
+      "sampleVi": "Chào bạn, số của tôi là 209. Không phải 290, mà là 209. Cảm ơn."
     }
   ],
-  "transferTask": "Ở quầy nhận hàng: đọc số giả định theo từng chữ số, nghe nhân viên đọc lại, xác nhận hoặc sửa một chữ số."
+  "transferTask": "Ở quầy nhận hàng: đọc số giả định theo từng chữ số, nghe nhân viên đọc lại, xác nhận hoặc sửa một chữ số.",
+  "pronunciation": [
+    {
+      "text": "二五九",
+      "pinyin": "èr wǔ jiǔ",
+      "hint": "èr thanh 4 rơi trước; wǔ và jiǔ là hai thanh 3 liền nhau — trong lời đọc số, wǔ thường được vớt lên như thanh 2."
+    },
+    {
+      "text": "手机",
+      "pinyin": "shǒu jī",
+      "hint": "shǒu thanh 3 để thấp rồi jī thanh 1 cao bằng; nghe 'điện thoại di động' là nghe cao độ nhảy lên ở âm cuối."
+    },
+    {
+      "text": "谢谢",
+      "pinyin": "xiè xie",
+      "hint": "Âm thứ hai xie đọc nhẹ, ngắn và thấp hơn hẳn âm đầu; nhấn đầy đủ thanh ở cả hai âm sẽ nghe nặng nề."
+    },
+    {
+      "text": "不是",
+      "pinyin": "bú shì",
+      "hint": "Không phủ nhận: 不 trước thanh 4 đọc bú đi lên; cặp bú shì là 'lên rồi rơi', không phải hai lần rơi."
+    },
+    {
+      "text": "零七四一",
+      "pinyin": "líng qī sì yī",
+      "hint": "Chỉ sì thanh 4 rơi giữa chuỗi; líng, qī, yī đều thanh 1 cao bằng — luyện giữ ba âm bằng ở cùng một cao độ."
+    }
+  ]
 }

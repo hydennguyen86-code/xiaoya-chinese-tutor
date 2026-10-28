@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { readCourseListening } from './courseListening.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 import { bundledSyllabus } from './courseContent.mjs';
+import { syllableCount } from '../src/lib/coursePinyin.mjs';
 
 test('82 course listening files validate authored pinyin sandhi meaning chunks and vocabulary', () => {
   const result = spawnSync(process.execPath, ['scripts/listening-checks/course-listening.check.mjs'], { encoding: 'utf8' });
@@ -31,7 +32,7 @@ test('82 course listening files validate authored pinyin sandhi meaning chunks a
         dictation += data.dictation.length;
         shadowing += data.shadowing.length;
         for (const item of data.shadowing) {
-          assert.equal(item.syllables, [...item.text].filter((c) => /\p{Script=Han}/u.test(c)).length);
+          assert.equal(item.syllables, syllableCount(item.text));
           assert.equal(item.chunks.map((c) => c.hanzi).join(''), item.text.replace(/[^\p{Script=Han}]/gu, ''));
           assert.equal(item.chunks.at(-1).pause, 'end');
         }

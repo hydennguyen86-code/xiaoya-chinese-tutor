@@ -149,7 +149,7 @@
       "prompt": "Nghe rồi nhắc lại mười tiếng mang vần mũi, chia làm ba nhóm.",
       "prepareSeconds": 10,
       "responseSeconds": 30,
-      "reference": "Bốn tiếng đầu đóng hơi bằng đầu lưỡi, bốn tiếng sau bằng gốc lưỡi, tiếng cuối cùng là -ng bo tròn môi.",
+      "reference": "Bốn tiếng đầu đóng hơi bằng đầu lưỡi; 上, 生, 冷, 朋, 风 kết thúc bằng -ng ở gốc lưỡi, riêng 天 vẫn là -n.",
       "checklist": [
         "Không nuốt âm cuối mũi",
         "Thấy khác nhau rõ giữa -n và -ng",
@@ -180,7 +180,7 @@
       "checklist": [
         "Đọc đủ ba câu",
         "Không lẫn shān với shàng",
-        "Giữ ong tròn môi ở 风"
+        "Giữ -ng ở 风, không lẫn với -n"
       ]
     },
     {

@@ -91,7 +91,7 @@
       "explanation": "Hỏi có loại lớn/nhỏ hơn một chút; đây là mẫu mở rộng thực dụng.",
       "example": "有小一点儿的吗？",
       "exampleVi": "Có loại nhỏ hơn một chút không?",
-      "examplePinyin": "yǒu xiǎo yì diǎn ér de ma ？"
+      "examplePinyin": "yǒu xiǎo yì diǎnr de ma ？"
     }
   ],
   "roleplay": {
@@ -103,7 +103,7 @@
       "Chọn một món và nói muốn to hay nhỏ hơn"
     ],
     "opening": "你好，这个杯子二十块，那个十块。",
-    "openingVi": "Chào bạn, cái cốc này hai mươi đồng, cái kia mười đồng."
+    "openingVi": "Chào bạn, cái cốc này hai mươi tệ, cái kia mười tệ."
   },
   "freeTalk": {
     "question": "请比较两个杯子的价格，选一个，再说要大一点还是小一点。",
@@ -121,7 +121,7 @@
     "title": "Nghe buổi 2: Mua đồ và chọn phương án",
     "playLimit": 2,
     "transcript": "甲：这个多少钱？乙：二十块钱。甲：那个呢？乙：十块。甲：我要那个。",
-    "translation": "A: Cái này bao nhiêu tiền? B: Hai mươi đồng. A: Còn cái kia? B: Mười đồng. A: Tôi lấy cái kia.",
+    "translation": "A: Cái này bao nhiêu tiền? B: Hai mươi tệ. A: Còn cái kia? B: Mười tệ. A: Tôi lấy cái kia.",
     "questions": [
       {
         "prompt": "A chọn cái nào?",
@@ -176,5 +176,27 @@
       "sampleVi": "Cái cốc này nhỏ quá. Tôi lấy cái kia to hơn. Cái kia bao nhiêu tiền?"
     }
   ],
-  "transferTask": "Ở cửa hàng: hỏi giá hai món, so sánh, chọn một món và nói muốn to hơn hay nhỏ hơn."
+  "transferTask": "Ở cửa hàng: hỏi giá hai món, so sánh, chọn một món và nói muốn to hơn hay nhỏ hơn.",
+  "pronunciation": [
+    {
+      "text": "多少钱",
+      "pinyin": "duō shǎo qián",
+      "hint": "shǎo mở đầu bằng âm cong lưỡi; qián khép -n chạm lợi, không để vang thành -ng."
+    },
+    {
+      "text": "二十",
+      "pinyin": "èr shí",
+      "hint": "shí là i hẹp sau âm cong lưỡi, đọc ngắn và đóng; 二 chỉ một hơi nâng gốc lưỡi."
+    },
+    {
+      "text": "小，少",
+      "pinyin": "xiǎo ， shǎo",
+      "hint": "Cùng vần -ao và cùng thanh 3, chỉ khác âm đầu: xiǎo là âm vòm phẳng, shǎo cong lưỡi."
+    },
+    {
+      "text": "那个呢",
+      "pinyin": "nà ge ne",
+      "hint": "Cả 个 lẫn 呢 đều đọc nhẹ, thấp; hơi nhấn duy nhất rơi trên nà thanh 4."
+    }
+  ]
 }

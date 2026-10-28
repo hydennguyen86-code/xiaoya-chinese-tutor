@@ -1,0 +1,54 @@
+{
+ "name": "tones",
+ "ranAt": "2026-10-26T05:03:25.795Z",
+ "commit": "2738d88",
+ "dirty": true,
+ "settings": {
+  "voice": "zh-CN-XiaoxiaoNeural"
+ },
+ "result": {
+  "matrix": {
+   "1": [
+    0,
+    8,
+    2,
+    0,
+    0
+   ],
+   "2": [
+    0,
+    0,
+    9,
+    1,
+    0
+   ],
+   "3": [
+    0,
+    0,
+    1,
+    9,
+    0
+   ],
+   "4": [
+    1,
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  "singles": {
+   "correct": 35,
+   "total": 40,
+   "unclear": 1
+  },
+  "words": {
+   "correct": 25,
+   "judged": 26,
+   "syllables": 32
+  },
+  "misses": [
+   "音乐 音: expected 1, heard 2"
+  ]
+ }
+}

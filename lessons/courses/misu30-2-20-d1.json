@@ -34,13 +34,13 @@
       "example": "很抱歉给您添麻烦了。",
       "exampleVi": "Rất xin lỗi vì đã làm phiền bạn.",
       "pinyin": "bào qiàn",
-      "examplePinyin": "hěn bào qiàn gěi nín tiān má fán le 。"
+      "examplePinyin": "hěn bào qiàn gěi nín tiān má fan le 。"
     },
     {
       "word": "解决",
       "meaning": "giải quyết",
       "example": "我们会尽快解决这个问题。",
-      "exampleVi": "Chúng tôi sẽ giải quyết vấn đề này sớm nhất.",
+      "exampleVi": "Chúng tôi sẽ giải quyết vấn đề này sớm nhất có thể.",
       "pinyin": "jiě jué",
       "examplePinyin": "wǒ men huì jǐn kuài jiě jué zhè ge wèn tí 。"
     },
@@ -135,8 +135,8 @@
     "title": "Nghe ví dụ thực tế",
     "playLimit": 2,
     "transcript": "我想投诉这个房间。 很抱歉给您添麻烦了。 我们会尽快解决这个问题。",
-    "translation": "Mình muốn khiếu nại về phòng này. Rất xin lỗi vì đã làm phiền bạn. Chúng tôi sẽ giải quyết vấn đề này sớm nhất.",
-    "pinyin": "wǒ xiǎng tóu sù zhè ge fáng jiān 。   hěn bào qiàn gěi nín tiān má fán le 。   wǒ men huì jǐn kuài jiě jué zhè ge wèn tí 。",
+    "translation": "Mình muốn khiếu nại về phòng này. Rất xin lỗi vì đã làm phiền bạn. Chúng tôi sẽ giải quyết vấn đề này sớm nhất có thể.",
+    "pinyin": "wǒ xiǎng tóu sù zhè ge fáng jiān 。   hěn bào qiàn gěi nín tiān má fan le 。   wǒ men huì jǐn kuài jiě jué zhè ge wèn tí 。",
     "questions": [
       {
         "prompt": "Cụm “投诉” trong đoạn nghe có nghĩa gì?",

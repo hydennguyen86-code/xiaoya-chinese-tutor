@@ -51,7 +51,7 @@
       "example": "我们几点在哪儿见面？",
       "exampleVi": "Mấy giờ và ở đâu chúng ta gặp nhau?",
       "pinyin": "jiàn miàn",
-      "examplePinyin": "wǒ men jǐ diǎn zài nǎ ér jiàn miàn ？"
+      "examplePinyin": "wǒ men jǐ diǎn zài nǎr jiàn miàn ？"
     },
     {
       "word": "晚会",
@@ -140,7 +140,7 @@
         "explanation": "Người nghe nói 现在外面太吵了."
       }
     ],
-    "pinyin": "jiǎ ： wèi ， xiǎo lǐ ma ？ wǒ shì xiǎo wáng 。 yǐ ： shì wǒ ， nǐ yǒu shén me shì ér ？ jiǎ ： zhōu liù wǎn shang yǒu gè wǎn huì ， nǐ qù ma ？ yǐ ： jǐ diǎn kāi shǐ ？ zài nǎ ér jiàn miàn ？ jiǎ ： qī diǎn kāi shǐ 。 wǒ men yuē zài fàn diàn mén kǒu jiàn miàn ， nǐ kàn fāng biàn ma ？ yǐ ： kě yǐ 。 wǒ míng tiān huí nǐ diàn huà ， xiàn zài wài miàn tài chǎo le 。 jiǎ ： hǎo ， nà wǒ děng nǐ diàn huà 。"
+    "pinyin": "jiǎ ： wèi ， xiǎo lǐ ma ？ wǒ shì xiǎo wáng 。 yǐ ： shì wǒ ， nǐ yǒu shén me shìr ？ jiǎ ： zhōu liù wǎn shang yǒu gè wǎn huì ， nǐ qù ma ？ yǐ ： jǐ diǎn kāi shǐ ？ zài nǎr jiàn miàn ？ jiǎ ： qī diǎn kāi shǐ 。 wǒ men yuē zài fàn diàn mén kǒu jiàn miàn ， nǐ kàn fāng biàn ma ？ yǐ ： kě yǐ 。 wǒ míng tiān huí nǐ diàn huà ， xiàn zài wài miàn tài chǎo le 。 jiǎ ： hǎo ， nà wǒ děng nǐ diàn huà 。"
   },
   "speaking": [
     {
@@ -217,7 +217,7 @@
     {
       "text": "见面",
       "pinyin": "jiàn miàn",
-      "hint": "Chữ đầu là âm cong lưỡi không bật hơi, vần gần 'iên'; chữ sau gần 'miện', thanh 4."
+      "hint": "Chữ đầu là âm mặt lưỡi j-, khóe miệng kéo ngang, không bật hơi, vần gần 'iên'; chữ sau gần 'miện', thanh 4."
     }
   ]
 }

@@ -19,7 +19,7 @@
       "example": "我今天有点儿不舒服。",
       "exampleVi": "Hôm nay tôi hơi khó ở.",
       "pinyin": "shū fu",
-      "examplePinyin": "wǒ jīn tiān yǒu diǎn er bù shū fu 。"
+      "examplePinyin": "wǒ jīn tiān yǒu diǎnr bù shū fu 。"
     },
     {
       "word": "感冒",
@@ -83,7 +83,7 @@
       "example": "我有点儿头疼，也想睡觉。",
       "exampleVi": "Tôi hơi đau đầu, cũng buồn ngủ.",
       "pinyin": "tóu téng",
-      "examplePinyin": "wǒ yǒu diǎn er tóu téng ， yě xiǎng shuì jiào 。"
+      "examplePinyin": "wǒ yǒu diǎnr tóu téng ， yě xiǎng shuì jiào 。"
     }
   ],
   "patterns": [
@@ -171,7 +171,7 @@
         "explanation": "Bác sĩ nói 药一天三次、多休息、别熬夜."
       }
     ],
-    "pinyin": "yī shēng ： nǐ nǎ ér bù shū fu ？ huàn zhě ： fā shāo liǎng tiān le ， hóu lóng téng ， hái yì zhí ké sou 。 yī shēng ： xiān liáng yí xià tǐ wēn ， zài zhāng zuǐ ， wǒ jiǎn chá yí xià 。 huàn zhě ： yán zhòng ma ？ yī shēng ： jiù shì pǔ tōng gǎn mào 。 yào yì tiān sān cì ， fàn hòu chī ， duō xiū xi ， bié áo yè 。 huàn zhě ： shén me shí hou néng shàng bān ？ yī shēng ： yì bān wǔ tiān jiù hǎo ， hái shāo jiù zài lái 。"
+    "pinyin": "yī shēng ： nǐ nǎr bù shū fu ？ huàn zhě ： fā shāo liǎng tiān le ， hóu lóng téng ， hái yì zhí ké sou 。 yī shēng ： xiān liáng yí xià tǐ wēn ， zài zhāng zuǐ ， wǒ jiǎn chá yí xià 。 huàn zhě ： yán zhòng ma ？ yī shēng ： jiù shì pǔ tōng gǎn mào 。 yào yì tiān sān cì ， fàn hòu chī ， duō xiū xi ， bié áo yè 。 huàn zhě ： shén me shí hou néng shàng bān ？ yī shēng ： yì bān wǔ tiān jiù hǎo ， hái shāo jiù zài lái 。"
   },
   "speaking": [
     {
@@ -238,7 +238,7 @@
     {
       "text": "医院",
       "pinyin": "yī yuàn",
-      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh; tròn môi ở âm đầu."
+      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh, môi tròn ở âm đệm ü; chữ đầu dẹt, không tròn."
     },
     {
       "text": "休息",

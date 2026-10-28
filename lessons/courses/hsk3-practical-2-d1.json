@@ -140,7 +140,7 @@
         "explanation": "Nhân viên trả lời 二十六块."
       }
     ],
-    "pinyin": "jiǎ ： nǐ hǎo ， wǒ men yào yí gè fān qié jī dàn miàn ， hái yào yí gè qīng cài 。 yǐ ： fān qié miàn yǒu diǎn er là 。 jiǎ ： yǒu méi yǒu bú là de cài ？ xiǎo hái zi bù néng chī là 。 yǐ ： yǒu ， wǒ gěi nǐ shǎo fàng là jiāo 。 jiǎ ： hǎo ， zài lái yì bēi rè dòu jiāng 。 yí gòng duō shǎo qián ？ yǐ ： èr shí liù kuài 。"
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ men yào yí gè fān qié jī dàn miàn ， hái yào yí gè qīng cài 。 yǐ ： fān qié miàn yǒu diǎnr là 。 jiǎ ： yǒu méi yǒu bú là de cài ？ xiǎo hái zi bù néng chī là 。 yǐ ： yǒu ， wǒ gěi nǐ shǎo fàng là jiāo 。 jiǎ ： hǎo ， zài lái yì bēi rè dòu jiāng 。 yí gòng duō shǎo qián ？ yǐ ： èr shí liù kuài 。"
   },
   "speaking": [
     {
@@ -207,12 +207,12 @@
     {
       "text": "菜",
       "pinyin": "cài",
-      "hint": "Âm đầu cong lưỡi bật mạnh, vần gần 'ai', thanh 4; nghe hơi nặng hơn 'cải'."
+      "hint": "Âm đầu phẳng lưỡi bật hơi mạnh (c-), vần gần 'ai', thanh 4; nghe hơi nặng hơn 'cải'."
     },
     {
       "text": "杯",
       "pinyin": "bēi",
-      "hint": "Phụ âm môi b- ghép vần 'ui', thanh 1 cao và bằng, môi tròn dần khi kết thúc."
+      "hint": "Phụ âm môi b- ghép vần 'ei', thanh 1 cao và bằng; môi mở rồi khép dần ở i, không tròn."
     },
     {
       "text": "豆浆",

@@ -20,10 +20,49 @@
         "方向 fāng xiàng: 方 thanh 1 cao bằng, 向 thanh 4 rơi."
       ],
       "sandhi": true,
-      "baseTones": [3, 4, 4, 5, 4, 3, 3, 3, 4, 1, 4, 3],
+      "baseTones": [
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        3,
+        3,
+        4,
+        1,
+        4,
+        3
+      ],
       "acceptTones": [
-        [3, 4, 4, 5, 4, 2, 2, 3, 4, 1, 4, 3],
-        [3, 4, 4, 5, 4, 3, 3, 3, 4, 1, 4, 3]
+        [
+          3,
+          4,
+          4,
+          5,
+          4,
+          2,
+          2,
+          3,
+          4,
+          1,
+          4,
+          3
+        ],
+        [
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          3,
+          3,
+          4,
+          1,
+          4,
+          3
+        ]
       ],
       "hint": "Biến điệu 3+3: kǒu wǎng → kóu wáng; wǎng nǎ → wáng nǎ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-4-4-5-4-2-2-3-4-1-4-3 lẫn 3-4-4-5-4-3-3-3-4-1-4-3."
     },
@@ -31,11 +70,11 @@
       "id": "dt-2-106",
       "level": "HSK3-4",
       "hanzi": "火车站离这儿远不远？",
-      "pinyin": "huǒ chē zhàn lí zhè ér yuǎn bu yuǎn",
+      "pinyin": "huǒ chē zhàn lí zhèr yuǎn bu yuǎn",
       "meaningVi": "Ga tàu cách đây có xa không?",
       "focus": [
         "远不远 yuǎn bu yuǎn: 不 chen giữa hai thanh 3, đọc nhẹ.",
-        "这儿 zhè ér: 儿 tách ra đọc gọn, gắn vào sau 这.",
+        "这儿 zhèr: 儿 hoá thành r dính vào zhè, đọc một âm tiết zhèr, không tách ér riêng.",
         "离 lí thanh 2 đi lên, phân biệt với 里 lǐ."
       ]
     },
@@ -74,10 +113,26 @@
       "syllables": 15,
       "pace": "vừa",
       "chunks": [
-        { "hanzi": "先去路口", "pinyin": "xiān qù lù kǒu", "pause": "soft" },
-        { "hanzi": "再往左走", "pinyin": "zài wáng zuó zǒu", "pause": "soft" },
-        { "hanzi": "方向对", "pinyin": "fāng xiàng duì", "pause": "soft" },
-        { "hanzi": "车站不远", "pinyin": "chē zhàn bù yuǎn", "pause": "end" }
+        {
+          "hanzi": "先去路口",
+          "pinyin": "xiān qù lù kǒu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "再往左走",
+          "pinyin": "zài wáng zuó zǒu",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "方向对",
+          "pinyin": "fāng xiàng duì",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "车站不远",
+          "pinyin": "chē zhàn bù yuǎn",
+          "pause": "end"
+        }
       ],
       "focus": [
         "Biến điệu 3+3: wǎng zuǒ → wáng zuǒ; zuǒ zǒu → zuó zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
@@ -86,10 +141,58 @@
         "方向 fāng xiàng và 车站 chē zhàn: giữ rõ hai từ khóa."
       ],
       "sandhi": true,
-      "baseTones": [1, 4, 4, 3, 4, 3, 3, 3, 1, 4, 4, 1, 4, 4, 3],
+      "baseTones": [
+        1,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        1,
+        4,
+        4,
+        1,
+        4,
+        4,
+        3
+      ],
       "acceptTones": [
-        [1, 4, 4, 3, 4, 2, 2, 3, 1, 4, 4, 1, 4, 4, 3],
-        [1, 4, 4, 3, 4, 3, 3, 3, 1, 4, 4, 1, 4, 4, 3]
+        [
+          1,
+          4,
+          4,
+          3,
+          4,
+          2,
+          2,
+          3,
+          1,
+          4,
+          4,
+          1,
+          4,
+          4,
+          3
+        ],
+        [
+          1,
+          4,
+          4,
+          3,
+          4,
+          3,
+          3,
+          3,
+          1,
+          4,
+          4,
+          1,
+          4,
+          4,
+          3
+        ]
       ],
       "hint": "Biến điệu 3+3: wǎng zuǒ → wáng zuǒ; zuǒ zǒu → zuó zǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 1-4-4-3-4-2-2-3-1-4-4-1-4-4-3 lẫn 1-4-4-3-4-3-3-3-1-4-4-1-4-4-3."
     }

@@ -176,5 +176,32 @@
       "sampleVi": "Xin hỏi, cửa hàng ở đâu? Ở phía trước trường phải không? Đi sang trái phải không?"
     }
   ],
-  "transferTask": "Ở ngã rẽ mới: hỏi trường ở đâu, nghe hướng, xác nhận bằng 是往……走吗 rồi cảm ơn."
+  "transferTask": "Ở ngã rẽ mới: hỏi trường ở đâu, nghe hướng, xác nhận bằng 是往……走吗 rồi cảm ơn.",
+  "pronunciation": [
+    {
+      "text": "右边",
+      "pinyin": "yòu bian",
+      "hint": "Âm tiết thứ hai nhẹ và nuốt ngắn; thanh 4 chỉ nằm ở 右 rồi rơi dứt, không kéo sang tiếng sau."
+    },
+    {
+      "text": "谢谢",
+      "pinyin": "xiè xie",
+      "hint": "Âm thứ hai đọc nhẹ, thấp, không dấu; đừng nhấn hai âm tiết nặng bằng nhau."
+    },
+    {
+      "text": "往前走",
+      "pinyin": "wǎng qián zǒu",
+      "hint": "Ba vị trí khác nhau: wǎng kết thúc -ng ở mũi sau, qián khép -n ở lợi, zǒu mở đầu bằng âm phẳng."
+    },
+    {
+      "text": "学校",
+      "pinyin": "xué xiào",
+      "hint": "Cả hai âm đầu x là âm vòm, đầu lưỡi tỳ mặt trong răng cửa dưới; xiào rơi mạnh ở cuối."
+    },
+    {
+      "text": "老师",
+      "pinyin": "lǎo shī",
+      "hint": "shī là âm cong lưỡi kéo hơi dài; người Việt hay đọc trệch thành âm x phẳng, nhớ nâng gốc lưỡi."
+    }
+  ]
 }

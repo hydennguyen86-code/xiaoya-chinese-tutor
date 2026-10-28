@@ -162,5 +162,32 @@
       "sampleVi": "Ba, tám, sáu. Là 386, đúng không?"
     }
   ],
-  "transferTask": "Trao đổi số liên hệ giả định; buổi 2 sửa số ở quầy nhận hàng."
+  "transferTask": "Trao đổi số liên hệ giả định; buổi 2 sửa số ở quầy nhận hàng.",
+  "pronunciation": [
+    {
+      "text": "一，二，三",
+      "pinyin": "yī ， èr ， sān",
+      "hint": "yī và sān đều thanh 1 cao bằng; èr thanh 4 rơi ngắn — nghe chuỗi số hãy bắt lấy hai âm bằng rồi một âm trụi."
+    },
+    {
+      "text": "号码",
+      "pinyin": "hào mǎ",
+      "hint": "hào thanh 4 rơi nhanh; mǎ thanh 3 hạ thấp nhất ở cuối cụm, chỉ vớt lên rất nhẹ."
+    },
+    {
+      "text": "电话",
+      "pinyin": "diàn huà",
+      "hint": "Hai thanh 4 liền nhau: cả hai âm đều rơi, âm thứ hai dài hơn một chút; đừng kéo diàn thành thanh 1."
+    },
+    {
+      "text": "多少",
+      "pinyin": "duō shǎo",
+      "hint": "duō thanh 1 cao bằng, shǎo thanh 3 thấp và vớt cuối; hỏi số thì rơi xuống chứ không đi lên như hỏi dứt."
+    },
+    {
+      "text": "三八六",
+      "pinyin": "sān bā liù",
+      "hint": "Hai âm đầu thanh 1 cao bằng liên tiếp, chốt bằng liù thanh 4 rơi dứt khoát; chuỗi số dễ nghe nhờ âm cuối."
+    }
+  ]
 }

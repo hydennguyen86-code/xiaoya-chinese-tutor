@@ -51,10 +51,11 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 |---|---|---|---|---|
 | 你好 | nǐ hǎo | xin chào | 你好，我是小安。 | Chào bạn, tôi là Tiểu An. |
 | 好 | hǎo | tốt; khỏe | 我很好。 | Tôi rất khỏe. |
-| 谢谢 | xiè xiè | cảm ơn | 谢谢你。 | Cảm ơn bạn. |
+| 谢谢 | xiè xie | cảm ơn | 谢谢你。 | Cảm ơn bạn. |
 | 再见 | zài jiàn | tạm biệt | 老师，再见。 | Tạm biệt thầy cô. |
 | 请 | qǐng | xin; mời | 请坐。 | Mời ngồi. |
 | 说 | shuō | nói | 请说。 | Mời bạn nói. |
+| 认识 | rèn shi | làm quen; biết | 认识你很高兴。 | Rất vui được làm quen với bạn. |
 
 **Mẫu câu:**
 
@@ -221,9 +222,11 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 我 | wǒ | tôi | 我是学生。 | Tôi là học sinh. |
 | 你 | nǐ | bạn | 你是老师吗？ | Bạn là giáo viên à? |
 | 叫 | jiào | tên là | 我叫小安。 | Tôi tên là Tiểu An. |
-| 名字 | míng zì | tên | 你的名字是什么？ | Tên của bạn là gì? |
+| 名字 | míng zi | tên | 你的名字是什么？ | Tên của bạn là gì? |
 | 是 | shì | là | 我是越南人。 | Tôi là người Việt Nam. |
 | 人 | rén | người | 他是中国人。 | Anh ấy là người Trung Quốc. |
+| 不客气 | bú kè qi | đừng khách sáo | 不客气。 | Đừng khách sáo. |
+| 也 | yě | cũng | 我也是越南人。 | Tôi cũng là người Việt Nam. |
 
 **Mẫu câu:**
 
@@ -392,6 +395,8 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 多少 | duō shǎo | bao nhiêu | 这本书多少钱？ | Quyển sách này bao nhiêu tiền? |
 | 电话 | diàn huà | điện thoại | 这是我的电话。 | Đây là điện thoại của tôi. |
 | 号码 | hào mǎ | số; mã số | 请说你的号码。 | Xin đọc số của bạn. |
+| 零 | líng | số không | 我的号码里有零。 | Số của tôi có chữ số không. |
+| 手机 | shǒu jī | điện thoại di động | 这是我的手机。 | Đây là điện thoại của tôi. |
 
 **Mẫu câu:**
 
@@ -561,6 +566,8 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 哥哥 | gē ge | anh trai | 我有一个哥哥。 | Tôi có một anh trai. |
 | 姐姐 | jiě jie | chị gái | 我姐姐是学生。 | Chị gái tôi là học sinh. |
 | 有 | yǒu | có | 我有两个姐姐。 | Tôi có hai chị gái. |
+| 弟弟 | dì di | em trai | 我有一个弟弟。 | Tôi có một em trai. |
+| 妹妹 | mèi mei | em gái | 我没有妹妹。 | Tôi không có em gái. |
 
 **Mẫu câu:**
 
@@ -728,6 +735,8 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 上午 | shàng wǔ | buổi sáng | 我上午学习。 | Tôi học vào buổi sáng. |
 | 下午 | xià wǔ | buổi chiều | 我下午有时间。 | Tôi có thời gian vào buổi chiều. |
 | 见面 | jiàn miàn | gặp mặt | 我们两点见面。 | Chúng ta gặp lúc hai giờ. |
+| 时间 | shí jiān | thời gian | 你明天有时间吗？ | Ngày mai bạn có thời gian không? |
+| 可以 | kě yǐ | được; có thể | 我们三点见面，可以吗？ | Chúng ta gặp lúc ba giờ, được không? |
 
 **Mẫu câu:**
 
@@ -895,6 +904,9 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 喝 | hē | uống | 你想喝什么？ | Bạn muốn uống gì? |
 | 杯 | bēi | cốc; lượng từ cho đồ uống | 我要两杯水。 | Tôi lấy hai cốc nước. |
 | 热 | rè | nóng | 这杯茶很热。 | Cốc trà này rất nóng. |
+| 糖 | táng | đường | 请加糖。 | Xin thêm đường. |
+| 冰 | bīng | đá | 一杯加冰的茶。 | Một cốc trà thêm đá. |
+| 加 | jiā | thêm | 请加水。 | Xin thêm nước. |
 
 **Mẫu câu:**
 
@@ -1105,8 +1117,10 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 米饭 | mǐ fàn | cơm | 我要一碗米饭。 | Tôi lấy một bát cơm. |
 | 面条 | miàn tiáo | mì | 我要一碗面条。 | Tôi lấy một bát mì. |
 | 钱 | qián | tiền | 我没有钱。 | Tôi không có tiền. |
-| 块 | kuài | đồng; cách nói khẩu ngữ của đơn vị tiền | 这碗面条十块钱。 | Bát mì này giá mười đồng. |
+| 块 | kuài | tệ; cách nói khẩu ngữ của nhân dân tệ | 这碗面条十块钱。 | Bát mì này giá mười tệ. |
 | 辣 | là | cay | 这个菜很辣。 | Món này rất cay. |
+| 碗 | wǎn | bát | 我要一碗面条。 | Tôi lấy một bát mì. |
+| 辣椒 | là jiāo | ớt | 请少放一点儿辣椒。 | Xin bớt ớt một chút. |
 
 **Mẫu câu:**
 
@@ -1133,7 +1147,7 @@ A. Ít ớt / B. Thêm cơm / C. Thêm đường
 
 甲：这碗面条多少钱？乙：十块钱。甲：我要一碗，请少放一点儿辣椒。乙：好的。
 
-A: Bát mì này bao nhiêu tiền? B: Mười đồng. A: Tôi lấy một bát, xin cho ít ớt một chút. B: Được.
+A: Bát mì này bao nhiêu tiền? B: Mười tệ. A: Tôi lấy một bát, xin cho ít ớt một chút. B: Được.
 
 1. C. B nói 十块钱.
 2. A. A nói 少放一点儿辣椒.
@@ -1201,7 +1215,7 @@ A. Mì / B. Nước / C. Trà
 
 甲：我要两碗米饭。乙：一碗三块，两碗六块。甲：好，再要一杯水。
 
-A: Tôi lấy hai bát cơm. B: Một bát ba đồng, hai bát sáu đồng. A: Được, cho thêm một cốc nước.
+A: Tôi lấy hai bát cơm. B: Một bát ba tệ, hai bát sáu tệ. A: Được, cho thêm một cốc nước.
 
 1. A. B nói 两碗六块.
 2. B. A nói 再要一杯水.
@@ -1271,9 +1285,11 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 在 | zài | ở | 老师在学校。 | Giáo viên ở trường. |
 | 哪里 | nǎ lǐ | đâu | 学校在哪里？ | Trường ở đâu? |
 | 前面 | qián miàn | phía trước | 商店在前面。 | Cửa hàng ở phía trước. |
-| 左边 | zuǒ biān | bên trái | 学校在左边。 | Trường ở bên trái. |
-| 右边 | yòu biān | bên phải | 商店在右边。 | Cửa hàng ở bên phải. |
+| 左边 | zuǒ bian | bên trái | 学校在左边。 | Trường ở bên trái. |
+| 右边 | yòu bian | bên phải | 商店在右边。 | Cửa hàng ở bên phải. |
 | 走 | zǒu | đi bộ; đi theo hướng | 请往前走。 | Xin đi thẳng về phía trước. |
+| 往 | wǎng | về phía | 请往右走。 | Xin đi sang phải. |
+| 商店 | shāng diàn | cửa hàng | 商店在学校前面。 | Cửa hàng ở phía trước trường. |
 
 **Mẫu câu:**
 
@@ -1441,6 +1457,8 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 大 | dà | to; lớn | 这个杯子很大。 | Cốc này rất to. |
 | 小 | xiǎo | nhỏ | 那个杯子很小。 | Cốc kia rất nhỏ. |
 | 喜欢 | xǐ huan | thích | 我喜欢这个。 | Tôi thích cái này. |
+| 杯子 | bēi zi | cái cốc | 这个杯子太小。 | Cái cốc này nhỏ quá. |
+| 太 | tài | quá | 这个太大了。 | Cái này to quá. |
 
 **Mẫu câu:**
 
@@ -1535,7 +1553,7 @@ A. Mười / B. Hai mươi / C. Ba mươi
 
 甲：这个多少钱？乙：二十块钱。甲：那个呢？乙：十块。甲：我要那个。
 
-A: Cái này bao nhiêu tiền? B: Hai mươi đồng. A: Còn cái kia? B: Mười đồng. A: Tôi lấy cái kia.
+A: Cái này bao nhiêu tiền? B: Hai mươi tệ. A: Còn cái kia? B: Mười tệ. A: Tôi lấy cái kia.
 
 1. C. A nói 我要那个.
 2. A. 那个 được báo giá 十块.
@@ -1608,6 +1626,8 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 学习 | xué xí | học | 我晚上学习中文。 | Tôi học tiếng Trung buổi tối. |
 | 回家 | huí jiā | về nhà | 我六点回家。 | Tôi về nhà lúc sáu giờ. |
 | 睡觉 | shuì jiào | ngủ | 我十点睡觉。 | Tôi ngủ lúc mười giờ. |
+| 晚上 | wǎn shang | buổi tối | 晚上我学习。 | Buổi tối tôi học. |
+| 中文 | zhōng wén | tiếng Trung | 我学习中文。 | Tôi học tiếng Trung. |
 
 **Mẫu câu:**
 
@@ -1775,6 +1795,8 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | 下雨 | xià yǔ | mưa | 今天下雨。 | Hôm nay trời mưa. |
 | 医院 | yī yuàn | bệnh viện | 医院在哪里？ | Bệnh viện ở đâu? |
 | 帮助 | bāng zhù | giúp đỡ | 谢谢你的帮助。 | Cảm ơn sự giúp đỡ của bạn. |
+| 不舒服 | bù shū fu | không khỏe | 今天我不舒服。 | Hôm nay tôi không khỏe. |
+| 帮 | bāng | giúp | 请帮我找医院。 | Xin giúp tôi tìm bệnh viện. |
 
 **Mẫu câu:**
 
@@ -1882,13 +1904,13 @@ A: Chào bạn, tôi không khỏe. Xin giúp tôi tìm bệnh viện. B: Bệnh
    Chuẩn bị 15 giây; nói khoảng 30 giây.
    <details><summary>Câu để người hỗ trợ đọc, người học không nhìn trước</summary>
 
-今天天气很好。 今天很冷。
+我不舒服。请帮我找医院。
 
    </details>
 
 <details><summary>Gợi ý tự đối chiếu sau khi nói</summary>
 
-今天天气很好。 今天很冷。
+我不舒服。请帮我找医院。
 
 - Giữ đúng thông tin trọng tâm
 - Người nghe hiểu được ý
@@ -1896,7 +1918,7 @@ A: Chào bạn, tôi không khỏe. Xin giúp tôi tìm bệnh viện. B: Bệnh
 
 </details>
 
-2. 请说明一个需要，再请对方帮忙。 Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.
+2. 请说不舒服，再请对方帮你找医院，最后请他说一遍。 Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.
    Chuẩn bị 15 giây; nói khoảng 30 giây.
 
 <details><summary>Gợi ý tự đối chiếu sau khi nói</summary>
@@ -1909,9 +1931,9 @@ Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; kh�
 
 **Một cách nói tham khảo, không phải đáp án duy nhất:**
 
-我不舒服。请帮我找医院。请再说一遍。
+你好，我不舒服。请帮我找医院。医院在哪里？请再说一遍。
 
-Tôi không khỏe. Xin giúp tôi tìm bệnh viện. Xin nói lại một lần nữa.
+Chào bạn, tôi không khỏe. Xin giúp tôi tìm bệnh viện. Bệnh viện ở đâu? Xin nói lại một lần.
 
 </details>
 
@@ -1938,7 +1960,7 @@ Thời lượng gợi ý mỗi buổi: 25 phút.
 | Chữ | Pinyin | Nghĩa trong bài | Ví dụ | Dịch |
 |---|---|---|---|---|
 | 去 | qù | đi | 我想去商店。 | Tôi muốn đi cửa hàng. |
-| 朋友 | péng yǒu | người bạn | 我和朋友见面。 | Tôi gặp bạn. |
+| 朋友 | péng you | người bạn | 我和朋友见面。 | Tôi gặp bạn. |
 | 现在 | xiàn zài | bây giờ | 现在是九点。 | Bây giờ là chín giờ. |
 | 什么 | shén me | gì | 你想喝什么？ | Bạn muốn uống gì? |
 | 不 | bù | không | 我不喝茶。 | Tôi không uống trà. |
@@ -2029,18 +2051,18 @@ Không hiện mẫu trả lời trước. Người hỗ trợ đổi ít nhất 
 1. Địa điểm đúng?
 A. Trước cửa hàng / B. Bệnh viện / C. Trước trường
 
-2. Giờ gặp có thay đổi không?
-A. Không, vẫn ba giờ / B. Không nói giờ / C. Có, thành hai giờ
+2. Một bát mì giá bao nhiêu?
+A. Tám tệ / B. Bốn tệ / C. Ba tệ
 
 <details>
 <summary>Bản chép lời, dịch và đáp án — mở sau khi làm</summary>
 
-甲：我们三点在商店前面见面吗？乙：不是商店，是学校前面。甲：好，三点在学校前面。乙：对。
+甲：我们三点在商店前面见面吗？乙：不是三点，是四点。甲：好，四点在学校前面。乙：对，面条一碗八块。
 
-A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải cửa hàng, mà là trước trường. A: Được, ba giờ trước trường. B: Đúng.
+A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải ba giờ, mà là bốn giờ. A: Được, bốn giờ trước trường. B: Đúng, mì một bát tám tệ.
 
-1. C. B sửa thành 学校前面.
-2. A. A xác nhận 三点.
+1. C. A chốt lại 四点在学校前面.
+2. A. B nói 面条一碗八块.
 
 </details>
 
@@ -2050,13 +2072,13 @@ A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải cửa
    Chuẩn bị 15 giây; nói khoảng 30 giây.
    <details><summary>Câu để người hỗ trợ đọc, người học không nhìn trước</summary>
 
-我想去商店。 我和朋友见面。
+我们先去商店，再去学校。
 
    </details>
 
 <details><summary>Gợi ý tự đối chiếu sau khi nói</summary>
 
-我想去商店。 我和朋友见面。
+我们先去商店，再去学校。
 
 - Giữ đúng thông tin trọng tâm
 - Người nghe hiểu được ý
@@ -2064,7 +2086,7 @@ A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải cửa
 
 </details>
 
-2. 请安排一次见面，说时间、地点和一个活动。 Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.
+2. 请安排明天下午的见面：说时间、地点、先做什么再做什么，再说一样东西的价钱。 Hãy sắp xếp buổi gặp chiều mai: nói thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món.
    Chuẩn bị 15 giây; nói khoảng 30 giây.
 
 <details><summary>Gợi ý tự đối chiếu sau khi nói</summary>
@@ -2077,15 +2099,15 @@ Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; kh�
 
 **Một cách nói tham khảo, không phải đáp án duy nhất:**
 
-我们明天下午三点在学校前面见面。先喝茶，再去商店。
+明天下午三点我们在学校见面。先去商店，再去吃饭。一碗面条八块。
 
-Mai chúng ta gặp lúc ba giờ chiều trước trường. Uống trà trước, rồi đi cửa hàng.
+Chiều mai ba giờ chúng ta gặp ở trường. Đi cửa hàng trước, rồi đi ăn. Một bát mì tám tệ.
 
 </details>
 
 **Nhập vai và chuyển giao:**
 
-Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền.
+Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi giờ gặp và giá một bát mì.
 
 Không hiện mẫu trả lời trước. Người hỗ trợ đổi ít nhất một dữ kiện: ngày/giờ, số lượng, giá, bên đối thoại hoặc một ràng buộc. Khi dùng gợi ý, ghi lại để phân biệt với tự làm.
 
@@ -2120,7 +2142,7 @@ A: Xin hỏi, cửa hàng ở đâu? B: Đi sang trái, cửa hàng bên cạnh 
 
 甲：我要一碗面条和两杯水。乙：面条八块，水一杯两块，一共十二块。甲：好，请不要放辣椒。
 
-A: Tôi lấy một bát mì và hai cốc nước. B: Mì tám đồng, nước hai đồng một cốc, tổng mười hai đồng. A: Được, xin đừng cho ớt.
+A: Tôi lấy một bát mì và hai cốc nước. B: Mì tám tệ, nước hai tệ một cốc, tổng mười hai tệ. A: Được, xin đừng cho ớt.
 
 1. B. B nói 一共十二块.
 2. C. A nói 请不要放辣椒.
@@ -2130,7 +2152,7 @@ A: Tôi lấy một bát mì và hai cốc nước. B: Mì tám đồng, nước
 **Phần nói:**
 
 - Nghe rồi nhắc lại hai câu ngắn. Chuẩn bị 15 giây, nói 30 giây.
-- 请介绍自己，再约一个见面时间。 Chuẩn bị 15 giây, nói 30 giây.
+- 请约一个见面时间，再问对方想去哪里。 Chuẩn bị 15 giây, nói 30 giây.
 
 Đánh giá phần nói theo rubric bên dưới, không quy đổi sang thang điểm chính thức.
 

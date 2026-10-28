@@ -83,7 +83,7 @@
       "example": "床单不干净，麻烦换一下。",
       "exampleVi": "Ga giường không sạch, phiền đổi giúp một bộ.",
       "pinyin": "gān jìng",
-      "examplePinyin": "chuáng dān bù gān jìng ， má fán huàn yí xià 。"
+      "examplePinyin": "chuáng dān bù gān jìng ， má fan huàn yí xià 。"
     }
   ],
   "patterns": [
@@ -171,7 +171,7 @@
         "explanation": "客人 nói 我晚上坐火车，能晚一点退房吗，前台说 可以，行李先放这儿."
       }
     ],
-    "pinyin": "kè rén ： nǐ hǎo ， wǒ shì bā líng bā fáng ， dì shàng hái yǒu tóu fa ， chuáng dān yě bù gān jìng ， má fán huàn yí xià 。 qián tái ： duì bù qǐ ， wǒ mǎ shàng ràng rén qù huàn ， zài gěi nín sòng liǎng píng shuǐ 。 kè rén ： xiè xie 。 míng tiān liù diǎn bàn néng jiào xǐng wǒ ma ？ qián tái ： kě yǐ ， zǎo cān qī diǎn kāi shǐ ， zài èr lóu 。 kè rén ： wǒ wǎn shang zuò huǒ chē ， néng wǎn yì diǎn tuì fáng ma ？ qián tái ： kě yǐ ， xíng li xiān fàng zhè ér 。"
+    "pinyin": "kè rén ： nǐ hǎo ， wǒ shì bā líng bā fáng ， dì shàng hái yǒu tóu fa ， chuáng dān yě bù gān jìng ， má fan huàn yí xià 。 qián tái ： duì bù qǐ ， wǒ mǎ shàng ràng rén qù huàn ， zài gěi nín sòng liǎng píng shuǐ 。 kè rén ： xiè xie 。 míng tiān liù diǎn bàn néng jiào xǐng wǒ ma ？ qián tái ： kě yǐ ， zǎo cān qī diǎn kāi shǐ ， zài èr lóu 。 kè rén ： wǒ wǎn shang zuò huǒ chē ， néng wǎn yì diǎn tuì fáng ma ？ qián tái ： kě yǐ ， xíng li xiān fàng zhèr 。"
   },
   "speaking": [
     {

@@ -152,7 +152,7 @@
       "reference": "Bốn vần đầu mở rồi khép dần, bốn vần sau có âm đệm tròn môi trước khi mở.",
       "checklist": [
         "Không cắt một vần thành hai âm",
-        "Bo môi rõ ở uo và üe",
+        "Bo môi rõ ở ou trong 走",
         "Giữ cao độ không đổi trong mỗi vần"
       ],
       "audioText": "来，白。黑，给。高，走。家，车。"
@@ -176,7 +176,7 @@
       "prepareSeconds": 15,
       "responseSeconds": 45,
       "text": "我家在高山上，山下有白色的水。小白来我家，我们慢慢走。白色的车在山上，不在山下。你走哪一条路？",
-      "reference": "Đoạn trộn đủ sáu vần: để ý ai ở 白, ao ở 高, ou ở 走, ia ở 家, uo ở 车.",
+      "reference": "Đoạn trộn đủ sáu vần: để ý ai ở 白, ao ở 高, ou ở 走, ia ở 家, e ở 车.",
       "checklist": [
         "Đọc đủ ba câu",
         "Không lẫn gāo với gē",

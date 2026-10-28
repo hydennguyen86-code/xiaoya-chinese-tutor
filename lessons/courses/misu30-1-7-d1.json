@@ -26,15 +26,15 @@
       "example": "银行在哪儿？",
       "exampleVi": "Ngân hàng ở đâu?",
       "pinyin": "zài",
-      "examplePinyin": "yín háng zài nǎ ér ？"
+      "examplePinyin": "yín háng zài nǎr ？"
     },
     {
       "word": "哪儿",
       "meaning": "ở đâu",
       "example": "洗手间在哪儿？",
       "exampleVi": "Nhà vệ sinh ở đâu?",
-      "pinyin": "nǎ ér",
-      "examplePinyin": "xǐ shǒu jiān zài nǎ ér ？"
+      "pinyin": "nǎr",
+      "examplePinyin": "xǐ shǒu jiān zài nǎr ？"
     },
     {
       "word": "怎么走",
@@ -91,7 +91,7 @@
       "explanation": "Dùng để hỏi vị trí.",
       "example": "银行在哪儿？",
       "exampleVi": "Ngân hàng ở đâu?",
-      "examplePinyin": "yín háng zài nǎ ér ？"
+      "examplePinyin": "yín háng zài nǎr ？"
     },
     {
       "pattern": "请问，……怎么走？",
@@ -136,7 +136,7 @@
     "playLimit": 2,
     "transcript": "银行在哪儿？ 洗手间在哪儿？ 请问，地铁站怎么走？",
     "translation": "Ngân hàng ở đâu? Nhà vệ sinh ở đâu? Xin hỏi, ga tàu điện đi thế nào?",
-    "pinyin": "yín xíng zài nǎ ér ？   xǐ shǒu jiān zài nǎ ér ？   qǐng wèn ， dì tiě zhàn zěn me zǒu ？",
+    "pinyin": "yín háng zài nǎr ？   xǐ shǒu jiān zài nǎr ？   qǐng wèn ， dì tiě zhàn zěn me zǒu ？",
     "questions": [
       {
         "prompt": "Cụm “在” trong đoạn nghe có nghĩa gì?",
@@ -178,7 +178,7 @@
       "responseSeconds": 30,
       "audioText": "银行在哪儿？",
       "reference": "银行在哪儿？",
-      "pinyin": "yín háng zài nǎ ér ？",
+      "pinyin": "yín háng zài nǎr ？",
       "checklist": [
         "Giữ thông tin chính",
         "Nói rõ để người nghe hiểu",

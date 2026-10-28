@@ -33,10 +33,49 @@
         "试一下 shì yí xià: 一 thành yí trước thanh 4, 下 rơi mạnh."
       ],
       "sandhi": true,
-      "baseTones": [3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4],
+      "baseTones": [
+        3,
+        2,
+        3,
+        4,
+        1,
+        4,
+        5,
+        3,
+        3,
+        4,
+        2,
+        4
+      ],
       "acceptTones": [
-        [3, 2, 3, 4, 1, 4, 5, 2, 3, 4, 2, 4],
-        [3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4]
+        [
+          3,
+          2,
+          3,
+          4,
+          1,
+          4,
+          5,
+          2,
+          3,
+          4,
+          2,
+          4
+        ],
+        [
+          3,
+          2,
+          3,
+          4,
+          1,
+          4,
+          5,
+          3,
+          3,
+          4,
+          2,
+          4
+        ]
       ],
       "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 3-2-3-4-1-4-5-2-3-4-2-4 lẫn 3-2-3-4-1-4-5-3-3-4-2-4."
     },
@@ -64,10 +103,34 @@
         "一点 yì diǎn: 一 thành yì trước thanh 3."
       ],
       "sandhi": true,
-      "baseTones": [3, 3, 3, 4, 3, 2, 2],
+      "baseTones": [
+        3,
+        3,
+        3,
+        4,
+        3,
+        2,
+        2
+      ],
       "acceptTones": [
-        [2, 2, 3, 4, 3, 2, 2],
-        [3, 3, 3, 4, 3, 2, 2]
+        [
+          2,
+          2,
+          3,
+          4,
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          4,
+          3,
+          2,
+          2
+        ]
       ],
       "hint": "Biến điệu 3+3: qǐng gěi → qíng géi; gěi wǒ → géi wǒ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-2-3-4-3-2-2 lẫn 3-3-3-4-3-2-2."
     }
@@ -82,9 +145,21 @@
       "syllables": 19,
       "pace": "chậm",
       "chunks": [
-        { "hanzi": "这条裙子多少钱", "pinyin": "zhè tiáo qún zi duō shǎo qián", "pause": "hard" },
-        { "hanzi": "有没有大一号的", "pinyin": "yǒu méi yǒu dà yī hào de", "pause": "hard" },
-        { "hanzi": "我想试一下", "pinyin": "wó xiǎng shì yí xià", "pause": "end" }
+        {
+          "hanzi": "这条裙子多少钱",
+          "pinyin": "zhè tiáo qún zi duō shǎo qián",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "有没有大一号的",
+          "pinyin": "yǒu méi yǒu dà yī hào de",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我想试一下",
+          "pinyin": "wó xiǎng shì yí xià",
+          "pause": "end"
+        }
       ],
       "focus": [
         "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
@@ -93,10 +168,70 @@
         "Ba câu ngắn, hạ giọng sau mỗi dấu hỏi."
       ],
       "sandhi": true,
-      "baseTones": [4, 2, 2, 3, 1, 3, 2, 3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4],
+      "baseTones": [
+        4,
+        2,
+        2,
+        5,
+        1,
+        3,
+        2,
+        3,
+        2,
+        3,
+        4,
+        1,
+        4,
+        5,
+        3,
+        3,
+        4,
+        2,
+        4
+      ],
       "acceptTones": [
-        [4, 2, 2, 5, 1, 3, 2, 3, 2, 3, 4, 1, 4, 5, 2, 3, 4, 2, 4],
-        [4, 2, 2, 5, 1, 3, 2, 3, 2, 3, 4, 1, 4, 5, 3, 3, 4, 2, 4]
+        [
+          4,
+          2,
+          2,
+          5,
+          1,
+          3,
+          2,
+          3,
+          2,
+          3,
+          4,
+          1,
+          4,
+          5,
+          2,
+          3,
+          4,
+          2,
+          4
+        ],
+        [
+          4,
+          2,
+          2,
+          5,
+          1,
+          3,
+          2,
+          3,
+          2,
+          3,
+          4,
+          1,
+          4,
+          5,
+          3,
+          3,
+          4,
+          2,
+          4
+        ]
       ],
       "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-2-2-5-1-3-2-3-2-3-4-1-4-5-2-3-4-2-4 lẫn 4-2-2-5-1-3-2-3-2-3-4-1-4-5-3-3-4-2-4."
     }

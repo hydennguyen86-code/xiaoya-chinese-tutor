@@ -35,7 +35,7 @@
       "example": "马跑得很快。",
       "exampleVi": "Ngựa chạy rất nhanh.",
       "pinyin": "mǎ",
-      "examplePinyin": "mǎ pǎo dé hěn kuài 。"
+      "examplePinyin": "mǎ pǎo de hěn kuài 。"
     },
     {
       "word": "骂",
@@ -147,11 +147,11 @@
       "prompt": "Nghe rồi nhắc lại sáu âm tiết chỉ khác nhau về cao độ.",
       "prepareSeconds": 10,
       "responseSeconds": 30,
-      "reference": "Đọc sáu âm rời nhau, không dính vào thành một từ; âm 吗 cuối cùng ngắn và không có dấu thanh.",
+      "reference": "Đọc sáu âm rời nhau, không dính vào thành một từ; âm 吗 đứng thứ năm trong danh sách, đọc nhẹ và không dấu.",
       "checklist": [
         "Giữ sáu âm tách biệt",
         "Thanh bốn hạ dứt khoát",
-        "Âm cuối câu đọc nhẹ, không dấu"
+        "Âm 吗 đọc nhẹ, không dấu"
       ],
       "audioText": "妈，麻，马，骂，吗，猫。"
     },

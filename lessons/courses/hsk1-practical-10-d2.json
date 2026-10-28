@@ -175,5 +175,32 @@
       "sampleVi": "Hôm nay tôi dậy lúc chín giờ. Buổi sáng tôi học, buổi tối tôi về nhà. Bạn ngủ lúc mấy giờ?"
     }
   ],
-  "transferTask": "Kể lịch ngày nghỉ: hai hoạt động kèm giờ, rồi hỏi lại một mốc giờ của bạn học."
+  "transferTask": "Kể lịch ngày nghỉ: hai hoạt động kèm giờ, rồi hỏi lại một mốc giờ của bạn học.",
+  "pronunciation": [
+    {
+      "text": "晚上",
+      "pinyin": "wǎn shang",
+      "hint": "shang đọc nhẹ, ngắn, không dấu; wǎn giữ thanh 3 uốn thấp rồi chuyển ngay sang."
+    },
+    {
+      "text": "中文",
+      "pinyin": "zhōng wén",
+      "hint": "zhōng cong lưỡi và mang -ng vang ở mũi sau; wén khép -n chạm lợi, hai âm mũi đối nhau rõ."
+    },
+    {
+      "text": "上午",
+      "pinyin": "shàng wǔ",
+      "hint": "shàng mở đầu cong lưỡi, vần -ang mở dài rồi nasal hóa; wǔ tròn môi và ngắn hơn."
+    },
+    {
+      "text": "十点",
+      "pinyin": "shí diǎn",
+      "hint": "shí là i hẹp sau âm cong lưỡi, không biến thành nguyên đôi; diǎn khép -n sớm ở lợi."
+    },
+    {
+      "text": "点，上",
+      "pinyin": "diǎn ， shàng",
+      "hint": "Hai tiếng khác cả âm cuối lẫn âm đầu: diǎn khép -n ở lợi, shàng cong lưỡi và rung -ng."
+    }
+  ]
 }

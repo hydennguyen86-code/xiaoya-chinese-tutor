@@ -127,7 +127,7 @@
         "explanation": "B xác nhận 晚上学习."
       }
     ],
-    "pinyin": "jiǎ ： nǐ jǐ diǎn qǐ chuáng ？ yǐ ： wǒ měi tiān qī diǎn qǐ chuáng ， bā diǎn gōng zuò ， xià wǔ liù diǎn huí jiā 。 jiǎ ： nǐ wǎn shàng xué xí ma ？ yǐ ： duì 。"
+    "pinyin": "jiǎ ： nǐ jǐ diǎn qǐ chuáng ？ yǐ ： wǒ měi tiān qī diǎn qǐ chuáng ， bā diǎn gōng zuò ， xià wǔ liù diǎn huí jiā 。 jiǎ ： nǐ wǎn shang xué xí ma ？ yǐ ： duì 。"
   },
   "speaking": [
     {
@@ -159,5 +159,32 @@
       "sampleVi": "Tôi thức dậy lúc bảy giờ, về nhà lúc sáu giờ. Bạn về nhà lúc mấy giờ?"
     }
   ],
-  "transferTask": "Chia sẻ lịch cá nhân; buổi 2 thay lịch làm việc bằng lịch học/ngày nghỉ."
+  "transferTask": "Chia sẻ lịch cá nhân; buổi 2 thay lịch làm việc bằng lịch học/ngày nghỉ.",
+  "pronunciation": [
+    {
+      "text": "起床",
+      "pinyin": "qǐ chuáng",
+      "hint": "chuáng mở đầu bằng ch cong lưỡi và kết thúc -ng; nghe hơi vang dồn lên mũi sau."
+    },
+    {
+      "text": "工作",
+      "pinyin": "gōng zuò",
+      "hint": "zuò là z phẳng, đầu lưỡi chạm lợi sau răng cửa, không cong lưỡi; gōng kết thúc -ng vang ở mũi sau."
+    },
+    {
+      "text": "睡觉",
+      "pinyin": "shuì jiào",
+      "hint": "shuì mở đầu bằng sh cong lưỡi, gốc lưỡi nâng; đừng đọc trệch thành âm x phẳng."
+    },
+    {
+      "text": "学习",
+      "pinyin": "xué xí",
+      "hint": "chữ u sau x ở đây thực ra là ü tròn môi, cả hai tiếng đều vậy; đừng đọc môi dẹt như u thường."
+    },
+    {
+      "text": "天，床",
+      "pinyin": "tiān ， chuáng",
+      "hint": "Cặp -n so với -ng: tiān chặn hơi gọn ở lợi, thêm -ng thành chuáng là rung mũi sau, nghe khác hẳn."
+    }
+  ]
 }

@@ -35,7 +35,7 @@
       "example": "这儿冬天很冷，零下十度。",
       "exampleVi": "Mùa đông ở đây rất lạnh, âm mười độ.",
       "pinyin": "lěng",
-      "examplePinyin": "zhè ér dōng tiān hěn lěng ， líng xià shí dù 。"
+      "examplePinyin": "zhèr dōng tiān hěn lěng ， líng xià shí dù 。"
     },
     {
       "word": "热",
@@ -67,7 +67,7 @@
       "example": "天有点儿冷，穿一件外套再走。",
       "exampleVi": "Trời hơi lạnh, mặc một chiếc áo khoác rồi hãy đi.",
       "pinyin": "wài tào",
-      "examplePinyin": "tiān yǒu diǎn er lěng ， chuān yí jiàn wài tào zài zǒu 。"
+      "examplePinyin": "tiān yǒu diǎnr lěng ， chuān yí jiàn wài tào zài zǒu 。"
     },
     {
       "word": "晴天",
@@ -92,7 +92,7 @@
       "explanation": "Hỏi dự báo: 明天天气怎么样 đứng nguyên một câu, không thêm 吗; muốn biết mặc gì thì hỏi tiếp 要不要带……？",
       "example": "你看一下明天天气怎么样，我得决定穿什么。",
       "exampleVi": "Bạn xem giúp mai thời tiết thế nào, tôi phải quyết định mặc gì.",
-      "examplePinyin": "nǐ kàn yí xià míng tiān tiān qì zěn me yàng ， wǒ dé jué dìng chuān shén me 。"
+      "examplePinyin": "nǐ kàn yí xià míng tiān tiān qì zěn me yàng ， wǒ děi jué dìng chuān shén me 。"
     },
     {
       "pattern": "记得带……",
@@ -163,11 +163,11 @@
       {
         "prompt": "A nhận mang gì?",
         "options": [
-          "Áo khoác",
+          "Ô",
           "Nón che nắng",
           "Nước uống"
         ],
-        "answer": 2,
+        "answer": 1,
         "explanation": "B dặn 你带太阳帽吧，A trả lời 行."
       }
     ],
@@ -238,7 +238,7 @@
     {
       "text": "下雨",
       "pinyin": "xià yǔ",
-      "hint": "Chữ đầu thanh 4 hạ mạnh, chữ sau thanh 3 uốn thấp; tròn môi ở cả hai âm tiết."
+      "hint": "Chữ đầu thanh 4 hạ mạnh, chữ sau thanh 3 uốn thấp và tròn môi vì mang ü; chữ đầu mở rộng, không tròn."
     },
     {
       "text": "外套",
@@ -250,5 +250,173 @@
       "pinyin": "zěn me yàng",
       "hint": "Chữ đầu thanh 3, âm giữa đọc nhẹ, chữ cuối thanh 4; hỏi xong hạ giọng."
     }
-  ]
+  ],
+  "checkpoint": {
+    "title": "Kiểm tra chặng 1 — nghe và nói ứng dụng",
+    "practiceMinutes": 15,
+    "official": false,
+    "instructions": "Bài mini tự soạn cho chặng Bài 4–6, không sao chép đề thi, không quy đổi điểm sang chứng chỉ. Mỗi đoạn nghe phát tối đa hai lần; không có một đáp án duy nhất cho phần ý kiến.",
+    "listening": [
+      {
+        "transcript": "甲：喂，是小李吗？现在说话方便吗？乙：方便，你找我有什么事？甲：明天下午你有空吗？我们三点在学校门口见面，一起去看电影。乙：明天我有课，四点以后才行。甲：那我们约四点半，你要是到不了就给我打电话。乙：好，不见不散。",
+        "translation": "A: Alo, có phải Tiểu Lý không? Bây giờ nói chuyện có tiện không? B: Tiện, bạn tìm tôi có việc gì? A: Chiều mai bạn rảnh không? Ba giờ mình gặp ở cổng trường rồi cùng đi xem phim. B: Mai tôi có lớp, phải sau bốn giờ mới được. A: Vậy mình hẹn bốn rưỡi, nếu bạn đến không được thì gọi cho tôi nhé. B: Được, hẹn nhất định gặp nhau.",
+        "questions": [
+          {
+            "prompt": "Hai bạn định cùng làm gì vào chiều mai?",
+            "options": [
+              "Đi thể dục",
+              "Đi xem phim",
+              "Đi ăn lẩu"
+            ],
+            "answer": 1,
+            "explanation": "A nói 我们三点在学校门口见面，一起去看电影."
+          },
+          {
+            "prompt": "Vì sao không hẹn được lúc ba giờ?",
+            "options": [
+              "Vì B phải làm thêm giờ",
+              "Vì rạp chiếu phim đóng cửa",
+              "Vì ngày mai B có lớp"
+            ],
+            "answer": 2,
+            "explanation": "B nói 明天我有课，四点以后才行."
+          },
+          {
+            "prompt": "Nếu B không đến được thì làm thế nào?",
+            "options": [
+              "Gọi điện cho A",
+              "Tự mua vé trước",
+              "Hẹn sang tuần khác"
+            ],
+            "answer": 0,
+            "explanation": "A dặn 你要是到不了就给我打电话."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 1",
+        "pinyin": "jiǎ ： wèi ， shì xiǎo lǐ ma ？ xiàn zài shuō huà fāng biàn ma ？ yǐ ： fāng biàn ， nǐ zhǎo wǒ yǒu shén me shì ？ jiǎ ： míng tiān xià wǔ nǐ yǒu kòng ma ？ wǒ men sān diǎn zài xué xiào mén kǒu jiàn miàn ， yì qǐ qù kàn diàn yǐng 。 yǐ ： míng tiān wǒ yǒu kè ， sì diǎn yǐ hòu cái xíng 。 jiǎ ： nà wǒ men yuē sì diǎn bàn ， nǐ yào shi dào bù liǎo jiù gěi wǒ dǎ diàn huà 。 yǐ ： hǎo ， bú jiàn bú sàn 。"
+      },
+      {
+        "transcript": "甲：周末你去不去运动？乙：去。我看了一下天气预报，周六是晴天，太阳很大。甲：那天最好早上去跑步，下午好像要下雨，还会冷一点儿。乙：行，我穿一件外套，再带一把伞。甲：记得九点见面，别睡得太晚。",
+        "translation": "A: Cuối tuần bạn có đi thể dục không? B: Có. Tôi xem dự báo thời tiết rồi, thứ bảy trời nắng, nắng to lắm. A: Hôm đó tốt nhất là chạy bộ buổi sáng, chiều dường như sẽ mưa và trời lạnh hơn một chút. B: Được, tôi mặc một chiếc áo khoác rồi mang thêm một cái dù. A: Nhớ chín giờ gặp nhau, đừng thức khuya quá.",
+        "questions": [
+          {
+            "prompt": "Dự báo nói gì về thứ bảy?",
+            "options": [
+              "Sáng nắng, chiều có thể mưa và lạnh hơn",
+              "Mưa to cả ngày",
+              "Sáng lạnh, chiều mới hửng nắng"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn nghe nói 周六是晴天， rồi A nói thêm 下午好像要下雨，还会冷一点儿."
+          },
+          {
+            "prompt": "B chuẩn bị mang gì?",
+            "options": [
+              "Giày chạy và nón",
+              "Áo khoác và dù",
+              "Chỉ mang theo nước uống"
+            ],
+            "answer": 1,
+            "explanation": "B nói 我穿一件外套，再带一把伞."
+          },
+          {
+            "prompt": "Hai bạn hẹn gặp nhau lúc mấy giờ?",
+            "options": [
+              "Bốn rưỡi",
+              "Mười giờ",
+              "Chín giờ"
+            ],
+            "answer": 2,
+            "explanation": "A nhắc 记得九点见面."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 2",
+        "pinyin": "jiǎ ： zhōu mò nǐ qù bu qù yùn dòng ？ yǐ ： qù 。 wǒ kàn le yí xià tiān qì yù bào ， zhōu liù shì qíng tiān ， tài yáng hěn dà 。 jiǎ ： nà tiān zuì hǎo zǎo shang qù pǎo bù ， xià wǔ hǎo xiàng yào xià yǔ ， hái huì lěng yì diǎnr 。 yǐ ： xíng ， wǒ chuān yí jiàn wài tào ， zài dài yì bǎ sǎn 。 jiǎ ： jì de jiǔ diǎn jiàn miàn ， bié shuì de tài wǎn 。"
+      }
+    ],
+    "speaking": [
+      {
+        "kind": "repeat",
+        "prompt": "Nghe rồi nhắc lại hai câu ngắn về thời tiết và lời nhắc trước khi ra ngoài.",
+        "audioText": "外面好像要下雨，天也冷一点儿。出门以前记得穿外套，别忘了带伞。",
+        "prepareSeconds": 15,
+        "responseSeconds": 45,
+        "reference": "外面好像要下雨，天也冷一点儿。出门以前记得穿外套，别忘了带伞。",
+        "checklist": [
+          "Nhắc lại đủ cả hai câu",
+          "Giữ đúng lời nhắc mang đồ",
+          "Đọc rõ hai từ áo khoác và cái dù",
+          "Không nhìn câu mẫu khi thử lại"
+        ],
+        "pinyin": "wài miàn hǎo xiàng yào xià yǔ ， tiān yě lěng yì diǎnr 。 chū mén yǐ qián jì de chuān wài tào ， bié wàng le dài sǎn 。"
+      },
+      {
+        "kind": "retell",
+        "prompt": "Nghe đoạn hội thoại thứ nhất (được nghe tối đa hai lần), rồi kể lại bằng tiếng Trung đơn giản: ai gọi cho ai, hẹn mấy giờ, cùng làm gì và nếu không đến được thì xử lý thế nào.",
+        "audioText": "甲：喂，是小李吗？现在说话方便吗？乙：方便，你找我有什么事？甲：明天下午你有空吗？我们三点在学校门口见面，一起去看电影。乙：明天我有课，四点以后才行。甲：那我们约四点半，你要是到不了就给我打电话。乙：好，不见不散。",
+        "prepareSeconds": 30,
+        "responseSeconds": 75,
+        "reference": "A gọi cho B rủ chiều mai đi xem phim, hẹn ba giờ ở cổng trường. B mai có lớp nên đổi sang bốn rưỡi; nếu đến không được thì B gọi cho A, hai người chốt nhất định gặp nhau.",
+        "checklist": [
+          "Nói đủ: giờ hẹn, việc cùng làm, cách xử lý nếu không đến",
+          "Người nghe hiểu được nội dung",
+          "Không tự đổi giờ gặp trong đoạn nghe"
+        ]
+      },
+      {
+        "kind": "read",
+        "prompt": "Đọc thành tiếng đoạn văn tự soạn sau, nhấn vào thời gian, thời tiết và đồ mang theo.",
+        "text": "周六早上天气很好，太阳很大，我们九点在学校门口见面，一起去跑步。下午好像要下雨，所以小刘带了一件外套，我带了两把伞。",
+        "prepareSeconds": 30,
+        "responseSeconds": 60,
+        "reference": "Đọc ngắt theo cụm: cụm thời tiết, cụm giờ hẹn, cụm đồ mang theo; chậm lại ở câu 好像要下雨 để rõ ý phỏng đoán.",
+        "checklist": [
+          "Không bỏ ý hoặc thay từ quan trọng",
+          "Ngắt theo cụm nghĩa",
+          "Giữ âm lượng đều, nói dễ nghe"
+        ]
+      }
+    ],
+    "glossary": [
+      {
+        "word": "方便",
+        "pinyin": "fāng biàn",
+        "meaningVi": "tiện; rảnh",
+        "note": "Dùng khi gọi điện: 现在说话方便吗？"
+      },
+      {
+        "word": "门口",
+        "pinyin": "mén kǒu",
+        "meaningVi": "cửa; cổng"
+      },
+      {
+        "word": "有课",
+        "pinyin": "yǒu kè",
+        "meaningVi": "có tiết học"
+      },
+      {
+        "word": "不见不散",
+        "pinyin": "bú jiàn bú sàn",
+        "meaningVi": "hẹn nhất định gặp nhau, không gặp không về"
+      },
+      {
+        "word": "天气预报",
+        "pinyin": "tiān qì yù bào",
+        "meaningVi": "dự báo thời tiết"
+      },
+      {
+        "word": "跑步",
+        "pinyin": "pǎo bù",
+        "meaningVi": "chạy bộ"
+      },
+      {
+        "word": "伞",
+        "pinyin": "sǎn",
+        "meaningVi": "cái dù",
+        "note": "Nói 一把伞 cho một cái dù"
+      }
+    ]
+  }
 }

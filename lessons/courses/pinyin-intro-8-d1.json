@@ -59,7 +59,7 @@
       "example": "你说得不对。",
       "exampleVi": "Bạn nói không đúng.",
       "pinyin": "bú duì",
-      "examplePinyin": "nǐ shuō dé bú duì 。"
+      "examplePinyin": "nǐ shuō de bú duì 。"
     }
   ],
   "patterns": [
@@ -149,7 +149,7 @@
       "prompt": "Nghe rồi nhắc lại sáu cụm có biến điệu, đọc như lời nói thật.",
       "prepareSeconds": 10,
       "responseSeconds": 30,
-      "reference": "Trong cặp hai thanh 3, âm đầu đi lên gần thanh 2; trước thanh 3 thì hai chữ số và phủ định cùng rơi mạnh.",
+      "reference": "Trong cặp hai thanh 3, âm đầu đi lên gần thanh 2; 一 đứng trước thanh 3 rơi mạnh như thanh 4, còn 不 trong 不是/不对 đứng trước thanh 4 nên đi lên thành bú.",
       "checklist": [
         "Cặp 3+3 nghe liền, tự nhiên",
         "一 không bị đọc thành âm dài",

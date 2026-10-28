@@ -34,8 +34,8 @@
       "meaning": "rảnh",
       "example": "你晚上有空吗？一起吃个饭。",
       "exampleVi": "Tối nay bạn rảnh không? Cùng đi ăn một bữa.",
-      "pinyin": "yǒu kōng",
-      "examplePinyin": "nǐ wǎn shang yǒu kōng ma ？ yì qǐ chī gè fàn 。"
+      "pinyin": "yǒu kòng",
+      "examplePinyin": "nǐ wǎn shang yǒu kòng ma ？ yì qǐ chī gè fàn 。"
     },
     {
       "word": "可惜",
@@ -59,7 +59,7 @@
       "example": "抱歉，那天我家里有点儿事儿。",
       "exampleVi": "Ngại quá, hôm đó nhà tôi có chút việc.",
       "pinyin": "bào qiàn",
-      "examplePinyin": "bào qiàn ， nà tiān wǒ jiā lǐ yǒu diǎn er shì ér 。"
+      "examplePinyin": "bào qiàn ， nà tiān wǒ jiā lǐ yǒu diǎnr shìr 。"
     }
   ],
   "patterns": [
@@ -68,7 +68,7 @@
       "explanation": "Mở lời mời: 你 rồi thêm thời gian và 有空吗？, sau đó nêu việc cùng làm; hỏi cho cả nhóm thì đổi thành 你们.",
       "example": "你周六晚上有空吗？我们一起去吃火锅。",
       "exampleVi": "Tối thứ bảy bạn rảnh không? Mình cùng đi ăn lẩu.",
-      "examplePinyin": "nǐ zhōu liù wǎn shang yǒu kōng ma ？ wǒ men yì qǐ qù chī huǒ guō 。"
+      "examplePinyin": "nǐ zhōu liù wǎn shang yǒu kòng ma ？ wǒ men yì qǐ qù chī huǒ guō 。"
     },
     {
       "pattern": "不好意思，我……",
@@ -140,7 +140,7 @@
         "explanation": "乙 nói 改天我一定请他。周日我在家，你们来一起吃个饭吧."
       }
     ],
-    "pinyin": "jiǎ ： zhōu liù wǒ dì di guò shēng rì ， wǒ men xiǎng yāo qǐng nǐ lái chī fàn ， nǐ yǒu kōng ma ？ yǐ ： xiè xie nǐ yāo qǐng wǒ 。 kě wǒ zhōu liù yào huí lǎo jiā ， zhēn bào qiàn 。 jiǎ ： nà tài kě xī le ， tā cháng shuō xiǎng jiàn nǐ 。 yǐ ： gǎi tiān wǒ yí dìng qǐng tā 。 zhōu rì wǒ zài jiā ， nǐ men lái yì qǐ chī gè fàn ba 。 jiǎ ： xíng ， jiù zhè me shuō dìng le 。 yǐ ： rén lái jiù xíng ， bié kè qi 。"
+    "pinyin": "jiǎ ： zhōu liù wǒ dì di guò shēng rì ， wǒ men xiǎng yāo qǐng nǐ lái chī fàn ， nǐ yǒu kòng ma ？ yǐ ： xiè xie nǐ yāo qǐng wǒ 。 kě wǒ zhōu liù yào huí lǎo jiā ， zhēn bào qiàn 。 jiǎ ： nà tài kě xī le ， tā cháng shuō xiǎng jiàn nǐ 。 yǐ ： gǎi tiān wǒ yí dìng qǐng tā 。 zhōu rì wǒ zài jiā ， nǐ men lái yì qǐ chī gè fàn ba 。 jiǎ ： xíng ， jiù zhè me shuō dìng le 。 yǐ ： rén lái jiù xíng ， bié kè qi 。"
   },
   "speaking": [
     {
@@ -216,8 +216,8 @@
     },
     {
       "text": "有空",
-      "pinyin": "yǒu kōng",
-      "hint": "Thanh 3 rồi thanh 1: hai âm tách rõ; chữ sau đọc kōng, không phải kòng."
+      "pinyin": "yǒu kòng",
+      "hint": "空 nghĩa \"rảnh\" đọc kòng thanh 4 rơi mạnh; kōng thanh 1 là nghĩa \"trống không\" (空调)."
     }
   ]
 }

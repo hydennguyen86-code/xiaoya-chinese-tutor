@@ -47,9 +47,9 @@
     },
     {
       "word": "块",
-      "meaning": "đồng; cách nói khẩu ngữ của đơn vị tiền",
+      "meaning": "tệ; cách nói khẩu ngữ của nhân dân tệ",
       "example": "这碗面条十块钱。",
-      "exampleVi": "Bát mì này giá mười đồng.",
+      "exampleVi": "Bát mì này giá mười tệ.",
       "pinyin": "kuài",
       "examplePinyin": "zhè wǎn miàn tiáo shí kuài qián 。"
     },
@@ -75,7 +75,7 @@
       "explanation": "Yêu cầu giảm ớt; học như một cụm khi gọi món.",
       "example": "请少放一点儿辣椒。",
       "exampleVi": "Xin cho ít ớt một chút.",
-      "examplePinyin": "qǐng shǎo fàng yì diǎn ér là jiāo 。"
+      "examplePinyin": "qǐng shǎo fàng yì diǎnr là jiāo 。"
     }
   ],
   "roleplay": {
@@ -105,7 +105,7 @@
     "title": "Nghe buổi 1: Gọi món và hỏi giá",
     "playLimit": 2,
     "transcript": "甲：这碗面条多少钱？乙：十块钱。甲：我要一碗，请少放一点儿辣椒。乙：好的。",
-    "translation": "A: Bát mì này bao nhiêu tiền? B: Mười đồng. A: Tôi lấy một bát, xin cho ít ớt một chút. B: Được.",
+    "translation": "A: Bát mì này bao nhiêu tiền? B: Mười tệ. A: Tôi lấy một bát, xin cho ít ớt một chút. B: Được.",
     "questions": [
       {
         "prompt": "Giá một bát là bao nhiêu?",
@@ -128,7 +128,7 @@
         "explanation": "A nói 少放一点儿辣椒."
       }
     ],
-    "pinyin": "jiǎ ： zhè wǎn miàn tiáo duō shǎo qián ？ yǐ ： shí kuài qián 。 jiǎ ： wǒ yào yì wǎn ， qǐng shǎo fàng yì diǎn ér là jiāo 。 yǐ ： hǎo de 。"
+    "pinyin": "jiǎ ： zhè wǎn miàn tiáo duō shǎo qián ？ yǐ ： shí kuài qián 。 jiǎ ： wǒ yào yì wǎn ， qǐng shǎo fàng yì diǎnr là jiāo 。 yǐ ： hǎo de 。"
   },
   "speaking": [
     {
@@ -160,5 +160,32 @@
       "sampleVi": "Tôi lấy một bát mì. Bao nhiêu tiền? Xin cho ít ớt một chút."
     }
   ],
-  "transferTask": "Quán mì; buổi 2 quầy cơm với giá và số lượng khác."
+  "transferTask": "Quán mì; buổi 2 quầy cơm với giá và số lượng khác.",
+  "pronunciation": [
+    {
+      "text": "多少钱",
+      "pinyin": "duō shǎo qián",
+      "hint": "shǎo thanh 3 nằm lọt giữa hai thanh đầy đủ; cao độ đi lên rơi vào qián ở cuối cụm hỏi giá."
+    },
+    {
+      "text": "十块",
+      "pinyin": "shí kuài",
+      "hint": "shí thanh 2 đi lên, kuài thanh 4 rơi dứt khoát — thế 'lên rồi rơi' điển hình của giá tiền."
+    },
+    {
+      "text": "辣椒",
+      "pinyin": "là jiāo",
+      "hint": "là thanh 4 rơi nhanh, jiāo thanh 1 cao bằng; đừng kéo jiāo lên như thanh 2."
+    },
+    {
+      "text": "一碗",
+      "pinyin": "yì wǎn",
+      "hint": "一 đứng trước wǎn thanh 3 chuyển thành yì thanh 4 rơi ngắn; wǎn thấp và vớt cuối."
+    },
+    {
+      "text": "米饭",
+      "pinyin": "mǐ fàn",
+      "hint": "mǐ thanh 3 để thấp, fàn thanh 4 rơi cắt gọn; từ món ăn kết thúc bằng âm rơi mạnh."
+    }
+  ]
 }

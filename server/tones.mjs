@@ -2,6 +2,7 @@ import { energyTiming } from './audioTiming.mjs';
 import { mediaToolPath } from './mediaTools.mjs';
 import { spawn } from 'node:child_process';
 import { pinyin } from 'pinyin-pro';
+import { erhuaIndices } from './listeningPinyin.mjs';
 
 // Tone feedback for a sentence the learner read aloud. Everything runs on this
 // computer: ffmpeg decodes the recording, YIN tracks the pitch, the utterance
@@ -324,7 +325,7 @@ export function classifyIsolated(f, knownRange, { single = true, first = false }
   return 0;
 }
 
-/** Expected tone per Han character, with 一/不 and 3-3 sandhi applied. */
+/** Expected tone per Han character, with 一/不 and 3-3 sandhi applied; 儿 hoá (哪儿) gộp một âm tiết. */
 export function expectedTones(text) {
   const chars = [...text].filter((ch) => HAN.test(ch));
   const tones = pinyin(chars.join(''), { pattern: 'num', type: 'array' }).map((t) => Number(t) || 0);
@@ -332,7 +333,15 @@ export function expectedTones(text) {
   for (let i = tones.length - 2; i >= 0; i -= 1) {
     if (tones[i] === 3 && tones[i + 1] === 3) tones[i] = 2;
   }
-  return chars.map((char, i) => ({ char, pinyin: marks[i], expected: tones[i] }));
+  const out = chars.map((char, i) => ({ char, pinyin: marks[i], expected: tones[i] }));
+  // 儿 (thanh 2) sau các chữ trong bảng ERHUA chỉ là đuôi "r": người học đọc một âm tiết,
+  // nên bộ chấm cũng chia một đoạn và chấm thanh của chữ đứng trước.
+  const erhua = erhuaIndices(chars.join(''));
+  for (const i of [...erhua].sort((a, b) => b - a)) {
+    out[i - 1] = { char: chars[i - 1] + '儿', pinyin: `${marks[i - 1]}r`, expected: tones[i - 1] };
+    out.splice(i, 1);
+  }
+  return out;
 }
 
 /** Fold a recording's voiced frames into a speaker's pitch profile. */

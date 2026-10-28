@@ -1,6 +1,7 @@
 // Adapted from supplied AI content utilities; validation only, never rewrites authored pinyin.
 // Sinh pinyin cho một câu/đoạn chữ Hán, dùng chung cho các generator nội dung.
-// Pinyin luôn lấy từ pinyin-pro theo cả câu (nên phân biệt được đa âm), rồi mới áp:
+// Pinyin luôn lấy từ pinyin-pro theo cả câu (nên phân biệt được đa âm), rồi khoá lại những
+// từ mà pinyin-pro đọc sai trong ngữ cảnh theo POLYPHONE_LOCKS của coursePinyin, sau đó mới áp:
 //   - thanh nhẹ cho từ từ điển ghi đọc nhẹ + hư từ cuối câu (theo người soạn)
 //   - biến điệu 3+3: chế độ allSandhi hạ MỌI cặp thanh 3 liền nhau trong cùng cụm hơi,
 //     nên pinyin xuất ra là dạng đọc thật (只好 → zhí hǎo); dấu câu chặn biến điệu.
@@ -8,9 +9,18 @@
 // Dấu thanh xử lý theo mã Unicode (0x0300–0x036f) để không ghi ký tự tổ hợp trực tiếp trong nguồn.
 
 import { pinyin } from 'pinyin-pro';
-import { HAN, NEUTRAL_LEXICAL as NEUTRAL, NEUTRAL_SUFFIX, neutralPositions } from './coursePinyin.mjs';
+import {
+  HAN,
+  NEUTRAL_LEXICAL as NEUTRAL,
+  NEUTRAL_SUFFIX,
+  neutralPositions,
+  applyPolyphoneLocks,
+  erhuaIndices,
+  syllableCount,
+  syllableIndexMap,
+} from './coursePinyin.mjs';
 
-export { HAN, NEUTRAL, NEUTRAL_SUFFIX };
+export { HAN, NEUTRAL, NEUTRAL_SUFFIX, erhuaIndices, syllableCount, syllableIndexMap };
 export const PAUSE = new Set(['，', '。', '！', '？', '、', '；', '：', '…', '—', ',', '.', '!', '?', ';', ':']);
 
 /** Vị trí chữ Hán (đếm từ 0) mà ngay sau nó là dấu câu → không biến điệu bắc qua. */
@@ -32,7 +42,7 @@ const CODE_BY_TONE = { 1: 0x0304, 2: 0x0301, 3: 0x030c, 4: 0x0300 };
 
 const isCombining = (ch) => {
   const c = ch.charCodeAt(0);
-  return c >= 0x0300 && c <= 0x036f;
+  return c >= 0x0300 && c <= 0x036f && c !== 0x0308;
 };
 
 // Từ có hai thanh 3 đi liền NHƯNG thuộc cùng một từ → bắt buộc biến điệu 3+3 khi nói.
@@ -85,7 +95,9 @@ export function addToneMark(letters, tone) {
   const chars = [...letters.normalize('NFD')].filter((c) => !isCombining(c));
   const idx = toneVowelIndex(chars.map((c) => c.toLowerCase()).join(''));
   if (idx < 0 || idx >= chars.length) return letters;
-  chars.splice(idx + 1, 0, String.fromCharCode(code));
+  let at = idx + 1;
+  if (chars[at]?.charCodeAt(0) === 0x0308) at += 1;
+  chars.splice(at, 0, String.fromCharCode(code));
   return chars.join('').normalize('NFC');
 }
 
@@ -115,10 +127,11 @@ export function strip(s) {
 export function readSentence(text, sandhiAt = [], extraNeutral = [], options = {}) {
   const { allSandhi = false, pauses = new Set() } = options;
   const chars = [...text];
-  const parsed = pinyin(text, { pattern: 'tone', type: 'array' }).map(strip);
+  const parsed = applyPolyphoneLocks(chars, pinyin(text, { pattern: 'tone', type: 'array' })).map(strip);
   const dict = parsed.map((p) => p.tone);
 
   const neutral = new Set([...neutralPositions(text), ...extraNeutral]);
+  const erhua = erhuaIndices(text);
 
   // "trích dẫn" = pinyin-pro + thanh nhẹ, CHƯA biến điệu 3+3
   const citation = [...dict];
@@ -157,6 +170,19 @@ export function readSentence(text, sandhiAt = [], extraNeutral = [], options = {
   const full = [...citation];
   for (let i = 0; i + 1 < full.length; i += 1) {
     if (!pauses.has(i) && full[i] === 3 && full[i + 1] === 3) full[i] = 2;
+  }
+
+  // 儿 hoá: 哪儿 → nǎr. Chữ 儿 gộp vào âm tiết trước (thêm "r"), vị trí 儿 bị bỏ.
+  // 儿 luôn thanh 2 nên không ảnh hưởng biến điệu 3+3 đã tính ở trên.
+  if (erhua.size) {
+    for (const i of [...erhua].sort((a, b) => b - a)) parsed[i - 1].letters += 'r';
+    for (const toneList of [chosen, citation, full, dict]) {
+      for (const i of [...erhua].sort((a, b) => b - a)) toneList.splice(i, 1);
+    }
+    for (const i of [...erhua].sort((a, b) => b - a)) parsed.splice(i, 1);
+    for (let k = 0; k < lowered.length; k += 1) {
+      lowered[k] -= [...erhua].filter((i) => i < lowered[k]).length;
+    }
   }
 
   const renderTone = (t, p) => (t === 5 ? p.letters : addToneMark(p.letters, t));

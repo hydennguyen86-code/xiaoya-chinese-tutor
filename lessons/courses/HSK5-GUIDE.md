@@ -55,6 +55,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 目标 | mù biāo | mục tiêu | 我的目标是提高工作效率。 | Mục tiêu của tôi là nâng cao hiệu quả công việc. |
 | 适应 | shì yìng | thích nghi | 我能很快适应新的工作环境。 | Tôi có thể nhanh chóng thích nghi với môi trường làm việc mới. |
 | 具体 | jù tǐ | cụ thể | 请举一个具体的例子。 | Xin đưa ra một ví dụ cụ thể. |
+| 汇报 | huì bào | báo cáo | 下周我向新同事汇报项目。 | Tuần sau tôi báo cáo dự án với đồng nghiệp mới. |
+| 同事 | tóng shì | đồng nghiệp | 同事帮我确认了数据。 | Đồng nghiệp giúp tôi xác nhận số liệu. |
 
 **Mẫu câu:**
 
@@ -252,6 +254,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 优先 | yōu xiān | ưu tiên | 请优先处理紧急问题。 | Xin ưu tiên xử lý vấn đề khẩn cấp. |
 | 避免 | bì miǎn | tránh | 这样可以避免重复工作。 | Cách này có thể tránh làm việc trùng lặp. |
 | 细节 | xì jié | chi tiết | 我们还需要讨论几个细节。 | Chúng ta còn cần bàn một vài chi tiết. |
+| 讲义 | jiǎng yì | giáo án; tài liệu giảng | 我先写讲义的第一部分。 | Tôi viết phần đầu của tài liệu giảng trước. |
+| 反馈 | fǎn kuì | phản hồi | 请给我一些反馈。 | Xin cho tôi một số phản hồi. |
 
 **Mẫu câu:**
 
@@ -449,6 +453,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 调整 | tiáo zhěng | điều chỉnh | 我们需要调整时间安排。 | Chúng ta cần điều chỉnh lịch trình. |
 | 影响 | yǐng xiǎng | ảnh hưởng | 这个变化会影响交货时间。 | Thay đổi này sẽ ảnh hưởng thời gian giao hàng. |
 | 承担 | chéng dān | đảm nhận; chịu trách nhiệm | 我愿意承担协调工作。 | Tôi sẵn sàng đảm nhận việc điều phối. |
+| 物流 | wù liú | logistics; vận chuyển | 物流信息还没有更新。 | Thông tin vận chuyển vẫn chưa cập nhật. |
+| 补偿 | bǔ cháng | bồi thường; bù | 我们可以补偿一部分运费。 | Chúng tôi có thể bù một phần phí vận chuyển. |
 
 **Mẫu câu:**
 
@@ -645,6 +651,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 效果 | xiào guǒ | hiệu quả; kết quả tác động | 我们需要观察实际效果。 | Chúng ta cần quan sát hiệu quả thực tế. |
 | 保留 | bǎo liú | giữ lại; bảo lưu | 我对这个结论仍有保留。 | Tôi vẫn còn bảo lưu về kết luận này. |
 | 执行 | zhí xíng | thực hiện; thi hành | 决定以后要有人负责执行。 | Sau khi quyết định cần có người chịu trách nhiệm thực hiện. |
+| 问卷 | wèn juàn | bảng hỏi; phiếu khảo sát | 我们做了一份问卷。 | Chúng tôi đã làm một bảng hỏi. |
+| 指标 | zhǐ biāo | chỉ số | 请先确定评价指标。 | Xin xác định chỉ số đánh giá trước. |
 
 **Mẫu câu:**
 
@@ -841,6 +849,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 维修 | wéi xiū | sửa chữa; bảo trì | 空调需要维修。 | Điều hòa cần sửa. |
 | 提前 | tí qián | sớm; trước thời hạn | 搬走前要提前通知。 | Trước khi dọn đi phải báo trước. |
 | 包含 | bāo hán | bao gồm | 这个价格不包含水电费。 | Giá này chưa bao gồm điện nước. |
+| 水表 | shuǐ biǎo | đồng hồ nước | 请把水表的数字写下来。 | Xin ghi lại số trên đồng hồ nước. |
+| 交接 | jiāo jiē | bàn giao | 我们周六交接房子。 | Thứ Bảy chúng ta bàn giao nhà. |
 
 **Mẫu câu:**
 
@@ -1038,6 +1048,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 更换 | gēng huàn | đổi; thay thế | 我希望更换有问题的商品。 | Tôi muốn đổi sản phẩm có vấn đề. |
 | 处理 | chǔ lǐ | xử lý | 这个问题由谁来处理？ | Ai xử lý vấn đề này? |
 | 凭证 | píng zhèng | chứng từ; bằng chứng giao dịch | 我保留了付款凭证。 | Tôi đã giữ chứng từ thanh toán. |
+| 运单 | yùn dān | vận đơn | 请把运单号发给我。 | Xin gửi cho tôi mã vận đơn. |
+| 时效 | shí xiào | thời hạn giao; tốc độ đúng hạn | 这个时效我们不能接受。 | Thời hạn giao này chúng tôi không thể chấp nhận. |
 
 **Mẫu câu:**
 
@@ -1287,6 +1299,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 耽误 | dān wù | làm lỡ; trì hoãn | 我们不想耽误第二天的会议。 | Chúng tôi không muốn lỡ cuộc họp hôm sau. |
 | 预订 | yù dìng | đặt trước | 我预订了两个房间。 | Tôi đã đặt trước hai phòng. |
 | 费用 | fèi yòng | chi phí; khoản phí | 请说明改签的费用。 | Xin giải thích phí đổi vé. |
+| 前台 | qián tái | quầy lễ tân | 请确认前台有人。 | Xin xác nhận quầy lễ tân có người. |
+| 入住 | rù zhù | nhận phòng | 我们晚上九点入住。 | Chúng tôi nhận phòng lúc chín giờ tối. |
 
 **Mẫu câu:**
 
@@ -1484,6 +1498,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 数量 | shù liàng | số lượng | 我们还没有确定数量。 | Chúng ta chưa xác định số lượng. |
 | 保证 | bǎo zhèng | bảo đảm | 请保证产品质量一致。 | Xin bảo đảm chất lượng sản phẩm đồng đều. |
 | 合作 | hé zuò | hợp tác | 我们希望建立长期合作。 | Chúng tôi mong thiết lập hợp tác lâu dài. |
+| 试用 | shì yòng | dùng thử | 我们先试用一个月。 | Chúng tôi dùng thử một tháng trước. |
+| 条款 | tiáo kuǎn | điều khoản | 请把这一条写进条款。 | Xin ghi điều này vào điều khoản. |
 
 **Mẫu câu:**
 
@@ -1681,6 +1697,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 结论 | jié lùn | kết luận | 不要急着下结论。 | Đừng vội kết luận. |
 | 调查 | diào chá | khảo sát; điều tra | 这项调查只访问了一个社区。 | Khảo sát này chỉ phỏng vấn một khu dân cư. |
 | 代表 | dài biǎo | đại diện | 这些意见不能代表所有人。 | Những ý kiến này không thể đại diện cho tất cả mọi người. |
+| 客流 | kè liú | lượng khách ra vào | 这个月客流增加了。 | Tháng này lượng khách tăng. |
+| 核实 | hé shí | xác minh; kiểm chứng | 请先核实数据的来源。 | Xin xác minh nguồn số liệu trước. |
 
 **Mẫu câu:**
 
@@ -1877,6 +1895,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 改进 | gǎi jìn | cải tiến; cải thiện cách làm | 我们需要改进交接方式。 | Chúng ta cần cải tiến cách bàn giao. |
 | 结果 | jié guǒ | kết quả | 结果跟我们预想的不一样。 | Kết quả khác với dự kiến của chúng ta. |
 | 反思 | fǎn sī | nhìn lại, suy xét để rút kinh nghiệm | 事后反思比互相指责更有用。 | Sau việc đó, nhìn lại để rút kinh nghiệm hữu ích hơn đổ lỗi cho nhau. |
+| 复盘 | fù pán | nhìn lại và rút kinh nghiệm | 每周复盘一次学习。 | Mỗi tuần nhìn lại việc học một lần. |
+| 积累 | jī lěi | tích lũy | 词汇需要慢慢积累。 | Từ vựng cần tích lũy dần. |
 
 **Mẫu câu:**
 
@@ -2075,6 +2095,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 限制 | xiàn zhì | giới hạn; hạn chế | 这个办法也有一定的限制。 | Cách này cũng có những giới hạn nhất định. |
 | 实际 | shí jì | thực tế | 我们要考虑实际情况。 | Chúng ta cần xét tình hình thực tế. |
 | 选择 | xuǎn zé | lựa chọn | 不同的人可能有不同的选择。 | Những người khác nhau có thể có lựa chọn khác nhau. |
+| 提醒 | tí xǐng | nhắc nhở | 请每天提醒我一次。 | Xin nhắc tôi mỗi ngày một lần. |
+| 频率 | pín lǜ | tần suất | 这个频率太高了。 | Tần suất này cao quá. |
 
 **Mẫu câu:**
 
@@ -2272,6 +2294,8 @@ Thời lượng gợi ý mỗi buổi: 30 phút.
 | 依据 | yī jù | căn cứ | 你的建议有什么依据？ | Đề nghị của bạn có căn cứ gì? |
 | 协调 | xié tiáo | điều phối; dung hòa | 我们需要协调各方的时间。 | Chúng ta cần điều phối thời gian của các bên. |
 | 落实 | luò shí | thực hiện cụ thể; đưa vào thực tế | 决定以后要落实到具体负责人。 | Sau khi quyết định phải giao cụ thể cho người phụ trách thực hiện. |
+| 阶段 | jiē duàn | giai đoạn | 我们分两个阶段完成。 | Chúng tôi hoàn thành theo hai giai đoạn. |
+| 验收 | yàn shōu | nghiệm thu | 请先确定验收标准。 | Xin xác định tiêu chuẩn nghiệm thu trước. |
 
 **Mẫu câu:**
 
@@ -2495,9 +2519,9 @@ Cộng đồng muốn mở phòng học chung. Học sinh muốn buổi tối, d
 - Nghe đoạn thứ nhất một lần, rồi kể lại trong 90 giây: vấn đề, nhu cầu, giải pháp và việc tiếp theo. Chuẩn bị 45 giây, nói 90 giây.
 - Đọc thành tiếng đoạn văn tự soạn sau. Chuẩn bị 30 giây, nói 60 giây.
 
-有效的沟通不只是把话说完，还包括确认对方是否理解。遇到意见不一致时，先弄清各自的需要，再讨论可以调整的条件。即使最后没有达成一致，也应该明确下一步由谁负责、什么时候再联系。
+培训不能只讲流程，还要让学员当场做一遍。光听不练，第二天就忘大半。所以验收放在任务上：每人独立完成一次，出错的地方再补讲一次。
 
-- 有人认为只要结果好，过程中的沟通就不重要。你怎么看？请举例并说明一个限制。 Chuẩn bị 45 giây, nói 120 giây.
+- 验收一次培训，应该先看满意度还是先看学员能不能独立完成任务？请举例并说明一个限制。 Chuẩn bị 45 giây, nói 120 giây.
 
 Đánh giá phần nói theo rubric bên dưới, không quy đổi sang thang điểm chính thức.
 

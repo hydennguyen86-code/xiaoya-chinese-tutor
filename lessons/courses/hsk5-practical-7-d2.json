@@ -102,8 +102,8 @@
       "Nêu giờ đến thực tế và giới hạn giữ phòng",
       "Xác nhận nhận phòng muộn, phí và quầy trực"
     ],
-    "opening": "酒店房间只能保留到晚上八点，我们九点才到，怎么办？",
-    "openingVi": "Khách sạn chỉ giữ phòng đến tám giờ tối, chín giờ chúng ta mới đến, phải làm sao?"
+    "opening": "房间只能保留到晚上八点，过点前台可能另外收费，我先帮您问清楚。",
+    "openingVi": "Chỉ giữ phòng đến tám giờ tối, quá giờ lễ tân có thể tính thêm, tôi hỏi rõ giúp bạn trước."
   },
   "freeTalk": {
     "question": "晚到酒店时，你会先确认房间、费用还是交通？为什么？",

@@ -42,7 +42,7 @@
       "example": "每天浪费的食物多得惊人。",
       "exampleVi": "Lượng thức ăn lãng phí mỗi ngày nhiều đến đáng kinh ngạc.",
       "pinyin": "làng fèi",
-      "examplePinyin": "měi tiān làng fèi de shí wù duō dé jīng rén 。"
+      "examplePinyin": "měi tiān làng fèi de shí wù duō de jīng rén 。"
     },
     {
       "word": "可持续",
@@ -50,7 +50,7 @@
       "example": "可持续发展关系到下一代。",
       "exampleVi": "Phát triển bền vững liên quan đến thế hệ sau.",
       "pinyin": "kě chí xù",
-      "examplePinyin": "kě chí xù fā zhǎn guān xì dào xià yí dài 。"
+      "examplePinyin": "kě chí xù fā zhǎn guān xi dào xià yí dài 。"
     },
     {
       "word": "环保",
@@ -136,7 +136,7 @@
     "playLimit": 2,
     "transcript": "空气污染已经成为大问题。 我们应该把垃圾分类回收。 每天浪费的食物多得惊人。",
     "translation": "Ô nhiễm không khí đã trở thành vấn đề lớn. Chúng ta nên phân loại và tái chế rác. Lượng thức ăn lãng phí mỗi ngày nhiều đến đáng kinh ngạc.",
-    "pinyin": "kōng qì wū rǎn yǐ jīng chéng wéi dà wèn tí 。   wǒ men yīng gāi bǎ lā jī fēn lèi huí shōu 。   měi tiān làng fèi de shí wù duō dé jīng rén 。",
+    "pinyin": "kōng qì wū rǎn yǐ jīng chéng wéi dà wèn tí 。   wǒ men yīng gāi bǎ lā jī fēn lèi huí shōu 。   měi tiān làng fèi de shí wù duō de jīng rén 。",
     "questions": [
       {
         "prompt": "Cụm “污染” trong đoạn nghe có nghĩa gì?",

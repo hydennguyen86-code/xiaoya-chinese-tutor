@@ -19,7 +19,7 @@
       "example": "我今天有点儿不舒服。",
       "exampleVi": "Hôm nay tôi hơi khó ở.",
       "pinyin": "shū fu",
-      "examplePinyin": "wǒ jīn tiān yǒu diǎn er bù shū fu 。"
+      "examplePinyin": "wǒ jīn tiān yǒu diǎnr bù shū fu 。"
     },
     {
       "word": "感冒",
@@ -140,7 +140,7 @@
         "explanation": "Câu cuối của A là 要是明天还发烧，你可别硬扛，一早就去医院."
       }
     ],
-    "pinyin": "jiǎ ： nǐ liǎn sè nà me hóng ， shì bu shì gǎn mào le ？ yào bu yào péi nǐ qù jiǎn chá ？ yǐ ： hóu lóng téng ， tóu yǒu diǎn er yūn ， zuó wǎn yě méi shuì hǎo 。 jiǎ ： wǒ zěn me jué de nǐ bǐ wǒ hái nán shòu 。 yǐ ： xiān chī yào guān chá yì tiān ba ， bú tài yán zhòng 。 jiǎ ： yào shi míng tiān hái fā shāo ， nǐ kě bié yìng káng ， yì zǎo jiù qù yī yuàn 。 yǐ ： hǎo ， wǒ zhī dao 。"
+    "pinyin": "jiǎ ： nǐ liǎn sè nà me hóng ， shì bu shì gǎn mào le ？ yào bu yào péi nǐ qù jiǎn chá ？ yǐ ： hóu lóng téng ， tóu yǒu diǎnr yūn ， zuó wǎn yě méi shuì hǎo 。 jiǎ ： wǒ zěn me jué de nǐ bǐ wǒ hái nán shòu 。 yǐ ： xiān chī yào guān chá yì tiān ba ， bú tài yán zhòng 。 jiǎ ： yào shi míng tiān hái fā shāo ， nǐ kě bié yìng káng ， yì zǎo jiù qù yī yuàn 。 yǐ ： hǎo ， wǒ zhī dao 。"
   },
   "speaking": [
     {
@@ -207,7 +207,7 @@
     {
       "text": "医院",
       "pinyin": "yī yuàn",
-      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh; tròn môi ở âm đầu."
+      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 hạ nhanh, môi tròn ở âm đệm ü; chữ đầu dẹt, không tròn."
     },
     {
       "text": "休息",

@@ -47,19 +47,52 @@
       "id": "dt-2-148",
       "level": "HSK3-4",
       "hanzi": "外套有点儿长，天热了不穿。",
-      "pinyin": "wài tào yóu diǎn er cháng tiān rè le bù chuān",
+      "pinyin": "wài tào yóu diǎnr cháng tiān rè le bù chuān",
       "meaningVi": "Áo khoác hơi dài, trời nóng rồi nên không mặc.",
       "focus": [
         "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
-        "有点儿 yóu diǎn er: 儿 tách thành âm riêng er.",
+        "有点儿 yóu diǎnr: 儿 hoá thành r dính vào diǎn, đọc một âm tiết diǎnr, không tách er riêng.",
         "天热了 tiān rè le: 了 đọc nhẹ le.",
         "不穿 bù chuān: 不 giữ bù trước thanh 1."
       ],
       "sandhi": true,
-      "baseTones": [4, 4, 3, 3, 5, 2, 1, 4, 5, 4, 1],
+      "baseTones": [
+        4,
+        4,
+        3,
+        3,
+        2,
+        1,
+        4,
+        5,
+        4,
+        1
+      ],
       "acceptTones": [
-        [4, 4, 2, 3, 5, 2, 1, 4, 5, 4, 1],
-        [4, 4, 3, 3, 5, 2, 1, 4, 5, 4, 1]
+        [
+          4,
+          4,
+          2,
+          3,
+          2,
+          1,
+          4,
+          5,
+          4,
+          1
+        ],
+        [
+          4,
+          4,
+          3,
+          3,
+          2,
+          1,
+          4,
+          5,
+          4,
+          1
+        ]
       ],
       "hint": "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-4-2-3-5-2-1-4-5-4-1 lẫn 4-4-3-3-5-2-1-4-5-4-1."
     }
@@ -74,10 +107,26 @@
       "syllables": 23,
       "pace": "vừa",
       "chunks": [
-        { "hanzi": "明天上午是晴天", "pinyin": "míng tiān shàng wǔ shì qíng tiān", "pause": "soft" },
-        { "hanzi": "太阳很大", "pinyin": "tài yáng hěn dà", "pause": "soft" },
-        { "hanzi": "下午好像要下雨", "pinyin": "xià wú hǎo xiàng yào xià yǔ", "pause": "soft" },
-        { "hanzi": "记得穿外套", "pinyin": "jì de chuān wài tào", "pause": "end" }
+        {
+          "hanzi": "明天上午是晴天",
+          "pinyin": "míng tiān shàng wǔ shì qíng tiān",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "太阳很大",
+          "pinyin": "tài yáng hěn dà",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "下午好像要下雨",
+          "pinyin": "xià wú hǎo xiàng yào xià yǔ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "记得穿外套",
+          "pinyin": "jì de chuān wài tào",
+          "pause": "end"
+        }
       ],
       "focus": [
         "Biến điệu 3+3: wǔ hǎo → wú hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
@@ -86,10 +135,82 @@
         "记得 jì de: 得 đọc nhẹ de."
       ],
       "sandhi": true,
-      "baseTones": [2, 1, 4, 3, 4, 2, 1, 4, 2, 3, 4, 4, 3, 3, 4, 4, 4, 3, 4, 5, 1, 4, 4],
+      "baseTones": [
+        2,
+        1,
+        4,
+        3,
+        4,
+        2,
+        1,
+        4,
+        2,
+        3,
+        4,
+        4,
+        3,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        5,
+        1,
+        4,
+        4
+      ],
       "acceptTones": [
-        [2, 1, 4, 3, 4, 2, 1, 4, 2, 3, 4, 4, 2, 3, 4, 4, 4, 3, 4, 5, 1, 4, 4],
-        [2, 1, 4, 3, 4, 2, 1, 4, 2, 3, 4, 4, 3, 3, 4, 4, 4, 3, 4, 5, 1, 4, 4]
+        [
+          2,
+          1,
+          4,
+          3,
+          4,
+          2,
+          1,
+          4,
+          2,
+          3,
+          4,
+          4,
+          2,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          5,
+          1,
+          4,
+          4
+        ],
+        [
+          2,
+          1,
+          4,
+          3,
+          4,
+          2,
+          1,
+          4,
+          2,
+          3,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          5,
+          1,
+          4,
+          4
+        ]
       ],
       "hint": "Biến điệu 3+3: wǔ hǎo → wú hǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-1-4-3-4-2-1-4-2-3-4-4-2-3-4-4-4-3-4-5-1-4-4 lẫn 2-1-4-3-4-2-1-4-2-3-4-4-3-3-4-4-4-3-4-5-1-4-4."
     }

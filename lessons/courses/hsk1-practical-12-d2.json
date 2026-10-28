@@ -112,7 +112,7 @@
     "title": "Nghe buổi 2: Chuyến đi nhỏ: nghe rồi tự xử lý",
     "playLimit": 2,
     "transcript": "甲：我们三点在商店前面见面吗？乙：不是三点，是四点。甲：好，四点在学校前面。乙：对，面条一碗八块。",
-    "translation": "A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải ba giờ, mà là bốn giờ. A: Được, bốn giờ trước trường. B: Đúng, mì một bát tám đồng.",
+    "translation": "A: Chúng ta gặp lúc ba giờ trước cửa hàng à? B: Không phải ba giờ, mà là bốn giờ. A: Được, bốn giờ trước trường. B: Đúng, mì một bát tám tệ.",
     "questions": [
       {
         "prompt": "Địa điểm đúng?",
@@ -122,14 +122,14 @@
           "Trước trường"
         ],
         "answer": 2,
-        "explanation": "B sửa thành 学校前面."
+        "explanation": "A chốt lại 四点在学校前面."
       },
       {
         "prompt": "Một bát mì giá bao nhiêu?",
         "options": [
-          "Tám đồng",
-          "Bốn đồng",
-          "Ba đồng"
+          "Tám tệ",
+          "Bốn tệ",
+          "Ba tệ"
         ],
         "answer": 0,
         "explanation": "B nói 面条一碗八块."
@@ -164,10 +164,37 @@
         "Người nghe hiểu được thông tin chính"
       ],
       "sampleZh": "明天下午三点我们在学校见面。先去商店，再去吃饭。一碗面条八块。",
-      "sampleVi": "Chiều mai ba giờ chúng ta gặp ở trường. Đi cửa hàng trước, rồi đi ăn. Một bát mì tám đồng."
+      "sampleVi": "Chiều mai ba giờ chúng ta gặp ở trường. Đi cửa hàng trước, rồi đi ăn. Một bát mì tám tệ."
     }
   ],
   "transferTask": "Lên kế hoạch chuyến gặp mới: hẹn giờ và nơi, nói việc trước–sau, gọi món và trả tiền; sửa lại nếu nghe nhầm giờ hoặc giá.",
+  "pronunciation": [
+    {
+      "text": "四，是",
+      "pinyin": "sì ， shì",
+      "hint": "Cùng vần i và cùng thanh 4, chỉ khác âm đầu: sì phẳng sát lợi, shì cong lưỡi."
+    },
+    {
+      "text": "不是",
+      "pinyin": "bú shì",
+      "hint": "shì cong lưỡi, i hẹp và đóng; chữ đầu đi lên thành bú, chỉ chữ sau rơi mạnh; cả cụm gọn."
+    },
+    {
+      "text": "三点",
+      "pinyin": "sān diǎn",
+      "hint": "sān là âm đầu phẳng, khép -n; diǎn nối tiếp cũng khép -n, cả cụm không có rung mũi sau."
+    },
+    {
+      "text": "见面",
+      "pinyin": "jiàn miàn",
+      "hint": "Hai tiếng liền nhau đều khép -n ở lợi; thêm -ng vào bất kỳ tiếng nào là đổi thành âm khác."
+    },
+    {
+      "text": "我们",
+      "pinyin": "wǒ men",
+      "hint": "men đọc nhẹ, thấp, gần như lướt; chỉ 我 giữ thanh 3 uốn đầy đủ."
+    }
+  ],
   "checkpoint": {
     "title": "Kiểm tra chặng 2 — nghe và nói ứng dụng",
     "practiceMinutes": 12,
@@ -205,7 +232,7 @@
       },
       {
         "transcript": "甲：我要一碗面条和两杯水。乙：面条八块，水一杯两块，一共十二块。甲：好，请不要放辣椒。",
-        "translation": "A: Tôi lấy một bát mì và hai cốc nước. B: Mì tám đồng, nước hai đồng một cốc, tổng mười hai đồng. A: Được, xin đừng cho ớt.",
+        "translation": "A: Tôi lấy một bát mì và hai cốc nước. B: Mì tám tệ, nước hai tệ một cốc, tổng mười hai tệ. A: Được, xin đừng cho ớt.",
         "questions": [
           {
             "prompt": "Tổng tiền?",
@@ -237,30 +264,30 @@
       {
         "kind": "repeat",
         "prompt": "Nghe rồi nhắc lại hai câu ngắn.",
-        "audioText": "现在是下午四点。我们在学校见面。",
+        "audioText": "我们先去商店，再去学校。我们在学校前面见面。",
         "prepareSeconds": 15,
         "responseSeconds": 30,
-        "reference": "现在是下午四点。我们在学校见面。",
+        "reference": "我们先去商店，再去学校。我们在学校前面见面。",
         "checklist": [
           "Giữ đúng dữ kiện",
           "Không thêm sự kiện không có trong bài",
           "Nói rõ và có trình tự"
         ],
-        "pinyin": "xiàn zài shì xià wǔ sì diǎn 。 wǒ men zài xué xiào jiàn miàn 。"
+        "pinyin": "wǒ men xiān qù shāng diàn ， zài qù xué xiào 。 wǒ men zài xué xiào qián miàn jiàn miàn 。"
       },
       {
         "kind": "answer",
-        "prompt": "请介绍自己，再约一个见面时间。",
-        "promptVi": "Giới thiệu ngắn rồi hẹn giờ gặp.",
+        "prompt": "请约一个见面时间，再问对方想去哪里。",
+        "promptVi": "Hẹn giờ gặp rồi hỏi nơi người đó muốn đến.",
         "prepareSeconds": 15,
         "responseSeconds": 30,
-        "reference": "我叫小安。我们明天下午三点见面，好吗？",
+        "reference": "我们明天下午三点见面，好吗？你想先去哪里？",
         "checklist": [
           "Đúng trọng tâm",
           "Có chi tiết cụ thể",
           "Tự nói không nhìn mẫu"
         ],
-        "pinyin": "wǒ jiào xiǎo ān 。 wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？"
+        "pinyin": "wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？ nǐ xiǎng xiān qù nǎ lǐ ？"
       }
     ],
     "glossary": [
@@ -310,6 +337,12 @@
         "word": "十二",
         "pinyin": "shí èr",
         "meaningVi": "mười hai"
+      },
+      {
+        "word": "想",
+        "pinyin": "xiǎng",
+        "meaningVi": "muốn",
+        "note": "Từ chưa có trong vocab bài 1–11; chú giải ngay tại checkpoint."
       }
     ]
   }

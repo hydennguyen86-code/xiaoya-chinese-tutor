@@ -35,7 +35,7 @@
       "example": "这儿冬天很冷，零下十度。",
       "exampleVi": "Mùa đông ở đây rất lạnh, âm mười độ.",
       "pinyin": "lěng",
-      "examplePinyin": "zhè ér dōng tiān hěn lěng ， líng xià shí dù 。"
+      "examplePinyin": "zhèr dōng tiān hěn lěng ， líng xià shí dù 。"
     },
     {
       "word": "热",
@@ -68,7 +68,7 @@
       "explanation": "Hỏi dự báo: 明天天气怎么样 đứng nguyên một câu, không thêm 吗; muốn biết mặc gì thì hỏi tiếp 要不要带……？",
       "example": "你看一下明天天气怎么样，我得决定穿什么。",
       "exampleVi": "Bạn xem giúp mai thời tiết thế nào, tôi phải quyết định mặc gì.",
-      "examplePinyin": "nǐ kàn yí xià míng tiān tiān qì zěn me yàng ， wǒ dé jué dìng chuān shén me 。"
+      "examplePinyin": "nǐ kàn yí xià míng tiān tiān qì zěn me yàng ， wǒ děi jué dìng chuān shén me 。"
     },
     {
       "pattern": "记得带……",
@@ -140,7 +140,7 @@
         "explanation": "B nói 明天早上就是晴天了."
       }
     ],
-    "pinyin": "jiǎ ： jīn tiān wài miàn tiān qì zěn me yàng ？ jiàng wēn le ma ？ yǐ ： xià le diǎn ér xiǎo yǔ ， yǒu diǎn er lěng 。 jiǎ ： nà wǒ qù kāi huì chuān shén me ？ yǐ ： chuān nà jiàn shēn sè de wài tào ba ， jì de dài sǎn 。 jiǎ ： hǎo 。 xià wǔ hái xià ma ？ yǐ ： shuō míng tiān zǎo shang jiù shì qíng tiān le 。 jiǎ ： nà wǒ xiān bǎ xié huàn xià lái 。"
+    "pinyin": "jiǎ ： jīn tiān wài miàn tiān qì zěn me yàng ？ jiàng wēn le ma ？ yǐ ： xià le diǎnr xiǎo yǔ ， yǒu diǎnr lěng 。 jiǎ ： nà wǒ qù kāi huì chuān shén me ？ yǐ ： chuān nà jiàn shēn sè de wài tào ba ， jì de dài sǎn 。 jiǎ ： hǎo 。 xià wǔ hái xià ma ？ yǐ ： shuō míng tiān zǎo shang jiù shì qíng tiān le 。 jiǎ ： nà wǒ xiān bǎ xié huàn xià lái 。"
   },
   "speaking": [
     {
@@ -207,7 +207,7 @@
     {
       "text": "下雨",
       "pinyin": "xià yǔ",
-      "hint": "Chữ đầu thanh 4 hạ mạnh, chữ sau thanh 3 uốn thấp; tròn môi ở cả hai âm tiết."
+      "hint": "Chữ đầu thanh 4 hạ mạnh, chữ sau thanh 3 uốn thấp và tròn môi vì mang ü; chữ đầu mở rộng, không tròn."
     },
     {
       "text": "外套",

@@ -40,6 +40,11 @@ Chỉ bỏ dấu thanh ở đúng âm tiết liệt kê; không đổi chữ cá
 | 左边 | zuǒ bian | âm tiết 2 |
 | 右边 | yòu bian | âm tiết 2 |
 | 早上 | zǎo shang | âm tiết 2 |
+| 麻烦 | má fan | âm tiết 2 |
+| 清楚 | qīng chu | âm tiết 2 |
+| 关系 | guān xi | âm tiết 2 |
+
+Ba từ 麻烦、清楚、关系 thêm vào 2026-10-28 vì đều là **必读轻声** trong chuẩn khảo thí Phổ thông thoại (PSC): từ điển ghi nhẹ và không có cách đọc thanh đầy đủ nào là chuẩn.
 
 Hư từ đứng sau một âm tiết Hán luôn đọc nhẹ: 们、么、吧、吗、呢、啊、呀、哦、嘛.
 
@@ -61,21 +66,31 @@ Danh sách này là **nguồn duy nhất** trong `server/coursePinyin.mjs` (đ�
 
 Giữ dạng đọc bề mặt do `pinyin-pro` trả về: `一杯` → `yì bēi`, `不是` → `bú shì`. Không tự đổi về `yī`/`bù` trong pinyin nội dung; nếu cần dạy thanh gốc, ghi trong `learningNotes` hoặc `focus`.
 
-## 5. Chưa chốt (cần giáo viên quyết)
+## 5. Từ 可轻读 — đã chốt 2026-10-28: giữ thanh đầy đủ
 
-Các từ sau cũng thường được từ điển ghi nhẹ, nhưng **chưa** đưa vào danh sách áp dụng:
+Các từ sau từ điển cho phép đọc nhẹ âm tiết 2 nhưng chuẩn PSC xếp vào nhóm **可轻读** (không bắt buộc nhẹ, khác với 必读轻声 ở §2). Quyết định: **giữ thanh đầy đủ** trong học liệu:
 
 | Từ | Đang ghi | Ghi chú |
 |---|---|---|
-| 哪里 | nǎ lǐ | Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt. |
-| 多少 | duō shǎo | Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt. |
-| 这里 | zhè lǐ | Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt. |
-| 那里 | nà lǐ | Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt. |
-| 哪儿 | nǎ ér | Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt. |
+| 哪里 | nǎ lǐ | 可轻读; giữ thanh đầy đủ. |
+| 多少 | duō shǎo | 可轻读; giữ thanh đầy đủ. |
+| 这里 | zhè lǐ | 可轻读; giữ thanh đầy đủ. |
+| 那里 | nà lǐ | 可轻读; giữ thanh đầy đủ. |
+| 哪儿 | nǎr | Đã gộp erhua (xem §6); thanh nhẹ không còn áp dụng. |
 
-Nếu chốt đưa các từ này vào, phải chạy lại toàn bộ generator và kiểm tra lại, không sửa lẻ từng file.
+Nếu sau này có giáo viên chốt đổi, phải chạy lại toàn bộ generator và kiểm tra lại, không sửa lẻ từng file.
 
-## 6. Bản vá checkpoint HSK1
+## 6. 儿 hoá (erhua) — đã chốt 2026-10-28
+
+Với 6 từ `点儿 这儿 哪儿 那儿 会儿 事儿`, 儿 nói thêm -r vào âm tiết trước, gộp thành **một** âm tiết: `nǎr`, `zhèr`, `diǎnr`, `huìr`, `shìr`. Áp dụng đồng bộ ở cả ba tầng để hiển thị, mảng thanh và bộ chấm không bao giờ lệch nhau:
+
+- `pinyinCitation` (hiển thị): `哪儿` → `nǎr`, `一点儿` → `yì diǎnr` — không còn `nǎ ér` hai âm tiết.
+- `readSentence` (dictation/shadowing): cắt lát `parts`/`tones`/`dict`/`baseTones` đã gộp; `syllables` đếm bằng `syllableCount()`.
+- `expectedTones` trong `server/tones.mjs` (bộ chấm): trả âm tiết gộp `{ char: '哪儿', pinyin: 'nǎr', expected: 3 }` để `segment()` chia đúng 1 đoạn.
+
+Quy tắc ngoại lệ: `儿子 女儿 儿科 三个儿子` giữ 儿 đứng riêng (từ riêng, không phải erhua). 儿 trong các từ gộp luôn thanh 2, không bao giờ bị hạ 3+3 hay đọc nhẹ, nên gộp sau khi tính thanh là an toàn. Nội dung bài học đã chạy lại bằng công cụ regen; ghi chú `focus` dạy cách đọc đã sửa theo dạng dính (ví dụ "有点儿 yóu diǎnr: 儿 hoá thành r dính vào diǎn, đọc một âm tiết diǎnr").
+
+## 7. Bản vá checkpoint HSK1
 
 Hai bản vá chỉ **thêm** trường, không sửa trường gốc, giữ `official: false`:
 
@@ -91,7 +106,34 @@ Mỗi bản vá thêm:
 
 Cách áp dụng: mở bản sao của file đích, thêm đúng các trường theo `ops`; **không** sửa repo `xiaoya-chinese-tutor` gốc. Các bản vá là đề xuất của AI, chưa được duyệt.
 
-## 7. Kiểm tra
+## 8. Bảng khoá cách đọc đa âm (POLYPHONE_LOCKS)
+
+`pinyin-pro` tự đoán cách đọc theo ngữ cảnh và thỉnh thoảng đọc sai một từ mà chính nó tra đúng khi để từ đó đứng một mình (银行人 → `yín xíng rén`, 别着急 → `zhe jí`). Repo khoá sẵn các chuỗi hay gặp trong học liệu:
+
+| Chuỗi | Cách đọc khoá | Lý do |
+|---|---|---|
+| 银行 | yín háng | 行 ở đây không phải `xíng` |
+| 着急 | zháo jí | 着 đọc `zháo`, không phải `zhe` |
+| 钥匙 | yào shi | âm tiết 2 đọc nhẹ |
+| 便宜 | pián yi | 便 đọc `pián`, 宜 đọc nhẹ |
+| 还是 | hái shì | 还 đọc `hái` (từ để hỏi), không phải `huán` |
+| 写得 / 说得 / 跑得 / 冷得 / 好得 / 用得 / 坐得 / 担得 / 睡得 / 练得 / 背得 / 行得 / 多得 | V + de | 得 làm bổ ngữ tố đứng sau động từ/tính từ đọc nhẹ; `pinyin-pro` ghi `dé` |
+| 我得加班, 就得用, 还得看, ，得改, ，得早 | děi | 得 = "phải" là `děi`. Khoá cả chữ đứng sau vì `我得` một mình sẽ bắt nhầm `我得到` (dé), `得早` sẽ bắt nhầm `觉得早上` |
+| 不便(宜) | bù pián yi | 不 chỉ hoá `bú` trước thanh 4; `pinyin-pro` nhầm trước 便宜 (thanh 2) |
+| 一起 | yì qǐ | Mất biến điệu sau một số ngữ cảnh (周六一起看 → `yī qǐ`) |
+| 有空 | yǒu kòng | 空 nghĩa "rảnh" đọc `kòng` thanh 4; `pinyin-pro` ghi `kōng` thanh 1 |
+| 空着 | kòng zhe | 空 nghĩa "còn trống" đọc `kòng`; `pinyin-pro` ghi `kōng` |
+| 只送 / 只看 / 只统计 / 只访问 | zhǐ + V | 只 = "chỉ" đọc `zhǐ`; `pinyin-pro` ghi `zhī` trước một số động từ |
+| 一千 | yì qiān | 一 biến điệu thành `yì` trước thanh 1; `pinyin-pro` trả `yī` khi 一千八百 đứng trong câu dài |
+| 时候还。 | huán | 还 cuối câu sau 时候 = "trả lại" đọc `huán`; `pinyin-pro` ghi `hái`. Kèm dấu câu để không bắt nhầm 的时候还没… (hái) |
+
+Lưu ý: trong kiểu câu A不A (是不是, 好不好, 能不能, 贵不贵) `pinyin-pro` đã ghi 不 nhẹ (`bu`) — đó là cách đọc đúng, không khoá thêm. 一 trong 十一点、星期一、一号线、二加一、走一走 giữ `yī`/`yi` đúng, không phải lỗi. `pinyin-pro` cũng đọc đúng 没空 (`méi kòng`), 空白 (`kòng bái`) — không cần khoá; 空调/空气/航空 (`kōng` thanh 1) là nghĩa khác của 空.
+
+Bảng nằm trong `src/lib/coursePinyin.mjs` và được áp cho **cả** `pinyinCitation` (chữ hiển thị, chép chính tả, validator) lẫn `readSentence` (bộ chấm thanh), nên không thể xảy ra chuyện màn hình hiện một cách đọc còn máy chấm dùng cách khác. Test: `server/coursePinyin.test.mjs`.
+
+Thêm từ vào bảng khi: (a) từ đó xuất hiện trong học liệu, (b) `pinyin-pro` trả sai trong ít nhất một ngữ cảnh đã kiểm, và (c) cách đọc khoá là cách đọc đúng ở **mọi** ngữ cảnh trong repo (không dùng cho chữ có hai cách đọc đều hợp lệ). Sau khi thêm, sinh lại mọi trường pinyin từ đúng chữ Hán nguồn của nó (không sửa lẻ từng file), rồi chạy `npm test` và `node scripts/check-course-day2.mjs`.
+
+## 9. Kiểm tra
 
 Các bản vá được soạn và kiểm tra ngoài repo (thư mục nội dung riêng của người soạn). Trong repo, kiểm tra học liệu sau khi áp dụng bằng:
 

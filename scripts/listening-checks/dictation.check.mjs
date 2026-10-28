@@ -7,7 +7,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { pinyin } from 'pinyin-pro';
+import { readSentence } from '../../server/listeningPinyin.mjs';
+import { neutralPositions, lockNeutralPositions } from '../../server/coursePinyin.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(HERE, '../../lessons/listening/dictation.json');
@@ -23,31 +24,9 @@ const LEVEL_BY_PREFIX = { 1: 'HSK1-2', 2: 'HSK3-4', 3: 'HSK5-6' };
 const PER_LEVEL = 60;
 const SAME = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
-// Âm tiết viết không dấu = thanh nhẹ; chỉ chấp nhận ở chữ/hậu tố thường đọc nhẹ.
-// Hai danh sách dưới đây phải khớp NEUTRAL / NEUTRAL_SUFFIX trong _make-dictation.mjs.
-const NEUTRAL_SUFFIX = new Set(['们', '么', '的', '了', '吧', '吗', '呢', '啊', '呀', '哦', '嘛']);
-const NEUTRAL_LEXICAL = {
-  朋友: [1], 妈妈: [1], 爸爸: [1], 哥哥: [1], 姐姐: [1], 弟弟: [1], 妹妹: [1],
-  什么: [1], 桌子: [1], 椅子: [1], 东西: [1], 谢谢: [1], 觉得: [1], 知道: [1],
-  时候: [1], 漂亮: [1], 衣服: [1], 玻璃: [1], 豆腐: [1], 萝卜: [1], 葡萄: [1],
-  客气: [1], 便宜: [1], 休息: [1], 名字: [1], 右边: [1], 左边: [1], 爷爷: [1], 奶奶: [1],
-  早上: [1], 晚上: [1], 商量: [1], 明白: [1],
-};
-
-/** các vị trí âm tiết được phép đọc nhẹ trong câu */
+/** các vị trí âm tiết được phép đọc nhẹ trong câu — theo chính sách của engine */
 function neutralSlots(text) {
-  const allowed = new Set();
-  for (const [word, idxs] of Object.entries(NEUTRAL_LEXICAL)) {
-    let start = text.indexOf(word);
-    while (start >= 0) {
-      for (const k of idxs) allowed.add(start + k);
-      start = text.indexOf(word, start + word.length);
-    }
-  }
-  [...text].forEach((c, i) => {
-    if (i > 0 && NEUTRAL_SUFFIX.has(c)) allowed.add(i);
-  });
-  return allowed;
+  return new Set([...neutralPositions(text), ...lockNeutralPositions(text)]);
 }
 
 const TONE_MARK = { '\u0300': 4, '\u0301': 2, '\u0304': 1, '\u030C': 3 };
@@ -73,12 +52,12 @@ function stripTone(syllable) {
 
 const hanOnly = (str) => [...String(str)].filter((c) => HAN.test(c)).join('');
 
-// pinyin-pro theo cả câu: tự phân từ nên phân biệt đa âm (银行 vs 行走) và đã gộp biến điệu 一/不.
-// Nó KHÔNG áp biến điệu 3+3, nên surface bên dưới mới thêm.
+// Lấy thanh từ engine (pinyin-pro + khoá đa âm), cùng nguồn với bộ chấm của app.
+// Engine KHÔNG áp biến điệu 3+3 vào dict, nên surface bên dưới mới thêm.
 function reference(text) {
-  const parsed = pinyin(text, { pattern: 'tone', type: 'array' }).map((s) => stripTone(s));
-  const letters = parsed.map((p) => p.letters);
-  const dict = parsed.map((p) => p.tone);
+  const r = readSentence(text, [], [], {});
+  const letters = r.parts.map((s) => stripTone(s).letters);
+  const dict = r.dict;
   const chars = [...text];
   const base = dict.map((t, i) => (chars[i] === '一' ? 1 : chars[i] === '不' ? 4 : t));
   const surface = [...dict];

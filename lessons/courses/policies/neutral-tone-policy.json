@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updated": "2026-10-25",
+  "version": 2,
+  "updated": "2026-10-28",
   "status": "AI đề xuất, chưa có giáo viên duyệt",
   "sourceOfTruth": "lessons/courses/policies/neutral-tone-policy.json; implementation: server/coursePinyin.mjs",
   "registers": {
@@ -317,6 +317,15 @@
     ],
     "小伙子": [
       2
+    ],
+    "麻烦": [
+      1
+    ],
+    "清楚": [
+      1
+    ],
+    "关系": [
+      1
     ]
   },
   "suffixNeutral": [
@@ -425,31 +434,31 @@
       "word": "哪里",
       "current": "nǎ lǐ",
       "pinyinPro": "nǎ lǐ",
-      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+      "note": "可轻读 (PSC không bắt buộc nhẹ); đã chốt 2026-10-28: giữ thanh đầy đủ."
     },
     {
       "word": "多少",
       "current": "duō shǎo",
       "pinyinPro": "duō shǎo",
-      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+      "note": "可轻读 (PSC không bắt buộc nhẹ); đã chốt 2026-10-28: giữ thanh đầy đủ."
     },
     {
       "word": "这里",
       "current": "zhè lǐ",
       "pinyinPro": "zhè lǐ",
-      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+      "note": "可轻读 (PSC không bắt buộc nhẹ); đã chốt 2026-10-28: giữ thanh đầy đủ."
     },
     {
       "word": "那里",
       "current": "nà lǐ",
       "pinyinPro": "nà lǐ",
-      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+      "note": "可轻读 (PSC không bắt buộc nhẹ); đã chốt 2026-10-28: giữ thanh đầy đủ."
     },
     {
       "word": "哪儿",
-      "current": "nǎ ér",
-      "pinyinPro": "nǎ ér",
-      "note": "Từ điển thường ghi âm tiết 2 nhẹ; chưa đưa vào danh sách áp dụng vì ngoài phạm vi 5 cảnh báo 3.3, cần giáo viên chốt."
+      "current": "nǎr",
+      "pinyinPro": "nǎr",
+      "note": "Đã gộp erhua thành nǎr (2026-10-28); thanh nhẹ không còn áp dụng."
     }
   ]
 }

@@ -90,7 +90,7 @@
       "id": "sh-3-29",
       "level": "HSK5-6",
       "text": "我想确认一下，租金包含水电费吗？押金是多少？合同里的维修条款也要看清楚。",
-      "pinyin": "wó xiǎng què rèn yí xià zū jīn bāo hán shuǐ diàn fèi ma yā jīn shì duō shǎo hé tong lǐ de wéi xiū tiáo kuán yě yào kàn qīng chǔ",
+      "pinyin": "wó xiǎng què rèn yí xià zū jīn bāo hán shuǐ diàn fèi ma yā jīn shì duō shǎo hé tong lǐ de wéi xiū tiáo kuán yě yào kàn qīng chu",
       "meaningVi": "Tôi muốn xác nhận một chút, tiền thuê có bao gồm điện nước không? Tiền đặt cọc là bao nhiêu? Điều khoản sửa chữa trong hợp đồng cũng phải xem rõ.",
       "syllables": 32,
       "pace": "vừa",
@@ -112,7 +112,7 @@
         },
         {
           "hanzi": "合同里的维修条款也要看清楚",
-          "pinyin": "hé tong lǐ de wéi xiū tiáo kuán yě yào kàn qīng chǔ",
+          "pinyin": "hé tong lǐ de wéi xiū tiáo kuán yě yào kàn qīng chu",
           "pause": "end"
         }
       ],
@@ -154,7 +154,7 @@
         4,
         4,
         1,
-        3
+        5
       ],
       "acceptTones": [
         [
@@ -189,7 +189,7 @@
           4,
           4,
           1,
-          3
+          5
         ],
         [
           3,
@@ -223,7 +223,7 @@
           4,
           4,
           1,
-          3
+          5
         ]
       ],
       "hint": "Biến điệu 3+3: wǒ xiǎng → wó xiǎng; kuǎn yě → kuán yě — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-4-4-2-4-1-1-1-2-3-4-4-5-1-1-4-1-3-2-5-3-5-2-1-2-2-3-4-4-1-3 lẫn 3-3-4-4-2-4-1-1-1-2-3-4-4-5-1-1-4-1-3-2-5-3-5-2-1-2-3-3-4-4-1-3."

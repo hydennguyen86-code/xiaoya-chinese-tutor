@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pinyin } from 'pinyin-pro';
+import { syllableCount, erhuaIndices, neutralPositions, lockNeutralPositions } from '../../server/coursePinyin.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(HERE, '../../lessons/listening/shadowing.json');
@@ -25,7 +26,7 @@ const TONE_BY_CODE = { 0x0300: 4, 0x0301: 2, 0x0304: 1, 0x030C: 3 };
 
 const isCombining = (ch) => {
   const c = ch.charCodeAt(0);
-  return c >= 0x0300 && c <= 0x036f;
+  return c >= 0x0300 && c <= 0x036f && c !== 0x0308;
 };
 
 function stripTone(syllable) {
@@ -43,28 +44,20 @@ function stripTone(syllable) {
 
 const hanOnly = (s) => [...s].filter((c) => HAN.test(c)).join('');
 
-// Phải khớp NEUTRAL trong _pinyin-utils.mjs.
-const NEUTRAL_LEXICAL = ['朋友', '妈妈', '爸爸', '哥哥', '姐姐', '弟弟', '妹妹', '什么', '桌子', '椅子', '东西', '谢谢', '觉得', '知道', '时候', '漂亮', '衣服', '玻璃', '豆腐', '萝卜', '葡萄', '客气', '便宜', '休息', '名字', '右边', '左边', '爷爷', '奶奶', '早上', '晚上', '商量', '明白'];
-const NEUTRAL_SUFFIX = new Set(['们', '么', '的', '了', '吧', '吗', '呢', '啊', '呀', '哦', '嘛']);
+// Vị trí đọc nhẹ lấy thẳng từ chính sách của engine (policy JSON + khoá đa âm).
+const NEUTRAL_POSITIONS = (text) => new Set([...neutralPositions(text), ...lockNeutralPositions(text)]);
 
-/** Tập hợp chuỗi thanh mà mục này có thể mang: pinyin-pro + nhẹ + biến điệu 3+3. */
+/** Tập hợp chuỗi thanh mà mục này có thể mang: pinyin-pro + nhẹ + biến điệu 3+3 (đã gộp 儿 hoá). */
 function allowedToneForms(text) {
   const chars = [...text];
   const dict = pinyin(text, { pattern: 'tone', type: 'array' }).map(stripTone).map((p) => p.tone);
-  const neutralPos = new Set();
-  for (const w of NEUTRAL_LEXICAL) {
-    let start = text.indexOf(w);
-    while (start >= 0) {
-      neutralPos.add(start + w.length - 1);
-      start = text.indexOf(w, start + w.length);
-    }
-  }
-  chars.forEach((c, i) => {
-    if (i > 0 && NEUTRAL_SUFFIX.has(c)) neutralPos.add(i);
-  });
+  const neutralPos = NEUTRAL_POSITIONS(text);
   const nIdx = [...neutralPos].filter((i) => i < dict.length).sort((a, b) => a - b);
   const trios = [];
   for (let i = 0; i + 1 < dict.length; i += 1) if (dict[i] === 3 && dict[i + 1] === 3) trios.push(i);
+
+  const erhua = erhuaIndices(text);
+  const project = (t) => t.filter((_, i) => !erhua.has(i));
 
   const forms = new Set();
   const base = [...dict];
@@ -78,9 +71,9 @@ function allowedToneForms(text) {
         if (t[i] === 3) t[i] = 2;
       }
     }
-    forms.add(t.join('-'));
+    forms.add(project(t).join('-'));
   }
-  return { dict: dict.join('-'), forms };
+  return { dict: project(dict).join('-'), forms };
 }
 
 let data;
@@ -136,24 +129,32 @@ for (const it of items) {
   }
   if (chunks[chunks.length - 1].pause !== 'end') fail(id, 'chunk cuối phải có pause=end');
 
-  // 2) pinyin
+  // 2) pinyin (đã gộp 儿 hoá: 哪儿 là một âm tiết nǎr)
   const syls = String(it.pinyin ?? '').trim().split(/\s+/).filter(Boolean);
-  if (syls.length !== textHan.length) fail(id, `pinyin có ${syls.length} âm tiết nhưng đoạn có ${textHan.length} chữ Hán`);
+  if (syls.length !== syllableCount(textHan)) fail(id, `pinyin có ${syls.length} âm tiết nhưng đoạn có ${syllableCount(textHan)} âm tiết Hán`);
   const ref = pinyin(textHan, { pattern: 'tone', type: 'array' }).map(stripTone);
-  syls.forEach((s, i) => {
-    const { letters, tone } = stripTone(s);
-    if (!ref[i]) return;
-    if (letters !== ref[i].letters) fail(id, `pinyin "${s}" không khớp chữ "${textHan[i]}" (pinyin-pro: ${ref[i].letters}${ref[i].tone})`);
-  });
+  const erhua = erhuaIndices(textHan);
+  {
+    let j = 0;
+    [...textHan].forEach((ch, i) => {
+      if (erhua.has(i)) return; // chữ 儿 gộp vào âm tiết trước
+      const s = syls[j];
+      j += 1;
+      if (!s || !ref[i]) return;
+      const { letters } = stripTone(s);
+      const want = ref[i].letters + (erhua.has(i + 1) ? 'r' : '');
+      if (letters !== want) fail(id, `pinyin "${s}" không khớp chữ "${ch}" (chờ "${want}", thanh ${ref[i].tone})`);
+    });
+  }
   const allowed = allowedToneForms(textHan);
   const tones = syls.map((s) => stripTone(s).tone);
-  if (syls.length === textHan.length && !allowed.forms.has(tones.join('-'))) {
+  if (syls.length === syllableCount(textHan) && !allowed.forms.has(tones.join('-'))) {
     fail(id, `chuỗi thanh ${tones.join('-')} không nằm trong các dạng chấp nhận được (gốc: ${allowed.dict})`);
   }
   // pinyin của từng chunk phải là lát cắt của pinyin cả đoạn
   let cursor = 0;
   for (const c of chunks) {
-    const n = hanOnly(String(c.hanzi ?? '')).length;
+    const n = syllableCount(String(c.hanzi ?? ''));
     const want = syls.slice(cursor, cursor + n).join(' ');
     cursor += n;
     if (String(c.pinyin ?? '').trim() !== want) fail(id, `chunk "${c.hanzi}" có pinyin khác lát cắt của pinyin đoạn`);
