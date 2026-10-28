@@ -19,7 +19,7 @@
       "example": "银行五点关门，得早点去。",
       "exampleVi": "Ngân hàng năm giờ đóng cửa, phải đi sớm.",
       "pinyin": "yín háng",
-      "examplePinyin": "yín háng wǔ diǎn guān mén ， dé zǎo diǎn qù 。"
+      "examplePinyin": "yín háng wǔ diǎn guān mén ， děi zǎo diǎn qù 。"
     },
     {
       "word": "换钱",
@@ -67,7 +67,7 @@
       "example": "银行人很多，要排队。",
       "exampleVi": "Ngân hàng đông người, phải xếp hàng.",
       "pinyin": "pái duì",
-      "examplePinyin": "yín xíng rén hěn duō ， yào pái duì 。"
+      "examplePinyin": "yín háng rén hěn duō ， yào pái duì 。"
     },
     {
       "word": "现金",
@@ -118,8 +118,8 @@
       "Kể lại hai bước thao tác để xác nhận",
       "Nói mình sẽ chuyển một nửa cho bạn đi cùng"
     ],
-    "opening": "一共三十六块，可以扫码吗？",
-    "openingVi": "Tổng cộng ba mươi sáu tệ, quét mã được không ạ?"
+    "opening": "一共三十六块，现金还是扫码？",
+    "openingVi": "Tổng cộng ba mươi sáu tệ, trả tiền mặt hay quét mã?"
   },
   "freeTalk": {
     "question": "用手机付款有什么好处，又有什么不方便？",
@@ -137,8 +137,8 @@
   "listening": {
     "title": "Nghe buổi 2: Ngân hàng, đổi tiền và trả bằng điện thoại",
     "playLimit": 1,
-    "transcript": "顾客：老板，一共多少钱？老板：八十六块，收款码在这儿。顾客：我手机里没钱了，可以转账吗？老板：可以，你扫这个，备注写一下名字。顾客：好，我先扫码，然后输数，你到账了给我发个消息。老板：没问题。顾客：我朋友付他那一半，我现在给他转账。",
-    "translation": "Hóa đơn hết tám mươi sáu tệ, chủ quán chỉ mã nhận tiền. Khách hết tiền trong điện thoại nên xin chuyển khoản, được hướng dẫn quét mã và ghi tên vào phần chú thích. Khách kể lại hai bước, nhờ chủ quán nhắn khi tiền vào, đồng thời chuyển tiền cho bạn đi cùng để người ấy trả phần của mình.",
+    "transcript": "顾客：老板，一共多少钱？老板：八十六块，收款码在这儿。顾客：我没带现金，可以扫码转账吗？老板：可以，你扫这个，备注写一下名字。顾客：好，我先扫码，然后输金额，你到账了给我发个消息。老板：没问题。顾客：我朋友付他那一半，我现在给他转账。",
+    "translation": "Hóa đơn hết tám mươi sáu tệ, chủ quán chỉ mã nhận tiền. Khách không mang tiền mặt nên xin quét mã chuyển khoản, được hướng dẫn quét mã và ghi tên vào phần chú thích. Khách kể lại hai bước, nhờ chủ quán nhắn khi tiền vào, đồng thời chuyển tiền cho bạn đi cùng để người ấy trả phần của mình.",
     "questions": [
       {
         "prompt": "Hóa đơn hết bao nhiêu?",
@@ -155,10 +155,10 @@
         "options": [
           "Thẻ của khách bị mất",
           "Chủ quán không cho quét mã",
-          "Trong điện thoại không còn tiền"
+          "Không mang theo tiền mặt"
         ],
         "answer": 2,
-        "explanation": "顾客 nói 我手机里没钱了."
+        "explanation": "顾客 nói 我没带现金."
       },
       {
         "prompt": "Khách chuyển tiền cho bạn đi cùng để làm gì?",
@@ -171,7 +171,7 @@
         "explanation": "顾客 nói 我朋友付他那一半，我现在给他转账."
       }
     ],
-    "pinyin": "gù kè ： lǎo bǎn ， yí gòng duō shǎo qián ？ lǎo bǎn ： bā shí liù kuài ， shōu kuǎn mǎ zài zhè ér 。 gù kè ： wǒ shǒu jī lǐ méi qián le ， kě yǐ zhuǎn zhàng ma ？ lǎo bǎn ： kě yǐ ， nǐ sǎo zhè ge ， bèi zhù xiě yí xià míng zi 。 gù kè ： hǎo ， wǒ xiān sǎo mǎ ， rán hòu shū shù ， nǐ dào zhàng le gěi wǒ fā gè xiāo xī 。 lǎo bǎn ： méi wèn tí 。 gù kè ： wǒ péng you fù tā nà yí bàn ， wǒ xiàn zài gěi tā zhuǎn zhàng 。"
+    "pinyin": "gù kè ： lǎo bǎn ， yí gòng duō shǎo qián ？ lǎo bǎn ： bā shí liù kuài ， shōu kuǎn mǎ zài zhèr 。 gù kè ： wǒ méi dài xiàn jīn ， kě yǐ sǎo mǎ zhuǎn zhàng ma ？ lǎo bǎn ： kě yǐ ， nǐ sǎo zhè ge ， bèi zhù xiě yí xià míng zi 。 gù kè ： hǎo ， wǒ xiān sǎo mǎ ， rán hòu shū jīn é ， nǐ dào zhàng le gěi wǒ fā gè xiāo xī 。 lǎo bǎn ： méi wèn tí 。 gù kè ： wǒ péng you fù tā nà yí bàn ， wǒ xiàn zài gěi tā zhuǎn zhàng 。"
   },
   "speaking": [
     {

@@ -35,6 +35,30 @@ yourself (`data/syllabus/tiyan-hanyu-kouyu.json`, not in this repository). No
 text, dialogue or exercise from the book is included; the practice material is
 written by the local model.
 
+## HSK level lists used for the coverage table
+
+`lessons/courses/HSK-COVERAGE.md` compares the app's lessons against published
+HSK level lists. Those lists are **not** official documents from Hanban/CALES;
+they are community transcriptions released under the MIT license:
+
+| Derived file in this repo | Upstream data | License |
+|---|---|---|
+| `eval/hsk-standard.json`, `eval/hsk-standard.words.jsonl` (7,823 words with the lowest level each word reaches in HSK 2.0, HSK 3.0 (2021) and the 2025 revision) | [drkameleon/complete-hsk-vocabulary](https://github.com/drkameleon/complete-hsk-vocabulary), `complete.min.json` | [MIT](licenses/complete-hsk-vocabulary-MIT.txt) |
+| `eval/hsk-grammar-30.json` (425 grammar points, levels 1-6, from 624 rows) | [ivankra/hsk30](https://github.com/ivankra/hsk30), `hsk30-grammar.csv` | [MIT](licenses/hsk30-MIT.txt) |
+
+Only the derived files are committed; the 2.8 MB upstream sources stay outside
+the repository. `scripts/build-hsk-standard.mjs` regenerates them from the two
+downloaded files and pins each by SHA-256 inside `eval/hsk-standard.json`
+(along with the retrieval date):
+
+- `complete.min.json` — `52d8e64ba65a6db4a38ea34302c6de5df53cdb5145254b25edcbf93b80676434`
+- `hsk30-grammar.csv` — `9a546944af00976a3afb160fe70dd564a035d36eff82eb275b6aed7ed8a9ccf4`
+
+The derived lists carry no Misu lesson content, and the coverage table is a
+formal match between lesson files and these third-party level lists: it does
+not certify that a learner reaches any HSK level. See the "Giới hạn cần nói
+thẳng" section at the end of that file for what the numbers cannot show.
+
 ## Edge GEC v2 compatibility module
 
 `server/edgeGec.mjs` is a JavaScript port derived from

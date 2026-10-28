@@ -177,5 +177,27 @@
       "sampleVi": "Chào bạn, tôi không khỏe. Xin giúp tôi tìm bệnh viện. Bệnh viện ở đâu? Xin nói lại một lần."
     }
   ],
-  "transferTask": "Ở nơi lạ: nói không khỏe, nhờ tìm bệnh viện, hỏi vị trí và xin nhắc lại nếu chưa rõ."
+  "transferTask": "Ở nơi lạ: nói không khỏe, nhờ tìm bệnh viện, hỏi vị trí và xin nhắc lại nếu chưa rõ.",
+  "pronunciation": [
+    {
+      "text": "不舒服",
+      "pinyin": "bù shū fu",
+      "hint": "Âm cuối fu đọc nhẹ, không dấu; hai âm đầu giữ thanh đầy đủ, cả cụm rơi rồi lướt nhanh."
+    },
+    {
+      "text": "找，再",
+      "pinyin": "zhǎo ， zài",
+      "hint": "zhǎo cong lưỡi, zài phẳng sát lợi; với tai người Việt gần giống tr và z nhưng khác nhau rõ."
+    },
+    {
+      "text": "前面",
+      "pinyin": "qián miàn",
+      "hint": "Cả hai tiếng khép -n ở lợi, không rung mũi; đọc thành 'qiáng miàng' là đổi sang -ng."
+    },
+    {
+      "text": "请，说",
+      "pinyin": "qǐng ， shuō",
+      "hint": "qǐng là âm vòm phẳng mang -ng vang; shuō mở đầu bằng sh cong lưỡi, gốc lưỡi nâng lên."
+    }
+  ]
 }

@@ -1,0 +1,6212 @@
+{
+ "generatedBy": "scripts/hsk-coverage.mjs",
+ "ranAt": "2026-10-27T08:45:06.583Z",
+ "standard": [
+  {
+   "project": "complete-hsk-vocabulary",
+   "url": "https://github.com/drkameleon/complete-hsk-vocabulary",
+   "license": "MIT",
+   "file": "complete.min.json",
+   "sha256": "52d8e64ba65a6db4a38ea34302c6de5df53cdb5145254b25edcbf93b80676434",
+   "versions": {
+    "old": "HSK 2.0",
+    "new": "HSK 3.0 (2021)",
+    "newest": "HSK 3.0 bản sửa 2025"
+   },
+   "tagLegend": "o = HSK 2.0, n = HSK 3.0 (2021), t = bản sửa 2025; chữ số sau là mức."
+  },
+  {
+   "project": "hsk30 (ngữ pháp)",
+   "url": "https://github.com/ivankra/hsk30",
+   "license": "MIT",
+   "file": "hsk30-grammar.csv",
+   "sha256": "9a546944af00976a3afb160fe70dd564a035d36eff82eb275b6aed7ed8a9ccf4"
+  }
+ ],
+ "results": [
+  {
+   "track": "pinyin-intro",
+   "title": "Nhập môn Pinyin",
+   "band": "HSK 1–2",
+   "from": 1,
+   "to": 2,
+   "lessons": 10,
+   "vocabSlots": 60,
+   "distinctWords": 56,
+   "patterns": 20,
+   "pronunciationCards": 10,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 24,
+       "seen": 95,
+       "cumRequired": 150,
+       "cumTaught": 24,
+       "cumSeen": 95
+      },
+      "2": {
+       "required": 147,
+       "taught": 7,
+       "seen": 36,
+       "cumRequired": 297,
+       "cumTaught": 31,
+       "cumSeen": 131
+      },
+      "3": {
+       "required": 298,
+       "taught": 3,
+       "seen": 24,
+       "cumRequired": 595,
+       "cumTaught": 34,
+       "cumSeen": 155
+      },
+      "4": {
+       "required": 598,
+       "taught": 0,
+       "seen": 16,
+       "cumRequired": 1193,
+       "cumTaught": 34,
+       "cumSeen": 171
+      },
+      "5": {
+       "required": 1298,
+       "taught": 2,
+       "seen": 11,
+       "cumRequired": 2491,
+       "cumTaught": 36,
+       "cumSeen": 182
+      },
+      "6": {
+       "required": 2500,
+       "taught": 0,
+       "seen": 1,
+       "cumRequired": 4991,
+       "cumTaught": 36,
+       "cumSeen": 183
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 36,
+      "seen": 183
+     },
+     "band": {
+      "required": 297,
+      "taught": 31,
+      "seen": 131,
+      "cumRequired": 297,
+      "cumTaught": 31,
+      "cumSeen": 131
+     },
+     "outside": [
+      {
+       "word": "绿",
+       "pinyin": "lǜ",
+       "level": 3
+      },
+      {
+       "word": "马",
+       "pinyin": "Mǎ",
+       "level": 3
+      },
+      {
+       "word": "米",
+       "pinyin": "Mǐ",
+       "level": 3
+      },
+      {
+       "word": "骂",
+       "pinyin": "mà",
+       "level": 5
+      },
+      {
+       "word": "诗",
+       "pinyin": "Shī",
+       "level": 5
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 126,
+       "neverSeen": 55
+      },
+      "2": {
+       "notTaught": 140,
+       "neverSeen": 111
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 36,
+       "seen": 167,
+       "cumRequired": 506,
+       "cumTaught": 36,
+       "cumSeen": 167
+      },
+      "2": {
+       "required": 750,
+       "taught": 6,
+       "seen": 52,
+       "cumRequired": 1256,
+       "cumTaught": 42,
+       "cumSeen": 219
+      },
+      "3": {
+       "required": 953,
+       "taught": 2,
+       "seen": 11,
+       "cumRequired": 2209,
+       "cumTaught": 44,
+       "cumSeen": 230
+      },
+      "4": {
+       "required": 972,
+       "taught": 2,
+       "seen": 10,
+       "cumRequired": 3181,
+       "cumTaught": 46,
+       "cumSeen": 240
+      },
+      "5": {
+       "required": 1059,
+       "taught": 1,
+       "seen": 7,
+       "cumRequired": 4240,
+       "cumTaught": 47,
+       "cumSeen": 247
+      },
+      "6": {
+       "required": 1123,
+       "taught": 0,
+       "seen": 9,
+       "cumRequired": 5363,
+       "cumTaught": 47,
+       "cumSeen": 256
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 47,
+      "seen": 256
+     },
+     "band": {
+      "required": 1256,
+      "taught": 42,
+      "seen": 219,
+      "cumRequired": 1256,
+      "cumTaught": 42,
+      "cumSeen": 219
+     },
+     "outside": [
+      {
+       "word": "咖啡",
+       "pinyin": "kā fēi",
+       "level": 3
+      },
+      {
+       "word": "马",
+       "pinyin": "Mǎ",
+       "level": 3
+      },
+      {
+       "word": "诗",
+       "pinyin": "Shī",
+       "level": 4
+      },
+      {
+       "word": "王",
+       "pinyin": "Wáng",
+       "level": 4
+      },
+      {
+       "word": "骂",
+       "pinyin": "mà",
+       "level": 5
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 470,
+       "neverSeen": 339
+      },
+      "2": {
+       "notTaught": 744,
+       "neverSeen": 698
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 28,
+       "seen": 130,
+       "cumRequired": 294,
+       "cumTaught": 28,
+       "cumSeen": 130
+      },
+      "2": {
+       "required": 197,
+       "taught": 6,
+       "seen": 37,
+       "cumRequired": 491,
+       "cumTaught": 34,
+       "cumSeen": 167
+      },
+      "3": {
+       "required": 487,
+       "taught": 5,
+       "seen": 32,
+       "cumRequired": 978,
+       "cumTaught": 39,
+       "cumSeen": 199
+      },
+      "4": {
+       "required": 972,
+       "taught": 1,
+       "seen": 13,
+       "cumRequired": 1950,
+       "cumTaught": 40,
+       "cumSeen": 212
+      },
+      "5": {
+       "required": 1547,
+       "taught": 3,
+       "seen": 16,
+       "cumRequired": 3497,
+       "cumTaught": 43,
+       "cumSeen": 228
+      },
+      "6": {
+       "required": 1684,
+       "taught": 0,
+       "seen": 10,
+       "cumRequired": 5181,
+       "cumTaught": 43,
+       "cumSeen": 238
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 43,
+      "seen": 238
+     },
+     "band": {
+      "required": 491,
+      "taught": 34,
+      "seen": 167,
+      "cumRequired": 491,
+      "cumTaught": 34,
+      "cumSeen": 167
+     },
+     "outside": [
+      {
+       "word": "马",
+       "pinyin": "Mǎ",
+       "level": 3
+      },
+      {
+       "word": "米",
+       "pinyin": "Mǐ",
+       "level": 3
+      },
+      {
+       "word": "怕",
+       "pinyin": "Pà",
+       "level": 3
+      },
+      {
+       "word": "山",
+       "pinyin": "Shān",
+       "level": 3
+      },
+      {
+       "word": "子",
+       "pinyin": "zǐ",
+       "level": 3
+      },
+      {
+       "word": "生",
+       "pinyin": "shēng",
+       "level": 4
+      },
+      {
+       "word": "白",
+       "pinyin": "Bái",
+       "level": 5
+      },
+      {
+       "word": "骂",
+       "pinyin": "mà",
+       "level": 5
+      },
+      {
+       "word": "诗",
+       "pinyin": "Shī",
+       "level": 5
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 266,
+       "neverSeen": 164
+      },
+      "2": {
+       "notTaught": 191,
+       "neverSeen": 160
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 2,
+      "used": 8,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 7
+     },
+     "2": {
+      "items": 82,
+      "taught": 0,
+      "used": 19,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 12
+     },
+     "3": {
+      "items": 81,
+      "taught": 0,
+      "used": 16,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 7
+     },
+     "4": {
+      "items": 76,
+      "taught": 0,
+      "used": 6,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 2
+     },
+     "5": {
+      "items": 71,
+      "taught": 0,
+      "used": 6,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 3
+     },
+     "6": {
+      "items": 67,
+      "taught": 0,
+      "used": 6,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 1
+     }
+    },
+    "band": {
+     "items": 130,
+     "taught": 2,
+     "used": 27,
+     "weak": 70,
+     "strong": 40,
+     "strongUsed": 19
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "这儿",
+       "那儿",
+       "这里",
+       "那里",
+       "这些",
+       "那些"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "马上",
+       "有时",
+       "正在"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "动作的态",
+      "category": "动作的态",
+      "details": "进行态",
+      "markers": [
+       "正在"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "疑问代词",
+      "markers": [
+       "多久"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "那么",
+       "那样",
+       "这么",
+       "这样"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "重新",
+       "经常",
+       "老是"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "必须",
+       "差不多",
+       "好像",
+       "也许"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "可能",
+       "可以"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "应该"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "越来越"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "不但",
+       "而且"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "如果",
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "只要"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "不如",
+       "这么",
+       "那么"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“是……的”句",
+      "markers": [
+       "地点",
+       "方式"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子成分",
+      "category": "补语",
+      "details": "结果补语",
+      "markers": [
+       "干净",
+       "清楚"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "不过",
+       "但是",
+       "而且",
+       "如果",
+       "虽然",
+       "只要"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "track": "hsk1-practical",
+   "title": "HSK 1 · Nghe nói thực tế",
+   "band": "HSK 1–2",
+   "from": 1,
+   "to": 2,
+   "lessons": 24,
+   "vocabSlots": 166,
+   "distinctWords": 100,
+   "patterns": 48,
+   "pronunciationCards": 24,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 58,
+       "seen": 99,
+       "cumRequired": 150,
+       "cumTaught": 58,
+       "cumSeen": 99
+      },
+      "2": {
+       "required": 147,
+       "taught": 16,
+       "seen": 36,
+       "cumRequired": 297,
+       "cumTaught": 74,
+       "cumSeen": 135
+      },
+      "3": {
+       "required": 298,
+       "taught": 5,
+       "seen": 29,
+       "cumRequired": 595,
+       "cumTaught": 79,
+       "cumSeen": 164
+      },
+      "4": {
+       "required": 598,
+       "taught": 5,
+       "seen": 15,
+       "cumRequired": 1193,
+       "cumTaught": 84,
+       "cumSeen": 179
+      },
+      "5": {
+       "required": 1298,
+       "taught": 1,
+       "seen": 10,
+       "cumRequired": 2491,
+       "cumTaught": 85,
+       "cumSeen": 189
+      },
+      "6": {
+       "required": 2500,
+       "taught": 0,
+       "seen": 1,
+       "cumRequired": 4991,
+       "cumTaught": 85,
+       "cumSeen": 190
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 85,
+      "seen": 190
+     },
+     "band": {
+      "required": 297,
+      "taught": 74,
+      "seen": 135,
+      "cumRequired": 297,
+      "cumTaught": 74,
+      "cumSeen": 135
+     },
+     "outside": [
+      {
+       "word": "见面",
+       "pinyin": "jiàn miàn",
+       "level": 3
+      },
+      {
+       "word": "面条",
+       "pinyin": "miàn tiáo",
+       "level": 3
+      },
+      {
+       "word": "糖",
+       "pinyin": "táng",
+       "level": 3
+      },
+      {
+       "word": "碗",
+       "pinyin": "wǎn",
+       "level": 3
+      },
+      {
+       "word": "一共",
+       "pinyin": "yī gòng",
+       "level": 3
+      },
+      {
+       "word": "对",
+       "pinyin": "duì",
+       "level": 4
+      },
+      {
+       "word": "号码",
+       "pinyin": "hào mǎ",
+       "level": 4
+      },
+      {
+       "word": "辣",
+       "pinyin": "là",
+       "level": 4
+      },
+      {
+       "word": "往",
+       "pinyin": "wǎng",
+       "level": 4
+      },
+      {
+       "word": "中文",
+       "pinyin": "Zhōng wén",
+       "level": 4
+      },
+      {
+       "word": "辣椒",
+       "pinyin": "là jiāo",
+       "level": 5
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 92,
+       "neverSeen": 51
+      },
+      "2": {
+       "notTaught": 131,
+       "neverSeen": 111
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 79,
+       "seen": 191,
+       "cumRequired": 506,
+       "cumTaught": 79,
+       "cumSeen": 191
+      },
+      "2": {
+       "required": 750,
+       "taught": 6,
+       "seen": 39,
+       "cumRequired": 1256,
+       "cumTaught": 85,
+       "cumSeen": 230
+      },
+      "3": {
+       "required": 953,
+       "taught": 3,
+       "seen": 17,
+       "cumRequired": 2209,
+       "cumTaught": 88,
+       "cumSeen": 247
+      },
+      "4": {
+       "required": 972,
+       "taught": 3,
+       "seen": 9,
+       "cumRequired": 3181,
+       "cumTaught": 91,
+       "cumSeen": 256
+      },
+      "5": {
+       "required": 1059,
+       "taught": 0,
+       "seen": 9,
+       "cumRequired": 4240,
+       "cumTaught": 91,
+       "cumSeen": 265
+      },
+      "6": {
+       "required": 1123,
+       "taught": 0,
+       "seen": 10,
+       "cumRequired": 5363,
+       "cumTaught": 91,
+       "cumSeen": 275
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 91,
+      "seen": 275
+     },
+     "band": {
+      "required": 1256,
+      "taught": 85,
+      "seen": 230,
+      "cumRequired": 1256,
+      "cumTaught": 85,
+      "cumSeen": 230
+     },
+     "outside": [
+      {
+       "word": "咖啡",
+       "pinyin": "kā fēi",
+       "level": 3
+      },
+      {
+       "word": "前面",
+       "pinyin": "qián miàn",
+       "level": 3
+      },
+      {
+       "word": "糖",
+       "pinyin": "táng",
+       "level": 3
+      },
+      {
+       "word": "冰",
+       "pinyin": "bīng",
+       "level": 4
+      },
+      {
+       "word": "号码",
+       "pinyin": "hào mǎ",
+       "level": 4
+      },
+      {
+       "word": "辣",
+       "pinyin": "là",
+       "level": 4
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 427,
+       "neverSeen": 315
+      },
+      "2": {
+       "notTaught": 744,
+       "neverSeen": 711
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 72,
+       "seen": 143,
+       "cumRequired": 294,
+       "cumTaught": 72,
+       "cumSeen": 143
+      },
+      "2": {
+       "required": 197,
+       "taught": 8,
+       "seen": 36,
+       "cumRequired": 491,
+       "cumTaught": 80,
+       "cumSeen": 179
+      },
+      "3": {
+       "required": 487,
+       "taught": 8,
+       "seen": 37,
+       "cumRequired": 978,
+       "cumTaught": 88,
+       "cumSeen": 216
+      },
+      "4": {
+       "required": 972,
+       "taught": 1,
+       "seen": 21,
+       "cumRequired": 1950,
+       "cumTaught": 89,
+       "cumSeen": 237
+      },
+      "5": {
+       "required": 1547,
+       "taught": 0,
+       "seen": 13,
+       "cumRequired": 3497,
+       "cumTaught": 89,
+       "cumSeen": 250
+      },
+      "6": {
+       "required": 1684,
+       "taught": 1,
+       "seen": 8,
+       "cumRequired": 5181,
+       "cumTaught": 90,
+       "cumSeen": 258
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 90,
+      "seen": 258
+     },
+     "band": {
+      "required": 491,
+      "taught": 80,
+      "seen": 179,
+      "cumRequired": 491,
+      "cumTaught": 80,
+      "cumSeen": 179
+     },
+     "outside": [
+      {
+       "word": "帮助",
+       "pinyin": "bāng zhù",
+       "level": 3
+      },
+      {
+       "word": "冰",
+       "pinyin": "bīng",
+       "level": 3
+      },
+      {
+       "word": "号码",
+       "pinyin": "hào mǎ",
+       "level": 3
+      },
+      {
+       "word": "加",
+       "pinyin": "Jiā",
+       "level": 3
+      },
+      {
+       "word": "见面",
+       "pinyin": "jiàn miàn",
+       "level": 3
+      },
+      {
+       "word": "糖",
+       "pinyin": "táng",
+       "level": 3
+      },
+      {
+       "word": "碗",
+       "pinyin": "wǎn",
+       "level": 3
+      },
+      {
+       "word": "一共",
+       "pinyin": "yī gòng",
+       "level": 3
+      },
+      {
+       "word": "辣",
+       "pinyin": "là",
+       "level": 4
+      },
+      {
+       "word": "辣椒",
+       "pinyin": "là jiāo",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 222,
+       "neverSeen": 151
+      },
+      "2": {
+       "notTaught": 189,
+       "neverSeen": 161
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 6,
+      "used": 12,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 7
+     },
+     "2": {
+      "items": 82,
+      "taught": 4,
+      "used": 11,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 7
+     },
+     "3": {
+      "items": 81,
+      "taught": 9,
+      "used": 12,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 4
+     },
+     "4": {
+      "items": 76,
+      "taught": 2,
+      "used": 6,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 2
+     },
+     "5": {
+      "items": 71,
+      "taught": 3,
+      "used": 5,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 2
+     },
+     "6": {
+      "items": 67,
+      "taught": 1,
+      "used": 5,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 0
+     }
+    },
+    "band": {
+     "items": 130,
+     "taught": 10,
+     "used": 23,
+     "weak": 70,
+     "strong": 40,
+     "strongUsed": 14
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "这儿",
+       "那儿",
+       "这里",
+       "那里",
+       "这些",
+       "那些"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "一块儿",
+       "一起"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "动作的态",
+      "category": "动作的态",
+      "details": "进行态",
+      "markers": [
+       "正在"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "疑问代词",
+      "markers": [
+       "多久"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "那么",
+       "那样",
+       "这么",
+       "这样"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "多么",
+       "十分",
+       "特别"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "刚刚",
+       "忽然",
+       "一直",
+       "已经"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "重新",
+       "经常",
+       "老是"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "必须",
+       "差不多",
+       "好像",
+       "也许"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "语气副词",
+      "markers": [
+       "正好"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "应该"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "愿意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "越来越"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "不但",
+       "而且"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "虽然",
+       "但是",
+       "可是",
+       "不过"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "如果",
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "只要"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "因为",
+       "所以"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "不如",
+       "这么",
+       "那么"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子成分",
+      "category": "补语",
+      "details": "结果补语",
+      "markers": [
+       "干净",
+       "清楚"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "不过",
+       "但是",
+       "而且",
+       "如果",
+       "虽然",
+       "只要"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "track": "hsk3-practical",
+   "title": "HSK 3 · Nghe nói thực tế",
+   "band": "HSK 3–4",
+   "from": 3,
+   "to": 4,
+   "lessons": 24,
+   "vocabSlots": 180,
+   "distinctWords": 114,
+   "patterns": 60,
+   "pronunciationCards": 24,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 10,
+       "seen": 120,
+       "cumRequired": 150,
+       "cumTaught": 10,
+       "cumSeen": 120
+      },
+      "2": {
+       "required": 147,
+       "taught": 18,
+       "seen": 99,
+       "cumRequired": 297,
+       "cumTaught": 28,
+       "cumSeen": 219
+      },
+      "3": {
+       "required": 298,
+       "taught": 24,
+       "seen": 128,
+       "cumRequired": 595,
+       "cumTaught": 52,
+       "cumSeen": 347
+      },
+      "4": {
+       "required": 598,
+       "taught": 18,
+       "seen": 106,
+       "cumRequired": 1193,
+       "cumTaught": 70,
+       "cumSeen": 453
+      },
+      "5": {
+       "required": 1298,
+       "taught": 10,
+       "seen": 73,
+       "cumRequired": 2491,
+       "cumTaught": 80,
+       "cumSeen": 526
+      },
+      "6": {
+       "required": 2500,
+       "taught": 4,
+       "seen": 17,
+       "cumRequired": 4991,
+       "cumTaught": 84,
+       "cumSeen": 543
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 84,
+      "seen": 543
+     },
+     "band": {
+      "required": 896,
+      "taught": 42,
+      "seen": 234,
+      "cumRequired": 1193,
+      "cumTaught": 70,
+      "cumSeen": 453
+     },
+     "outside": [
+      {
+       "word": "保持",
+       "pinyin": "bǎo chí",
+       "level": 5
+      },
+      {
+       "word": "发票",
+       "pinyin": "fā piào",
+       "level": 5
+      },
+      {
+       "word": "付款",
+       "pinyin": "fù kuǎn",
+       "level": 5
+      },
+      {
+       "word": "合同",
+       "pinyin": "hé tong",
+       "level": 5
+      },
+      {
+       "word": "聚会",
+       "pinyin": "jù huì",
+       "level": 5
+      },
+      {
+       "word": "零钱",
+       "pinyin": "líng qián",
+       "level": 5
+      },
+      {
+       "word": "排队",
+       "pinyin": "pái duì",
+       "level": 5
+      },
+      {
+       "word": "位置",
+       "pinyin": "wèi zhi",
+       "level": 5
+      },
+      {
+       "word": "现金",
+       "pinyin": "xiàn jīn",
+       "level": 5
+      },
+      {
+       "word": "预订",
+       "pinyin": "yù dìng",
+       "level": 5
+      },
+      {
+       "word": "打包",
+       "pinyin": "dǎ bāo",
+       "level": 6
+      },
+      {
+       "word": "维修",
+       "pinyin": "wéi xiū",
+       "level": 6
+      },
+      {
+       "word": "押金",
+       "pinyin": "yā jīn",
+       "level": 6
+      },
+      {
+       "word": "作息",
+       "pinyin": "zuò xī",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "3": {
+       "notTaught": 274,
+       "neverSeen": 170
+      },
+      "4": {
+       "notTaught": 580,
+       "neverSeen": 492
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 31,
+       "seen": 320,
+       "cumRequired": 506,
+       "cumTaught": 31,
+       "cumSeen": 320
+      },
+      "2": {
+       "required": 750,
+       "taught": 24,
+       "seen": 233,
+       "cumRequired": 1256,
+       "cumTaught": 55,
+       "cumSeen": 553
+      },
+      "3": {
+       "required": 953,
+       "taught": 9,
+       "seen": 124,
+       "cumRequired": 2209,
+       "cumTaught": 64,
+       "cumSeen": 677
+      },
+      "4": {
+       "required": 972,
+       "taught": 19,
+       "seen": 86,
+       "cumRequired": 3181,
+       "cumTaught": 83,
+       "cumSeen": 763
+      },
+      "5": {
+       "required": 1059,
+       "taught": 5,
+       "seen": 45,
+       "cumRequired": 4240,
+       "cumTaught": 88,
+       "cumSeen": 808
+      },
+      "6": {
+       "required": 1123,
+       "taught": 4,
+       "seen": 48,
+       "cumRequired": 5363,
+       "cumTaught": 92,
+       "cumSeen": 856
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 92,
+      "seen": 856
+     },
+     "band": {
+      "required": 1925,
+      "taught": 28,
+      "seen": 210,
+      "cumRequired": 3181,
+      "cumTaught": 83,
+      "cumSeen": 763
+     },
+     "outside": [
+      {
+       "word": "打包",
+       "pinyin": "dǎ bāo",
+       "level": 5
+      },
+      {
+       "word": "打扰",
+       "pinyin": "dǎ rǎo",
+       "level": 5
+      },
+      {
+       "word": "可惜",
+       "pinyin": "kě xī",
+       "level": 5
+      },
+      {
+       "word": "押金",
+       "pinyin": "yā jīn",
+       "level": 5
+      },
+      {
+       "word": "邀请",
+       "pinyin": "yāo qǐng",
+       "level": 5
+      },
+      {
+       "word": "抱歉",
+       "pinyin": "bào qiàn",
+       "level": 6
+      },
+      {
+       "word": "头疼",
+       "pinyin": "tóu téng",
+       "level": 6
+      },
+      {
+       "word": "预约",
+       "pinyin": "yù yuē",
+       "level": 6
+      },
+      {
+       "word": "租金",
+       "pinyin": "zū jīn",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "3": {
+       "notTaught": 944,
+       "neverSeen": 829
+      },
+      "4": {
+       "notTaught": 953,
+       "neverSeen": 886
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 19,
+       "seen": 205,
+       "cumRequired": 294,
+       "cumTaught": 19,
+       "cumSeen": 205
+      },
+      "2": {
+       "required": 197,
+       "taught": 12,
+       "seen": 119,
+       "cumRequired": 491,
+       "cumTaught": 31,
+       "cumSeen": 324
+      },
+      "3": {
+       "required": 487,
+       "taught": 29,
+       "seen": 180,
+       "cumRequired": 978,
+       "cumTaught": 60,
+       "cumSeen": 504
+      },
+      "4": {
+       "required": 972,
+       "taught": 20,
+       "seen": 158,
+       "cumRequired": 1950,
+       "cumTaught": 80,
+       "cumSeen": 662
+      },
+      "5": {
+       "required": 1547,
+       "taught": 10,
+       "seen": 88,
+       "cumRequired": 3497,
+       "cumTaught": 90,
+       "cumSeen": 750
+      },
+      "6": {
+       "required": 1684,
+       "taught": 1,
+       "seen": 47,
+       "cumRequired": 5181,
+       "cumTaught": 91,
+       "cumSeen": 797
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 91,
+      "seen": 797
+     },
+     "band": {
+      "required": 1459,
+      "taught": 49,
+      "seen": 338,
+      "cumRequired": 1950,
+      "cumTaught": 80,
+      "cumSeen": 662
+     },
+     "outside": [
+      {
+       "word": "熬夜",
+       "pinyin": "áo yè",
+       "level": 5
+      },
+      {
+       "word": "保持",
+       "pinyin": "bǎo chí",
+       "level": 5
+      },
+      {
+       "word": "打包",
+       "pinyin": "dǎ bāo",
+       "level": 5
+      },
+      {
+       "word": "合同",
+       "pinyin": "hé tong",
+       "level": 5
+      },
+      {
+       "word": "维修",
+       "pinyin": "wéi xiū",
+       "level": 5
+      },
+      {
+       "word": "位置",
+       "pinyin": "wèi zhi",
+       "level": 5
+      },
+      {
+       "word": "押金",
+       "pinyin": "yā jīn",
+       "level": 5
+      },
+      {
+       "word": "预订",
+       "pinyin": "yù dìng",
+       "level": 5
+      },
+      {
+       "word": "预约",
+       "pinyin": "yù yuē",
+       "level": 5
+      },
+      {
+       "word": "租金",
+       "pinyin": "zū jīn",
+       "level": 5
+      },
+      {
+       "word": "发票",
+       "pinyin": "fā piào",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "3": {
+       "notTaught": 458,
+       "neverSeen": 307
+      },
+      "4": {
+       "notTaught": 952,
+       "neverSeen": 814
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 11,
+      "used": 16,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 10
+     },
+     "2": {
+      "items": 82,
+      "taught": 9,
+      "used": 35,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 24
+     },
+     "3": {
+      "items": 81,
+      "taught": 6,
+      "used": 32,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 20
+     },
+     "4": {
+      "items": 76,
+      "taught": 1,
+      "used": 17,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 10
+     },
+     "5": {
+      "items": 71,
+      "taught": 4,
+      "used": 14,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 11
+     },
+     "6": {
+      "items": 67,
+      "taught": 2,
+      "used": 19,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 6
+     }
+    },
+    "band": {
+     "items": 287,
+     "taught": 27,
+     "used": 100,
+     "weak": 148,
+     "strong": 102,
+     "strongUsed": 64
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "越来越"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "只要"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“是……的”句",
+      "markers": [
+       "地点",
+       "方式"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出时间、处所",
+      "markers": [
+       "自从"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "比较",
+       "更加",
+       "相当"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "仅仅",
+       "至少"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "互相",
+       "尽量",
+       "亲自",
+       "相互"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "恐怕"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看起来"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看上去"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "有的是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一方面",
+       "另一方面"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "对于"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "关于"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "根据"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "作为"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "格外",
+       "极其"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "一再",
+       "再三"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "否定副词",
+      "markers": [
+       "未必"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "几乎",
+       "似乎"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "似的"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "来得及",
+       "来不及"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "说不定"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "一般来说"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "首先",
+       "其次"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "于是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "甚至"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "然而"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "否则"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "假如"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "万一"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "无论"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "既然"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "可见"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "哪怕"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "track": "hsk5-practical",
+   "title": "HSK 5 · Nghe nói thực tế",
+   "band": "HSK 5–6",
+   "from": 5,
+   "to": 6,
+   "lessons": 24,
+   "vocabSlots": 168,
+   "distinctWords": 96,
+   "patterns": 48,
+   "pronunciationCards": 0,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 0,
+       "seen": 90,
+       "cumRequired": 150,
+       "cumTaught": 0,
+       "cumSeen": 90
+      },
+      "2": {
+       "required": 147,
+       "taught": 0,
+       "seen": 82,
+       "cumRequired": 297,
+       "cumTaught": 0,
+       "cumSeen": 172
+      },
+      "3": {
+       "required": 298,
+       "taught": 3,
+       "seen": 127,
+       "cumRequired": 595,
+       "cumTaught": 3,
+       "cumSeen": 299
+      },
+      "4": {
+       "required": 598,
+       "taught": 20,
+       "seen": 199,
+       "cumRequired": 1193,
+       "cumTaught": 23,
+       "cumSeen": 498
+      },
+      "5": {
+       "required": 1298,
+       "taught": 29,
+       "seen": 203,
+       "cumRequired": 2491,
+       "cumTaught": 52,
+       "cumSeen": 701
+      },
+      "6": {
+       "required": 2500,
+       "taught": 20,
+       "seen": 85,
+       "cumRequired": 4991,
+       "cumTaught": 72,
+       "cumSeen": 786
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 72,
+      "seen": 786
+     },
+     "band": {
+      "required": 3798,
+      "taught": 49,
+      "seen": 288,
+      "cumRequired": 4991,
+      "cumTaught": 72,
+      "cumSeen": 786
+     },
+     "outside": [],
+     "missingCounts": {
+      "5": {
+       "notTaught": 1269,
+       "neverSeen": 1095
+      },
+      "6": {
+       "notTaught": 2480,
+       "neverSeen": 2415
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 0,
+       "seen": 246,
+       "cumRequired": 506,
+       "cumTaught": 0,
+       "cumSeen": 246
+      },
+      "2": {
+       "required": 750,
+       "taught": 6,
+       "seen": 263,
+       "cumRequired": 1256,
+       "cumTaught": 6,
+       "cumSeen": 509
+      },
+      "3": {
+       "required": 953,
+       "taught": 27,
+       "seen": 286,
+       "cumRequired": 2209,
+       "cumTaught": 33,
+       "cumSeen": 795
+      },
+      "4": {
+       "required": 972,
+       "taught": 18,
+       "seen": 177,
+       "cumRequired": 3181,
+       "cumTaught": 51,
+       "cumSeen": 972
+      },
+      "5": {
+       "required": 1059,
+       "taught": 13,
+       "seen": 89,
+       "cumRequired": 4240,
+       "cumTaught": 64,
+       "cumSeen": 1061
+      },
+      "6": {
+       "required": 1123,
+       "taught": 6,
+       "seen": 105,
+       "cumRequired": 5363,
+       "cumTaught": 70,
+       "cumSeen": 1166
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 70,
+      "seen": 1166
+     },
+     "band": {
+      "required": 2182,
+      "taught": 19,
+      "seen": 194,
+      "cumRequired": 5363,
+      "cumTaught": 70,
+      "cumSeen": 1166
+     },
+     "outside": [],
+     "missingCounts": {
+      "5": {
+       "notTaught": 1046,
+       "neverSeen": 970
+      },
+      "6": {
+       "notTaught": 1117,
+       "neverSeen": 1018
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 0,
+       "seen": 162,
+       "cumRequired": 294,
+       "cumTaught": 0,
+       "cumSeen": 162
+      },
+      "2": {
+       "required": 197,
+       "taught": 0,
+       "seen": 82,
+       "cumRequired": 491,
+       "cumTaught": 0,
+       "cumSeen": 244
+      },
+      "3": {
+       "required": 487,
+       "taught": 3,
+       "seen": 180,
+       "cumRequired": 978,
+       "cumTaught": 3,
+       "cumSeen": 424
+      },
+      "4": {
+       "required": 972,
+       "taught": 21,
+       "seen": 304,
+       "cumRequired": 1950,
+       "cumTaught": 24,
+       "cumSeen": 728
+      },
+      "5": {
+       "required": 1547,
+       "taught": 39,
+       "seen": 283,
+       "cumRequired": 3497,
+       "cumTaught": 63,
+       "cumSeen": 1011
+      },
+      "6": {
+       "required": 1684,
+       "taught": 12,
+       "seen": 136,
+       "cumRequired": 5181,
+       "cumTaught": 75,
+       "cumSeen": 1147
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 75,
+      "seen": 1147
+     },
+     "band": {
+      "required": 3231,
+      "taught": 51,
+      "seen": 419,
+      "cumRequired": 5181,
+      "cumTaught": 75,
+      "cumSeen": 1147
+     },
+     "outside": [],
+     "missingCounts": {
+      "5": {
+       "notTaught": 1508,
+       "neverSeen": 1264
+      },
+      "6": {
+       "notTaught": 1672,
+       "neverSeen": 1548
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 4,
+      "used": 16,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 10
+     },
+     "2": {
+      "items": 82,
+      "taught": 14,
+      "used": 36,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 26
+     },
+     "3": {
+      "items": 81,
+      "taught": 13,
+      "used": 31,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 21
+     },
+     "4": {
+      "items": 76,
+      "taught": 6,
+      "used": 24,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 15
+     },
+     "5": {
+      "items": 71,
+      "taught": 2,
+      "used": 15,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 12
+     },
+     "6": {
+      "items": 67,
+      "taught": 6,
+      "used": 18,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 6
+     }
+    },
+    "band": {
+     "items": 425,
+     "taught": 45,
+     "used": 140,
+     "weak": 222,
+     "strong": 154,
+     "strongUsed": 90
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "越来越"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出时间、处所",
+      "markers": [
+       "自从"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "恐怕"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看起来"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看上去"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "有的是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一会儿"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "并且"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "要是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "对于"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "代词",
+      "details": "人称代词",
+      "markers": [
+       "人家"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "格外",
+       "极其"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "否定副词",
+      "markers": [
+       "未必"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "几乎",
+       "似乎"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "似的"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "说不定"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "一般来说"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "于是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "甚至"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "然而"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "假如"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "万一"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "不管"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "无论"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "既然"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "可见"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "哪怕"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "依照"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "彼此",
+       "如此"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "大都"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "不时",
+       "将要",
+       "仍旧",
+       "时常",
+       "时刻",
+       "依旧"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "偷偷"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "也好"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不得了"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不敢当"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "得了"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "用不着"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "选择复句",
+      "markers": [
+       "或是"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "尽管",
+       "但是",
+       "可是"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "一旦"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "因而"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "目的复句",
+      "markers": [
+       "以便"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“有”字句",
+      "markers": [
+       "具有"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "连动句",
+      "markers": [
+       "转折"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "从而",
+       "加上",
+       "完了",
+       "一旦"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "至于"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "一齐",
+       "一同"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "时时",
+       "一时",
+       "早晚"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "不禁",
+       "赶忙",
+       "亲眼",
+       "特地",
+       "特意"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "仿佛"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "助词",
+      "details": "语气助词",
+      "markers": [
+       "罢了"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不怎么"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不怎么样"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "就是说",
+       "这就是说"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "算了"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "时而"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一时"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "选择复句",
+      "markers": [
+       "要么"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "凡是"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "就算"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "不料"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "track": "misu30-1",
+   "title": "30 bài giao tiếp · Tập 1",
+   "band": "HSK 1–2",
+   "from": 1,
+   "to": 2,
+   "lessons": 10,
+   "vocabSlots": 80,
+   "distinctWords": 80,
+   "patterns": 30,
+   "pronunciationCards": 0,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 36,
+       "seen": 97,
+       "cumRequired": 150,
+       "cumTaught": 36,
+       "cumSeen": 97
+      },
+      "2": {
+       "required": 147,
+       "taught": 19,
+       "seen": 49,
+       "cumRequired": 297,
+       "cumTaught": 55,
+       "cumSeen": 146
+      },
+      "3": {
+       "required": 298,
+       "taught": 7,
+       "seen": 33,
+       "cumRequired": 595,
+       "cumTaught": 62,
+       "cumSeen": 179
+      },
+      "4": {
+       "required": 598,
+       "taught": 3,
+       "seen": 11,
+       "cumRequired": 1193,
+       "cumTaught": 65,
+       "cumSeen": 190
+      },
+      "5": {
+       "required": 1298,
+       "taught": 0,
+       "seen": 8,
+       "cumRequired": 2491,
+       "cumTaught": 65,
+       "cumSeen": 198
+      },
+      "6": {
+       "required": 2500,
+       "taught": 0,
+       "seen": 0,
+       "cumRequired": 4991,
+       "cumTaught": 65,
+       "cumSeen": 198
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 65,
+      "seen": 198
+     },
+     "band": {
+      "required": 297,
+      "taught": 55,
+      "seen": 146,
+      "cumRequired": 297,
+      "cumTaught": 55,
+      "cumSeen": 146
+     },
+     "outside": [
+      {
+       "word": "爱好",
+       "pinyin": "ài hào",
+       "level": 3
+      },
+      {
+       "word": "担心",
+       "pinyin": "dān xīn",
+       "level": 3
+      },
+      {
+       "word": "分",
+       "pinyin": "fēn",
+       "level": 3
+      },
+      {
+       "word": "附近",
+       "pinyin": "fù jìn",
+       "level": 3
+      },
+      {
+       "word": "口",
+       "pinyin": "kǒu",
+       "level": 3
+      },
+      {
+       "word": "面条",
+       "pinyin": "miàn tiáo",
+       "level": 3
+      },
+      {
+       "word": "舒服",
+       "pinyin": "shū fu",
+       "level": 3
+      },
+      {
+       "word": "号码",
+       "pinyin": "hào mǎ",
+       "level": 4
+      },
+      {
+       "word": "辣",
+       "pinyin": "là",
+       "level": 4
+      },
+      {
+       "word": "试",
+       "pinyin": "shì",
+       "level": 4
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 114,
+       "neverSeen": 53
+      },
+      "2": {
+       "notTaught": 128,
+       "neverSeen": 98
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 60,
+       "seen": 192,
+       "cumRequired": 506,
+       "cumTaught": 60,
+       "cumSeen": 192
+      },
+      "2": {
+       "required": 750,
+       "taught": 4,
+       "seen": 50,
+       "cumRequired": 1256,
+       "cumTaught": 64,
+       "cumSeen": 242
+      },
+      "3": {
+       "required": 953,
+       "taught": 2,
+       "seen": 18,
+       "cumRequired": 2209,
+       "cumTaught": 66,
+       "cumSeen": 260
+      },
+      "4": {
+       "required": 972,
+       "taught": 4,
+       "seen": 9,
+       "cumRequired": 3181,
+       "cumTaught": 70,
+       "cumSeen": 269
+      },
+      "5": {
+       "required": 1059,
+       "taught": 0,
+       "seen": 3,
+       "cumRequired": 4240,
+       "cumTaught": 70,
+       "cumSeen": 272
+      },
+      "6": {
+       "required": 1123,
+       "taught": 0,
+       "seen": 10,
+       "cumRequired": 5363,
+       "cumTaught": 70,
+       "cumSeen": 282
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 70,
+      "seen": 282
+     },
+     "band": {
+      "required": 1256,
+      "taught": 64,
+      "seen": 242,
+      "cumRequired": 1256,
+      "cumTaught": 64,
+      "cumSeen": 242
+     },
+     "outside": [
+      {
+       "word": "服务员",
+       "pinyin": "fú wù yuán",
+       "level": 3
+      },
+      {
+       "word": "前面",
+       "pinyin": "qián miàn",
+       "level": 3
+      },
+      {
+       "word": "担心",
+       "pinyin": "dān xīn",
+       "level": 4
+      },
+      {
+       "word": "附近",
+       "pinyin": "fù jìn",
+       "level": 4
+      },
+      {
+       "word": "号码",
+       "pinyin": "hào mǎ",
+       "level": 4
+      },
+      {
+       "word": "辣",
+       "pinyin": "là",
+       "level": 4
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 446,
+       "neverSeen": 314
+      },
+      "2": {
+       "notTaught": 746,
+       "neverSeen": 700
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 54,
+       "seen": 159,
+       "cumRequired": 294,
+       "cumTaught": 54,
+       "cumSeen": 159
+      },
+      "2": {
+       "required": 197,
+       "taught": 8,
+       "seen": 38,
+       "cumRequired": 491,
+       "cumTaught": 62,
+       "cumSeen": 197
+      },
+      "3": {
+       "required": 487,
+       "taught": 4,
+       "seen": 36,
+       "cumRequired": 978,
+       "cumTaught": 66,
+       "cumSeen": 233
+      },
+      "4": {
+       "required": 972,
+       "taught": 1,
+       "seen": 14,
+       "cumRequired": 1950,
+       "cumTaught": 67,
+       "cumSeen": 247
+      },
+      "5": {
+       "required": 1547,
+       "taught": 0,
+       "seen": 12,
+       "cumRequired": 3497,
+       "cumTaught": 67,
+       "cumSeen": 259
+      },
+      "6": {
+       "required": 1684,
+       "taught": 0,
+       "seen": 6,
+       "cumRequired": 5181,
+       "cumTaught": 67,
+       "cumSeen": 265
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 67,
+      "seen": 265
+     },
+     "band": {
+      "required": 491,
+      "taught": 62,
+      "seen": 197,
+      "cumRequired": 491,
+      "cumTaught": 62,
+      "cumSeen": 197
+     },
+     "outside": [
+      {
+       "word": "担心",
+       "pinyin": "dān xīn",
+       "level": 3
+      },
+      {
+       "word": "附近",
+       "pinyin": "fù jìn",
+       "level": 3
+      },
+      {
+       "word": "号码",
+       "pinyin": "hào mǎ",
+       "level": 3
+      },
+      {
+       "word": "试",
+       "pinyin": "shì",
+       "level": 3
+      },
+      {
+       "word": "辣",
+       "pinyin": "là",
+       "level": 4
+      }
+     ],
+     "missingCounts": {
+      "1": {
+       "notTaught": 240,
+       "neverSeen": 135
+      },
+      "2": {
+       "notTaught": 189,
+       "neverSeen": 159
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 5,
+      "used": 9,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 6
+     },
+     "2": {
+      "items": 82,
+      "taught": 8,
+      "used": 11,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 7
+     },
+     "3": {
+      "items": 81,
+      "taught": 12,
+      "used": 16,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 6
+     },
+     "4": {
+      "items": 76,
+      "taught": 3,
+      "used": 5,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 2
+     },
+     "5": {
+      "items": 71,
+      "taught": 1,
+      "used": 2,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 0
+     },
+     "6": {
+      "items": 67,
+      "taught": 2,
+      "used": 6,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 0
+     }
+    },
+    "band": {
+     "items": 130,
+     "taught": 13,
+     "used": 20,
+     "weak": 70,
+     "strong": 40,
+     "strongUsed": 13
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "常常"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "副词",
+      "details": "否定副词",
+      "markers": [
+       "没有"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "动作的态",
+      "category": "动作的态",
+      "details": "进行态",
+      "markers": [
+       "正在"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "没有"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "疑问代词",
+      "markers": [
+       "多久"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "那么",
+       "那样",
+       "这么",
+       "这样"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "一共"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "重新",
+       "经常",
+       "老是"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "必须",
+       "差不多",
+       "好像",
+       "也许"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "语气副词",
+      "markers": [
+       "正好"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "应该"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "愿意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "越来越"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "不但",
+       "而且"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "虽然",
+       "但是",
+       "可是",
+       "不过"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "如果",
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "只要"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "不如",
+       "这么",
+       "那么"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "一样",
+       "相同"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“是……的”句",
+      "markers": [
+       "地点",
+       "方式"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子成分",
+      "category": "补语",
+      "details": "结果补语",
+      "markers": [
+       "干净",
+       "清楚"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "不过",
+       "但是",
+       "而且",
+       "如果",
+       "虽然",
+       "只要"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "track": "misu30-2",
+   "title": "30 bài giao tiếp · Tập 2",
+   "band": "HSK 3–4",
+   "from": 3,
+   "to": 4,
+   "lessons": 10,
+   "vocabSlots": 80,
+   "distinctWords": 79,
+   "patterns": 30,
+   "pronunciationCards": 0,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 2,
+       "seen": 77,
+       "cumRequired": 150,
+       "cumTaught": 2,
+       "cumSeen": 77
+      },
+      "2": {
+       "required": 147,
+       "taught": 5,
+       "seen": 56,
+       "cumRequired": 297,
+       "cumTaught": 7,
+       "cumSeen": 133
+      },
+      "3": {
+       "required": 298,
+       "taught": 11,
+       "seen": 47,
+       "cumRequired": 595,
+       "cumTaught": 18,
+       "cumSeen": 180
+      },
+      "4": {
+       "required": 598,
+       "taught": 22,
+       "seen": 51,
+       "cumRequired": 1193,
+       "cumTaught": 40,
+       "cumSeen": 231
+      },
+      "5": {
+       "required": 1298,
+       "taught": 8,
+       "seen": 31,
+       "cumRequired": 2491,
+       "cumTaught": 48,
+       "cumSeen": 262
+      },
+      "6": {
+       "required": 2500,
+       "taught": 1,
+       "seen": 4,
+       "cumRequired": 4991,
+       "cumTaught": 49,
+       "cumSeen": 266
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 49,
+      "seen": 266
+     },
+     "band": {
+      "required": 896,
+      "taught": 33,
+      "seen": 98,
+      "cumRequired": 1193,
+      "cumTaught": 40,
+      "cumSeen": 231
+     },
+     "outside": [
+      {
+       "word": "登记",
+       "pinyin": "dēng jì",
+       "level": 5
+      },
+      {
+       "word": "过敏",
+       "pinyin": "guò mǐn",
+       "level": 5
+      },
+      {
+       "word": "合同",
+       "pinyin": "hé tong",
+       "level": 5
+      },
+      {
+       "word": "汇率",
+       "pinyin": "huì lǜ",
+       "level": 5
+      },
+      {
+       "word": "现金",
+       "pinyin": "xiàn jīn",
+       "level": 5
+      },
+      {
+       "word": "预订",
+       "pinyin": "yù dìng",
+       "level": 5
+      },
+      {
+       "word": "账户",
+       "pinyin": "zhàng hù",
+       "level": 5
+      },
+      {
+       "word": "招待",
+       "pinyin": "zhāo dài",
+       "level": 5
+      },
+      {
+       "word": "押金",
+       "pinyin": "yā jīn",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "3": {
+       "notTaught": 287,
+       "neverSeen": 251
+      },
+      "4": {
+       "notTaught": 576,
+       "neverSeen": 547
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 8,
+       "seen": 178,
+       "cumRequired": 506,
+       "cumTaught": 8,
+       "cumSeen": 178
+      },
+      "2": {
+       "required": 750,
+       "taught": 15,
+       "seen": 80,
+       "cumRequired": 1256,
+       "cumTaught": 23,
+       "cumSeen": 258
+      },
+      "3": {
+       "required": 953,
+       "taught": 13,
+       "seen": 62,
+       "cumRequired": 2209,
+       "cumTaught": 36,
+       "cumSeen": 320
+      },
+      "4": {
+       "required": 972,
+       "taught": 15,
+       "seen": 47,
+       "cumRequired": 3181,
+       "cumTaught": 51,
+       "cumSeen": 367
+      },
+      "5": {
+       "required": 1059,
+       "taught": 3,
+       "seen": 16,
+       "cumRequired": 4240,
+       "cumTaught": 54,
+       "cumSeen": 383
+      },
+      "6": {
+       "required": 1123,
+       "taught": 6,
+       "seen": 25,
+       "cumRequired": 5363,
+       "cumTaught": 60,
+       "cumSeen": 408
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 60,
+      "seen": 408
+     },
+     "band": {
+      "required": 1925,
+      "taught": 28,
+      "seen": 109,
+      "cumRequired": 3181,
+      "cumTaught": 51,
+      "cumSeen": 367
+     },
+     "outside": [
+      {
+       "word": "过敏",
+       "pinyin": "guò mǐn",
+       "level": 5
+      },
+      {
+       "word": "客气",
+       "pinyin": "kè qi",
+       "level": 5
+      },
+      {
+       "word": "押金",
+       "pinyin": "yā jīn",
+       "level": 5
+      },
+      {
+       "word": "抱歉",
+       "pinyin": "bào qiàn",
+       "level": 6
+      },
+      {
+       "word": "难忘",
+       "pinyin": "nán wàng",
+       "level": 6
+      },
+      {
+       "word": "手续费",
+       "pinyin": "shǒu xù fèi",
+       "level": 6
+      },
+      {
+       "word": "头疼",
+       "pinyin": "tóu téng",
+       "level": 6
+      },
+      {
+       "word": "团队",
+       "pinyin": "tuán duì",
+       "level": 6
+      },
+      {
+       "word": "账户",
+       "pinyin": "zhàng hù",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "3": {
+       "notTaught": 940,
+       "neverSeen": 891
+      },
+      "4": {
+       "notTaught": 957,
+       "neverSeen": 925
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 5,
+       "seen": 127,
+       "cumRequired": 294,
+       "cumTaught": 5,
+       "cumSeen": 127
+      },
+      "2": {
+       "required": 197,
+       "taught": 4,
+       "seen": 57,
+       "cumRequired": 491,
+       "cumTaught": 9,
+       "cumSeen": 184
+      },
+      "3": {
+       "required": 487,
+       "taught": 13,
+       "seen": 66,
+       "cumRequired": 978,
+       "cumTaught": 22,
+       "cumSeen": 250
+      },
+      "4": {
+       "required": 972,
+       "taught": 28,
+       "seen": 76,
+       "cumRequired": 1950,
+       "cumTaught": 50,
+       "cumSeen": 326
+      },
+      "5": {
+       "required": 1547,
+       "taught": 8,
+       "seen": 48,
+       "cumRequired": 3497,
+       "cumTaught": 58,
+       "cumSeen": 374
+      },
+      "6": {
+       "required": 1684,
+       "taught": 2,
+       "seen": 19,
+       "cumRequired": 5181,
+       "cumTaught": 60,
+       "cumSeen": 393
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 60,
+      "seen": 393
+     },
+     "band": {
+      "required": 1459,
+      "taught": 41,
+      "seen": 142,
+      "cumRequired": 1950,
+      "cumTaught": 50,
+      "cumSeen": 326
+     },
+     "outside": [
+      {
+       "word": "登记",
+       "pinyin": "dēng jì",
+       "level": 5
+      },
+      {
+       "word": "过敏",
+       "pinyin": "guò mǐn",
+       "level": 5
+      },
+      {
+       "word": "合同",
+       "pinyin": "hé tong",
+       "level": 5
+      },
+      {
+       "word": "汇率",
+       "pinyin": "huì lǜ",
+       "level": 5
+      },
+      {
+       "word": "团队",
+       "pinyin": "tuán duì",
+       "level": 5
+      },
+      {
+       "word": "押金",
+       "pinyin": "yā jīn",
+       "level": 5
+      },
+      {
+       "word": "预订",
+       "pinyin": "yù dìng",
+       "level": 5
+      },
+      {
+       "word": "账户",
+       "pinyin": "zhàng hù",
+       "level": 5
+      },
+      {
+       "word": "投诉",
+       "pinyin": "tóu sù",
+       "level": 6
+      },
+      {
+       "word": "招待",
+       "pinyin": "zhāo dài",
+       "level": 6
+      }
+     ],
+     "missingCounts": {
+      "3": {
+       "notTaught": 474,
+       "neverSeen": 421
+      },
+      "4": {
+       "notTaught": 944,
+       "neverSeen": 896
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 7,
+      "used": 13,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 9
+     },
+     "2": {
+      "items": 82,
+      "taught": 5,
+      "used": 16,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 8
+     },
+     "3": {
+      "items": 81,
+      "taught": 2,
+      "used": 12,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 5
+     },
+     "4": {
+      "items": 76,
+      "taught": 3,
+      "used": 8,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 4
+     },
+     "5": {
+      "items": 71,
+      "taught": 1,
+      "used": 2,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 1
+     },
+     "6": {
+      "items": 67,
+      "taught": 2,
+      "used": 8,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 1
+     }
+    },
+    "band": {
+     "items": 287,
+     "taught": 17,
+     "used": 49,
+     "weak": 148,
+     "strong": 102,
+     "strongUsed": 26
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "动作的态",
+      "category": "动作的态",
+      "details": "进行态",
+      "markers": [
+       "正在"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "疑问代词",
+      "markers": [
+       "多久"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "那么",
+       "那样",
+       "这么",
+       "这样"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "一共"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "刚刚",
+       "忽然",
+       "一直",
+       "已经"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "必须",
+       "差不多",
+       "好像",
+       "也许"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "语气副词",
+      "markers": [
+       "正好"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "应该"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "愿意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "越来越"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "不但",
+       "而且"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "虽然",
+       "但是",
+       "可是",
+       "不过"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "如果",
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "只要"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "因为",
+       "所以"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "不如",
+       "这么",
+       "那么"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“是……的”句",
+      "markers": [
+       "地点",
+       "方式"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "不过",
+       "但是",
+       "而且",
+       "如果",
+       "虽然",
+       "只要"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出时间、处所",
+      "markers": [
+       "自从"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出目的、原因",
+      "markers": [
+       "由于",
+       "因为"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "比较",
+       "更加",
+       "相当"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "仅仅",
+       "至少"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "本来",
+       "曾经",
+       "从来",
+       "赶紧",
+       "赶快",
+       "立刻"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "通常",
+       "往往",
+       "总是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "互相",
+       "尽量",
+       "亲自",
+       "相互"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "恐怕"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "语气副词",
+      "markers": [
+       "当然",
+       "到底",
+       "反正",
+       "根本",
+       "果然",
+       "简直"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "动词",
+      "details": "离合词",
+      "markers": [
+       "打开",
+       "看见",
+       "离开",
+       "完成"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看起来"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看上去"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "有的是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一会儿"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一方面",
+       "另一方面"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "首先",
+       "然后"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "并且"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "不仅",
+       "不光",
+       "而且"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "不过"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "要是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "只有"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "由于",
+       "所以",
+       "因此"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子成分",
+      "category": "补语",
+      "details": "程度补语",
+      "markers": [
+       "极了"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "并且",
+       "不光",
+       "不仅",
+       "另外",
+       "要是",
+       "因此"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "对于"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "关于"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "根据"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "作为"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "代词",
+      "details": "人称代词",
+      "markers": [
+       "人家"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "格外",
+       "极其"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "一再",
+       "再三"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "否定副词",
+      "markers": [
+       "未必"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "几乎",
+       "似乎"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "语气副词",
+      "markers": [
+       "的确",
+       "反而",
+       "竟然",
+       "究竟"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "似的"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "说不定"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "一般来说"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "而是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "首先",
+       "其次"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "于是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "甚至"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "选择复句",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "然而"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "否则"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "假如"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "万一"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "不管"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "无论"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "既然"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "可见"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "哪怕"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "以及"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "此外",
+       "而是",
+       "既然",
+       "可见",
+       "甚至",
+       "假如"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "track": "misu30-3",
+   "title": "30 bài giao tiếp · Tập 3",
+   "band": "HSK 5–6",
+   "from": 5,
+   "to": 6,
+   "lessons": 10,
+   "vocabSlots": 80,
+   "distinctWords": 75,
+   "patterns": 30,
+   "pronunciationCards": 0,
+   "vocabulary": {
+    "old": {
+     "perLevel": {
+      "1": {
+       "required": 150,
+       "taught": 0,
+       "seen": 64,
+       "cumRequired": 150,
+       "cumTaught": 0,
+       "cumSeen": 64
+      },
+      "2": {
+       "required": 147,
+       "taught": 0,
+       "seen": 57,
+       "cumRequired": 297,
+       "cumTaught": 0,
+       "cumSeen": 121
+      },
+      "3": {
+       "required": 298,
+       "taught": 9,
+       "seen": 79,
+       "cumRequired": 595,
+       "cumTaught": 9,
+       "cumSeen": 200
+      },
+      "4": {
+       "required": 598,
+       "taught": 17,
+       "seen": 84,
+       "cumRequired": 1193,
+       "cumTaught": 26,
+       "cumSeen": 284
+      },
+      "5": {
+       "required": 1298,
+       "taught": 24,
+       "seen": 81,
+       "cumRequired": 2491,
+       "cumTaught": 50,
+       "cumSeen": 365
+      },
+      "6": {
+       "required": 2500,
+       "taught": 13,
+       "seen": 31,
+       "cumRequired": 4991,
+       "cumTaught": 63,
+       "cumSeen": 396
+      }
+     },
+     "cumulative": {
+      "required": 4991,
+      "taught": 63,
+      "seen": 396
+     },
+     "band": {
+      "required": 3798,
+      "taught": 37,
+      "seen": 112,
+      "cumRequired": 4991,
+      "cumTaught": 63,
+      "cumSeen": 396
+     },
+     "outside": [],
+     "missingCounts": {
+      "5": {
+       "notTaught": 1274,
+       "neverSeen": 1217
+      },
+      "6": {
+       "notTaught": 2487,
+       "neverSeen": 2469
+      }
+     }
+    },
+    "new": {
+     "perLevel": {
+      "1": {
+       "required": 506,
+       "taught": 0,
+       "seen": 169,
+       "cumRequired": 506,
+       "cumTaught": 0,
+       "cumSeen": 169
+      },
+      "2": {
+       "required": 750,
+       "taught": 13,
+       "seen": 130,
+       "cumRequired": 1256,
+       "cumTaught": 13,
+       "cumSeen": 299
+      },
+      "3": {
+       "required": 953,
+       "taught": 17,
+       "seen": 124,
+       "cumRequired": 2209,
+       "cumTaught": 30,
+       "cumSeen": 423
+      },
+      "4": {
+       "required": 972,
+       "taught": 13,
+       "seen": 86,
+       "cumRequired": 3181,
+       "cumTaught": 43,
+       "cumSeen": 509
+      },
+      "5": {
+       "required": 1059,
+       "taught": 10,
+       "seen": 40,
+       "cumRequired": 4240,
+       "cumTaught": 53,
+       "cumSeen": 549
+      },
+      "6": {
+       "required": 1123,
+       "taught": 5,
+       "seen": 47,
+       "cumRequired": 5363,
+       "cumTaught": 58,
+       "cumSeen": 596
+      }
+     },
+     "cumulative": {
+      "required": 5363,
+      "taught": 58,
+      "seen": 596
+     },
+     "band": {
+      "required": 2182,
+      "taught": 15,
+      "seen": 87,
+      "cumRequired": 5363,
+      "cumTaught": 58,
+      "cumSeen": 596
+     },
+     "outside": [],
+     "missingCounts": {
+      "5": {
+       "notTaught": 1049,
+       "neverSeen": 1019
+      },
+      "6": {
+       "notTaught": 1118,
+       "neverSeen": 1076
+      }
+     }
+    },
+    "newest": {
+     "perLevel": {
+      "1": {
+       "required": 294,
+       "taught": 0,
+       "seen": 117,
+       "cumRequired": 294,
+       "cumTaught": 0,
+       "cumSeen": 117
+      },
+      "2": {
+       "required": 197,
+       "taught": 0,
+       "seen": 59,
+       "cumRequired": 491,
+       "cumTaught": 0,
+       "cumSeen": 176
+      },
+      "3": {
+       "required": 487,
+       "taught": 10,
+       "seen": 95,
+       "cumRequired": 978,
+       "cumTaught": 10,
+       "cumSeen": 271
+      },
+      "4": {
+       "required": 972,
+       "taught": 21,
+       "seen": 130,
+       "cumRequired": 1950,
+       "cumTaught": 31,
+       "cumSeen": 401
+      },
+      "5": {
+       "required": 1547,
+       "taught": 23,
+       "seen": 116,
+       "cumRequired": 3497,
+       "cumTaught": 54,
+       "cumSeen": 517
+      },
+      "6": {
+       "required": 1684,
+       "taught": 12,
+       "seen": 61,
+       "cumRequired": 5181,
+       "cumTaught": 66,
+       "cumSeen": 578
+      }
+     },
+     "cumulative": {
+      "required": 5181,
+      "taught": 66,
+      "seen": 578
+     },
+     "band": {
+      "required": 3231,
+      "taught": 35,
+      "seen": 177,
+      "cumRequired": 5181,
+      "cumTaught": 66,
+      "cumSeen": 578
+     },
+     "outside": [],
+     "missingCounts": {
+      "5": {
+       "notTaught": 1524,
+       "neverSeen": 1431
+      },
+      "6": {
+       "notTaught": 1672,
+       "neverSeen": 1623
+      }
+     }
+    }
+   },
+   "grammar": {
+    "perLevel": {
+     "1": {
+      "items": 48,
+      "taught": 3,
+      "used": 13,
+      "weak": 29,
+      "strong": 11,
+      "strongUsed": 9
+     },
+     "2": {
+      "items": 82,
+      "taught": 13,
+      "used": 29,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 20
+     },
+     "3": {
+      "items": 81,
+      "taught": 4,
+      "used": 21,
+      "weak": 41,
+      "strong": 29,
+      "strongUsed": 12
+     },
+     "4": {
+      "items": 76,
+      "taught": 2,
+      "used": 10,
+      "weak": 37,
+      "strong": 33,
+      "strongUsed": 5
+     },
+     "5": {
+      "items": 71,
+      "taught": 3,
+      "used": 9,
+      "weak": 33,
+      "strong": 30,
+      "strongUsed": 6
+     },
+     "6": {
+      "items": 67,
+      "taught": 4,
+      "used": 13,
+      "weak": 41,
+      "strong": 22,
+      "strongUsed": 4
+     }
+    },
+    "band": {
+     "items": 425,
+     "taught": 29,
+     "used": 95,
+     "weak": 222,
+     "strong": 154,
+     "strongUsed": 56
+    },
+    "unusedStrong": [
+     {
+      "level": 1,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "一块儿",
+       "一起"
+      ]
+     },
+     {
+      "level": 1,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一边"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "疑问代词",
+      "markers": [
+       "多久"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "那么",
+       "那样",
+       "这么",
+       "这样"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "故意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "动词",
+      "details": "能愿动词",
+      "markers": [
+       "愿意"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "的话"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不一会儿"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "因为",
+       "所以"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“是……的”句",
+      "markers": [
+       "地点",
+       "方式"
+      ]
+     },
+     {
+      "level": 2,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出时间、处所",
+      "markers": [
+       "自从"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出目的、原因",
+      "markers": [
+       "由于",
+       "因为"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "按照"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "比较",
+       "更加",
+       "相当"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "仅仅",
+       "至少"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "恐怕"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "动词",
+      "details": "离合词",
+      "markers": [
+       "打开",
+       "看见",
+       "离开",
+       "完成"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "看上去"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "有的是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一会儿"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "首先",
+       "然后"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "并且"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "不仅",
+       "不光",
+       "而且"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "不过"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "要是"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "由于",
+       "所以",
+       "因此"
+      ]
+     },
+     {
+      "level": 3,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "并且",
+       "不光",
+       "不仅",
+       "另外",
+       "要是",
+       "因此"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "对于"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "根据"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "作为"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "代词",
+      "details": "人称代词",
+      "markers": [
+       "人家"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "格外",
+       "极其"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "按时",
+       "即将",
+       "急忙",
+       "渐渐",
+       "尽快"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "一再",
+       "再三"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "几乎",
+       "似乎"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "似的"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "来得及",
+       "来不及"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "说不定"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "一般来说"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "而是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "首先",
+       "其次"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "承接复句",
+      "markers": [
+       "于是"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "递进复句",
+      "markers": [
+       "甚至"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "选择复句",
+      "markers": [
+       "或者"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "转折复句",
+      "markers": [
+       "然而"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "否则"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "假如"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "万一"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "不管"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "无论"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "既然"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "可见"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "哪怕"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接词或词组",
+      "markers": [
+       "以及"
+      ]
+     },
+     {
+      "level": 4,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "此外",
+       "而是",
+       "既然",
+       "可见",
+       "甚至",
+       "假如"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出凭借、依据",
+      "markers": [
+       "依照"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "代词",
+      "details": "指示代词",
+      "markers": [
+       "彼此",
+       "如此"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "过于",
+       "稍微",
+       "尤其"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "范围、协同副词",
+      "markers": [
+       "大都"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "不时",
+       "将要",
+       "仍旧",
+       "时常",
+       "时刻",
+       "依旧"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "频率、重复副词",
+      "markers": [
+       "偶尔",
+       "再次"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "偷偷"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "助词",
+      "details": "其他助词",
+      "markers": [
+       "也好"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不得了"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不敢当"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "得了"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "用不着"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "选择复句",
+      "markers": [
+       "或是"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "一旦"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "要是",
+       "否则"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "除非",
+       "否则",
+       "不然"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "因果复句",
+      "markers": [
+       "因而"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "即使"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "目的复句",
+      "markers": [
+       "以便"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "“有”字句",
+      "markers": [
+       "具有"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "连动句",
+      "markers": [
+       "转折"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子的类型",
+      "category": "特殊句型",
+      "details": "比较句",
+      "markers": [
+       "相比"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "句子成分",
+      "category": "补语",
+      "details": "程度补语",
+      "markers": [
+       "不得了",
+       "厉害"
+      ]
+     },
+     {
+      "level": 5,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "从而",
+       "加上",
+       "完了",
+       "一旦"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "介词",
+      "details": "引出对象",
+      "markers": [
+       "至于"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "程度副词",
+      "markers": [
+       "异常"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "时间副词",
+      "markers": [
+       "时时",
+       "一时",
+       "早晚"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "方式副词",
+      "markers": [
+       "不禁",
+       "赶忙",
+       "亲眼",
+       "特地",
+       "特意"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "副词",
+      "details": "情态副词",
+      "markers": [
+       "仿佛"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "助词",
+      "details": "语气助词",
+      "markers": [
+       "罢了"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不怎么"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "不怎么样"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "容易"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "就是说",
+       "这就是说"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "短语",
+      "category": "固定短语",
+      "details": "其他",
+      "markers": [
+       "算了"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "时而"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "并列复句",
+      "markers": [
+       "一时"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "选择复句",
+      "markers": [
+       "要么"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "假设复句",
+      "markers": [
+       "要不然",
+       "不然"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "条件复句",
+      "markers": [
+       "凡是"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "句子的类型",
+      "category": "复句",
+      "details": "让步复句",
+      "markers": [
+       "就算"
+      ]
+     },
+     {
+      "level": 6,
+      "group": "词类",
+      "category": "连词",
+      "details": "连接分句或句子",
+      "markers": [
+       "不料"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

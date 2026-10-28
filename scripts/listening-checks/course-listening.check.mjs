@@ -14,6 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { HAN, hanOnly, pauseAfter, readSentence, splitChunks, strip } from '../../server/listeningPinyin.mjs';
+import { syllableCount, syllableIndexMap } from '../../server/coursePinyin.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const DIR = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(HERE, '../../lessons/listening/course');
@@ -87,7 +88,7 @@ function checkToneSurface(id, item, r, label) {
   if (r.lowered.length) {
     if (item.sandhi !== true) fail(id, 'có biến điệu 3+3 mà thiếu sandhi=true');
     if (!Array.isArray(item.baseTones)) fail(id, 'thiếu baseTones');
-    else if (!SAME(item.baseTones, r.dict)) fail(id, `baseTones [${item.baseTones}] không khớp [${r.dict}]`);
+    else if (!SAME(item.baseTones, r.citation)) fail(id, `baseTones [${item.baseTones}] không khớp thanh trích dẫn [${r.citation}]`);
     if (!Array.isArray(item.acceptTones) || !item.acceptTones.some((t) => SAME(t, r.tones))) {
       fail(id, 'acceptTones phải chứa dạng đọc thật');
     }
@@ -126,7 +127,8 @@ function checkNeutralClaims(id, item, text, syls) {
     if (strip(claim[claim.length - 1]).tone !== 5) continue;
     const pos = text.indexOf(m[1]);
     if (pos < 0) continue;
-    const target = syls[pos + claim.length - 1];
+    const sylMap = syllableIndexMap(text);
+    const target = syls[sylMap[pos] + claim.length - 1];
     if (target && strip(target).tone !== 5) {
       fail(id, `focus nói "${m[1]} ${claim.join(' ')}" đọc nhẹ nhưng pinyin là "${target}"`);
     }
@@ -215,7 +217,7 @@ for (const file of expected) {
       const syls = String(it.pinyin).trim().split(/\s+/).filter(Boolean);
       if (/[，。？！、；：,.;:!?—…]/.test(it.pinyin)) fail(id, 'pinyin chứa dấu câu');
       if (/\s{2,}/.test(it.pinyin)) fail(id, 'pinyin có khoảng trắng liên tiếp');
-      if (syls.length !== [...text].length) fail(id, `pinyin ${syls.length} âm tiết nhưng có ${text.length} chữ Hán`);
+      if (syls.length !== syllableCount(text)) fail(id, `pinyin ${syls.length} âm tiết nhưng có ${syllableCount(text)} âm tiết Hán (sau khi gộp 儿 hoá)`);
       else {
         const r = readSentence(text, [], [], { allSandhi: true, pauses: pauseAfter(it.hanzi) });
         if (it.pinyin !== r.pinyin) fail(id, `pinyin không khớp dạng sinh: "${it.pinyin}" ≠ "${r.pinyin}"`);
@@ -254,11 +256,11 @@ for (const file of expected) {
       fail(id, `không dùng từ mới của buổi: ${newWords.join(', ')}`);
     }
 
-    if (it.syllables !== [...text].length) fail(id, `syllables=${it.syllables}, thực tế ${text.length}`);
+    if (it.syllables !== syllableCount(text)) fail(id, `syllables=${it.syllables}, thực tế ${syllableCount(text)}`);
     const syls = String(it.pinyin).trim().split(/\s+/).filter(Boolean);
     if (/[，。？！、；：,.;:!?—…]/.test(it.pinyin)) fail(id, 'pinyin chứa dấu câu');
     if (/\s{2,}/.test(it.pinyin)) fail(id, 'pinyin có khoảng trắng liên tiếp');
-    if (syls.length !== [...text].length) fail(id, `pinyin ${syls.length} âm tiết nhưng có ${text.length} chữ Hán`);
+    if (syls.length !== syllableCount(text)) fail(id, `pinyin ${syls.length} âm tiết nhưng có ${syllableCount(text)} âm tiết Hán (sau khi gộp 儿 hoá)`);
 
     const r = readSentence(text, [], [], { allSandhi: true, pauses: pauseAfter(it.text) });
     if (it.pinyin !== r.pinyin) fail(id, `pinyin không khớp dạng sinh: "${it.pinyin}" ≠ "${r.pinyin}"`);
@@ -268,6 +270,7 @@ for (const file of expected) {
     if (!Array.isArray(chunks) || chunks.length < 3)
       fail(id, `chunks phải có ≥3 cụm, đang có ${Array.isArray(chunks) ? chunks.length : 0}`);
     else {
+      const sylMap = syllableIndexMap(text);
       let offset = 0;
       for (const [i, c] of chunks.entries()) {
         if (typeof c.hanzi !== 'string' || !c.hanzi) fail(id, `chunks[${i}].hanzi rỗng`);
@@ -276,7 +279,9 @@ for (const file of expected) {
         if (i < chunks.length - 1 && c.pause === 'end') fail(id, `chunks[${i}] pause=end nhưng chưa phải cụm cuối`);
         if (HAN.test(c.hanzi)) {
           const n = [...c.hanzi].length;
-          const want = r.parts.slice(offset, offset + n).join(' ');
+          const from = sylMap[offset];
+          const to = sylMap[offset + n - 1] + 1;
+          const want = r.parts.slice(from, to).join(' ');
           if (String(c.pinyin).trim() !== want) fail(id, `chunks[${i}].pinyin không khớp pinyin cả đoạn`);
           if (text.slice(offset, offset + n) !== c.hanzi) fail(id, `chunks[${i}] lệch thứ tự chữ Hán`);
         }

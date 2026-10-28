@@ -107,7 +107,7 @@
     "title": "Nghe buổi 1: Nói về cuối tuần và sở thích",
     "playLimit": 1,
     "transcript": "甲：这周末你有什么打算？乙：我哪儿都不想去，就在家看电影。甲：你平时不是喜欢运动吗？乙：平时上班太累，周末我就想睡到十点。甲：那下午跟我去打篮球吧，学校旁边就有球场。乙：好吧，不过打完球咱们一起吃饭。甲：行，周六下午两点见。",
-    "translation": "Tiểu Lý than cuối tuần chỉ muốn ở nhà xem phim và ngủ nướng vì đi làm mệt. Người bạn nhắc rằng bạn ấy vốn thích thể thao rồi rủ chiều xuống đánh bóng rổ ở sân cạnh trường. Hai bên chốt sau khi chơi sẽ cùng ăn cơm, gặp nhau lúc hai giờ chiều thứ bảy.",
+    "translation": "B than cuối tuần chỉ muốn ở nhà xem phim và ngủ nướng vì đi làm mệt. Người bạn nhắc rằng bạn ấy vốn thích thể thao rồi rủ chiều xuống đánh bóng rổ ở sân cạnh trường. Hai bên chốt sau khi chơi sẽ cùng ăn cơm, gặp nhau lúc hai giờ chiều thứ bảy.",
     "questions": [
       {
         "prompt": "Người B dự định làm gì trong cuối tuần?",
@@ -140,7 +140,7 @@
         "explanation": "A chốt 周六下午两点见."
       }
     ],
-    "pinyin": "jiǎ ： zhè zhōu mò nǐ yǒu shén me dǎ suàn ？ yǐ ： wǒ nǎ ér dōu bù xiǎng qù ， jiù zài jiā kàn diàn yǐng 。 jiǎ ： nǐ píng shí bú shì xǐ huan yùn dòng ma ？ yǐ ： píng shí shàng bān tài lèi ， zhōu mò wǒ jiù xiǎng shuì dào shí diǎn 。 jiǎ ： nà xià wǔ gēn wǒ qù dǎ lán qiú ba ， xué xiào páng biān jiù yǒu qiú chǎng 。 yǐ ： hǎo ba ， bú guò dǎ wán qiú zán men yì qǐ chī fàn 。 jiǎ ： xíng ， zhōu liù xià wǔ liǎng diǎn jiàn 。"
+    "pinyin": "jiǎ ： zhè zhōu mò nǐ yǒu shén me dǎ suàn ？ yǐ ： wǒ nǎr dōu bù xiǎng qù ， jiù zài jiā kàn diàn yǐng 。 jiǎ ： nǐ píng shí bú shì xǐ huan yùn dòng ma ？ yǐ ： píng shí shàng bān tài lèi ， zhōu mò wǒ jiù xiǎng shuì dào shí diǎn 。 jiǎ ： nà xià wǔ gēn wǒ qù dǎ lán qiú ba ， xué xiào páng biān jiù yǒu qiú chǎng 。 yǐ ： hǎo ba ， bú guò dǎ wán qiú zán men yì qǐ chī fàn 。 jiǎ ： xíng ， zhōu liù xià wǔ liǎng diǎn jiàn 。"
   },
   "speaking": [
     {
@@ -202,7 +202,7 @@
     {
       "text": "周末",
       "pinyin": "zhōu mò",
-      "hint": "Chữ đầu thanh 2 kéo lên, chữ sau thanh 4 rơi mạnh; hai âm tiết đọc tách bạch."
+      "hint": "Chữ đầu thanh 1 cao và bằng, chữ sau thanh 4 rơi mạnh; hai âm tiết đọc tách bạch."
     },
     {
       "text": "爱好",

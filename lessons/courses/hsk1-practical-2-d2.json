@@ -176,5 +176,32 @@
       "sampleVi": "Chào bạn, tôi tên Tiểu An, tôi cũng là người Việt Nam. Bạn tên gì?"
     }
   ],
-  "transferTask": "Ở quầy đăng ký: nói tên và quốc tịch, nghe lại rồi xác nhận; nếu tên bị đọc sai thì sửa bằng 我叫……, và đáp 不客气 khi được giúp."
+  "transferTask": "Ở quầy đăng ký: nói tên và quốc tịch, nghe lại rồi xác nhận; nếu tên bị đọc sai thì sửa bằng 我叫……, và đáp 不客气 khi được giúp.",
+  "pronunciation": [
+    {
+      "text": "不是",
+      "pinyin": "bú shì",
+      "hint": "不 vốn là bù, nhưng đứng trước shì thanh 4 thì đọc bú; hãy nghe âm đầu đi lên chứ không rơi."
+    },
+    {
+      "text": "不客气",
+      "pinyin": "bú kè qi",
+      "hint": "bú đổi thanh trước kè (thanh 4); âm thứ ba qì đọc nhẹ, ngắn và buông giọng."
+    },
+    {
+      "text": "小明",
+      "pinyin": "xiǎo míng",
+      "hint": "xiǎo thanh 3 để thấp, míng thanh 2 vớt lên kéo dài; tên riêng không được đọc trụi xuống."
+    },
+    {
+      "text": "你叫小明吗",
+      "pinyin": "nǐ jiào xiǎo míng ma",
+      "hint": "ma cuối câu hỏi đọc nhẹ và rất ngắn; toàn bộ cao độ nằm ở các âm trước, đừng nhấn vào ma."
+    },
+    {
+      "text": "也",
+      "pinyin": "yě",
+      "hint": "Thanh 3 đơn: thấp, chạm đáy rồi có thể vớt lên cuối; đừng đọc cao bằng như yē."
+    }
+  ]
 }

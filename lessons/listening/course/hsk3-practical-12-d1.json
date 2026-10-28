@@ -11,11 +11,11 @@
       "id": "dt-2-191",
       "level": "HSK3-4",
       "hanzi": "这周六晚上你有空吗？",
-      "pinyin": "zhè zhōu liù wǎn shang ní yǒu kōng ma",
+      "pinyin": "zhè zhōu liù wǎn shang ní yǒu kòng ma",
       "meaningVi": "Tối thứ bảy này bạn có rảnh không?",
       "focus": [
         "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
-        "有空 kōng thanh 1 cao, nghĩa là \"có thời gian rảnh\".",
+        "有空 yǒu kòng: 空 nghĩa \"rảnh\" đọc kòng thanh 4 rơi mạnh; kōng thanh 1 là nghĩa khác (空调).",
         "晚上 wǎn shang: 上 đọc nhẹ."
       ],
       "sandhi": true,
@@ -24,10 +24,10 @@
         1,
         4,
         3,
+        5,
+        3,
+        3,
         4,
-        3,
-        3,
-        1,
         5
       ],
       "acceptTones": [
@@ -39,7 +39,7 @@
           5,
           2,
           3,
-          1,
+          4,
           5
         ],
         [
@@ -50,11 +50,11 @@
           5,
           3,
           3,
-          1,
+          4,
           5
         ]
       ],
-      "hint": "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-1-4-3-5-2-3-1-5 lẫn 4-1-4-3-5-3-3-1-5."
+      "hint": "Biến điệu 3+3: nǐ yǒu → ní yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 4-1-4-3-5-2-3-4-5 lẫn 4-1-4-3-5-3-3-4-5."
     },
     {
       "id": "dt-2-192",
@@ -167,12 +167,12 @@
       "focus": [
         "Biến điệu 3+3: wǒ qǐng → wó qíng; qǐng nǐ → qíng nǐ — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
         "谢谢 xiè xie: chữ thứ hai đọc nhẹ.",
-        "没空 kòng rơi mạnh, khác 有空 ở buổi trước."
+        "没空 méi kòng: 空 đọc kòng thanh 4 giống trong 有空; âm rơi mạnh."
       ],
       "sandhi": true,
       "baseTones": [
         4,
-        4,
+        5,
         3,
         5,
         1,

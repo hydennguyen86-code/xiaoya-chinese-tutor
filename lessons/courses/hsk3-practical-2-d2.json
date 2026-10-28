@@ -83,7 +83,7 @@
       "example": "这两个菜麻烦打包。",
       "exampleVi": "Hai món này làm ơn gói giúp tôi.",
       "pinyin": "dǎ bāo",
-      "examplePinyin": "zhè liǎng gè cài má fán dǎ bāo 。"
+      "examplePinyin": "zhè liǎng gè cài má fan dǎ bāo 。"
     }
   ],
   "patterns": [
@@ -171,7 +171,7 @@
         "explanation": "Khách hỏi 我扫手机付，行吗 và được trả lời 可以."
       }
     ],
-    "pinyin": "jiǎ ： fú wù yuán ， zhè wǎn miàn tài là le ， néng bu néng huàn yì wǎn bú là de ？ yǐ ： wǒ qù wèn chú fáng 。 nín hái yào bié de ma ？ jiǎ ： qǐng gěi wǒ yì zhāng cài dān ， wǒ xiǎng zài kàn kàn 。 yǐ ： zhè ge qīng cài kě yǐ dǎ bāo ， míng tiān rè yí xià hái néng chī 。 jiǎ ： hǎo ， mǎi dān ， yí gòng duō shǎo qián ？ yǐ ： sì shí bā kuài 。 jiǎ ： wǒ sǎo shǒu jī fù ， xíng ma ？ yǐ ： kě yǐ ， sǎo zhè ér 。"
+    "pinyin": "jiǎ ： fú wù yuán ， zhè wǎn miàn tài là le ， néng bu néng huàn yì wǎn bú là de ？ yǐ ： wǒ qù wèn chú fáng 。 nín hái yào bié de ma ？ jiǎ ： qǐng gěi wǒ yì zhāng cài dān ， wǒ xiǎng zài kàn kàn 。 yǐ ： zhè ge qīng cài kě yǐ dǎ bāo ， míng tiān rè yí xià hái néng chī 。 jiǎ ： hǎo ， mǎi dān ， yí gòng duō shǎo qián ？ yǐ ： sì shí bā kuài 。 jiǎ ： wǒ sǎo shǒu jī fù ， xíng ma ？ yǐ ： kě yǐ ， sǎo zhèr 。"
   },
   "speaking": [
     {
@@ -238,12 +238,12 @@
     {
       "text": "菜",
       "pinyin": "cài",
-      "hint": "Âm đầu cong lưỡi bật mạnh, vần gần 'ai', thanh 4; nghe hơi nặng hơn 'cải'."
+      "hint": "Âm đầu phẳng lưỡi bật hơi mạnh (c-), vần gần 'ai', thanh 4; nghe hơi nặng hơn 'cải'."
     },
     {
       "text": "杯",
       "pinyin": "bēi",
-      "hint": "Phụ âm môi b- ghép vần 'ui', thanh 1 cao và bằng, môi tròn dần khi kết thúc."
+      "hint": "Phụ âm môi b- ghép vần 'ei', thanh 1 cao và bằng; môi mở rồi khép dần ở i, không tròn."
     },
     {
       "text": "豆浆",

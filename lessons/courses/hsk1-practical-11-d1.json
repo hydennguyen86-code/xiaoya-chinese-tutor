@@ -161,5 +161,32 @@
       "sampleVi": "Tôi không khỏe. Xin giúp tôi tìm bệnh viện. Xin nói lại một lần nữa."
     }
   ],
-  "transferTask": "Đổi lịch vì mưa; buổi 2 xin giúp tìm nơi khám khi không khỏe."
+  "transferTask": "Đổi lịch vì mưa; buổi 2 xin giúp tìm nơi khám khi không khỏe.",
+  "pronunciation": [
+    {
+      "text": "天气",
+      "pinyin": "tiān qì",
+      "hint": "tiān khép -n gọn ở lợi; qì bật hơi mạnh, rất ngắn, đừng kéo âm đầu thành cong lưỡi."
+    },
+    {
+      "text": "冷，热",
+      "pinyin": "lěng ， rè",
+      "hint": "lěng là âm bên l nơi đầu lưỡi, rè là âm cong lưỡi r rung; cặp dễ lẫn nhất khi nghe."
+    },
+    {
+      "text": "下雨",
+      "pinyin": "xià yǔ",
+      "hint": "yǔ là ü tròn môi, không phải i phẳng; môi thu nhỏ tròn khi phát âm rồi hạ nhanh."
+    },
+    {
+      "text": "医院",
+      "pinyin": "yī yuàn",
+      "hint": "yuàn có ü tròn môi ở giữa âm rồi khép -n; nghe rõ khác một âm đọc phẳng kiểu 'yian'."
+    },
+    {
+      "text": "帮助",
+      "pinyin": "bāng zhù",
+      "hint": "bāng vang -ng ở mũi sau; zhù cong lưỡi với u sau, môi trề ra chứ không tròn túm như ü."
+    }
+  ]
 }

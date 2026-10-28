@@ -798,7 +798,7 @@
       "id": "dt-2-003",
       "level": "HSK3-4",
       "hanzi": "他跑得比我还快。",
-      "pinyin": "tā pǎo dé bǐ wǒ hái kuài",
+      "pinyin": "tā pǎo de bǐ wǒ hái kuài",
       "meaningVi": "Anh ấy chạy nhanh hơn tôi.",
       "focus": [
         "得 sau động từ đọc nhẹ de.",
@@ -831,7 +831,7 @@
       "id": "dt-2-006",
       "level": "HSK3-4",
       "hanzi": "这件事跟我没关系。",
-      "pinyin": "zhè jiàn shì gēn wǒ méi guān xì",
+      "pinyin": "zhè jiàn shì gēn wǒ méi guān xi",
       "meaningVi": "Chuyện này không liên quan đến tôi.",
       "focus": [
         "关 guān đóng -n, khác 光 guāng mở -ng.",
@@ -974,7 +974,7 @@
       "id": "dt-2-019",
       "level": "HSK3-4",
       "hanzi": "麻烦你再说一遍好吗？",
-      "pinyin": "má fán nǐ zài shuō yí biàn hǎo ma",
+      "pinyin": "má fan nǐ zài shuō yí biàn hǎo ma",
       "meaningVi": "Phiền bạn nói lại một lần được không?",
       "focus": [
         "烦 fan và 遍 bian đều đóng -n.",
@@ -1020,7 +1020,7 @@
       "id": "dt-2-023",
       "level": "HSK3-4",
       "hanzi": "我建议你早点去看医生。",
-      "pinyin": "wǒ jiàn yì nǐ záo diǎn qù kàn yī shēng",
+      "pinyin": "wǒ jiàn yì ní záo diǎn qù kàn yī shēng",
       "meaningVi": "Tôi khuyên bạn nên đi khám sớm.",
       "focus": [
         "议 yì bắt đầu bằng nguyên âm i.",
@@ -1044,6 +1044,18 @@
           3,
           4,
           4,
+          2,
+          2,
+          3,
+          4,
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          4,
+          4,
           3,
           2,
           3,
@@ -1058,18 +1070,6 @@
           4,
           3,
           3,
-          3,
-          4,
-          4,
-          1,
-          1
-        ],
-        [
-          3,
-          4,
-          4,
-          2,
-          2,
           3,
           4,
           4,
@@ -1127,7 +1127,7 @@
       "id": "dt-2-028",
       "level": "HSK3-4",
       "hanzi": "他比我更擅长处理投诉。",
-      "pinyin": "tā bǐ wǒ gèng shàn cháng chú lǐ tóu sù",
+      "pinyin": "tā bí wǒ gèng shàn cháng chú lǐ tóu sù",
       "meaningVi": "Anh ấy giỏi xử lý khiếu nại hơn tôi.",
       "focus": [
         "处 trong 处理 đọc chǔ, thanh 3.",
@@ -1149,6 +1149,18 @@
       "acceptTones": [
         [
           1,
+          2,
+          3,
+          4,
+          4,
+          2,
+          2,
+          3,
+          2,
+          4
+        ],
+        [
+          1,
           3,
           3,
           4,
@@ -1167,18 +1179,6 @@
           4,
           2,
           3,
-          3,
-          2,
-          4
-        ],
-        [
-          1,
-          2,
-          3,
-          4,
-          4,
-          2,
-          2,
           3,
           2,
           4
@@ -1454,7 +1454,7 @@
       "id": "dt-2-053",
       "level": "HSK3-4",
       "hanzi": "他的报告数据准确，分析清楚。",
-      "pinyin": "tā de bào gào shù jù zhǔn què fēn xī qīng chǔ",
+      "pinyin": "tā de bào gào shù jù zhǔn què fēn xī qīng chu",
       "meaningVi": "Báo cáo của anh ấy số liệu chính xác, phân tích rõ ràng.",
       "focus": [
         "数 trong 数据 đọc shù.",
@@ -1586,7 +1586,7 @@
       "id": "dt-3-005",
       "level": "HSK5-6",
       "hanzi": "请把这个案例的背景讲清楚。",
-      "pinyin": "qǐng bǎ zhè ge àn lì de bèi jǐng jiǎng qīng chǔ",
+      "pinyin": "qǐng bǎ zhè ge àn lì de bèi jǐng jiǎng qīng chu",
       "meaningVi": "Xin nói rõ bối cảnh của ví dụ này.",
       "focus": [
         "案例 àn lì: 案 mở rồi đóng -n.",
@@ -1952,7 +1952,7 @@
       "id": "dt-3-033",
       "level": "HSK5-6",
       "hanzi": "因为准备充分，演讲进行得很顺利。",
-      "pinyin": "yīn wéi zhǔn bèi chōng fèn yán jiǎng jìn xíng dé hěn shùn lì",
+      "pinyin": "yīn wéi zhǔn bèi chōng fèn yán jiǎng jìn xíng de hěn shùn lì",
       "meaningVi": "Vì chuẩn bị kỹ, bài diễn tiến hành rất thuận lợi.",
       "focus": [
         "演讲 yǎn jiǎng: hai thanh 3 đi liền → yán jiǎng.",
@@ -1970,7 +1970,7 @@
         3,
         4,
         2,
-        2,
+        5,
         3,
         4,
         4
@@ -1987,7 +1987,7 @@
           3,
           4,
           2,
-          2,
+          5,
           3,
           4,
           4
@@ -2003,13 +2003,13 @@
           3,
           4,
           2,
-          2,
+          5,
           3,
           4,
           4
         ]
       ],
-      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-2-3-4-1-4-2-3-4-2-2-3-4-4 lẫn 1-2-3-4-1-4-3-3-4-2-2-3-4-4."
+      "hint": "Biến điệu 3+3 áp ở vị trí 6 (đếm theo chữ Hán, bắt đầu từ 0). App nên chấp nhận cả 1-2-3-4-1-4-2-3-4-2-5-3-4-4 lẫn 1-2-3-4-1-4-3-3-4-2-5-3-4-4."
     },
     {
       "id": "dt-3-034",
@@ -2125,7 +2125,7 @@
       "id": "dt-3-044",
       "level": "HSK5-6",
       "hanzi": "这本书探讨了技术与伦理的关系。",
-      "pinyin": "zhè běn shū tàn tǎo le jì shù yǔ lún lǐ de guān xì",
+      "pinyin": "zhè běn shū tàn tǎo le jì shù yǔ lún lǐ de guān xi",
       "meaningVi": "Cuốn sách bàn về quan hệ giữa công nghệ và đạo đức.",
       "focus": [
         "伦理 lún lǐ: cả hai là âm l, đừng lẫn n.",
@@ -2245,7 +2245,7 @@
       "id": "dt-3-050",
       "level": "HSK5-6",
       "hanzi": "城市的交通拥堵问题短期难以缓解。",
-      "pinyin": "chéng shì de jiāo tōng yōng dǔ wèn tí duǎn qī nán yǐ huán jiě",
+      "pinyin": "chéng shì de jiāo tōng yōng dǔ wèn tí duǎn qī nán yí huán jiě",
       "meaningVi": "Tình trạng tắc đường ở thành phố khó giảm trong thời gian ngắn.",
       "focus": [
         "拥堵 yōng dǔ: 拥 đóng -ng, 堵 là d không bật hơi.",
@@ -2283,6 +2283,23 @@
           3,
           1,
           2,
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          5,
+          1,
+          1,
+          1,
+          3,
+          4,
+          2,
+          3,
+          1,
+          2,
           3,
           2,
           3
@@ -2302,23 +2319,6 @@
           2,
           3,
           3,
-          3
-        ],
-        [
-          2,
-          4,
-          5,
-          1,
-          1,
-          1,
-          3,
-          4,
-          2,
-          3,
-          1,
-          2,
-          2,
-          2,
           3
         ]
       ],

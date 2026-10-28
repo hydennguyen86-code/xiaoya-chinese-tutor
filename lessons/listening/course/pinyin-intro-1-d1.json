@@ -35,7 +35,7 @@
       "id": "dt-1-203",
       "level": "HSK1-2",
       "hanzi": "我的马跑得很快。",
-      "pinyin": "wǒ de má pǎo dé hěn kuài",
+      "pinyin": "wǒ de má pǎo de hěn kuài",
       "meaningVi": "Ngựa của tôi chạy rất nhanh.",
       "focus": [
         "Biến điệu 3+3: mǎ pǎo → má pǎo — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
@@ -48,7 +48,7 @@
         5,
         3,
         3,
-        2,
+        5,
         3,
         4
       ],
@@ -58,7 +58,7 @@
           5,
           2,
           3,
-          2,
+          5,
           3,
           4
         ],
@@ -67,12 +67,12 @@
           5,
           3,
           3,
-          2,
+          5,
           3,
           4
         ]
       ],
-      "hint": "App chấp nhận cả dạng đọc liền 3-5-2-3-2-3-4 lẫn dạng trích dẫn từng chữ 3-5-3-3-2-3-4."
+      "hint": "App chấp nhận cả dạng đọc liền 3-5-2-3-5-3-4 lẫn dạng trích dẫn từng chữ 3-5-3-3-5-3-4."
     },
     {
       "id": "dt-1-204",

@@ -47,19 +47,43 @@
       "id": "dt-2-144",
       "level": "HSK3-4",
       "hanzi": "有点儿冷，多穿一件。",
-      "pinyin": "yóu diǎn er lěng duō chuān yí jiàn",
+      "pinyin": "yóu diǎnr lěng duō chuān yí jiàn",
       "meaningVi": "Hơi lạnh, mặc thêm một cái đi.",
       "focus": [
         "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
-        "有点儿 yóu diǎn er: 儿 tách thành âm riêng er.",
+        "有点儿 yóu diǎnr: 儿 hoá thành r dính vào diǎn, đọc một âm tiết diǎnr, không tách er riêng.",
         "一件 yí jiàn: 一 thành yí trước thanh 4.",
         "穿 chuān cuộn lưỡi, khác 船 chuán."
       ],
       "sandhi": true,
-      "baseTones": [3, 3, 5, 3, 1, 1, 2, 4],
+      "baseTones": [
+        3,
+        3,
+        3,
+        1,
+        1,
+        2,
+        4
+      ],
       "acceptTones": [
-        [2, 3, 5, 3, 1, 1, 2, 4],
-        [3, 3, 5, 3, 1, 1, 2, 4]
+        [
+          2,
+          3,
+          3,
+          1,
+          1,
+          2,
+          4
+        ],
+        [
+          3,
+          3,
+          3,
+          1,
+          1,
+          2,
+          4
+        ]
       ],
       "hint": "Biến điệu 3+3: yǒu diǎn → yóu diǎn — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3. App nên chấp nhận cả 2-3-5-3-1-1-2-4 lẫn 3-3-5-3-1-1-2-4."
     }
@@ -74,9 +98,21 @@
       "syllables": 17,
       "pace": "chậm",
       "chunks": [
-        { "hanzi": "今天天气怎么样", "pinyin": "jīn tiān tiān qì zěn me yàng", "pause": "hard" },
-        { "hanzi": "外面还在下雨", "pinyin": "wài miàn hái zài xià yǔ", "pause": "soft" },
-        { "hanzi": "记得带伞", "pinyin": "jì de dài sǎn", "pause": "end" }
+        {
+          "hanzi": "今天天气怎么样",
+          "pinyin": "jīn tiān tiān qì zěn me yàng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "外面还在下雨",
+          "pinyin": "wài miàn hái zài xià yǔ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "记得带伞",
+          "pinyin": "jì de dài sǎn",
+          "pause": "end"
+        }
       ],
       "focus": [
         "记得 jì de: 得 đọc nhẹ de.",

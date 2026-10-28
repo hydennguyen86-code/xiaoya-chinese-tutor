@@ -7,6 +7,9 @@
   gọi món, mua sắm, gọi điện, ốm, ngân hàng, xem phòng, khách sạn…).
 - [HSK 5: 12 chủ đề × 2 buổi](HSK5-GUIDE.md), khoảng 30 phút/buổi.
 - [Dạng thi tham khảo, nguồn chính thức và giới hạn](EXAM-ALIGNMENT.md).
+- [Bảng đối chiếu từ vựng và ngữ pháp HSK theo từng cấp](HSK-COVERAGE.md) — do
+  `node scripts/hsk-coverage.mjs` sinh ra, chỉ so trùng hình thức với danh sách mức
+  của bên thứ ba, không chứng nhận đạt cấp.
 
 Mỗi buổi có từ/cụm, pinyin, ví dụ và dịch, mẫu câu, bản nghe riêng, câu hỏi và
 đáp án giải thích, nhiệm vụ nói và chuyển tình huống. Cuối bài 6 và 12 có đề

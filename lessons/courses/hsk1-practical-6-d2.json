@@ -185,6 +185,33 @@
     }
   ],
   "transferTask": "Mua mang đi cho hai người: gọi hai cốc khác loại, nói nóng/đá cho từng cốc và nhắc lại tổng số cốc.",
+  "pronunciation": [
+    {
+      "text": "两杯",
+      "pinyin": "liǎng bēi",
+      "hint": "liǎng thanh 3 để thấp rồi bēi thanh 1 cao bằng; đếm cốc là nghe cao độ nhảy lên ở âm cuối."
+    },
+    {
+      "text": "冰，糖",
+      "pinyin": "bīng ， táng",
+      "hint": "bīng thanh 1 cao bằng; táng thanh 2 đi lên — khi phân biệt đồ thêm, hãy nghe chuyển động cuối âm."
+    },
+    {
+      "text": "热的",
+      "pinyin": "rè de",
+      "hint": "Cấu trúc 'X + de': de đọc nhẹ, rất ngắn; toàn bộ thanh rơi nằm ở rè."
+    },
+    {
+      "text": "两杯咖啡",
+      "pinyin": "liǎng bēi kā fēi",
+      "hint": "Một âm thấp (liǎng thanh 3) rồi ba âm thanh 1 cao bằng liên tiếp — giữa ba âm cuối không được tụt."
+    },
+    {
+      "text": "不要",
+      "pinyin": "bú yào",
+      "hint": "不 trước yào thanh 4 đọc bú đi lên; lệnh phủ định 'đừng' này có thế lên-rồi-rơi."
+    }
+  ],
   "checkpoint": {
     "title": "Kiểm tra chặng 1 — nghe và nói ứng dụng",
     "practiceMinutes": 12,
@@ -310,6 +337,16 @@
         "word": "水",
         "pinyin": "shuǐ",
         "meaningVi": "nước"
+      },
+      {
+        "word": "学校",
+        "pinyin": "xué xiào",
+        "meaningVi": "trường học"
+      },
+      {
+        "word": "想",
+        "pinyin": "xiǎng",
+        "meaningVi": "muốn"
       }
     ]
   }

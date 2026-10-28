@@ -160,5 +160,32 @@
       "sampleVi": "Tôi lấy một cốc trà nóng. Xin đừng thêm đường. Cảm ơn."
     }
   ],
-  "transferTask": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người."
+  "transferTask": "Gọi nước ở quán; buổi 2 mua đồ uống mang đi cho hai người.",
+  "pronunciation": [
+    {
+      "text": "一杯",
+      "pinyin": "yì bēi",
+      "hint": "一 đứng một mình là yī, nhưng trước bēi thanh 1 đọc yì rơi ngắn; bēi sau đó cao bằng."
+    },
+    {
+      "text": "咖啡",
+      "pinyin": "kā fēi",
+      "hint": "Cả hai âm thanh 1 cao bằng; giữ cùng một cao độ suốt cụm, đừng để âm thứ hai tụt xuống."
+    },
+    {
+      "text": "水，茶",
+      "pinyin": "shuǐ ， chá",
+      "hint": "shuǐ thanh 3 thấp, vớt nhẹ cuối; chá thanh 2 đi lên dứt khoát — hai đồ uống, hai thế ngược nhau."
+    },
+    {
+      "text": "喝什么",
+      "pinyin": "hē shén me",
+      "hint": "me đọc nhẹ vì là phần cuối của từ hỏi 什么; cao độ chính nằm ở shén đi lên."
+    },
+    {
+      "text": "热茶",
+      "pinyin": "rè chá",
+      "hint": "rè thanh 4 rơi nhanh, chá thanh 2 vớt lên; cụm 'trà nóng' có thế rơi rồi lên rõ rệt."
+    }
+  ]
 }

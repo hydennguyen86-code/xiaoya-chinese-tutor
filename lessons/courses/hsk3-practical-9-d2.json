@@ -35,7 +35,7 @@
       "example": "租金一个月一千八百块，有点贵。",
       "exampleVi": "Tiền thuê một nghìn tám trăm tệ một tháng, hơi đắt.",
       "pinyin": "zū jīn",
-      "examplePinyin": "zū jīn yí gè yuè yī qiān bā bǎi kuài ， yǒu diǎn guì 。"
+      "examplePinyin": "zū jīn yí gè yuè yì qiān bā bǎi kuài ， yǒu diǎn guì 。"
     },
     {
       "word": "押金",
@@ -43,7 +43,7 @@
       "example": "押金付两个月，退房的时候还。",
       "exampleVi": "Cọc hai tháng, lúc trả phòng thì nhận lại.",
       "pinyin": "yā jīn",
-      "examplePinyin": "yā jīn fù liǎng gè yuè ， tuì fáng de shí hou hái 。"
+      "examplePinyin": "yā jīn fù liǎng gè yuè ， tuì fáng de shí hou huán 。"
     },
     {
       "word": "合同",
@@ -106,7 +106,7 @@
       "explanation": "Báo một đồ dùng trong phòng đã hỏng: nói tên đồ rồi thêm 坏了; muốn nhờ người xử lý thì nối 麻烦你叫维修的人过来.",
       "example": "空调坏了，麻烦你叫人来修一下。",
       "exampleVi": "Điều hòa hỏng rồi, phiền bạn gọi người đến sửa một chút.",
-      "examplePinyin": "kōng tiáo huài le ， má fán nǐ jiào rén lái xiū yí xià 。"
+      "examplePinyin": "kōng tiáo huài le ， má fan nǐ jiào rén lái xiū yí xià 。"
     }
   ],
   "roleplay": {
@@ -118,7 +118,7 @@
       "Hỏi người sửa đến giờ nào và ai trả tiền",
       "Xin làm thêm chìa khóa và hẹn giờ có mặt ở phòng"
     ],
-    "opening": "空调今天才坏的？维修的人下午两点能到，那时候你在房子吗？",
+    "opening": "空调今天才坏的？维修的人下午两点能到，那时候你在房间吗？",
     "openingVi": "Điều hòa hôm nay mới hỏng à? Người sửa có thể đến lúc hai giờ chiều, lúc đó bạn có ở phòng không?"
   },
   "freeTalk": {

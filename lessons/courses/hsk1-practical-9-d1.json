@@ -75,7 +75,7 @@
       "explanation": "Hỏi có loại lớn/nhỏ hơn một chút; đây là mẫu mở rộng thực dụng.",
       "example": "有小一点儿的吗？",
       "exampleVi": "Có loại nhỏ hơn một chút không?",
-      "examplePinyin": "yǒu xiǎo yì diǎn ér de ma ？"
+      "examplePinyin": "yǒu xiǎo yì diǎnr de ma ？"
     }
   ],
   "roleplay": {
@@ -128,7 +128,7 @@
         "explanation": "A hỏi 小一点儿."
       }
     ],
-    "pinyin": "jiǎ ： wǒ xiǎng mǎi yí gè bēi zi 。 yǐ ： zhè ge zěn me yàng ？ jiǎ ： tài dà le ， yǒu xiǎo yì diǎn ér de ma ？ yǐ ： yǒu ， nà ge xiǎo yì diǎn ér 。"
+    "pinyin": "jiǎ ： wǒ xiǎng mǎi yí gè bēi zi 。 yǐ ： zhè ge zěn me yàng ？ jiǎ ： tài dà le ， yǒu xiǎo yì diǎnr de ma ？ yǐ ： yǒu ， nà ge xiǎo yì diǎnr 。"
   },
   "speaking": [
     {
@@ -160,5 +160,32 @@
       "sampleVi": "Cái này bao nhiêu tiền? Còn cái kia? Tôi lấy cái kia."
     }
   ],
-  "transferTask": "Mua cốc; buổi 2 chọn giữa hai món có giá khác nhau."
+  "transferTask": "Mua cốc; buổi 2 chọn giữa hai món có giá khác nhau.",
+  "pronunciation": [
+    {
+      "text": "杯子",
+      "pinyin": "bēi zi",
+      "hint": "zi đọc nhẹ, ngắn, không dấu; toàn bộ thanh nằm ở bēi thanh 1 cao và bằng."
+    },
+    {
+      "text": "喜欢",
+      "pinyin": "xǐ huan",
+      "hint": "huan nhẹ và lướt nhanh; chỉ xǐ giữ thanh 3 uốn thấp, đừng đọc đều hai âm tiết."
+    },
+    {
+      "text": "这个，那个",
+      "pinyin": "zhè ge ， nà ge",
+      "hint": "zhè mở đầu bằng âm cong lưỡi, nà mở đầu bằng mũi n; cả hai tiếng 个 đều đọc nhẹ."
+    },
+    {
+      "text": "怎么",
+      "pinyin": "zěn me",
+      "hint": "zěn là z phẳng sát lợi, không cong lưỡi; me đọc nhẹ, thấp, không dấu."
+    },
+    {
+      "text": "点，样",
+      "pinyin": "diǎn ， yàng",
+      "hint": "Cặp kiểm tra -n so với -ng: diǎn chặn hơi sớm ở lợi, yàng rung vang ở mũi sau."
+    }
+  ]
 }

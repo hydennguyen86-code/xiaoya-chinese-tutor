@@ -175,5 +175,32 @@
       "sampleVi": "Sáng mai tôi có thời gian. Chúng ta gặp lúc mười giờ. Bạn có thời gian không?"
     }
   ],
-  "transferTask": "Ở quán nước: đổi lịch hẹn sang ngày/giờ khác, đọc lại lịch mới và hỏi đối phương có thời gian không."
+  "transferTask": "Ở quán nước: đổi lịch hẹn sang ngày/giờ khác, đọc lại lịch mới và hỏi đối phương có thời gian không.",
+  "pronunciation": [
+    {
+      "text": "时间",
+      "pinyin": "shí jiān",
+      "hint": "shí thanh 2 đi lên, jiān thanh 1 cao bằng — từ chỉ thời gian kết thúc ở cao độ bằng và cao."
+    },
+    {
+      "text": "可以",
+      "pinyin": "kě yǐ",
+      "hint": "Hai thanh 3 liền nhau: trong lời nói âm đầu được đọc vớt lên như thanh 2, âm thứ hai giữ thanh 3 thấp."
+    },
+    {
+      "text": "三点",
+      "pinyin": "sān diǎn",
+      "hint": "sān thanh 1 cao bằng, diǎn thanh 3 thấp và vớt cuối; khi nói giờ đừng biến diǎn thành thanh 4 rơi."
+    },
+    {
+      "text": "好的",
+      "pinyin": "hǎo de",
+      "hint": "hǎo mang thanh 3 đầy đủ, de là trợ từ đọc rất nhẹ, ngắn và buông; đồng ý là nghe 'thấp rồi buông'."
+    },
+    {
+      "text": "不是今天",
+      "pinyin": "bú shì jīn tiān",
+      "hint": "不 đọc bú trước shì thanh 4; hai âm cuối jīn tiān cùng thanh 1 cao bằng — nghe lên ngắn rồi trôi bằng."
+    }
+  ]
 }

@@ -1,0 +1,81 @@
+{
+ "generatedBy": "scripts/build-hsk-standard.mjs",
+ "note": "Danh sách mức do nguồn thứ ba cung cấp, không phải nội dung Misu. null = từ không thuộc dải 1–6 của phiên bản đó.",
+ "sources": [
+  {
+   "project": "complete-hsk-vocabulary",
+   "url": "https://github.com/drkameleon/complete-hsk-vocabulary",
+   "license": "MIT",
+   "file": "complete.min.json",
+   "sha256": "52d8e64ba65a6db4a38ea34302c6de5df53cdb5145254b25edcbf93b80676434",
+   "versions": {
+    "old": "HSK 2.0",
+    "new": "HSK 3.0 (2021)",
+    "newest": "HSK 3.0 bản sửa 2025"
+   },
+   "tagLegend": "o = HSK 2.0, n = HSK 3.0 (2021), t = bản sửa 2025; chữ số sau là mức."
+  },
+  {
+   "project": "hsk30 (ngữ pháp)",
+   "url": "https://github.com/ivankra/hsk30",
+   "license": "MIT",
+   "file": "hsk30-grammar.csv",
+   "sha256": "9a546944af00976a3afb160fe70dd564a035d36eff82eb275b6aed7ed8a9ccf4"
+  }
+ ],
+ "retrievedAt": "2026-10-27",
+ "entryCount": 11470,
+ "wordCount": 7823,
+ "exclusive": {
+  "old": {
+   "1": 150,
+   "2": 147,
+   "3": 298,
+   "4": 598,
+   "5": 1298,
+   "6": 2500
+  },
+  "new": {
+   "1": 506,
+   "2": 750,
+   "3": 953,
+   "4": 972,
+   "5": 1059,
+   "6": 1123
+  },
+  "newest": {
+   "1": 294,
+   "2": 197,
+   "3": 487,
+   "4": 972,
+   "5": 1547,
+   "6": 1684
+  }
+ },
+ "cumulative": {
+  "old": {
+   "1": 150,
+   "2": 297,
+   "3": 595,
+   "4": 1193,
+   "5": 2491,
+   "6": 4991
+  },
+  "new": {
+   "1": 506,
+   "2": 1256,
+   "3": 2209,
+   "4": 3181,
+   "5": 4240,
+   "6": 5363
+  },
+  "newest": {
+   "1": 294,
+   "2": 491,
+   "3": 978,
+   "4": 1950,
+   "5": 3497,
+   "6": 5181
+  }
+ }
+}

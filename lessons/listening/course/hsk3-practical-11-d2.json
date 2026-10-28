@@ -23,11 +23,11 @@
       "id": "dt-2-188",
       "level": "HSK3-4",
       "hanzi": "午睡一会儿，下午有精神。",
-      "pinyin": "wǔ shuì yí huì er xià wú yǒu jīng shén",
+      "pinyin": "wǔ shuì yí huìr xià wú yǒu jīng shén",
       "meaningVi": "Ngủ trưa một lát, chiều là tỉnh táo hơn.",
       "focus": [
         "Biến điệu 3+3: wǔ yǒu → wú yǒu — pinyin trong file ghi theo cách đọc thật; đọc rời từng chữ thì chữ đầu vẫn thanh 3.",
-        "一 trong 一会儿 đọc yí, 儿 đi liền sau 会.",
+        "一 trong 一会儿 đọc yí; 会儿 hoá thành huìr, đọc một âm tiết dính, không tách er riêng.",
         "精神 jīng shén: hai âm đi lên, 精 đóng -ng rồi 神 đóng -n."
       ],
       "sandhi": true,
@@ -36,7 +36,6 @@
         4,
         2,
         4,
-        5,
         4,
         3,
         3,
@@ -49,7 +48,6 @@
           4,
           2,
           4,
-          5,
           4,
           2,
           3,
@@ -61,7 +59,6 @@
           4,
           2,
           4,
-          5,
           4,
           3,
           3,
@@ -75,7 +72,7 @@
       "id": "dt-2-189",
       "level": "HSK3-4",
       "hanzi": "他的作息不太规律。",
-      "pinyin": "tā de zuò xī bú tài guī lù",
+      "pinyin": "tā de zuò xī bú tài guī lǜ",
       "meaningVi": "Sinh hoạt của bạn ấy không đều đặn lắm.",
       "focus": [
         "作息 zuò xī: 作 đọc zuò,  xī thanh 1 cao.",
@@ -101,9 +98,9 @@
       "id": "sh-2-42",
       "level": "HSK3-4",
       "text": "他天天熬夜，作息全乱了。午睡一会儿，下午才有精神。",
-      "pinyin": "tā tiān tiān áo yè zuò xī quán luàn le wǔ shuì yí huì er xià wǔ cái yǒu jīng shén",
+      "pinyin": "tā tiān tiān áo yè zuò xī quán luàn le wǔ shuì yí huìr xià wǔ cái yǒu jīng shén",
       "meaningVi": "Bạn ấy ngày nào cũng thức khuya, sinh hoạt rối hết. Ngủ trưa một lát, chiều mới tỉnh táo.",
-      "syllables": 21,
+      "syllables": 20,
       "pace": "vừa",
       "chunks": [
         {
@@ -118,7 +115,7 @@
         },
         {
           "hanzi": "午睡一会儿",
-          "pinyin": "wǔ shuì yí huì er",
+          "pinyin": "wǔ shuì yí huìr",
           "pause": "soft"
         },
         {

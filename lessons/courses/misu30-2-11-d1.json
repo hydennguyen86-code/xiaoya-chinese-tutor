@@ -25,8 +25,8 @@
       "meaning": "rảnh",
       "example": "你周末有空吗？",
       "exampleVi": "Cuối tuần bạn có rảnh không?",
-      "pinyin": "yǒu kōng",
-      "examplePinyin": "nǐ zhōu mò yǒu kōng ma ？"
+      "pinyin": "yǒu kòng",
+      "examplePinyin": "nǐ zhōu mò yǒu kòng ma ？"
     },
     {
       "word": "一起",
@@ -91,7 +91,7 @@
       "explanation": "Dùng để hỏi người khác có thời gian không.",
       "example": "你明天有空吗？",
       "exampleVi": "Ngày mai bạn có rảnh không?",
-      "examplePinyin": "nǐ míng tiān yǒu kōng ma ？"
+      "examplePinyin": "nǐ míng tiān yǒu kòng ma ？"
     },
     {
       "pattern": "我们一起……吧。",
@@ -134,7 +134,7 @@
     "playLimit": 2,
     "transcript": "你周末有空吗？ 我们一起吃饭吧。 我打算学开车。",
     "translation": "Cuối tuần bạn có rảnh không? Chúng mình cùng ăn cơm nhé. Mình dự định học lái xe.",
-    "pinyin": "nǐ zhōu mò yǒu kōng ma ？   wǒ men yì qǐ chī fàn ba 。   wǒ dǎ suàn xué kāi chē 。",
+    "pinyin": "nǐ zhōu mò yǒu kòng ma ？   wǒ men yì qǐ chī fàn ba 。   wǒ dǎ suàn xué kāi chē 。",
     "questions": [
       {
         "prompt": "Cụm “有空” trong đoạn nghe có nghĩa gì?",
@@ -176,7 +176,7 @@
       "responseSeconds": 30,
       "audioText": "你周末有空吗？",
       "reference": "你周末有空吗？",
-      "pinyin": "nǐ zhōu mò yǒu kōng ma ？",
+      "pinyin": "nǐ zhōu mò yǒu kòng ma ？",
       "checklist": [
         "Giữ thông tin chính",
         "Nói rõ để người nghe hiểu",

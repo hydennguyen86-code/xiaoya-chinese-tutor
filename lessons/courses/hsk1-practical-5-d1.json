@@ -159,5 +159,32 @@
       "sampleVi": "Mai chúng ta gặp lúc hai giờ chiều nhé? Là hai giờ chiều mai, đúng không?"
     }
   ],
-  "transferTask": "Hẹn bạn học; buổi 2 sửa lại lịch hẹn ở quán nước."
+  "transferTask": "Hẹn bạn học; buổi 2 sửa lại lịch hẹn ở quán nước.",
+  "pronunciation": [
+    {
+      "text": "今天",
+      "pinyin": "jīn tiān",
+      "hint": "Cả hai âm thanh 1 cao bằng; giữ đúng một cao độ để 'tiān' không bị nghe thành âm rơi."
+    },
+    {
+      "text": "明天",
+      "pinyin": "míng tiān",
+      "hint": "míng thanh 2 đi lên rồi tiān thanh 1 cao bằng; cao độ nhảy lên rõ sau khúc vớt."
+    },
+    {
+      "text": "下午",
+      "pinyin": "xià wǔ",
+      "hint": "xià thanh 4 rơi dứt khoát, wǔ thanh 3 thấp nhất khi kết thúc; thế 'rơi rồi nằm thấp' của buổi chiều."
+    },
+    {
+      "text": "两点",
+      "pinyin": "liǎng diǎn",
+      "hint": "Hai thanh 3 liền nhau: khi nói, âm đầu liǎng thường được vớt lên như thanh 2; chữ viết vẫn giữ dạng từ điển."
+    },
+    {
+      "text": "见面",
+      "pinyin": "jiàn miàn",
+      "hint": "Hai thanh 4 liên tiếp: cả hai âm đều rơi gọn, âm sau dài hơn chút; đừng kéo âm đầu thành thanh 2."
+    }
+  ]
 }

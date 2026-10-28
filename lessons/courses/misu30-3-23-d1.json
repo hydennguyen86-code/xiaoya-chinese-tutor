@@ -62,9 +62,9 @@
     },
     {
       "word": "免疫力",
-      "meaning": "sức miễn dịch",
+      "meaning": "khả năng miễn dịch",
       "example": "睡眠不足会降低免疫力。",
-      "exampleVi": "Thiếu ngủ sẽ làm giảm sức miễn dịch.",
+      "exampleVi": "Thiếu ngủ sẽ làm giảm khả năng miễn dịch.",
       "pinyin": "miǎn yì lì",
       "examplePinyin": "shuì mián bù zú huì jiàng dī miǎn yì lì 。"
     },
@@ -163,7 +163,7 @@
         "options": [
           "thức khuya",
           "mất ngủ",
-          "sức miễn dịch"
+          "khả năng miễn dịch"
         ],
         "answer": 1,
         "explanation": "“失眠”: mất ngủ. Ví dụ đã nghe: 最近压力大，我经常失眠。"

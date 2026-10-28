@@ -47,9 +47,9 @@
     },
     {
       "word": "块",
-      "meaning": "đồng; cách nói khẩu ngữ của đơn vị tiền",
+      "meaning": "tệ; cách nói khẩu ngữ của nhân dân tệ",
       "example": "这碗面条十块钱。",
-      "exampleVi": "Bát mì này giá mười đồng.",
+      "exampleVi": "Bát mì này giá mười tệ.",
       "pinyin": "kuài",
       "examplePinyin": "zhè wǎn miàn tiáo shí kuài qián 。"
     },
@@ -75,7 +75,7 @@
       "example": "请少放一点儿辣椒。",
       "exampleVi": "Xin bớt ớt một chút.",
       "pinyin": "là jiāo",
-      "examplePinyin": "qǐng shǎo fàng yì diǎn ér là jiāo 。"
+      "examplePinyin": "qǐng shǎo fàng yì diǎnr là jiāo 。"
     }
   ],
   "patterns": [
@@ -91,7 +91,7 @@
       "explanation": "Yêu cầu giảm ớt; học như một cụm khi gọi món.",
       "example": "请少放一点儿辣椒。",
       "exampleVi": "Xin cho ít ớt một chút.",
-      "examplePinyin": "qǐng shǎo fàng yì diǎn ér là jiāo 。"
+      "examplePinyin": "qǐng shǎo fàng yì diǎnr là jiāo 。"
     }
   ],
   "roleplay": {
@@ -121,7 +121,7 @@
     "title": "Nghe buổi 2: Gọi món và hỏi giá",
     "playLimit": 2,
     "transcript": "甲：我要两碗米饭。乙：一碗三块，两碗六块。甲：好，再要一杯水。",
-    "translation": "A: Tôi lấy hai bát cơm. B: Một bát ba đồng, hai bát sáu đồng. A: Được, cho thêm một cốc nước.",
+    "translation": "A: Tôi lấy hai bát cơm. B: Một bát ba tệ, hai bát sáu tệ. A: Được, cho thêm một cốc nước.",
     "questions": [
       {
         "prompt": "Hai bát cơm giá bao nhiêu?",
@@ -176,5 +176,32 @@
       "sampleVi": "Tôi lấy hai bát cơm. Một bát bao nhiêu tiền? Xin bớt ớt một chút."
     }
   ],
-  "transferTask": "Ở quầy cơm: gọi hai bát, hỏi giá một bát, xin bớt ớt và xác nhận tổng số bát."
+  "transferTask": "Ở quầy cơm: gọi hai bát, hỏi giá một bát, xin bớt ớt và xác nhận tổng số bát.",
+  "pronunciation": [
+    {
+      "text": "两碗",
+      "pinyin": "liǎng wǎn",
+      "hint": "Hai thanh 3 liền nhau: khi nói, liǎng được vớt lên như thanh 2 rồi wǎn giữ thanh 3 thấp — đếm bát phải nghe mượt, không gãy."
+    },
+    {
+      "text": "三块",
+      "pinyin": "sān kuài",
+      "hint": "sān thanh 1 cao bằng, kuài thanh 4 rơi — ranh giới hai âm của giá tiền rất rõ."
+    },
+    {
+      "text": "一杯水",
+      "pinyin": "yì bēi shuǐ",
+      "hint": "yì rơi ngắn (thanh 4 của 一 trước âm 1), bēi cao bằng, shuǐ thấp vớt cuối — thế 4-1-3 của cụm 'một cốc nước'."
+    },
+    {
+      "text": "六块",
+      "pinyin": "liù kuài",
+      "hint": "Hai thanh 4 liên tiếp: cả hai âm đều rơi, âm thứ hai dài hơn; đừng làm phẳng âm nào trong giá."
+    },
+    {
+      "text": "面条",
+      "pinyin": "miàn tiáo",
+      "hint": "miàn thanh 4 rơi trước, tiáo thanh 2 đi lên sau — món mì kết thúc bằng âm vớt lên."
+    }
+  ]
 }

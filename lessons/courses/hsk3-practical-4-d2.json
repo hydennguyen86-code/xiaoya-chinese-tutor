@@ -51,7 +51,7 @@
       "example": "我们几点在哪儿见面？",
       "exampleVi": "Mấy giờ và ở đâu chúng ta gặp nhau?",
       "pinyin": "jiàn miàn",
-      "examplePinyin": "wǒ men jǐ diǎn zài nǎ ér jiàn miàn ？"
+      "examplePinyin": "wǒ men jǐ diǎn zài nǎr jiàn miàn ？"
     },
     {
       "word": "晚会",
@@ -171,7 +171,7 @@
         "explanation": "Câu đổi hẹn là 我们在地铁站出口见面."
       }
     ],
-    "pinyin": "jiǎ ： nín hǎo ， wǒ xiǎng yù yuē zhōu liù wǎn shang de zhuō zi ， wǒ men sì gè rén 。 yǐ ： liù diǎn bàn kě yǐ ma ？ jiǎ ： kě yǐ 。 qǐng bǎ fàn diàn de wèi zhì fā gěi wǒ ， wǒ dì yí cì qù 。 yǐ ： hǎo de 。 jiǎ ： wèi ， xiǎo lǐ ， wǒ yào chí dào le ， wǒ men bú zài fàn diàn mén kǒu jiàn miàn le ba ？ yǐ ： nà zài nǎ lǐ ？ jiǎ ： wǒ men zài dì tiě zhàn chū kǒu jiàn miàn ， wǒ zài nà lǐ děng nǐ 。 yǐ ： hǎo ， yí huì er lián xì 。"
+    "pinyin": "jiǎ ： nín hǎo ， wǒ xiǎng yù yuē zhōu liù wǎn shang de zhuō zi ， wǒ men sì gè rén 。 yǐ ： liù diǎn bàn kě yǐ ma ？ jiǎ ： kě yǐ 。 qǐng bǎ fàn diàn de wèi zhì fā gěi wǒ ， wǒ dì yí cì qù 。 yǐ ： hǎo de 。 jiǎ ： wèi ， xiǎo lǐ ， wǒ yào chí dào le ， wǒ men bú zài fàn diàn mén kǒu jiàn miàn le ba ？ yǐ ： nà zài nǎ lǐ ？ jiǎ ： wǒ men zài dì tiě zhàn chū kǒu jiàn miàn ， wǒ zài nà lǐ děng nǐ 。 yǐ ： hǎo ， yí huìr lián xì 。"
   },
   "speaking": [
     {
@@ -248,7 +248,7 @@
     {
       "text": "见面",
       "pinyin": "jiàn miàn",
-      "hint": "Chữ đầu là âm cong lưỡi không bật hơi, vần gần 'iên'; chữ sau gần 'miện', thanh 4."
+      "hint": "Chữ đầu là âm mặt lưỡi j-, khóe miệng kéo ngang, không bật hơi, vần gần 'iên'; chữ sau gần 'miện', thanh 4."
     }
   ]
 }

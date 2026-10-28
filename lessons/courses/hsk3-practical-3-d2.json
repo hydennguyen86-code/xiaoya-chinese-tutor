@@ -43,7 +43,7 @@
       "example": "有没有大一号的？这件有点儿小。",
       "exampleVi": "Có cỡ lớn hơn không? Cái này hơi nhỏ.",
       "pinyin": "hào",
-      "examplePinyin": "yǒu méi yǒu dà yī hào de ？ zhè jiàn yǒu diǎn er xiǎo 。"
+      "examplePinyin": "yǒu méi yǒu dà yī hào de ？ zhè jiàn yǒu diǎnr xiǎo 。"
     },
     {
       "word": "付款",
@@ -51,7 +51,7 @@
       "example": "我先去付款，你在这儿等我。",
       "exampleVi": "Tôi đi trả tiền trước, bạn đợi ở đây.",
       "pinyin": "fù kuǎn",
-      "examplePinyin": "wǒ xiān qù fù kuǎn ， nǐ zài zhè ér děng wǒ 。"
+      "examplePinyin": "wǒ xiān qù fù kuǎn ， nǐ zài zhèr děng wǒ 。"
     },
     {
       "word": "零钱",
@@ -171,7 +171,7 @@
         "explanation": "Người bán trả lời 只送小号的."
       }
     ],
-    "pinyin": "jiǎ ： zhè tiáo qún zi yì bǎi èr ， néng pián yi diǎn ma ？ yǐ ： mǎi liǎng jiàn kě yǐ dǎ zhé ， dǎ jiǔ zhé 。 jiǎ ： nà wǒ kàn kàn wài tào 。 zhè jiàn wài tào tǐng hé shì ， kě shì wǒ méi dài duō shǎo xiàn jīn 。 yǐ ： nǐ kě yǐ sǎo shǒu jī ， yě kě yǐ fù xiàn jīn 。 jiǎ ： mǎi liǎng jiàn sòng yí jiàn ， shì zhēn de ma ？ yǐ ： zhēn de ， bú guò zhī sòng xiǎo hào de 。 jiǎ ： hǎo ， wǒ fù kuǎn ， qǐng gěi wǒ yì diǎn líng qián 。"
+    "pinyin": "jiǎ ： zhè tiáo qún zi yì bǎi èr ， néng pián yi diǎn ma ？ yǐ ： mǎi liǎng jiàn kě yǐ dǎ zhé ， dǎ jiǔ zhé 。 jiǎ ： nà wǒ kàn kàn wài tào 。 zhè jiàn wài tào tǐng hé shì ， kě shì wǒ méi dài duō shǎo xiàn jīn 。 yǐ ： nǐ kě yǐ sǎo shǒu jī ， yě kě yǐ fù xiàn jīn 。 jiǎ ： mǎi liǎng jiàn sòng yí jiàn ， shì zhēn de ma ？ yǐ ： zhēn de ， bú guò zhǐ sòng xiǎo hào de 。 jiǎ ： hǎo ， wǒ fù kuǎn ， qǐng gěi wǒ yì diǎn líng qián 。"
   },
   "speaking": [
     {

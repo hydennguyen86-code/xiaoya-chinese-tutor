@@ -128,7 +128,7 @@
         "explanation": "A nói 我是越南人."
       }
     ],
-    "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo ān 。 nǐ jiào shén me míng zì ？ yǐ ： wǒ jiào xiǎo míng 。 wǒ shì zhōng guó rén 。 jiǎ ： wǒ shì yuè nán rén 。"
+    "pinyin": "jiǎ ： nǐ hǎo ， wǒ jiào xiǎo ān 。 nǐ jiào shén me míng zi ？ yǐ ： wǒ jiào xiǎo míng 。 wǒ shì zhōng guó rén 。 jiǎ ： wǒ shì yuè nán rén 。"
   },
   "speaking": [
     {
@@ -160,5 +160,32 @@
       "sampleVi": "Tôi tên Tiểu An. Tôi là người Việt Nam. Bạn tên gì?"
     }
   ],
-  "transferTask": "Làm quen với bạn học; buổi 2 xác nhận lại tên ở quầy đăng ký."
+  "transferTask": "Làm quen với bạn học; buổi 2 xác nhận lại tên ở quầy đăng ký.",
+  "pronunciation": [
+    {
+      "text": "名字",
+      "pinyin": "míng zi",
+      "hint": "zi âm tiết thứ hai đọc nhẹ, ngắn và thấp; đừng nhớ thành zǐ đầy đủ thanh."
+    },
+    {
+      "text": "我叫",
+      "pinyin": "wǒ jiào",
+      "hint": "wǒ thanh 3 hạ thấp, jiào thanh 4 rơi dứt khoát; giữ hai âm tách bạch để người nghe phân biệt rõ."
+    },
+    {
+      "text": "中国人",
+      "pinyin": "zhōng guó rén",
+      "hint": "Âm đầu thanh 1 cao bằng; guó và rén cùng thanh 2 đi lên, tạo cao độ dâng dần ở giữa cụm."
+    },
+    {
+      "text": "越南",
+      "pinyin": "yuè nán",
+      "hint": "yuè thanh 4 rơi nhanh, nán thanh 2 đi lên; cặp 4+2 này đừng để mất phần vớt cuối."
+    },
+    {
+      "text": "你好",
+      "pinyin": "nǐ hǎo",
+      "hint": "Hai thanh 3 liền nhau: trong lời nói âm đầu thường được đọc vớt lên như thanh 2, chữ viết vẫn ghi dạng từ điển."
+    }
+  ]
 }

@@ -34,8 +34,8 @@
       "meaning": "rảnh",
       "example": "你晚上有空吗？一起吃个饭。",
       "exampleVi": "Tối nay bạn rảnh không? Cùng đi ăn một bữa.",
-      "pinyin": "yǒu kōng",
-      "examplePinyin": "nǐ wǎn shang yǒu kōng ma ？ yì qǐ chī gè fàn 。"
+      "pinyin": "yǒu kòng",
+      "examplePinyin": "nǐ wǎn shang yǒu kòng ma ？ yì qǐ chī gè fàn 。"
     },
     {
       "word": "可惜",
@@ -59,7 +59,7 @@
       "example": "抱歉，那天我家里有点儿事儿。",
       "exampleVi": "Ngại quá, hôm đó nhà tôi có chút việc.",
       "pinyin": "bào qiàn",
-      "examplePinyin": "bào qiàn ， nà tiān wǒ jiā lǐ yǒu diǎn er shì ér 。"
+      "examplePinyin": "bào qiàn ， nà tiān wǒ jiā lǐ yǒu diǎnr shìr 。"
     },
     {
       "word": "加班",
@@ -67,7 +67,7 @@
       "example": "周六我得加班，去不了。",
       "exampleVi": "Thứ bảy tôi phải làm thêm giờ, đi không được.",
       "pinyin": "jiā bān",
-      "examplePinyin": "zhōu liù wǒ dé jiā bān ， qù bù liǎo 。"
+      "examplePinyin": "zhōu liù wǒ děi jiā bān ， qù bù liǎo 。"
     },
     {
       "word": "请客",
@@ -92,7 +92,7 @@
       "explanation": "Mở lời mời: 你 rồi thêm thời gian và 有空吗？, sau đó nêu việc cùng làm; hỏi cho cả nhóm thì đổi thành 你们.",
       "example": "你周六晚上有空吗？我们一起去吃火锅。",
       "exampleVi": "Tối thứ bảy bạn rảnh không? Mình cùng đi ăn lẩu.",
-      "examplePinyin": "nǐ zhōu liù wǎn shang yǒu kōng ma ？ wǒ men yì qǐ qù chī huǒ guō 。"
+      "examplePinyin": "nǐ zhōu liù wǎn shang yǒu kòng ma ？ wǒ men yì qǐ qù chī huǒ guō 。"
     },
     {
       "pattern": "不好意思，我……",
@@ -171,7 +171,7 @@
         "explanation": "乙 nói 我先跟大家说一声，七点半到那儿找你们，不过我只能待一个小时."
       }
     ],
-    "pinyin": "jiǎ ： zhōu liù wǎn shang dà jiā yì qǐ chàng gē ， wǒ qǐng kè ， nǐ yǒu kōng ma ？ yǐ ： wǒ běn lái xiǎng qù ， kě shì nà tiān wǒ dé jiā bān dào jiǔ diǎn 。 jiǎ ： nà nǐ máng wán le zài lái ， shí diǎn cái sàn 。 yǐ ： yào shi bù jiā bān de huà ， wǒ yí dìng qù 。 wǒ xiān gēn dà jiā shuō yì shēng ， qī diǎn bàn dào nà ér zhǎo nǐ men ， bú guò wǒ zhǐ néng dài yí gè xiǎo shí 。 jiǎ ： xíng ， rén lái jiù hǎo 。"
+    "pinyin": "jiǎ ： zhōu liù wǎn shang dà jiā yì qǐ chàng gē ， wǒ qǐng kè ， nǐ yǒu kòng ma ？ yǐ ： wǒ běn lái xiǎng qù ， kě shì nà tiān wǒ děi jiā bān dào jiǔ diǎn 。 jiǎ ： nà nǐ máng wán le zài lái ， shí diǎn cái sàn 。 yǐ ： yào shi bù jiā bān de huà ， wǒ yí dìng qù 。 wǒ xiān gēn dà jiā shuō yì shēng ， qī diǎn bàn dào nàr zhǎo nǐ men ， bú guò wǒ zhǐ néng dài yí gè xiǎo shí 。 jiǎ ： xíng ， rén lái jiù hǎo 。"
   },
   "speaking": [
     {
@@ -247,8 +247,200 @@
     },
     {
       "text": "有空",
-      "pinyin": "yǒu kōng",
-      "hint": "Thanh 3 rồi thanh 1: hai âm tách rõ; chữ sau đọc kōng, không phải kòng."
+      "pinyin": "yǒu kòng",
+      "hint": "空 nghĩa \"rảnh\" đọc kòng thanh 4 rơi mạnh; kōng thanh 1 là nghĩa \"trống không\" (空调)."
     }
-  ]
+  ],
+  "checkpoint": {
+    "title": "Kiểm tra chặng 2 — nghe và nói ứng dụng",
+    "practiceMinutes": 20,
+    "official": false,
+    "instructions": "Bài mini tự soạn, đề kiểm tra cuối khóa cho chặng Bài 7–12, không sao chép đề thi, không quy đổi điểm sang chứng chỉ. Mỗi đoạn nghe phát tối đa hai lần; phần ý kiến không chấm theo đồng ý hay phản đối.",
+    "listening": [
+      {
+        "transcript": "甲：今天我没来上班，你别着急。我昨天发烧了，去医院做了检查。乙：医生怎么说？甲：医生让我在家休息两天，按时吃药。乙：你最近总熬夜，作息不好，身体当然容易出问题。甲：是啊，好了以后，我打算每天早起跑步，多锻炼身体。乙：对，周末的聚会你就别来了，改天大家再一起吃饭。",
+        "translation": "A: Hôm nay tôi không đi làm, bạn đừng lo. Tôi bị sốt từ hôm qua và đã đi khám ở bệnh viện. B: Bác sĩ nói thế nào? A: Bác sĩ bảo tôi nghỉ ở nhà hai ngày, uống thuốc đúng giờ. B: Dạo này bạn thức khuya suốt, sinh hoạt không điều độ, cơ thể dễ có vấn đề là đúng rồi. A: Ừ, khỏi bệnh rồi tôi định mỗi ngày dậy sớm chạy bộ, rèn luyện thân thể nhiều hơn. B: Đúng đó, buổi họp mặt cuối tuần bạn khỏi cần tới, hôm khác cả nhóm ăn cùng nhau sau.",
+        "questions": [
+          {
+            "prompt": "Vì sao A hôm nay không đi làm?",
+            "options": [
+              "A bị sốt, phải nghỉ theo lời bác sĩ",
+              "A đi công tác chưa về",
+              "A đang dọn sang phòng mới"
+            ],
+            "answer": 0,
+            "explanation": "A nói 我昨天发烧了，去医院做了检查 và 医生让我在家休息两天."
+          },
+          {
+            "prompt": "Theo B, nguyên nhân khiến A hay mất sức khỏe là gì?",
+            "options": [
+              "Mùa đông tập thể dục quá ít",
+              "Thường xuyên thức khuya, sinh hoạt thất thường",
+              "Ăn tối quá muộn mỗi ngày"
+            ],
+            "answer": 1,
+            "explanation": "B nói 你最近总熬夜，作息不好."
+          },
+          {
+            "prompt": "B nói gì về buổi gặp cuối tuần?",
+            "options": [
+              "A nên đến đúng giờ",
+              "Cả nhóm sẽ đến nhà A ăn cơm",
+              "A không cần đến, hôm khác ăn cùng sau"
+            ],
+            "answer": 2,
+            "explanation": "B nói 周末的聚会你就别来了，改天大家再一起吃饭."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 1",
+        "pinyin": "jiǎ ： jīn tiān wǒ méi lái shàng bān ， nǐ bié zháo jí 。 wǒ zuó tiān fā shāo le ， qù yī yuàn zuò le jiǎn chá 。 yǐ ： yī shēng zěn me shuō ？ jiǎ ： yī shēng ràng wǒ zài jiā xiū xi liǎng tiān ， àn shí chī yào 。 yǐ ： nǐ zuì jìn zǒng áo yè ， zuò xī bù hǎo ， shēn tǐ dāng rán róng yì chū wèn tí 。 jiǎ ： shì a ， hǎo le yǐ hòu ， wǒ dǎ suàn měi tiān zǎo qǐ pǎo bù ， duō duàn liàn shēn tǐ 。 yǐ ： duì ， zhōu mò de jù huì nǐ jiù bié lái le ， gǎi tiān dà jiā zài yì qǐ chī fàn 。"
+      },
+      {
+        "transcript": "乙：喂，王先生吗？我是三楼的小李。房间里的空调坏了，这几天特别冷。甲：知道了，我找维修的人，明天上午去，大概一个小时。乙：水费和电费上个月我都交了，租金这个月用手机转账，到账以后我把截图发给您。甲：好，钥匙不够的话，我那儿还能配一把。乙：麻烦您了，再见。",
+        "translation": "B: Alo, có phải anh Vương không? Tôi là Tiểu Lý ở tầng ba. Điều hòa trong phòng bị hỏng, mấy hôm nay lạnh lắm. A: Biết rồi, tôi sẽ tìm người sửa, họ đến vào sáng mai, khoảng một tiếng. B: Tiền nước tiền điện tháng trước tôi đóng hết rồi; tiền thuê tháng này tôi chuyển bằng điện thoại, khi nhận được tôi gửi ảnh chụp màn hình cho anh. A: Được, nếu chìa khóa không đủ thì chỗ tôi còn làm thêm một chiếc. B: Phiền anh quá, tạm biệt.",
+        "questions": [
+          {
+            "prompt": "Chuyện gì đang xảy ra ở phòng tầng ba?",
+            "options": [
+              "Điều hòa bị hỏng",
+              "Tiền nước bị đóng quá",
+              "Ga giường chưa được thay"
+            ],
+            "answer": 0,
+            "explanation": "B nói 房间里的空调坏了，这几天特别冷."
+          },
+          {
+            "prompt": "Người thuê nói sẽ trả tiền thuê tháng này thế nào?",
+            "options": [
+              "Đưa tiền mặt trực tiếp cho chủ nhà",
+              "Chuyển khoản bằng điện thoại rồi gửi ảnh chụp",
+              "Nhờ chủ nhà trả giúp một nửa"
+            ],
+            "answer": 1,
+            "explanation": "B nói 租金这个月用手机转账，到账以后我把截图发给您."
+          },
+          {
+            "prompt": "Người sửa sẽ đến khi nào?",
+            "options": [
+              "Tối nay",
+              "Cuối tuần này",
+              "Sáng mai, làm khoảng một tiếng"
+            ],
+            "answer": 2,
+            "explanation": "A nói 我找维修的人，明天上午去，大概一个小时."
+          }
+        ],
+        "playLimit": 2,
+        "title": "Đoạn 2",
+        "pinyin": "yǐ ： wèi ， wáng xiān sheng ma ？ wǒ shì sān lóu de xiǎo lǐ 。 fáng jiān lǐ de kōng tiáo huài le ， zhè jǐ tiān tè bié lěng 。 jiǎ ： zhī dao le ， wǒ zhǎo wéi xiū de rén ， míng tiān shàng wǔ qù ， dà gài yí gè xiǎo shí 。 yǐ ： shuǐ fèi hé diàn fèi shàng gè yuè wǒ dōu jiāo le ， zū jīn zhè ge yuè yòng shǒu jī zhuǎn zhàng ， dào zhàng yǐ hòu wǒ bǎ jié tú fā gěi nín 。 jiǎ ： hǎo ， yào shi bú gòu de huà ， wǒ nàr hái néng pèi yì bǎ 。 yǐ ： má fan nín le ， zài jiàn 。"
+      }
+    ],
+    "speaking": [
+      {
+        "kind": "repeat",
+        "prompt": "Nghe rồi nhắc lại hai câu ngắn gồm ba ý: lời dặn của bác sĩ, lời nhờ gọi điện và lời hẹn hôm khác.",
+        "audioText": "医生的话你要记住，按时吃药，多休息。要是还有事儿，就给我打电话，改天我再去看你。",
+        "prepareSeconds": 15,
+        "responseSeconds": 45,
+        "reference": "医生的话你要记住，按时吃药，多休息。要是还有事儿，就给我打电话，改天我再去看你。",
+        "checklist": [
+          "Nhắc lại đủ ba ý",
+          "Giữ đúng lời hẹn hôm khác",
+          "Người nghe hiểu được lời dặn",
+          "Không nhìn câu mẫu khi thử lại"
+        ],
+        "pinyin": "yī shēng de huà nǐ yào jì zhù ， àn shí chī yào ， duō xiū xi 。 yào shi hái yǒu shìr ， jiù gěi wǒ dǎ diàn huà ， gǎi tiān wǒ zài qù kàn nǐ 。"
+      },
+      {
+        "kind": "retell",
+        "prompt": "Nghe đoạn hội thoại thứ nhất (được nghe tối đa hai lần), rồi kể lại bằng tiếng Trung đơn giản: A bị làm sao, bác sĩ dặn gì, B nói gì về thói quen của A, và buổi gặp cuối tuần chốt thế nào.",
+        "audioText": "甲：今天我没来上班，你别着急。我昨天发烧了，去医院做了检查。乙：医生怎么说？甲：医生让我在家休息两天，按时吃药。乙：你最近总熬夜，作息不好，身体当然容易出问题。甲：是啊，好了以后，我打算每天早起跑步，多锻炼身体。乙：对，周末的聚会你就别来了，改天大家再一起吃饭。",
+        "prepareSeconds": 30,
+        "responseSeconds": 75,
+        "reference": "A nghỉ làm vì sốt, đã đi khám; bác sĩ dặn nghỉ hai ngày và uống thuốc đúng giờ. B cho rằng tại A hay thức khuya, sinh hoạt thất thường; A định khỏi rồi sẽ dậy sớm chạy bộ. B bảo A khỏi đến buổi gặp cuối tuần, hôm khác cả nhóm ăn cùng.",
+        "checklist": [
+          "Nói đủ: bệnh, lời bác sĩ, thói quen, kế hoạch cuối tuần",
+          "Người nghe hiểu được nội dung",
+          "Không thêm chi tiết không có trong đoạn nghe"
+        ]
+      },
+      {
+        "kind": "opinion",
+        "prompt": "朋友邀请你，可是你生病了或者要加班，你应该怎么回绝？请举例说明。",
+        "promptVi": "Nêu cách từ chối cho lịch sự, kể một ví dụ cụ thể và nói lời hẹn sau đó; không chấm theo ý kiến đồng ý hay phản đối.",
+        "prepareSeconds": 30,
+        "responseSeconds": 90,
+        "reference": "Dàn ý mẫu: trước hết nói 不好意思 rồi nêu lý do thật, thêm lời hẹn 改天我请你; ví dụ từ chối đi hát vì phải làm thêm giờ; nhận xét nên nói sớm để bạn còn sửa kế hoạch. Người học có thể chọn cách khác.",
+        "checklist": [
+          "Nêu được lý do rõ ràng",
+          "Có một ví dụ cụ thể",
+          "Nói được một câu hẹn hôm khác"
+        ]
+      }
+    ],
+    "glossary": [
+      {
+        "word": "发烧",
+        "pinyin": "fā shāo",
+        "meaningVi": "sốt; bị sốt"
+      },
+      {
+        "word": "按时",
+        "pinyin": "àn shí",
+        "meaningVi": "đúng giờ; theo giờ"
+      },
+      {
+        "word": "熬夜",
+        "pinyin": "áo yè",
+        "meaningVi": "thức khuya; chơi khuya"
+      },
+      {
+        "word": "作息",
+        "pinyin": "zuò xī",
+        "meaningVi": "nếp sinh hoạt và nghỉ ngơi"
+      },
+      {
+        "word": "锻炼",
+        "pinyin": "duàn liàn",
+        "meaningVi": "rèn luyện; tập thể dục"
+      },
+      {
+        "word": "聚会",
+        "pinyin": "jù huì",
+        "meaningVi": "buổi họp mặt; buổi tụ tập"
+      },
+      {
+        "word": "维修",
+        "pinyin": "wéi xiū",
+        "meaningVi": "sửa chữa; bảo trì"
+      },
+      {
+        "word": "转账",
+        "pinyin": "zhuǎn zhàng",
+        "meaningVi": "chuyển khoản; chuyển tiền"
+      },
+      {
+        "word": "截图",
+        "pinyin": "jié tú",
+        "meaningVi": "ảnh chụp màn hình"
+      },
+      {
+        "word": "水费",
+        "pinyin": "shuǐ fèi",
+        "meaningVi": "tiền nước"
+      },
+      {
+        "word": "电费",
+        "pinyin": "diàn fèi",
+        "meaningVi": "tiền điện"
+      },
+      {
+        "word": "配",
+        "pinyin": "pèi",
+        "meaningVi": "làm thêm (chìa khóa)",
+        "note": "配一把钥匙 = làm thêm một chìa khóa."
+      }
+    ]
+  }
 }

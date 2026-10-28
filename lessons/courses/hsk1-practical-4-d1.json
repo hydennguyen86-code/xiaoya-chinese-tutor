@@ -160,5 +160,37 @@
       "sampleVi": "Gia đình tôi có ba người: mẹ, chị gái và tôi. Chị gái tôi là học sinh."
     }
   ],
-  "transferTask": "Giới thiệu gia đình với bạn; buổi 2 giới thiệu một gia đình giả định khác."
+  "transferTask": "Giới thiệu gia đình với bạn; buổi 2 giới thiệu một gia đình giả định khác.",
+  "pronunciation": [
+    {
+      "text": "爸爸",
+      "pinyin": "bà ba",
+      "hint": "Âm thứ hai ba đọc nhẹ, thấp và ngắn; cao độ chính nằm ở bà thanh 4 rơi mạnh."
+    },
+    {
+      "text": "妈妈",
+      "pinyin": "mā ma",
+      "hint": "Âm đầu mā thanh 1 cao bằng, âm sau nhẹ và buông; kiểu 'cao rồi ngắn' này lặp ở mọi từ xưng hô thân mật."
+    },
+    {
+      "text": "哥哥",
+      "pinyin": "gē ge",
+      "hint": "gē thanh 1 cao bằng rồi ge nhẹ rơi nhanh; đừng kéo dài âm thứ hai như âm thứ nhất."
+    },
+    {
+      "text": "姐姐",
+      "pinyin": "jiě jie",
+      "hint": "jiě thanh 3 để thấp, jie sau đó đọc nhẹ; không tách thành hai thanh 3 đầy đủ."
+    },
+    {
+      "text": "四口人",
+      "pinyin": "sì kǒu rén",
+      "hint": "kǒu thanh 3 lọt giữa hai thanh đầy đủ: sì rơi trước, rén vớt lên sau — thế 4-3-2 nối nhau rõ rệt."
+    },
+    {
+      "text": "有",
+      "pinyin": "yǒu",
+      "hint": "Thanh 3 đơn: thấp, chạm đáy rồi vớt nhẹ lên cuối; khi đứng một mình đừng đọc cao bằng như yōu."
+    }
+  ]
 }

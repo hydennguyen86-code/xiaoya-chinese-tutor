@@ -32,6 +32,18 @@ test('expected tones follow the sandhi rules', () => {
   );
 });
 
+test('儿 hoá merges 儿 into the previous syllable so the grader splits one segment', () => {
+  assert.deepEqual(expectedTones('哪儿'), [{ char: '哪儿', pinyin: 'nǎr', expected: 3 }]);
+  assert.deepEqual(expectedTones('有点儿'), [
+    { char: '有', pinyin: 'yǒu', expected: 2 },
+    { char: '点儿', pinyin: 'diǎnr', expected: 3 },
+  ]);
+  assert.deepEqual(
+    expectedTones('儿子').map((s) => s.char),
+    ['儿', '子'],
+  );
+});
+
 test('isolated syllables are classified by contour and height', () => {
   assert.equal(judge(shape(3, 3, 3)), 1); // high and level
   assert.equal(judge(shape(-1.5, 0, 2.5)), 2); // rises from its lowest point

@@ -172,9 +172,36 @@
         "Dùng ít nhất một mẫu của bài",
         "Người nghe hiểu được thông tin chính"
       ],
-      "sampleZh": "我家有四口人：爸爸、妈妈、姐姐和我。",
-      "sampleVi": "Gia đình tôi có bốn người: bố, mẹ, chị gái và tôi."
+      "sampleZh": "我家有三口人：爸爸、妈妈和我。",
+      "sampleVi": "Gia đình tôi có ba người: bố, mẹ và tôi."
     }
   ],
-  "transferTask": "Giới thiệu một gia đình giả định 3–4 người: số người, hai người thân, có/không có anh chị em; trả lời một câu hỏi của bạn học."
+  "transferTask": "Giới thiệu một gia đình giả định 3–4 người: số người, hai người thân, có/không có anh chị em; trả lời một câu hỏi của bạn học.",
+  "pronunciation": [
+    {
+      "text": "弟弟",
+      "pinyin": "dì di",
+      "hint": "Âm đầu dì thanh 4 rơi đầy đủ, âm sau di nhẹ và ngắn — quy luật lặp của từ xưng hô trong nhà."
+    },
+    {
+      "text": "妹妹",
+      "pinyin": "mèi mei",
+      "hint": "Thanh rơi nằm hẳn ở mèi đầu; mei thứ hai đọc nhẹ, buông, không mang dấu thanh."
+    },
+    {
+      "text": "没有",
+      "pinyin": "méi yǒu",
+      "hint": "méi thanh 2 đi lên, yǒu thanh 3 thấp ở cuối; nghe phủ định là nghe thế 'lên rồi hạ thấp'."
+    },
+    {
+      "text": "一个",
+      "pinyin": "yí gè",
+      "hint": "一 vốn là yī nhưng trước gè thanh 4 đọc yí đi lên; gè lại đọc nhẹ, ngắn gọn."
+    },
+    {
+      "text": "几",
+      "pinyin": "jǐ",
+      "hint": "jǐ thanh 3 thấp rồi vớt nhẹ cuối; khi hỏi 'mấy người' nó nằm ngay trước lượng từ, đừng đọc cao bằng."
+    }
+  ]
 }

@@ -61,7 +61,7 @@
       "id": "sh-2-40",
       "level": "HSK3-4",
       "text": "房间很干净，早餐七点开始。麻烦加个叫醒服务，六点半。",
-      "pinyin": "fáng jiān hěn gān jìng zǎo cān qī diǎn kāi shǐ má fán jiā gè jiào xǐng fú wù liù diǎn bàn",
+      "pinyin": "fáng jiān hěn gān jìng zǎo cān qī diǎn kāi shǐ má fan jiā gè jiào xǐng fú wù liù diǎn bàn",
       "meaningVi": "Phòng rất sạch, bữa sáng bắt đầu lúc bảy giờ. Phiền thêm cho tôi dịch vụ gọi dậy lúc sáu giờ rưỡi.",
       "syllables": 22,
       "pace": "vừa",
@@ -78,7 +78,7 @@
         },
         {
           "hanzi": "麻烦加个叫醒服务",
-          "pinyin": "má fán jiā gè jiào xǐng fú wù",
+          "pinyin": "má fan jiā gè jiào xǐng fú wù",
           "pause": "soft"
         },
         {
@@ -88,7 +88,7 @@
         }
       ],
       "focus": [
-        "麻烦 fán đi lên, mở lời nhờ lịch sự.",
+        "麻烦 má fan: fan đọc nhẹ, mở lời nhờ lịch sự.",
         "加个 jiā gè: 个 vẫn giữ thanh 4, nối nhanh vào 叫醒.",
         "开始 shǐ thanh 3, giữ hơi gọn trước số giờ."
       ]

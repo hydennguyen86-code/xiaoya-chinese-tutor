@@ -176,7 +176,7 @@
       "prepareSeconds": 15,
       "responseSeconds": 45,
       "text": "我妈妈是医生，我爸爸是老师。我有一个很好的朋友，他也是我的同学。他对我很好，我谢谢他。你妈妈做什么工作？",
-      "reference": "Đoạn có đủ sáu từ đã học: để ý cặp nặng-nhẹ ở 妈妈, 爸爸, 朋友, 什么, 谢谢, 喜欢.",
+      "reference": "Đoạn có năm từ đã học: để ý cặp nặng-nhẹ ở 妈妈, 爸爸, 朋友, 什么, 谢谢.",
       "checklist": [
         "Đọc đủ bốn câu",
         "Không gán dấu cho âm nhẹ",

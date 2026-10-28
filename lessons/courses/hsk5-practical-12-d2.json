@@ -308,7 +308,7 @@
       {
         "kind": "read",
         "prompt": "Đọc thành tiếng đoạn văn tự soạn sau.",
-        "text": "有效的沟通不只是把话说完，还包括确认对方是否理解。遇到意见不一致时，先弄清各自的需要，再讨论可以调整的条件。即使最后没有达成一致，也应该明确下一步由谁负责、什么时候再联系。",
+        "text": "培训不能只讲流程，还要让学员当场做一遍。光听不练，第二天就忘大半。所以验收放在任务上：每人独立完成一次，出错的地方再补讲一次。",
         "prepareSeconds": 30,
         "responseSeconds": 60,
         "reference": "Đọc theo cụm nghĩa, phân biệt câu nêu quan điểm và câu nêu hành động.",
@@ -320,11 +320,11 @@
       },
       {
         "kind": "opinion",
-        "prompt": "有人认为只要结果好，过程中的沟通就不重要。你怎么看？请举例并说明一个限制。",
+        "prompt": "验收一次培训，应该先看满意度还是先看学员能不能独立完成任务？请举例并说明一个限制。",
         "promptVi": "Nêu quan điểm, hai lý do, ví dụ và một giới hạn; không chấm theo ý kiến đồng ý hay phản đối.",
         "prepareSeconds": 45,
         "responseSeconds": 120,
-        "reference": "Bài mẫu dàn ý: kết quả quan trọng nhưng thông tin rõ ràng giúp tránh hiểu nhầm; ví dụ thay đổi thời hạn; thừa nhận có việc khẩn cấp; kết luận vẫn cần xác nhận sau. Người học có thể có quan điểm khác.",
+        "reference": "Bài mẫu dàn ý: coi làm được việc là chuẩn chính, độ hài lòng chỉ để đánh giá cách giảng; ví dụ đào tạo hệ thống mới phải cho học viên làm thử; giới hạn là học viên có thể làm đúng khi có người kèm. Người học có thể có quan điểm khác.",
         "checklist": [
           "Đúng trọng tâm",
           "Có chi tiết cụ thể",

@@ -26,7 +26,7 @@
         3,
         4,
         1,
-        2,
+        5,
         3,
         2,
         4,
@@ -110,9 +110,9 @@
       "id": "sh-2-33",
       "level": "HSK3-4",
       "text": "我感冒了，头有点儿疼。医生让我吃药休息，明天再去检查。",
-      "pinyin": "wó gǎn mào le tóu yóu diǎn er téng yī shēng ràng wǒ chī yào xiū xi míng tiān zài qù jiǎn chá",
+      "pinyin": "wó gǎn mào le tóu yóu diǎnr téng yī shēng ràng wǒ chī yào xiū xi míng tiān zài qù jiǎn chá",
       "meaningVi": "Tôi bị cảm, đầu hơi đau. Bác sĩ bảo tôi uống thuốc nghỉ ngơi, ngày mai đi khám lại.",
-      "syllables": 23,
+      "syllables": 22,
       "pace": "vừa",
       "chunks": [
         {
@@ -122,7 +122,7 @@
         },
         {
           "hanzi": "头有点儿疼",
-          "pinyin": "tóu yóu diǎn er téng",
+          "pinyin": "tóu yóu diǎnr téng",
           "pause": "hard"
         },
         {
@@ -150,7 +150,6 @@
         2,
         3,
         3,
-        5,
         2,
         1,
         1,
@@ -176,7 +175,6 @@
           2,
           2,
           3,
-          5,
           2,
           1,
           1,
@@ -201,7 +199,6 @@
           2,
           3,
           3,
-          5,
           2,
           1,
           1,

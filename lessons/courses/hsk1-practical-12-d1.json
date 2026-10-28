@@ -168,5 +168,32 @@
       "sampleVi": "Mai chúng ta gặp lúc ba giờ chiều trước trường. Uống trà trước, rồi đi cửa hàng."
     }
   ],
-  "transferTask": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền."
+  "transferTask": "Tự xử lý chuyến gặp bạn gồm hẹn giờ, hỏi đường và gọi món; buổi 2 đổi địa điểm và số tiền.",
+  "pronunciation": [
+    {
+      "text": "朋友",
+      "pinyin": "péng you",
+      "hint": "you đọc nhẹ, ngắn sau -ng vang của péng; đừng nhấn đều hai âm tiết."
+    },
+    {
+      "text": "什么",
+      "pinyin": "shén me",
+      "hint": "shén cong lưỡi và khép -n; me đọc nhẹ, thấp, chỉ còn hơi, không mang thanh."
+    },
+    {
+      "text": "去，对",
+      "pinyin": "qù ， duì",
+      "hint": "qù là ü tròn môi; duì bắt đầu bằng u sau rồi sang ui, miệng mở hơn hẳn, môi không túm."
+    },
+    {
+      "text": "先喝水",
+      "pinyin": "xiān hē shuǐ",
+      "hint": "xiān khép -n gọn ở lợi; shuǐ cong lưỡi với gốc lưỡi nâng, hē chỉ là hơi mở nhẹ."
+    },
+    {
+      "text": "现在",
+      "pinyin": "xiàn zài",
+      "hint": "xiàn kết thúc bằng -n chạm lợi; zài không có âm mũi, kết thúc bằng ai mở, âm đầu z phẳng."
+    }
+  ]
 }
