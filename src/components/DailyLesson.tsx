@@ -3,7 +3,7 @@ import { PronunciationReview } from './PronunciationReview';
 import { ListenFirstToggle, ListeningControls, ListeningRate, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
 import { CoursePractice } from './CoursePractice';
 import { CommunicationTask } from './CommunicationTask';
-import { MicButton, Han } from './LessonWidgets';
+import { MicButton, Han, ReadableChinese } from './LessonWidgets';
 import { rememberLesson, loadAssessment, saveAssessment } from '../lib/assessment';
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { AvatarApi } from '../lib/avatarApi';
@@ -39,6 +39,16 @@ import {
 } from '../lib/voiceInput';
 import { pinyinWord, sameSyllable, toneLabel } from '../lib/coursePinyin.mjs';
 import type { Correction, LearningProfile, Level } from '../types';
+import { pinyinLine } from '../lib/text';
+
+function LessonCorrection({ correction }: { correction: Pick<Correction, 'original' | 'corrected' | 'explanation'> }) {
+  return (
+    <div className="lesson-bad lesson-correction">
+      <div><s>{correction.original}</s> <span className="lesson-correction-pinyin">({pinyinLine(correction.original)})</span> → <strong>{correction.corrected}</strong> <span className="lesson-correction-pinyin">({pinyinLine(correction.corrected)})</span></div>
+      {correction.explanation ? <div>{correction.explanation}</div> : <div>Chưa có giải thích tiếng Việt cho lỗi này.</div>}
+    </div>
+  );
+}
 
 interface DailyLessonProps {
   learner: Learner;
@@ -542,7 +552,7 @@ export function DailyLesson(props: DailyLessonProps) {
             <summary>Kiến thức cần biết và cách học buổi này</summary>
             <ul>
               {content.learningNotes.map((note) => (
-                <li key={note}>{note}</li>
+                <li key={note}><ReadableChinese text={note} /></li>
               ))}
             </ul>
           </details>
@@ -574,13 +584,8 @@ export function DailyLesson(props: DailyLessonProps) {
                 onBusy={handleCourseBusy}
               />
             )}
-            {model ? (
-              <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={teachingLevel} />
-            ) : (
-              <p className="lesson-notice">
-                Bài nghe và luyện nói cố định vẫn học được. Chọn model trong Cài đặt để nhập vai tương tác với {teacher.vi}.
-              </p>
-            )}
+            {!model && <p className="lesson-notice">Chọn model trong Cài đặt để {teacher.vi} trả lời và sửa bài. Bạn vẫn có thể ghi âm để nhận dạng lời nói.</p>}
+            <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={teachingLevel} />
           </>
         )}
         {sectionInfo.id === 'summary' && (
@@ -727,9 +732,9 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
       ) : (
         <>
           <p className="lesson-prompt">
-            Bạn từng nói <s>{item.original}</s>. Hãy nói lại cho đúng.
+            Bạn từng nói <s><ReadableChinese text={item.original} /></s>. Hãy nói lại cho đúng.
           </p>
-          <p className="lesson-hint">{item.explanation}</p>
+          <p className="lesson-hint"><ReadableChinese text={item.explanation} /></p>
           {result && (
             <p className={result.ok ? 'lesson-ok' : 'lesson-bad'}>
               {result.ok ? 'Chuẩn rồi!' : `Mình nghe: "${result.heard}". Cách nói đúng: ${item.corrected}`}
@@ -936,8 +941,8 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
       <p className="lesson-count">
         Mẫu câu {session.item + 1}/{content.patterns.length}
       </p>
-      <p className="lesson-word">{pattern.pattern}</p>
-      <p className="lesson-meaning">{pattern.explanation}</p>
+      <p className="lesson-word"><ReadableChinese text={pattern.pattern} /></p>
+      <p className="lesson-meaning"><ReadableChinese text={pattern.explanation} /></p>
       <p className="lesson-example">
         <Han text={pattern.example} pinyinText={pattern.examplePinyin} />
         <SlowListen onPlay={() => say(pattern.example)} />
@@ -966,10 +971,7 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
           {feedback.missing.length > 0 && <p className="lesson-bad">Câu chưa dùng mẫu: thiếu "{feedback.missing.join('", "')}".</p>}
           {feedback.corrections.length === 0 && feedback.missing.length === 0 && <p className="lesson-ok">Câu đúng và dùng đúng mẫu!</p>}
           {feedback.corrections.map((c, i) => (
-            <p key={i} className="lesson-bad">
-              <s>{c.original}</s> → <strong>{c.corrected}</strong>
-              {c.explanation ? ` · ${c.explanation}` : ''}
-            </p>
+            <LessonCorrection key={i} correction={c} />
           ))}
         </div>
       )}
@@ -1045,6 +1047,11 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
   const reply = async (input: string) => {
     const text = input.trim();
     if (!text || busy) return;
+    if (!model) {
+      setDraft(text);
+      setNotice('Chọn model trong Cài đặt để gửi câu trả lời và nhận phản hồi.');
+      return;
+    }
     setDraft('');
     const userLine: DialogLine = { role: 'user', text };
     const history = [...dialog, userLine];
@@ -1144,13 +1151,10 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
             {line.role === 'assistant' ? (
               <ListenFirstLine text={line.text} translation={line.translation} onPlay={() => say(line.text)} hidden={mode === 'roleplay'} />
             ) : (
-              <p>{line.text}</p>
+              <p><Han text={line.text} /></p>
             )}
             {line.corrections?.map((c, j) => (
-              <small key={j} className="lesson-bad">
-                <s>{c.original}</s> → {c.corrected}
-                {c.explanation ? ` · ${c.explanation}` : ''}
-              </small>
+              <LessonCorrection key={j} correction={c} />
             ))}
           </div>
         ))}
@@ -1170,7 +1174,8 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
           placeholder="Trả lời bằng tiếng Trung (gõ hoặc bấm Nói)"
           disabled={busy}
         />
-        <MicButton voicePhase={voicePhase} micReady={micReady && !busy} onClick={() => void speak()} />
+        <MicButton voicePhase={voicePhase} micReady={micReady && !busy} onClick={() => void speak()} label="🎙 Ghi âm" />
+        {!micReady && <span className="lesson-hint">Thiết bị chưa hỗ trợ ghi âm. Kiểm tra cài đặt nhận dạng giọng nói.</span>}
         <button type="button" className="lesson-secondary" disabled={busy || !draft.trim()} onClick={() => void reply(draft)}>
           {busy ? 'Đang xử lý…' : 'Gửi'}
         </button>
@@ -1201,10 +1206,7 @@ function SummarySection({ session, content, onFinish }: { session: SessionState;
         <>
           <p className="lesson-prompt">Cần nhớ:</p>
           {session.notes.slice(-6).map((n, i) => (
-            <p key={i} className="lesson-bad">
-              <s>{n.original}</s> → <strong>{n.corrected}</strong>
-              {n.explanation ? ` · ${n.explanation}` : ''}
-            </p>
+            <LessonCorrection key={i} correction={n} />
           ))}
         </>
       )}

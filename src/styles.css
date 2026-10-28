@@ -5173,3 +5173,6 @@ svg {
 @media (max-width: 400px) {
   .motivation-table tbody tr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+.lesson-correction { margin: 0.5rem 0; }
+.lesson-correction-pinyin { font-size: 0.9em; }

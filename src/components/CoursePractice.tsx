@@ -10,7 +10,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { exerciseFingerprint, gradeListening, speechText } from '../lib/coursePractice';
 import type { LessonContent, ListeningExercise, SpeakingExercise } from '../lib/lessonApi';
 import type { VoicePhase } from '../lib/voiceInput';
-import { MicButton } from './LessonWidgets';
+import { MicButton, Han, ReadableChinese } from './LessonWidgets';
 
 interface Props {
   content: LessonContent;
@@ -165,7 +165,7 @@ function ListeningCard({
       {exercise.questions.map((question, index) => (
         <fieldset key={index} disabled={state.submitted}>
           <legend>
-            {index + 1}. {question.prompt}
+            {index + 1}. <ReadableChinese text={question.prompt} />
           </legend>
           {question.options.map((option, choice) => (
             <label className="course-choice" key={choice}>
@@ -179,7 +179,7 @@ function ListeningCard({
                   save({ ...state, answers });
                 }}
               />
-              {String.fromCharCode(65 + choice)}. {option}
+              {String.fromCharCode(65 + choice)}. <ReadableChinese text={option} />
             </label>
           ))}
           {state.submitted && (
@@ -282,11 +282,11 @@ function SpeakingCard({
           }[exercise.kind]
         }
       </h4>
-      <p lang="zh">{exercise.prompt}</p>
+      <p lang="zh"><ReadableChinese text={exercise.prompt} /></p>
       {exercise.promptVi && <p>{exercise.promptVi}</p>}
       {exercise.kind === 'read' && (
         <p className="lesson-example" lang="zh">
-          {exercise.text}
+          <Han text={exercise.text || ""} />
         </p>
       )}
       <p>
@@ -343,11 +343,11 @@ function SpeakingCard({
       </button>
       {reveal && (
         <>
-          <p>{exercise.reference}</p>
+          <p><ReadableChinese text={exercise.reference} /></p>
           {exercise.pinyin && <p>{exercise.pinyin}</p>}
           {exercise.sampleZh && (
             <>
-              <p lang="zh">{exercise.sampleZh}</p>
+              <p lang="zh"><Han text={exercise.sampleZh} /></p>
               <p>{exercise.sampleVi}</p>
               <button type="button" className="lesson-secondary" onClick={() => void audio.play(exercise.sampleZh!)}>
                 {audio.playing ? 'Dừng âm thanh' : 'Nghe bài nói mẫu'}
@@ -356,7 +356,7 @@ function SpeakingCard({
           )}
           <ul>
             {exercise.checklist.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}><ReadableChinese text={item} /></li>
             ))}
           </ul>
           <p className="lesson-hint">

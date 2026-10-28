@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Han } from './LessonWidgets';
 import { listeningPrefs, SPEEDS, updateListeningPrefs, withSpeechRate } from '../lib/listeningPrefs';
 export function useListeningPrefs() {
   const [prefs, setPrefs] = useState(listeningPrefs);
@@ -84,7 +85,7 @@ export function ListenFirstLine({
         <p>Nghe trước rồi mở chữ để đối chiếu.</p>
       ) : (
         <>
-          <p>{text}</p>
+          <p><Han text={text} /></p>
           {translation && <small>{translation}</small>}
         </>
       )}
