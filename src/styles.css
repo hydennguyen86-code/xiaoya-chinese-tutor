@@ -5176,3 +5176,188 @@ svg {
 
 .lesson-correction { margin: 0.5rem 0; }
 .lesson-correction-pinyin { font-size: 0.9em; }
+
+/* Dashboard: midnight blue with a luminous jade accent. Lesson and settings
+   panels keep their own light palette for comfortable reading. */
+body {
+  background: radial-gradient(ellipse at 45% -20%, #123653 0, transparent 55%), #031426;
+}
+.app { max-width: 1700px; gap: 16px; }
+.topbar { color: #edf6ff; }
+.topbar .brand-seal, .nameplate-seal {
+  background: linear-gradient(145deg, #07536b, #071f39);
+  border: 1px solid #31e1dd;
+  color: #eaffff;
+  box-shadow: inset 0 0 18px #16c9c74d, 0 0 24px #00d5d221;
+}
+.topbar .brand-seal { width: 56px; height: 56px; font-size: 28px; }
+.topbar .brand-title { color: #f6fbff; font-size: 24px; }
+.topbar .brand-subtitle { color: #a9bfd4; font-size: 11px; }
+.topbar .lesson-launch, .topbar .level-chip, .topbar .runtime-chip, .topbar .icon-button {
+  color: #d9eaff; background: linear-gradient(145deg, #142d46, #0b2038);
+  border: 1px solid #2d4d68; box-shadow: inset 0 1px #ffffff0d;
+}
+.topbar .lesson-launch { border-radius: 14px; padding: 12px 16px; font-weight: 600; }
+.topbar .lesson-launch:first-of-type { border-color: #22cbc9; background: linear-gradient(135deg, #0a5a68, #0b3144); box-shadow: inset 0 0 18px #17e2d921; }
+.topbar .lesson-launch:hover, .topbar .icon-button:hover, .topbar .runtime-chip:hover, .topbar .level-chip:hover { background: #20415b; color: white; }
+.topbar .runtime-chip-copy small { color: #a5bfd4; }
+.topbar .learner-chip { color: #e8ffff; border-color: #37d4d0; background: #168d96; }
+.avatar-stage { background: radial-gradient(ellipse at 50% 35%, #2378a1 0%, #104d76 32%, #082942 68%, #06182c 100%); border: 1px solid #305b79; box-shadow: inset 0 1px #ffffff18, 0 20px 55px #0005; }
+.stage-halo { opacity: .5; filter: hue-rotate(145deg); }
+.stage-ring { border-color: #6ad9f055; }
+.stage-glyph { color: #a5d9eb; opacity: .17; }
+.stage-vignette { background: linear-gradient(180deg, transparent 58%, #031b30ba 100%); }
+.nameplate { background: #08243ac9; border-color: #5c94a64a; box-shadow: none; }
+.nameplate-cn { color: #f5fbff; }
+.nameplate-meta { color: #bed7e8; }
+.phase-pill { color: #dcffff; background: #0b52618c; border-color: #2ccbc8a6; }
+.phase-dot { background: #70fff3; box-shadow: 0 0 12px #54fff3; }
+.stage-dock { color: #d6e9f8; background: #123952d9; border-color: #58bad080; box-shadow: inset 0 1px #ffffff1a; }
+.stage-note { color: #a7c6d9; }
+.progress-strip { color: #edf8ff; background: linear-gradient(135deg, #102e47, #0a2138); border-color: #2a526d; box-shadow: none; }
+.progress-strip .streak-icon { color: #ffbd77; background: #83523770; }
+.progress-strip .streak-block span:not(.streak-icon), .progress-strip .goal-labels { color: #b4ccdc; }
+.progress-strip .goal-count { color: #71f6ef; }
+.progress-strip .goal-track { background: #284f68; }
+.progress-strip .goal-track span { background: linear-gradient(90deg, #8bfff5, #20bebd); }
+.progress-strip .week-mini-dot { background: #315c72; }
+.progress-strip .week-mini-dot.is-active { background: #5bf5ea; }
+.chat-panel {
+  --ink: #f0f7ff; --ink-2: #c7d9e9; --ink-3: #94afc4;
+  --line: #ffffff18; --line-strong: #6fa8c044;
+  --sage: #72e7e2; --sage-deep: #83f5ed; --sage-soft: #124a59;
+  --terracotta: #68eee7; --terracotta-deep: #b2fff8; --terracotta-soft: #123a4c;
+  color: var(--ink); background: linear-gradient(155deg, #0c2942, #061b30 65%, #06192b);
+  border: 1px solid #28516c; box-shadow: 0 24px 70px #0004; border-radius: 22px;
+}
+.chat-head { padding: 22px 24px 18px; }
+.chat-head h2 { font-size: 19px; }
+.chat-subtitle { font-size: 11px; }
+.chat-panel .icon-button, .chat-panel .pinyin-toggle { color: #cfe5f4; background: #193b54; border-color: #315870; }
+.chat-panel .pinyin-toggle.is-on { color: #a4fffa; background: #0a5261; border-color: #26d7d1; }
+.chat-panel .speaker-avatar { background: linear-gradient(145deg, #168593, #123b62); border: 1px solid #58d8e2; }
+.chat-panel .bubble-assistant { background: linear-gradient(145deg, #123b55, #0d2c43); border: 1px solid #3a728b; box-shadow: inset 0 1px #ffffff0d; border-radius: 18px; }
+.chat-panel .bubble-user { background: linear-gradient(145deg, #215b85, #102e50); border: 1px solid #458fc0; border-radius: 18px; }
+.chat-panel .bubble-cn { font-family: var(--font-cn-sans); font-size: 18px; }
+.chat-panel .bubble-user .bubble-cn { font-size: 16px; }
+.chat-panel .pinyin-line { color: #7debe7; font-size: 11px; }
+.chat-panel .bubble-translation { color: #ccdeeb; font-style: normal; border-color: #5d8aa044; }
+.chat-panel .suggestion-card { background: #102e45; border: 1px solid #31576e; }
+.chat-panel .suggestion-card:hover:not(:disabled) { background: #19435a; border-color: #42c9ca; }
+.chat-panel .suggestion-kicker { color: #6df4eb; }
+.chat-panel .composer { background: #0e3047; border-color: #3a6a80; box-shadow: inset 0 1px #ffffff0d; }
+.chat-panel .composer:focus-within { border-color: #35ded8; box-shadow: 0 0 0 3px #25d7d51a; }
+.chat-panel .composer textarea { color: #efffff; }
+.chat-panel .mic-button { border-radius: 50%; color: #d9ffff; background: #087a83; border-color: #68fff2; box-shadow: 0 0 20px #32e5d555; }
+.chat-panel .mic-button:hover:not(:disabled), .chat-panel .mic-button.is-live { background: #0aaeb0; }
+.chat-panel .send-button { background: linear-gradient(145deg, #397aa0, #174364); border: 1px solid #68b5d6; }
+.chat-panel .send-button:disabled { background: #345163; }
+.chat-panel .listening-strip { background: #0c4b58; border-color: #33b6b6; color: #d9fffb; }
+.chat-panel select { color: #e3f3ff; background: #102c44; border-color: #315870; }
+@media (max-width: 700px) {
+  .topbar .brand-seal { width: 42px; height: 42px; font-size: 22px; }
+  .topbar .lesson-launch { padding: 8px 11px; }
+  .chat-panel .bubble-cn { font-size: 16px; }
+}
+.chat-panel .lesson-secondary { color: #c8f7f5; background: #173d53; border-color: #39677a; }
+.chat-panel .lesson-secondary:hover:not(:disabled) { color: #fff; background: #24566a; }
+/* Sharper avatar and unified lesson surfaces. */
+.avatar-host canvas {
+  filter: contrast(1.06) saturate(1.1);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 74%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 74%, transparent 100%);
+}
+.stage-grain { opacity: .025; }
+.stage-vignette { background: linear-gradient(180deg, #00142612 0%, transparent 55%, #03182b70 100%); }
+.lesson-panel {
+  --ink: #eef8ff; --ink-2: #c7dcec; --ink-3: #9cbad0;
+  --paper: #0a253a; --paper-strong: #102f46;
+  --line: #91d4e72b; --line-strong: #80c6d952;
+  --terracotta: #4be5db; --terracotta-deep: #b2fff6; --terracotta-soft: #124c59;
+  --sage: #4bd9d3; --sage-deep: #a4fff3; --sage-soft: #174656;
+  color: var(--ink); background: linear-gradient(150deg, #0d2b43, #061b30);
+  border: 1px solid #315e77; box-shadow: 0 24px 65px #0005; border-radius: 22px;
+}
+.lesson-panel .lesson-card, .lesson-panel .lesson-setup { background: #102f46; border-color: #315d73; }
+.lesson-panel .lesson-setup > summary, .lesson-panel .lesson-clock, .lesson-panel .lesson-hint { color: #b7d0df; }
+.lesson-panel .lesson-inputrow input, .lesson-panel input:not([type='radio']):not([type='checkbox']), .lesson-panel textarea, .lesson-panel select {
+  color: #effaff; background: #0b253a; border: 1px solid #3b6b80;
+}
+.lesson-panel .lesson-primary, .lesson-panel .lesson-mic { color: #e8fffd; background: #087c84; border: 1px solid #42e0d8; }
+.lesson-panel .lesson-secondary, .lesson-panel .lesson-link { color: #c8f7f5; background: #173d53; border: 1px solid #39677a; }
+.lesson-panel .lesson-secondary:hover:not(:disabled), .lesson-panel .lesson-mic:hover:not(:disabled) { background: #216077; }
+.lesson-panel .lesson-bad { color: #ffbca6; }
+.lesson-panel .lesson-ok { color: #92f9d4; }
+.lesson-panel .lesson-han small { color: #81f2e9; }
+.lesson-panel .lesson-line { color: #e8f6ff; }
+.lesson-panel { --cream: #0b263b; }
+.avatar-stage { background: #09253d url('/images/moonlit-mountains.png') center center / cover no-repeat; }
+.stage-halo { opacity: .16; }
+/* The LAM renderer uses an opaque WebGL canvas; soften its outer edges so the
+   landscape remains visible without obscuring the face. */
+.avatar-host canvas {
+  -webkit-mask-image: radial-gradient(ellipse 67% 72% at 50% 40%, #000 48%, transparent 100%);
+  mask-image: radial-gradient(ellipse 67% 72% at 50% 40%, #000 48%, transparent 100%);
+}
+
+/* Light accents give controls and cards depth without reducing text contrast. */
+.topbar .brand-seal, .nameplate-seal {
+  background: linear-gradient(145deg, #126d81 0%, #073249 54%, #051b32 100%);
+  box-shadow: inset 0 1px 12px #91fff345, inset 0 -8px 18px #02172980, 0 0 18px #25e9e63b;
+  text-shadow: 0 0 12px #b5fffbb3;
+}
+.topbar .lesson-launch, .topbar .level-chip, .topbar .runtime-chip, .topbar .icon-button {
+  background: linear-gradient(155deg, #1d405c 0%, #112d48 45%, #0a2037 100%);
+  box-shadow: inset 0 1px 1px #ccefff24, inset 0 -8px 16px #03142652, 0 6px 18px #0003;
+}
+.topbar .lesson-launch:hover, .topbar .icon-button:hover, .topbar .runtime-chip:hover, .topbar .level-chip:hover {
+  border-color: #60d8e2; box-shadow: inset 0 1px 8px #a9ffff2b, 0 0 16px #39d9df36;
+}
+.topbar .lesson-launch:first-of-type {
+  background: linear-gradient(145deg, #18828a, #075166 55%, #062e47);
+  border-color: #46e6dc;
+  box-shadow: inset 0 1px 8px #b4fff65c, 0 0 18px #1ce7d64d;
+  color: #efffff; text-shadow: 0 0 10px #91fffa78;
+}
+.topbar .icon-button svg, .topbar .motivation-trigger svg { color: #b5e9ff; filter: drop-shadow(0 0 5px #56d8ff82); }
+.phase-pill { background: linear-gradient(135deg, #167785d9, #0a4054db); box-shadow: inset 0 1px #b9ffff45, 0 0 15px #26ead33b; }
+.stage-dock, .progress-strip {
+  background: linear-gradient(145deg, #1a4a63e8, #102d45ee 58%, #09243aec);
+  box-shadow: inset 0 1px 2px #c2faff40, inset 0 0 20px #47c9dc18, 0 8px 25px #0003;
+}
+.goal-track span { box-shadow: 0 0 10px #50fff4b3; }
+.week-mini-dot.is-active { box-shadow: 0 0 8px #66fff4b3; }
+.chat-panel, .lesson-panel { box-shadow: inset 0 1px 1px #9fdaef25, 0 20px 55px #0007; }
+.chat-head { background: linear-gradient(110deg, #183e58a8, #0a293f36); }
+.chat-panel .bubble-assistant, .lesson-panel .lesson-card {
+  background: linear-gradient(145deg, #1a4058, #102e45 62%, #0b263a);
+  border-color: #5592aa99;
+  box-shadow: inset 0 1px 2px #cbf8ff2e, inset 0 0 25px #44bdcf0d, 0 8px 20px #0002;
+}
+.chat-panel .bubble-user {
+  background: linear-gradient(145deg, #286e9a, #174b72 45%, #0e2a4c);
+  box-shadow: inset 0 1px 4px #a9e7ff52, 0 0 18px #42a9ef30;
+}
+.chat-panel .pinyin-toggle.is-on, .lesson-panel .lesson-primary, .lesson-panel .lesson-mic {
+  background: linear-gradient(145deg, #178c95, #085767 62%, #073849);
+  border-color: #55e8df;
+  box-shadow: inset 0 1px 6px #b8fff64d, 0 0 14px #24d8d23d;
+  color: #e9fffd;
+}
+.chat-panel .suggestion-card, .chat-panel .composer, .lesson-panel .lesson-secondary {
+  background: linear-gradient(145deg, #1b4058, #102e45 65%, #0d273d);
+  box-shadow: inset 0 1px 2px #b6edff2b, 0 5px 16px #0002;
+}
+.chat-panel .suggestion-kicker, .chat-panel .pinyin-line, .lesson-panel .lesson-han small {
+  color: #98fff6; text-shadow: 0 0 9px #4bf7e777;
+}
+.chat-panel .mic-button {
+  background: radial-gradient(circle at 35% 25%, #45ded6, #09868e 48%, #075361);
+  box-shadow: inset 0 1px 6px #d7ffffa1, 0 0 20px #42ffe69c;
+}
+.chat-panel .mic-button svg, .chat-panel .send-button svg { color: #ecffff; filter: drop-shadow(0 0 5px #8affffb3); }
+.chat-panel .send-button {
+  background: linear-gradient(145deg, #5097b8, #22587b 60%, #103451);
+  box-shadow: inset 0 1px 5px #d3f7ff6b, 0 0 14px #51c8f03b;
+}
+.chat-panel .send-button:disabled { background: #28465a; box-shadow: none; }
