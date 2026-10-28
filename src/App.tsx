@@ -85,7 +85,7 @@ function friendlyError(error: unknown, teacher: Teacher) {
 /** a face of the given gender needs a voice of the same gender; clones have no declared gender */
 function voiceForGender(voices: VoiceInfo[], gender: TeacherGender, currentVoice: string) {
   const current = voices.find((item) => item.id === currentVoice);
-  if (!current?.gender || current.gender === gender) return currentVoice;
+  if (current?.gender === gender) return currentVoice;
   return voices.find((item) => item.gender === gender)?.id ?? currentVoice;
 }
 
@@ -216,12 +216,11 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             ? previous.model
             : chosenProvider.recommendedModel || chosenProvider.models[0] || ''
           : '';
-        // A cloned voice has no declared gender, so it is never swapped; a named
-        // Edge voice must match the face it is speaking through.
+        // Select a voice with a known gender matching the learner's teacher.
         const gender = previous.avatarGender || 'female';
         const current = data.voices.find((item) => item.id === previous.voice);
         const voice =
-          current && (!current.gender || current.gender === gender)
+          current?.gender === gender
             ? previous.voice
             : (data.voices.find((item) => item.gender === gender)?.id ?? data.defaultVoice ?? previous.voice);
         const viVoice = data.viVoices?.some((item) => item.id === previous.viVoice)
