@@ -216,10 +216,10 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
     ram === undefined
       ? 'Chưa đọc được RAM của máy chủ.'
       : ram < 8
-        ? `${ram} GB RAM: ưu tiên bài cố định hoặc API; avatar/model local có thể chậm.`
+        ? `${ram} GB RAM: Máy cần ít nhất 16 GB RAM để chạy model AI local (Ollama/LM Studio) và chấm điểm nói. Hiện tại nên dùng bài cố định hoặc API. Avatar đã tự chuyển sang chế độ nhẹ (3D).`
         : ram < 16
-          ? `${ram} GB RAM: bắt đầu bằng bài cố định hoặc model nhỏ; đóng app nặng. Nếu không đủ bộ nhớ, dùng API tuỳ chọn.`
-          : `${ram} GB RAM: có thể thử model local đã đo qwen3.5:4b — ollama pull qwen3.5:4b. RAM không bảo đảm tốc độ; còn phụ thuộc CPU/GPU.`;
+          ? `${ram} GB RAM: Để chạy model AI local (qwen3.5:4b) và chấm điểm nói mượt mà, cần 16 GB RAM. Hiện tại có thể dùng bài cố định hoặc API. Avatar đã tự chuyển sang chế độ nhẹ (3D).`
+          : `${ram} GB RAM: Đủ để chạy model local đã đo qwen3.5:4b — ollama pull qwen3.5:4b. RAM không bảo đảm tốc độ; còn phụ thuộc CPU/GPU. Avatar LAM (ảnh thật) chạy tốt trên máy có card đồ họa.`;
   const provider = status?.providers.find((p) => p.id === settings.providerId);
   return (
     <div className="setup-overlay" role="dialog" aria-modal="true" aria-label="Kiểm tra hệ thống">

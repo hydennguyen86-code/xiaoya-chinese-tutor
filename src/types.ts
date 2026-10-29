@@ -58,6 +58,7 @@ export interface Settings {
   autoReadTranslation: boolean;
   showPinyin: boolean;
   avatarMode: AvatarMode;
+  avatarModeAuto: boolean;
   avatarGender: 'female' | 'male';
 }
 

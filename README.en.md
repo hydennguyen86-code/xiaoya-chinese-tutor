@@ -109,6 +109,20 @@ Voice; audio is not shipped with the repo and voice coverage remains limited.
 
 ## Install
 
+### System requirements
+
+**Minimum:**
+- **Node.js 24** and npm
+- **8 GB RAM**: runs fixed lessons with lightweight 3D avatar
+- **Graphics**: Intel UHD 620 or better for 3D avatar
+
+**Recommended for local AI models (Ollama/LM Studio) and speech scoring:**
+- **16 GB RAM** or more
+- **CPU**: 4 cores or more
+- **Graphics**: dedicated GPU for smoother LAM (photo-real) avatar
+
+**Auto light-avatar:** Machines with < 8 GB RAM automatically switch to the 3D avatar (.glb) instead of the LAM photo-real avatar for better performance. You can still enable LAM in Settings if desired.
+
 Requires **Node.js 24** and npm. Tested on macOS Apple Silicon; Windows/Linux paths and
 three-OS CI were added, but **not tested on real Windows**. Fixed lessons need no
 Ollama/GPU. Chat and correction need Ollama/LM Studio or an API configured in Settings.

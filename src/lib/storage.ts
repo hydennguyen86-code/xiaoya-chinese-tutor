@@ -1,6 +1,7 @@
 import type { ChatMessage, Level, Progress, Settings } from '../types';
 
 const SETTINGS_KEY = 'xiaoya.settings.v1';
+const PINYIN_DEFAULT_KEY = 'xiaoya.pinyinDefault.v1';
 export const CHAT_KEY = 'xiaoya.chat.v1';
 export const PROGRESS_KEY = 'xiaoya.progress.v1';
 const CHAT_LIMIT = 80;
@@ -20,8 +21,9 @@ export const DEFAULT_SETTINGS: Settings = {
   level: 'HSK5-6',
   autoSpeak: true,
   autoReadTranslation: false,
-  showPinyin: false,
+  showPinyin: true,
   avatarMode: 'lam',
+  avatarModeAuto: true,
   avatarGender: 'female',
 };
 
@@ -40,9 +42,21 @@ function yesterdayKey() {
   return dayKey(date);
 }
 
+/** pinyin is now shown by default in chat; enable it once for browsers that saved the old default */
+function pinyinDefaultOn() {
+  try {
+    if (localStorage.getItem(PINYIN_DEFAULT_KEY)) return false;
+    localStorage.setItem(PINYIN_DEFAULT_KEY, '1');
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function loadSettings(): Settings {
   try {
     const parsed = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
+    const pinyinUpgrade = pinyinDefaultOn();
     return {
       providerId: typeof parsed.providerId === 'string' ? parsed.providerId : '',
       model: typeof parsed.model === 'string' ? parsed.model : '',
@@ -64,10 +78,16 @@ export function loadSettings(): Settings {
           ? parsed.autoReadTranslation
           : DEFAULT_SETTINGS.autoReadTranslation,
       showPinyin:
-        typeof parsed.showPinyin === 'boolean'
-          ? parsed.showPinyin
-          : DEFAULT_SETTINGS.showPinyin,
+        pinyinUpgrade
+          ? true
+          : typeof parsed.showPinyin === 'boolean'
+            ? parsed.showPinyin
+            : DEFAULT_SETTINGS.showPinyin,
       avatarMode: parsed.avatarMode === 'classic' ? 'classic' : 'lam',
+      avatarModeAuto:
+        typeof parsed.avatarModeAuto === 'boolean'
+          ? parsed.avatarModeAuto
+          : DEFAULT_SETTINGS.avatarModeAuto,
       avatarGender: parsed.avatarGender === 'male' ? 'male' : 'female',
     };
   } catch {

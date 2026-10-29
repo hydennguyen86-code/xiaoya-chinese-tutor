@@ -1103,8 +1103,8 @@ svg {
 
 .pinyin-line {
   margin-top: 6px;
-  font-size: 10.5px;
-  line-height: 1.65;
+  font-size: 12px;
+  line-height: 1.7;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--sage);
@@ -5240,7 +5240,7 @@ body {
 .chat-panel .bubble-user { background: linear-gradient(145deg, #215b85, #102e50); border: 1px solid #458fc0; border-radius: 18px; }
 .chat-panel .bubble-cn { font-family: var(--font-cn-sans); font-size: 18px; }
 .chat-panel .bubble-user .bubble-cn { font-size: 16px; }
-.chat-panel .pinyin-line { color: #7debe7; font-size: 11px; }
+.chat-panel .pinyin-line { color: #7debe7; font-size: 13px; }
 .chat-panel .bubble-translation { color: #ccdeeb; font-style: normal; border-color: #5d8aa044; }
 .chat-panel .suggestion-card { background: #102e45; border: 1px solid #31576e; }
 .chat-panel .suggestion-card:hover:not(:disabled) { background: #19435a; border-color: #42c9ca; }

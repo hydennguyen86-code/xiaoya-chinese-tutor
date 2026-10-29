@@ -174,6 +174,20 @@ Voice, nhưng audio không đi kèm repo; phạm vi giọng nghe vẫn hạn ch�
 
 ## Cài đặt
 
+### Yêu cầu hệ thống
+
+**Tối thiểu:**
+- **Node.js 24** và npm
+- **RAM 8 GB**: chạy được bài học cố định, avatar 3D nhẹ
+- **Card đồ họa**: Intel UHD 620 trở lên cho avatar 3D
+
+**Khuyến nghị để chạy model AI local (Ollama/LM Studio) và chấm điểm nói:**
+- **RAM 16 GB** trở lên
+- **CPU**: 4 cores trở lên
+- **Card đồ họa**: có GPU rời giúp avatar LAM (ảnh thật) mượt hơn
+
+**Tự động chọn avatar nhẹ:** Máy có RAM < 8 GB sẽ tự động chuyển sang avatar 3D (.glb) thay vì avatar LAM (ảnh thật) để chạy mượt hơn. Bạn vẫn có thể bật lại avatar LAM trong Cài đặt nếu muốn.
+
 Cần **Node.js 24** và npm. Đã thử trên macOS Apple Silicon; đường dẫn Windows/Linux
 và CI ba hệ điều hành đã được bổ sung, **chưa thử trên Windows thật**.
 Bài học cố định không cần Ollama/GPU. Trò chuyện và sửa câu cần Ollama/LM Studio

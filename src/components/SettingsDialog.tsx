@@ -428,12 +428,12 @@ export function SettingsDialog({
               />
               <Toggle
                 checked={settings.avatarMode === 'lam'}
-                onChange={(checked) => onChange({ avatarMode: checked ? 'lam' : 'classic' })}
+                onChange={(checked) => onChange({ avatarMode: checked ? 'lam' : 'classic', avatarModeAuto: false })}
                 label="Avatar ảnh thật (LAM)"
                 description={
                   customAvatar
-                    ? 'Đang dùng file avatar tuỳ chỉnh. Bấm “Dùng mặc định” ở trên để chọn lại kiểu avatar.'
-                    : 'Avatar dựng từ ảnh thật, chạy cục bộ; miệng và nét mặt chuyển động theo giọng nói. Tắt để dùng avatar 3D hoạt hình.'
+                    ? 'Đang dùng file avatar tuỳ chỉnh. Bấm "Dùng mặc định" ở trên để chọn lại kiểu avatar.'
+                    : 'Ảnh thật của Misu đi kèm app, cần card đồ hoạ tốt. Tắt để dùng avatar 3D nhẹ (gương mặt nữ mặc định). Máy RAM < 8 GB tự động dùng avatar 3D.'
                 }
                 disabled={Boolean(customAvatar)}
               />

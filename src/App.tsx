@@ -226,12 +226,16 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
         const viVoice = data.viVoices?.some((item) => item.id === previous.viVoice)
           ? previous.viVoice
           : data.defaultViVoice || previous.viVoice;
+        const ram = data.system?.ramGB;
+        const avatarMode =
+          previous.avatarModeAuto && ram !== undefined && ram < 8 ? 'classic' : previous.avatarMode;
         return {
           ...previous,
           providerId: chosenProvider?.id || '',
           model,
           voice,
           viVoice,
+          avatarMode,
         };
       });
     } catch (requestError) {
@@ -849,6 +853,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
         name: stored.name,
         kind: stored.kind,
       });
+      setSettings((previous) => ({ ...previous, avatarModeAuto: false }));
       setError(null);
       setPhase('loading');
       showToast(`Đang dùng avatar “${stored.name}”.`);
