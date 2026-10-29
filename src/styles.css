@@ -8,11 +8,11 @@
   --paper-strong: #fffdf9;
   --ink: #332a24;
   --ink-2: #6a5a4e;
-  --ink-3: #958377;
-  --terracotta: #aa5139;
+  --ink-3: #776455;
+  --terracotta: #a14c35;
   --terracotta-deep: #883c28;
   --terracotta-soft: #f0d6c8;
-  --sage: #6f8068;
+  --sage: #5e6f57;
   --sage-deep: #52614b;
   --sage-soft: #e6ecdf;
   --gold: #c39a5c;
@@ -1238,7 +1238,7 @@ svg {
 
 .correction-wrong {
   font-family: var(--font-cn-serif);
-  color: #9b6756;
+  color: #995448;
   text-decoration: line-through;
   text-decoration-color: rgba(170, 81, 57, 0.45);
 }
@@ -1590,7 +1590,7 @@ svg {
   display: grid;
   place-items: center;
   color: #fff9f2;
-  background: linear-gradient(145deg, #b75c41, #95412d);
+  background: linear-gradient(145deg, #a44f36, #82341f);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     0 9px 18px -12px rgba(105, 45, 25, 0.85);
@@ -2934,7 +2934,7 @@ svg {
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: linear-gradient(145deg, #b75c41, #95412d);
+  background: linear-gradient(145deg, #a44f36, #82341f);
   border: 1.5px solid rgba(255, 250, 244, 0.9);
   color: #fff9f2;
   font-size: 8px;
@@ -3379,7 +3379,7 @@ svg {
 
 .learning-primary {
   color: #fff9f2;
-  background: linear-gradient(145deg, #b75c41, #95412d);
+  background: linear-gradient(145deg, #a44f36, #82341f);
   box-shadow: 0 9px 18px -13px rgba(105, 45, 25, 0.85);
 }
 
@@ -3758,7 +3758,7 @@ svg {
 
 .mistake-category.category-word_order {
   background: rgba(195, 154, 92, 0.12);
-  color: #8a6632;
+  color: #7a5828;
 }
 
 .mistake-category.category-measure_word {
@@ -3787,7 +3787,7 @@ svg {
 }
 
 .correction-wrong {
-  color: #a4655b;
+  color: #995448;
   text-decoration: line-through;
   text-decoration-thickness: 1px;
   text-decoration-color: rgba(164, 101, 91, 0.55);
@@ -5144,7 +5144,7 @@ svg {
 .motivation-table { width: 100%; min-width: 670px; border-collapse: collapse; text-align: right; font-size: 14px; }
 .motivation-table caption { padding: 15px 16px 11px; text-align: left; font-size: 14px; font-weight: 700; color: #704938; }
 .motivation-table th, .motivation-table td { padding: 13px 14px; border-top: 1px solid #f0e4d8; white-space: nowrap; }
-.motivation-table thead th { color: #8b766a; font-size: 11px; font-weight: 650; }
+.motivation-table thead th { color: #74604f; font-size: 11px; font-weight: 650; }
 .motivation-table th:first-child { text-align: left; }
 .motivation-table tbody th { font-weight: 650; }
 .motivation-table tbody td { color: #685044; font-variant-numeric: tabular-nums; }
@@ -5152,14 +5152,14 @@ svg {
 .motivation-table .motivation-current { background: #fff0e2; }
 .motivation-name { white-space: normal; overflow-wrap: anywhere; }
 .motivation-you { display: inline-block; margin-left: 8px; padding: 3px 7px; border-radius: 999px; color: #955037; background: #f7deca; font-size: 10px; font-weight: 700; }
-.motivation-note, .motivation-empty { margin: 14px 2px 0; color: #806f63; font-size: 12px; line-height: 1.65; }
+.motivation-note, .motivation-empty { margin: 14px 2px 0; color: #74604f; font-size: 12px; line-height: 1.65; }
 @media (max-width: 600px) {
   .motivation-body { padding: 16px; }
   .motivation-welcome { align-items: flex-start; padding: 15px; }
   .motivation-table-scroll { margin-top: 14px; }
 }
 
-.motivation-profile { display: inline-block; margin-left: 8px; color: #8b766a; font-size: 11px; font-weight: 500; }
+.motivation-profile { display: inline-block; margin-left: 8px; color: #74604f; font-size: 11px; font-weight: 500; }
 @media (max-width: 700px) {
   .motivation-table-scroll { overflow: visible; }
   .motivation-table, .motivation-table tbody { display: block; min-width: 0; }
@@ -5168,7 +5168,7 @@ svg {
   .motivation-table tbody tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 4px 13px 13px; border-top: 1px solid #f0e4d8; text-align: left; }
   .motivation-table tbody th { grid-column: 1 / -1; padding: 12px 2px 5px; border: 0; }
   .motivation-table tbody td { padding: 8px 2px 2px; border: 0; text-align: left; }
-  .motivation-table tbody td::before { content: attr(data-label); display: block; margin-bottom: 3px; color: #8b766a; font-size: 11px; }
+  .motivation-table tbody td::before { content: attr(data-label); display: block; margin-bottom: 3px; color: #74604f; font-size: 11px; }
 }
 @media (max-width: 400px) {
   .motivation-table tbody tr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -5201,7 +5201,7 @@ body {
 .topbar .lesson-launch:first-of-type { border-color: #22cbc9; background: linear-gradient(135deg, #0a5a68, #0b3144); box-shadow: inset 0 0 18px #17e2d921; }
 .topbar .lesson-launch:hover, .topbar .icon-button:hover, .topbar .runtime-chip:hover, .topbar .level-chip:hover { background: #20415b; color: white; }
 .topbar .runtime-chip-copy small { color: #a5bfd4; }
-.topbar .learner-chip { color: #e8ffff; border-color: #37d4d0; background: #168d96; }
+.topbar .learner-chip { color: #e8ffff; border-color: #37d4d0; background: #0e6f79; }
 .avatar-stage { background: radial-gradient(ellipse at 50% 35%, #2378a1 0%, #104d76 32%, #082942 68%, #06182c 100%); border: 1px solid #305b79; box-shadow: inset 0 1px #ffffff18, 0 20px 55px #0005; }
 .stage-halo { opacity: .5; filter: hue-rotate(145deg); }
 .stage-ring { border-color: #6ad9f055; }
@@ -5245,6 +5245,20 @@ body {
 .chat-panel .suggestion-card { background: #102e45; border: 1px solid #31576e; }
 .chat-panel .suggestion-card:hover:not(:disabled) { background: #19435a; border-color: #42c9ca; }
 .chat-panel .suggestion-kicker { color: #6df4eb; }
+/* study cards share the dark chat surface: keep their own light-theme fills off */
+.chat-panel .feedback-card { background: #102e45; border-color: #31576e; border-left-color: #e08a68; }
+.chat-panel .feedback-card.vocab-card { border-left-color: #7fe0b9; }
+.chat-panel .feedback-title { color: #d3eaf7; }
+.chat-panel .vocab-item { background: #0d2a40; border-color: #2c5170; }
+.chat-panel .vocab-word { color: #f2fbff; }
+.chat-panel .vocab-pinyin,
+.chat-panel .hanviet-reading { color: #7debe7; }
+.chat-panel .vocab-item p { color: #c8dcea; }
+.chat-panel .correction-wrong { color: #ffb9a6; text-decoration-color: #ffb9a680; }
+.chat-panel .correction-right { color: #9ff0c8; }
+.chat-panel .correction-note { color: #c8dcea; }
+.chat-panel .translation-play { background: #14425a; border-color: #3a728b; color: #a9f7f0; }
+.chat-panel .translation-play:hover:not(:disabled) { background: #1b5674; border-color: #58d8e2; color: #eaffff; }
 .chat-panel .composer { background: #0e3047; border-color: #3a6a80; box-shadow: inset 0 1px #ffffff0d; }
 .chat-panel .composer:focus-within { border-color: #35ded8; box-shadow: 0 0 0 3px #25d7d51a; }
 .chat-panel .composer textarea { color: #efffff; }
@@ -5339,7 +5353,7 @@ body {
   box-shadow: inset 0 1px 4px #a9e7ff52, 0 0 18px #42a9ef30;
 }
 .chat-panel .pinyin-toggle.is-on, .lesson-panel .lesson-primary, .lesson-panel .lesson-mic {
-  background: linear-gradient(145deg, #178c95, #085767 62%, #073849);
+  background: linear-gradient(145deg, #0f7078, #085767 62%, #073849);
   border-color: #55e8df;
   box-shadow: inset 0 1px 6px #b8fff64d, 0 0 14px #24d8d23d;
   color: #e9fffd;
