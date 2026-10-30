@@ -87,7 +87,7 @@ export async function pingRemote() {
     await res.body?.cancel();
     return setHealth('unknown', startedAt, 'Máy chủ API phản hồi nhưng không có danh sách model; bấm “Thử trả lời 1 câu” để chắc chắn.');
   }
-  if (!res.ok) return setHealth('error', startedAt, (await httpError(res)).message);
+  if (!res.ok) return setHealth('error', startedAt, (await httpError(res, settings.apiKey)).message);
   const value = await res.json().catch(() => null);
   const ids = Array.isArray(value?.data) ? value.data.map((item) => item?.id).filter((id) => typeof id === 'string') : null;
   if (ids?.length && !ids.includes(settings.model))
@@ -105,8 +105,30 @@ export function remoteMaxTokens(maxTokens = 700) {
   return Math.min(8192, Math.max(2048, Math.round(Number(maxTokens) || 700) * 3));
 }
 
-// The provider's error body is read only to classify it; it is never logged or returned.
-async function httpError(res) {
+// What the provider said, shortened and scrubbed of anything key-like, so a failure says why
+// (for example "model not available for this key") instead of only an HTTP code.
+export function providerDetail(body, secret = '') {
+  let text = '';
+  try {
+    const parsed = JSON.parse(body);
+    const value = parsed?.error?.message ?? parsed?.message ?? parsed?.error ?? parsed?.detail;
+    text = typeof value === 'string' ? value : '';
+  } catch {
+    text = /^\s*</.test(body) ? '' : body;
+  }
+  if (secret.length >= 6) text = text.split(secret).join('[đã ẩn]');
+  text = text
+    .replace(/\b(?:sk|key|tok|vk)[-_][\w-]{8,}/gi, '[đã ẩn]')
+    .replace(/\bBearer\s+\S+/gi, 'Bearer [đã ẩn]')
+    .replace(/[\w-]{32,}/g, '[đã ẩn]')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 180);
+  return text ? ` API nói: “${text}”.` : '';
+}
+
+// The provider's error body is read to classify it and to quote a short, scrubbed reason.
+async function httpError(res, secret = '') {
   let body = '';
   try {
     body = (await res.text()).slice(0, 2000);
@@ -114,14 +136,14 @@ async function httpError(res) {
     /* ignore */
   }
   const s = res.status;
-  if (s === 429) return remoteError('API đang giới hạn tốc độ (HTTP 429). Đợi một chút rồi thử lại.');
+  if (s === 429) return remoteError(`API đang giới hạn tốc độ (HTTP 429). Đợi một chút rồi thử lại.${providerDetail(body, secret)}`);
   if (s === 402 || /insufficient|balance|credit|quota|số dư|hết tiền|top.?up/i.test(body))
-    return remoteError(`API báo hết credit/hạn mức (HTTP ${s}). Nạp thêm credit cho key rồi thử lại.`);
+    return remoteError(`API báo hết credit/hạn mức (HTTP ${s}). Nạp thêm credit cho key rồi thử lại.${providerDetail(body, secret)}`);
   if (s === 401 || s === 403) return remoteError(`API key sai, hết hạn hoặc chưa kích hoạt (HTTP ${s}).`);
   if (s === 404 || /model_not_found|model not found|no such model|unknown model/i.test(body))
-    return remoteError(`Không tìm thấy model hoặc sai URL (HTTP ${s}). Mã model phải đúng như trang Models; URL kết thúc bằng /v1.`);
-  if (s >= 500) return remoteError(`Dịch vụ API đang lỗi (HTTP ${s}). Thử lại sau ít phút.`);
-  return remoteError(`API đã cấu hình trả HTTP ${s}. Kiểm tra URL/key, model, hạn mức và quyền truy cập.`);
+    return remoteError(`Không tìm thấy model hoặc sai URL (HTTP ${s}). Mã model phải đúng như trang Models; URL kết thúc bằng /v1.${providerDetail(body, secret)}`);
+  if (s >= 500) return remoteError(`Dịch vụ API đang lỗi (HTTP ${s}). Thử lại sau ít phút.${providerDetail(body, secret)}`);
+  return remoteError(`API đã cấu hình trả HTTP ${s}. Kiểm tra URL/key, model, hạn mức và quyền truy cập.${providerDetail(body, secret)}`);
 }
 
 function postChat(settings, body, signal) {
@@ -192,7 +214,7 @@ export async function streamRemote({ model, messages = [], signal, onDelta, sche
     res = await postChat(settings, base, signal);
   }
   if (!res.ok) {
-    const error = await httpError(res);
+    const error = await httpError(res, settings.apiKey);
     setHealth('error', startedAt, error.message);
     throw error;
   }
@@ -238,7 +260,7 @@ export async function testRemote() {
     AbortSignal.timeout(60000),
   );
   if (!res.ok) {
-    const error = await httpError(res);
+    const error = await httpError(res, settings.apiKey);
     setHealth('error', startedAt, error.message);
     throw error;
   }

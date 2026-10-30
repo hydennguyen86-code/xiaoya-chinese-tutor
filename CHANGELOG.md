@@ -10,6 +10,7 @@
 - Bản phân tích điểm yếu mới nhất được đưa vào cách dạy hằng ngày (trọng tâm, từ trọng tâm, lỗi phát âm hay nhầm); gia sư chủ động tạo tình huống để luyện lại đúng chỗ hay sai.
 - Phân tích bằng cloud đọc nhiều dữ liệu hơn: câu gốc của người học, lỗi phát âm/thanh điệu, và so với bản phân tích trước để thấy điểm nào đã giảm, điểm nào còn lặp. Lưu 12 bản phân tích gần nhất (trước là 4).
 - Tải trang nhanh hơn trên điện thoại: server nén gzip file JS/CSS/mô hình 3D (JS 1,2 MB → 0,4 MB, avatar 4,6 MB → 2,7 MB) và cho file có mã băm lưu cache 1 năm, nên các lần mở sau gần như không tải lại. Không cần cài thêm thư viện.
+- Lỗi từ API cloud giờ kèm lý do ngắn do dịch vụ trả về (đã che key và chuỗi giống khoá; lỗi sai key không trích lại nội dung).
 
 ## 2026-10-27 — Bản tạm
 

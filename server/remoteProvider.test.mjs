@@ -143,3 +143,15 @@ test('free ping reports ok, missing model, bad key and unreachable without leaki
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('provider reasons are quoted short and scrubbed of key-like text', async () => {
+  const { providerDetail } = await import('./remoteProvider.mjs');
+  assert.equal(
+    providerDetail('{"error":{"message":"model gemini-4-argon is not available for this group"}}'),
+    ' API nói: “model gemini-4-argon is not available for this group”.',
+  );
+  assert.equal(providerDetail('<html>Not Found</html>'), '');
+  const scrubbed = providerDetail('{"message":"bad key sk-abcdef1234567890 for MYSECRETVALUE and Bearer abc123"}', 'MYSECRETVALUE');
+  assert.equal(/sk-abcdef|MYSECRETVALUE|abc123/.test(scrubbed), false);
+  assert.ok(providerDetail('x'.repeat(500)).length < 230);
+});
