@@ -14,6 +14,7 @@
 - Đổi cách chia việc: trò chuyện và chấm bài mặc định dùng model máy (nhanh, miễn phí), model cloud chỉ phân tích lại dữ liệu đã lưu. Áp dụng một lần cho trình duyệt đã lưu cách chia cũ; vẫn bật lại từng việc được trong Cài đặt.
 - Tab Phân tích có 3 biểu đồ tính từ dữ liệu đã lưu (không cần gọi AI): lỗi mỗi 10 lượt nói trong 14 ngày (so tuần này với tuần trước), lỗi hay gặp theo nhóm, và điểm yếu lặp lại qua các bản phân tích. Có xem dạng bảng và chi tiết khi rê/chạm.
 - API báo “không có channel khả dụng” giờ hiện đúng là model tạm không có nguồn phục vụ, thay vì nói sai URL.
+- Bỏ hai dải thông báo lớn ở màn hình chính (API bên ngoài, nguồn giọng): giờ là hai nhãn nhỏ ở góc dưới, chi tiết hiện khi rê chuột. Nhãn API ngoài chỉ hiện khi trò chuyện/chấm bài thật sự dùng cloud; phân tích (bấm mới chạy) ghi rõ nơi gửi dữ liệu ngay trong tab Phân tích.
 
 ## 2026-10-27 — Bản tạm
 

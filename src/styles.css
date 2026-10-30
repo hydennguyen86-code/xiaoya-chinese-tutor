@@ -5528,3 +5528,41 @@ body {
     font-size: 15px;
   }
 }
+
+/* status chips instead of full-width banners: small, out of the way, details on hover */
+.remote-provider-notice,
+.voice-source-notice {
+  right: auto;
+  bottom: 8px;
+  left: 12px;
+  width: max-content;
+  max-width: calc(50% - 18px);
+  margin: 0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ink-3);
+  opacity: 0.9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.voice-source-notice {
+  left: auto;
+  right: 12px;
+}
+@media (max-width: 720px) {
+  .remote-provider-notice,
+  .voice-source-notice {
+    bottom: 6px;
+    max-width: calc(50% - 12px);
+    font-size: 10px;
+  }
+  .remote-provider-notice {
+    left: 6px;
+  }
+  .voice-source-notice {
+    right: 6px;
+  }
+}

@@ -30,6 +30,8 @@ interface LearningDialogProps {
   learning: LearningProfile;
   levelLabel: string;
   canAnalyze: boolean;
+  /** set when the analysis runs on an outside API: the host that receives the saved history */
+  analysisHost?: string;
   analyzing: boolean;
   analysisError: string | null;
   onClose: () => void;
@@ -117,6 +119,7 @@ export function LearningDialog({
   learning,
   levelLabel,
   canAnalyze,
+  analysisHost = '',
   analyzing,
   analysisError,
   onClose,
@@ -550,6 +553,7 @@ export function LearningDialog({
                   <h3>Phân tích điểm yếu</h3>
                   <p>
                     Dựa trên {totals.turns} lượt nói, {totals.mistakes} kiểu lỗi và {totals.words} từ trong {periodDays} ngày.
+                    {analysisHost && ` Bấm phân tích sẽ gửi dữ liệu học này đến ${analysisHost} (có thể tính phí).`}
                   </p>
                 </div>
                 <button

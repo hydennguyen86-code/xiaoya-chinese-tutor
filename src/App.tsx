@@ -96,6 +96,14 @@ interface TutorProps {
   onLearnerChange: (patch: { gender?: LearnerGender }) => void;
 }
 
+function hostOf(url?: string) {
+  try {
+    return url ? new URL(url).host : '';
+  } catch {
+    return '';
+  }
+}
+
 function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   const scope = learner.id;
   const derivedTeacherGender = teacherGenderFor(learner.gender);
@@ -384,7 +392,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
     [settings, status],
   );
   const canChat = Boolean(routes.chat);
-  const cloudInUse = Object.values(routes).some((route) => route?.cloud);
+  // analysis is a button the learner presses, so it never keeps the banner on; the Learning
+  // dialog says where it sends data at that moment
+  const cloudInUse = [routes.chat, routes.corrections, routes.assessment, routes.lessons].some((route) => route?.cloud);
   const localInUse = Object.values(routes).some((route) => route && !route.cloud);
   useEffect(() => {
     if (!providerOnline || !settings.model || !localInUse || !['ollama', 'lmstudio'].includes(settings.providerId)) return;
@@ -1195,9 +1205,12 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           />
         )}
         {cloudInUse && (
-          <p className="remote-provider-notice" role="status">
-            Đang dùng API bên ngoài: bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến {cloudProvider(status)?.url || activeProvider?.url}. Dịch vụ có thể
-            tính phí.
+          <p
+            className="remote-provider-notice"
+            role="status"
+            title={`Bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến ${cloudProvider(status)?.url || activeProvider?.url}. Dịch vụ có thể tính phí.`}
+          >
+            API ngoài · {hostOf(cloudProvider(status)?.url || activeProvider?.url)}
           </p>
         )}
         <VoiceSourceNotice />
@@ -1232,6 +1245,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           learning={learning}
           levelLabel={LEVEL_LABEL[settings.level]}
           canAnalyze={Boolean(routes.analysis)}
+          analysisHost={routes.analysis?.cloud ? hostOf(cloudProvider(status)?.url) : ''}
           analyzing={analyzing}
           analysisError={analysisError}
           onClose={closeLearning}
