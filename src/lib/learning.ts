@@ -18,7 +18,7 @@ export const LEARNING_KEY = 'xiaoya.learning.v1';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MAX_MISTAKES = 120;
 const MAX_WORDS = 400;
-const MAX_REPORTS = 4;
+const MAX_REPORTS = 12;
 const MAX_CONTEXTS = 3;
 
 const SRS_DAYS = [10 / (24 * 60), 1, 3, 7, 14, 30];
@@ -506,56 +506,100 @@ function formatDate(timestamp: number) {
   });
 }
 
+export function topPronunciation(profile: LearningProfile, limit = 5) {
+  return [...(profile.pronunciation || [])]
+    .sort((a, b) => b.count + b.lapses - (a.count + a.lapses) || b.lastSeen - a.lastSeen)
+    .slice(0, limit);
+}
+
+function clip(text: string, max: number) {
+  return text.length > max ? `${text.slice(0, max - 1)}…` : text;
+}
+
+// The server keeps 2200 characters of learner context and the app adds the learner's name first.
+const DIGEST_LIMIT = 2100;
+
 export function buildLearningDigest(profile: LearningProfile) {
   const totals = learningTotals(profile);
-  if (!totals.turns && !totals.mistakes && !totals.words) return '';
+  const report = latestReport(profile);
+  const sounds = topPronunciation(profile, 3);
+  if (!totals.turns && !totals.mistakes && !totals.words && !report && !sounds.length) return '';
 
   const skills = skillBreakdown(profile)
     .slice(0, 3)
     .map((item) => `${item.label} (${item.count})`)
     .join(', ');
-  const mistakes = topMistakes(profile, 5)
-    .map((item) => `“${item.original}” → “${item.corrected}” (${item.count} lần; ${item.explanation})`)
+  const mistakes = topMistakes(profile, 4)
+    .map((item) => clip(`“${item.original}” → “${item.corrected}” (${item.count} lần; ${item.explanation})`, 170))
     .join('; ');
   const words = weakWords(profile, 6)
     .map((item) => `${item.word} (${item.pinyin}) = ${item.meaning}`)
     .join('; ');
+  const focus = report
+    ? report.weaknesses
+        .slice(0, 3)
+        .map((item) => clip(`${item.title}${item.practice ? ` — cách luyện: ${item.practice}` : ''}`, 180))
+        .join('; ')
+    : '';
+  const focusWords = report
+    ? report.focusWords
+        .slice(0, 4)
+        .map((item) => item.word)
+        .filter(Boolean)
+        .join(', ')
+    : '';
+  const pron = sounds.map((item) => `${item.target} ↔ ${item.contrast} (${item.count} lần)`).join('; ');
 
   const lines = [
     'HỒ SƠ HỌC TẬP TỰ ĐỘNG (dùng ngầm để điều chỉnh cách dạy, không được đọc lại như một bản báo cáo và không nhắc đến chữ “hồ sơ”):',
     `- Đã ghi ${totals.turns} lượt trong ${totals.activeDays || 1} ngày; ${totals.mistakes} kiểu lỗi, ${totals.words} từ đang ôn.`,
   ];
+  if (report && focus) lines.push(`- TRỌNG TÂM DẠY (bản phân tích ngày ${formatDate(report.createdAt)}): ${focus}.`);
+  if (focusWords) lines.push(`- Từ trọng tâm: ${focusWords}.`);
   if (skills) lines.push(`- Kỹ năng cần chú ý: ${skills}.`);
   if (mistakes) lines.push(`- Lỗi hay lặp: ${mistakes}.`);
   if (words) lines.push(`- Từ nên xuất hiện lại tự nhiên: ${words}.`);
-  lines.push(
-    '- Khi phù hợp, hãy dùng lại 1 từ hoặc cấu trúc mà người học từng sai để họ gặp lại trong ngữ cảnh mới. Nếu người học dùng đúng, khen ngắn và tự nhiên. Không nhắc “theo hồ sơ”, không liệt kê lỗi hàng loạt.',
-  );
-  return lines.join('\n').slice(0, 2200);
+  if (pron) lines.push(`- Phát âm hay nhầm: ${pron}.`);
+  const guide =
+    '- Cách dạy: cứ vài lượt, khéo tạo tình huống buộc người học dùng một điểm trọng tâm hoặc một lỗi hay lặp ở trên; dùng lại từ cần ôn trong ngữ cảnh mới. Dùng đúng thì khen ngắn, tự nhiên; sai lại thì đưa câu đúng thật gọn. Không nhắc “theo hồ sơ”, không liệt kê lỗi hàng loạt.';
+  // the teaching rule must survive even when the data lines are long
+  const budget = DIGEST_LIMIT - guide.length - 1;
+  const body = lines.join('\n');
+  return `${body.length > budget ? `${body.slice(0, budget - 1)}…` : body}\n${guide}`;
 }
 
-export function buildAnalysisInput(profile: LearningProfile) {
+/** rich = the cloud model reads more history, the learner's own sentences and the previous report. */
+export function buildAnalysisInput(profile: LearningProfile, options: { rich?: boolean } = {}) {
+  const rich = Boolean(options.rich);
   const totals = learningTotals(profile);
   const periodDays = learningPeriodDays(profile);
   const skills = skillBreakdown(profile)
     .map((item) => `- ${item.label}: ${item.count} lỗi`)
     .join('\n');
-  const mistakes = topMistakes(profile, 14)
+  const mistakes = topMistakes(profile, rich ? 24 : 14)
     .map(
       (item) =>
-        `- [${SKILL_LABELS[item.category]}] “${item.original}” → “${item.corrected}” | ${item.explanation} | ${item.count} lần | gần nhất ${formatDate(item.lastSeen)}`,
+        `- [${SKILL_LABELS[item.category]}] “${item.original}” → “${item.corrected}” | ${item.explanation} | ${item.count} lần | gần nhất ${formatDate(item.lastSeen)}` +
+        (rich && item.contexts?.[0] ? ` | câu gốc: “${clip(item.contexts[0], 90)}”` : ''),
     )
     .join('\n');
-  const words = allowedWords(profile, 14)
+  const words = allowedWords(profile, rich ? 20 : 14)
     .map(
       (item) =>
         `- ${item.word} (${item.pinyin}): ${item.meaning} | gặp ${item.count} lần | mức nhớ ${item.box}/5 | quên ${item.lapses} lần | ôn ${item.reviews} lần`,
     )
     .join('\n');
+  const pron = topPronunciation(profile, rich ? 10 : 5)
+    .map(
+      (item) =>
+        `- [${item.kind === 'tone' ? 'Thanh điệu' : 'Âm'}] ${item.target} ↔ ${item.contrast}${item.heard ? ` | máy nghe thành ${item.heard}` : ''} | ${item.count} lần | ôn ${item.reviews}, sai ${item.lapses}`,
+    )
+    .join('\n');
   const sessions = profile.days
-    .slice(-7)
+    .slice(rich ? -14 : -7)
     .map((day) => `- ${day.date}: ${day.turns} lượt, ${day.corrections} lỗi mới ghi, ${day.newWords} từ mới, ${day.reviews} lượt ôn`)
     .join('\n');
+  const previous = latestReport(profile);
 
   const lines = [
     `Khoảng thời gian: ${periodDays} ngày.`,
@@ -570,13 +614,19 @@ export function buildAnalysisInput(profile: LearningProfile) {
     '',
     'TỪ VỰNG CẦN CHÚ Ý:',
     words || '- Chưa có dữ liệu.',
-    '',
-    'HOẠT ĐỘNG GẦN ĐÂY:',
-    sessions || '- Chưa có dữ liệu.',
-    '',
-    'Hãy phân tích chỉ dựa trên dữ liệu trên. Không bịa lỗi hoặc từ không có trong danh sách.',
   ];
-  return lines.join('\n').slice(0, 6000);
+  if (pron) lines.push('', 'PHÁT ÂM HAY NHẦM:', pron);
+  lines.push('', 'HOẠT ĐỘNG GẦN ĐÂY:', sessions || '- Chưa có dữ liệu.');
+  if (previous) {
+    lines.push(
+      '',
+      `BẢN PHÂN TÍCH TRƯỚC (${formatDate(previous.createdAt)}, ${reportAgeDays(previous)} ngày trước):`,
+      `- Tóm tắt: ${clip(previous.summary, 300)}`,
+      ...previous.weaknesses.map((item) => `- Điểm yếu đã nêu: ${item.title}`),
+    );
+  }
+  lines.push('', 'Hãy phân tích chỉ dựa trên dữ liệu trên. Không bịa lỗi hoặc từ không có trong danh sách.');
+  return lines.join('\n').slice(0, rich ? 12000 : 6000);
 }
 
 export function hasAnalysisData(profile: LearningProfile) {

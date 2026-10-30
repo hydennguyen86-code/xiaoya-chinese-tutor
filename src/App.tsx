@@ -2,6 +2,7 @@ import { beginLatency, markLatency, cancelLatency } from './lib/latency';
 import { retainSpokenTurn } from './lib/spokenTurns';
 import type { VoiceResult } from './lib/voiceInput';
 import { recordPronunciation } from './lib/learning';
+import { cloudProvider, routeTask } from './lib/modelRouting';
 import { VoiceSourceNotice } from './components/VoiceSourceNotice';
 import { Assessment } from './components/Assessment';
 import { SetupCheck } from './components/SetupCheck';
@@ -372,9 +373,21 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
     [status, settings.providerId],
   );
   const providerOnline = Boolean(activeProvider?.online);
-  const canChat = Boolean(status && activeProvider?.online && settings.model);
+  const routes = useMemo(
+    () => ({
+      chat: routeTask('chat', settings, status),
+      corrections: routeTask('corrections', settings, status),
+      analysis: routeTask('analysis', settings, status),
+      assessment: routeTask('assessment', settings, status),
+      lessons: routeTask('lessons', settings, status),
+    }),
+    [settings, status],
+  );
+  const canChat = Boolean(routes.chat);
+  const cloudInUse = Object.values(routes).some((route) => route?.cloud);
+  const localInUse = Object.values(routes).some((route) => route && !route.cloud);
   useEffect(() => {
-    if (!canChat || !['ollama', 'lmstudio'].includes(settings.providerId)) return;
+    if (!providerOnline || !settings.model || !localInUse || !['ollama', 'lmstudio'].includes(settings.providerId)) return;
     const abort = new AbortController();
     fetch('/api/warmup', {
       method: 'POST',
@@ -383,7 +396,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
       signal: abort.signal,
     }).catch(() => {});
     return () => abort.abort();
-  }, [canChat, settings.providerId, settings.model]);
+  }, [providerOnline, localInUse, settings.providerId, settings.model]);
   // the female teacher always uses the app's built-in female face; the stored
   // custom avatar file is the male teacher's face
   const fixedAvatar = teacher.fixedAvatar ?? null;
@@ -460,13 +473,13 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
       if (!text || busyRef.current) return;
 
       const currentStatus = statusRef.current;
-      const active = currentStatus?.providers.find((provider) => provider.id === settingsRef.current.providerId);
+      const chatRoute = routeTask('chat', settingsRef.current, currentStatus);
       if (!currentStatus) {
         setError('Đang kết nối server local. Đợi một chút rồi thử lại nhé.');
         return;
       }
-      if (!active?.online || !settingsRef.current.model) {
-        setError('Chưa có model sẵn sàng. Mở Ollama hoặc LM Studio, sau đó kiểm tra trong Cài đặt.');
+      if (!chatRoute) {
+        setError('Chưa có model sẵn sàng. Mở Ollama/LM Studio hoặc cấu hình model cloud (API) trong Cài đặt.');
         return;
       }
 
@@ -537,8 +550,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
 
       void streamChat(
         {
-          provider: settingsRef.current.providerId,
-          model: settingsRef.current.model,
+          provider: chatRoute.provider,
+          model: chatRoute.model,
           level: settingsRef.current.level,
           gender: teacher.gender,
           messages: history,
@@ -616,8 +629,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             }
 
             const learningEpoch = learningEpochRef.current;
-            const { providerId, model: modelId } = settingsRef.current;
-            void fetchCorrections({ provider: providerId, model: modelId, text })
+            // no model for corrections → the server still applies its rules for common mistakes
+            const correctionRoute = routeTask('corrections', settingsRef.current, statusRef.current) ?? { provider: 'rules', model: '' };
+            void fetchCorrections({ provider: correctionRoute.provider, model: correctionRoute.model, text })
               .then((corrections) => {
                 patchAssistant({ corrections, correctionsPending: false });
                 if (
@@ -781,9 +795,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   );
 
   const handleAnalyzeLearning = useCallback(async () => {
-    const active = statusRef.current?.providers.find((provider) => provider.id === settingsRef.current.providerId);
-    if (!statusRef.current || !active?.online || !settingsRef.current.model) {
-      setAnalysisError('Chưa có model sẵn sàng. Kiểm tra Ollama hoặc LM Studio trong Cài đặt.');
+    const analysisRoute = routeTask('analysis', settingsRef.current, statusRef.current);
+    if (!analysisRoute) {
+      setAnalysisError('Chưa có model sẵn sàng. Kiểm tra Ollama/LM Studio hoặc model cloud (API) trong Cài đặt.');
       return;
     }
     if (analyzing) return;
@@ -792,10 +806,10 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
     setAnalysisError(null);
     try {
       const levelLabel = LEVEL_LABEL[settingsRef.current.level];
-      const profileText = `Trình độ hiện tại: ${levelLabel}\n\n${buildAnalysisInput(learningRef.current)}`;
+      const profileText = `Trình độ hiện tại: ${levelLabel}\n\n${buildAnalysisInput(learningRef.current, { rich: analysisRoute.cloud })}`;
       const report = await analyzeLearning({
-        provider: settingsRef.current.providerId,
-        model: settingsRef.current.model,
+        provider: analysisRoute.provider,
+        model: analysisRoute.model,
         profile: profileText,
         periodDays: learningPeriodDays(learningRef.current),
       });
@@ -1016,11 +1030,20 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             <button className="lesson-launch motivation-trigger" type="button" onClick={() => setMotivationOpen(true)}>
               <SparkIcon size={16} /> Bảng động lực
             </button>
-            <button className="runtime-chip" type="button" onClick={openSettings} title="Xem hoặc đổi model local">
-              <span className={`status-dot${providerOnline ? ' is-online' : ''}`} />
+            <button
+              className="runtime-chip"
+              type="button"
+              onClick={openSettings}
+              title={routes.chat?.cloud ? cloudProvider(status)?.health?.message || 'Model cloud qua API' : 'Xem hoặc đổi model'}
+            >
+              <span
+                className={`status-dot${
+                  (routes.chat?.cloud ? cloudProvider(status)?.health?.state !== 'error' : providerOnline) ? ' is-online' : ''
+                }${routes.chat?.cloud && cloudProvider(status)?.health?.state === 'error' ? ' is-error' : ''}`}
+              />
               <span className="runtime-chip-copy">
-                <strong>{activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}</strong>
-                <small>{settings.model ? shortModelName(settings.model, 26) : activeProvider ? 'Chọn model' : 'Ollama · LM Studio'}</small>
+                <strong>{routes.chat?.cloud ? 'Cloud API' : activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}</strong>
+                <small>{routes.chat ? shortModelName(routes.chat.model, 26) : activeProvider ? 'Chọn model' : 'Ollama · LM Studio'}</small>
               </span>
               <ChevronDownIcon size={14} />
             </button>
@@ -1109,8 +1132,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             <Assessment
               learnerId={learner.id}
               learning={learning}
-              provider={settings.providerId}
-              model={settings.model}
+              provider={routes.assessment?.provider ?? settings.providerId}
+              model={routes.assessment?.model ?? settings.model}
               level={settings.level}
               localStt={Boolean(status?.localStt)}
               say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
@@ -1122,8 +1145,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
               learner={learner}
               onLevelChange={(level) => handleSettingsChange({ level })}
               level={settings.level}
-              provider={settings.providerId}
-              model={settings.model}
+              provider={routes.lessons?.provider ?? settings.providerId}
+              model={routes.lessons?.model ?? settings.model}
               voice={settings.voice}
               localStt={Boolean(status?.localStt)}
               getAvatar={getAvatar}
@@ -1171,9 +1194,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             }}
           />
         )}
-        {settings.providerId === 'compatible' && (
+        {cloudInUse && (
           <p className="remote-provider-notice" role="status">
-            Đang dùng API bên ngoài: bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến {activeProvider?.url}. Dịch vụ có thể
+            Đang dùng API bên ngoài: bản chép lời, hội thoại và dữ liệu học liên quan được gửi đến {cloudProvider(status)?.url || activeProvider?.url}. Dịch vụ có thể
             tính phí.
           </p>
         )}
@@ -1208,7 +1231,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           open={learningOpen}
           learning={learning}
           levelLabel={LEVEL_LABEL[settings.level]}
-          canAnalyze={canChat}
+          canAnalyze={Boolean(routes.analysis)}
           analyzing={analyzing}
           analysisError={analysisError}
           onClose={closeLearning}

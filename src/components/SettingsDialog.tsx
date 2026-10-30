@@ -152,7 +152,7 @@ export function SettingsDialog({
             <div className="section-heading">
               <div>
                 <h3>Bộ não của {teacher.vi}</h3>
-                <p>Chọn Ollama/LM Studio trên máy, hoặc tự cấu hình API bên ngoài ở phía dưới.</p>
+                <p>Model trên máy (Ollama/LM Studio) lo việc nhẹ. Việc cần suy luận giao cho model cloud ở mục “Model cloud qua API” phía dưới.</p>
               </div>
               <button className="refresh-button" type="button" onClick={onRefresh} disabled={refreshing}>
                 <RefreshIcon size={15} className={refreshing ? 'is-spinning' : ''} />
@@ -489,7 +489,7 @@ export function SettingsDialog({
             </div>
           </section>
 
-          <ConnectivitySettings onChange={onChange} onRefresh={onRefresh} />
+          <ConnectivitySettings settings={settings} onChange={onChange} onRefresh={onRefresh} />
           <section className="settings-section settings-footer">
             <p className="privacy-note">
               <SparkIcon size={14} />

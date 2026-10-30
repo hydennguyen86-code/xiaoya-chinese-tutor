@@ -96,3 +96,29 @@ test('LAN requires TLS/PIN for remote data, rejects cross-origin and rebinding, 
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('Tailscale Serve name is accepted only over loopback and only when configured', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-proxy-test-'));
+  try {
+    const name = 'mac-mini.tail1234.ts.net';
+    const lan = await createLanAccess({ host: '127.0.0.1', port: 8787, dataDir: dir, env: { XIAOYA_PROXY_HOSTS: `${name}.` } });
+    const viaServe = { socket: { remoteAddress: '127.0.0.1' }, headers: { host: name, origin: `https://${name}` }, path: '/api/store', method: 'PUT' };
+    let passed = 0;
+    lan.guard(viaServe, response(), () => passed++);
+    // some proxies rewrite Host to the upstream address but keep the browser's Origin
+    lan.guard({ ...viaServe, headers: { host: '127.0.0.1:8787', origin: `https://${name}` } }, response(), () => passed++);
+    assert.equal(passed, 2);
+    const remote = response();
+    lan.guard({ ...viaServe, socket: { remoteAddress: '100.64.0.9' } }, remote, () => assert.fail('proxy name accepted off loopback'));
+    assert.equal(remote.code, 403);
+    const other = response();
+    lan.guard({ ...viaServe, headers: { host: 'evil.ts.net', origin: 'https://evil.ts.net' } }, other, () => assert.fail('unknown ts.net name'));
+    assert.equal(other.code, 403);
+    const plain = await createLanAccess({ host: '127.0.0.1', port: 8787, dataDir: dir, env: {} });
+    const off = response();
+    plain.guard(viaServe, off, () => assert.fail('accepted without configuration'));
+    assert.equal(off.code, 403);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

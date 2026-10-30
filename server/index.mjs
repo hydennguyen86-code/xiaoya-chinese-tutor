@@ -8,7 +8,15 @@ import https from 'node:https';
 import http from 'node:http';
 import { createLanAccess, ownerRequest } from './lanAccess.mjs';
 import os from 'node:os';
-import { initializeRemoteProvider, publicRemoteSettings, saveRemoteSettings, deleteRemoteSettings } from './remoteProvider.mjs';
+import {
+  initializeRemoteProvider,
+  publicRemoteSettings,
+  saveRemoteSettings,
+  deleteRemoteSettings,
+  testRemote,
+  pingRemote,
+  remoteHealth,
+} from './remoteProvider.mjs';
 import { mountToneEvaluation } from './toneEvaluation.mjs';
 import { assessTask, prepareTask } from './assessment.mjs';
 import express from 'express';
@@ -63,13 +71,31 @@ app.post('/api/warmup', async (req, res) => {
   }
 });
 app.get('/api/provider-config', (req, res) => (isOwner(req) ? res.json(publicRemoteSettings()) : res.sendStatus(403)));
-app.put('/api/provider-config', (req, res) => {
+app.put('/api/provider-config', async (req, res) => {
   if (!isOwner(req)) return res.sendStatus(403);
   try {
-    res.json(saveRemoteSettings(req.body));
+    saveRemoteSettings(req.body);
+    await pingRemote(); // free check so the settings show a status right away
+    res.json(publicRemoteSettings());
   } catch {
     res.status(400).json({ error: 'Cấu hình chưa hợp lệ: cần URL HTTPS, model và đồng ý gửi hội thoại. Key không được chứa xuống dòng.' });
   }
+});
+app.post('/api/provider-test', async (req, res) => {
+  if (!isOwner(req)) return res.sendStatus(403);
+  try {
+    res.json(await testRemote());
+  } catch (error) {
+    const known = error?.remote || error?.status === 400;
+    res.status(error?.status === 400 ? 400 : 502).json({
+      error: known ? error.message : 'API không phản hồi kịp (quá 60 giây) hoặc lỗi mạng. Thử lại sau.',
+      health: remoteHealth(),
+    });
+  }
+});
+app.post('/api/provider-ping', async (req, res) => {
+  if (!isOwner(req)) return res.sendStatus(403);
+  res.json((await pingRemote()) ?? null);
 });
 app.delete('/api/provider-config', (req, res) => {
   if (!isOwner(req)) return res.sendStatus(403);
@@ -245,6 +271,8 @@ function friendlyError(error) {
   if (error?.name === 'TimeoutError') {
     return 'Model xử lý quá lâu. Bạn thử model nhỏ hơn hoặc đóng bớt ứng dụng đang dùng GPU.';
   }
+  // cloud API errors are already classified and contain no provider body or key
+  if (error?.remote) return error.message;
   if (error instanceof ModelError) {
     if (/fetch failed|ECONNREFUSED|ENOTFOUND/i.test(error.message)) {
       return 'Không kết nối được model local. Kiểm tra Ollama hoặc LM Studio đã chạy chưa.';
@@ -265,7 +293,8 @@ async function collectCorrections(provider, model, userText, signal) {
   const ruleFixes = ruleCorrections(userText);
   let raw = '';
   try {
-    const timeout = AbortSignal.timeout(15000);
+    // a cloud model thinks before answering; a local one should be quick
+    const timeout = AbortSignal.timeout(provider === 'compatible' ? 45000 : 15000);
     const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
     const result = await completeJson({
       provider,
@@ -497,7 +526,7 @@ app.post('/api/analysis', async (req, res) => {
     const result = await completeJson({
       provider,
       model: model.trim(),
-      messages: buildAnalysisMessages(profile),
+      messages: buildAnalysisMessages(profile, provider === 'compatible' ? 12000 : 6000),
       signal: AbortSignal.timeout(150000),
       schema: ANALYSIS_SCHEMA,
       maxTokens: 1600,
@@ -519,12 +548,14 @@ app.post('/api/analysis', async (req, res) => {
 
 app.post('/api/corrections', async (req, res) => {
   const { provider = 'ollama', model, text = '' } = req.body || {};
+  // provider "rules": no model, only the built-in rules for typical Vietnamese-learner mistakes
+  const rulesOnly = provider === 'rules';
 
-  if (!PROVIDER_DEFS[provider]) {
+  if (!rulesOnly && !PROVIDER_DEFS[provider]) {
     res.status(400).json({ error: 'Provider không hợp lệ.' });
     return;
   }
-  if (typeof model !== 'string' || !model.trim() || model.length > 200) {
+  if (!rulesOnly && (typeof model !== 'string' || !model.trim() || model.length > 200)) {
     res.status(400).json({ error: 'Chưa chọn model.' });
     return;
   }
@@ -538,6 +569,11 @@ app.post('/api/corrections', async (req, res) => {
       : '';
   if (!learnerText || !HAN.test(learnerText)) {
     res.json({ corrections: [] });
+    return;
+  }
+
+  if (rulesOnly) {
+    res.json({ corrections: mergeCorrections(ruleCorrections(learnerText), [], 2, learnerText) });
     return;
   }
 
@@ -782,6 +818,9 @@ server.listen(PORT, HOST, async () => {
   process.send?.({ type: 'misu-ready', port: server.address().port });
   console.log(`米苏 server → ${lan.enabled ? 'https' : 'http'}://${HOST}:${PORT}`);
   console.log(`[providers] ${summary}`);
+  // keep the cloud status fresh without spending tokens
+  void pingRemote().then((h) => h && console.log(`[cloud] ${h.state} · ${h.ms}ms · ${h.message}`));
+  setInterval(() => void pingRemote(), 5 * 60_000).unref();
   await startStt();
 });
 

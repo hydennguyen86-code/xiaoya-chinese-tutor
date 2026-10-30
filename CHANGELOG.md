@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-30 — Bản tạm
+
+- Thêm mục “Model cloud qua API” trong Cài đặt: nút điền sẵn VietAPI (https://api.vietapi.tech/v1 · gemini-4-argon), link lấy key/nạp credit, nút Kiểm tra kết nối. Key chỉ lưu trên máy chủ.
+- Chia việc theo model: trò chuyện, phân tích điểm yếu và chấm bài mặc định đi cloud; model máy (7B) lo việc nhẹ như soạn bài tự sinh. Bắt lỗi ngay khi nói mặc định không gọi cloud (bộ luật lỗi hay gặp + model máy nếu có); ghi âm vẫn lưu để phân tích sau. Có thể bật/tắt từng việc. Máy không chạy model nào thì các việc khác tự chuyển sang cloud.
+- API cloud trả lời dạng streaming để gia sư nói sớm hơn; nới max_tokens cho model có suy luận; báo lỗi rõ: sai key, hết credit, sai mã model, quá giới hạn, dịch vụ lỗi.
+- Thêm trạng thái cloud API: chấm xanh/vàng/đỏ, nút Ping miễn phí (GET /models), tự ping khi mở Cài đặt và mỗi 5 phút; nút “Thử trả lời 1 câu”.
+- Dùng trên điện thoại qua Tailscale Serve: server chấp nhận tên máy *.ts.net khai báo trong XIAOYA_PROXY_HOSTS (chỉ khi yêu cầu đi qua loopback).
+- Bản phân tích điểm yếu mới nhất được đưa vào cách dạy hằng ngày (trọng tâm, từ trọng tâm, lỗi phát âm hay nhầm); gia sư chủ động tạo tình huống để luyện lại đúng chỗ hay sai.
+- Phân tích bằng cloud đọc nhiều dữ liệu hơn: câu gốc của người học, lỗi phát âm/thanh điệu, và so với bản phân tích trước để thấy điểm nào đã giảm, điểm nào còn lặp. Lưu 12 bản phân tích gần nhất (trước là 4).
+
 ## 2026-10-27 — Bản tạm
 
 - Thêm Bảng động lực dùng dữ liệu từng học viên: lượt trò chuyện, chuỗi ngày, buổi hoàn thành và XP; phân biệt hồ sơ trùng tên, không xếp hạng trình độ.

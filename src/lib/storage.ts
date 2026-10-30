@@ -1,4 +1,5 @@
-import type { ChatMessage, Level, Progress, Settings } from '../types';
+import type { ChatMessage, CloudTask, Level, Progress, Settings } from '../types';
+import { CLOUD_TASK_IDS, DEFAULT_CLOUD_TASKS } from './modelRouting.ts';
 
 const SETTINGS_KEY = 'xiaoya.settings.v1';
 const PINYIN_DEFAULT_KEY = 'xiaoya.pinyinDefault.v1';
@@ -25,6 +26,7 @@ export const DEFAULT_SETTINGS: Settings = {
   avatarMode: 'lam',
   avatarModeAuto: true,
   avatarGender: 'female',
+  cloudTasks: [...DEFAULT_CLOUD_TASKS],
 };
 
 const LEVELS = new Set<Level>(['HSK1-2', 'HSK3-4', 'HSK5-6', 'free']);
@@ -89,9 +91,12 @@ export function loadSettings(): Settings {
           ? parsed.avatarModeAuto
           : DEFAULT_SETTINGS.avatarModeAuto,
       avatarGender: parsed.avatarGender === 'male' ? 'male' : 'female',
+      cloudTasks: Array.isArray(parsed.cloudTasks)
+        ? parsed.cloudTasks.filter((task: unknown): task is CloudTask => CLOUD_TASK_IDS.has(task as CloudTask))
+        : [...DEFAULT_CLOUD_TASKS],
     };
   } catch {
-    return { ...DEFAULT_SETTINGS };
+    return { ...DEFAULT_SETTINGS, cloudTasks: [...DEFAULT_CLOUD_TASKS] };
   }
 }
 

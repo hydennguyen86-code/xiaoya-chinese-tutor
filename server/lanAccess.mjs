@@ -22,6 +22,12 @@ export async function createLanAccess({ host, port, dataDir, env = process.env }
   const enabled = host === '0.0.0.0';
   const addresses = enabled ? lanAddresses() : [];
   const allowedHosts = new Set(['localhost', '127.0.0.1', '[::1]', ...addresses]);
+  // HTTPS names of a reverse proxy running on this computer, e.g. Tailscale Serve
+  // (mac-mini.tailnet.ts.net). Accepted only for requests that arrive over loopback.
+  const proxyHosts = String(env.XIAOYA_PROXY_HOSTS || '')
+    .split(',')
+    .map((name) => name.trim().toLowerCase().replace(/\.$/, ''))
+    .filter((name) => /^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(name));
   const sessions = new Map(),
     attempts = new Map();
   const pin = env.XIAOYA_LAN_PIN || String(crypto.randomInt(100000, 1000000));
@@ -72,10 +78,13 @@ export async function createLanAccess({ host, port, dataDir, env = process.env }
     } catch {
       return res.sendStatus(403);
     }
-    if (!allowedHosts.has(hostname)) return res.sendStatus(403);
+    const viaProxy = ownerRequest(req) && proxyHosts.includes(hostname);
+    if (!allowedHosts.has(hostname) && !viaProxy) return res.sendStatus(403);
     const origin = req.headers.origin;
     const developmentOrigin = !enabled && ownerRequest(req) && ['http://localhost:5173', 'http://127.0.0.1:5173'].includes(origin);
-    if (origin && origin !== `${enabled ? 'https' : 'http'}://${req.headers.host}` && !developmentOrigin) return res.sendStatus(403);
+    const proxyOrigin = ownerRequest(req) && proxyHosts.some((name) => origin === `https://${name}`);
+    const expectedOrigin = `${enabled || viaProxy ? 'https' : 'http'}://${req.headers.host}`;
+    if (origin && origin !== expectedOrigin && !developmentOrigin && !proxyOrigin) return res.sendStatus(403);
     res.set('Cache-Control', 'no-store');
     if (!enabled || ownerRequest(req)) return next();
     if (req.path === '/api/lan/login' && req.method === 'POST') return next();

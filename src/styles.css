@@ -5375,3 +5375,38 @@ body {
   box-shadow: inset 0 1px 5px #d3f7ff6b, 0 0 14px #51c8f03b;
 }
 .chat-panel .send-button:disabled { background: #28465a; box-shadow: none; }
+
+/* cloud API: preset links and the per-job routing list */
+.connectivity-settings .lesson-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.connectivity-settings a.lesson-secondary { display: inline-flex; align-items: center; text-decoration: none; }
+.connectivity-settings .cloud-tasks {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 6px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 12px;
+}
+.connectivity-settings .cloud-tasks legend { padding: 0 6px; font-weight: 600; }
+.connectivity-settings .cloud-task { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.connectivity-settings .cloud-task small { display: block; opacity: 0.75; }
+.connectivity-settings .cloud-tasks-note { margin: 2px 0 0; font-size: 0.9em; opacity: 0.8; }
+
+/* cloud API status line */
+.connectivity-settings .cloud-health {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 12px;
+}
+.connectivity-settings .cloud-health-text { flex: 1; min-width: 0; }
+.connectivity-settings .cloud-health-text small { display: block; opacity: 0.8; }
+.connectivity-settings .cloud-health.is-ok { border-color: #2f9e6e; }
+.connectivity-settings .cloud-health.is-warn { border-color: #d39b22; }
+.connectivity-settings .cloud-health.is-warn .status-dot { background: #d39b22; }
+.connectivity-settings .cloud-health.is-error { border-color: #d6455d; }
+.connectivity-settings .cloud-health.is-error .status-dot,
+.runtime-chip .status-dot.is-error { background: #d6455d; }

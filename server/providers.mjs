@@ -1,4 +1,4 @@
-import { remoteSettings } from './remoteProvider.mjs';
+import { remoteHealth, remoteSettings } from './remoteProvider.mjs';
 const OLLAMA_URL = (process.env.OLLAMA_URL || 'http://127.0.0.1:11434').replace(/\/$/, '');
 const LMSTUDIO_URL = (process.env.LMSTUDIO_URL || 'http://127.0.0.1:1234').replace(/\/$/, '');
 
@@ -88,6 +88,7 @@ export async function detectProviders() {
       models: remote ? [remote.model] : [],
       recommendedModel: remote?.model || '',
       remote: true,
+      health: remoteHealth(),
     },
   ];
 }

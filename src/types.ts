@@ -5,6 +5,7 @@ export type AvatarMode = 'classic' | 'lam';
 export type Phase = 'loading' | 'ready' | 'listening' | 'thinking' | 'replying' | 'speaking';
 export type MistakeCategory = 'grammar' | 'word_choice' | 'word_order' | 'measure_word' | 'other';
 export type SkillKey = MistakeCategory | 'vocabulary';
+export type CloudTask = 'chat' | 'corrections' | 'analysis' | 'assessment' | 'lessons';
 
 export interface Correction {
   original: string;
@@ -60,10 +61,20 @@ export interface Settings {
   avatarMode: AvatarMode;
   avatarModeAuto: boolean;
   avatarGender: 'female' | 'male';
+  /** jobs sent to the configured cloud API instead of the local model */
+  cloudTasks: CloudTask[];
+}
+
+export interface RemoteHealth {
+  state: 'ok' | 'warn' | 'error' | 'unknown';
+  ms: number;
+  at: number;
+  message: string;
 }
 
 export interface ProviderInfo {
   remote?: boolean;
+  health?: RemoteHealth | null;
   id: string;
   name: string;
   url: string;

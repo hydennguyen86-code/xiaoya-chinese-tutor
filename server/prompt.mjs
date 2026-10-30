@@ -107,6 +107,9 @@ Quy tắc:
 - Chỉ kết luận từ dữ liệu được cung cấp. Không bịa lỗi, không bịa từ, không suy đoán ngoài dữ liệu.
 - Viết bằng tiếng Việt có dấu, tự nhiên, ngắn gọn, dễ hiểu. Được phép dùng chữ Hán và pinyin làm ví dụ.
 - Nếu dữ liệu quá ít (dưới 3 lượt hoặc chưa có lỗi/từ nào), nói rõ trong summary rằng cần thêm dữ liệu, nhưng vẫn đưa ra hướng luyện tập hợp lý.
+- Nếu có mục BẢN PHÂN TÍCH TRƯỚC: đối chiếu với dữ liệu hiện tại và nói ngắn trong summary điểm nào đã giảm, điểm nào vẫn lặp. Điểm yếu còn lặp được ưu tiên giữ lại.
+- Nếu có mục PHÁT ÂM HAY NHẦM với số lần đáng kể, được nêu một điểm yếu phát âm (skill "other", title ghi rõ thanh điệu hoặc âm nào).
+- Khi có câu gốc của người học trong dữ liệu, dùng nó làm evidence thay vì mô tả chung chung.
 - summary: 2–3 câu, tối đa 450 ký tự.
 - strengths: 2–3 điểm đang làm tốt, dựa trên dữ liệu (ví dụ ít lỗi ở một nhóm nào đó, chăm ôn từ). Mỗi ý tối đa 25 từ.
 - weaknesses: 2–3 mục, xếp theo mức độ đáng chú ý. Mỗi mục gồm:
@@ -119,12 +122,12 @@ Quy tắc:
 - plan: đúng 3 bước hành động cho 3–5 ngày tới, mỗi bước tối đa 25 từ.
 - Tổng toàn bộ JSON dưới 900 từ. Không markdown, không bullet ký tự, không lời chào, không nhắc “là AI”. Chỉ trả JSON đúng schema.`;
 
-export function buildAnalysisMessages(profileText) {
+export function buildAnalysisMessages(profileText, limit = 6000) {
   return [
     { role: 'system', content: ANALYSIS_PROMPT },
     {
       role: 'user',
-      content: String(profileText ?? '').slice(0, 6000),
+      content: String(profileText ?? '').slice(0, Math.max(1000, Math.min(12000, Number(limit) || 6000))),
     },
   ];
 }
