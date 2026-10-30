@@ -3,6 +3,7 @@ import { CLOUD_TASK_IDS, DEFAULT_CLOUD_TASKS } from './modelRouting.ts';
 
 const SETTINGS_KEY = 'xiaoya.settings.v1';
 const PINYIN_DEFAULT_KEY = 'xiaoya.pinyinDefault.v1';
+const CLOUD_TASKS_DEFAULT_KEY = 'xiaoya.cloudTasksDefault.v2';
 export const CHAT_KEY = 'xiaoya.chat.v1';
 export const PROGRESS_KEY = 'xiaoya.progress.v1';
 const CHAT_LIMIT = 80;
@@ -55,10 +56,22 @@ function pinyinDefaultOn() {
   }
 }
 
+/** the cloud model now only analyses saved history; apply that once for browsers that saved the earlier split */
+function cloudTasksDefaultOn() {
+  try {
+    if (localStorage.getItem(CLOUD_TASKS_DEFAULT_KEY)) return false;
+    localStorage.setItem(CLOUD_TASKS_DEFAULT_KEY, '1');
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function loadSettings(): Settings {
   try {
     const parsed = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
     const pinyinUpgrade = pinyinDefaultOn();
+    const cloudTasksUpgrade = cloudTasksDefaultOn();
     return {
       providerId: typeof parsed.providerId === 'string' ? parsed.providerId : '',
       model: typeof parsed.model === 'string' ? parsed.model : '',
@@ -91,7 +104,9 @@ export function loadSettings(): Settings {
           ? parsed.avatarModeAuto
           : DEFAULT_SETTINGS.avatarModeAuto,
       avatarGender: parsed.avatarGender === 'male' ? 'male' : 'female',
-      cloudTasks: Array.isArray(parsed.cloudTasks)
+      cloudTasks: cloudTasksUpgrade
+        ? [...DEFAULT_CLOUD_TASKS]
+        : Array.isArray(parsed.cloudTasks)
         ? parsed.cloudTasks.filter((task: unknown): task is CloudTask => CLOUD_TASK_IDS.has(task as CloudTask))
         : [...DEFAULT_CLOUD_TASKS],
     };

@@ -14,7 +14,8 @@ export const CLOUD_TASK_OPTIONS: Array<{ id: CloudTask; label: string; hint: str
 ];
 
 export const CLOUD_TASK_IDS = new Set<CloudTask>(CLOUD_TASK_OPTIONS.map((item) => item.id));
-export const DEFAULT_CLOUD_TASKS: CloudTask[] = ['chat', 'analysis', 'assessment'];
+// Chat and scoring stay on the machine (fast, free); the cloud model only reads the saved history.
+export const DEFAULT_CLOUD_TASKS: CloudTask[] = ['analysis'];
 
 export const VIETAPI_PRESET = {
   url: 'https://api.vietapi.tech/v1',

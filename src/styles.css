@@ -5410,3 +5410,121 @@ body {
 .connectivity-settings .cloud-health.is-error { border-color: #d6455d; }
 .connectivity-settings .cloud-health.is-error .status-dot,
 .runtime-chip .status-dot.is-error { background: #d6455d; }
+
+/* learning charts: one accent, text in ink tokens, hairline grid, 2px surface ring on dots */
+.learning-charts {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.lc-card {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper-strong);
+}
+.lc-card h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.lc-sub {
+  margin: 2px 0 8px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.lc-card svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.lc-label,
+.lc-value {
+  font-size: 11px;
+  fill: var(--ink-2);
+}
+.lc-value {
+  font-weight: 600;
+  fill: var(--ink);
+}
+.lc-axis {
+  font-size: 10px;
+  fill: var(--ink-3);
+}
+.lc-grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.lc-cross {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.lc-bar,
+.lc-dot {
+  fill: var(--terracotta);
+}
+.lc-dot {
+  stroke: var(--paper-strong);
+  stroke-width: 2;
+}
+.lc-dot.is-off {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+.lc-line {
+  fill: none;
+  stroke: var(--terracotta);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lc-hit {
+  fill: transparent;
+  outline: none;
+  cursor: crosshair;
+}
+.lc-hit:focus-visible {
+  stroke: var(--terracotta);
+  stroke-width: 1.5;
+  rx: 4;
+}
+.lc-readout {
+  min-height: 16px;
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: var(--ink-2);
+}
+.lc-table {
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: var(--ink-2);
+}
+.lc-table summary {
+  cursor: pointer;
+  color: var(--ink-3);
+}
+.lc-table table {
+  width: 100%;
+  margin-top: 6px;
+  border-collapse: collapse;
+}
+.lc-table th,
+.lc-table td {
+  padding: 3px 6px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 560px) {
+  /* the SVG scales down with the card, so lift the text to stay readable on a phone */
+  .lc-label,
+  .lc-value {
+    font-size: 17px;
+  }
+  .lc-axis {
+    font-size: 15px;
+  }
+}

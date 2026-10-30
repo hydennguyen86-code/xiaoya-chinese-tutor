@@ -11,6 +11,9 @@
 - Phân tích bằng cloud đọc nhiều dữ liệu hơn: câu gốc của người học, lỗi phát âm/thanh điệu, và so với bản phân tích trước để thấy điểm nào đã giảm, điểm nào còn lặp. Lưu 12 bản phân tích gần nhất (trước là 4).
 - Tải trang nhanh hơn trên điện thoại: server nén gzip file JS/CSS/mô hình 3D (JS 1,2 MB → 0,4 MB, avatar 4,6 MB → 2,7 MB) và cho file có mã băm lưu cache 1 năm, nên các lần mở sau gần như không tải lại. Không cần cài thêm thư viện.
 - Lỗi từ API cloud giờ kèm lý do ngắn do dịch vụ trả về (đã che key và chuỗi giống khoá; lỗi sai key không trích lại nội dung).
+- Đổi cách chia việc: trò chuyện và chấm bài mặc định dùng model máy (nhanh, miễn phí), model cloud chỉ phân tích lại dữ liệu đã lưu. Áp dụng một lần cho trình duyệt đã lưu cách chia cũ; vẫn bật lại từng việc được trong Cài đặt.
+- Tab Phân tích có 3 biểu đồ tính từ dữ liệu đã lưu (không cần gọi AI): lỗi mỗi 10 lượt nói trong 14 ngày (so tuần này với tuần trước), lỗi hay gặp theo nhóm, và điểm yếu lặp lại qua các bản phân tích. Có xem dạng bảng và chi tiết khi rê/chạm.
+- API báo “không có channel khả dụng” giờ hiện đúng là model tạm không có nguồn phục vụ, thay vì nói sai URL.
 
 ## 2026-10-27 — Bản tạm
 

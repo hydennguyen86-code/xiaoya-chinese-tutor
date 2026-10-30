@@ -19,10 +19,13 @@ const settings = (patch: Partial<Settings> = {}): Settings => ({ ...DEFAULT_SETT
 
 test('ticked jobs go to the cloud, chores stay on the local model', () => {
   const both = status([local, cloud]);
-  assert.deepEqual(routeTask('chat', settings(), both), { provider: 'compatible', model: 'gemini-4-argon', cloud: true });
-  assert.deepEqual(routeTask('analysis', settings(), both)?.cloud, true);
+  // by default only the analysis of saved history goes to the cloud
+  assert.deepEqual(routeTask('analysis', settings(), both), { provider: 'compatible', model: 'gemini-4-argon', cloud: true });
+  assert.deepEqual(routeTask('chat', settings(), both), { provider: 'ollama', model: 'qwen2.5:7b', cloud: false });
+  assert.equal(routeTask('assessment', settings(), both)?.cloud, false);
   assert.deepEqual(routeTask('lessons', settings(), both), { provider: 'ollama', model: 'qwen2.5:7b', cloud: false });
-  assert.equal(routeTask('chat', settings({ cloudTasks: [] }), both)?.provider, 'ollama');
+  assert.equal(routeTask('chat', settings({ cloudTasks: ['chat'] }), both)?.provider, 'compatible');
+  assert.equal(routeTask('analysis', settings({ cloudTasks: [] }), both)?.provider, 'ollama');
 });
 
 test('falls back to whichever model is available', () => {

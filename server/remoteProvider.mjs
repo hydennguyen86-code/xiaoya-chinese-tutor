@@ -140,6 +140,8 @@ async function httpError(res, secret = '') {
   if (s === 402 || /insufficient|balance|credit|quota|số dư|hết tiền|top.?up/i.test(body))
     return remoteError(`API báo hết credit/hạn mức (HTTP ${s}). Nạp thêm credit cho key rồi thử lại.${providerDetail(body, secret)}`);
   if (s === 401 || s === 403) return remoteError(`API key sai, hết hạn hoặc chưa kích hoạt (HTTP ${s}).`);
+  if (/channel khả dụng|no available channel|no channel|overloaded|tạm thời không/i.test(body))
+    return remoteError(`Model đang tạm không có nguồn phục vụ (HTTP ${s}). Thử model khác hoặc chờ một lúc.${providerDetail(body, secret)}`);
   if (s === 404 || /model_not_found|model not found|no such model|unknown model/i.test(body))
     return remoteError(`Không tìm thấy model hoặc sai URL (HTTP ${s}). Mã model phải đúng như trang Models; URL kết thúc bằng /v1.${providerDetail(body, secret)}`);
   if (s >= 500) return remoteError(`Dịch vụ API đang lỗi (HTTP ${s}). Thử lại sau ít phút.${providerDetail(body, secret)}`);

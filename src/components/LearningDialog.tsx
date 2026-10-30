@@ -1,5 +1,6 @@
 import { HanViet, HanVietGuide } from './HanViet';
 import { LatencyHistory } from './LatencyHistory';
+import { LearningCharts } from './LearningCharts';
 import { FluencyHistory } from './FluencyHistory';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
@@ -580,6 +581,8 @@ export function LearningDialog({
                   {analysisError}
                 </div>
               )}
+
+              <LearningCharts learning={learning} />
 
               {report ? (
                 <>
