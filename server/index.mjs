@@ -7,6 +7,7 @@ import { createAvatarStore } from './avatars.mjs';
 import https from 'node:https';
 import http from 'node:http';
 import { createLanAccess, ownerRequest } from './lanAccess.mjs';
+import { staticAssets } from './staticAssets.mjs';
 import os from 'node:os';
 import {
   initializeRemoteProvider,
@@ -784,7 +785,7 @@ app.post('/api/chat', async (req, res) => {
 });
 
 if (fs.existsSync(distDir)) {
-  app.use(express.static(distDir, { index: false, maxAge: '1h' }));
+  app.use(staticAssets(distDir));
   app.use((req, res, next) => {
     if (req.method !== 'GET' || req.path.startsWith('/api/') || !req.accepts('html')) {
       next();
