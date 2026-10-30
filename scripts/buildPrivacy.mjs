@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-export const PUBLIC_FILES = ['avatars/brunette.glb', 'avatars/lam-sample.zip', 'images/moonlit-mountains.png', 'favicon.svg', 'manifest.webmanifest', 'sw.js'];
+export const PUBLIC_FILES = ['avatars/brunette.glb', 'avatars/lam-sample.zip', 'images/moonlit-mountains.webp', 'favicon.svg', 'manifest.webmanifest', 'sw.js'];
 export function checkBuildPrivacy(dir) {
   const names = JSON.parse(fs.readFileSync(path.join(dir, '.misu-build-files.json'), 'utf8'));
   const allowed = new Set([...PUBLIC_FILES, '.misu-build-files.json', ...names]);

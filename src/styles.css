@@ -5305,7 +5305,7 @@ body {
 .lesson-panel .lesson-han small { color: #81f2e9; }
 .lesson-panel .lesson-line { color: #e8f6ff; }
 .lesson-panel { --cream: #0b263b; }
-.avatar-stage { background: #09253d url('/images/moonlit-mountains.png') center center / cover no-repeat; }
+.avatar-stage { background: #09253d url('/images/moonlit-mountains.webp') center center / cover no-repeat; }
 .stage-halo { opacity: .16; }
 /* The LAM renderer uses an opaque WebGL canvas; soften its outer edges so the
    landscape remains visible without obscuring the face. */
