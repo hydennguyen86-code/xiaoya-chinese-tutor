@@ -4,7 +4,7 @@
 // tone/train.py --human can measure a classifier on real speech. Audio stays
 // where it is: rows point at the original files with absolute paths.
 //
-//   node eval/tone-train/segment-recordings.mjs /path/to/split/huan [--labels=labels.X.json] > human.jsonl
+//   node eval/tone-train/segment-recordings.mjs /path/to/split/learner-01 [--labels=labels.X.json] > human.jsonl
 import fs from 'node:fs';
 import path from 'node:path';
 import { readRecordingDataset } from '../recordings.mjs';

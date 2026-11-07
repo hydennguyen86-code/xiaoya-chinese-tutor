@@ -4,7 +4,7 @@
 // needs a key you own:
 //
 //   AZURE_SPEECH_KEY=… AZURE_SPEECH_REGION=southeastasia \
-//   node eval/azure-pronunciation.mjs /Users/you/misu-recordings/split/huan [--labels=labels.X.json] [--limit=20]
+//   node eval/azure-pronunciation.mjs /Users/you/misu-recordings/split/learner-01 [--labels=labels.X.json] [--limit=20]
 //
 // Each recording (decoded to 16 kHz WAV on this machine) is sent to Azure with
 // its reference text; Azure returns accuracy/fluency/completeness and a

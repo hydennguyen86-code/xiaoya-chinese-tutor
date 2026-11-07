@@ -2,13 +2,15 @@
 
   .venv-tone/bin/python tone/train.py \
       --manifests data/tone-train/say/manifest.jsonl data/tone-train/edge/manifest.jsonl \
-      --human data/tone-train/human-huan.jsonl --out tone/weights
+      --human data/tone-train/human-learner-01.jsonl --out tone/weights
 
 Training rows come from eval/tone-train/make-dataset.mjs (synthetic voices, tones
 known from the text). Validation holds out whole voices. The --human file (from
 eval/tone-train/segment-recordings.mjs) is a real learner's recordings with human
 labels; it is only ever measured, never trained on, and the script prints its
-numbers plainly so nobody has to trust the synthetic accuracy.
+numbers plainly so nobody has to trust the synthetic accuracy. Learners are stored
+as human-learner-NN: these labels ship inside the public weights, so a file name
+must never reach them.
 """
 
 from __future__ import annotations
@@ -252,8 +254,9 @@ def main():
             pred_val = model(torch.tensor((x[val_mask] - mean) / std)).argmax(1).numpy()
         print_matrix(confusion(labels[val_mask], pred_val), "  giọng máy giữ lại: hàng = thanh thật, cột = máy đoán")
         human_metrics = {}
-        for file, hdata in human_sets:
-            human_metrics[Path(file).stem] = evaluate_human(model, mean, std, assemble(hdata, variant), hdata, device, f"  {Path(file).stem}")
+        for index, (_, hdata) in enumerate(human_sets, 1):
+            label = f"human-learner-{index:02d}"
+            human_metrics[label] = evaluate_human(model, mean, std, assemble(hdata, variant), hdata, device, f"  {label}")
         results[variant] = {"valAccuracy": float(val_acc), "human": human_metrics, "dim": int(x.shape[1])}
         # the final weights are trained on every voice, with the epoch count the hold-out run chose
         final, fmean, fstd, _, _ = train_one(x, labels, x[:0], labels[:0], best_epoch + 1, device)

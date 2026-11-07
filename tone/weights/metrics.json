@@ -5,7 +5,7 @@
     "pitch": {
       "valAccuracy": 0.4653109908103943,
       "human": {
-        "human-huan": {
+        "human-learner-01": {
           "agreement": 0.7142857142857143,
           "agreementWithExpected": 0.6571428571428571,
           "thresholds": [
@@ -52,7 +52,7 @@
     "speech": {
       "valAccuracy": 0.8754485845565796,
       "human": {
-        "human-huan": {
+        "human-learner-01": {
           "agreement": 0.6571428571428571,
           "agreementWithExpected": 0.6571428571428571,
           "thresholds": [
@@ -99,7 +99,7 @@
     "both": {
       "valAccuracy": 0.8823265433311462,
       "human": {
-        "human-huan": {
+        "human-learner-01": {
           "agreement": 0.7,
           "agreementWithExpected": 0.7,
           "thresholds": [
