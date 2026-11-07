@@ -26,7 +26,7 @@ listening drills, all running on your own computer.*
 | 🎯 **Chấm thanh điệu từng chữ** | Đọc theo một từ, Misu tô xanh/đỏ từng chữ, bảo bạn nghe như thanh mấy và cách sửa; câu dài thì vẽ đường cao độ của bạn cạnh giọng mẫu. Chạy hoàn toàn trên máy. |
 | 👂 **Luyện tai cho người Việt** | Chọn thanh nghe được, cặp âm hay lẫn (zh/z, ch/c, ü/u, an/ang, en/eng…), nghe chép, nói đuổi (shadowing), 3 tốc độ 0.7×/0.85×/1×. Câu sau ưu tiên đúng cặp bạn hay nhầm. |
 | 🈶 **Âm Hán Việt và bẫy nghĩa** | Mỗi từ có âm Hán Việt (家 = gia, 学生 = học sinh) để người Việt nhớ nhanh; cảnh báo từ "nhìn quen mà nghĩa khác" (骄傲 là *tự hào*, không phải *kiêu ngạo*). |
-| 📅 **Bài hôm nay, khỏi phải chọn** | Lộ trình có sẵn: HSK 1, HSK 5 (48 buổi) và 30 bài giao tiếp HSK1–6. Mỗi buổi: ôn → từ mới → mẫu câu → nhập vai (nghe trước, bấm mới hiện chữ) → nói tự do → tổng kết. |
+| 📅 **Bài hôm nay, khỏi phải chọn** | Lộ trình có sẵn: Nhập môn Pinyin, HSK 1, HSK 3, HSK 5 (82 buổi) và 30 bài giao tiếp HSK1–6. Mỗi buổi: ôn → từ mới → mẫu câu → nhập vai (nghe trước, bấm mới hiện chữ) → nói tự do → tổng kết. |
 | 📝 **Kiểm tra tuần / tháng** | Đề lấy từ chính từ và lỗi của bạn, chấm từng phần, câu sai tự vào lịch ôn. Có nhiệm vụ giao tiếp ghi rõ bạn tự làm được hay cần gợi ý. |
 | 👨‍👩‍👧 **Cả nhà cùng học** | Nhiều người học trên một máy, mỗi người có trình độ, lịch sử, lịch ôn và hồ sơ giọng riêng. Dùng điện thoại làm micro qua Wi-Fi (HTTPS + mã PIN). |
 | 🧒 **Hồ sơ trẻ em** | Chọn "Bé dưới 12 tuổi": gia sư nói 1–2 câu ngắn, hỏi một câu dễ, chữ to, mic mở sẵn (nói liên tục, nói chen là cô dừng lại nghe), sticker mỗi ngày đủ 8 lượt, tập viết nét chữ, đọc theo bậc, và "Báo cáo cho bố mẹ" 4 dòng mỗi tuần. |
@@ -170,12 +170,12 @@ trong từng nhóm và không dùng số liệu đối thủ chưa được ki�
 
 | Nhóm ứng dụng | Tiêu chí nên đối chiếu | Misu hiện tại / hạn chế |
 |---|---|---|
-| App khóa học | Chất lượng biên tập, lộ trình và trải nghiệm di động | 48 buổi thực hành HSK1/HSK5; chưa có giáo viên duyệt, chưa có app điện thoại native |
+| App khóa học | Chất lượng biên tập, lộ trình và trải nghiệm di động | 82 buổi tự soạn cho Pinyin, HSK 1, HSK 3 và HSK 5; chưa có giáo viên duyệt, chưa có app điện thoại native |
 | Gia sư AI trên mạng | Sự thuận tiện, chất lượng phản hồi và dữ liệu gửi đi | Chạy model trên máy hoặc tự chọn API; cần cài đặt, model nhỏ vẫn có thể sửa sai |
 | App chuyên phát âm | Phản hồi âm vị, độ tin cậy trên giọng người học | Từ 1–2 chữ có chấm thanh ước lượng; câu dài chủ yếu xem cao độ, chưa kiểm chứng với người Việt thật |
 | Từ điển / app ôn từ | Độ phủ từ, chọn âm theo ngữ cảnh và lịch ôn | Có ôn từ/lỗi riêng; Unihan còn thiếu chữ/đa âm, không thay từ điển Hán Việt chuyên dụng |
 
-Misu chưa đầu tư phần viết chữ. Có nghe giọng người thật nếu tự cấu hình Common
+Phần viết chữ có xem thứ tự nét và tập viết theo nét trong thẻ từ mới (Hanzi Writer). Có nghe giọng người thật nếu tự cấu hình Common
 Voice, nhưng audio không đi kèm repo; phạm vi giọng nghe vẫn hạn chế.
 
 ## Cài đặt
