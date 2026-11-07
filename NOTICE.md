@@ -9,6 +9,7 @@ sample avatars and the libraries below keep their own licenses.
 |---|---|---|
 | `public/avatars/brunette.glb` | Example avatar of [TalkingHead](https://github.com/met4citizen/TalkingHead), made with Ready Player Me | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/): non-commercial use only |
 | `public/avatars/lam-sample.zip` | `barbara.zip` sample from [OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat) | Apache-2.0 |
+| `public/images/moonlit-mountains.png`, `.webp` | Background generated with ChatGPT (`gpt-image`, OpenAI), per the C2PA manifest in the PNG dated 2026-10-28; the WebP is converted from it | AI-generated, no third-party source image recorded; use is subject to OpenAI's terms |
 
 Because of the Ready Player Me avatar, the repository **as shipped** is for
 non-commercial use. Replace `brunette.glb` with your own avatar if you need

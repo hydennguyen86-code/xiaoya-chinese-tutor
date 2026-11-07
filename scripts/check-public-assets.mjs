@@ -1,7 +1,13 @@
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 
-const allowed = new Set(['public/avatars/brunette.glb', 'public/avatars/lam-sample.zip', 'public/favicon.svg']);
+const allowed = new Set([
+  'public/avatars/brunette.glb',
+  'public/avatars/lam-sample.zip',
+  'public/favicon.svg',
+  'public/images/moonlit-mountains.png',
+  'public/images/moonlit-mountains.webp',
+]);
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { encoding: 'utf8' })
   .split('\0')
   .filter(Boolean);
