@@ -85,7 +85,9 @@ export function ListenFirstLine({
         <p>Nghe trước rồi mở chữ để đối chiếu.</p>
       ) : (
         <>
-          <p><Han text={text} /></p>
+          <p>
+            <Han text={text} />
+          </p>
           {translation && <small>{translation}</small>}
         </>
       )}

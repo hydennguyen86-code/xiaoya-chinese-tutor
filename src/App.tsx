@@ -20,6 +20,7 @@ import type { AvatarApi } from './lib/avatarApi';
 import { analyzeLearning, fetchCorrections, fetchStatus, resetPitchProfile, streamChat } from './lib/api';
 import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
 import { ChineseMic, configureSpeech, isSpeechSupported, micPermissionState } from './lib/speech';
+import { HandsFreeMic, type HandsFreeState } from './lib/handsFree';
 import {
   DAILY_GOAL,
   clearMessages,
@@ -48,7 +49,7 @@ import {
   seedLearningFromMessages,
 } from './lib/learning';
 import { createLearner, loadActiveLearnerId, loadLearners, setActiveLearner, updateLearner } from './lib/learners';
-import type { Learner, LearnerGender } from './lib/learners';
+import type { Learner, LearnerAudience, LearnerGender } from './lib/learners';
 import { TeacherContext, teacherFor, teacherGenderFor } from './lib/persona';
 import type { Teacher, TeacherGender } from './lib/persona';
 import { DailyLesson } from './components/DailyLesson';
@@ -131,6 +132,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   const [phase, setPhase] = useState<Phase>('loading');
   const [draft, setDraft] = useState('');
   const [listening, setListening] = useState(false);
+  const [handsFreeState, setHandsFreeState] = useState<HandsFreeState>('off');
+  const handsFreeRef = useRef<HandsFreeMic | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [learningOpen, setLearningOpen] = useState(false);
@@ -236,8 +239,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           ? previous.viVoice
           : data.defaultViVoice || previous.viVoice;
         const ram = data.system?.ramGB;
-        const avatarMode =
-          previous.avatarModeAuto && ram !== undefined && ram < 8 ? 'classic' : previous.avatarMode;
+        const avatarMode = previous.avatarModeAuto && ram !== undefined && ram < 8 ? 'classic' : previous.avatarMode;
         return {
           ...previous,
           providerId: chosenProvider?.id || '',
@@ -392,6 +394,77 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
     [settings, status],
   );
   const canChat = Boolean(routes.chat);
+  const kid = learner.audience === 'kid';
+  useEffect(() => {
+    document.body.classList.toggle('kid-mode', kid);
+    return () => document.body.classList.remove('kid-mode');
+  }, [kid]);
+  useEffect(() => {
+    // a child's first session starts with the microphone open; the toggle still turns it off
+    if (!kid) return;
+    const key = `xiaoya.kidHandsFree.v1:${learner.id}`;
+    try {
+      if (localStorage.getItem(key)) return;
+      localStorage.setItem(key, '1');
+    } catch {
+      return;
+    }
+    setSettings((previous) => (previous.handsFree ? previous : { ...previous, handsFree: true }));
+  }, [kid, learner.id]);
+  // Hands-free conversation: one open microphone for the session. An utterance
+  // is sent like a spoken turn; talking over the avatar stops its voice (and a
+  // reply still being written) so the learner never has to wait or press anything.
+  const handsFreeOn = settings.handsFree && canChat && Boolean(status?.localStt);
+  useEffect(() => {
+    if (!handsFreeOn || !HandsFreeMic.supported()) {
+      handsFreeRef.current?.stop();
+      handsFreeRef.current = null;
+      setHandsFreeState('off');
+      return;
+    }
+    const mic = new HandsFreeMic(
+      {
+        onState: setHandsFreeState,
+        onBargeIn: () => {
+          avatarRef.current?.stopSpeech();
+          if (busyRef.current) abortRef.current?.abort();
+        },
+        onUtterance: (result) => {
+          pendingVoice.current = result;
+          sendRef.current(result.text);
+        },
+        onError: (message) => setError(message),
+      },
+      { learnerId: scope },
+    );
+    handsFreeRef.current = mic;
+    micRef.current?.abort();
+    avatarRef.current?.stopSpeech();
+    void mic.start().then((ok) => {
+      // the microphone could not be opened: switch the mode off instead of showing an open-mic strip
+      if (!ok && handsFreeRef.current === mic) setSettings((previous) => ({ ...previous, handsFree: false }));
+    });
+    return () => {
+      mic.stop();
+      if (handsFreeRef.current === mic) handsFreeRef.current = null;
+    };
+  }, [handsFreeOn, scope]);
+  const handsFreeUnavailable = settings.handsFree && !status?.localStt;
+  useEffect(() => {
+    if (handsFreeUnavailable)
+      showToast('Chế độ nói liên tục cần nhận dạng giọng nói trên máy (whisper.cpp). Hãy chạy npm run setup:whisper rồi mở lại.');
+  }, [handsFreeUnavailable, showToast]);
+  useEffect(() => {
+    handsFreeRef.current?.setAvatarSpeaking(phase === 'speaking');
+    handsFreeRef.current?.setPaused(phase === 'thinking' || phase === 'replying');
+  }, [phase]);
+  const handleHandsFreeToggle = useCallback(() => {
+    if (!HandsFreeMic.supported()) {
+      setError('Trình duyệt này chưa hỗ trợ chế độ nói liên tục. Hãy dùng Chrome, Edge hoặc Safari mới.');
+      return;
+    }
+    setSettings((previous) => ({ ...previous, handsFree: !previous.handsFree }));
+  }, []);
   // analysis is a button the learner presses, so it never keeps the banner on; the Learning
   // dialog says where it sends data at that moment
   const cloudInUse = [routes.chat, routes.corrections, routes.assessment, routes.lessons].some((route) => route?.cloud);
@@ -564,6 +637,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           model: chatRoute.model,
           level: settingsRef.current.level,
           gender: teacher.gender,
+          audience: learner.audience,
           messages: history,
           learning: [`Tên học viên: ${learner.name}`, buildLearningDigest(learningRef.current)].filter(Boolean).join('\n\n') || undefined,
         },
@@ -632,9 +706,19 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             }
 
             const nextProgress = recordPractice(progressRef.current, scope);
+            const newSticker =
+              (nextProgress.stickers || []).length > (progressRef.current.stickers || []).length
+                ? nextProgress.stickers[nextProgress.stickers.length - 1]
+                : null;
             progressRef.current = nextProgress;
             setProgress(nextProgress);
-            if (nextProgress.todayTurns === DAILY_GOAL) {
+            if (newSticker) {
+              showToast(
+                learner.audience === 'kid'
+                  ? `${newSticker.emoji} ${learner.name} nhận một sticker: đủ ${DAILY_GOAL} lượt nói hôm nay!`
+                  : `${newSticker.emoji} Đã đạt mục tiêu hôm nay, thêm một sticker. Tiếp tục giữ nhịp thật đều nhé!`,
+              );
+            } else if (nextProgress.todayTurns === DAILY_GOAL) {
               showToast('Đã đạt mục tiêu hôm nay. Tiếp tục giữ nhịp thật đều nhé!');
             }
 
@@ -1052,7 +1136,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
                 }${routes.chat?.cloud && cloudProvider(status)?.health?.state === 'error' ? ' is-error' : ''}`}
               />
               <span className="runtime-chip-copy">
-                <strong>{routes.chat?.cloud ? 'Cloud API' : activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}</strong>
+                <strong>
+                  {routes.chat?.cloud ? 'Cloud API' : activeProvider ? activeProvider.name : refreshing ? 'Đang kết nối' : 'Chưa kết nối'}
+                </strong>
                 <small>{routes.chat ? shortModelName(routes.chat.model, 26) : activeProvider ? 'Chọn model' : 'Ollama · LM Studio'}</small>
               </span>
               <ChevronDownIcon size={14} />
@@ -1174,6 +1260,10 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
               draft={draft}
               listening={listening}
               micSupported={isSpeechSupported()}
+              handsFree={settings.handsFree}
+              handsFreeSupported={Boolean(status?.localStt) && HandsFreeMic.supported()}
+              handsFreeState={handsFreeState}
+              onHandsFreeToggle={handleHandsFreeToggle}
               canSend={canChat && !busy}
               showPinyin={settings.showPinyin}
               todayTurns={progress.todayTurns}
@@ -1241,6 +1331,11 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
 
         <LearningDialog
           learnerId={scope}
+          learnerName={learner.name}
+          voice={settings.voice}
+          localStt={Boolean(status?.localStt)}
+          progress={progress}
+          kid={kid}
           open={learningOpen}
           learning={learning}
           levelLabel={LEVEL_LABEL[settings.level]}
@@ -1278,8 +1373,8 @@ export default function App() {
     setActiveId(id);
   };
 
-  const handleCreate = (name: string, level: Level, gender: LearnerGender) => {
-    const created = createLearner(name, level, gender);
+  const handleCreate = (name: string, level: Level, gender: LearnerGender, audience: LearnerAudience = 'adult') => {
+    const created = createLearner(name, level, gender, audience);
     setLearners(loadLearners());
     setActiveId(created.id);
   };

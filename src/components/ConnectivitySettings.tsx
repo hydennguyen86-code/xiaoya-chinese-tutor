@@ -254,8 +254,8 @@ export function ConnectivitySettings({
               ))}
               <p className="cloud-tasks-note">
                 Việc không đánh dấu chạy trên model máy
-                {settings.providerId && settings.providerId !== 'compatible' && settings.model ? ` (${settings.model})` : ''}. Nếu máy không có
-                model nào đang chạy, mọi việc tự chuyển sang cloud.
+                {settings.providerId && settings.providerId !== 'compatible' && settings.model ? ` (${settings.model})` : ''}. Nếu máy không
+                có model nào đang chạy, mọi việc tự chuyển sang cloud.
               </p>
             </fieldset>
           )}

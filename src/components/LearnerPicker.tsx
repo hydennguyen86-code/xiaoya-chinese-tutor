@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Learner, LearnerGender } from '../lib/learners';
+import type { Learner, LearnerGender, LearnerAudience } from '../lib/learners';
 import { loadProgress } from '../lib/storage';
 import { teacherFor, teacherGenderFor } from '../lib/persona';
 import type { Level } from '../types';
@@ -11,21 +11,19 @@ const LEVEL_OPTIONS: { id: Level; label: string; hint: string }[] = [
   { id: 'free', label: 'Tự do', hint: 'Nói chuyện như bạn bè' },
 ];
 
-const GENDER_OPTIONS: { id: LearnerGender; label: string; hint: string }[] = (['female', 'male'] as LearnerGender[]).map(
-  (id) => {
-    const teacher = teacherFor(teacherGenderFor(id));
-    return {
-      id,
-      label: id === 'female' ? 'Nữ' : 'Nam',
-      hint: `Giáo viên: ${teacher.vi} · ${teacher.cn}`,
-    };
-  },
-);
+const GENDER_OPTIONS: { id: LearnerGender; label: string; hint: string }[] = (['female', 'male'] as LearnerGender[]).map((id) => {
+  const teacher = teacherFor(teacherGenderFor(id));
+  return {
+    id,
+    label: id === 'female' ? 'Nữ' : 'Nam',
+    hint: `Giáo viên: ${teacher.vi} · ${teacher.cn}`,
+  };
+});
 
 interface LearnerPickerProps {
   learners: Learner[];
   onPick: (id: string) => void;
-  onCreate: (name: string, level: Level, gender: LearnerGender) => void;
+  onCreate: (name: string, level: Level, gender: LearnerGender, audience: LearnerAudience) => void;
 }
 
 export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps) {
@@ -33,6 +31,7 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
   const [name, setName] = useState('');
   const [level, setLevel] = useState<Level>('HSK5-6');
   const [gender, setGender] = useState<LearnerGender>('female');
+  const [kid, setKid] = useState(false);
   const trimmed = name.trim();
 
   return (
@@ -40,9 +39,7 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
       <div className="learner-card">
         <p className="learner-eyebrow">米苏 · Misu</p>
         <h1 className="learner-title">Ai đang học hôm nay?</h1>
-        <p className="learner-lead">
-          Mỗi người có lịch sử hội thoại, trình độ và bài ôn riêng. Chọn đúng tên trước khi bắt đầu.
-        </p>
+        <p className="learner-lead">Mỗi người có lịch sử hội thoại, trình độ và bài ôn riêng. Chọn đúng tên trước khi bắt đầu.</p>
 
         {learners.length > 0 && (
           <div className="learner-list">
@@ -51,12 +48,7 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
               const levelLabel = LEVEL_OPTIONS.find((option) => option.id === item.level)?.label;
               const teacher = teacherFor(teacherGenderFor(item.gender));
               return (
-                <button
-                  key={item.id}
-                  type="button"
-                  className="learner-option"
-                  onClick={() => onPick(item.id)}
-                >
+                <button key={item.id} type="button" className="learner-option" onClick={() => onPick(item.id)}>
                   <span className="learner-initial" aria-hidden="true">
                     {item.name.slice(0, 1).toUpperCase()}
                   </span>
@@ -84,18 +76,12 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
             onSubmit={(event) => {
               event.preventDefault();
               if (!trimmed) return;
-              onCreate(trimmed, level, gender);
+              onCreate(trimmed, kid ? 'HSK1-2' : level, gender, kid ? 'kid' : 'adult');
             }}
           >
             <label className="field">
               <span className="field-label">Tên</span>
-              <input
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                maxLength={30}
-                placeholder="Ví dụ: Lan"
-                autoFocus
-              />
+              <input value={name} onChange={(event) => setName(event.target.value)} maxLength={30} placeholder="Ví dụ: Lan" autoFocus />
             </label>
 
             <div className="learner-levels" role="radiogroup" aria-label="Trình độ">
@@ -129,6 +115,16 @@ export function LearnerPicker({ learners, onPick, onCreate }: LearnerPickerProps
                 </button>
               ))}
             </div>
+
+            <label className="learner-kid-toggle">
+              <input type="checkbox" checked={kid} onChange={(event) => setKid(event.target.checked)} />
+              <span>
+                <strong>Bé dưới 12 tuổi</strong>
+                <small>
+                  Câu ngắn, cô giáo vui, chữ to, mic mở sẵn, sticker sau mỗi buổi và báo cáo cho bố mẹ. Trình độ bắt đầu HSK 1–2.
+                </small>
+              </span>
+            </label>
 
             <button className="learner-submit" type="submit" disabled={!trimmed}>
               Bắt đầu luyện

@@ -1,3 +1,4 @@
+import { createEmptyCard, fsrs, generatorParameters, Rating, State, type Card } from 'ts-fsrs';
 import type {
   PronunciationReviewRecord,
   AnalysisReport,
@@ -11,6 +12,7 @@ import type {
   TutorTurn,
   VocabItem,
   WordRecord,
+  FsrsState,
 } from '../types';
 import { dayKey, scopedKey } from './storage.ts';
 
@@ -21,7 +23,72 @@ const MAX_WORDS = 400;
 const MAX_REPORTS = 12;
 const MAX_CONTEXTS = 3;
 
+// Legacy fixed ladder (10 min → 1 → 3 → 7 → 14 → 30 days). Words reviewed since the
+// switch are scheduled by FSRS (see scheduleReview); the ladder only seeds a card
+// for a word that was last reviewed under the old scheme, and defines the 0–5
+// "memory level" shown in the UI.
 const SRS_DAYS = [10 / (24 * 60), 1, 3, 7, 14, 30];
+const scheduler = fsrs(generatorParameters({ enable_fuzz: false, maximum_interval: 120 }));
+
+function cardFromRecord(item: WordRecord): Card {
+  const card = createEmptyCard(new Date(item.firstSeen || Date.now()));
+  if (item.fsrs) {
+    return {
+      ...card,
+      due: new Date(item.dueAt || Date.now()),
+      stability: item.fsrs.stability,
+      difficulty: item.fsrs.difficulty,
+      state: item.fsrs.state as State,
+      reps: item.fsrs.reps,
+      lapses: item.fsrs.lapses,
+      scheduled_days: item.fsrs.scheduledDays,
+      learning_steps: item.fsrs.learningSteps,
+      last_review: item.fsrs.lastReview ? new Date(item.fsrs.lastReview) : undefined,
+    };
+  }
+  if (item.box > 0 && item.reviews > 0) {
+    // seed from the old ladder: a word on step n was holding for about SRS_DAYS[n] days
+    return {
+      ...card,
+      due: new Date(item.dueAt || Date.now()),
+      stability: Math.max(0.5, SRS_DAYS[Math.min(item.box, SRS_DAYS.length - 1)]),
+      difficulty: Math.min(10, 5 + item.lapses),
+      state: State.Review,
+      reps: item.reviews,
+      lapses: item.lapses,
+      scheduled_days: Math.round(SRS_DAYS[Math.min(item.box, SRS_DAYS.length - 1)]),
+      last_review: item.lastReviewedAt ? new Date(item.lastReviewedAt) : undefined,
+    };
+  }
+  return card;
+}
+
+/** 0–5 "memory level" for the UI, from how long FSRS now trusts the word to hold */
+export function memoryLevel(card: Pick<Card, 'state' | 'scheduled_days' | 'stability'>) {
+  if (card.state === State.New) return 0;
+  if (card.state === State.Learning || card.state === State.Relearning) return 1;
+  const days = Math.max(card.scheduled_days, card.stability);
+  return Math.max(1, Math.min(5, 1 + Math.floor(Math.log2(Math.max(1, days)))));
+}
+
+/** FSRS step for one review: Good when remembered, Again when not. */
+export function scheduleReview(item: WordRecord, remembered: boolean, timestamp = Date.now()) {
+  const { card } = scheduler.next(cardFromRecord(item), new Date(timestamp), remembered ? Rating.Good : Rating.Again);
+  return {
+    dueAt: card.due.getTime(),
+    box: memoryLevel(card),
+    fsrs: {
+      stability: card.stability,
+      difficulty: card.difficulty,
+      state: card.state as number,
+      reps: card.reps,
+      lapses: card.lapses,
+      scheduledDays: card.scheduled_days,
+      learningSteps: card.learning_steps,
+      lastReview: card.last_review?.getTime(),
+    } satisfies FsrsState,
+  };
+}
 
 export const SKILL_LABELS: Record<SkillKey, string> = {
   grammar: 'Ngữ pháp',
@@ -105,10 +172,27 @@ function cleanWords(value: unknown): WordRecord[] {
         reviews: Math.max(0, Math.round(asNumber(raw.reviews, 0))),
         lapses: Math.max(0, Math.round(asNumber(raw.lapses, 0))),
         lastReviewedAt: asNumber(raw.lastReviewedAt) || undefined,
+        fsrs: cleanFsrs(raw.fsrs),
       };
     })
     .filter((item) => item.word && item.meaning)
     .slice(-MAX_WORDS);
+}
+
+function cleanFsrs(value: unknown): FsrsState | undefined {
+  if (!value || typeof value !== 'object') return undefined;
+  const raw = value as Record<string, unknown>;
+  if (!Number.isFinite(raw.stability) || !Number.isFinite(raw.difficulty)) return undefined;
+  return {
+    stability: Math.max(0.01, asNumber(raw.stability)),
+    difficulty: Math.min(10, Math.max(1, asNumber(raw.difficulty, 5))),
+    state: Math.max(0, Math.min(3, Math.round(asNumber(raw.state)))),
+    reps: Math.max(0, Math.round(asNumber(raw.reps))),
+    lapses: Math.max(0, Math.round(asNumber(raw.lapses))),
+    scheduledDays: Math.max(0, asNumber(raw.scheduledDays)),
+    learningSteps: Math.max(0, Math.round(asNumber(raw.learningSteps))),
+    lastReview: asNumber(raw.lastReview) || undefined,
+  };
 }
 
 function cleanDays(value: unknown): LearningDay[] {
@@ -386,12 +470,12 @@ export function seedLearningFromMessages(messages: ChatMessage[]): LearningProfi
 export function reviewWord(profile: LearningProfile, word: string, remembered: boolean, timestamp = Date.now()): LearningProfile {
   const words = profile.words.map((item) => {
     if (item.word !== word) return item;
-    const nextBox = remembered ? Math.min(item.box + 1, SRS_DAYS.length - 1) : 0;
-    const interval = remembered ? SRS_DAYS[nextBox] : SRS_DAYS[0];
+    const next = scheduleReview(item, remembered, timestamp);
     return {
       ...item,
-      box: nextBox,
-      dueAt: timestamp + interval * DAY_MS,
+      box: next.box,
+      dueAt: next.dueAt,
+      fsrs: next.fsrs,
       reviews: item.reviews + 1,
       lapses: item.lapses + (remembered ? 0 : 1),
       lastReviewedAt: timestamp,

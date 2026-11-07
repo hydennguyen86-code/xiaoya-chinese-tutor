@@ -152,7 +152,10 @@ export function SettingsDialog({
             <div className="section-heading">
               <div>
                 <h3>Bộ não của {teacher.vi}</h3>
-                <p>Model trên máy (Ollama/LM Studio) lo việc nhẹ. Việc cần suy luận giao cho model cloud ở mục “Model cloud qua API” phía dưới.</p>
+                <p>
+                  Model trên máy (Ollama/LM Studio) lo việc nhẹ. Việc cần suy luận giao cho model cloud ở mục “Model cloud qua API” phía
+                  dưới.
+                </p>
               </div>
               <button className="refresh-button" type="button" onClick={onRefresh} disabled={refreshing}>
                 <RefreshIcon size={15} className={refreshing ? 'is-spinning' : ''} />

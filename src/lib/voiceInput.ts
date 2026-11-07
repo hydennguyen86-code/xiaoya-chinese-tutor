@@ -14,6 +14,9 @@ export interface ToneSyllable {
   heard: number;
   /** null when the tone could not be judged */
   ok: boolean | null;
+  /** the classifier's probability for `heard`, when the tone model judged it */
+  confidence?: number | null;
+  method?: string;
 }
 
 export interface ToneSegment {
@@ -35,6 +38,8 @@ export interface ToneReport {
   segments?: ToneSegment[];
   model?: { timing?: AudioTiming | null; segments: ToneSegment[]; duration: number; audioBase64: string; mime: string };
   mode?: 'word' | 'sentence';
+  /** 'model' when tone/tone_service.py judged the syllables, 'rules' for the pitch-shape checker */
+  method?: 'model' | 'rules';
   syllables: ToneSyllable[];
   checked: number;
   correct: number;

@@ -1,0 +1,29 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "benchmark",
+  "version": 1,
+  "level": "HSK1-2",
+  "note": "Bài kiểm tra mốc cố định (16 mục) để so sánh chính người học với họ trước đó: lần đầu (mốc), rồi mỗi 4 tuần. Ba phần: nghe chọn thanh (giọng máy đọc, chọn thanh của chữ), nhìn chữ chọn nghĩa, đọc to (máy chấm thanh từng chữ). Không quy đổi sang HSK; không dùng để xếp loại.",
+  "listening": [
+    { "id": "bl-1", "word": "妈", "pinyin": "mā", "tones": [1] },
+    { "id": "bl-2", "word": "马", "pinyin": "mǎ", "tones": [3] },
+    { "id": "bl-3", "word": "是", "pinyin": "shì", "tones": [4] },
+    { "id": "bl-4", "word": "鱼", "pinyin": "yú", "tones": [2] },
+    { "id": "bl-5", "word": "猫", "pinyin": "māo", "tones": [1] },
+    { "id": "bl-6", "word": "水", "pinyin": "shuǐ", "tones": [3] }
+  ],
+  "meaning": [
+    { "id": "bm-1", "word": "谢谢", "options": ["cảm ơn", "tạm biệt", "xin chào"], "answer": 0 },
+    { "id": "bm-2", "word": "妈妈", "options": ["bố", "mẹ", "chị"], "answer": 1 },
+    { "id": "bm-3", "word": "喝水", "options": ["ăn cơm", "uống nước", "đi ngủ"], "answer": 1 },
+    { "id": "bm-4", "word": "今天", "options": ["hôm nay", "ngày mai", "buổi tối"], "answer": 0 },
+    { "id": "bm-5", "word": "朋友", "options": ["bạn", "thầy giáo", "em trai"], "answer": 0 },
+    { "id": "bm-6", "word": "再见", "options": ["xin lỗi", "tạm biệt", "không sao"], "answer": 1 }
+  ],
+  "speaking": [
+    { "id": "bs-1", "word": "你好", "pinyin": "nǐ hǎo" },
+    { "id": "bs-2", "word": "妈妈", "pinyin": "mā ma" },
+    { "id": "bs-3", "word": "谢谢", "pinyin": "xiè xie" },
+    { "id": "bs-4", "word": "喝水", "pinyin": "hē shuǐ" }
+  ]
+}

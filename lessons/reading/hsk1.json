@@ -1,0 +1,1258 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "graded-reading",
+  "version": 1,
+  "level": "HSK1-2",
+  "note": "Đọc hiểu theo bậc cho người mới (và trẻ em): mỗi bài 4–6 câu rất ngắn, chỉ dùng từ đã gặp trong lộ trình HSK 1 của app (xem lessons/courses/hsk1-*). Chạm chữ để xem pinyin và nghĩa; bấm câu để nghe. Không chép từ sách; nội dung do AI soạn, chưa có giáo viên duyệt.",
+  "passages": [
+    {
+      "id": "rd-1-001",
+      "title": "我的家",
+      "titleVi": "Nhà của tôi",
+      "sentences": [
+        {
+          "hanzi": "我家有四个人。",
+          "vi": "Nhà tôi có bốn người."
+        },
+        {
+          "hanzi": "爸爸、妈妈、哥哥和我。",
+          "vi": "Bố, mẹ, anh trai và tôi."
+        },
+        {
+          "hanzi": "我家有一只猫。",
+          "vi": "Nhà tôi có một con mèo."
+        },
+        {
+          "hanzi": "猫很小，很白。",
+          "vi": "Con mèo rất nhỏ, rất trắng."
+        },
+        {
+          "hanzi": "我喜欢我的家。",
+          "vi": "Tôi yêu nhà của tôi."
+        }
+      ],
+      "question": {
+        "hanzi": "我家有几个人？",
+        "vi": "Nhà tôi có mấy người?",
+        "options": [
+          "三个",
+          "四个",
+          "十个"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "哥哥": {
+          "pinyin": "gē ge",
+          "meaning": "anh trai"
+        },
+        "喜欢": {
+          "pinyin": "xǐ huan",
+          "meaning": "thích"
+        },
+        "妈妈": {
+          "pinyin": "mā ma",
+          "meaning": "mẹ"
+        },
+        "爸爸": {
+          "pinyin": "bà ba",
+          "meaning": "bố"
+        },
+        "一": {
+          "pinyin": "yī",
+          "meaning": "một"
+        },
+        "三": {
+          "pinyin": "sān",
+          "meaning": "ba"
+        },
+        "个": {
+          "pinyin": "gè",
+          "meaning": "cái (lượng từ)"
+        },
+        "人": {
+          "pinyin": "rén",
+          "meaning": "người"
+        },
+        "几": {
+          "pinyin": "jǐ",
+          "meaning": "mấy"
+        },
+        "十": {
+          "pinyin": "shí",
+          "meaning": "mười"
+        },
+        "只": {
+          "pinyin": "zhī",
+          "meaning": "con (lượng từ cho mèo)"
+        },
+        "和": {
+          "pinyin": "hé",
+          "meaning": "và; hòa"
+        },
+        "四": {
+          "pinyin": "sì",
+          "meaning": "bốn"
+        },
+        "妈": {
+          "pinyin": "mā",
+          "meaning": "mẹ"
+        },
+        "家": {
+          "pinyin": "jiā",
+          "meaning": "nhà; gia đình"
+        },
+        "小": {
+          "pinyin": "xiǎo",
+          "meaning": "nhỏ"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "有": {
+          "pinyin": "yǒu",
+          "meaning": "có"
+        },
+        "猫": {
+          "pinyin": "māo",
+          "meaning": "con mèo"
+        },
+        "白": {
+          "pinyin": "bái",
+          "meaning": "trắng"
+        },
+        "的": {
+          "pinyin": "de",
+          "meaning": "của"
+        }
+      }
+    },
+    {
+      "id": "rd-1-002",
+      "title": "早上",
+      "titleVi": "Buổi sáng",
+      "sentences": [
+        {
+          "hanzi": "我每天六点起床。",
+          "vi": "Mỗi ngày tôi dậy lúc sáu giờ."
+        },
+        {
+          "hanzi": "妈妈在家。",
+          "vi": "Mẹ ở nhà."
+        },
+        {
+          "hanzi": "我喝水，吃米饭。",
+          "vi": "Tôi uống nước, ăn cơm."
+        },
+        {
+          "hanzi": "爸爸喝咖啡。",
+          "vi": "Bố uống cà phê."
+        },
+        {
+          "hanzi": "八点我去学习。",
+          "vi": "Tám giờ tôi đi học."
+        }
+      ],
+      "question": {
+        "hanzi": "爸爸喝什么？",
+        "vi": "Bố uống gì?",
+        "options": [
+          "水",
+          "咖啡",
+          "茶"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "什么": {
+          "pinyin": "shén me",
+          "meaning": "gì"
+        },
+        "咖啡": {
+          "pinyin": "kā fēi",
+          "meaning": "cà phê"
+        },
+        "妈妈": {
+          "pinyin": "mā ma",
+          "meaning": "mẹ"
+        },
+        "学习": {
+          "pinyin": "xué xí",
+          "meaning": "học"
+        },
+        "每天": {
+          "pinyin": "měi tiān",
+          "meaning": "hằng ngày"
+        },
+        "爸爸": {
+          "pinyin": "bà ba",
+          "meaning": "bố"
+        },
+        "米饭": {
+          "pinyin": "mǐ fàn",
+          "meaning": "cơm"
+        },
+        "起床": {
+          "pinyin": "qǐ chuáng",
+          "meaning": "thức dậy"
+        },
+        "八": {
+          "pinyin": "bā",
+          "meaning": "tám"
+        },
+        "六": {
+          "pinyin": "liù",
+          "meaning": "sáu"
+        },
+        "去": {
+          "pinyin": "qù",
+          "meaning": "đi"
+        },
+        "吃": {
+          "pinyin": "chī",
+          "meaning": "ăn"
+        },
+        "喝": {
+          "pinyin": "hē",
+          "meaning": "uống"
+        },
+        "在": {
+          "pinyin": "zài",
+          "meaning": "ở"
+        },
+        "妈": {
+          "pinyin": "mā",
+          "meaning": "mẹ"
+        },
+        "学": {
+          "pinyin": "xué",
+          "meaning": "học"
+        },
+        "家": {
+          "pinyin": "jiā",
+          "meaning": "nhà; gia đình"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "水": {
+          "pinyin": "shuǐ",
+          "meaning": "nước"
+        },
+        "点": {
+          "pinyin": "diǎn",
+          "meaning": "giờ"
+        },
+        "米": {
+          "pinyin": "mǐ",
+          "meaning": "gạo; cơm"
+        },
+        "茶": {
+          "pinyin": "chá",
+          "meaning": "trà"
+        }
+      }
+    },
+    {
+      "id": "rd-1-003",
+      "title": "我的朋友",
+      "titleVi": "Bạn của tôi",
+      "sentences": [
+        {
+          "hanzi": "我有一个朋友。",
+          "vi": "Tôi có một người bạn."
+        },
+        {
+          "hanzi": "他叫王大。",
+          "vi": "Bạn ấy tên là Vương Đại."
+        },
+        {
+          "hanzi": "他很高。",
+          "vi": "Bạn ấy rất cao."
+        },
+        {
+          "hanzi": "他喜欢喝茶。",
+          "vi": "Bạn ấy thích uống trà."
+        },
+        {
+          "hanzi": "我们一起学中文。",
+          "vi": "Chúng tôi cùng học tiếng Trung."
+        }
+      ],
+      "question": {
+        "hanzi": "我的朋友叫什么？",
+        "vi": "Bạn tôi tên gì?",
+        "options": [
+          "王大",
+          "马大",
+          "小王"
+        ],
+        "answer": 0
+      },
+      "glossary": {
+        "一起": {
+          "pinyin": "yì qǐ",
+          "meaning": "cùng nhau"
+        },
+        "中文": {
+          "pinyin": "zhōng wén",
+          "meaning": "tiếng Trung"
+        },
+        "什么": {
+          "pinyin": "shén me",
+          "meaning": "gì"
+        },
+        "喜欢": {
+          "pinyin": "xǐ huan",
+          "meaning": "thích"
+        },
+        "我们": {
+          "pinyin": "wǒmen",
+          "meaning": "chúng tôi"
+        },
+        "朋友": {
+          "pinyin": "péng you",
+          "meaning": "người bạn"
+        },
+        "一": {
+          "pinyin": "yī",
+          "meaning": "một"
+        },
+        "个": {
+          "pinyin": "gè",
+          "meaning": "cái (lượng từ)"
+        },
+        "他": {
+          "pinyin": "tā",
+          "meaning": "anh ấy / bạn ấy"
+        },
+        "叫": {
+          "pinyin": "jiào",
+          "meaning": "tên là"
+        },
+        "喝": {
+          "pinyin": "hē",
+          "meaning": "uống"
+        },
+        "大": {
+          "pinyin": "dà",
+          "meaning": "to; lớn"
+        },
+        "学": {
+          "pinyin": "xué",
+          "meaning": "học"
+        },
+        "小": {
+          "pinyin": "xiǎo",
+          "meaning": "nhỏ"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "有": {
+          "pinyin": "yǒu",
+          "meaning": "có"
+        },
+        "王": {
+          "pinyin": "wáng",
+          "meaning": "họ Vương"
+        },
+        "的": {
+          "pinyin": "de",
+          "meaning": "của"
+        },
+        "茶": {
+          "pinyin": "chá",
+          "meaning": "trà"
+        },
+        "马": {
+          "pinyin": "mǎ",
+          "meaning": "con ngựa"
+        },
+        "高": {
+          "pinyin": "gāo",
+          "meaning": "cao"
+        }
+      }
+    },
+    {
+      "id": "rd-1-004",
+      "title": "今天很热",
+      "titleVi": "Hôm nay rất nóng",
+      "sentences": [
+        {
+          "hanzi": "今天天气很热。",
+          "vi": "Hôm nay trời rất nóng."
+        },
+        {
+          "hanzi": "我不去商店。",
+          "vi": "Tôi không đi cửa hàng."
+        },
+        {
+          "hanzi": "我在家喝水。",
+          "vi": "Tôi ở nhà uống nước."
+        },
+        {
+          "hanzi": "妹妹吃冰。",
+          "vi": "Em gái ăn kem đá."
+        },
+        {
+          "hanzi": "明天不热，我们去山上。",
+          "vi": "Mai không nóng, chúng tôi lên núi."
+        }
+      ],
+      "question": {
+        "hanzi": "今天天气怎么样？",
+        "vi": "Hôm nay trời thế nào?",
+        "options": [
+          "很冷",
+          "很热",
+          "下雨"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "怎么样": {
+          "pinyin": "zěnmeyàng",
+          "meaning": "thế nào"
+        },
+        "下雨": {
+          "pinyin": "xià yǔ",
+          "meaning": "mưa"
+        },
+        "今天": {
+          "pinyin": "jīn tiān",
+          "meaning": "hôm nay"
+        },
+        "商店": {
+          "pinyin": "shāng diàn",
+          "meaning": "cửa hàng"
+        },
+        "天气": {
+          "pinyin": "tiān qì",
+          "meaning": "thời tiết"
+        },
+        "妹妹": {
+          "pinyin": "mèi mei",
+          "meaning": "em gái"
+        },
+        "我们": {
+          "pinyin": "wǒmen",
+          "meaning": "chúng tôi"
+        },
+        "明天": {
+          "pinyin": "míng tiān",
+          "meaning": "ngày mai"
+        },
+        "上": {
+          "pinyin": "shàng",
+          "meaning": "trên"
+        },
+        "不": {
+          "pinyin": "bù",
+          "meaning": "không"
+        },
+        "冰": {
+          "pinyin": "bīng",
+          "meaning": "đá"
+        },
+        "冷": {
+          "pinyin": "lěng",
+          "meaning": "lạnh"
+        },
+        "去": {
+          "pinyin": "qù",
+          "meaning": "đi"
+        },
+        "吃": {
+          "pinyin": "chī",
+          "meaning": "ăn"
+        },
+        "喝": {
+          "pinyin": "hē",
+          "meaning": "uống"
+        },
+        "在": {
+          "pinyin": "zài",
+          "meaning": "ở"
+        },
+        "家": {
+          "pinyin": "jiā",
+          "meaning": "nhà; gia đình"
+        },
+        "山": {
+          "pinyin": "shān",
+          "meaning": "núi"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "水": {
+          "pinyin": "shuǐ",
+          "meaning": "nước"
+        },
+        "热": {
+          "pinyin": "rè",
+          "meaning": "nóng"
+        }
+      }
+    },
+    {
+      "id": "rd-1-005",
+      "title": "买东西",
+      "titleVi": "Đi mua đồ",
+      "sentences": [
+        {
+          "hanzi": "我和妈妈去商店。",
+          "vi": "Tôi và mẹ đi cửa hàng."
+        },
+        {
+          "hanzi": "妈妈买三个杯子。",
+          "vi": "Mẹ mua ba cái cốc."
+        },
+        {
+          "hanzi": "一个杯子十块。",
+          "vi": "Một cái cốc mười đồng."
+        },
+        {
+          "hanzi": "我买一个糖。",
+          "vi": "Tôi mua một cái kẹo."
+        },
+        {
+          "hanzi": "我说：“谢谢妈妈！”",
+          "vi": "Tôi nói: “Cảm ơn mẹ!”"
+        }
+      ],
+      "question": {
+        "hanzi": "妈妈买几个杯子？",
+        "vi": "Mẹ mua mấy cái cốc?",
+        "options": [
+          "一个",
+          "三个",
+          "十个"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "商店": {
+          "pinyin": "shāng diàn",
+          "meaning": "cửa hàng"
+        },
+        "妈妈": {
+          "pinyin": "mā ma",
+          "meaning": "mẹ"
+        },
+        "杯子": {
+          "pinyin": "bēi zi",
+          "meaning": "cái cốc"
+        },
+        "谢谢": {
+          "pinyin": "xiè xie",
+          "meaning": "cảm ơn"
+        },
+        "一": {
+          "pinyin": "yī",
+          "meaning": "một"
+        },
+        "三": {
+          "pinyin": "sān",
+          "meaning": "ba"
+        },
+        "个": {
+          "pinyin": "gè",
+          "meaning": "cái (lượng từ)"
+        },
+        "买": {
+          "pinyin": "mǎi",
+          "meaning": "mua"
+        },
+        "几": {
+          "pinyin": "jǐ",
+          "meaning": "mấy"
+        },
+        "十": {
+          "pinyin": "shí",
+          "meaning": "mười"
+        },
+        "去": {
+          "pinyin": "qù",
+          "meaning": "đi"
+        },
+        "和": {
+          "pinyin": "hé",
+          "meaning": "và; hòa"
+        },
+        "块": {
+          "pinyin": "kuài",
+          "meaning": "tệ; cách nói khẩu ngữ của nhân dân tệ"
+        },
+        "妈": {
+          "pinyin": "mā",
+          "meaning": "mẹ"
+        },
+        "子": {
+          "pinyin": "zǐ",
+          "meaning": "hạt; con (thanh nhẹ)"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "杯": {
+          "pinyin": "bēi",
+          "meaning": "cốc; lượng từ cho đồ uống"
+        },
+        "糖": {
+          "pinyin": "táng",
+          "meaning": "đường"
+        },
+        "说": {
+          "pinyin": "shuō",
+          "meaning": "nói"
+        }
+      }
+    },
+    {
+      "id": "rd-1-006",
+      "title": "我的猫",
+      "titleVi": "Con mèo của tôi",
+      "sentences": [
+        {
+          "hanzi": "我的猫叫小白。",
+          "vi": "Mèo của tôi tên là Tiểu Bạch."
+        },
+        {
+          "hanzi": "小白喜欢吃鱼。",
+          "vi": "Tiểu Bạch thích ăn cá."
+        },
+        {
+          "hanzi": "小白不喜欢水。",
+          "vi": "Tiểu Bạch không thích nước."
+        },
+        {
+          "hanzi": "晚上小白睡觉。",
+          "vi": "Buổi tối Tiểu Bạch ngủ."
+        },
+        {
+          "hanzi": "我很喜欢小白。",
+          "vi": "Tôi rất thích Tiểu Bạch."
+        }
+      ],
+      "question": {
+        "hanzi": "小白喜欢吃什么？",
+        "vi": "Tiểu Bạch thích ăn gì?",
+        "options": [
+          "米饭",
+          "鱼",
+          "面条"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "什么": {
+          "pinyin": "shén me",
+          "meaning": "gì"
+        },
+        "喜欢": {
+          "pinyin": "xǐ huan",
+          "meaning": "thích"
+        },
+        "晚上": {
+          "pinyin": "wǎn shang",
+          "meaning": "buổi tối"
+        },
+        "睡觉": {
+          "pinyin": "shuì jiào",
+          "meaning": "ngủ"
+        },
+        "米饭": {
+          "pinyin": "mǐ fàn",
+          "meaning": "cơm"
+        },
+        "面条": {
+          "pinyin": "miàn tiáo",
+          "meaning": "mì"
+        },
+        "上": {
+          "pinyin": "shàng",
+          "meaning": "trên"
+        },
+        "不": {
+          "pinyin": "bù",
+          "meaning": "không"
+        },
+        "叫": {
+          "pinyin": "jiào",
+          "meaning": "tên là"
+        },
+        "吃": {
+          "pinyin": "chī",
+          "meaning": "ăn"
+        },
+        "小": {
+          "pinyin": "xiǎo",
+          "meaning": "nhỏ"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "晚": {
+          "pinyin": "wǎn",
+          "meaning": "muộn; tối"
+        },
+        "水": {
+          "pinyin": "shuǐ",
+          "meaning": "nước"
+        },
+        "猫": {
+          "pinyin": "māo",
+          "meaning": "con mèo"
+        },
+        "白": {
+          "pinyin": "bái",
+          "meaning": "trắng"
+        },
+        "的": {
+          "pinyin": "de",
+          "meaning": "của"
+        },
+        "米": {
+          "pinyin": "mǐ",
+          "meaning": "gạo; cơm"
+        },
+        "鱼": {
+          "pinyin": "yú",
+          "meaning": "cá"
+        }
+      }
+    },
+    {
+      "id": "rd-1-007",
+      "title": "晚上",
+      "titleVi": "Buổi tối",
+      "sentences": [
+        {
+          "hanzi": "晚上我们在家。",
+          "vi": "Buổi tối chúng tôi ở nhà."
+        },
+        {
+          "hanzi": "爸爸看手机。",
+          "vi": "Bố xem điện thoại."
+        },
+        {
+          "hanzi": "妈妈和姐姐说话。",
+          "vi": "Mẹ và chị nói chuyện."
+        },
+        {
+          "hanzi": "我吃面条。",
+          "vi": "Tôi ăn mì."
+        },
+        {
+          "hanzi": "十点我们睡觉。",
+          "vi": "Mười giờ chúng tôi đi ngủ."
+        }
+      ],
+      "question": {
+        "hanzi": "我们几点睡觉？",
+        "vi": "Chúng tôi đi ngủ lúc mấy giờ?",
+        "options": [
+          "八点",
+          "十点",
+          "六点"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "妈妈": {
+          "pinyin": "mā ma",
+          "meaning": "mẹ"
+        },
+        "姐姐": {
+          "pinyin": "jiě jie",
+          "meaning": "chị gái"
+        },
+        "我们": {
+          "pinyin": "wǒmen",
+          "meaning": "chúng tôi"
+        },
+        "手机": {
+          "pinyin": "shǒu jī",
+          "meaning": "điện thoại di động"
+        },
+        "晚上": {
+          "pinyin": "wǎn shang",
+          "meaning": "buổi tối"
+        },
+        "爸爸": {
+          "pinyin": "bà ba",
+          "meaning": "bố"
+        },
+        "睡觉": {
+          "pinyin": "shuì jiào",
+          "meaning": "ngủ"
+        },
+        "说话": {
+          "pinyin": "shuōhuà",
+          "meaning": "nói chuyện"
+        },
+        "面条": {
+          "pinyin": "miàn tiáo",
+          "meaning": "mì"
+        },
+        "上": {
+          "pinyin": "shàng",
+          "meaning": "trên"
+        },
+        "八": {
+          "pinyin": "bā",
+          "meaning": "tám"
+        },
+        "六": {
+          "pinyin": "liù",
+          "meaning": "sáu"
+        },
+        "几": {
+          "pinyin": "jǐ",
+          "meaning": "mấy"
+        },
+        "十": {
+          "pinyin": "shí",
+          "meaning": "mười"
+        },
+        "吃": {
+          "pinyin": "chī",
+          "meaning": "ăn"
+        },
+        "和": {
+          "pinyin": "hé",
+          "meaning": "và; hòa"
+        },
+        "在": {
+          "pinyin": "zài",
+          "meaning": "ở"
+        },
+        "妈": {
+          "pinyin": "mā",
+          "meaning": "mẹ"
+        },
+        "家": {
+          "pinyin": "jiā",
+          "meaning": "nhà; gia đình"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "晚": {
+          "pinyin": "wǎn",
+          "meaning": "muộn; tối"
+        },
+        "点": {
+          "pinyin": "diǎn",
+          "meaning": "giờ"
+        },
+        "看": {
+          "pinyin": "kàn",
+          "meaning": "nhìn; xem"
+        },
+        "说": {
+          "pinyin": "shuō",
+          "meaning": "nói"
+        }
+      }
+    },
+    {
+      "id": "rd-1-008",
+      "title": "去医院",
+      "titleVi": "Đi bệnh viện",
+      "sentences": [
+        {
+          "hanzi": "今天弟弟不舒服。",
+          "vi": "Hôm nay em trai không khỏe."
+        },
+        {
+          "hanzi": "妈妈和弟弟去医院。",
+          "vi": "Mẹ và em trai đi bệnh viện."
+        },
+        {
+          "hanzi": "医院在前面。",
+          "vi": "Bệnh viện ở phía trước."
+        },
+        {
+          "hanzi": "我在家帮妈妈。",
+          "vi": "Tôi ở nhà giúp mẹ."
+        },
+        {
+          "hanzi": "晚上弟弟好了。",
+          "vi": "Buổi tối em trai khỏe rồi."
+        }
+      ],
+      "question": {
+        "hanzi": "谁不舒服？",
+        "vi": "Ai không khỏe?",
+        "options": [
+          "妈妈",
+          "弟弟",
+          "我"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "不舒服": {
+          "pinyin": "bù shū fu",
+          "meaning": "không khỏe"
+        },
+        "今天": {
+          "pinyin": "jīn tiān",
+          "meaning": "hôm nay"
+        },
+        "前面": {
+          "pinyin": "qián miàn",
+          "meaning": "phía trước"
+        },
+        "医院": {
+          "pinyin": "yī yuàn",
+          "meaning": "bệnh viện"
+        },
+        "妈妈": {
+          "pinyin": "mā ma",
+          "meaning": "mẹ"
+        },
+        "弟弟": {
+          "pinyin": "dì di",
+          "meaning": "em trai"
+        },
+        "晚上": {
+          "pinyin": "wǎn shang",
+          "meaning": "buổi tối"
+        },
+        "上": {
+          "pinyin": "shàng",
+          "meaning": "trên"
+        },
+        "不": {
+          "pinyin": "bù",
+          "meaning": "không"
+        },
+        "了": {
+          "pinyin": "le",
+          "meaning": "rồi (đã xong)"
+        },
+        "去": {
+          "pinyin": "qù",
+          "meaning": "đi"
+        },
+        "和": {
+          "pinyin": "hé",
+          "meaning": "và; hòa"
+        },
+        "在": {
+          "pinyin": "zài",
+          "meaning": "ở"
+        },
+        "好": {
+          "pinyin": "hǎo",
+          "meaning": "tốt; khỏe"
+        },
+        "妈": {
+          "pinyin": "mā",
+          "meaning": "mẹ"
+        },
+        "家": {
+          "pinyin": "jiā",
+          "meaning": "nhà; gia đình"
+        },
+        "帮": {
+          "pinyin": "bāng",
+          "meaning": "giúp"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "晚": {
+          "pinyin": "wǎn",
+          "meaning": "muộn; tối"
+        },
+        "谁": {
+          "pinyin": "shéi",
+          "meaning": "ai"
+        }
+      }
+    },
+    {
+      "id": "rd-1-009",
+      "title": "下雨了",
+      "titleVi": "Trời mưa rồi",
+      "sentences": [
+        {
+          "hanzi": "今天下雨。",
+          "vi": "Hôm nay trời mưa."
+        },
+        {
+          "hanzi": "天气很冷。",
+          "vi": "Trời rất lạnh."
+        },
+        {
+          "hanzi": "我不去朋友家。",
+          "vi": "Tôi không đi nhà bạn."
+        },
+        {
+          "hanzi": "我在家喝热茶。",
+          "vi": "Tôi ở nhà uống trà nóng."
+        },
+        {
+          "hanzi": "我看书，很好。",
+          "vi": "Tôi đọc sách, rất vui."
+        }
+      ],
+      "question": {
+        "hanzi": "我在家喝什么？",
+        "vi": "Ở nhà tôi uống gì?",
+        "options": [
+          "冰水",
+          "热茶",
+          "咖啡"
+        ],
+        "answer": 1
+      },
+      "glossary": {
+        "下雨": {
+          "pinyin": "xià yǔ",
+          "meaning": "mưa"
+        },
+        "什么": {
+          "pinyin": "shén me",
+          "meaning": "gì"
+        },
+        "今天": {
+          "pinyin": "jīn tiān",
+          "meaning": "hôm nay"
+        },
+        "咖啡": {
+          "pinyin": "kā fēi",
+          "meaning": "cà phê"
+        },
+        "天气": {
+          "pinyin": "tiān qì",
+          "meaning": "thời tiết"
+        },
+        "很好": {
+          "pinyin": "hěn hǎo",
+          "meaning": "rất tốt"
+        },
+        "朋友": {
+          "pinyin": "péng you",
+          "meaning": "người bạn"
+        },
+        "不": {
+          "pinyin": "bù",
+          "meaning": "không"
+        },
+        "书": {
+          "pinyin": "shū",
+          "meaning": "sách"
+        },
+        "冰": {
+          "pinyin": "bīng",
+          "meaning": "đá"
+        },
+        "冷": {
+          "pinyin": "lěng",
+          "meaning": "lạnh"
+        },
+        "去": {
+          "pinyin": "qù",
+          "meaning": "đi"
+        },
+        "喝": {
+          "pinyin": "hē",
+          "meaning": "uống"
+        },
+        "在": {
+          "pinyin": "zài",
+          "meaning": "ở"
+        },
+        "好": {
+          "pinyin": "hǎo",
+          "meaning": "tốt; khỏe"
+        },
+        "家": {
+          "pinyin": "jiā",
+          "meaning": "nhà; gia đình"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "水": {
+          "pinyin": "shuǐ",
+          "meaning": "nước"
+        },
+        "热": {
+          "pinyin": "rè",
+          "meaning": "nóng"
+        },
+        "看": {
+          "pinyin": "kàn",
+          "meaning": "nhìn; xem"
+        },
+        "茶": {
+          "pinyin": "chá",
+          "meaning": "trà"
+        }
+      }
+    },
+    {
+      "id": "rd-1-010",
+      "title": "认识新朋友",
+      "titleVi": "Làm quen bạn mới",
+      "sentences": [
+        {
+          "hanzi": "“你好！你叫什么名字？”",
+          "vi": "“Chào bạn! Bạn tên gì?”"
+        },
+        {
+          "hanzi": "“我叫小马。你呢？”",
+          "vi": "“Mình tên Tiểu Mã. Còn bạn?”"
+        },
+        {
+          "hanzi": "“我叫小鱼。认识你很高兴。”",
+          "vi": "“Mình tên Tiểu Ngư. Rất vui được làm quen.”"
+        },
+        {
+          "hanzi": "“我们一起去喝水吧！”",
+          "vi": "“Chúng ta cùng đi uống nước nhé!”"
+        },
+        {
+          "hanzi": "“好！再见，明天见！”",
+          "vi": "“Được! Tạm biệt, mai gặp!”"
+        }
+      ],
+      "question": {
+        "hanzi": "小鱼和小马明天见吗？",
+        "vi": "Tiểu Ngư và Tiểu Mã mai có gặp không?",
+        "options": [
+          "见",
+          "不见"
+        ],
+        "answer": 0
+      },
+      "glossary": {
+        "一起": {
+          "pinyin": "yì qǐ",
+          "meaning": "cùng nhau"
+        },
+        "什么": {
+          "pinyin": "shén me",
+          "meaning": "gì"
+        },
+        "你好": {
+          "pinyin": "nǐ hǎo",
+          "meaning": "xin chào"
+        },
+        "再见": {
+          "pinyin": "zài jiàn",
+          "meaning": "tạm biệt"
+        },
+        "名字": {
+          "pinyin": "míng zi",
+          "meaning": "tên"
+        },
+        "我们": {
+          "pinyin": "wǒmen",
+          "meaning": "chúng tôi"
+        },
+        "明天": {
+          "pinyin": "míng tiān",
+          "meaning": "ngày mai"
+        },
+        "认识": {
+          "pinyin": "rèn shi",
+          "meaning": "làm quen; biết"
+        },
+        "高兴": {
+          "pinyin": "gāoxìng",
+          "meaning": "vui"
+        },
+        "一": {
+          "pinyin": "yī",
+          "meaning": "một"
+        },
+        "不": {
+          "pinyin": "bù",
+          "meaning": "không"
+        },
+        "你": {
+          "pinyin": "nǐ",
+          "meaning": "bạn"
+        },
+        "去": {
+          "pinyin": "qù",
+          "meaning": "đi"
+        },
+        "叫": {
+          "pinyin": "jiào",
+          "meaning": "tên là"
+        },
+        "吗": {
+          "pinyin": "ma",
+          "meaning": "chăng (hỏi)"
+        },
+        "吧": {
+          "pinyin": "ba",
+          "meaning": "nhé; quán"
+        },
+        "呢": {
+          "pinyin": "ne",
+          "meaning": "còn … thì sao?"
+        },
+        "和": {
+          "pinyin": "hé",
+          "meaning": "và; hòa"
+        },
+        "喝": {
+          "pinyin": "hē",
+          "meaning": "uống"
+        },
+        "好": {
+          "pinyin": "hǎo",
+          "meaning": "tốt; khỏe"
+        },
+        "字": {
+          "pinyin": "zì",
+          "meaning": "chữ"
+        },
+        "小": {
+          "pinyin": "xiǎo",
+          "meaning": "nhỏ"
+        },
+        "我": {
+          "pinyin": "wǒ",
+          "meaning": "tôi"
+        },
+        "水": {
+          "pinyin": "shuǐ",
+          "meaning": "nước"
+        },
+        "马": {
+          "pinyin": "mǎ",
+          "meaning": "con ngựa"
+        },
+        "高": {
+          "pinyin": "gāo",
+          "meaning": "cao"
+        },
+        "鱼": {
+          "pinyin": "yú",
+          "meaning": "cá"
+        }
+      }
+    }
+  ]
+}

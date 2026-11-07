@@ -1,4 +1,4 @@
-import type { ChatMessage, CloudTask, Level, Progress, Settings } from '../types';
+import type { ChatMessage, CloudTask, Level, Progress, Settings, Sticker } from '../types';
 import { CLOUD_TASK_IDS, DEFAULT_CLOUD_TASKS } from './modelRouting.ts';
 
 const SETTINGS_KEY = 'xiaoya.settings.v1';
@@ -9,6 +9,8 @@ export const PROGRESS_KEY = 'xiaoya.progress.v1';
 const CHAT_LIMIT = 80;
 
 export const DAILY_GOAL = 8;
+/** sticker sheet for finished days, in the order they are earned */
+export const STICKERS = ['🐼', '🌟', '🐯', '🍎', '🚀', '🐸', '🌈', '🐥', '🎈', '🦁', '🍉', '🐧', '🏆', '🐬', '🌻', '🦊'];
 
 // Per-learner storage: each learner gets its own key suffix. Empty scope = legacy key.
 export function scopedKey(base: string, scope = '') {
@@ -28,6 +30,7 @@ export const DEFAULT_SETTINGS: Settings = {
   avatarModeAuto: true,
   avatarGender: 'female',
   cloudTasks: [...DEFAULT_CLOUD_TASKS],
+  handsFree: false,
 };
 
 const LEVELS = new Set<Level>(['HSK1-2', 'HSK3-4', 'HSK5-6', 'free']);
@@ -75,40 +78,22 @@ export function loadSettings(): Settings {
     return {
       providerId: typeof parsed.providerId === 'string' ? parsed.providerId : '',
       model: typeof parsed.model === 'string' ? parsed.model : '',
-      voice:
-        typeof parsed.voice === 'string' && parsed.voice
-          ? parsed.voice
-          : DEFAULT_SETTINGS.voice,
-      viVoice:
-        typeof parsed.viVoice === 'string' && parsed.viVoice
-          ? parsed.viVoice
-          : DEFAULT_SETTINGS.viVoice,
+      voice: typeof parsed.voice === 'string' && parsed.voice ? parsed.voice : DEFAULT_SETTINGS.voice,
+      viVoice: typeof parsed.viVoice === 'string' && parsed.viVoice ? parsed.viVoice : DEFAULT_SETTINGS.viVoice,
       level: LEVELS.has(parsed.level) ? parsed.level : DEFAULT_SETTINGS.level,
-      autoSpeak:
-        typeof parsed.autoSpeak === 'boolean'
-          ? parsed.autoSpeak
-          : DEFAULT_SETTINGS.autoSpeak,
+      autoSpeak: typeof parsed.autoSpeak === 'boolean' ? parsed.autoSpeak : DEFAULT_SETTINGS.autoSpeak,
       autoReadTranslation:
-        typeof parsed.autoReadTranslation === 'boolean'
-          ? parsed.autoReadTranslation
-          : DEFAULT_SETTINGS.autoReadTranslation,
-      showPinyin:
-        pinyinUpgrade
-          ? true
-          : typeof parsed.showPinyin === 'boolean'
-            ? parsed.showPinyin
-            : DEFAULT_SETTINGS.showPinyin,
+        typeof parsed.autoReadTranslation === 'boolean' ? parsed.autoReadTranslation : DEFAULT_SETTINGS.autoReadTranslation,
+      showPinyin: pinyinUpgrade ? true : typeof parsed.showPinyin === 'boolean' ? parsed.showPinyin : DEFAULT_SETTINGS.showPinyin,
       avatarMode: parsed.avatarMode === 'classic' ? 'classic' : 'lam',
-      avatarModeAuto:
-        typeof parsed.avatarModeAuto === 'boolean'
-          ? parsed.avatarModeAuto
-          : DEFAULT_SETTINGS.avatarModeAuto,
+      avatarModeAuto: typeof parsed.avatarModeAuto === 'boolean' ? parsed.avatarModeAuto : DEFAULT_SETTINGS.avatarModeAuto,
       avatarGender: parsed.avatarGender === 'male' ? 'male' : 'female',
       cloudTasks: cloudTasksUpgrade
         ? [...DEFAULT_CLOUD_TASKS]
         : Array.isArray(parsed.cloudTasks)
-        ? parsed.cloudTasks.filter((task: unknown): task is CloudTask => CLOUD_TASK_IDS.has(task as CloudTask))
-        : [...DEFAULT_CLOUD_TASKS],
+          ? parsed.cloudTasks.filter((task: unknown): task is CloudTask => CLOUD_TASK_IDS.has(task as CloudTask))
+          : [...DEFAULT_CLOUD_TASKS],
+      handsFree: typeof parsed.handsFree === 'boolean' ? parsed.handsFree : DEFAULT_SETTINGS.handsFree,
     };
   } catch {
     return { ...DEFAULT_SETTINGS, cloudTasks: [...DEFAULT_CLOUD_TASKS] };
@@ -130,14 +115,8 @@ export function loadMessages(scope = ''): ChatMessage[] {
       return [];
     }
     return parsed.messages
-      .filter(
-        (m: unknown): m is ChatMessage =>
-          Boolean(
-            m &&
-              typeof m === 'object' &&
-              (m as ChatMessage).role &&
-              typeof (m as ChatMessage).text === 'string',
-          ),
+      .filter((m: unknown): m is ChatMessage =>
+        Boolean(m && typeof m === 'object' && (m as ChatMessage).role && typeof (m as ChatMessage).text === 'string'),
       )
       .filter((m: ChatMessage) => !m.error)
       .slice(-CHAT_LIMIT);
@@ -152,10 +131,7 @@ export function saveMessages(messages: ChatMessage[], scope = '') {
       .filter((m) => !m.error)
       .map(({ streaming: _streaming, ...rest }) => rest)
       .slice(-CHAT_LIMIT);
-    localStorage.setItem(
-      scopedKey(CHAT_KEY, scope),
-      JSON.stringify({ date: dayKey(), messages: clean }),
-    );
+    localStorage.setItem(scopedKey(CHAT_KEY, scope), JSON.stringify({ date: dayKey(), messages: clean }));
   } catch {
     // ignore
   }
@@ -179,6 +155,7 @@ export function loadProgress(scope = ''): Progress {
     totalTurns: 0,
     xp: 0,
     days: [],
+    stickers: [],
   };
 
   try {
@@ -191,8 +168,14 @@ export function loadProgress(scope = ''): Progress {
       todayTurns: Number.isFinite(parsed.todayTurns) ? Math.max(0, parsed.todayTurns) : 0,
       totalTurns: Number.isFinite(parsed.totalTurns) ? Math.max(0, parsed.totalTurns) : 0,
       xp: Number.isFinite(parsed.xp) ? Math.max(0, parsed.xp) : 0,
-      days: Array.isArray(parsed.days)
-        ? parsed.days.filter((d: unknown) => typeof d === 'string').slice(-30)
+      days: Array.isArray(parsed.days) ? parsed.days.filter((d: unknown) => typeof d === 'string').slice(-30) : [],
+      stickers: Array.isArray(parsed.stickers)
+        ? parsed.stickers
+            .filter(
+              (s: unknown) =>
+                s && typeof s === 'object' && typeof (s as Sticker).date === 'string' && typeof (s as Sticker).emoji === 'string',
+            )
+            .slice(-200)
         : [],
     };
 
@@ -229,6 +212,12 @@ export function recordPractice(progress: Progress, scope = ''): Progress {
   if (!next.days.includes(today)) {
     next.days = [...next.days, today].slice(-30);
   }
+  // one sticker per day the daily goal is reached: a reward for finishing, not a penalty for missing
+  if (next.todayTurns === DAILY_GOAL && !(next.stickers || []).some((s) => s.date === today)) {
+    next.stickers = [...(next.stickers || []), { date: today, emoji: STICKERS[(next.stickers || []).length % STICKERS.length] }].slice(
+      -200,
+    );
+  }
 
   try {
     localStorage.setItem(scopedKey(PROGRESS_KEY, scope), JSON.stringify(next));
@@ -248,6 +237,7 @@ export function resetProgress(scope = '') {
     totalTurns: 0,
     xp: 0,
     days: [],
+    stickers: [],
   };
   try {
     localStorage.removeItem(scopedKey(PROGRESS_KEY, scope));

@@ -26,6 +26,18 @@ otherwise.
 | [msedge-tts](https://www.npmjs.com/package/msedge-tts) | Microsoft Edge online voices | MIT; the voices are Microsoft's service |
 | [Ollama](https://ollama.com/) / [LM Studio](https://lmstudio.ai/) and the model you choose (e.g. Qwen) | the tutor's replies and corrections | each model has its own license |
 | [LAM](https://github.com/aigc3d/LAM) | making a LAM avatar from a photo (done outside this app) | see the LAM repository; its model weights have their own terms |
+| [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) | FSRS scheduling of word reviews | MIT |
+| [Hanzi Writer](https://hanziwriter.org/) | stroke-order animation and tracing quiz | MIT |
+| [hanzi-writer-data](https://github.com/chanind/hanzi-writer-data) (served from `node_modules` by `/api/hanzi/:char`) | stroke data, derived from Make Me a Hanzi / Arphic fonts | [Arphic Public License](https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT) |
+| [chinese-wav2vec2-base](https://huggingface.co/TencentGameMate/chinese-wav2vec2-base) (downloaded by the optional tone service, `tone/`) | speech features for the per-syllable tone classifier | MIT |
+| PyTorch, transformers, librosa (optional tone service only) | running and training the tone classifier | BSD / Apache-2.0 / ISC |
+
+The tone classifier's design follows two open projects without reusing their
+code or weights: [Tone.me](https://github.com/tone-me/tone-me) (MIT; wav2vec2
+fine-tuned on syllables cut from AISHELL-3) and
+[Tonara](https://github.com/dima-xd/tonara) (MIT; pYIN contour + small MLP).
+The classifier in `tone/weights/` is trained here on synthetic voices only (see
+`tone/README.md`); no AISHELL-3 audio or recordings of people are used.
 
 ## Textbook
 

@@ -1,5 +1,6 @@
 import { HanViet } from './HanViet';
 import { ShadowingPractice } from './ShadowingPractice';
+import { ReadingPractice } from './ReadingPractice';
 import { DictationPractice } from './DictationPractice';
 import { SoundListening } from './SoundListening';
 import { CommunityListening } from './CommunityListening';
@@ -75,6 +76,7 @@ export function CoursePractice(props: Props) {
           onBusy={props.onBusy}
         />
       )}
+      {!checkpoint && <ReadingPractice level={content.level || 'HSK1-2'} voice={props.voice} onBusy={props.onBusy} />}
       {!checkpoint && <CommunityListening level={content.level || 'HSK1-2'} />}
       {content.checkpoint && (
         <button type="button" className="lesson-secondary" onClick={() => setCheckpoint((v) => !v)}>
@@ -282,11 +284,13 @@ function SpeakingCard({
           }[exercise.kind]
         }
       </h4>
-      <p lang="zh"><ReadableChinese text={exercise.prompt} /></p>
+      <p lang="zh">
+        <ReadableChinese text={exercise.prompt} />
+      </p>
       {exercise.promptVi && <p>{exercise.promptVi}</p>}
       {exercise.kind === 'read' && (
         <p className="lesson-example" lang="zh">
-          <Han text={exercise.text || ""} />
+          <Han text={exercise.text || ''} />
         </p>
       )}
       <p>
@@ -343,11 +347,15 @@ function SpeakingCard({
       </button>
       {reveal && (
         <>
-          <p><ReadableChinese text={exercise.reference} /></p>
+          <p>
+            <ReadableChinese text={exercise.reference} />
+          </p>
           {exercise.pinyin && <p>{exercise.pinyin}</p>}
           {exercise.sampleZh && (
             <>
-              <p lang="zh"><Han text={exercise.sampleZh} /></p>
+              <p lang="zh">
+                <Han text={exercise.sampleZh} />
+              </p>
               <p>{exercise.sampleVi}</p>
               <button type="button" className="lesson-secondary" onClick={() => void audio.play(exercise.sampleZh!)}>
                 {audio.playing ? 'Dừng âm thanh' : 'Nghe bài nói mẫu'}
@@ -356,7 +364,9 @@ function SpeakingCard({
           )}
           <ul>
             {exercise.checklist.map((item) => (
-              <li key={item}><ReadableChinese text={item} /></li>
+              <li key={item}>
+                <ReadableChinese text={item} />
+              </li>
             ))}
           </ul>
           <p className="lesson-hint">

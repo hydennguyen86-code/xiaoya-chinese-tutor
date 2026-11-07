@@ -18,12 +18,19 @@
     "review:lesson": "node scripts/review-lesson.mjs",
     "setup:whisper:windows": "powershell -NoProfile -File scripts/setup-whisper.ps1",
     "test:edge:live": "node scripts/test-edge-live.mjs",
-    "corpus:import": "node scripts/import-common-voice.mjs"
+    "corpus:import": "node scripts/import-common-voice.mjs",
+    "setup:tone": "bash tone/setup.sh",
+    "tone:service": ".venv-tone/bin/python -I tone/tone_service.py",
+    "tone:dataset": "node eval/tone-train/make-dataset.mjs --out data/tone-train/say --say && node eval/tone-train/make-dataset.mjs --out data/tone-train/edge --edge",
+    "tone:train": ".venv-tone/bin/python -I tone/train.py --manifests data/tone-train/say/manifest.jsonl data/tone-train/edge/manifest.jsonl --out tone/weights",
+    "eval:azure": "node eval/azure-pronunciation.mjs"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",
     "@myned-ai/gsplat-flame-avatar-renderer": "^1.4.0",
     "express": "^5.3.0",
+    "hanzi-writer": "^3.7.3",
+    "hanzi-writer-data": "^2.0.1",
     "jszip": "^3.10.2",
     "msedge-tts": "^2.1.0",
     "pinyin-pro": "^3.29.5",
@@ -31,7 +38,8 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "selfsigned": "^5.5.0",
-    "three": "^0.186.1"
+    "three": "^0.186.1",
+    "ts-fsrs": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

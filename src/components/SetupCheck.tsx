@@ -288,6 +288,14 @@ export function SetupCheck({ settings, onChange, onClose, onStart, onStatus }: P
           </p>
         </section>
         <section>
+          <h3>3b. Chấm thanh điệu</h3>
+          <p>
+            {status?.toneModel
+              ? 'Đạt: mô hình thanh điệu (wav2vec2 + cao độ) đang chạy trên máy; chấm được từng chữ cả trong câu dài.'
+              : 'Đang dùng bộ luật cao độ (chỉ chấm từ 1–2 chữ; câu dài chỉ vẽ đường cao độ). Để bật mô hình: npm run setup:tone, rồi khởi động lại app (xem tone/README.md).'}
+          </p>
+        </section>
+        <section>
           <h3>4. Nghe giọng mẫu</h3>
           <p>{tts}</p>
           <button type="button" disabled={busy} onClick={() => void testTts()}>

@@ -29,12 +29,16 @@ listening drills, all running on your own computer.*
 | 📅 **Bài hôm nay, khỏi phải chọn** | Lộ trình có sẵn: HSK 1, HSK 5 (48 buổi) và 30 bài giao tiếp HSK1–6. Mỗi buổi: ôn → từ mới → mẫu câu → nhập vai (nghe trước, bấm mới hiện chữ) → nói tự do → tổng kết. |
 | 📝 **Kiểm tra tuần / tháng** | Đề lấy từ chính từ và lỗi của bạn, chấm từng phần, câu sai tự vào lịch ôn. Có nhiệm vụ giao tiếp ghi rõ bạn tự làm được hay cần gợi ý. |
 | 👨‍👩‍👧 **Cả nhà cùng học** | Nhiều người học trên một máy, mỗi người có trình độ, lịch sử, lịch ôn và hồ sơ giọng riêng. Dùng điện thoại làm micro qua Wi-Fi (HTTPS + mã PIN). |
+| 🧒 **Hồ sơ trẻ em** | Chọn "Bé dưới 12 tuổi": gia sư nói 1–2 câu ngắn, hỏi một câu dễ, chữ to, mic mở sẵn (nói liên tục, nói chen là cô dừng lại nghe), sticker mỗi ngày đủ 8 lượt, tập viết nét chữ, đọc theo bậc, và "Báo cáo cho bố mẹ" 4 dòng mỗi tuần. |
+| 📈 **So với chính mình** | Ôn từ theo FSRS (lịch ôn tự điều chỉnh theo từng từ). Bài kiểm tra mốc 16 mục cố định làm lần đầu rồi mỗi 4 tuần, để thấy nghe thanh, nghĩa và đọc thanh có tiến lên không. |
 | 🔒 **Riêng tư** | Model (Ollama/LM Studio), nhận dạng giọng (whisper.cpp) và chấm thanh đều chạy trên máy; dữ liệu nằm trong thư mục `data/`. Giọng đọc Edge và API tuỳ chọn mới cần mạng. |
 
 **Nói thật về giới hạn:** chấm thanh điệu mới được đo trên giọng máy và **một**
 người học thật (đúng khoảng 80% số chữ chấm được, chữ không chắc thì báo "chưa
-chấm được"); bài học do AI soạn, chưa có giáo viên duyệt; âm Hán Việt lấy từ Unicode
-Unihan nên còn thiếu hoặc sai một số chữ. Số đo chi tiết ở phần [Độ chính xác](#độ-chính-xác-đo-được-bao-nhiêu).
+chấm được"); bộ chấm bằng mô hình (tuỳ chọn, xem [tone/README.md](tone/README.md))
+huấn luyện trên giọng máy và cũng chỉ mới đo trên người học đó; bài học do AI soạn,
+chưa có giáo viên duyệt; âm Hán Việt lấy từ Unicode Unihan nên còn thiếu hoặc sai
+một số chữ. Số đo chi tiết ở phần [Độ chính xác](#độ-chính-xác-đo-được-bao-nhiêu).
 
 ## Bắt đầu nhanh
 
@@ -55,6 +59,8 @@ npm run build && npm start
 Mở **http://127.0.0.1:8787**. Lần đầu, app có màn hình kiểm tra model, micro và
 giọng đọc. Muốn chấm thanh điệu và nhận dạng giọng nói ngay trên máy thì chạy thêm
 `npm run setup:whisper` (Mac/Linux) hoặc `npm run setup:whisper:windows`, và cài ffmpeg.
+Muốn chấm thanh từng chữ bằng mô hình (kể cả trong câu dài) thì chạy thêm
+`npm run setup:tone` (cần Python 3.10+, ~2 GB thư viện; xem [tone/README.md](tone/README.md)).
 Trên Windows/Mac có thể bấm đúp `start-windows.bat` / `start-mac.command`.
 Chi tiết ở phần [Cài đặt](#cài-đặt).
 
@@ -300,6 +306,17 @@ nhãn chưa được chuyên gia xác minh. Mục cắt hỏng cần thu lại; 
 vì chưa đủ 56 mục. [Kết quả tổng hợp](eval/results/tones-human-unchanged-separate_sentence_clips_same_person-human_self_peer_expert-2026-10-25T14-31-25-942Z.json).
 Không chứa audio, tên người hay đường dẫn máy.
 
+**Bộ chấm bằng mô hình (tuỳ chọn, 07/11/2026)**: wav2vec2 tiếng Trung + cao độ
+pYIN + MLP nhỏ, huấn luyện trên 12 660 câu/từ giọng máy (42 nghìn âm tiết), đúng
+88 % trên hai giọng máy giữ lại. Trên cùng bộ thu người học ở trên (70 âm có nhãn
+peer), đường ống đầy đủ (mô hình gộp + đối chiếu bộ luật ở từ 1–2 chữ) khớp nhãn
+**59/70**, 0 âm chưa chấm; mô hình đơn khớp 74–77 %, và khi bỏ chữ máy chưa chắc
+(ngưỡng 0,6) còn chấm 74 % số chữ với 83 % khớp. Sai lệch còn lại chủ yếu là thanh
+1 của người học bị nghe thành thanh 4 (8/29), giống bộ luật cũ. Bộ thu nhỏ, một
+người, nhãn chưa được chuyên gia xác minh: đây là số để theo dõi, không phải
+chứng nhận. [Kết quả](eval/results/tones-human-model-unchanged-separate_sentence_clips_same_person-human_self_peer_-2026-11-07T07-28-33-419Z.json),
+cách làm và giới hạn ở [tone/README.md](tone/README.md).
+
 **Thanh điệu trên TTS**: bản ghi có thể đối chiếu là
 [Tingting ngày 24/10/2026](eval/results/tones-macOS_Tingting-2026-10-24.json),
 commit `841d68b`, working tree lúc đo còn thay đổi. Giọng tổng hợp macOS,
@@ -313,10 +330,10 @@ Các số của Flo/Reed/Grandpa/Shelley từng ghi ở đây không có file k�
 kèm theo trong repo, nên đã bỏ khỏi bảng có thể kiểm chứng. Chưa chạy lại bộ
 TTS sau thay đổi giao diện/mốc âm tiết; ngưỡng `classifyIsolated` giữ nguyên.
 
-Đây là giọng máy đọc chuẩn, chưa phải người học thật: độ chính xác trên giọng người
-(nhất là người mới học, đọc ngập ngừng) hiện chưa được đo. Vì thế Misu chỉ chấm đúng/sai
-từng chữ khi đọc từ 1–2 chữ, còn với câu dài thì chỉ vẽ đường cao độ để bạn tự
-so, và báo "chưa chấm được" thay vì đoán khi không rõ. Thanh 1 và thanh 3 đọc
+Đây là giọng máy đọc chuẩn, chưa phải người học thật. Vì thế, khi không bật bộ
+chấm bằng mô hình, Misu chỉ chấm đúng/sai từng chữ khi đọc từ 1–2 chữ, còn với
+câu dài thì chỉ vẽ đường cao độ để bạn tự so; có mô hình thì chấm từng chữ cả
+trong câu, và cả hai đều báo "chưa chấm được" thay vì đoán khi không rõ. Thanh 1 và thanh 3 đọc
 riêng chỉ khác nhau ở độ cao, nên Misu cần nghe bạn nói vài câu trước để biết
 giọng bạn cao thấp thế nào.
 

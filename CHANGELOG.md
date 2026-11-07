@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-07 — Bản tạm
+
+- **Bộ chấm thanh điệu bằng mô hình (tuỳ chọn, `tone/`)**: dịch vụ Python chạy trên máy, gộp wav2vec2 tiếng Trung (`TencentGameMate/chinese-wav2vec2-base`, lớp 8) với đường cao độ pYIN, phân loại từng âm tiết thành thanh 1–4/nhẹ bằng MLP nhỏ, theo hướng Tone.me và Tonara. Chấm được từng chữ cả trong câu dài (trước chỉ từ 1–2 chữ). Huấn luyện chỉ trên giọng máy (macOS `say` + Edge TTS, 12 660 câu/từ, 42 nghìn âm tiết, nhãn lấy từ chữ viết có biến điệu): 88 % đúng trên 2 giọng máy giữ lại; trên bộ thu một người học thật (70 âm tiết có nhãn người nghe) đường ống đầy đủ khớp người nghe 59/70 so với 45/70 của bộ luật cũ, mô hình đơn khớp 74–77 % (xem `tone/README.md`, `tone/weights/metrics.json`, `eval/results/tones-human-model-…`). Chưa chắc thì báo “—”; từ 1–2 chữ còn đối chiếu với bộ luật cũ. `npm run setup:tone`, rồi server tự chạy; không có thì mọi thứ như cũ. Thêm `npm run eval:azure` để đối chứng với Azure Pronunciation Assessment (cần key riêng, không gọi tự động).
+- **Nói liên tục (rảnh tay)**: nút dưới ô nhắn; mic mở suốt buổi, nói là gửi (cổng năng lượng tự nhận hết lượt sau 1,1 giây im lặng, có 0,9 giây tiền đệm), nói trong lúc avatar đang nói thì avatar dừng lại nghe (ngắt lời). Cần nhận dạng trên máy (whisper.cpp). Âm thanh ghi bằng Web Audio 16 kHz, không rời máy.
+- **Hồ sơ trẻ em**: khi thêm người học có ô “Bé dưới 12 tuổi”: gia sư nói 1–2 câu ≤ 6 chữ, hỏi một câu cụ thể, chủ đề đời sống trẻ con; chữ to, mic mở sẵn lần đầu; sticker mỗi ngày đạt 8 lượt; mục “Báo cáo cho bố mẹ (7 ngày)” trong Hồ sơ học tập (số buổi, lượt nói, từ mới, lỗi phát âm lặp lại, từ nên hỏi lại) có nút sao chép. Bảng động lực có cột Sticker.
+- **Lịch ôn từ theo FSRS** (`ts-fsrs`): thay thang cố định 10 phút → 1 → 3 → 7 → 14 → 30 ngày bằng mô hình độ bền/độ khó từng từ; từ ôn dưới thang cũ được chuyển sang không mất lịch. “Mức nhớ 0–5” giờ suy từ khoảng cách FSRS tin từ đó còn nhớ.
+- **Tập viết chữ Hán** trong thẻ từ mới của bài: xem thứ tự nét và tự viết theo nét (Hanzi Writer); dữ liệu nét lấy từ `hanzi-writer-data` qua `/api/hanzi/:chữ`, chạy offline.
+- **Đọc theo bậc (HSK 1)**: 10 bài đọc 5 câu chỉ dùng từ của lộ trình HSK 1, chạm chữ xem pinyin/Hán Việt/nghĩa, nghe từng câu, một câu hỏi hiểu bài. Trong mục “Nghe hiểu và luyện nói” của bài HSK 1. AI soạn, chưa duyệt (`lessons/reading/hsk1.json`).
+- **Bài kiểm tra mốc**: 16 mục cố định (6 nghe chọn thanh, 6 chọn nghĩa, 4 đọc to máy chấm thanh) trong Hồ sơ học tập; lần đầu là mốc, hẹn lại sau 4 tuần, hiện bảng so với chính mình. Không quy ra HSK.
+
 ## 2026-10-30 — Bản tạm
 
 - Thêm mục “Model cloud qua API” trong Cài đặt: nút điền sẵn VietAPI (https://api.vietapi.tech/v1 · gemini-4-argon), link lấy key/nạp credit, nút Kiểm tra kết nối. Key chỉ lưu trên máy chủ.

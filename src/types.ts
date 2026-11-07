@@ -63,6 +63,8 @@ export interface Settings {
   avatarGender: 'female' | 'male';
   /** jobs sent to the configured cloud API instead of the local model */
   cloudTasks: CloudTask[];
+  /** keep the microphone open: speak without pressing the button, interrupt the avatar by talking */
+  handsFree: boolean;
 }
 
 export interface RemoteHealth {
@@ -101,6 +103,8 @@ export interface StatusResponse {
   avatarUrl: string;
   lamAvatarUrl?: string;
   localStt?: boolean;
+  /** the per-syllable tone classifier service is running */
+  toneModel?: boolean;
 }
 
 export interface TtsWord {
@@ -137,6 +141,13 @@ export interface Progress {
   totalTurns: number;
   xp: number;
   days: string[];
+  /** stickers earned (one per day the daily goal was reached), newest last */
+  stickers: Sticker[];
+}
+
+export interface Sticker {
+  date: string;
+  emoji: string;
 }
 
 export interface StreamMeta {
@@ -213,6 +224,20 @@ export interface WordRecord {
   reviews: number;
   lapses: number;
   lastReviewedAt?: number;
+  /** FSRS memory state (open-spaced-repetition); absent for words never reviewed since the switch */
+  fsrs?: FsrsState;
+}
+
+export interface FsrsState {
+  stability: number;
+  difficulty: number;
+  /** 0 new · 1 learning · 2 review · 3 relearning */
+  state: number;
+  reps: number;
+  lapses: number;
+  scheduledDays: number;
+  learningSteps: number;
+  lastReview?: number;
 }
 
 export interface LearningDay {

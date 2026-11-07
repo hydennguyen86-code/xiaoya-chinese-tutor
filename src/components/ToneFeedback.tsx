@@ -121,10 +121,45 @@ export function ToneFeedback({
     </>
   );
 
+  const wrong = report.syllables.filter((s) => s.ok === false);
+  const byModel = report.method === 'model';
+  const syllableChips = (
+    <div className="tone-syllables">
+      {report.syllables.map((s, i) => (
+        <span
+          key={`${s.char}-${i}`}
+          className={`tone-syllable ${s.ok === true ? 'is-ok' : s.ok === false ? 'is-wrong' : 'is-unclear'}`}
+          title={
+            s.ok === null
+              ? 'Chưa chấm được chữ này'
+              : `Cần thanh ${s.expected}, mình nghe thanh ${s.heard === 5 ? 'nhẹ' : s.heard}${
+                  typeof s.confidence === 'number' ? ` (chắc ${Math.round(s.confidence * 100)}%)` : ''
+                }`
+          }
+        >
+          <small>{s.pinyin}</small>
+          <span>{s.char}</span>
+          <em>{s.ok === true ? `thanh ${s.expected} ✓` : s.ok === false ? `nghe như thanh ${s.heard === 5 ? 'nhẹ' : s.heard}` : '—'}</em>
+        </span>
+      ))}
+    </div>
+  );
+  const methodHint = byModel
+    ? 'Chấm bằng mô hình thanh điệu chạy trên máy (wav2vec2 + cao độ), được đo trên giọng máy và một người học thật; chữ không chắc thì để trống "—" thay vì chấm sai. Hãy xem là gợi ý.'
+    : 'Chấm tự động mới được thử trên giọng máy; hãy xem kết quả là gợi ý.';
+
   if (report.mode === 'sentence') {
     return (
       <div className="tone-feedback">
+        {byModel && <p className="lesson-hint">{methodHint}</p>}
         {comparison}
+        {byModel && report.syllables.length > 0 && syllableChips}
+        {byModel &&
+          wrong.slice(0, 3).map((s, i) => (
+            <p key={`${s.char}-hint-${i}`} className="lesson-hint">
+              <strong>{s.char}</strong> — {TONE_HINT[s.expected]}
+            </p>
+          ))}
         <ToneLabelFeedback
           key={report.syllables.map((s) => s.char).join('') + String(audio?.size)}
           report={report}
@@ -134,8 +169,8 @@ export function ToneFeedback({
         {report.curve && report.curve.some((v) => v !== null) ? (
           <>
             <p className="lesson-hint">
-              Chấm tự động mới được thử trên giọng máy. Đường cao độ của bạn (cam) và của giọng mẫu (xanh). Hai đường được kéo về cùng độ
-              dài, chưa căn theo từng chữ; khác nhịp đọc cũng làm đường lệch. Chỉ tham khảo dáng chung.
+              {byModel ? '' : 'Chấm tự động mới được thử trên giọng máy. '}Đường cao độ của bạn (cam) và của giọng mẫu (xanh). Hai đường
+              được kéo về cùng độ dài, chưa căn theo từng chữ; khác nhịp đọc cũng làm đường lệch. Chỉ tham khảo dáng chung.
             </p>
           </>
         ) : (
@@ -145,10 +180,9 @@ export function ToneFeedback({
     );
   }
 
-  const wrong = report.syllables.filter((s) => s.ok === false);
   return (
     <div className="tone-feedback">
-      <p className="lesson-hint">Chấm tự động mới được thử trên giọng máy; hãy xem kết quả là gợi ý.</p>
+      <p className="lesson-hint">{methodHint}</p>
       {comparison}
       <ToneLabelFeedback
         key={report.syllables.map((s) => s.char).join('') + String(audio?.size)}
@@ -165,19 +199,7 @@ export function ToneFeedback({
       {repair && repairChar && (
         <PronunciationRepair key={repairChar} context={repair} char={repairChar} onClose={() => setRepairChar('')} />
       )}
-      <div className="tone-syllables">
-        {report.syllables.map((s, i) => (
-          <span
-            key={`${s.char}-${i}`}
-            className={`tone-syllable ${s.ok === true ? 'is-ok' : s.ok === false ? 'is-wrong' : 'is-unclear'}`}
-            title={s.ok === null ? 'Chưa chấm được chữ này' : `Cần thanh ${s.expected}, mình nghe thanh ${s.heard}`}
-          >
-            <small>{s.pinyin}</small>
-            <span>{s.char}</span>
-            <em>{s.ok === true ? `thanh ${s.expected} ✓` : s.ok === false ? `nghe như thanh ${s.heard}` : '—'}</em>
-          </span>
-        ))}
-      </div>
+      {syllableChips}
       {report.checked > 0 &&
         !wrong.length &&
         (report.checked === report.syllables.filter((s) => s.expected).length ? (

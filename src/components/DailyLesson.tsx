@@ -1,4 +1,5 @@
 import { HanViet } from './HanViet';
+import { HanziWriterCard } from './HanziWriterCard';
 import { PronunciationReview } from './PronunciationReview';
 import { ListenFirstToggle, ListeningControls, ListeningRate, ListenFirstLine, SlowListen, useListeningPrefs } from './ListeningControls';
 import { CoursePractice } from './CoursePractice';
@@ -44,7 +45,10 @@ import { pinyinLine } from '../lib/text';
 function LessonCorrection({ correction }: { correction: Pick<Correction, 'original' | 'corrected' | 'explanation'> }) {
   return (
     <div className="lesson-bad lesson-correction">
-      <div><s>{correction.original}</s> <span className="lesson-correction-pinyin">({pinyinLine(correction.original)})</span> → <strong>{correction.corrected}</strong> <span className="lesson-correction-pinyin">({pinyinLine(correction.corrected)})</span></div>
+      <div>
+        <s>{correction.original}</s> <span className="lesson-correction-pinyin">({pinyinLine(correction.original)})</span> →{' '}
+        <strong>{correction.corrected}</strong> <span className="lesson-correction-pinyin">({pinyinLine(correction.corrected)})</span>
+      </div>
       {correction.explanation ? <div>{correction.explanation}</div> : <div>Chưa có giải thích tiếng Việt cho lỗi này.</div>}
     </div>
   );
@@ -552,7 +556,9 @@ export function DailyLesson(props: DailyLessonProps) {
             <summary>Kiến thức cần biết và cách học buổi này</summary>
             <ul>
               {content.learningNotes.map((note) => (
-                <li key={note}><ReadableChinese text={note} /></li>
+                <li key={note}>
+                  <ReadableChinese text={note} />
+                </li>
               ))}
             </ul>
           </details>
@@ -584,7 +590,11 @@ export function DailyLesson(props: DailyLessonProps) {
                 onBusy={handleCourseBusy}
               />
             )}
-            {!model && <p className="lesson-notice">Chọn model trong Cài đặt để {teacher.vi} trả lời và sửa bài. Bạn vẫn có thể ghi âm để nhận dạng lời nói.</p>}
+            {!model && (
+              <p className="lesson-notice">
+                Chọn model trong Cài đặt để {teacher.vi} trả lời và sửa bài. Bạn vẫn có thể ghi âm để nhận dạng lời nói.
+              </p>
+            )}
             <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={teachingLevel} />
           </>
         )}
@@ -732,9 +742,15 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
       ) : (
         <>
           <p className="lesson-prompt">
-            Bạn từng nói <s><ReadableChinese text={item.original} /></s>. Hãy nói lại cho đúng.
+            Bạn từng nói{' '}
+            <s>
+              <ReadableChinese text={item.original} />
+            </s>
+            . Hãy nói lại cho đúng.
           </p>
-          <p className="lesson-hint"><ReadableChinese text={item.explanation} /></p>
+          <p className="lesson-hint">
+            <ReadableChinese text={item.explanation} />
+          </p>
           {result && (
             <p className={result.ok ? 'lesson-ok' : 'lesson-bad'}>
               {result.ok ? 'Chuẩn rồi!' : `Mình nghe: "${result.heard}". Cách nói đúng: ${item.corrected}`}
@@ -854,6 +870,7 @@ function VocabSection(props: SharedProps) {
       </p>
       <HanViet word={word.word} />
       <p className="lesson-meaning">{word.meaning}</p>
+      <HanziWriterCard word={word.word} />
       <p className="lesson-example">
         <Han text={word.example} pinyinText={word.examplePinyin} />
       </p>
@@ -941,8 +958,12 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
       <p className="lesson-count">
         Mẫu câu {session.item + 1}/{content.patterns.length}
       </p>
-      <p className="lesson-word"><ReadableChinese text={pattern.pattern} /></p>
-      <p className="lesson-meaning"><ReadableChinese text={pattern.explanation} /></p>
+      <p className="lesson-word">
+        <ReadableChinese text={pattern.pattern} />
+      </p>
+      <p className="lesson-meaning">
+        <ReadableChinese text={pattern.explanation} />
+      </p>
       <p className="lesson-example">
         <Han text={pattern.example} pinyinText={pattern.examplePinyin} />
         <SlowListen onPlay={() => say(pattern.example)} />
@@ -1151,7 +1172,9 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
             {line.role === 'assistant' ? (
               <ListenFirstLine text={line.text} translation={line.translation} onPlay={() => say(line.text)} hidden={mode === 'roleplay'} />
             ) : (
-              <p><Han text={line.text} /></p>
+              <p>
+                <Han text={line.text} />
+              </p>
             )}
             {line.corrections?.map((c, j) => (
               <LessonCorrection key={j} correction={c} />

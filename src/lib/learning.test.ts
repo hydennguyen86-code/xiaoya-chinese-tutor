@@ -47,3 +47,58 @@ test('broken pronunciation schedules are discarded and duplicate IDs cannot mult
     Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: original });
   }
 });
+
+test('reviews are scheduled by FSRS: intervals grow when remembered and reset when forgotten', async () => {
+  const { reviewWord, emptyLearning, recordLearningTurn } = await import('./learning.ts');
+  const t0 = Date.parse('2026-11-01T08:00:00Z');
+  let profile = recordLearningTurn(
+    emptyLearning(),
+    '我喜欢苹果',
+    { corrections: [], vocab: [{ word: '苹果', pinyin: 'píngguǒ', meaning: 'quả táo' }] },
+    { timestamp: t0 },
+  );
+  const word = () => profile.words.find((w) => w.word === '苹果')!;
+  assert.equal(word().box, 0);
+  profile = reviewWord(profile, '苹果', true, t0);
+  const first = word();
+  assert.ok(first.fsrs, 'FSRS state is stored');
+  assert.ok(first.dueAt > t0 && first.dueAt - t0 < 2 * 86400000, 'a first Good review comes back within two days');
+  const t1 = first.dueAt + 1000;
+  profile = reviewWord(profile, '苹果', true, t1);
+  const second = word();
+  assert.ok(second.dueAt - t1 > first.dueAt - t0, 'the interval grows');
+  assert.ok(second.box >= first.box);
+  const t2 = second.dueAt + 1000;
+  profile = reviewWord(profile, '苹果', false, t2);
+  const lapsed = word();
+  assert.equal(lapsed.lapses, 1);
+  assert.ok(lapsed.dueAt - t2 < 86400000, 'a forgotten word comes back the same day');
+  assert.equal(lapsed.box, 1);
+  assert.equal(lapsed.reviews, 3);
+});
+
+test('a word last reviewed under the old ladder keeps a sensible schedule after the switch', async () => {
+  const { reviewWord, emptyLearning } = await import('./learning.ts');
+  const t0 = Date.parse('2026-11-01T08:00:00Z');
+  const legacy = {
+    ...emptyLearning(t0),
+    words: [
+      {
+        word: '学校',
+        pinyin: 'xuéxiào',
+        meaning: 'trường học',
+        count: 3,
+        firstSeen: t0 - 20 * 86400000,
+        lastSeen: t0,
+        box: 4,
+        dueAt: t0,
+        reviews: 4,
+        lapses: 0,
+      },
+    ],
+  };
+  const next = reviewWord(legacy, '学校', true, t0).words[0];
+  assert.ok(next.fsrs, 'the review creates FSRS state');
+  assert.ok(next.dueAt - t0 > 10 * 86400000, 'a word that held for two weeks is not asked again tomorrow');
+  assert.ok(next.dueAt - t0 <= 120 * 86400000);
+});

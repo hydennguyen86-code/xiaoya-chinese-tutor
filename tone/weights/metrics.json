@@ -1,0 +1,151 @@
+{
+  "backbone": "TencentGameMate/chinese-wav2vec2-base",
+  "layer": 8,
+  "results": {
+    "pitch": {
+      "valAccuracy": 0.4653109908103943,
+      "human": {
+        "human-huan": {
+          "agreement": 0.7142857142857143,
+          "agreementWithExpected": 0.6571428571428571,
+          "thresholds": [
+            {
+              "cut": 0.0,
+              "coverage": 1.0,
+              "agreement": 0.7142857142857143
+            },
+            {
+              "cut": 0.5,
+              "coverage": 0.8142857142857143,
+              "agreement": 0.7192982456140351
+            },
+            {
+              "cut": 0.6,
+              "coverage": 0.6714285714285714,
+              "agreement": 0.7659574468085106
+            },
+            {
+              "cut": 0.7,
+              "coverage": 0.6142857142857143,
+              "agreement": 0.7906976744186046
+            },
+            {
+              "cut": 0.8,
+              "coverage": 0.4,
+              "agreement": 0.8571428571428571
+            },
+            {
+              "cut": 0.9,
+              "coverage": 0.1,
+              "agreement": 1.0
+            }
+          ],
+          "byKind": {
+            "single": 0.675,
+            "word": 0.7666666666666667
+          },
+          "syllables": 70
+        }
+      },
+      "dim": 35
+    },
+    "speech": {
+      "valAccuracy": 0.8754485845565796,
+      "human": {
+        "human-huan": {
+          "agreement": 0.6571428571428571,
+          "agreementWithExpected": 0.6571428571428571,
+          "thresholds": [
+            {
+              "cut": 0.0,
+              "coverage": 1.0,
+              "agreement": 0.6571428571428571
+            },
+            {
+              "cut": 0.5,
+              "coverage": 0.8714285714285714,
+              "agreement": 0.6885245901639344
+            },
+            {
+              "cut": 0.6,
+              "coverage": 0.7857142857142857,
+              "agreement": 0.7272727272727273
+            },
+            {
+              "cut": 0.7,
+              "coverage": 0.6285714285714286,
+              "agreement": 0.75
+            },
+            {
+              "cut": 0.8,
+              "coverage": 0.42857142857142855,
+              "agreement": 0.7
+            },
+            {
+              "cut": 0.9,
+              "coverage": 0.2571428571428571,
+              "agreement": 0.7222222222222222
+            }
+          ],
+          "byKind": {
+            "single": 0.625,
+            "word": 0.7
+          },
+          "syllables": 70
+        }
+      },
+      "dim": 1536
+    },
+    "both": {
+      "valAccuracy": 0.8823265433311462,
+      "human": {
+        "human-huan": {
+          "agreement": 0.7,
+          "agreementWithExpected": 0.7,
+          "thresholds": [
+            {
+              "cut": 0.0,
+              "coverage": 1.0,
+              "agreement": 0.7
+            },
+            {
+              "cut": 0.5,
+              "coverage": 0.9142857142857143,
+              "agreement": 0.75
+            },
+            {
+              "cut": 0.6,
+              "coverage": 0.8142857142857143,
+              "agreement": 0.7719298245614035
+            },
+            {
+              "cut": 0.7,
+              "coverage": 0.7285714285714285,
+              "agreement": 0.7647058823529411
+            },
+            {
+              "cut": 0.8,
+              "coverage": 0.5714285714285714,
+              "agreement": 0.775
+            },
+            {
+              "cut": 0.9,
+              "coverage": 0.32857142857142857,
+              "agreement": 0.7391304347826086
+            }
+          ],
+          "byKind": {
+            "single": 0.725,
+            "word": 0.6666666666666666
+          },
+          "syllables": 70
+        }
+      },
+      "dim": 1571
+    }
+  },
+  "holdoutVoices": [
+    "Grandpa (Chinese (China mainland))",
+    "zh-CN-YunxiNeural"
+  ]
+}

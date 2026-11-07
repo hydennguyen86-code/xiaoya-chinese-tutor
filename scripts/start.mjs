@@ -44,9 +44,13 @@ try {
   if (ramGB >= 16) {
     console.log(`RAM ${ramGB} GB: Đủ để chạy model local qwen3.5:4b. Gợi ý: ollama pull qwen3.5:4b (tốc độ còn phụ thuộc CPU/GPU).`);
   } else if (ramGB >= 8) {
-    console.log(`RAM ${ramGB} GB: Cần 16 GB để chạy model AI local và chấm điểm nói mượt mà. Avatar tự chuyển sang chế độ nhẹ (3D). Xem gợi ý trong Kiểm tra hệ thống; cân nhắc API hoặc chỉ học bài cố định.`);
+    console.log(
+      `RAM ${ramGB} GB: Cần 16 GB để chạy model AI local và chấm điểm nói mượt mà. Avatar tự chuyển sang chế độ nhẹ (3D). Xem gợi ý trong Kiểm tra hệ thống; cân nhắc API hoặc chỉ học bài cố định.`,
+    );
   } else {
-    console.log(`RAM ${ramGB} GB: Máy cần ít nhất 16 GB RAM để chạy model AI local. Avatar đã tự chuyển sang chế độ nhẹ (3D). Ưu tiên bài cố định hoặc API.`);
+    console.log(
+      `RAM ${ramGB} GB: Máy cần ít nhất 16 GB RAM để chạy model AI local. Avatar đã tự chuyển sang chế độ nhẹ (3D). Ưu tiên bài cố định hoặc API.`,
+    );
   }
   const child = spawn(process.execPath, ['server/index.mjs'], {
     stdio: ['inherit', 'inherit', 'inherit', 'ipc'],

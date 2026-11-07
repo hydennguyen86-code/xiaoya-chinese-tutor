@@ -4,7 +4,7 @@ import { LearningCharts } from './LearningCharts';
 import { FluencyHistory } from './FluencyHistory';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { AnalysisReport, LearningProfile, MistakeCategory, SkillKey } from '../types';
+import type { AnalysisReport, LearningProfile, MistakeCategory, Progress, SkillKey } from '../types';
 import {
   SKILL_LABELS,
   daysUntil,
@@ -21,11 +21,20 @@ import {
 } from '../lib/learning';
 import { AlertIcon, ArrowRightIcon, BookIcon, CheckIcon, CloseIcon, FlameIcon, PlayIcon, SparkIcon, VolumeIcon } from './Icons';
 import { useTeacher } from '../lib/persona';
+import { buildParentReport } from '../lib/parentReport';
+import { benchmarkDue, loadBenchmark } from '../lib/benchmark';
+import { BenchmarkTest } from './BenchmarkTest';
 
 type LearningTab = 'overview' | 'review' | 'mistakes' | 'analysis';
 
 interface LearningDialogProps {
   learnerId: string;
+  learnerName: string;
+  voice: string;
+  localStt: boolean;
+  progress: Progress;
+  /** a child's profile: the report is addressed to the parents */
+  kid?: boolean;
   open: boolean;
   learning: LearningProfile;
   levelLabel: string;
@@ -76,6 +85,59 @@ function skillLabel(skill: SkillKey) {
 
 const NEXT_INTERVAL_DAYS = [1, 3, 7, 14, 30, 30];
 
+function ParentReportCard({
+  name,
+  learnerId,
+  learning,
+  progress,
+  kid,
+}: {
+  name: string;
+  learnerId: string;
+  learning: LearningProfile;
+  progress: Progress;
+  kid: boolean;
+}) {
+  const [copied, setCopied] = useState(false);
+  const report = useMemo(() => buildParentReport(name, learning, progress, learnerId, { kid }), [name, learning, progress, learnerId, kid]);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(report.lines.join('\n'));
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  };
+  return (
+    <section className="learning-section parent-report">
+      <div className="learning-section-head">
+        <div>
+          <h3>{kid ? 'Báo cáo cho bố mẹ (7 ngày)' : 'Tóm tắt 7 ngày'}</h3>
+          <p>Tính từ dữ liệu đã lưu trên máy: số buổi, lượt nói, từ mới, lỗi phát âm lặp lại. Không xếp loại, không điểm số.</p>
+        </div>
+      </div>
+      <ol>
+        {report.lines.map((line, i) => (
+          <li key={i}>{line}</li>
+        ))}
+      </ol>
+      {(progress.stickers || []).length > 0 && (
+        <div className="sticker-shelf" aria-label="Sticker đã nhận">
+          {(progress.stickers || []).slice(-16).map((s) => (
+            <span key={s.date} title={s.date}>
+              {s.emoji}
+            </span>
+          ))}
+        </div>
+      )}
+      <button className="learning-secondary" type="button" onClick={() => void copy()}>
+        {copied ? 'Đã sao chép' : 'Sao chép báo cáo'}
+      </button>
+    </section>
+  );
+}
+
 function EmptyState({ title, description, children }: { title: string; description: string; children?: ReactNode }) {
   return (
     <div className="learning-empty">
@@ -115,6 +177,11 @@ function WeaknessCard({ report }: { report: AnalysisReport }) {
 
 export function LearningDialog({
   learnerId,
+  learnerName,
+  voice,
+  localStt,
+  progress,
+  kid = false,
   open,
   learning,
   levelLabel,
@@ -131,6 +198,8 @@ export function LearningDialog({
 }: LearningDialogProps) {
   const teacher = useTeacher();
   const [tab, setTab] = useState<LearningTab>('overview');
+  const [benchmarkOpen, setBenchmarkOpen] = useState(false);
+  const benchmarkIsDue = useMemo(() => benchmarkDue(loadBenchmark(learnerId)), [learnerId, benchmarkOpen]);
   const [session, setSession] = useState<string[]>([]);
   const [reviewed, setReviewed] = useState(0);
   const [revealed, setRevealed] = useState(false);
@@ -259,6 +328,26 @@ export function LearningDialog({
                   <small>ngày học</small>
                 </div>
               </div>
+
+              <ParentReportCard name={learnerName} learnerId={learnerId} learning={learning} progress={progress} kid={kid} />
+              {benchmarkOpen ? (
+                <BenchmarkTest learnerId={learnerId} voice={voice} localStt={localStt} onClose={() => setBenchmarkOpen(false)} />
+              ) : (
+                <section className="learning-section">
+                  <div className="learning-section-head">
+                    <div>
+                      <h3>Bài kiểm tra mốc</h3>
+                      <p>
+                        16 mục cố định (nghe thanh, nghĩa, đọc to) để so với chính mình sau mỗi 4 tuần.
+                        {benchmarkIsDue ? ' Đang đến hẹn.' : ''}
+                      </p>
+                    </div>
+                    <button className="learning-secondary" type="button" onClick={() => setBenchmarkOpen(true)}>
+                      {benchmarkIsDue ? 'Làm bài kiểm tra mốc' : 'Xem kết quả'}
+                    </button>
+                  </div>
+                </section>
+              )}
 
               <div className="learning-stats">
                 <div>

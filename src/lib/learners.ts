@@ -3,12 +3,15 @@ import { CHAT_KEY, PROGRESS_KEY, scopedKey } from './storage';
 import { LEARNING_KEY } from './learning';
 
 export type LearnerGender = 'female' | 'male';
+/** 'kid': a child learner — shorter turns, playful tutor, bigger UI, stickers, parent report */
+export type LearnerAudience = 'adult' | 'kid';
 
 export interface Learner {
   id: string;
   name: string;
   level: Level;
   gender: LearnerGender;
+  audience: LearnerAudience;
   createdAt: number;
 }
 
@@ -53,6 +56,7 @@ function readRegistry(): Registry {
         name: item.name.trim().slice(0, NAME_MAX) || 'Học viên',
         level: LEVELS.has(item.level) ? item.level : 'HSK5-6',
         gender: asGender(item.gender),
+        audience: item.audience === 'kid' ? 'kid' : 'adult',
         createdAt: Number.isFinite(item.createdAt) ? item.createdAt : 0,
       }));
     return {
@@ -78,9 +82,7 @@ export function loadLearners(): Learner[] {
 
 export function loadActiveLearnerId(): string {
   const registry = readRegistry();
-  return registry.learners.some((item) => item.id === registry.activeId)
-    ? registry.activeId
-    : '';
+  return registry.learners.some((item) => item.id === registry.activeId) ? registry.activeId : '';
 }
 
 export function setActiveLearner(id: string) {
@@ -104,13 +106,14 @@ function inheritLegacyData(id: string) {
   }
 }
 
-export function createLearner(name: string, level: Level, gender: LearnerGender = 'female'): Learner {
+export function createLearner(name: string, level: Level, gender: LearnerGender = 'female', audience: LearnerAudience = 'adult'): Learner {
   const registry = readRegistry();
   const learner: Learner = {
     id: newId(),
     name: name.trim().slice(0, NAME_MAX) || 'Học viên',
     level: LEVELS.has(level) ? level : 'HSK5-6',
     gender: GENDERS.has(gender) ? gender : 'female',
+    audience: audience === 'kid' ? 'kid' : 'adult',
     createdAt: Date.now(),
   };
   if (registry.learners.length === 0) inheritLegacyData(learner.id);
@@ -121,13 +124,14 @@ export function createLearner(name: string, level: Level, gender: LearnerGender 
   return learner;
 }
 
-export function updateLearner(id: string, patch: { level?: Level; gender?: LearnerGender }) {
+export function updateLearner(id: string, patch: { level?: Level; gender?: LearnerGender; audience?: LearnerAudience }) {
   const registry = readRegistry();
   const learners = registry.learners.map((item) => {
     if (item.id !== id) return item;
     const level = patch.level && LEVELS.has(patch.level) ? patch.level : item.level;
     const gender = patch.gender && GENDERS.has(patch.gender) ? patch.gender : item.gender;
-    return item.level === level && item.gender === gender ? item : { ...item, level, gender };
+    const audience = patch.audience === 'kid' || patch.audience === 'adult' ? patch.audience : item.audience;
+    return item.level === level && item.gender === gender && item.audience === audience ? item : { ...item, level, gender, audience };
   });
   writeRegistry({ ...registry, learners });
 }

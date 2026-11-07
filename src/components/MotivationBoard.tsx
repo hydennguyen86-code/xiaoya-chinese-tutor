@@ -12,6 +12,7 @@ export interface MotivationRow {
   streak: number;
   completed: number | null;
   xp: number;
+  stickers: number;
 }
 
 /** Read each learner's existing counters without changing their data. */
@@ -27,6 +28,7 @@ export function motivationRows(learners: Learner[]): MotivationRow[] {
       streak: progress.streak,
       completed: lesson && Number.isFinite(lesson.completed) ? Math.max(0, lesson.completed) : null,
       xp: progress.xp,
+      stickers: (progress.stickers || []).length,
     };
   });
 }
@@ -50,6 +52,7 @@ export function MotivationTable({ rows, activeId }: { rows: MotivationRow[]; act
             <th scope="col">Chuỗi ngày</th>
             <th scope="col">Buổi hoàn thành</th>
             <th scope="col">XP</th>
+            <th scope="col">Sticker</th>
           </tr>
         </thead>
         <tbody>
@@ -69,6 +72,7 @@ export function MotivationTable({ rows, activeId }: { rows: MotivationRow[]; act
               <td data-label="XP">
                 <strong>{row.xp}</strong>
               </td>
+              <td data-label="Sticker">{row.stickers ? `${row.stickers} 🌟` : '—'}</td>
             </tr>
           ))}
         </tbody>

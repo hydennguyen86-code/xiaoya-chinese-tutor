@@ -18,6 +18,12 @@ interface ChatPanelProps {
   draft: string;
   listening: boolean;
   micSupported: boolean;
+  /** hands-free conversation: mic stays open, talking interrupts the avatar */
+  handsFree?: boolean;
+  /** local speech-to-text and Web Audio are available, so the mic can stay open */
+  handsFreeSupported?: boolean;
+  handsFreeState?: 'off' | 'listening' | 'recording' | 'transcribing';
+  onHandsFreeToggle?: () => void;
   canSend: boolean;
   showPinyin: boolean;
   todayTurns: number;
@@ -186,7 +192,7 @@ function MessageItem({
                         <span className="vocab-word">{item.word}</span>
                         <span className="vocab-pinyin">{item.pinyin}</span>
                       </div>
-                      <HanViet word={item.word}/>
+                      <HanViet word={item.word} />
                       <p>{item.meaning}</p>
                     </div>
                   ))}
@@ -230,6 +236,10 @@ export function ChatPanel({
   draft,
   listening,
   micSupported,
+  handsFree = false,
+  handsFreeSupported = false,
+  handsFreeState = 'off',
+  onHandsFreeToggle,
   canSend,
   showPinyin,
   todayTurns,
@@ -354,6 +364,30 @@ export function ChatPanel({
       )}
 
       <footer className="composer-area">
+        {handsFree && !listening && (
+          <div className={`listening-strip is-handsfree is-${handsFreeState}`}>
+            <span className="listening-wave" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+            <span>
+              {handsFreeState === 'recording'
+                ? 'Đang ghi… ngừng một chút là gửi.'
+                : handsFreeState === 'transcribing'
+                  ? 'Đang nhận dạng câu bạn vừa nói…'
+                  : handsFreeState === 'listening'
+                    ? phase === 'speaking'
+                      ? `${teacher.vi} đang nói — cứ nói là ${teacher.vi} dừng lại nghe bạn.`
+                      : 'Mic đang mở: nói tiếng Trung là gửi, không cần bấm nút.'
+                    : 'Đang mở micro…'}
+            </span>
+            <button type="button" onClick={onHandsFreeToggle}>
+              Tắt
+            </button>
+          </div>
+        )}
         {listening && (
           <div className="listening-strip">
             <span className="listening-wave" aria-hidden="true">
@@ -400,6 +434,21 @@ export function ChatPanel({
             <SendIcon size={19} />
           </button>
         </div>
+        {onHandsFreeToggle && handsFreeSupported && (
+          <button
+            type="button"
+            className={`handsfree-toggle${handsFree ? ' is-on' : ''}`}
+            onClick={onHandsFreeToggle}
+            aria-pressed={handsFree}
+            title={
+              handsFree
+                ? 'Tắt chế độ nói liên tục'
+                : 'Mic mở suốt buổi: nói là gửi, không cần bấm; nói trong lúc avatar đang nói là avatar dừng lại nghe'
+            }
+          >
+            <MicIcon size={13} /> {handsFree ? 'Nói liên tục: đang bật' : 'Nói liên tục'}
+          </button>
+        )}
         <div className="composer-hint">
           <span>Enter để gửi · Shift + Enter để xuống dòng</span>
           <span className="composer-voice-note">Giọng Edge · có dự phòng</span>

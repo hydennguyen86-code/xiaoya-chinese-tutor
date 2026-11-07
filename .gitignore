@@ -21,6 +21,9 @@ public/avatars/personal*
 /vendor/
 /models/
 
+# Python environment of the tone classifier service (npm run setup:tone)
+/.venv-tone/
+
 # recordings remain private even with a custom data folder inside the repo
 **/eval-recordings/
 

@@ -2,7 +2,8 @@ import { energyTiming } from './audioTiming.mjs';
 import { mediaToolPath } from './mediaTools.mjs';
 import { spawn } from 'node:child_process';
 import { pinyin } from 'pinyin-pro';
-import { erhuaIndices } from './listeningPinyin.mjs';
+import { erhuaIndices, hanOnly, pauseAfter, readSentence } from './listeningPinyin.mjs';
+import { mergeVerdict, scoreWithModel } from './toneModel.mjs';
 
 // Tone feedback for a sentence the learner read aloud. Everything runs on this
 // computer: ffmpeg decodes the recording, YIN tracks the pitch, the utterance
@@ -325,18 +326,47 @@ export function classifyIsolated(f, knownRange, { single = true, first = false }
   return 0;
 }
 
-/** Expected tone per Han character, with 一/不 and 3-3 sandhi applied; 儿 hoá (哪儿) gộp một âm tiết. */
+/**
+ * Expected tone per Han character as spoken: pinyin-pro readings (一/不 sandhi),
+ * the lesson neutral-tone policy (expected 0), and 3-3 sandhi lowered left to
+ * right but never across a punctuation pause (the same reading the listening
+ * drills teach, see listeningPinyin.readSentence). 儿 hoá (哪儿) gộp một âm tiết.
+ */
 export function expectedTones(text) {
-  const chars = [...text].filter((ch) => HAN.test(ch));
-  const tones = pinyin(chars.join(''), { pattern: 'num', type: 'array' }).map((t) => Number(t) || 0);
-  const marks = pinyin(chars.join(''), { type: 'array' });
+  const han = hanOnly(text);
+  const chars = [...han];
+  if (!chars.length) return [];
+  let read = null;
+  try {
+    read = readSentence(han, [], [], { allSandhi: true, pauses: pauseAfter(text) });
+  } catch {
+    read = null;
+  }
+  if (read && read.count === chars.length - erhuaIndices(han).size) {
+    // pinyin keeps the dictionary tone mark (nǐ hǎo); `expected` is the tone as spoken (2, 3)
+    const parts = read.citationParts;
+    const erhua = erhuaIndices(han);
+    const out = [];
+    let k = 0;
+    for (let i = 0; i < chars.length; i += 1) {
+      if (erhua.has(i)) {
+        out[out.length - 1].char += '儿';
+        continue;
+      }
+      const tone = read.tones[k];
+      out.push({ char: chars[i], pinyin: parts[k], expected: tone >= 1 && tone <= 4 ? tone : 0 });
+      k += 1;
+    }
+    return out;
+  }
+  // fallback: plain pinyin-pro reading with the simple 3-3 rule
+  const tones = pinyin(han, { pattern: 'num', type: 'array' }).map((t) => Number(t) || 0);
+  const marks = pinyin(han, { type: 'array' });
   for (let i = tones.length - 2; i >= 0; i -= 1) {
     if (tones[i] === 3 && tones[i + 1] === 3) tones[i] = 2;
   }
   const out = chars.map((char, i) => ({ char, pinyin: marks[i], expected: tones[i] }));
-  // 儿 (thanh 2) sau các chữ trong bảng ERHUA chỉ là đuôi "r": người học đọc một âm tiết,
-  // nên bộ chấm cũng chia một đoạn và chấm thanh của chữ đứng trước.
-  const erhua = erhuaIndices(chars.join(''));
+  const erhua = erhuaIndices(han);
   for (const i of [...erhua].sort((a, b) => b - a)) {
     out[i - 1] = { char: chars[i - 1] + '儿', pinyin: `${marks[i - 1]}r`, expected: tones[i - 1] };
     out.splice(i, 1);
@@ -366,14 +396,18 @@ function contour(f0, median, points = 60) {
 
 /**
  * Analyse a recording of `target`.
- * - Words of 1–2 syllables get a tone verdict per syllable.
- * - Longer sentences get the learner's pitch curve for visual comparison with
- *   a model reading (connected-speech tones are too context-dependent to grade
- *   reliably with a rule-based checker; see eval/tones.mjs).
+ * - With the tone model service running (tone/tone_service.py), every syllable
+ *   of a word or a sentence gets a verdict from the classifier, cross-checked
+ *   against the pitch-shape rules for 1–2 syllable words (see toneModel.mjs).
+ * - Without it, words of 1–2 syllables get a rule-based verdict per syllable
+ *   and longer sentences only get the learner's pitch curve for visual
+ *   comparison with a model reading (connected-speech tones are too
+ *   context-dependent for the rules; see eval/tones.mjs).
  * `profile` is the speaker's accumulated pitch histogram (or null); the
- * updated profile is returned so the caller can store it.
+ * updated profile is returned so the caller can store it. `scorer` replaces
+ * the model service (tests); `scorer: null` disables it.
  */
-export async function analyseTones(audio, target, { profile = null, debug = false, pcm: decoded = null } = {}) {
+export async function analyseTones(audio, target, { profile = null, debug = false, pcm: decoded = null, scorer = scoreWithModel } = {}) {
   const syllables = expectedTones(target);
   const pcm = decoded ?? (await decodeToPcm(audio));
   const { f0, rms, median } = pitchTrack(pcm);
@@ -397,8 +431,19 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     end: Math.min(duration, (b * HOP) / SR),
   }));
   Object.assign(base, { timing: energyTiming(pcm), duration, segments, curve: contour(f0, median), boundaryMethod: 'energy-estimate' });
-  if (syllables.length > 2) {
-    return { ...base, mode: 'sentence', curve: contour(f0, median) };
+  const mode = syllables.length > 2 ? 'sentence' : 'word';
+  const modelVerdicts =
+    parts && scorer
+      ? await scorer(
+          pcm,
+          segments.map((s, i) => ({
+            ...s,
+            pos: segments.length === 1 ? 'single' : i === 0 ? 'first' : i === segments.length - 1 ? 'last' : 'mid',
+          })),
+        ).catch(() => null)
+      : null;
+  if (mode === 'sentence' && !modelVerdicts) {
+    return { ...base, mode, method: 'rules' };
   }
 
   // judge high/low only against a profile that is this speaker's voice
@@ -406,13 +451,19 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   const ref = range ? range.median : median;
   const low = range ? semis(range.low, ref) : -3;
   const high = range ? semis(range.high, ref) : 3;
-  if (!parts) return { ...base, mode: 'word', note: 'Không đủ âm thanh để chấm. Đọc to, rõ hơn nhé.' };
+  if (!parts) return { ...base, mode, method: 'rules', note: 'Không đủ âm thanh để chấm. Đọc to, rõ hơn nhé.' };
   const result = syllables.map((s, i) => {
     const [a, b] = parts[i];
     const frames = f0.slice(a, b + 1).map((v) => (v ? semis(v, ref) : null));
     const features = toneFeatures(frames, low, high);
     const single = syllables.length === 1;
-    const heard = s.expected ? classifyIsolated(features, Boolean(range), { single, first: i === 0 }) : 0;
+    // the pitch-shape rules only cover 1–2 syllable words
+    const rule = mode === 'word' && s.expected ? classifyIsolated(features, Boolean(range), { single, first: i === 0 }) : null;
+    if (modelVerdicts) {
+      const verdict = mergeVerdict(s.expected, modelVerdicts[i], rule);
+      return { ...s, ...verdict, ...(debug ? { features, probs: modelVerdicts[i].probs, rule } : {}) };
+    }
+    const heard = rule ?? 0;
     // A mismatch is only a failure when the measurement can actually support it:
     // before the speaker's pitch range is learned, on a short or creaky syllable,
     // and for the 2/3 pair inside a word (where the previous syllable drags the
@@ -420,15 +471,18 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     const sure = !heard || heard === s.expected || (Boolean(range) && features && features.frames >= 6 && features.voicedRatio >= 0.8);
     const confusable = !single && s.expected === 2 && heard === 3;
     const ok = s.expected && heard ? (heard === s.expected ? true : sure && !confusable ? false : null) : null;
-    return { ...s, heard, ok, ...(debug ? { features } : {}) };
+    return { ...s, heard, ok, method: 'rules', ...(debug ? { features } : {}) };
   });
   const scored = result.filter((s) => s.ok !== null);
   return {
     ...base,
-    mode: 'word',
+    mode,
+    method: modelVerdicts ? 'model' : 'rules',
     syllables: result,
     checked: scored.length,
     correct: scored.filter((s) => s.ok).length,
-    ...(range ? {} : { note: 'Mình chưa quen giọng bạn: nói thêm vài câu để mình phân biệt thanh 1 và thanh 3 chính xác hơn.' }),
+    ...(range || modelVerdicts
+      ? {}
+      : { note: 'Mình chưa quen giọng bạn: nói thêm vài câu để mình phân biệt thanh 1 và thanh 3 chính xác hơn.' }),
   };
 }

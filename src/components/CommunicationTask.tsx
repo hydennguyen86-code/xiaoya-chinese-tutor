@@ -122,18 +122,30 @@ export function CommunicationTask({ task, provider, model, level, ask, say, micR
       </p>
       <ul>
         {task.goals.map((g) => (
-          <li key={g}><ReadableChinese text={g} /></li>
+          <li key={g}>
+            <ReadableChinese text={g} />
+          </li>
         ))}
       </ul>
       <p className="lesson-hint">Tối đa 4 lượt. Thử tự nói trước khi xin gợi ý. Đánh giá do AI ước lượng.</p>
       <div className="lesson-chat">
         {dialog.map((d, i) => (
           <div key={i} className={`lesson-line is-${d.role}`}>
-            {d.role === 'assistant' ? <ListenFirstLine text={d.content} onPlay={() => say(d.content)} /> : <p><Han text={d.content} /></p>}
+            {d.role === 'assistant' ? (
+              <ListenFirstLine text={d.content} onPlay={() => say(d.content)} />
+            ) : (
+              <p>
+                <Han text={d.content} />
+              </p>
+            )}
           </div>
         ))}
       </div>
-      {hint && <p className="lesson-hint">Gợi ý: <ReadableChinese text={hint} /> (đã ghi nhận dùng gợi ý)</p>}
+      {hint && (
+        <p className="lesson-hint">
+          Gợi ý: <ReadableChinese text={hint} /> (đã ghi nhận dùng gợi ý)
+        </p>
+      )}
       {error && (
         <p role="alert" className="lesson-bad">
           {error}

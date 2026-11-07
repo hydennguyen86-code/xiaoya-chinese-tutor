@@ -19,15 +19,26 @@ const REPLY_LENGTH = {
   free: '3–5 句，像真人聊天一样展开，不必刻意压缩。学习者问解释、或要求复习时可以到 6 句。',
 };
 
-export function buildSystemPrompt(level = 'HSK5-6', gender = 'male') {
+// A child learner (audience 'kid'): very short turns, one concrete question,
+// playful and specific praise, topics from a child's day. The JSON contract and
+// the language split stay exactly the same.
+const KID_NOTE = `学习者是一个小孩（6–12 岁），母语是越南语，刚开始学中文。和小孩说话的方式：
+- 每句不超过 6 个字，一次只说 1–2 句，最后一句是一个很具体、很容易回答的问题（比如“你喜欢猫吗？”），不要问抽象的问题。
+- 话题来自小孩的生活：家人、动物、颜色、吃的、玩的、学校、天气。不要谈工作、新闻、考试。
+- 多用小孩已经会的词，新词一次最多一个，并在 vocab 里给出。
+- 夸奖要具体（“‘猫’说得很清楚！”），不要每句都夸；小孩说错时，用正确的说法轻轻地回应一次，不解释语法。
+- 可以偶尔用一点游戏感（猜一猜、数一数、我说你跟），但 reply 仍然只是中文口语，不要加表情符号。
+- translation 用小孩听得懂的越南语，短句。suggestion 也要很短（3–6 个字）。`;
+
+export function buildSystemPrompt(level = 'HSK5-6', gender = 'male', audience = 'adult') {
   const levelNote = LEVELS[level] || LEVELS['HSK5-6'];
-  const lengthNote = REPLY_LENGTH[level] || REPLY_LENGTH['HSK5-6'];
+  const lengthNote = audience === 'kid' ? '1–2 句，每句不超过 6 个字。' : REPLY_LENGTH[level] || REPLY_LENGTH['HSK5-6'];
   const teacher = TEACHERS[gender] || TEACHERS.male;
 
   return `你是“${teacher.name}”（${teacher.pinyin}），${teacher.genderWord}，一位温柔、自然、有点幽默感的中文口语陪练。你正在和一个越南学习者进行语音对话，帮助他每天开口说中文。
 
 学习者水平：${levelNote}
-
+${audience === 'kid' ? `\n${KID_NOTE}\n` : ''}
 对话原则：
 - 像朋友聊天一样自然，不要像课本，不要长篇说教。顺着学习者的话题聊，每次只问一个轻松的问题。
 - reply 用简体中文口语，适合直接朗读。长度按学习者水平：${lengthNote} 仍是口语，不要写成文章。不要用 emoji、markdown、拼音、越南语或舞台说明。
@@ -85,14 +96,14 @@ export function sanitizeHistory(messages) {
     .slice(-14);
 }
 
-export function buildMessages(level, history, learningDigest = '', gender = 'male') {
+export function buildMessages(level, history, learningDigest = '', gender = 'male', audience = 'adult') {
   const memory = String(learningDigest ?? '')
     .replace(/\u0000/g, '')
     .trim()
     .slice(0, 2200);
   const system = memory
-    ? `${buildSystemPrompt(level, gender)}\n\n${memory}`
-    : buildSystemPrompt(level, gender);
+    ? `${buildSystemPrompt(level, gender, audience)}\n\n${memory}`
+    : buildSystemPrompt(level, gender, audience);
   return [
     { role: 'system', content: system },
     ...sanitizeHistory(history),

@@ -1461,6 +1461,40 @@ svg {
   color: var(--terracotta);
 }
 
+.listening-strip.is-handsfree {
+  background: rgba(196, 122, 90, 0.08);
+  border-color: rgba(196, 122, 90, 0.16);
+}
+
+.listening-strip.is-handsfree.is-recording {
+  background: rgba(111, 128, 104, 0.14);
+}
+
+.listening-strip.is-handsfree.is-listening .listening-wave i {
+  animation-play-state: paused;
+  opacity: 0.45;
+}
+
+.handsfree-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 8px 3px 0;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(111, 128, 104, 0.22);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--sage-deep);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.handsfree-toggle.is-on {
+  background: var(--sage-deep, #4f6049);
+  border-color: transparent;
+  color: #fff;
+}
+
 .listening-wave {
   display: inline-flex;
   align-items: center;
@@ -5565,4 +5599,297 @@ body {
   .voice-source-notice {
     right: 6px;
   }
+}
+
+/* ---- child learner profile ---- */
+.learner-kid-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 6px 0 2px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(111, 128, 104, 0.18);
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.learner-kid-toggle input {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--terracotta, #c47a5a);
+}
+
+.learner-kid-toggle span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.learner-kid-toggle small {
+  font-size: 10.5px;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+/* bigger text and targets for a child: the chat column, lesson cards and the mic */
+body.kid-mode .chat-list,
+body.kid-mode .lesson-card {
+  font-size: 1.12em;
+}
+
+body.kid-mode .message-text,
+body.kid-mode .lesson-word,
+body.kid-mode .lesson-example {
+  font-size: 1.18em;
+  line-height: 1.6;
+}
+
+body.kid-mode .mic-button {
+  transform: scale(1.18);
+}
+
+body.kid-mode .composer textarea {
+  font-size: 1.1em;
+}
+
+body.kid-mode .handsfree-toggle,
+body.kid-mode .listening-strip {
+  font-size: 11.5px;
+}
+
+.sticker-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sticker-shelf span {
+  padding: 3px 5px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.parent-report {
+  margin-top: 12px;
+}
+
+.parent-report ol {
+  margin: 6px 0 8px;
+  padding-left: 20px;
+  line-height: 1.55;
+}
+
+.parent-report .learning-secondary {
+  margin-right: 8px;
+}
+
+/* ---- hanzi writing ---- */
+.hanzi-writer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.hanzi-writer-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 14px;
+  background:
+    linear-gradient(to right, rgba(111, 128, 104, 0.12) 1px, transparent 1px) 50% 0 / 50% 100% no-repeat,
+    linear-gradient(to bottom, rgba(111, 128, 104, 0.12) 1px, transparent 1px) 0 50% / 100% 50% no-repeat,
+    rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(111, 128, 104, 0.2);
+  touch-action: none;
+}
+
+.hanzi-writer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.hanzi-writer-controls button {
+  padding: 6px 10px;
+  border-radius: 9px;
+  border: 1px solid rgba(111, 128, 104, 0.22);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sage-deep, #4f6049);
+}
+
+.hanzi-writer-controls button.is-active {
+  background: var(--sage-deep, #4f6049);
+  color: #fff;
+  border-color: transparent;
+}
+
+.hanzi-writer-chars {
+  display: flex;
+  gap: 4px;
+}
+
+.hanzi-writer-chars button {
+  min-width: 34px;
+  font-size: 15px;
+}
+
+.hanzi-writer-status {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+body.kid-mode .hanzi-writer-box {
+  width: 190px;
+  height: 190px;
+}
+
+/* ---- graded reading ---- */
+.reading-practice {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(111, 128, 104, 0.14);
+}
+
+.reading-practice h4 small {
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.reading-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 1px;
+  margin: 6px 0;
+  font-size: 1.35em;
+  line-height: 1.7;
+}
+
+.reading-speak {
+  margin-right: 6px;
+  padding: 0 4px;
+  border: none;
+  background: transparent;
+  font-size: 0.75em;
+}
+
+.reading-word {
+  padding: 0 2px;
+  border: none;
+  border-bottom: 2px dotted rgba(111, 128, 104, 0.35);
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.reading-word.is-plain {
+  border-bottom-color: transparent;
+}
+
+.reading-word.is-picked {
+  background: rgba(196, 122, 90, 0.18);
+  border-radius: 6px;
+}
+
+.reading-vi {
+  flex-basis: 100%;
+  font-size: 0.6em;
+  opacity: 0.75;
+}
+
+.reading-gloss {
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(196, 122, 90, 0.1);
+  font-size: 12.5px;
+}
+
+.reading-gloss button {
+  margin-left: 6px;
+  border: none;
+  background: transparent;
+}
+
+.reading-question {
+  margin-top: 10px;
+}
+
+.reading-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.reading-options button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(111, 128, 104, 0.25);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 1.1em;
+}
+
+.reading-options button.is-right {
+  background: rgba(111, 128, 104, 0.25);
+}
+
+.reading-options button.is-wrong {
+  background: rgba(196, 122, 90, 0.25);
+}
+
+body.kid-mode .reading-sentence {
+  font-size: 1.6em;
+}
+
+/* ---- milestone test ---- */
+.benchmark {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(111, 128, 104, 0.14);
+}
+
+.benchmark-table {
+  width: 100%;
+  margin: 8px 0;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.benchmark-table th,
+.benchmark-table td {
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(111, 128, 104, 0.14);
+  text-align: left;
+}
+
+.benchmark-table small {
+  opacity: 0.7;
+}
+
+.benchmark-item {
+  margin-top: 8px;
+}
+
+.benchmark-item .lesson-word {
+  font-size: 2em;
+}
+
+.benchmark-item .lesson-word small {
+  font-size: 0.45em;
+  opacity: 0.7;
+  margin-left: 6px;
 }

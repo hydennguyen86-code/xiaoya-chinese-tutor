@@ -37,6 +37,7 @@ import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
 import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
+import { startToneModel, stopToneModel, toneModelHealth } from './toneModel.mjs';
 import { analyseTones, profileFromAudio, decodeToPcm, expectedTones } from './tones.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
@@ -368,8 +369,22 @@ app.get('/api/status', async (_req, res) => {
     avatarUrl: avatarStore.glbUrl(),
     lamAvatarUrl: avatarStore.lamUrl(),
     localStt: sttReady(),
+    toneModel: Boolean(await toneModelHealth()),
     system: { ramGB: Math.round(os.totalmem() / 1024 ** 3), platform: process.platform },
   });
+});
+
+// Stroke-order data for one character (hanzi-writer-data, Arphic Public License),
+// served from node_modules so writing practice works offline and the bundle
+// does not carry 9,500 JSON files.
+const HANZI_DATA_DIR = path.resolve(__dirname, '..', 'node_modules', 'hanzi-writer-data');
+app.get('/api/hanzi/:char', (req, res) => {
+  const chars = [...String(req.params.char || '')];
+  if (chars.length !== 1 || !HAN.test(chars[0])) return res.status(400).json({ error: 'Cần đúng một chữ Hán.' });
+  const file = path.join(HANZI_DATA_DIR, `${chars[0]}.json`);
+  if (!file.startsWith(HANZI_DATA_DIR + path.sep) || !fs.existsSync(file))
+    return res.status(404).json({ error: 'Chưa có dữ liệu nét cho chữ này.' });
+  res.set('Cache-Control', 'public, max-age=31536000, immutable').type('application/json').sendFile(file);
 });
 
 app.post('/api/tts', async (req, res) => {
@@ -621,7 +636,16 @@ app.post('/api/lesson-content', async (req, res) => {
 });
 
 app.post('/api/chat', async (req, res) => {
-  const { provider = 'ollama', model, level = 'HSK5-6', gender = 'male', messages = [], learning = '', scenario = '' } = req.body || {};
+  const {
+    provider = 'ollama',
+    model,
+    level = 'HSK5-6',
+    gender = 'male',
+    audience = 'adult',
+    messages = [],
+    learning = '',
+    scenario = '',
+  } = req.body || {};
 
   if (!PROVIDER_DEFS[provider]) {
     res.status(400).json({ error: 'Provider không hợp lệ.' });
@@ -655,7 +679,14 @@ app.post('/api/chat', async (req, res) => {
           .trim()
           .slice(0, 900)
       : '';
-  const conversation = buildMessages(safeLevel, history, [scenarioText, learningDigest].filter(Boolean).join('\n\n'), safeGender);
+  const safeAudience = audience === 'kid' ? 'kid' : 'adult';
+  const conversation = buildMessages(
+    safeLevel,
+    history,
+    [scenarioText, learningDigest].filter(Boolean).join('\n\n'),
+    safeGender,
+    safeAudience,
+  );
 
   res.status(200);
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
@@ -823,11 +854,13 @@ server.listen(PORT, HOST, async () => {
   void pingRemote().then((h) => h && console.log(`[cloud] ${h.state} · ${h.ms}ms · ${h.message}`));
   setInterval(() => void pingRemote(), 5 * 60_000).unref();
   await startStt();
+  await startToneModel();
 });
 
 for (const signal of ['SIGINT', 'SIGTERM']) {
   process.on(signal, () => {
     stopStt();
+    stopToneModel();
     server.close(() => process.exit(0));
     setTimeout(() => process.exit(0), 1500).unref();
   });

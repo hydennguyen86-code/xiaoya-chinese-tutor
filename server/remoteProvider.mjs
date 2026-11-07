@@ -141,9 +141,13 @@ async function httpError(res, secret = '') {
     return remoteError(`API báo hết credit/hạn mức (HTTP ${s}). Nạp thêm credit cho key rồi thử lại.${providerDetail(body, secret)}`);
   if (s === 401 || s === 403) return remoteError(`API key sai, hết hạn hoặc chưa kích hoạt (HTTP ${s}).`);
   if (/channel khả dụng|no available channel|no channel|overloaded|tạm thời không/i.test(body))
-    return remoteError(`Model đang tạm không có nguồn phục vụ (HTTP ${s}). Thử model khác hoặc chờ một lúc.${providerDetail(body, secret)}`);
+    return remoteError(
+      `Model đang tạm không có nguồn phục vụ (HTTP ${s}). Thử model khác hoặc chờ một lúc.${providerDetail(body, secret)}`,
+    );
   if (s === 404 || /model_not_found|model not found|no such model|unknown model/i.test(body))
-    return remoteError(`Không tìm thấy model hoặc sai URL (HTTP ${s}). Mã model phải đúng như trang Models; URL kết thúc bằng /v1.${providerDetail(body, secret)}`);
+    return remoteError(
+      `Không tìm thấy model hoặc sai URL (HTTP ${s}). Mã model phải đúng như trang Models; URL kết thúc bằng /v1.${providerDetail(body, secret)}`,
+    );
   if (s >= 500) return remoteError(`Dịch vụ API đang lỗi (HTTP ${s}). Thử lại sau ít phút.${providerDetail(body, secret)}`);
   return remoteError(`API đã cấu hình trả HTTP ${s}. Kiểm tra URL/key, model, hạn mức và quyền truy cập.${providerDetail(body, secret)}`);
 }
@@ -210,7 +214,11 @@ export async function streamRemote({ model, messages = [], signal, onDelta, sche
   // option before the model ran (not billed), so retry once without the extras. Never
   // retry after the model has produced output.
   const startedAt = Date.now();
-  let res = await postChat(settings, { ...base, response_format: { type: 'json_object' }, stream_options: { include_usage: true } }, signal);
+  let res = await postChat(
+    settings,
+    { ...base, response_format: { type: 'json_object' }, stream_options: { include_usage: true } },
+    signal,
+  );
   if (res.status === 400) {
     await res.body?.cancel();
     res = await postChat(settings, base, signal);
@@ -258,7 +266,13 @@ export async function testRemote() {
   const startedAt = Date.now();
   const res = await postChat(
     settings,
-    { model: settings.model, messages: [{ role: 'user', content: 'Reply with exactly: OK' }], max_tokens: 1024, temperature: 0, stream: false },
+    {
+      model: settings.model,
+      messages: [{ role: 'user', content: 'Reply with exactly: OK' }],
+      max_tokens: 1024,
+      temperature: 0,
+      stream: false,
+    },
     AbortSignal.timeout(60000),
   );
   if (!res.ok) {

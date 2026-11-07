@@ -133,8 +133,10 @@ export async function evaluateRecordings(directory, { persist = true, labelsFile
     humanNeutral: 0,
   };
   const sources = Object.fromEntries(TONE_LABEL_SOURCES.map((source) => [source, Array.from({ length: 5 }, () => [0, 0, 0, 0, 0])]));
+  let scorer = 'rules';
   for (const entry of recordings) {
     const report = await analyseTones(entry.audio, entry.text, { profile });
+    if (report.method === 'model') scorer = 'model';
     counts[entry.label.source] += 1;
     entry.label.tones.forEach((truth, index) => {
       if (truth === 0) {
@@ -155,7 +157,7 @@ export async function evaluateRecordings(directory, { persist = true, labelsFile
   }
   console.log('Rows: human label 1–4. Columns: unclear, predicted 1,2,3,4.');
   console.table(matrix.slice(1));
-  console.log(counts);
+  console.log(counts, `scorer: ${scorer}`);
   console.log(`labelled items: ${inventory.labeledItems}/${inventory.requiredItems}`);
   if (inventory.rejectedLabels) {
     const reasons = Object.entries(inventory.rejected.reduce((acc, { reason }) => ({ ...acc, [reason]: (acc[reason] || 0) + 1 }), {}));
@@ -165,6 +167,7 @@ export async function evaluateRecordings(directory, { persist = true, labelsFile
     saveResult(
       'tones-human',
       {
+        scorer,
         thresholds: 'unchanged',
         rangeCalibration: calibrationEntries.length ? 'separate sentence clips; same person' : 'same captured set; not held-out',
         labels: 'human; self/peer/expert reported separately',
