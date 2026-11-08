@@ -90,8 +90,8 @@
     "openingVi": "Chào bạn, bạn muốn đi đâu?"
   },
   "freeTalk": {
-    "question": "请问一个地方在哪里，再确认方向。",
-    "questionVi": "Xin hỏi một địa điểm ở đâu rồi xác nhận hướng đi."
+    "question": "请问一个地方在哪里，再问一次方向。",
+    "questionVi": "Hãy hỏi một địa điểm ở đâu rồi hỏi lại hướng đi."
   },
   "learningNotes": [
     "Bổ trợ: 学校 xuéxiào — trường; 商店 shāngdiàn — cửa hàng; 往 wǎng — về phía; 对 duì — đúng.",
@@ -146,7 +146,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请问一个地方在哪里，再确认方向。",
+      "prompt": "请问一个地方在哪里，再问一次方向。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

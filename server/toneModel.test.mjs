@@ -69,3 +69,7 @@ test('analyseTones uses an injected scorer for words and sentences and falls bac
   assert.equal(word.syllables[0].method, 'model');
   assert.equal(word.syllables[0].ok, true);
 });
+
+test('a model answer outside 1–5 is no evidence, never a wrong verdict', () => {
+  for (const tone of [0, 6, -1, 2.5, NaN]) assert.equal(mergeVerdict(1, { tone, confidence: 0.99 }, null, opts).ok, null, String(tone));
+});

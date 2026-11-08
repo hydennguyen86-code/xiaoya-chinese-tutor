@@ -36,9 +36,10 @@ import { CLONE_VOICES, DEFAULT_VI_VOICE, TTS_VOICES, VI_TTS_VOICES, isCloneVietn
 import { createDataStore } from './dataStore.mjs';
 import { isStyleOnlyEdit } from './correctionFilter.mjs';
 import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
-import { startStt, stopStt, sttReady, transcribe } from './stt.mjs';
+import { startStt, stopStt, sttBackend, sttReady, transcribe } from './stt.mjs';
 import { startToneModel, stopToneModel, toneModelHealth } from './toneModel.mjs';
 import { analyseTones, profileFromAudio, decodeToPcm, expectedTones } from './tones.mjs';
+import { syllableCount } from '../src/lib/coursePinyin.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 
@@ -140,7 +141,7 @@ app.post('/api/transcribe', express.raw({ type: () => true, limit: '15mb' }), as
     const key = pitchKey(String(req.query.learner || ''));
     if (key && pcm) {
       profileFromAudio(req.body, loadPitchProfile(key), pcm)
-        .then((profile) => dataStore.write(key, JSON.stringify(profile)))
+        .then((profile) => profile && dataStore.write(key, JSON.stringify(profile)))
         .catch(() => {});
     }
   } catch (error) {
@@ -168,7 +169,8 @@ async function modelCurve(target, rate = 1) {
   const cacheKey = `${rate}:${target}`;
   if (modelCurves.has(cacheKey)) return modelCurves.get(cacheKey);
   const speech = await synthesizeSpeech({ text: target, voice: DEFAULT_VOICE, rate });
-  const report = await analyseTones(Buffer.from(speech.audioBase64, 'base64'), target);
+  // only the pitch curve and syllable marks are used: skip the tone model (it would judge the TTS voice)
+  const report = await analyseTones(Buffer.from(speech.audioBase64, 'base64'), target, { scorer: null });
   const curve = {
     curve: report.curve || [],
     segments: report.segments || [],
@@ -222,6 +224,20 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
         tones.model = reference;
       }
     }
+    // Bộ chấm thanh cắt đoạn ghi âm thành đúng N âm tiết của câu mẫu. Nếu bản
+    // chép nghe được lệch từ 2 âm tiết trở lên (đọc thiếu, thêm, hoặc nói câu
+    // khác) thì các đoạn cắt không còn khớp chữ, nên không kết luận thanh nữa.
+    if (text && HAN.test(text) && Array.isArray(tones.syllables)) {
+      const heardCount = syllableCount(text);
+      const expectedCount = syllableCount(target);
+      if (Math.abs(heardCount - expectedCount) >= 2) {
+        tones.syllables = tones.syllables.map((s) => ({ ...s, heard: 0, ok: null }));
+        tones.checked = 0;
+        tones.correct = 0;
+        tones.note = `Máy nghe ${heardCount} âm tiết, câu mẫu có ${expectedCount}, nên chưa chấm thanh. Đọc đủ và rõ từng chữ rồi thử lại nhé.`;
+        tones.mismatch = { heard: heardCount, expected: expectedCount };
+      }
+    }
     const fluency = measureFluency(tones.timing, text);
     const fluencyReason = !pcm
       ? 'decode-failed'
@@ -231,7 +247,7 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
           ? 'stt-not-ready'
           : transcriptFailed
             ? 'stt-failed'
-            : !text
+            : !text || !HAN.test(text)
               ? 'empty-transcript'
               : 'insufficient-speech';
     tones.fluencyReason = fluencyReason;
@@ -369,6 +385,7 @@ app.get('/api/status', async (_req, res) => {
     avatarUrl: avatarStore.glbUrl(),
     lamAvatarUrl: avatarStore.lamUrl(),
     localStt: sttReady(),
+    sttBackend: sttBackend(),
     toneModel: Boolean(await toneModelHealth()),
     system: { ramGB: Math.round(os.totalmem() / 1024 ** 3), platform: process.platform },
   });

@@ -106,8 +106,8 @@
     "openingVi": "Chiều mai chúng ta gặp nhau, được không?"
   },
   "freeTalk": {
-    "question": "请把见面改到明天上午，再确认一次。",
-    "questionVi": "Hãy đổi buổi gặp sang sáng mai, rồi xác nhận lại một lần."
+    "question": "请说明天上午见面，好吗？再问一次：对吗？",
+    "questionVi": "Hãy đề nghị gặp vào sáng mai, rồi hỏi lại một lần: đúng không?"
   },
   "learningNotes": [
     "Bổ trợ: 现在 xiànzài — bây giờ; 时间 shíjiān — thời gian; 可以 kěyǐ — được/có thể.",
@@ -161,8 +161,8 @@
     },
     {
       "kind": "answer",
-      "prompt": "请把见面改到明天上午，再确认一次。",
-      "promptVi": "Hãy đổi buổi gặp sang sáng mai, rồi xác nhận lại một lần.",
+      "prompt": "请说明天上午见面，好吗？再问一次：对吗？",
+      "promptVi": "Hãy đề nghị gặp vào sáng mai, rồi hỏi lại một lần: đúng không?",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",

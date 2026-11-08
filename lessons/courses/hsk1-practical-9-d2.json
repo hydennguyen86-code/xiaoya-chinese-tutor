@@ -106,8 +106,8 @@
     "openingVi": "Chào bạn, cái cốc này hai mươi tệ, cái kia mười tệ."
   },
   "freeTalk": {
-    "question": "请比较两个杯子的价格，选一个，再说要大一点还是小一点。",
-    "questionVi": "Hãy so giá hai cái cốc, chọn một cái, rồi nói muốn to hơn hay nhỏ hơn."
+    "question": "请问两个杯子多少钱，选一个，再说要大一点还是小一点。",
+    "questionVi": "Hãy hỏi giá hai cái cốc, chọn một cái, rồi nói muốn to hơn hay nhỏ hơn."
   },
   "learningNotes": [
     "Bổ trợ: 杯子 bēizi — cái cốc; 二十 èrshí — hai mươi; 太……了 tài...le — quá.",
@@ -162,8 +162,8 @@
     },
     {
       "kind": "answer",
-      "prompt": "请比较两个杯子的价格，选一个，再说要大一点还是小一点。",
-      "promptVi": "Hãy so giá hai cái cốc, chọn một cái, rồi nói muốn to hơn hay nhỏ hơn.",
+      "prompt": "请问两个杯子多少钱，选一个，再说要大一点还是小一点。",
+      "promptVi": "Hãy hỏi giá hai cái cốc, chọn một cái, rồi nói muốn to hơn hay nhỏ hơn.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",

@@ -132,8 +132,8 @@ export function nextPointer(syllabus: Syllabus, pointer: Pointer): Pointer | nul
   if (pointer.day < volume.lessons[lIndex].days) return { ...pointer, day: pointer.day + 1 };
   const nextLesson = volume.lessons[lIndex + 1];
   if (nextLesson) return { volumeId: volume.id, lessonNo: nextLesson.no, day: 1 };
-  if (volume.authored && volume.trackId && volume.nextVolumeId) {
-    const next = syllabus.volumes.find((v, i) => i > vIndex && v.id === volume.nextVolumeId && v.trackId === volume.trackId);
+  if (volume.authored && volume.nextVolumeId) {
+    const next = syllabus.volumes.find((v, i) => i > vIndex && v.id === volume.nextVolumeId && v.authored);
     if (next?.lessons.length) return { volumeId: next.id, lessonNo: next.lessons[0].no, day: 1 };
   }
   if (volume.authored) return null; // Independent courses: never jump from HSK 1 straight to HSK 5.

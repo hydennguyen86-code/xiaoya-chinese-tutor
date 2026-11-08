@@ -15,7 +15,7 @@
   "vocab": [
     {
       "word": "路",
-      "meaning": "đường; lộ",
+      "meaning": "đường; con đường",
       "example": "这条路能走到地铁站。",
       "exampleVi": "Đường này đi bộ ra được ga tàu điện ngầm.",
       "pinyin": "lù",
@@ -80,10 +80,10 @@
     {
       "word": "方向",
       "meaning": "hướng; phương hướng",
-      "example": "往前走就是你要的方向。",
-      "exampleVi": "Cứ đi tới là đúng hướng bạn cần.",
+      "example": "你走错方向了，要往回走。",
+      "exampleVi": "Bạn đi nhầm hướng rồi, phải quay lại.",
       "pinyin": "fāng xiàng",
-      "examplePinyin": "wǎng qián zǒu jiù shì nǐ yào de fāng xiàng 。"
+      "examplePinyin": "nǐ zǒu cuò fāng xiàng le ， yào wǎng huí zǒu 。"
     }
   ],
   "patterns": [

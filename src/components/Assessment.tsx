@@ -19,7 +19,8 @@ import {
 } from '../lib/assessment';
 import { loadLessonProgress } from '../lib/lessonStore';
 import { reviewWord } from '../lib/learning';
-import { bareChinese, listen, voiceSupported, type VoiceHandle, type VoicePhase, type ToneReport } from '../lib/voiceInput';
+import { readingOk } from '../lib/readingScore.mjs';
+import { listen, voiceSupported, type VoiceHandle, type VoicePhase, type ToneReport } from '../lib/voiceInput';
 import { dayKey } from '../lib/storage';
 import type { LearningProfile, Level } from '../types';
 import { CommunicationTask } from './CommunicationTask';
@@ -157,7 +158,7 @@ export function Assessment(props: Props) {
   function mark() {
     if (lock.current || judged || !item || item.kind === 'task' || item.kind === 'open') return;
     lock.current = true;
-    const ok = bareChinese(answer) === bareChinese(item.target);
+    const ok = readingOk(item.target, answer);
     if (item.kind === 'tone') {
       if (tones && tones.checked > 0) {
         addPart('Thanh điệu', tones.correct, tones.checked);

@@ -90,8 +90,8 @@
     "openingVi": "Chào bạn, bạn muốn mua gì?"
   },
   "freeTalk": {
-    "question": "请比较两个东西的价格，再选一个。",
-    "questionVi": "Xin so giá hai món đồ rồi chọn một."
+    "question": "请问两个东西多少钱，再选一个。",
+    "questionVi": "Xin hỏi giá hai món đồ rồi chọn một."
   },
   "learningNotes": [
     "Bổ trợ: 杯子 bēizi — cái cốc; 二十 èrshí — hai mươi; 太……了 tài...le — quá.",
@@ -146,7 +146,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请比较两个东西的价格，再选一个。",
+      "prompt": "请问两个东西多少钱，再选一个。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

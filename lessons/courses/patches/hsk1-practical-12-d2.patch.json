@@ -23,13 +23,13 @@
       "op": "add",
       "path": "/checkpoint/speaking/0/pinyin",
       "source": "/checkpoint/speaking/0/audioText",
-      "value": "xiàn zài shì xià wǔ sì diǎn 。 wǒ men zài xué xiào jiàn miàn 。"
+      "value": "wǒ men xiān qù shāng diàn ， zài qù xué xiào 。 wǒ men zài xué xiào qián miàn jiàn miàn 。"
     },
     {
       "op": "add",
       "path": "/checkpoint/speaking/1/pinyin",
       "source": "/checkpoint/speaking/1/reference",
-      "value": "wǒ jiào xiǎo ān 。 wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？"
+      "value": "wǒ men míng tiān xià wǔ sān diǎn jiàn miàn ， hǎo ma ？ nǐ xiǎng xiān qù nǎ lǐ ？"
     },
     {
       "op": "add",
@@ -81,6 +81,12 @@
           "word": "十二",
           "pinyin": "shí èr",
           "meaningVi": "mười hai"
+        },
+        {
+          "word": "想",
+          "pinyin": "xiǎng",
+          "meaningVi": "muốn",
+          "note": "Từ chưa có trong vocab bài 1–11; chú giải ngay tại checkpoint."
         }
       ]
     }

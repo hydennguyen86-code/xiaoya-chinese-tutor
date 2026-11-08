@@ -125,6 +125,10 @@
         "的": {
           "pinyin": "de",
           "meaning": "của"
+        },
+        "很": {
+          "pinyin": "hěn",
+          "meaning": "rất"
         }
       }
     },
@@ -375,6 +379,10 @@
         "高": {
           "pinyin": "gāo",
           "meaning": "cao"
+        },
+        "很": {
+          "pinyin": "hěn",
+          "meaning": "rất"
         }
       }
     },
@@ -498,6 +506,10 @@
         "热": {
           "pinyin": "rè",
           "meaning": "nóng"
+        },
+        "很": {
+          "pinyin": "hěn",
+          "meaning": "rất"
         }
       }
     },
@@ -728,6 +740,10 @@
         "鱼": {
           "pinyin": "yú",
           "meaning": "cá"
+        },
+        "很": {
+          "pinyin": "hěn",
+          "meaning": "rất"
         }
       }
     },
@@ -1105,6 +1121,10 @@
         "茶": {
           "pinyin": "chá",
           "meaning": "trà"
+        },
+        "很": {
+          "pinyin": "hěn",
+          "meaning": "rất"
         }
       }
     },
@@ -1251,6 +1271,14 @@
         "鱼": {
           "pinyin": "yú",
           "meaning": "cá"
+        },
+        "很": {
+          "pinyin": "hěn",
+          "meaning": "rất"
+        },
+        "见": {
+          "pinyin": "jiàn",
+          "meaning": "gặp"
         }
       }
     }

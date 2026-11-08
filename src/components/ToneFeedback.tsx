@@ -11,6 +11,9 @@ const TONE_HINT: Record<number, string> = {
   4: 'Thanh 4: bắt đầu cao rồi rơi dứt khoát xuống, như khi ra lệnh.',
 };
 
+// 0 (expected) and 5 (heard) both mean the neutral tone
+const toneName = (tone: number) => (tone === 0 || tone === 5 ? 'thanh nhẹ' : `thanh ${tone}`);
+
 /** Per-syllable tone verdicts for a word, or the pitch curve for a sentence. */
 export function ToneFeedback({
   report,
@@ -132,14 +135,20 @@ export function ToneFeedback({
           title={
             s.ok === null
               ? 'Chưa chấm được chữ này'
-              : `Cần thanh ${s.expected}, mình nghe thanh ${s.heard === 5 ? 'nhẹ' : s.heard}${
+              : `Cần ${toneName(s.expected)}${s.sandhi ? ' (biến điệu 3-3: chữ này đọc như thanh 2)' : ''}, mình nghe ${toneName(s.heard)}${
                   typeof s.confidence === 'number' ? ` (chắc ${Math.round(s.confidence * 100)}%)` : ''
                 }`
           }
         >
           <small>{s.pinyin}</small>
           <span>{s.char}</span>
-          <em>{s.ok === true ? `thanh ${s.expected} ✓` : s.ok === false ? `nghe như thanh ${s.heard === 5 ? 'nhẹ' : s.heard}` : '—'}</em>
+          <em>
+            {s.ok === true
+              ? `${toneName(s.expected)}${s.sandhi ? ' (biến điệu)' : ''} ✓`
+              : s.ok === false
+                ? `nghe như ${toneName(s.heard)}`
+                : '—'}
+          </em>
         </span>
       ))}
     </div>

@@ -114,8 +114,8 @@
     "openingVi": "Chào bạn, bạn lấy mấy cốc?"
   },
   "freeTalk": {
-    "question": "请买两杯不同的饮料，一杯热，一杯加冰。",
-    "questionVi": "Hãy mua hai cốc đồ uống khác nhau, một cốc nóng, một cốc thêm đá."
+    "question": "请买两杯不同的茶，一杯热，一杯加冰。",
+    "questionVi": "Hãy mua hai cốc trà khác nhau, một cốc nóng, một cốc thêm đá."
   },
   "learningNotes": [
     "Bổ trợ: 糖 táng — đường; 冰 bīng — đá; 加 jiā — thêm; 不要 bú yào — không muốn/đừng.",
@@ -170,8 +170,8 @@
     },
     {
       "kind": "answer",
-      "prompt": "请买两杯不同的饮料，一杯热，一杯加冰。",
-      "promptVi": "Hãy mua hai cốc đồ uống khác nhau, một cốc nóng, một cốc thêm đá.",
+      "prompt": "请买两杯不同的茶，一杯热，一杯加冰。",
+      "promptVi": "Hãy mua hai cốc trà khác nhau, một cốc nóng, một cốc thêm đá.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",

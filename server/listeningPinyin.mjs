@@ -123,11 +123,22 @@ export function strip(s) {
  * @param {{ allSandhi?: boolean, pauses?: Set<number> }} options
  *   allSandhi: hạ mọi cặp 3+3 liền nhau (trừ vị trí có pauses) → pinyin là dạng đọc thật
  *   pauses: vị trí chữ Hán cuối cụm hơi, lấy từ pauseAfter(text có dấu câu)
+ *   source: câu gốc có dấu câu; đọc pinyin theo cả câu này (khớp syllablesOf) thay vì chuỗi chỉ-chữ-Hán
  */
 export function readSentence(text, sandhiAt = [], extraNeutral = [], options = {}) {
-  const { allSandhi = false, pauses = new Set() } = options;
+  const { allSandhi = false, pauses = new Set(), source = '' } = options;
   const chars = [...text];
-  const parsed = applyPolyphoneLocks(chars, pinyin(text, { pattern: 'tone', type: 'array' })).map(strip);
+  // `source`: the sentence as written (with punctuation). Reading it whole keeps the same
+  // context and the same POLYPHONE_LOCKS (some are keyed on a punctuation mark) as the
+  // on-screen pinyin / reading score; only the Han tokens are kept.
+  let parsed = null;
+  if (source) {
+    const sourceChars = [...source];
+    const toks = applyPolyphoneLocks(sourceChars, pinyin(source, { pattern: 'tone', type: 'array' }));
+    const han = toks.filter((_, i) => HAN.test(sourceChars[i]));
+    if (toks.length === sourceChars.length && han.length === chars.length) parsed = han.map(strip);
+  }
+  parsed ??= applyPolyphoneLocks(chars, pinyin(text, { pattern: 'tone', type: 'array' })).map(strip);
   const dict = parsed.map((p) => p.tone);
 
   const neutral = new Set([...neutralPositions(text), ...extraNeutral]);

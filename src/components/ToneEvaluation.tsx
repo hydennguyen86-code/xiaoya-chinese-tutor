@@ -53,7 +53,10 @@ export function ToneEvaluation({ learnerId, onClose }: { learnerId: string; onCl
     setError('');
     setBusy(true);
     try {
-      const audio = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // Bản thu dùng để chấm thanh điệu: tắt lọc của trình duyệt để giữ cao độ thật.
+      const audio = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 },
+      });
       if (!alive.current) {
         audio.getTracks().forEach((t) => t.stop());
         return;

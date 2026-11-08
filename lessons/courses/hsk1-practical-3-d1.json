@@ -90,7 +90,7 @@
     "openingVi": "Xin đọc một số điện thoại."
   },
   "freeTalk": {
-    "question": "请说三个数字，再请对方确认。",
+    "question": "请说三个数字，再问他：对吗？",
     "questionVi": "Xin đọc ba chữ số rồi nhờ người đối thoại xác nhận."
   },
   "learningNotes": [
@@ -148,7 +148,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请说三个数字，再请对方确认。",
+      "prompt": "请说三个数字，再问他：对吗？",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

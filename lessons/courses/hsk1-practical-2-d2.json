@@ -106,8 +106,8 @@
     "openingVi": "Chào bạn, xin nói tên của bạn."
   },
   "freeTalk": {
-    "question": "请确认你的名字，再问对方叫什么。",
-    "questionVi": "Hãy xác nhận tên của bạn, rồi hỏi tên người đối diện."
+    "question": "请再说一次你的名字，再问他叫什么。",
+    "questionVi": "Hãy nói lại tên của bạn, rồi hỏi tên người đối diện."
   },
   "learningNotes": [
     "Cụm bổ trợ: 越南 Yuènán — Việt Nam; 中国 Zhōngguó — Trung Quốc; 不 bù — không.",
@@ -162,8 +162,8 @@
     },
     {
       "kind": "answer",
-      "prompt": "请确认你的名字，再问对方叫什么。",
-      "promptVi": "Hãy xác nhận tên của bạn, rồi hỏi tên người đối diện.",
+      "prompt": "请再说一次你的名字，再问他叫什么。",
+      "promptVi": "Hãy nói lại tên của bạn, rồi hỏi tên người đối diện.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",

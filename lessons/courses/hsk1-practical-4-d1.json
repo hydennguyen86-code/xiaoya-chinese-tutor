@@ -90,8 +90,8 @@
     "openingVi": "Gia đình bạn có mấy người?"
   },
   "freeTalk": {
-    "question": "请介绍你的家人，也可以介绍一个虚构的家庭。",
-    "questionVi": "Xin giới thiệu gia đình bạn, hoặc một gia đình giả định."
+    "question": "请说一说你的家人，也可以说别人的家。",
+    "questionVi": "Hãy nói về gia đình bạn, hoặc gia đình của một người khác."
   },
   "learningNotes": [
     "Bổ trợ: 弟弟 dìdi — em trai; 妹妹 mèimei — em gái; 没有 méiyǒu — không có; 几 jǐ — mấy; 口 kǒu — lượng từ đếm người trong gia đình.",
@@ -146,7 +146,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请介绍你的家人，也可以介绍一个虚构的家庭。",
+      "prompt": "请说一说你的家人，也可以说别人的家。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

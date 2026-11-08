@@ -36,11 +36,13 @@ const get = (url, headers = {}) => fetch(url, { headers: { 'accept-encoding': 'i
 // fetch() transparently decodes gzip, so read the raw bytes through http instead
 function raw(url, headers = {}) {
   return new Promise((resolve, reject) => {
-    http.get(url, { headers }, (res) => {
-      const chunks = [];
-      res.on('data', (chunk) => chunks.push(chunk));
-      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) }));
-    }).on('error', reject);
+    http
+      .get(url, { headers }, (res) => {
+        const chunks = [];
+        res.on('data', (chunk) => chunks.push(chunk));
+        res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) }));
+      })
+      .on('error', reject);
   });
 }
 

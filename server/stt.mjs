@@ -1,10 +1,16 @@
 import { fileURLToPath } from 'node:url';
 import { mediaToolEnv } from './mediaTools.mjs';
+import { decodeToPcm } from './tones.mjs';
+import { sherpaConfigured, sherpaKind, sherpaReady, startSherpa, stopSherpa, transcribeSherpaPcm } from './sttSherpa.mjs';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Local speech-to-text with whisper.cpp's server (Metal GPU on Apple Silicon),
+// Nhận giọng cục bộ có hai backend: sherpa-onnx (SenseVoice/Paraformer, chuyên
+// tiếng Trung, `npm run setup:stt`) và whisper.cpp (dự phòng). STT_BACKEND =
+// auto (mặc định: sherpa nếu có, không thì whisper) | sherpa | whisper | off.
+//
+// Whisper: local speech-to-text with whisper.cpp's server (Metal GPU on Apple Silicon),
 // so the learner's voice never leaves this computer. `npm run setup:whisper`
 // builds it into vendor/ and downloads the model into models/; WHISPER_BIN /
 // WHISPER_MODEL point to a build elsewhere.
@@ -25,11 +31,11 @@ const PROMPT = '以下是普通话的简体中文句子。';
 let child = null;
 let ready = false;
 
-export function sttConfigured() {
+function whisperConfigured() {
   return fs.existsSync(BIN) && fs.existsSync(MODEL);
 }
 
-export function sttReady() {
+function whisperReady() {
   return ready;
 }
 
@@ -42,8 +48,8 @@ async function probe() {
   }
 }
 
-export async function startStt() {
-  if (!sttConfigured()) {
+async function startWhisper() {
+  if (!whisperConfigured()) {
     console.log('[stt] whisper.cpp not found (run `npm run setup:whisper`); the browser speech API is used instead');
     return;
   }
@@ -76,7 +82,7 @@ export async function startStt() {
   }
 }
 
-export function stopStt() {
+function stopWhisper() {
   child?.kill();
   child = null;
   ready = false;
@@ -104,7 +110,7 @@ async function inference(audio, mimeType, format) {
   return res.json();
 }
 
-export async function transcribe(audio, mimeType = 'audio/webm') {
+async function whisperTranscribe(audio, mimeType) {
   const data = await inference(audio, mimeType, 'json');
   return String(data?.text ?? '').trim();
 }
@@ -128,6 +134,66 @@ export function pcmWav(pcm) {
   pcm.forEach((v, i) => out.writeInt16LE(Math.round(Math.max(-1, Math.min(1, v)) * 32767), 44 + i * 2));
   return out;
 }
-export function transcribePcm(pcm) {
-  return transcribe(pcmWav(pcm), 'audio/wav');
+function whisperTranscribePcm(pcm) {
+  return whisperTranscribe(pcmWav(pcm), 'audio/wav');
+}
+
+// ---- chọn backend ----
+function mode() {
+  const value = String(process.env.STT_BACKEND || 'auto').toLowerCase();
+  return ['auto', 'sherpa', 'whisper', 'off'].includes(value) ? value : 'auto';
+}
+
+function wantSherpa() {
+  return mode() === 'sherpa' || (mode() === 'auto' && sherpaConfigured());
+}
+
+function wantWhisper() {
+  return mode() === 'whisper' || mode() === 'auto' || mode() === 'sherpa'; // sherpa lỗi thì whisper đỡ
+}
+
+export function sttConfigured() {
+  if (mode() === 'off') return false;
+  return (mode() !== 'whisper' && sherpaConfigured()) || (wantWhisper() && whisperConfigured());
+}
+
+export function sttReady() {
+  return sherpaReady() || whisperReady();
+}
+
+/** 'sherpa:sense-voice' | 'sherpa:paraformer' | 'whisper' | null */
+export function sttBackend() {
+  if (sherpaReady()) return `sherpa:${sherpaKind()}`;
+  return whisperReady() ? 'whisper' : null;
+}
+
+export async function startStt() {
+  if (mode() === 'off') {
+    console.log('[stt] STT_BACKEND=off; dùng nhận dạng của trình duyệt');
+    return;
+  }
+  if (wantSherpa()) {
+    try {
+      if (await startSherpa()) return;
+    } catch (error) {
+      console.error('[stt] sherpa-onnx không khởi động được:', error.message);
+    }
+    if (mode() === 'sherpa') console.error('[stt] STT_BACKEND=sherpa nhưng sherpa-onnx lỗi; thử whisper.');
+  }
+  if (wantWhisper()) await startWhisper();
+}
+
+export function stopStt() {
+  stopSherpa();
+  stopWhisper();
+}
+
+export async function transcribePcm(pcm) {
+  if (sherpaReady()) return (await transcribeSherpaPcm(pcm)).text;
+  return whisperTranscribePcm(pcm);
+}
+
+export async function transcribe(audio, mimeType = 'audio/webm') {
+  if (sherpaReady()) return transcribePcm(await decodeToPcm(Buffer.from(audio)));
+  return whisperTranscribe(audio, mimeType);
 }

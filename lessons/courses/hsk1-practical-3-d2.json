@@ -73,7 +73,7 @@
       "word": "手机",
       "meaning": "điện thoại di động",
       "example": "这是我的手机。",
-      "exampleVi": "Đây là điện thoại của tôi.",
+      "exampleVi": "Đây là điện thoại di động của tôi.",
       "pinyin": "shǒu jī",
       "examplePinyin": "zhè shì wǒ de shǒu jī 。"
     }
@@ -106,7 +106,7 @@
     "openingVi": "Chào bạn, xin đọc số điện thoại của bạn."
   },
   "freeTalk": {
-    "question": "请读一个三位数，再问对方是不是这个数。",
+    "question": "请说一个三位数，再问他是不是这个数。",
     "questionVi": "Hãy đọc một số có ba chữ số, rồi hỏi người đối diện có phải số đó không."
   },
   "learningNotes": [
@@ -164,7 +164,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请读一个三位数，再问对方是不是这个数。",
+      "prompt": "请说一个三位数，再问他是不是这个数。",
       "promptVi": "Hãy đọc một số có ba chữ số, rồi hỏi người đối diện có phải số đó không.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

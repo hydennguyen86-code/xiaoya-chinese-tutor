@@ -10,7 +10,7 @@ import { normalizeLesson, getLessonContent } from './lessonContent.mjs';
 // Sessions in the standalone courses: pinyin intro (10 x 1) + HSK1, HSK3, HSK5 (12 x 2 each).
 test('standalone courses carry aligned vocabulary, goals, listening and speaking', () => {
   const syllabus = validateSyllabus(bundledSyllabus());
-  const volumes = syllabus.volumes.filter((v) => !v.trackId);
+  const volumes = syllabus.volumes.filter((v) => !v.id.startsWith('misu30-'));
   assert.deepEqual(
     volumes.map((v) => v.id),
     ['pinyin-intro', 'hsk1-practical', 'hsk3-practical', 'hsk5-practical'],
@@ -70,7 +70,7 @@ test('packaged syllabus is default and a fixed session loads without any model',
 
 test('course prerequisite graph is ordered and answer positions are not a single-position shortcut', () => {
   const syllabus = bundledSyllabus();
-  for (const vol of syllabus.volumes.filter((v) => !v.trackId)) {
+  for (const vol of syllabus.volumes.filter((v) => !v.id.startsWith('misu30-'))) {
     const positions = [0, 0, 0];
     for (const lesson of vol.lessons) {
       const raw = readCourseLesson(vol.id, lesson.no, 1);
@@ -84,14 +84,13 @@ test('course prerequisite graph is ordered and answer positions are not a single
 
 test('30 communication lessons form an independent 3-volume draft track and all load without a model', async () => {
   const syllabus = validateSyllabus(bundledSyllabus());
-  const volumes = syllabus.volumes.filter((v) => v.trackId === 'misu30');
+  const volumes = syllabus.volumes.filter((v) => v.id.startsWith('misu30-'));
   assert.equal(volumes.length, 3);
   const numbers = [];
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'misu30-test-'));
   try {
     for (const [index, volume] of volumes.entries()) {
       assert.equal(volume.nextVolumeId, index < 2 ? volumes[index + 1].id : '');
-      assert.equal(volume.trackTitle, '30 bài giao tiếp HSK1–6');
       const positions = [0, 0, 0];
       for (const lesson of volume.lessons) {
         numbers.push(lesson.no);
@@ -131,6 +130,30 @@ test('30 communication lessons form an independent 3-volume draft track and all 
   }
 });
 
+// Volumes are grouped by level: each track holds the practical course and the matching 30-lesson volume. Ids stay unchanged so saved progress is kept.
+test('syllabus groups volumes into level tracks without changing any volume id', () => {
+  const syllabus = validateSyllabus(bundledSyllabus());
+  const tracks = new Map();
+  for (const v of syllabus.volumes) {
+    assert.ok(v.trackId && v.trackTitle, v.id);
+    tracks.set(v.trackId, [...(tracks.get(v.trackId) || []), v.id]);
+  }
+  assert.deepEqual(Object.fromEntries(tracks), {
+    hsk1: ['pinyin-intro', 'hsk1-practical', 'misu30-1'],
+    hsk3: ['hsk3-practical', 'misu30-2'],
+    hsk5: ['hsk5-practical', 'misu30-3'],
+  });
+  assert.deepEqual(syllabus.volumes.map((v) => v.id).sort(), [
+    'hsk1-practical',
+    'hsk3-practical',
+    'hsk5-practical',
+    'misu30-1',
+    'misu30-2',
+    'misu30-3',
+    'pinyin-intro',
+  ]);
+});
+
 import { applyMisu30Provenance } from '../scripts/patch-misu30-provenance.mjs';
 test('misu30 provenance retains original titles and patch is repeatable without changing lesson content', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'misu-provenance-'));
@@ -139,7 +162,7 @@ test('misu30 provenance retains original titles and patch is repeatable without 
     for (const file of fs.readdirSync('lessons/courses').filter((f) => f.startsWith('misu30-')))
       fs.copyFileSync(path.join('lessons/courses', file), path.join(root, file));
     assert.equal(applyMisu30Provenance(root), 0);
-    for (const volume of bundledSyllabus().volumes.filter((v) => v.trackId === 'misu30'))
+    for (const volume of bundledSyllabus().volumes.filter((v) => v.id.startsWith('misu30-')))
       for (const [index, l] of volume.lessons.entries()) {
         const raw = readCourseLesson(volume.id, l.no, 1);
         assert.equal(raw.source.book, 'Misu · 30 bài nói tiếng Trung');

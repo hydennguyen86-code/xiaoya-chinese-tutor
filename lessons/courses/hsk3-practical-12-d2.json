@@ -15,7 +15,7 @@
   "vocab": [
     {
       "word": "邀请",
-      "meaning": "mời; mời mọc",
+      "meaning": "mời; lời mời",
       "example": "同事邀请我周六去吃火锅。",
       "exampleVi": "Đồng nghiệp mời tôi thứ bảy đi ăn lẩu.",
       "pinyin": "yāo qǐng",
@@ -71,7 +71,7 @@
     },
     {
       "word": "请客",
-      "meaning": "mời ăn; bao tiền",
+      "meaning": "mời ăn; đãi (mình trả tiền)",
       "example": "说好了，这次我请客。",
       "exampleVi": "Nói chắc rồi nhé, lần này tôi bao.",
       "pinyin": "qǐng kè",
@@ -138,12 +138,12 @@
     "title": "Nghe buổi 2: Mời bạn, nhận lời và từ chối khéo",
     "playLimit": 1,
     "transcript": "甲：周六晚上大家一起唱歌，我请客，你有空吗？乙：我本来想去，可是那天我得加班到九点。甲：那你忙完了再来，十点才散。乙：要是不加班的话，我一定去。我先跟大家说一声，七点半到那儿找你们，不过我只能待一个小时。甲：行，人来就好。",
-    "translation": "Người thứ nhất mời bạn ấy đi hát cùng cả nhóm tối thứ bảy và nói sẽ bao tiền. Bạn ấy vốn muốn đi nhưng hôm đó phải làm thêm giờ đến chín giờ; người mời bảo cứ tới sau cũng được vì mười giờ mới tan. Bạn ấy nói nếu không tăng ca thì nhất định đi, sẽ nhắn trước cho mọi người để bảy giờ rưỡi tới tìm, chỉ có điều ở được một tiếng thôi. Người mời trả lời tới được là quý rồi.",
+    "translation": "Người thứ nhất mời bạn ấy đi hát cùng cả nhóm tối thứ bảy và nói mình sẽ đãi. Bạn ấy vốn muốn đi nhưng hôm đó phải làm thêm giờ đến chín giờ; người mời bảo cứ tới sau cũng được vì mười giờ mới tan. Bạn ấy nói nếu không tăng ca thì nhất định đi, sẽ nhắn trước cho mọi người để bảy giờ rưỡi tới tìm, chỉ có điều ở được một tiếng thôi. Người mời trả lời tới được là quý rồi.",
     "questions": [
       {
         "prompt": "Người mời nói sẽ làm gì cho cả nhóm?",
         "options": [
-          "Bao tiền cho buổi đi hát tối thứ bảy",
+          "Đãi cả nhóm buổi đi hát tối thứ bảy",
           "Đặt trước vé tàu cho mọi người",
           "Góp tiền mỗi người một nửa"
         ],
@@ -192,7 +192,7 @@
       "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: ai mời đi đâu, bạn kia vướng gì, hai người chốt giờ nào, bạn ấy nhắc thêm điều gì.",
       "prepareSeconds": 30,
       "responseSeconds": 60,
-      "reference": "Người thứ nhất mời bạn ấy đi hát cùng cả nhóm tối thứ bảy và nói sẽ bao tiền. Bạn ấy vốn muốn đi nhưng hôm đó phải làm thêm giờ đến chín giờ; người mời bảo cứ tới sau cũng được vì mười giờ mới tan. Bạn ấy nói nếu không tăng ca thì nhất định đi, sẽ nhắn trước cho mọi người để bảy giờ rưỡi tới tìm, chỉ có điều ở được một tiếng thôi. Người mời trả lời tới được là quý rồi.",
+      "reference": "Người thứ nhất mời bạn ấy đi hát cùng cả nhóm tối thứ bảy và nói mình sẽ đãi. Bạn ấy vốn muốn đi nhưng hôm đó phải làm thêm giờ đến chín giờ; người mời bảo cứ tới sau cũng được vì mười giờ mới tan. Bạn ấy nói nếu không tăng ca thì nhất định đi, sẽ nhắn trước cho mọi người để bảy giờ rưỡi tới tìm, chỉ có điều ở được một tiếng thôi. Người mời trả lời tới được là quý rồi.",
       "checklist": [
         "Nói đủ: lời mời, lý do, giờ tới, thời gian ở lại",
         "Người nghe hiểu được nội dung",

@@ -11,6 +11,12 @@ if (!source) throw new Error('Pass the curriculum directory.');
 const root = new URL('../lessons/courses/', import.meta.url);
 const syllabus = JSON.parse(fs.readFileSync(new URL('syllabus.json', root), 'utf8'));
 const title = '30 bài giao tiếp HSK1–6';
+// Volumes are listed under the level track they teach (same ids as before, so saved progress is kept).
+const TRACKS = [
+  ['hsk1', 'HSK 1–2'],
+  ['hsk3', 'HSK 3–4'],
+  ['hsk5', 'HSK 5–6'],
+];
 const volumes = [],
   prepared = [];
 for (let v = 1; v <= 3; v++) {
@@ -24,8 +30,8 @@ for (let v = 1; v <= 3; v++) {
     levels: input.levels,
     authored: true,
     targetLevel: input.levels[0],
-    trackId: 'misu30',
-    trackTitle: title,
+    trackId: TRACKS[v - 1][0],
+    trackTitle: TRACKS[v - 1][1],
     ...(v < 3 ? { nextVolumeId: `misu30-${v + 1}` } : {}),
     sourceBook: input.book,
     sourceTitle: input.title,
@@ -139,7 +145,7 @@ for (const [name, raw] of prepared) {
 // Validate everything before writing any file.
 for (const [name, raw] of prepared)
   if (!fs.existsSync(new URL(name, root))) fs.writeFileSync(new URL(name, root), JSON.stringify(raw, null, 2) + '\n');
-syllabus.volumes = [...syllabus.volumes.filter((v) => v.trackId !== 'misu30'), ...volumes];
+syllabus.volumes = [...syllabus.volumes.filter((v) => !/^misu30-\d+$/.test(v.id)), ...volumes];
 syllabus.book = 'Misu · Nghe nói thực tế và 30 bài giao tiếp HSK1–6';
 fs.writeFileSync(new URL('syllabus.json', root), JSON.stringify(syllabus, null, 2) + '\n');
 console.log('Imported 30 AI draft sessions; all structural validators passed.');

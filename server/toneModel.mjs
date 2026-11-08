@@ -139,6 +139,8 @@ export function mergeVerdict(expected, model, rule, { minConfidence = MIN_CONFID
   }
   const heard = model.tone;
   const confidence = model.confidence;
+  // not a tone the classifier knows (1–4, 5 = neutral): no evidence either way
+  if (!Number.isInteger(heard) || heard < 1 || heard > 5) return { heard: 0, ok: null, confidence: null, method: 'model' };
   if (!expected) {
     // a neutral syllable: agree when the model also hears a light tone, otherwise stay silent
     return { heard, ok: heard === 5 ? true : null, confidence, method: 'model' };

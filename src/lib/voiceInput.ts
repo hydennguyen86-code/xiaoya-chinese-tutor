@@ -17,6 +17,8 @@ export interface ToneSyllable {
   /** the classifier's probability for `heard`, when the tone model judged it */
   confidence?: number | null;
   method?: string;
+  /** a citation tone 3 said as tone 2 (3-3 sandhi); `pinyin` stays the dictionary form */
+  sandhi?: boolean;
 }
 
 export interface ToneSegment {
@@ -44,6 +46,8 @@ export interface ToneReport {
   checked: number;
   correct: number;
   note?: string;
+  /** số âm tiết nghe được lệch câu mẫu nên không chấm thanh */
+  mismatch?: { heard: number; expected: number };
   /** pitch in semitones around the speaker's middle, for sentences */
   curve?: (number | null)[];
   modelCurve?: (number | null)[];
@@ -129,8 +133,12 @@ function listenLocal({
   };
 
   const details = (async (): Promise<VoiceResult> => {
+    // Khi chấm phát âm, các bộ lọc của trình duyệt (khử ồn, khử vọng, tự chỉnh
+    // âm lượng) làm méo đường cao độ mà bộ chấm thanh điệu dựa vào: tắt hết,
+    // thu âm thô. Trò chuyện tự do vẫn dùng bộ lọc để nhận chữ dễ hơn.
+    const raw = Boolean(pronounce);
     const stream = await navigator.mediaDevices.getUserMedia({
-      audio: { echoCancellation: true, noiseSuppression: true, channelCount: 1 },
+      audio: { echoCancellation: !raw, noiseSuppression: !raw, autoGainControl: !raw, channelCount: 1 },
     });
     const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((t) => MediaRecorder.isTypeSupported(t)) || '';
     const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
@@ -207,14 +215,23 @@ function listenLocal({
       query.set('rate', String(modelRate));
     }
     const sttStart = performance.now();
-    const res = await fetch(`${pronounce ? '/api/pronounce' : '/api/transcribe'}?${query}`, {
-      method: 'POST',
-      signal: request.signal,
-      headers: { 'Content-Type': blob.type },
-      body: blob,
-    });
-    if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
-    const data = (await res.json()) as { text?: string; tones?: ToneReport; fluency?: Fluency; fluencyReason?: string };
+    let data: { text?: string; tones?: ToneReport; fluency?: Fluency; fluencyReason?: string };
+    try {
+      const res = await fetch(`${pronounce ? '/api/pronounce' : '/api/transcribe'}?${query}`, {
+        method: 'POST',
+        signal: request.signal,
+        headers: { 'Content-Type': blob.type },
+        body: blob,
+      });
+      if (!res.ok) throw new Error('Không nhận dạng được giọng nói. Thử lại nhé.');
+      data = (await res.json()) as typeof data;
+    } catch (error) {
+      // cancel() aborts the request: that is "nothing said", not an error to show on whatever comes next
+      if (cancelled || request.signal.aborted) return { text: '', tones: null };
+      throw error;
+    }
+    // the turn was cancelled while the server was answering: drop the late result
+    if (cancelled) return { text: '', tones: null };
     if (learnerId && !pronounce && data.fluency) saveFluency(learnerId, data.fluency);
     if (learnerId && data.tones) recordSpokenTones(learnerId, data.tones, blob);
     return {

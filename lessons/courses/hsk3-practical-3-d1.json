@@ -106,18 +106,18 @@
   "listening": {
     "title": "Nghe buổi 1: Đi mua sắm: hỏi giá, thử đồ, trả giá",
     "playLimit": 1,
-    "transcript": "甲：这条裙子多少钱？乙：一百二十块。甲：能便宜一点吗？我买两件。乙：两件算你一百一。甲：有没有大一号的？我想试一下。乙：有，你拿这件去试。甲：这件挺大，小一号的有吗？乙：也有。甲：那我付款。我没有零钱，给你一百五十块。乙：找你四十。",
-    "translation": "Khách hỏi giá chiếc váy và được báo một trăm hai mươi tệ. Khi xin bớt, khách mua hai chiếc được tính một trăm mười một. Khách hỏi cỡ lớn hơn, thử thấy rộng nên hỏi lại cỡ nhỏ hơn. Cuối cùng khách trả tiền: không có tiền lẻ nên đưa một trăm năm mươi và được thối lại bốn mươi.",
+    "transcript": "甲：这条裙子多少钱？乙：一百二十块。甲：能便宜一点吗？我买两件。乙：两件算你二百一。甲：有没有大一号的？我想试一下。乙：有，你拿这件去试。甲：这件挺大，小一号的有吗？乙：也有。甲：那我付款。我没有零钱，给你二百五十块。乙：找你四十。",
+    "translation": "Khách hỏi giá chiếc váy và được báo một trăm hai mươi tệ. Khi xin bớt, khách mua hai chiếc được tính hai trăm mười. Khách hỏi cỡ lớn hơn, thử thấy rộng nên hỏi lại cỡ nhỏ hơn. Cuối cùng khách trả tiền: không có tiền lẻ nên đưa hai trăm năm mươi và được thối lại bốn mươi.",
     "questions": [
       {
         "prompt": "Giá của hai chiếc váy là bao nhiêu?",
         "options": [
           "Một trăm hai mươi tệ",
-          "Một trăm mười một tệ",
-          "Một trăm năm mươi tệ"
+          "Hai trăm mười tệ",
+          "Hai trăm năm mươi tệ"
         ],
         "answer": 1,
-        "explanation": "Người bán nói 两件算你一百一."
+        "explanation": "Người bán nói 两件算你二百一."
       },
       {
         "prompt": "Khách thử cỡ nào?",
@@ -140,7 +140,7 @@
         "explanation": "Câu cuối là 找你四十."
       }
     ],
-    "pinyin": "jiǎ ： zhè tiáo qún zi duō shǎo qián ？ yǐ ： yì bǎi èr shí kuài 。 jiǎ ： néng pián yi yì diǎn ma ？ wǒ mǎi liǎng jiàn 。 yǐ ： liǎng jiàn suàn nǐ yì bǎi yī 。 jiǎ ： yǒu méi yǒu dà yī hào de ？ wǒ xiǎng shì yí xià 。 yǐ ： yǒu ， nǐ ná zhè jiàn qù shì 。 jiǎ ： zhè jiàn tǐng dà ， xiǎo yī hào de yǒu ma ？ yǐ ： yě yǒu 。 jiǎ ： nà wǒ fù kuǎn 。 wǒ méi yǒu líng qián ， gěi nǐ yì bǎi wǔ shí kuài 。 yǐ ： zhǎo nǐ sì shí 。"
+    "pinyin": "jiǎ ： zhè tiáo qún zi duō shǎo qián ？ yǐ ： yì bǎi èr shí kuài 。 jiǎ ： néng pián yi yì diǎn ma ？ wǒ mǎi liǎng jiàn 。 yǐ ： liǎng jiàn suàn nǐ èr bǎi yī 。 jiǎ ： yǒu méi yǒu dà yī hào de ？ wǒ xiǎng shì yí xià 。 yǐ ： yǒu ， nǐ ná zhè jiàn qù shì 。 jiǎ ： zhè jiàn tǐng dà ， xiǎo yī hào de yǒu ma ？ yǐ ： yě yǒu 。 jiǎ ： nà wǒ fù kuǎn 。 wǒ méi yǒu líng qián ， gěi nǐ èr bǎi wǔ shí kuài 。 yǐ ： zhǎo nǐ sì shí 。"
   },
   "speaking": [
     {
@@ -161,7 +161,7 @@
       "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách hỏi gì, được trả lời giá nào, cuối cùng trả tiền ra sao.",
       "prepareSeconds": 30,
       "responseSeconds": 60,
-      "reference": "Khách hỏi giá chiếc váy và được báo một trăm hai mươi tệ. Khi xin bớt, khách mua hai chiếc được tính một trăm mười một. Khách hỏi cỡ lớn hơn, thử thấy rộng nên hỏi lại cỡ nhỏ hơn. Cuối cùng khách trả tiền: không có tiền lẻ nên đưa một trăm năm mươi và được thối lại bốn mươi.",
+      "reference": "Khách hỏi giá chiếc váy và được báo một trăm hai mươi tệ. Khi xin bớt, khách mua hai chiếc được tính hai trăm mười. Khách hỏi cỡ lớn hơn, thử thấy rộng nên hỏi lại cỡ nhỏ hơn. Cuối cùng khách trả tiền: không có tiền lẻ nên đưa hai trăm năm mươi và được thối lại bốn mươi.",
       "checklist": [
         "Nói đủ: giá, cỡ, cách trả tiền",
         "Người nghe hiểu được nội dung",

@@ -154,3 +154,39 @@ test('neutral-tone feedback does not ask the learner to prolong the syllable', (
   assert.doesNotMatch(renderNote(note), /phân biệt thanh 1 và thanh 3/);
   assert.match(renderNote('Không nghe rõ giọng.'), /Không nghe rõ giọng/);
 });
+
+test('vocabulary card chấm theo âm: đồng âm đúng, lệch thanh/vần gần được chỉ ra', () => {
+  const render = (word: string, pinyin: string, target: string, text: string) =>
+    renderToStaticMarkup(<VocabReadFeedback word={{ word, pinyin }} target={target} text={text} />);
+  const same = render('是', 'shì', '是', '事');
+  assert.match(same, /lesson-ok/);
+  assert.match(same, /Mình nghe đúng rồi/);
+  const tone = render('妈妈', 'māma', '妈妈', '马马');
+  assert.match(tone, /thanh 3/);
+  assert.match(render('妈', 'mā', '妈', '马'), /lesson-bad/);
+  assert.match(tone, /gợi ý/);
+  const near = render('四', 'sì', '四', '十');
+  assert.match(near, /lesson-bad/);
+  assert.match(near, /nghe thành “sh”/);
+});
+
+test('tone chips name the neutral tone and explain a 3-3 sandhi syllable', () => {
+  const html = renderToStaticMarkup(
+    <ToneFeedback
+      report={{
+        mode: 'word',
+        method: 'model',
+        checked: 1,
+        correct: 1,
+        syllables: [
+          { char: '你', pinyin: 'nǐ', expected: 2, heard: 2, ok: true, sandhi: true },
+          { char: '吗', pinyin: 'ma', expected: 0, heard: 5, ok: true },
+        ],
+      }}
+    />,
+  );
+  assert.match(html, /thanh 2 \(biến điệu\) ✓/);
+  assert.match(html, /thanh nhẹ ✓/);
+  assert.doesNotMatch(html, /thanh 0/);
+  assert.doesNotMatch(html, /chưa đủ chắc/); // checked equals the syllables that carry a tone
+});

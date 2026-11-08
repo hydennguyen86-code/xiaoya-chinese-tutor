@@ -91,8 +91,8 @@
     "openingVi": "Chào bạn, chúng ta gặp lúc mấy giờ và ở đâu?"
   },
   "freeTalk": {
-    "question": "请安排一次见面，说时间、地点和一个活动。",
-    "questionVi": "Xin sắp xếp một cuộc gặp, nêu thời gian, địa điểm và một hoạt động."
+    "question": "请说一次见面：时间、地点和一个活动。",
+    "questionVi": "Hãy nói về một buổi gặp: thời gian, địa điểm và một hoạt động."
   },
   "learningNotes": [
     "Bài tích hợp, ưu tiên dùng lại vốn đã học. Không yêu cầu học nhiều từ mới.",
@@ -154,7 +154,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请安排一次见面，说时间、地点和一个活动。",
+      "prompt": "请说一次见面：时间、地点和一个活动。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

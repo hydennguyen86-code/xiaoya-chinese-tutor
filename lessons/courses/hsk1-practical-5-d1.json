@@ -90,8 +90,8 @@
     "openingVi": "Chiều mai bạn có thời gian không?"
   },
   "freeTalk": {
-    "question": "请约一个见面时间，再确认一次。",
-    "questionVi": "Xin hẹn một thời gian gặp rồi xác nhận lại một lần."
+    "question": "请说一个见面时间，再问一次：对吗？",
+    "questionVi": "Hãy nói một thời gian gặp, rồi hỏi lại một lần: đúng không?"
   },
   "learningNotes": [
     "Bổ trợ: 现在 xiànzài — bây giờ; 时间 shíjiān — thời gian; 可以 kěyǐ — được/có thể.",
@@ -145,7 +145,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请约一个见面时间，再确认一次。",
+      "prompt": "请说一个见面时间，再问一次：对吗？",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

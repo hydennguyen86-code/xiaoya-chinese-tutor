@@ -98,7 +98,7 @@
     "openingVi": "Chào bạn, rất vui được làm quen. Mời ngồi, bạn khỏe không?"
   },
   "freeTalk": {
-    "question": "请跟对方打招呼，再问对方好不好。",
+    "question": "请先说你好，再问他好不好。",
     "questionVi": "Hãy chào người đối diện, rồi hỏi xem họ có khỏe không."
   },
   "learningNotes": [
@@ -153,7 +153,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请跟对方打招呼，再问对方好不好。",
+      "prompt": "请先说你好，再问他好不好。",
       "promptVi": "Hãy chào người đối diện, rồi hỏi xem họ có khỏe không.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

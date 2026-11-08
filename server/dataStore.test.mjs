@@ -25,15 +25,25 @@ test('rejects keys outside the app namespace and path tricks', () => {
   const dir = tempDir();
   const store = createDataStore(dir);
   for (const key of ['other.key', 'xiaoya./../evil', '../xiaoya.x', 'xiaoya.', '']) {
-    assert.throws(() => store.write(key, '1'), (error) => error.status === 400, key);
+    assert.throws(
+      () => store.write(key, '1'),
+      (error) => error.status === 400,
+      key,
+    );
   }
   assert.deepEqual(fs.readdirSync(dir), []);
 });
 
 test('rejects non-string and oversized values', () => {
   const store = createDataStore(tempDir());
-  assert.throws(() => store.write('xiaoya.a', 5), (error) => error.status === 400);
-  assert.throws(() => store.write('xiaoya.a', 'x'.repeat(2 * 1024 * 1024 + 1)), (error) => error.status === 413);
+  assert.throws(
+    () => store.write('xiaoya.a', 5),
+    (error) => error.status === 400,
+  );
+  assert.throws(
+    () => store.write('xiaoya.a', 'x'.repeat(2 * 1024 * 1024 + 1)),
+    (error) => error.status === 413,
+  );
 });
 
 test('backs up existing files before the first change of the day', () => {

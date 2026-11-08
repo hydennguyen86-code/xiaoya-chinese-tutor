@@ -35,7 +35,7 @@ test('expected tones follow the sandhi rules', () => {
 test('儿 hoá merges 儿 into the previous syllable so the grader splits one segment', () => {
   assert.deepEqual(expectedTones('哪儿'), [{ char: '哪儿', pinyin: 'nǎr', expected: 3 }]);
   assert.deepEqual(expectedTones('有点儿'), [
-    { char: '有', pinyin: 'yǒu', expected: 2 },
+    { char: '有', pinyin: 'yǒu', expected: 2, sandhi: true },
     { char: '点儿', pinyin: 'diǎnr', expected: 3 },
   ]);
   assert.deepEqual(
@@ -191,4 +191,116 @@ test('a recording far from the learner profile is not judged against it and does
   for (let i = 0; i < 3; i++) profile = updateProfile(profile, Array(200).fill(120), 120);
   assert.ok(profile.frames <= 200);
   assert.ok(Math.abs(12 * Math.log2(120 / (profileRange({ ...profile, frames: Math.max(300, profile.frames) })?.median || 120))) < 1);
+});
+
+// ---- regressions found in the 2026-11-08 audit ----
+import { syllablesOf } from '../src/lib/readingScore.mjs';
+import { analyseTones as analyse } from './tones.mjs';
+
+const toneTestPcm = (seconds = 1.2) => {
+  const rate = 16000;
+  const pcm = new Float32Array(Math.round(rate * seconds));
+  for (let i = 0; i < pcm.length; i += 1) {
+    const t = i / rate;
+    const gap = (t > 0.38 && t < 0.42) || (t > 0.78 && t < 0.82);
+    pcm[i] = gap ? 0 : 0.3 * Math.sin(2 * Math.PI * 200 * t);
+  }
+  return pcm;
+};
+
+test('expected pinyin reads the sentence as written: locks keyed on punctuation apply, like the on-screen reading', () => {
+  // POLYPHONE_LOCKS has '，得改' (děi) and '时候还。' (huán); the Han-only string never matched them
+  const de = expectedTones('我们，得改');
+  assert.equal(de[2].pinyin, 'děi');
+  assert.equal(syllablesOf('我们，得改')[2].pinyin, 'děi');
+  assert.equal(expectedTones('那时候还。').at(-1).pinyin, 'huán');
+  // 3-3 still does not cross the comma: 们(neutral) 得(děi) 改(gǎi) -> 得 lowered, but 你好，得 is not
+  assert.deepEqual(
+    expectedTones('你好，得改').map((s) => s.pinyin),
+    syllablesOf('你好，得改').map((s) => s.pinyin),
+  );
+});
+
+test('expected pinyin and the reading score agree on every syllable (same count, same dictionary reading)', () => {
+  for (const text of [
+    '你好，得改',
+    '哪儿有洗手间？',
+    '我想买一个，不好的。',
+    '一点儿也不贵',
+    '我喜欢B超',
+    '这是 5G 手机',
+    '他把书还给我',
+    '一，不要',
+  ]) {
+    const a = expectedTones(text).map((s) => s.pinyin.replace(/r$/, ''));
+    const b = syllablesOf(text).map((s) => s.pinyin.replace(/r$/, ''));
+    assert.equal(a.length, b.length, text);
+    assert.deepEqual(a, b, text);
+  }
+});
+
+test('3-3 sandhi is applied across 儿 hoá: 哪儿有 and 一点儿也 lower the erhua syllable', () => {
+  assert.deepEqual(
+    expectedTones('哪儿有洗手间').map((s) => s.expected),
+    [2, 2, 2, 3, 1],
+  );
+  assert.deepEqual(
+    expectedTones('一点儿也不').map((s) => s.expected),
+    [4, 2, 3, 4],
+  );
+  // a pause still blocks it
+  assert.deepEqual(
+    expectedTones('哪儿，有').map((s) => s.expected),
+    [3, 3],
+  );
+  assert.equal(expectedTones('哪儿有')[0].sandhi, true);
+});
+
+test('a syllable lowered by 3-3 sandhi is flagged so the screen can say why it asks for tone 2', () => {
+  const [ni, hao] = expectedTones('你好');
+  assert.equal(ni.expected, 2);
+  assert.equal(ni.pinyin, 'nǐ');
+  assert.equal(ni.sandhi, true);
+  assert.equal(hao.sandhi, undefined);
+  assert.equal(expectedTones('不是')[0].sandhi, undefined); // 不 -> bú is read off the pinyin, not 3-3
+});
+
+test('a confirmed neutral syllable is not counted as a graded syllable', async () => {
+  const scorer = async (_pcm, segments) => segments.map((_s, i) => ({ tone: [1, 5, 3][i], confidence: 0.95, probs: [] }));
+  const report = await analyse(null, '妈妈好', { pcm: toneTestPcm(), scorer });
+  assert.equal(report.syllables[1].ok, true); // shown as confirmed
+  assert.equal(report.checked, 2);
+  assert.equal(report.correct, 2);
+});
+
+test('digits and Latin letters in the target are not split into syllables', async () => {
+  let called = false;
+  const scorer = async () => {
+    called = true;
+    return null;
+  };
+  for (const text of ['我有2个朋友', '我喜欢HSK']) {
+    const report = await analyse(null, text, { pcm: toneTestPcm(), scorer });
+    assert.equal(called, false);
+    assert.equal(report.checked, 0);
+    assert.ok(report.syllables.every((s) => s.ok === null));
+    assert.match(report.note, /chữ số hoặc chữ cái Latin/);
+  }
+});
+
+test('a sentence that is too short to split says so instead of staying silent', async () => {
+  const pcm = toneTestPcm(0.1);
+  const report = await analyse(null, '我学习汉语', { pcm, scorer: async () => null });
+  assert.equal(report.mode, 'sentence');
+  assert.match(report.note, /Không đủ âm thanh/);
+});
+
+test('very long recordings are refused before pitch tracking; long arrays do not overflow Math.max', async () => {
+  const long = new Float32Array(16000 * 121);
+  const report = await analyse(null, '你好', { pcm: long });
+  assert.match(report.note, /quá dài/);
+  assert.equal(report.checked, 0);
+  // > 125k frames used to throw RangeError in Math.max(...rms)
+  const silent = new Float32Array(16000 * 1300);
+  assert.equal(pitchTrack(silent).median, 0);
 });

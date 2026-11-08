@@ -90,8 +90,8 @@
     "openingVi": "Ngày mai chúng ta đi đâu trước?"
   },
   "freeTalk": {
-    "question": "请安排明天下午的见面：说时间、地点、先做什么再做什么，再说一样东西的价钱。",
-    "questionVi": "Hãy sắp xếp buổi gặp chiều mai: nói thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món."
+    "question": "请说明天下午的见面：时间、地点、先做什么再做什么，再说一样东西多少钱。",
+    "questionVi": "Hãy nói về buổi gặp chiều mai: thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món."
   },
   "learningNotes": [
     "Bài tích hợp, ưu tiên dùng lại vốn đã học. Không yêu cầu học nhiều từ mới.",
@@ -153,8 +153,8 @@
     },
     {
       "kind": "answer",
-      "prompt": "请安排明天下午的见面：说时间、地点、先做什么再做什么，再说一样东西的价钱。",
-      "promptVi": "Hãy sắp xếp buổi gặp chiều mai: nói thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món.",
+      "prompt": "请说明天下午的见面：时间、地点、先做什么再做什么，再说一样东西多少钱。",
+      "promptVi": "Hãy nói về buổi gặp chiều mai: thời gian, địa điểm, việc làm trước rồi việc làm sau, và giá một món.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",

@@ -28,6 +28,7 @@ import {
 } from '../lib/lessonPlan';
 import { loadLessonProgress, saveLessonProgress } from '../lib/lessonStore';
 import { dayKey } from '../lib/storage';
+import { groupTracks, trackIdOf } from '../lib/courseTracks';
 import { ToneFeedback } from './ToneFeedback';
 import {
   bareChinese,
@@ -39,6 +40,7 @@ import {
   type VoiceResult,
 } from '../lib/voiceInput';
 import { pinyinWord, sameSyllable, toneLabel } from '../lib/coursePinyin.mjs';
+import { containsReading, readingOk } from '../lib/readingScore.mjs';
 import type { Correction, LearningProfile, Level } from '../types';
 import { pinyinLine } from '../lib/text';
 
@@ -323,49 +325,39 @@ export function DailyLesson(props: DailyLessonProps) {
     else void load();
   }
   const currentVolume = syllabus?.volumes.find((v) => v.id === progress?.volumeId);
+  const tracks = useMemo(() => (syllabus ? groupTracks(syllabus.volumes) : []), [syllabus]);
+  const currentTrack = currentVolume ? tracks.find((track) => track.id === trackIdOf(currentVolume)) : undefined;
   const coursePicker = syllabus && (
     <div className="course-picker">
       <label>
         Lộ trình{' '}
         <select
           aria-label="Lộ trình học"
-          value={currentVolume?.trackId || currentVolume?.id || ''}
-          onChange={(event) => chooseCourse(event.target.value === 'misu30' ? 'misu30-1' : event.target.value)}
+          value={currentTrack?.id || ''}
+          onChange={(event) => {
+            const track = tracks.find((item) => item.id === event.target.value);
+            if (track) chooseCourse(track.volumes[0].id);
+          }}
         >
-          {!currentVolume && <option value="">Chọn lộ trình</option>}
-          {syllabus.volumes
-            .filter((volume) => !volume.trackId)
-            .map((volume) => (
-              <option key={volume.id} value={volume.id}>
-                {volume.title}
-              </option>
-            ))}
-          {syllabus.volumes.some((v) => v.trackId === 'misu30') && <option value="misu30">30 bài giao tiếp HSK1–6</option>}
+          {!currentTrack && <option value="">Chọn lộ trình</option>}
+          {tracks.map((track) => (
+            <option key={track.id} value={track.id}>
+              {track.title}
+            </option>
+          ))}
         </select>
       </label>
-      {currentVolume?.trackId === 'misu30' && (
-        <>
-          <label>
-            Tập{' '}
-            <select aria-label="Tập của 30 bài giao tiếp" value={currentVolume.id} onChange={(event) => chooseCourse(event.target.value)}>
-              {syllabus.volumes
-                .filter((v) => v.trackId === 'misu30')
-                .map((v) => (
-                  <option key={v.id} value={v.id}>
-                    {v.title}
-                  </option>
-                ))}
-            </select>
-          </label>
-          {currentVolume.id !== 'misu30-1' && (
-            <p>
-              Bạn đang vào giữa lộ trình (bài {currentVolume.lessons[0].no} trở đi). Bài 1–10 nằm ở Tập 1.{' '}
-              <button type="button" onClick={() => chooseCourse('misu30-1', 1)}>
-                Bắt đầu 30 bài từ bài 1
-              </button>
-            </p>
-          )}
-        </>
+      {currentVolume && currentTrack && currentTrack.volumes.length > 1 && (
+        <label>
+          Phần{' '}
+          <select aria-label="Phần của lộ trình" value={currentVolume.id} onChange={(event) => chooseCourse(event.target.value)}>
+            {currentTrack.volumes.map((v) => (
+              <option key={v.id} value={v.id}>
+                {v.title}
+              </option>
+            ))}
+          </select>
+        </label>
       )}
       {currentVolume && (
         <label>
@@ -710,7 +702,7 @@ function ReviewSection(props: SharedProps & { learning: LearningProfile }) {
     const heard = await ask();
     if (!heard) return;
     const target = item.kind === 'word' ? item.word : item.corrected;
-    const ok = bareChinese(heard).includes(bareChinese(target));
+    const ok = readingOk(target, heard, { within: true });
     setResult({ ok, heard });
     if (item.kind === 'word') onLearningUpdate((p) => reviewWord(p, item.word, ok));
     updateSession((s) => ({ ...s, stats: { ...s.stats, reviewed: s.stats.reviewed + 1, remembered: s.stats.remembered + (ok ? 1 : 0) } }));
@@ -798,9 +790,12 @@ function isLightSyllable(word: { word: string; pinyin: string }) {
 export function VocabReadFeedback({ word, target, text }: { word: { word: string; pinyin: string }; target: string; text: string }) {
   if (!text) return null;
   const cleanedTarget = bareChinese(target);
-  const exact = Boolean(cleanedTarget) && bareChinese(text).includes(cleanedTarget);
   const readingWord = target === word.word;
   const light = readingWord && isLightSyllable(word);
+  // Chấm theo âm: đồng âm khác chữ (事/是) vẫn đúng. Riêng thanh nhẹ giữ so chữ vì máy chưa chấm được thanh nhẹ.
+  const reading = containsReading(target, text);
+  const exact = light ? Boolean(cleanedTarget) && bareChinese(text).includes(cleanedTarget) : readingOk(target, text, { within: true });
+  const partial = !exact && reading.total > 0 && reading.syllables.some((s) => s.status !== 'wrong' && s.status !== 'missing');
   const heardWord = readingWord ? pinyinOf(text) : '';
   const similar = light && Boolean(heardWord) && sameSyllable(heardWord, word.pinyin);
   const want = word.pinyin ? `${word.pinyin} · ${toneLabel(word.pinyin)}` : '';
@@ -810,12 +805,16 @@ export function VocabReadFeedback({ word, target, text }: { word: { word: string
       {light && exact
         ? `Máy nhận đúng chữ ${word.word}. Thanh nhẹ chưa được chấm; nghe mẫu và đọc ngắn, nhẹ nhé.`
         : exact
-          ? 'Mình nghe đúng chữ rồi.'
+          ? reading.matched === reading.total && !reading.extra.length
+            ? 'Mình nghe đúng rồi.'
+            : `Mình nghe gần đúng: ${reading.summary}`
           : similar
             ? `Máy nhận thành “${text}” (${heardWord}), có cùng âm tiết ${word.pinyin}. Mình tạm chấp nhận; máy chưa xác nhận được thanh nhẹ. Nghe mẫu và đọc ngắn, nhẹ nhé.`
-            : heardWord && want
-              ? `Mình nghe thành “${text}” (${heardWord} · ${toneLabel(heardWord)}), còn ${word.word} cần “${want}”. Nghe mẫu rồi thử lại nhé.`
-              : `Mình nghe thành: “${text}”. Nghe lại rồi thử lần nữa nhé.`}
+            : partial
+              ? `Mình nghe thành “${text}”. ${reading.summary} Nghe mẫu rồi thử lại nhé.`
+              : heardWord && want
+                ? `Mình nghe thành “${text}” (${heardWord} · ${toneLabel(heardWord)}), còn ${word.word} cần “${want}”. Nghe mẫu rồi thử lại nhé.`
+                : `Mình nghe thành: “${text}”. Nghe lại rồi thử lần nữa nhé.`}
     </p>
   );
 }
@@ -927,7 +926,7 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
     setBusy(true);
     try {
       const corrections = await fetchCorrections({ provider, model, text });
-      const missing = fixedParts.filter((part) => !bareChinese(text).includes(part));
+      const missing = fixedParts.filter((part) => !readingOk(part, text, { within: true }));
       setFeedback({ corrections, missing });
       if (corrections.length) onLearningUpdate((p) => recordLearningCorrections(p, text, corrections));
       updateSession((s) => ({

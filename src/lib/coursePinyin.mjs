@@ -81,6 +81,8 @@ export const POLYPHONE_LOCKS = {
   // 空 = "rảnh, còn trống" đọc kòng thanh 4; pinyin-pro ghi nhầm kōng thanh 1.
   有空: ['yǒu', 'kòng'],
   空着: ['kòng', 'zhe'],
+  // 有空调 = có máy lạnh: 空 là kōng, khoá sau để ghi đè khoá 有空 ở trên.
+  有空调: ['yǒu', 'kōng', 'tiáo'],
   // 只 = "chỉ" là zhǐ; pinyin-pro ghi nhầm zhī trước một số động từ (只送/只看/只统计/只访问).
   只送: ['zhǐ', 'sòng'],
   只看: ['zhǐ', 'kàn'],
@@ -127,7 +129,6 @@ export function lockNeutralPositions(text) {
   }
   return out;
 }
-
 
 // Từ điển ghi âm tiết thứ hai (hoặc các vị trí liệt kê) là thanh nhẹ.
 // Đây là nguồn duy nhất; mọi script kiểm tra phải import danh sách này.

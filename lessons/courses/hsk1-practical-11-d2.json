@@ -106,7 +106,7 @@
     "openingVi": "Chào bạn, bạn không khỏe à?"
   },
   "freeTalk": {
-    "question": "请说不舒服，再请对方帮你找医院，最后请他说一遍。",
+    "question": "请说不舒服，再请他帮你找医院，最后请他再说一遍。",
     "questionVi": "Hãy nói bạn không khỏe, nhờ người đối diện giúp tìm bệnh viện, cuối cùng nhờ họ nói lại một lần."
   },
   "learningNotes": [
@@ -163,7 +163,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请说不舒服，再请对方帮你找医院，最后请他说一遍。",
+      "prompt": "请说不舒服，再请他帮你找医院，最后请他再说一遍。",
       "promptVi": "Hãy nói bạn không khỏe, nhờ người đối diện giúp tìm bệnh viện, cuối cùng nhờ họ nói lại một lần.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

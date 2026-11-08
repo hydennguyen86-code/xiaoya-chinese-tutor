@@ -84,3 +84,42 @@ chủ ý. Không đổi cờ `reviewed` để vượt qua điều kiện của b
 - Soạn buổi 2 làm nhiệm vụ ôn chuyển ngữ cảnh, không chỉ thay câu ví dụ.
 - Nạp bộ bài cố định theo trạng thái minh bạch, sau đó nhờ người có chuyên môn
   duyệt ngôn ngữ và thử với người học đúng nhóm mục tiêu.
+
+---
+
+## Rà soát đợt 2026-11-08: 82 buổi cố định, 30 bài misu30, nghe, đọc, benchmark
+
+Rà soát bởi AI (không phải giáo viên). Công cụ mới: `node scripts/audit-lessons.mjs [--all] [--section=struct,pinyin,dup,level,meaning,dialog,aux] [--json]`.
+Công cụ chỉ liệt kê chỗ để xem tay; không sửa file, không phải cổng chặn. Các checker có sẵn
+(`check:assets`, `check-course-day2`, `hsk-coverage`, `review-lesson` cho cả 112 file, 7 checker trong
+`scripts/listening-checks/`, `npm test`) đều pass sau khi sửa.
+
+### Đã đọc tay bằng mắt
+- Toàn bộ 24 buổi HSK 1 (từ vựng, mẫu câu, nhập vai, nghe, nói, thẻ phát âm, đề chặng) và bộ dictation/shadowing tương ứng.
+- 10 bài misu30-1.
+- HSK 3 và HSK 5: đọc toàn bộ từ vựng, bản nghe và câu hỏi nghe; đọc nhanh phần còn lại + kiểm bằng script.
+- misu30-2, misu30-3, nhập môn pinyin: đọc từ vựng/mẫu câu; phần nhập vai và nói kiểm bằng script.
+
+### Kết quả theo loại (đã sửa)
+| Loại | Số | Ví dụ |
+|---|---|---|
+| Số liệu/logic trong bài nghe | 1 bài (5 chỗ) | hsk3-practical-3-d1: dịch 一百一 thành "111" (đúng là 110); hai chiếc giá 110 trong khi một chiếc 120; 150 − 40 không khớp. Sửa thành 二百一 / 二百五十块 / 找四十, đồng bộ transcript, pinyin, dịch, đáp án, đoạn kể lại |
+| Gợi ý phát âm sai | 2 thẻ (3 file) | 学习: ghi "cả hai tiếng đều ü" (xí là i, không phải ü); 预约: ghi "hai thanh 4" (yuē là thanh 1) |
+| Nghĩa tiếng Việt sai/gây hiểu nhầm | 11 mục | 习惯 "làm quen" → "quen với"; 电影 "rạp phim" → "điện ảnh"; 合适 "vừa ý" → "vừa vặn; phù hợp"; 菜单 "bảng gọi món" → "thực đơn"; 讲义 "giáo án" → "tài liệu bài giảng"; 米 "cơm" → "gạo"; 请客 "bao tiền" → "đãi"; 邀请 "mời mọc"; 路 "lộ"; 吗 "chăng"; 朋友说什么 dịch "Bạn nói gì?" → "Bạn tôi nói gì?" |
+| Bản dịch ví dụ trùng/lệch | 4 | 手机 dịch giống hệt 电话; 锻炼 "tập rèn luyện"; 传统 "Tết Xuân" → "Tết Nguyên đán"; "rủ rê" (nghĩa xấu) → "rủ" (3 chỗ) |
+| Câu tiếng Trung không tự nhiên | 1 | 方向: 往前走就是你要的方向 → 你走错方向了，要往回走 (pinyin tính lại) |
+| Vượt bậc trong lời lệnh HSK 1 (freeTalk và speaking[1].prompt) | 21 buổi | 对方, 确认, 打招呼, 饮料, 价钱/价格, 比较, 安排, 虚构, 约, 把 → dùng từ HSK 1–2 (他, 问多少钱, 再问一次…); bản dịch giữ ý, chỉnh khi cần |
+| Thiếu glossary đọc hiểu | 7 bài đọc | Thêm 很 (6 bài) và 见 (rd-1-010); trước đây chạm chữ không hiện nghĩa |
+| Patch checkpoint lệch file bài | 2 patch | `hsk1-practical-12-d2.patch.json` mang pinyin chép nhầm từ bài 6 (và glossary cũ); `node scripts/apply-course-patches.mjs` báo "Patch cannot overwrite existing content". Đã đồng bộ theo file bài |
+
+Không tìm thấy lỗi ở: trường bắt buộc thiếu/rỗng, đáp án nghe ngoài phạm vi, option trùng, cặp d1/d2 lệch nhau (script: 0 phát hiện), nghĩa rỗng, từ trùng giữa các bài ngoài thiết kế (chỉ 12 từ dùng lại, hợp lý).
+`pinyin` lưu trong bài lệch pinyin-pro: 0 chỗ lỗi thật (xem mục dưới về 空调).
+
+### Cần người có chuyên môn xem (chưa tự quyết)
+1. **Lỗi trong code, ngoài phạm vi sửa lượt này:** `POLYPHONE_LOCKS['有空']` trong `src/lib/coursePinyin.mjs` khớp nhầm bên trong 有空调 (misu30-2-13 "房间里有空调吗？") nên `pinyinCitation` ra *kòng* thay vì *kōng*. Pinyin lưu trong bài đúng (kōng); chỗ nào tính lại bằng `pinyinCitation` (chấm thanh, thẻ thanh điệu) sẽ ra sai. Gợi ý: khóa `有空` kèm ký tự sau không phải 调, hoặc thêm khóa `空调: ['kōng','tiáo']` đứng sau.
+2. **Bản dịch bản nghe dạng tóm tắt, không dịch từng lượt** (27 clip: HSK 3, nhập môn pinyin, phần đề chặng). HSK 1 có A:/B: từng câu. Người duyệt quyết định có cần bản dịch từng câu cho HSK 3 trở lên không.
+3. **misu30 (30 bài):** bản nghe chỉ ghép 3 câu ví dụ từ vựng và câu hỏi chỉ hỏi nghĩa từ ("Cụm … nghĩa gì?"), không có hội thoại nghe hiểu thật; không có bộ chép chính tả/nhắc lại trong `lessons/listening/course/` (checker hiện loại trừ misu30). Có thể đây là lựa chọn thiết kế; nếu muốn đủ bộ như 82 buổi kia thì cần soạn 30 file và mở rộng `course-listening.check.mjs`, không làm trong lượt này.
+4. **Từ ngoài băng mức trong ví dụ/đối thoại** (script `level`, đối chiếu `eval/hsk-standard.words.jsonl`; còn lại 160 dòng, nhiều dòng là chữ lẻ do tách từ): HSK 3 dùng 豆浆, 番茄, 喉咙, 晕, 扛, 尴尬, 宿舍, 业务, 患者…; HSK 5 và misu30 có tình huống tương tự. Đây là từ ngữ cảnh thực tế trong hội thoại nghe, không phải từ vựng mục tiêu; cần quyết định có chú giải sẵn hay thay bằng từ trong băng.
+5. **`lessons/listening/course/hsk1-practical-3-d2.json`, dt-1-123 "电话是零。"** (Số điện thoại là không): câu vô nghĩa về nội dung. Sửa cần tính lại pinyin, baseTones, acceptTones, nên để người soạn bộ nghe quyết định.
+6. **Chỉ có nghĩa-cặp, chưa kiểm ngữ nghĩa sâu:** nghĩa các từ đa nghĩa (点 giờ/gọi món, 换, 走) khác nhau giữa các bài là chủ ý theo ngữ cảnh; 吗 trong pinyin-intro-1 ghi "trợ từ nghi vấn (…không?)", người duyệt xem cách gọi quen thuộc với học viên Việt.
+7. **Đồng bộ `syllabus.json`** (file này do tác nhân khác sửa, không động vào): các nghĩa sau trong `lessons/courses/` đã đổi nhưng mục lục còn bản cũ: 吗 "chăng (hỏi)", 米 "gạo; cơm", 路 "đường; lộ", 电影 "phim; rạp phim", 锻炼 "rèn luyện; tập", 习惯 "thói quen; làm quen", 邀请 "mời; mời mọc", chủ đề "rủ rê" (misu30-2-11). Đã lệch sẵn từ trước: 一把 "một nắm" (bài: "một nắm; một chiếc"), 免疫力 "sức miễn dịch" (bài: "khả năng miễn dịch"). Không có test bắt lệch này, nhưng nên đồng bộ để app không hiển thị hai nghĩa khác nhau.

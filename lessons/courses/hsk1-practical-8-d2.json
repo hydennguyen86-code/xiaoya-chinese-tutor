@@ -106,8 +106,8 @@
     "openingVi": "Chào bạn, bạn đang tìm trường à?"
   },
   "freeTalk": {
-    "question": "请在学校门口问商店在哪里，再确认往左还是往右。",
-    "questionVi": "Hãy hỏi ở cổng trường xem cửa hàng ở đâu, rồi xác nhận đi sang trái hay sang phải."
+    "question": "请在学校门口问商店在哪里，再问往左还是往右。",
+    "questionVi": "Hãy hỏi ở cổng trường xem cửa hàng ở đâu, rồi hỏi lại đi sang trái hay sang phải."
   },
   "learningNotes": [
     "Bổ trợ: 学校 xuéxiào — trường; 商店 shāngdiàn — cửa hàng; 往 wǎng — về phía; 对 duì — đúng.",
@@ -162,8 +162,8 @@
     },
     {
       "kind": "answer",
-      "prompt": "请在学校门口问商店在哪里，再确认往左还是往右。",
-      "promptVi": "Hãy hỏi ở cổng trường xem cửa hàng ở đâu, rồi xác nhận đi sang trái hay sang phải.",
+      "prompt": "请在学校门口问商店在哪里，再问往左还是往右。",
+      "promptVi": "Hãy hỏi ở cổng trường xem cửa hàng ở đâu, rồi hỏi lại đi sang trái hay sang phải.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
       "reference": "Dùng mẫu câu của bài để trả lời theo hoàn cảnh của bạn; không có một đáp án duy nhất.",

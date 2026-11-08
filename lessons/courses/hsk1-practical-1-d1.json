@@ -90,7 +90,7 @@
     "openingVi": "Chào bạn, bạn khỏe không?"
   },
   "freeTalk": {
-    "question": "请打个招呼，再说一句谢谢。",
+    "question": "请说你好，再说一句谢谢。",
     "questionVi": "Hãy chào hỏi rồi nói một câu cảm ơn."
   },
   "learningNotes": [
@@ -145,7 +145,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请打个招呼，再说一句谢谢。",
+      "prompt": "请说你好，再说一句谢谢。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

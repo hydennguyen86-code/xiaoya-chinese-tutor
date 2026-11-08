@@ -15,7 +15,15 @@ Mỗi buổi có từ/cụm, pinyin, ví dụ và dịch, mẫu câu, bản nghe
 đáp án giải thích, nhiệm vụ nói và chuyển tình huống. Cuối bài 6 và 12 có đề
 mini tự soạn. Buổi 2 không dùng lại bản nghe của buổi 1.
 
-Trong app: **Bài hôm nay → Lộ trình học → Nhập môn Pinyin / HSK 1 / HSK 3 / HSK 5**.
+Trong app: **Bài hôm nay → Lộ trình học** liệt kê theo bậc, mỗi bậc một mục; ô **Phần**
+bên dưới liệt kê các tập trong bậc đó theo thứ tự (khai báo bằng `trackId`/`trackTitle`
+trong `syllabus.json`):
+
+- **HSK 1–2**: Nhập môn Pinyin → HSK 1 · Nghe nói thực tế → 30 bài giao tiếp Tập 1 (bài 1–10).
+- **HSK 3–4**: HSK 3 · Nghe nói thực tế → 30 bài giao tiếp Tập 2 (bài 11–20).
+- **HSK 5–6**: HSK 5 · Nghe nói thực tế → 30 bài giao tiếp Tập 3 (bài 21–30).
+
+Id các tập (`pinyin-intro`, `hsk1-practical`, `misu30-1`…) giữ nguyên nên tiến độ đã lưu không mất.
 Trình độ HSK1–2 mặc định mở Nhập môn Pinyin, HSK3–4 mặc định mở HSK 3; ai đang học
 dở bài nào thì app đưa về đúng bài đó, không bị dịch chuyển. Có thể chọn
 bài để xem trước. Phần **Hội thoại nhập vai** chứa bài nghe và luyện nói;

@@ -90,8 +90,8 @@
     "openingVi": "Chào bạn, bạn cần giúp việc gì?"
   },
   "freeTalk": {
-    "question": "请说明一个需要，再请对方帮忙。",
-    "questionVi": "Xin nói một nhu cầu rồi nhờ người đối thoại giúp."
+    "question": "请说你要什么，再请他帮忙。",
+    "questionVi": "Hãy nói bạn cần gì rồi nhờ người đối diện giúp."
   },
   "learningNotes": [
     "Bổ trợ: 不舒服 bù shūfu — không khỏe; 帮 bāng — giúp; 找 zhǎo — tìm.",
@@ -147,7 +147,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请说明一个需要，再请对方帮忙。",
+      "prompt": "请说你要什么，再请他帮忙。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

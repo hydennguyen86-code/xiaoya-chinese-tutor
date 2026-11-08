@@ -90,7 +90,7 @@
     "openingVi": "Bạn thức dậy lúc mấy giờ mỗi ngày?"
   },
   "freeTalk": {
-    "question": "请说两个活动和时间，再问对方一个问题。",
+    "question": "请说两个活动和时间，再问他一个问题。",
     "questionVi": "Xin nói hai hoạt động cùng thời gian, rồi hỏi người đối thoại một câu."
   },
   "learningNotes": [
@@ -145,7 +145,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请说两个活动和时间，再问对方一个问题。",
+      "prompt": "请说两个活动和时间，再问他一个问题。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
@@ -179,7 +179,7 @@
     {
       "text": "学习",
       "pinyin": "xué xí",
-      "hint": "chữ u sau x ở đây thực ra là ü tròn môi, cả hai tiếng đều vậy; đừng đọc môi dẹt như u thường."
+      "hint": "xué: chữ u sau x thực ra là ü tròn môi (viết u theo quy tắc chính tả); xí chỉ là i dẹt môi, đừng tròn môi ở âm thứ hai."
     },
     {
       "text": "天，床",

@@ -106,7 +106,7 @@
     "openingVi": "Hôm nay bạn thức dậy lúc mấy giờ?"
   },
   "freeTalk": {
-    "question": "请说今天上午和晚上做什么，再问对方几点睡觉。",
+    "question": "请说今天上午和晚上做什么，再问他几点睡觉。",
     "questionVi": "Hãy nói sáng nay và tối nay bạn làm gì, rồi hỏi người đối diện mấy giờ đi ngủ."
   },
   "learningNotes": [
@@ -161,7 +161,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请说今天上午和晚上做什么，再问对方几点睡觉。",
+      "prompt": "请说今天上午和晚上做什么，再问他几点睡觉。",
       "promptVi": "Hãy nói sáng nay và tối nay bạn làm gì, rồi hỏi người đối diện mấy giờ đi ngủ.",
       "prepareSeconds": 15,
       "responseSeconds": 30,

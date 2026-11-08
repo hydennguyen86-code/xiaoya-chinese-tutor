@@ -71,9 +71,9 @@
     },
     {
       "word": "菜单",
-      "meaning": "bảng gọi món; thực đơn",
+      "meaning": "thực đơn",
       "example": "能给我们一张菜单吗？",
-      "exampleVi": "Có thể cho chúng tôi một bảng gọi món không?",
+      "exampleVi": "Có thể đưa cho chúng tôi một tờ thực đơn không?",
       "pinyin": "cài dān",
       "examplePinyin": "néng gěi wǒ men yì zhāng cài dān ma ？"
     },
@@ -110,7 +110,7 @@
     }
   ],
   "roleplay": {
-    "setting": "Buổi 2: món đã lên bàn nhưng một bát quá cay và còn thừa một đĩa; bạn nhờ nhân viên đổi món, xin bảng gọi món để gọi thêm, rồi thanh toán và gói phần còn lại mang về.",
+    "setting": "Buổi 2: món đã lên bàn nhưng một bát quá cay và còn thừa một đĩa; bạn nhờ nhân viên đổi món, xin thực đơn để gọi thêm, rồi thanh toán và gói phần còn lại mang về.",
     "avatarRole": "Nhân viên phục vụ tại bàn",
     "learnerRole": "Khách phản hồi món ăn",
     "goals": [
@@ -138,7 +138,7 @@
     "title": "Nghe buổi 2: Gọi món, hỏi vị và thanh toán ở quán",
     "playLimit": 1,
     "transcript": "甲：服务员，这碗面太辣了，能不能换一碗不辣的？乙：我去问厨房。您还要别的吗？甲：请给我一张菜单，我想再看看。乙：这个青菜可以打包，明天热一下还能吃。甲：好，买单，一共多少钱？乙：四十八块。甲：我扫手机付，行吗？乙：可以，扫这儿。",
-    "translation": "Khách báo bát mì quá cay và xin đổi bát không cay; nhân viên xuống bếp hỏi. Khách xin bảng gọi món để xem thêm, được gợi ý gói đĩa rau mang về hôm sau hâm lại, rồi hỏi tổng cộng bao nhiêu. Khách trả bằng cách quét điện thoại và được đồng ý.",
+    "translation": "Khách báo bát mì quá cay và xin đổi bát không cay; nhân viên xuống bếp hỏi. Khách xin thực đơn để xem thêm, được gợi ý gói đĩa rau mang về hôm sau hâm lại, rồi hỏi tổng cộng bao nhiêu. Khách trả bằng cách quét điện thoại và được đồng ý.",
     "questions": [
       {
         "prompt": "Khách phàn nàn điều gì?",
@@ -192,7 +192,7 @@
       "prompt": "Nghe đoạn hội thoại rồi kể lại bằng tiếng Trung đơn giản: khách phản hồi gì, hai bên quyết định gì, trả tiền ra sao. Không tự thêm chi tiết.",
       "prepareSeconds": 30,
       "responseSeconds": 60,
-      "reference": "Khách báo bát mì quá cay và xin đổi bát không cay; nhân viên xuống bếp hỏi. Khách xin bảng gọi món để xem thêm, được gợi ý gói đĩa rau mang về hôm sau hâm lại, rồi hỏi tổng cộng bao nhiêu. Khách trả bằng cách quét điện thoại và được đồng ý.",
+      "reference": "Khách báo bát mì quá cay và xin đổi bát không cay; nhân viên xuống bếp hỏi. Khách xin thực đơn để xem thêm, được gợi ý gói đĩa rau mang về hôm sau hâm lại, rồi hỏi tổng cộng bao nhiêu. Khách trả bằng cách quét điện thoại và được đồng ý.",
       "checklist": [
         "Nói đủ ba ý: phản hồi, gói mang về, cách trả tiền",
         "Người nghe hiểu được nội dung",

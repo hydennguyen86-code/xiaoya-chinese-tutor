@@ -2,7 +2,7 @@ import { energyTiming } from './audioTiming.mjs';
 import { mediaToolPath } from './mediaTools.mjs';
 import { spawn } from 'node:child_process';
 import { pinyin } from 'pinyin-pro';
-import { erhuaIndices, hanOnly, pauseAfter, readSentence } from './listeningPinyin.mjs';
+import { erhuaIndices, hanOnly, pauseAfter, readSentence, syllableIndexMap } from './listeningPinyin.mjs';
 import { mergeVerdict, scoreWithModel } from './toneModel.mjs';
 
 // Tone feedback for a sentence the learner read aloud. Everything runs on this
@@ -15,6 +15,12 @@ const SR = 16000;
 const HOP = 160; // 10 ms
 const FRAME = 800; // 50 ms
 const HAN = /\p{Script=Han}/u;
+// Longer recordings are not pitch-tracked (YIN is O(frames) with a large constant; the UI stops at 30 s).
+export const MAX_SECONDS = 120;
+// Digits and Latin letters in a target are spoken as Chinese syllables (2024 → èr líng èr sì,
+// HSK → H S K) that expectedTones() does not count, so an even split into n syllables would
+// put every later syllable on the wrong stretch of audio.
+const UNALIGNABLE = /[0-9\uff10-\uff19\p{Script=Latin}]/u;
 
 export function decodeToPcm(buffer) {
   return new Promise((resolve, reject) => {
@@ -81,6 +87,13 @@ function yin(frame, fmin = 70, fmax = 500, threshold = 0.2) {
   return cmnd[best] < 0.35 ? SR / best : 0;
 }
 
+// Math.max(...array) throws RangeError on very long arrays
+function maxOf(values, floor = -Infinity) {
+  let max = floor;
+  for (const v of values) if (v > max) max = v;
+  return max;
+}
+
 export function pitchTrack(samples) {
   const f0 = [];
   const rms = [];
@@ -92,7 +105,7 @@ export function pitchTrack(samples) {
     rms.push(energy);
     f0.push(energy > 0.005 ? yin(frame) : 0);
   }
-  const peak = Math.max(...rms, 1e-9);
+  const peak = maxOf(rms, 1e-9);
   // unvoice quiet frames, then a 5-frame median filter and an octave-jump guard
   const voiced = f0.map((v, i) => (rms[i] > peak * 0.08 ? v : 0));
   const smooth = voiced.map((v, i) => {
@@ -111,7 +124,7 @@ export function pitchTrack(samples) {
 
 // ---- split the speech span into n syllables (low-energy boundaries, even lengths) ----
 export function segment(rms, f0, n, lo = 0, hi = rms.length - 1) {
-  const peakAll = Math.max(...rms);
+  const peakAll = maxOf(rms);
   let first = -1;
   let last = -1;
   for (let i = lo; i <= hi; i += 1) {
@@ -129,7 +142,7 @@ export function segment(rms, f0, n, lo = 0, hi = rms.length - 1) {
   const T = last - first + 1;
   const mean = T / n;
   const minLen = Math.max(2, Math.floor(mean * 0.35));
-  const peak = Math.max(...rms);
+  const peak = peakAll;
   const env = rms.slice(first, last + 1).map((v, i, arr) => {
     const win = arr.slice(Math.max(0, i - 2), i + 3);
     return win.reduce((a, b) => a + b, 0) / win.length / peak;
@@ -327,6 +340,21 @@ export function classifyIsolated(f, knownRange, { single = true, first = false }
 }
 
 /**
+ * readSentence() lowers 3-3 pairs before 儿 hoá merges the 儿 into the syllable before it,
+ * so in 哪儿有 / 一点儿也 the pair 哪(3)+儿(2) hides that the merged nǎr is a tone 3 in front of
+ * another tone 3. Redo the left-to-right 3-3 pass on the merged syllables.
+ */
+function sandhiAfterErhua(read, han, pauses) {
+  const map = syllableIndexMap(han);
+  const stops = new Set([...pauses].map((h) => map[h]));
+  const tones = [...read.citation];
+  for (let i = 0; i + 1 < tones.length; i += 1) {
+    if (!stops.has(i) && tones[i] === 3 && tones[i + 1] === 3) tones[i] = 2;
+  }
+  return tones;
+}
+
+/**
  * Expected tone per Han character as spoken: pinyin-pro readings (一/不 sandhi),
  * the lesson neutral-tone policy (expected 0), and 3-3 sandhi lowered left to
  * right but never across a punctuation pause (the same reading the listening
@@ -338,7 +366,7 @@ export function expectedTones(text) {
   if (!chars.length) return [];
   let read = null;
   try {
-    read = readSentence(han, [], [], { allSandhi: true, pauses: pauseAfter(text) });
+    read = readSentence(han, [], [], { allSandhi: true, pauses: pauseAfter(text), source: text });
   } catch {
     read = null;
   }
@@ -346,6 +374,7 @@ export function expectedTones(text) {
     // pinyin keeps the dictionary tone mark (nǐ hǎo); `expected` is the tone as spoken (2, 3)
     const parts = read.citationParts;
     const erhua = erhuaIndices(han);
+    const tones = erhua.size ? sandhiAfterErhua(read, han, pauseAfter(text)) : read.tones;
     const out = [];
     let k = 0;
     for (let i = 0; i < chars.length; i += 1) {
@@ -353,8 +382,14 @@ export function expectedTones(text) {
         out[out.length - 1].char += '儿';
         continue;
       }
-      const tone = read.tones[k];
-      out.push({ char: chars[i], pinyin: parts[k], expected: tone >= 1 && tone <= 4 ? tone : 0 });
+      const tone = tones[k];
+      // `sandhi`: a citation tone 3 said as tone 2; the pinyin shown stays the dictionary form
+      out.push({
+        char: chars[i],
+        pinyin: parts[k],
+        expected: tone >= 1 && tone <= 4 ? tone : 0,
+        ...(tone === 2 && read.citation[k] === 3 ? { sandhi: true } : {}),
+      });
       k += 1;
     }
     return out;
@@ -376,7 +411,9 @@ export function expectedTones(text) {
 
 /** Fold a recording's voiced frames into a speaker's pitch profile. */
 export async function profileFromAudio(audio, profile, pcm = null) {
-  const { f0, median } = pitchTrack(pcm ?? (await decodeToPcm(audio)));
+  const samples = pcm ?? (await decodeToPcm(audio));
+  if (samples.length > MAX_SECONDS * SR) return profile;
+  const { f0, median } = pitchTrack(samples);
   return updateProfile(profile, f0, median);
 }
 
@@ -410,6 +447,15 @@ function contour(f0, median, points = 60) {
 export async function analyseTones(audio, target, { profile = null, debug = false, pcm: decoded = null, scorer = scoreWithModel } = {}) {
   const syllables = expectedTones(target);
   const pcm = decoded ?? (await decodeToPcm(audio));
+  if (pcm.length > MAX_SECONDS * SR) {
+    return {
+      syllables: syllables.map((s) => ({ ...s, heard: 0, ok: null })),
+      checked: 0,
+      correct: 0,
+      profile,
+      note: 'Bản ghi quá dài để chấm thanh điệu. Đọc từng câu ngắn nhé.',
+    };
+  }
   const { f0, rms, median } = pitchTrack(pcm);
   const fits = voiceFits(profile, median);
   const nextProfile = updateProfile(profile, f0, median);
@@ -423,7 +469,8 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   if (!syllables.length) return { ...base, note: 'Không có chữ Hán để chấm.' };
   if (!median) return { ...base, note: 'Không nghe rõ giọng. Đọc to, rõ và chậm hơn nhé.' };
 
-  const parts = segment(rms, f0, syllables.length);
+  const unalignable = UNALIGNABLE.test(target);
+  const parts = unalignable ? null : segment(rms, f0, syllables.length);
   const duration = pcm.length / SR;
   const segments = (parts || []).map(([a, b], index) => ({
     char: syllables[index].char,
@@ -432,6 +479,16 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   }));
   Object.assign(base, { timing: energyTiming(pcm), duration, segments, curve: contour(f0, median), boundaryMethod: 'energy-estimate' });
   const mode = syllables.length > 2 ? 'sentence' : 'word';
+  if (!parts) {
+    return {
+      ...base,
+      mode,
+      method: 'rules',
+      note: unalignable
+        ? 'Câu có chữ số hoặc chữ cái Latin: khi đọc thành tiếng chúng thêm âm tiết nên mình không chia được từng chữ để chấm thanh.'
+        : 'Không đủ âm thanh để chấm. Đọc to, rõ hơn nhé.',
+    };
+  }
   const modelVerdicts =
     parts && scorer
       ? await scorer(
@@ -451,7 +508,6 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
   const ref = range ? range.median : median;
   const low = range ? semis(range.low, ref) : -3;
   const high = range ? semis(range.high, ref) : 3;
-  if (!parts) return { ...base, mode, method: 'rules', note: 'Không đủ âm thanh để chấm. Đọc to, rõ hơn nhé.' };
   const result = syllables.map((s, i) => {
     const [a, b] = parts[i];
     const frames = f0.slice(a, b + 1).map((v) => (v ? semis(v, ref) : null));
@@ -473,7 +529,9 @@ export async function analyseTones(audio, target, { profile = null, debug = fals
     const ok = s.expected && heard ? (heard === s.expected ? true : sure && !confusable ? false : null) : null;
     return { ...s, heard, ok, method: 'rules', ...(debug ? { features } : {}) };
   });
-  const scored = result.filter((s) => s.ok !== null);
+  // a neutral syllable can only be confirmed, never marked wrong: counting those confirmations
+  // would raise the score and break `checked === syllables with a tone` in the UI
+  const scored = result.filter((s) => s.expected && s.ok !== null);
   return {
     ...base,
     mode,

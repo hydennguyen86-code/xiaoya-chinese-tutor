@@ -15,9 +15,9 @@
   "vocab": [
     {
       "word": "锻炼",
-      "meaning": "rèn luyện; tập",
+      "meaning": "rèn luyện; tập thể dục",
       "example": "傍晚我去操场锻炼半小时。",
-      "exampleVi": "Chiều tối tôi ra sân tập rèn luyện nửa tiếng.",
+      "exampleVi": "Chiều tối tôi ra sân tập thể dục nửa tiếng.",
       "pinyin": "duàn liàn",
       "examplePinyin": "bàng wǎn wǒ qù cāo chǎng duàn liàn bàn xiǎo shí 。"
     },
@@ -39,7 +39,7 @@
     },
     {
       "word": "习惯",
-      "meaning": "thói quen; làm quen",
+      "meaning": "thói quen; quen với",
       "example": "晚睡是个坏习惯，得改掉。",
       "exampleVi": "Ngủ muộn là thói quen xấu, phải bỏ.",
       "pinyin": "xí guàn",

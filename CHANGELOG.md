@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-08 — Bản tạm
+
+- **Backend nhận giọng sherpa-onnx (tuỳ chọn)**: SenseVoice/Paraformer chuyên tiếng Trung, chạy trên máy, thay whisper-small khi có; không có thì dùng whisper như cũ. `npm run setup:stt` tải model; chọn bằng `STT_BACKEND` (`auto`/`sherpa`/`whisper`/`off`) và `STT_SHERPA_MODEL_DIR`. Xem `docs/STT.md`.
+- **Chấm đọc theo pinyin**: khi đã biết câu mẫu, so từng âm tiết thay vì chữ Hán nên đồng âm (事/是, 他/她) không còn bị báo sai; khác thanh và gần âm (s/sh, z/zh…) được báo riêng.
+- **Mic tắt lọc khi chấm**: lúc chấm đọc, tắt khử vọng, khử ồn và tự chỉnh âm lượng của trình duyệt để không làm méo giọng.
+- **Gom lộ trình theo bậc**: “Lộ trình học” còn 3 mục HSK 1–2 / HSK 3–4 / HSK 5–6; mỗi mục có ô “Phần” liệt kê Nhập môn Pinyin, bài nghe nói thực tế và tập tương ứng của 30 bài giao tiếp. Id tập không đổi nên tiến độ cũ giữ nguyên; bỏ mục “30 bài” riêng và lời nhắn “đang vào giữa lộ trình”.
+- **Bộ đo nhận giọng**: `npm run eval:stt` so các backend trên cùng bộ ghi âm (CER, đúng âm tiết, thời gian), có `--synth=N` làm bộ trần bằng giọng máy. Chưa đo trên giọng người học thật.
+
 ## 2026-11-07 — Bản tạm
 
 - **Không còn tên người học trong trọng số công khai**: nhãn trong `tone/weights` đổi thành `human-learner-01`, tensor giữ nguyên; `train.py` từ nay không lấy tên file làm nhãn.
@@ -57,6 +65,7 @@ có nhãn và kiểm tra cài đặt trên máy macOS thứ hai trước khi k�
 - Prettier có phạm vi, smoke-test từ clone sạch, job Linux và hướng dẫn xử lý lỗi cài đặt.
 
 Ngưỡng chấm thanh giữ nguyên. Số TTS cũ không thay thế đánh giá giọng người thật.
+
 - Cập nhật bản vá body-parser trong lockfile sau cảnh báo DoS của npm audit.
 
 ## 2026-10-25 — Học liệu và phản hồi phát âm

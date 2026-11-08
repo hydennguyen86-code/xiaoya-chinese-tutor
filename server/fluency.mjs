@@ -1,5 +1,7 @@
+import { syllableCount } from './coursePinyin.mjs';
 export function measureFluency(timing, text) {
-  const syllables = [...(text || '').matchAll(/\p{Script=Han}/gu)].length;
+  // 儿 hoá (哪儿) is one spoken syllable, not two
+  const syllables = syllableCount(text || '');
   const span = timing ? timing.speechEnd - timing.speechStart : 0;
   if (!timing || span <= 0 || !syllables) return null;
   return {

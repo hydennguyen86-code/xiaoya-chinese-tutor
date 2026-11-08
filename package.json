@@ -11,6 +11,7 @@
     "test": "node --test server/*.test.mjs src/lib/*.test.ts && tsx --tsconfig tsconfig.test.json --test src/components/*.test.tsx",
     "eval:corrections": "node eval/corrections.mjs",
     "eval:tones": "node eval/tones.mjs",
+    "setup:stt": "bash scripts/setup-stt.sh",
     "setup:whisper": "bash scripts/setup-whisper.sh",
     "format": "node scripts/format.mjs",
     "format:check": "node scripts/format.mjs --check",
@@ -23,7 +24,8 @@
     "tone:service": ".venv-tone/bin/python -I tone/tone_service.py",
     "tone:dataset": "node eval/tone-train/make-dataset.mjs --out data/tone-train/say --say && node eval/tone-train/make-dataset.mjs --out data/tone-train/edge --edge",
     "tone:train": ".venv-tone/bin/python -I tone/train.py --manifests data/tone-train/say/manifest.jsonl data/tone-train/edge/manifest.jsonl --out tone/weights",
-    "eval:azure": "node eval/azure-pronunciation.mjs"
+    "eval:azure": "node eval/azure-pronunciation.mjs",
+    "eval:stt": "node eval/stt-compare.mjs"
   },
   "dependencies": {
     "@met4citizen/talkinghead": "^1.7.0",
@@ -40,6 +42,9 @@
     "selfsigned": "^5.5.0",
     "three": "^0.186.1",
     "ts-fsrs": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "sherpa-onnx-node": "2.0.1"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

@@ -9,6 +9,8 @@
         "HSK1-2"
       ],
       "targetLevel": "HSK1",
+      "trackId": "hsk1",
+      "trackTitle": "HSK 1–2",
       "authored": true,
       "lessons": [
         {
@@ -37,7 +39,7 @@
             },
             {
               "word": "吗",
-              "meaning": "chăng (hỏi)"
+              "meaning": "trợ từ nghi vấn (…không?)"
             },
             {
               "word": "猫",
@@ -68,7 +70,7 @@
             },
             {
               "word": "米",
-              "meaning": "gạo; cơm"
+              "meaning": "gạo"
             },
             {
               "word": "咖啡",
@@ -410,6 +412,8 @@
         "HSK1-2"
       ],
       "targetLevel": "HSK1",
+      "trackId": "hsk1",
+      "trackTitle": "HSK 1–2",
       "authored": true,
       "lessons": [
         {
@@ -927,6 +931,8 @@
         "HSK3-4"
       ],
       "targetLevel": "HSK3",
+      "trackId": "hsk3",
+      "trackTitle": "HSK 3–4",
       "authored": true,
       "lessons": [
         {
@@ -939,7 +945,7 @@
           "vocab": [
             {
               "word": "路",
-              "meaning": "đường; lộ"
+              "meaning": "con đường"
             },
             {
               "word": "站",
@@ -1107,7 +1113,7 @@
             },
             {
               "word": "电影",
-              "meaning": "phim; rạp phim"
+              "meaning": "điện ảnh"
             },
             {
               "word": "累",
@@ -1329,7 +1335,7 @@
           "vocab": [
             {
               "word": "锻炼",
-              "meaning": "rèn luyện; tập"
+              "meaning": "tập thể dục"
             },
             {
               "word": "起床",
@@ -1341,7 +1347,7 @@
             },
             {
               "word": "习惯",
-              "meaning": "thói quen; làm quen"
+              "meaning": "thói quen; quen với"
             },
             {
               "word": "健康",
@@ -1368,7 +1374,7 @@
           "vocab": [
             {
               "word": "邀请",
-              "meaning": "mời; mời mọc"
+              "meaning": "mời; lời mời"
             },
             {
               "word": "参加",
@@ -1407,6 +1413,8 @@
         "free"
       ],
       "targetLevel": "HSK5",
+      "trackId": "hsk5",
+      "trackTitle": "HSK 5–6",
       "authored": true,
       "lessons": [
         {
@@ -1928,8 +1936,8 @@
       ],
       "authored": true,
       "targetLevel": "HSK1-2",
-      "trackId": "misu30",
-      "trackTitle": "30 bài giao tiếp HSK1–6",
+      "trackId": "hsk1",
+      "trackTitle": "HSK 1–2",
       "nextVolumeId": "misu30-2",
       "source": {
         "book": "Misu · 30 bài nói tiếng Trung",
@@ -2440,8 +2448,8 @@
       ],
       "authored": true,
       "targetLevel": "HSK3-4",
-      "trackId": "misu30",
-      "trackTitle": "30 bài giao tiếp HSK1–6",
+      "trackId": "hsk3",
+      "trackTitle": "HSK 3–4",
       "nextVolumeId": "misu30-3",
       "source": {
         "book": "Misu · 30 bài nói tiếng Trung",
@@ -2453,7 +2461,7 @@
           "no": 11,
           "title": "这个周末你有空吗？ · Hẹn bạn và lên kế hoạch",
           "topics": [
-            "rủ rê",
+            "rủ",
             "kế hoạch",
             "hẹn gặp"
           ],
@@ -2952,8 +2960,8 @@
       ],
       "authored": true,
       "targetLevel": "HSK5-6",
-      "trackId": "misu30",
-      "trackTitle": "30 bài giao tiếp HSK1–6",
+      "trackId": "hsk5",
+      "trackTitle": "HSK 5–6",
       "source": {
         "book": "Misu · 30 bài nói tiếng Trung",
         "volumeTitle": "Trung cao cấp · HSK 5–6",
@@ -3045,7 +3053,7 @@
             },
             {
               "word": "习惯",
-              "meaning": "thói quen"
+              "meaning": "thói quen; quen với"
             },
             {
               "word": "鼓励",
@@ -3074,7 +3082,7 @@
             },
             {
               "word": "锻炼",
-              "meaning": "rèn luyện, tập thể dục"
+              "meaning": "tập thể dục"
             },
             {
               "word": "失眠",

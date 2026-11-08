@@ -10,3 +10,9 @@ test('fluency uses recognized Han count and internal voiced span, missing speech
   assert.equal(r.pausesOverOneSecond, 1);
   assert.ok(r.advisory);
 });
+
+test('儿 hoá counts as one syllable in the speaking rate', () => {
+  const timing = { speechStart: 0, speechEnd: 2, pauses: [] };
+  assert.equal(measureFluency(timing, '哪儿有洗手间？').syllables, 5);
+  assert.equal(measureFluency(timing, '儿子在哪儿').syllables, 4);
+});

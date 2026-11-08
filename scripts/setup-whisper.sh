@@ -3,6 +3,8 @@
 # speech-to-text (the learner's voice stays on this computer).
 #   npm run setup:whisper            # small model (~466 MB, good for Chinese)
 #   WHISPER_SIZE=base npm run setup:whisper   # smaller and faster, less accurate
+#   WHISPER_SIZE=large-v3-turbo-q5_0 npm run setup:whisper   # ~570 MB, much better Chinese
+# (For Chinese, `npm run setup:stt` (sherpa-onnx SenseVoice) is the preferred backend; whisper is the fallback.)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

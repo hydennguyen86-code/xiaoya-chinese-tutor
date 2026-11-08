@@ -150,7 +150,10 @@ test('explicit communication track links 10 to 11 and 20 to 21 without entering 
   assert.deepEqual(nextPointer(syllabus, { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), { volumeId: 'misu30-2', lessonNo: 20, day: 1 });
   assert.deepEqual(nextPointer(syllabus, { volumeId: 'misu30-2', lessonNo: 20, day: 1 }), { volumeId: 'misu30-3', lessonNo: 30, day: 1 });
   assert.equal(nextPointer(syllabus, { volumeId: 'misu30-3', lessonNo: 30, day: 1 }), null);
+  // The follow-on volume may live in another level track (misu30-1 is in hsk1, misu30-2 in hsk3).
   syllabus.volumes[1].trackId = 'another';
+  assert.deepEqual(nextPointer(syllabus, { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), { volumeId: 'misu30-2', lessonNo: 20, day: 1 });
+  syllabus.volumes[0].nextVolumeId = 'missing';
   assert.equal(nextPointer(syllabus, { volumeId: 'misu30-1', lessonNo: 10, day: 1 }), null);
 });
 

@@ -90,8 +90,8 @@
     "openingVi": "Chào bạn, bạn muốn uống gì?"
   },
   "freeTalk": {
-    "question": "请点一杯饮料，再说一个要求。",
-    "questionVi": "Xin gọi một đồ uống rồi đưa ra một yêu cầu."
+    "question": "请点一杯水或茶，再说一个要求。",
+    "questionVi": "Hãy gọi một cốc nước hoặc trà rồi đưa ra một yêu cầu."
   },
   "learningNotes": [
     "Bổ trợ: 糖 táng — đường; 冰 bīng — đá; 加 jiā — thêm; 不要 bú yào — không muốn/đừng.",
@@ -146,7 +146,7 @@
     },
     {
       "kind": "answer",
-      "prompt": "请点一杯饮料，再说一个要求。",
+      "prompt": "请点一杯水或茶，再说一个要求。",
       "promptVi": "Trả lời bằng 2–4 câu ngắn, có thể dùng thông tin giả định.",
       "prepareSeconds": 15,
       "responseSeconds": 30,
