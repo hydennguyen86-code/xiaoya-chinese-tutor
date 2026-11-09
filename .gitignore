@@ -35,3 +35,6 @@ public/avatars/personal*
 *.wav
 *.mp3
 !public/**/*.mp3
+
+# Thư mục chờ xoá tay trên máy (không đưa lên repo)
+_to_delete/

@@ -1,6 +1,6 @@
 # Đóng góp cho Misu
 
-Cài Node.js 24, `npm ci`. Kiểm tra trước khi gửi PR:
+Cài Node.js 22.12+ (khuyên dùng 24), `npm ci`. Kiểm tra trước khi gửi PR:
 
 ```sh
 npm run typecheck

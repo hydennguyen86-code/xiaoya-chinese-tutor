@@ -5,8 +5,10 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(root);
 const guide = 'https://github.com/hydennguyen86-code/xiaoya-chinese-tutor#readme';
-if (Number(process.versions.node.split('.')[0]) < 24) {
-  console.error(`Cần Node.js 24 trở lên: https://nodejs.org/\nHướng dẫn: ${guide}`);
+// Vite cần Node 22.12+; CI chạy cả Node 22 và 24.
+const [major, minor] = process.versions.node.split('.').map(Number);
+if (major < 22 || (major === 22 && minor < 12)) {
+  console.error(`Cần Node.js 22.12 trở lên (khuyên dùng 24): https://nodejs.org/\nHướng dẫn: ${guide}`);
   process.exit(1);
 }
 async function runNpm(args) {

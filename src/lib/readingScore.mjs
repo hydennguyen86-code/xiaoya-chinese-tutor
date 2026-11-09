@@ -5,6 +5,7 @@
 
 import { pinyin } from 'pinyin-pro';
 import { HAN, applyPolyphoneLocks, erhuaIndices, neutralPositions, toneLabel } from './coursePinyin.mjs';
+import { hasDigits, numberCandidates } from './hanziNumbers.mjs';
 
 const TONE_MARK = { 0x0304: 1, 0x0301: 2, 0x030c: 3, 0x0300: 4 };
 
@@ -188,15 +189,45 @@ function scoreSyllables(targetSyls, heardSyls) {
   return { syllables, extra, matched, total, score, ok, summary };
 }
 
+const better = (r, best) => !best || r.score > best.score || (r.score === best.score && r.ok && !best.ok);
+
+// Bản chép có chữ số (25岁, 3点半): thử mọi cách đọc bằng chữ Hán, giữ cách khớp câu mẫu nhất.
+function bestOverNumbers(heardText, score) {
+  if (!hasDigits(heardText)) return { result: score(heardText), text: heardText };
+  let best = null;
+  let text = heardText;
+  for (const c of numberCandidates(heardText)) {
+    const r = score(c);
+    if (better(r, best)) {
+      best = r;
+      text = c;
+    }
+  }
+  return { result: best, text };
+}
+
 /** Chấm cả câu nghe được so với câu mẫu. */
 export function scoreReading(target, heardText) {
-  return scoreSyllables(syllablesOf(target), syllablesOf(heardText));
+  const t = syllablesOf(target);
+  return bestOverNumbers(heardText, (h) => scoreSyllables(t, syllablesOf(h))).result;
+}
+
+/**
+ * Bản chép đã đổi chữ số về chữ Hán theo cách đọc khớp câu mẫu nhất (không có chữ số thì giữ nguyên).
+ * Dùng khi cần đếm âm tiết lời nghe, ví dụ server so số âm tiết trước khi chấm thanh.
+ */
+export function normalizeHeard(target, heardText, { within = false } = {}) {
+  const t = syllablesOf(target);
+  return bestOverNumbers(heardText, (h) => (within ? containsSyllables(t, syllablesOf(h)) : scoreSyllables(t, syllablesOf(h)))).text;
 }
 
 /** Mục tiêu NẰM TRONG câu nói dài: trượt cửa sổ độ dài n-1..n+1 trong lời nghe, lấy cửa sổ tốt nhất. */
 export function containsReading(target, heardText) {
   const t = syllablesOf(target);
-  const h = syllablesOf(heardText);
+  return bestOverNumbers(heardText, (h) => containsSyllables(t, syllablesOf(h))).result;
+}
+
+function containsSyllables(t, h) {
   const n = t.length;
   if (!n) return scoreSyllables(t, h);
   let best = null;
@@ -204,7 +235,7 @@ export function containsReading(target, heardText) {
     const last = Math.max(0, h.length - len);
     for (let start = 0; start <= last; start += 1) {
       const r = scoreSyllables(t, h.slice(start, start + len));
-      if (!best || r.score > best.score || (r.score === best.score && r.ok && !best.ok)) best = r;
+      if (better(r, best)) best = r;
     }
   }
   return best ?? scoreSyllables(t, h);

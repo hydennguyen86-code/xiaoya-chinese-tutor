@@ -31,6 +31,7 @@ npm run setup:stt      # tải model SenseVoice vào models/ (đã gitignore)
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `STT_BACKEND`          | `auto` (mặc định: sherpa nếu có, không thì whisper), `sherpa`, `whisper`, `off`                                              |
 | `STT_SHERPA_MODEL_DIR` | thư mục model sherpa cụ thể; không đặt thì tự dò `models/sherpa-onnx-sense-voice-*` rồi `models/sherpa-onnx-paraformer-zh-*` |
+| `STT_SHERPA_ITN` | `1` bật chuẩn hoá văn bản của SenseVoice (chép số thành chữ số, thêm dấu câu). Mặc định tắt vì bộ chấm đọc so âm tiết; bản chép có chữ số vẫn được đổi về chữ Hán trước khi chấm (`src/lib/hanziNumbers.mjs`) |
 
 Xem backend đang chạy ở `/api/status` (trường `sttBackend`).
 

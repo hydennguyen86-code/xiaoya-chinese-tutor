@@ -35,5 +35,6 @@ export function alignSyllables(
 ): { syllables: AlignedSyllable[]; extra: ReadingSyllable[] };
 export function scoreReading(target: string, heardText: string): ReadingScore;
 export function containsReading(target: string, heardText: string): ReadingScore;
+export function normalizeHeard(target: string, heardText: string, opts?: { within?: boolean }): string;
 export function readingOk(target: string, heardText: string, opts?: { within?: boolean }): boolean;
 export function toneLabel(text: string): string;

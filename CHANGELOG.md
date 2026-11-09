@@ -4,6 +4,8 @@
 
 - **Phần nghe thật cho 30 bài giao tiếp (misu30)**: thay đoạn nghe ghép 3 câu ví dụ và câu hỏi "Cụm … nghĩa gì?" bằng hội thoại 甲/乙 (8 lượt ở Tập 1, 10 ở Tập 2, 10–12 ở Tập 3) có bản dịch từng lượt A:/B: và 3 câu hỏi nghe hiểu nội dung (ai, bao nhiêu, vì sao, quyết định gì). Thêm bộ chép chính tả (4 câu) và nói đuổi (1 đoạn) cho mỗi bài trong `lessons/listening/course/`, phủ đủ 8 từ mới; cả 112 buổi giờ cùng một chuẩn. AI soạn, chưa duyệt.
 - **Nguồn soạn và bộ dựng**: nội dung nghe soạn tay ở `lessons/authoring/misu30/` (chỉ chữ Hán, nghĩa, ghi chú; không pinyin). `scripts/build-course-listening.mjs` sinh pinyin, biến điệu 3+3, cụm hơi và id bằng đúng hàm checker dùng; `readings` báo khi chữ đa âm bị đọc khác ý người soạn (đã tránh 还给 → hái, 吃得 → dé, 只 → zhī…). Checker, loader và audit mở cho misu30.
+- **Đọc số không còn bị chấm sai**: SenseVoice từng chép 二十五岁 thành "25岁", nên bộ chấm theo âm tiết báo sai và bỏ chấm thanh dù người học đọc đúng. Tắt chuẩn hoá số của SenseVoice (`STT_SHERPA_ITN=1` để bật lại); bản chép có chữ số (từ whisper hoặc khi bật lại) được đổi về chữ Hán theo cách đọc khớp câu mẫu nhất: số điện thoại đọc từng số, giá trị (一百二十, 两千一百六十), giờ (八点半), phần trăm, tiền lẻ (七块二). Áp cho chấm đọc, bước đếm âm tiết trước khi chấm thanh và độ trôi chảy.
+- **Chạy được trên Node 22.12+**: file bấm đúp `start-mac.command` từng đòi Node 24; mọi test và build chạy trên Node 22, CI thêm một máy macOS chạy Node 22.
 - **Sửa học liệu lẻ**: câu chép chính tả vô nghĩa "电话是零。" (dt-1-123) thay bằng "他的电话号码是三二一。"; đồng bộ nghĩa 一把, 免疫力 trong `syllabus.json`.
 
 ## 2026-11-08 — Bản tạm

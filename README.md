@@ -42,7 +42,7 @@ một số chữ. Số đo chi tiết ở phần [Độ chính xác](#độ-chí
 
 ## Bắt đầu nhanh
 
-Cần [Node.js 24](https://nodejs.org) và [Ollama](https://ollama.com) (để trò chuyện; bài học cố định chạy được cả khi chưa có).
+Cần [Node.js 22.12 trở lên, khuyên dùng 24](https://nodejs.org) và [Ollama](https://ollama.com) (để trò chuyện; bài học cố định chạy được cả khi chưa có).
 
 ```bash
 git clone https://github.com/hydennguyen86-code/xiaoya-chinese-tutor.git
@@ -183,7 +183,7 @@ Voice, nhưng audio không đi kèm repo; phạm vi giọng nghe vẫn hạn ch�
 ### Yêu cầu hệ thống
 
 **Tối thiểu:**
-- **Node.js 24** và npm
+- **Node.js 22.12+** (khuyên dùng 24) và npm
 - **RAM 8 GB**: chạy được bài học cố định, avatar 3D nhẹ
 - **Card đồ họa**: Intel UHD 620 trở lên cho avatar 3D
 
@@ -194,7 +194,7 @@ Voice, nhưng audio không đi kèm repo; phạm vi giọng nghe vẫn hạn ch�
 
 **Tự động chọn avatar nhẹ:** Máy có RAM < 8 GB sẽ tự động chuyển sang avatar 3D (.glb) thay vì avatar LAM (ảnh thật) để chạy mượt hơn. Bạn vẫn có thể bật lại avatar LAM trong Cài đặt nếu muốn.
 
-Cần **Node.js 24** và npm. Đã thử trên macOS Apple Silicon; đường dẫn Windows/Linux
+Cần **Node.js 22.12+** (khuyên dùng 24) và npm. Đã thử trên macOS Apple Silicon; đường dẫn Windows/Linux
 và CI ba hệ điều hành đã được bổ sung, **chưa thử trên Windows thật**.
 Bài học cố định không cần Ollama/GPU. Trò chuyện và sửa câu cần Ollama/LM Studio
 hoặc API do bạn tự cấu hình trong Cài đặt. ffmpeg cần cho Whisper/chấm thanh;
@@ -407,7 +407,7 @@ Mặc định dùng cổng 8791; dừng server thử cũ trước, hoặc đặt
 Linux CI không cần Ollama. Nếu TTS không khả dụng, lượt thường xác nhận
 phản hồi lỗi và báo rõ chưa xác minh tạo audio; lượt `SMOKE_REQUIRE_TTS=1` thất bại.
 
-**Chưa thử trên máy macOS thứ hai.** Khi bạn có máy khác: cài Node 24 và Git,
+**Chưa thử trên máy macOS thứ hai.** Khi bạn có máy khác: cài Node 22.12+ (khuyên dùng 24) và Git,
 clone repo, chạy script trên; sau đó `npm ci`, `npm run build`, chạy
 `XIAOYA_SAMPLE_AVATARS=1 XIAOYA_DATA_DIR=/tmp/misu-test npm start`.
 Mở app, tạo người học thử, vào HSK 1/HSK 5 và kiểm tra nghe; cài Whisper nếu

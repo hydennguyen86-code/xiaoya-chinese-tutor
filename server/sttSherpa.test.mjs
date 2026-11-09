@@ -55,7 +55,7 @@ test('cấu hình sherpa đúng dạng cho SenseVoice và Paraformer', () => {
   assert.deepEqual(sense.modelConfig.senseVoice, {
     model: path.join(root, 'sherpa-onnx-sense-voice-x', 'model.int8.onnx'),
     language: 'zh',
-    useInverseTextNormalization: 1,
+    useInverseTextNormalization: 0,
   });
   assert.equal(sense.modelConfig.numThreads, 4);
   assert.deepEqual(sense.featConfig, { sampleRate: 16000, featureDim: 80 });

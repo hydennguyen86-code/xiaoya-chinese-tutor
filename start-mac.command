@@ -2,7 +2,7 @@
 cd "$(dirname "$0")" || exit 1
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 if ! command -v node >/dev/null 2>&1; then
-  echo "Chưa có Node.js. Cài Node 24 từ https://nodejs.org/ rồi mở lại file này."
+  echo "Chưa có Node.js. Cài Node 22 trở lên (khuyên dùng 24) từ https://nodejs.org/ rồi mở lại file này."
   echo "Hướng dẫn: https://github.com/hydennguyen86-code/xiaoya-chinese-tutor#readme"
   read -r -p "Nhấn Enter để đóng…"
   exit 1

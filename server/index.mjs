@@ -40,6 +40,7 @@ import { startStt, stopStt, sttBackend, sttReady, transcribe } from './stt.mjs';
 import { startToneModel, stopToneModel, toneModelHealth } from './toneModel.mjs';
 import { analyseTones, profileFromAudio, decodeToPcm, expectedTones } from './tones.mjs';
 import { syllableCount } from '../src/lib/coursePinyin.mjs';
+import { normalizeHeard } from '../src/lib/readingScore.mjs';
 import { loadSyllabus } from './syllabus.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 
@@ -227,8 +228,10 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
     // Bộ chấm thanh cắt đoạn ghi âm thành đúng N âm tiết của câu mẫu. Nếu bản
     // chép nghe được lệch từ 2 âm tiết trở lên (đọc thiếu, thêm, hoặc nói câu
     // khác) thì các đoạn cắt không còn khớp chữ, nên không kết luận thanh nữa.
-    if (text && HAN.test(text) && Array.isArray(tones.syllables)) {
-      const heardCount = syllableCount(text);
+    // Bản chép có chữ số (25岁) được đổi về chữ Hán theo câu mẫu trước khi đếm.
+    const heardHan = text ? normalizeHeard(target, text) : text;
+    if (heardHan && HAN.test(heardHan) && Array.isArray(tones.syllables)) {
+      const heardCount = syllableCount(heardHan);
       const expectedCount = syllableCount(target);
       if (Math.abs(heardCount - expectedCount) >= 2) {
         tones.syllables = tones.syllables.map((s) => ({ ...s, heard: 0, ok: null }));
@@ -238,7 +241,7 @@ app.post('/api/pronounce', express.raw({ type: () => true, limit: '15mb' }), asy
         tones.mismatch = { heard: heardCount, expected: expectedCount };
       }
     }
-    const fluency = measureFluency(tones.timing, text);
+    const fluency = measureFluency(tones.timing, heardHan);
     const fluencyReason = !pcm
       ? 'decode-failed'
       : fluency

@@ -74,7 +74,9 @@ export function findSherpaModel(modelsDir = MODELS, envDir = process.env.STT_SHE
 export function sherpaConfig(found) {
   const modelConfig =
     found.kind === 'sense-voice'
-      ? { senseVoice: { model: found.model, language: 'zh', useInverseTextNormalization: 1 } }
+      ? // Tắt chuẩn hoá văn bản (ITN): bật thì 二十五 ra "25", bộ chấm đọc so âm tiết sẽ báo sai
+        // dù người học đọc đúng. STT_SHERPA_ITN=1 để bật lại (chép số dạng chữ số, có dấu câu).
+        { senseVoice: { model: found.model, language: 'zh', useInverseTextNormalization: process.env.STT_SHERPA_ITN === '1' ? 1 : 0 } }
       : { paraformer: { model: found.model } };
   return {
     featConfig: { sampleRate: 16000, featureDim: 80 },
