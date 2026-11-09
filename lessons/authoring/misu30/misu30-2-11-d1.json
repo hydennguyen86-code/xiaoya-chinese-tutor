@@ -1,0 +1,134 @@
+{
+  "lesson": "misu30-2-11-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，这个周末你有空吗？",
+      "vi": "Minh ơi, cuối tuần này bạn có rảnh không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "星期六我要去看奶奶，星期天有空。你有什么计划？",
+      "vi": "Thứ Bảy mình phải đi thăm bà, Chủ nhật thì rảnh. Bạn có kế hoạch gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我打算去海边走走，我们一起去吧。",
+      "vi": "Mình định ra biển đi dạo, chúng mình cùng đi nhé."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好啊！你什么时候方便？",
+      "vi": "Được chứ! Khi nào bạn tiện?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "星期天上午九点，怎么样？",
+      "vi": "Chín giờ sáng Chủ nhật, thế nào?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "九点有点早，我想多睡一会儿。十点见面可以吗？",
+      "vi": "Chín giờ hơi sớm, mình muốn ngủ thêm một lúc. Mười giờ gặp được không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "可以。我们在地铁站门口见面，你别迟到。",
+      "vi": "Được. Chúng mình gặp ở cửa ga tàu điện, bạn đừng đến muộn nhé."
+    },
+    {
+      "speaker": "乙",
+      "zh": "放心，我不会迟到。我还约了小安，他也想去。",
+      "vi": "Yên tâm, mình sẽ không đến muộn đâu. Mình còn hẹn cả Tiểu An, bạn ấy cũng muốn đi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "太好了，那就是我们三个人。",
+      "vi": "Tuyệt quá, vậy là ba người chúng mình."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，星期天十点见！",
+      "vi": "Ừ, mười giờ Chủ nhật gặp nhé!"
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Vì sao thứ Bảy Minh không rảnh?",
+      "options": [
+        "Phải đi thăm bà",
+        "Phải đi làm thêm",
+        "Phải ra biển"
+      ],
+      "answer": 0,
+      "explanation": "B nói 星期六我要去看奶奶 — thứ Bảy mình phải đi thăm bà."
+    },
+    {
+      "prompt": "Cuối cùng hai người hẹn gặp lúc nào, ở đâu?",
+      "options": [
+        "Thứ Bảy mười giờ, cửa ga tàu điện",
+        "Chủ nhật mười giờ, cửa ga tàu điện",
+        "Chủ nhật chín giờ, cửa ga tàu điện"
+      ],
+      "answer": 1,
+      "explanation": "A đề nghị 九点, B muốn muộn hơn: 十点见面可以吗？ rồi A chốt 我们在地铁站门口见面."
+    },
+    {
+      "prompt": "Cả nhóm đi tổng cộng mấy người?",
+      "options": [
+        "Bốn người",
+        "Hai người",
+        "Ba người"
+      ],
+      "answer": 2,
+      "explanation": "B nói 我还约了小安, A đáp 那就是我们三个人。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "阿兰星期五晚上有空，我们一起吃饭吧。",
+      "meaningVi": "Lan tối thứ Sáu rảnh, chúng mình cùng đi ăn cơm nhé.",
+      "focus": [
+        "有空 yǒu kòng: kòng thanh 4, đọc dứt khoát.",
+        "一起 yì qǐ: 一 đọc yì trước thanh 3, qǐ hạ thấp rồi lên."
+      ]
+    },
+    {
+      "hanzi": "我打算下个月去上海旅行。",
+      "meaningVi": "Mình định tháng sau đi du lịch Thượng Hải.",
+      "focus": [
+        "打算 dǎ suàn: hai thanh 3 liền, chữ đầu lên thành thanh 2.",
+        "上海 shàng hǎi: sh uốn lưỡi, -ng cuối chữ 上."
+      ]
+    },
+    {
+      "hanzi": "你明天什么时候方便见面？",
+      "meaningVi": "Ngày mai khi nào bạn tiện gặp mặt?",
+      "focus": [
+        "方便 fāng biàn: fāng thanh 1 kéo dài, biàn thanh 4.",
+        "见面 jiàn miàn: cả hai thanh 4, xuống dứt khoát."
+      ]
+    },
+    {
+      "hanzi": "对不起，我迟到了十分钟。",
+      "meaningVi": "Xin lỗi, mình đến muộn mười phút.",
+      "focus": [
+        "迟到 chí dào: ch bật hơi, uốn lưỡi.",
+        "了 le đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "这个周末我有一个小计划，我约了朋友一起去爬山。我们早上七点出发，中午在山上吃饭。",
+    "meaningVi": "Cuối tuần này mình có một kế hoạch nhỏ, mình đã hẹn bạn cùng đi leo núi. Bảy giờ sáng chúng mình xuất phát, trưa ăn cơm trên núi.",
+    "focus": [
+      "Ngắt hơi sau 计划 và sau 朋友.",
+      "约 yuē: ü tròn môi, thanh 1."
+    ]
+  },
+  "readings": {
+    "空": "kòng",
+    "了": "le",
+    "约": "yuē"
+  }
+}

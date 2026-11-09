@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Gia đình",
     "playLimit": 2,
-    "transcript": "我家有四口人。 我爸爸是老师。 妈妈在家做饭。",
-    "translation": "Nhà mình có bốn người. Bố mình là giáo viên. Mẹ ở nhà nấu cơm.",
-    "pinyin": "wǒ jiā yǒu sì kǒu rén 。   wǒ bà ba shì lǎo shī 。   mā ma zài jiā zuò fàn 。",
+    "transcript": "甲：阿明，你家有几口人？乙：我家有五口人，爸爸、妈妈、哥哥、妹妹和我。甲：你哥哥做什么工作？乙：他是老师，在河内工作。甲：你妹妹呢？乙：她今年八岁，是个孩子。甲：你们住在哪儿？乙：我们都住在河内。",
+    "translation": "A: Minh, nhà bạn có mấy người? B: Nhà mình có năm người, bố, mẹ, anh trai, em gái và mình. A: Anh trai bạn làm nghề gì? B: Anh ấy là giáo viên, làm việc ở Hà Nội. A: Còn em gái bạn? B: Năm nay em tám tuổi, còn là một đứa trẻ. A: Các bạn sống ở đâu? B: Chúng mình đều sống ở Hà Nội.",
+    "pinyin": "jiǎ ： ā míng ， nǐ jiā yǒu jǐ kǒu rén ？ yǐ ： wǒ jiā yǒu wǔ kǒu rén ， bà ba 、 mā ma 、 gē ge 、 mèi mei hé wǒ 。 jiǎ ： nǐ gē ge zuò shén me gōng zuò ？ yǐ ： tā shì lǎo shī ， zài hé nèi gōng zuò 。 jiǎ ： nǐ mèi mei ne ？ yǐ ： tā jīn nián bā suì ， shì gè hái zi 。 jiǎ ： nǐ men zhù zài nǎr ？ yǐ ： wǒ men dōu zhù zài hé nèi 。",
     "questions": [
       {
-        "prompt": "Cụm “家” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Nhà Minh có mấy người?",
         "options": [
-          "nhà, gia đình",
-          "mẹ",
-          "anh trai"
-        ],
-        "answer": 0,
-        "explanation": "“家”: nhà, gia đình. Ví dụ đã nghe: 我家有四口人。"
-      },
-      {
-        "prompt": "Cụm “爸爸” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "anh trai",
-          "bố",
-          "em gái"
-        ],
-        "answer": 1,
-        "explanation": "“爸爸”: bố. Ví dụ đã nghe: 我爸爸是老师。"
-      },
-      {
-        "prompt": "Cụm “妈妈” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "em gái",
-          "con, trẻ em",
-          "mẹ"
+          "Bốn người",
+          "Ba người",
+          "Năm người"
         ],
         "answer": 2,
-        "explanation": "“妈妈”: mẹ. Ví dụ đã nghe: 妈妈在家做饭。"
+        "explanation": "Minh nói 我家有五口人。"
+      },
+      {
+        "prompt": "Anh trai của Minh làm nghề gì, ở đâu?",
+        "options": [
+          "Giáo viên, ở Hà Nội",
+          "Học sinh, ở Hà Nội",
+          "Giáo viên, ở Thượng Hải"
+        ],
+        "answer": 0,
+        "explanation": "Minh nói 他是老师，在河内工作。"
+      },
+      {
+        "prompt": "Ai trong nhà Minh còn là trẻ nhỏ, mấy tuổi?",
+        "options": [
+          "Anh trai, tám tuổi",
+          "Em gái, tám tuổi",
+          "Em gái, mười tuổi"
+        ],
+        "answer": 1,
+        "explanation": "Minh nói 她今年八岁，是个孩子。"
       }
     ]
   },

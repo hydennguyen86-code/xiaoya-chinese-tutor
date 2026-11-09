@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "这条新闻今天刷屏了。 媒体报道的未必都是事实。 每个人都有自己的观点。",
-    "translation": "Tin này hôm nay tràn ngập mạng. Những gì truyền thông đưa tin không nhất thiết đều là sự thật. Mỗi người đều có quan điểm riêng.",
-    "pinyin": "zhè tiáo xīn wén jīn tiān shuā píng le 。   méi tǐ bào dào de wèi bì dōu shì shì shí 。   měi gè rén dōu yǒu zì jǐ de guān diǎn 。",
+    "title": "Nghe hội thoại: Tin tức và quan điểm",
+    "playLimit": 1,
+    "transcript": "甲：阿明，你看到今天那条新闻了吗？网上很多人在转发。乙：看到了，据媒体报道，一家科技公司下个月要把工作时间改成每周四天。甲：对，网上争论很激烈。乙：有人认为这是好事，也有人认为会影响工作效率。甲：那你怎么看？乙：我认为现在还不好判断，应该先弄清事实，再下结论。甲：可是标题很吸引人，很多人只看标题就发表观点。乙：所以看新闻要尽量客观。媒体报道的未必是事实。甲：你说得对。我刚才看到另一个报道，说这只是试验三个月。乙：看，这就是区别。如果只看第一条，我们可能就判断错了。甲：以后我也要先查几个来源，再说自己的看法。乙：这样很好。晚上我们再聊聊，看看大家怎么说。",
+    "translation": "A: Minh à, bạn thấy tin hôm nay chưa? Trên mạng nhiều người đang chia sẻ. B: Thấy rồi, theo truyền thông đưa tin, một công ty công nghệ tháng sau sẽ đổi thời gian làm việc thành bốn ngày mỗi tuần. A: Đúng, trên mạng tranh luận rất gay gắt. B: Có người cho rằng đây là việc tốt, cũng có người cho rằng sẽ ảnh hưởng hiệu suất làm việc. A: Vậy bạn nghĩ sao? B: Mình cho rằng bây giờ chưa dễ phán đoán, nên làm rõ sự thật trước rồi hãy kết luận. A: Nhưng tiêu đề rất thu hút, nhiều người chỉ đọc tiêu đề đã đưa ra quan điểm. B: Vì vậy xem tin tức phải cố gắng khách quan. Điều truyền thông đưa tin chưa chắc là sự thật. A: Bạn nói đúng. Vừa rồi mình thấy một bài khác, nói đây chỉ là thử nghiệm ba tháng. B: Thấy chưa, đây chính là khác biệt. Nếu chỉ xem bài đầu, có thể chúng ta đã phán đoán sai. A: Sau này mình cũng sẽ tra vài nguồn trước, rồi mới nói ý kiến của mình. B: Vậy rất tốt. Tối nay chúng ta nói chuyện thêm, xem mọi người nói sao.",
+    "pinyin": "jiǎ ： ā míng ， nǐ kàn dào jīn tiān nà tiáo xīn wén le ma ？ wǎng shàng hěn duō rén zài zhuǎn fā 。 yǐ ： kàn dào le ， jù méi tǐ bào dào ， yì jiā kē jì gōng sī xià gè yuè yào bǎ gōng zuò shí jiān gǎi chéng měi zhōu sì tiān 。 jiǎ ： duì ， wǎng shàng zhēng lùn hěn jī liè 。 yǐ ： yǒu rén rèn wéi zhè shì hǎo shì ， yě yǒu rén rèn wèi huì yǐng xiǎng gōng zuò xiào lǜ 。 jiǎ ： nà nǐ zěn me kàn ？ yǐ ： wǒ rèn wéi xiàn zài hái bù hǎo pàn duàn ， yīng gāi xiān nòng qīng shì shí ， zài xià jié lùn 。 jiǎ ： kě shì biāo tí hěn xī yǐn rén ， hěn duō rén zhǐ kàn biāo tí jiù fā biǎo guān diǎn 。 yǐ ： suǒ yǐ kàn xīn wén yào jǐn liàng kè guān 。 méi tǐ bào dào de wèi bì shì shì shí 。 jiǎ ： nǐ shuō de duì 。 wǒ gāng cái kàn dào lìng yí gè bào dào ， shuō zhè zhǐ shì shì yàn sān gè yuè 。 yǐ ： kàn ， zhè jiù shì qū bié 。 rú guǒ zhǐ kàn dì yī tiáo ， wǒ men kě néng jiù pàn duàn cuò le 。 jiǎ ： yǐ hòu wǒ yě yào xiān chá jǐ gè lái yuán ， zài shuō zì jǐ de kàn fǎ 。 yǐ ： zhè yàng hěn hǎo 。 wǎn shang wǒ men zài liáo liáo ， kàn kàn dà jiā zěn me shuō 。",
     "questions": [
       {
-        "prompt": "Cụm “新闻” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Theo truyền thông, công ty định đổi thời gian làm việc thế nào?",
         "options": [
-          "quan điểm",
-          "ảnh hưởng",
-          "tin tức"
+          "Mỗi ngày làm bốn tiếng",
+          "Mỗi tháng nghỉ bốn ngày",
+          "Mỗi tuần làm bốn ngày"
         ],
         "answer": 2,
-        "explanation": "“新闻”: tin tức. Ví dụ đã nghe: 这条新闻今天刷屏了。"
+        "explanation": "B nói 把工作时间改成每周四天。"
       },
       {
-        "prompt": "Cụm “媒体” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Những người phản đối lo ngại điều gì?",
         "options": [
-          "truyền thông",
-          "ảnh hưởng",
-          "sự thật"
+          "Ảnh hưởng hiệu suất làm việc",
+          "Công ty sẽ phá sản",
+          "Tiền lương bị cắt"
         ],
         "answer": 0,
-        "explanation": "“媒体”: truyền thông. Ví dụ đã nghe: 媒体报道的未必都是事实。"
+        "explanation": "B nói 也有人认为会影响工作效率。"
       },
       {
-        "prompt": "Cụm “观点” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Thông tin nào cho thấy chỉ đọc bài đầu có thể dẫn đến phán đoán sai?",
         "options": [
-          "sự thật",
-          "quan điểm",
-          "tranh cãi"
+          "Công ty đã hủy kế hoạch",
+          "Một bài khác nói đây chỉ là thử nghiệm ba tháng",
+          "Bài báo gốc đã bị xóa"
         ],
         "answer": 1,
-        "explanation": "“观点”: quan điểm. Ví dụ đã nghe: 每个人都有自己的观点。"
+        "explanation": "A nói 另一个报道，说这只是试验三个月 và B nói 如果只看第一条，我们可能就判断错了。"
       }
     ]
   },

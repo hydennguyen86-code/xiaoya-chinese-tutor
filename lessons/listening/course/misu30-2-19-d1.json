@@ -1,0 +1,310 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-2-19-d1",
+  "level": "HSK3-4",
+  "title": "今天我请客 · Mời khách và ứng xử",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-231",
+      "level": "HSK3-4",
+      "hanzi": "今天是阿兰的生日，我请客。",
+      "pinyin": "jīn tiān shì ā lán de shēng rì wó qǐng kè",
+      "meaningVi": "Hôm nay là sinh nhật Lan, mình mời.",
+      "focus": [
+        "请客 qǐng kè: qǐng thanh 3, kè thanh 4.",
+        "生日 shēng rì: r uốn lưỡi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        1,
+        4,
+        1,
+        2,
+        5,
+        1,
+        4,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          1,
+          4,
+          1,
+          2,
+          5,
+          1,
+          4,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          1,
+          4,
+          1,
+          2,
+          5,
+          1,
+          4,
+          3,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "dt-2-232",
+      "level": "HSK3-4",
+      "hanzi": "你别客气，自己点菜吧。",
+      "pinyin": "nǐ bié kè qi zì jí diǎn cài ba",
+      "meaningVi": "Bạn đừng khách sáo, tự gọi món đi.",
+      "focus": [
+        "客气 kè qi: qi đọc nhẹ.",
+        "点菜 diǎn cài: c bật hơi."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        2,
+        4,
+        5,
+        4,
+        3,
+        3,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          3,
+          2,
+          4,
+          5,
+          4,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          2,
+          4,
+          5,
+          4,
+          3,
+          3,
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "id": "dt-2-233",
+      "level": "HSK3-4",
+      "hanzi": "谢谢你送我这么好的礼物。",
+      "pinyin": "xiè xie nǐ sòng wǒ zhè me hǎo de lǐ wù",
+      "meaningVi": "Cảm ơn bạn đã tặng mình món quà tốt như vậy.",
+      "focus": [
+        "谢谢 xiè xie: chữ sau đọc nhẹ.",
+        "礼物 lǐ wù: thanh 3 rồi thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-234",
+      "level": "HSK3-4",
+      "hanzi": "我想感谢王老师的热情招待。",
+      "pinyin": "wó xiáng gǎn xiè wáng lǎo shī de rè qíng zhāo dài",
+      "meaningVi": "Mình muốn cảm ơn sự tiếp đãi nhiệt tình của thầy Vương.",
+      "focus": [
+        "感谢 gǎn xiè: gǎn thanh 3, xiè thanh 4.",
+        "招待 zhāo dài: zh uốn lưỡi, dài thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        3,
+        4,
+        2,
+        3,
+        1,
+        5,
+        4,
+        2,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          2,
+          3,
+          4,
+          2,
+          3,
+          1,
+          5,
+          4,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          3,
+          3,
+          4,
+          2,
+          3,
+          1,
+          5,
+          4,
+          2,
+          1,
+          4
+        ]
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-53",
+      "level": "HSK3-4",
+      "text": "我敬大家一杯，祝大家身体健康。今天吃什么都可以，随便点，别客气！",
+      "pinyin": "wǒ jìng dà jiā yì bēi zhù dà jiā shēn tǐ jiàn kāng jīn tiān chī shén me dōu ké yǐ suí biàn diǎn bié kè qi",
+      "meaningVi": "Mình kính mọi người một ly, chúc mọi người mạnh khỏe. Hôm nay ăn gì cũng được, cứ gọi tùy ý, đừng khách sáo!",
+      "syllables": 27,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我敬大家一杯",
+          "pinyin": "wǒ jìng dà jiā yì bēi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "祝大家身体健康",
+          "pinyin": "zhù dà jiā shēn tǐ jiàn kāng",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "今天吃什么都可以",
+          "pinyin": "jīn tiān chī shén me dōu ké yǐ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "随便点",
+          "pinyin": "suí biàn diǎn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "别客气",
+          "pinyin": "bié kè qi",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 一杯 và sau 都可以.",
+        "敬 jìng: thanh 4, -ng cuối."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        4,
+        1,
+        4,
+        1,
+        4,
+        4,
+        1,
+        1,
+        3,
+        4,
+        1,
+        1,
+        1,
+        1,
+        2,
+        5,
+        1,
+        3,
+        3,
+        2,
+        4,
+        3,
+        2,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          4,
+          1,
+          4,
+          1,
+          4,
+          4,
+          1,
+          1,
+          3,
+          4,
+          1,
+          1,
+          1,
+          1,
+          2,
+          5,
+          1,
+          2,
+          3,
+          2,
+          4,
+          3,
+          2,
+          4,
+          5
+        ],
+        [
+          3,
+          4,
+          4,
+          1,
+          4,
+          1,
+          4,
+          4,
+          1,
+          1,
+          3,
+          4,
+          1,
+          1,
+          1,
+          1,
+          2,
+          5,
+          1,
+          3,
+          3,
+          2,
+          4,
+          3,
+          2,
+          4,
+          5
+        ]
+      ]
+    }
+  ]
+}

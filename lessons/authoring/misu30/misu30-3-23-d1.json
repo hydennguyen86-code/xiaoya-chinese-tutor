@@ -1,0 +1,152 @@
+{
+  "lesson": "misu30-3-23-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿兰，我最近总是睡不好，每天晚上两三点才睡。",
+      "vi": "Lan à, dạo này mình toàn ngủ không ngon, mỗi tối hai ba giờ sáng mới ngủ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "你是不是又熬夜了？长期熬夜对身体不好。",
+      "vi": "Có phải bạn lại thức khuya không? Thức khuya lâu dài không tốt cho sức khỏe."
+    },
+    {
+      "speaker": "甲",
+      "zh": "也不全是。压力大的时候，我躺在床上就失眠。",
+      "vi": "Cũng không hẳn. Lúc áp lực lớn, mình nằm trên giường là mất ngủ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "那你的作息一定很乱。你白天锻炼吗？",
+      "vi": "Vậy giờ giấc sinh hoạt của bạn chắc rất lộn xộn. Ban ngày bạn có tập luyện không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "以前每天锻炼半个小时，最近工作忙，已经停了两个星期。",
+      "vi": "Trước đây mỗi ngày mình tập nửa tiếng, dạo này công việc bận, đã dừng hai tuần rồi."
+    },
+    {
+      "speaker": "乙",
+      "zh": "我建议你先调整作息，十一点以前上床，别再玩手机。",
+      "vi": "Mình khuyên bạn điều chỉnh giờ giấc trước, mười một giờ lên giường, đừng chơi điện thoại nữa."
+    },
+    {
+      "speaker": "甲",
+      "zh": "可是我担心自己坚持不下去。",
+      "vi": "Nhưng mình lo bản thân không kiên trì nổi."
+    },
+    {
+      "speaker": "乙",
+      "zh": "只要坚持，就会有效果。我去年也失眠，早睡早起，坚持了一个月就恢复了。",
+      "vi": "Chỉ cần kiên trì là sẽ có hiệu quả. Năm ngoái mình cũng mất ngủ, ngủ sớm dậy sớm, kiên trì một tháng là hồi phục."
+    },
+    {
+      "speaker": "甲",
+      "zh": "真的吗？那饮食方面要注意什么？",
+      "vi": "Thật à? Vậy về ăn uống cần chú ý gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "晚上少喝咖啡，多吃蔬菜，免疫力也会好一些。",
+      "vi": "Buổi tối uống ít cà phê, ăn nhiều rau, sức đề kháng cũng sẽ tốt hơn một chút."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，我从今晚开始试试。",
+      "vi": "Được, từ tối nay mình sẽ thử."
+    },
+    {
+      "speaker": "乙",
+      "zh": "一个星期以后告诉我结果。",
+      "vi": "Một tuần sau nhớ báo mình kết quả."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Mỗi tối A mấy giờ mới ngủ?",
+      "options": [
+        "Khoảng mười một giờ",
+        "Bốn năm giờ sáng",
+        "Hai ba giờ sáng"
+      ],
+      "answer": 2,
+      "explanation": "A nói 每天晚上两三点才睡。"
+    },
+    {
+      "prompt": "Năm ngoái Lan mất ngủ rồi hồi phục thế nào?",
+      "options": [
+        "Ngủ sớm dậy sớm, kiên trì một tháng thì hồi phục",
+        "Vẫn chưa hồi phục",
+        "Uống thuốc một tháng"
+      ],
+      "answer": 0,
+      "explanation": "B nói 早睡早起，坚持了一个月就恢复了。"
+    },
+    {
+      "prompt": "Vì sao A hơi do dự trước lời khuyên?",
+      "options": [
+        "Sợ bạn không vui",
+        "Sợ bản thân không kiên trì nổi",
+        "Sợ uống thuốc bất tiện"
+      ],
+      "answer": 1,
+      "explanation": "A nói 我担心自己坚持不下去。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "医生说长期熬夜会降低免疫力，对身体不好。",
+      "meaningVi": "Bác sĩ nói thức khuya lâu dài sẽ làm giảm sức đề kháng, không tốt cho cơ thể.",
+      "focus": [
+        "长期 cháng qī: cháng thanh 2.",
+        "免疫力 miǎn yì lì: thanh 3, 4, 4."
+      ]
+    },
+    {
+      "hanzi": "小安每天晚上锻炼四十分钟，作息也很规律。",
+      "meaningVi": "Tiểu An mỗi tối tập bốn mươi phút, giờ giấc cũng rất đều đặn.",
+      "focus": [
+        "锻炼 duàn liàn: hai chữ thanh 4, -n cuối.",
+        "四十 sì shí: s đầu lưỡi, sh uốn lưỡi."
+      ]
+    },
+    {
+      "hanzi": "她失眠的时候，不吃药，先调整饮食和心情。",
+      "meaningVi": "Lúc mất ngủ cô ấy không uống thuốc, mà điều chỉnh ăn uống và tâm trạng trước.",
+      "focus": [
+        "失眠 shī mián: sh uốn lưỡi, mián -n.",
+        "调整 tiáo zhěng: thanh 2 rồi thanh 3."
+      ]
+    },
+    {
+      "hanzi": "只要坚持一个月，身体就一定能慢慢恢复。",
+      "meaningVi": "Chỉ cần kiên trì một tháng, cơ thể nhất định sẽ từ từ hồi phục.",
+      "focus": [
+        "坚持 jiān chí: ch bật hơi, uốn lưỡi.",
+        "一个 yí gè: yī đổi thanh 2 trước thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我最近总是失眠，所以决定从今晚开始改变。我要早点睡觉，每天锻炼，晚上不喝咖啡。我相信，只要坚持，身体就会慢慢恢复。",
+    "meaningVi": "Dạo này mình toàn mất ngủ, nên quyết định thay đổi từ tối nay. Mình sẽ đi ngủ sớm, ngày nào cũng tập luyện, buổi tối không uống cà phê. Mình tin rằng chỉ cần kiên trì, cơ thể sẽ từ từ hồi phục.",
+    "focus": [
+      "Ngắt hơi sau 失眠, 改变 và 睡觉.",
+      "恢复 huī fù: huī thanh 1, fù thanh 4."
+    ]
+  },
+  "readings": {
+    "觉": "jiào",
+    "少": "shǎo",
+    "调": "tiáo",
+    "分": "fēn",
+    "要": "yào",
+    "相": "xiāng",
+    "好": "hǎo",
+    "长": "cháng",
+    "了": "le",
+    "还": "hái",
+    "重": "zhòng"
+  }
+}

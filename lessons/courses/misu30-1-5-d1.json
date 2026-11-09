@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Mua sắm và trả giá",
     "playLimit": 2,
-    "transcript": "我想买一件衣服。 这里卖水果。 这件衣服多少钱？",
-    "translation": "Mình muốn mua một bộ quần áo. Ở đây bán hoa quả. Bộ quần áo này bao nhiêu tiền?",
-    "pinyin": "wǒ xiǎng mǎi yí jiàn yī fu 。   zhè lǐ mài shuǐ guǒ 。   zhè jiàn yī fu duō shǎo qián ？",
+    "transcript": "甲：你好，你想买什么？乙：我想买一件衣服。这件多少钱？甲：这件一百二十块。乙：太贵了！有便宜的吗？甲：有。那件八十块，也很好看。乙：我可以试一下吗？甲：可以，请。乙：很好，我买那件。",
+    "translation": "A: Xin chào, anh chị muốn mua gì ạ? B: Tôi muốn mua một cái áo. Cái này bao nhiêu tiền? A: Cái này một trăm hai mươi tệ. B: Đắt quá! Có cái nào rẻ hơn không? A: Có. Cái kia tám mươi tệ, cũng rất đẹp. B: Tôi thử một chút được không? A: Được, mời anh chị. B: Rất tốt, tôi mua cái kia.",
+    "pinyin": "jiǎ ： nǐ hǎo ， nǐ xiǎng mǎi shén me ？ yǐ ： wǒ xiǎng mǎi yí jiàn yī fu 。 zhè jiàn duō shǎo qián ？ jiǎ ： zhè jiàn yì bǎi èr shí kuài 。 yǐ ： tài guì le ！ yǒu pián yi de ma ？ jiǎ ： yǒu 。 nà jiàn bā shí kuài ， yě hěn hǎo kàn 。 yǐ ： wǒ kě yǐ shì yí xià ma ？ jiǎ ： kě yǐ ， qǐng 。 yǐ ： hěn hǎo ， wǒ mǎi nà jiàn 。",
     "questions": [
       {
-        "prompt": "Cụm “买” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Cái áo đầu tiên giá bao nhiêu?",
         "options": [
-          "bao nhiêu tiền",
-          "đắt",
-          "mua"
-        ],
-        "answer": 2,
-        "explanation": "“买”: mua. Ví dụ đã nghe: 我想买一件衣服。"
-      },
-      {
-        "prompt": "Cụm “卖” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "bán",
-          "đắt",
-          "rẻ"
-        ],
-        "answer": 0,
-        "explanation": "“卖”: bán. Ví dụ đã nghe: 这里卖水果。"
-      },
-      {
-        "prompt": "Cụm “多少钱” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "rẻ",
-          "bao nhiêu tiền",
-          "tệ (đơn vị tiền)"
+          "Tám mươi tệ",
+          "Một trăm hai mươi tệ",
+          "Một trăm tệ"
         ],
         "answer": 1,
-        "explanation": "“多少钱”: bao nhiêu tiền. Ví dụ đã nghe: 这件衣服多少钱？"
+        "explanation": "Nhân viên nói 这件一百二十块。"
+      },
+      {
+        "prompt": "Vì sao khách hỏi cái khác?",
+        "options": [
+          "Cái đó không đẹp",
+          "Cái đó quá nhỏ",
+          "Cái đó quá đắt"
+        ],
+        "answer": 2,
+        "explanation": "Khách nói 太贵了！有便宜的吗？"
+      },
+      {
+        "prompt": "Cái áo khách mua rẻ hơn cái đầu bao nhiêu tệ?",
+        "options": [
+          "Bốn mươi tệ",
+          "Hai mươi tệ",
+          "Tám mươi tệ"
+        ],
+        "answer": 0,
+        "explanation": "一百二十块 trừ 八十块 là bốn mươi tệ, khách mua 那件。"
       }
     ]
   },

@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "那段经历改变了我。 第一次上台演讲，我至今难忘。 挫折让我成长了很多。",
-    "translation": "Trải nghiệm đó đã thay đổi mình. Lần đầu lên sân khấu thuyết trình, đến nay mình vẫn không quên. Thất bại khiến mình trưởng thành hơn nhiều.",
-    "pinyin": "nà duàn jīng lì gǎi biàn le wǒ 。   dì yī cì shàng tái yǎn jiǎng ， wǒ zhì jīn nán wàng 。   cuò zhé ràng wǒ chéng zhǎng le hěn duō 。",
+    "title": "Nghe hội thoại: Chia sẻ trải nghiệm",
+    "playLimit": 1,
+    "transcript": "甲：阿兰，你还记得我们第一次上台演讲吗？乙：当然记得，那段经历我至今难忘。你当时紧张极了。甲：是啊，那天我差点哭了。乙：可是你还是坚持讲完了，我很佩服你的勇气。甲：其实讲完以后，我最大的感受是后悔。如果当时我多准备一点，也许结果会更好。乙：不要这样想。那段经历让你成长了很多。甲：你说得对。多年以后，我终于释怀了。乙：我记得你后来还当了班长。甲：对，是你的鼓励让我有了勇气，我一直很感动。乙：别这么说，我们是朋友嘛。以后有困难，还可以互相帮助。甲：嗯，我会珍惜我们的友情。乙：我也是。下个月我们再一起去爬山吧。",
+    "translation": "A: Lan à, bạn còn nhớ lần đầu chúng mình lên sân khấu diễn thuyết không? B: Đương nhiên nhớ, trải nghiệm đó đến giờ mình vẫn khó quên. Lúc đó bạn căng thẳng cực kỳ. A: Ừ, hôm đó mình suýt khóc. B: Nhưng bạn vẫn kiên trì nói xong, mình rất khâm phục dũng khí của bạn. A: Thật ra nói xong, cảm giác lớn nhất của mình là hối tiếc. Nếu lúc đó mình chuẩn bị thêm một chút, có lẽ kết quả đã tốt hơn. B: Đừng nghĩ vậy. Trải nghiệm đó khiến bạn trưởng thành rất nhiều. A: Bạn nói đúng. Nhiều năm sau, cuối cùng mình đã thanh thản. B: Mình nhớ sau đó bạn còn làm lớp trưởng nữa. A: Đúng, chính lời động viên của bạn cho mình dũng khí, mình luôn rất cảm động. B: Đừng nói vậy, chúng ta là bạn mà. Sau này có khó khăn vẫn có thể giúp đỡ nhau. A: Ừ, mình sẽ trân trọng tình bạn của chúng ta. B: Mình cũng vậy. Tháng sau chúng ta lại cùng đi leo núi nhé.",
+    "pinyin": "jiǎ ： ā lán ， nǐ hái jì de wǒ men dì yī cì shàng tái yǎn jiǎng ma ？ yǐ ： dāng rán jì de ， nà duàn jīng lì wǒ zhì jīn nán wàng 。 nǐ dāng shí jǐn zhāng jí le 。 jiǎ ： shì a ， nà tiān wǒ chà diǎn kū le 。 yǐ ： kě shì nǐ hái shì jiān chí jiǎng wán le ， wǒ hěn pèi fú nǐ de yǒng qì 。 jiǎ ： qí shí jiǎng wán yǐ hòu ， wǒ zuì dà de gǎn shòu shì hòu huǐ 。 rú guǒ dāng shí wǒ duō zhǔn bèi yì diǎn ， yě xǔ jié guǒ huì gèng hǎo 。 yǐ ： bú yào zhè yàng xiǎng 。 nà duàn jīng lì ràng nǐ chéng zhǎng le hěn duō 。 jiǎ ： nǐ shuō de duì 。 duō nián yǐ hòu ， wǒ zhōng yú shì huái le 。 yǐ ： wǒ jì dé nǐ hòu lái hái dāng le bān zhǎng 。 jiǎ ： duì ， shì nǐ de gǔ lì ràng wǒ yǒu le yǒng qì ， wǒ yì zhí hěn gǎn dòng 。 yǐ ： bié zhè me shuō ， wǒ men shì péng you ma 。 yǐ hòu yǒu kùn nán ， hái kě yǐ hù xiāng bāng zhù 。 jiǎ ： ǹg ， wǒ huì zhēn xī wǒ men de yǒu qíng 。 yǐ ： wǒ yě shì 。 xià gè yuè wǒ men zài yì qǐ qù pá shān ba 。",
     "questions": [
       {
-        "prompt": "Cụm “经历” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Hai người đang nhớ lại chuyện gì?",
         "options": [
-          "trưởng thành",
-          "trải nghiệm",
-          "hối hận"
+          "Lần đầu cùng đi leo núi",
+          "Lần đầu cùng lên sân khấu diễn thuyết",
+          "Lần đầu cùng đi nước ngoài"
         ],
         "answer": 1,
-        "explanation": "“经历”: trải nghiệm. Ví dụ đã nghe: 那段经历改变了我。"
+        "explanation": "A hỏi 你还记得我们第一次上台演讲吗？"
       },
       {
-        "prompt": "Cụm “难忘” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Sau khi nói xong, cảm giác lớn nhất của A là gì?",
         "options": [
-          "hối hận",
-          "dũng khí",
-          "khó quên"
+          "Rất tự hào",
+          "Thấy nhẹ nhõm ngay",
+          "Hối tiếc vì chuẩn bị chưa kỹ"
         ],
         "answer": 2,
-        "explanation": "“难忘”: khó quên. Ví dụ đã nghe: 第一次上台演讲，我至今难忘。"
+        "explanation": "A nói 我最大的感受是后悔。如果当时我多准备一点。"
       },
       {
-        "prompt": "Cụm “成长” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao A có dũng khí làm lớp trưởng sau này?",
         "options": [
-          "trưởng thành",
-          "dũng khí",
-          "cảm động"
+          "Vì lời động viên của Lan",
+          "Vì muốn đạt điểm cao",
+          "Vì cha mẹ yêu cầu"
         ],
         "answer": 0,
-        "explanation": "“成长”: trưởng thành. Ví dụ đã nghe: 挫折让我成长了很多。"
+        "explanation": "A nói 是你的鼓励让我有了勇气。"
       }
     ]
   },

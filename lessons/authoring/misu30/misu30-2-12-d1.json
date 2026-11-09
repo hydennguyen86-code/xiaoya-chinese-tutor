@@ -1,0 +1,132 @@
+{
+  "lesson": "misu30-2-12-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，我们要去火车站，你觉得坐地铁还是打车好？",
+      "vi": "Minh à, chúng ta phải ra ga tàu, bạn thấy đi tàu điện hay gọi taxi thì tốt hơn?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "现在是下班时间，路上肯定堵车，我觉得坐地铁好。",
+      "vi": "Bây giờ là giờ tan tầm, trên đường chắc chắn tắc, mình thấy đi tàu điện tốt hơn."
+    },
+    {
+      "speaker": "甲",
+      "zh": "从这儿到火车站坐地铁要多长时间？",
+      "vi": "Từ đây đến ga tàu đi tàu điện mất bao lâu?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "要四十分钟，中间换乘一次。打车的话，不堵车二十分钟，现在可能要一个小时。",
+      "vi": "Mất bốn mươi phút, giữa đường phải chuyển tuyến một lần. Còn gọi taxi thì nếu không tắc là hai mươi phút, bây giờ có thể mất một tiếng."
+    },
+    {
+      "speaker": "甲",
+      "zh": "打车贵不贵？",
+      "vi": "Gọi taxi có đắt không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "要八十块，比地铁贵多了。地铁一个人才五块。",
+      "vi": "Tám mươi tệ, đắt hơn tàu điện nhiều. Tàu điện một người chỉ năm tệ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那我们坐地铁吧。火车七点半开，我们几点出发？",
+      "vi": "Vậy chúng mình đi tàu điện nhé. Bảy giờ rưỡi tàu chạy, mấy giờ chúng mình xuất phát?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "六点半出发，七点十分就能到。",
+      "vi": "Sáu giờ rưỡi xuất phát, bảy giờ mười phút là đến."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，我去买票。",
+      "vi": "Được, mình đi mua vé."
+    },
+    {
+      "speaker": "乙",
+      "zh": "不用，我已经买好了，你跟我走吧。",
+      "vi": "Không cần, mình mua rồi, bạn đi theo mình nhé."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Vì sao Minh chọn đi tàu điện?",
+      "options": [
+        "Vì tàu điện nhanh hơn xe buýt",
+        "Vì giờ tan tầm trên đường sẽ tắc",
+        "Vì Minh không có tiền gọi taxi"
+      ],
+      "answer": 1,
+      "explanation": "B nói 现在是下班时间，路上肯定堵车，我觉得坐地铁好。"
+    },
+    {
+      "prompt": "Họ định xuất phát lúc mấy giờ?",
+      "options": [
+        "Bảy giờ rưỡi",
+        "Bảy giờ mười phút",
+        "Sáu giờ rưỡi"
+      ],
+      "answer": 2,
+      "explanation": "B nói 六点半出发，七点十分就能到 (7 giờ 30 là giờ tàu chạy)."
+    },
+    {
+      "prompt": "Bây giờ nếu gọi taxi thì có thể mất bao lâu?",
+      "options": [
+        "Một tiếng",
+        "Bốn mươi phút",
+        "Hai mươi phút"
+      ],
+      "answer": 0,
+      "explanation": "B nói 现在可能要一个小时。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "我每天坐公交去公司。",
+      "meaningVi": "Mỗi ngày mình đi xe buýt đến công ty.",
+      "focus": [
+        "公交 gōng jiāo: hai thanh 1, giữ giọng cao đều.",
+        "公司 gōng sī: s đầu lưỡi, chữ 司 đọc rõ."
+      ]
+    },
+    {
+      "hanzi": "这张票是从北京到上海的。",
+      "meaningVi": "Tấm vé này là từ Bắc Kinh đến Thượng Hải.",
+      "focus": [
+        "张 zhāng: zh uốn lưỡi, thanh 1.",
+        "到 dào thanh 4, xuống dứt khoát."
+      ]
+    },
+    {
+      "hanzi": "下雨的时候，路上很容易堵车。",
+      "meaningVi": "Lúc trời mưa, trên đường rất dễ tắc.",
+      "focus": [
+        "堵车 dǔ chē: dǔ thanh 3, chē thanh 1, ch bật hơi.",
+        "容易 róng yì: yì thanh 4."
+      ]
+    },
+    {
+      "hanzi": "在人民广场换乘二号线，再坐三站就到了。",
+      "meaningVi": "Đổi sang tuyến số hai ở Quảng trường Nhân Dân, rồi đi thêm ba trạm là đến.",
+      "focus": [
+        "换乘 huàn chéng: ch uốn lưỡi, -ng cuối.",
+        "到了 dào le: le đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "明天早上六点我们出发。先坐地铁，再换乘公交，如果来不及，就打车去。",
+    "meaningVi": "Sáng mai sáu giờ chúng mình xuất phát. Đi tàu điện trước, rồi chuyển sang xe buýt, nếu không kịp thì gọi taxi đi.",
+    "focus": [
+      "Ngắt hơi sau 地铁 và sau 公交.",
+      "来不及 lái bù jí: 不 đọc thanh 4, jí thanh 2."
+    ]
+  },
+  "readings": {
+    "了": "le"
+  }
+}

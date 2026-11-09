@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我每天坐地铁上班。 坐公交比地铁慢。 我买了两张票。",
-    "translation": "Mình đi tàu điện đi làm mỗi ngày. Đi xe buýt chậm hơn tàu điện. Mình đã mua hai tấm vé.",
-    "pinyin": "wǒ měi tiān zuò dì tiě shàng bān 。   zuò gōng jiāo bǐ dì tiě màn 。   wǒ mǎi le liǎng zhāng piào 。",
+    "title": "Nghe hội thoại: Đi lại và mua vé",
+    "playLimit": 1,
+    "transcript": "甲：阿明，我们要去火车站，你觉得坐地铁还是打车好？乙：现在是下班时间，路上肯定堵车，我觉得坐地铁好。甲：从这儿到火车站坐地铁要多长时间？乙：要四十分钟，中间换乘一次。打车的话，不堵车二十分钟，现在可能要一个小时。甲：打车贵不贵？乙：要八十块，比地铁贵多了。地铁一个人才五块。甲：那我们坐地铁吧。火车七点半开，我们几点出发？乙：六点半出发，七点十分就能到。甲：好，我去买票。乙：不用，我已经买好了，你跟我走吧。",
+    "translation": "A: Minh à, chúng ta phải ra ga tàu, bạn thấy đi tàu điện hay gọi taxi thì tốt hơn? B: Bây giờ là giờ tan tầm, trên đường chắc chắn tắc, mình thấy đi tàu điện tốt hơn. A: Từ đây đến ga tàu đi tàu điện mất bao lâu? B: Mất bốn mươi phút, giữa đường phải chuyển tuyến một lần. Còn gọi taxi thì nếu không tắc là hai mươi phút, bây giờ có thể mất một tiếng. A: Gọi taxi có đắt không? B: Tám mươi tệ, đắt hơn tàu điện nhiều. Tàu điện một người chỉ năm tệ. A: Vậy chúng mình đi tàu điện nhé. Bảy giờ rưỡi tàu chạy, mấy giờ chúng mình xuất phát? B: Sáu giờ rưỡi xuất phát, bảy giờ mười phút là đến. A: Được, mình đi mua vé. B: Không cần, mình mua rồi, bạn đi theo mình nhé.",
+    "pinyin": "jiǎ ： ā míng ， wǒ men yào qù huǒ chē zhàn ， nǐ jué de zuò dì tiě hái shì dǎ chē hǎo ？ yǐ ： xiàn zài shì xià bān shí jiān ， lù shang kěn dìng dǔ chē ， wǒ jué de zuò dì tiě hǎo 。 jiǎ ： cóng zhèr dào huǒ chē zhàn zuò dì tiě yào duō cháng shí jiān ？ yǐ ： yào sì shí fēn zhōng ， zhōng jiān huàn chéng yí cì 。 dǎ chē de huà ， bù dǔ chē èr shí fēn zhōng ， xiàn zài kě néng yào yí gè xiǎo shí 。 jiǎ ： dǎ chē guì bu guì ？ yǐ ： yào bā shí kuài ， bǐ dì tiě guì duō le 。 dì tiě yí gè rén cái wǔ kuài 。 jiǎ ： nà wǒ men zuò dì tiě ba 。 huǒ chē qī diǎn bàn kāi ， wǒ men jǐ diǎn chū fā ？ yǐ ： liù diǎn bàn chū fā ， qī diǎn shí fēn jiù néng dào 。 jiǎ ： hǎo ， wǒ qù mǎi piào 。 yǐ ： bú yòng ， wǒ yǐ jīng mǎi hǎo le ， nǐ gēn wǒ zǒu ba 。",
     "questions": [
       {
-        "prompt": "Cụm “地铁” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao Minh chọn đi tàu điện?",
         "options": [
-          "tàu điện ngầm",
-          "vé",
-          "xuất phát"
-        ],
-        "answer": 0,
-        "explanation": "“地铁”: tàu điện ngầm. Ví dụ đã nghe: 我每天坐地铁上班。"
-      },
-      {
-        "prompt": "Cụm “公交” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "xuất phát",
-          "xe buýt công cộng",
-          "đến"
+          "Vì tàu điện nhanh hơn xe buýt",
+          "Vì giờ tan tầm trên đường sẽ tắc",
+          "Vì Minh không có tiền gọi taxi"
         ],
         "answer": 1,
-        "explanation": "“公交”: xe buýt công cộng. Ví dụ đã nghe: 坐公交比地铁慢。"
+        "explanation": "B nói 现在是下班时间，路上肯定堵车，我觉得坐地铁好。"
       },
       {
-        "prompt": "Cụm “票” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Họ định xuất phát lúc mấy giờ?",
         "options": [
-          "đến",
-          "chuyển tuyến",
-          "vé"
+          "Bảy giờ rưỡi",
+          "Bảy giờ mười phút",
+          "Sáu giờ rưỡi"
         ],
         "answer": 2,
-        "explanation": "“票”: vé. Ví dụ đã nghe: 我买了两张票。"
+        "explanation": "B nói 六点半出发，七点十分就能到 (7 giờ 30 là giờ tàu chạy)."
+      },
+      {
+        "prompt": "Bây giờ nếu gọi taxi thì có thể mất bao lâu?",
+        "options": [
+          "Một tiếng",
+          "Bốn mươi phút",
+          "Hai mươi phút"
+        ],
+        "answer": 0,
+        "explanation": "B nói 现在可能要一个小时。"
       }
     ]
   },

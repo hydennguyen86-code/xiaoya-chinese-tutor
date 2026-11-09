@@ -1,0 +1,92 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-2-15-d1",
+  "level": "HSK3-4",
+  "title": "你哪里不舒服？ · Khám bệnh",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-215",
+      "level": "HSK3-4",
+      "hanzi": "我今天头疼，什么也不想吃。",
+      "pinyin": "wǒ jīn tiān tóu téng shén me yě bù xiǎng chī",
+      "meaningVi": "Hôm nay mình đau đầu, chẳng muốn ăn gì cả.",
+      "focus": [
+        "头疼 tóu téng: hai thanh 2 liền nhau.",
+        "什么 shén me: me đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-2-216",
+      "level": "HSK3-4",
+      "hanzi": "他昨晚发烧了，今天没去上班。",
+      "pinyin": "tā zuó wǎn fā shāo le jīn tiān méi qù shàng bān",
+      "meaningVi": "Tối qua anh ấy bị sốt, hôm nay không đi làm.",
+      "focus": [
+        "发烧 fā shāo: hai thanh 1, giữ giọng cao.",
+        "没去 méi qù: 没 thanh 2."
+      ]
+    },
+    {
+      "id": "dt-2-217",
+      "level": "HSK3-4",
+      "hanzi": "孩子咳嗽三天了，我带他去医院。",
+      "pinyin": "hái zi ké sou sān tiān le wǒ dài tā qù yī yuàn",
+      "meaningVi": "Con ho ba ngày rồi, mình đưa con đến bệnh viện.",
+      "focus": [
+        "咳嗽 ké sou: sou đọc nhẹ.",
+        "医院 yī yuàn: yuàn có ü, đọc tròn môi."
+      ]
+    },
+    {
+      "id": "dt-2-218",
+      "level": "HSK3-4",
+      "hanzi": "医生让我按时吃药，多喝水。",
+      "pinyin": "yī shēng ràng wǒ àn shí chī yào duō hē shuǐ",
+      "meaningVi": "Bác sĩ bảo mình uống thuốc đúng giờ và uống nhiều nước.",
+      "focus": [
+        "医生 yī shēng: sh uốn lưỡi, -ng cuối.",
+        "吃药 chī yào: ch bật hơi, yào thanh 4."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-49",
+      "level": "HSK3-4",
+      "text": "我对牛奶过敏。昨天我喝了一杯牛奶，晚上就不舒服了。今天我要去看医生。",
+      "pinyin": "wǒ duì niú nǎi guò mǐn zuó tiān wǒ hē le yì bēi niú nǎi wǎn shang jiù bù shū fu le jīn tiān wǒ yào qù kàn yī shēng",
+      "meaningVi": "Mình bị dị ứng sữa bò. Hôm qua mình uống một ly sữa, buổi tối thì thấy khó chịu. Hôm nay mình phải đi khám bác sĩ.",
+      "syllables": 30,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我对牛奶过敏",
+          "pinyin": "wǒ duì niú nǎi guò mǐn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "昨天我喝了一杯牛奶",
+          "pinyin": "zuó tiān wǒ hē le yì bēi niú nǎi",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "晚上就不舒服了",
+          "pinyin": "wǎn shang jiù bù shū fu le",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "今天我要去看医生",
+          "pinyin": "jīn tiān wǒ yào qù kàn yī shēng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 过敏 và sau 牛奶.",
+        "不舒服 bù shū fu: fu đọc nhẹ."
+      ]
+    }
+  ]
+}

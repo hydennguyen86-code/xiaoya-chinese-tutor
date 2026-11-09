@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "空气污染已经成为大问题。 我们应该把垃圾分类回收。 每天浪费的食物多得惊人。",
-    "translation": "Ô nhiễm không khí đã trở thành vấn đề lớn. Chúng ta nên phân loại và tái chế rác. Lượng thức ăn lãng phí mỗi ngày nhiều đến đáng kinh ngạc.",
-    "pinyin": "kōng qì wū rǎn yǐ jīng chéng wéi dà wèn tí 。   wǒ men yīng gāi bǎ lā jī fēn lèi huí shōu 。   měi tiān làng fèi de shí wù duō de jīng rén 。",
+    "title": "Nghe hội thoại: Môi trường",
+    "playLimit": 1,
+    "transcript": "甲：各位邻居，今天我们讨论一下小区的垃圾分类问题。乙：王主任，最近垃圾桶旁边越来越脏，污染也越来越严重。甲：是啊，很多人不愿意分类，认为太麻烦。乙：可是环保不只是政府的责任，也是我们每个人的责任。甲：说得对。我建议从身边的小事做起，比如少用塑料袋。乙：还有，食物浪费也很严重。上个星期，我们小区一天就扔掉了两百公斤剩饭。甲：两百公斤！这太浪费了。我们可以建一个回收点，把能回收的东西分开放。乙：好主意。不过一个回收点需要多少钱？甲：大概三千块，物业公司同意出一半。乙：那我们居民只需要出一千五百块。甲：对。大家同意的话，下个月一号就开始。乙：我同意，这样也能减少污染，对下一代更好。",
+    "translation": "A: Thưa các hàng xóm, hôm nay chúng ta bàn về vấn đề phân loại rác của khu dân cư. B: Trưởng ban Vương, dạo này quanh thùng rác ngày càng bẩn, ô nhiễm cũng ngày càng nghiêm trọng. A: Đúng vậy, nhiều người không muốn phân loại, cho rằng quá phiền. B: Nhưng bảo vệ môi trường không chỉ là trách nhiệm của chính phủ, mà còn là trách nhiệm của mỗi chúng ta. A: Đúng. Tôi đề nghị bắt đầu từ những việc nhỏ quanh ta, ví dụ dùng ít túi ni lông. B: Còn nữa, lãng phí thức ăn cũng rất nghiêm trọng. Tuần trước, khu mình một ngày đã vứt hai trăm cân cơm thừa. A: Hai trăm cân! Lãng phí quá. Chúng ta có thể lập một điểm thu hồi, để riêng những thứ tái chế được. B: Ý hay. Có điều một điểm thu hồi cần bao nhiêu tiền? A: Khoảng ba nghìn tệ, công ty quản lý đồng ý chi một nửa. B: Vậy cư dân chúng ta chỉ cần bỏ ra một nghìn năm trăm tệ. A: Đúng. Nếu mọi người đồng ý, mùng một tháng sau sẽ bắt đầu. B: Tôi đồng ý, như vậy cũng giảm được ô nhiễm, tốt hơn cho thế hệ sau.",
+    "pinyin": "jiǎ ： gè wèi lín jū ， jīn tiān wǒ men tǎo lùn yí xià xiǎo qū de lā jī fēn lèi wèn tí 。 yǐ ： wáng zhǔ rèn ， zuì jìn lā jī tǒng páng biān yuè lái yuè zāng ， wū rǎn yě yuè lái yuè yán zhòng 。 jiǎ ： shì a ， hěn duō rén bú yuàn yì fēn lèi ， rèn wéi tài má fan 。 yǐ ： kě shì huán bǎo bù zhī shì zhèng fǔ de zé rèn ， yě shì wǒ men měi gè rén de zé rèn 。 jiǎ ： shuō de duì 。 wǒ jiàn yì cóng shēn biān de xiǎo shì zuò qǐ ， bǐ rú shǎo yòng sù liào dài 。 yǐ ： hái yǒu ， shí wù làng fèi yě hěn yán zhòng 。 shàng gè xīng qī ， wǒ men xiǎo qū yì tiān jiù rēng diào le liǎng bǎi gōng jīn shèng fàn 。 jiǎ ： liǎng bǎi gōng jīn ！ zhè tài làng fèi le 。 wǒ men kě yǐ jiàn yí gè huí shōu diǎn ， bǎ néng huí shōu de dōng xi fēn kāi fàng 。 yǐ ： hǎo zhǔ yì 。 bú guò yí gè huí shōu diǎn xū yào duō shǎo qián ？ jiǎ ： dà gài sān qiān kuài ， wù yè gōng sī tóng yì chū yí bàn 。 yǐ ： nà wǒ men jū mín zhī xū yào chū yì qiān wǔ bǎi kuài 。 jiǎ ： duì 。 dà jiā tóng yì de huà ， xià gè yuè yī hào jiù kāi shǐ 。 yǐ ： wǒ tóng yì ， zhè yàng yě néng jiǎn shǎo wū rǎn ， duì xià yí dài gèng hǎo 。",
     "questions": [
       {
-        "prompt": "Cụm “污染” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tuần trước khu dân cư vứt bao nhiêu cơm thừa trong một ngày?",
         "options": [
-          "lãng phí",
-          "bền vững",
-          "ô nhiễm"
+          "Hai mươi cân",
+          "Hai nghìn cân",
+          "Hai trăm cân"
         ],
         "answer": 2,
-        "explanation": "“污染”: ô nhiễm. Ví dụ đã nghe: 空气污染已经成为大问题。"
+        "explanation": "B nói 一天就扔掉了两百公斤剩饭。"
       },
       {
-        "prompt": "Cụm “回收” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Cư dân cần bỏ ra bao nhiêu tiền cho điểm thu hồi?",
         "options": [
-          "tái chế, thu hồi",
-          "bền vững",
-          "bảo vệ môi trường"
+          "Một nghìn năm trăm tệ",
+          "Ba nghìn tệ",
+          "Năm trăm tệ"
         ],
         "answer": 0,
-        "explanation": "“回收”: tái chế, thu hồi. Ví dụ đã nghe: 我们应该把垃圾分类回收。"
+        "explanation": "Tổng 大概三千块, 物业公司同意出一半, nên 居民只需要出一千五百块。"
       },
       {
-        "prompt": "Cụm “浪费” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao người cuối cùng đồng ý với kế hoạch?",
         "options": [
-          "bảo vệ môi trường",
-          "lãng phí",
-          "năng lượng"
+          "Vì được hoàn lại tiền",
+          "Vì giảm được ô nhiễm, tốt hơn cho thế hệ sau",
+          "Vì ban quản lý bắt buộc"
         ],
         "answer": 1,
-        "explanation": "“浪费”: lãng phí. Ví dụ đã nghe: 每天浪费的食物多得惊人。"
+        "explanation": "Người nói cuối: 这样也能减少污染，对下一代更好。"
       }
     ]
   },

@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "规律的作息对健康很重要。 我每天锻炼半个小时。 最近压力大，我经常失眠。",
-    "translation": "Giờ giấc sinh hoạt điều độ rất quan trọng cho sức khỏe. Mình tập thể dục nửa tiếng mỗi ngày. Dạo này áp lực lớn, mình thường xuyên mất ngủ.",
-    "pinyin": "guī lǜ de zuò xī duì jiàn kāng hěn zhòng yào 。   wǒ měi tiān duàn liàn bàn gè xiǎo shí 。   zuì jìn yā lì dà ， wǒ jīng cháng shī mián 。",
+    "title": "Nghe hội thoại: Sức khỏe và lối sống",
+    "playLimit": 1,
+    "transcript": "甲：阿兰，我最近总是睡不好，每天晚上两三点才睡。乙：你是不是又熬夜了？长期熬夜对身体不好。甲：也不全是。压力大的时候，我躺在床上就失眠。乙：那你的作息一定很乱。你白天锻炼吗？甲：以前每天锻炼半个小时，最近工作忙，已经停了两个星期。乙：我建议你先调整作息，十一点以前上床，别再玩手机。甲：可是我担心自己坚持不下去。乙：只要坚持，就会有效果。我去年也失眠，早睡早起，坚持了一个月就恢复了。甲：真的吗？那饮食方面要注意什么？乙：晚上少喝咖啡，多吃蔬菜，免疫力也会好一些。甲：好，我从今晚开始试试。乙：一个星期以后告诉我结果。",
+    "translation": "A: Lan à, dạo này mình toàn ngủ không ngon, mỗi tối hai ba giờ sáng mới ngủ. B: Có phải bạn lại thức khuya không? Thức khuya lâu dài không tốt cho sức khỏe. A: Cũng không hẳn. Lúc áp lực lớn, mình nằm trên giường là mất ngủ. B: Vậy giờ giấc sinh hoạt của bạn chắc rất lộn xộn. Ban ngày bạn có tập luyện không? A: Trước đây mỗi ngày mình tập nửa tiếng, dạo này công việc bận, đã dừng hai tuần rồi. B: Mình khuyên bạn điều chỉnh giờ giấc trước, mười một giờ lên giường, đừng chơi điện thoại nữa. A: Nhưng mình lo bản thân không kiên trì nổi. B: Chỉ cần kiên trì là sẽ có hiệu quả. Năm ngoái mình cũng mất ngủ, ngủ sớm dậy sớm, kiên trì một tháng là hồi phục. A: Thật à? Vậy về ăn uống cần chú ý gì? B: Buổi tối uống ít cà phê, ăn nhiều rau, sức đề kháng cũng sẽ tốt hơn một chút. A: Được, từ tối nay mình sẽ thử. B: Một tuần sau nhớ báo mình kết quả.",
+    "pinyin": "jiǎ ： ā lán ， wǒ zuì jìn zǒng shì shuì bù hǎo ， měi tiān wǎn shang liǎng sān diǎn cái shuì 。 yǐ ： nǐ shì bu shì yòu áo yè le ？ cháng qī áo yè duì shēn tǐ bù hǎo 。 jiǎ ： yě bù quán shì 。 yā lì dà de shí hou ， wǒ tǎng zài chuáng shàng jiù shī mián 。 yǐ ： nà nǐ de zuò xī yí dìng hěn luàn 。 nǐ bái tiān duàn liàn ma ？ jiǎ ： yǐ qián měi tiān duàn liàn bàn gè xiǎo shí ， zuì jìn gōng zuò máng ， yǐ jīng tíng le liǎng gè xīng qī 。 yǐ ： wǒ jiàn yì nǐ xiān tiáo zhěng zuò xī ， shí yī diǎn yǐ qián shàng chuáng ， bié zài wán shǒu jī 。 jiǎ ： kě shì wǒ dān xīn zì jǐ jiān chí bú xià qù 。 yǐ ： zhǐ yào jiān chí ， jiù huì yǒu xiào guǒ 。 wǒ qù nián yě shī mián ， zǎo shuì zǎo qǐ ， jiān chí le yí gè yuè jiù huī fù le 。 jiǎ ： zhēn de ma ？ nà yǐn shí fāng miàn yào zhù yì shén me ？ yǐ ： wǎn shang shǎo hē kā fēi ， duō chī shū cài ， miǎn yì lì yě huì hǎo yì xiē 。 jiǎ ： hǎo ， wǒ cóng jīn wǎn kāi shǐ shì shì 。 yǐ ： yí gè xīng qī yǐ hòu gào sù wǒ jié guǒ 。",
     "questions": [
       {
-        "prompt": "Cụm “作息” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Mỗi tối A mấy giờ mới ngủ?",
         "options": [
-          "mất ngủ",
-          "ăn uống, chế độ ăn",
-          "giờ giấc sinh hoạt"
+          "Khoảng mười một giờ",
+          "Bốn năm giờ sáng",
+          "Hai ba giờ sáng"
         ],
         "answer": 2,
-        "explanation": "“作息”: giờ giấc sinh hoạt. Ví dụ đã nghe: 规律的作息对健康很重要。"
+        "explanation": "A nói 每天晚上两三点才睡。"
       },
       {
-        "prompt": "Cụm “锻炼” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Năm ngoái Lan mất ngủ rồi hồi phục thế nào?",
         "options": [
-          "rèn luyện, tập thể dục",
-          "ăn uống, chế độ ăn",
-          "thức khuya"
+          "Ngủ sớm dậy sớm, kiên trì một tháng thì hồi phục",
+          "Vẫn chưa hồi phục",
+          "Uống thuốc một tháng"
         ],
         "answer": 0,
-        "explanation": "“锻炼”: rèn luyện, tập thể dục. Ví dụ đã nghe: 我每天锻炼半个小时。"
+        "explanation": "B nói 早睡早起，坚持了一个月就恢复了。"
       },
       {
-        "prompt": "Cụm “失眠” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao A hơi do dự trước lời khuyên?",
         "options": [
-          "thức khuya",
-          "mất ngủ",
-          "khả năng miễn dịch"
+          "Sợ bạn không vui",
+          "Sợ bản thân không kiên trì nổi",
+          "Sợ uống thuốc bất tiện"
         ],
         "answer": 1,
-        "explanation": "“失眠”: mất ngủ. Ví dụ đã nghe: 最近压力大，我经常失眠。"
+        "explanation": "A nói 我担心自己坚持不下去。"
       }
     ]
   },

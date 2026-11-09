@@ -9,14 +9,14 @@ import { getLessonContent } from './lessonContent.mjs';
 import { bundledSyllabus } from './courseContent.mjs';
 import { syllableCount } from '../src/lib/coursePinyin.mjs';
 
-test('82 course listening files validate authored pinyin sandhi meaning chunks and vocabulary', () => {
+test('112 course listening files validate authored pinyin sandhi meaning chunks and vocabulary', () => {
   const result = spawnSync(process.execPath, ['scripts/listening-checks/course-listening.check.mjs'], { encoding: 'utf8' });
   assert.equal(result.status, 0, result.stdout + result.stderr);
   const ids = new Set();
   let dictation = 0,
     shadowing = 0;
   const syllabus = bundledSyllabus();
-  for (const volumeId of ['pinyin-intro', 'hsk1-practical', 'hsk3-practical', 'hsk5-practical']) {
+  for (const volumeId of ['pinyin-intro', 'hsk1-practical', 'hsk3-practical', 'hsk5-practical', 'misu30-1', 'misu30-2', 'misu30-3']) {
     const volume = syllabus.volumes.find((v) => v.id === volumeId);
     for (const lesson of volume.lessons)
       for (let day = 1; day <= lesson.days; day++) {
@@ -38,11 +38,11 @@ test('82 course listening files validate authored pinyin sandhi meaning chunks a
         }
       }
   }
-  assert.equal(ids.size, 416);
-  assert.equal(dictation, 334);
-  assert.equal(shadowing, 82);
+  assert.equal(ids.size, 566);
+  assert.equal(dictation, 454);
+  assert.equal(shadowing, 112);
   assert.equal(readCourseListening('../escape', 1, 1), null);
-  assert.equal(readCourseListening('misu30-1', 1, 1), null);
+  assert.equal(readCourseListening('misu30-1', 1, 2), null);
   assert.equal(readCourseListening('hsk1-practical', 1, 3), null);
 });
 test('loader preserves the exact listening practice and checkpoint pinyin through merge', async () => {

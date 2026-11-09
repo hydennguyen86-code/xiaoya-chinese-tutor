@@ -127,44 +127,44 @@
   "prerequisites": [],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "你周末有空吗？ 我们一起吃饭吧。 我打算学开车。",
-    "translation": "Cuối tuần bạn có rảnh không? Chúng mình cùng ăn cơm nhé. Mình dự định học lái xe.",
-    "pinyin": "nǐ zhōu mò yǒu kòng ma ？   wǒ men yì qǐ chī fàn ba 。   wǒ dǎ suàn xué kāi chē 。",
+    "title": "Nghe hội thoại: Hẹn bạn và lên kế hoạch",
+    "playLimit": 1,
+    "transcript": "甲：阿明，这个周末你有空吗？乙：星期六我要去看奶奶，星期天有空。你有什么计划？甲：我打算去海边走走，我们一起去吧。乙：好啊！你什么时候方便？甲：星期天上午九点，怎么样？乙：九点有点早，我想多睡一会儿。十点见面可以吗？甲：可以。我们在地铁站门口见面，你别迟到。乙：放心，我不会迟到。我还约了小安，他也想去。甲：太好了，那就是我们三个人。乙：好，星期天十点见！",
+    "translation": "A: Minh ơi, cuối tuần này bạn có rảnh không? B: Thứ Bảy mình phải đi thăm bà, Chủ nhật thì rảnh. Bạn có kế hoạch gì? A: Mình định ra biển đi dạo, chúng mình cùng đi nhé. B: Được chứ! Khi nào bạn tiện? A: Chín giờ sáng Chủ nhật, thế nào? B: Chín giờ hơi sớm, mình muốn ngủ thêm một lúc. Mười giờ gặp được không? A: Được. Chúng mình gặp ở cửa ga tàu điện, bạn đừng đến muộn nhé. B: Yên tâm, mình sẽ không đến muộn đâu. Mình còn hẹn cả Tiểu An, bạn ấy cũng muốn đi. A: Tuyệt quá, vậy là ba người chúng mình. B: Ừ, mười giờ Chủ nhật gặp nhé!",
+    "pinyin": "jiǎ ： ā míng ， zhè ge zhōu mò nǐ yǒu kòng ma ？ yǐ ： xīng qī liù wǒ yào qù kàn nǎi nai ， xīng qī tiān yǒu kòng 。 nǐ yǒu shén me jì huà ？ jiǎ ： wǒ dǎ suàn qù hǎi biān zǒu zǒu ， wǒ men yì qǐ qù ba 。 yǐ ： hǎo a ！ nǐ shén me shí hou fāng biàn ？ jiǎ ： xīng qī tiān shàng wǔ jiǔ diǎn ， zěn me yàng ？ yǐ ： jiǔ diǎn yǒu diǎn zǎo ， wǒ xiǎng duō shuì yí huìr 。 shí diǎn jiàn miàn kě yǐ ma ？ jiǎ ： kě yǐ 。 wǒ men zài dì tiě zhàn mén kǒu jiàn miàn ， nǐ bié chí dào 。 yǐ ： fàng xīn ， wǒ bú huì chí dào 。 wǒ hái yuē le xiǎo ān ， tā yě xiǎng qù 。 jiǎ ： tài hǎo le ， nà jiù shì wǒ men sān gè rén 。 yǐ ： hǎo ， xīng qī tiān shí diǎn jiàn ！",
     "questions": [
       {
-        "prompt": "Cụm “有空” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao thứ Bảy Minh không rảnh?",
         "options": [
-          "dự định",
-          "kế hoạch",
-          "rảnh"
-        ],
-        "answer": 2,
-        "explanation": "“有空”: rảnh. Ví dụ đã nghe: 你周末有空吗？"
-      },
-      {
-        "prompt": "Cụm “一起” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "cùng nhau",
-          "kế hoạch",
-          "hẹn"
+          "Phải đi thăm bà",
+          "Phải đi làm thêm",
+          "Phải ra biển"
         ],
         "answer": 0,
-        "explanation": "“一起”: cùng nhau. Ví dụ đã nghe: 我们一起吃饭吧。"
+        "explanation": "B nói 星期六我要去看奶奶 — thứ Bảy mình phải đi thăm bà."
       },
       {
-        "prompt": "Cụm “打算” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Cuối cùng hai người hẹn gặp lúc nào, ở đâu?",
         "options": [
-          "hẹn",
-          "dự định",
-          "thuận tiện"
+          "Thứ Bảy mười giờ, cửa ga tàu điện",
+          "Chủ nhật mười giờ, cửa ga tàu điện",
+          "Chủ nhật chín giờ, cửa ga tàu điện"
         ],
         "answer": 1,
-        "explanation": "“打算”: dự định. Ví dụ đã nghe: 我打算学开车。"
+        "explanation": "A đề nghị 九点, B muốn muộn hơn: 十点见面可以吗？ rồi A chốt 我们在地铁站门口见面."
+      },
+      {
+        "prompt": "Cả nhóm đi tổng cộng mấy người?",
+        "options": [
+          "Bốn người",
+          "Hai người",
+          "Ba người"
+        ],
+        "answer": 2,
+        "explanation": "B nói 我还约了小安, A đáp 那就是我们三个人。"
       }
     ]
   },

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Bản tạm
+
+- **Phần nghe thật cho 30 bài giao tiếp (misu30)**: thay đoạn nghe ghép 3 câu ví dụ và câu hỏi "Cụm … nghĩa gì?" bằng hội thoại 甲/乙 (8 lượt ở Tập 1, 10 ở Tập 2, 10–12 ở Tập 3) có bản dịch từng lượt A:/B: và 3 câu hỏi nghe hiểu nội dung (ai, bao nhiêu, vì sao, quyết định gì). Thêm bộ chép chính tả (4 câu) và nói đuổi (1 đoạn) cho mỗi bài trong `lessons/listening/course/`, phủ đủ 8 từ mới; cả 112 buổi giờ cùng một chuẩn. AI soạn, chưa duyệt.
+- **Nguồn soạn và bộ dựng**: nội dung nghe soạn tay ở `lessons/authoring/misu30/` (chỉ chữ Hán, nghĩa, ghi chú; không pinyin). `scripts/build-course-listening.mjs` sinh pinyin, biến điệu 3+3, cụm hơi và id bằng đúng hàm checker dùng; `readings` báo khi chữ đa âm bị đọc khác ý người soạn (đã tránh 还给 → hái, 吃得 → dé, 只 → zhī…). Checker, loader và audit mở cho misu30.
+- **Sửa học liệu lẻ**: câu chép chính tả vô nghĩa "电话是零。" (dt-1-123) thay bằng "他的电话号码是三二一。"; đồng bộ nghĩa 一把, 免疫力 trong `syllabus.json`.
+
 ## 2026-11-08 — Bản tạm
 
 - **Backend nhận giọng sherpa-onnx (tuỳ chọn)**: SenseVoice/Paraformer chuyên tiếng Trung, chạy trên máy, thay whisper-small khi có; không có thì dùng whisper như cũ. `npm run setup:stt` tải model; chọn bằng `STT_BACKEND` (`auto`/`sherpa`/`whisper`/`off`) và `STT_SHERPA_MODEL_DIR`. Xem `docs/STT.md`.

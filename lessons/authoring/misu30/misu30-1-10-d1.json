@@ -1,0 +1,126 @@
+{
+  "lesson": "misu30-1-10-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，你每天几点起床？",
+      "vi": "Minh, mỗi ngày bạn dậy lúc mấy giờ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我每天六点半起床。你呢？",
+      "vi": "Mỗi ngày mình dậy lúc sáu giờ rưỡi. Còn bạn?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我七点起床。你几点上班？",
+      "vi": "Mình dậy lúc bảy giờ. Bạn đi làm lúc mấy giờ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我八点上班，五点半下班。",
+      "vi": "Mình đi làm lúc tám giờ, tan làm lúc năm giờ rưỡi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你早饭吃什么？",
+      "vi": "Bạn ăn sáng món gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我先吃早饭，然后去上班。早饭常常吃面条。",
+      "vi": "Mình ăn sáng trước, sau đó đi làm. Bữa sáng thường ăn mì."
+    },
+    {
+      "speaker": "甲",
+      "zh": "晚上你几点睡觉？",
+      "vi": "Buổi tối bạn mấy giờ đi ngủ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "十点睡觉。今天我很忙，要早点休息。",
+      "vi": "Mười giờ đi ngủ. Hôm nay mình rất bận, phải nghỉ sớm."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Ai dậy sớm hơn, và sớm hơn bao lâu?",
+      "options": [
+        "Minh, sớm hơn nửa tiếng",
+        "Bạn của Minh, sớm hơn nửa tiếng",
+        "Minh, sớm hơn một tiếng"
+      ],
+      "answer": 0,
+      "explanation": "Minh 六点半起床, bạn 七点起床."
+    },
+    {
+      "prompt": "Minh làm việc mỗi ngày khoảng bao lâu?",
+      "options": [
+        "Tám tiếng rưỡi",
+        "Chín tiếng rưỡi",
+        "Chín tiếng"
+      ],
+      "answer": 1,
+      "explanation": "八点上班，五点半下班, từ tám giờ đến năm rưỡi chiều là chín tiếng rưỡi."
+    },
+    {
+      "prompt": "Vì sao tối nay Minh muốn nghỉ sớm?",
+      "options": [
+        "Vì ngày mai đi làm sớm",
+        "Vì không muốn ăn tối",
+        "Vì hôm nay rất bận"
+      ],
+      "answer": 2,
+      "explanation": "Minh nói 今天我很忙，要早点休息。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "米苏每天早上六点起床。",
+      "meaningVi": "Misu mỗi ngày sáu giờ sáng dậy.",
+      "focus": [
+        "起床 qǐ chuáng: q bật hơi, chuáng vần -ng.",
+        "每天 měi tiān: měi thanh 3."
+      ]
+    },
+    {
+      "hanzi": "爸爸八点半上班，六点下班。",
+      "meaningVi": "Bố tám giờ rưỡi đi làm, sáu giờ tan làm.",
+      "focus": [
+        "上班 shàng bān và 下班 xià bān: thanh 4 rồi thanh 1.",
+        "半 bàn thanh 4."
+      ]
+    },
+    {
+      "hanzi": "我吃早饭很快，因为很忙。",
+      "meaningVi": "Mình ăn sáng rất nhanh vì rất bận.",
+      "focus": [
+        "早饭 zǎo fàn: thanh 3 rồi thanh 4.",
+        "忙 máng: vần -ng, thanh 2."
+      ]
+    },
+    {
+      "hanzi": "我想休息，十点睡觉。",
+      "meaningVi": "Mình muốn nghỉ ngơi, mười giờ đi ngủ.",
+      "focus": [
+        "休息 xiū xi: xi đọc nhẹ.",
+        "睡觉 shuì jiào: 觉 đọc jiào."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我每天六点半起床，先吃早饭，然后去上班。晚上十点睡觉。",
+    "meaningVi": "Mỗi ngày mình dậy lúc sáu giờ rưỡi, ăn sáng trước, sau đó đi làm. Buổi tối mười giờ đi ngủ.",
+    "focus": [
+      "Ngắt hơi sau 起床, 早饭 và 上班。",
+      "然后 rán hòu: r uốn lưỡi nhẹ, thanh 2 rồi thanh 4."
+    ]
+  },
+  "readings": {
+    "觉": "jiào",
+    "的": "de",
+    "了": "le",
+    "要": "yào",
+    "还": "hái"
+  }
+}

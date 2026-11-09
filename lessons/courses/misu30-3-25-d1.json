@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "春节是中国最重要的传统节日。 你最喜欢哪个节日？ 每个地方都有自己的习俗。",
-    "translation": "Tết Xuân là ngày lễ truyền thống quan trọng nhất của Trung Quốc. Bạn thích ngày lễ nào nhất? Mỗi nơi đều có phong tục riêng.",
-    "pinyin": "chūn jié shì zhōng guó zuì zhòng yào de chuán tǒng jié rì 。   nǐ zuì xǐ huan nǎ gè jié rì ？   měi gè dì fāng dōu yǒu zì jǐ de xí sú 。",
+    "title": "Nghe hội thoại: Văn hóa và phong tục",
+    "playLimit": 1,
+    "transcript": "甲：阿明，越南的春节和中国的春节有什么不一样？乙：差异不少。比如，除夕晚上我们会包粽子，这是团圆的象征。甲：我们北方人除夕晚上包饺子，也是为了一家人团圆。乙：虽然食物不同，但是心意是一样的。甲：对。你们过年的时候，也给孩子红包吗？乙：当然，长辈会给孩子红包，希望他们健康平安。甲：那有什么礼仪要注意吗？乙：去亲戚家拜年要说吉祥话，而且要尊重长辈。甲：我们也一样。我还知道，越南人初一不扫地，对吗？乙：对，这是我们的习俗，怕把好运扫出去。甲：每个地方有自己的传统，我们应该互相尊重。乙：你说得对。下次春节你来我家，我请你吃粽子。",
+    "translation": "A: Minh à, Tết của Việt Nam và Tết của Trung Quốc có gì khác nhau? B: Khác khá nhiều. Ví dụ, tối giao thừa chúng mình gói bánh chưng, đó là biểu tượng của sum họp. A: Người miền Bắc chúng mình tối giao thừa gói sủi cảo, cũng là để cả nhà sum họp. B: Tuy món ăn khác nhau, nhưng tấm lòng thì giống nhau. A: Đúng. Dịp Tết các bạn cũng lì xì cho trẻ em chứ? B: Đương nhiên, người lớn sẽ lì xì cho trẻ, mong các em khỏe mạnh bình an. A: Vậy có lễ nghi nào cần chú ý không? B: Đến nhà họ hàng chúc Tết phải nói lời may mắn, hơn nữa phải tôn trọng người lớn. A: Bên mình cũng vậy. Mình còn biết người Việt mùng một không quét nhà, đúng không? B: Đúng, đó là phong tục của chúng mình, sợ quét mất vận may. A: Mỗi nơi có truyền thống riêng, chúng ta nên tôn trọng lẫn nhau. B: Bạn nói đúng. Tết sau bạn đến nhà mình, mình mời bạn ăn bánh chưng.",
+    "pinyin": "jiǎ ： ā míng ， yuè nán de chūn jié hé zhōng guó de chūn jié yǒu shén me bù yí yàng ？ yǐ ： chā yì bù shǎo 。 bǐ rú ， chú xī wǎn shang wǒ men huì bāo zòng zǐ ， zhè shì tuán yuán de xiàng zhēng 。 jiǎ ： wǒ men běi fāng rén chú xī wǎn shang bāo jiǎo zi ， yě shì wèi le yì jiā rén tuán yuán 。 yǐ ： suī rán shí wù bù tóng ， dàn shì xīn yì shì yí yàng de 。 jiǎ ： duì 。 nǐ men guò nián de shí hou ， yě gěi hái zi hóng bāo ma ？ yǐ ： dāng rán ， zhǎng bèi huì gěi hái zi hóng bāo ， xī wàng tā men jiàn kāng píng ān 。 jiǎ ： nà yǒu shén me lǐ yí yào zhù yì ma ？ yǐ ： qù qīn qi jiā bài nián yào shuō jí xiáng huà ， ér qiě yào zūn zhòng zhǎng bèi 。 jiǎ ： wǒ men yě yí yàng 。 wǒ hái zhī dao ， yuè nán rén chū yī bù sǎo dì ， duì ma ？ yǐ ： duì ， zhè shì wǒ men de xí sú ， pà bǎ hǎo yùn sǎo chū qù 。 jiǎ ： měi gè dì fāng yǒu zì jǐ de chuán tǒng ， wǒ men yīng gāi hù xiāng zūn zhòng 。 yǐ ： nǐ shuō de duì 。 xià cì chūn jié nǐ lái wǒ jiā ， wǒ qǐng nǐ chī zòng zǐ 。",
     "questions": [
       {
-        "prompt": "Cụm “传统” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tối giao thừa người miền Bắc Trung Quốc gói món gì?",
         "options": [
-          "phong tục",
-          "truyền thống",
-          "tôn trọng"
+          "Bánh chưng",
+          "Sủi cảo",
+          "Bánh trung thu"
         ],
         "answer": 1,
-        "explanation": "“传统”: truyền thống. Ví dụ đã nghe: 春节是中国最重要的传统节日。"
+        "explanation": "A nói 我们北方人除夕晚上包饺子。"
       },
       {
-        "prompt": "Cụm “节日” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao người lớn lì xì cho trẻ em?",
         "options": [
-          "tôn trọng",
-          "phong bao lì xì",
-          "ngày lễ"
+          "Thưởng vì học giỏi",
+          "Để các em đi mua quà",
+          "Mong các em khỏe mạnh bình an"
         ],
         "answer": 2,
-        "explanation": "“节日”: ngày lễ. Ví dụ đã nghe: 你最喜欢哪个节日？"
+        "explanation": "B nói 长辈会给孩子红包，希望他们健康平安。"
       },
       {
-        "prompt": "Cụm “习俗” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao người Việt mùng một không quét nhà?",
         "options": [
-          "phong tục",
-          "phong bao lì xì",
-          "đoàn viên, sum họp"
+          "Sợ quét mất vận may",
+          "Sợ làm ồn hàng xóm",
+          "Vì trời quá lạnh"
         ],
         "answer": 0,
-        "explanation": "“习俗”: phong tục. Ví dụ đã nghe: 每个地方都有自己的习俗。"
+        "explanation": "B nói 怕把好运扫出去。"
       }
     ]
   },

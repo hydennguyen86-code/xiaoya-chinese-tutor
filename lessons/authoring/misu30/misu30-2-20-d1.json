@@ -1,0 +1,136 @@
+{
+  "lesson": "misu30-2-20-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "您好，请问有什么可以帮您？",
+      "vi": "Xin chào, xin hỏi có thể giúp gì cho quý khách?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我想投诉一下房间的问题。空调坏了，房间里特别热。",
+      "vi": "Tôi muốn khiếu nại về vấn đề của phòng. Máy lạnh hỏng, trong phòng rất nóng."
+    },
+    {
+      "speaker": "甲",
+      "zh": "很抱歉，给您添麻烦了。您是什么时候发现的？",
+      "vi": "Rất xin lỗi đã gây phiền phức cho quý khách. Quý khách phát hiện từ khi nào ạ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "昨天晚上。我给前台打了两次电话，但是服务员的态度很不好。",
+      "vi": "Tối qua. Tôi đã gọi cho quầy lễ tân hai lần, nhưng thái độ của nhân viên rất không tốt."
+    },
+    {
+      "speaker": "甲",
+      "zh": "真的很抱歉。您想怎么解决这个问题？",
+      "vi": "Thật sự rất xin lỗi. Quý khách muốn giải quyết vấn đề này thế nào?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "可以给我换一个房间吗？",
+      "vi": "Có thể đổi cho tôi một phòng khác không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "当然可以。十二楼有一个安静的房间，我马上让人帮您搬行李。",
+      "vi": "Tất nhiên là được. Tầng mười hai có một phòng yên tĩnh, tôi sẽ cho người giúp quý khách chuyển hành lý ngay."
+    },
+    {
+      "speaker": "乙",
+      "zh": "谢谢。另外，昨天晚上我没睡好，可以退款吗？",
+      "vi": "Cảm ơn. Ngoài ra, tối qua tôi ngủ không ngon, có thể hoàn tiền không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我理解您的心情。昨天晚上的房费，我们给您退款，您看可以吗？",
+      "vi": "Tôi hiểu tâm trạng của quý khách. Tiền phòng tối qua chúng tôi sẽ hoàn lại, quý khách thấy được không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "可以，谢谢您的理解。",
+      "vi": "Được, cảm ơn sự thông cảm của anh chị."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Phòng của khách có vấn đề gì?",
+      "options": [
+        "Máy lạnh hỏng",
+        "Không có nước nóng",
+        "Phòng quá ồn"
+      ],
+      "answer": 0,
+      "explanation": "Khách nói 空调坏了，房间里特别热。"
+    },
+    {
+      "prompt": "Vì sao khách không hài lòng với nhân viên lễ tân?",
+      "options": [
+        "Vì nhân viên không nghe máy",
+        "Vì thái độ nhân viên không tốt",
+        "Vì nhân viên gọi điện quá nhiều"
+      ],
+      "answer": 1,
+      "explanation": "Khách nói 给前台打了两次电话，但是服务员的态度很不好。"
+    },
+    {
+      "prompt": "Cuối cùng khách nhận được gì?",
+      "options": [
+        "Hoàn tiền cả kỳ nghỉ",
+        "Chỉ đổi phòng, không hoàn tiền",
+        "Đổi sang phòng tầng mười hai và hoàn tiền phòng tối qua"
+      ],
+      "answer": 2,
+      "explanation": "Quản lý nói 十二楼有一个安静的房间 và 昨天晚上的房费，我们给您退款。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "楼上晚上声音太大，我想投诉。",
+      "meaningVi": "Tầng trên buổi tối ồn quá, tôi muốn khiếu nại.",
+      "focus": [
+        "投诉 tóu sù: t bật hơi, sù thanh 4.",
+        "声音 shēng yīn: hai thanh 1."
+      ]
+    },
+    {
+      "hanzi": "很抱歉，是我们的服务员态度不好。",
+      "meaningVi": "Rất xin lỗi, là thái độ nhân viên của chúng tôi không tốt.",
+      "focus": [
+        "抱歉 bào qiàn: hai thanh 4, qiàn bật hơi.",
+        "态度 tài dù: t bật hơi, hai thanh 4."
+      ]
+    },
+    {
+      "hanzi": "这个问题很快就能解决，请您放心。",
+      "meaningVi": "Vấn đề này sẽ sớm giải quyết được, xin quý khách yên tâm.",
+      "focus": [
+        "问题 wèn tí: tí thanh 2.",
+        "解决 jiě jué: jué có ü, tròn môi."
+      ]
+    },
+    {
+      "hanzi": "这件衣服太小了，我想换一件大的。",
+      "meaningVi": "Chiếc áo này nhỏ quá, mình muốn đổi cái lớn hơn.",
+      "focus": [
+        "换 huàn: -n cuối, thanh 4.",
+        "太小了 tài xiǎo le: le đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "如果不能换，我想退款。我理解你们也很忙，但是请你们认真处理这件事。",
+    "meaningVi": "Nếu không đổi được thì tôi muốn hoàn tiền. Tôi hiểu các bạn cũng rất bận, nhưng xin hãy xử lý việc này nghiêm túc.",
+    "focus": [
+      "Ngắt hơi sau 退款 và sau 很忙.",
+      "处理 chǔ lǐ: hai thanh 3 liền, chữ đầu lên thành thanh 2."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "处": "chǔ",
+    "好": "hǎo",
+    "空": "kōng",
+    "大": "dà"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "lesson": "misu30-1-3-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，你家有几口人？",
+      "vi": "Minh, nhà bạn có mấy người?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我家有五口人，爸爸、妈妈、哥哥、妹妹和我。",
+      "vi": "Nhà mình có năm người, bố, mẹ, anh trai, em gái và mình."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你哥哥做什么工作？",
+      "vi": "Anh trai bạn làm nghề gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "他是老师，在河内工作。",
+      "vi": "Anh ấy là giáo viên, làm việc ở Hà Nội."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你妹妹呢？",
+      "vi": "Còn em gái bạn?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "她今年八岁，是个孩子。",
+      "vi": "Năm nay em tám tuổi, còn là một đứa trẻ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你们住在哪儿？",
+      "vi": "Các bạn sống ở đâu?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我们都住在河内。",
+      "vi": "Chúng mình đều sống ở Hà Nội."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Nhà Minh có mấy người?",
+      "options": [
+        "Bốn người",
+        "Ba người",
+        "Năm người"
+      ],
+      "answer": 2,
+      "explanation": "Minh nói 我家有五口人。"
+    },
+    {
+      "prompt": "Anh trai của Minh làm nghề gì, ở đâu?",
+      "options": [
+        "Giáo viên, ở Hà Nội",
+        "Học sinh, ở Hà Nội",
+        "Giáo viên, ở Thượng Hải"
+      ],
+      "answer": 0,
+      "explanation": "Minh nói 他是老师，在河内工作。"
+    },
+    {
+      "prompt": "Ai trong nhà Minh còn là trẻ nhỏ, mấy tuổi?",
+      "options": [
+        "Anh trai, tám tuổi",
+        "Em gái, tám tuổi",
+        "Em gái, mười tuổi"
+      ],
+      "answer": 1,
+      "explanation": "Minh nói 她今年八岁，是个孩子。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "我爸爸和妈妈都住在家里。",
+      "meaningVi": "Bố và mẹ mình đều sống ở nhà.",
+      "focus": [
+        "爸爸 bà ba, 妈妈 mā ma: chữ thứ hai đọc nhẹ.",
+        "都 dōu thanh 1."
+      ]
+    },
+    {
+      "hanzi": "阿明的哥哥有一个孩子。",
+      "meaningVi": "Anh trai của Minh có một đứa con.",
+      "focus": [
+        "哥哥 gē ge: chữ thứ hai đọc nhẹ.",
+        "孩子 hái zi: zi đọc nhẹ."
+      ]
+    },
+    {
+      "hanzi": "我妹妹今年九岁，住在上海。",
+      "meaningVi": "Em gái mình năm nay chín tuổi, sống ở Thượng Hải.",
+      "focus": [
+        "妹妹 mèi mei: chữ thứ hai đọc nhẹ.",
+        "上海 shàng hǎi: sh uốn lưỡi, vần -ng."
+      ]
+    },
+    {
+      "hanzi": "米苏家有三口人。",
+      "meaningVi": "Nhà Misu có ba người.",
+      "focus": [
+        "口 kǒu: bật hơi k.",
+        "三 sān: vần -n, không thêm -ng."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我叫阿明，我家有五口人。我爸爸是老师，妈妈在家。",
+    "meaningVi": "Mình tên là Minh, nhà mình có năm người. Bố mình là giáo viên, mẹ ở nhà.",
+    "focus": [
+      "Ngắt hơi sau 阿明 và sau 五口人。",
+      "老师 lǎo shī: lǎo thanh 3 đọc nửa thấp."
+    ]
+  },
+  "readings": {
+    "都": "dōu",
+    "和": "hé",
+    "的": "de",
+    "了": "le",
+    "得": "de"
+  }
+}

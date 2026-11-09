@@ -1,0 +1,126 @@
+{
+  "lesson": "misu30-1-6-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "服务员，请给我菜单。",
+      "vi": "Phục vụ ơi, cho tôi xem thực đơn."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的。你想吃什么？",
+      "vi": "Vâng. Bạn muốn ăn gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "这个菜辣吗？",
+      "vi": "Món này có cay không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "很辣。",
+      "vi": "Rất cay."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那我不要这个，我要一碗面条。",
+      "vi": "Vậy tôi không lấy món này, tôi lấy một tô mì."
+    },
+    {
+      "speaker": "乙",
+      "zh": "喝什么？",
+      "vi": "Bạn uống gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "一杯水。再来一碗米饭，谢谢。",
+      "vi": "Một ly nước. Cho thêm một bát cơm nữa, cảm ơn."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，请等一下。",
+      "vi": "Vâng, xin chờ một chút."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Vì sao khách không gọi món đầu tiên?",
+      "options": [
+        "Món đó quá đắt",
+        "Món đó hết rồi",
+        "Món đó rất cay"
+      ],
+      "answer": 2,
+      "explanation": "Phục vụ nói 很辣, khách nói 那我不要这个。"
+    },
+    {
+      "prompt": "Khách uống gì?",
+      "options": [
+        "Một ly nước",
+        "Một ly trà",
+        "Một ly sữa"
+      ],
+      "answer": 0,
+      "explanation": "Khách nói 一杯水。"
+    },
+    {
+      "prompt": "Cuối cùng khách gọi những thứ gì?",
+      "options": [
+        "Món cay, cơm và nước",
+        "Mì, cơm và nước",
+        "Mì và món cay"
+      ],
+      "answer": 1,
+      "explanation": "Khách gọi 面条, 水 và 米饭。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "服务员，这个菜辣不辣？",
+      "meaningVi": "Phục vụ ơi, món này có cay không?",
+      "focus": [
+        "服务员 fú wù yuán: thanh 2, 4, 2.",
+        "辣 là thanh 4, l không uốn lưỡi."
+      ]
+    },
+    {
+      "hanzi": "我不吃辣，就喝一杯茶。",
+      "meaningVi": "Mình không ăn cay, chỉ uống một ly trà.",
+      "focus": [
+        "就 jiù: thanh 4, j không bật hơi.",
+        "茶 chá: bật hơi ch."
+      ]
+    },
+    {
+      "hanzi": "阿兰想吃一碗米饭。",
+      "meaningVi": "Lan muốn ăn một bát cơm.",
+      "focus": [
+        "吃 chī: ch uốn lưỡi, thanh 1.",
+        "米饭 mǐ fàn: thanh 3 rồi thanh 4."
+      ]
+    },
+    {
+      "hanzi": "他们的面条很好吃。",
+      "meaningVi": "Mì của họ rất ngon.",
+      "focus": [
+        "面条 miàn tiáo: thanh 4 rồi thanh 2.",
+        "很好吃 hén hǎo chī: 很 đổi thành thanh 2 trước thanh 3."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我是阿兰，今天在这家店吃饭。我要一碗面条，一杯水，不要太辣。",
+    "meaningVi": "Mình là Lan, hôm nay ăn cơm ở quán này. Mình lấy một tô mì, một ly nước, không cay quá.",
+    "focus": [
+      "Ngắt hơi sau 阿兰, 吃饭 và 面条。",
+      "不要 bú yào: 不 đổi thanh 2 trước thanh 4."
+    ]
+  },
+  "readings": {
+    "的": "de",
+    "了": "le",
+    "好": "hǎo",
+    "要": "yào",
+    "再": "zài"
+  }
+}

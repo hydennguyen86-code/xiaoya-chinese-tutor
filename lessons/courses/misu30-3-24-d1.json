@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "人工智能正在改变我们的生活。 用这些应用的时候，要注意保护隐私。 手机支付确实很方便。",
-    "translation": "Trí tuệ nhân tạo đang thay đổi cuộc sống của chúng ta. Khi dùng những ứng dụng này, cần chú ý bảo vệ quyền riêng tư. Thanh toán bằng điện thoại thật sự rất tiện.",
-    "pinyin": "rén gōng zhì néng zhèng zài gǎi biàn wǒ men de shēng huó 。   yòng zhè xiē yìng yòng de shí hou ， yào zhù yì bǎo hù yǐn sī 。   shǒu jī zhī fù què shí hěn fāng biàn 。",
+    "title": "Nghe hội thoại: Công nghệ và đời sống",
+    "playLimit": 1,
+    "transcript": "甲：小安，你看，现在连买菜也用手机支付。乙：是啊，随着科技的发展，生活越来越方便了。甲：不过我担心我们太依赖手机，一天不看就不习惯。乙：我同意。一方面手机提高了效率，另一方面也影响了我们的睡眠。甲：还有隐私问题。很多应用需要我们提供个人信息。乙：对，所以我从来不随便下载不认识的软件。甲：你认为人工智能会取代我们的工作吗？乙：一部分工作可能会，但我认为人必须学会适应，而不是害怕。甲：有道理。与其担心被取代，不如学会用人工智能帮我们提高效率。乙：没错，我现在每天用它整理资料，节省了不少时间。甲：这样看来，关键是我们怎么用它。乙：对，工具本身没有问题。",
+    "translation": "A: Tiểu An, bạn xem, bây giờ đến đi chợ cũng thanh toán bằng điện thoại. B: Ừ, cùng với sự phát triển của công nghệ, cuộc sống ngày càng tiện lợi. A: Có điều mình lo chúng ta quá phụ thuộc vào điện thoại, một ngày không xem là thấy không quen. B: Mình đồng ý. Một mặt điện thoại nâng cao hiệu suất, mặt khác cũng ảnh hưởng đến giấc ngủ của chúng ta. A: Còn vấn đề quyền riêng tư nữa. Nhiều ứng dụng cần chúng ta cung cấp thông tin cá nhân. B: Đúng, nên mình chưa bao giờ tùy tiện tải phần mềm lạ. A: Bạn nghĩ trí tuệ nhân tạo có thay thế công việc của chúng ta không? B: Một phần công việc có thể, nhưng mình cho rằng con người phải học cách thích nghi chứ không phải sợ hãi. A: Có lý. Thay vì lo bị thay thế, chi bằng học cách dùng trí tuệ nhân tạo giúp mình nâng cao hiệu suất. B: Đúng vậy, bây giờ mỗi ngày mình dùng nó sắp xếp tài liệu, tiết kiệm được không ít thời gian. A: Nhìn thế này, mấu chốt là chúng ta dùng nó như thế nào. B: Đúng, bản thân công cụ không có vấn đề.",
+    "pinyin": "jiǎ ： xiǎo ān ， nǐ kàn ， xiàn zài lián mǎi cài yě yòng shǒu jī zhī fù 。 yǐ ： shì a ， suí zhe kē jì de fā zhǎn ， shēng huó yuè lái yuè fāng biàn le 。 jiǎ ： bú guò wǒ dān xīn wǒ men tài yī lài shǒu jī ， yì tiān bú kàn jiù bù xí guàn 。 yǐ ： wǒ tóng yì 。 yì fāng miàn shǒu jī tí gāo le xiào lǜ ， lìng yì fāng miàn yě yǐng xiǎng le wǒ men de shuì mián 。 jiǎ ： hái yǒu yǐn sī wèn tí 。 hěn duō yìng yòng xū yào wǒ men tí gōng gè rén xìn xī 。 yǐ ： duì ， suǒ yǐ wǒ cóng lái bù suí biàn xià zài bú rèn shi de ruǎn jiàn 。 jiǎ ： nǐ rèn wéi rén gōng zhì néng huì qǔ dài wǒ men de gōng zuò ma ？ yǐ ： yí bù fen gōng zuò kě néng huì ， dàn wǒ rèn wéi rén bì xū xué huì shì yìng ， ér bú shì hài pà 。 jiǎ ： yǒu dào lǐ 。 yǔ qí dān xīn bèi qǔ dài ， bù rú xué huì yòng rén gōng zhì néng bāng wǒ men tí gāo xiào lǜ 。 yǐ ： méi cuò ， wǒ xiàn zài měi tiān yòng tā zhěng lǐ zī liào ， jié shěng le bù shǎo shí jiān 。 jiǎ ： zhè yàng kàn lái ， guān jiàn shì wǒ men zěn me yòng tā 。 yǐ ： duì ， gōng jù běn shēn méi yǒu wèn tí 。",
     "questions": [
       {
-        "prompt": "Cụm “人工智能” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao A lo lắng về điện thoại?",
         "options": [
-          "trí tuệ nhân tạo",
-          "thuận tiện",
-          "phụ thuộc"
+          "Vì mọi người quá phụ thuộc vào điện thoại",
+          "Vì điện thoại quá đắt",
+          "Vì điện thoại hay bị hỏng"
         ],
         "answer": 0,
-        "explanation": "“人工智能”: trí tuệ nhân tạo. Ví dụ đã nghe: 人工智能正在改变我们的生活。"
+        "explanation": "A nói 我担心我们太依赖手机。"
       },
       {
-        "prompt": "Cụm “隐私” trong đoạn nghe có nghĩa gì?",
+        "prompt": "B tránh rủi ro về quyền riêng tư bằng cách nào?",
         "options": [
-          "phụ thuộc",
-          "quyền riêng tư",
-          "hiệu suất"
+          "Không dùng điện thoại",
+          "Không bao giờ tải phần mềm lạ",
+          "Đổi mật khẩu mỗi ngày"
         ],
         "answer": 1,
-        "explanation": "“隐私”: quyền riêng tư. Ví dụ đã nghe: 用这些应用的时候，要注意保护隐私。"
+        "explanation": "B nói 我从来不随便下载不认识的软件。"
       },
       {
-        "prompt": "Cụm “方便” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Hiện nay B dùng trí tuệ nhân tạo để làm gì?",
         "options": [
-          "hiệu suất",
-          "thay thế",
-          "thuận tiện"
+          "Viết thư cho khách",
+          "Dịch hợp đồng",
+          "Sắp xếp tài liệu để tiết kiệm thời gian"
         ],
         "answer": 2,
-        "explanation": "“方便”: thuận tiện. Ví dụ đã nghe: 手机支付确实很方便。"
+        "explanation": "B nói 我现在每天用它整理资料，节省了不少时间。"
       }
     ]
   },

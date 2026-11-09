@@ -1,7 +1,7 @@
 // Kiểm tra lessons/listening/course/ (mỗi buổi của các khoá đóng gói một file).
 //
 // Danh sách file lấy từ lessons/courses/syllabus.json cho các khoá trong VOLUME_LEVEL
-// (pinyin-intro, hsk1-practical, hsk3-practical, hsk5-practical).
+// (pinyin-intro, hsk1-practical, hsk3-practical, hsk5-practical, misu30-1/2/3).
 // Kiểm tra: đủ/đúng file so với lessons/courses; 3–5 câu dictation + đúng 1 đoạn shadowing;
 // schema và id của dictation.json / shadowing.json; pinyin-pro + thanh nhẹ + biến điệu 3+3;
 // cụm hơi của shadowing; nghĩa tiếng Việt; focus; và mỗi câu/đoạn phải dùng từ của bài.
@@ -31,6 +31,9 @@ const VOLUME_LEVEL = {
   'hsk1-practical': 'HSK1-2',
   'hsk3-practical': 'HSK3-4',
   'hsk5-practical': 'HSK5-6',
+  'misu30-1': 'HSK1-2',
+  'misu30-2': 'HSK3-4',
+  'misu30-3': 'HSK5-6',
 };
 // Id prefix follows the level band: HSK1-2 → 1, HSK3-4 → 2, HSK5-6 → 3.
 const LEVEL_PREFIX = { 'HSK1-2': 1, 'HSK3-4': 2, 'HSK5-6': 3 };

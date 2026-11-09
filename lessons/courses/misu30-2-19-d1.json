@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "今天我请客。 你别客气，多吃一点。 你随便点，不用问我。",
-    "translation": "Hôm nay mình mời. Bạn đừng khách sáo, ăn nhiều một chút. Bạn cứ gọi tùy ý, không cần hỏi mình.",
-    "pinyin": "jīn tiān wǒ qǐng kè 。   nǐ bié kè qi ， duō chī yì diǎn 。   nǐ suí biàn diǎn ， bú yòng wèn wǒ 。",
+    "title": "Nghe hội thoại: Mời khách và ứng xử",
+    "playLimit": 1,
+    "transcript": "甲：欢迎来我家！你想喝点什么？乙：喝茶就行，谢谢你请我来。我给你带了一份小礼物。甲：你太客气了，谢谢你的礼物！今天我请客，你想吃什么？乙：我吃什么都行，你随便做吧。甲：那可不行，你是客人，你说想吃什么吧。我会做鱼、鸡肉和青菜。乙：那我想吃鱼。听说你做的鱼很好吃。甲：好，那就做鱼，再做一个青菜。你别客气，多吃一点。乙：谢谢！来，我敬你一杯茶，感谢你今天的招待。甲：应该的！希望你喜欢我做的菜。乙：一定喜欢！下次我请客，请你来我家吃饭。",
+    "translation": "A: Chào mừng đến nhà mình! Bạn muốn uống chút gì? B: Trà là được rồi, cảm ơn bạn đã mời mình đến. Mình mang cho bạn một món quà nhỏ. A: Bạn khách sáo quá, cảm ơn món quà của bạn! Hôm nay mình mời, bạn muốn ăn gì? B: Mình ăn gì cũng được, bạn cứ làm tùy ý nhé. A: Thế sao được, bạn là khách, bạn cứ nói muốn ăn gì đi. Mình biết làm cá, thịt gà và rau xanh. B: Vậy mình muốn ăn cá. Nghe nói cá bạn nấu rất ngon. A: Được, vậy làm cá, thêm một món rau. Bạn đừng khách sáo, ăn nhiều một chút. B: Cảm ơn! Nào, mình kính bạn một tách trà, cảm ơn sự tiếp đãi của bạn hôm nay. A: Có gì đâu! Mong là bạn thích món mình nấu. B: Chắc chắn là thích! Lần sau mình mời, mời bạn đến nhà mình ăn cơm.",
+    "pinyin": "jiǎ ： huān yíng lái wǒ jiā ！ nǐ xiǎng hē diǎn shén me ？ yǐ ： hē chá jiù xíng ， xiè xie nǐ qǐng wǒ lái 。 wǒ gěi nǐ dài le yí fèn xiǎo lǐ wù 。 jiǎ ： nǐ tài kè qi le ， xiè xie nǐ de lǐ wù ！ jīn tiān wǒ qǐng kè ， nǐ xiǎng chī shén me ？ yǐ ： wǒ chī shén me dōu xíng ， nǐ suí biàn zuò ba 。 jiǎ ： nà kě bù xíng ， nǐ shì kè rén ， nǐ shuō xiǎng chī shén me ba 。 wǒ huì zuò yú 、 jī ròu hé qīng cài 。 yǐ ： nà wǒ xiǎng chī yú 。 tīng shuō nǐ zuò de yú hěn hǎo chī 。 jiǎ ： hǎo ， nà jiù zuò yú ， zài zuò yí gè qīng cài 。 nǐ bié kè qi ， duō chī yì diǎn 。 yǐ ： xiè xie ！ lái ， wǒ jìng nǐ yì bēi chá ， gǎn xiè nǐ jīn tiān de zhāo dài 。 jiǎ ： yīng gāi de ！ xī wàng nǐ xǐ huan wǒ zuò de cài 。 yǐ ： yí dìng xǐ huan ！ xià cì wǒ qǐng kè ， qǐng nǐ lái wǒ jiā chī fàn 。",
     "questions": [
       {
-        "prompt": "Cụm “请客” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Khách mang đến cho chủ nhà thứ gì?",
         "options": [
-          "tùy ý",
-          "mời khách, bao ăn",
-          "gọi món"
-        ],
-        "answer": 1,
-        "explanation": "“请客”: mời khách, bao ăn. Ví dụ đã nghe: 今天我请客。"
-      },
-      {
-        "prompt": "Cụm “客气” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "gọi món",
-          "kính (rượu)",
-          "khách sáo"
+          "Một bó hoa",
+          "Một chai rượu",
+          "Một món quà nhỏ"
         ],
         "answer": 2,
-        "explanation": "“客气”: khách sáo. Ví dụ đã nghe: 你别客气，多吃一点。"
+        "explanation": "Khách nói 我给你带了一份小礼物。"
       },
       {
-        "prompt": "Cụm “随便” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao chủ nhà không chịu để khách nói “gì cũng được”?",
         "options": [
-          "tùy ý",
-          "kính (rượu)",
-          "tiếp đãi"
+          "Vì khách là khách",
+          "Vì chủ nhà không biết nấu",
+          "Vì khách đang rất đói"
         ],
         "answer": 0,
-        "explanation": "“随便”: tùy ý. Ví dụ đã nghe: 你随便点，不用问我。"
+        "explanation": "Chủ nhà nói 那可不行，你是客人 — khách thì nên được chọn món."
+      },
+      {
+        "prompt": "Lần sau ai sẽ mời ai ăn cơm?",
+        "options": [
+          "Chủ nhà lại mời khách đến nhà",
+          "Khách mời chủ nhà đến nhà mình",
+          "Hai người ra nhà hàng"
+        ],
+        "answer": 1,
+        "explanation": "Khách nói 下次我请客，请你来我家吃饭。"
       }
     ]
   },

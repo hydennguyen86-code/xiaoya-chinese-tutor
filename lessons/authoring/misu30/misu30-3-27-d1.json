@@ -1,0 +1,154 @@
+{
+  "lesson": "misu30-3-27-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "王总，欢迎您。这次谈判，我们的目标很明确，希望价格能降低百分之五。",
+      "vi": "Tổng giám đốc Vương, hoan nghênh ông. Cuộc đàm phán lần này, mục tiêu của chúng tôi rất rõ, mong giá giảm năm phần trăm."
+    },
+    {
+      "speaker": "乙",
+      "zh": "李经理，降价五个点有难度。原材料涨价了，我们的利润本来就不高。",
+      "vi": "Giám đốc Lý, giảm giá năm điểm là khó. Nguyên liệu tăng giá rồi, lợi nhuận của chúng tôi vốn đã không cao."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我理解。如果你们能降价，我们就把订单从一千件增加到一千五百件。",
+      "vi": "Tôi hiểu. Nếu các ông giảm giá, chúng tôi sẽ tăng đơn hàng từ một nghìn lên một nghìn năm trăm chiếc."
+    },
+    {
+      "speaker": "乙",
+      "zh": "订单增加是好事。不过在价格方面，我们最多只能降百分之三。",
+      "vi": "Đơn hàng tăng là chuyện tốt. Có điều về giá, chúng tôi chỉ có thể giảm nhiều nhất ba phần trăm."
+    },
+    {
+      "speaker": "甲",
+      "zh": "百分之三还是低了一点。在付款方面，我们可以提前一个月付款，这也是一种合作。",
+      "vi": "Ba phần trăm vẫn thấp một chút. Về thanh toán, chúng tôi có thể trả trước một tháng, đó cũng là một kiểu hợp tác."
+    },
+    {
+      "speaker": "乙",
+      "zh": "提前付款对我们确实有帮助。那百分之四怎么样？这是我们的底线。",
+      "vi": "Thanh toán trước đúng là có ích cho chúng tôi. Vậy bốn phần trăm thì sao? Đó là giới hạn cuối cùng của chúng tôi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，我可以接受百分之四。不过合同条款要写清楚，交货时间不能晚于三月十号。",
+      "vi": "Được, tôi có thể chấp nhận bốn phần trăm. Có điều điều khoản hợp đồng phải ghi rõ, thời gian giao hàng không được muộn hơn ngày mười tháng Ba."
+    },
+    {
+      "speaker": "乙",
+      "zh": "没问题。交货时间可以安排，但是质量标准我们不能妥协。",
+      "vi": "Không vấn đề. Thời gian giao hàng có thể sắp xếp, nhưng tiêu chuẩn chất lượng chúng tôi không thể thỏa hiệp."
+    },
+    {
+      "speaker": "甲",
+      "zh": "当然，质量也是我们合作的基础。",
+      "vi": "Đương nhiên, chất lượng cũng là nền tảng hợp tác của chúng ta."
+    },
+    {
+      "speaker": "乙",
+      "zh": "那么，下周一我们签合同。",
+      "vi": "Vậy thứ Hai tuần sau chúng ta ký hợp đồng."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好的，期待我们长期合作。",
+      "vi": "Được, mong chúng ta hợp tác lâu dài."
+    },
+    {
+      "speaker": "乙",
+      "zh": "合作愉快！",
+      "vi": "Hợp tác vui vẻ!"
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Lúc đầu bên mua muốn giảm giá bao nhiêu?",
+      "options": [
+        "Năm phần trăm",
+        "Ba phần trăm",
+        "Bốn phần trăm"
+      ],
+      "answer": 0,
+      "explanation": "A nói 希望价格能降低百分之五。"
+    },
+    {
+      "prompt": "Cuối cùng hai bên chốt giảm giá bao nhiêu?",
+      "options": [
+        "Ba phần trăm",
+        "Bốn phần trăm",
+        "Năm phần trăm"
+      ],
+      "answer": 1,
+      "explanation": "B nói 那百分之四怎么样？这是我们的底线 và A đáp 我可以接受百分之四。"
+    },
+    {
+      "prompt": "Vì sao bên bán sẵn lòng nâng từ ba lên bốn phần trăm?",
+      "options": [
+        "Vì bên mua nhận hàng muộn hơn",
+        "Vì bên mua trả thêm phí vận chuyển",
+        "Vì bên mua đồng ý thanh toán trước một tháng"
+      ],
+      "answer": 2,
+      "explanation": "A đề nghị 提前一个月付款, B nói 提前付款对我们确实有帮助。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "这次谈判双方各有让步，终于谈成了合作。",
+      "meaningVi": "Lần đàm phán này hai bên đều có nhượng bộ, cuối cùng đã đạt được hợp tác.",
+      "focus": [
+        "谈判 tán pàn: t và p bật hơi.",
+        "让步 ràng bù: r uốn lưỡi, bù thanh 4."
+      ]
+    },
+    {
+      "hanzi": "请你仔细看看合同条款，有问题我们再谈。",
+      "meaningVi": "Mời bạn xem kỹ các điều khoản hợp đồng, có vấn đề chúng ta bàn tiếp.",
+      "focus": [
+        "条款 tiáo kuǎn: k bật hơi, kuǎn thanh 3.",
+        "仔细 zǐ xì: zǐ thanh 3, z đầu lưỡi."
+      ]
+    },
+    {
+      "hanzi": "价格已经是我们的底线了，再低就没有利润。",
+      "meaningVi": "Giá đã là giới hạn cuối cùng của chúng tôi, thấp nữa là không còn lợi nhuận.",
+      "focus": [
+        "底线 dǐ xiàn: dǐ thanh 3, xiàn thanh 4.",
+        "利润 lì rùn: r uốn lưỡi, -n cuối."
+      ]
+    },
+    {
+      "hanzi": "为了长期合作，李经理愿意妥协，但是目标不能变。",
+      "meaningVi": "Vì hợp tác lâu dài, Giám đốc Lý sẵn lòng thỏa hiệp, nhưng mục tiêu không thể thay đổi.",
+      "focus": [
+        "妥协 tuǒ xié: t bật hơi, xié thanh 2.",
+        "目标 mù biāo: mù thanh 4, biāo thanh 1."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我们公司愿意合作，但是有两个条件。第一，价格不能低于成本，第二，付款时间不能太晚。如果你们接受，我们就可以马上签合同。",
+    "meaningVi": "Công ty chúng tôi sẵn lòng hợp tác, nhưng có hai điều kiện. Thứ nhất, giá không được thấp hơn giá vốn, thứ hai, thời gian thanh toán không được quá muộn. Nếu các ông chấp nhận, chúng tôi có thể ký hợp đồng ngay.",
+    "focus": [
+      "Ngắt hơi sau 合作, 第一 và 第二.",
+      "条件 tiáo jiàn: thanh 2 rồi thanh 4."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "为": "wèi",
+    "长": "cháng",
+    "还": "hái",
+    "好": "hǎo",
+    "要": "yào",
+    "得": "de",
+    "重": "zhòng",
+    "量": "liàng",
+    "当": "dāng",
+    "降": "jiàng",
+    "行": "xíng",
+    "质": "zhì"
+  }
+}

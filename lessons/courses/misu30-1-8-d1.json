@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Sở thích",
     "playLimit": 2,
-    "transcript": "我喜欢看电影。 你的爱好是什么？ 周末我喜欢看电影。",
-    "translation": "Mình thích xem phim. Sở thích của bạn là gì? Cuối tuần mình thích xem phim.",
-    "pinyin": "wǒ xǐ huan kàn diàn yǐng 。   nǐ de ài hào shì shén me ？   zhōu mò wǒ xǐ huan kàn diàn yǐng 。",
+    "transcript": "甲：米苏，你有什么爱好？乙：我喜欢唱歌，也喜欢看书。你呢？甲：我喜欢运动，也喜欢听音乐。乙：太好了！学校有唱歌小组，也有运动小组。甲：我想去唱歌小组。你周末有空吗？乙：周末我有空。我们一起去吧！甲：好，星期六下午见。乙：好，星期六见！",
+    "translation": "A: Misu, bạn có sở thích gì? B: Mình thích hát, cũng thích đọc sách. Còn bạn? A: Mình thích vận động, cũng thích nghe nhạc. B: Hay quá! Trường có nhóm hát, cũng có nhóm vận động. A: Mình muốn đến nhóm hát. Cuối tuần bạn có rảnh không? B: Cuối tuần mình rảnh. Chúng ta cùng đi nhé! A: Được, chiều thứ Bảy gặp nhé. B: Được, thứ Bảy gặp!",
+    "pinyin": "jiǎ ： mǐ sū ， nǐ yǒu shén me ài hào ？ yǐ ： wǒ xǐ huan chàng gē ， yě xǐ huan kàn shū 。 nǐ ne ？ jiǎ ： wǒ xǐ huan yùn dòng ， yě xǐ huan tīng yīn yuè 。 yǐ ： tài hǎo le ！ xué xiào yǒu chàng gē xiǎo zǔ ， yě yǒu yùn dòng xiǎo zǔ 。 jiǎ ： wǒ xiǎng qù chàng gē xiǎo zǔ 。 nǐ zhōu mò yǒu kòng ma ？ yǐ ： zhōu mò wǒ yǒu kòng 。 wǒ men yì qǐ qù ba ！ jiǎ ： hǎo ， xīng qī liù xià wǔ jiàn 。 yǐ ： hǎo ， xīng qī liù jiàn ！",
     "questions": [
       {
-        "prompt": "Cụm “喜欢” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Misu có những sở thích nào?",
         "options": [
-          "xem phim",
-          "nghe nhạc",
-          "thích"
-        ],
-        "answer": 2,
-        "explanation": "“喜欢”: thích. Ví dụ đã nghe: 我喜欢看电影。"
-      },
-      {
-        "prompt": "Cụm “爱好” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "sở thích",
-          "nghe nhạc",
-          "vận động, thể thao"
-        ],
-        "answer": 0,
-        "explanation": "“爱好”: sở thích. Ví dụ đã nghe: 你的爱好是什么？"
-      },
-      {
-        "prompt": "Cụm “看电影” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "vận động, thể thao",
-          "xem phim",
-          "đọc sách"
+          "Vận động và nghe nhạc",
+          "Hát và đọc sách",
+          "Xem phim và hát"
         ],
         "answer": 1,
-        "explanation": "“看电影”: xem phim. Ví dụ đã nghe: 周末我喜欢看电影。"
+        "explanation": "Misu nói 我喜欢唱歌，也喜欢看书。"
+      },
+      {
+        "prompt": "Người thứ nhất thích gì?",
+        "options": [
+          "Đọc sách và hát",
+          "Hát và vận động",
+          "Vận động và nghe nhạc"
+        ],
+        "answer": 2,
+        "explanation": "Người thứ nhất nói 我喜欢运动，也喜欢听音乐。"
+      },
+      {
+        "prompt": "Hai người quyết định làm gì và khi nào?",
+        "options": [
+          "Đi nhóm hát vào chiều thứ Bảy",
+          "Đi nhóm vận động vào Chủ nhật",
+          "Đi nhóm hát vào sáng thứ Bảy"
+        ],
+        "answer": 0,
+        "explanation": "我想去唱歌的 và 星期六下午见。"
       }
     ]
   },

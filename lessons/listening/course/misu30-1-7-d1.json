@@ -1,0 +1,128 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-1-7-d1",
+  "level": "HSK1-2",
+  "title": "请问，地铁站怎么走？ · Hỏi đường",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-269",
+      "level": "HSK1-2",
+      "hanzi": "学校在银行的右边。",
+      "pinyin": "xué xiào zài yín háng de yòu bian",
+      "meaningVi": "Trường học ở bên phải ngân hàng.",
+      "focus": [
+        "右边 yòu bian: bian đọc nhẹ.",
+        "银行 yín háng: 行 đọc háng trong 银行."
+      ]
+    },
+    {
+      "id": "dt-1-270",
+      "level": "HSK1-2",
+      "hanzi": "请问，医院怎么走？",
+      "pinyin": "qǐng wèn yī yuàn zěn me zǒu",
+      "meaningVi": "Xin hỏi, bệnh viện đi thế nào?",
+      "focus": [
+        "请问 qǐng wèn: q bật hơi.",
+        "怎么走 zěn me zǒu: me đọc nhẹ."
+      ]
+    },
+    {
+      "id": "dt-1-271",
+      "level": "HSK1-2",
+      "hanzi": "前面左边有一个超市。",
+      "pinyin": "qián miàn zuǒ bian yǒu yí gè chāo shì",
+      "meaningVi": "Phía trước bên trái có một siêu thị.",
+      "focus": [
+        "前面 qián miàn: thanh 2 rồi thanh 4.",
+        "超市 chāo shì: ch uốn lưỡi, bật hơi."
+      ]
+    },
+    {
+      "id": "dt-1-272",
+      "level": "HSK1-2",
+      "hanzi": "你去哪儿？我们一起走吧。",
+      "pinyin": "nǐ qù nǎr wǒ men yì qí zǒu ba",
+      "meaningVi": "Bạn đi đâu? Chúng ta cùng đi nhé.",
+      "focus": [
+        "哪儿 nǎr: cuốn lưỡi nhẹ cuối âm.",
+        "一起 yì qǐ: 一 đổi thanh 4 trước thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        3,
+        3,
+        5,
+        4,
+        3,
+        3,
+        5
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          3,
+          3,
+          5,
+          4,
+          2,
+          3,
+          5
+        ],
+        [
+          3,
+          4,
+          3,
+          3,
+          5,
+          4,
+          3,
+          3,
+          5
+        ]
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-62",
+      "level": "HSK1-2",
+      "text": "请问，我要去地铁站。附近的地铁站在哪儿？怎么走？",
+      "pinyin": "qǐng wèn wǒ yào qù dì tiě zhàn fù jìn de dì tiě zhàn zài nǎr zěn me zǒu",
+      "meaningVi": "Xin hỏi, mình muốn đến ga tàu điện. Ga tàu điện gần đây ở đâu? Đi thế nào?",
+      "syllables": 19,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "请问",
+          "pinyin": "qǐng wèn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我要去地铁站",
+          "pinyin": "wǒ yào qù dì tiě zhàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "附近的地铁站在哪儿",
+          "pinyin": "fù jìn de dì tiě zhàn zài nǎr",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "怎么走",
+          "pinyin": "zěn me zǒu",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 请问 và sau 地铁站。",
+        "附近 fù jìn: hai thanh 4 liền, đọc dứt khoát."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "lesson": "misu30-1-9-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "早上好，阿兰！今天天气怎么样？",
+      "vi": "Chào buổi sáng, Lan! Hôm nay thời tiết thế nào?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "今天下雨，我觉得有点冷。",
+      "vi": "Hôm nay mưa, mình thấy hơi lạnh."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你高兴吗？",
+      "vi": "Bạn có vui không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "不太高兴。因为昨天睡得很晚，所以今天很累。",
+      "vi": "Không vui lắm. Vì hôm qua ngủ rất muộn nên hôm nay rất mệt."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你是不是不舒服？",
+      "vi": "Có phải bạn không khỏe không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "有一点。我妈妈也很担心。",
+      "vi": "Hơi hơi. Mẹ mình cũng rất lo."
+    },
+    {
+      "speaker": "甲",
+      "zh": "下午天气会好，你也会舒服一点。",
+      "vi": "Chiều trời sẽ đẹp, bạn cũng sẽ dễ chịu hơn."
+    },
+    {
+      "speaker": "乙",
+      "zh": "谢谢，我现在高兴多了。",
+      "vi": "Cảm ơn, bây giờ mình vui hơn nhiều rồi."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Hôm nay thời tiết thế nào?",
+      "options": [
+        "Nắng và nóng",
+        "Nhiều gió và mát",
+        "Mưa và hơi lạnh"
+      ],
+      "answer": 2,
+      "explanation": "Lan nói 今天下雨，我觉得有点冷。"
+    },
+    {
+      "prompt": "Vì sao Lan hôm nay mệt?",
+      "options": [
+        "Hôm qua ngủ rất muộn",
+        "Hôm qua đi làm cả ngày",
+        "Hôm nay dậy rất sớm"
+      ],
+      "answer": 0,
+      "explanation": "Lan nói 因为昨天睡得很晚，所以今天很累。"
+    },
+    {
+      "prompt": "Ai lo cho Lan, và bạn của Lan nói chiều nay sẽ ra sao?",
+      "options": [
+        "Bố lo, chiều trời mưa",
+        "Mẹ lo, chiều trời đẹp",
+        "Mẹ lo, chiều trời mưa"
+      ],
+      "answer": 1,
+      "explanation": "我妈妈也很担心 và 下午天气会好。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "天气很热，我想喝水。",
+      "meaningVi": "Trời rất nóng, mình muốn uống nước.",
+      "focus": [
+        "天气 tiān qì: thanh 1 rồi thanh 4.",
+        "热 rè: r uốn lưỡi, thanh 4."
+      ]
+    },
+    {
+      "hanzi": "下雨了，阿兰有点冷。",
+      "meaningVi": "Mưa rồi, Lan hơi lạnh.",
+      "focus": [
+        "下雨 xià yǔ: yǔ đọc ü tròn môi.",
+        "冷 lěng: vần -ng, thanh 3."
+      ]
+    },
+    {
+      "hanzi": "我很累，但是很高兴。",
+      "meaningVi": "Mình rất mệt nhưng rất vui.",
+      "focus": [
+        "累 lèi thanh 4.",
+        "高兴 gāo xìng: xìng thanh 4, vần -ng."
+      ]
+    },
+    {
+      "hanzi": "妈妈担心我，因为我不舒服。",
+      "meaningVi": "Mẹ lo cho mình vì mình không khỏe.",
+      "focus": [
+        "担心 dān xīn: hai âm đều thanh 1.",
+        "舒服 shū fu: fu đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "今天天气很好，我觉得很舒服。因为我很高兴，所以不累。",
+    "meaningVi": "Hôm nay thời tiết rất đẹp, mình thấy rất dễ chịu. Vì mình rất vui nên không mệt.",
+    "focus": [
+      "Ngắt hơi sau 很好 và sau 因为我很高兴。",
+      "觉得 jué de: de đọc nhẹ."
+    ]
+  },
+  "readings": {
+    "觉": "jué",
+    "得": "de",
+    "好": "hǎo",
+    "的": "de",
+    "了": "le",
+    "会": "huì",
+    "还": "hái"
+  }
+}

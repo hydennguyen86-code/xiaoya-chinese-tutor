@@ -1,0 +1,152 @@
+{
+  "lesson": "misu30-3-29-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，你看到今天那条新闻了吗？网上很多人在转发。",
+      "vi": "Minh à, bạn thấy tin hôm nay chưa? Trên mạng nhiều người đang chia sẻ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "看到了，据媒体报道，一家科技公司下个月要把工作时间改成每周四天。",
+      "vi": "Thấy rồi, theo truyền thông đưa tin, một công ty công nghệ tháng sau sẽ đổi thời gian làm việc thành bốn ngày mỗi tuần."
+    },
+    {
+      "speaker": "甲",
+      "zh": "对，网上争论很激烈。",
+      "vi": "Đúng, trên mạng tranh luận rất gay gắt."
+    },
+    {
+      "speaker": "乙",
+      "zh": "有人认为这是好事，也有人认为会影响工作效率。",
+      "vi": "Có người cho rằng đây là việc tốt, cũng có người cho rằng sẽ ảnh hưởng hiệu suất làm việc."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那你怎么看？",
+      "vi": "Vậy bạn nghĩ sao?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我认为现在还不好判断，应该先弄清事实，再下结论。",
+      "vi": "Mình cho rằng bây giờ chưa dễ phán đoán, nên làm rõ sự thật trước rồi hãy kết luận."
+    },
+    {
+      "speaker": "甲",
+      "zh": "可是标题很吸引人，很多人只看标题就发表观点。",
+      "vi": "Nhưng tiêu đề rất thu hút, nhiều người chỉ đọc tiêu đề đã đưa ra quan điểm."
+    },
+    {
+      "speaker": "乙",
+      "zh": "所以看新闻要尽量客观。媒体报道的未必是事实。",
+      "vi": "Vì vậy xem tin tức phải cố gắng khách quan. Điều truyền thông đưa tin chưa chắc là sự thật."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你说得对。我刚才看到另一个报道，说这只是试验三个月。",
+      "vi": "Bạn nói đúng. Vừa rồi mình thấy một bài khác, nói đây chỉ là thử nghiệm ba tháng."
+    },
+    {
+      "speaker": "乙",
+      "zh": "看，这就是区别。如果只看第一条，我们可能就判断错了。",
+      "vi": "Thấy chưa, đây chính là khác biệt. Nếu chỉ xem bài đầu, có thể chúng ta đã phán đoán sai."
+    },
+    {
+      "speaker": "甲",
+      "zh": "以后我也要先查几个来源，再说自己的看法。",
+      "vi": "Sau này mình cũng sẽ tra vài nguồn trước, rồi mới nói ý kiến của mình."
+    },
+    {
+      "speaker": "乙",
+      "zh": "这样很好。晚上我们再聊聊，看看大家怎么说。",
+      "vi": "Vậy rất tốt. Tối nay chúng ta nói chuyện thêm, xem mọi người nói sao."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Theo truyền thông, công ty định đổi thời gian làm việc thế nào?",
+      "options": [
+        "Mỗi ngày làm bốn tiếng",
+        "Mỗi tháng nghỉ bốn ngày",
+        "Mỗi tuần làm bốn ngày"
+      ],
+      "answer": 2,
+      "explanation": "B nói 把工作时间改成每周四天。"
+    },
+    {
+      "prompt": "Những người phản đối lo ngại điều gì?",
+      "options": [
+        "Ảnh hưởng hiệu suất làm việc",
+        "Công ty sẽ phá sản",
+        "Tiền lương bị cắt"
+      ],
+      "answer": 0,
+      "explanation": "B nói 也有人认为会影响工作效率。"
+    },
+    {
+      "prompt": "Thông tin nào cho thấy chỉ đọc bài đầu có thể dẫn đến phán đoán sai?",
+      "options": [
+        "Công ty đã hủy kế hoạch",
+        "Một bài khác nói đây chỉ là thử nghiệm ba tháng",
+        "Bài báo gốc đã bị xóa"
+      ],
+      "answer": 1,
+      "explanation": "A nói 另一个报道，说这只是试验三个月 và B nói 如果只看第一条，我们可能就判断错了。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "这条新闻刚出来，网上就有很多人发表自己的观点。",
+      "meaningVi": "Tin này vừa ra, trên mạng đã có rất nhiều người đưa ra quan điểm của mình.",
+      "focus": [
+        "新闻 xīn wén: hai chữ -n, thanh 1 rồi thanh 2.",
+        "观点 guān diǎn: guān thanh 1, diǎn thanh 3."
+      ]
+    },
+    {
+      "hanzi": "媒体应该客观报道事实，不能隐瞒重要的信息。",
+      "meaningVi": "Truyền thông nên đưa tin sự thật một cách khách quan, không thể che giấu thông tin quan trọng.",
+      "focus": [
+        "客观 kè guān: k bật hơi, kè thanh 4.",
+        "事实 shì shí: sh uốn lưỡi, hai chữ khác thanh."
+      ]
+    },
+    {
+      "hanzi": "网络上的争论有时会影响一个人的判断。",
+      "meaningVi": "Tranh luận trên mạng đôi khi ảnh hưởng đến phán đoán của một người.",
+      "focus": [
+        "争论 zhēng lùn: zh uốn lưỡi, lùn -n cuối.",
+        "判断 pàn duàn: p bật hơi, hai chữ thanh 4."
+      ]
+    },
+    {
+      "hanzi": "阿明先看了三条新闻，再说自己的看法，这样更客观。",
+      "meaningVi": "Minh xem ba bản tin trước, rồi mới nói ý kiến của mình, như vậy khách quan hơn.",
+      "focus": [
+        "三条 sān tiáo: s đầu lưỡi, tiáo thanh 2.",
+        "更 gèng: -ng cuối, thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "看到一条新闻，我不会马上转发。我会先查几个媒体的报道，弄清事实，再说自己的观点。只看标题，就很容易做出错误的判断。",
+    "meaningVi": "Thấy một bản tin, mình sẽ không chia sẻ ngay. Mình sẽ tra báo cáo của vài đơn vị truyền thông trước, làm rõ sự thật, rồi mới nói quan điểm của mình. Chỉ xem tiêu đề thì rất dễ đưa ra phán đoán sai.",
+    "focus": [
+      "Ngắt hơi sau 新闻, 转发 và 事实.",
+      "容易 róng yì: róng thanh 2, yì thanh 4."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "得": "de",
+    "为": "wéi",
+    "只": "zhǐ",
+    "看": "kàn",
+    "应": "yīng",
+    "好": "hǎo",
+    "更": "gèng",
+    "要": "yào",
+    "转": "zhuǎn",
+    "重": "zhòng"
+  }
+}

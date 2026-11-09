@@ -1,0 +1,284 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-2-20-d1",
+  "level": "HSK3-4",
+  "title": "我想投诉一下 · Phàn nàn và xin lỗi",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-235",
+      "level": "HSK3-4",
+      "hanzi": "楼上晚上声音太大，我想投诉。",
+      "pinyin": "lóu shàng wǎn shang shēng yīn tài dà wó xiǎng tóu sù",
+      "meaningVi": "Tầng trên buổi tối ồn quá, tôi muốn khiếu nại.",
+      "focus": [
+        "投诉 tóu sù: t bật hơi, sù thanh 4.",
+        "声音 shēng yīn: hai thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        4,
+        3,
+        5,
+        1,
+        1,
+        4,
+        4,
+        3,
+        3,
+        2,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          4,
+          3,
+          5,
+          1,
+          1,
+          4,
+          4,
+          2,
+          3,
+          2,
+          4
+        ],
+        [
+          2,
+          4,
+          3,
+          5,
+          1,
+          1,
+          4,
+          4,
+          3,
+          3,
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "dt-2-236",
+      "level": "HSK3-4",
+      "hanzi": "很抱歉，是我们的服务员态度不好。",
+      "pinyin": "hěn bào qiàn shì wǒ men de fú wù yuán tài dù bù hǎo",
+      "meaningVi": "Rất xin lỗi, là thái độ nhân viên của chúng tôi không tốt.",
+      "focus": [
+        "抱歉 bào qiàn: hai thanh 4, qiàn bật hơi.",
+        "态度 tài dù: t bật hơi, hai thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-237",
+      "level": "HSK3-4",
+      "hanzi": "这个问题很快就能解决，请您放心。",
+      "pinyin": "zhè ge wèn tí hěn kuài jiù néng jiě jué qǐng nín fàng xīn",
+      "meaningVi": "Vấn đề này sẽ sớm giải quyết được, xin quý khách yên tâm.",
+      "focus": [
+        "问题 wèn tí: tí thanh 2.",
+        "解决 jiě jué: jué có ü, tròn môi."
+      ]
+    },
+    {
+      "id": "dt-2-238",
+      "level": "HSK3-4",
+      "hanzi": "这件衣服太小了，我想换一件大的。",
+      "pinyin": "zhè jiàn yī fu tài xiǎo le wó xiǎng huàn yí jiàn dà de",
+      "meaningVi": "Chiếc áo này nhỏ quá, mình muốn đổi cái lớn hơn.",
+      "focus": [
+        "换 huàn: -n cuối, thanh 4.",
+        "太小了 tài xiǎo le: le đọc nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        4,
+        1,
+        5,
+        4,
+        3,
+        5,
+        3,
+        3,
+        4,
+        2,
+        4,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          4,
+          4,
+          1,
+          5,
+          4,
+          3,
+          5,
+          2,
+          3,
+          4,
+          2,
+          4,
+          4,
+          5
+        ],
+        [
+          4,
+          4,
+          1,
+          5,
+          4,
+          3,
+          5,
+          3,
+          3,
+          4,
+          2,
+          4,
+          4,
+          5
+        ]
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-54",
+      "level": "HSK3-4",
+      "text": "如果不能换，我想退款。我理解你们也很忙，但是请你们认真处理这件事。",
+      "pinyin": "rú guǒ bù néng huàn wó xiǎng tuì kuǎn wó lí jié nǐ men yé hěn máng dàn shì qíng nǐ men rèn zhēn chú lǐ zhè jiàn shì",
+      "meaningVi": "Nếu không đổi được thì tôi muốn hoàn tiền. Tôi hiểu các bạn cũng rất bận, nhưng xin hãy xử lý việc này nghiêm túc.",
+      "syllables": 29,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "如果不能换",
+          "pinyin": "rú guǒ bù néng huàn",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我想退款",
+          "pinyin": "wó xiǎng tuì kuǎn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我理解你们也很忙",
+          "pinyin": "wó lí jié nǐ men yé hěn máng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "但是请你们认真处理这件事",
+          "pinyin": "dàn shì qíng nǐ men rèn zhēn chú lǐ zhè jiàn shì",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 退款 và sau 很忙.",
+        "处理 chǔ lǐ: hai thanh 3 liền, chữ đầu lên thành thanh 2."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        2,
+        3,
+        4,
+        2,
+        4,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        5,
+        3,
+        3,
+        2,
+        4,
+        4,
+        3,
+        3,
+        5,
+        4,
+        1,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          2,
+          4,
+          2,
+          3,
+          4,
+          3,
+          2,
+          2,
+          2,
+          3,
+          5,
+          2,
+          3,
+          2,
+          4,
+          4,
+          2,
+          3,
+          5,
+          4,
+          1,
+          2,
+          3,
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          3,
+          4,
+          2,
+          4,
+          3,
+          3,
+          4,
+          3,
+          3,
+          3,
+          3,
+          3,
+          5,
+          3,
+          3,
+          2,
+          4,
+          4,
+          3,
+          3,
+          5,
+          4,
+          1,
+          3,
+          3,
+          4,
+          4,
+          4
+        ]
+      ]
+    }
+  ]
+}

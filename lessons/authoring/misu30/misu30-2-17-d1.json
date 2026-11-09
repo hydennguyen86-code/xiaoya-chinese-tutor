@@ -1,0 +1,136 @@
+{
+  "lesson": "misu30-2-17-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "请先简单介绍一下你自己。",
+      "vi": "Trước tiên hãy giới thiệu ngắn gọn về bản thân bạn."
+    },
+    {
+      "speaker": "乙",
+      "zh": "您好，我叫小安。我有四年销售经验，在上一家公司负责北方市场。",
+      "vi": "Xin chào, tôi tên là Tiểu An. Tôi có bốn năm kinh nghiệm bán hàng, ở công ty trước phụ trách thị trường miền Bắc."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你的优点是什么？",
+      "vi": "Ưu điểm của bạn là gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我的优点是认真，也喜欢团队合作。",
+      "vi": "Ưu điểm của tôi là nghiêm túc, và cũng thích làm việc theo nhóm."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那你的缺点呢？",
+      "vi": "Còn nhược điểm của bạn thì sao?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我有时候太着急，不过现在已经比以前好多了。",
+      "vi": "Đôi khi tôi quá nóng vội, nhưng bây giờ đã tốt hơn trước nhiều rồi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我们公司有时候需要加班，你能接受吗？",
+      "vi": "Công ty chúng tôi đôi khi cần làm thêm giờ, bạn có chấp nhận được không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "可以，不过请问工资是多少？",
+      "vi": "Được, nhưng xin hỏi lương là bao nhiêu?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "基本工资每月八千，加班另外算钱。",
+      "vi": "Lương cơ bản mỗi tháng tám nghìn, làm thêm giờ tính tiền riêng."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的，谢谢您给我这次面试的机会。",
+      "vi": "Vâng, cảm ơn anh chị đã cho tôi cơ hội phỏng vấn này."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Tiểu An có mấy năm kinh nghiệm bán hàng?",
+      "options": [
+        "Bốn năm",
+        "Ba năm",
+        "Năm năm"
+      ],
+      "answer": 0,
+      "explanation": "Tiểu An nói 我有四年销售经验。"
+    },
+    {
+      "prompt": "Tiểu An nói nhược điểm của mình là gì?",
+      "options": [
+        "Không thích làm thêm giờ",
+        "Đôi khi quá nóng vội",
+        "Không biết làm việc nhóm"
+      ],
+      "answer": 1,
+      "explanation": "Tiểu An nói 我有时候太着急。"
+    },
+    {
+      "prompt": "Vì sao nhà tuyển dụng hỏi Tiểu An có chấp nhận làm thêm giờ?",
+      "options": [
+        "Vì Tiểu An từng làm thêm giờ",
+        "Vì lương cơ bản rất thấp",
+        "Vì công ty đôi khi cần làm thêm giờ"
+      ],
+      "answer": 2,
+      "explanation": "Nhà tuyển dụng nói 我们公司有时候需要加班，你能接受吗？"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "这个周末公司有一个重要的面试。",
+      "meaningVi": "Cuối tuần này công ty có một buổi phỏng vấn quan trọng.",
+      "focus": [
+        "重要 zhòng yào: hai thanh 4 liền nhau.",
+        "面试 miàn shì: sh uốn lưỡi."
+      ]
+    },
+    {
+      "hanzi": "他在这家公司工作了五年，很有经验。",
+      "meaningVi": "Anh ấy làm ở công ty này năm năm rồi, rất có kinh nghiệm.",
+      "focus": [
+        "经验 jīng yàn: jīng thanh 1, yàn thanh 4.",
+        "工作 gōng zuò: hai âm cuối đều rõ."
+      ]
+    },
+    {
+      "hanzi": "我的优点是认真，缺点是有点慢。",
+      "meaningVi": "Ưu điểm của mình là nghiêm túc, nhược điểm là hơi chậm.",
+      "focus": [
+        "优点 yōu diǎn, 缺点 quē diǎn: hai chữ 点 đều thanh 3.",
+        "缺 quē có ü, tròn môi."
+      ]
+    },
+    {
+      "hanzi": "我负责团队的工作，有时候要加班。",
+      "meaningVi": "Mình phụ trách công việc của nhóm, đôi khi phải làm thêm giờ.",
+      "focus": [
+        "负责 fù zé: fù thanh 4, zé thanh 2.",
+        "团队 tuán duì: tuán thanh 2, duì thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我想问一下，这个工作的工资是多少？如果需要加班，有没有加班费？",
+    "meaningVi": "Tôi muốn hỏi một chút, lương của công việc này là bao nhiêu? Nếu cần làm thêm giờ thì có tiền làm thêm không?",
+    "focus": [
+      "Ngắt hơi sau 一下 và sau 工作的工资.",
+      "Câu hỏi: giọng lên ở cuối 多少 và 加班费."
+    ]
+  },
+  "readings": {
+    "重": "zhòng",
+    "要": "yào",
+    "了": "le",
+    "的": "de",
+    "好": "hǎo"
+  }
+}

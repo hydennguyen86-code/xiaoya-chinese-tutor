@@ -127,44 +127,44 @@
   "prerequisites": [],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "最近天天加班，我有点吃不消。 工作压力大，我常常睡不好。 提高效率比延长工作时间更重要。",
-    "translation": "Dạo này ngày nào cũng làm thêm giờ, mình hơi quá sức. Áp lực công việc lớn, mình thường ngủ không ngon. Nâng cao hiệu suất quan trọng hơn kéo dài thời gian làm việc.",
-    "pinyin": "zuì jìn tiān tiān jiā bān ， wǒ yǒu diǎn chī bù xiāo 。   gōng zuò yā lì dà ， wǒ cháng cháng shuì bù hǎo 。   tí gāo xiào lǜ bǐ yán cháng gōng zuò shí jiān gèng zhòng yào 。",
+    "title": "Nghe hội thoại: Công việc và áp lực",
+    "playLimit": 1,
+    "transcript": "甲：阿明，你脸色不太好，最近是不是又加班了？乙：是啊，这个星期我连续加班了四天，压力特别大。甲：我也一样。不过我认为，与其每天加班到很晚，不如提高效率。乙：你说得对，可是项目时间太紧，我越想越焦虑。甲：那你先想想哪件事最重要，优先做它，别的明天再说。乙：有道理。一方面我想把工作做好，另一方面也不想影响睡觉。甲：所以要学会平衡。我准备调整一下计划，每天六点准时下班。乙：真羡慕你。那周末你打算做什么？甲：我想去公园放松一下，你也一起去吧。乙：好啊，周六上午九点在公园门口见。",
+    "translation": "A: Minh à, sắc mặt bạn không tốt lắm, dạo này lại làm thêm giờ à? B: Ừ, tuần này mình làm thêm giờ liên tục bốn ngày, áp lực đặc biệt lớn. A: Mình cũng vậy. Có điều mình thấy, thay vì ngày nào cũng làm thêm đến khuya, chi bằng nâng cao hiệu suất. B: Bạn nói đúng, nhưng thời gian của dự án quá gấp, mình càng nghĩ càng lo. A: Vậy bạn nghĩ xem việc nào quan trọng nhất, ưu tiên làm nó, việc khác để mai tính. B: Có lý. Một mặt mình muốn làm tốt công việc, mặt khác cũng không muốn ảnh hưởng đến giấc ngủ. A: Vì vậy phải học cách cân bằng. Mình định điều chỉnh lại kế hoạch, mỗi ngày sáu giờ tan làm đúng giờ. B: Mình ngưỡng mộ bạn thật. Vậy cuối tuần bạn định làm gì? A: Mình muốn ra công viên thư giãn một chút, bạn cũng đi cùng đi. B: Được chứ, chín giờ sáng thứ Bảy gặp nhau ở cổng công viên.",
+    "pinyin": "jiǎ ： ā míng ， nǐ liǎn sè bú tài hǎo ， zuì jìn shì bu shì yòu jiā bān le ？ yǐ ： shì a ， zhè ge xīng qī wǒ lián xù jiā bān le sì tiān ， yā lì tè bié dà 。 jiǎ ： wǒ yě yí yàng 。 bú guò wǒ rèn wéi ， yǔ qí měi tiān jiā bān dào hěn wǎn ， bù rú tí gāo xiào lǜ 。 yǐ ： nǐ shuō de duì ， kě shì xiàng mù shí jiān tài jǐn ， wǒ yuè xiǎng yuè jiāo lǜ 。 jiǎ ： nà nǐ xiān xiǎng xiǎng nǎ jiàn shì zuì zhòng yào ， yōu xiān zuò tā ， bié de míng tiān zài shuō 。 yǐ ： yǒu dào lǐ 。 yì fāng miàn wǒ xiǎng bǎ gōng zuò zuò hǎo ， lìng yì fāng miàn yě bù xiǎng yǐng xiǎng shuì jiào 。 jiǎ ： suǒ yǐ yào xué huì píng héng 。 wǒ zhǔn bèi tiáo zhěng yí xià jì huà ， měi tiān liù diǎn zhǔn shí xià bān 。 yǐ ： zhēn xiàn mù nǐ 。 nà zhōu mò nǐ dǎ suàn zuò shén me ？ jiǎ ： wǒ xiǎng qù gōng yuán fàng sōng yí xià ， nǐ yě yì qǐ qù ba 。 yǐ ： hǎo a ， zhōu liù shàng wǔ jiǔ diǎn zài gōng yuán mén kǒu jiàn 。",
     "questions": [
       {
-        "prompt": "Cụm “加班” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tuần này Minh làm thêm giờ mấy ngày?",
         "options": [
-          "làm thêm giờ",
-          "hiệu suất",
-          "cân bằng"
+          "Bốn ngày",
+          "Ba ngày",
+          "Năm ngày"
         ],
         "answer": 0,
-        "explanation": "“加班”: làm thêm giờ. Ví dụ đã nghe: 最近天天加班，我有点吃不消。"
+        "explanation": "B nói 这个星期我连续加班了四天。"
       },
       {
-        "prompt": "Cụm “压力” trong đoạn nghe có nghĩa gì?",
+        "prompt": "A đề nghị cách nào để bớt làm thêm giờ?",
         "options": [
-          "cân bằng",
-          "áp lực",
-          "lo lắng, bồn chồn"
+          "Đi làm sớm hơn mỗi ngày",
+          "Nâng cao hiệu suất và làm việc quan trọng nhất trước",
+          "Giao bớt việc cho người khác"
         ],
         "answer": 1,
-        "explanation": "“压力”: áp lực. Ví dụ đã nghe: 工作压力大，我常常睡不好。"
+        "explanation": "A nói 与其每天加班到很晚，不如提高效率 và 优先做它."
       },
       {
-        "prompt": "Cụm “效率” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao Minh càng nghĩ càng lo?",
         "options": [
-          "lo lắng, bồn chồn",
-          "điều chỉnh",
-          "hiệu suất"
+          "Đồng nghiệp không muốn giúp",
+          "Sếp đã phê bình anh",
+          "Thời gian của dự án quá gấp"
         ],
         "answer": 2,
-        "explanation": "“效率”: hiệu suất. Ví dụ đã nghe: 提高效率比延长工作时间更重要。"
+        "explanation": "B nói 项目时间太紧，我越想越焦虑。"
       }
     ]
   },

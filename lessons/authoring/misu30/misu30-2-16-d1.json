@@ -1,0 +1,135 @@
+{
+  "lesson": "misu30-2-16-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "这就是你要看的房子。你觉得怎么样？",
+      "vi": "Đây chính là căn nhà bạn muốn xem. Bạn thấy thế nào?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "房子不错，家具也很全。房租是多少？",
+      "vi": "Nhà khá tốt, đồ nội thất cũng đầy đủ. Tiền thuê là bao nhiêu?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "一个月两千八，押金是一个月房租。",
+      "vi": "Hai nghìn tám một tháng, tiền cọc bằng một tháng tiền thuê."
+    },
+    {
+      "speaker": "乙",
+      "zh": "水电费包括在房租里吗？",
+      "vi": "Tiền điện nước có gồm trong tiền thuê không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "不包括，水电费每个月自己交，一般两百块左右。",
+      "vi": "Không gồm, tiền điện nước mỗi tháng tự trả, thường khoảng hai trăm tệ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "附近有超市吗？",
+      "vi": "Gần đây có siêu thị không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "有，走路五分钟就到。地铁站也很近。",
+      "vi": "Có, đi bộ năm phút là tới. Ga tàu điện cũng rất gần."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，我想租一年。什么时候可以搬进来？",
+      "vi": "Được, tôi muốn thuê một năm. Khi nào có thể dọn vào?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "下个月一号可以搬，我们先签合同吧。",
+      "vi": "Mùng một tháng sau có thể dọn, chúng ta ký hợp đồng trước nhé."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的，那我先交押金，两千八。",
+      "vi": "Được, vậy tôi trả tiền cọc trước, hai nghìn tám."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Tiền thuê và tiền cọc là bao nhiêu?",
+      "options": [
+        "Thuê 2.800, cọc 5.600",
+        "Thuê 200, cọc 2.800",
+        "Thuê 2.800, cọc 2.800"
+      ],
+      "answer": 2,
+      "explanation": "Chủ nhà nói 一个月两千八，押金是一个月房租."
+    },
+    {
+      "prompt": "Vì sao mỗi tháng người thuê còn phải chuẩn bị thêm khoảng hai trăm tệ?",
+      "options": [
+        "Vì tiền điện nước không nằm trong tiền thuê",
+        "Vì phải trả tiền đồ nội thất",
+        "Vì phải trả phí gửi xe"
+      ],
+      "answer": 0,
+      "explanation": "Chủ nhà nói 不包括，水电费每个月自己交，一般两百块左右。"
+    },
+    {
+      "prompt": "Cuối cùng người đi xem nhà quyết định gì?",
+      "options": [
+        "Về suy nghĩ thêm",
+        "Trả cọc rồi ký hợp đồng thuê một năm",
+        "Xem căn khác"
+      ],
+      "answer": 1,
+      "explanation": "Họ nói 我想租一年, rồi 我先交押金，两千八 và ký 合同."
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "阿明想在学校附近租一个小房子。",
+      "meaningVi": "Minh muốn thuê một căn nhà nhỏ gần trường.",
+      "focus": [
+        "附近 fù jìn: hai thanh 4 liền nhau.",
+        "租 zū: thanh 1, z không bật hơi."
+      ]
+    },
+    {
+      "hanzi": "房租每个月交，水电费自己付。",
+      "meaningVi": "Tiền thuê trả mỗi tháng, tiền điện nước tự trả.",
+      "focus": [
+        "水电费 shuǐ diàn fèi: shuǐ thanh 3, hai thanh 4 sau.",
+        "自己 zì jǐ: thanh 4 rồi thanh 3."
+      ]
+    },
+    {
+      "hanzi": "请你看清楚合同，再签名。",
+      "meaningVi": "Xin bạn xem kỹ hợp đồng rồi hãy ký tên.",
+      "focus": [
+        "合同 hé tong: 同 đọc nhẹ.",
+        "清楚 qīng chu: qīng bật hơi, chu đọc nhẹ."
+      ]
+    },
+    {
+      "hanzi": "这个房间的家具都是新的。",
+      "meaningVi": "Đồ nội thất của phòng này đều là đồ mới.",
+      "focus": [
+        "家具 jiā jù: jù có ü, thanh 4.",
+        "都 dōu thanh 1, đừng đọc thành dū."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我下个月要搬家，新房子离公司很近。房东说要先交押金，再签合同，然后就可以搬进去了。",
+    "meaningVi": "Tháng sau mình dọn nhà, nhà mới rất gần công ty. Chủ nhà nói phải trả tiền cọc trước, rồi ký hợp đồng, sau đó là có thể dọn vào.",
+    "focus": [
+      "Ngắt hơi sau 搬家 và sau 很近.",
+      "押金 yā jīn: hai thanh 1, giữ giọng cao đều."
+    ]
+  },
+  "readings": {
+    "都": "dōu",
+    "了": "le",
+    "签": "qiān",
+    "要": "yào"
+  }
+}

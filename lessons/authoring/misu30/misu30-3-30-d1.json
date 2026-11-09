@@ -1,0 +1,151 @@
+{
+  "lesson": "misu30-3-30-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "王老师，三十节课已经学完了，我想说说自己的感受。",
+      "vi": "Thầy Vương, ba mươi bài đã học xong rồi, em muốn nói về cảm nhận của mình."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好啊，你有什么收获？",
+      "vi": "Được chứ, em có thu hoạch gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我的口语进步很大。以前我不敢开口，现在敢和中国人聊天了。",
+      "vi": "Khẩu ngữ của em tiến bộ nhiều. Trước đây em không dám mở miệng, giờ dám trò chuyện với người Trung Quốc rồi."
+    },
+    {
+      "speaker": "乙",
+      "zh": "这很不容易。你说说，最大的挑战是什么？",
+      "vi": "Điều này không dễ. Em thử nói xem, thử thách lớn nhất là gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "是坚持。有时候很累，但是只要每天练习一点，就会有进步。",
+      "vi": "Là kiên trì. Có lúc rất mệt, nhưng chỉ cần mỗi ngày luyện một chút là sẽ có tiến bộ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "说得对。那么，你下一步有什么计划？",
+      "vi": "Đúng vậy. Vậy bước tiếp theo em có kế hoạch gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我的目标是明年去中国留学一年。",
+      "vi": "Mục tiêu của em là năm sau sang Trung Quốc du học một năm."
+    },
+    {
+      "speaker": "乙",
+      "zh": "很好。为了实现这个目标，你准备怎么做？",
+      "vi": "Rất tốt. Để thực hiện mục tiêu này, em định làm thế nào?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我计划每天练习口语半个小时，周末再看一部中文电影。",
+      "vi": "Em dự định mỗi ngày luyện nói nửa tiếng, cuối tuần xem thêm một bộ phim tiếng Trung."
+    },
+    {
+      "speaker": "乙",
+      "zh": "暑假我们学校有一个交流项目，你可以先试试，这是个好机会。",
+      "vi": "Kỳ nghỉ hè trường mình có một chương trình giao lưu, em có thể thử trước, đây là cơ hội tốt."
+    },
+    {
+      "speaker": "甲",
+      "zh": "真的吗？我想抓住这次机会。我对未来充满期待，希望五年以后梦想能实现。",
+      "vi": "Thật ạ? Em muốn nắm lấy cơ hội này. Em tràn đầy mong đợi về tương lai, hy vọng năm năm sau ước mơ thành hiện thực."
+    },
+    {
+      "speaker": "乙",
+      "zh": "只要你坚持，就一定能做到。我相信你！",
+      "vi": "Chỉ cần em kiên trì, nhất định làm được. Thầy tin em!"
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Khẩu ngữ của học viên thay đổi thế nào?",
+      "options": [
+        "Trước không dám mở miệng, giờ dám trò chuyện",
+        "Nói ít hơn trước",
+        "Không có thay đổi gì"
+      ],
+      "answer": 0,
+      "explanation": "A nói 以前我不敢开口，现在敢和中国人聊天了。"
+    },
+    {
+      "prompt": "Mục tiêu của học viên là gì?",
+      "options": [
+        "Làm việc ở Trung Quốc năm sau",
+        "Sang Trung Quốc du học một năm vào năm sau",
+        "Mở trường dạy tiếng Trung"
+      ],
+      "answer": 1,
+      "explanation": "A nói 我的目标是明年去中国留学一年。"
+    },
+    {
+      "prompt": "Vì sao học viên nói kiên trì là thử thách?",
+      "options": [
+        "Vì thầy giáo quá nghiêm",
+        "Vì không có thời gian",
+        "Vì thỉnh thoảng rất mệt"
+      ],
+      "answer": 2,
+      "explanation": "A nói 是坚持。有时候很累。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "王老师的目标是让学生每天进步一点。",
+      "meaningVi": "Mục tiêu của thầy Vương là giúp học sinh mỗi ngày tiến bộ thêm một chút.",
+      "focus": [
+        "目标 mù biāo: mù thanh 4, biāo thanh 1.",
+        "进步 jìn bù: -n cuối, bù thanh 4."
+      ]
+    },
+    {
+      "hanzi": "米苏计划明年去中国留学，现在每天练口语。",
+      "meaningVi": "Misu dự định sang Trung Quốc du học năm sau, bây giờ mỗi ngày luyện nói.",
+      "focus": [
+        "计划 jì huà: hai chữ thanh 4 liền.",
+        "留学 liú xué: xué có ü."
+      ]
+    },
+    {
+      "hanzi": "面对新的挑战，我们要坚持，也要抓住每一个机会。",
+      "meaningVi": "Đối mặt với thử thách mới, chúng ta phải kiên trì, cũng phải nắm lấy từng cơ hội.",
+      "focus": [
+        "挑战 tiǎo zhàn: t bật hơi, zhàn thanh 4.",
+        "机会 jī huì: jī thanh 1, huì thanh 4."
+      ]
+    },
+    {
+      "hanzi": "我相信五年以后，我的梦想一定能实现，未来让人期待。",
+      "meaningVi": "Mình tin rằng năm năm sau, ước mơ của mình nhất định thành hiện thực, tương lai rất đáng mong đợi.",
+      "focus": [
+        "实现 shí xiàn: sh uốn lưỡi, xiàn thanh 4.",
+        "未来 wèi lái: wèi thanh 4, lái thanh 2."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "三十节课结束了，我的口语进步很大。明年我计划去中国留学，这是我的目标。我会坚持练习，抓住每一次机会，把梦想变成现实。",
+    "meaningVi": "Ba mươi bài học đã kết thúc, khẩu ngữ của mình tiến bộ nhiều. Năm sau mình dự định sang Trung Quốc du học, đó là mục tiêu của mình. Mình sẽ kiên trì luyện tập, nắm lấy mỗi cơ hội, biến ước mơ thành hiện thực.",
+    "focus": [
+      "Ngắt hơi sau 结束了, 留学 và 目标.",
+      "现实 xiàn shí: xiàn thanh 4, shí thanh 2."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "为": "wèi",
+    "要": "yào",
+    "好": "hǎo",
+    "相": "xiāng",
+    "看": "kàn",
+    "得": "de",
+    "还": "hái",
+    "会": "huì",
+    "重": "zhòng"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-1-6-d1",
+  "level": "HSK1-2",
+  "title": "我要一碗面条 · Gọi món ăn",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-265",
+      "level": "HSK1-2",
+      "hanzi": "服务员，这个菜辣不辣？",
+      "pinyin": "fú wù yuán zhè ge cài là bu là",
+      "meaningVi": "Phục vụ ơi, món này có cay không?",
+      "focus": [
+        "服务员 fú wù yuán: thanh 2, 4, 2.",
+        "辣 là thanh 4, l không uốn lưỡi."
+      ]
+    },
+    {
+      "id": "dt-1-266",
+      "level": "HSK1-2",
+      "hanzi": "我不吃辣，就喝一杯茶。",
+      "pinyin": "wǒ bù chī là jiù hē yì bēi chá",
+      "meaningVi": "Mình không ăn cay, chỉ uống một ly trà.",
+      "focus": [
+        "就 jiù: thanh 4, j không bật hơi.",
+        "茶 chá: bật hơi ch."
+      ]
+    },
+    {
+      "id": "dt-1-267",
+      "level": "HSK1-2",
+      "hanzi": "阿兰想吃一碗米饭。",
+      "pinyin": "ā lán xiǎng chī yì wán mǐ fàn",
+      "meaningVi": "Lan muốn ăn một bát cơm.",
+      "focus": [
+        "吃 chī: ch uốn lưỡi, thanh 1.",
+        "米饭 mǐ fàn: thanh 3 rồi thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        2,
+        3,
+        1,
+        4,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          3,
+          1,
+          4,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          1,
+          4,
+          3,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "dt-1-268",
+      "level": "HSK1-2",
+      "hanzi": "他们的面条很好吃。",
+      "pinyin": "tā men de miàn tiáo hén hǎo chī",
+      "meaningVi": "Mì của họ rất ngon.",
+      "focus": [
+        "面条 miàn tiáo: thanh 4 rồi thanh 2.",
+        "很好吃 hén hǎo chī: 很 đổi thành thanh 2 trước thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        5,
+        5,
+        4,
+        2,
+        3,
+        3,
+        1
+      ],
+      "acceptTones": [
+        [
+          1,
+          5,
+          5,
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          5,
+          5,
+          4,
+          2,
+          3,
+          3,
+          1
+        ]
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-61",
+      "level": "HSK1-2",
+      "text": "我是阿兰，今天在这家店吃饭。我要一碗面条，一杯水，不要太辣。",
+      "pinyin": "wǒ shì ā lán jīn tiān zài zhè jiā diàn chī fàn wǒ yào yì wǎn miàn tiáo yì bēi shuǐ bú yào tài là",
+      "meaningVi": "Mình là Lan, hôm nay ăn cơm ở quán này. Mình lấy một tô mì, một ly nước, không cay quá.",
+      "syllables": 25,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我是阿兰",
+          "pinyin": "wǒ shì ā lán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "今天在这家店吃饭",
+          "pinyin": "jīn tiān zài zhè jiā diàn chī fàn",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我要一碗面条",
+          "pinyin": "wǒ yào yì wǎn miàn tiáo",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "一杯水",
+          "pinyin": "yì bēi shuǐ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "不要太辣",
+          "pinyin": "bú yào tài là",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 阿兰, 吃饭 và 面条。",
+        "不要 bú yào: 不 đổi thanh 2 trước thanh 4."
+      ]
+    }
+  ]
+}

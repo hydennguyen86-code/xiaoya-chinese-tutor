@@ -1,0 +1,138 @@
+{
+  "lesson": "misu30-3-21-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，你脸色不太好，最近是不是又加班了？",
+      "vi": "Minh à, sắc mặt bạn không tốt lắm, dạo này lại làm thêm giờ à?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "是啊，这个星期我连续加班了四天，压力特别大。",
+      "vi": "Ừ, tuần này mình làm thêm giờ liên tục bốn ngày, áp lực đặc biệt lớn."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我也一样。不过我认为，与其每天加班到很晚，不如提高效率。",
+      "vi": "Mình cũng vậy. Có điều mình thấy, thay vì ngày nào cũng làm thêm đến khuya, chi bằng nâng cao hiệu suất."
+    },
+    {
+      "speaker": "乙",
+      "zh": "你说得对，可是项目时间太紧，我越想越焦虑。",
+      "vi": "Bạn nói đúng, nhưng thời gian của dự án quá gấp, mình càng nghĩ càng lo."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那你先想想哪件事最重要，优先做它，别的明天再说。",
+      "vi": "Vậy bạn nghĩ xem việc nào quan trọng nhất, ưu tiên làm nó, việc khác để mai tính."
+    },
+    {
+      "speaker": "乙",
+      "zh": "有道理。一方面我想把工作做好，另一方面也不想影响睡觉。",
+      "vi": "Có lý. Một mặt mình muốn làm tốt công việc, mặt khác cũng không muốn ảnh hưởng đến giấc ngủ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "所以要学会平衡。我准备调整一下计划，每天六点准时下班。",
+      "vi": "Vì vậy phải học cách cân bằng. Mình định điều chỉnh lại kế hoạch, mỗi ngày sáu giờ tan làm đúng giờ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "真羡慕你。那周末你打算做什么？",
+      "vi": "Mình ngưỡng mộ bạn thật. Vậy cuối tuần bạn định làm gì?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我想去公园放松一下，你也一起去吧。",
+      "vi": "Mình muốn ra công viên thư giãn một chút, bạn cũng đi cùng đi."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好啊，周六上午九点在公园门口见。",
+      "vi": "Được chứ, chín giờ sáng thứ Bảy gặp nhau ở cổng công viên."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Tuần này Minh làm thêm giờ mấy ngày?",
+      "options": [
+        "Bốn ngày",
+        "Ba ngày",
+        "Năm ngày"
+      ],
+      "answer": 0,
+      "explanation": "B nói 这个星期我连续加班了四天。"
+    },
+    {
+      "prompt": "A đề nghị cách nào để bớt làm thêm giờ?",
+      "options": [
+        "Đi làm sớm hơn mỗi ngày",
+        "Nâng cao hiệu suất và làm việc quan trọng nhất trước",
+        "Giao bớt việc cho người khác"
+      ],
+      "answer": 1,
+      "explanation": "A nói 与其每天加班到很晚，不如提高效率 và 优先做它."
+    },
+    {
+      "prompt": "Vì sao Minh càng nghĩ càng lo?",
+      "options": [
+        "Đồng nghiệp không muốn giúp",
+        "Sếp đã phê bình anh",
+        "Thời gian của dự án quá gấp"
+      ],
+      "answer": 2,
+      "explanation": "B nói 项目时间太紧，我越想越焦虑。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "阿明连续加班了四天，所以今天特别累。",
+      "meaningVi": "Minh làm thêm giờ liên tục bốn ngày nên hôm nay đặc biệt mệt.",
+      "focus": [
+        "加班 jiā bān: hai chữ thanh 1, giữ cao đều.",
+        "累 lèi thanh 4, hạ dứt khoát."
+      ]
+    },
+    {
+      "hanzi": "压力太大的时候，你应该出去放松一下。",
+      "meaningVi": "Lúc áp lực quá lớn, bạn nên ra ngoài thư giãn một chút.",
+      "focus": [
+        "压力 yā lì: thanh 1 rồi thanh 4.",
+        "放松 fàng sōng: -ng cuối, không bật thành n."
+      ]
+    },
+    {
+      "hanzi": "与其熬夜赶工，不如提高效率，早点休息。",
+      "meaningVi": "Thay vì thức khuya chạy việc, chi bằng nâng cao hiệu suất, nghỉ sớm một chút.",
+      "focus": [
+        "效率 xiào lǜ: lǜ có ü, tròn môi.",
+        "不如 bù rú: bù thanh 4, rú thanh 2."
+      ]
+    },
+    {
+      "hanzi": "项目一直往后拖，小安越来越焦虑，晚上也睡不好。",
+      "meaningVi": "Dự án cứ bị kéo dài mãi, Tiểu An càng lúc càng lo, buổi tối cũng ngủ không ngon.",
+      "focus": [
+        "焦虑 jiāo lǜ: j không bật hơi, lǜ có ü.",
+        "睡不好 shuì bù hǎo: bù thanh 4, hǎo thanh 3."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "最近我压力很大，所以决定调整计划。我会优先做最重要的事，再慢慢找到工作和生活的平衡。周末去公园放松一下，心情就会好很多！",
+    "meaningVi": "Dạo này mình áp lực rất lớn, nên quyết định điều chỉnh kế hoạch. Mình sẽ ưu tiên làm việc quan trọng nhất, rồi từ từ tìm được sự cân bằng giữa công việc và cuộc sống. Cuối tuần ra công viên thư giãn, tâm trạng sẽ tốt hơn nhiều!",
+    "focus": [
+      "Ngắt hơi sau 压力很大, 调整计划 và 平衡.",
+      "调整 tiáo zhěng: thanh 2 rồi thanh 3, zh uốn lưỡi."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "应": "yīng",
+    "好": "hǎo",
+    "觉": "jiào",
+    "要": "yào",
+    "重": "zhòng",
+    "调": "tiáo"
+  }
+}

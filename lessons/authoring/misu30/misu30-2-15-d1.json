@@ -1,0 +1,134 @@
+{
+  "lesson": "misu30-2-15-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "你好，你哪里不舒服？",
+      "vi": "Chào bạn, bạn thấy khó chịu ở đâu?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "医生，我头疼，还有点咳嗽，已经两天了。",
+      "vi": "Bác sĩ ơi, tôi đau đầu, còn hơi ho, được hai ngày rồi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "发烧吗？",
+      "vi": "Có sốt không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "昨天晚上发烧了，三十八度。",
+      "vi": "Tối qua tôi có sốt, ba mươi tám độ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我看看。现在是三十七度五，比昨天低一点。",
+      "vi": "Để tôi xem. Bây giờ là ba mươi bảy độ rưỡi, thấp hơn hôm qua một chút."
+    },
+    {
+      "speaker": "乙",
+      "zh": "严重吗？",
+      "vi": "Có nghiêm trọng không ạ?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "不太严重，是感冒。开药以前我要问一下，你对药过敏吗？",
+      "vi": "Không nghiêm trọng lắm, là cảm. Trước khi kê thuốc tôi cần hỏi, bạn có dị ứng thuốc không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我对药不过敏，不过对海鲜过敏。",
+      "vi": "Tôi không dị ứng thuốc, nhưng dị ứng hải sản."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好。你要按时吃药，一天三次，饭后吃。如果还发烧，就去大医院检查。",
+      "vi": "Được. Bạn phải uống thuốc đúng giờ, ngày ba lần, sau bữa ăn. Nếu vẫn còn sốt thì đến bệnh viện lớn kiểm tra."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的，谢谢医生。",
+      "vi": "Vâng, cảm ơn bác sĩ."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Bệnh nhân đã bị đau đầu và ho được bao lâu?",
+      "options": [
+        "Một ngày",
+        "Hai ngày",
+        "Ba ngày"
+      ],
+      "answer": 1,
+      "explanation": "Bệnh nhân nói 我头疼，还有点咳嗽，已经两天了。"
+    },
+    {
+      "prompt": "Nhiệt độ hiện tại so với tối qua thế nào?",
+      "options": [
+        "Cao hơn",
+        "Bằng nhau",
+        "Thấp hơn"
+      ],
+      "answer": 2,
+      "explanation": "Tối qua 三十八度, bây giờ 三十七度五，比昨天低一点。"
+    },
+    {
+      "prompt": "Vì sao bác sĩ hỏi bệnh nhân có dị ứng không?",
+      "options": [
+        "Vì sắp kê thuốc cho bệnh nhân",
+        "Vì bệnh nhân dị ứng thức ăn",
+        "Vì bệnh nhân muốn đổi thuốc"
+      ],
+      "answer": 0,
+      "explanation": "Bác sĩ nói 开药以前我要问一下，你对药过敏吗？"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "我今天头疼，什么也不想吃。",
+      "meaningVi": "Hôm nay mình đau đầu, chẳng muốn ăn gì cả.",
+      "focus": [
+        "头疼 tóu téng: hai thanh 2 liền nhau.",
+        "什么 shén me: me đọc nhẹ."
+      ]
+    },
+    {
+      "hanzi": "他昨晚发烧了，今天没去上班。",
+      "meaningVi": "Tối qua anh ấy bị sốt, hôm nay không đi làm.",
+      "focus": [
+        "发烧 fā shāo: hai thanh 1, giữ giọng cao.",
+        "没去 méi qù: 没 thanh 2."
+      ]
+    },
+    {
+      "hanzi": "孩子咳嗽三天了，我带他去医院。",
+      "meaningVi": "Con ho ba ngày rồi, mình đưa con đến bệnh viện.",
+      "focus": [
+        "咳嗽 ké sou: sou đọc nhẹ.",
+        "医院 yī yuàn: yuàn có ü, đọc tròn môi."
+      ]
+    },
+    {
+      "hanzi": "医生让我按时吃药，多喝水。",
+      "meaningVi": "Bác sĩ bảo mình uống thuốc đúng giờ và uống nhiều nước.",
+      "focus": [
+        "医生 yī shēng: sh uốn lưỡi, -ng cuối.",
+        "吃药 chī yào: ch bật hơi, yào thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我对牛奶过敏。昨天我喝了一杯牛奶，晚上就不舒服了。今天我要去看医生。",
+    "meaningVi": "Mình bị dị ứng sữa bò. Hôm qua mình uống một ly sữa, buổi tối thì thấy khó chịu. Hôm nay mình phải đi khám bác sĩ.",
+    "focus": [
+      "Ngắt hơi sau 过敏 và sau 牛奶.",
+      "不舒服 bù shū fu: fu đọc nhẹ."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "药": "yào",
+    "看": "kàn"
+  }
+}

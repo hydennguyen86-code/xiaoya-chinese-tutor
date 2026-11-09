@@ -349,7 +349,7 @@ function checkMeaningText(file, where, text, sentence = false) {
 function checkAux() {
   const dir = path.join(ROOT, 'lessons', 'listening', 'course');
   for (const { name, data: d } of lessons) {
-    if (!d.volumeId.startsWith('misu30') && !fs.existsSync(path.join(dir, `${name}.json`))) add('aux', name, 'listening/course', 'thiếu file nghe riêng');
+    if (!fs.existsSync(path.join(dir, `${name}.json`))) add('aux', name, 'listening/course', 'thiếu file nghe riêng');
   }
   for (const f of fs.readdirSync(dir)) {
     const L = rd(path.join(dir, f));

@@ -1,0 +1,123 @@
+{
+  "lesson": "misu30-1-2-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "你好！请问你叫什么名字？",
+      "vi": "Xin chào! Cho hỏi bạn tên là gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我叫阿明。",
+      "vi": "Mình tên là Minh."
+    },
+    {
+      "speaker": "甲",
+      "zh": "阿明，你今年几岁？",
+      "vi": "Minh, năm nay bạn mấy tuổi?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我今年二十五岁。",
+      "vi": "Năm nay mình hai mươi lăm tuổi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好的。你的电话号码是多少？",
+      "vi": "Vâng. Số điện thoại của bạn là bao nhiêu?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "一三五，七二零八，九四六一。",
+      "vi": "Một ba năm, bảy hai không tám, chín bốn sáu một."
+    },
+    {
+      "speaker": "甲",
+      "zh": "这个班一个月三百块。",
+      "vi": "Lớp này một tháng ba trăm tệ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，我想学这个班。",
+      "vi": "Được, mình muốn học lớp này."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Minh năm nay bao nhiêu tuổi?",
+      "options": [
+        "Hai mươi tuổi",
+        "Hai mươi lăm tuổi",
+        "Hai mươi hai tuổi"
+      ],
+      "answer": 1,
+      "explanation": "Minh nói 我今年二十五岁。"
+    },
+    {
+      "prompt": "Số điện thoại của Minh bắt đầu bằng những số nào?",
+      "options": [
+        "Một năm ba",
+        "Ba năm một",
+        "Một ba năm"
+      ],
+      "answer": 2,
+      "explanation": "Minh đọc 一三五，七二零八，九四六一。"
+    },
+    {
+      "prompt": "Học phí một tháng là bao nhiêu và Minh quyết định thế nào?",
+      "options": [
+        "Ba trăm tệ, Minh học lớp này",
+        "Hai trăm tệ, Minh không học",
+        "Ba trăm tệ, Minh chưa quyết định"
+      ],
+      "answer": 0,
+      "explanation": "Nhân viên nói 一个月三百块, Minh trả lời 我想学这个班。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "阿明今年二十五岁。",
+      "meaningVi": "Minh năm nay hai mươi lăm tuổi.",
+      "focus": [
+        "岁 suì thanh 4, hạ dứt khoát.",
+        "今年 jīn nián: thanh 1 rồi thanh 2."
+      ]
+    },
+    {
+      "hanzi": "他的电话号码是多少？",
+      "meaningVi": "Số điện thoại của anh ấy là bao nhiêu?",
+      "focus": [
+        "电话 diàn huà: hai thanh 4 liền nhau.",
+        "多少 duō shǎo: shǎo thanh 3."
+      ]
+    },
+    {
+      "hanzi": "这本书三百块，那本书两百块。",
+      "meaningVi": "Quyển sách này ba trăm tệ, quyển kia hai trăm tệ.",
+      "focus": [
+        "两 liǎng đứng trước 百 bǎi: hai thanh 3 liền, nghe liáng bǎi.",
+        "百 bǎi thanh 3, khác 白 bái."
+      ]
+    },
+    {
+      "hanzi": "米苏有几个朋友？",
+      "meaningVi": "Misu có mấy người bạn?",
+      "focus": [
+        "几 jǐ thanh 3.",
+        "朋友 péng you: chữ thứ hai đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我叫阿明，今年二十五岁。电话号码是一三五，七二零八，九四六一。",
+    "meaningVi": "Mình tên là Minh, năm nay hai mươi lăm tuổi. Số điện thoại là một ba năm, bảy hai không tám, chín bốn sáu một.",
+    "focus": [
+      "Ngắt hơi sau 阿明 và sau 二十岁。",
+      "零 líng: vần -ng, giữ mũi ở cuối."
+    ]
+  },
+  "readings": {
+    "的": "de",
+    "了": "le"
+  }
+}

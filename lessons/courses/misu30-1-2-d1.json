@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Số đếm, tuổi và số điện thoại",
     "playLimit": 2,
-    "transcript": "你今年几岁？ 我今年二十岁。 你的电话是多少？",
-    "translation": "Bạn năm nay mấy tuổi? Mình năm nay hai mươi tuổi. Số điện thoại của bạn là bao nhiêu?",
-    "pinyin": "nǐ jīn nián jǐ suì ？   wǒ jīn nián èr shí suì 。   nǐ de diàn huà shì duō shǎo ？",
+    "transcript": "甲：你好！请问你叫什么名字？乙：我叫阿明。甲：阿明，你今年几岁？乙：我今年二十五岁。甲：好的。你的电话号码是多少？乙：一三五，七二零八，九四六一。甲：这个班一个月三百块。乙：好，我想学这个班。",
+    "translation": "A: Xin chào! Cho hỏi bạn tên là gì? B: Mình tên là Minh. A: Minh, năm nay bạn mấy tuổi? B: Năm nay mình hai mươi lăm tuổi. A: Vâng. Số điện thoại của bạn là bao nhiêu? B: Một ba năm, bảy hai không tám, chín bốn sáu một. A: Lớp này một tháng ba trăm tệ. B: Được, mình muốn học lớp này.",
+    "pinyin": "jiǎ ： nǐ hǎo ！ qǐng wèn nǐ jiào shén me míng zi ？ yǐ ： wǒ jiào ā míng 。 jiǎ ： ā míng ， nǐ jīn nián jǐ suì ？ yǐ ： wǒ jīn nián èr shí wǔ suì 。 jiǎ ： hǎo de 。 nǐ de diàn huà hào mǎ shì duō shǎo ？ yǐ ： yī sān wǔ ， qī èr líng bā ， jiǔ sì liù yī 。 jiǎ ： zhè ge bān yí gè yuè sān bǎi kuài 。 yǐ ： hǎo ， wǒ xiǎng xué zhè ge bān 。",
     "questions": [
       {
-        "prompt": "Cụm “几” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Minh năm nay bao nhiêu tuổi?",
         "options": [
-          "bao nhiêu",
-          "điện thoại",
-          "mấy"
-        ],
-        "answer": 2,
-        "explanation": "“几”: mấy. Ví dụ đã nghe: 你今年几岁？"
-      },
-      {
-        "prompt": "Cụm “岁” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "tuổi",
-          "điện thoại",
-          "số (điện thoại)"
-        ],
-        "answer": 0,
-        "explanation": "“岁”: tuổi. Ví dụ đã nghe: 我今年二十岁。"
-      },
-      {
-        "prompt": "Cụm “多少” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "số (điện thoại)",
-          "bao nhiêu",
-          "hai (dùng trước lượng từ)"
+          "Hai mươi tuổi",
+          "Hai mươi lăm tuổi",
+          "Hai mươi hai tuổi"
         ],
         "answer": 1,
-        "explanation": "“多少”: bao nhiêu. Ví dụ đã nghe: 你的电话是多少？"
+        "explanation": "Minh nói 我今年二十五岁。"
+      },
+      {
+        "prompt": "Số điện thoại của Minh bắt đầu bằng những số nào?",
+        "options": [
+          "Một năm ba",
+          "Ba năm một",
+          "Một ba năm"
+        ],
+        "answer": 2,
+        "explanation": "Minh đọc 一三五，七二零八，九四六一。"
+      },
+      {
+        "prompt": "Học phí một tháng là bao nhiêu và Minh quyết định thế nào?",
+        "options": [
+          "Ba trăm tệ, Minh học lớp này",
+          "Hai trăm tệ, Minh không học",
+          "Ba trăm tệ, Minh chưa quyết định"
+        ],
+        "answer": 0,
+        "explanation": "Nhân viên nói 一个月三百块, Minh trả lời 我想学这个班。"
       }
     ]
   },

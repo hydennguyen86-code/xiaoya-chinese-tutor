@@ -1,0 +1,172 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-1-2-d1",
+  "level": "HSK1-2",
+  "title": "你今年几岁？ · Số đếm, tuổi và số điện thoại",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-249",
+      "level": "HSK1-2",
+      "hanzi": "阿明今年二十五岁。",
+      "pinyin": "ā míng jīn nián èr shí wǔ suì",
+      "meaningVi": "Minh năm nay hai mươi lăm tuổi.",
+      "focus": [
+        "岁 suì thanh 4, hạ dứt khoát.",
+        "今年 jīn nián: thanh 1 rồi thanh 2."
+      ]
+    },
+    {
+      "id": "dt-1-250",
+      "level": "HSK1-2",
+      "hanzi": "他的电话号码是多少？",
+      "pinyin": "tā de diàn huà hào mǎ shì duō shǎo",
+      "meaningVi": "Số điện thoại của anh ấy là bao nhiêu?",
+      "focus": [
+        "电话 diàn huà: hai thanh 4 liền nhau.",
+        "多少 duō shǎo: shǎo thanh 3."
+      ]
+    },
+    {
+      "id": "dt-1-251",
+      "level": "HSK1-2",
+      "hanzi": "这本书三百块，那本书两百块。",
+      "pinyin": "zhè běn shū sān bǎi kuài nà běn shū liáng bǎi kuài",
+      "meaningVi": "Quyển sách này ba trăm tệ, quyển kia hai trăm tệ.",
+      "focus": [
+        "两 liǎng đứng trước 百 bǎi: hai thanh 3 liền, nghe liáng bǎi.",
+        "百 bǎi thanh 3, khác 白 bái."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        3,
+        1,
+        1,
+        3,
+        4,
+        4,
+        3,
+        1,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          3,
+          1,
+          1,
+          3,
+          4,
+          4,
+          3,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          1,
+          1,
+          3,
+          4,
+          4,
+          3,
+          1,
+          3,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "dt-1-252",
+      "level": "HSK1-2",
+      "hanzi": "米苏有几个朋友？",
+      "pinyin": "mǐ sū yóu jǐ gè péng you",
+      "meaningVi": "Misu có mấy người bạn?",
+      "focus": [
+        "几 jǐ thanh 3.",
+        "朋友 péng you: chữ thứ hai đọc nhẹ."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        1,
+        3,
+        3,
+        4,
+        2,
+        5
+      ],
+      "acceptTones": [
+        [
+          3,
+          1,
+          2,
+          3,
+          4,
+          2,
+          5
+        ],
+        [
+          3,
+          1,
+          3,
+          3,
+          4,
+          2,
+          5
+        ]
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-57",
+      "level": "HSK1-2",
+      "text": "我叫阿明，今年二十五岁。电话号码是一三五，七二零八，九四六一。",
+      "pinyin": "wǒ jiào ā míng jīn nián èr shí wǔ suì diàn huà hào mǎ shì yī sān wǔ qī èr líng bā jiǔ sì liù yī",
+      "meaningVi": "Mình tên là Minh, năm nay hai mươi lăm tuổi. Số điện thoại là một ba năm, bảy hai không tám, chín bốn sáu một.",
+      "syllables": 26,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我叫阿明",
+          "pinyin": "wǒ jiào ā míng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "今年二十五岁",
+          "pinyin": "jīn nián èr shí wǔ suì",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "电话号码是一三五",
+          "pinyin": "diàn huà hào mǎ shì yī sān wǔ",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "七二零八",
+          "pinyin": "qī èr líng bā",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "九四六一",
+          "pinyin": "jiǔ sì liù yī",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 阿明 và sau 二十岁。",
+        "零 líng: vần -ng, giữ mũi ở cuối."
+      ]
+    }
+  ]
+}

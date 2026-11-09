@@ -1,0 +1,152 @@
+{
+  "lesson": "misu30-3-26-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "各位邻居，今天我们讨论一下小区的垃圾分类问题。",
+      "vi": "Thưa các hàng xóm, hôm nay chúng ta bàn về vấn đề phân loại rác của khu dân cư."
+    },
+    {
+      "speaker": "乙",
+      "zh": "王主任，最近垃圾桶旁边越来越脏，污染也越来越严重。",
+      "vi": "Trưởng ban Vương, dạo này quanh thùng rác ngày càng bẩn, ô nhiễm cũng ngày càng nghiêm trọng."
+    },
+    {
+      "speaker": "甲",
+      "zh": "是啊，很多人不愿意分类，认为太麻烦。",
+      "vi": "Đúng vậy, nhiều người không muốn phân loại, cho rằng quá phiền."
+    },
+    {
+      "speaker": "乙",
+      "zh": "可是环保不只是政府的责任，也是我们每个人的责任。",
+      "vi": "Nhưng bảo vệ môi trường không chỉ là trách nhiệm của chính phủ, mà còn là trách nhiệm của mỗi chúng ta."
+    },
+    {
+      "speaker": "甲",
+      "zh": "说得对。我建议从身边的小事做起，比如少用塑料袋。",
+      "vi": "Đúng. Tôi đề nghị bắt đầu từ những việc nhỏ quanh ta, ví dụ dùng ít túi ni lông."
+    },
+    {
+      "speaker": "乙",
+      "zh": "还有，食物浪费也很严重。上个星期，我们小区一天就扔掉了两百公斤剩饭。",
+      "vi": "Còn nữa, lãng phí thức ăn cũng rất nghiêm trọng. Tuần trước, khu mình một ngày đã vứt hai trăm cân cơm thừa."
+    },
+    {
+      "speaker": "甲",
+      "zh": "两百公斤！这太浪费了。我们可以建一个回收点，把能回收的东西分开放。",
+      "vi": "Hai trăm cân! Lãng phí quá. Chúng ta có thể lập một điểm thu hồi, để riêng những thứ tái chế được."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好主意。不过一个回收点需要多少钱？",
+      "vi": "Ý hay. Có điều một điểm thu hồi cần bao nhiêu tiền?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "大概三千块，物业公司同意出一半。",
+      "vi": "Khoảng ba nghìn tệ, công ty quản lý đồng ý chi một nửa."
+    },
+    {
+      "speaker": "乙",
+      "zh": "那我们居民只需要出一千五百块。",
+      "vi": "Vậy cư dân chúng ta chỉ cần bỏ ra một nghìn năm trăm tệ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "对。大家同意的话，下个月一号就开始。",
+      "vi": "Đúng. Nếu mọi người đồng ý, mùng một tháng sau sẽ bắt đầu."
+    },
+    {
+      "speaker": "乙",
+      "zh": "我同意，这样也能减少污染，对下一代更好。",
+      "vi": "Tôi đồng ý, như vậy cũng giảm được ô nhiễm, tốt hơn cho thế hệ sau."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Tuần trước khu dân cư vứt bao nhiêu cơm thừa trong một ngày?",
+      "options": [
+        "Hai mươi cân",
+        "Hai nghìn cân",
+        "Hai trăm cân"
+      ],
+      "answer": 2,
+      "explanation": "B nói 一天就扔掉了两百公斤剩饭。"
+    },
+    {
+      "prompt": "Cư dân cần bỏ ra bao nhiêu tiền cho điểm thu hồi?",
+      "options": [
+        "Một nghìn năm trăm tệ",
+        "Ba nghìn tệ",
+        "Năm trăm tệ"
+      ],
+      "answer": 0,
+      "explanation": "Tổng 大概三千块, 物业公司同意出一半, nên 居民只需要出一千五百块。"
+    },
+    {
+      "prompt": "Vì sao người cuối cùng đồng ý với kế hoạch?",
+      "options": [
+        "Vì được hoàn lại tiền",
+        "Vì giảm được ô nhiễm, tốt hơn cho thế hệ sau",
+        "Vì ban quản lý bắt buộc"
+      ],
+      "answer": 1,
+      "explanation": "Người nói cuối: 这样也能减少污染，对下一代更好。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "每个家庭少扔一点剩饭，就能明显减少浪费。",
+      "meaningVi": "Mỗi gia đình vứt bớt một chút cơm thừa là có thể giảm lãng phí rõ rệt.",
+      "focus": [
+        "减少 jiǎn shǎo: hai chữ thanh 3, chữ đầu biến điệu.",
+        "浪费 làng fèi: -ng và f."
+      ]
+    },
+    {
+      "hanzi": "工厂排出的废水会污染河水，影响附近居民的健康。",
+      "meaningVi": "Nước thải nhà máy thải ra sẽ làm ô nhiễm nước sông, ảnh hưởng sức khỏe cư dân gần đó.",
+      "focus": [
+        "污染 wū rǎn: r là âm uốn lưỡi nhẹ.",
+        "废水 fèi shuǐ: shuǐ thanh 3, shu tròn môi."
+      ]
+    },
+    {
+      "hanzi": "王主任说，回收废纸和塑料瓶也是环保的好办法。",
+      "meaningVi": "Trưởng ban Vương nói, thu hồi giấy vụn và chai nhựa cũng là cách hay để bảo vệ môi trường.",
+      "focus": [
+        "回收 huí shōu: sh uốn lưỡi.",
+        "环保 huán bǎo: huán thanh 2, bǎo thanh 3."
+      ]
+    },
+    {
+      "hanzi": "清洁能源有利于可持续发展，这是每个人的责任。",
+      "meaningVi": "Năng lượng sạch có lợi cho phát triển bền vững, đó là trách nhiệm của mỗi người.",
+      "focus": [
+        "可持续 kě chí xù: ch bật hơi, xù có ü.",
+        "责任 zé rèn: z đầu lưỡi, r uốn lưỡi."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我住在这个小区，看到垃圾越来越多，心里很不安。环保是每个人的责任，我想从身边做起，少用塑料袋，认真分类回收。",
+    "meaningVi": "Mình sống ở khu dân cư này, thấy rác ngày càng nhiều, trong lòng rất bất an. Bảo vệ môi trường là trách nhiệm của mỗi người, mình muốn bắt đầu từ quanh mình, dùng ít túi ni lông, nghiêm túc phân loại và thu hồi.",
+    "focus": [
+      "Ngắt hơi sau 小区, 不安 và 责任.",
+      "分类 fēn lèi: fēn thanh 1, lèi thanh 4."
+    ]
+  },
+  "readings": {
+    "少": "shǎo",
+    "分": "fēn",
+    "还": "hái",
+    "好": "hǎo",
+    "得": "de",
+    "重": "zhòng",
+    "了": "le",
+    "要": "yào",
+    "区": "qū",
+    "便": "biàn",
+    "更": "gèng"
+  }
+}

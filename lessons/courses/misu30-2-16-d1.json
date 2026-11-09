@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我想租一个一居室。 房租一个月多少钱？ 水电费包括在房租里吗？",
-    "translation": "Mình muốn thuê một căn hộ một phòng ngủ. Tiền thuê nhà một tháng bao nhiêu? Tiền điện nước có bao gồm trong tiền thuê không?",
-    "pinyin": "wǒ xiǎng zū yí gè yì jū shì 。   fáng zū yí gè yuè duō shǎo qián ？   shuǐ diàn fèi bāo kuò zài fáng zū lǐ ma ？",
+    "title": "Nghe hội thoại: Thuê nhà",
+    "playLimit": 1,
+    "transcript": "甲：这就是你要看的房子。你觉得怎么样？乙：房子不错，家具也很全。房租是多少？甲：一个月两千八，押金是一个月房租。乙：水电费包括在房租里吗？甲：不包括，水电费每个月自己交，一般两百块左右。乙：附近有超市吗？甲：有，走路五分钟就到。地铁站也很近。乙：好，我想租一年。什么时候可以搬进来？甲：下个月一号可以搬，我们先签合同吧。乙：好的，那我先交押金，两千八。",
+    "translation": "A: Đây chính là căn nhà bạn muốn xem. Bạn thấy thế nào? B: Nhà khá tốt, đồ nội thất cũng đầy đủ. Tiền thuê là bao nhiêu? A: Hai nghìn tám một tháng, tiền cọc bằng một tháng tiền thuê. B: Tiền điện nước có gồm trong tiền thuê không? A: Không gồm, tiền điện nước mỗi tháng tự trả, thường khoảng hai trăm tệ. B: Gần đây có siêu thị không? A: Có, đi bộ năm phút là tới. Ga tàu điện cũng rất gần. B: Được, tôi muốn thuê một năm. Khi nào có thể dọn vào? A: Mùng một tháng sau có thể dọn, chúng ta ký hợp đồng trước nhé. B: Được, vậy tôi trả tiền cọc trước, hai nghìn tám.",
+    "pinyin": "jiǎ ： zhè jiù shì nǐ yào kàn de fáng zi 。 nǐ jué de zěn me yàng ？ yǐ ： fáng zi bú cuò ， jiā jù yě hěn quán 。 fáng zū shì duō shǎo ？ jiǎ ： yí gè yuè liǎng qiān bā ， yā jīn shì yí gè yuè fáng zū 。 yǐ ： shuǐ diàn fèi bāo kuò zài fáng zū lǐ ma ？ jiǎ ： bù bāo kuò ， shuǐ diàn fèi měi gè yuè zì jǐ jiāo ， yì bān liǎng bǎi kuài zuǒ yòu 。 yǐ ： fù jìn yǒu chāo shì ma ？ jiǎ ： yǒu ， zǒu lù wǔ fēn zhōng jiù dào 。 dì tiě zhàn yě hěn jìn 。 yǐ ： hǎo ， wǒ xiǎng zū yì nián 。 shén me shí hou kě yǐ bān jìn lái ？ jiǎ ： xià gè yuè yī hào kě yǐ bān ， wǒ men xiān qiān hé tong ba 。 yǐ ： hǎo de ， nà wǒ xiān jiāo yā jīn ， liǎng qiān bā 。",
     "questions": [
       {
-        "prompt": "Cụm “租” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tiền thuê và tiền cọc là bao nhiêu?",
         "options": [
-          "tiền điện nước",
-          "thuê",
-          "hợp đồng"
-        ],
-        "answer": 1,
-        "explanation": "“租”: thuê. Ví dụ đã nghe: 我想租一个一居室。"
-      },
-      {
-        "prompt": "Cụm “房租” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "hợp đồng",
-          "tiền đặt cọc",
-          "tiền thuê nhà"
+          "Thuê 2.800, cọc 5.600",
+          "Thuê 200, cọc 2.800",
+          "Thuê 2.800, cọc 2.800"
         ],
         "answer": 2,
-        "explanation": "“房租”: tiền thuê nhà. Ví dụ đã nghe: 房租一个月多少钱？"
+        "explanation": "Chủ nhà nói 一个月两千八，押金是一个月房租."
       },
       {
-        "prompt": "Cụm “水电费” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao mỗi tháng người thuê còn phải chuẩn bị thêm khoảng hai trăm tệ?",
         "options": [
-          "tiền điện nước",
-          "tiền đặt cọc",
-          "đồ nội thất"
+          "Vì tiền điện nước không nằm trong tiền thuê",
+          "Vì phải trả tiền đồ nội thất",
+          "Vì phải trả phí gửi xe"
         ],
         "answer": 0,
-        "explanation": "“水电费”: tiền điện nước. Ví dụ đã nghe: 水电费包括在房租里吗？"
+        "explanation": "Chủ nhà nói 不包括，水电费每个月自己交，一般两百块左右。"
+      },
+      {
+        "prompt": "Cuối cùng người đi xem nhà quyết định gì?",
+        "options": [
+          "Về suy nghĩ thêm",
+          "Trả cọc rồi ký hợp đồng thuê một năm",
+          "Xem căn khác"
+        ],
+        "answer": 1,
+        "explanation": "Họ nói 我想租一年, rồi 我先交押金，两千八 và ký 合同."
       }
     ]
   },

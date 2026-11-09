@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我想投诉这个房间。 很抱歉给您添麻烦了。 我们会尽快解决这个问题。",
-    "translation": "Mình muốn khiếu nại về phòng này. Rất xin lỗi vì đã làm phiền bạn. Chúng tôi sẽ giải quyết vấn đề này sớm nhất có thể.",
-    "pinyin": "wǒ xiǎng tóu sù zhè ge fáng jiān 。   hěn bào qiàn gěi nín tiān má fan le 。   wǒ men huì jǐn kuài jiě jué zhè ge wèn tí 。",
+    "title": "Nghe hội thoại: Phàn nàn và xin lỗi",
+    "playLimit": 1,
+    "transcript": "甲：您好，请问有什么可以帮您？乙：我想投诉一下房间的问题。空调坏了，房间里特别热。甲：很抱歉，给您添麻烦了。您是什么时候发现的？乙：昨天晚上。我给前台打了两次电话，但是服务员的态度很不好。甲：真的很抱歉。您想怎么解决这个问题？乙：可以给我换一个房间吗？甲：当然可以。十二楼有一个安静的房间，我马上让人帮您搬行李。乙：谢谢。另外，昨天晚上我没睡好，可以退款吗？甲：我理解您的心情。昨天晚上的房费，我们给您退款，您看可以吗？乙：可以，谢谢您的理解。",
+    "translation": "A: Xin chào, xin hỏi có thể giúp gì cho quý khách? B: Tôi muốn khiếu nại về vấn đề của phòng. Máy lạnh hỏng, trong phòng rất nóng. A: Rất xin lỗi đã gây phiền phức cho quý khách. Quý khách phát hiện từ khi nào ạ? B: Tối qua. Tôi đã gọi cho quầy lễ tân hai lần, nhưng thái độ của nhân viên rất không tốt. A: Thật sự rất xin lỗi. Quý khách muốn giải quyết vấn đề này thế nào? B: Có thể đổi cho tôi một phòng khác không? A: Tất nhiên là được. Tầng mười hai có một phòng yên tĩnh, tôi sẽ cho người giúp quý khách chuyển hành lý ngay. B: Cảm ơn. Ngoài ra, tối qua tôi ngủ không ngon, có thể hoàn tiền không? A: Tôi hiểu tâm trạng của quý khách. Tiền phòng tối qua chúng tôi sẽ hoàn lại, quý khách thấy được không? B: Được, cảm ơn sự thông cảm của anh chị.",
+    "pinyin": "jiǎ ： nín hǎo ， qǐng wèn yǒu shén me kě yǐ bāng nín ？ yǐ ： wǒ xiǎng tóu sù yí xià fáng jiān de wèn tí 。 kōng tiáo huài le ， fáng jiān lǐ tè bié rè 。 jiǎ ： hěn bào qiàn ， gěi nín tiān má fan le 。 nín shì shén me shí hou fā xiàn de ？ yǐ ： zuó tiān wǎn shang 。 wǒ gěi qián tái dǎ le liǎng cì diàn huà ， dàn shì fú wù yuán de tài dù hěn bù hǎo 。 jiǎ ： zhēn de hěn bào qiàn 。 nín xiǎng zěn me jiě jué zhè ge wèn tí ？ yǐ ： kě yǐ gěi wǒ huàn yí gè fáng jiān ma ？ jiǎ ： dāng rán kě yǐ 。 shí èr lóu yǒu yí gè ān jìng de fáng jiān ， wǒ mǎ shàng ràng rén bāng nín bān xíng li 。 yǐ ： xiè xie 。 lìng wài ， zuó tiān wǎn shang wǒ méi shuì hǎo ， kě yǐ tuì kuǎn ma ？ jiǎ ： wǒ lǐ jiě nín de xīn qíng 。 zuó tiān wǎn shang de fáng fèi ， wǒ men gěi nín tuì kuǎn ， nín kàn kě yǐ ma ？ yǐ ： kě yǐ ， xiè xie nín de lǐ jiě 。",
     "questions": [
       {
-        "prompt": "Cụm “投诉” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Phòng của khách có vấn đề gì?",
         "options": [
-          "giải quyết",
-          "vấn đề",
-          "phàn nàn, khiếu nại"
-        ],
-        "answer": 2,
-        "explanation": "“投诉”: phàn nàn, khiếu nại. Ví dụ đã nghe: 我想投诉这个房间。"
-      },
-      {
-        "prompt": "Cụm “抱歉” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "xin lỗi",
-          "vấn đề",
-          "đổi"
+          "Máy lạnh hỏng",
+          "Không có nước nóng",
+          "Phòng quá ồn"
         ],
         "answer": 0,
-        "explanation": "“抱歉”: xin lỗi. Ví dụ đã nghe: 很抱歉给您添麻烦了。"
+        "explanation": "Khách nói 空调坏了，房间里特别热。"
       },
       {
-        "prompt": "Cụm “解决” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao khách không hài lòng với nhân viên lễ tân?",
         "options": [
-          "đổi",
-          "giải quyết",
-          "hoàn tiền"
+          "Vì nhân viên không nghe máy",
+          "Vì thái độ nhân viên không tốt",
+          "Vì nhân viên gọi điện quá nhiều"
         ],
         "answer": 1,
-        "explanation": "“解决”: giải quyết. Ví dụ đã nghe: 我们会尽快解决这个问题。"
+        "explanation": "Khách nói 给前台打了两次电话，但是服务员的态度很不好。"
+      },
+      {
+        "prompt": "Cuối cùng khách nhận được gì?",
+        "options": [
+          "Hoàn tiền cả kỳ nghỉ",
+          "Chỉ đổi phòng, không hoàn tiền",
+          "Đổi sang phòng tầng mười hai và hoàn tiền phòng tối qua"
+        ],
+        "answer": 2,
+        "explanation": "Quản lý nói 十二楼有一个安静的房间 và 昨天晚上的房费，我们给您退款。"
       }
     ]
   },

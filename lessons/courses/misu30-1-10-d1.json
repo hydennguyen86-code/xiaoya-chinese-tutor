@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Ôn tập sinh hoạt hằng ngày",
     "playLimit": 2,
-    "transcript": "我每天七点起床。 我晚上十点睡觉。 爸爸八点上班。",
-    "translation": "Mình thức dậy lúc bảy giờ mỗi ngày. Mình ngủ lúc mười giờ tối. Bố đi làm lúc tám giờ.",
-    "pinyin": "wǒ měi tiān qī diǎn qǐ chuáng 。   wǒ wǎn shang shí diǎn shuì jiào 。   bà ba bā diǎn shàng bān 。",
+    "transcript": "甲：阿明，你每天几点起床？乙：我每天六点半起床。你呢？甲：我七点起床。你几点上班？乙：我八点上班，五点半下班。甲：你早饭吃什么？乙：我先吃早饭，然后去上班。早饭常常吃面条。甲：晚上你几点睡觉？乙：十点睡觉。今天我很忙，要早点休息。",
+    "translation": "A: Minh, mỗi ngày bạn dậy lúc mấy giờ? B: Mỗi ngày mình dậy lúc sáu giờ rưỡi. Còn bạn? A: Mình dậy lúc bảy giờ. Bạn đi làm lúc mấy giờ? B: Mình đi làm lúc tám giờ, tan làm lúc năm giờ rưỡi. A: Bạn ăn sáng món gì? B: Mình ăn sáng trước, sau đó đi làm. Bữa sáng thường ăn mì. A: Buổi tối bạn mấy giờ đi ngủ? B: Mười giờ đi ngủ. Hôm nay mình rất bận, phải nghỉ sớm.",
+    "pinyin": "jiǎ ： ā míng ， nǐ měi tiān jǐ diǎn qǐ chuáng ？ yǐ ： wǒ měi tiān liù diǎn bàn qǐ chuáng 。 nǐ ne ？ jiǎ ： wǒ qī diǎn qǐ chuáng 。 nǐ jǐ diǎn shàng bān ？ yǐ ： wǒ bā diǎn shàng bān ， wǔ diǎn bàn xià bān 。 jiǎ ： nǐ zǎo fàn chī shén me ？ yǐ ： wǒ xiān chī zǎo fàn ， rán hòu qù shàng bān 。 zǎo fàn cháng cháng chī miàn tiáo 。 jiǎ ： wǎn shang nǐ jǐ diǎn shuì jiào ？ yǐ ： shí diǎn shuì jiào 。 jīn tiān wǒ hěn máng ， yào zǎo diǎn xiū xi 。",
     "questions": [
       {
-        "prompt": "Cụm “起床” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Ai dậy sớm hơn, và sớm hơn bao lâu?",
         "options": [
-          "đi làm",
-          "thức dậy, ngủ dậy",
-          "tan làm"
-        ],
-        "answer": 1,
-        "explanation": "“起床”: thức dậy, ngủ dậy. Ví dụ đã nghe: 我每天七点起床。"
-      },
-      {
-        "prompt": "Cụm “睡觉” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "tan làm",
-          "bữa sáng",
-          "ngủ"
-        ],
-        "answer": 2,
-        "explanation": "“睡觉”: ngủ. Ví dụ đã nghe: 我晚上十点睡觉。"
-      },
-      {
-        "prompt": "Cụm “上班” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "đi làm",
-          "bữa sáng",
-          "mỗi ngày"
+          "Minh, sớm hơn nửa tiếng",
+          "Bạn của Minh, sớm hơn nửa tiếng",
+          "Minh, sớm hơn một tiếng"
         ],
         "answer": 0,
-        "explanation": "“上班”: đi làm. Ví dụ đã nghe: 爸爸八点上班。"
+        "explanation": "Minh 六点半起床, bạn 七点起床."
+      },
+      {
+        "prompt": "Minh làm việc mỗi ngày khoảng bao lâu?",
+        "options": [
+          "Tám tiếng rưỡi",
+          "Chín tiếng rưỡi",
+          "Chín tiếng"
+        ],
+        "answer": 1,
+        "explanation": "八点上班，五点半下班, từ tám giờ đến năm rưỡi chiều là chín tiếng rưỡi."
+      },
+      {
+        "prompt": "Vì sao tối nay Minh muốn nghỉ sớm?",
+        "options": [
+          "Vì ngày mai đi làm sớm",
+          "Vì không muốn ăn tối",
+          "Vì hôm nay rất bận"
+        ],
+        "answer": 2,
+        "explanation": "Minh nói 今天我很忙，要早点休息。"
       }
     ]
   },

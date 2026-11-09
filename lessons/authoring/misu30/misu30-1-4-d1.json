@@ -1,0 +1,124 @@
+{
+  "lesson": "misu30-1-4-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，今天星期几？",
+      "vi": "Minh, hôm nay là thứ mấy?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "今天星期三。",
+      "vi": "Hôm nay thứ Tư."
+    },
+    {
+      "speaker": "甲",
+      "zh": "现在几点？",
+      "vi": "Bây giờ mấy giờ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "现在八点十分。",
+      "vi": "Bây giờ là tám giờ mười phút."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我们下午三点上课，对吗？",
+      "vi": "Chúng ta học lúc ba giờ chiều, đúng không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "不对，明天上午九点半上课。",
+      "vi": "Không đúng, chín giờ rưỡi sáng mai mới học."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，那我们九点在学校见。",
+      "vi": "Được, vậy chín giờ chúng ta gặp ở trường."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的，明天见！",
+      "vi": "Được, mai gặp nhé!"
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Hôm nay là thứ mấy?",
+      "options": [
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Ba"
+      ],
+      "answer": 0,
+      "explanation": "Minh nói 今天星期三。"
+    },
+    {
+      "prompt": "Lớp học bắt đầu khi nào?",
+      "options": [
+        "Ba giờ chiều nay",
+        "Chín giờ rưỡi sáng mai",
+        "Tám giờ mười sáng mai"
+      ],
+      "answer": 1,
+      "explanation": "Minh sửa lại 明天上午九点半上课。"
+    },
+    {
+      "prompt": "Hai người hẹn gặp trước giờ học bao lâu?",
+      "options": [
+        "Mười phút",
+        "Một tiếng",
+        "Ba mươi phút"
+      ],
+      "answer": 2,
+      "explanation": "Hẹn 九点在学校见, học 九点半, nên sớm ba mươi phút."
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "昨天星期二，今天星期三。",
+      "meaningVi": "Hôm qua thứ Ba, hôm nay thứ Tư.",
+      "focus": [
+        "星期 xīng qī: xīng thanh 1, vần -ng.",
+        "昨天 zuó tiān: zuó thanh 2 đi lên."
+      ]
+    },
+    {
+      "hanzi": "明天下午两点见。",
+      "meaningVi": "Hai giờ chiều mai gặp.",
+      "focus": [
+        "两点 liǎng diǎn: hai thanh 3 liền, nghe liáng diǎn.",
+        "下午 xià wǔ: thanh 4 rồi thanh 3, nghe xià wú."
+      ]
+    },
+    {
+      "hanzi": "阿明上午九点二十分上课。",
+      "meaningVi": "Minh học lúc chín giờ hai mươi phút sáng.",
+      "focus": [
+        "分 fēn thanh 1, vần -n.",
+        "上午 shàng wǔ: sh uốn lưỡi, nghe shàng wú."
+      ]
+    },
+    {
+      "hanzi": "现在几点？还有五分钟。",
+      "meaningVi": "Bây giờ mấy giờ? Còn năm phút nữa.",
+      "focus": [
+        "点 diǎn thanh 3.",
+        "还 hái thanh 2 trong 还有."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "今天星期三，现在上午八点十分。明天下午我有课，三点在学校见。",
+    "meaningVi": "Hôm nay thứ Tư, bây giờ là tám giờ mười sáng. Chiều mai mình có tiết, ba giờ gặp ở trường.",
+    "focus": [
+      "Ngắt hơi sau 星期三 và sau 八点十分。",
+      "三点 sān diǎn: sān thanh 1, rồi diǎn đi xuống rồi lên."
+    ]
+  },
+  "readings": {
+    "还": "hái",
+    "的": "de",
+    "了": "le"
+  }
+}

@@ -31,11 +31,12 @@
     {
       "id": "dt-1-123",
       "level": "HSK1-2",
-      "hanzi": "电话是零。",
-      "pinyin": "diàn huà shì líng",
-      "meaningVi": "Số điện thoại là không.",
+      "hanzi": "他的电话号码是三二一。",
+      "pinyin": "tā de diàn huà hào mǎ shì sān èr yī",
+      "meaningVi": "Số điện thoại của anh ấy là ba hai một.",
       "focus": [
-        "零 líng thanh 2 đi lên."
+        "号码 hào mǎ: thanh 4 rồi thanh 3.",
+        "三 sān là s đầu lưỡi, không phải sh."
       ]
     },
     {

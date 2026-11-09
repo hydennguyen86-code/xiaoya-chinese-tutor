@@ -1,0 +1,118 @@
+{
+  "lesson": "misu30-1-1-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "你好！我叫米苏。你叫什么名字？",
+      "vi": "Xin chào! Mình tên là Misu. Bạn tên là gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "你好，米苏！我叫阿明。",
+      "vi": "Chào Misu! Mình tên là Minh."
+    },
+    {
+      "speaker": "甲",
+      "zh": "阿明，你是哪国人？",
+      "vi": "Minh ơi, bạn là người nước nào?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我是越南人。你呢？",
+      "vi": "Mình là người Việt Nam. Còn bạn?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我是中国人。我的名字是米苏，不是米米。",
+      "vi": "Mình là người Trung Quốc. Tên mình là Misu, không phải Mimi."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，米苏。很高兴认识你！",
+      "vi": "Ừ, Misu. Rất vui được làm quen với bạn!"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我也很高兴认识你！",
+      "vi": "Mình cũng rất vui được làm quen với bạn!"
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Người thứ hai tên là gì?",
+      "options": [
+        "Minh",
+        "Mimi",
+        "Misu"
+      ],
+      "answer": 0,
+      "explanation": "B nói 我叫阿明 — mình tên là Minh."
+    },
+    {
+      "prompt": "Minh là người nước nào?",
+      "options": [
+        "Trung Quốc",
+        "Việt Nam",
+        "Không nói"
+      ],
+      "answer": 1,
+      "explanation": "B trả lời 我是越南人."
+    },
+    {
+      "prompt": "Misu nhắc lại điều gì về tên mình?",
+      "options": [
+        "Tên mình rất dài",
+        "Mình chưa có tên tiếng Trung",
+        "Tên là Misu, không phải Mimi"
+      ],
+      "answer": 2,
+      "explanation": "A nói 我的名字是米苏，不是米米。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "你好，我叫阿明。",
+      "meaningVi": "Xin chào, mình tên là Minh.",
+      "focus": [
+        "叫 jiào thanh 4, hạ dứt khoát.",
+        "你好 nói liền đọc gần như ní hǎo."
+      ]
+    },
+    {
+      "hanzi": "你是哪国人？",
+      "meaningVi": "Bạn là người nước nào?",
+      "focus": [
+        "哪 nǎ thanh 3, khác 那 nà thanh 4.",
+        "国 guó thanh 2, đi lên."
+      ]
+    },
+    {
+      "hanzi": "我是越南人，不是中国人。",
+      "meaningVi": "Mình là người Việt Nam, không phải người Trung Quốc.",
+      "focus": [
+        "越南 yuè nán: thanh 4 rồi thanh 2.",
+        "中国 zhōng guó: zh uốn lưỡi, thanh 1 rồi thanh 2."
+      ]
+    },
+    {
+      "hanzi": "你的名字是什么？",
+      "meaningVi": "Tên của bạn là gì?",
+      "focus": [
+        "名字 míng zi: chữ thứ hai đọc nhẹ.",
+        "什么 shén me: me đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "你好！我叫阿兰，我是越南人。很高兴认识你！",
+    "meaningVi": "Xin chào! Mình tên là Lan, mình là người Việt Nam. Rất vui được làm quen với bạn!",
+    "focus": [
+      "Ngắt hơi sau 你好 và sau 阿兰.",
+      "认识 rèn shi: chữ thứ hai đọc nhẹ."
+    ]
+  },
+  "readings": {
+    "叫": "jiào",
+    "哪": "nǎ"
+  }
+}

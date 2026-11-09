@@ -1,0 +1,127 @@
+{
+  "lesson": "misu30-1-8-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "米苏，你有什么爱好？",
+      "vi": "Misu, bạn có sở thích gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我喜欢唱歌，也喜欢看书。你呢？",
+      "vi": "Mình thích hát, cũng thích đọc sách. Còn bạn?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "我喜欢运动，也喜欢听音乐。",
+      "vi": "Mình thích vận động, cũng thích nghe nhạc."
+    },
+    {
+      "speaker": "乙",
+      "zh": "太好了！学校有唱歌小组，也有运动小组。",
+      "vi": "Hay quá! Trường có nhóm hát, cũng có nhóm vận động."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我想去唱歌小组。你周末有空吗？",
+      "vi": "Mình muốn đến nhóm hát. Cuối tuần bạn có rảnh không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "周末我有空。我们一起去吧！",
+      "vi": "Cuối tuần mình rảnh. Chúng ta cùng đi nhé!"
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，星期六下午见。",
+      "vi": "Được, chiều thứ Bảy gặp nhé."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，星期六见！",
+      "vi": "Được, thứ Bảy gặp!"
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Misu có những sở thích nào?",
+      "options": [
+        "Vận động và nghe nhạc",
+        "Hát và đọc sách",
+        "Xem phim và hát"
+      ],
+      "answer": 1,
+      "explanation": "Misu nói 我喜欢唱歌，也喜欢看书。"
+    },
+    {
+      "prompt": "Người thứ nhất thích gì?",
+      "options": [
+        "Đọc sách và hát",
+        "Hát và vận động",
+        "Vận động và nghe nhạc"
+      ],
+      "answer": 2,
+      "explanation": "Người thứ nhất nói 我喜欢运动，也喜欢听音乐。"
+    },
+    {
+      "prompt": "Hai người quyết định làm gì và khi nào?",
+      "options": [
+        "Đi nhóm hát vào chiều thứ Bảy",
+        "Đi nhóm vận động vào Chủ nhật",
+        "Đi nhóm hát vào sáng thứ Bảy"
+      ],
+      "answer": 0,
+      "explanation": "我想去唱歌的 và 星期六下午见。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "阿明的爱好是看书。",
+      "meaningVi": "Sở thích của Minh là đọc sách.",
+      "focus": [
+        "爱好 ài hào: hai thanh 4 liền.",
+        "看书 kàn shū: kàn thanh 4, shū thanh 1."
+      ]
+    },
+    {
+      "hanzi": "米苏喜欢在家听音乐。",
+      "meaningVi": "Misu thích ở nhà nghe nhạc.",
+      "focus": [
+        "喜欢 xǐ huan: huan đọc nhẹ.",
+        "音乐 yīn yuè: 乐 đọc yuè."
+      ]
+    },
+    {
+      "hanzi": "他周末有空，想去运动。",
+      "meaningVi": "Cuối tuần anh ấy rảnh, muốn đi vận động.",
+      "focus": [
+        "有空 yǒu kòng: 空 đọc kòng, thanh 4.",
+        "运动 yùn dòng: hai thanh 4 liền."
+      ]
+    },
+    {
+      "hanzi": "我妹妹喜欢唱歌，不喜欢看电影。",
+      "meaningVi": "Em gái mình thích hát, không thích xem phim.",
+      "focus": [
+        "唱歌 chàng gē: ch bật hơi uốn lưỡi.",
+        "看电影 kàn diàn yǐng: hai thanh 4 liền rồi thanh 3."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我喜欢听音乐，也喜欢唱歌。周末我有空，你想一起去吗？",
+    "meaningVi": "Mình thích nghe nhạc, cũng thích hát. Cuối tuần mình rảnh, bạn muốn cùng đi không?",
+    "focus": [
+      "Ngắt hơi sau 听音乐 và sau 周末我有空。",
+      "一起 yì qǐ: 一 đổi thanh 4 trước thanh 3."
+    ]
+  },
+  "readings": {
+    "乐": "yuè",
+    "空": "kòng",
+    "看": "kàn",
+    "的": "de",
+    "了": "le",
+    "还": "hái"
+  }
+}

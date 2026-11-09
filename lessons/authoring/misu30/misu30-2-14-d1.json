@@ -1,0 +1,134 @@
+{
+  "lesson": "misu30-2-14-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "您好，请问您要办理什么业务？",
+      "vi": "Xin chào, xin hỏi quý khách cần làm giao dịch gì ạ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我想取钱，也想换钱。我要取两千块，再换三百美元。",
+      "vi": "Tôi muốn rút tiền và cũng muốn đổi tiền. Tôi muốn rút hai nghìn tệ, rồi đổi ba trăm đô la."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好的，请输入密码。",
+      "vi": "Vâng, xin quý khách nhập mật khẩu."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好了。取钱要手续费吗？",
+      "vi": "Xong rồi. Rút tiền có mất phí giao dịch không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "您有我们银行的账户，取钱不收手续费。",
+      "vi": "Quý khách có tài khoản ở ngân hàng chúng tôi, rút tiền không thu phí giao dịch."
+    },
+    {
+      "speaker": "乙",
+      "zh": "那今天的汇率是多少？",
+      "vi": "Vậy tỷ giá hôm nay là bao nhiêu?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "一美元换七块二，三百美元可以换两千一百六十块。",
+      "vi": "Một đô la đổi bảy tệ hai, ba trăm đô la đổi được hai nghìn một trăm sáu mươi tệ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "那我一共能拿到多少现金？",
+      "vi": "Vậy tổng cộng tôi lấy được bao nhiêu tiền mặt?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "取的两千块加上换的两千一百六十块，一共四千一百六十块。",
+      "vi": "Hai nghìn tệ rút cộng với hai nghìn một trăm sáu mươi tệ đổi, tổng cộng bốn nghìn một trăm sáu mươi tệ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的，谢谢。",
+      "vi": "Vâng, cảm ơn."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Vì sao rút tiền không mất phí giao dịch?",
+      "options": [
+        "Vì khách có tài khoản ở chính ngân hàng này",
+        "Vì số tiền rút rất nhỏ",
+        "Vì hôm nay ngân hàng miễn phí"
+      ],
+      "answer": 0,
+      "explanation": "Nhân viên nói 您是我们银行的账户，取钱不收手续费。"
+    },
+    {
+      "prompt": "Ba trăm đô la đổi được bao nhiêu tệ?",
+      "options": [
+        "Bốn nghìn một trăm sáu mươi tệ",
+        "Hai nghìn một trăm sáu mươi tệ",
+        "Hai nghìn tệ"
+      ],
+      "answer": 1,
+      "explanation": "Tỷ giá 一美元换七块二, nên 三百美元可以换两千一百六十块 (300 x 7,2)."
+    },
+    {
+      "prompt": "Tổng tiền mặt khách nhận được là bao nhiêu?",
+      "options": [
+        "Hai nghìn một trăm sáu mươi tệ",
+        "Ba trăm tệ",
+        "Bốn nghìn một trăm sáu mươi tệ"
+      ],
+      "answer": 2,
+      "explanation": "Nhân viên cộng: 两千 + 两千一百六十 = 一共四千一百六十块."
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "我的银行账户里还有一千块。",
+      "meaningVi": "Trong tài khoản ngân hàng của mình còn một nghìn tệ.",
+      "focus": [
+        "账户 zhàng hù: zh uốn lưỡi, hai thanh 4.",
+        "还 hái thanh 2, 有 yǒu thanh 3."
+      ]
+    },
+    {
+      "hanzi": "这家店不能刷卡，只能付现金。",
+      "meaningVi": "Cửa hàng này không quẹt thẻ được, chỉ trả tiền mặt được.",
+      "focus": [
+        "刷卡 shuā kǎ: sh uốn lưỡi, kǎ thanh 3.",
+        "现金 xiàn jīn: xiàn thanh 4, jīn thanh 1."
+      ]
+    },
+    {
+      "hanzi": "请不要告诉别人你的密码。",
+      "meaningVi": "Xin đừng nói mật khẩu của bạn cho người khác biết.",
+      "focus": [
+        "密码 mì mǎ: thanh 4 rồi thanh 3.",
+        "不要 bú yào: 不 đổi thành thanh 2 trước thanh 4."
+      ]
+    },
+    {
+      "hanzi": "去国外换钱的时候，要先看汇率。",
+      "meaningVi": "Lúc đi nước ngoài đổi tiền, cần xem tỷ giá trước.",
+      "focus": [
+        "换钱 huàn qián: q bật hơi, -n cuối.",
+        "汇率 huì lǜ: lǜ có ü, thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我今天下午去银行取钱，取了一千块。手续费是五块，我觉得有点贵。",
+    "meaningVi": "Chiều nay mình đến ngân hàng rút tiền, rút một nghìn tệ. Phí giao dịch là năm tệ, mình thấy hơi đắt.",
+    "focus": [
+      "Ngắt hơi sau 取钱 và sau 一千块.",
+      "手续费 shǒu xù fèi: xù có ü, fèi thanh 4."
+    ]
+  },
+  "readings": {
+    "还": "hái",
+    "了": "le",
+    "觉": "jué"
+  }
+}

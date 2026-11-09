@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Ngày tháng và giờ giấc",
     "playLimit": 2,
-    "transcript": "今天天气很好。 明天见！ 昨天我很忙。",
-    "translation": "Hôm nay thời tiết rất đẹp. Mai gặp lại! Hôm qua mình rất bận.",
-    "pinyin": "jīn tiān tiān qì hěn hǎo 。   míng tiān jiàn ！   zuó tiān wǒ hěn máng 。",
+    "transcript": "甲：阿明，今天星期几？乙：今天星期三。甲：现在几点？乙：现在八点十分。甲：我们下午三点上课，对吗？乙：不对，明天上午九点半上课。甲：好，那我们九点在学校见。乙：好的，明天见！",
+    "translation": "A: Minh, hôm nay là thứ mấy? B: Hôm nay thứ Tư. A: Bây giờ mấy giờ? B: Bây giờ là tám giờ mười phút. A: Chúng ta học lúc ba giờ chiều, đúng không? B: Không đúng, chín giờ rưỡi sáng mai mới học. A: Được, vậy chín giờ chúng ta gặp ở trường. B: Được, mai gặp nhé!",
+    "pinyin": "jiǎ ： ā míng ， jīn tiān xīng qī jǐ ？ yǐ ： jīn tiān xīng qī sān 。 jiǎ ： xiàn zài jǐ diǎn ？ yǐ ： xiàn zài bā diǎn shí fēn 。 jiǎ ： wǒ men xià wǔ sān diǎn shàng kè ， duì ma ？ yǐ ： bú duì ， míng tiān shàng wǔ jiǔ diǎn bàn shàng kè 。 jiǎ ： hǎo ， nà wǒ men jiǔ diǎn zài xué xiào jiàn 。 yǐ ： hǎo de ， míng tiān jiàn ！",
     "questions": [
       {
-        "prompt": "Cụm “今天” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Hôm nay là thứ mấy?",
         "options": [
-          "hôm qua",
-          "hôm nay",
-          "tuần, thứ"
-        ],
-        "answer": 1,
-        "explanation": "“今天”: hôm nay. Ví dụ đã nghe: 今天天气很好。"
-      },
-      {
-        "prompt": "Cụm “明天” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "tuần, thứ",
-          "giờ (điểm)",
-          "ngày mai"
-        ],
-        "answer": 2,
-        "explanation": "“明天”: ngày mai. Ví dụ đã nghe: 明天见！"
-      },
-      {
-        "prompt": "Cụm “昨天” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "hôm qua",
-          "giờ (điểm)",
-          "phút"
+          "Thứ Tư",
+          "Thứ Năm",
+          "Thứ Ba"
         ],
         "answer": 0,
-        "explanation": "“昨天”: hôm qua. Ví dụ đã nghe: 昨天我很忙。"
+        "explanation": "Minh nói 今天星期三。"
+      },
+      {
+        "prompt": "Lớp học bắt đầu khi nào?",
+        "options": [
+          "Ba giờ chiều nay",
+          "Chín giờ rưỡi sáng mai",
+          "Tám giờ mười sáng mai"
+        ],
+        "answer": 1,
+        "explanation": "Minh sửa lại 明天上午九点半上课。"
+      },
+      {
+        "prompt": "Hai người hẹn gặp trước giờ học bao lâu?",
+        "options": [
+          "Mười phút",
+          "Một tiếng",
+          "Ba mươi phút"
+        ],
+        "answer": 2,
+        "explanation": "Hẹn 九点在学校见, học 九点半, nên sớm ba mươi phút."
       }
     ]
   },

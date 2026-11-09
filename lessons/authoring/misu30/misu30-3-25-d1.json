@@ -1,0 +1,154 @@
+{
+  "lesson": "misu30-3-25-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿明，越南的春节和中国的春节有什么不一样？",
+      "vi": "Minh à, Tết của Việt Nam và Tết của Trung Quốc có gì khác nhau?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "差异不少。比如，除夕晚上我们会包粽子，这是团圆的象征。",
+      "vi": "Khác khá nhiều. Ví dụ, tối giao thừa chúng mình gói bánh chưng, đó là biểu tượng của sum họp."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我们北方人除夕晚上包饺子，也是为了一家人团圆。",
+      "vi": "Người miền Bắc chúng mình tối giao thừa gói sủi cảo, cũng là để cả nhà sum họp."
+    },
+    {
+      "speaker": "乙",
+      "zh": "虽然食物不同，但是心意是一样的。",
+      "vi": "Tuy món ăn khác nhau, nhưng tấm lòng thì giống nhau."
+    },
+    {
+      "speaker": "甲",
+      "zh": "对。你们过年的时候，也给孩子红包吗？",
+      "vi": "Đúng. Dịp Tết các bạn cũng lì xì cho trẻ em chứ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "当然，长辈会给孩子红包，希望他们健康平安。",
+      "vi": "Đương nhiên, người lớn sẽ lì xì cho trẻ, mong các em khỏe mạnh bình an."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那有什么礼仪要注意吗？",
+      "vi": "Vậy có lễ nghi nào cần chú ý không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "去亲戚家拜年要说吉祥话，而且要尊重长辈。",
+      "vi": "Đến nhà họ hàng chúc Tết phải nói lời may mắn, hơn nữa phải tôn trọng người lớn."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我们也一样。我还知道，越南人初一不扫地，对吗？",
+      "vi": "Bên mình cũng vậy. Mình còn biết người Việt mùng một không quét nhà, đúng không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "对，这是我们的习俗，怕把好运扫出去。",
+      "vi": "Đúng, đó là phong tục của chúng mình, sợ quét mất vận may."
+    },
+    {
+      "speaker": "甲",
+      "zh": "每个地方有自己的传统，我们应该互相尊重。",
+      "vi": "Mỗi nơi có truyền thống riêng, chúng ta nên tôn trọng lẫn nhau."
+    },
+    {
+      "speaker": "乙",
+      "zh": "你说得对。下次春节你来我家，我请你吃粽子。",
+      "vi": "Bạn nói đúng. Tết sau bạn đến nhà mình, mình mời bạn ăn bánh chưng."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Tối giao thừa người miền Bắc Trung Quốc gói món gì?",
+      "options": [
+        "Bánh chưng",
+        "Sủi cảo",
+        "Bánh trung thu"
+      ],
+      "answer": 1,
+      "explanation": "A nói 我们北方人除夕晚上包饺子。"
+    },
+    {
+      "prompt": "Vì sao người lớn lì xì cho trẻ em?",
+      "options": [
+        "Thưởng vì học giỏi",
+        "Để các em đi mua quà",
+        "Mong các em khỏe mạnh bình an"
+      ],
+      "answer": 2,
+      "explanation": "B nói 长辈会给孩子红包，希望他们健康平安。"
+    },
+    {
+      "prompt": "Vì sao người Việt mùng một không quét nhà?",
+      "options": [
+        "Sợ quét mất vận may",
+        "Sợ làm ồn hàng xóm",
+        "Vì trời quá lạnh"
+      ],
+      "answer": 0,
+      "explanation": "B nói 怕把好运扫出去。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "过年的时候，家人坐在一起吃团圆饭，特别热闹。",
+      "meaningVi": "Dịp Tết, cả nhà ngồi lại ăn bữa cơm sum họp, đặc biệt náo nhiệt.",
+      "focus": [
+        "团圆 tuán yuán: tuán bật hơi, yuán có ü.",
+        "团圆 tuán yuán: hai thanh 2 liền nhau, giọng đi lên đều."
+      ]
+    },
+    {
+      "hanzi": "到别人家做客，要注意礼仪，也要尊重主人的习俗。",
+      "meaningVi": "Đến nhà người khác làm khách, phải chú ý lễ nghi, cũng phải tôn trọng phong tục của chủ nhà.",
+      "focus": [
+        "尊重 zūn zhòng: -n rồi zh uốn lưỡi.",
+        "习俗 xí sú: hai chữ thanh 2."
+      ]
+    },
+    {
+      "hanzi": "阿明的奶奶给每个孩子一个红包，里面有二十块钱。",
+      "meaningVi": "Bà của Minh cho mỗi đứa trẻ một phong bao lì xì, bên trong có hai mươi tệ.",
+      "focus": [
+        "红包 hóng bāo: thanh 2 rồi thanh 1.",
+        "二十 èr shí: èr cuốn lưỡi."
+      ]
+    },
+    {
+      "hanzi": "中越两国的传统节日有不少差异，也有很多一样的地方。",
+      "meaningVi": "Ngày lễ truyền thống của hai nước Trung Việt có không ít khác biệt, cũng có nhiều điểm giống nhau.",
+      "focus": [
+        "传统 chuán tǒng: ch bật hơi, uốn lưỡi.",
+        "差异 chā yì: chā thanh 1."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我是阿明，在越南，春节也是最重要的节日。除夕晚上，全家人坐在一起吃饭，长辈给孩子红包，大家互相祝福。",
+    "meaningVi": "Mình là Minh, ở Việt Nam, Tết cũng là ngày lễ quan trọng nhất. Tối giao thừa, cả nhà ngồi lại ăn cơm, người lớn lì xì cho trẻ, mọi người chúc phúc lẫn nhau.",
+    "focus": [
+      "Ngắt hơi sau 阿明, 越南 và 节日.",
+      "长辈 zhǎng bèi: zhǎng thanh 3, zh uốn lưỡi."
+    ]
+  },
+  "readings": {
+    "长": "zhǎng",
+    "当": "dāng",
+    "还": "hái",
+    "好": "hǎo",
+    "应": "yīng",
+    "相": "xiāng",
+    "重": "zhòng",
+    "了": "le",
+    "得": "de",
+    "为": "wèi",
+    "差": "chā",
+    "要": "yào",
+    "传": "chuán"
+  }
+}

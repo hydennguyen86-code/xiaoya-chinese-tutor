@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我明天有一个面试。 我有两年的工作经验。 我的优点是认真。",
-    "translation": "Ngày mai mình có một buổi phỏng vấn. Mình có hai năm kinh nghiệm làm việc. Ưu điểm của mình là nghiêm túc.",
-    "pinyin": "wǒ míng tiān yǒu yí gè miàn shì 。   wǒ yǒu liǎng nián de gōng zuò jīng yàn 。   wǒ de yōu diǎn shì rèn zhēn 。",
+    "title": "Nghe hội thoại: Công việc và phỏng vấn",
+    "playLimit": 1,
+    "transcript": "甲：请先简单介绍一下你自己。乙：您好，我叫小安。我有四年销售经验，在上一家公司负责北方市场。甲：你的优点是什么？乙：我的优点是认真，也喜欢团队合作。甲：那你的缺点呢？乙：我有时候太着急，不过现在已经比以前好多了。甲：我们公司有时候需要加班，你能接受吗？乙：可以，不过请问工资是多少？甲：基本工资每月八千，加班另外算钱。乙：好的，谢谢您给我这次面试的机会。",
+    "translation": "A: Trước tiên hãy giới thiệu ngắn gọn về bản thân bạn. B: Xin chào, tôi tên là Tiểu An. Tôi có bốn năm kinh nghiệm bán hàng, ở công ty trước phụ trách thị trường miền Bắc. A: Ưu điểm của bạn là gì? B: Ưu điểm của tôi là nghiêm túc, và cũng thích làm việc theo nhóm. A: Còn nhược điểm của bạn thì sao? B: Đôi khi tôi quá nóng vội, nhưng bây giờ đã tốt hơn trước nhiều rồi. A: Công ty chúng tôi đôi khi cần làm thêm giờ, bạn có chấp nhận được không? B: Được, nhưng xin hỏi lương là bao nhiêu? A: Lương cơ bản mỗi tháng tám nghìn, làm thêm giờ tính tiền riêng. B: Vâng, cảm ơn anh chị đã cho tôi cơ hội phỏng vấn này.",
+    "pinyin": "jiǎ ： qǐng xiān jiǎn dān jiè shào yí xià nǐ zì jǐ 。 yǐ ： nín hǎo ， wǒ jiào xiǎo ān 。 wǒ yǒu sì nián xiāo shòu jīng yàn ， zài shàng yì jiā gōng sī fù zé běi fāng shì chǎng 。 jiǎ ： nǐ de yōu diǎn shì shén me ？ yǐ ： wǒ de yōu diǎn shì rèn zhēn ， yě xǐ huan tuán duì hé zuò 。 jiǎ ： nà nǐ de quē diǎn ne ？ yǐ ： wǒ yǒu shí hou tài zháo jí ， bú guò xiàn zài yǐ jīng bǐ yǐ qián hǎo duō le 。 jiǎ ： wǒ men gōng sī yǒu shí hou xū yào jiā bān ， nǐ néng jiē shòu ma ？ yǐ ： kě yǐ ， bú guò qǐng wèn gōng zī shì duō shǎo ？ jiǎ ： jī běn gōng zī měi yuè bā qiān ， jiā bān lìng wài suàn qián 。 yǐ ： hǎo de ， xiè xie nín gěi wǒ zhè cì miàn shì de jī huì 。",
     "questions": [
       {
-        "prompt": "Cụm “面试” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tiểu An có mấy năm kinh nghiệm bán hàng?",
         "options": [
-          "ưu điểm",
-          "nhược điểm",
-          "phỏng vấn"
-        ],
-        "answer": 2,
-        "explanation": "“面试”: phỏng vấn. Ví dụ đã nghe: 我明天有一个面试。"
-      },
-      {
-        "prompt": "Cụm “经验” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "kinh nghiệm",
-          "nhược điểm",
-          "phụ trách"
+          "Bốn năm",
+          "Ba năm",
+          "Năm năm"
         ],
         "answer": 0,
-        "explanation": "“经验”: kinh nghiệm. Ví dụ đã nghe: 我有两年的工作经验。"
+        "explanation": "Tiểu An nói 我有四年销售经验。"
       },
       {
-        "prompt": "Cụm “优点” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tiểu An nói nhược điểm của mình là gì?",
         "options": [
-          "phụ trách",
-          "ưu điểm",
-          "đội nhóm"
+          "Không thích làm thêm giờ",
+          "Đôi khi quá nóng vội",
+          "Không biết làm việc nhóm"
         ],
         "answer": 1,
-        "explanation": "“优点”: ưu điểm. Ví dụ đã nghe: 我的优点是认真。"
+        "explanation": "Tiểu An nói 我有时候太着急。"
+      },
+      {
+        "prompt": "Vì sao nhà tuyển dụng hỏi Tiểu An có chấp nhận làm thêm giờ?",
+        "options": [
+          "Vì Tiểu An từng làm thêm giờ",
+          "Vì lương cơ bản rất thấp",
+          "Vì công ty đôi khi cần làm thêm giờ"
+        ],
+        "answer": 2,
+        "explanation": "Nhà tuyển dụng nói 我们公司有时候需要加班，你能接受吗？"
       }
     ]
   },

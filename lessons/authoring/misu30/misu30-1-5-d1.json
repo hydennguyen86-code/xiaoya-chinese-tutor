@@ -1,0 +1,125 @@
+{
+  "lesson": "misu30-1-5-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "你好，你想买什么？",
+      "vi": "Xin chào, anh chị muốn mua gì ạ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我想买一件衣服。这件多少钱？",
+      "vi": "Tôi muốn mua một cái áo. Cái này bao nhiêu tiền?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "这件一百二十块。",
+      "vi": "Cái này một trăm hai mươi tệ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "太贵了！有便宜的吗？",
+      "vi": "Đắt quá! Có cái nào rẻ hơn không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "有。那件八十块，也很好看。",
+      "vi": "Có. Cái kia tám mươi tệ, cũng rất đẹp."
+    },
+    {
+      "speaker": "乙",
+      "zh": "我可以试一下吗？",
+      "vi": "Tôi thử một chút được không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "可以，请。",
+      "vi": "Được, mời anh chị."
+    },
+    {
+      "speaker": "乙",
+      "zh": "很好，我买那件。",
+      "vi": "Rất tốt, tôi mua cái kia."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Cái áo đầu tiên giá bao nhiêu?",
+      "options": [
+        "Tám mươi tệ",
+        "Một trăm hai mươi tệ",
+        "Một trăm tệ"
+      ],
+      "answer": 1,
+      "explanation": "Nhân viên nói 这件一百二十块。"
+    },
+    {
+      "prompt": "Vì sao khách hỏi cái khác?",
+      "options": [
+        "Cái đó không đẹp",
+        "Cái đó quá nhỏ",
+        "Cái đó quá đắt"
+      ],
+      "answer": 2,
+      "explanation": "Khách nói 太贵了！有便宜的吗？"
+    },
+    {
+      "prompt": "Cái áo khách mua rẻ hơn cái đầu bao nhiêu tệ?",
+      "options": [
+        "Bốn mươi tệ",
+        "Hai mươi tệ",
+        "Tám mươi tệ"
+      ],
+      "answer": 0,
+      "explanation": "一百二十块 trừ 八十块 là bốn mươi tệ, khách mua 那件。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "他们卖的衣服不贵。",
+      "meaningVi": "Quần áo họ bán không đắt.",
+      "focus": [
+        "卖 mài thanh 4, khác 买 mǎi thanh 3.",
+        "贵 guì thanh 4."
+      ]
+    },
+    {
+      "hanzi": "我想买便宜的。",
+      "meaningVi": "Mình muốn mua cái rẻ.",
+      "focus": [
+        "买 mǎi thanh 3.",
+        "便宜 pián yi: yi đọc nhẹ."
+      ]
+    },
+    {
+      "hanzi": "我可以试一下那件吗？",
+      "meaningVi": "Mình thử cái kia một chút được không?",
+      "focus": [
+        "试 shì: sh uốn lưỡi, thanh 4.",
+        "一下 yí xià: 一 đổi thành thanh 2 trước thanh 4."
+      ]
+    },
+    {
+      "hanzi": "这件和那件一共多少钱？",
+      "meaningVi": "Cái này và cái kia tổng cộng bao nhiêu tiền?",
+      "focus": [
+        "钱 qián: bật hơi q.",
+        "多少 duō shǎo: shǎo thanh 3."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我想买衣服，这件一百块，太贵了。那件五十块，便宜，我要试一下。",
+    "meaningVi": "Mình muốn mua quần áo, cái này một trăm tệ, đắt quá. Cái kia năm mươi tệ, rẻ, mình muốn thử một chút.",
+    "focus": [
+      "Ngắt hơi sau 衣服 và sau 一百块。",
+      "块 kuài: bật hơi k, thanh 4."
+    ]
+  },
+  "readings": {
+    "的": "de",
+    "了": "le",
+    "便": "pián",
+    "和": "hé"
+  }
+}

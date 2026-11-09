@@ -1,0 +1,151 @@
+{
+  "lesson": "misu30-3-22-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "阿兰，听说小宇这次考试的成绩不太理想？",
+      "vi": "Lan à, nghe nói điểm thi lần này của Tiểu Vũ không được lý tưởng lắm?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "是啊，他考了七十分，我很担心，想给他报两个补习班。",
+      "vi": "Ừ, nó được bảy mươi điểm, mình rất lo, định đăng ký cho nó hai lớp học thêm."
+    },
+    {
+      "speaker": "甲",
+      "zh": "我不太同意。与其逼他天天补习，不如先和他沟通一下。",
+      "vi": "Mình không đồng ý lắm. Thay vì ép nó học thêm mỗi ngày, chi bằng trò chuyện với nó trước."
+    },
+    {
+      "speaker": "乙",
+      "zh": "可是成绩不好，将来怎么找工作呢？",
+      "vi": "Nhưng điểm không tốt thì sau này sao tìm được việc?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "成绩固然重要，但是对孩子来说，兴趣和好习惯更重要。",
+      "vi": "Điểm số đúng là quan trọng, nhưng đối với trẻ, sở thích và thói quen tốt còn quan trọng hơn."
+    },
+    {
+      "speaker": "乙",
+      "zh": "你说得对。不过我怕他玩太多，学习不认真。",
+      "vi": "Bạn nói đúng. Có điều mình sợ nó chơi quá nhiều, học không nghiêm túc."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那就让他自己安排时间，这样他也会学会独立。",
+      "vi": "Vậy cứ để nó tự sắp xếp thời gian, như thế nó cũng học được tính tự lập."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好主意。以前我总是批评他，现在应该多鼓励他。",
+      "vi": "Ý hay. Trước đây mình toàn phê bình nó, giờ nên động viên nó nhiều hơn."
+    },
+    {
+      "speaker": "甲",
+      "zh": "对，给孩子太大的压力反而不好。",
+      "vi": "Đúng, tạo áp lực quá lớn cho trẻ ngược lại không tốt."
+    },
+    {
+      "speaker": "乙",
+      "zh": "谢谢你，今晚我就和他好好聊聊。",
+      "vi": "Cảm ơn bạn, tối nay mình sẽ nói chuyện thật kỹ với nó."
+    },
+    {
+      "speaker": "甲",
+      "zh": "先问问他喜欢什么，说不定他对画画很感兴趣。",
+      "vi": "Hãy hỏi xem nó thích gì trước, biết đâu nó rất thích vẽ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好，我明天告诉你结果。",
+      "vi": "Được, mai mình báo bạn kết quả."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Tiểu Vũ được bao nhiêu điểm trong kỳ thi này?",
+      "options": [
+        "Sáu mươi điểm",
+        "Bảy mươi điểm",
+        "Tám mươi điểm"
+      ],
+      "answer": 1,
+      "explanation": "B nói 他考了七十分。"
+    },
+    {
+      "prompt": "Ban đầu Lan định làm gì để cải thiện điểm của con?",
+      "options": [
+        "Cho con chuyển trường",
+        "Cấm con chơi điện thoại",
+        "Đăng ký hai lớp học thêm"
+      ],
+      "answer": 2,
+      "explanation": "B nói 想给他报两个补习班。"
+    },
+    {
+      "prompt": "Vì sao A không đồng ý cho con học thêm?",
+      "options": [
+        "Vì cho rằng sở thích và thói quen tốt quan trọng hơn việc ép con",
+        "Vì lớp học thêm ở quá xa",
+        "Vì lớp học thêm quá đắt"
+      ],
+      "answer": 0,
+      "explanation": "A nói 与其逼他天天补习，不如先和他沟通 và 对孩子来说，兴趣和好习惯更重要。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "教育孩子不能只看成绩，还要看他的习惯。",
+      "meaningVi": "Giáo dục con không thể chỉ nhìn vào điểm, còn phải xem thói quen của con.",
+      "focus": [
+        "教育 jiào yù: cả hai chữ thanh 4, hạ dứt khoát.",
+        "成绩 chéng jì: ch bật hơi, uốn lưỡi."
+      ]
+    },
+    {
+      "hanzi": "小宇很独立，每天自己整理书包，真让人高兴。",
+      "meaningVi": "Tiểu Vũ rất tự lập, mỗi ngày tự sắp xếp cặp sách, thật khiến người ta vui.",
+      "focus": [
+        "独立 dú lì: thanh 2 rồi thanh 4.",
+        "整理 zhěng lǐ: hai thanh 3 liền, chữ đầu biến điệu."
+      ]
+    },
+    {
+      "hanzi": "妈妈经常鼓励他，所以他对画画越来越感兴趣。",
+      "meaningVi": "Mẹ thường động viên cậu, nên cậu ngày càng hứng thú với vẽ tranh.",
+      "focus": [
+        "鼓励 gǔ lì: thanh 3 rồi thanh 4.",
+        "兴趣 xìng qù: qù có ü, tròn môi."
+      ]
+    },
+    {
+      "hanzi": "老师希望家长多和孩子沟通，不要给他太大的压力。",
+      "meaningVi": "Cô giáo mong phụ huynh trò chuyện nhiều với con, đừng tạo cho con áp lực quá lớn.",
+      "focus": [
+        "沟通 gōu tōng: hai chữ thanh 1, giữ cao đều.",
+        "不要 bú yào: bù đổi thành thanh 2 trước thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我是小宇的妈妈，以前我只看成绩，现在我明白了。与其逼他补习，不如多鼓励他，再慢慢培养好习惯。每个孩子有自己的兴趣。",
+    "meaningVi": "Mình là mẹ của Tiểu Vũ, trước đây mình chỉ nhìn điểm, bây giờ mình hiểu rồi. Thay vì ép con học thêm, chi bằng động viên con nhiều hơn, rồi từ từ nuôi dưỡng thói quen tốt. Mỗi đứa trẻ có sở thích riêng.",
+    "focus": [
+      "Ngắt hơi sau 妈妈, 成绩, 明白了 và 习惯.",
+      "培养 péi yǎng: p bật hơi, yǎng thanh 3."
+    ]
+  },
+  "readings": {
+    "教": "jiào",
+    "还": "hái",
+    "只": "zhǐ",
+    "看": "kàn",
+    "好": "hǎo",
+    "了": "le",
+    "要": "yào",
+    "重": "zhòng",
+    "应": "yīng",
+    "得": "de"
+  }
+}

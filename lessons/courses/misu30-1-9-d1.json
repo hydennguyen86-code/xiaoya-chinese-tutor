@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Thời tiết và cảm xúc",
     "playLimit": 2,
-    "transcript": "今天天气很好。 冬天很冷。 夏天很热。",
-    "translation": "Hôm nay thời tiết rất đẹp. Mùa đông rất lạnh. Mùa hè rất nóng.",
-    "pinyin": "jīn tiān tiān qì hěn hǎo 。   dōng tiān hěn lěng 。   xià tiān hěn rè 。",
+    "transcript": "甲：早上好，阿兰！今天天气怎么样？乙：今天下雨，我觉得有点冷。甲：你高兴吗？乙：不太高兴。因为昨天睡得很晚，所以今天很累。甲：你是不是不舒服？乙：有一点。我妈妈也很担心。甲：下午天气会好，你也会舒服一点。乙：谢谢，我现在高兴多了。",
+    "translation": "A: Chào buổi sáng, Lan! Hôm nay thời tiết thế nào? B: Hôm nay mưa, mình thấy hơi lạnh. A: Bạn có vui không? B: Không vui lắm. Vì hôm qua ngủ rất muộn nên hôm nay rất mệt. A: Có phải bạn không khỏe không? B: Hơi hơi. Mẹ mình cũng rất lo. A: Chiều trời sẽ đẹp, bạn cũng sẽ dễ chịu hơn. B: Cảm ơn, bây giờ mình vui hơn nhiều rồi.",
+    "pinyin": "jiǎ ： zǎo shang hǎo ， ā lán ！ jīn tiān tiān qì zěn me yàng ？ yǐ ： jīn tiān xià yǔ ， wǒ jué de yǒu diǎn lěng 。 jiǎ ： nǐ gāo xìng ma ？ yǐ ： bú tài gāo xìng 。 yīn wèi zuó tiān shuì de hěn wǎn ， suǒ yǐ jīn tiān hěn lèi 。 jiǎ ： nǐ shì bu shì bù shū fu ？ yǐ ： yǒu yì diǎn 。 wǒ mā ma yě hěn dān xīn 。 jiǎ ： xià wǔ tiān qì huì hǎo ， nǐ yě huì shū fu yì diǎn 。 yǐ ： xiè xie ， wǒ xiàn zài gāo xìng duō le 。",
     "questions": [
       {
-        "prompt": "Cụm “天气” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Hôm nay thời tiết thế nào?",
         "options": [
-          "thời tiết",
-          "nóng",
-          "mưa"
-        ],
-        "answer": 0,
-        "explanation": "“天气”: thời tiết. Ví dụ đã nghe: 今天天气很好。"
-      },
-      {
-        "prompt": "Cụm “冷” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "mưa",
-          "lạnh",
-          "vui"
-        ],
-        "answer": 1,
-        "explanation": "“冷”: lạnh. Ví dụ đã nghe: 冬天很冷。"
-      },
-      {
-        "prompt": "Cụm “热” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "vui",
-          "mệt",
-          "nóng"
+          "Nắng và nóng",
+          "Nhiều gió và mát",
+          "Mưa và hơi lạnh"
         ],
         "answer": 2,
-        "explanation": "“热”: nóng. Ví dụ đã nghe: 夏天很热。"
+        "explanation": "Lan nói 今天下雨，我觉得有点冷。"
+      },
+      {
+        "prompt": "Vì sao Lan hôm nay mệt?",
+        "options": [
+          "Hôm qua ngủ rất muộn",
+          "Hôm qua đi làm cả ngày",
+          "Hôm nay dậy rất sớm"
+        ],
+        "answer": 0,
+        "explanation": "Lan nói 因为昨天睡得很晚，所以今天很累。"
+      },
+      {
+        "prompt": "Ai lo cho Lan, và bạn của Lan nói chiều nay sẽ ra sao?",
+        "options": [
+          "Bố lo, chiều trời mưa",
+          "Mẹ lo, chiều trời đẹp",
+          "Mẹ lo, chiều trời mưa"
+        ],
+        "answer": 1,
+        "explanation": "我妈妈也很担心 và 下午天气会好。"
       }
     ]
   },

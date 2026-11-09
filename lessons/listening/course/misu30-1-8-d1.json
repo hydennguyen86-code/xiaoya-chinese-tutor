@@ -1,0 +1,167 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-1-8-d1",
+  "level": "HSK1-2",
+  "title": "你喜欢做什么？ · Sở thích",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-1-273",
+      "level": "HSK1-2",
+      "hanzi": "阿明的爱好是看书。",
+      "pinyin": "ā míng de ài hào shì kàn shū",
+      "meaningVi": "Sở thích của Minh là đọc sách.",
+      "focus": [
+        "爱好 ài hào: hai thanh 4 liền.",
+        "看书 kàn shū: kàn thanh 4, shū thanh 1."
+      ]
+    },
+    {
+      "id": "dt-1-274",
+      "level": "HSK1-2",
+      "hanzi": "米苏喜欢在家听音乐。",
+      "pinyin": "mǐ sū xǐ huan zài jiā tīng yīn yuè",
+      "meaningVi": "Misu thích ở nhà nghe nhạc.",
+      "focus": [
+        "喜欢 xǐ huan: huan đọc nhẹ.",
+        "音乐 yīn yuè: 乐 đọc yuè."
+      ]
+    },
+    {
+      "id": "dt-1-275",
+      "level": "HSK1-2",
+      "hanzi": "他周末有空，想去运动。",
+      "pinyin": "tā zhōu mò yǒu kòng xiǎng qù yùn dòng",
+      "meaningVi": "Cuối tuần anh ấy rảnh, muốn đi vận động.",
+      "focus": [
+        "有空 yǒu kòng: 空 đọc kòng, thanh 4.",
+        "运动 yùn dòng: hai thanh 4 liền."
+      ]
+    },
+    {
+      "id": "dt-1-276",
+      "level": "HSK1-2",
+      "hanzi": "我妹妹喜欢唱歌，不喜欢看电影。",
+      "pinyin": "wǒ mèi mei xǐ huan chàng gē bù xǐ huan kàn diàn yǐng",
+      "meaningVi": "Em gái mình thích hát, không thích xem phim.",
+      "focus": [
+        "唱歌 chàng gē: ch bật hơi uốn lưỡi.",
+        "看电影 kàn diàn yǐng: hai thanh 4 liền rồi thanh 3."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-1-63",
+      "level": "HSK1-2",
+      "text": "我喜欢听音乐，也喜欢唱歌。周末我有空，你想一起去吗？",
+      "pinyin": "wó xǐ huan tīng yīn yuè yé xǐ huan chàng gē zhōu mò wó yǒu kòng ní xiǎng yì qǐ qù ma",
+      "meaningVi": "Mình thích nghe nhạc, cũng thích hát. Cuối tuần mình rảnh, bạn muốn cùng đi không?",
+      "syllables": 22,
+      "pace": "chậm",
+      "chunks": [
+        {
+          "hanzi": "我喜欢听音乐",
+          "pinyin": "wó xǐ huan tīng yīn yuè",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "也喜欢唱歌",
+          "pinyin": "yé xǐ huan chàng gē",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "周末我有空",
+          "pinyin": "zhōu mò wó yǒu kòng",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "你想一起去吗",
+          "pinyin": "ní xiǎng yì qǐ qù ma",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 听音乐 và sau 周末我有空。",
+        "一起 yì qǐ: 一 đổi thanh 4 trước thanh 3."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        5,
+        1,
+        1,
+        4,
+        3,
+        3,
+        5,
+        4,
+        1,
+        1,
+        4,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          5,
+          1,
+          1,
+          4,
+          2,
+          3,
+          5,
+          4,
+          1,
+          1,
+          4,
+          2,
+          3,
+          4,
+          2,
+          3,
+          4,
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          3,
+          5,
+          1,
+          1,
+          4,
+          3,
+          3,
+          5,
+          4,
+          1,
+          1,
+          4,
+          3,
+          3,
+          4,
+          3,
+          3,
+          4,
+          3,
+          4,
+          5
+        ]
+      ]
+    }
+  ]
+}

@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "教育孩子不能只看成绩。 父母应该让孩子学会独立。 他对科学很感兴趣。",
-    "translation": "Giáo dục con cái không thể chỉ nhìn vào điểm số. Cha mẹ nên để con học cách tự lập. Cậu ấy rất hứng thú với khoa học.",
-    "pinyin": "jiào yù hái zi bù néng zhǐ kàn chéng jì 。   fù mǔ yīng gāi ràng hái zi xué huì dú lì 。   tā duì kē xué hěn gǎn xìng qù 。",
+    "title": "Nghe hội thoại: Giáo dục và nuôi dạy con",
+    "playLimit": 1,
+    "transcript": "甲：阿兰，听说小宇这次考试的成绩不太理想？乙：是啊，他考了七十分，我很担心，想给他报两个补习班。甲：我不太同意。与其逼他天天补习，不如先和他沟通一下。乙：可是成绩不好，将来怎么找工作呢？甲：成绩固然重要，但是对孩子来说，兴趣和好习惯更重要。乙：你说得对。不过我怕他玩太多，学习不认真。甲：那就让他自己安排时间，这样他也会学会独立。乙：好主意。以前我总是批评他，现在应该多鼓励他。甲：对，给孩子太大的压力反而不好。乙：谢谢你，今晚我就和他好好聊聊。甲：先问问他喜欢什么，说不定他对画画很感兴趣。乙：好，我明天告诉你结果。",
+    "translation": "A: Lan à, nghe nói điểm thi lần này của Tiểu Vũ không được lý tưởng lắm? B: Ừ, nó được bảy mươi điểm, mình rất lo, định đăng ký cho nó hai lớp học thêm. A: Mình không đồng ý lắm. Thay vì ép nó học thêm mỗi ngày, chi bằng trò chuyện với nó trước. B: Nhưng điểm không tốt thì sau này sao tìm được việc? A: Điểm số đúng là quan trọng, nhưng đối với trẻ, sở thích và thói quen tốt còn quan trọng hơn. B: Bạn nói đúng. Có điều mình sợ nó chơi quá nhiều, học không nghiêm túc. A: Vậy cứ để nó tự sắp xếp thời gian, như thế nó cũng học được tính tự lập. B: Ý hay. Trước đây mình toàn phê bình nó, giờ nên động viên nó nhiều hơn. A: Đúng, tạo áp lực quá lớn cho trẻ ngược lại không tốt. B: Cảm ơn bạn, tối nay mình sẽ nói chuyện thật kỹ với nó. A: Hãy hỏi xem nó thích gì trước, biết đâu nó rất thích vẽ. B: Được, mai mình báo bạn kết quả.",
+    "pinyin": "jiǎ ： ā lán ， tīng shuō xiǎo yǔ zhè cì kǎo shì de chéng jì bú tài lǐ xiǎng ？ yǐ ： shì a ， tā kǎo le qī shí fēn ， wǒ hěn dān xīn ， xiǎng gěi tā bào liǎng gè bǔ xí bān 。 jiǎ ： wǒ bú tài tóng yì 。 yǔ qí bī tā tiān tiān bǔ xí ， bù rú xiān hé tā gōu tōng yí xià 。 yǐ ： kě shì chéng jì bù hǎo ， jiāng lái zěn me zhǎo gōng zuò ne ？ jiǎ ： chéng jì gù rán zhòng yào ， dàn shì duì hái zi lái shuō ， xìng qù hé hǎo xí guàn gèng zhòng yào 。 yǐ ： nǐ shuō de duì 。 bú guò wǒ pà tā wán tài duō ， xué xí bú rèn zhēn 。 jiǎ ： nà jiù ràng tā zì jǐ ān pái shí jiān ， zhè yàng tā yě huì xué huì dú lì 。 yǐ ： hǎo zhǔ yì 。 yǐ qián wǒ zǒng shì pī píng tā ， xiàn zài yìng gāi duō gǔ lì tā 。 jiǎ ： duì ， gěi hái zi tài dà de yā lì fǎn ér bù hǎo 。 yǐ ： xiè xie nǐ ， jīn wǎn wǒ jiù hé tā hǎo hǎo liáo liáo 。 jiǎ ： xiān wèn wèn tā xǐ huan shén me ， shuō bú dìng tā duì huà huà hěn gǎn xìng qù 。 yǐ ： hǎo ， wǒ míng tiān gào sù nǐ jié guǒ 。",
     "questions": [
       {
-        "prompt": "Cụm “教育” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Tiểu Vũ được bao nhiêu điểm trong kỳ thi này?",
         "options": [
-          "hứng thú, sở thích",
-          "giáo dục",
-          "thành tích, điểm số"
+          "Sáu mươi điểm",
+          "Bảy mươi điểm",
+          "Tám mươi điểm"
         ],
         "answer": 1,
-        "explanation": "“教育”: giáo dục. Ví dụ đã nghe: 教育孩子不能只看成绩。"
+        "explanation": "B nói 他考了七十分。"
       },
       {
-        "prompt": "Cụm “独立” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Ban đầu Lan định làm gì để cải thiện điểm của con?",
         "options": [
-          "thành tích, điểm số",
-          "áp lực",
-          "độc lập"
+          "Cho con chuyển trường",
+          "Cấm con chơi điện thoại",
+          "Đăng ký hai lớp học thêm"
         ],
         "answer": 2,
-        "explanation": "“独立”: độc lập. Ví dụ đã nghe: 父母应该让孩子学会独立。"
+        "explanation": "B nói 想给他报两个补习班。"
       },
       {
-        "prompt": "Cụm “兴趣” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao A không đồng ý cho con học thêm?",
         "options": [
-          "hứng thú, sở thích",
-          "áp lực",
-          "giao tiếp, trao đổi"
+          "Vì cho rằng sở thích và thói quen tốt quan trọng hơn việc ép con",
+          "Vì lớp học thêm ở quá xa",
+          "Vì lớp học thêm quá đắt"
         ],
         "answer": 0,
-        "explanation": "“兴趣”: hứng thú, sở thích. Ví dụ đã nghe: 他对科学很感兴趣。"
+        "explanation": "A nói 与其逼他天天补习，不如先和他沟通 và 对孩子来说，兴趣和好习惯更重要。"
       }
     ]
   },

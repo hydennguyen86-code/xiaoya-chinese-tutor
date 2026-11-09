@@ -1,0 +1,136 @@
+{
+  "lesson": "misu30-2-19-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "欢迎来我家！你想喝点什么？",
+      "vi": "Chào mừng đến nhà mình! Bạn muốn uống chút gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "喝茶就行，谢谢你请我来。我给你带了一份小礼物。",
+      "vi": "Trà là được rồi, cảm ơn bạn đã mời mình đến. Mình mang cho bạn một món quà nhỏ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你太客气了，谢谢你的礼物！今天我请客，你想吃什么？",
+      "vi": "Bạn khách sáo quá, cảm ơn món quà của bạn! Hôm nay mình mời, bạn muốn ăn gì?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "我吃什么都行，你随便做吧。",
+      "vi": "Mình ăn gì cũng được, bạn cứ làm tùy ý nhé."
+    },
+    {
+      "speaker": "甲",
+      "zh": "那可不行，你是客人，你说想吃什么吧。我会做鱼、鸡肉和青菜。",
+      "vi": "Thế sao được, bạn là khách, bạn cứ nói muốn ăn gì đi. Mình biết làm cá, thịt gà và rau xanh."
+    },
+    {
+      "speaker": "乙",
+      "zh": "那我想吃鱼。听说你做的鱼很好吃。",
+      "vi": "Vậy mình muốn ăn cá. Nghe nói cá bạn nấu rất ngon."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，那就做鱼，再做一个青菜。你别客气，多吃一点。",
+      "vi": "Được, vậy làm cá, thêm một món rau. Bạn đừng khách sáo, ăn nhiều một chút."
+    },
+    {
+      "speaker": "乙",
+      "zh": "谢谢！来，我敬你一杯茶，感谢你今天的招待。",
+      "vi": "Cảm ơn! Nào, mình kính bạn một tách trà, cảm ơn sự tiếp đãi của bạn hôm nay."
+    },
+    {
+      "speaker": "甲",
+      "zh": "应该的！希望你喜欢我做的菜。",
+      "vi": "Có gì đâu! Mong là bạn thích món mình nấu."
+    },
+    {
+      "speaker": "乙",
+      "zh": "一定喜欢！下次我请客，请你来我家吃饭。",
+      "vi": "Chắc chắn là thích! Lần sau mình mời, mời bạn đến nhà mình ăn cơm."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Khách mang đến cho chủ nhà thứ gì?",
+      "options": [
+        "Một bó hoa",
+        "Một chai rượu",
+        "Một món quà nhỏ"
+      ],
+      "answer": 2,
+      "explanation": "Khách nói 我给你带了一份小礼物。"
+    },
+    {
+      "prompt": "Vì sao chủ nhà không chịu để khách nói “gì cũng được”?",
+      "options": [
+        "Vì khách là khách",
+        "Vì chủ nhà không biết nấu",
+        "Vì khách đang rất đói"
+      ],
+      "answer": 0,
+      "explanation": "Chủ nhà nói 那可不行，你是客人 — khách thì nên được chọn món."
+    },
+    {
+      "prompt": "Lần sau ai sẽ mời ai ăn cơm?",
+      "options": [
+        "Chủ nhà lại mời khách đến nhà",
+        "Khách mời chủ nhà đến nhà mình",
+        "Hai người ra nhà hàng"
+      ],
+      "answer": 1,
+      "explanation": "Khách nói 下次我请客，请你来我家吃饭。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "今天是阿兰的生日，我请客。",
+      "meaningVi": "Hôm nay là sinh nhật Lan, mình mời.",
+      "focus": [
+        "请客 qǐng kè: qǐng thanh 3, kè thanh 4.",
+        "生日 shēng rì: r uốn lưỡi."
+      ]
+    },
+    {
+      "hanzi": "你别客气，自己点菜吧。",
+      "meaningVi": "Bạn đừng khách sáo, tự gọi món đi.",
+      "focus": [
+        "客气 kè qi: qi đọc nhẹ.",
+        "点菜 diǎn cài: c bật hơi."
+      ]
+    },
+    {
+      "hanzi": "谢谢你送我这么好的礼物。",
+      "meaningVi": "Cảm ơn bạn đã tặng mình món quà tốt như vậy.",
+      "focus": [
+        "谢谢 xiè xie: chữ sau đọc nhẹ.",
+        "礼物 lǐ wù: thanh 3 rồi thanh 4."
+      ]
+    },
+    {
+      "hanzi": "我想感谢王老师的热情招待。",
+      "meaningVi": "Mình muốn cảm ơn sự tiếp đãi nhiệt tình của thầy Vương.",
+      "focus": [
+        "感谢 gǎn xiè: gǎn thanh 3, xiè thanh 4.",
+        "招待 zhāo dài: zh uốn lưỡi, dài thanh 4."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我敬大家一杯，祝大家身体健康。今天吃什么都可以，随便点，别客气！",
+    "meaningVi": "Mình kính mọi người một ly, chúc mọi người mạnh khỏe. Hôm nay ăn gì cũng được, cứ gọi tùy ý, đừng khách sáo!",
+    "focus": [
+      "Ngắt hơi sau 一杯 và sau 都可以.",
+      "敬 jìng: thanh 4, -ng cuối."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "行": "xíng",
+    "都": "dōu",
+    "好": "hǎo",
+    "会": "huì"
+  }
+}

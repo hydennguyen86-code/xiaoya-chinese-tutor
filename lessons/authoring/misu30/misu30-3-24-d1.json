@@ -1,0 +1,153 @@
+{
+  "lesson": "misu30-3-24-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "小安，你看，现在连买菜也用手机支付。",
+      "vi": "Tiểu An, bạn xem, bây giờ đến đi chợ cũng thanh toán bằng điện thoại."
+    },
+    {
+      "speaker": "乙",
+      "zh": "是啊，随着科技的发展，生活越来越方便了。",
+      "vi": "Ừ, cùng với sự phát triển của công nghệ, cuộc sống ngày càng tiện lợi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "不过我担心我们太依赖手机，一天不看就不习惯。",
+      "vi": "Có điều mình lo chúng ta quá phụ thuộc vào điện thoại, một ngày không xem là thấy không quen."
+    },
+    {
+      "speaker": "乙",
+      "zh": "我同意。一方面手机提高了效率，另一方面也影响了我们的睡眠。",
+      "vi": "Mình đồng ý. Một mặt điện thoại nâng cao hiệu suất, mặt khác cũng ảnh hưởng đến giấc ngủ của chúng ta."
+    },
+    {
+      "speaker": "甲",
+      "zh": "还有隐私问题。很多应用需要我们提供个人信息。",
+      "vi": "Còn vấn đề quyền riêng tư nữa. Nhiều ứng dụng cần chúng ta cung cấp thông tin cá nhân."
+    },
+    {
+      "speaker": "乙",
+      "zh": "对，所以我从来不随便下载不认识的软件。",
+      "vi": "Đúng, nên mình chưa bao giờ tùy tiện tải phần mềm lạ."
+    },
+    {
+      "speaker": "甲",
+      "zh": "你认为人工智能会取代我们的工作吗？",
+      "vi": "Bạn nghĩ trí tuệ nhân tạo có thay thế công việc của chúng ta không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "一部分工作可能会，但我认为人必须学会适应，而不是害怕。",
+      "vi": "Một phần công việc có thể, nhưng mình cho rằng con người phải học cách thích nghi chứ không phải sợ hãi."
+    },
+    {
+      "speaker": "甲",
+      "zh": "有道理。与其担心被取代，不如学会用人工智能帮我们提高效率。",
+      "vi": "Có lý. Thay vì lo bị thay thế, chi bằng học cách dùng trí tuệ nhân tạo giúp mình nâng cao hiệu suất."
+    },
+    {
+      "speaker": "乙",
+      "zh": "没错，我现在每天用它整理资料，节省了不少时间。",
+      "vi": "Đúng vậy, bây giờ mỗi ngày mình dùng nó sắp xếp tài liệu, tiết kiệm được không ít thời gian."
+    },
+    {
+      "speaker": "甲",
+      "zh": "这样看来，关键是我们怎么用它。",
+      "vi": "Nhìn thế này, mấu chốt là chúng ta dùng nó như thế nào."
+    },
+    {
+      "speaker": "乙",
+      "zh": "对，工具本身没有问题。",
+      "vi": "Đúng, bản thân công cụ không có vấn đề."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Vì sao A lo lắng về điện thoại?",
+      "options": [
+        "Vì mọi người quá phụ thuộc vào điện thoại",
+        "Vì điện thoại quá đắt",
+        "Vì điện thoại hay bị hỏng"
+      ],
+      "answer": 0,
+      "explanation": "A nói 我担心我们太依赖手机。"
+    },
+    {
+      "prompt": "B tránh rủi ro về quyền riêng tư bằng cách nào?",
+      "options": [
+        "Không dùng điện thoại",
+        "Không bao giờ tải phần mềm lạ",
+        "Đổi mật khẩu mỗi ngày"
+      ],
+      "answer": 1,
+      "explanation": "B nói 我从来不随便下载不认识的软件。"
+    },
+    {
+      "prompt": "Hiện nay B dùng trí tuệ nhân tạo để làm gì?",
+      "options": [
+        "Viết thư cho khách",
+        "Dịch hợp đồng",
+        "Sắp xếp tài liệu để tiết kiệm thời gian"
+      ],
+      "answer": 2,
+      "explanation": "B nói 我现在每天用它整理资料，节省了不少时间。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "随着人工智能的发展，很多工作的效率大大提高了。",
+      "meaningVi": "Cùng với sự phát triển của trí tuệ nhân tạo, hiệu suất của nhiều công việc đã tăng lên rất nhiều.",
+      "focus": [
+        "人工智能 rén gōng zhì néng: thanh 2, 1, 4, 2.",
+        "效率 xiào lǜ: lǜ có ü."
+      ]
+    },
+    {
+      "hanzi": "用手机支付虽然很方便，但是我们要保护个人隐私。",
+      "meaningVi": "Thanh toán bằng điện thoại tuy rất tiện, nhưng chúng ta phải bảo vệ quyền riêng tư cá nhân.",
+      "focus": [
+        "隐私 yǐn sī: yǐn thanh 3, -n cuối.",
+        "保护 bǎo hù: hai chữ thanh 3 liền, chữ đầu biến điệu."
+      ]
+    },
+    {
+      "hanzi": "年轻人太依赖社交软件，会影响正常的学习和睡眠。",
+      "meaningVi": "Người trẻ quá phụ thuộc vào phần mềm mạng xã hội, sẽ ảnh hưởng đến học tập và giấc ngủ bình thường.",
+      "focus": [
+        "依赖 yī lài: thanh 1 rồi thanh 4.",
+        "影响 yǐng xiǎng: hai chữ thanh 3 liền."
+      ]
+    },
+    {
+      "hanzi": "机器不可能取代人，我们需要尽快适应新的变化。",
+      "meaningVi": "Máy móc không thể thay thế con người, chúng ta cần nhanh chóng thích nghi với thay đổi mới.",
+      "focus": [
+        "取代 qǔ dài: q bật hơi, qǔ có ü.",
+        "适应 shì yìng: sh uốn lưỡi, -ng cuối."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我每天用手机工作，确实很方便。但是我也在想，如果太依赖它，会不会影响我自己的判断？所以我决定，有空的时候放下手机，出去走一走。",
+    "meaningVi": "Mỗi ngày mình dùng điện thoại để làm việc, đúng là rất tiện. Nhưng mình cũng đang nghĩ, nếu quá phụ thuộc vào nó, liệu có ảnh hưởng đến phán đoán của chính mình không? Vì vậy mình quyết định lúc rảnh sẽ đặt điện thoại xuống, ra ngoài đi dạo.",
+    "focus": [
+      "Ngắt hơi sau 工作, 方便 và 判断.",
+      "判断 pàn duàn: p bật hơi, hai chữ thanh 4."
+    ]
+  },
+  "readings": {
+    "着": "zhe",
+    "发": "fā",
+    "便": "biàn",
+    "应": "yìng",
+    "还": "hái",
+    "了": "le",
+    "要": "yào",
+    "空": "kòng",
+    "得": "de",
+    "好": "hǎo",
+    "重": "zhòng",
+    "为": "wéi"
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-2-11-d1",
+  "level": "HSK3-4",
+  "title": "这个周末你有空吗？ · Hẹn bạn và lên kế hoạch",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-199",
+      "level": "HSK3-4",
+      "hanzi": "阿兰星期五晚上有空，我们一起吃饭吧。",
+      "pinyin": "ā lán xīng qī wú wǎn shang yǒu kòng wǒ men yì qǐ chī fàn ba",
+      "meaningVi": "Lan tối thứ Sáu rảnh, chúng mình cùng đi ăn cơm nhé.",
+      "focus": [
+        "有空 yǒu kòng: kòng thanh 4, đọc dứt khoát.",
+        "一起 yì qǐ: 一 đọc yì trước thanh 3, qǐ hạ thấp rồi lên."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        1,
+        2,
+        1,
+        1,
+        3,
+        3,
+        5,
+        3,
+        4,
+        3,
+        5,
+        4,
+        3,
+        1,
+        4,
+        5
+      ],
+      "acceptTones": [
+        [
+          1,
+          2,
+          1,
+          1,
+          2,
+          3,
+          5,
+          3,
+          4,
+          3,
+          5,
+          4,
+          3,
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          3,
+          3,
+          5,
+          3,
+          4,
+          3,
+          5,
+          4,
+          3,
+          1,
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "id": "dt-2-200",
+      "level": "HSK3-4",
+      "hanzi": "我打算下个月去上海旅行。",
+      "pinyin": "wó dǎ suàn xià gè yuè qù shàng hái lǚ xíng",
+      "meaningVi": "Mình định tháng sau đi du lịch Thượng Hải.",
+      "focus": [
+        "打算 dǎ suàn: hai thanh 3 liền, chữ đầu lên thành thanh 2.",
+        "上海 shàng hǎi: sh uốn lưỡi, -ng cuối chữ 上."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2
+      ],
+      "acceptTones": [
+        [
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "dt-2-201",
+      "level": "HSK3-4",
+      "hanzi": "你明天什么时候方便见面？",
+      "pinyin": "nǐ míng tiān shén me shí hou fāng biàn jiàn miàn",
+      "meaningVi": "Ngày mai khi nào bạn tiện gặp mặt?",
+      "focus": [
+        "方便 fāng biàn: fāng thanh 1 kéo dài, biàn thanh 4.",
+        "见面 jiàn miàn: cả hai thanh 4, xuống dứt khoát."
+      ]
+    },
+    {
+      "id": "dt-2-202",
+      "level": "HSK3-4",
+      "hanzi": "对不起，我迟到了十分钟。",
+      "pinyin": "duì bù qǐ wǒ chí dào le shí fēn zhōng",
+      "meaningVi": "Xin lỗi, mình đến muộn mười phút.",
+      "focus": [
+        "迟到 chí dào: ch bật hơi, uốn lưỡi.",
+        "了 le đọc nhẹ."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-45",
+      "level": "HSK3-4",
+      "text": "这个周末我有一个小计划，我约了朋友一起去爬山。我们早上七点出发，中午在山上吃饭。",
+      "pinyin": "zhè ge zhōu mò wó yǒu yí gè xiǎo jì huà wǒ yuē le péng you yì qǐ qù pá shān wǒ men zǎo shang qī diǎn chū fā zhōng wǔ zài shān shàng chī fàn",
+      "meaningVi": "Cuối tuần này mình có một kế hoạch nhỏ, mình đã hẹn bạn cùng đi leo núi. Bảy giờ sáng chúng mình xuất phát, trưa ăn cơm trên núi.",
+      "syllables": 36,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "这个周末我有一个小计划",
+          "pinyin": "zhè ge zhōu mò wó yǒu yí gè xiǎo jì huà",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我约了朋友一起去爬山",
+          "pinyin": "wǒ yuē le péng you yì qǐ qù pá shān",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "我们早上七点出发",
+          "pinyin": "wǒ men zǎo shang qī diǎn chū fā",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "中午在山上吃饭",
+          "pinyin": "zhōng wǔ zài shān shàng chī fàn",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 计划 và sau 朋友.",
+        "约 yuē: ü tròn môi, thanh 1."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        4,
+        5,
+        1,
+        4,
+        3,
+        3,
+        2,
+        4,
+        3,
+        4,
+        4,
+        3,
+        1,
+        5,
+        2,
+        5,
+        4,
+        3,
+        4,
+        2,
+        1,
+        3,
+        5,
+        3,
+        5,
+        1,
+        3,
+        1,
+        1,
+        1,
+        3,
+        4,
+        1,
+        4,
+        1,
+        4
+      ],
+      "acceptTones": [
+        [
+          4,
+          5,
+          1,
+          4,
+          2,
+          3,
+          2,
+          4,
+          3,
+          4,
+          4,
+          3,
+          1,
+          5,
+          2,
+          5,
+          4,
+          3,
+          4,
+          2,
+          1,
+          3,
+          5,
+          3,
+          5,
+          1,
+          3,
+          1,
+          1,
+          1,
+          3,
+          4,
+          1,
+          4,
+          1,
+          4
+        ],
+        [
+          4,
+          5,
+          1,
+          4,
+          3,
+          3,
+          2,
+          4,
+          3,
+          4,
+          4,
+          3,
+          1,
+          5,
+          2,
+          5,
+          4,
+          3,
+          4,
+          2,
+          1,
+          3,
+          5,
+          3,
+          5,
+          1,
+          3,
+          1,
+          1,
+          1,
+          3,
+          4,
+          1,
+          4,
+          1,
+          4
+        ]
+      ]
+    }
+  ]
+}

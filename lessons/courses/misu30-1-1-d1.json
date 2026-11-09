@@ -127,44 +127,44 @@
   "prerequisites": [],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Chào hỏi và giới thiệu bản thân",
     "playLimit": 2,
-    "transcript": "你好，我叫阿兰。 你叫什么名字？ 我的名字是阿明。",
-    "translation": "Xin chào, mình tên là Lan. Bạn tên là gì? Tên của mình là Minh.",
-    "pinyin": "nǐ hǎo ， wǒ jiào ā lán 。   nǐ jiào shén me míng zi ？   wǒ de míng zi shì ā míng 。",
+    "transcript": "甲：你好！我叫米苏。你叫什么名字？乙：你好，米苏！我叫阿明。甲：阿明，你是哪国人？乙：我是越南人。你呢？甲：我是中国人。我的名字是米苏，不是米米。乙：好，米苏。很高兴认识你！甲：我也很高兴认识你！",
+    "translation": "A: Xin chào! Mình tên là Misu. Bạn tên là gì? B: Chào Misu! Mình tên là Minh. A: Minh ơi, bạn là người nước nào? B: Mình là người Việt Nam. Còn bạn? A: Mình là người Trung Quốc. Tên mình là Misu, không phải Mimi. B: Ừ, Misu. Rất vui được làm quen với bạn! A: Mình cũng rất vui được làm quen với bạn!",
+    "pinyin": "jiǎ ： nǐ hǎo ！ wǒ jiào mǐ sū 。 nǐ jiào shén me míng zi ？ yǐ ： nǐ hǎo ， mǐ sū ！ wǒ jiào ā míng 。 jiǎ ： ā míng ， nǐ shì nǎ guó rén ？ yǐ ： wǒ shì yuè nán rén 。 nǐ ne ？ jiǎ ： wǒ shì zhōng guó rén 。 wǒ de míng zi shì mǐ sū ， bú shì mǐ mǐ 。 yǐ ： hǎo ， mǐ sū 。 hěn gāo xìng rèn shi nǐ ！ jiǎ ： wǒ yě hěn gāo xìng rèn shi nǐ ！",
     "questions": [
       {
-        "prompt": "Cụm “你好” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Người thứ hai tên là gì?",
         "options": [
-          "tên",
-          "xin chào",
-          "quen biết, làm quen"
-        ],
-        "answer": 1,
-        "explanation": "“你好”: xin chào. Ví dụ đã nghe: 你好，我叫阿兰。"
-      },
-      {
-        "prompt": "Cụm “叫” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "quen biết, làm quen",
-          "nào",
-          "gọi là, tên là"
-        ],
-        "answer": 2,
-        "explanation": "“叫”: gọi là, tên là. Ví dụ đã nghe: 你叫什么名字？"
-      },
-      {
-        "prompt": "Cụm “名字” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "tên",
-          "nào",
-          "nước, quốc gia"
+          "Minh",
+          "Mimi",
+          "Misu"
         ],
         "answer": 0,
-        "explanation": "“名字”: tên. Ví dụ đã nghe: 我的名字是阿明。"
+        "explanation": "B nói 我叫阿明 — mình tên là Minh."
+      },
+      {
+        "prompt": "Minh là người nước nào?",
+        "options": [
+          "Trung Quốc",
+          "Việt Nam",
+          "Không nói"
+        ],
+        "answer": 1,
+        "explanation": "B trả lời 我是越南人."
+      },
+      {
+        "prompt": "Misu nhắc lại điều gì về tên mình?",
+        "options": [
+          "Tên mình rất dài",
+          "Mình chưa có tên tiếng Trung",
+          "Tên là Misu, không phải Mimi"
+        ],
+        "answer": 2,
+        "explanation": "A nói 我的名字是米苏，不是米米。"
       }
     ]
   },

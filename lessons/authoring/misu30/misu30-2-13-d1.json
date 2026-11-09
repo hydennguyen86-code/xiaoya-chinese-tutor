@@ -1,0 +1,133 @@
+{
+  "lesson": "misu30-2-13-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "您好，欢迎入住。请问您预订了房间吗？",
+      "vi": "Xin chào, chào mừng quý khách đến lưu trú. Xin hỏi quý khách đã đặt phòng chưa ạ?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "是的，我预订了一个双人房间，住两个晚上。",
+      "vi": "Rồi, tôi đã đặt một phòng đôi, ở hai đêm."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好的，请先登记。还需要交三百块押金，退房的时候会退给您。",
+      "vi": "Vâng, xin quý khách đăng ký trước. Còn cần đặt cọc ba trăm tệ, lúc trả phòng sẽ hoàn lại cho quý khách."
+    },
+    {
+      "speaker": "乙",
+      "zh": "好的。房间里有无线网络吗？",
+      "vi": "Được. Trong phòng có wifi không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "有，密码在桌子上。早餐是七点到九点半，在一楼。",
+      "vi": "Có ạ, mật khẩu để trên bàn. Bữa sáng từ bảy giờ đến chín giờ rưỡi, ở tầng một."
+    },
+    {
+      "speaker": "乙",
+      "zh": "太好了。请问几点退房？",
+      "vi": "Tốt quá. Xin hỏi mấy giờ trả phòng?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "后天中午十二点以前退房就可以。",
+      "vi": "Trước mười hai giờ trưa ngày kia là được ạ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "我可能要晚一点，大概十二点半，可以吗？",
+      "vi": "Có thể tôi sẽ muộn một chút, khoảng mười hai giờ rưỡi, được không?"
+    },
+    {
+      "speaker": "甲",
+      "zh": "可以，不过超过十二点要多收五十块钱。",
+      "vi": "Được ạ, có điều quá mười hai giờ sẽ thu thêm năm mươi tệ."
+    },
+    {
+      "speaker": "乙",
+      "zh": "没问题。这是我的护照和押金。",
+      "vi": "Không vấn đề gì. Đây là hộ chiếu và tiền cọc của tôi."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Khách phải đặt cọc bao nhiêu?",
+      "options": [
+        "Năm mươi tệ",
+        "Một trăm tệ",
+        "Ba trăm tệ"
+      ],
+      "answer": 2,
+      "explanation": "Lễ tân nói 还需要交三百块押金."
+    },
+    {
+      "prompt": "Bữa sáng phục vụ thế nào?",
+      "options": [
+        "Bảy giờ đến chín giờ rưỡi, ở tầng một",
+        "Tám giờ đến mười giờ, ở tầng hai",
+        "Bảy giờ đến chín giờ rưỡi, ở tầng hai"
+      ],
+      "answer": 0,
+      "explanation": "Lễ tân nói 早餐是七点到九点半，在一楼。"
+    },
+    {
+      "prompt": "Nếu khách trả phòng lúc mười hai giờ rưỡi thì sao?",
+      "options": [
+        "Không được trả phòng",
+        "Phải trả thêm năm mươi tệ",
+        "Không phải trả thêm gì"
+      ],
+      "answer": 1,
+      "explanation": "Lễ tân nói 超过十二点要多收五十块钱."
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "请问前台在一楼还是二楼？",
+      "meaningVi": "Xin hỏi quầy lễ tân ở tầng một hay tầng hai?",
+      "focus": [
+        "前台 qián tái: qián thanh 2, tái thanh 2.",
+        "还是 hái shì: hái thanh 2, shì thanh 4."
+      ]
+    },
+    {
+      "hanzi": "我在网上预订了三天的房间。",
+      "meaningVi": "Mình đã đặt phòng ba ngày trên mạng.",
+      "focus": [
+        "预订 yù dìng: ü tròn môi, hai thanh 4.",
+        "房间 fáng jiān: -ng ở 房, -n ở 间."
+      ]
+    },
+    {
+      "hanzi": "入住的时候，请先登记，再交押金。",
+      "meaningVi": "Lúc nhận phòng, xin hãy đăng ký trước rồi đặt cọc.",
+      "focus": [
+        "入住 rù zhù: r uốn lưỡi, zh uốn lưỡi.",
+        "押金 yā jīn: yā thanh 1, jīn thanh 1."
+      ]
+    },
+    {
+      "hanzi": "明天早上八点吃早餐，十一点退房。",
+      "meaningVi": "Sáng mai tám giờ ăn sáng, mười một giờ trả phòng.",
+      "focus": [
+        "早餐 zǎo cān: z và c, chữ 餐 bật hơi.",
+        "退房 tuì fáng: t bật hơi, thanh 4 rồi thanh 2."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "我是阿兰，我预订了一个房间。请问在哪里登记？早餐几点开始？明天我想十点退房。",
+    "meaningVi": "Tôi là Lan, tôi đã đặt một phòng. Xin hỏi đăng ký ở đâu? Bữa sáng mấy giờ bắt đầu? Ngày mai tôi muốn trả phòng lúc mười giờ.",
+    "focus": [
+      "Ngắt hơi sau 阿兰 và sau 房间.",
+      "Hai câu hỏi liền nhau: giọng lên ở cuối 登记 và 开始."
+    ]
+  },
+  "readings": {
+    "了": "le",
+    "还": "hái"
+  }
+}

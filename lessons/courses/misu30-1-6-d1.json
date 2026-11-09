@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Gọi món ăn",
     "playLimit": 2,
-    "transcript": "我想吃米饭。 你喝什么？ 一碗米饭多少钱？",
-    "translation": "Mình muốn ăn cơm. Bạn uống gì? Một bát cơm bao nhiêu tiền?",
-    "pinyin": "wǒ xiǎng chī mǐ fàn 。   nǐ hē shén me ？   yì wǎn mǐ fàn duō shǎo qián ？",
+    "transcript": "甲：服务员，请给我菜单。乙：好的。你想吃什么？甲：这个菜辣吗？乙：很辣。甲：那我不要这个，我要一碗面条。乙：喝什么？甲：一杯水。再来一碗米饭，谢谢。乙：好，请等一下。",
+    "translation": "A: Phục vụ ơi, cho tôi xem thực đơn. B: Vâng. Bạn muốn ăn gì? A: Món này có cay không? B: Rất cay. A: Vậy tôi không lấy món này, tôi lấy một tô mì. B: Bạn uống gì? A: Một ly nước. Cho thêm một bát cơm nữa, cảm ơn. B: Vâng, xin chờ một chút.",
+    "pinyin": "jiǎ ： fú wù yuán ， qǐng gěi wǒ cài dān 。 yǐ ： hǎo de 。 nǐ xiǎng chī shén me ？ jiǎ ： zhè ge cài là ma ？ yǐ ： hěn là 。 jiǎ ： nà wǒ bú yào zhè ge ， wǒ yào yì wǎn miàn tiáo 。 yǐ ： hē shén me ？ jiǎ ： yì bēi shuǐ 。 zài lái yì wǎn mǐ fàn ， xiè xie 。 yǐ ： hǎo ， qǐng děng yí xià 。",
     "questions": [
       {
-        "prompt": "Cụm “吃” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao khách không gọi món đầu tiên?",
         "options": [
-          "ăn",
-          "cơm",
-          "mì sợi"
-        ],
-        "answer": 0,
-        "explanation": "“吃”: ăn. Ví dụ đã nghe: 我想吃米饭。"
-      },
-      {
-        "prompt": "Cụm “喝” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "mì sợi",
-          "uống",
-          "món ăn, rau"
-        ],
-        "answer": 1,
-        "explanation": "“喝”: uống. Ví dụ đã nghe: 你喝什么？"
-      },
-      {
-        "prompt": "Cụm “米饭” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "món ăn, rau",
-          "cay",
-          "cơm"
+          "Món đó quá đắt",
+          "Món đó hết rồi",
+          "Món đó rất cay"
         ],
         "answer": 2,
-        "explanation": "“米饭”: cơm. Ví dụ đã nghe: 一碗米饭多少钱？"
+        "explanation": "Phục vụ nói 很辣, khách nói 那我不要这个。"
+      },
+      {
+        "prompt": "Khách uống gì?",
+        "options": [
+          "Một ly nước",
+          "Một ly trà",
+          "Một ly sữa"
+        ],
+        "answer": 0,
+        "explanation": "Khách nói 一杯水。"
+      },
+      {
+        "prompt": "Cuối cùng khách gọi những thứ gì?",
+        "options": [
+          "Món cay, cơm và nước",
+          "Mì, cơm và nước",
+          "Mì và món cay"
+        ],
+        "answer": 1,
+        "explanation": "Khách gọi 面条, 水 và 米饭。"
       }
     ]
   },

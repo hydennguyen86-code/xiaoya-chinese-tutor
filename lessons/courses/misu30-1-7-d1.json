@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
+    "title": "Nghe hội thoại: Hỏi đường",
     "playLimit": 2,
-    "transcript": "银行在哪儿？ 洗手间在哪儿？ 请问，地铁站怎么走？",
-    "translation": "Ngân hàng ở đâu? Nhà vệ sinh ở đâu? Xin hỏi, ga tàu điện đi thế nào?",
-    "pinyin": "yín háng zài nǎr ？   xǐ shǒu jiān zài nǎr ？   qǐng wèn ， dì tiě zhàn zěn me zǒu ？",
+    "transcript": "甲：请问，地铁站怎么走？乙：一直走，然后向右转。甲：远不远？乙：不远，就在银行前面。甲：银行在哪儿？乙：银行在左边，附近有一个超市。甲：好，谢谢你！乙：不客气。",
+    "translation": "A: Xin hỏi, ga tàu điện đi thế nào? B: Đi thẳng, sau đó rẽ phải. A: Có xa không? B: Không xa, ngay phía trước ngân hàng. A: Ngân hàng ở đâu? B: Ngân hàng ở bên trái, gần đó có một siêu thị. A: Được, cảm ơn bạn! B: Không có gì.",
+    "pinyin": "jiǎ ： qǐng wèn ， dì tiě zhàn zěn me zǒu ？ yǐ ： yì zhí zǒu ， rán hòu xiàng yòu zhuǎn 。 jiǎ ： yuǎn bu yuǎn ？ yǐ ： bù yuǎn ， jiù zài yín háng qián miàn 。 jiǎ ： yín háng zài nǎr ？ yǐ ： yín háng zài zuǒ bian ， fù jìn yǒu yí gè chāo shì 。 jiǎ ： hǎo ， xiè xie nǐ ！ yǐ ： bú kè qi 。",
     "questions": [
       {
-        "prompt": "Cụm “在” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Người thứ nhất muốn đến đâu?",
         "options": [
-          "đi thế nào",
-          "ở, tại",
-          "bên trái"
-        ],
-        "answer": 1,
-        "explanation": "“在”: ở, tại. Ví dụ đã nghe: 银行在哪儿？"
-      },
-      {
-        "prompt": "Cụm “哪儿” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "bên trái",
-          "bên phải",
-          "ở đâu"
-        ],
-        "answer": 2,
-        "explanation": "“哪儿”: ở đâu. Ví dụ đã nghe: 洗手间在哪儿？"
-      },
-      {
-        "prompt": "Cụm “怎么走” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "đi thế nào",
-          "bên phải",
-          "phía trước"
+          "Ga tàu điện",
+          "Ngân hàng",
+          "Siêu thị"
         ],
         "answer": 0,
-        "explanation": "“怎么走”: đi thế nào. Ví dụ đã nghe: 请问，地铁站怎么走？"
+        "explanation": "Người thứ nhất hỏi 地铁站怎么走？"
+      },
+      {
+        "prompt": "Nên đi thế nào?",
+        "options": [
+          "Đi thẳng rồi rẽ trái",
+          "Đi thẳng rồi rẽ phải",
+          "Rẽ phải ngay"
+        ],
+        "answer": 1,
+        "explanation": "Người thứ hai nói 一直走，然后向右转。"
+      },
+      {
+        "prompt": "Ga tàu điện ở gần chỗ nào, và ngân hàng ở bên nào?",
+        "options": [
+          "Gần siêu thị, ngân hàng bên phải",
+          "Trước ngân hàng, ngân hàng bên phải",
+          "Trước ngân hàng, ngân hàng bên trái"
+        ],
+        "answer": 2,
+        "explanation": "就在银行前面 và 银行在左边。"
       }
     ]
   },

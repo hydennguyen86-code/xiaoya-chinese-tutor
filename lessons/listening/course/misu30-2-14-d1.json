@@ -1,0 +1,182 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-2-14-d1",
+  "level": "HSK3-4",
+  "title": "我想取五百块钱 · Ngân hàng và thanh toán",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-211",
+      "level": "HSK3-4",
+      "hanzi": "我的银行账户里还有一千块。",
+      "pinyin": "wǒ de yín háng zhàng hù lǐ hái yǒu yì qiān kuài",
+      "meaningVi": "Trong tài khoản ngân hàng của mình còn một nghìn tệ.",
+      "focus": [
+        "账户 zhàng hù: zh uốn lưỡi, hai thanh 4.",
+        "还 hái thanh 2, 有 yǒu thanh 3."
+      ]
+    },
+    {
+      "id": "dt-2-212",
+      "level": "HSK3-4",
+      "hanzi": "这家店不能刷卡，只能付现金。",
+      "pinyin": "zhè jiā diàn bù néng shuā kǎ zhǐ néng fù xiàn jīn",
+      "meaningVi": "Cửa hàng này không quẹt thẻ được, chỉ trả tiền mặt được.",
+      "focus": [
+        "刷卡 shuā kǎ: sh uốn lưỡi, kǎ thanh 3.",
+        "现金 xiàn jīn: xiàn thanh 4, jīn thanh 1."
+      ]
+    },
+    {
+      "id": "dt-2-213",
+      "level": "HSK3-4",
+      "hanzi": "请不要告诉别人你的密码。",
+      "pinyin": "qǐng bú yào gào sù bié rén nǐ de mì mǎ",
+      "meaningVi": "Xin đừng nói mật khẩu của bạn cho người khác biết.",
+      "focus": [
+        "密码 mì mǎ: thanh 4 rồi thanh 3.",
+        "不要 bú yào: 不 đổi thành thanh 2 trước thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-214",
+      "level": "HSK3-4",
+      "hanzi": "去国外换钱的时候，要先看汇率。",
+      "pinyin": "qù guó wài huàn qián de shí hou yào xiān kàn huì lǜ",
+      "meaningVi": "Lúc đi nước ngoài đổi tiền, cần xem tỷ giá trước.",
+      "focus": [
+        "换钱 huàn qián: q bật hơi, -n cuối.",
+        "汇率 huì lǜ: lǜ có ü, thanh 4."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-48",
+      "level": "HSK3-4",
+      "text": "我今天下午去银行取钱，取了一千块。手续费是五块，我觉得有点贵。",
+      "pinyin": "wǒ jīn tiān xià wǔ qù yín háng qǔ qián qǔ le yì qiān kuài shǒu xù fèi shì wǔ kuài wǒ jué de yóu diǎn guì",
+      "meaningVi": "Chiều nay mình đến ngân hàng rút tiền, rút một nghìn tệ. Phí giao dịch là năm tệ, mình thấy hơi đắt.",
+      "syllables": 27,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我今天下午去银行取钱",
+          "pinyin": "wǒ jīn tiān xià wǔ qù yín háng qǔ qián",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "取了一千块",
+          "pinyin": "qǔ le yì qiān kuài",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "手续费是五块",
+          "pinyin": "shǒu xù fèi shì wǔ kuài",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我觉得有点贵",
+          "pinyin": "wǒ jué de yóu diǎn guì",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 取钱 và sau 一千块.",
+        "手续费 shǒu xù fèi: xù có ü, fèi thanh 4."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        1,
+        1,
+        4,
+        3,
+        4,
+        2,
+        2,
+        3,
+        2,
+        3,
+        5,
+        4,
+        1,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        2,
+        5,
+        3,
+        3,
+        4
+      ],
+      "acceptTones": [
+        [
+          3,
+          1,
+          1,
+          4,
+          3,
+          4,
+          2,
+          2,
+          3,
+          2,
+          3,
+          5,
+          4,
+          1,
+          4,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          3,
+          2,
+          5,
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          1,
+          1,
+          4,
+          3,
+          4,
+          2,
+          2,
+          3,
+          2,
+          3,
+          5,
+          4,
+          1,
+          4,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          3,
+          2,
+          5,
+          3,
+          3,
+          4
+        ]
+      ]
+    }
+  ]
+}

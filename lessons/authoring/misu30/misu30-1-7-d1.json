@@ -1,0 +1,126 @@
+{
+  "lesson": "misu30-1-7-d1",
+  "dialogue": [
+    {
+      "speaker": "甲",
+      "zh": "请问，地铁站怎么走？",
+      "vi": "Xin hỏi, ga tàu điện đi thế nào?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "一直走，然后向右转。",
+      "vi": "Đi thẳng, sau đó rẽ phải."
+    },
+    {
+      "speaker": "甲",
+      "zh": "远不远？",
+      "vi": "Có xa không?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "不远，就在银行前面。",
+      "vi": "Không xa, ngay phía trước ngân hàng."
+    },
+    {
+      "speaker": "甲",
+      "zh": "银行在哪儿？",
+      "vi": "Ngân hàng ở đâu?"
+    },
+    {
+      "speaker": "乙",
+      "zh": "银行在左边，附近有一个超市。",
+      "vi": "Ngân hàng ở bên trái, gần đó có một siêu thị."
+    },
+    {
+      "speaker": "甲",
+      "zh": "好，谢谢你！",
+      "vi": "Được, cảm ơn bạn!"
+    },
+    {
+      "speaker": "乙",
+      "zh": "不客气。",
+      "vi": "Không có gì."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Người thứ nhất muốn đến đâu?",
+      "options": [
+        "Ga tàu điện",
+        "Ngân hàng",
+        "Siêu thị"
+      ],
+      "answer": 0,
+      "explanation": "Người thứ nhất hỏi 地铁站怎么走？"
+    },
+    {
+      "prompt": "Nên đi thế nào?",
+      "options": [
+        "Đi thẳng rồi rẽ trái",
+        "Đi thẳng rồi rẽ phải",
+        "Rẽ phải ngay"
+      ],
+      "answer": 1,
+      "explanation": "Người thứ hai nói 一直走，然后向右转。"
+    },
+    {
+      "prompt": "Ga tàu điện ở gần chỗ nào, và ngân hàng ở bên nào?",
+      "options": [
+        "Gần siêu thị, ngân hàng bên phải",
+        "Trước ngân hàng, ngân hàng bên phải",
+        "Trước ngân hàng, ngân hàng bên trái"
+      ],
+      "answer": 2,
+      "explanation": "就在银行前面 và 银行在左边。"
+    }
+  ],
+  "dictation": [
+    {
+      "hanzi": "学校在银行的右边。",
+      "meaningVi": "Trường học ở bên phải ngân hàng.",
+      "focus": [
+        "右边 yòu bian: bian đọc nhẹ.",
+        "银行 yín háng: 行 đọc háng trong 银行."
+      ]
+    },
+    {
+      "hanzi": "请问，医院怎么走？",
+      "meaningVi": "Xin hỏi, bệnh viện đi thế nào?",
+      "focus": [
+        "请问 qǐng wèn: q bật hơi.",
+        "怎么走 zěn me zǒu: me đọc nhẹ."
+      ]
+    },
+    {
+      "hanzi": "前面左边有一个超市。",
+      "meaningVi": "Phía trước bên trái có một siêu thị.",
+      "focus": [
+        "前面 qián miàn: thanh 2 rồi thanh 4.",
+        "超市 chāo shì: ch uốn lưỡi, bật hơi."
+      ]
+    },
+    {
+      "hanzi": "你去哪儿？我们一起走吧。",
+      "meaningVi": "Bạn đi đâu? Chúng ta cùng đi nhé.",
+      "focus": [
+        "哪儿 nǎr: cuốn lưỡi nhẹ cuối âm.",
+        "一起 yì qǐ: 一 đổi thanh 4 trước thanh 3."
+      ]
+    }
+  ],
+  "shadowing": {
+    "text": "请问，我要去地铁站。附近的地铁站在哪儿？怎么走？",
+    "meaningVi": "Xin hỏi, mình muốn đến ga tàu điện. Ga tàu điện gần đây ở đâu? Đi thế nào?",
+    "focus": [
+      "Ngắt hơi sau 请问 và sau 地铁站。",
+      "附近 fù jìn: hai thanh 4 liền, đọc dứt khoát."
+    ]
+  },
+  "readings": {
+    "行": "háng",
+    "的": "de",
+    "了": "le",
+    "还": "hái",
+    "要": "yào"
+  }
+}

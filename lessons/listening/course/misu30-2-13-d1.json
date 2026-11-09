@@ -1,0 +1,205 @@
+{
+  "source": "AI soạn, chưa duyệt",
+  "kind": "course-listening",
+  "version": 1,
+  "lesson": "misu30-2-13-d1",
+  "level": "HSK3-4",
+  "title": "我预订了房间 · Khách sạn",
+  "note": "Nghe gắn với bài: dictation dùng đúng schema items của lessons/listening/dictation.json; shadowing dùng đúng schema items của lessons/listening/shadowing.json. File không chứa audio. Pinyin ở dạng đọc thành tiếng: đã áp biến điệu 一/不, thanh nhẹ và mọi cặp 3+3 trong cùng cụm hơi (dấu câu chặn biến điệu).",
+  "dictation": [
+    {
+      "id": "dt-2-207",
+      "level": "HSK3-4",
+      "hanzi": "请问前台在一楼还是二楼？",
+      "pinyin": "qǐng wèn qián tái zài yī lóu hái shì èr lóu",
+      "meaningVi": "Xin hỏi quầy lễ tân ở tầng một hay tầng hai?",
+      "focus": [
+        "前台 qián tái: qián thanh 2, tái thanh 2.",
+        "还是 hái shì: hái thanh 2, shì thanh 4."
+      ]
+    },
+    {
+      "id": "dt-2-208",
+      "level": "HSK3-4",
+      "hanzi": "我在网上预订了三天的房间。",
+      "pinyin": "wǒ zài wǎng shàng yù dìng le sān tiān de fáng jiān",
+      "meaningVi": "Mình đã đặt phòng ba ngày trên mạng.",
+      "focus": [
+        "预订 yù dìng: ü tròn môi, hai thanh 4.",
+        "房间 fáng jiān: -ng ở 房, -n ở 间."
+      ]
+    },
+    {
+      "id": "dt-2-209",
+      "level": "HSK3-4",
+      "hanzi": "入住的时候，请先登记，再交押金。",
+      "pinyin": "rù zhù de shí hou qǐng xiān dēng jì zài jiāo yā jīn",
+      "meaningVi": "Lúc nhận phòng, xin hãy đăng ký trước rồi đặt cọc.",
+      "focus": [
+        "入住 rù zhù: r uốn lưỡi, zh uốn lưỡi.",
+        "押金 yā jīn: yā thanh 1, jīn thanh 1."
+      ]
+    },
+    {
+      "id": "dt-2-210",
+      "level": "HSK3-4",
+      "hanzi": "明天早上八点吃早餐，十一点退房。",
+      "pinyin": "míng tiān zǎo shang bā diǎn chī zǎo cān shí yī diǎn tuì fáng",
+      "meaningVi": "Sáng mai tám giờ ăn sáng, mười một giờ trả phòng.",
+      "focus": [
+        "早餐 zǎo cān: z và c, chữ 餐 bật hơi.",
+        "退房 tuì fáng: t bật hơi, thanh 4 rồi thanh 2."
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "id": "sh-2-47",
+      "level": "HSK3-4",
+      "text": "我是阿兰，我预订了一个房间。请问在哪里登记？早餐几点开始？明天我想十点退房。",
+      "pinyin": "wǒ shì ā lán wǒ yù dìng le yí gè fáng jiān qǐng wèn zài ná lǐ dēng jì zǎo cān jí diǎn kāi shǐ míng tiān wó xiǎng shí diǎn tuì fáng",
+      "meaningVi": "Tôi là Lan, tôi đã đặt một phòng. Xin hỏi đăng ký ở đâu? Bữa sáng mấy giờ bắt đầu? Ngày mai tôi muốn trả phòng lúc mười giờ.",
+      "syllables": 33,
+      "pace": "vừa",
+      "chunks": [
+        {
+          "hanzi": "我是阿兰",
+          "pinyin": "wǒ shì ā lán",
+          "pause": "soft"
+        },
+        {
+          "hanzi": "我预订了一个房间",
+          "pinyin": "wǒ yù dìng le yí gè fáng jiān",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "请问在哪里登记",
+          "pinyin": "qǐng wèn zài ná lǐ dēng jì",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "早餐几点开始",
+          "pinyin": "zǎo cān jí diǎn kāi shǐ",
+          "pause": "hard"
+        },
+        {
+          "hanzi": "明天我想十点退房",
+          "pinyin": "míng tiān wó xiǎng shí diǎn tuì fáng",
+          "pause": "end"
+        }
+      ],
+      "focus": [
+        "Ngắt hơi sau 阿兰 và sau 房间.",
+        "Hai câu hỏi liền nhau: giọng lên ở cuối 登记 và 开始."
+      ],
+      "sandhi": true,
+      "baseTones": [
+        3,
+        4,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        2,
+        4,
+        2,
+        1,
+        3,
+        4,
+        4,
+        3,
+        3,
+        1,
+        4,
+        3,
+        1,
+        3,
+        3,
+        1,
+        3,
+        2,
+        1,
+        3,
+        3,
+        2,
+        3,
+        4,
+        2
+      ],
+      "acceptTones": [
+        [
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          2,
+          4,
+          2,
+          1,
+          3,
+          4,
+          4,
+          2,
+          3,
+          1,
+          4,
+          3,
+          1,
+          2,
+          3,
+          1,
+          3,
+          2,
+          1,
+          2,
+          3,
+          2,
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          2,
+          4,
+          2,
+          1,
+          3,
+          4,
+          4,
+          3,
+          3,
+          1,
+          4,
+          3,
+          1,
+          3,
+          3,
+          1,
+          3,
+          2,
+          1,
+          3,
+          3,
+          2,
+          3,
+          4,
+          2
+        ]
+      ]
+    }
+  ]
+}

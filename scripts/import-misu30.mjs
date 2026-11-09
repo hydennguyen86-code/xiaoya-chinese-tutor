@@ -1,5 +1,7 @@
 // Convert the user's AI curriculum, not textbook material. No audio is imported.
 // Usage: node scripts/import-misu30.mjs <curriculum directory>
+// Khối listening sinh ở đây chỉ là bản tạm (ghép câu ví dụ). Phần nghe thật soạn ở
+// lessons/authoring/misu30/ và dựng bằng scripts/build-course-listening.mjs.
 import fs from 'node:fs';
 import { isDeepStrictEqual } from 'node:util';
 import path from 'node:path';

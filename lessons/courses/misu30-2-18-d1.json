@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我喜欢一个人旅行。 你去过北京吗？ 这里的风景很美。",
-    "translation": "Mình thích du lịch một mình. Bạn đã từng đến Bắc Kinh chưa? Phong cảnh ở đây rất đẹp.",
-    "pinyin": "wǒ xǐ huan yí gè rén lǚ xíng 。   nǐ qù guò běi jīng ma ？   zhè lǐ de fēng jǐng hěn měi 。",
+    "title": "Nghe hội thoại: Du lịch và trải nghiệm",
+    "playLimit": 1,
+    "transcript": "甲：阿明，你去过云南吗？乙：去过，去年夏天我和家人去了一个星期。甲：你觉得那里怎么样？乙：我觉得那里的风景很美，特别是大理的湖。我们每天都拍照。甲：你们找导游了吗？乙：找了。导游是当地人，他的安排很好，带我们去了很多小地方。甲：真好！你买纪念品了吗？乙：买了，我给妈妈买了一盒茶，给朋友买了一个小包。甲：这次旅行你最难忘的是什么？乙：是在湖边看日出。这次旅行让我很难忘。",
+    "translation": "A: Minh à, bạn đã từng đến Vân Nam chưa? B: Rồi, mùa hè năm ngoái mình cùng gia đình đi một tuần. A: Bạn thấy ở đó thế nào? B: Mình thấy phong cảnh ở đó rất đẹp, nhất là cái hồ ở Đại Lý. Ngày nào chúng mình cũng chụp ảnh. A: Các bạn có thuê hướng dẫn viên không? B: Có. Hướng dẫn viên là người địa phương, cách sắp xếp của bạn ấy rất tốt, đưa chúng mình đến nhiều nơi nhỏ. A: Thích thật! Bạn có mua đồ lưu niệm không? B: Có, mình mua cho mẹ một hộp trà, mua cho bạn một cái túi nhỏ. A: Trong chuyến đi này, điều khiến bạn khó quên nhất là gì? B: Là ngắm bình minh bên hồ. Chuyến đi này khiến mình rất khó quên.",
+    "pinyin": "jiǎ ： ā míng ， nǐ qù guò yún nán ma ？ yǐ ： qù guò ， qù nián xià tiān wǒ hé jiā rén qù le yí gè xīng qī 。 jiǎ ： nǐ jué de nà lǐ zěn me yàng ？ yǐ ： wǒ jué de nà lǐ de fēng jǐng hěn měi ， tè bié shì dà lǐ de hú 。 wǒ men měi tiān dōu pāi zhào 。 jiǎ ： nǐ men zhǎo dǎo yóu le ma ？ yǐ ： zhǎo le 。 dǎo yóu shì dāng dì rén ， tā de ān pái hěn hǎo ， dài wǒ men qù le hěn duō xiǎo dì fāng 。 jiǎ ： zhēn hǎo ！ nǐ mǎi jì niàn pǐn le ma ？ yǐ ： mǎi le ， wǒ gěi mā ma mǎi le yì hé chá ， gěi péng you mǎi le yí gè xiǎo bāo 。 jiǎ ： zhè cì lǚ xíng nǐ zuì nán wàng de shì shén me ？ yǐ ： shì zài hú biān kàn rì chū 。 zhè cì lǚ xíng ràng wǒ hěn nán wàng 。",
     "questions": [
       {
-        "prompt": "Cụm “旅行” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Năm ngoái Minh đi Vân Nam bao lâu?",
         "options": [
-          "du lịch",
-          "phong cảnh",
-          "chụp ảnh"
-        ],
-        "answer": 0,
-        "explanation": "“旅行”: du lịch. Ví dụ đã nghe: 我喜欢一个人旅行。"
-      },
-      {
-        "prompt": "Cụm “去过” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "chụp ảnh",
-          "đã từng đến",
-          "hướng dẫn viên"
+          "Ba ngày",
+          "Một tuần",
+          "Một tháng"
         ],
         "answer": 1,
-        "explanation": "“去过”: đã từng đến. Ví dụ đã nghe: 你去过北京吗？"
+        "explanation": "Minh nói 去年夏天我和家人去了一个星期。"
       },
       {
-        "prompt": "Cụm “风景” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao Minh thấy hướng dẫn viên rất tốt?",
         "options": [
-          "hướng dẫn viên",
-          "đồ lưu niệm",
-          "phong cảnh"
+          "Vì hướng dẫn viên miễn phí",
+          "Vì hướng dẫn viên nói được nhiều thứ tiếng",
+          "Vì là người địa phương, sắp xếp tốt, đưa đến nhiều nơi nhỏ"
         ],
         "answer": 2,
-        "explanation": "“风景”: phong cảnh. Ví dụ đã nghe: 这里的风景很美。"
+        "explanation": "Minh nói 导游是当地人，他的安排很好，带我们去了很多小地方。"
+      },
+      {
+        "prompt": "Điều khiến Minh khó quên nhất là gì?",
+        "options": [
+          "Ngắm bình minh bên hồ",
+          "Mua đồ lưu niệm",
+          "Chụp ảnh ở thành phố"
+        ],
+        "answer": 0,
+        "explanation": "Minh nói 是在湖边看日出。"
       }
     ]
   },

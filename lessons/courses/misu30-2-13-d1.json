@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我在网上预订了一个房间。 房间里有空调吗？ 我想现在办理入住。",
-    "translation": "Mình đã đặt một phòng trên mạng. Trong phòng có điều hòa không? Mình muốn làm thủ tục nhận phòng bây giờ.",
-    "pinyin": "wǒ zài wǎng shàng yù dìng le yí gè fáng jiān 。   fáng jiān lǐ yǒu kōng tiáo ma ？   wǒ xiǎng xiàn zài bàn lǐ rù zhù 。",
+    "title": "Nghe hội thoại: Khách sạn",
+    "playLimit": 1,
+    "transcript": "甲：您好，欢迎入住。请问您预订了房间吗？乙：是的，我预订了一个双人房间，住两个晚上。甲：好的，请先登记。还需要交三百块押金，退房的时候会退给您。乙：好的。房间里有无线网络吗？甲：有，密码在桌子上。早餐是七点到九点半，在一楼。乙：太好了。请问几点退房？甲：后天中午十二点以前退房就可以。乙：我可能要晚一点，大概十二点半，可以吗？甲：可以，不过超过十二点要多收五十块钱。乙：没问题。这是我的护照和押金。",
+    "translation": "A: Xin chào, chào mừng quý khách đến lưu trú. Xin hỏi quý khách đã đặt phòng chưa ạ? B: Rồi, tôi đã đặt một phòng đôi, ở hai đêm. A: Vâng, xin quý khách đăng ký trước. Còn cần đặt cọc ba trăm tệ, lúc trả phòng sẽ hoàn lại cho quý khách. B: Được. Trong phòng có wifi không? A: Có ạ, mật khẩu để trên bàn. Bữa sáng từ bảy giờ đến chín giờ rưỡi, ở tầng một. B: Tốt quá. Xin hỏi mấy giờ trả phòng? A: Trước mười hai giờ trưa ngày kia là được ạ. B: Có thể tôi sẽ muộn một chút, khoảng mười hai giờ rưỡi, được không? A: Được ạ, có điều quá mười hai giờ sẽ thu thêm năm mươi tệ. B: Không vấn đề gì. Đây là hộ chiếu và tiền cọc của tôi.",
+    "pinyin": "jiǎ ： nín hǎo ， huān yíng rù zhù 。 qǐng wèn nín yù dìng le fáng jiān ma ？ yǐ ： shì de ， wǒ yù dìng le yí gè shuāng rén fáng jiān ， zhù liǎng gè wǎn shang 。 jiǎ ： hǎo de ， qǐng xiān dēng jì 。 hái xū yào jiāo sān bǎi kuài yā jīn ， tuì fáng de shí hou huì tuì gěi nín 。 yǐ ： hǎo de 。 fáng jiān lǐ yǒu wú xiàn wǎng luò ma ？ jiǎ ： yǒu ， mì mǎ zài zhuō zi shàng 。 zǎo cān shì qī diǎn dào jiǔ diǎn bàn ， zài yī lóu 。 yǐ ： tài hǎo le 。 qǐng wèn jǐ diǎn tuì fáng ？ jiǎ ： hòu tiān zhōng wǔ shí èr diǎn yǐ qián tuì fáng jiù kě yǐ 。 yǐ ： wǒ kě néng yào wǎn yì diǎn ， dà gài shí èr diǎn bàn ， kě yǐ ma ？ jiǎ ： kě yǐ ， bú guò chāo guò shí èr diǎn yào duō shōu wǔ shí kuài qián 。 yǐ ： méi wèn tí 。 zhè shì wǒ de hù zhào hé yā jīn 。",
     "questions": [
       {
-        "prompt": "Cụm “预订” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Khách phải đặt cọc bao nhiêu?",
         "options": [
-          "nhận phòng",
-          "đặt trước",
-          "trả phòng"
-        ],
-        "answer": 1,
-        "explanation": "“预订”: đặt trước. Ví dụ đã nghe: 我在网上预订了一个房间。"
-      },
-      {
-        "prompt": "Cụm “房间” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "trả phòng",
-          "tiền đặt cọc",
-          "phòng"
+          "Năm mươi tệ",
+          "Một trăm tệ",
+          "Ba trăm tệ"
         ],
         "answer": 2,
-        "explanation": "“房间”: phòng. Ví dụ đã nghe: 房间里有空调吗？"
+        "explanation": "Lễ tân nói 还需要交三百块押金."
       },
       {
-        "prompt": "Cụm “入住” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Bữa sáng phục vụ thế nào?",
         "options": [
-          "nhận phòng",
-          "tiền đặt cọc",
-          "bữa sáng"
+          "Bảy giờ đến chín giờ rưỡi, ở tầng một",
+          "Tám giờ đến mười giờ, ở tầng hai",
+          "Bảy giờ đến chín giờ rưỡi, ở tầng hai"
         ],
         "answer": 0,
-        "explanation": "“入住”: nhận phòng. Ví dụ đã nghe: 我想现在办理入住。"
+        "explanation": "Lễ tân nói 早餐是七点到九点半，在一楼。"
+      },
+      {
+        "prompt": "Nếu khách trả phòng lúc mười hai giờ rưỡi thì sao?",
+        "options": [
+          "Không được trả phòng",
+          "Phải trả thêm năm mươi tệ",
+          "Không phải trả thêm gì"
+        ],
+        "answer": 1,
+        "explanation": "Lễ tân nói 超过十二点要多收五十块钱."
       }
     ]
   },

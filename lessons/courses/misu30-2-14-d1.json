@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我想去银行取钱。 这里可以换钱吗？ 可以刷卡吗？",
-    "translation": "Mình muốn đến ngân hàng rút tiền. Ở đây có thể đổi tiền không? Có thể quẹt thẻ không?",
-    "pinyin": "wǒ xiǎng qù yín háng qǔ qián 。   zhè lǐ kě yǐ huàn qián ma ？   kě yǐ shuā kǎ ma ？",
+    "title": "Nghe hội thoại: Ngân hàng và thanh toán",
+    "playLimit": 1,
+    "transcript": "甲：您好，请问您要办理什么业务？乙：我想取钱，也想换钱。我要取两千块，再换三百美元。甲：好的，请输入密码。乙：好了。取钱要手续费吗？甲：您有我们银行的账户，取钱不收手续费。乙：那今天的汇率是多少？甲：一美元换七块二，三百美元可以换两千一百六十块。乙：那我一共能拿到多少现金？甲：取的两千块加上换的两千一百六十块，一共四千一百六十块。乙：好的，谢谢。",
+    "translation": "A: Xin chào, xin hỏi quý khách cần làm giao dịch gì ạ? B: Tôi muốn rút tiền và cũng muốn đổi tiền. Tôi muốn rút hai nghìn tệ, rồi đổi ba trăm đô la. A: Vâng, xin quý khách nhập mật khẩu. B: Xong rồi. Rút tiền có mất phí giao dịch không? A: Quý khách có tài khoản ở ngân hàng chúng tôi, rút tiền không thu phí giao dịch. B: Vậy tỷ giá hôm nay là bao nhiêu? A: Một đô la đổi bảy tệ hai, ba trăm đô la đổi được hai nghìn một trăm sáu mươi tệ. B: Vậy tổng cộng tôi lấy được bao nhiêu tiền mặt? A: Hai nghìn tệ rút cộng với hai nghìn một trăm sáu mươi tệ đổi, tổng cộng bốn nghìn một trăm sáu mươi tệ. B: Vâng, cảm ơn.",
+    "pinyin": "jiǎ ： nín hǎo ， qǐng wèn nín yào bàn lǐ shén me yè wù ？ yǐ ： wǒ xiǎng qǔ qián ， yě xiǎng huàn qián 。 wǒ yào qǔ liǎng qiān kuài ， zài huàn sān bǎi měi yuán 。 jiǎ ： hǎo de ， qǐng shū rù mì mǎ 。 yǐ ： hǎo le 。 qǔ qián yào shǒu xù fèi ma ？ jiǎ ： nín yǒu wǒ men yín háng de zhàng hù ， qǔ qián bù shōu shǒu xù fèi 。 yǐ ： nà jīn tiān de huì lǜ shì duō shǎo ？ jiǎ ： yì měi yuán huàn qī kuài èr ， sān bǎi měi yuán kě yǐ huàn liǎng qiān yì bǎi liù shí kuài 。 yǐ ： nà wǒ yí gòng néng ná dào duō shǎo xiàn jīn ？ jiǎ ： qǔ de liǎng qiān kuài jiā shàng huàn de liǎng qiān yì bǎi liù shí kuài ， yí gòng sì qiān yì bǎi liù shí kuài 。 yǐ ： hǎo de ， xiè xie 。",
     "questions": [
       {
-        "prompt": "Cụm “取钱” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Vì sao rút tiền không mất phí giao dịch?",
         "options": [
-          "quẹt thẻ",
-          "tiền mặt",
-          "rút tiền"
-        ],
-        "answer": 2,
-        "explanation": "“取钱”: rút tiền. Ví dụ đã nghe: 我想去银行取钱。"
-      },
-      {
-        "prompt": "Cụm “换钱” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "đổi tiền",
-          "tiền mặt",
-          "mật khẩu"
+          "Vì khách có tài khoản ở chính ngân hàng này",
+          "Vì số tiền rút rất nhỏ",
+          "Vì hôm nay ngân hàng miễn phí"
         ],
         "answer": 0,
-        "explanation": "“换钱”: đổi tiền. Ví dụ đã nghe: 这里可以换钱吗？"
+        "explanation": "Nhân viên nói 您是我们银行的账户，取钱不收手续费。"
       },
       {
-        "prompt": "Cụm “刷卡” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Ba trăm đô la đổi được bao nhiêu tệ?",
         "options": [
-          "mật khẩu",
-          "quẹt thẻ",
-          "tài khoản"
+          "Bốn nghìn một trăm sáu mươi tệ",
+          "Hai nghìn một trăm sáu mươi tệ",
+          "Hai nghìn tệ"
         ],
         "answer": 1,
-        "explanation": "“刷卡”: quẹt thẻ. Ví dụ đã nghe: 可以刷卡吗？"
+        "explanation": "Tỷ giá 一美元换七块二, nên 三百美元可以换两千一百六十块 (300 x 7,2)."
+      },
+      {
+        "prompt": "Tổng tiền mặt khách nhận được là bao nhiêu?",
+        "options": [
+          "Hai nghìn một trăm sáu mươi tệ",
+          "Ba trăm tệ",
+          "Bốn nghìn một trăm sáu mươi tệ"
+        ],
+        "answer": 2,
+        "explanation": "Nhân viên cộng: 两千 + 两千一百六十 = 一共四千一百六十块."
       }
     ]
   },

@@ -129,44 +129,44 @@
   ],
   "learningNotes": [
     "AI soạn, chưa duyệt. Mức HSK là định hướng chủ đề, chưa đối chiếu đầy đủ danh sách từ hay đề thi chính thức.",
-    "Bài nghe nhận nghĩa dùng câu ví dụ của bài. Hãy áp dụng vào nhập vai rồi tự đổi thông tin."
+    "Bài nghe là một hội thoại ngắn dùng từ và mẫu câu của bài: nghe trước, trả lời câu hỏi, rồi mới mở bản dịch. Phần chép chính tả và nói đuổi đi kèm dùng lại các từ mới."
   ],
   "listening": {
-    "title": "Nghe ví dụ thực tế",
-    "playLimit": 2,
-    "transcript": "我今天有点不舒服。 我从早上开始头疼。 你发烧了，需要休息。",
-    "translation": "Hôm nay mình hơi không khỏe. Mình đau đầu từ sáng. Bạn bị sốt rồi, cần nghỉ ngơi.",
-    "pinyin": "wǒ jīn tiān yǒu diǎn bù shū fu 。   wǒ cóng zǎo shang kāi shǐ tóu téng 。   nǐ fā shāo le ， xū yào xiū xi 。",
+    "title": "Nghe hội thoại: Khám bệnh",
+    "playLimit": 1,
+    "transcript": "甲：你好，你哪里不舒服？乙：医生，我头疼，还有点咳嗽，已经两天了。甲：发烧吗？乙：昨天晚上发烧了，三十八度。甲：我看看。现在是三十七度五，比昨天低一点。乙：严重吗？甲：不太严重，是感冒。开药以前我要问一下，你对药过敏吗？乙：我对药不过敏，不过对海鲜过敏。甲：好。你要按时吃药，一天三次，饭后吃。如果还发烧，就去大医院检查。乙：好的，谢谢医生。",
+    "translation": "A: Chào bạn, bạn thấy khó chịu ở đâu? B: Bác sĩ ơi, tôi đau đầu, còn hơi ho, được hai ngày rồi. A: Có sốt không? B: Tối qua tôi có sốt, ba mươi tám độ. A: Để tôi xem. Bây giờ là ba mươi bảy độ rưỡi, thấp hơn hôm qua một chút. B: Có nghiêm trọng không ạ? A: Không nghiêm trọng lắm, là cảm. Trước khi kê thuốc tôi cần hỏi, bạn có dị ứng thuốc không? B: Tôi không dị ứng thuốc, nhưng dị ứng hải sản. A: Được. Bạn phải uống thuốc đúng giờ, ngày ba lần, sau bữa ăn. Nếu vẫn còn sốt thì đến bệnh viện lớn kiểm tra. B: Vâng, cảm ơn bác sĩ.",
+    "pinyin": "jiǎ ： nǐ hǎo ， nǐ nǎ lǐ bù shū fu ？ yǐ ： yī shēng ， wǒ tóu téng ， hái yǒu diǎn ké sou ， yǐ jīng liǎng tiān le 。 jiǎ ： fā shāo ma ？ yǐ ： zuó tiān wǎn shang fā shāo le ， sān shí bā dù 。 jiǎ ： wǒ kàn kàn 。 xiàn zài shì sān shí qī dù wǔ ， bǐ zuó tiān dī yì diǎn 。 yǐ ： yán zhòng ma ？ jiǎ ： bú tài yán zhòng ， shì gǎn mào 。 kāi yào yǐ qián wǒ yào wèn yí xià ， nǐ duì yào guò mǐn ma ？ yǐ ： wǒ duì yào bú guò mǐn ， bú guò duì hǎi xiān guò mǐn 。 jiǎ ： hǎo 。 nǐ yào àn shí chī yào ， yì tiān sān cì ， fàn hòu chī 。 rú guǒ hái fā shāo ， jiù qù dà yī yuàn jiǎn chá 。 yǐ ： hǎo de ， xiè xie yī shēng 。",
     "questions": [
       {
-        "prompt": "Cụm “不舒服” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Bệnh nhân đã bị đau đầu và ho được bao lâu?",
         "options": [
-          "không khỏe",
-          "sốt",
-          "ho"
-        ],
-        "answer": 0,
-        "explanation": "“不舒服”: không khỏe. Ví dụ đã nghe: 我今天有点不舒服。"
-      },
-      {
-        "prompt": "Cụm “头疼” trong đoạn nghe có nghĩa gì?",
-        "options": [
-          "ho",
-          "đau đầu",
-          "uống thuốc"
+          "Một ngày",
+          "Hai ngày",
+          "Ba ngày"
         ],
         "answer": 1,
-        "explanation": "“头疼”: đau đầu. Ví dụ đã nghe: 我从早上开始头疼。"
+        "explanation": "Bệnh nhân nói 我头疼，还有点咳嗽，已经两天了。"
       },
       {
-        "prompt": "Cụm “发烧” trong đoạn nghe có nghĩa gì?",
+        "prompt": "Nhiệt độ hiện tại so với tối qua thế nào?",
         "options": [
-          "uống thuốc",
-          "bệnh viện",
-          "sốt"
+          "Cao hơn",
+          "Bằng nhau",
+          "Thấp hơn"
         ],
         "answer": 2,
-        "explanation": "“发烧”: sốt. Ví dụ đã nghe: 你发烧了，需要休息。"
+        "explanation": "Tối qua 三十八度, bây giờ 三十七度五，比昨天低一点。"
+      },
+      {
+        "prompt": "Vì sao bác sĩ hỏi bệnh nhân có dị ứng không?",
+        "options": [
+          "Vì sắp kê thuốc cho bệnh nhân",
+          "Vì bệnh nhân dị ứng thức ăn",
+          "Vì bệnh nhân muốn đổi thuốc"
+        ],
+        "answer": 0,
+        "explanation": "Bác sĩ nói 开药以前我要问一下，你对药过敏吗？"
       }
     ]
   },
