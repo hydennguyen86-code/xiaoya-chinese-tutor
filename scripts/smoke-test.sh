@@ -36,12 +36,13 @@ for (const url of [status.avatarUrl, status.lamAvatarUrl]) {
 }
 const syllabusResponse = await fetch(`${base}/api/syllabus`); assert.equal(syllabusResponse.status, 200);
 const syllabus = await syllabusResponse.json(); assert.ok(JSON.stringify(syllabus).includes('hsk1-practical'));
-assert.equal(syllabus.volumes.filter(v => v.trackId === 'misu30').length, 3);
+// 30 bài giao tiếp xếp vào lộ trình theo bậc (trackId hsk1/hsk3/hsk5), id tập giữ nguyên.
+const misu = syllabus.volumes.filter(v => v.id.startsWith('misu30-')); assert.deepEqual(misu.map(v => v.trackId), ['hsk1','hsk3','hsk5']);
 const lessonResponse = await fetch(`${base}/api/lesson-content`, {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({volumeId:'hsk1-practical',lessonNo:1,day:1,level:'HSK1-2'})});
 assert.equal(lessonResponse.status,200);
 const lesson = await lessonResponse.json(); assert.ok(lesson.listeningPractice.dictation.length >= 3); assert.equal(lesson.listeningPractice.shadowing.length,1); assert.equal(lesson.reviewed,false);
 const courseResponse = await fetch(`${base}/api/lesson-content`, {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({volumeId:'misu30-2',lessonNo:11,day:1,level:'HSK3-4'})});
-assert.equal(courseResponse.status,200); const course = await courseResponse.json(); assert.equal(course.editorialStatus,'AI soạn, chưa duyệt'); assert.equal(course.vocab.length,8);
+assert.equal(courseResponse.status,200); const course = await courseResponse.json(); assert.equal(course.editorialStatus,'AI soạn, chưa duyệt'); assert.equal(course.vocab.length,8); assert.ok(course.listeningPractice.dictation.length >= 3); assert.match(course.listening.transcript, /甲：/);
 const counts = await (await fetch(`${base}/api/tone-feedback/synthetic-smoke`)).json(); assert.deepEqual(counts,{labeled:0,feedback:0});
 const tts = await fetch(`${base}/api/tts`, { method: 'POST', headers: {'content-type':'application/json'}, body: JSON.stringify({text:'你好。'}), signal: AbortSignal.timeout(90000) });
 const speech = await tts.json();
