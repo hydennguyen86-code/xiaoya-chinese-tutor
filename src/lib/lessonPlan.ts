@@ -1,6 +1,9 @@
 // Pure scheduling logic for the 20-minute daily lesson. No imports, so it can
 // be unit-tested directly with `node --test`.
 
+import type { CoachFeedback } from '../types';
+import type { Tier } from './tier';
+
 export interface SyllabusLesson {
   no: number;
   title: string;
@@ -29,17 +32,46 @@ export interface Syllabus {
   warning?: string;
 }
 
-export const SECTIONS = [
+export type SectionId = 'review' | 'vocab' | 'patterns' | 'roleplay' | 'freetalk' | 'coach' | 'summary';
+export interface SectionInfo {
+  id: SectionId;
+  title: string;
+  minutes: number;
+}
+
+/** Foundation tier (Vỡ lòng, HSK 1-2). */
+export const SECTIONS: readonly SectionInfo[] = [
   { id: 'review', title: 'Khởi động ôn tập', minutes: 3 },
   { id: 'vocab', title: 'Từ mới', minutes: 4 },
   { id: 'patterns', title: 'Mẫu câu', minutes: 4 },
   { id: 'roleplay', title: 'Hội thoại nhập vai', minutes: 6 },
-  { id: 'freetalk', title: 'Nói tự do', minutes: 2 },
+  { id: 'freetalk', title: 'Nói với Coach', minutes: 2 },
   { id: 'summary', title: 'Tổng kết', minutes: 1 },
-] as const;
+];
 
-export type SectionId = (typeof SECTIONS)[number]['id'];
-export const SESSION_MS = SECTIONS.reduce((sum, s) => sum + s.minutes, 0) * 60_000;
+/** Coach tier (HSK 3 and above): word cards, then conversation with the Coach. */
+export const COACH_SECTIONS: readonly SectionInfo[] = [
+  { id: 'review', title: 'Khởi động ôn tập', minutes: 3 },
+  { id: 'vocab', title: 'Từ mới', minutes: 6 },
+  { id: 'coach', title: 'Nói với Coach', minutes: 10 },
+  { id: 'summary', title: 'Tổng kết', minutes: 1 },
+];
+
+export function sectionsFor(tier: Tier = 'foundation'): readonly SectionInfo[] {
+  return tier === 'coach' ? COACH_SECTIONS : SECTIONS;
+}
+
+export function sessionMsFor(tier: Tier = 'foundation') {
+  return sectionsFor(tier).reduce((sum, s) => sum + s.minutes, 0) * 60_000;
+}
+
+/** A stored section index may be out of range for the current tier: clamp to the last valid step. */
+export function clampSection(section: number, tier: Tier = 'foundation') {
+  const last = sectionsFor(tier).length - 1;
+  return Math.min(Math.max(0, Number.isFinite(section) ? Math.trunc(section) : 0), last);
+}
+
+export const SESSION_MS = sessionMsFor('foundation');
 
 export interface Pointer {
   volumeId: string;
@@ -61,6 +93,9 @@ export interface DialogLine {
   text: string;
   translation?: string;
   corrections?: Array<{ original: string; corrected: string; explanation: string }>;
+  /** Coach feedback on a learner line */
+  coach?: CoachFeedback | null;
+  coachPending?: boolean;
 }
 
 export interface SessionNote {
@@ -98,12 +133,12 @@ export type TodayPlan =
   | { kind: 'done-today'; next: Pointer | null }
   | { kind: 'finished' };
 
-export function sectionBudgetMs(index: number) {
-  return (SECTIONS[index]?.minutes ?? 0) * 60_000;
+export function sectionBudgetMs(index: number, tier: Tier = 'foundation') {
+  return (sectionsFor(tier)[index]?.minutes ?? 0) * 60_000;
 }
 
-export function remainingMs(session: SessionState) {
-  return Math.max(0, SESSION_MS - session.elapsedMs.reduce((a, b) => a + b, 0));
+export function remainingMs(session: SessionState, tier: Tier = 'foundation') {
+  return Math.max(0, sessionMsFor(tier) - session.elapsedMs.reduce((a, b) => a + b, 0));
 }
 
 export function previousDay(day: string) {
@@ -191,6 +226,7 @@ export function beginSession(
   level: string,
   pointer: Pointer,
   today: string,
+  tier: Tier = 'foundation',
 ): LessonProgress {
   const base = progress ?? (initialProgress(syllabus, level) as LessonProgress);
   return {
@@ -201,7 +237,7 @@ export function beginSession(
       date: today,
       section: 0,
       item: 0,
-      elapsedMs: SECTIONS.map(() => 0),
+      elapsedMs: sectionsFor(tier).map(() => 0),
       stats: emptyStats(),
     },
   };

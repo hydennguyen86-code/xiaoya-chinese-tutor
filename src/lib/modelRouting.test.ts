@@ -19,12 +19,13 @@ const settings = (patch: Partial<Settings> = {}): Settings => ({ ...DEFAULT_SETT
 
 test('ticked jobs go to the cloud, chores stay on the local model', () => {
   const both = status([local, cloud]);
-  // by default only the analysis of saved history goes to the cloud
+  // by default the Coach, the sentence check and the analysis go to the cloud
   assert.deepEqual(routeTask('analysis', settings(), both), { provider: 'compatible', model: 'gemini-4-argon', cloud: true });
-  assert.deepEqual(routeTask('chat', settings(), both), { provider: 'ollama', model: 'qwen2.5:7b', cloud: false });
+  assert.deepEqual(routeTask('chat', settings(), both), { provider: 'compatible', model: 'gemini-4-argon', cloud: true });
+  assert.equal(routeTask('corrections', settings(), both)?.provider, 'compatible');
   assert.equal(routeTask('assessment', settings(), both)?.cloud, false);
   assert.deepEqual(routeTask('lessons', settings(), both), { provider: 'ollama', model: 'qwen2.5:7b', cloud: false });
-  assert.equal(routeTask('chat', settings({ cloudTasks: ['chat'] }), both)?.provider, 'compatible');
+  assert.equal(routeTask('chat', settings({ cloudTasks: ['analysis'] }), both)?.provider, 'ollama');
   assert.equal(routeTask('analysis', settings({ cloudTasks: [] }), both)?.provider, 'ollama');
 });
 
@@ -37,7 +38,7 @@ test('falls back to whichever model is available', () => {
 
 test('live corrections stay off the cloud unless ticked', () => {
   const both = status([local, cloud]);
-  assert.equal(routeTask('corrections', settings(), both)?.provider, 'ollama');
-  assert.equal(routeTask('corrections', settings(), status([{ ...local, online: false }, cloud])), null);
+  assert.equal(routeTask('corrections', settings({ cloudTasks: ['analysis'] }), both)?.provider, 'ollama');
+  assert.equal(routeTask('corrections', settings({ cloudTasks: [] }), status([{ ...local, online: false }, cloud])), null);
   assert.equal(routeTask('corrections', settings({ cloudTasks: ['corrections'] }), both)?.provider, 'compatible');
 });

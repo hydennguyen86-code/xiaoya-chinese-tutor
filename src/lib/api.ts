@@ -3,7 +3,10 @@ import { voiceLocale } from './browserVoice';
 import type {
   AnalysisReport,
   ChatHistoryMessage,
+  CoachFeedback,
   Correction,
+  Level,
+  WordNotes,
   StatusResponse,
   StreamAttitude,
   StreamEvent,
@@ -141,6 +144,46 @@ export async function streamChat(payload: ChatRequest, handlers: ChatStreamHandl
   if (!gotTurn) {
     throw new Error('Kết nối với model bị ngắt trước khi phản hồi hoàn tất. Thử lại nhé.');
   }
+}
+
+/** Coach feedback for one learner sentence; corrections keep the old shape for the learning profile. */
+export async function fetchCoach(payload: {
+  provider: string;
+  model: string;
+  text: string;
+  level: Level;
+  /** the Coach's previous line, so the feedback can judge whether the answer fits */
+  context?: string;
+  signal?: AbortSignal;
+}): Promise<{ corrections: Correction[]; coach: CoachFeedback | null }> {
+  const { signal, ...body } = payload;
+  const res = await fetch('/api/corrections', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+    signal,
+  });
+  if (!res.ok) throw new Error(await readError(res));
+  const data = (await res.json()) as { corrections?: Correction[]; coach?: CoachFeedback | null };
+  return { corrections: Array.isArray(data?.corrections) ? data.corrections : [], coach: data?.coach ?? null };
+}
+
+/** AI notes (origin, character meanings, examples) for a word card; cached on the server. */
+export async function fetchWordNotes(payload: {
+  provider: string;
+  model: string;
+  word: string;
+  pinyin: string;
+  meaning: string;
+  level: Level;
+}): Promise<WordNotes> {
+  const res = await fetch('/api/word-notes', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(await readError(res));
+  return (await res.json()) as WordNotes;
 }
 
 export async function fetchCorrections(payload: { provider: string; model: string; text: string }): Promise<Correction[]> {

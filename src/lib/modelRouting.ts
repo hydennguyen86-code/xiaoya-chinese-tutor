@@ -2,11 +2,11 @@ import type { CloudTask, ProviderInfo, Settings, StatusResponse } from '../types
 
 /** Which jobs may go to the cloud model. A local 7B model is fine for chores, not for judging mistakes. */
 export const CLOUD_TASK_OPTIONS: Array<{ id: CloudTask; label: string; hint: string }> = [
-  { id: 'chat', label: 'Trò chuyện với gia sư', hint: 'Hội thoại tự nhiên, tự lồng điểm yếu của bạn vào tình huống' },
+  { id: 'chat', label: 'Trò chuyện với Coach', hint: 'Hội thoại tự nhiên, tự lồng điểm yếu của bạn vào tình huống' },
   {
     id: 'corrections',
-    label: 'Bắt lỗi câu nói ngay khi nói',
-    hint: 'Tắt: chỉ bộ luật lỗi hay gặp + model máy (nếu có) bắt lỗi; ghi âm vẫn lưu để phân tích sau',
+    label: 'Coach sửa lỗi từng câu nói',
+    hint: 'Phân tích vì sao sai, câu đúng, cách người Trung hay nói. Tắt: chỉ bộ luật lỗi hay gặp + model máy (nếu có)',
   },
   { id: 'analysis', label: 'Phân tích điểm yếu & kế hoạch', hint: 'Đọc toàn bộ lỗi đã lưu, so với bản phân tích trước' },
   { id: 'assessment', label: 'Chấm bài kiểm tra', hint: 'Đánh giá câu trả lời theo mục tiêu bài' },
@@ -14,12 +14,13 @@ export const CLOUD_TASK_OPTIONS: Array<{ id: CloudTask; label: string; hint: str
 ];
 
 export const CLOUD_TASK_IDS = new Set<CloudTask>(CLOUD_TASK_OPTIONS.map((item) => item.id));
-// Chat and scoring stay on the machine (fast, free); the cloud model only reads the saved history.
-export const DEFAULT_CLOUD_TASKS: CloudTask[] = ['analysis'];
+// The Coach (chat) and the sentence check need a strong model to explain mistakes well,
+// so they go to the configured cloud model by default, as does the analysis of saved history.
+export const DEFAULT_CLOUD_TASKS: CloudTask[] = ['chat', 'corrections', 'analysis'];
 
 export const VIETAPI_PRESET = {
   url: 'https://api.vietapi.tech/v1',
-  model: 'gemini-4-argon',
+  model: 'claude-sonnet-5.5',
   topupUrl: 'https://vietapi.tech/topup.html',
   modelsUrl: 'https://vietapi.tech/models.html',
 } as const;

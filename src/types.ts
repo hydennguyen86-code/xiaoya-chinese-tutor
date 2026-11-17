@@ -7,6 +7,50 @@ export type MistakeCategory = 'grammar' | 'word_choice' | 'word_order' | 'measur
 export type SkillKey = MistakeCategory | 'vocabulary';
 export type CloudTask = 'chat' | 'corrections' | 'analysis' | 'assessment' | 'lessons';
 
+/** One concrete mistake in a learner sentence, explained in Vietnamese. */
+export interface CoachIssue {
+  original: string;
+  corrected: string;
+  category: MistakeCategory;
+  /** why it is wrong: names the grammar point, in Vietnamese */
+  why: string;
+}
+
+/**
+ * The Coach's feedback on one learner sentence.
+ * verdict: ok = correct and natural; fix = has mistakes; polish = correct but not how a native speaker says it.
+ */
+export interface CoachFeedback {
+  verdict: 'ok' | 'fix' | 'polish';
+  /** the learner sentence as heard/typed */
+  said: string;
+  /** the whole sentence, corrected ('' when verdict is ok) */
+  corrected: string;
+  correctedPinyin: string;
+  issues: CoachIssue[];
+  /** how a native speaker would usually say it ('' when the same as corrected or for HSK 1–2) */
+  natural: string;
+  naturalVi: string;
+  /** reusable sentence frame, e.g. "去 + nơi + 做什么" ('' when none) */
+  pattern: string;
+  patternVi: string;
+  /** short specific praise in Vietnamese when verdict is ok ('' otherwise) */
+  praise: string;
+}
+
+/** AI-written notes for one vocabulary word (HSK 3+ word card). */
+export interface WordNotes {
+  word: string;
+  /** meaning of each character on its own, in Vietnamese */
+  parts: Array<{ char: string; meaning: string }>;
+  /** where the word comes from / how it is built, 1–3 Vietnamese sentences */
+  origin: string;
+  memoryTip: string;
+  /** what it usually goes with, register, pitfalls for Vietnamese speakers */
+  usage: string;
+  examples: Array<{ zh: string; pinyin: string; vi: string }>;
+}
+
 export interface Correction {
   original: string;
   corrected: string;
@@ -38,6 +82,9 @@ export interface ChatMessage {
   translation?: string;
   corrections?: Correction[];
   correctionsPending?: boolean;
+  /** Coach feedback on this learner turn (user messages only) */
+  coach?: CoachFeedback | null;
+  coachPending?: boolean;
   vocab?: VocabItem[];
   suggestion?: string;
   suggestionTranslation?: string;

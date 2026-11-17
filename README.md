@@ -21,17 +21,18 @@ listening drills, all running on your own computer.*
 
 | | |
 |---|---|
+| 🧑‍🏫 **Coach sửa lỗi** | Nói câu tiếng Trung, Coach trả một thẻ gồm: câu bạn nói, lỗi và vì sao sai, câu nói đúng (kèm pinyin và nút nghe), cách người Trung hay nói, khuôn câu, và nút 🎤 nói lại câu đúng. Coach mặc định gửi câu tới model cloud đã cấu hình (ví dụ Claude qua API tuỳ chọn). |
 | 🗣️ **Nói chuyện với avatar** | Gõ hoặc nói tiếng Trung, avatar trả lời bằng giọng nói, cử động môi theo từng câu, kèm bản dịch tiếng Việt. Câu dài trình độ HSK 5, câu ngắn chậm cho người mới. |
 | ✍️ **Sửa đúng lỗi người Việt hay mắc** | Luật riêng cho các lỗi kiểu dịch từ tiếng Việt: 我工作在银行 → 在银行工作, 三个书 → 三本书, 比我很高 → 比我高… giải thích bằng tiếng Việt, cộng thêm góp ý của model. |
 | 🎯 **Chấm thanh điệu từng chữ** | Đọc theo một từ, Misu tô xanh/đỏ từng chữ, bảo bạn nghe như thanh mấy và cách sửa; câu dài thì vẽ đường cao độ của bạn cạnh giọng mẫu. Chạy hoàn toàn trên máy. |
 | 👂 **Luyện tai cho người Việt** | Chọn thanh nghe được, cặp âm hay lẫn (zh/z, ch/c, ü/u, an/ang, en/eng…), nghe chép, nói đuổi (shadowing), 3 tốc độ 0.7×/0.85×/1×. Câu sau ưu tiên đúng cặp bạn hay nhầm. |
 | 🈶 **Âm Hán Việt và bẫy nghĩa** | Mỗi từ có âm Hán Việt (家 = gia, 学生 = học sinh) để người Việt nhớ nhanh; cảnh báo từ "nhìn quen mà nghĩa khác" (骄傲 là *tự hào*, không phải *kiêu ngạo*). |
-| 📅 **Bài hôm nay, khỏi phải chọn** | Lộ trình có sẵn: Nhập môn Pinyin, HSK 1, HSK 3, HSK 5 (82 buổi) và 30 bài giao tiếp HSK1–6. Mỗi buổi: ôn → từ mới → mẫu câu → nhập vai (nghe trước, bấm mới hiện chữ) → nói tự do → tổng kết. |
+| 📅 **Bài hôm nay, khỏi phải chọn** | Lộ trình có sẵn: Nhập môn Pinyin, HSK 1, HSK 3, HSK 5 (82 buổi) và 30 bài giao tiếp HSK1–6. Vỡ lòng và HSK 1–2: ôn → từ mới → mẫu câu → nhập vai (nghe trước, bấm mới hiện chữ) → nói với Coach → tổng kết. HSK 3 trở lên: ôn → từ mới (Hán Việt, nguồn gốc từ, câu mẫu) → nói với Coach → tổng kết. |
 | 📝 **Kiểm tra tuần / tháng** | Đề lấy từ chính từ và lỗi của bạn, chấm từng phần, câu sai tự vào lịch ôn. Có nhiệm vụ giao tiếp ghi rõ bạn tự làm được hay cần gợi ý. |
 | 👨‍👩‍👧 **Cả nhà cùng học** | Nhiều người học trên một máy, mỗi người có trình độ, lịch sử, lịch ôn và hồ sơ giọng riêng. Dùng điện thoại làm micro qua Wi-Fi (HTTPS + mã PIN). |
 | 🧒 **Hồ sơ trẻ em** | Chọn "Bé dưới 12 tuổi": gia sư nói 1–2 câu ngắn, hỏi một câu dễ, chữ to, mic mở sẵn (nói liên tục, nói chen là cô dừng lại nghe), sticker mỗi ngày đủ 8 lượt, tập viết nét chữ, đọc theo bậc, và "Báo cáo cho bố mẹ" 4 dòng mỗi tuần. |
 | 📈 **So với chính mình** | Ôn từ theo FSRS (lịch ôn tự điều chỉnh theo từng từ). Bài kiểm tra mốc 16 mục cố định làm lần đầu rồi mỗi 4 tuần, để thấy nghe thanh, nghĩa và đọc thanh có tiến lên không. |
-| 🔒 **Riêng tư** | Model (Ollama/LM Studio), nhận dạng giọng (whisper.cpp) và chấm thanh đều chạy trên máy; dữ liệu nằm trong thư mục `data/`. Giọng đọc Edge và API tuỳ chọn mới cần mạng. |
+| 🔒 **Riêng tư** | Nhận dạng giọng (SenseVoice/whisper.cpp) và chấm thanh chạy trên máy; dữ liệu học nằm trong thư mục `data/`. Coach và bước sửa câu mặc định gọi model cloud bạn đã cấu hình (API OpenAI-compatible), nên câu chữ hội thoại được gửi tới dịch vụ đó; bỏ tick trong Cài đặt → Model cloud để chạy bằng model trên máy (Ollama/LM Studio). Giọng đọc Edge cũng cần mạng. |
 
 **Nói thật về giới hạn:** chấm thanh điệu mới được đo trên giọng máy và **một**
 người học thật (đúng khoảng 80% số chữ chấm được, chữ không chắc thì báo "chưa

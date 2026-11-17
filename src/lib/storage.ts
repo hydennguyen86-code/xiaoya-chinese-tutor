@@ -3,7 +3,7 @@ import { CLOUD_TASK_IDS, DEFAULT_CLOUD_TASKS } from './modelRouting.ts';
 
 const SETTINGS_KEY = 'xiaoya.settings.v1';
 const PINYIN_DEFAULT_KEY = 'xiaoya.pinyinDefault.v1';
-const CLOUD_TASKS_DEFAULT_KEY = 'xiaoya.cloudTasksDefault.v2';
+const CLOUD_TASKS_DEFAULT_KEY = 'xiaoya.cloudTasksDefault.v3';
 export const CHAT_KEY = 'xiaoya.chat.v1';
 export const PROGRESS_KEY = 'xiaoya.progress.v1';
 const CHAT_LIMIT = 80;
@@ -59,7 +59,7 @@ function pinyinDefaultOn() {
   }
 }
 
-/** the cloud model now only analyses saved history; apply that once for browsers that saved the earlier split */
+/** the lean version sends the Coach and the sentence check to the cloud model; apply that once to saved settings */
 function cloudTasksDefaultOn() {
   try {
     if (localStorage.getItem(CLOUD_TASKS_DEFAULT_KEY)) return false;
@@ -119,6 +119,8 @@ export function loadMessages(scope = ''): ChatMessage[] {
         Boolean(m && typeof m === 'object' && (m as ChatMessage).role && typeof (m as ChatMessage).text === 'string'),
       )
       .filter((m: ChatMessage) => !m.error)
+      // a check still running when the page closed will never finish
+      .map((m: ChatMessage) => (m.coachPending || m.correctionsPending ? { ...m, coachPending: false, correctionsPending: false } : m))
       .slice(-CHAT_LIMIT);
   } catch {
     return [];

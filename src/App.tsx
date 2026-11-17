@@ -4,20 +4,16 @@ import type { VoiceResult } from './lib/voiceInput';
 import { recordPronunciation } from './lib/learning';
 import { cloudProvider, routeTask } from './lib/modelRouting';
 import { VoiceSourceNotice } from './components/VoiceSourceNotice';
-import { Assessment } from './components/Assessment';
 import { SetupCheck } from './components/SetupCheck';
-import { isDue, loadAssessment } from './lib/assessment';
-import { loadLessonProgress } from './lib/lessonStore';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AvatarStage } from './components/AvatarStage';
 import { ChatPanel } from './components/ChatPanel';
 import { LearnerPicker } from './components/LearnerPicker';
 import { LearningDialog } from './components/LearningDialog';
-import { MotivationBoard } from './components/MotivationBoard';
 import { SettingsDialog } from './components/SettingsDialog';
-import { BookIcon, ChevronDownIcon, FlameIcon, MuteIcon, SettingsIcon, SparkIcon, VolumeIcon } from './components/Icons';
+import { BookIcon, ChevronDownIcon, FlameIcon, MuteIcon, SettingsIcon, VolumeIcon } from './components/Icons';
 import type { AvatarApi } from './lib/avatarApi';
-import { analyzeLearning, fetchCorrections, fetchStatus, resetPitchProfile, streamChat } from './lib/api';
+import { analyzeLearning, fetchCoach, fetchStatus, resetPitchProfile, streamChat } from './lib/api';
 import { clearCustomAvatar, loadCustomAvatar, saveCustomAvatar } from './lib/avatarStore';
 import { ChineseMic, configureSpeech, isSpeechSupported, micPermissionState } from './lib/speech';
 import { HandsFreeMic, type HandsFreeState } from './lib/handsFree';
@@ -53,6 +49,7 @@ import type { Learner, LearnerAudience, LearnerGender } from './lib/learners';
 import { TeacherContext, teacherFor, teacherGenderFor } from './lib/persona';
 import type { Teacher, TeacherGender } from './lib/persona';
 import { DailyLesson } from './components/DailyLesson';
+import { tierFor } from './lib/tier';
 import { extractSpeechSegments, makeGreeting, shortModelName, uid } from './lib/text';
 import type {
   AvatarMode,
@@ -137,25 +134,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   const [error, setError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [learningOpen, setLearningOpen] = useState(false);
-  const [motivationOpen, setMotivationOpen] = useState(false);
-  const closeMotivation = useCallback(() => setMotivationOpen(false), []);
   const [lessonOpen, setLessonOpen] = useState(false);
-  const [assessmentOpen, setAssessmentOpen] = useState(false);
   const [setupOpen, setSetupOpen] = useState(() => localStorage.getItem('xiaoya.setup.v1') !== 'done');
-  const assessmentData = loadAssessment(learner.id);
-  const lessonProgress = loadLessonProgress(learner.id);
-  const firstStudyAt = Math.min(
-    ...[
-      ...learning.words.map((w) => w.firstSeen),
-      ...learning.mistakes.map((m) => m.firstSeen),
-      ...assessmentData.samples.map((s) => s.date),
-      ...learning.days.filter((d) => d.turns > 0).map((d) => new Date(d.date + 'T00:00:00').getTime()),
-    ].filter((n) => n > 0),
-    Date.now(),
-  );
-  const assessmentDue =
-    isDue('week', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt) ||
-    isDue('month', assessmentData.history, lessonProgress?.completed ?? 0, firstStudyAt);
   function closeSetup() {
     localStorage.setItem('xiaoya.setup.v1', 'done');
     setSetupOpen(false);
@@ -179,6 +159,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
   const micBaseRef = useRef('');
   const busyRef = useRef(false);
   const abortRef = useRef<AbortController | null>(null);
+  const coachAbortRef = useRef<AbortController | null>(null);
   const toastTimerRef = useRef<number | null>(null);
   const statusRequestRef = useRef(0);
   const learningEpochRef = useRef(0);
@@ -393,6 +374,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
     }),
     [settings, status],
   );
+  const tier = tierFor(settings.level);
   const canChat = Boolean(routes.chat);
   const kid = learner.audience === 'kid';
   useEffect(() => {
@@ -580,6 +562,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
         role: 'user',
         text,
         createdAt: Date.now(),
+        coachPending: true,
       };
       if (spokenTurn) setSpokenTurns((current) => retainSpokenTurn(current, userMessage.id, spokenTurn));
       const assistantId = uid();
@@ -592,6 +575,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
         gesture: 'none',
         createdAt: Date.now(),
       };
+      const previousAssistant = [...messagesRef.current]
+        .reverse()
+        .find((message) => message.role === 'assistant' && message.text.trim() && !message.error);
       const baseMessages = [...messagesRef.current, userMessage];
       setMessages([...baseMessages, assistantMessage]);
       setDraft('');
@@ -630,6 +616,41 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
 
       const abort = new AbortController();
       abortRef.current = abort;
+
+      // Coach feedback on the learner's sentence runs alongside the chat stream
+      const patchUser = (patch: Partial<ChatMessage>) => {
+        setMessages((current) => current.map((message) => (message.id === userMessage.id ? { ...message, ...patch } : message)));
+      };
+      const learningEpoch = learningEpochRef.current;
+      const coachRoute = routeTask('corrections', settingsRef.current, currentStatus) ?? { provider: 'rules', model: '' };
+      const coachAbort = new AbortController();
+      coachAbortRef.current?.abort();
+      coachAbortRef.current = coachAbort;
+      void fetchCoach({
+        provider: coachRoute.provider,
+        model: coachRoute.model,
+        text,
+        level: settingsRef.current.level,
+        context: previousAssistant?.text,
+        signal: coachAbort.signal,
+      })
+        .then(({ corrections, coach }) => {
+          if (coachAbort.signal.aborted) return;
+          patchUser({ coach, coachPending: false });
+          if (
+            !corrections.length ||
+            learningEpoch !== learningEpochRef.current ||
+            !messagesRef.current.some((message) => message.id === userMessage.id)
+          ) {
+            return;
+          }
+          const withCorrections = recordLearningCorrections(learningRef.current, text, corrections);
+          learningRef.current = withCorrections;
+          setLearning(withCorrections);
+        })
+        .catch(() => {
+          if (!coachAbort.signal.aborted) patchUser({ coachPending: false });
+        });
 
       void streamChat(
         {
@@ -678,7 +699,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
               emotion,
               gesture,
               corrections: [],
-              correctionsPending: true,
+              correctionsPending: false,
               vocab: turn.vocab,
               suggestion: turn.suggestion,
               suggestionTranslation: turn.suggestionTranslation,
@@ -721,27 +742,6 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             } else if (nextProgress.todayTurns === DAILY_GOAL) {
               showToast('Đã đạt mục tiêu hôm nay. Tiếp tục giữ nhịp thật đều nhé!');
             }
-
-            const learningEpoch = learningEpochRef.current;
-            // no model for corrections → the server still applies its rules for common mistakes
-            const correctionRoute = routeTask('corrections', settingsRef.current, statusRef.current) ?? { provider: 'rules', model: '' };
-            void fetchCorrections({ provider: correctionRoute.provider, model: correctionRoute.model, text })
-              .then((corrections) => {
-                patchAssistant({ corrections, correctionsPending: false });
-                if (
-                  !corrections.length ||
-                  learningEpoch !== learningEpochRef.current ||
-                  !messagesRef.current.some((message) => message.id === assistantId)
-                ) {
-                  return;
-                }
-                const withCorrections = recordLearningCorrections(learningRef.current, text, corrections);
-                learningRef.current = withCorrections;
-                setLearning(withCorrections);
-              })
-              .catch(() => {
-                patchAssistant({ correctionsPending: false });
-              });
           },
         },
         abort.signal,
@@ -1023,6 +1023,8 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
     }
     abortRef.current?.abort();
     abortRef.current = null;
+    coachAbortRef.current?.abort();
+    coachAbortRef.current = null;
     busyRef.current = false;
     micRef.current?.abort();
     setListening(false);
@@ -1095,35 +1097,32 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
               {learner.name}
             </button>
 
-            <button
-              className="lesson-launch"
-              type="button"
-              onClick={() => {
-                micRef.current?.abort();
-                avatarRef.current?.stopSpeech();
-                setAssessmentOpen(false);
-                setLessonOpen((open) => !open);
-              }}
-              title="Bài học theo lộ trình, có nghe hiểu và luyện nói"
-            >
-              {lessonOpen ? 'Về trò chuyện' : 'Bài hôm nay'}
-            </button>
-
-            <button
-              type="button"
-              className={`lesson-launch${assessmentDue ? ' is-due' : ''}`}
-              onClick={() => {
-                micRef.current?.abort();
-                avatarRef.current?.stopSpeech();
-                setLessonOpen(false);
-                setAssessmentOpen((v) => !v);
-              }}
-            >
-              Kiểm tra{assessmentDue ? ' · đến hạn' : ''}
-            </button>
-            <button className="lesson-launch motivation-trigger" type="button" onClick={() => setMotivationOpen(true)}>
-              <SparkIcon size={16} /> Bảng động lực
-            </button>
+            <div className="mode-tabs" role="tablist" aria-label="Chế độ học">
+              <button
+                className={`mode-tab${lessonOpen ? ' is-active' : ''}`}
+                type="button"
+                role="tab"
+                aria-selected={lessonOpen}
+                onClick={() => {
+                  micRef.current?.abort();
+                  avatarRef.current?.stopSpeech();
+                  setLessonOpen(true);
+                }}
+                title="Học từ mới theo lộ trình"
+              >
+                Học từ
+              </button>
+              <button
+                className={`mode-tab${lessonOpen ? '' : ' is-active'}`}
+                type="button"
+                role="tab"
+                aria-selected={!lessonOpen}
+                onClick={() => setLessonOpen(false)}
+                title="Nói chuyện với Coach, Coach sửa lỗi kỹ"
+              >
+                Coach
+              </button>
+            </div>
             <button
               className="runtime-chip"
               type="button"
@@ -1224,25 +1223,19 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             </div>
           </section>
 
-          {assessmentOpen ? (
-            <Assessment
-              learnerId={learner.id}
-              learning={learning}
-              provider={routes.assessment?.provider ?? settings.providerId}
-              model={routes.assessment?.model ?? settings.model}
-              level={settings.level}
-              localStt={Boolean(status?.localStt)}
-              say={(text) => getAvatar()?.speakAll(text, settings.voice, 'happy', 'none')}
-              onLearningUpdate={updateLearning}
-              onClose={() => setAssessmentOpen(false)}
-            />
-          ) : lessonOpen ? (
+          {lessonOpen ? (
             <DailyLesson
               learner={learner}
               onLevelChange={(level) => handleSettingsChange({ level })}
               level={settings.level}
               provider={routes.lessons?.provider ?? settings.providerId}
               model={routes.lessons?.model ?? settings.model}
+              chatRoute={routes.chat ? { provider: routes.chat.provider, model: routes.chat.model } : null}
+              checkRoute={
+                routes.corrections
+                  ? { provider: routes.corrections.provider, model: routes.corrections.model }
+                  : { provider: 'rules', model: '' }
+              }
               voice={settings.voice}
               localStt={Boolean(status?.localStt)}
               getAvatar={getAvatar}
@@ -1252,6 +1245,9 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             />
           ) : (
             <ChatPanel
+              tier={tier}
+              onSay={(text) => speakText(text, settings.voice, 'neutral')}
+              localStt={Boolean(status?.localStt)}
               spokenTurns={spokenTurns}
               learnerId={scope}
               voice={settings.voice}
@@ -1289,7 +1285,6 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
             onClose={closeSetup}
             onStart={() => {
               closeSetup();
-              setAssessmentOpen(false);
               setLessonOpen(true);
             }}
           />
@@ -1338,6 +1333,7 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           kid={kid}
           open={learningOpen}
           learning={learning}
+          tier={tier}
           levelLabel={LEVEL_LABEL[settings.level]}
           canAnalyze={Boolean(routes.analysis)}
           analysisHost={routes.analysis?.cloud ? hostOf(cloudProvider(status)?.url) : ''}
@@ -1350,8 +1346,6 @@ function Tutor({ learner, onSwitchLearner, onLearnerChange }: TutorProps) {
           onSpeakVietnamese={handleSpeakVietnamese}
           onClearLearning={handleClearLearning}
         />
-
-        {motivationOpen && <MotivationBoard activeId={scope} onClose={closeMotivation} />}
 
         {toast && (
           <div className="toast" role="status">

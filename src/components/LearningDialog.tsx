@@ -24,6 +24,7 @@ import { useTeacher } from '../lib/persona';
 import { buildParentReport } from '../lib/parentReport';
 import { benchmarkDue, loadBenchmark } from '../lib/benchmark';
 import { BenchmarkTest } from './BenchmarkTest';
+import { showsAdvancedPronunciation, type Tier } from '../lib/tier';
 
 type LearningTab = 'overview' | 'review' | 'mistakes' | 'analysis';
 
@@ -38,6 +39,8 @@ interface LearningDialogProps {
   open: boolean;
   learning: LearningProfile;
   levelLabel: string;
+  /** coach tier (HSK 3+) hides pronunciation tools and the benchmark test */
+  tier?: Tier;
   canAnalyze: boolean;
   /** set when the analysis runs on an outside API: the host that receives the saved history */
   analysisHost?: string;
@@ -185,6 +188,7 @@ export function LearningDialog({
   open,
   learning,
   levelLabel,
+  tier = 'foundation',
   canAnalyze,
   analysisHost = '',
   analyzing,
@@ -197,6 +201,7 @@ export function LearningDialog({
   onClearLearning,
 }: LearningDialogProps) {
   const teacher = useTeacher();
+  const pronunciationTools = showsAdvancedPronunciation(tier);
   const [tab, setTab] = useState<LearningTab>('overview');
   const [benchmarkOpen, setBenchmarkOpen] = useState(false);
   const benchmarkIsDue = useMemo(() => benchmarkDue(loadBenchmark(learnerId)), [learnerId, benchmarkOpen]);
@@ -309,7 +314,7 @@ export function LearningDialog({
           {tab === 'overview' && (
             <div className="learning-overview">
               <HanVietGuide onSpeak={onSpeakChinese} />
-              <FluencyHistory learnerId={learnerId} />
+              {pronunciationTools && <FluencyHistory learnerId={learnerId} />}
               <LatencyHistory learnerId={learnerId} />
               <div className="learning-hero">
                 <div className="learning-hero-copy">
@@ -330,7 +335,7 @@ export function LearningDialog({
               </div>
 
               <ParentReportCard name={learnerName} learnerId={learnerId} learning={learning} progress={progress} kid={kid} />
-              {benchmarkOpen ? (
+              {!pronunciationTools ? null : benchmarkOpen ? (
                 <BenchmarkTest learnerId={learnerId} voice={voice} localStt={localStt} onClose={() => setBenchmarkOpen(false)} />
               ) : (
                 <section className="learning-section">

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-17 — Bản gọn: Học từ + Coach (17/11/2026)
+
+- **Hai tầng học**: Vỡ lòng và HSK 1–2 giữ công cụ phát âm nâng cao (chấm thanh từng chữ, cao độ, sửa phát âm, luyện tai, tập viết), cùng Coach mức dễ. HSK 3 trở lên có thẻ từ với Hán Việt, nguồn gốc từ (AI soạn, chưa duyệt) và câu mẫu, rồi nói chuyện với Coach; tầng này không có chấm thanh, cao độ, luyện tai hay tập viết.
+- **Thẻ sửa lỗi của Coach**: gồm bạn nói, vì sao sai, nói đúng, người Trung hay nói, khuôn câu và nút nói lại câu đúng.
+- **Model cloud mặc định**: Coach và bước kiểm câu chạy model cloud qua API OpenAI-compatible đã cấu hình (ví dụ Claude qua VietAPI).
+- **Top bar gọn**: bỏ nút Kiểm tra và Bảng động lực khỏi thanh trên. Nút "Bài hôm nay" thay bằng hai tab Học từ và Coach.
+
 ## 2026-11-09 — Bản tạm
 
 - **Phần nghe thật cho 30 bài giao tiếp (misu30)**: thay đoạn nghe ghép 3 câu ví dụ và câu hỏi "Cụm … nghĩa gì?" bằng hội thoại 甲/乙 (8 lượt ở Tập 1, 10 ở Tập 2, 10–12 ở Tập 3) có bản dịch từng lượt A:/B: và 3 câu hỏi nghe hiểu nội dung (ai, bao nhiêu, vì sao, quyết định gì). Thêm bộ chép chính tả (4 câu) và nói đuổi (1 đoạn) cho mỗi bài trong `lessons/listening/course/`, phủ đủ 8 từ mới; cả 112 buổi giờ cùng một chuẩn. AI soạn, chưa duyệt.

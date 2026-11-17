@@ -29,19 +29,18 @@ import { fileURLToPath } from 'node:url';
 import { pinyin } from 'pinyin-pro';
 
 import { PROVIDER_DEFS, detectProviders } from './providers.mjs';
-import { CORRECTION_PROMPT, LEVELS, buildAnalysisMessages, buildMessages, sanitizeHistory } from './prompt.mjs';
-import { ANALYSIS_SCHEMA, CORRECTION_SCHEMA, ModelError, completeJson, streamCompletion } from './llm.mjs';
-import { parseCorrections, parseJsonObject, parseTutorResponse, readAttitude, readStringField } from './jsonStream.mjs';
+import { LEVELS, buildAnalysisMessages, buildMessages, sanitizeHistory } from './prompt.mjs';
+import { ANALYSIS_SCHEMA, ModelError, completeJson, streamCompletion } from './llm.mjs';
+import { parseJsonObject, parseTutorResponse, readAttitude, readStringField } from './jsonStream.mjs';
 import { CLONE_VOICES, DEFAULT_VI_VOICE, TTS_VOICES, VI_TTS_VOICES, isCloneVietnameseVoice, synthesizeSpeech } from './tts.mjs';
 import { createDataStore } from './dataStore.mjs';
-import { isStyleOnlyEdit } from './correctionFilter.mjs';
-import { mergeCorrections, ruleCorrections } from './grammarRules.mjs';
 import { startStt, stopStt, sttBackend, sttReady, transcribe } from './stt.mjs';
 import { startToneModel, stopToneModel, toneModelHealth } from './toneModel.mjs';
 import { analyseTones, profileFromAudio, decodeToPcm, expectedTones } from './tones.mjs';
 import { syllableCount } from '../src/lib/coursePinyin.mjs';
 import { normalizeHeard } from '../src/lib/readingScore.mjs';
 import { loadSyllabus } from './syllabus.mjs';
+import { coachFeedback, createWordNotes } from './coach.mjs';
 import { getLessonContent } from './lessonContent.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -308,39 +307,6 @@ function friendlyError(error) {
 
 const HAN = /\p{Script=Han}/u;
 
-async function collectCorrections(provider, model, userText, signal) {
-  // deterministic rules for typical Vietnamese-learner errors always apply,
-  // even when the model is slow, down or returns nothing usable
-  const ruleFixes = ruleCorrections(userText);
-  let raw = '';
-  try {
-    // a cloud model thinks before answering; a local one should be quick
-    const timeout = AbortSignal.timeout(provider === 'compatible' ? 45000 : 15000);
-    const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
-    const result = await completeJson({
-      provider,
-      model,
-      messages: [
-        { role: 'system', content: CORRECTION_PROMPT },
-        { role: 'user', content: userText },
-      ],
-      signal: combined,
-      schema: CORRECTION_SCHEMA,
-      maxTokens: 400,
-      temperature: 0,
-    });
-    raw = result.raw;
-  } catch (error) {
-    if (!ruleFixes.length) throw error;
-  }
-  // drop "corrections" that only change style (synonyms, 很→非常, 儿, final particles)
-  const modelFixes = parseCorrections(raw, userText)
-    .filter((item) => !isStyleOnlyEdit(item.original, item.corrected, userText))
-    // the explanation must be Vietnamese; a Chinese one is dropped, the fix is kept
-    .map((item) => (HAN.test(item.explanation || '') ? { ...item, explanation: '' } : item));
-  return mergeCorrections(ruleFixes, modelFixes, 2, userText);
-}
-
 function polishTurn(turn) {
   if (HAN.test(turn.translation)) turn.translation = '';
   if (HAN.test(turn.suggestionTranslation)) turn.suggestionTranslation = '';
@@ -583,7 +549,7 @@ app.post('/api/analysis', async (req, res) => {
 });
 
 app.post('/api/corrections', async (req, res) => {
-  const { provider = 'ollama', model, text = '' } = req.body || {};
+  const { provider = 'ollama', model, text = '', level = 'HSK3-4', context = '' } = req.body || {};
   // provider "rules": no model, only the built-in rules for typical Vietnamese-learner mistakes
   const rulesOnly = provider === 'rules';
 
@@ -604,23 +570,59 @@ app.post('/api/corrections', async (req, res) => {
           .slice(0, 2000)
       : '';
   if (!learnerText || !HAN.test(learnerText)) {
-    res.json({ corrections: [] });
+    res.json({ corrections: [], coach: null });
     return;
   }
 
-  if (rulesOnly) {
-    res.json({ corrections: mergeCorrections(ruleCorrections(learnerText), [], 2, learnerText) });
-    return;
-  }
-
+  const abort = new AbortController();
+  res.on('close', () => {
+    if (!res.writableEnded) abort.abort();
+  });
+  const startedAt = Date.now();
   try {
-    const corrections = await collectCorrections(provider, model.trim(), learnerText);
-    res.json({ corrections });
+    const result = await coachFeedback({
+      provider,
+      model: rulesOnly ? '' : model.trim(),
+      level: Object.hasOwn(LEVELS, level) ? level : 'HSK3-4',
+      text: learnerText,
+      context: typeof context === 'string' ? context : '',
+      signal: abort.signal,
+    });
+    res.json(result);
+    if (!rulesOnly) console.log(`[coach] ${provider}/${model} · ${Date.now() - startedAt}ms · ${result.coach?.verdict ?? 'none'}`);
   } catch (error) {
     if (error?.name !== 'AbortError' && error?.name !== 'TimeoutError') {
-      console.error('[correct]', error.message);
+      console.error('[coach]', error.message);
     }
-    res.json({ corrections: [] });
+    if (!res.headersSent) res.json({ corrections: [], coach: null });
+  }
+});
+
+const wordNotes = createWordNotes(dataStore.dir);
+app.post('/api/word-notes', async (req, res) => {
+  const { provider, model, word, pinyin: wordPinyin = '', meaning = '', level = 'HSK3-4', example = '' } = req.body || {};
+  if (!PROVIDER_DEFS[provider] || typeof model !== 'string' || !model.trim() || model.length > 200) {
+    res.status(400).json({ error: 'Chưa có model để soạn ghi chú từ.' });
+    return;
+  }
+  if (typeof word !== 'string' || !HAN.test(word) || word.length > 12) {
+    res.status(400).json({ error: 'Từ không hợp lệ.' });
+    return;
+  }
+  try {
+    const notes = await wordNotes({
+      provider,
+      model: model.trim(),
+      word: word.trim(),
+      pinyin: String(wordPinyin),
+      meaning: String(meaning),
+      level: Object.hasOwn(LEVELS, level) ? level : 'HSK3-4',
+      example: String(example),
+    });
+    res.json(notes);
+  } catch (error) {
+    if (error?.name !== 'AbortError' && error?.name !== 'TimeoutError') console.error('[word-notes]', error.message);
+    res.status(error.status || 502).json({ error: error.status === 400 ? error.message : 'Chưa soạn được ghi chú cho từ này.' });
   }
 });
 

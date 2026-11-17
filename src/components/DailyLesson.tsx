@@ -6,17 +6,21 @@ import { CoursePractice } from './CoursePractice';
 import { CommunicationTask } from './CommunicationTask';
 import { MicButton, Han, ReadableChinese } from './LessonWidgets';
 import { rememberLesson, loadAssessment, saveAssessment } from '../lib/assessment';
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { AvatarApi } from '../lib/avatarApi';
-import { fetchCorrections, streamChat } from '../lib/api';
+import { fetchCoach, streamChat } from '../lib/api';
+import { CoachCard, CoachPending } from './CoachCard';
+import { WordNotesCard } from './WordNotesCard';
+import { showsAdvancedPronunciation, tierFor, type Tier } from '../lib/tier';
 import type { Learner } from '../lib/learners';
 import { renameTeacher, useTeacher, type Teacher } from '../lib/persona';
 import { dueWords, recordLearningCorrections, recordLearningTurn, reviewWord, topMistakes } from '../lib/learning';
 import { fetchLessonContent, fetchSyllabus, type LessonContent } from '../lib/lessonApi';
 import {
-  SECTIONS,
   beginSession,
+  clampSection,
   completeSession,
+  sectionsFor,
   planToday,
   remainingMs,
   sectionBudgetMs as baseSectionBudgetMs,
@@ -41,8 +45,11 @@ import {
 } from '../lib/voiceInput';
 import { pinyinWord, sameSyllable, toneLabel } from '../lib/coursePinyin.mjs';
 import { containsReading, readingOk } from '../lib/readingScore.mjs';
-import type { Correction, LearningProfile, Level } from '../types';
+import type { CoachFeedback, Correction, LearningProfile, Level } from '../types';
 import { pinyinLine } from '../lib/text';
+
+// Loaded here (browser only) so node-based component tests can import this file without a CSS loader.
+if (typeof window !== 'undefined') void import('./lessonLean.css');
 
 function LessonCorrection({ correction }: { correction: Pick<Correction, 'original' | 'corrected' | 'explanation'> }) {
   return (
@@ -56,6 +63,34 @@ function LessonCorrection({ correction }: { correction: Pick<Correction, 'origin
   );
 }
 
+/** One checked sentence: the Coach card when there is one, otherwise the plain corrections. */
+function FeedbackBlock({
+  coach,
+  corrections,
+  tier,
+  say,
+  localStt,
+  learnerId,
+}: {
+  coach?: CoachFeedback | null;
+  corrections?: Array<Pick<Correction, 'original' | 'corrected' | 'explanation'>>;
+  tier: Tier;
+  say: (text: string) => void;
+  localStt: boolean;
+  learnerId: string;
+}) {
+  if (coach) return <CoachCard feedback={coach} tier={tier} onSay={say} localStt={localStt} learnerId={learnerId} compact />;
+  return (
+    <>
+      {corrections?.map((c, j) => (
+        <LessonCorrection key={j} correction={c} />
+      ))}
+    </>
+  );
+}
+
+type Route = { provider: string; model: string };
+
 interface DailyLessonProps {
   learner: Learner;
   level: Level;
@@ -68,6 +103,10 @@ interface DailyLessonProps {
   onLearningUpdate: (update: (previous: LearningProfile) => LearningProfile) => void;
   onClose: () => void;
   onLevelChange?: (level: Level) => void;
+  /** model for the conversation in the lesson; null = use provider/model above */
+  chatRoute: Route | null;
+  /** model that checks the learner's sentences ('rules' = no model) */
+  checkRoute: Route;
 }
 
 type Screen =
@@ -103,6 +142,15 @@ export function DailyLesson(props: DailyLessonProps) {
   const [busy, setBusy] = useState(false);
   const [voicePhase, setVoicePhase] = useState<VoicePhase | null>(null);
   const [notice, setNotice] = useState('');
+  const tier = tierFor(
+    level,
+    syllabus?.volumes.find((v) => v.id === progress?.volumeId),
+  );
+  const tierRef = useRef<Tier>(tier);
+  tierRef.current = tier;
+  const sections = sectionsFor(tier);
+  const chat: Route = props.chatRoute ?? { provider, model };
+  const wordRoute: Route | null = props.chatRoute ?? (model ? { provider, model } : null);
   const progressRef = useRef(progress);
   progressRef.current = progress;
   const voiceRef = useRef<VoiceHandle | null>(null);
@@ -170,7 +218,21 @@ export function DailyLesson(props: DailyLessonProps) {
       );
       if (request.signal.aborted) return;
       setContent(material);
-      save(plan.kind === 'resume' ? (stored as LessonProgress) : beginSession(stored, outline, level, plan.pointer, today));
+      save(
+        plan.kind === 'resume'
+          ? (stored as LessonProgress)
+          : beginSession(
+              stored,
+              outline,
+              level,
+              plan.pointer,
+              today,
+              tierFor(
+                level,
+                outline.volumes.find((v) => v.id === plan.pointer.volumeId),
+              ),
+            ),
+      );
       setScreen({ kind: 'ready' });
     } catch (error) {
       if (request.signal.aborted) return;
@@ -192,9 +254,9 @@ export function DailyLesson(props: DailyLessonProps) {
   );
 
   const lessonBudget = (content?.authored ? (content.recommendedMinutes ?? 20) : 20) * 60000;
-  const sectionBudgetMs = (index: number) => (baseSectionBudgetMs(index) * lessonBudget) / (20 * 60000);
+  const sectionBudgetMs = (index: number) => (baseSectionBudgetMs(index, tier) * lessonBudget) / (20 * 60000);
   const session = progress?.current ?? null;
-  const section = session?.section ?? 0;
+  const section = clampSection(session?.section ?? 0, tier);
 
   // ---- timer: counts only while the lesson is open, visible and not paused ----
   useEffect(() => {
@@ -205,8 +267,10 @@ export function DailyLesson(props: DailyLessonProps) {
       const current = progressRef.current;
       if (!current?.current) return;
       const s = current.current;
+      const now = clampSection(s.section, tierRef.current);
+      const steps = sectionsFor(tierRef.current);
       const elapsedMs = [...s.elapsedMs];
-      elapsedMs[s.section] = (elapsedMs[s.section] || 0) + 1000;
+      elapsedMs[now] = (elapsedMs[now] || 0) + 1000;
       const next = { ...current, current: { ...s, elapsedMs } };
       progressRef.current = next;
       setProgress(next);
@@ -215,12 +279,12 @@ export function DailyLesson(props: DailyLessonProps) {
       // past the section budget plus a grace period and idle: move on
       if (
         !content?.authored &&
-        s.section < SECTIONS.length - 1 &&
-        elapsedMs[s.section] > sectionBudgetMs(s.section) + AUTO_ADVANCE_GRACE_MS &&
+        now < steps.length - 1 &&
+        elapsedMs[now] > sectionBudgetMs(now) + AUTO_ADVANCE_GRACE_MS &&
         !busyRef.current
       ) {
-        goToSection(s.section + 1);
-        setNotice(`Hết giờ phần trước, chuyển sang "${SECTIONS[s.section + 1].title}".`);
+        goToSection(now + 1);
+        setNotice(`Hết giờ phần trước, chuyển sang "${steps[now + 1].title}".`);
       }
     }, 1000);
     return () => {
@@ -277,11 +341,12 @@ export function DailyLesson(props: DailyLessonProps) {
   function goToSection(index: number) {
     voiceRef.current?.cancel();
     getAvatar()?.stopSpeech();
+    const steps = sectionsFor(tierRef.current);
     updateSession((s) => ({
       ...s,
-      section: Math.min(index, SECTIONS.length - 1),
+      section: clampSection(index, tierRef.current),
       item: 0,
-      dialog: SECTIONS[index]?.id === 'freetalk' ? [] : s.dialog,
+      dialog: steps[index]?.id === 'freetalk' || steps[index]?.id === 'coach' ? [] : s.dialog,
     }));
   }
 
@@ -466,10 +531,11 @@ export function DailyLesson(props: DailyLessonProps) {
     );
   }
 
-  const sectionInfo = SECTIONS[section];
+  const sectionInfo = sections[section];
   const sectionElapsed = session.elapsedMs[section] || 0;
   const overBudget = sectionElapsed > sectionBudgetMs(section);
   const shared = {
+    tier,
     learnerId: learner.id,
     voice,
     localStt,
@@ -505,8 +571,8 @@ export function DailyLesson(props: DailyLessonProps) {
       </LessonTop>
 
       <div className="lesson-track">
-        <div className="lesson-timeline" role="list">
-          {SECTIONS.map((item, index) => {
+        <div className={`lesson-timeline${tier === 'coach' ? ' is-coach' : ''}`} role="list">
+          {sections.map((item, index) => {
             const spent = session.elapsedMs[index] || 0;
             const pct = Math.min(100, (spent / sectionBudgetMs(index)) * 100);
             return (
@@ -533,7 +599,7 @@ export function DailyLesson(props: DailyLessonProps) {
           <span>cả buổi còn {clock(Math.max(0, lessonBudget - session.elapsedMs.reduce((a, b) => a + b, 0)))}</span>
         </p>
       </div>
-      {overBudget && section < SECTIONS.length - 1 && (
+      {overBudget && section < sections.length - 1 && (
         <p className="lesson-notice">Đã hết thời gian phần này. Làm nốt câu đang dở rồi bấm "Phần tiếp".</p>
       )}
       {notice && (
@@ -557,19 +623,21 @@ export function DailyLesson(props: DailyLessonProps) {
         )}
         {sectionInfo.id === 'review' && (
           <>
-            <PronunciationReview
-              learning={props.learning}
-              learnerId={learner.id}
-              voice={voice}
-              localStt={localStt}
-              onUpdate={onLearningUpdate}
-            />
+            {showsAdvancedPronunciation(tier) && (
+              <PronunciationReview
+                learning={props.learning}
+                learnerId={learner.id}
+                voice={voice}
+                localStt={localStt}
+                onUpdate={onLearningUpdate}
+              />
+            )}
             <ReviewSection {...shared} learning={props.learning} />
           </>
         )}
-        {sectionInfo.id === 'vocab' && <VocabSection {...shared} />}
-        {sectionInfo.id === 'patterns' && <PatternSection {...shared} provider={provider} model={model} />}
-        {(sectionInfo.id === 'roleplay' || sectionInfo.id === 'freetalk') && (
+        {sectionInfo.id === 'vocab' && <VocabSection {...shared} wordRoute={wordRoute} level={teachingLevel} />}
+        {sectionInfo.id === 'patterns' && <PatternSection {...shared} checkRoute={props.checkRoute} level={teachingLevel} />}
+        {(sectionInfo.id === 'roleplay' || sectionInfo.id === 'freetalk' || sectionInfo.id === 'coach') && (
           <>
             {content.authored && sectionInfo.id === 'roleplay' && (
               <CoursePractice
@@ -582,34 +650,44 @@ export function DailyLesson(props: DailyLessonProps) {
                 onBusy={handleCourseBusy}
               />
             )}
-            {!model && (
+            {!chat.model && (
               <p className="lesson-notice">
                 Chọn model trong Cài đặt để {teacher.vi} trả lời và sửa bài. Bạn vẫn có thể ghi âm để nhận dạng lời nói.
               </p>
             )}
-            <DialogSection {...shared} mode={sectionInfo.id} provider={provider} model={model} level={teachingLevel} />
+            <DialogSection
+              {...shared}
+              mode={sectionInfo.id as 'roleplay' | 'freetalk' | 'coach'}
+              provider={chat.provider}
+              model={chat.model}
+              checkRoute={props.checkRoute}
+              level={teachingLevel}
+              onDone={() => goToSection(sections.length - 1)}
+            />
           </>
         )}
         {sectionInfo.id === 'summary' && (
           <>
-            <CommunicationTask
-              task={content.roleplay}
-              provider={provider}
-              model={model}
-              level={teachingLevel}
-              ask={shared.ask}
-              say={say}
-              micReady={micReady}
-              voicePhase={voicePhase}
-              onComplete={(result) => {
-                const data = loadAssessment(learner.id);
-                saveAssessment(learner.id, {
-                  ...data,
-                  tasks: [...data.tasks, { date: Date.now(), task: content.roleplay, result }].slice(-90),
-                });
-              }}
-            />
-            <SummarySection session={session} content={content} onFinish={finish} />
+            {showsAdvancedPronunciation(tier) && (
+              <CommunicationTask
+                task={content.roleplay}
+                provider={provider}
+                model={model}
+                level={teachingLevel}
+                ask={shared.ask}
+                say={say}
+                micReady={micReady}
+                voicePhase={voicePhase}
+                onComplete={(result) => {
+                  const data = loadAssessment(learner.id);
+                  saveAssessment(learner.id, {
+                    ...data,
+                    tasks: [...data.tasks, { date: Date.now(), task: content.roleplay, result }].slice(-90),
+                  });
+                }}
+              />
+            )}
+            <SummarySection tier={tier} session={session} content={content} onFinish={finish} />
           </>
         )}
       </div>
@@ -618,9 +696,9 @@ export function DailyLesson(props: DailyLessonProps) {
         <button type="button" className="lesson-secondary" onClick={() => setPaused((p) => !p)}>
           {paused ? 'Tiếp tục' : 'Tạm dừng'}
         </button>
-        {section < SECTIONS.length - 1 && (
+        {section < sections.length - 1 && (
           <button type="button" className="lesson-primary" onClick={() => goToSection(section + 1)}>
-            Phần tiếp: {SECTIONS[section + 1].title}
+            Phần tiếp: {sections[section + 1].title}
           </button>
         )}
       </div>
@@ -643,6 +721,7 @@ function LessonTop({ onClose, children }: { onClose: () => void; children?: Reac
 }
 
 interface SharedProps {
+  tier: Tier;
   learnerId: string;
   voice: string;
   localStt: boolean;
@@ -820,8 +899,8 @@ export function VocabReadFeedback({ word, target, text }: { word: { word: string
 }
 
 // 2. New words: listen, repeat, and they go into the learner's review list.
-function VocabSection(props: SharedProps) {
-  const { content, session, say, read, voicePhase, micReady, updateSession, onLearningUpdate } = props;
+function VocabSection(props: SharedProps & { wordRoute: Route | null; level: Level }) {
+  const { tier, content, session, say, read, voicePhase, micReady, updateSession, onLearningUpdate } = props;
   const word = content.vocab[session.item];
   const [heard, setHeard] = useState<({ target: string } & VoiceResult) | null>(null);
 
@@ -840,8 +919,10 @@ function VocabSection(props: SharedProps) {
     );
   }
 
+  const coachTier = tier === 'coach';
   const readAloud = async (target: string) => {
-    const result = await read(target);
+    // coach tier only checks that the words match; tones are not scored
+    const result: VoiceResult = coachTier ? { text: await props.ask(), tones: null } : await read(target);
     if (result.text || result.tones) setHeard({ target, ...result });
   };
   const next = () => {
@@ -867,15 +948,28 @@ function VocabSection(props: SharedProps) {
       <p className="lesson-word">
         <Han text={word.word} pinyinText={cardPinyin} />
       </p>
+      {coachTier && <p className="lesson-meaning lesson-meaning-big">{word.meaning}</p>}
       <HanViet word={word.word} />
-      <p className="lesson-meaning">{word.meaning}</p>
-      <HanziWriterCard word={word.word} />
+      {!coachTier && <p className="lesson-meaning">{word.meaning}</p>}
+      {coachTier ? (
+        <WordNotesCard
+          key={word.word}
+          word={word.word}
+          pinyin={word.pinyin}
+          meaning={word.meaning}
+          level={props.level}
+          route={props.wordRoute}
+          onSay={say}
+        />
+      ) : (
+        <HanziWriterCard word={word.word} />
+      )}
       <p className="lesson-example">
         <Han text={word.example} pinyinText={word.examplePinyin} />
       </p>
       <p className="lesson-hint">{word.exampleVi}</p>
       {heard && <VocabReadFeedback word={word} target={heard.target} text={heard.text} />}
-      {heard?.tones && (
+      {!coachTier && heard?.tones && (
         <ToneFeedback
           report={heard.tones}
           audio={heard.audio}
@@ -888,8 +982,15 @@ function VocabSection(props: SharedProps) {
         <button type="button" className="lesson-secondary" onClick={() => say(`${word.word}。${word.example}`)}>
           Nghe lại
         </button>
-        <MicButton voicePhase={voicePhase} micReady={micReady} onClick={() => void readAloud(word.word)} label="Đọc từ" />
-        <MicButton voicePhase={voicePhase} micReady={micReady} onClick={() => void readAloud(word.example)} label="Đọc câu" />
+        <MicButton
+          voicePhase={voicePhase}
+          micReady={micReady}
+          onClick={() => void readAloud(word.word)}
+          label={coachTier ? 'Đọc theo' : 'Đọc từ'}
+        />
+        {!coachTier && (
+          <MicButton voicePhase={voicePhase} micReady={micReady} onClick={() => void readAloud(word.example)} label="Đọc câu" />
+        )}
         <button type="button" className="lesson-primary" onClick={next}>
           Từ tiếp theo
         </button>
@@ -899,11 +1000,12 @@ function VocabSection(props: SharedProps) {
 }
 
 // 3. Sentence patterns: the learner makes their own sentence and gets it checked.
-function PatternSection(props: SharedProps & { provider: string; model: string }) {
-  const { content, session, say, ask, voicePhase, micReady, busy, setBusy, updateSession, onLearningUpdate, provider, model } = props;
+function PatternSection(props: SharedProps & { checkRoute: Route; level: Level }) {
+  const { tier, content, session, say, ask, voicePhase, micReady, busy, setBusy, updateSession, onLearningUpdate, checkRoute, level } =
+    props;
   const pattern = content.patterns[session.item];
   const [draft, setDraft] = useState('');
-  const [feedback, setFeedback] = useState<{ corrections: Correction[]; missing: string[] } | null>(null);
+  const [feedback, setFeedback] = useState<{ corrections: Correction[]; coach: CoachFeedback | null; missing: string[] } | null>(null);
 
   useEffect(() => {
     setDraft('');
@@ -925,9 +1027,9 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
     if (!text) return;
     setBusy(true);
     try {
-      const corrections = await fetchCorrections({ provider, model, text });
+      const { corrections, coach } = await fetchCoach({ ...checkRoute, text, level });
       const missing = fixedParts.filter((part) => !readingOk(part, text, { within: true }));
-      setFeedback({ corrections, missing });
+      setFeedback({ corrections, coach, missing });
       if (corrections.length) onLearningUpdate((p) => recordLearningCorrections(p, text, corrections));
       updateSession((s) => ({
         ...s,
@@ -938,7 +1040,7 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
         ].slice(-20),
       }));
     } catch {
-      setFeedback({ corrections: [], missing: [] });
+      setFeedback({ corrections: [], coach: null, missing: [] });
     } finally {
       setBusy(false);
     }
@@ -989,10 +1091,17 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
       {feedback && (
         <div className="lesson-feedback">
           {feedback.missing.length > 0 && <p className="lesson-bad">Câu chưa dùng mẫu: thiếu "{feedback.missing.join('", "')}".</p>}
-          {feedback.corrections.length === 0 && feedback.missing.length === 0 && <p className="lesson-ok">Câu đúng và dùng đúng mẫu!</p>}
-          {feedback.corrections.map((c, i) => (
-            <LessonCorrection key={i} correction={c} />
-          ))}
+          {feedback.corrections.length === 0 && !feedback.coach && feedback.missing.length === 0 && (
+            <p className="lesson-ok">Câu đúng và dùng đúng mẫu!</p>
+          )}
+          <FeedbackBlock
+            coach={feedback.coach}
+            corrections={feedback.corrections}
+            tier={tier}
+            say={say}
+            localStt={props.localStt}
+            learnerId={props.learnerId}
+          />
         </div>
       )}
       <div className="lesson-actions">
@@ -1004,8 +1113,10 @@ function PatternSection(props: SharedProps & { provider: string; model: string }
   );
 }
 
-// 4 and 5. Role-play and free talk with the avatar.
-function scenarioText(content: LessonContent, mode: 'roleplay' | 'freetalk', teacher: Teacher) {
+// 4 and 5. Role-play and free talk with the avatar; coach tier: talk with the Coach.
+type DialogMode = 'roleplay' | 'freetalk' | 'coach';
+
+function scenarioText(content: LessonContent, mode: DialogMode, teacher: Teacher) {
   if (mode === 'freetalk') {
     return renameTeacher(
       `【课堂：自由表达】你和学生就这个问题聊天：「${content.freeTalk.question}」。鼓励学生多说，每次只追问一个细节，回答简短自然，不要讲解语法。`,
@@ -1013,15 +1124,55 @@ function scenarioText(content: LessonContent, mode: 'roleplay' | 'freetalk', tea
     );
   }
   const rp = content.roleplay;
+  if (mode === 'coach') {
+    return renameTeacher(
+      `【课堂：和教练对话】情境（越南语说明）：${rp.setting}。你扮演：${rp.avatarRole}。学生扮演：${rp.learnerRole}。学生的任务：${rp.goals.join('；')}。也可以顺着这个问题聊：「${content.freeTalk.question}」。请留在角色里，用适合学生水平的口语对话，每次只说 1–3 句并以一个问题结尾，不要讲解语法（语法由另外的反馈卡处理）。`,
+      teacher,
+    );
+  }
   return renameTeacher(
     `【课堂：角色扮演】情境（越南语说明）：${rp.setting}。你扮演：${rp.avatarRole}。学生扮演：${rp.learnerRole}。学生的任务：${rp.goals.join('；')}。请一直留在角色里，用适合学生水平的口语对话，每次只说 1–3 句并以一个问题结尾，不要跳出角色，不要讲解语法。`,
     teacher,
   );
 }
 
-function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; provider: string; model: string; level: Level }) {
+const COACH_TURN_GOAL = 8;
+
+/** Words and patterns of the lesson, folded away so the learner can peek while talking. */
+function LessonCheatSheet({ content, say }: { content: LessonContent; say: (text: string) => void }) {
+  return (
+    <details className="coach-cheat">
+      <summary>Từ &amp; khuôn câu của bài</summary>
+      <ul className="coach-cheat-words">
+        {content.vocab.map((w) => (
+          <li key={w.word}>
+            <button type="button" className="lesson-link" aria-label={`Nghe ${w.word}`} onClick={() => say(w.word)}>
+              <b>{w.word}</b>
+            </button>{' '}
+            <span className="lesson-correction-pinyin">{w.pinyin}</span> · {w.meaning}
+          </li>
+        ))}
+      </ul>
+      {content.patterns.length > 0 && (
+        <ul className="coach-cheat-patterns">
+          {content.patterns.map((pt) => (
+            <li key={pt.pattern}>
+              <b>{pt.pattern}</b> · {pt.example}
+              <span className="lesson-hint"> {pt.exampleVi}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </details>
+  );
+}
+
+function DialogSection(
+  props: SharedProps & { mode: DialogMode; provider: string; model: string; level: Level; checkRoute: Route; onDone: () => void },
+) {
   const { listenFirst } = useListeningPrefs();
   const {
+    tier,
     content,
     session,
     say,
@@ -1037,23 +1188,34 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
     provider,
     model,
     level,
+    checkRoute,
   } = props;
   const dialog = session.dialog ?? [];
+  const coachMode = mode === 'coach';
   const teacher = useTeacher();
   const [draft, setDraft] = useState('');
   const [streaming, setStreaming] = useState('');
   const active = useRef(true);
   const request = useRef<AbortController | null>(null);
+  const endRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     active.current = true;
+    // a check that was still running when the lesson was closed will never finish
+    if ((session.dialog || []).some((line) => line.coachPending)) {
+      updateSession((s) => ({
+        ...s,
+        dialog: (s.dialog || []).map((line) => (line.coachPending ? { ...line, coachPending: false } : line)),
+      }));
+    }
     return () => {
       active.current = false;
       request.current?.abort();
       setBusy(false);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const opening = renameTeacher(mode === 'roleplay' ? content.roleplay.opening : content.freeTalk.question, teacher);
-  const openingVi = renameTeacher(mode === 'roleplay' ? content.roleplay.openingVi : content.freeTalk.questionVi, teacher);
+  const opening = renameTeacher(mode === 'freetalk' ? content.freeTalk.question : content.roleplay.opening, teacher);
+  const openingVi = renameTeacher(mode === 'freetalk' ? content.freeTalk.questionVi : content.roleplay.openingVi, teacher);
 
   useEffect(() => {
     if (dialog.length === 0) {
@@ -1064,6 +1226,22 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode]);
 
+  useEffect(() => {
+    if (coachMode && dialog.length > 1) endRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [coachMode, dialog.length, streaming]);
+
+  const patchLine = (text: string, change: (line: DialogLine) => DialogLine) =>
+    updateSession((s) => {
+      const lines = [...(s.dialog || [])];
+      for (let i = lines.length - 1; i >= 0; i--) {
+        if (lines[i].role === 'user' && lines[i].text === text && lines[i].coachPending) {
+          lines[i] = change(lines[i]);
+          break;
+        }
+      }
+      return { ...s, dialog: lines };
+    });
+
   const reply = async (input: string) => {
     const text = input.trim();
     if (!text || busy) return;
@@ -1073,7 +1251,8 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
       return;
     }
     setDraft('');
-    const userLine: DialogLine = { role: 'user', text };
+    const context = [...dialog].reverse().find((line) => line.role === 'assistant')?.text;
+    const userLine: DialogLine = { role: 'user', text, coachPending: true };
     const history = [...dialog, userLine];
     updateSession((s) => ({ ...s, dialog: history, stats: { ...s.stats, turns: s.stats.turns + 1 } }));
     const controller = new AbortController();
@@ -1081,24 +1260,33 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
     setBusy(true);
     setStreaming('');
 
-    // check the learner's sentence in the background
-    void fetchCorrections({ provider, model, text })
-      .then((corrections) => {
-        if (!active.current || !corrections.length) return;
-        onLearningUpdate((p) => recordLearningCorrections(p, text, corrections));
+    // the Coach checks the learner's sentence while the reply streams in
+    void fetchCoach({ ...checkRoute, text, level, context })
+      .then(({ corrections, coach }) => {
+        const fromCoach =
+          !corrections.length && coach && coach.verdict === 'fix'
+            ? [
+                {
+                  original: coach.said || text,
+                  corrected: coach.corrected,
+                  explanation: coach.issues
+                    .map((issue) => issue.why)
+                    .filter(Boolean)
+                    .join(' '),
+                },
+              ]
+            : [];
+        const notes = [...corrections.map(({ original, corrected, explanation }) => ({ original, corrected, explanation })), ...fromCoach];
+        patchLine(text, (line) => ({ ...line, coach, coachPending: false }));
+        if (!notes.length) return;
+        if (corrections.length) onLearningUpdate((p) => recordLearningCorrections(p, text, corrections));
         updateSession((s) => ({
           ...s,
-          dialog: (s.dialog || []).map((line) =>
-            line === userLine || (line.role === 'user' && line.text === text && !line.corrections) ? { ...line, corrections } : line,
-          ),
-          notes: [
-            ...(s.notes || []),
-            ...corrections.map(({ original, corrected, explanation }) => ({ original, corrected, explanation })),
-          ].slice(-20),
-          stats: { ...s.stats, corrections: s.stats.corrections + corrections.length },
+          notes: [...(s.notes || []), ...notes].slice(-20),
+          stats: { ...s.stats, corrections: s.stats.corrections + notes.length },
         }));
       })
-      .catch(() => {});
+      .catch(() => patchLine(text, (line) => ({ ...line, coachPending: false })));
 
     try {
       let replyText = '';
@@ -1145,9 +1333,31 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
     if (text) void reply(text);
   };
 
+  const turns = dialog.filter((line) => line.role === 'user').length;
+
   return (
-    <div className="lesson-card lesson-dialog">
-      {mode === 'roleplay' ? (
+    <div className={`lesson-card lesson-dialog${coachMode ? ' is-coach' : ''}`}>
+      {coachMode ? (
+        <>
+          <div className="lesson-scenario">
+            <p>
+              <strong>Tình huống:</strong> {renameTeacher(content.roleplay.setting, teacher)}
+            </p>
+            <p>
+              <strong>Bạn:</strong> {content.roleplay.learnerRole} · <strong>Coach:</strong>{' '}
+              {renameTeacher(content.roleplay.avatarRole, teacher)}
+            </p>
+            <p className="lesson-hint">{content.freeTalk.questionVi}</p>
+          </div>
+          <LessonCheatSheet content={content} say={say} />
+          <p className="coach-turns" aria-live="polite">
+            Lượt nói: <strong>{turns}</strong>/{COACH_TURN_GOAL}
+            <span className="coach-turns-bar" aria-hidden="true">
+              <span style={{ width: `${Math.min(100, (turns / COACH_TURN_GOAL) * 100)}%` }} />
+            </span>
+          </p>
+        </>
+      ) : mode === 'roleplay' ? (
         <div className="lesson-scenario">
           <p>
             <strong>Tình huống:</strong> {renameTeacher(content.roleplay.setting, teacher)}
@@ -1163,28 +1373,43 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
           </ul>
         </div>
       ) : (
-        <p className="lesson-prompt">Nói ít nhất 3–4 câu về câu hỏi này. {teacher.vi} sẽ hỏi thêm.</p>
+        <p className="lesson-prompt">Nói ít nhất 3–4 câu về câu hỏi này. Coach sẽ hỏi thêm.</p>
       )}
       <div className="lesson-chat">
         {dialog.map((line, i) => (
-          <div key={i} className={`lesson-line is-${line.role}`}>
-            {line.role === 'assistant' ? (
-              <ListenFirstLine text={line.text} translation={line.translation} onPlay={() => say(line.text)} hidden={mode === 'roleplay'} />
-            ) : (
-              <p>
-                <Han text={line.text} />
-              </p>
+          <Fragment key={i}>
+            <div className={`lesson-line is-${line.role}`}>
+              {line.role === 'assistant' ? (
+                <ListenFirstLine
+                  text={line.text}
+                  translation={line.translation}
+                  onPlay={() => say(line.text)}
+                  hidden={mode === 'roleplay'}
+                />
+              ) : (
+                <p>
+                  <Han text={line.text} />
+                </p>
+              )}
+              {!coachMode && line.role === 'user' && line.corrections?.map((c, j) => <LessonCorrection key={j} correction={c} />)}
+            </div>
+            {line.role === 'user' && (line.coachPending || line.coach) && (
+              <div className="lesson-coach">
+                {line.coachPending ? (
+                  <CoachPending />
+                ) : line.coach ? (
+                  <FeedbackBlock coach={line.coach} tier={tier} say={say} localStt={props.localStt} learnerId={props.learnerId} />
+                ) : null}
+              </div>
             )}
-            {line.corrections?.map((c, j) => (
-              <LessonCorrection key={j} correction={c} />
-            ))}
-          </div>
+          </Fragment>
         ))}
         {streaming && (
           <div className="lesson-line is-assistant">
             <p>{mode === 'roleplay' && listenFirst ? 'Đang chuẩn bị câu trả lời để nghe…' : streaming}</p>
           </div>
         )}
+        <div ref={endRef} />
       </div>
       <div className="lesson-inputrow">
         <input
@@ -1202,13 +1427,36 @@ function DialogSection(props: SharedProps & { mode: 'roleplay' | 'freetalk'; pro
           {busy ? 'Đang xử lý…' : 'Gửi'}
         </button>
       </div>
+      {coachMode && turns > 0 && (
+        <div className="lesson-actions">
+          <button
+            type="button"
+            className={turns >= COACH_TURN_GOAL ? 'lesson-primary' : 'lesson-secondary'}
+            disabled={busy}
+            onClick={props.onDone}
+          >
+            Xong, tổng kết
+          </button>
+        </div>
+      )}
     </div>
   );
 }
 
 // 6. Summary.
-function SummarySection({ session, content, onFinish }: { session: SessionState; content: LessonContent; onFinish: () => void }) {
+function SummarySection({
+  tier,
+  session,
+  content,
+  onFinish,
+}: {
+  tier: Tier;
+  session: SessionState;
+  content: LessonContent;
+  onFinish: () => void;
+}) {
   const s = session.stats;
+  const coachTier = tier === 'coach';
   return (
     <div className="lesson-card">
       <h3>Tổng kết buổi học</h3>
@@ -1219,10 +1467,10 @@ function SummarySection({ session, content, onFinish }: { session: SessionState;
         <li>
           Từ của bài: {s.newWords}/{content.vocab.length} đã thêm vào ôn tập
         </li>
+        <li>{coachTier ? `Lượt nói với Coach: ${s.turns}` : `Câu tự đặt: ${s.sentences} · lượt hội thoại: ${s.turns}`}</li>
         <li>
-          Câu tự đặt: {s.sentences} · lượt hội thoại: {s.turns}
+          {coachTier ? 'Câu được Coach sửa' : 'Lỗi được sửa'}: {s.corrections}
         </li>
-        <li>Lỗi được sửa: {s.corrections}</li>
       </ul>
       {session.notes && session.notes.length > 0 && (
         <>

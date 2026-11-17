@@ -5,11 +5,17 @@ import { ListeningControls, SlowListen } from './ListeningControls';
 import { useEffect, useMemo, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 import type { ChatMessage, Phase } from '../types';
+import type { Tier } from '../lib/tier';
+import { showsAdvancedPronunciation } from '../lib/tier';
+import { CoachCard, CoachPending } from './CoachCard';
 import { pinyinLine } from '../lib/text';
 import { useTeacher } from '../lib/persona';
 import { AlertIcon, ArrowRightIcon, CloseIcon, MicIcon, RefreshIcon, SendIcon, SparkIcon, VolumeIcon } from './Icons';
 
 interface ChatPanelProps {
+  tier: Tier;
+  onSay: (text: string) => void;
+  localStt: boolean;
   spokenTurns?: Record<string, VoiceResult>;
   learnerId?: string;
   voice?: string;
@@ -66,6 +72,9 @@ function TypingDots() {
 }
 
 interface MessageItemProps {
+  tier: Tier;
+  onSay: (text: string) => void;
+  localStt: boolean;
   spokenTurn?: VoiceResult;
   learnerId?: string;
   voice?: string;
@@ -78,6 +87,9 @@ interface MessageItemProps {
 }
 
 function MessageItem({
+  tier,
+  onSay,
+  localStt,
   spokenTurn,
   learnerId,
   voice,
@@ -99,13 +111,17 @@ function MessageItem({
         <div className="bubble bubble-user">
           <p className="bubble-cn">{message.text}</p>
         </div>
-        {spokenTurn && learnerId && <SpokenPronunciation turn={spokenTurn} learnerId={learnerId} voice={voice || 'zh-CN-XiaoxiaoNeural'} />}
+        {spokenTurn && learnerId && showsAdvancedPronunciation(tier) && <SpokenPronunciation turn={spokenTurn} learnerId={learnerId} voice={voice || 'zh-CN-XiaoxiaoNeural'} />}
         <p className="user-meta">{formatTime(message.createdAt)}</p>
+        {message.coachPending && !message.coach && <CoachPending />}
+        {message.coach && (
+          <CoachCard feedback={message.coach} tier={tier} onSay={onSay} localStt={localStt} learnerId={learnerId} />
+        )}
       </article>
     );
   }
 
-  const hasExtras = Boolean(message.corrections?.length || message.vocab?.length);
+  const hasExtras = Boolean(message.vocab?.length);
 
   return (
     <article className={`message message-assistant${message.streaming ? ' is-streaming' : ''}`}>
@@ -158,27 +174,6 @@ function MessageItem({
 
         {hasExtras && !message.streaming && (
           <div className="study-cards">
-            {Boolean(message.corrections?.length) && (
-              <section className="feedback-card">
-                <h3 className="feedback-title">
-                  <span className="feedback-mark">修</span>
-                  Góp ý nhỏ
-                </h3>
-                <div className="correction-list">
-                  {message.corrections?.map((item, index) => (
-                    <div className="correction-item" key={`${item.corrected}-${index}`}>
-                      <div className="correction-line">
-                        <span className="correction-wrong">{item.original}</span>
-                        <ArrowRightIcon size={14} />
-                        <span className="correction-right">{item.corrected}</span>
-                      </div>
-                      <p className="correction-note">{item.explanation}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-
             {Boolean(message.vocab?.length) && (
               <section className="feedback-card vocab-card">
                 <h3 className="feedback-title">
@@ -202,13 +197,6 @@ function MessageItem({
           </div>
         )}
 
-        {message.correctionsPending && !message.streaming && (
-          <p className="corrections-pending">
-            <span className="corrections-pending-dot" aria-hidden="true" />
-            Đang kiểm tra ngữ pháp…
-          </p>
-        )}
-
         {message.suggestion && !message.streaming && (
           <button className="suggestion-card" type="button" onClick={() => onUseSuggestion(message.suggestion || '')} disabled={busy}>
             <span className="suggestion-kicker">
@@ -228,6 +216,9 @@ function MessageItem({
 }
 
 export function ChatPanel({
+  tier,
+  onSay,
+  localStt,
   spokenTurns,
   learnerId,
   voice,
@@ -340,6 +331,9 @@ export function ChatPanel({
           <MessageItem
             key={message.id}
             message={message}
+            tier={tier}
+            onSay={onSay}
+            localStt={localStt}
             spokenTurn={spokenTurns?.[message.id]}
             learnerId={learnerId}
             voice={voice}
@@ -363,7 +357,7 @@ export function ChatPanel({
         </div>
       )}
 
-      <footer className="composer-area">
+      <footer className={`composer-area${tier === 'coach' ? ' is-coach-tier' : ''}`}>
         {handsFree && !listening && (
           <div className={`listening-strip is-handsfree is-${handsFreeState}`}>
             <span className="listening-wave" aria-hidden="true">

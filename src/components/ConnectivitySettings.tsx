@@ -150,7 +150,7 @@ export function ConnectivitySettings({
       <h3>Model cloud qua API</h3>
       <p>
         Model 7B trên máy chỉ nên làm việc vặt. Việc cần suy luận — trò chuyện, bắt lỗi, phân tích điểm yếu — giao cho model cloud như
-        gemini-4-argon qua VietAPI. Tính phí theo token; key chỉ lưu trên máy chủ này, không gửi về trình duyệt.
+        claude-sonnet-5.5 qua VietAPI. Tính phí theo token; key chỉ lưu trên máy chủ này, không gửi về trình duyệt.
       </p>
       {remote?.configured && (
         <div className={`cloud-health is-${health?.state ?? 'unknown'}`} role="status">
@@ -177,7 +177,7 @@ export function ConnectivitySettings({
                 setConsent(false);
               }}
             >
-              Điền sẵn VietAPI · gemini-4-argon
+              Điền sẵn VietAPI · claude-sonnet-5.5
             </button>
             <a className="lesson-secondary" href={VIETAPI_PRESET.topupUrl} target="_blank" rel="noopener noreferrer">
               Lấy key / nạp credit

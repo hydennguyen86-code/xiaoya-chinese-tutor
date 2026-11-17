@@ -1,7 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  COACH_SECTIONS,
+  SECTIONS,
   SESSION_MS,
+  clampSection,
+  sectionBudgetMs,
+  sectionsFor,
+  sessionMsFor,
   nextPointer,
   beginSession,
   completeSession,
@@ -171,4 +177,28 @@ test('pinyin intro and HSK3 courses take their level defaults without moving sav
     lessonNo: 10,
     day: 1,
   });
+});
+
+test('coach tier has four steps in 20 minutes: ôn, từ mới, Coach, tổng kết', () => {
+  assert.deepEqual(
+    COACH_SECTIONS.map((x) => x.id),
+    ['review', 'vocab', 'coach', 'summary'],
+  );
+  assert.equal(sessionMsFor('coach'), 20 * 60_000);
+  assert.equal(sectionsFor('coach'), COACH_SECTIONS);
+  assert.equal(sectionsFor('foundation'), SECTIONS);
+  assert.equal(SECTIONS.find((x) => x.id === 'freetalk')?.title, 'Nói với Coach');
+  assert.equal(sectionBudgetMs(2, 'coach'), 10 * 60_000);
+});
+
+test('a stored section beyond the tier steps clamps to the last valid step', () => {
+  assert.equal(clampSection(5, 'coach'), 3);
+  assert.equal(clampSection(5, 'foundation'), 5);
+  assert.equal(clampSection(-2, 'coach'), 0);
+  assert.equal(clampSection(2, 'coach'), 2);
+});
+
+test('beginSession sizes elapsedMs for the tier', () => {
+  const p = beginSession(null, book, 'HSK5-6', { volumeId: 'cao-cap', lessonNo: 1, day: 1 }, '2026-10-24', 'coach');
+  assert.equal(p.current!.elapsedMs.length, 4);
 });

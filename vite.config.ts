@@ -7,10 +7,10 @@ export default defineConfig({
   build: { copyPublicDir: false },
   server: {
     host: '127.0.0.1',
-    port: 5173,
+    port: Number(process.env.VITE_PORT || 5173),
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8787',
+        target: `http://127.0.0.1:${process.env.API_PORT || 8787}`,
         changeOrigin: false,
       },
     },
