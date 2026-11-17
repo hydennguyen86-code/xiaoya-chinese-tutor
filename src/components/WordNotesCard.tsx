@@ -9,6 +9,45 @@ type Route = { provider: string; model: string };
 const notesCache = new Map<string, WordNotes>();
 const pending = new Map<string, Promise<WordNotes>>();
 
+interface NotesRequest {
+  word: string;
+  pinyin: string;
+  meaning: string;
+}
+
+/** One request per word at a time; the server also caches, so a word is written once. */
+function loadNotes(item: NotesRequest, route: Route, level: Level): Promise<WordNotes> {
+  const cached = notesCache.get(item.word);
+  if (cached) return Promise.resolve(cached);
+  let request = pending.get(item.word);
+  if (!request) {
+    request = fetchWordNotes({ provider: route.provider, model: route.model, ...item, level }).then((result) => {
+      notesCache.set(item.word, result);
+      return result;
+    });
+    pending.set(item.word, request);
+    const clear = () => pending.delete(item.word);
+    request.then(clear, clear);
+  }
+  return request;
+}
+
+/**
+ * Writes the notes of every word of a lesson one after another in the background,
+ * so the next card is usually ready by the time the learner flips to it.
+ */
+export async function prefetchWordNotes(items: NotesRequest[], route: Route | null, level: Level, signal?: AbortSignal) {
+  if (!route) return;
+  for (const item of items) {
+    if (signal?.aborted) return;
+    try {
+      await loadNotes(item, route, level);
+    } catch {
+      // one failed word does not stop the rest; its card simply shows no notes
+    }
+  }
+}
+
 interface WordNotesCardProps {
   word: string;
   pinyin: string;
@@ -36,16 +75,9 @@ export function WordNotesCard({ word, pinyin, meaning, level, route, onSay }: Wo
     let alive = true;
     setNotes(null);
     setState('loading');
-    let request = pending.get(word);
-    if (!request) {
-      request = fetchWordNotes({ provider, model: model ?? '', word, pinyin, meaning, level });
-      pending.set(word, request);
-      const clear = () => pending.delete(word);
-      request.then(clear, clear);
-    }
+    const request = loadNotes({ word, pinyin, meaning }, { provider, model: model ?? '' }, level);
     request.then(
       (result) => {
-        notesCache.set(word, result);
         if (!alive) return;
         setNotes(result);
         setState('ready');

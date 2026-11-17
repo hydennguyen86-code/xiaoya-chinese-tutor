@@ -10,7 +10,7 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type React
 import type { AvatarApi } from '../lib/avatarApi';
 import { fetchCoach, streamChat } from '../lib/api';
 import { CoachCard, CoachPending } from './CoachCard';
-import { WordNotesCard } from './WordNotesCard';
+import { WordNotesCard, prefetchWordNotes } from './WordNotesCard';
 import { showsAdvancedPronunciation, tierFor, type Tier } from '../lib/tier';
 import type { Learner } from '../lib/learners';
 import { renameTeacher, useTeacher, type Teacher } from '../lib/persona';
@@ -150,7 +150,8 @@ export function DailyLesson(props: DailyLessonProps) {
   tierRef.current = tier;
   const sections = sectionsFor(tier);
   const chat: Route = props.chatRoute ?? { provider, model };
-  const wordRoute: Route | null = props.chatRoute ?? (model ? { provider, model } : null);
+  // word notes are a chore for the model on this computer (lessons route); the cloud model is only the fallback
+  const wordRoute: Route | null = model ? { provider, model } : props.chatRoute;
   const progressRef = useRef(progress);
   progressRef.current = progress;
   const voiceRef = useRef<VoiceHandle | null>(null);
@@ -465,6 +466,20 @@ export function DailyLesson(props: DailyLessonProps) {
       : content?.targetLevel === 'HSK1'
         ? 'HSK1-2'
         : level;
+  // HSK 3+: write the notes of all the lesson's words in the background, one after another
+  const wordRouteProvider = wordRoute?.provider ?? '';
+  const wordRouteModel = wordRoute?.model ?? '';
+  useEffect(() => {
+    if (tier !== 'coach' || !content?.vocab.length || !wordRouteProvider) return undefined;
+    const abort = new AbortController();
+    void prefetchWordNotes(
+      content.vocab.map((item) => ({ word: item.word, pinyin: item.pinyin, meaning: item.meaning })),
+      { provider: wordRouteProvider, model: wordRouteModel },
+      teachingLevel,
+      abort.signal,
+    );
+    return () => abort.abort();
+  }, [tier, content, wordRouteProvider, wordRouteModel, teachingLevel]);
   const handleCourseBusy = useCallback(
     (value: boolean) => {
       if (value) getAvatar()?.stopSpeech();
